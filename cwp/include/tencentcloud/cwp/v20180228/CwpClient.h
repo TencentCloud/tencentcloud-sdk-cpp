@@ -103,6 +103,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeHistoryAccountsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImpactedHostsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImpactedHostsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeImportMachineInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeImportMachineInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLoginWhiteListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLoginWhiteListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMachineInfoRequest.h>
@@ -207,6 +209,10 @@
 #include <tencentcloud/cwp/v20180228/model/ExportReverseShellEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportTasksRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportTasksResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ExportVulDetectionExcelRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ExportVulDetectionExcelResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ExportVulDetectionReportRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ExportVulDetectionReportResponse.h>
 #include <tencentcloud/cwp/v20180228/model/IgnoreImpactedHostsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/IgnoreImpactedHostsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/InquiryPriceOpenProVersionPrepaidRequest.h>
@@ -383,6 +389,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeImpactedHostsResponse> DescribeImpactedHostsOutcome;
                 typedef std::future<DescribeImpactedHostsOutcome> DescribeImpactedHostsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeImpactedHostsRequest&, DescribeImpactedHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImpactedHostsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeImportMachineInfoResponse> DescribeImportMachineInfoOutcome;
+                typedef std::future<DescribeImportMachineInfoOutcome> DescribeImportMachineInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeImportMachineInfoRequest&, DescribeImportMachineInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImportMachineInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeLoginWhiteListResponse> DescribeLoginWhiteListOutcome;
                 typedef std::future<DescribeLoginWhiteListOutcome> DescribeLoginWhiteListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeLoginWhiteListRequest&, DescribeLoginWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginWhiteListAsyncHandler;
@@ -539,6 +548,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ExportTasksResponse> ExportTasksOutcome;
                 typedef std::future<ExportTasksOutcome> ExportTasksOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportTasksRequest&, ExportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportTasksAsyncHandler;
+                typedef Outcome<Error, Model::ExportVulDetectionExcelResponse> ExportVulDetectionExcelOutcome;
+                typedef std::future<ExportVulDetectionExcelOutcome> ExportVulDetectionExcelOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ExportVulDetectionExcelRequest&, ExportVulDetectionExcelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportVulDetectionExcelAsyncHandler;
+                typedef Outcome<Error, Model::ExportVulDetectionReportResponse> ExportVulDetectionReportOutcome;
+                typedef std::future<ExportVulDetectionReportOutcome> ExportVulDetectionReportOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ExportVulDetectionReportRequest&, ExportVulDetectionReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportVulDetectionReportAsyncHandler;
                 typedef Outcome<Error, Model::IgnoreImpactedHostsResponse> IgnoreImpactedHostsOutcome;
                 typedef std::future<IgnoreImpactedHostsOutcome> IgnoreImpactedHostsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::IgnoreImpactedHostsRequest&, IgnoreImpactedHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IgnoreImpactedHostsAsyncHandler;
@@ -964,6 +979,15 @@ namespace TencentCloud
                 DescribeImpactedHostsOutcome DescribeImpactedHosts(const Model::DescribeImpactedHostsRequest &request);
                 void DescribeImpactedHostsAsync(const Model::DescribeImpactedHostsRequest& request, const DescribeImpactedHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImpactedHostsOutcomeCallable DescribeImpactedHostsCallable(const Model::DescribeImpactedHostsRequest& request);
+
+                /**
+                 *查询批量导入机器信息
+                 * @param req DescribeImportMachineInfoRequest
+                 * @return DescribeImportMachineInfoOutcome
+                 */
+                DescribeImportMachineInfoOutcome DescribeImportMachineInfo(const Model::DescribeImportMachineInfoRequest &request);
+                void DescribeImportMachineInfoAsync(const Model::DescribeImportMachineInfoRequest& request, const DescribeImportMachineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImportMachineInfoOutcomeCallable DescribeImportMachineInfoCallable(const Model::DescribeImportMachineInfoRequest& request);
 
                 /**
                  *获取异地登录白名单列表
@@ -1435,6 +1459,24 @@ namespace TencentCloud
                 ExportTasksOutcome ExportTasks(const Model::ExportTasksRequest &request);
                 void ExportTasksAsync(const Model::ExportTasksRequest& request, const ExportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExportTasksOutcomeCallable ExportTasksCallable(const Model::ExportTasksRequest& request);
+
+                /**
+                 *导出本次漏洞检测Excel
+                 * @param req ExportVulDetectionExcelRequest
+                 * @return ExportVulDetectionExcelOutcome
+                 */
+                ExportVulDetectionExcelOutcome ExportVulDetectionExcel(const Model::ExportVulDetectionExcelRequest &request);
+                void ExportVulDetectionExcelAsync(const Model::ExportVulDetectionExcelRequest& request, const ExportVulDetectionExcelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportVulDetectionExcelOutcomeCallable ExportVulDetectionExcelCallable(const Model::ExportVulDetectionExcelRequest& request);
+
+                /**
+                 *导出漏洞检测报告。
+                 * @param req ExportVulDetectionReportRequest
+                 * @return ExportVulDetectionReportOutcome
+                 */
+                ExportVulDetectionReportOutcome ExportVulDetectionReport(const Model::ExportVulDetectionReportRequest &request);
+                void ExportVulDetectionReportAsync(const Model::ExportVulDetectionReportRequest& request, const ExportVulDetectionReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportVulDetectionReportOutcomeCallable ExportVulDetectionReportCallable(const Model::ExportVulDetectionReportRequest& request);
 
                 /**
                  *本接口 (IgnoreImpactedHosts) 用于忽略漏洞。

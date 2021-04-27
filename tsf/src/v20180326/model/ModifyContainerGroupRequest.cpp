@@ -29,7 +29,8 @@ ModifyContainerGroupRequest::ModifyContainerGroupRequest() :
     m_protocolPortsHasBeenSet(false),
     m_updateTypeHasBeenSet(false),
     m_updateIvlHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,14 @@ string ModifyContainerGroupRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Alias";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -197,6 +206,22 @@ void ModifyContainerGroupRequest::SetSubnetId(const string& _subnetId)
 bool ModifyContainerGroupRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+string ModifyContainerGroupRequest::GetAlias() const
+{
+    return m_alias;
+}
+
+void ModifyContainerGroupRequest::SetAlias(const string& _alias)
+{
+    m_alias = _alias;
+    m_aliasHasBeenSet = true;
+}
+
+bool ModifyContainerGroupRequest::AliasHasBeenSet() const
+{
+    return m_aliasHasBeenSet;
 }
 
 

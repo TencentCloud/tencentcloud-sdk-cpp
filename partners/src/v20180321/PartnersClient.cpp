@@ -513,6 +513,49 @@ PartnersClient::DescribeAgentPayDealsOutcomeCallable PartnersClient::DescribeAge
     return task->get_future();
 }
 
+PartnersClient::DescribeAgentPayDealsV2Outcome PartnersClient::DescribeAgentPayDealsV2(const DescribeAgentPayDealsV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentPayDealsV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentPayDealsV2Response rsp = DescribeAgentPayDealsV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentPayDealsV2Outcome(rsp);
+        else
+            return DescribeAgentPayDealsV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentPayDealsV2Outcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeAgentPayDealsV2Async(const DescribeAgentPayDealsV2Request& request, const DescribeAgentPayDealsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentPayDealsV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeAgentPayDealsV2OutcomeCallable PartnersClient::DescribeAgentPayDealsV2Callable(const DescribeAgentPayDealsV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentPayDealsV2Outcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentPayDealsV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeAgentSelfPayDealsOutcome PartnersClient::DescribeAgentSelfPayDeals(const DescribeAgentSelfPayDealsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgentSelfPayDeals");
@@ -549,6 +592,49 @@ PartnersClient::DescribeAgentSelfPayDealsOutcomeCallable PartnersClient::Describ
         [this, request]()
         {
             return this->DescribeAgentSelfPayDeals(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PartnersClient::DescribeAgentSelfPayDealsV2Outcome PartnersClient::DescribeAgentSelfPayDealsV2(const DescribeAgentSelfPayDealsV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentSelfPayDealsV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentSelfPayDealsV2Response rsp = DescribeAgentSelfPayDealsV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentSelfPayDealsV2Outcome(rsp);
+        else
+            return DescribeAgentSelfPayDealsV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentSelfPayDealsV2Outcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeAgentSelfPayDealsV2Async(const DescribeAgentSelfPayDealsV2Request& request, const DescribeAgentSelfPayDealsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentSelfPayDealsV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeAgentSelfPayDealsV2OutcomeCallable PartnersClient::DescribeAgentSelfPayDealsV2Callable(const DescribeAgentSelfPayDealsV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentSelfPayDealsV2Outcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentSelfPayDealsV2(request);
         }
     );
 

@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取起始时间，默认一天前的时间戳。对应 FirstOccurTime，告警首次出现时间。
-                     * @return StartTime 起始时间，默认一天前的时间戳。对应 FirstOccurTime，告警首次出现时间。
+                     * 获取起始时间，默认一天前的时间戳。对应 `FirstOccurTime` 告警首次出现时间，告警历史的 `FirstOccurTime` 晚于 `StartTime` 才可能被搜索到。
+                     * @return StartTime 起始时间，默认一天前的时间戳。对应 `FirstOccurTime` 告警首次出现时间，告警历史的 `FirstOccurTime` 晚于 `StartTime` 才可能被搜索到。
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置起始时间，默认一天前的时间戳。对应 FirstOccurTime，告警首次出现时间。
-                     * @param StartTime 起始时间，默认一天前的时间戳。对应 FirstOccurTime，告警首次出现时间。
+                     * 设置起始时间，默认一天前的时间戳。对应 `FirstOccurTime` 告警首次出现时间，告警历史的 `FirstOccurTime` 晚于 `StartTime` 才可能被搜索到。
+                     * @param StartTime 起始时间，默认一天前的时间戳。对应 `FirstOccurTime` 告警首次出现时间，告警历史的 `FirstOccurTime` 晚于 `StartTime` 才可能被搜索到。
                      */
                     void SetStartTime(const int64_t& _startTime);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，默认当前时间戳。对应 FirstOccurTime，告警首次出现时间。
-                     * @return EndTime 结束时间，默认当前时间戳。对应 FirstOccurTime，告警首次出现时间。
+                     * 获取结束时间，默认当前时间戳。对应 `FirstOccurTime` 告警首次出现时间，告警历史的 `FirstOccurTime` 早于 `EndTime` 才可能被搜索到。
+                     * @return EndTime 结束时间，默认当前时间戳。对应 `FirstOccurTime` 告警首次出现时间，告警历史的 `FirstOccurTime` 早于 `EndTime` 才可能被搜索到。
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间，默认当前时间戳。对应 FirstOccurTime，告警首次出现时间。
-                     * @param EndTime 结束时间，默认当前时间戳。对应 FirstOccurTime，告警首次出现时间。
+                     * 设置结束时间，默认当前时间戳。对应 `FirstOccurTime` 告警首次出现时间，告警历史的 `FirstOccurTime` 早于 `EndTime` 才可能被搜索到。
+                     * @param EndTime 结束时间，默认当前时间戳。对应 `FirstOccurTime` 告警首次出现时间，告警历史的 `FirstOccurTime` 早于 `EndTime` 才可能被搜索到。
                      */
                     void SetEndTime(const int64_t& _endTime);
 
@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "
-                     * @return MonitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "
+                     * 获取根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控
+                     * @return MonitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控
                      */
                     std::vector<std::string> GetMonitorTypes() const;
 
                     /**
-                     * 设置根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "
-                     * @param MonitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "
+                     * 设置根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控
+                     * @param MonitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控
                      */
                     void SetMonitorTypes(const std::vector<std::string>& _monitorTypes);
 
@@ -207,13 +207,17 @@ namespace TencentCloud
 
                     /**
                      * 获取根据项目ID过滤，-1=无项目 0=默认项目
+可在此页面查询 [项目管理](https://console.cloud.tencent.com/project)
                      * @return ProjectIds 根据项目ID过滤，-1=无项目 0=默认项目
+可在此页面查询 [项目管理](https://console.cloud.tencent.com/project)
                      */
                     std::vector<int64_t> GetProjectIds() const;
 
                     /**
                      * 设置根据项目ID过滤，-1=无项目 0=默认项目
+可在此页面查询 [项目管理](https://console.cloud.tencent.com/project)
                      * @param ProjectIds 根据项目ID过滤，-1=无项目 0=默认项目
+可在此页面查询 [项目管理](https://console.cloud.tencent.com/project)
                      */
                     void SetProjectIds(const std::vector<int64_t>& _projectIds);
 
@@ -242,14 +246,18 @@ namespace TencentCloud
                     bool InstanceGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取根据策略类型过滤
-                     * @return Namespaces 根据策略类型过滤
+                     * 获取根据策略类型过滤，策略类型是监控类型之下的概念，在这里两者都需要传入，例如 `[{"MonitorType": "MT_QCE", "Namespace": "cvm_device"}]`
+可使用 [查询所有名字空间 DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 接口查询
+                     * @return Namespaces 根据策略类型过滤，策略类型是监控类型之下的概念，在这里两者都需要传入，例如 `[{"MonitorType": "MT_QCE", "Namespace": "cvm_device"}]`
+可使用 [查询所有名字空间 DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 接口查询
                      */
                     std::vector<MonitorTypeNamespace> GetNamespaces() const;
 
                     /**
-                     * 设置根据策略类型过滤
-                     * @param Namespaces 根据策略类型过滤
+                     * 设置根据策略类型过滤，策略类型是监控类型之下的概念，在这里两者都需要传入，例如 `[{"MonitorType": "MT_QCE", "Namespace": "cvm_device"}]`
+可使用 [查询所有名字空间 DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 接口查询
+                     * @param Namespaces 根据策略类型过滤，策略类型是监控类型之下的概念，在这里两者都需要传入，例如 `[{"MonitorType": "MT_QCE", "Namespace": "cvm_device"}]`
+可使用 [查询所有名字空间 DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 接口查询
                      */
                     void SetNamespaces(const std::vector<MonitorTypeNamespace>& _namespaces);
 
@@ -314,14 +322,14 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取根据接收人搜索
-                     * @return ReceiverUids 根据接收人搜索
+                     * 获取根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段
+                     * @return ReceiverUids 根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段
                      */
                     std::vector<int64_t> GetReceiverUids() const;
 
                     /**
-                     * 设置根据接收人搜索
-                     * @param ReceiverUids 根据接收人搜索
+                     * 设置根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段
+                     * @param ReceiverUids 根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段
                      */
                     void SetReceiverUids(const std::vector<int64_t>& _receiverUids);
 
@@ -332,14 +340,14 @@ namespace TencentCloud
                     bool ReceiverUidsHasBeenSet() const;
 
                     /**
-                     * 获取根据接收组搜索
-                     * @return ReceiverGroups 根据接收组搜索
+                     * 获取根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段
+                     * @return ReceiverGroups 根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段
                      */
                     std::vector<int64_t> GetReceiverGroups() const;
 
                     /**
-                     * 设置根据接收组搜索
-                     * @param ReceiverGroups 根据接收组搜索
+                     * 设置根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段
+                     * @param ReceiverGroups 根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段
                      */
                     void SetReceiverGroups(const std::vector<int64_t>& _receiverGroups);
 
@@ -394,19 +402,19 @@ namespace TencentCloud
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 起始时间，默认一天前的时间戳。对应 FirstOccurTime，告警首次出现时间。
+                     * 起始时间，默认一天前的时间戳。对应 `FirstOccurTime` 告警首次出现时间，告警历史的 `FirstOccurTime` 晚于 `StartTime` 才可能被搜索到。
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，默认当前时间戳。对应 FirstOccurTime，告警首次出现时间。
+                     * 结束时间，默认当前时间戳。对应 `FirstOccurTime` 告警首次出现时间，告警历史的 `FirstOccurTime` 早于 `EndTime` 才可能被搜索到。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控 "
+                     * 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控
                      */
                     std::vector<std::string> m_monitorTypes;
                     bool m_monitorTypesHasBeenSet;
@@ -425,6 +433,7 @@ namespace TencentCloud
 
                     /**
                      * 根据项目ID过滤，-1=无项目 0=默认项目
+可在此页面查询 [项目管理](https://console.cloud.tencent.com/project)
                      */
                     std::vector<int64_t> m_projectIds;
                     bool m_projectIdsHasBeenSet;
@@ -436,7 +445,8 @@ namespace TencentCloud
                     bool m_instanceGroupIdsHasBeenSet;
 
                     /**
-                     * 根据策略类型过滤
+                     * 根据策略类型过滤，策略类型是监控类型之下的概念，在这里两者都需要传入，例如 `[{"MonitorType": "MT_QCE", "Namespace": "cvm_device"}]`
+可使用 [查询所有名字空间 DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 接口查询
                      */
                     std::vector<MonitorTypeNamespace> m_namespaces;
                     bool m_namespacesHasBeenSet;
@@ -460,13 +470,13 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 根据接收人搜索
+                     * 根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段
                      */
                     std::vector<int64_t> m_receiverUids;
                     bool m_receiverUidsHasBeenSet;
 
                     /**
-                     * 根据接收组搜索
+                     * 根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段
                      */
                     std::vector<int64_t> m_receiverGroups;
                     bool m_receiverGroupsHasBeenSet;

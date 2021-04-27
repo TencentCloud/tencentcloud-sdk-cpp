@@ -23,6 +23,8 @@ using namespace std;
 
 TaskSimpleInfo::TaskSimpleInfo() :
     m_taskIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_fileIdHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_beginProcessTimeHasBeenSet(false),
@@ -45,6 +47,26 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const Value &value)
         }
         m_taskId = string(value["TaskId"].GetString());
         m_taskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TaskSimpleInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileId") && !value["FileId"].IsNull())
+    {
+        if (!value["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TaskSimpleInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(value["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
     }
 
     if (value.HasMember("TaskType") && !value["TaskType"].IsNull())
@@ -122,6 +144,22 @@ void TaskSimpleInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         value.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_taskTypeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -187,6 +225,38 @@ void TaskSimpleInfo::SetTaskId(const string& _taskId)
 bool TaskSimpleInfo::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string TaskSimpleInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void TaskSimpleInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool TaskSimpleInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string TaskSimpleInfo::GetFileId() const
+{
+    return m_fileId;
+}
+
+void TaskSimpleInfo::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool TaskSimpleInfo::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
 }
 
 string TaskSimpleInfo::GetTaskType() const

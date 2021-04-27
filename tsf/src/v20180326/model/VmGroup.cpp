@@ -55,7 +55,8 @@ VmGroup::VmGroup() :
     m_healthCheckSettingsHasBeenSet(false),
     m_packageTypeHasBeenSet(false),
     m_startScriptHasBeenSet(false),
-    m_stopScriptHasBeenSet(false)
+    m_stopScriptHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
 }
 
@@ -414,6 +415,16 @@ CoreInternalOutcome VmGroup::Deserialize(const Value &value)
         m_stopScriptHasBeenSet = true;
     }
 
+    if (value.HasMember("Alias") && !value["Alias"].IsNull())
+    {
+        if (!value["Alias"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VmGroup.Alias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alias = string(value["Alias"].GetString());
+        m_aliasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -697,6 +708,14 @@ void VmGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "StopScript";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_stopScript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Alias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1244,5 +1263,21 @@ void VmGroup::SetStopScript(const string& _stopScript)
 bool VmGroup::StopScriptHasBeenSet() const
 {
     return m_stopScriptHasBeenSet;
+}
+
+string VmGroup::GetAlias() const
+{
+    return m_alias;
+}
+
+void VmGroup::SetAlias(const string& _alias)
+{
+    m_alias = _alias;
+    m_aliasHasBeenSet = true;
+}
+
+bool VmGroup::AliasHasBeenSet() const
+{
+    return m_aliasHasBeenSet;
 }
 

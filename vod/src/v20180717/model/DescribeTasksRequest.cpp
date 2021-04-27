@@ -26,6 +26,9 @@ using namespace std;
 DescribeTasksRequest::DescribeTasksRequest() :
     m_statusHasBeenSet(false),
     m_fileIdHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_finishTimeHasBeenSet(false),
+    m_sortHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_scrollTokenHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
@@ -53,6 +56,33 @@ string DescribeTasksRequest::ToJsonString() const
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_createTime.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_finishTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_finishTime.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_sort.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -117,6 +147,54 @@ void DescribeTasksRequest::SetFileId(const string& _fileId)
 bool DescribeTasksRequest::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+TimeRange DescribeTasksRequest::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void DescribeTasksRequest::SetCreateTime(const TimeRange& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+TimeRange DescribeTasksRequest::GetFinishTime() const
+{
+    return m_finishTime;
+}
+
+void DescribeTasksRequest::SetFinishTime(const TimeRange& _finishTime)
+{
+    m_finishTime = _finishTime;
+    m_finishTimeHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::FinishTimeHasBeenSet() const
+{
+    return m_finishTimeHasBeenSet;
+}
+
+SortBy DescribeTasksRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void DescribeTasksRequest::SetSort(const SortBy& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
 }
 
 uint64_t DescribeTasksRequest::GetLimit() const

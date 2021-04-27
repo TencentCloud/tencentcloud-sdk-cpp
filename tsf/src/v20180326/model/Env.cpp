@@ -23,7 +23,8 @@ using namespace std;
 
 Env::Env() :
     m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_valueFromHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,23 @@ CoreInternalOutcome Env::Deserialize(const Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("ValueFrom") && !value["ValueFrom"].IsNull())
+    {
+        if (!value["ValueFrom"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Env.ValueFrom` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_valueFrom.Deserialize(value["ValueFrom"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_valueFromHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +91,15 @@ void Env::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valueFromHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ValueFrom";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_valueFrom.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -108,5 +135,21 @@ void Env::SetValue(const string& _value)
 bool Env::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+ValueFrom Env::GetValueFrom() const
+{
+    return m_valueFrom;
+}
+
+void Env::SetValueFrom(const ValueFrom& _valueFrom)
+{
+    m_valueFrom = _valueFrom;
+    m_valueFromHasBeenSet = true;
+}
+
+bool Env::ValueFromHasBeenSet() const
+{
+    return m_valueFromHasBeenSet;
 }
 

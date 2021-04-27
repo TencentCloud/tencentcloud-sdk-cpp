@@ -45,8 +45,12 @@
 #include <tencentcloud/partners/v20180321/model/DescribeAgentDealsCacheResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsV2Request.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentPayDealsV2Response.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsV2Request.h>
+#include <tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsV2Response.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosRequest.h>
@@ -106,9 +110,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAgentPayDealsResponse> DescribeAgentPayDealsOutcome;
                 typedef std::future<DescribeAgentPayDealsOutcome> DescribeAgentPayDealsOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentPayDealsRequest&, DescribeAgentPayDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentPayDealsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAgentPayDealsV2Response> DescribeAgentPayDealsV2Outcome;
+                typedef std::future<DescribeAgentPayDealsV2Outcome> DescribeAgentPayDealsV2OutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeAgentPayDealsV2Request&, DescribeAgentPayDealsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentPayDealsV2AsyncHandler;
                 typedef Outcome<Error, Model::DescribeAgentSelfPayDealsResponse> DescribeAgentSelfPayDealsOutcome;
                 typedef std::future<DescribeAgentSelfPayDealsOutcome> DescribeAgentSelfPayDealsOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeAgentSelfPayDealsRequest&, DescribeAgentSelfPayDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentSelfPayDealsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAgentSelfPayDealsV2Response> DescribeAgentSelfPayDealsV2Outcome;
+                typedef std::future<DescribeAgentSelfPayDealsV2Outcome> DescribeAgentSelfPayDealsV2OutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeAgentSelfPayDealsV2Request&, DescribeAgentSelfPayDealsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentSelfPayDealsV2AsyncHandler;
                 typedef Outcome<Error, Model::DescribeClientBalanceResponse> DescribeClientBalanceOutcome;
                 typedef std::future<DescribeClientBalanceOutcome> DescribeClientBalanceOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeClientBalanceRequest&, DescribeClientBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientBalanceAsyncHandler;
@@ -222,7 +232,7 @@ namespace TencentCloud
                 DescribeAgentDealsCacheOutcomeCallable DescribeAgentDealsCacheCallable(const Model::DescribeAgentDealsCacheRequest& request);
 
                 /**
-                 *可以查询代理商代付的所有订单
+                 *【该接口将逐步下线，请切换使用升级版本DescribeAgentPayDealsV2】可以查询代理商代付的所有订单
                  * @param req DescribeAgentPayDealsRequest
                  * @return DescribeAgentPayDealsOutcome
                  */
@@ -231,13 +241,31 @@ namespace TencentCloud
                 DescribeAgentPayDealsOutcomeCallable DescribeAgentPayDealsCallable(const Model::DescribeAgentPayDealsRequest& request);
 
                 /**
-                 *可以查询代理商下指定客户的自付订单
+                 *可以查询代理商代付的所有订单
+                 * @param req DescribeAgentPayDealsV2Request
+                 * @return DescribeAgentPayDealsV2Outcome
+                 */
+                DescribeAgentPayDealsV2Outcome DescribeAgentPayDealsV2(const Model::DescribeAgentPayDealsV2Request &request);
+                void DescribeAgentPayDealsV2Async(const Model::DescribeAgentPayDealsV2Request& request, const DescribeAgentPayDealsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentPayDealsV2OutcomeCallable DescribeAgentPayDealsV2Callable(const Model::DescribeAgentPayDealsV2Request& request);
+
+                /**
+                 *【该接口将逐步下线，请切换使用升级版本DescribeAgentSelfPayDealsV2】可以查询代理商下指定客户的自付订单
                  * @param req DescribeAgentSelfPayDealsRequest
                  * @return DescribeAgentSelfPayDealsOutcome
                  */
                 DescribeAgentSelfPayDealsOutcome DescribeAgentSelfPayDeals(const Model::DescribeAgentSelfPayDealsRequest &request);
                 void DescribeAgentSelfPayDealsAsync(const Model::DescribeAgentSelfPayDealsRequest& request, const DescribeAgentSelfPayDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAgentSelfPayDealsOutcomeCallable DescribeAgentSelfPayDealsCallable(const Model::DescribeAgentSelfPayDealsRequest& request);
+
+                /**
+                 *可以查询代理商下指定客户的自付订单
+                 * @param req DescribeAgentSelfPayDealsV2Request
+                 * @return DescribeAgentSelfPayDealsV2Outcome
+                 */
+                DescribeAgentSelfPayDealsV2Outcome DescribeAgentSelfPayDealsV2(const Model::DescribeAgentSelfPayDealsV2Request &request);
+                void DescribeAgentSelfPayDealsV2Async(const Model::DescribeAgentSelfPayDealsV2Request& request, const DescribeAgentSelfPayDealsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentSelfPayDealsV2OutcomeCallable DescribeAgentSelfPayDealsV2Callable(const Model::DescribeAgentSelfPayDealsV2Request& request);
 
                 /**
                  *为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额

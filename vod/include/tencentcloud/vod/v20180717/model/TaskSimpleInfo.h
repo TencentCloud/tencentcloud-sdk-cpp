@@ -65,6 +65,42 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
+                     * 获取任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * @return Status 任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * @param Status 任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取视频 ID。
+                     * @return FileId 视频 ID。
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置视频 ID。
+                     * @param FileId 视频 ID。
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     */
+                    bool FileIdHasBeenSet() const;
+
+                    /**
                      * 获取任务类型，取值：
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务</li>
@@ -215,6 +251,18 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 视频 ID。
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                     /**
                      * 任务类型，取值：

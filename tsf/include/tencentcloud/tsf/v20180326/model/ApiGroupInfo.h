@@ -311,6 +311,50 @@ namespace TencentCloud
                      */
                     bool GroupTypeHasBeenSet() const;
 
+                    /**
+                     * 获取网关实例的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayInstanceType 网关实例的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGatewayInstanceType() const;
+
+                    /**
+                     * 设置网关实例的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GatewayInstanceType 网关实例的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGatewayInstanceType(const std::string& _gatewayInstanceType);
+
+                    /**
+                     * 判断参数 GatewayInstanceType 是否已赋值
+                     * @return GatewayInstanceType 是否已赋值
+                     */
+                    bool GatewayInstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取网关实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayInstanceId 网关实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGatewayInstanceId() const;
+
+                    /**
+                     * 设置网关实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GatewayInstanceId 网关实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGatewayInstanceId(const std::string& _gatewayInstanceId);
+
+                    /**
+                     * 判断参数 GatewayInstanceId 是否已赋值
+                     * @return GatewayInstanceId 是否已赋值
+                     */
+                    bool GatewayInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -396,6 +440,20 @@ namespace TencentCloud
                      */
                     std::string m_groupType;
                     bool m_groupTypeHasBeenSet;
+
+                    /**
+                     * 网关实例的类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gatewayInstanceType;
+                    bool m_gatewayInstanceTypeHasBeenSet;
+
+                    /**
+                     * 网关实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gatewayInstanceId;
+                    bool m_gatewayInstanceIdHasBeenSet;
 
                 };
             }

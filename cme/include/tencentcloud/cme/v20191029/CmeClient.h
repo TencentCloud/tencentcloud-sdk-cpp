@@ -45,6 +45,8 @@
 #include <tencentcloud/cme/v20191029/model/DeleteTeamResponse.h>
 #include <tencentcloud/cme/v20191029/model/DeleteTeamMembersRequest.h>
 #include <tencentcloud/cme/v20191029/model/DeleteTeamMembersResponse.h>
+#include <tencentcloud/cme/v20191029/model/DescribeAccountsRequest.h>
+#include <tencentcloud/cme/v20191029/model/DescribeAccountsResponse.h>
 #include <tencentcloud/cme/v20191029/model/DescribeClassRequest.h>
 #include <tencentcloud/cme/v20191029/model/DescribeClassResponse.h>
 #include <tencentcloud/cme/v20191029/model/DescribeJoinTeamsRequest.h>
@@ -154,6 +156,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteTeamMembersResponse> DeleteTeamMembersOutcome;
                 typedef std::future<DeleteTeamMembersOutcome> DeleteTeamMembersOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::DeleteTeamMembersRequest&, DeleteTeamMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTeamMembersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
+                typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClassResponse> DescribeClassOutcome;
                 typedef std::future<DescribeClassOutcome> DescribeClassOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::DescribeClassRequest&, DescribeClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassAsyncHandler;
@@ -357,6 +362,15 @@ namespace TencentCloud
                 DeleteTeamMembersOutcome DeleteTeamMembers(const Model::DeleteTeamMembersRequest &request);
                 void DeleteTeamMembersAsync(const Model::DeleteTeamMembersRequest& request, const DeleteTeamMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTeamMembersOutcomeCallable DeleteTeamMembersCallable(const Model::DeleteTeamMembersRequest& request);
+
+                /**
+                 *获取用户账号信息。
+                 * @param req DescribeAccountsRequest
+                 * @return DescribeAccountsOutcome
+                 */
+                DescribeAccountsOutcome DescribeAccounts(const Model::DescribeAccountsRequest &request);
+                void DescribeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountsOutcomeCallable DescribeAccountsCallable(const Model::DescribeAccountsRequest& request);
 
                 /**
                  *获取指定归属者下所有的分类信息。

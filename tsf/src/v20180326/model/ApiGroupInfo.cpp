@@ -33,7 +33,9 @@ ApiGroupInfo::ApiGroupInfo() :
     m_apiCountHasBeenSet(false),
     m_aclModeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_groupTypeHasBeenSet(false)
+    m_groupTypeHasBeenSet(false),
+    m_gatewayInstanceTypeHasBeenSet(false),
+    m_gatewayInstanceIdHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,26 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const Value &value)
         m_groupTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("GatewayInstanceType") && !value["GatewayInstanceType"].IsNull())
+    {
+        if (!value["GatewayInstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ApiGroupInfo.GatewayInstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayInstanceType = string(value["GatewayInstanceType"].GetString());
+        m_gatewayInstanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GatewayInstanceId") && !value["GatewayInstanceId"].IsNull())
+    {
+        if (!value["GatewayInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ApiGroupInfo.GatewayInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayInstanceId = string(value["GatewayInstanceId"].GetString());
+        m_gatewayInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -280,6 +302,22 @@ void ApiGroupInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "GroupType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_groupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayInstanceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GatewayInstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gatewayInstanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayInstanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "GatewayInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_gatewayInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -475,5 +513,37 @@ void ApiGroupInfo::SetGroupType(const string& _groupType)
 bool ApiGroupInfo::GroupTypeHasBeenSet() const
 {
     return m_groupTypeHasBeenSet;
+}
+
+string ApiGroupInfo::GetGatewayInstanceType() const
+{
+    return m_gatewayInstanceType;
+}
+
+void ApiGroupInfo::SetGatewayInstanceType(const string& _gatewayInstanceType)
+{
+    m_gatewayInstanceType = _gatewayInstanceType;
+    m_gatewayInstanceTypeHasBeenSet = true;
+}
+
+bool ApiGroupInfo::GatewayInstanceTypeHasBeenSet() const
+{
+    return m_gatewayInstanceTypeHasBeenSet;
+}
+
+string ApiGroupInfo::GetGatewayInstanceId() const
+{
+    return m_gatewayInstanceId;
+}
+
+void ApiGroupInfo::SetGatewayInstanceId(const string& _gatewayInstanceId)
+{
+    m_gatewayInstanceId = _gatewayInstanceId;
+    m_gatewayInstanceIdHasBeenSet = true;
+}
+
+bool ApiGroupInfo::GatewayInstanceIdHasBeenSet() const
+{
+    return m_gatewayInstanceIdHasBeenSet;
 }
 

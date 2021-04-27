@@ -38,7 +38,8 @@ VmGroupSimple::VmGroupSimple() :
     m_microserviceTypeHasBeenSet(false),
     m_groupResourceTypeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_deployDescHasBeenSet(false)
+    m_deployDescHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,16 @@ CoreInternalOutcome VmGroupSimple::Deserialize(const Value &value)
         m_deployDescHasBeenSet = true;
     }
 
+    if (value.HasMember("Alias") && !value["Alias"].IsNull())
+    {
+        if (!value["Alias"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VmGroupSimple.Alias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alias = string(value["Alias"].GetString());
+        m_aliasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -358,6 +369,14 @@ void VmGroupSimple::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "DeployDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_deployDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Alias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -633,5 +652,21 @@ void VmGroupSimple::SetDeployDesc(const string& _deployDesc)
 bool VmGroupSimple::DeployDescHasBeenSet() const
 {
     return m_deployDescHasBeenSet;
+}
+
+string VmGroupSimple::GetAlias() const
+{
+    return m_alias;
+}
+
+void VmGroupSimple::SetAlias(const string& _alias)
+{
+    m_alias = _alias;
+    m_aliasHasBeenSet = true;
+}
+
+bool VmGroupSimple::AliasHasBeenSet() const
+{
+    return m_aliasHasBeenSet;
 }
 

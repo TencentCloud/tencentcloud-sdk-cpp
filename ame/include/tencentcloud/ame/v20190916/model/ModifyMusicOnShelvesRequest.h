@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return MusicDetailInfos 无
+                     * 获取歌曲变更信息
+                     * @return MusicDetailInfos 歌曲变更信息
                      */
                     MusicDetailInfo GetMusicDetailInfos() const;
 
                     /**
-                     * 设置无
-                     * @param MusicDetailInfos 无
+                     * 设置歌曲变更信息
+                     * @param MusicDetailInfos 歌曲变更信息
                      */
                     void SetMusicDetailInfos(const MusicDetailInfo& _musicDetailInfos);
 
@@ -61,13 +61,37 @@ namespace TencentCloud
                      */
                     bool MusicDetailInfosHasBeenSet() const;
 
+                    /**
+                     * 获取ame对接资源方密钥
+                     * @return AmeKey ame对接资源方密钥
+                     */
+                    std::string GetAmeKey() const;
+
+                    /**
+                     * 设置ame对接资源方密钥
+                     * @param AmeKey ame对接资源方密钥
+                     */
+                    void SetAmeKey(const std::string& _ameKey);
+
+                    /**
+                     * 判断参数 AmeKey 是否已赋值
+                     * @return AmeKey 是否已赋值
+                     */
+                    bool AmeKeyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 无
+                     * 歌曲变更信息
                      */
                     MusicDetailInfo m_musicDetailInfos;
                     bool m_musicDetailInfosHasBeenSet;
+
+                    /**
+                     * ame对接资源方密钥
+                     */
+                    std::string m_ameKey;
+                    bool m_ameKeyHasBeenSet;
 
                 };
             }

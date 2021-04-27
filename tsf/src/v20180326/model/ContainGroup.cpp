@@ -35,7 +35,8 @@ ContainGroup::ContainGroup() :
     m_cpuRequestHasBeenSet(false),
     m_cpuLimitHasBeenSet(false),
     m_memRequestHasBeenSet(false),
-    m_memLimitHasBeenSet(false)
+    m_memLimitHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,16 @@ CoreInternalOutcome ContainGroup::Deserialize(const Value &value)
         m_memLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("Alias") && !value["Alias"].IsNull())
+    {
+        if (!value["Alias"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ContainGroup.Alias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alias = string(value["Alias"].GetString());
+        m_aliasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +312,14 @@ void ContainGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "MemLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_memLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Alias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -528,5 +547,21 @@ void ContainGroup::SetMemLimit(const string& _memLimit)
 bool ContainGroup::MemLimitHasBeenSet() const
 {
     return m_memLimitHasBeenSet;
+}
+
+string ContainGroup::GetAlias() const
+{
+    return m_alias;
+}
+
+void ContainGroup::SetAlias(const string& _alias)
+{
+    m_alias = _alias;
+    m_aliasHasBeenSet = true;
+}
+
+bool ContainGroup::AliasHasBeenSet() const
+{
+    return m_aliasHasBeenSet;
 }
 

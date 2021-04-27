@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool AccessIdHasBeenSet() const;
 
                     /**
-                     * 获取设备昵称
-                     * @return Nick 设备昵称
+                     * 获取设备昵称，最多不超过64个字符
+                     * @return Nick 设备昵称，最多不超过64个字符
                      */
                     std::string GetNick() const;
 
                     /**
-                     * 设置设备昵称
-                     * @param Nick 设备昵称
+                     * 设置设备昵称，最多不超过64个字符
+                     * @param Nick 设备昵称，最多不超过64个字符
                      */
                     void SetNick(const std::string& _nick);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_accessIdHasBeenSet;
 
                     /**
-                     * 设备昵称
+                     * 设备昵称，最多不超过64个字符
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;

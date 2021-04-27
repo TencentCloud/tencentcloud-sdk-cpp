@@ -147,6 +147,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeConfigSummaryResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeConfigsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeConfigsResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeContainerEventsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeContainerEventsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupDetailRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeContainerGroupsRequest.h>
@@ -233,6 +235,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeUnitApiUseDetailRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeUnitApiUseDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUnitNamespacesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUnitNamespacesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUnitRuleRequest.h>
@@ -541,6 +545,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeConfigsResponse> DescribeConfigsOutcome;
                 typedef std::future<DescribeConfigsOutcome> DescribeConfigsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeConfigsRequest&, DescribeConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeContainerEventsResponse> DescribeContainerEventsOutcome;
+                typedef std::future<DescribeContainerEventsOutcome> DescribeContainerEventsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeContainerEventsRequest&, DescribeContainerEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContainerEventsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeContainerGroupDetailResponse> DescribeContainerGroupDetailOutcome;
                 typedef std::future<DescribeContainerGroupDetailOutcome> DescribeContainerGroupDetailOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeContainerGroupDetailRequest&, DescribeContainerGroupDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContainerGroupDetailAsyncHandler;
@@ -670,6 +677,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTaskLastStatusResponse> DescribeTaskLastStatusOutcome;
                 typedef std::future<DescribeTaskLastStatusOutcome> DescribeTaskLastStatusOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeTaskLastStatusRequest&, DescribeTaskLastStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskLastStatusAsyncHandler;
+                typedef Outcome<Error, Model::DescribeUnitApiUseDetailResponse> DescribeUnitApiUseDetailOutcome;
+                typedef std::future<DescribeUnitApiUseDetailOutcome> DescribeUnitApiUseDetailOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeUnitApiUseDetailRequest&, DescribeUnitApiUseDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnitApiUseDetailAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUnitNamespacesResponse> DescribeUnitNamespacesOutcome;
                 typedef std::future<DescribeUnitNamespacesOutcome> DescribeUnitNamespacesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeUnitNamespacesRequest&, DescribeUnitNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnitNamespacesAsyncHandler;
@@ -1395,6 +1405,15 @@ namespace TencentCloud
                 DescribeConfigsOutcomeCallable DescribeConfigsCallable(const Model::DescribeConfigsRequest& request);
 
                 /**
+                 *获取容器事件列表
+                 * @param req DescribeContainerEventsRequest
+                 * @return DescribeContainerEventsOutcome
+                 */
+                DescribeContainerEventsOutcome DescribeContainerEvents(const Model::DescribeContainerEventsRequest &request);
+                void DescribeContainerEventsAsync(const Model::DescribeContainerEventsRequest& request, const DescribeContainerEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeContainerEventsOutcomeCallable DescribeContainerEventsCallable(const Model::DescribeContainerEventsRequest& request);
+
+                /**
                  * 容器部署组详情
                  * @param req DescribeContainerGroupDetailRequest
                  * @return DescribeContainerGroupDetailOutcome
@@ -1781,6 +1800,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeTaskLastStatusOutcome DescribeTaskLastStatus(const Model::DescribeTaskLastStatusRequest &request);
                 void DescribeTaskLastStatusAsync(const Model::DescribeTaskLastStatusRequest& request, const DescribeTaskLastStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTaskLastStatusOutcomeCallable DescribeTaskLastStatusCallable(const Model::DescribeTaskLastStatusRequest& request);
+
+                /**
+                 *查询网关API监控明细数据（仅单元化网关），非单元化网关使用DescribeApiUseDetail
+                 * @param req DescribeUnitApiUseDetailRequest
+                 * @return DescribeUnitApiUseDetailOutcome
+                 */
+                DescribeUnitApiUseDetailOutcome DescribeUnitApiUseDetail(const Model::DescribeUnitApiUseDetailRequest &request);
+                void DescribeUnitApiUseDetailAsync(const Model::DescribeUnitApiUseDetailRequest& request, const DescribeUnitApiUseDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUnitApiUseDetailOutcomeCallable DescribeUnitApiUseDetailCallable(const Model::DescribeUnitApiUseDetailRequest& request);
 
                 /**
                  *查询单元化命名空间列表

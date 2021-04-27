@@ -377,6 +377,32 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取媒体文件的存储类别：
+<li>STANDARD：标准存储。</li>
+<li>STANDARD_IA：低频存储。</li>
+                     * @return StorageClass 媒体文件的存储类别：
+<li>STANDARD：标准存储。</li>
+<li>STANDARD_IA：低频存储。</li>
+                     */
+                    std::string GetStorageClass() const;
+
+                    /**
+                     * 设置媒体文件的存储类别：
+<li>STANDARD：标准存储。</li>
+<li>STANDARD_IA：低频存储。</li>
+                     * @param StorageClass 媒体文件的存储类别：
+<li>STANDARD：标准存储。</li>
+<li>STANDARD_IA：低频存储。</li>
+                     */
+                    void SetStorageClass(const std::string& _storageClass);
+
+                    /**
+                     * 判断参数 StorageClass 是否已赋值
+                     * @return StorageClass 是否已赋值
+                     */
+                    bool StorageClassHasBeenSet() const;
+
                 private:
 
                     /**
@@ -486,6 +512,14 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 媒体文件的存储类别：
+<li>STANDARD：标准存储。</li>
+<li>STANDARD_IA：低频存储。</li>
+                     */
+                    std::string m_storageClass;
+                    bool m_storageClassHasBeenSet;
 
                 };
             }

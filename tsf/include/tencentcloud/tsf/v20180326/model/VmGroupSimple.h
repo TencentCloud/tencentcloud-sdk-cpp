@@ -420,6 +420,28 @@ namespace TencentCloud
                      */
                     bool DeployDescHasBeenSet() const;
 
+                    /**
+                     * 获取部署组备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Alias 部署组备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAlias() const;
+
+                    /**
+                     * 设置部署组备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Alias 部署组备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlias(const std::string& _alias);
+
+                    /**
+                     * 判断参数 Alias 是否已赋值
+                     * @return Alias 是否已赋值
+                     */
+                    bool AliasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -540,6 +562,13 @@ namespace TencentCloud
                      */
                     std::string m_deployDesc;
                     bool m_deployDescHasBeenSet;
+
+                    /**
+                     * 部署组备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alias;
+                    bool m_aliasHasBeenSet;
 
                 };
             }

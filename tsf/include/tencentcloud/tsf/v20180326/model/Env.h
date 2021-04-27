@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/ValueFrom.h>
 
 
 namespace TencentCloud
@@ -82,6 +83,28 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取k8s ValueFrom
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValueFrom k8s ValueFrom
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ValueFrom GetValueFrom() const;
+
+                    /**
+                     * 设置k8s ValueFrom
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ValueFrom k8s ValueFrom
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetValueFrom(const ValueFrom& _valueFrom);
+
+                    /**
+                     * 判断参数 ValueFrom 是否已赋值
+                     * @return ValueFrom 是否已赋值
+                     */
+                    bool ValueFromHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +118,13 @@ namespace TencentCloud
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * k8s ValueFrom
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ValueFrom m_valueFrom;
+                    bool m_valueFromHasBeenSet;
 
                 };
             }

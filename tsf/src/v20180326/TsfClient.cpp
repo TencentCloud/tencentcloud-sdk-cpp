@@ -2706,6 +2706,49 @@ TsfClient::DescribeConfigsOutcomeCallable TsfClient::DescribeConfigsCallable(con
     return task->get_future();
 }
 
+TsfClient::DescribeContainerEventsOutcome TsfClient::DescribeContainerEvents(const DescribeContainerEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeContainerEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeContainerEventsResponse rsp = DescribeContainerEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeContainerEventsOutcome(rsp);
+        else
+            return DescribeContainerEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeContainerEventsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeContainerEventsAsync(const DescribeContainerEventsRequest& request, const DescribeContainerEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeContainerEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeContainerEventsOutcomeCallable TsfClient::DescribeContainerEventsCallable(const DescribeContainerEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeContainerEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeContainerEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeContainerGroupDetailOutcome TsfClient::DescribeContainerGroupDetail(const DescribeContainerGroupDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeContainerGroupDetail");
@@ -4548,6 +4591,49 @@ TsfClient::DescribeTaskLastStatusOutcomeCallable TsfClient::DescribeTaskLastStat
         [this, request]()
         {
             return this->DescribeTaskLastStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeUnitApiUseDetailOutcome TsfClient::DescribeUnitApiUseDetail(const DescribeUnitApiUseDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUnitApiUseDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUnitApiUseDetailResponse rsp = DescribeUnitApiUseDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUnitApiUseDetailOutcome(rsp);
+        else
+            return DescribeUnitApiUseDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUnitApiUseDetailOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeUnitApiUseDetailAsync(const DescribeUnitApiUseDetailRequest& request, const DescribeUnitApiUseDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUnitApiUseDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeUnitApiUseDetailOutcomeCallable TsfClient::DescribeUnitApiUseDetailCallable(const DescribeUnitApiUseDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUnitApiUseDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUnitApiUseDetail(request);
         }
     );
 

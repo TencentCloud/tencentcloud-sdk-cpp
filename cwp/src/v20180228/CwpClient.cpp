@@ -1760,6 +1760,49 @@ CwpClient::DescribeImpactedHostsOutcomeCallable CwpClient::DescribeImpactedHosts
     return task->get_future();
 }
 
+CwpClient::DescribeImportMachineInfoOutcome CwpClient::DescribeImportMachineInfo(const DescribeImportMachineInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImportMachineInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImportMachineInfoResponse rsp = DescribeImportMachineInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImportMachineInfoOutcome(rsp);
+        else
+            return DescribeImportMachineInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImportMachineInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeImportMachineInfoAsync(const DescribeImportMachineInfoRequest& request, const DescribeImportMachineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImportMachineInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeImportMachineInfoOutcomeCallable CwpClient::DescribeImportMachineInfoCallable(const DescribeImportMachineInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImportMachineInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImportMachineInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeLoginWhiteListOutcome CwpClient::DescribeLoginWhiteList(const DescribeLoginWhiteListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLoginWhiteList");
@@ -3989,6 +4032,92 @@ CwpClient::ExportTasksOutcomeCallable CwpClient::ExportTasksCallable(const Expor
         [this, request]()
         {
             return this->ExportTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ExportVulDetectionExcelOutcome CwpClient::ExportVulDetectionExcel(const ExportVulDetectionExcelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportVulDetectionExcel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportVulDetectionExcelResponse rsp = ExportVulDetectionExcelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportVulDetectionExcelOutcome(rsp);
+        else
+            return ExportVulDetectionExcelOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportVulDetectionExcelOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportVulDetectionExcelAsync(const ExportVulDetectionExcelRequest& request, const ExportVulDetectionExcelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportVulDetectionExcel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ExportVulDetectionExcelOutcomeCallable CwpClient::ExportVulDetectionExcelCallable(const ExportVulDetectionExcelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportVulDetectionExcelOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportVulDetectionExcel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ExportVulDetectionReportOutcome CwpClient::ExportVulDetectionReport(const ExportVulDetectionReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportVulDetectionReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportVulDetectionReportResponse rsp = ExportVulDetectionReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportVulDetectionReportOutcome(rsp);
+        else
+            return ExportVulDetectionReportOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportVulDetectionReportOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportVulDetectionReportAsync(const ExportVulDetectionReportRequest& request, const ExportVulDetectionReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportVulDetectionReport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ExportVulDetectionReportOutcomeCallable CwpClient::ExportVulDetectionReportCallable(const ExportVulDetectionReportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportVulDetectionReportOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportVulDetectionReport(request);
         }
     );
 

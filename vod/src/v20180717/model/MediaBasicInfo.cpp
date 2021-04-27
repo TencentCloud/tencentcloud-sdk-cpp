@@ -38,7 +38,8 @@ MediaBasicInfo::MediaBasicInfo() :
     m_tagSetHasBeenSet(false),
     m_vidHasBeenSet(false),
     m_categoryHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_storageClassHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("StorageClass") && !value["StorageClass"].IsNull())
+    {
+        if (!value["StorageClass"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MediaBasicInfo.StorageClass` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageClass = string(value["StorageClass"].GetString());
+        m_storageClassHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -374,6 +385,14 @@ void MediaBasicInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageClassHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StorageClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_storageClass.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -649,5 +668,21 @@ void MediaBasicInfo::SetStatus(const string& _status)
 bool MediaBasicInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string MediaBasicInfo::GetStorageClass() const
+{
+    return m_storageClass;
+}
+
+void MediaBasicInfo::SetStorageClass(const string& _storageClass)
+{
+    m_storageClass = _storageClass;
+    m_storageClassHasBeenSet = true;
+}
+
+bool MediaBasicInfo::StorageClassHasBeenSet() const
+{
+    return m_storageClassHasBeenSet;
 }
 

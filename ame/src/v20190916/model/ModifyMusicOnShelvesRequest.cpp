@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 ModifyMusicOnShelvesRequest::ModifyMusicOnShelvesRequest() :
-    m_musicDetailInfosHasBeenSet(false)
+    m_musicDetailInfosHasBeenSet(false),
+    m_ameKeyHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,14 @@ string ModifyMusicOnShelvesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_musicDetailInfos.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ameKeyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AmeKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_ameKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -66,6 +75,22 @@ void ModifyMusicOnShelvesRequest::SetMusicDetailInfos(const MusicDetailInfo& _mu
 bool ModifyMusicOnShelvesRequest::MusicDetailInfosHasBeenSet() const
 {
     return m_musicDetailInfosHasBeenSet;
+}
+
+string ModifyMusicOnShelvesRequest::GetAmeKey() const
+{
+    return m_ameKey;
+}
+
+void ModifyMusicOnShelvesRequest::SetAmeKey(const string& _ameKey)
+{
+    m_ameKey = _ameKey;
+    m_ameKeyHasBeenSet = true;
+}
+
+bool ModifyMusicOnShelvesRequest::AmeKeyHasBeenSet() const
+{
+    return m_ameKeyHasBeenSet;
 }
 
 

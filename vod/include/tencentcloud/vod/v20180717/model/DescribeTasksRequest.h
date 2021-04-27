@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/TimeRange.h>
+#include <tencentcloud/vod/v20180717/model/SortBy.h>
 
 
 namespace TencentCloud
@@ -77,6 +79,68 @@ namespace TencentCloud
                      * @return FileId 是否已赋值
                      */
                     bool FileIdHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件：任务创建时间。
+                     * @return CreateTime 过滤条件：任务创建时间。
+                     */
+                    TimeRange GetCreateTime() const;
+
+                    /**
+                     * 设置过滤条件：任务创建时间。
+                     * @param CreateTime 过滤条件：任务创建时间。
+                     */
+                    void SetCreateTime(const TimeRange& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件：任务结束时间。
+                     * @return FinishTime 过滤条件：任务结束时间。
+                     */
+                    TimeRange GetFinishTime() const;
+
+                    /**
+                     * 设置过滤条件：任务结束时间。
+                     * @param FinishTime 过滤条件：任务结束时间。
+                     */
+                    void SetFinishTime(const TimeRange& _finishTime);
+
+                    /**
+                     * 判断参数 FinishTime 是否已赋值
+                     * @return FinishTime 是否已赋值
+                     */
+                    bool FinishTimeHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式。Sort.Field 可选：
+<li> CreateTime 任务创建时间。</li>
+<li>FinishTime 任务结束时间。</li>
+                     * @return Sort 排序方式。Sort.Field 可选：
+<li> CreateTime 任务创建时间。</li>
+<li>FinishTime 任务结束时间。</li>
+                     */
+                    SortBy GetSort() const;
+
+                    /**
+                     * 设置排序方式。Sort.Field 可选：
+<li> CreateTime 任务创建时间。</li>
+<li>FinishTime 任务结束时间。</li>
+                     * @param Sort 排序方式。Sort.Field 可选：
+<li> CreateTime 任务创建时间。</li>
+<li>FinishTime 任务结束时间。</li>
+                     */
+                    void SetSort(const SortBy& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     */
+                    bool SortHasBeenSet() const;
 
                     /**
                      * 获取返回记录条数，默认值：10，最大值：100。
@@ -145,6 +209,26 @@ namespace TencentCloud
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
+
+                    /**
+                     * 过滤条件：任务创建时间。
+                     */
+                    TimeRange m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 过滤条件：任务结束时间。
+                     */
+                    TimeRange m_finishTime;
+                    bool m_finishTimeHasBeenSet;
+
+                    /**
+                     * 排序方式。Sort.Field 可选：
+<li> CreateTime 任务创建时间。</li>
+<li>FinishTime 任务结束时间。</li>
+                     */
+                    SortBy m_sort;
+                    bool m_sortHasBeenSet;
 
                     /**
                      * 返回记录条数，默认值：10，最大值：100。
