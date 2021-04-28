@@ -52,6 +52,7 @@ set(gpm_public_header_model
   include/tencentcloud/gpm/v20200820/model/CancelMatchingRequest.h
   include/tencentcloud/gpm/v20200820/model/AttributeMap.h
   include/tencentcloud/gpm/v20200820/model/StringKV.h
+  include/tencentcloud/gpm/v20200820/model/StartMatchingBackfillRequest.h
   include/tencentcloud/gpm/v20200820/model/CancelMatchingResponse.h
   include/tencentcloud/gpm/v20200820/model/DescribeMatchCodesResponse.h
   include/tencentcloud/gpm/v20200820/model/CreateRuleResponse.h
@@ -59,6 +60,7 @@ set(gpm_public_header_model
   include/tencentcloud/gpm/v20200820/model/MTicket.h
   include/tencentcloud/gpm/v20200820/model/RuleInfo.h
   include/tencentcloud/gpm/v20200820/model/ModifyTokenRequest.h
+  include/tencentcloud/gpm/v20200820/model/StartMatchingBackfillResponse.h
   include/tencentcloud/gpm/v20200820/model/DescribeMatchesResponse.h
   include/tencentcloud/gpm/v20200820/model/Player.h
   include/tencentcloud/gpm/v20200820/model/StartMatchingRequest.h
@@ -104,6 +106,7 @@ set(gpm_src
   src/v20200820/model/CancelMatchingRequest.cpp
   src/v20200820/model/AttributeMap.cpp
   src/v20200820/model/StringKV.cpp
+  src/v20200820/model/StartMatchingBackfillRequest.cpp
   src/v20200820/model/CancelMatchingResponse.cpp
   src/v20200820/model/DescribeMatchCodesResponse.cpp
   src/v20200820/model/CreateRuleResponse.cpp
@@ -111,6 +114,7 @@ set(gpm_src
   src/v20200820/model/MTicket.cpp
   src/v20200820/model/RuleInfo.cpp
   src/v20200820/model/ModifyTokenRequest.cpp
+  src/v20200820/model/StartMatchingBackfillResponse.cpp
   src/v20200820/model/DescribeMatchesResponse.cpp
   src/v20200820/model/Player.cpp
   src/v20200820/model/StartMatchingRequest.cpp

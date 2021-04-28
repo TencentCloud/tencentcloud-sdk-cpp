@@ -82,7 +82,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/CreateNetworkInterfaceRequest.h
   include/tencentcloud/ecm/v20190719/model/CreateModuleResponse.h
   include/tencentcloud/ecm/v20190719/model/RebootInstancesRequest.h
-  include/tencentcloud/ecm/v20190719/model/SecurityGroupPolicySet.h
+  include/tencentcloud/ecm/v20190719/model/RuleHealth.h
   include/tencentcloud/ecm/v20190719/model/AllocateAddressesRequest.h
   include/tencentcloud/ecm/v20190719/model/NetworkInterfaceAttachment.h
   include/tencentcloud/ecm/v20190719/model/Instance.h
@@ -134,7 +134,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/ReplaceSecurityGroupPolicyResponse.h
   include/tencentcloud/ecm/v20190719/model/ModifyPrivateIpAddressesAttributeResponse.h
   include/tencentcloud/ecm/v20190719/model/ReplaceRoutesResponse.h
-  include/tencentcloud/ecm/v20190719/model/RuleHealth.h
+  include/tencentcloud/ecm/v20190719/model/PhysicalPosition.h
   include/tencentcloud/ecm/v20190719/model/Listener.h
   include/tencentcloud/ecm/v20190719/model/ModifyLoadBalancerAttributesResponse.h
   include/tencentcloud/ecm/v20190719/model/SetLoadBalancerSecurityGroupsRequest.h
@@ -196,6 +196,7 @@ set(ecm_public_header_model
   include/tencentcloud/ecm/v20190719/model/DeleteVpcResponse.h
   include/tencentcloud/ecm/v20190719/model/Target.h
   include/tencentcloud/ecm/v20190719/model/RouteTableAssociation.h
+  include/tencentcloud/ecm/v20190719/model/SecurityGroupPolicySet.h
   include/tencentcloud/ecm/v20190719/model/DescribeVpcsResponse.h
   include/tencentcloud/ecm/v20190719/model/ImageUrl.h
   include/tencentcloud/ecm/v20190719/model/ISP.h
@@ -413,7 +414,7 @@ set(ecm_src
   src/v20190719/model/CreateNetworkInterfaceRequest.cpp
   src/v20190719/model/CreateModuleResponse.cpp
   src/v20190719/model/RebootInstancesRequest.cpp
-  src/v20190719/model/SecurityGroupPolicySet.cpp
+  src/v20190719/model/RuleHealth.cpp
   src/v20190719/model/AllocateAddressesRequest.cpp
   src/v20190719/model/NetworkInterfaceAttachment.cpp
   src/v20190719/model/Instance.cpp
@@ -465,7 +466,7 @@ set(ecm_src
   src/v20190719/model/ReplaceSecurityGroupPolicyResponse.cpp
   src/v20190719/model/ModifyPrivateIpAddressesAttributeResponse.cpp
   src/v20190719/model/ReplaceRoutesResponse.cpp
-  src/v20190719/model/RuleHealth.cpp
+  src/v20190719/model/PhysicalPosition.cpp
   src/v20190719/model/Listener.cpp
   src/v20190719/model/ModifyLoadBalancerAttributesResponse.cpp
   src/v20190719/model/SetLoadBalancerSecurityGroupsRequest.cpp
@@ -527,6 +528,7 @@ set(ecm_src
   src/v20190719/model/DeleteVpcResponse.cpp
   src/v20190719/model/Target.cpp
   src/v20190719/model/RouteTableAssociation.cpp
+  src/v20190719/model/SecurityGroupPolicySet.cpp
   src/v20190719/model/DescribeVpcsResponse.cpp
   src/v20190719/model/ImageUrl.cpp
   src/v20190719/model/ISP.cpp

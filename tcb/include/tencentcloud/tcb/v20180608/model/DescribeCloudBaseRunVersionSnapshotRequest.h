@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量。默认0
+                     * @return Offset 偏移量。默认0
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置偏移量。默认0
+                     * @param Offset 偏移量。默认0
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制大小
-                     * @return Limit 限制大小
+                     * 获取限制大小。默认10，最大20
+                     * @return Limit 限制大小。默认10，最大20
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置限制大小
-                     * @param Limit 限制大小
+                     * 设置限制大小。默认10，最大20
+                     * @param Limit 限制大小。默认10，最大20
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -177,13 +177,13 @@ namespace TencentCloud
                     bool m_snapshotNameHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量。默认0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制大小
+                     * 限制大小。默认10，最大20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

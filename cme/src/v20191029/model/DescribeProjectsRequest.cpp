@@ -28,6 +28,7 @@ DescribeProjectsRequest::DescribeProjectsRequest() :
     m_projectIdsHasBeenSet(false),
     m_aspectRatioSetHasBeenSet(false),
     m_categorySetHasBeenSet(false),
+    m_modesHasBeenSet(false),
     m_sortHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_offsetHasBeenSet(false),
@@ -85,6 +86,19 @@ string DescribeProjectsRequest::ToJsonString() const
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_categorySet.begin(); itr != m_categorySet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_modesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Modes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_modes.begin(); itr != m_modes.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -202,6 +216,22 @@ void DescribeProjectsRequest::SetCategorySet(const vector<string>& _categorySet)
 bool DescribeProjectsRequest::CategorySetHasBeenSet() const
 {
     return m_categorySetHasBeenSet;
+}
+
+vector<string> DescribeProjectsRequest::GetModes() const
+{
+    return m_modes;
+}
+
+void DescribeProjectsRequest::SetModes(const vector<string>& _modes)
+{
+    m_modes = _modes;
+    m_modesHasBeenSet = true;
+}
+
+bool DescribeProjectsRequest::ModesHasBeenSet() const
+{
+    return m_modesHasBeenSet;
 }
 
 SortBy DescribeProjectsRequest::GetSort() const

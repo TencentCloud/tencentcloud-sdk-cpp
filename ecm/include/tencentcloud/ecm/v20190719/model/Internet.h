@@ -50,17 +50,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例的内网相关信息列表。
+                     * 获取实例的内网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PrivateIPAddressSet 实例的内网相关信息列表。
+                     * @return PrivateIPAddressSet 实例的内网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrivateIPAddressInfo> GetPrivateIPAddressSet() const;
 
                     /**
-                     * 设置实例的内网相关信息列表。
+                     * 设置实例的内网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PrivateIPAddressSet 实例的内网相关信息列表。
+                     * @param PrivateIPAddressSet 实例的内网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPrivateIPAddressSet(const std::vector<PrivateIPAddressInfo>& _privateIPAddressSet);
@@ -72,17 +72,17 @@ namespace TencentCloud
                     bool PrivateIPAddressSetHasBeenSet() const;
 
                     /**
-                     * 获取实例的公网相关信息列表。
+                     * 获取实例的公网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicIPAddressSet 实例的公网相关信息列表。
+                     * @return PublicIPAddressSet 实例的公网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PublicIPAddressInfo> GetPublicIPAddressSet() const;
 
                     /**
-                     * 设置实例的公网相关信息列表。
+                     * 设置实例的公网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PublicIPAddressSet 实例的公网相关信息列表。
+                     * @param PublicIPAddressSet 实例的公网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPublicIPAddressSet(const std::vector<PublicIPAddressInfo>& _publicIPAddressSet);
@@ -118,14 +118,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例的内网相关信息列表。
+                     * 实例的内网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrivateIPAddressInfo> m_privateIPAddressSet;
                     bool m_privateIPAddressSetHasBeenSet;
 
                     /**
-                     * 实例的公网相关信息列表。
+                     * 实例的公网相关信息列表。顺序为主网卡在前，辅助网卡按绑定先后顺序排列。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PublicIPAddressInfo> m_publicIPAddressSet;

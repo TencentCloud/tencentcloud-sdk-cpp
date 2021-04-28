@@ -49,6 +49,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeACLResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeAppInfoRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeAppInfoResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeGroupRequest.h>
@@ -63,6 +65,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeInstancesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeInstancesDetailRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeInstancesDetailResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeRegionRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeRegionResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeRouteRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeRouteResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicRequest.h>
@@ -134,6 +138,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAppInfoResponse> DescribeAppInfoOutcome;
                 typedef std::future<DescribeAppInfoOutcome> DescribeAppInfoOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeAppInfoRequest&, DescribeAppInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCkafkaZoneResponse> DescribeCkafkaZoneOutcome;
+                typedef std::future<DescribeCkafkaZoneOutcome> DescribeCkafkaZoneOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeCkafkaZoneRequest&, DescribeCkafkaZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCkafkaZoneAsyncHandler;
                 typedef Outcome<Error, Model::DescribeConsumerGroupResponse> DescribeConsumerGroupOutcome;
                 typedef std::future<DescribeConsumerGroupOutcome> DescribeConsumerGroupOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeConsumerGroupRequest&, DescribeConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerGroupAsyncHandler;
@@ -155,6 +162,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstancesDetailResponse> DescribeInstancesDetailOutcome;
                 typedef std::future<DescribeInstancesDetailOutcome> DescribeInstancesDetailOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeInstancesDetailRequest&, DescribeInstancesDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRegionResponse> DescribeRegionOutcome;
+                typedef std::future<DescribeRegionOutcome> DescribeRegionOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeRegionRequest&, DescribeRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRouteResponse> DescribeRouteOutcome;
                 typedef std::future<DescribeRouteOutcome> DescribeRouteOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeRouteRequest&, DescribeRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteAsyncHandler;
@@ -303,6 +313,15 @@ namespace TencentCloud
                 DescribeAppInfoOutcomeCallable DescribeAppInfoCallable(const Model::DescribeAppInfoRequest& request);
 
                 /**
+                 *用于查看ckafka的可用区列表
+                 * @param req DescribeCkafkaZoneRequest
+                 * @return DescribeCkafkaZoneOutcome
+                 */
+                DescribeCkafkaZoneOutcome DescribeCkafkaZone(const Model::DescribeCkafkaZoneRequest &request);
+                void DescribeCkafkaZoneAsync(const Model::DescribeCkafkaZoneRequest& request, const DescribeCkafkaZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCkafkaZoneOutcomeCallable DescribeCkafkaZoneCallable(const Model::DescribeCkafkaZoneRequest& request);
+
+                /**
                  *查询消费分组信息
                  * @param req DescribeConsumerGroupRequest
                  * @return DescribeConsumerGroupOutcome
@@ -364,6 +383,15 @@ namespace TencentCloud
                 DescribeInstancesDetailOutcome DescribeInstancesDetail(const Model::DescribeInstancesDetailRequest &request);
                 void DescribeInstancesDetailAsync(const Model::DescribeInstancesDetailRequest& request, const DescribeInstancesDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesDetailOutcomeCallable DescribeInstancesDetailCallable(const Model::DescribeInstancesDetailRequest& request);
+
+                /**
+                 *枚举地域,只支持广州地域
+                 * @param req DescribeRegionRequest
+                 * @return DescribeRegionOutcome
+                 */
+                DescribeRegionOutcome DescribeRegion(const Model::DescribeRegionRequest &request);
+                void DescribeRegionAsync(const Model::DescribeRegionRequest& request, const DescribeRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRegionOutcomeCallable DescribeRegionCallable(const Model::DescribeRegionRequest& request);
 
                 /**
                  *查看路由信息

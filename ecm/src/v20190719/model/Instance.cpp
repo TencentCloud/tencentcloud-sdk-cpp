@@ -48,7 +48,8 @@ Instance::Instance() :
     m_newFlagHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_virtualPrivateCloudHasBeenSet(false),
-    m_iSPHasBeenSet(false)
+    m_iSPHasBeenSet(false),
+    m_physicalPositionHasBeenSet(false)
 {
 }
 
@@ -399,6 +400,23 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_iSPHasBeenSet = true;
     }
 
+    if (value.HasMember("PhysicalPosition") && !value["PhysicalPosition"].IsNull())
+    {
+        if (!value["PhysicalPosition"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Instance.PhysicalPosition` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_physicalPosition.Deserialize(value["PhysicalPosition"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_physicalPositionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -646,6 +664,15 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "ISP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_iSP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_physicalPositionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PhysicalPosition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_physicalPosition.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1081,5 +1108,21 @@ void Instance::SetISP(const string& _iSP)
 bool Instance::ISPHasBeenSet() const
 {
     return m_iSPHasBeenSet;
+}
+
+PhysicalPosition Instance::GetPhysicalPosition() const
+{
+    return m_physicalPosition;
+}
+
+void Instance::SetPhysicalPosition(const PhysicalPosition& _physicalPosition)
+{
+    m_physicalPosition = _physicalPosition;
+    m_physicalPositionHasBeenSet = true;
+}
+
+bool Instance::PhysicalPositionHasBeenSet() const
+{
+    return m_physicalPositionHasBeenSet;
 }
 

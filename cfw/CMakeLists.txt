@@ -24,6 +24,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeSyncAssetStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyAllSwitchStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyAllRuleStatusResponse.h
+  include/tencentcloud/cfw/v20190904/model/IocListData.h
   include/tencentcloud/cfw/v20190904/model/DescribeRuleOverviewResponse.h
   include/tencentcloud/cfw/v20190904/model/CfwNatDnatRule.h
   include/tencentcloud/cfw/v20190904/model/CreateSecurityGroupApiRulesRequest.h
@@ -64,9 +65,11 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleResponse.h
+  include/tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteSecurityGroupAllRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/ExpandCfwVerticalRequest.h
   include/tencentcloud/cfw/v20190904/model/SecurityGroupListData.h
+  include/tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateAcRulesRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeSecurityGroupListRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeSwitchListsRequest.h
@@ -89,6 +92,7 @@ set(cfw_src
   src/v20190904/model/DescribeSyncAssetStatusResponse.cpp
   src/v20190904/model/ModifyAllSwitchStatusRequest.cpp
   src/v20190904/model/ModifyAllRuleStatusResponse.cpp
+  src/v20190904/model/IocListData.cpp
   src/v20190904/model/DescribeRuleOverviewResponse.cpp
   src/v20190904/model/CfwNatDnatRule.cpp
   src/v20190904/model/CreateSecurityGroupApiRulesRequest.cpp
@@ -129,9 +133,11 @@ set(cfw_src
   src/v20190904/model/DescribeNatRuleOverviewResponse.cpp
   src/v20190904/model/DeleteAcRuleRequest.cpp
   src/v20190904/model/DeleteAllAccessControlRuleResponse.cpp
+  src/v20190904/model/ModifyBlockIgnoreListResponse.cpp
   src/v20190904/model/DeleteSecurityGroupAllRuleResponse.cpp
   src/v20190904/model/ExpandCfwVerticalRequest.cpp
   src/v20190904/model/SecurityGroupListData.cpp
+  src/v20190904/model/ModifyBlockIgnoreListRequest.cpp
   src/v20190904/model/CreateAcRulesRequest.cpp
   src/v20190904/model/DescribeSecurityGroupListRequest.cpp
   src/v20190904/model/DescribeSwitchListsRequest.cpp

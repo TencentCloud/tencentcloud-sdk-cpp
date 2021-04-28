@@ -137,6 +137,36 @@ namespace TencentCloud
                     bool CategorySetHasBeenSet() const;
 
                     /**
+                     * 获取项目模式，一个项目可以有多种模式并相互切换。
+当 Category 为 VIDEO_EDIT 时，可选模式有：
+<li>Default：默认模式。</li>
+<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+                     * @return Modes 项目模式，一个项目可以有多种模式并相互切换。
+当 Category 为 VIDEO_EDIT 时，可选模式有：
+<li>Default：默认模式。</li>
+<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+                     */
+                    std::vector<std::string> GetModes() const;
+
+                    /**
+                     * 设置项目模式，一个项目可以有多种模式并相互切换。
+当 Category 为 VIDEO_EDIT 时，可选模式有：
+<li>Default：默认模式。</li>
+<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+                     * @param Modes 项目模式，一个项目可以有多种模式并相互切换。
+当 Category 为 VIDEO_EDIT 时，可选模式有：
+<li>Default：默认模式。</li>
+<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+                     */
+                    void SetModes(const std::vector<std::string>& _modes);
+
+                    /**
+                     * 判断参数 Modes 是否已赋值
+                     * @return Modes 是否已赋值
+                     */
+                    bool ModesHasBeenSet() const;
+
+                    /**
                      * 获取列表排序，支持下列排序字段：
 <li>CreateTime：创建时间；</li>
 <li>UpdateTime：更新时间。</li>
@@ -264,6 +294,15 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_categorySet;
                     bool m_categorySetHasBeenSet;
+
+                    /**
+                     * 项目模式，一个项目可以有多种模式并相互切换。
+当 Category 为 VIDEO_EDIT 时，可选模式有：
+<li>Default：默认模式。</li>
+<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+                     */
+                    std::vector<std::string> m_modes;
+                    bool m_modesHasBeenSet;
 
                     /**
                      * 列表排序，支持下列排序字段：

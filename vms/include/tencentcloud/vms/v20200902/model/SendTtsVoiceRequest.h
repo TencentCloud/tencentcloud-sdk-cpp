@@ -102,13 +102,17 @@ namespace TencentCloud
 
                     /**
                      * 获取模板参数，若模板没有参数，请提供为空数组。
+注：语音消息的内容长度不超过350字。
                      * @return TemplateParamSet 模板参数，若模板没有参数，请提供为空数组。
+注：语音消息的内容长度不超过350字。
                      */
                     std::vector<std::string> GetTemplateParamSet() const;
 
                     /**
                      * 设置模板参数，若模板没有参数，请提供为空数组。
+注：语音消息的内容长度不超过350字。
                      * @param TemplateParamSet 模板参数，若模板没有参数，请提供为空数组。
+注：语音消息的内容长度不超过350字。
                      */
                     void SetTemplateParamSet(const std::vector<std::string>& _templateParamSet);
 
@@ -177,6 +181,7 @@ namespace TencentCloud
 
                     /**
                      * 模板参数，若模板没有参数，请提供为空数组。
+注：语音消息的内容长度不超过350字。
                      */
                     std::vector<std::string> m_templateParamSet;
                     bool m_templateParamSetHasBeenSet;

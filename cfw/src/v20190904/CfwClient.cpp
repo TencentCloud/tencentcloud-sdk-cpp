@@ -900,6 +900,49 @@ CfwClient::ModifyAllSwitchStatusOutcomeCallable CfwClient::ModifyAllSwitchStatus
     return task->get_future();
 }
 
+CfwClient::ModifyBlockIgnoreListOutcome CfwClient::ModifyBlockIgnoreList(const ModifyBlockIgnoreListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBlockIgnoreList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBlockIgnoreListResponse rsp = ModifyBlockIgnoreListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBlockIgnoreListOutcome(rsp);
+        else
+            return ModifyBlockIgnoreListOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBlockIgnoreListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyBlockIgnoreListAsync(const ModifyBlockIgnoreListRequest& request, const ModifyBlockIgnoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBlockIgnoreList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyBlockIgnoreListOutcomeCallable CfwClient::ModifyBlockIgnoreListCallable(const ModifyBlockIgnoreListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBlockIgnoreListOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBlockIgnoreList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::ModifyItemSwitchStatusOutcome CfwClient::ModifyItemSwitchStatus(const ModifyItemSwitchStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyItemSwitchStatus");

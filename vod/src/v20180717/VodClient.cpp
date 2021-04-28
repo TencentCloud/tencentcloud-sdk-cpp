@@ -3652,6 +3652,49 @@ VodClient::ModifyContentReviewTemplateOutcomeCallable VodClient::ModifyContentRe
     return task->get_future();
 }
 
+VodClient::ModifyEventConfigOutcome VodClient::ModifyEventConfig(const ModifyEventConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEventConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEventConfigResponse rsp = ModifyEventConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEventConfigOutcome(rsp);
+        else
+            return ModifyEventConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEventConfigOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyEventConfigAsync(const ModifyEventConfigRequest& request, const ModifyEventConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyEventConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifyEventConfigOutcomeCallable VodClient::ModifyEventConfigCallable(const ModifyEventConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyEventConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyEventConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ModifyImageSpriteTemplateOutcome VodClient::ModifyImageSpriteTemplate(const ModifyImageSpriteTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyImageSpriteTemplate");

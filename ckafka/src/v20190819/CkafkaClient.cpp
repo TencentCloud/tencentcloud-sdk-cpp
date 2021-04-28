@@ -599,6 +599,49 @@ CkafkaClient::DescribeAppInfoOutcomeCallable CkafkaClient::DescribeAppInfoCallab
     return task->get_future();
 }
 
+CkafkaClient::DescribeCkafkaZoneOutcome CkafkaClient::DescribeCkafkaZone(const DescribeCkafkaZoneRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCkafkaZone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCkafkaZoneResponse rsp = DescribeCkafkaZoneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCkafkaZoneOutcome(rsp);
+        else
+            return DescribeCkafkaZoneOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCkafkaZoneOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeCkafkaZoneAsync(const DescribeCkafkaZoneRequest& request, const DescribeCkafkaZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCkafkaZone(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeCkafkaZoneOutcomeCallable CkafkaClient::DescribeCkafkaZoneCallable(const DescribeCkafkaZoneRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCkafkaZoneOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCkafkaZone(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DescribeConsumerGroupOutcome CkafkaClient::DescribeConsumerGroup(const DescribeConsumerGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeConsumerGroup");
@@ -893,6 +936,49 @@ CkafkaClient::DescribeInstancesDetailOutcomeCallable CkafkaClient::DescribeInsta
         [this, request]()
         {
             return this->DescribeInstancesDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::DescribeRegionOutcome CkafkaClient::DescribeRegion(const DescribeRegionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegionResponse rsp = DescribeRegionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegionOutcome(rsp);
+        else
+            return DescribeRegionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegionOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeRegionAsync(const DescribeRegionRequest& request, const DescribeRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRegion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeRegionOutcomeCallable CkafkaClient::DescribeRegionCallable(const DescribeRegionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRegionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRegion(request);
         }
     );
 

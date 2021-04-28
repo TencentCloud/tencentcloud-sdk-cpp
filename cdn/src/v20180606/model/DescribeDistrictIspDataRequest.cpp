@@ -31,7 +31,8 @@ DescribeDistrictIspDataRequest::DescribeDistrictIspDataRequest() :
     m_districtsHasBeenSet(false),
     m_ispsHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_ipProtocolHasBeenSet(false)
+    m_ipProtocolHasBeenSet(false),
+    m_intervalHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string DescribeDistrictIspDataRequest::ToJsonString() const
         string key = "IpProtocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_ipProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intervalHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Interval";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_interval.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -255,6 +264,22 @@ void DescribeDistrictIspDataRequest::SetIpProtocol(const string& _ipProtocol)
 bool DescribeDistrictIspDataRequest::IpProtocolHasBeenSet() const
 {
     return m_ipProtocolHasBeenSet;
+}
+
+string DescribeDistrictIspDataRequest::GetInterval() const
+{
+    return m_interval;
+}
+
+void DescribeDistrictIspDataRequest::SetInterval(const string& _interval)
+{
+    m_interval = _interval;
+    m_intervalHasBeenSet = true;
+}
+
+bool DescribeDistrictIspDataRequest::IntervalHasBeenSet() const
+{
+    return m_intervalHasBeenSet;
 }
 
 

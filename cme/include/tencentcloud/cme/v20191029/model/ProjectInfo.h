@@ -177,17 +177,17 @@ namespace TencentCloud
                     bool CoverUrlHasBeenSet() const;
 
                     /**
-                     * 获取云转推项目信息。
+                     * 获取云转推项目信息，仅当项目类别取值 STREAM_CONNECT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StreamConnectProjectInfo 云转推项目信息。
+                     * @return StreamConnectProjectInfo 云转推项目信息，仅当项目类别取值 STREAM_CONNECT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StreamConnectProjectInfo GetStreamConnectProjectInfo() const;
 
                     /**
-                     * 设置云转推项目信息。
+                     * 设置云转推项目信息，仅当项目类别取值 STREAM_CONNECT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StreamConnectProjectInfo 云转推项目信息。
+                     * @param StreamConnectProjectInfo 云转推项目信息，仅当项目类别取值 STREAM_CONNECT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStreamConnectProjectInfo(const StreamConnectProjectInfo& _streamConnectProjectInfo);
@@ -278,7 +278,7 @@ namespace TencentCloud
                     bool m_coverUrlHasBeenSet;
 
                     /**
-                     * 云转推项目信息。
+                     * 云转推项目信息，仅当项目类别取值 STREAM_CONNECT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StreamConnectProjectInfo m_streamConnectProjectInfo;

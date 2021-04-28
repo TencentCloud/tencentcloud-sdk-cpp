@@ -63,6 +63,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyAllRuleStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllSwitchStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllSwitchStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyItemSwitchStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyItemSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupAllRuleStatusRequest.h>
@@ -149,6 +151,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAllSwitchStatusResponse> ModifyAllSwitchStatusOutcome;
                 typedef std::future<ModifyAllSwitchStatusOutcome> ModifyAllSwitchStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAllSwitchStatusRequest&, ModifyAllSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllSwitchStatusAsyncHandler;
+                typedef Outcome<Error, Model::ModifyBlockIgnoreListResponse> ModifyBlockIgnoreListOutcome;
+                typedef std::future<ModifyBlockIgnoreListOutcome> ModifyBlockIgnoreListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyBlockIgnoreListRequest&, ModifyBlockIgnoreListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockIgnoreListAsyncHandler;
                 typedef Outcome<Error, Model::ModifyItemSwitchStatusResponse> ModifyItemSwitchStatusOutcome;
                 typedef std::future<ModifyItemSwitchStatusOutcome> ModifyItemSwitchStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyItemSwitchStatusRequest&, ModifyItemSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyItemSwitchStatusAsyncHandler;
@@ -349,6 +354,18 @@ namespace TencentCloud
                 ModifyAllSwitchStatusOutcome ModifyAllSwitchStatus(const Model::ModifyAllSwitchStatusRequest &request);
                 void ModifyAllSwitchStatusAsync(const Model::ModifyAllSwitchStatusRequest& request, const ModifyAllSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAllSwitchStatusOutcomeCallable ModifyAllSwitchStatusCallable(const Model::ModifyAllSwitchStatusRequest& request);
+
+                /**
+                 *支持对拦截列表、忽略列表如下操作：
+批量增加拦截IP、忽略IP/域名
+批量删除拦截IP、忽略IP/域名
+批量修改拦截IP、忽略IP/域名生效事件
+                 * @param req ModifyBlockIgnoreListRequest
+                 * @return ModifyBlockIgnoreListOutcome
+                 */
+                ModifyBlockIgnoreListOutcome ModifyBlockIgnoreList(const Model::ModifyBlockIgnoreListRequest &request);
+                void ModifyBlockIgnoreListAsync(const Model::ModifyBlockIgnoreListRequest& request, const ModifyBlockIgnoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBlockIgnoreListOutcomeCallable ModifyBlockIgnoreListCallable(const Model::ModifyBlockIgnoreListRequest& request);
 
                 /**
                  *修改单个防火墙开关

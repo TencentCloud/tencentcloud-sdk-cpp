@@ -28,7 +28,8 @@ ModifyProjectRequest::ModifyProjectRequest() :
     m_projectIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_aspectRatioHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+    m_ownerHasBeenSet(false),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,14 @@ string ModifyProjectRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_owner.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -166,6 +175,22 @@ void ModifyProjectRequest::SetOwner(const Entity& _owner)
 bool ModifyProjectRequest::OwnerHasBeenSet() const
 {
     return m_ownerHasBeenSet;
+}
+
+string ModifyProjectRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void ModifyProjectRequest::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool ModifyProjectRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 
 

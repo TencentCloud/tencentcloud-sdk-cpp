@@ -32,6 +32,7 @@
 #include <tencentcloud/ecm/v20190719/model/Tag.h>
 #include <tencentcloud/ecm/v20190719/model/DiskInfo.h>
 #include <tencentcloud/ecm/v20190719/model/VirtualPrivateCloud.h>
+#include <tencentcloud/ecm/v20190719/model/PhysicalPosition.h>
 
 
 namespace TencentCloud
@@ -716,6 +717,28 @@ PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
                      */
                     bool ISPHasBeenSet() const;
 
+                    /**
+                     * 获取物理位置信息。注意该字段目前为保留字段，均为空值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PhysicalPosition 物理位置信息。注意该字段目前为保留字段，均为空值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PhysicalPosition GetPhysicalPosition() const;
+
+                    /**
+                     * 设置物理位置信息。注意该字段目前为保留字段，均为空值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PhysicalPosition 物理位置信息。注意该字段目前为保留字段，均为空值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPhysicalPosition(const PhysicalPosition& _physicalPosition);
+
+                    /**
+                     * 判断参数 PhysicalPosition 是否已赋值
+                     * @return PhysicalPosition 是否已赋值
+                     */
+                    bool PhysicalPositionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -923,6 +946,13 @@ PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
                      */
                     std::string m_iSP;
                     bool m_iSPHasBeenSet;
+
+                    /**
+                     * 物理位置信息。注意该字段目前为保留字段，均为空值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PhysicalPosition m_physicalPosition;
+                    bool m_physicalPositionHasBeenSet;
 
                 };
             }

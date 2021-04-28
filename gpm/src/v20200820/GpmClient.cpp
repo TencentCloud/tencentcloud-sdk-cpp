@@ -771,3 +771,46 @@ GpmClient::StartMatchingOutcomeCallable GpmClient::StartMatchingCallable(const S
     return task->get_future();
 }
 
+GpmClient::StartMatchingBackfillOutcome GpmClient::StartMatchingBackfill(const StartMatchingBackfillRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartMatchingBackfill");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartMatchingBackfillResponse rsp = StartMatchingBackfillResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartMatchingBackfillOutcome(rsp);
+        else
+            return StartMatchingBackfillOutcome(o.GetError());
+    }
+    else
+    {
+        return StartMatchingBackfillOutcome(outcome.GetError());
+    }
+}
+
+void GpmClient::StartMatchingBackfillAsync(const StartMatchingBackfillRequest& request, const StartMatchingBackfillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartMatchingBackfill(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GpmClient::StartMatchingBackfillOutcomeCallable GpmClient::StartMatchingBackfillCallable(const StartMatchingBackfillRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartMatchingBackfillOutcome()>>(
+        [this, request]()
+        {
+            return this->StartMatchingBackfill(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

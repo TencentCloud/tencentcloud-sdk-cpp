@@ -57,6 +57,8 @@
 #include <tencentcloud/gpm/v20200820/model/ModifyTokenResponse.h>
 #include <tencentcloud/gpm/v20200820/model/StartMatchingRequest.h>
 #include <tencentcloud/gpm/v20200820/model/StartMatchingResponse.h>
+#include <tencentcloud/gpm/v20200820/model/StartMatchingBackfillRequest.h>
+#include <tencentcloud/gpm/v20200820/model/StartMatchingBackfillResponse.h>
 
 
 namespace TencentCloud
@@ -122,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::StartMatchingResponse> StartMatchingOutcome;
                 typedef std::future<StartMatchingOutcome> StartMatchingOutcomeCallable;
                 typedef std::function<void(const GpmClient*, const Model::StartMatchingRequest&, StartMatchingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMatchingAsyncHandler;
+                typedef Outcome<Error, Model::StartMatchingBackfillResponse> StartMatchingBackfillOutcome;
+                typedef std::future<StartMatchingBackfillOutcome> StartMatchingBackfillOutcomeCallable;
+                typedef std::function<void(const GpmClient*, const Model::StartMatchingBackfillRequest&, StartMatchingBackfillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMatchingBackfillAsyncHandler;
 
 
 
@@ -277,6 +282,15 @@ namespace TencentCloud
                 StartMatchingOutcome StartMatching(const Model::StartMatchingRequest &request);
                 void StartMatchingAsync(const Model::StartMatchingRequest& request, const StartMatchingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartMatchingOutcomeCallable StartMatchingCallable(const Model::StartMatchingRequest& request);
+
+                /**
+                 *通过调用StartMatchingBackfill，用户可以传入一个回填的匹配请求，GPM为回填请求搜索符合条件的ticket并形成一个新的match。
+                 * @param req StartMatchingBackfillRequest
+                 * @return StartMatchingBackfillOutcome
+                 */
+                StartMatchingBackfillOutcome StartMatchingBackfill(const Model::StartMatchingBackfillRequest &request);
+                void StartMatchingBackfillAsync(const Model::StartMatchingBackfillRequest& request, const StartMatchingBackfillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartMatchingBackfillOutcomeCallable StartMatchingBackfillCallable(const Model::StartMatchingBackfillRequest& request);
 
             };
         }

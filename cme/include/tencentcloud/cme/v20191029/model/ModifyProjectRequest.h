@@ -141,6 +141,36 @@ namespace TencentCloud
                      */
                     bool OwnerHasBeenSet() const;
 
+                    /**
+                     * 获取项目模式，一个项目可以有多种模式并相互切换。
+当 Category 为 VIDEO_EDIT 时，可选模式有：
+<li>Defualt：默认模式。</li>
+<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+                     * @return Mode 项目模式，一个项目可以有多种模式并相互切换。
+当 Category 为 VIDEO_EDIT 时，可选模式有：
+<li>Defualt：默认模式。</li>
+<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置项目模式，一个项目可以有多种模式并相互切换。
+当 Category 为 VIDEO_EDIT 时，可选模式有：
+<li>Defualt：默认模式。</li>
+<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+                     * @param Mode 项目模式，一个项目可以有多种模式并相互切换。
+当 Category 为 VIDEO_EDIT 时，可选模式有：
+<li>Defualt：默认模式。</li>
+<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     */
+                    bool ModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -174,6 +204,15 @@ namespace TencentCloud
                      */
                     Entity m_owner;
                     bool m_ownerHasBeenSet;
+
+                    /**
+                     * 项目模式，一个项目可以有多种模式并相互切换。
+当 Category 为 VIDEO_EDIT 时，可选模式有：
+<li>Defualt：默认模式。</li>
+<li>VideoEditTemplate：视频编辑模板制作模式。</li>
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
 
                 };
             }

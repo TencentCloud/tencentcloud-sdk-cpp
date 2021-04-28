@@ -28,6 +28,7 @@ CreateProjectRequest::CreateProjectRequest() :
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_categoryHasBeenSet(false),
+    m_modeHasBeenSet(false),
     m_aspectRatioHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_switcherProjectInputHasBeenSet(false),
@@ -77,6 +78,14 @@ string CreateProjectRequest::ToJsonString() const
         string key = "Category";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_category.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aspectRatioHasBeenSet)
@@ -219,6 +228,22 @@ void CreateProjectRequest::SetCategory(const string& _category)
 bool CreateProjectRequest::CategoryHasBeenSet() const
 {
     return m_categoryHasBeenSet;
+}
+
+string CreateProjectRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void CreateProjectRequest::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool CreateProjectRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 
 string CreateProjectRequest::GetAspectRatio() const
