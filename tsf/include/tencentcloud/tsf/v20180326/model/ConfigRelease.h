@@ -310,6 +310,28 @@ namespace TencentCloud
                      */
                     bool ReleaseDescHasBeenSet() const;
 
+                    /**
+                     * 获取应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationId 应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationId 应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +417,13 @@ namespace TencentCloud
                      */
                     std::string m_releaseDesc;
                     bool m_releaseDescHasBeenSet;
+
+                    /**
+                     * 应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
 
                 };
             }

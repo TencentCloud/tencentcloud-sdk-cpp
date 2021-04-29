@@ -68,7 +68,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/ManageReplicationRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.h
-  include/tencentcloud/tcr/v20190924/model/DuplicateImagePersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceSyncStatusResponse.h
   include/tencentcloud/tcr/v20190924/model/Tag.h
   include/tencentcloud/tcr/v20190924/model/DupImageTagResp.h
   include/tencentcloud/tcr/v20190924/model/DeleteApplicationTriggerPersonalResponse.h
@@ -81,6 +81,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DeleteApplicationTriggerPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/SearchUserRepositoryResp.h
   include/tencentcloud/tcr/v20190924/model/CreateTagRetentionRuleRequest.h
+  include/tencentcloud/tcr/v20190924/model/DuplicateImagePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageLifecyclePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifyInstanceTokenRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageLifecyclePersonalResponse.h
@@ -94,6 +95,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/TcrImageInfo.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageLifecycleGlobalPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateNamespacePersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceSyncStatusRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteInstanceResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeInstanceStatusRequest.h
@@ -288,7 +290,7 @@ set(tcr_src
   src/v20190924/model/ManageReplicationRequest.cpp
   src/v20190924/model/DeleteWebhookTriggerResponse.cpp
   src/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.cpp
-  src/v20190924/model/DuplicateImagePersonalResponse.cpp
+  src/v20190924/model/DescribeReplicationInstanceSyncStatusResponse.cpp
   src/v20190924/model/Tag.cpp
   src/v20190924/model/DupImageTagResp.cpp
   src/v20190924/model/DeleteApplicationTriggerPersonalResponse.cpp
@@ -301,6 +303,7 @@ set(tcr_src
   src/v20190924/model/DeleteApplicationTriggerPersonalRequest.cpp
   src/v20190924/model/SearchUserRepositoryResp.cpp
   src/v20190924/model/CreateTagRetentionRuleRequest.cpp
+  src/v20190924/model/DuplicateImagePersonalResponse.cpp
   src/v20190924/model/DescribeImageLifecyclePersonalResponse.cpp
   src/v20190924/model/ModifyInstanceTokenRequest.cpp
   src/v20190924/model/DeleteImageLifecyclePersonalResponse.cpp
@@ -314,6 +317,7 @@ set(tcr_src
   src/v20190924/model/TcrImageInfo.cpp
   src/v20190924/model/DescribeImageLifecycleGlobalPersonalResponse.cpp
   src/v20190924/model/CreateNamespacePersonalResponse.cpp
+  src/v20190924/model/DescribeReplicationInstanceSyncStatusRequest.cpp
   src/v20190924/model/DeleteInstanceResponse.cpp
   src/v20190924/model/DeleteImageLifecycleGlobalPersonalRequest.cpp
   src/v20190924/model/DescribeInstanceStatusRequest.cpp

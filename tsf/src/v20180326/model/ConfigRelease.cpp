@@ -33,7 +33,8 @@ ConfigRelease::ConfigRelease() :
     m_namespaceNameHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_releaseDescHasBeenSet(false)
+    m_releaseDescHasBeenSet(false),
+    m_applicationIdHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,16 @@ CoreInternalOutcome ConfigRelease::Deserialize(const Value &value)
         m_releaseDescHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationId") && !value["ApplicationId"].IsNull())
+    {
+        if (!value["ApplicationId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ConfigRelease.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationId = string(value["ApplicationId"].GetString());
+        m_applicationIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -263,6 +274,14 @@ void ConfigRelease::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "ReleaseDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_releaseDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -458,5 +477,21 @@ void ConfigRelease::SetReleaseDesc(const string& _releaseDesc)
 bool ConfigRelease::ReleaseDescHasBeenSet() const
 {
     return m_releaseDescHasBeenSet;
+}
+
+string ConfigRelease::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void ConfigRelease::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool ConfigRelease::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
 }
 

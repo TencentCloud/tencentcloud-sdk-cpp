@@ -2276,6 +2276,49 @@ VodClient::DescribeDrmDataKeyOutcomeCallable VodClient::DescribeDrmDataKeyCallab
     return task->get_future();
 }
 
+VodClient::DescribeEventConfigOutcome VodClient::DescribeEventConfig(const DescribeEventConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEventConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEventConfigResponse rsp = DescribeEventConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEventConfigOutcome(rsp);
+        else
+            return DescribeEventConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEventConfigOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeEventConfigAsync(const DescribeEventConfigRequest& request, const DescribeEventConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEventConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeEventConfigOutcomeCallable VodClient::DescribeEventConfigCallable(const DescribeEventConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEventConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEventConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeEventsStateOutcome VodClient::DescribeEventsState(const DescribeEventsStateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEventsState");

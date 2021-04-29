@@ -112,6 +112,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DescribeCDNStatDetailsResponse.h
   include/tencentcloud/vod/v20180717/model/AttachMediaSubtitlesRequest.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskCoverResult.h
+  include/tencentcloud/vod/v20180717/model/DescribeEventConfigRequest.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskClassificationOutput.h
   include/tencentcloud/vod/v20180717/model/FileDeleteTask.h
   include/tencentcloud/vod/v20180717/model/ResourceTag.h
@@ -320,6 +321,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/AiReviewTaskTerrorismResult.h
   include/tencentcloud/vod/v20180717/model/ProcessMediaByUrlResponse.h
   include/tencentcloud/vod/v20180717/model/MediaContentReviewAsrTextSegmentItem.h
+  include/tencentcloud/vod/v20180717/model/DescribeEventConfigResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeCdnLogsResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeTaskDetailResponse.h
   include/tencentcloud/vod/v20180717/model/DeletePersonSampleResponse.h
@@ -653,6 +655,7 @@ set(vod_src
   src/v20180717/model/DescribeCDNStatDetailsResponse.cpp
   src/v20180717/model/AttachMediaSubtitlesRequest.cpp
   src/v20180717/model/AiAnalysisTaskCoverResult.cpp
+  src/v20180717/model/DescribeEventConfigRequest.cpp
   src/v20180717/model/AiAnalysisTaskClassificationOutput.cpp
   src/v20180717/model/FileDeleteTask.cpp
   src/v20180717/model/ResourceTag.cpp
@@ -861,6 +864,7 @@ set(vod_src
   src/v20180717/model/AiReviewTaskTerrorismResult.cpp
   src/v20180717/model/ProcessMediaByUrlResponse.cpp
   src/v20180717/model/MediaContentReviewAsrTextSegmentItem.cpp
+  src/v20180717/model/DescribeEventConfigResponse.cpp
   src/v20180717/model/DescribeCdnLogsResponse.cpp
   src/v20180717/model/DescribeTaskDetailResponse.cpp
   src/v20180717/model/DeletePersonSampleResponse.cpp

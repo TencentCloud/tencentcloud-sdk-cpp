@@ -125,6 +125,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeNamespacesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceCreateTasksRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceCreateTasksResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceSyncStatusRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceSyncStatusResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeRepositoriesRequest.h>
@@ -354,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeReplicationInstanceCreateTasksResponse> DescribeReplicationInstanceCreateTasksOutcome;
                 typedef std::future<DescribeReplicationInstanceCreateTasksOutcome> DescribeReplicationInstanceCreateTasksOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeReplicationInstanceCreateTasksRequest&, DescribeReplicationInstanceCreateTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicationInstanceCreateTasksAsyncHandler;
+                typedef Outcome<Error, Model::DescribeReplicationInstanceSyncStatusResponse> DescribeReplicationInstanceSyncStatusOutcome;
+                typedef std::future<DescribeReplicationInstanceSyncStatusOutcome> DescribeReplicationInstanceSyncStatusOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeReplicationInstanceSyncStatusRequest&, DescribeReplicationInstanceSyncStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicationInstanceSyncStatusAsyncHandler;
                 typedef Outcome<Error, Model::DescribeReplicationInstancesResponse> DescribeReplicationInstancesOutcome;
                 typedef std::future<DescribeReplicationInstancesOutcome> DescribeReplicationInstancesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeReplicationInstancesRequest&, DescribeReplicationInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicationInstancesAsyncHandler;
@@ -908,6 +913,15 @@ namespace TencentCloud
                 DescribeReplicationInstanceCreateTasksOutcome DescribeReplicationInstanceCreateTasks(const Model::DescribeReplicationInstanceCreateTasksRequest &request);
                 void DescribeReplicationInstanceCreateTasksAsync(const Model::DescribeReplicationInstanceCreateTasksRequest& request, const DescribeReplicationInstanceCreateTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReplicationInstanceCreateTasksOutcomeCallable DescribeReplicationInstanceCreateTasksCallable(const Model::DescribeReplicationInstanceCreateTasksRequest& request);
+
+                /**
+                 *查询从实例同步状态
+                 * @param req DescribeReplicationInstanceSyncStatusRequest
+                 * @return DescribeReplicationInstanceSyncStatusOutcome
+                 */
+                DescribeReplicationInstanceSyncStatusOutcome DescribeReplicationInstanceSyncStatus(const Model::DescribeReplicationInstanceSyncStatusRequest &request);
+                void DescribeReplicationInstanceSyncStatusAsync(const Model::DescribeReplicationInstanceSyncStatusRequest& request, const DescribeReplicationInstanceSyncStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReplicationInstanceSyncStatusOutcomeCallable DescribeReplicationInstanceSyncStatusCallable(const Model::DescribeReplicationInstanceSyncStatusRequest& request);
 
                 /**
                  *查询从实例列表

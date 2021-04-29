@@ -127,6 +127,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeDailyPlayStatFileListResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDrmDataKeyRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDrmDataKeyResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeEventConfigRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeEventConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventsStateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventsStateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageProcessingTemplatesRequest.h>
@@ -409,6 +411,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDrmDataKeyResponse> DescribeDrmDataKeyOutcome;
                 typedef std::future<DescribeDrmDataKeyOutcome> DescribeDrmDataKeyOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeDrmDataKeyRequest&, DescribeDrmDataKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrmDataKeyAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEventConfigResponse> DescribeEventConfigOutcome;
+                typedef std::future<DescribeEventConfigOutcome> DescribeEventConfigOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeEventConfigRequest&, DescribeEventConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventConfigAsyncHandler;
                 typedef Outcome<Error, Model::DescribeEventsStateResponse> DescribeEventsStateOutcome;
                 typedef std::future<DescribeEventsStateOutcome> DescribeEventsStateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeEventsStateRequest&, DescribeEventsStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventsStateAsyncHandler;
@@ -1089,6 +1094,19 @@ namespace TencentCloud
                 DescribeDrmDataKeyOutcome DescribeDrmDataKey(const Model::DescribeDrmDataKeyRequest &request);
                 void DescribeDrmDataKeyAsync(const Model::DescribeDrmDataKeyRequest& request, const DescribeDrmDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDrmDataKeyOutcomeCallable DescribeDrmDataKeyCallable(const Model::DescribeDrmDataKeyRequest& request);
+
+                /**
+                 *腾讯云点播为客户提供了媒体上传、媒体管理、媒体处理等等服务，在这些服务执行过程或执行结束时，腾讯云点播也提供各种对应的事件通知，方便开发者感知服务处理状态，并做下一步的业务操作。
+
+开发者可以通过本接口来查询当前配置事件通知的接收方式、接收地址以及哪些事件开启了接收回调通知。
+
+默认接口请求频率限制：100次/秒。
+                 * @param req DescribeEventConfigRequest
+                 * @return DescribeEventConfigOutcome
+                 */
+                DescribeEventConfigOutcome DescribeEventConfig(const Model::DescribeEventConfigRequest &request);
+                void DescribeEventConfigAsync(const Model::DescribeEventConfigRequest& request, const DescribeEventConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEventConfigOutcomeCallable DescribeEventConfigCallable(const Model::DescribeEventConfigRequest& request);
 
                 /**
                  ** 该接口用于业务服务器获取 [可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83) 事件通知的状态。

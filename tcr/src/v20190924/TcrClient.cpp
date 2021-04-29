@@ -2233,6 +2233,49 @@ TcrClient::DescribeReplicationInstanceCreateTasksOutcomeCallable TcrClient::Desc
     return task->get_future();
 }
 
+TcrClient::DescribeReplicationInstanceSyncStatusOutcome TcrClient::DescribeReplicationInstanceSyncStatus(const DescribeReplicationInstanceSyncStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReplicationInstanceSyncStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReplicationInstanceSyncStatusResponse rsp = DescribeReplicationInstanceSyncStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReplicationInstanceSyncStatusOutcome(rsp);
+        else
+            return DescribeReplicationInstanceSyncStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReplicationInstanceSyncStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeReplicationInstanceSyncStatusAsync(const DescribeReplicationInstanceSyncStatusRequest& request, const DescribeReplicationInstanceSyncStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReplicationInstanceSyncStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeReplicationInstanceSyncStatusOutcomeCallable TcrClient::DescribeReplicationInstanceSyncStatusCallable(const DescribeReplicationInstanceSyncStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReplicationInstanceSyncStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReplicationInstanceSyncStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DescribeReplicationInstancesOutcome TcrClient::DescribeReplicationInstances(const DescribeReplicationInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeReplicationInstances");
