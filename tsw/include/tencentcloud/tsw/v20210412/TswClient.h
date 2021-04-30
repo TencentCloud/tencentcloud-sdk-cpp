@@ -27,6 +27,8 @@
 #include <tencentcloud/tsw/v20210412/model/DescribeComponentAlertObjectResponse.h>
 #include <tencentcloud/tsw/v20210412/model/DescribeServiceAlertObjectRequest.h>
 #include <tencentcloud/tsw/v20210412/model/DescribeServiceAlertObjectResponse.h>
+#include <tencentcloud/tsw/v20210412/model/DescribeTokenRequest.h>
+#include <tencentcloud/tsw/v20210412/model/DescribeTokenResponse.h>
 
 
 namespace TencentCloud
@@ -47,6 +49,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeServiceAlertObjectResponse> DescribeServiceAlertObjectOutcome;
                 typedef std::future<DescribeServiceAlertObjectOutcome> DescribeServiceAlertObjectOutcomeCallable;
                 typedef std::function<void(const TswClient*, const Model::DescribeServiceAlertObjectRequest&, DescribeServiceAlertObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceAlertObjectAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTokenResponse> DescribeTokenOutcome;
+                typedef std::future<DescribeTokenOutcome> DescribeTokenOutcomeCallable;
+                typedef std::function<void(const TswClient*, const Model::DescribeTokenRequest&, DescribeTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTokenAsyncHandler;
 
 
 
@@ -67,6 +72,15 @@ namespace TencentCloud
                 DescribeServiceAlertObjectOutcome DescribeServiceAlertObject(const Model::DescribeServiceAlertObjectRequest &request);
                 void DescribeServiceAlertObjectAsync(const Model::DescribeServiceAlertObjectRequest& request, const DescribeServiceAlertObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServiceAlertObjectOutcomeCallable DescribeServiceAlertObjectCallable(const Model::DescribeServiceAlertObjectRequest& request);
+
+                /**
+                 *查询token
+                 * @param req DescribeTokenRequest
+                 * @return DescribeTokenOutcome
+                 */
+                DescribeTokenOutcome DescribeToken(const Model::DescribeTokenRequest &request);
+                void DescribeTokenAsync(const Model::DescribeTokenRequest& request, const DescribeTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTokenOutcomeCallable DescribeTokenCallable(const Model::DescribeTokenRequest& request);
 
             };
         }

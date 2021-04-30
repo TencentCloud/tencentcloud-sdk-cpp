@@ -126,3 +126,46 @@ TswClient::DescribeServiceAlertObjectOutcomeCallable TswClient::DescribeServiceA
     return task->get_future();
 }
 
+TswClient::DescribeTokenOutcome TswClient::DescribeToken(const DescribeTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTokenResponse rsp = DescribeTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTokenOutcome(rsp);
+        else
+            return DescribeTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTokenOutcome(outcome.GetError());
+    }
+}
+
+void TswClient::DescribeTokenAsync(const DescribeTokenRequest& request, const DescribeTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TswClient::DescribeTokenOutcomeCallable TswClient::DescribeTokenCallable(const DescribeTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

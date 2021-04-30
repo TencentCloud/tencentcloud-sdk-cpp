@@ -175,14 +175,14 @@ namespace TencentCloud
                     bool PayeeIdHasBeenSet() const;
 
                     /**
-                     * 获取收款方姓名，微信，支付宝可选；平安模式下必传
-                     * @return PayeeName 收款方姓名，微信，支付宝可选；平安模式下必传
+                     * 获取收款方姓名。支付宝可选；微信，平安模式下必传
+                     * @return PayeeName 收款方姓名。支付宝可选；微信，平安模式下必传
                      */
                     std::string GetPayeeName() const;
 
                     /**
-                     * 设置收款方姓名，微信，支付宝可选；平安模式下必传
-                     * @param PayeeName 收款方姓名，微信，支付宝可选；平安模式下必传
+                     * 设置收款方姓名。支付宝可选；微信，平安模式下必传
+                     * @param PayeeName 收款方姓名。支付宝可选；微信，平安模式下必传
                      */
                     void SetPayeeName(const std::string& _payeeName);
 
@@ -339,7 +339,7 @@ PayeeBankName：收款人开户行名称
                     bool m_payeeIdHasBeenSet;
 
                     /**
-                     * 收款方姓名，微信，支付宝可选；平安模式下必传
+                     * 收款方姓名。支付宝可选；微信，平安模式下必传
                      */
                     std::string m_payeeName;
                     bool m_payeeNameHasBeenSet;

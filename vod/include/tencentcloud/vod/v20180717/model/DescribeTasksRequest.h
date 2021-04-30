@@ -117,20 +117,24 @@ namespace TencentCloud
                     bool FinishTimeHasBeenSet() const;
 
                     /**
-                     * 获取排序方式。Sort.Field 可选：
+                     * 获取(该字段暂不支持)
+排序方式。Sort.Field 可选：
 <li> CreateTime 任务创建时间。</li>
 <li>FinishTime 任务结束时间。</li>
-                     * @return Sort 排序方式。Sort.Field 可选：
+                     * @return Sort (该字段暂不支持)
+排序方式。Sort.Field 可选：
 <li> CreateTime 任务创建时间。</li>
 <li>FinishTime 任务结束时间。</li>
                      */
                     SortBy GetSort() const;
 
                     /**
-                     * 设置排序方式。Sort.Field 可选：
+                     * 设置(该字段暂不支持)
+排序方式。Sort.Field 可选：
 <li> CreateTime 任务创建时间。</li>
 <li>FinishTime 任务结束时间。</li>
-                     * @param Sort 排序方式。Sort.Field 可选：
+                     * @param Sort (该字段暂不支持)
+排序方式。Sort.Field 可选：
 <li> CreateTime 任务创建时间。</li>
 <li>FinishTime 任务结束时间。</li>
                      */
@@ -223,7 +227,8 @@ namespace TencentCloud
                     bool m_finishTimeHasBeenSet;
 
                     /**
-                     * 排序方式。Sort.Field 可选：
+                     * (该字段暂不支持)
+排序方式。Sort.Field 可选：
 <li> CreateTime 任务创建时间。</li>
 <li>FinishTime 任务结束时间。</li>
                      */

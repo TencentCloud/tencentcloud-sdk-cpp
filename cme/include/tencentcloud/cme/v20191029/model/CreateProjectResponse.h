@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cme/v20191029/model/RtmpPushInputInfo.h>
 
 
 namespace TencentCloud
@@ -54,6 +55,20 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取输入源推流信息。
+ <li> 当 Catagory 为 STREAM_CONNECT 时，数组返回长度为 2 ，第 0 个代表主输入源，第 1 个代表备输入源。只有当各自输入源类型为推流时才有有效内容。</li>
+                     * @return RtmpPushInputInfoSet 输入源推流信息。
+ <li> 当 Catagory 为 STREAM_CONNECT 时，数组返回长度为 2 ，第 0 个代表主输入源，第 1 个代表备输入源。只有当各自输入源类型为推流时才有有效内容。</li>
+                     */
+                    std::vector<RtmpPushInputInfo> GetRtmpPushInputInfoSet() const;
+
+                    /**
+                     * 判断参数 RtmpPushInputInfoSet 是否已赋值
+                     * @return RtmpPushInputInfoSet 是否已赋值
+                     */
+                    bool RtmpPushInputInfoSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +76,13 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 输入源推流信息。
+ <li> 当 Catagory 为 STREAM_CONNECT 时，数组返回长度为 2 ，第 0 个代表主输入源，第 1 个代表备输入源。只有当各自输入源类型为推流时才有有效内容。</li>
+                     */
+                    std::vector<RtmpPushInputInfo> m_rtmpPushInputInfoSet;
+                    bool m_rtmpPushInputInfoSetHasBeenSet;
 
                 };
             }

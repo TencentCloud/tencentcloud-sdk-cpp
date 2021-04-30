@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cme/v20191029/model/CreateProjectResponse.h>
+#include <tencentcloud/tsw/v20210412/model/DescribeTokenResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cme::V20191029::Model;
+using namespace TencentCloud::Tsw::V20210412::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateProjectResponse::CreateProjectResponse() :
-    m_projectIdHasBeenSet(false),
-    m_rtmpPushInputInfoSetHasBeenSet(false)
+DescribeTokenResponse::DescribeTokenResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateProjectResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeTokenResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,34 +63,14 @@ CoreInternalOutcome CreateProjectResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("ProjectId") && !rsp["ProjectId"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["ProjectId"].IsString())
+        if (!rsp["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_projectId = string(rsp["ProjectId"].GetString());
-        m_projectIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("RtmpPushInputInfoSet") && !rsp["RtmpPushInputInfoSet"].IsNull())
-    {
-        if (!rsp["RtmpPushInputInfoSet"].IsArray())
-            return CoreInternalOutcome(Error("response `RtmpPushInputInfoSet` is not array type"));
-
-        const Value &tmpValue = rsp["RtmpPushInputInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            RtmpPushInputInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_rtmpPushInputInfoSet.push_back(item);
-        }
-        m_rtmpPushInputInfoSetHasBeenSet = true;
+        m_result = string(rsp["Result"].GetString());
+        m_resultHasBeenSet = true;
     }
 
 
@@ -99,24 +78,14 @@ CoreInternalOutcome CreateProjectResponse::Deserialize(const string &payload)
 }
 
 
-string CreateProjectResponse::GetProjectId() const
+string DescribeTokenResponse::GetResult() const
 {
-    return m_projectId;
+    return m_result;
 }
 
-bool CreateProjectResponse::ProjectIdHasBeenSet() const
+bool DescribeTokenResponse::ResultHasBeenSet() const
 {
-    return m_projectIdHasBeenSet;
-}
-
-vector<RtmpPushInputInfo> CreateProjectResponse::GetRtmpPushInputInfoSet() const
-{
-    return m_rtmpPushInputInfoSet;
-}
-
-bool CreateProjectResponse::RtmpPushInputInfoSetHasBeenSet() const
-{
-    return m_rtmpPushInputInfoSetHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
 

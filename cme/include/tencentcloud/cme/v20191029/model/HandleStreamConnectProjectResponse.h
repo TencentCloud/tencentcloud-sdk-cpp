@@ -42,7 +42,25 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取输入源推流地址，当 Operation 取值 AddInput 且 InputType 为 RtmpPush 类型时有效。
+                     * @return StreamInputRtmpPushUrl 输入源推流地址，当 Operation 取值 AddInput 且 InputType 为 RtmpPush 类型时有效。
+                     */
+                    std::string GetStreamInputRtmpPushUrl() const;
+
+                    /**
+                     * 判断参数 StreamInputRtmpPushUrl 是否已赋值
+                     * @return StreamInputRtmpPushUrl 是否已赋值
+                     */
+                    bool StreamInputRtmpPushUrlHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 输入源推流地址，当 Operation 取值 AddInput 且 InputType 为 RtmpPush 类型时有效。
+                     */
+                    std::string m_streamInputRtmpPushUrl;
+                    bool m_streamInputRtmpPushUrlHasBeenSet;
 
                 };
             }

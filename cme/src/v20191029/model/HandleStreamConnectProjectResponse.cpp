@@ -24,7 +24,8 @@ using namespace TencentCloud::Cme::V20191029::Model;
 using namespace rapidjson;
 using namespace std;
 
-HandleStreamConnectProjectResponse::HandleStreamConnectProjectResponse()
+HandleStreamConnectProjectResponse::HandleStreamConnectProjectResponse() :
+    m_streamInputRtmpPushUrlHasBeenSet(false)
 {
 }
 
@@ -62,9 +63,29 @@ CoreInternalOutcome HandleStreamConnectProjectResponse::Deserialize(const string
     }
 
 
+    if (rsp.HasMember("StreamInputRtmpPushUrl") && !rsp["StreamInputRtmpPushUrl"].IsNull())
+    {
+        if (!rsp["StreamInputRtmpPushUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `StreamInputRtmpPushUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_streamInputRtmpPushUrl = string(rsp["StreamInputRtmpPushUrl"].GetString());
+        m_streamInputRtmpPushUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string HandleStreamConnectProjectResponse::GetStreamInputRtmpPushUrl() const
+{
+    return m_streamInputRtmpPushUrl;
+}
+
+bool HandleStreamConnectProjectResponse::StreamInputRtmpPushUrlHasBeenSet() const
+{
+    return m_streamInputRtmpPushUrlHasBeenSet;
+}
 
 
