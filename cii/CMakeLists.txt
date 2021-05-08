@@ -15,10 +15,21 @@
 #
 
 set(cii_public_header
+  include/tencentcloud/cii/v20210408/CiiClient.h
   include/tencentcloud/cii/v20201210/CiiClient.h
   )
 
 set(cii_public_header_model
+  include/tencentcloud/cii/v20210408/model/DescribeStructCompareDataResponse.h
+  include/tencentcloud/cii/v20210408/model/DescribeStructureTaskResultRequest.h
+  include/tencentcloud/cii/v20210408/model/CreateStructureTaskRequest.h
+  include/tencentcloud/cii/v20210408/model/CompareMetricsData.h
+  include/tencentcloud/cii/v20210408/model/ResultObject.h
+  include/tencentcloud/cii/v20210408/model/DescribeStructCompareDataRequest.h
+  include/tencentcloud/cii/v20210408/model/CreateStructureTaskResponse.h
+  include/tencentcloud/cii/v20210408/model/ReviewDataTaskInfo.h
+  include/tencentcloud/cii/v20210408/model/DescribeStructureTaskResultResponse.h
+  include/tencentcloud/cii/v20210408/model/CreateStructureTaskInfo.h
   include/tencentcloud/cii/v20201210/model/DescribeStructCompareDataResponse.h
   include/tencentcloud/cii/v20201210/model/DescribeStructureTaskResultRequest.h
   include/tencentcloud/cii/v20201210/model/CreateStructureTaskRequest.h
@@ -30,7 +41,18 @@ set(cii_public_header_model
   )
 
 set(cii_src
+  src/v20210408/CiiClient.cpp
   src/v20201210/CiiClient.cpp
+  src/v20210408/model/DescribeStructCompareDataResponse.cpp
+  src/v20210408/model/DescribeStructureTaskResultRequest.cpp
+  src/v20210408/model/CreateStructureTaskRequest.cpp
+  src/v20210408/model/CompareMetricsData.cpp
+  src/v20210408/model/ResultObject.cpp
+  src/v20210408/model/DescribeStructCompareDataRequest.cpp
+  src/v20210408/model/CreateStructureTaskResponse.cpp
+  src/v20210408/model/ReviewDataTaskInfo.cpp
+  src/v20210408/model/DescribeStructureTaskResultResponse.cpp
+  src/v20210408/model/CreateStructureTaskInfo.cpp
   src/v20201210/model/DescribeStructCompareDataResponse.cpp
   src/v20201210/model/DescribeStructureTaskResultRequest.cpp
   src/v20201210/model/CreateStructureTaskRequest.cpp

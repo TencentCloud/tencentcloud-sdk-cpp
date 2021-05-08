@@ -25,42 +25,96 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateKeyPairRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateKeyPairResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteKeyPairsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteKeyPairsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesTemplateRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesTemplateResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeGeneralResourceQuotasRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeGeneralResourceQuotasResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceLoginKeyPairAttributeRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceLoginKeyPairAttributeResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesReturnableRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesReturnableResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeKeyPairsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeKeyPairsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeModifyInstanceBundlesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeModifyInstanceBundlesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeRegionsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeRegionsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeResetInstanceBlueprintsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeResetInstanceBlueprintsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ImportKeyPairRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ImportKeyPairResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/InquirePriceCreateBlueprintRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/InquirePriceCreateBlueprintResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/InquirePriceCreateInstancesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/InquirePriceCreateInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRuleDescriptionRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRuleDescriptionResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesLoginKeyPairAttributeRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesLoginKeyPairAttributeResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesRenewFlagRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyInstancesRenewFlagResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/StartInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/StartInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/StopInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/TerminateInstancesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/TerminateInstancesResponse.h>
 
 
 namespace TencentCloud
@@ -78,6 +132,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ApplyInstanceSnapshotResponse> ApplyInstanceSnapshotOutcome;
                 typedef std::future<ApplyInstanceSnapshotOutcome> ApplyInstanceSnapshotOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ApplyInstanceSnapshotRequest&, ApplyInstanceSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyInstanceSnapshotAsyncHandler;
+                typedef Outcome<Error, Model::AssociateInstancesKeyPairsResponse> AssociateInstancesKeyPairsOutcome;
+                typedef std::future<AssociateInstancesKeyPairsOutcome> AssociateInstancesKeyPairsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::AssociateInstancesKeyPairsRequest&, AssociateInstancesKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateInstancesKeyPairsAsyncHandler;
                 typedef Outcome<Error, Model::CreateBlueprintResponse> CreateBlueprintOutcome;
                 typedef std::future<CreateBlueprintOutcome> CreateBlueprintOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateBlueprintRequest&, CreateBlueprintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlueprintAsyncHandler;
@@ -87,15 +144,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateInstanceSnapshotResponse> CreateInstanceSnapshotOutcome;
                 typedef std::future<CreateInstanceSnapshotOutcome> CreateInstanceSnapshotOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateInstanceSnapshotRequest&, CreateInstanceSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceSnapshotAsyncHandler;
+                typedef Outcome<Error, Model::CreateKeyPairResponse> CreateKeyPairOutcome;
+                typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CreateKeyPairRequest&, CreateKeyPairOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyPairAsyncHandler;
                 typedef Outcome<Error, Model::DeleteBlueprintsResponse> DeleteBlueprintsOutcome;
                 typedef std::future<DeleteBlueprintsOutcome> DeleteBlueprintsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DeleteBlueprintsRequest&, DeleteBlueprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlueprintsAsyncHandler;
                 typedef Outcome<Error, Model::DeleteFirewallRulesResponse> DeleteFirewallRulesOutcome;
                 typedef std::future<DeleteFirewallRulesOutcome> DeleteFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DeleteFirewallRulesRequest&, DeleteFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallRulesAsyncHandler;
+                typedef Outcome<Error, Model::DeleteKeyPairsResponse> DeleteKeyPairsOutcome;
+                typedef std::future<DeleteKeyPairsOutcome> DeleteKeyPairsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DeleteKeyPairsRequest&, DeleteKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKeyPairsAsyncHandler;
                 typedef Outcome<Error, Model::DeleteSnapshotsResponse> DeleteSnapshotsOutcome;
                 typedef std::future<DeleteSnapshotsOutcome> DeleteSnapshotsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DeleteSnapshotsRequest&, DeleteSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBlueprintInstancesResponse> DescribeBlueprintInstancesOutcome;
+                typedef std::future<DescribeBlueprintInstancesOutcome> DescribeBlueprintInstancesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeBlueprintInstancesRequest&, DescribeBlueprintInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlueprintInstancesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBlueprintsResponse> DescribeBlueprintsOutcome;
                 typedef std::future<DescribeBlueprintsOutcome> DescribeBlueprintsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeBlueprintsRequest&, DescribeBlueprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlueprintsAsyncHandler;
@@ -105,18 +171,81 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeFirewallRulesResponse> DescribeFirewallRulesOutcome;
                 typedef std::future<DescribeFirewallRulesOutcome> DescribeFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeFirewallRulesRequest&, DescribeFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallRulesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFirewallRulesTemplateResponse> DescribeFirewallRulesTemplateOutcome;
+                typedef std::future<DescribeFirewallRulesTemplateOutcome> DescribeFirewallRulesTemplateOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeFirewallRulesTemplateRequest&, DescribeFirewallRulesTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallRulesTemplateAsyncHandler;
+                typedef Outcome<Error, Model::DescribeGeneralResourceQuotasResponse> DescribeGeneralResourceQuotasOutcome;
+                typedef std::future<DescribeGeneralResourceQuotasOutcome> DescribeGeneralResourceQuotasOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeGeneralResourceQuotasRequest&, DescribeGeneralResourceQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralResourceQuotasAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceLoginKeyPairAttributeResponse> DescribeInstanceLoginKeyPairAttributeOutcome;
+                typedef std::future<DescribeInstanceLoginKeyPairAttributeOutcome> DescribeInstanceLoginKeyPairAttributeOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeInstanceLoginKeyPairAttributeRequest&, DescribeInstanceLoginKeyPairAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceLoginKeyPairAttributeAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstanceVncUrlResponse> DescribeInstanceVncUrlOutcome;
+                typedef std::future<DescribeInstanceVncUrlOutcome> DescribeInstanceVncUrlOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeInstanceVncUrlRequest&, DescribeInstanceVncUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceVncUrlAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstancesDeniedActionsResponse> DescribeInstancesDeniedActionsOutcome;
+                typedef std::future<DescribeInstancesDeniedActionsOutcome> DescribeInstancesDeniedActionsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeInstancesDeniedActionsRequest&, DescribeInstancesDeniedActionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesDeniedActionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeInstancesReturnableResponse> DescribeInstancesReturnableOutcome;
+                typedef std::future<DescribeInstancesReturnableOutcome> DescribeInstancesReturnableOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeInstancesReturnableRequest&, DescribeInstancesReturnableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesReturnableAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstancesTrafficPackagesResponse> DescribeInstancesTrafficPackagesOutcome;
                 typedef std::future<DescribeInstancesTrafficPackagesOutcome> DescribeInstancesTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeInstancesTrafficPackagesRequest&, DescribeInstancesTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesTrafficPackagesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeKeyPairsResponse> DescribeKeyPairsOutcome;
+                typedef std::future<DescribeKeyPairsOutcome> DescribeKeyPairsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeKeyPairsRequest&, DescribeKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeyPairsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeModifyInstanceBundlesResponse> DescribeModifyInstanceBundlesOutcome;
+                typedef std::future<DescribeModifyInstanceBundlesOutcome> DescribeModifyInstanceBundlesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeModifyInstanceBundlesRequest&, DescribeModifyInstanceBundlesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModifyInstanceBundlesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
+                typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeResetInstanceBlueprintsResponse> DescribeResetInstanceBlueprintsOutcome;
+                typedef std::future<DescribeResetInstanceBlueprintsOutcome> DescribeResetInstanceBlueprintsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeResetInstanceBlueprintsRequest&, DescribeResetInstanceBlueprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResetInstanceBlueprintsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSnapshotsResponse> DescribeSnapshotsOutcome;
                 typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeSnapshotsRequest&, DescribeSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSnapshotsDeniedActionsResponse> DescribeSnapshotsDeniedActionsOutcome;
+                typedef std::future<DescribeSnapshotsDeniedActionsOutcome> DescribeSnapshotsDeniedActionsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeSnapshotsDeniedActionsRequest&, DescribeSnapshotsDeniedActionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotsDeniedActionsAsyncHandler;
+                typedef Outcome<Error, Model::DisassociateInstancesKeyPairsResponse> DisassociateInstancesKeyPairsOutcome;
+                typedef std::future<DisassociateInstancesKeyPairsOutcome> DisassociateInstancesKeyPairsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DisassociateInstancesKeyPairsRequest&, DisassociateInstancesKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateInstancesKeyPairsAsyncHandler;
+                typedef Outcome<Error, Model::ImportKeyPairResponse> ImportKeyPairOutcome;
+                typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ImportKeyPairRequest&, ImportKeyPairOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportKeyPairAsyncHandler;
+                typedef Outcome<Error, Model::InquirePriceCreateBlueprintResponse> InquirePriceCreateBlueprintOutcome;
+                typedef std::future<InquirePriceCreateBlueprintOutcome> InquirePriceCreateBlueprintOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::InquirePriceCreateBlueprintRequest&, InquirePriceCreateBlueprintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateBlueprintAsyncHandler;
+                typedef Outcome<Error, Model::InquirePriceCreateInstancesResponse> InquirePriceCreateInstancesOutcome;
+                typedef std::future<InquirePriceCreateInstancesOutcome> InquirePriceCreateInstancesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::InquirePriceCreateInstancesRequest&, InquirePriceCreateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateInstancesAsyncHandler;
+                typedef Outcome<Error, Model::InquirePriceRenewInstancesResponse> InquirePriceRenewInstancesOutcome;
+                typedef std::future<InquirePriceRenewInstancesOutcome> InquirePriceRenewInstancesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::InquirePriceRenewInstancesRequest&, InquirePriceRenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewInstancesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyBlueprintAttributeResponse> ModifyBlueprintAttributeOutcome;
                 typedef std::future<ModifyBlueprintAttributeOutcome> ModifyBlueprintAttributeOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyBlueprintAttributeRequest&, ModifyBlueprintAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlueprintAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyFirewallRuleDescriptionResponse> ModifyFirewallRuleDescriptionOutcome;
+                typedef std::future<ModifyFirewallRuleDescriptionOutcome> ModifyFirewallRuleDescriptionOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyFirewallRuleDescriptionRequest&, ModifyFirewallRuleDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFirewallRuleDescriptionAsyncHandler;
+                typedef Outcome<Error, Model::ModifyFirewallRulesResponse> ModifyFirewallRulesOutcome;
+                typedef std::future<ModifyFirewallRulesOutcome> ModifyFirewallRulesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyFirewallRulesRequest&, ModifyFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFirewallRulesAsyncHandler;
+                typedef Outcome<Error, Model::ModifyInstancesAttributeResponse> ModifyInstancesAttributeOutcome;
+                typedef std::future<ModifyInstancesAttributeOutcome> ModifyInstancesAttributeOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyInstancesAttributeRequest&, ModifyInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyInstancesLoginKeyPairAttributeResponse> ModifyInstancesLoginKeyPairAttributeOutcome;
+                typedef std::future<ModifyInstancesLoginKeyPairAttributeOutcome> ModifyInstancesLoginKeyPairAttributeOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyInstancesLoginKeyPairAttributeRequest&, ModifyInstancesLoginKeyPairAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesLoginKeyPairAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyInstancesRenewFlagResponse> ModifyInstancesRenewFlagOutcome;
+                typedef std::future<ModifyInstancesRenewFlagOutcome> ModifyInstancesRenewFlagOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyInstancesRenewFlagRequest&, ModifyInstancesRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesRenewFlagAsyncHandler;
                 typedef Outcome<Error, Model::ModifySnapshotAttributeResponse> ModifySnapshotAttributeOutcome;
                 typedef std::future<ModifySnapshotAttributeOutcome> ModifySnapshotAttributeOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifySnapshotAttributeRequest&, ModifySnapshotAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotAttributeAsyncHandler;
@@ -126,12 +255,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ResetInstanceResponse> ResetInstanceOutcome;
                 typedef std::future<ResetInstanceOutcome> ResetInstanceOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ResetInstanceRequest&, ResetInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstanceAsyncHandler;
+                typedef Outcome<Error, Model::ResetInstancesPasswordResponse> ResetInstancesPasswordOutcome;
+                typedef std::future<ResetInstancesPasswordOutcome> ResetInstancesPasswordOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ResetInstancesPasswordRequest&, ResetInstancesPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstancesPasswordAsyncHandler;
                 typedef Outcome<Error, Model::StartInstancesResponse> StartInstancesOutcome;
                 typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::StartInstancesRequest&, StartInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartInstancesAsyncHandler;
                 typedef Outcome<Error, Model::StopInstancesResponse> StopInstancesOutcome;
                 typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::StopInstancesRequest&, StopInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopInstancesAsyncHandler;
+                typedef Outcome<Error, Model::TerminateInstancesResponse> TerminateInstancesOutcome;
+                typedef std::future<TerminateInstancesOutcome> TerminateInstancesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::TerminateInstancesRequest&, TerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstancesAsyncHandler;
 
 
 
@@ -146,6 +281,21 @@ namespace TencentCloud
                 ApplyInstanceSnapshotOutcome ApplyInstanceSnapshot(const Model::ApplyInstanceSnapshotRequest &request);
                 void ApplyInstanceSnapshotAsync(const Model::ApplyInstanceSnapshotRequest& request, const ApplyInstanceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyInstanceSnapshotOutcomeCallable ApplyInstanceSnapshotCallable(const Model::ApplyInstanceSnapshotRequest& request);
+
+                /**
+                 *本接口（AssociateInstancesKeyPairs）用于绑定用户指定密钥对到实例。
+* 只支持 [RUNNING, STOPPED] 状态的 LINUX_UNIX 操作系统的实例。处于 RUNNING 状态的实例会强制关机，然后绑定。
+* 将密钥的公钥写入到实例的 SSH 配置当中，用户就可以通过该密钥的私钥来登录实例。
+* 如果实例原来绑定过密钥，那么原来的密钥将失效。
+* 如果实例原来是通过密码登录，绑定密钥后无法使用密码登录。
+* 支持批量操作。每次请求批量实例的上限为 100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。
+* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。
+                 * @param req AssociateInstancesKeyPairsRequest
+                 * @return AssociateInstancesKeyPairsOutcome
+                 */
+                AssociateInstancesKeyPairsOutcome AssociateInstancesKeyPairs(const Model::AssociateInstancesKeyPairsRequest &request);
+                void AssociateInstancesKeyPairsAsync(const Model::AssociateInstancesKeyPairsRequest& request, const AssociateInstancesKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateInstancesKeyPairsOutcomeCallable AssociateInstancesKeyPairsCallable(const Model::AssociateInstancesKeyPairsRequest& request);
 
                 /**
                  *本接口 (CreateBlueprint) 用于创建镜像。
@@ -185,6 +335,15 @@ namespace TencentCloud
                 CreateInstanceSnapshotOutcomeCallable CreateInstanceSnapshotCallable(const Model::CreateInstanceSnapshotRequest& request);
 
                 /**
+                 *本接口（CreateKeyPair）用于创建一个密钥对。
+                 * @param req CreateKeyPairRequest
+                 * @return CreateKeyPairOutcome
+                 */
+                CreateKeyPairOutcome CreateKeyPair(const Model::CreateKeyPairRequest &request);
+                void CreateKeyPairAsync(const Model::CreateKeyPairRequest& request, const CreateKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateKeyPairOutcomeCallable CreateKeyPairCallable(const Model::CreateKeyPairRequest& request);
+
+                /**
                  *本接口 (DeleteBlueprints) 用于删除镜像。
                  * @param req DeleteBlueprintsRequest
                  * @return DeleteBlueprintsOutcome
@@ -212,6 +371,15 @@ namespace TencentCloud
                 DeleteFirewallRulesOutcomeCallable DeleteFirewallRulesCallable(const Model::DeleteFirewallRulesRequest& request);
 
                 /**
+                 *本接口（DeleteKeyPairs）用于删除密钥对。
+                 * @param req DeleteKeyPairsRequest
+                 * @return DeleteKeyPairsOutcome
+                 */
+                DeleteKeyPairsOutcome DeleteKeyPairs(const Model::DeleteKeyPairsRequest &request);
+                void DeleteKeyPairsAsync(const Model::DeleteKeyPairsRequest& request, const DeleteKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteKeyPairsOutcomeCallable DeleteKeyPairsCallable(const Model::DeleteKeyPairsRequest& request);
+
+                /**
                  *本接口（DeleteSnapshots）用于删除快照。
 快照必须处于 NORMAL 状态，快照状态可以通过 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。
                  * @param req DeleteSnapshotsRequest
@@ -220,6 +388,15 @@ namespace TencentCloud
                 DeleteSnapshotsOutcome DeleteSnapshots(const Model::DeleteSnapshotsRequest &request);
                 void DeleteSnapshotsAsync(const Model::DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSnapshotsOutcomeCallable DeleteSnapshotsCallable(const Model::DeleteSnapshotsRequest& request);
+
+                /**
+                 *本接口（DescribeBlueprintInstances）用于查询镜像实例信息。
+                 * @param req DescribeBlueprintInstancesRequest
+                 * @return DescribeBlueprintInstancesOutcome
+                 */
+                DescribeBlueprintInstancesOutcome DescribeBlueprintInstances(const Model::DescribeBlueprintInstancesRequest &request);
+                void DescribeBlueprintInstancesAsync(const Model::DescribeBlueprintInstancesRequest& request, const DescribeBlueprintInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlueprintInstancesOutcomeCallable DescribeBlueprintInstancesCallable(const Model::DescribeBlueprintInstancesRequest& request);
 
                 /**
                  *本接口（DescribeBlueprints）用于查询镜像信息。
@@ -249,6 +426,47 @@ namespace TencentCloud
                 DescribeFirewallRulesOutcomeCallable DescribeFirewallRulesCallable(const Model::DescribeFirewallRulesRequest& request);
 
                 /**
+                 *本接口（DescribeFirewallRulesTemplate）用于查询防火墙规则模版。
+                 * @param req DescribeFirewallRulesTemplateRequest
+                 * @return DescribeFirewallRulesTemplateOutcome
+                 */
+                DescribeFirewallRulesTemplateOutcome DescribeFirewallRulesTemplate(const Model::DescribeFirewallRulesTemplateRequest &request);
+                void DescribeFirewallRulesTemplateAsync(const Model::DescribeFirewallRulesTemplateRequest& request, const DescribeFirewallRulesTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirewallRulesTemplateOutcomeCallable DescribeFirewallRulesTemplateCallable(const Model::DescribeFirewallRulesTemplateRequest& request);
+
+                /**
+                 *本接口（DescribeGeneralResourceQuotas）用于查询通用资源配额信息。
+                 * @param req DescribeGeneralResourceQuotasRequest
+                 * @return DescribeGeneralResourceQuotasOutcome
+                 */
+                DescribeGeneralResourceQuotasOutcome DescribeGeneralResourceQuotas(const Model::DescribeGeneralResourceQuotasRequest &request);
+                void DescribeGeneralResourceQuotasAsync(const Model::DescribeGeneralResourceQuotasRequest& request, const DescribeGeneralResourceQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGeneralResourceQuotasOutcomeCallable DescribeGeneralResourceQuotasCallable(const Model::DescribeGeneralResourceQuotasRequest& request);
+
+                /**
+                 *本接口用于查询实例默认登录密钥属性。
+                 * @param req DescribeInstanceLoginKeyPairAttributeRequest
+                 * @return DescribeInstanceLoginKeyPairAttributeOutcome
+                 */
+                DescribeInstanceLoginKeyPairAttributeOutcome DescribeInstanceLoginKeyPairAttribute(const Model::DescribeInstanceLoginKeyPairAttributeRequest &request);
+                void DescribeInstanceLoginKeyPairAttributeAsync(const Model::DescribeInstanceLoginKeyPairAttributeRequest& request, const DescribeInstanceLoginKeyPairAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceLoginKeyPairAttributeOutcomeCallable DescribeInstanceLoginKeyPairAttributeCallable(const Model::DescribeInstanceLoginKeyPairAttributeRequest& request);
+
+                /**
+                 *本接口（DescribeInstanceVncUrl）用于查询实例管理终端地址，获取的地址可用于实例的 VNC 登录。
+
+* 处于 RUNNING 状态的机器可使用此功能。
+* 管理终端地址的有效期为 15 秒，调用接口成功后如果 15 秒内不使用该链接进行访问，管理终端地址自动失效，您需要重新查询。
+* 管理终端地址一旦被访问，将自动失效，您需要重新查询。
+* 如果连接断开，每分钟内重新连接的次数不能超过 30 次。
+                 * @param req DescribeInstanceVncUrlRequest
+                 * @return DescribeInstanceVncUrlOutcome
+                 */
+                DescribeInstanceVncUrlOutcome DescribeInstanceVncUrl(const Model::DescribeInstanceVncUrlRequest &request);
+                void DescribeInstanceVncUrlAsync(const Model::DescribeInstanceVncUrlRequest& request, const DescribeInstanceVncUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceVncUrlOutcomeCallable DescribeInstanceVncUrlCallable(const Model::DescribeInstanceVncUrlRequest& request);
+
+                /**
                  *本接口（DescribeInstances）用于查询一个或多个实例的详细信息。
 
 * 可以根据实例 ID、实例名称或者实例的内网 IP 查询实例的详细信息。
@@ -263,6 +481,24 @@ namespace TencentCloud
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
+                 *本接口（DescribeInstancesDeniedActions）用于查询一个或多个实例的操作限制列表信息。
+                 * @param req DescribeInstancesDeniedActionsRequest
+                 * @return DescribeInstancesDeniedActionsOutcome
+                 */
+                DescribeInstancesDeniedActionsOutcome DescribeInstancesDeniedActions(const Model::DescribeInstancesDeniedActionsRequest &request);
+                void DescribeInstancesDeniedActionsAsync(const Model::DescribeInstancesDeniedActionsRequest& request, const DescribeInstancesDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesDeniedActionsOutcomeCallable DescribeInstancesDeniedActionsCallable(const Model::DescribeInstancesDeniedActionsRequest& request);
+
+                /**
+                 *本接口（DescribeInstancesReturnable）用于查询实例是否可退还。
+                 * @param req DescribeInstancesReturnableRequest
+                 * @return DescribeInstancesReturnableOutcome
+                 */
+                DescribeInstancesReturnableOutcome DescribeInstancesReturnable(const Model::DescribeInstancesReturnableRequest &request);
+                void DescribeInstancesReturnableAsync(const Model::DescribeInstancesReturnableRequest& request, const DescribeInstancesReturnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesReturnableOutcomeCallable DescribeInstancesReturnableCallable(const Model::DescribeInstancesReturnableRequest& request);
+
+                /**
                  *本接口（DescribeInstancesTrafficPackages）用于查询一个或多个实例的流量包详情。
                  * @param req DescribeInstancesTrafficPackagesRequest
                  * @return DescribeInstancesTrafficPackagesOutcome
@@ -270,6 +506,42 @@ namespace TencentCloud
                 DescribeInstancesTrafficPackagesOutcome DescribeInstancesTrafficPackages(const Model::DescribeInstancesTrafficPackagesRequest &request);
                 void DescribeInstancesTrafficPackagesAsync(const Model::DescribeInstancesTrafficPackagesRequest& request, const DescribeInstancesTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesTrafficPackagesOutcomeCallable DescribeInstancesTrafficPackagesCallable(const Model::DescribeInstancesTrafficPackagesRequest& request);
+
+                /**
+                 *本接口 (DescribeKeyPairs) 用于查询用户密钥对信息。
+                 * @param req DescribeKeyPairsRequest
+                 * @return DescribeKeyPairsOutcome
+                 */
+                DescribeKeyPairsOutcome DescribeKeyPairs(const Model::DescribeKeyPairsRequest &request);
+                void DescribeKeyPairsAsync(const Model::DescribeKeyPairsRequest& request, const DescribeKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKeyPairsOutcomeCallable DescribeKeyPairsCallable(const Model::DescribeKeyPairsRequest& request);
+
+                /**
+                 *本接口（DescribeModifyInstanceBundles）用于查询实例可变更套餐列表。
+                 * @param req DescribeModifyInstanceBundlesRequest
+                 * @return DescribeModifyInstanceBundlesOutcome
+                 */
+                DescribeModifyInstanceBundlesOutcome DescribeModifyInstanceBundles(const Model::DescribeModifyInstanceBundlesRequest &request);
+                void DescribeModifyInstanceBundlesAsync(const Model::DescribeModifyInstanceBundlesRequest& request, const DescribeModifyInstanceBundlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModifyInstanceBundlesOutcomeCallable DescribeModifyInstanceBundlesCallable(const Model::DescribeModifyInstanceBundlesRequest& request);
+
+                /**
+                 *本接口（DescribeRegions）用于查询地域信息。
+                 * @param req DescribeRegionsRequest
+                 * @return DescribeRegionsOutcome
+                 */
+                DescribeRegionsOutcome DescribeRegions(const Model::DescribeRegionsRequest &request);
+                void DescribeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
+
+                /**
+                 *查询重置实例的镜像信息
+                 * @param req DescribeResetInstanceBlueprintsRequest
+                 * @return DescribeResetInstanceBlueprintsOutcome
+                 */
+                DescribeResetInstanceBlueprintsOutcome DescribeResetInstanceBlueprints(const Model::DescribeResetInstanceBlueprintsRequest &request);
+                void DescribeResetInstanceBlueprintsAsync(const Model::DescribeResetInstanceBlueprintsRequest& request, const DescribeResetInstanceBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResetInstanceBlueprintsOutcomeCallable DescribeResetInstanceBlueprintsCallable(const Model::DescribeResetInstanceBlueprintsRequest& request);
 
                 /**
                  *本接口（DescribeSnapshots）用于查询快照的详细信息。
@@ -281,6 +553,66 @@ namespace TencentCloud
                 DescribeSnapshotsOutcomeCallable DescribeSnapshotsCallable(const Model::DescribeSnapshotsRequest& request);
 
                 /**
+                 *本接口（DescribeSnapshotsDeniedActions）用于查询一个或多个快照的操作限制列表信息。
+                 * @param req DescribeSnapshotsDeniedActionsRequest
+                 * @return DescribeSnapshotsDeniedActionsOutcome
+                 */
+                DescribeSnapshotsDeniedActionsOutcome DescribeSnapshotsDeniedActions(const Model::DescribeSnapshotsDeniedActionsRequest &request);
+                void DescribeSnapshotsDeniedActionsAsync(const Model::DescribeSnapshotsDeniedActionsRequest& request, const DescribeSnapshotsDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotsDeniedActionsOutcomeCallable DescribeSnapshotsDeniedActionsCallable(const Model::DescribeSnapshotsDeniedActionsRequest& request);
+
+                /**
+                 *本接口（DisassociateInstancesKeyPairs）用于解除实例与指定密钥对的绑定关系。
+
+* 只支持 [RUNNING, STOPPED] 状态的 LINUX_UNIX 操作系统的实例。处于 RUNNING 状态的实例会强制关机，然后解绑。
+* 解绑密钥后，实例可以通过原来设置的密码登录。
+* 如果原来没有设置密码，解绑后将无法使用 SSH 登录。可以调用 ResetInstancesPassword 接口来设置登录密码。
+* 支持批量操作。每次请求批量实例的上限为 100。
+* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。
+                 * @param req DisassociateInstancesKeyPairsRequest
+                 * @return DisassociateInstancesKeyPairsOutcome
+                 */
+                DisassociateInstancesKeyPairsOutcome DisassociateInstancesKeyPairs(const Model::DisassociateInstancesKeyPairsRequest &request);
+                void DisassociateInstancesKeyPairsAsync(const Model::DisassociateInstancesKeyPairsRequest& request, const DisassociateInstancesKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateInstancesKeyPairsOutcomeCallable DisassociateInstancesKeyPairsCallable(const Model::DisassociateInstancesKeyPairsRequest& request);
+
+                /**
+                 *本接口（ImportKeyPair）用于导入用户指定密钥对。
+                 * @param req ImportKeyPairRequest
+                 * @return ImportKeyPairOutcome
+                 */
+                ImportKeyPairOutcome ImportKeyPair(const Model::ImportKeyPairRequest &request);
+                void ImportKeyPairAsync(const Model::ImportKeyPairRequest& request, const ImportKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportKeyPairOutcomeCallable ImportKeyPairCallable(const Model::ImportKeyPairRequest& request);
+
+                /**
+                 *本接口 (InquirePriceCreateBlueprint) 用于创建镜像询价。
+                 * @param req InquirePriceCreateBlueprintRequest
+                 * @return InquirePriceCreateBlueprintOutcome
+                 */
+                InquirePriceCreateBlueprintOutcome InquirePriceCreateBlueprint(const Model::InquirePriceCreateBlueprintRequest &request);
+                void InquirePriceCreateBlueprintAsync(const Model::InquirePriceCreateBlueprintRequest& request, const InquirePriceCreateBlueprintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceCreateBlueprintOutcomeCallable InquirePriceCreateBlueprintCallable(const Model::InquirePriceCreateBlueprintRequest& request);
+
+                /**
+                 *本接口（InquiryPriceCreateInstances）用于创建实例询价。
+                 * @param req InquirePriceCreateInstancesRequest
+                 * @return InquirePriceCreateInstancesOutcome
+                 */
+                InquirePriceCreateInstancesOutcome InquirePriceCreateInstances(const Model::InquirePriceCreateInstancesRequest &request);
+                void InquirePriceCreateInstancesAsync(const Model::InquirePriceCreateInstancesRequest& request, const InquirePriceCreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceCreateInstancesOutcomeCallable InquirePriceCreateInstancesCallable(const Model::InquirePriceCreateInstancesRequest& request);
+
+                /**
+                 *本接口（InquirePriceCreateInstances）用于续费实例询价。
+                 * @param req InquirePriceRenewInstancesRequest
+                 * @return InquirePriceRenewInstancesOutcome
+                 */
+                InquirePriceRenewInstancesOutcome InquirePriceRenewInstances(const Model::InquirePriceRenewInstancesRequest &request);
+                void InquirePriceRenewInstancesAsync(const Model::InquirePriceRenewInstancesRequest& request, const InquirePriceRenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceRenewInstancesOutcomeCallable InquirePriceRenewInstancesCallable(const Model::InquirePriceRenewInstancesRequest& request);
+
+                /**
                  *本接口 (ModifyBlueprintAttribute) 用于修改镜像属性。
                  * @param req ModifyBlueprintAttributeRequest
                  * @return ModifyBlueprintAttributeOutcome
@@ -288,6 +620,80 @@ namespace TencentCloud
                 ModifyBlueprintAttributeOutcome ModifyBlueprintAttribute(const Model::ModifyBlueprintAttributeRequest &request);
                 void ModifyBlueprintAttributeAsync(const Model::ModifyBlueprintAttributeRequest& request, const ModifyBlueprintAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBlueprintAttributeOutcomeCallable ModifyBlueprintAttributeCallable(const Model::ModifyBlueprintAttributeRequest& request);
+
+                /**
+                 *本接口（ModifyFirewallRuleDescription）用于修改单条防火墙规则描述。
+
+* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接修改防火墙规则备注。
+
+在 FirewallRule 参数中：
+* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。
+* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。
+* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。
+* Action 字段只允许输入 ACCEPT 或 DROP。
+* FirewallRuleDescription 字段长度不得超过 64。
+                 * @param req ModifyFirewallRuleDescriptionRequest
+                 * @return ModifyFirewallRuleDescriptionOutcome
+                 */
+                ModifyFirewallRuleDescriptionOutcome ModifyFirewallRuleDescription(const Model::ModifyFirewallRuleDescriptionRequest &request);
+                void ModifyFirewallRuleDescriptionAsync(const Model::ModifyFirewallRuleDescriptionRequest& request, const ModifyFirewallRuleDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFirewallRuleDescriptionOutcomeCallable ModifyFirewallRuleDescriptionCallable(const Model::ModifyFirewallRuleDescriptionRequest& request);
+
+                /**
+                 *本接口（ModifyFirewallRules）用于重置实例防火墙规则。
+
+本接口先删除当前实例的所有防火墙规则，然后添加新的规则。
+
+* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接重置防火墙规则。
+
+在 FirewallRules 参数中：
+* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。
+* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。
+* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。
+* Action 字段只允许输入 ACCEPT 或 DROP。
+* FirewallRuleDescription 字段长度不得超过 64。
+                 * @param req ModifyFirewallRulesRequest
+                 * @return ModifyFirewallRulesOutcome
+                 */
+                ModifyFirewallRulesOutcome ModifyFirewallRules(const Model::ModifyFirewallRulesRequest &request);
+                void ModifyFirewallRulesAsync(const Model::ModifyFirewallRulesRequest& request, const ModifyFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFirewallRulesOutcomeCallable ModifyFirewallRulesCallable(const Model::ModifyFirewallRulesRequest& request);
+
+                /**
+                 *本接口（ModifyInstancesAttribute）用于修改实例的属性。
+* “实例名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为提交工单或是进行实例管理操作的依据。
+* 支持批量操作。每次请求批量实例的上限为 100。
+* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。
+                 * @param req ModifyInstancesAttributeRequest
+                 * @return ModifyInstancesAttributeOutcome
+                 */
+                ModifyInstancesAttributeOutcome ModifyInstancesAttribute(const Model::ModifyInstancesAttributeRequest &request);
+                void ModifyInstancesAttributeAsync(const Model::ModifyInstancesAttributeRequest& request, const ModifyInstancesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstancesAttributeOutcomeCallable ModifyInstancesAttributeCallable(const Model::ModifyInstancesAttributeRequest& request);
+
+                /**
+                 *本接口用于设置实例默认登录密钥对属性。
+
+
+                 * @param req ModifyInstancesLoginKeyPairAttributeRequest
+                 * @return ModifyInstancesLoginKeyPairAttributeOutcome
+                 */
+                ModifyInstancesLoginKeyPairAttributeOutcome ModifyInstancesLoginKeyPairAttribute(const Model::ModifyInstancesLoginKeyPairAttributeRequest &request);
+                void ModifyInstancesLoginKeyPairAttributeAsync(const Model::ModifyInstancesLoginKeyPairAttributeRequest& request, const ModifyInstancesLoginKeyPairAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstancesLoginKeyPairAttributeOutcomeCallable ModifyInstancesLoginKeyPairAttributeCallable(const Model::ModifyInstancesLoginKeyPairAttributeRequest& request);
+
+                /**
+                 *本接口 (ModifyInstancesRenewFlag) 用于修改包年包月实例续费标识。
+
+* 实例被标识为自动续费后，每次在实例到期时，会自动续费一个月。
+* 支持批量操作。每次请求批量实例的上限为100。
+* 实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。
+                 * @param req ModifyInstancesRenewFlagRequest
+                 * @return ModifyInstancesRenewFlagOutcome
+                 */
+                ModifyInstancesRenewFlagOutcome ModifyInstancesRenewFlag(const Model::ModifyInstancesRenewFlagRequest &request);
+                void ModifyInstancesRenewFlagAsync(const Model::ModifyInstancesRenewFlagRequest& request, const ModifyInstancesRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstancesRenewFlagOutcomeCallable ModifyInstancesRenewFlagCallable(const Model::ModifyInstancesRenewFlagRequest& request);
 
                 /**
                  *本接口（ModifySnapshotAttribute）用于修改指定快照的属性。
@@ -328,6 +734,18 @@ namespace TencentCloud
                 ResetInstanceOutcomeCallable ResetInstanceCallable(const Model::ResetInstanceRequest& request);
 
                 /**
+                 *本接口（ResetInstancesPassword）用于将实例操作系统的密码重置为用户指定的密码。
+* 只修改管理员帐号的密码。实例的操作系统不同，管理员帐号也会不一样（Windows 为 Administrator，Ubuntu 为 ubuntu ，其它系统为 root）。
+* 支持批量操作。将多个实例操作系统的密码重置为相同的密码。每次请求批量实例的上限为 100。
+* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。
+                 * @param req ResetInstancesPasswordRequest
+                 * @return ResetInstancesPasswordOutcome
+                 */
+                ResetInstancesPasswordOutcome ResetInstancesPassword(const Model::ResetInstancesPasswordRequest &request);
+                void ResetInstancesPasswordAsync(const Model::ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetInstancesPasswordOutcomeCallable ResetInstancesPasswordCallable(const Model::ResetInstancesPasswordRequest& request);
+
+                /**
                  *本接口（StartInstances）用于启动一个或多个实例。
 
 * 只有状态为 STOPPED 的实例才可以进行此操作。
@@ -353,6 +771,19 @@ namespace TencentCloud
                 StopInstancesOutcome StopInstances(const Model::StopInstancesRequest &request);
                 void StopInstancesAsync(const Model::StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopInstancesOutcomeCallable StopInstancesCallable(const Model::StopInstancesRequest& request);
+
+                /**
+                 *本接口 (TerminateInstances) 用于退还实例。
+
+* 处于 SHUTDOWN 状态的实例，可通过本接口销毁，且不可恢复。
+* 支持批量操作，每次请求批量实例的上限为100。
+* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态 (LatestOperationState) 为“SUCCESS”，则代表操作成功。
+                 * @param req TerminateInstancesRequest
+                 * @return TerminateInstancesOutcome
+                 */
+                TerminateInstancesOutcome TerminateInstances(const Model::TerminateInstancesRequest &request);
+                void TerminateInstancesAsync(const Model::TerminateInstancesRequest& request, const TerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateInstancesOutcomeCallable TerminateInstancesCallable(const Model::TerminateInstancesRequest& request);
 
             };
         }

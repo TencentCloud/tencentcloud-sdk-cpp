@@ -79,6 +79,24 @@ namespace TencentCloud
                     bool PassWordHasBeenSet() const;
 
                     /**
+                     * 获取设备类型 2:国标IPC设备; 3:NVR设备
+                     * @return DeviceType 设备类型 2:国标IPC设备; 3:NVR设备
+                     */
+                    int64_t GetDeviceType() const;
+
+                    /**
+                     * 设置设备类型 2:国标IPC设备; 3:NVR设备
+                     * @param DeviceType 设备类型 2:国标IPC设备; 3:NVR设备
+                     */
+                    void SetDeviceType(const int64_t& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
+                    /**
                      * 获取设备需要绑定的分组ID，参数为空则默认绑定到根分组
                      * @return GroupId 设备需要绑定的分组ID，参数为空则默认绑定到根分组
                      */
@@ -109,6 +127,12 @@ namespace TencentCloud
                      */
                     std::string m_passWord;
                     bool m_passWordHasBeenSet;
+
+                    /**
+                     * 设备类型 2:国标IPC设备; 3:NVR设备
+                     */
+                    int64_t m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
 
                     /**
                      * 设备需要绑定的分组ID，参数为空则默认绑定到根分组

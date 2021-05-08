@@ -41,7 +41,8 @@ FleetAttributes::FleetAttributes() :
     m_tagsHasBeenSet(false),
     m_dataDiskInfoHasBeenSet(false),
     m_systemDiskInfoHasBeenSet(false),
-    m_relatedCcnInfosHasBeenSet(false)
+    m_relatedCcnInfosHasBeenSet(false),
+    m_internetMaxBandwidthOutHasBeenSet(false)
 {
 }
 
@@ -297,6 +298,16 @@ CoreInternalOutcome FleetAttributes::Deserialize(const Value &value)
         m_relatedCcnInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("InternetMaxBandwidthOut") && !value["InternetMaxBandwidthOut"].IsNull())
+    {
+        if (!value["InternetMaxBandwidthOut"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `FleetAttributes.InternetMaxBandwidthOut` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_internetMaxBandwidthOut = value["InternetMaxBandwidthOut"].GetInt64();
+        m_internetMaxBandwidthOutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +501,14 @@ void FleetAttributes::ToJsonObject(Value &value, Document::AllocatorType& alloca
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_internetMaxBandwidthOutHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InternetMaxBandwidthOut";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_internetMaxBandwidthOut, allocator);
     }
 
 }
@@ -813,5 +832,21 @@ void FleetAttributes::SetRelatedCcnInfos(const vector<RelatedCcnInfo>& _relatedC
 bool FleetAttributes::RelatedCcnInfosHasBeenSet() const
 {
     return m_relatedCcnInfosHasBeenSet;
+}
+
+int64_t FleetAttributes::GetInternetMaxBandwidthOut() const
+{
+    return m_internetMaxBandwidthOut;
+}
+
+void FleetAttributes::SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut)
+{
+    m_internetMaxBandwidthOut = _internetMaxBandwidthOut;
+    m_internetMaxBandwidthOutHasBeenSet = true;
+}
+
+bool FleetAttributes::InternetMaxBandwidthOutHasBeenSet() const
+{
+    return m_internetMaxBandwidthOutHasBeenSet;
 }
 

@@ -25,10 +25,26 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/tem/v20201221/model/CreateCosTokenRequest.h>
 #include <tencentcloud/tem/v20201221/model/CreateCosTokenResponse.h>
+#include <tencentcloud/tem/v20201221/model/CreateCosTokenV2Request.h>
+#include <tencentcloud/tem/v20201221/model/CreateCosTokenV2Response.h>
 #include <tencentcloud/tem/v20201221/model/CreateNamespaceRequest.h>
 #include <tencentcloud/tem/v20201221/model/CreateNamespaceResponse.h>
+#include <tencentcloud/tem/v20201221/model/CreateResourceRequest.h>
+#include <tencentcloud/tem/v20201221/model/CreateResourceResponse.h>
+#include <tencentcloud/tem/v20201221/model/CreateServiceV2Request.h>
+#include <tencentcloud/tem/v20201221/model/CreateServiceV2Response.h>
+#include <tencentcloud/tem/v20201221/model/DeleteIngressRequest.h>
+#include <tencentcloud/tem/v20201221/model/DeleteIngressResponse.h>
+#include <tencentcloud/tem/v20201221/model/DeployServiceV2Request.h>
+#include <tencentcloud/tem/v20201221/model/DeployServiceV2Response.h>
+#include <tencentcloud/tem/v20201221/model/DescribeIngressRequest.h>
+#include <tencentcloud/tem/v20201221/model/DescribeIngressResponse.h>
+#include <tencentcloud/tem/v20201221/model/DescribeIngressesRequest.h>
+#include <tencentcloud/tem/v20201221/model/DescribeIngressesResponse.h>
 #include <tencentcloud/tem/v20201221/model/DescribeNamespacesRequest.h>
 #include <tencentcloud/tem/v20201221/model/DescribeNamespacesResponse.h>
+#include <tencentcloud/tem/v20201221/model/DescribeServiceRunPodListV2Request.h>
+#include <tencentcloud/tem/v20201221/model/DescribeServiceRunPodListV2Response.h>
 #include <tencentcloud/tem/v20201221/model/ModifyIngressRequest.h>
 #include <tencentcloud/tem/v20201221/model/ModifyIngressResponse.h>
 #include <tencentcloud/tem/v20201221/model/ModifyNamespaceRequest.h>
@@ -50,12 +66,36 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateCosTokenResponse> CreateCosTokenOutcome;
                 typedef std::future<CreateCosTokenOutcome> CreateCosTokenOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::CreateCosTokenRequest&, CreateCosTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosTokenAsyncHandler;
+                typedef Outcome<Error, Model::CreateCosTokenV2Response> CreateCosTokenV2Outcome;
+                typedef std::future<CreateCosTokenV2Outcome> CreateCosTokenV2OutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::CreateCosTokenV2Request&, CreateCosTokenV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosTokenV2AsyncHandler;
                 typedef Outcome<Error, Model::CreateNamespaceResponse> CreateNamespaceOutcome;
                 typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::CreateNamespaceRequest&, CreateNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNamespaceAsyncHandler;
+                typedef Outcome<Error, Model::CreateResourceResponse> CreateResourceOutcome;
+                typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::CreateResourceRequest&, CreateResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceAsyncHandler;
+                typedef Outcome<Error, Model::CreateServiceV2Response> CreateServiceV2Outcome;
+                typedef std::future<CreateServiceV2Outcome> CreateServiceV2OutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::CreateServiceV2Request&, CreateServiceV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceV2AsyncHandler;
+                typedef Outcome<Error, Model::DeleteIngressResponse> DeleteIngressOutcome;
+                typedef std::future<DeleteIngressOutcome> DeleteIngressOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DeleteIngressRequest&, DeleteIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIngressAsyncHandler;
+                typedef Outcome<Error, Model::DeployServiceV2Response> DeployServiceV2Outcome;
+                typedef std::future<DeployServiceV2Outcome> DeployServiceV2OutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DeployServiceV2Request&, DeployServiceV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployServiceV2AsyncHandler;
+                typedef Outcome<Error, Model::DescribeIngressResponse> DescribeIngressOutcome;
+                typedef std::future<DescribeIngressOutcome> DescribeIngressOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeIngressRequest&, DescribeIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIngressAsyncHandler;
+                typedef Outcome<Error, Model::DescribeIngressesResponse> DescribeIngressesOutcome;
+                typedef std::future<DescribeIngressesOutcome> DescribeIngressesOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeIngressesRequest&, DescribeIngressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIngressesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeNamespacesResponse> DescribeNamespacesOutcome;
                 typedef std::future<DescribeNamespacesOutcome> DescribeNamespacesOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeNamespacesRequest&, DescribeNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNamespacesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeServiceRunPodListV2Response> DescribeServiceRunPodListV2Outcome;
+                typedef std::future<DescribeServiceRunPodListV2Outcome> DescribeServiceRunPodListV2OutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeServiceRunPodListV2Request&, DescribeServiceRunPodListV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceRunPodListV2AsyncHandler;
                 typedef Outcome<Error, Model::ModifyIngressResponse> ModifyIngressOutcome;
                 typedef std::future<ModifyIngressOutcome> ModifyIngressOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyIngressRequest&, ModifyIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIngressAsyncHandler;
@@ -75,7 +115,16 @@ namespace TencentCloud
                 CreateCosTokenOutcomeCallable CreateCosTokenCallable(const Model::CreateCosTokenRequest& request);
 
                 /**
-                 *创建命名空间
+                 *生成Cos临时秘钥
+                 * @param req CreateCosTokenV2Request
+                 * @return CreateCosTokenV2Outcome
+                 */
+                CreateCosTokenV2Outcome CreateCosTokenV2(const Model::CreateCosTokenV2Request &request);
+                void CreateCosTokenV2Async(const Model::CreateCosTokenV2Request& request, const CreateCosTokenV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCosTokenV2OutcomeCallable CreateCosTokenV2Callable(const Model::CreateCosTokenV2Request& request);
+
+                /**
+                 *创建环境
                  * @param req CreateNamespaceRequest
                  * @return CreateNamespaceOutcome
                  */
@@ -84,13 +133,79 @@ namespace TencentCloud
                 CreateNamespaceOutcomeCallable CreateNamespaceCallable(const Model::CreateNamespaceRequest& request);
 
                 /**
-                 *获取租户命名空间列表
+                 *绑定云资源
+                 * @param req CreateResourceRequest
+                 * @return CreateResourceOutcome
+                 */
+                CreateResourceOutcome CreateResource(const Model::CreateResourceRequest &request);
+                void CreateResourceAsync(const Model::CreateResourceRequest& request, const CreateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateResourceOutcomeCallable CreateResourceCallable(const Model::CreateResourceRequest& request);
+
+                /**
+                 *创建服务
+                 * @param req CreateServiceV2Request
+                 * @return CreateServiceV2Outcome
+                 */
+                CreateServiceV2Outcome CreateServiceV2(const Model::CreateServiceV2Request &request);
+                void CreateServiceV2Async(const Model::CreateServiceV2Request& request, const CreateServiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateServiceV2OutcomeCallable CreateServiceV2Callable(const Model::CreateServiceV2Request& request);
+
+                /**
+                 *删除 Ingress 规则
+                 * @param req DeleteIngressRequest
+                 * @return DeleteIngressOutcome
+                 */
+                DeleteIngressOutcome DeleteIngress(const Model::DeleteIngressRequest &request);
+                void DeleteIngressAsync(const Model::DeleteIngressRequest& request, const DeleteIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteIngressOutcomeCallable DeleteIngressCallable(const Model::DeleteIngressRequest& request);
+
+                /**
+                 *服务部署
+ - 创建新版本
+ - 部署新版本
+ - 一个服务只能有一个版本，所以前端无需关心版本及版本ID
+                 * @param req DeployServiceV2Request
+                 * @return DeployServiceV2Outcome
+                 */
+                DeployServiceV2Outcome DeployServiceV2(const Model::DeployServiceV2Request &request);
+                void DeployServiceV2Async(const Model::DeployServiceV2Request& request, const DeployServiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployServiceV2OutcomeCallable DeployServiceV2Callable(const Model::DeployServiceV2Request& request);
+
+                /**
+                 *查询 Ingress 规则
+                 * @param req DescribeIngressRequest
+                 * @return DescribeIngressOutcome
+                 */
+                DescribeIngressOutcome DescribeIngress(const Model::DescribeIngressRequest &request);
+                void DescribeIngressAsync(const Model::DescribeIngressRequest& request, const DescribeIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIngressOutcomeCallable DescribeIngressCallable(const Model::DescribeIngressRequest& request);
+
+                /**
+                 *查询 Ingress 规则列表
+                 * @param req DescribeIngressesRequest
+                 * @return DescribeIngressesOutcome
+                 */
+                DescribeIngressesOutcome DescribeIngresses(const Model::DescribeIngressesRequest &request);
+                void DescribeIngressesAsync(const Model::DescribeIngressesRequest& request, const DescribeIngressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIngressesOutcomeCallable DescribeIngressesCallable(const Model::DescribeIngressesRequest& request);
+
+                /**
+                 *获取租户环境列表
                  * @param req DescribeNamespacesRequest
                  * @return DescribeNamespacesOutcome
                  */
                 DescribeNamespacesOutcome DescribeNamespaces(const Model::DescribeNamespacesRequest &request);
                 void DescribeNamespacesAsync(const Model::DescribeNamespacesRequest& request, const DescribeNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNamespacesOutcomeCallable DescribeNamespacesCallable(const Model::DescribeNamespacesRequest& request);
+
+                /**
+                 *获取服务下面运行pod列表
+                 * @param req DescribeServiceRunPodListV2Request
+                 * @return DescribeServiceRunPodListV2Outcome
+                 */
+                DescribeServiceRunPodListV2Outcome DescribeServiceRunPodListV2(const Model::DescribeServiceRunPodListV2Request &request);
+                void DescribeServiceRunPodListV2Async(const Model::DescribeServiceRunPodListV2Request& request, const DescribeServiceRunPodListV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServiceRunPodListV2OutcomeCallable DescribeServiceRunPodListV2Callable(const Model::DescribeServiceRunPodListV2Request& request);
 
                 /**
                  *创建或者更新 Ingress 规则
@@ -102,7 +217,7 @@ namespace TencentCloud
                 ModifyIngressOutcomeCallable ModifyIngressCallable(const Model::ModifyIngressRequest& request);
 
                 /**
-                 *编辑命名空间
+                 *编辑环境
                  * @param req ModifyNamespaceRequest
                  * @return ModifyNamespaceOutcome
                  */

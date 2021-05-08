@@ -42,7 +42,8 @@ CopyFleetRequest::CopyFleetRequest() :
     m_systemDiskInfoHasBeenSet(false),
     m_dataDiskInfoHasBeenSet(false),
     m_selectedTimerTypeHasBeenSet(false),
-    m_ccnInfosHasBeenSet(false)
+    m_ccnInfosHasBeenSet(false),
+    m_internetMaxBandwidthOutHasBeenSet(false)
 {
 }
 
@@ -234,6 +235,14 @@ string CopyFleetRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_internetMaxBandwidthOutHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InternetMaxBandwidthOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_internetMaxBandwidthOut, allocator);
     }
 
 
@@ -546,6 +555,22 @@ void CopyFleetRequest::SetCcnInfos(const vector<CcnInfo>& _ccnInfos)
 bool CopyFleetRequest::CcnInfosHasBeenSet() const
 {
     return m_ccnInfosHasBeenSet;
+}
+
+int64_t CopyFleetRequest::GetInternetMaxBandwidthOut() const
+{
+    return m_internetMaxBandwidthOut;
+}
+
+void CopyFleetRequest::SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut)
+{
+    m_internetMaxBandwidthOut = _internetMaxBandwidthOut;
+    m_internetMaxBandwidthOutHasBeenSet = true;
+}
+
+bool CopyFleetRequest::InternetMaxBandwidthOutHasBeenSet() const
+{
+    return m_internetMaxBandwidthOutHasBeenSet;
 }
 
 

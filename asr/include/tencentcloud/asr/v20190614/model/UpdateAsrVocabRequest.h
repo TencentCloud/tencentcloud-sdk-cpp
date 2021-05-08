@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool VocabIdHasBeenSet() const;
 
                     /**
-                     * 获取热词表名称
-                     * @return Name 热词表名称
+                     * 获取热词表名称，长度在1-255之间
+                     * @return Name 热词表名称，长度在1-255之间
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置热词表名称
-                     * @param Name 热词表名称
+                     * 设置热词表名称，长度在1-255之间
+                     * @param Name 热词表名称，长度在1-255之间
                      */
                     void SetName(const std::string& _name);
 
@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool WordWeightStrHasBeenSet() const;
 
                     /**
-                     * 获取热词表描述
-                     * @return Description 热词表描述
+                     * 获取热词表描述，长度在0-1000之间
+                     * @return Description 热词表描述，长度在0-1000之间
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置热词表描述
-                     * @param Description 热词表描述
+                     * 设置热词表描述，长度在0-1000之间
+                     * @param Description 热词表描述，长度在0-1000之间
                      */
                     void SetDescription(const std::string& _description);
 
@@ -146,7 +146,7 @@ namespace TencentCloud
                     bool m_vocabIdHasBeenSet;
 
                     /**
-                     * 热词表名称
+                     * 热词表名称，长度在1-255之间
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -165,7 +165,7 @@ namespace TencentCloud
                     bool m_wordWeightStrHasBeenSet;
 
                     /**
-                     * 热词表描述
+                     * 热词表描述，长度在0-1000之间
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

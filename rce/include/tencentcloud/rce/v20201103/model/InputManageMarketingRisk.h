@@ -69,18 +69,22 @@ namespace TencentCloud
                     bool AccountHasBeenSet() const;
 
                     /**
-                     * 获取场景code;
-e_activity_antirush；活动防刷场景e_login_protection；登陆保护场景e_register_protection：注册保护场景
-                     * @return SceneCode 场景code;
-e_activity_antirush；活动防刷场景e_login_protection；登陆保护场景e_register_protection：注册保护场景
+                     * 获取场景类型：场景SceneCode, 控制台上新建对应的场景并获取对应的值；
+例如：e_register_protection_1521184361
+控制台链接：https://console.cloud.tencent.com/rce/risk/sceneroot；
+                     * @return SceneCode 场景类型：场景SceneCode, 控制台上新建对应的场景并获取对应的值；
+例如：e_register_protection_1521184361
+控制台链接：https://console.cloud.tencent.com/rce/risk/sceneroot；
                      */
                     std::string GetSceneCode() const;
 
                     /**
-                     * 设置场景code;
-e_activity_antirush；活动防刷场景e_login_protection；登陆保护场景e_register_protection：注册保护场景
-                     * @param SceneCode 场景code;
-e_activity_antirush；活动防刷场景e_login_protection；登陆保护场景e_register_protection：注册保护场景
+                     * 设置场景类型：场景SceneCode, 控制台上新建对应的场景并获取对应的值；
+例如：e_register_protection_1521184361
+控制台链接：https://console.cloud.tencent.com/rce/risk/sceneroot；
+                     * @param SceneCode 场景类型：场景SceneCode, 控制台上新建对应的场景并获取对应的值；
+例如：e_register_protection_1521184361
+控制台链接：https://console.cloud.tencent.com/rce/risk/sceneroot；
                      */
                     void SetSceneCode(const std::string& _sceneCode);
 
@@ -701,8 +705,9 @@ IOS wifi_mac String 否 WiFi MAC地址
                     bool m_accountHasBeenSet;
 
                     /**
-                     * 场景code;
-e_activity_antirush；活动防刷场景e_login_protection；登陆保护场景e_register_protection：注册保护场景
+                     * 场景类型：场景SceneCode, 控制台上新建对应的场景并获取对应的值；
+例如：e_register_protection_1521184361
+控制台链接：https://console.cloud.tencent.com/rce/risk/sceneroot；
                      */
                     std::string m_sceneCode;
                     bool m_sceneCodeHasBeenSet;

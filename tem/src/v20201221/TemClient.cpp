@@ -83,6 +83,49 @@ TemClient::CreateCosTokenOutcomeCallable TemClient::CreateCosTokenCallable(const
     return task->get_future();
 }
 
+TemClient::CreateCosTokenV2Outcome TemClient::CreateCosTokenV2(const CreateCosTokenV2Request &request)
+{
+    auto outcome = MakeRequest(request, "CreateCosTokenV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCosTokenV2Response rsp = CreateCosTokenV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCosTokenV2Outcome(rsp);
+        else
+            return CreateCosTokenV2Outcome(o.GetError());
+    }
+    else
+    {
+        return CreateCosTokenV2Outcome(outcome.GetError());
+    }
+}
+
+void TemClient::CreateCosTokenV2Async(const CreateCosTokenV2Request& request, const CreateCosTokenV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCosTokenV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::CreateCosTokenV2OutcomeCallable TemClient::CreateCosTokenV2Callable(const CreateCosTokenV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCosTokenV2Outcome()>>(
+        [this, request]()
+        {
+            return this->CreateCosTokenV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::CreateNamespaceOutcome TemClient::CreateNamespace(const CreateNamespaceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNamespace");
@@ -126,6 +169,264 @@ TemClient::CreateNamespaceOutcomeCallable TemClient::CreateNamespaceCallable(con
     return task->get_future();
 }
 
+TemClient::CreateResourceOutcome TemClient::CreateResource(const CreateResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateResourceResponse rsp = CreateResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateResourceOutcome(rsp);
+        else
+            return CreateResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateResourceOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::CreateResourceAsync(const CreateResourceRequest& request, const CreateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::CreateResourceOutcomeCallable TemClient::CreateResourceCallable(const CreateResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::CreateServiceV2Outcome TemClient::CreateServiceV2(const CreateServiceV2Request &request)
+{
+    auto outcome = MakeRequest(request, "CreateServiceV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateServiceV2Response rsp = CreateServiceV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateServiceV2Outcome(rsp);
+        else
+            return CreateServiceV2Outcome(o.GetError());
+    }
+    else
+    {
+        return CreateServiceV2Outcome(outcome.GetError());
+    }
+}
+
+void TemClient::CreateServiceV2Async(const CreateServiceV2Request& request, const CreateServiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateServiceV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::CreateServiceV2OutcomeCallable TemClient::CreateServiceV2Callable(const CreateServiceV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateServiceV2Outcome()>>(
+        [this, request]()
+        {
+            return this->CreateServiceV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::DeleteIngressOutcome TemClient::DeleteIngress(const DeleteIngressRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteIngress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteIngressResponse rsp = DeleteIngressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteIngressOutcome(rsp);
+        else
+            return DeleteIngressOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteIngressOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DeleteIngressAsync(const DeleteIngressRequest& request, const DeleteIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteIngress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DeleteIngressOutcomeCallable TemClient::DeleteIngressCallable(const DeleteIngressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteIngressOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteIngress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::DeployServiceV2Outcome TemClient::DeployServiceV2(const DeployServiceV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DeployServiceV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeployServiceV2Response rsp = DeployServiceV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeployServiceV2Outcome(rsp);
+        else
+            return DeployServiceV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DeployServiceV2Outcome(outcome.GetError());
+    }
+}
+
+void TemClient::DeployServiceV2Async(const DeployServiceV2Request& request, const DeployServiceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeployServiceV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DeployServiceV2OutcomeCallable TemClient::DeployServiceV2Callable(const DeployServiceV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeployServiceV2Outcome()>>(
+        [this, request]()
+        {
+            return this->DeployServiceV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::DescribeIngressOutcome TemClient::DescribeIngress(const DescribeIngressRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIngress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIngressResponse rsp = DescribeIngressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIngressOutcome(rsp);
+        else
+            return DescribeIngressOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIngressOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DescribeIngressAsync(const DescribeIngressRequest& request, const DescribeIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIngress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DescribeIngressOutcomeCallable TemClient::DescribeIngressCallable(const DescribeIngressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIngressOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIngress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::DescribeIngressesOutcome TemClient::DescribeIngresses(const DescribeIngressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIngresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIngressesResponse rsp = DescribeIngressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIngressesOutcome(rsp);
+        else
+            return DescribeIngressesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIngressesOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DescribeIngressesAsync(const DescribeIngressesRequest& request, const DescribeIngressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIngresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DescribeIngressesOutcomeCallable TemClient::DescribeIngressesCallable(const DescribeIngressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIngressesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIngresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::DescribeNamespacesOutcome TemClient::DescribeNamespaces(const DescribeNamespacesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNamespaces");
@@ -162,6 +463,49 @@ TemClient::DescribeNamespacesOutcomeCallable TemClient::DescribeNamespacesCallab
         [this, request]()
         {
             return this->DescribeNamespaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::DescribeServiceRunPodListV2Outcome TemClient::DescribeServiceRunPodListV2(const DescribeServiceRunPodListV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceRunPodListV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceRunPodListV2Response rsp = DescribeServiceRunPodListV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceRunPodListV2Outcome(rsp);
+        else
+            return DescribeServiceRunPodListV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceRunPodListV2Outcome(outcome.GetError());
+    }
+}
+
+void TemClient::DescribeServiceRunPodListV2Async(const DescribeServiceRunPodListV2Request& request, const DescribeServiceRunPodListV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServiceRunPodListV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DescribeServiceRunPodListV2OutcomeCallable TemClient::DescribeServiceRunPodListV2Callable(const DescribeServiceRunPodListV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServiceRunPodListV2Outcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServiceRunPodListV2(request);
         }
     );
 

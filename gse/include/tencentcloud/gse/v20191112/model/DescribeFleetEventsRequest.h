@@ -96,6 +96,60 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取事件代码
+                     * @return EventCode 事件代码
+                     */
+                    std::string GetEventCode() const;
+
+                    /**
+                     * 设置事件代码
+                     * @param EventCode 事件代码
+                     */
+                    void SetEventCode(const std::string& _eventCode);
+
+                    /**
+                     * 判断参数 EventCode 是否已赋值
+                     * @return EventCode 是否已赋值
+                     */
+                    bool EventCodeHasBeenSet() const;
+
+                    /**
+                     * 获取发生事件的开始时间
+                     * @return StartTime 发生事件的开始时间
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置发生事件的开始时间
+                     * @param StartTime 发生事件的开始时间
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取发生事件的结束时间
+                     * @return EndTime 发生事件的结束时间
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置发生事件的结束时间
+                     * @param EndTime 发生事件的结束时间
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +169,24 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 事件代码
+                     */
+                    std::string m_eventCode;
+                    bool m_eventCodeHasBeenSet;
+
+                    /**
+                     * 发生事件的开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 发生事件的结束时间
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

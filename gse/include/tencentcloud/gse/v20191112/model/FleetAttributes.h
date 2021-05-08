@@ -478,6 +478,28 @@ namespace TencentCloud
                      */
                     bool RelatedCcnInfosHasBeenSet() const;
 
+                    /**
+                     * 获取fleet公网出带宽最大值，默认100Mbps，范围1-200Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternetMaxBandwidthOut fleet公网出带宽最大值，默认100Mbps，范围1-200Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInternetMaxBandwidthOut() const;
+
+                    /**
+                     * 设置fleet公网出带宽最大值，默认100Mbps，范围1-200Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InternetMaxBandwidthOut fleet公网出带宽最大值，默认100Mbps，范围1-200Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
+
+                    /**
+                     * 判断参数 InternetMaxBandwidthOut 是否已赋值
+                     * @return InternetMaxBandwidthOut 是否已赋值
+                     */
+                    bool InternetMaxBandwidthOutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -616,6 +638,13 @@ namespace TencentCloud
                      */
                     std::vector<RelatedCcnInfo> m_relatedCcnInfos;
                     bool m_relatedCcnInfosHasBeenSet;
+
+                    /**
+                     * fleet公网出带宽最大值，默认100Mbps，范围1-200Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_internetMaxBandwidthOut;
+                    bool m_internetMaxBandwidthOutHasBeenSet;
 
                 };
             }

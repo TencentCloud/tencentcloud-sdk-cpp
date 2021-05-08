@@ -83,6 +83,49 @@ LighthouseClient::ApplyInstanceSnapshotOutcomeCallable LighthouseClient::ApplyIn
     return task->get_future();
 }
 
+LighthouseClient::AssociateInstancesKeyPairsOutcome LighthouseClient::AssociateInstancesKeyPairs(const AssociateInstancesKeyPairsRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateInstancesKeyPairs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateInstancesKeyPairsResponse rsp = AssociateInstancesKeyPairsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateInstancesKeyPairsOutcome(rsp);
+        else
+            return AssociateInstancesKeyPairsOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateInstancesKeyPairsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::AssociateInstancesKeyPairsAsync(const AssociateInstancesKeyPairsRequest& request, const AssociateInstancesKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateInstancesKeyPairs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::AssociateInstancesKeyPairsOutcomeCallable LighthouseClient::AssociateInstancesKeyPairsCallable(const AssociateInstancesKeyPairsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateInstancesKeyPairsOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateInstancesKeyPairs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::CreateBlueprintOutcome LighthouseClient::CreateBlueprint(const CreateBlueprintRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBlueprint");
@@ -212,6 +255,49 @@ LighthouseClient::CreateInstanceSnapshotOutcomeCallable LighthouseClient::Create
     return task->get_future();
 }
 
+LighthouseClient::CreateKeyPairOutcome LighthouseClient::CreateKeyPair(const CreateKeyPairRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateKeyPair");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateKeyPairResponse rsp = CreateKeyPairResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateKeyPairOutcome(rsp);
+        else
+            return CreateKeyPairOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateKeyPairOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::CreateKeyPairAsync(const CreateKeyPairRequest& request, const CreateKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateKeyPair(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::CreateKeyPairOutcomeCallable LighthouseClient::CreateKeyPairCallable(const CreateKeyPairRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateKeyPairOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateKeyPair(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DeleteBlueprintsOutcome LighthouseClient::DeleteBlueprints(const DeleteBlueprintsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteBlueprints");
@@ -298,6 +384,49 @@ LighthouseClient::DeleteFirewallRulesOutcomeCallable LighthouseClient::DeleteFir
     return task->get_future();
 }
 
+LighthouseClient::DeleteKeyPairsOutcome LighthouseClient::DeleteKeyPairs(const DeleteKeyPairsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteKeyPairs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteKeyPairsResponse rsp = DeleteKeyPairsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteKeyPairsOutcome(rsp);
+        else
+            return DeleteKeyPairsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteKeyPairsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DeleteKeyPairsAsync(const DeleteKeyPairsRequest& request, const DeleteKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteKeyPairs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DeleteKeyPairsOutcomeCallable LighthouseClient::DeleteKeyPairsCallable(const DeleteKeyPairsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteKeyPairsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteKeyPairs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DeleteSnapshotsOutcome LighthouseClient::DeleteSnapshots(const DeleteSnapshotsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSnapshots");
@@ -334,6 +463,49 @@ LighthouseClient::DeleteSnapshotsOutcomeCallable LighthouseClient::DeleteSnapsho
         [this, request]()
         {
             return this->DeleteSnapshots(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeBlueprintInstancesOutcome LighthouseClient::DescribeBlueprintInstances(const DescribeBlueprintInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlueprintInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlueprintInstancesResponse rsp = DescribeBlueprintInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlueprintInstancesOutcome(rsp);
+        else
+            return DescribeBlueprintInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlueprintInstancesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeBlueprintInstancesAsync(const DescribeBlueprintInstancesRequest& request, const DescribeBlueprintInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBlueprintInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeBlueprintInstancesOutcomeCallable LighthouseClient::DescribeBlueprintInstancesCallable(const DescribeBlueprintInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBlueprintInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBlueprintInstances(request);
         }
     );
 
@@ -470,6 +642,178 @@ LighthouseClient::DescribeFirewallRulesOutcomeCallable LighthouseClient::Describ
     return task->get_future();
 }
 
+LighthouseClient::DescribeFirewallRulesTemplateOutcome LighthouseClient::DescribeFirewallRulesTemplate(const DescribeFirewallRulesTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFirewallRulesTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFirewallRulesTemplateResponse rsp = DescribeFirewallRulesTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFirewallRulesTemplateOutcome(rsp);
+        else
+            return DescribeFirewallRulesTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFirewallRulesTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeFirewallRulesTemplateAsync(const DescribeFirewallRulesTemplateRequest& request, const DescribeFirewallRulesTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFirewallRulesTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeFirewallRulesTemplateOutcomeCallable LighthouseClient::DescribeFirewallRulesTemplateCallable(const DescribeFirewallRulesTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFirewallRulesTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFirewallRulesTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeGeneralResourceQuotasOutcome LighthouseClient::DescribeGeneralResourceQuotas(const DescribeGeneralResourceQuotasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGeneralResourceQuotas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGeneralResourceQuotasResponse rsp = DescribeGeneralResourceQuotasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGeneralResourceQuotasOutcome(rsp);
+        else
+            return DescribeGeneralResourceQuotasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGeneralResourceQuotasOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeGeneralResourceQuotasAsync(const DescribeGeneralResourceQuotasRequest& request, const DescribeGeneralResourceQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGeneralResourceQuotas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeGeneralResourceQuotasOutcomeCallable LighthouseClient::DescribeGeneralResourceQuotasCallable(const DescribeGeneralResourceQuotasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGeneralResourceQuotasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGeneralResourceQuotas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeInstanceLoginKeyPairAttributeOutcome LighthouseClient::DescribeInstanceLoginKeyPairAttribute(const DescribeInstanceLoginKeyPairAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceLoginKeyPairAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceLoginKeyPairAttributeResponse rsp = DescribeInstanceLoginKeyPairAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceLoginKeyPairAttributeOutcome(rsp);
+        else
+            return DescribeInstanceLoginKeyPairAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceLoginKeyPairAttributeOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeInstanceLoginKeyPairAttributeAsync(const DescribeInstanceLoginKeyPairAttributeRequest& request, const DescribeInstanceLoginKeyPairAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceLoginKeyPairAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeInstanceLoginKeyPairAttributeOutcomeCallable LighthouseClient::DescribeInstanceLoginKeyPairAttributeCallable(const DescribeInstanceLoginKeyPairAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceLoginKeyPairAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceLoginKeyPairAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeInstanceVncUrlOutcome LighthouseClient::DescribeInstanceVncUrl(const DescribeInstanceVncUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceVncUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceVncUrlResponse rsp = DescribeInstanceVncUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceVncUrlOutcome(rsp);
+        else
+            return DescribeInstanceVncUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceVncUrlOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeInstanceVncUrlAsync(const DescribeInstanceVncUrlRequest& request, const DescribeInstanceVncUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceVncUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeInstanceVncUrlOutcomeCallable LighthouseClient::DescribeInstanceVncUrlCallable(const DescribeInstanceVncUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceVncUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceVncUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DescribeInstancesOutcome LighthouseClient::DescribeInstances(const DescribeInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstances");
@@ -506,6 +850,92 @@ LighthouseClient::DescribeInstancesOutcomeCallable LighthouseClient::DescribeIns
         [this, request]()
         {
             return this->DescribeInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeInstancesDeniedActionsOutcome LighthouseClient::DescribeInstancesDeniedActions(const DescribeInstancesDeniedActionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesDeniedActions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesDeniedActionsResponse rsp = DescribeInstancesDeniedActionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesDeniedActionsOutcome(rsp);
+        else
+            return DescribeInstancesDeniedActionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesDeniedActionsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeInstancesDeniedActionsAsync(const DescribeInstancesDeniedActionsRequest& request, const DescribeInstancesDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesDeniedActions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeInstancesDeniedActionsOutcomeCallable LighthouseClient::DescribeInstancesDeniedActionsCallable(const DescribeInstancesDeniedActionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesDeniedActionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesDeniedActions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeInstancesReturnableOutcome LighthouseClient::DescribeInstancesReturnable(const DescribeInstancesReturnableRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesReturnable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesReturnableResponse rsp = DescribeInstancesReturnableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesReturnableOutcome(rsp);
+        else
+            return DescribeInstancesReturnableOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesReturnableOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeInstancesReturnableAsync(const DescribeInstancesReturnableRequest& request, const DescribeInstancesReturnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesReturnable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeInstancesReturnableOutcomeCallable LighthouseClient::DescribeInstancesReturnableCallable(const DescribeInstancesReturnableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesReturnableOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesReturnable(request);
         }
     );
 
@@ -556,6 +986,178 @@ LighthouseClient::DescribeInstancesTrafficPackagesOutcomeCallable LighthouseClie
     return task->get_future();
 }
 
+LighthouseClient::DescribeKeyPairsOutcome LighthouseClient::DescribeKeyPairs(const DescribeKeyPairsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKeyPairs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKeyPairsResponse rsp = DescribeKeyPairsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKeyPairsOutcome(rsp);
+        else
+            return DescribeKeyPairsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKeyPairsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeKeyPairsAsync(const DescribeKeyPairsRequest& request, const DescribeKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKeyPairs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeKeyPairsOutcomeCallable LighthouseClient::DescribeKeyPairsCallable(const DescribeKeyPairsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKeyPairsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKeyPairs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeModifyInstanceBundlesOutcome LighthouseClient::DescribeModifyInstanceBundles(const DescribeModifyInstanceBundlesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModifyInstanceBundles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModifyInstanceBundlesResponse rsp = DescribeModifyInstanceBundlesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModifyInstanceBundlesOutcome(rsp);
+        else
+            return DescribeModifyInstanceBundlesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModifyInstanceBundlesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeModifyInstanceBundlesAsync(const DescribeModifyInstanceBundlesRequest& request, const DescribeModifyInstanceBundlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeModifyInstanceBundles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeModifyInstanceBundlesOutcomeCallable LighthouseClient::DescribeModifyInstanceBundlesCallable(const DescribeModifyInstanceBundlesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeModifyInstanceBundlesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeModifyInstanceBundles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeRegionsOutcome LighthouseClient::DescribeRegions(const DescribeRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegionsResponse rsp = DescribeRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegionsOutcome(rsp);
+        else
+            return DescribeRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegionsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeRegionsOutcomeCallable LighthouseClient::DescribeRegionsCallable(const DescribeRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeResetInstanceBlueprintsOutcome LighthouseClient::DescribeResetInstanceBlueprints(const DescribeResetInstanceBlueprintsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResetInstanceBlueprints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResetInstanceBlueprintsResponse rsp = DescribeResetInstanceBlueprintsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResetInstanceBlueprintsOutcome(rsp);
+        else
+            return DescribeResetInstanceBlueprintsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResetInstanceBlueprintsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeResetInstanceBlueprintsAsync(const DescribeResetInstanceBlueprintsRequest& request, const DescribeResetInstanceBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResetInstanceBlueprints(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeResetInstanceBlueprintsOutcomeCallable LighthouseClient::DescribeResetInstanceBlueprintsCallable(const DescribeResetInstanceBlueprintsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResetInstanceBlueprintsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResetInstanceBlueprints(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DescribeSnapshotsOutcome LighthouseClient::DescribeSnapshots(const DescribeSnapshotsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSnapshots");
@@ -599,6 +1201,264 @@ LighthouseClient::DescribeSnapshotsOutcomeCallable LighthouseClient::DescribeSna
     return task->get_future();
 }
 
+LighthouseClient::DescribeSnapshotsDeniedActionsOutcome LighthouseClient::DescribeSnapshotsDeniedActions(const DescribeSnapshotsDeniedActionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotsDeniedActions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotsDeniedActionsResponse rsp = DescribeSnapshotsDeniedActionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotsDeniedActionsOutcome(rsp);
+        else
+            return DescribeSnapshotsDeniedActionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotsDeniedActionsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeSnapshotsDeniedActionsAsync(const DescribeSnapshotsDeniedActionsRequest& request, const DescribeSnapshotsDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotsDeniedActions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeSnapshotsDeniedActionsOutcomeCallable LighthouseClient::DescribeSnapshotsDeniedActionsCallable(const DescribeSnapshotsDeniedActionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotsDeniedActionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotsDeniedActions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DisassociateInstancesKeyPairsOutcome LighthouseClient::DisassociateInstancesKeyPairs(const DisassociateInstancesKeyPairsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateInstancesKeyPairs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateInstancesKeyPairsResponse rsp = DisassociateInstancesKeyPairsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateInstancesKeyPairsOutcome(rsp);
+        else
+            return DisassociateInstancesKeyPairsOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateInstancesKeyPairsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DisassociateInstancesKeyPairsAsync(const DisassociateInstancesKeyPairsRequest& request, const DisassociateInstancesKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateInstancesKeyPairs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DisassociateInstancesKeyPairsOutcomeCallable LighthouseClient::DisassociateInstancesKeyPairsCallable(const DisassociateInstancesKeyPairsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateInstancesKeyPairsOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateInstancesKeyPairs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ImportKeyPairOutcome LighthouseClient::ImportKeyPair(const ImportKeyPairRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportKeyPair");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportKeyPairResponse rsp = ImportKeyPairResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportKeyPairOutcome(rsp);
+        else
+            return ImportKeyPairOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportKeyPairOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ImportKeyPairAsync(const ImportKeyPairRequest& request, const ImportKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImportKeyPair(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ImportKeyPairOutcomeCallable LighthouseClient::ImportKeyPairCallable(const ImportKeyPairRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImportKeyPairOutcome()>>(
+        [this, request]()
+        {
+            return this->ImportKeyPair(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::InquirePriceCreateBlueprintOutcome LighthouseClient::InquirePriceCreateBlueprint(const InquirePriceCreateBlueprintRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceCreateBlueprint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceCreateBlueprintResponse rsp = InquirePriceCreateBlueprintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceCreateBlueprintOutcome(rsp);
+        else
+            return InquirePriceCreateBlueprintOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceCreateBlueprintOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::InquirePriceCreateBlueprintAsync(const InquirePriceCreateBlueprintRequest& request, const InquirePriceCreateBlueprintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceCreateBlueprint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::InquirePriceCreateBlueprintOutcomeCallable LighthouseClient::InquirePriceCreateBlueprintCallable(const InquirePriceCreateBlueprintRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceCreateBlueprintOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceCreateBlueprint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::InquirePriceCreateInstancesOutcome LighthouseClient::InquirePriceCreateInstances(const InquirePriceCreateInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceCreateInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceCreateInstancesResponse rsp = InquirePriceCreateInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceCreateInstancesOutcome(rsp);
+        else
+            return InquirePriceCreateInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceCreateInstancesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::InquirePriceCreateInstancesAsync(const InquirePriceCreateInstancesRequest& request, const InquirePriceCreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceCreateInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::InquirePriceCreateInstancesOutcomeCallable LighthouseClient::InquirePriceCreateInstancesCallable(const InquirePriceCreateInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceCreateInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceCreateInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::InquirePriceRenewInstancesOutcome LighthouseClient::InquirePriceRenewInstances(const InquirePriceRenewInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceRenewInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceRenewInstancesResponse rsp = InquirePriceRenewInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceRenewInstancesOutcome(rsp);
+        else
+            return InquirePriceRenewInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceRenewInstancesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::InquirePriceRenewInstancesAsync(const InquirePriceRenewInstancesRequest& request, const InquirePriceRenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceRenewInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::InquirePriceRenewInstancesOutcomeCallable LighthouseClient::InquirePriceRenewInstancesCallable(const InquirePriceRenewInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceRenewInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceRenewInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::ModifyBlueprintAttributeOutcome LighthouseClient::ModifyBlueprintAttribute(const ModifyBlueprintAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyBlueprintAttribute");
@@ -635,6 +1495,221 @@ LighthouseClient::ModifyBlueprintAttributeOutcomeCallable LighthouseClient::Modi
         [this, request]()
         {
             return this->ModifyBlueprintAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ModifyFirewallRuleDescriptionOutcome LighthouseClient::ModifyFirewallRuleDescription(const ModifyFirewallRuleDescriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFirewallRuleDescription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFirewallRuleDescriptionResponse rsp = ModifyFirewallRuleDescriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFirewallRuleDescriptionOutcome(rsp);
+        else
+            return ModifyFirewallRuleDescriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFirewallRuleDescriptionOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyFirewallRuleDescriptionAsync(const ModifyFirewallRuleDescriptionRequest& request, const ModifyFirewallRuleDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFirewallRuleDescription(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyFirewallRuleDescriptionOutcomeCallable LighthouseClient::ModifyFirewallRuleDescriptionCallable(const ModifyFirewallRuleDescriptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFirewallRuleDescriptionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFirewallRuleDescription(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ModifyFirewallRulesOutcome LighthouseClient::ModifyFirewallRules(const ModifyFirewallRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFirewallRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFirewallRulesResponse rsp = ModifyFirewallRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFirewallRulesOutcome(rsp);
+        else
+            return ModifyFirewallRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFirewallRulesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyFirewallRulesAsync(const ModifyFirewallRulesRequest& request, const ModifyFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFirewallRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyFirewallRulesOutcomeCallable LighthouseClient::ModifyFirewallRulesCallable(const ModifyFirewallRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFirewallRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFirewallRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ModifyInstancesAttributeOutcome LighthouseClient::ModifyInstancesAttribute(const ModifyInstancesAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstancesAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstancesAttributeResponse rsp = ModifyInstancesAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstancesAttributeOutcome(rsp);
+        else
+            return ModifyInstancesAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstancesAttributeOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyInstancesAttributeAsync(const ModifyInstancesAttributeRequest& request, const ModifyInstancesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstancesAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyInstancesAttributeOutcomeCallable LighthouseClient::ModifyInstancesAttributeCallable(const ModifyInstancesAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstancesAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstancesAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ModifyInstancesLoginKeyPairAttributeOutcome LighthouseClient::ModifyInstancesLoginKeyPairAttribute(const ModifyInstancesLoginKeyPairAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstancesLoginKeyPairAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstancesLoginKeyPairAttributeResponse rsp = ModifyInstancesLoginKeyPairAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstancesLoginKeyPairAttributeOutcome(rsp);
+        else
+            return ModifyInstancesLoginKeyPairAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstancesLoginKeyPairAttributeOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyInstancesLoginKeyPairAttributeAsync(const ModifyInstancesLoginKeyPairAttributeRequest& request, const ModifyInstancesLoginKeyPairAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstancesLoginKeyPairAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyInstancesLoginKeyPairAttributeOutcomeCallable LighthouseClient::ModifyInstancesLoginKeyPairAttributeCallable(const ModifyInstancesLoginKeyPairAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstancesLoginKeyPairAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstancesLoginKeyPairAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ModifyInstancesRenewFlagOutcome LighthouseClient::ModifyInstancesRenewFlag(const ModifyInstancesRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstancesRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstancesRenewFlagResponse rsp = ModifyInstancesRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstancesRenewFlagOutcome(rsp);
+        else
+            return ModifyInstancesRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstancesRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyInstancesRenewFlagAsync(const ModifyInstancesRenewFlagRequest& request, const ModifyInstancesRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstancesRenewFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyInstancesRenewFlagOutcomeCallable LighthouseClient::ModifyInstancesRenewFlagCallable(const ModifyInstancesRenewFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstancesRenewFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstancesRenewFlag(request);
         }
     );
 
@@ -771,6 +1846,49 @@ LighthouseClient::ResetInstanceOutcomeCallable LighthouseClient::ResetInstanceCa
     return task->get_future();
 }
 
+LighthouseClient::ResetInstancesPasswordOutcome LighthouseClient::ResetInstancesPassword(const ResetInstancesPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetInstancesPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetInstancesPasswordResponse rsp = ResetInstancesPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetInstancesPasswordOutcome(rsp);
+        else
+            return ResetInstancesPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetInstancesPasswordOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ResetInstancesPasswordAsync(const ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetInstancesPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ResetInstancesPasswordOutcomeCallable LighthouseClient::ResetInstancesPasswordCallable(const ResetInstancesPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetInstancesPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetInstancesPassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::StartInstancesOutcome LighthouseClient::StartInstances(const StartInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "StartInstances");
@@ -850,6 +1968,49 @@ LighthouseClient::StopInstancesOutcomeCallable LighthouseClient::StopInstancesCa
         [this, request]()
         {
             return this->StopInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::TerminateInstancesOutcome LighthouseClient::TerminateInstances(const TerminateInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateInstancesResponse rsp = TerminateInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateInstancesOutcome(rsp);
+        else
+            return TerminateInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateInstancesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::TerminateInstancesAsync(const TerminateInstancesRequest& request, const TerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::TerminateInstancesOutcomeCallable LighthouseClient::TerminateInstancesCallable(const TerminateInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateInstances(request);
         }
     );
 

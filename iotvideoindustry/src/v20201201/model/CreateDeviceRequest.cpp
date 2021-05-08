@@ -26,6 +26,7 @@ using namespace std;
 CreateDeviceRequest::CreateDeviceRequest() :
     m_nickNameHasBeenSet(false),
     m_passWordHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false),
     m_groupIdHasBeenSet(false)
 {
 }
@@ -51,6 +52,14 @@ string CreateDeviceRequest::ToJsonString() const
         string key = "PassWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_passWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deviceType, allocator);
     }
 
     if (m_groupIdHasBeenSet)
@@ -99,6 +108,22 @@ void CreateDeviceRequest::SetPassWord(const string& _passWord)
 bool CreateDeviceRequest::PassWordHasBeenSet() const
 {
     return m_passWordHasBeenSet;
+}
+
+int64_t CreateDeviceRequest::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void CreateDeviceRequest::SetDeviceType(const int64_t& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool CreateDeviceRequest::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 
 string CreateDeviceRequest::GetGroupId() const

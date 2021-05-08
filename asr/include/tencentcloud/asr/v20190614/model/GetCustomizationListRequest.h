@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TagInfosHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return Limit 分页大小
+                     * 获取分页大小，默认1000
+                     * @return Limit 分页大小，默认1000
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小
-                     * @param Limit 分页大小
+                     * 设置分页大小，默认1000
+                     * @param Limit 分页大小，默认1000
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页offset
-                     * @return Offset 分页offset
+                     * 获取分页offset，默认0
+                     * @return Offset 分页offset，默认0
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页offset
-                     * @param Offset 分页offset
+                     * 设置分页offset，默认0
+                     * @param Offset 分页offset，默认0
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_tagInfosHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * 分页大小，默认1000
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页offset
+                     * 分页offset，默认0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

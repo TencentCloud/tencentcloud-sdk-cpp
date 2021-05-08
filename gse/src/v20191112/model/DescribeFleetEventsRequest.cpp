@@ -26,7 +26,10 @@ using namespace std;
 DescribeFleetEventsRequest::DescribeFleetEventsRequest() :
     m_fleetIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_eventCodeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -59,6 +62,30 @@ string DescribeFleetEventsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_eventCodeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EventCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_eventCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +142,54 @@ void DescribeFleetEventsRequest::SetOffset(const uint64_t& _offset)
 bool DescribeFleetEventsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeFleetEventsRequest::GetEventCode() const
+{
+    return m_eventCode;
+}
+
+void DescribeFleetEventsRequest::SetEventCode(const string& _eventCode)
+{
+    m_eventCode = _eventCode;
+    m_eventCodeHasBeenSet = true;
+}
+
+bool DescribeFleetEventsRequest::EventCodeHasBeenSet() const
+{
+    return m_eventCodeHasBeenSet;
+}
+
+string DescribeFleetEventsRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeFleetEventsRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeFleetEventsRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeFleetEventsRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeFleetEventsRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeFleetEventsRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 

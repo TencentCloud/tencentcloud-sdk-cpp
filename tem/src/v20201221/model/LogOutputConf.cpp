@@ -1,0 +1,147 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/tem/v20201221/model/LogOutputConf.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Tem::V20201221::Model;
+using namespace rapidjson;
+using namespace std;
+
+LogOutputConf::LogOutputConf() :
+    m_outputTypeHasBeenSet(false),
+    m_clsLogsetNameHasBeenSet(false),
+    m_clsLogTopicIdHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome LogOutputConf::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("OutputType") && !value["OutputType"].IsNull())
+    {
+        if (!value["OutputType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LogOutputConf.OutputType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputType = string(value["OutputType"].GetString());
+        m_outputTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClsLogsetName") && !value["ClsLogsetName"].IsNull())
+    {
+        if (!value["ClsLogsetName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LogOutputConf.ClsLogsetName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clsLogsetName = string(value["ClsLogsetName"].GetString());
+        m_clsLogsetNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClsLogTopicId") && !value["ClsLogTopicId"].IsNull())
+    {
+        if (!value["ClsLogTopicId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LogOutputConf.ClsLogTopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clsLogTopicId = string(value["ClsLogTopicId"].GetString());
+        m_clsLogTopicIdHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void LogOutputConf::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_outputTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OutputType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_outputType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsLogsetNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClsLogsetName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clsLogsetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsLogTopicIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClsLogTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clsLogTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string LogOutputConf::GetOutputType() const
+{
+    return m_outputType;
+}
+
+void LogOutputConf::SetOutputType(const string& _outputType)
+{
+    m_outputType = _outputType;
+    m_outputTypeHasBeenSet = true;
+}
+
+bool LogOutputConf::OutputTypeHasBeenSet() const
+{
+    return m_outputTypeHasBeenSet;
+}
+
+string LogOutputConf::GetClsLogsetName() const
+{
+    return m_clsLogsetName;
+}
+
+void LogOutputConf::SetClsLogsetName(const string& _clsLogsetName)
+{
+    m_clsLogsetName = _clsLogsetName;
+    m_clsLogsetNameHasBeenSet = true;
+}
+
+bool LogOutputConf::ClsLogsetNameHasBeenSet() const
+{
+    return m_clsLogsetNameHasBeenSet;
+}
+
+string LogOutputConf::GetClsLogTopicId() const
+{
+    return m_clsLogTopicId;
+}
+
+void LogOutputConf::SetClsLogTopicId(const string& _clsLogTopicId)
+{
+    m_clsLogTopicId = _clsLogTopicId;
+    m_clsLogTopicIdHasBeenSet = true;
+}
+
+bool LogOutputConf::ClsLogTopicIdHasBeenSet() const
+{
+    return m_clsLogTopicIdHasBeenSet;
+}
+
