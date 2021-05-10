@@ -960,6 +960,7 @@ namespace TencentCloud
 
                 /**
                  *本接口支持房产证关键字段的识别，包括房地产权利人、共有情况、登记时间、规划用途、房屋性质、房屋坐落等。
+目前接口对合肥、成都、佛山三个城市的房产证版式识别较好。
                  * @param req PropOwnerCertOCRRequest
                  * @return PropOwnerCertOCROutcome
                  */

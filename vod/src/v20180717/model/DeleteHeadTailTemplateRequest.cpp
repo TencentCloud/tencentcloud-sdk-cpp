@@ -14,42 +14,42 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/apigateway/v20180808/model/DeleteServiceRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteHeadTailTemplateRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Apigateway::V20180808::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace rapidjson;
 using namespace std;
 
-DeleteServiceRequest::DeleteServiceRequest() :
-    m_serviceIdHasBeenSet(false),
-    m_skipVerificationHasBeenSet(false)
+DeleteHeadTailTemplateRequest::DeleteHeadTailTemplateRequest() :
+    m_definitionHasBeenSet(false),
+    m_subAppIdHasBeenSet(false)
 {
 }
 
-string DeleteServiceRequest::ToJsonString() const
+string DeleteHeadTailTemplateRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_serviceIdHasBeenSet)
+    if (m_definitionHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "ServiceId";
+        string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_serviceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_definition, allocator);
     }
 
-    if (m_skipVerificationHasBeenSet)
+    if (m_subAppIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "SkipVerification";
+        string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_skipVerification, allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -60,36 +60,36 @@ string DeleteServiceRequest::ToJsonString() const
 }
 
 
-string DeleteServiceRequest::GetServiceId() const
+int64_t DeleteHeadTailTemplateRequest::GetDefinition() const
 {
-    return m_serviceId;
+    return m_definition;
 }
 
-void DeleteServiceRequest::SetServiceId(const string& _serviceId)
+void DeleteHeadTailTemplateRequest::SetDefinition(const int64_t& _definition)
 {
-    m_serviceId = _serviceId;
-    m_serviceIdHasBeenSet = true;
+    m_definition = _definition;
+    m_definitionHasBeenSet = true;
 }
 
-bool DeleteServiceRequest::ServiceIdHasBeenSet() const
+bool DeleteHeadTailTemplateRequest::DefinitionHasBeenSet() const
 {
-    return m_serviceIdHasBeenSet;
+    return m_definitionHasBeenSet;
 }
 
-int64_t DeleteServiceRequest::GetSkipVerification() const
+uint64_t DeleteHeadTailTemplateRequest::GetSubAppId() const
 {
-    return m_skipVerification;
+    return m_subAppId;
 }
 
-void DeleteServiceRequest::SetSkipVerification(const int64_t& _skipVerification)
+void DeleteHeadTailTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
 {
-    m_skipVerification = _skipVerification;
-    m_skipVerificationHasBeenSet = true;
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
 }
 
-bool DeleteServiceRequest::SkipVerificationHasBeenSet() const
+bool DeleteHeadTailTemplateRequest::SubAppIdHasBeenSet() const
 {
-    return m_skipVerificationHasBeenSet;
+    return m_subAppIdHasBeenSet;
 }
 
 

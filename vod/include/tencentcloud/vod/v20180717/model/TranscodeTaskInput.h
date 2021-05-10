@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/WatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/MosaicInput.h>
+#include <tencentcloud/vod/v20180717/model/HeadTailTaskInput.h>
 
 
 namespace TencentCloud
@@ -101,6 +102,24 @@ namespace TencentCloud
                      * @return MosaicSet 是否已赋值
                      */
                     bool MosaicSetHasBeenSet() const;
+
+                    /**
+                     * 获取片头片尾列表，支持多片头片尾，最大可支持 10 个。
+                     * @return HeadTailSet 片头片尾列表，支持多片头片尾，最大可支持 10 个。
+                     */
+                    std::vector<HeadTailTaskInput> GetHeadTailSet() const;
+
+                    /**
+                     * 设置片头片尾列表，支持多片头片尾，最大可支持 10 个。
+                     * @param HeadTailSet 片头片尾列表，支持多片头片尾，最大可支持 10 个。
+                     */
+                    void SetHeadTailSet(const std::vector<HeadTailTaskInput>& _headTailSet);
+
+                    /**
+                     * 判断参数 HeadTailSet 是否已赋值
+                     * @return HeadTailSet 是否已赋值
+                     */
+                    bool HeadTailSetHasBeenSet() const;
 
                     /**
                      * 获取转码后的视频的起始时间偏移，单位：秒。
@@ -181,6 +200,12 @@ namespace TencentCloud
                      */
                     std::vector<MosaicInput> m_mosaicSet;
                     bool m_mosaicSetHasBeenSet;
+
+                    /**
+                     * 片头片尾列表，支持多片头片尾，最大可支持 10 个。
+                     */
+                    std::vector<HeadTailTaskInput> m_headTailSet;
+                    bool m_headTailSetHasBeenSet;
 
                     /**
                      * 转码后的视频的起始时间偏移，单位：秒。

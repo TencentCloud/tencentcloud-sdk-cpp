@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool ServiceIdHasBeenSet() const;
 
+                    /**
+                     * 获取跳过删除前置条件校验（仅支持独享实例上的服务）
+                     * @return SkipVerification 跳过删除前置条件校验（仅支持独享实例上的服务）
+                     */
+                    int64_t GetSkipVerification() const;
+
+                    /**
+                     * 设置跳过删除前置条件校验（仅支持独享实例上的服务）
+                     * @param SkipVerification 跳过删除前置条件校验（仅支持独享实例上的服务）
+                     */
+                    void SetSkipVerification(const int64_t& _skipVerification);
+
+                    /**
+                     * 判断参数 SkipVerification 是否已赋值
+                     * @return SkipVerification 是否已赋值
+                     */
+                    bool SkipVerificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;
+
+                    /**
+                     * 跳过删除前置条件校验（仅支持独享实例上的服务）
+                     */
+                    int64_t m_skipVerification;
+                    bool m_skipVerificationHasBeenSet;
 
                 };
             }

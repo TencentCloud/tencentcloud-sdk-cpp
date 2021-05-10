@@ -232,6 +232,24 @@ namespace TencentCloud
                      */
                     bool RouterCountHasBeenSet() const;
 
+                    /**
+                     * 获取扩容的Master节点数量。
+                     * @return MasterCount 扩容的Master节点数量。
+                     */
+                    uint64_t GetMasterCount() const;
+
+                    /**
+                     * 设置扩容的Master节点数量。
+                     * @param MasterCount 扩容的Master节点数量。
+                     */
+                    void SetMasterCount(const uint64_t& _masterCount);
+
+                    /**
+                     * 判断参数 MasterCount 是否已赋值
+                     * @return MasterCount 是否已赋值
+                     */
+                    bool MasterCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -294,6 +312,12 @@ namespace TencentCloud
                      */
                     uint64_t m_routerCount;
                     bool m_routerCountHasBeenSet;
+
+                    /**
+                     * 扩容的Master节点数量。
+                     */
+                    uint64_t m_masterCount;
+                    bool m_masterCountHasBeenSet;
 
                 };
             }

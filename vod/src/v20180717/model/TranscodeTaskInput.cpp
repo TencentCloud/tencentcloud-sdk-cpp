@@ -25,6 +25,7 @@ TranscodeTaskInput::TranscodeTaskInput() :
     m_definitionHasBeenSet(false),
     m_watermarkSetHasBeenSet(false),
     m_mosaicSetHasBeenSet(false),
+    m_headTailSetHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false)
 {
@@ -83,6 +84,26 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const Value &value)
             m_mosaicSet.push_back(item);
         }
         m_mosaicSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("HeadTailSet") && !value["HeadTailSet"].IsNull())
+    {
+        if (!value["HeadTailSet"].IsArray())
+            return CoreInternalOutcome(Error("response `TranscodeTaskInput.HeadTailSet` is not array type"));
+
+        const Value &tmpValue = value["HeadTailSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HeadTailTaskInput item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_headTailSet.push_back(item);
+        }
+        m_headTailSetHasBeenSet = true;
     }
 
     if (value.HasMember("StartTimeOffset") && !value["StartTimeOffset"].IsNull())
@@ -144,6 +165,21 @@ void TranscodeTaskInput::ToJsonObject(Value &value, Document::AllocatorType& all
 
         int i=0;
         for (auto itr = m_mosaicSet.begin(); itr != m_mosaicSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_headTailSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HeadTailSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_headTailSet.begin(); itr != m_headTailSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -215,6 +251,22 @@ void TranscodeTaskInput::SetMosaicSet(const vector<MosaicInput>& _mosaicSet)
 bool TranscodeTaskInput::MosaicSetHasBeenSet() const
 {
     return m_mosaicSetHasBeenSet;
+}
+
+vector<HeadTailTaskInput> TranscodeTaskInput::GetHeadTailSet() const
+{
+    return m_headTailSet;
+}
+
+void TranscodeTaskInput::SetHeadTailSet(const vector<HeadTailTaskInput>& _headTailSet)
+{
+    m_headTailSet = _headTailSet;
+    m_headTailSetHasBeenSet = true;
+}
+
+bool TranscodeTaskInput::HeadTailSetHasBeenSet() const
+{
+    return m_headTailSetHasBeenSet;
 }
 
 double TranscodeTaskInput::GetStartTimeOffset() const

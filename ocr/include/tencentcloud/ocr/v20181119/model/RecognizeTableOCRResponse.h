@@ -80,10 +80,8 @@ namespace TencentCloud
                     bool PdfPageSizeHasBeenSet() const;
 
                     /**
-                     * 获取图片旋转角度（角度制），文本的水平
-方向为 0°；顺时针为正，逆时针为负
-                     * @return Angle 图片旋转角度（角度制），文本的水平
-方向为 0°；顺时针为正，逆时针为负
+                     * 获取图片旋转角度（角度制），文本的水平方向为0°，统一以逆时针方向旋转，逆时针为负，角度范围为-360°至0°。
+                     * @return Angle 图片旋转角度（角度制），文本的水平方向为0°，统一以逆时针方向旋转，逆时针为负，角度范围为-360°至0°。
                      */
                     double GetAngle() const;
 
@@ -114,8 +112,7 @@ namespace TencentCloud
                     bool m_pdfPageSizeHasBeenSet;
 
                     /**
-                     * 图片旋转角度（角度制），文本的水平
-方向为 0°；顺时针为正，逆时针为负
+                     * 图片旋转角度（角度制），文本的水平方向为0°，统一以逆时针方向旋转，逆时针为负，角度范围为-360°至0°。
                      */
                     double m_angle;
                     bool m_angleHasBeenSet;

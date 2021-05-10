@@ -32,7 +32,8 @@ InquiryPriceScaleOutInstanceRequest::InquiryPriceScaleOutInstanceRequest() :
     m_coreCountHasBeenSet(false),
     m_taskCountHasBeenSet(false),
     m_currencyHasBeenSet(false),
-    m_routerCountHasBeenSet(false)
+    m_routerCountHasBeenSet(false),
+    m_masterCountHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string InquiryPriceScaleOutInstanceRequest::ToJsonString() const
         string key = "RouterCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_routerCount, allocator);
+    }
+
+    if (m_masterCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MasterCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_masterCount, allocator);
     }
 
 
@@ -265,6 +274,22 @@ void InquiryPriceScaleOutInstanceRequest::SetRouterCount(const uint64_t& _router
 bool InquiryPriceScaleOutInstanceRequest::RouterCountHasBeenSet() const
 {
     return m_routerCountHasBeenSet;
+}
+
+uint64_t InquiryPriceScaleOutInstanceRequest::GetMasterCount() const
+{
+    return m_masterCount;
+}
+
+void InquiryPriceScaleOutInstanceRequest::SetMasterCount(const uint64_t& _masterCount)
+{
+    m_masterCount = _masterCount;
+    m_masterCountHasBeenSet = true;
+}
+
+bool InquiryPriceScaleOutInstanceRequest::MasterCountHasBeenSet() const
+{
+    return m_masterCountHasBeenSet;
 }
 
 
