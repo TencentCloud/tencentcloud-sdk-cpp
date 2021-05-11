@@ -74,17 +74,17 @@ namespace TencentCloud
 
                     /**
                      * 获取签名过期时间设置
-单位为秒，最大可设置为 31536000
+单位为秒，最大可设置为 630720000
                      * @return ExpireTime 签名过期时间设置
-单位为秒，最大可设置为 31536000
+单位为秒，最大可设置为 630720000
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置签名过期时间设置
-单位为秒，最大可设置为 31536000
+单位为秒，最大可设置为 630720000
                      * @param ExpireTime 签名过期时间设置
-单位为秒，最大可设置为 31536000
+单位为秒，最大可设置为 630720000
                      */
                     void SetExpireTime(const int64_t& _expireTime);
 
@@ -150,7 +150,7 @@ blacklist：黑名单，表示仅对 FileExtensions 中的类型进行鉴权
 
                     /**
                      * 签名过期时间设置
-单位为秒，最大可设置为 31536000
+单位为秒，最大可设置为 630720000
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;

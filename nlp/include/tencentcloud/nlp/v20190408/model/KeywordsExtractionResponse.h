@@ -45,7 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取关键词提取结果
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keywords 关键词提取结果
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Keyword> GetKeywords() const;
 
@@ -59,6 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 关键词提取结果
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Keyword> m_keywords;
                     bool m_keywordsHasBeenSet;

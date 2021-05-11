@@ -22,8 +22,8 @@ using namespace rapidjson;
 using namespace std;
 
 Similarity::Similarity() :
-    m_scoreHasBeenSet(false),
-    m_textHasBeenSet(false)
+    m_textHasBeenSet(false),
+    m_scoreHasBeenSet(false)
 {
 }
 
@@ -31,16 +31,6 @@ CoreInternalOutcome Similarity::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Score") && !value["Score"].IsNull())
-    {
-        if (!value["Score"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Error("response `Similarity.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_score = value["Score"].GetDouble();
-        m_scoreHasBeenSet = true;
-    }
 
     if (value.HasMember("Text") && !value["Text"].IsNull())
     {
@@ -52,20 +42,22 @@ CoreInternalOutcome Similarity::Deserialize(const Value &value)
         m_textHasBeenSet = true;
     }
 
+    if (value.HasMember("Score") && !value["Score"].IsNull())
+    {
+        if (!value["Score"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `Similarity.Score` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_score = value["Score"].GetDouble();
+        m_scoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void Similarity::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_scoreHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Score";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_score, allocator);
-    }
 
     if (m_textHasBeenSet)
     {
@@ -75,24 +67,16 @@ void Similarity::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_scoreHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Score";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_score, allocator);
+    }
+
 }
 
-
-double Similarity::GetScore() const
-{
-    return m_score;
-}
-
-void Similarity::SetScore(const double& _score)
-{
-    m_score = _score;
-    m_scoreHasBeenSet = true;
-}
-
-bool Similarity::ScoreHasBeenSet() const
-{
-    return m_scoreHasBeenSet;
-}
 
 string Similarity::GetText() const
 {
@@ -108,5 +92,21 @@ void Similarity::SetText(const string& _text)
 bool Similarity::TextHasBeenSet() const
 {
     return m_textHasBeenSet;
+}
+
+double Similarity::GetScore() const
+{
+    return m_score;
+}
+
+void Similarity::SetScore(const double& _score)
+{
+    m_score = _score;
+    m_scoreHasBeenSet = true;
+}
+
+bool Similarity::ScoreHasBeenSet() const
+{
+    return m_scoreHasBeenSet;
 }
 

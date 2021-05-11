@@ -25,8 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 WordEmbeddingResponse::WordEmbeddingResponse() :
-    m_dimensionHasBeenSet(false),
-    m_vectorHasBeenSet(false)
+    m_vectorHasBeenSet(false),
+    m_dimensionHasBeenSet(false)
 {
 }
 
@@ -64,16 +64,6 @@ CoreInternalOutcome WordEmbeddingResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Dimension") && !rsp["Dimension"].IsNull())
-    {
-        if (!rsp["Dimension"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `Dimension` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_dimension = rsp["Dimension"].GetUint64();
-        m_dimensionHasBeenSet = true;
-    }
-
     if (rsp.HasMember("Vector") && !rsp["Vector"].IsNull())
     {
         if (!rsp["Vector"].IsArray())
@@ -87,20 +77,20 @@ CoreInternalOutcome WordEmbeddingResponse::Deserialize(const string &payload)
         m_vectorHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Dimension") && !rsp["Dimension"].IsNull())
+    {
+        if (!rsp["Dimension"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `Dimension` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dimension = rsp["Dimension"].GetUint64();
+        m_dimensionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-
-uint64_t WordEmbeddingResponse::GetDimension() const
-{
-    return m_dimension;
-}
-
-bool WordEmbeddingResponse::DimensionHasBeenSet() const
-{
-    return m_dimensionHasBeenSet;
-}
 
 vector<double> WordEmbeddingResponse::GetVector() const
 {
@@ -110,6 +100,16 @@ vector<double> WordEmbeddingResponse::GetVector() const
 bool WordEmbeddingResponse::VectorHasBeenSet() const
 {
     return m_vectorHasBeenSet;
+}
+
+uint64_t WordEmbeddingResponse::GetDimension() const
+{
+    return m_dimension;
+}
+
+bool WordEmbeddingResponse::DimensionHasBeenSet() const
+{
+    return m_dimensionHasBeenSet;
 }
 
 

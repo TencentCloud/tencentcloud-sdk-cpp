@@ -22,10 +22,10 @@ using namespace rapidjson;
 using namespace std;
 
 PosToken::PosToken() :
-    m_beginOffsetHasBeenSet(false),
+    m_wordHasBeenSet(false),
     m_lengthHasBeenSet(false),
-    m_posHasBeenSet(false),
-    m_wordHasBeenSet(false)
+    m_beginOffsetHasBeenSet(false),
+    m_posHasBeenSet(false)
 {
 }
 
@@ -34,24 +34,34 @@ CoreInternalOutcome PosToken::Deserialize(const Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("BeginOffset") && !value["BeginOffset"].IsNull())
+    if (value.HasMember("Word") && !value["Word"].IsNull())
     {
-        if (!value["BeginOffset"].IsUint64())
+        if (!value["Word"].IsString())
         {
-            return CoreInternalOutcome(Error("response `PosToken.BeginOffset` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PosToken.Word` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_beginOffset = value["BeginOffset"].GetUint64();
-        m_beginOffsetHasBeenSet = true;
+        m_word = string(value["Word"].GetString());
+        m_wordHasBeenSet = true;
     }
 
     if (value.HasMember("Length") && !value["Length"].IsNull())
     {
-        if (!value["Length"].IsUint64())
+        if (!value["Length"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PosToken.Length` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `PosToken.Length` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_length = value["Length"].GetUint64();
+        m_length = value["Length"].GetInt64();
         m_lengthHasBeenSet = true;
+    }
+
+    if (value.HasMember("BeginOffset") && !value["BeginOffset"].IsNull())
+    {
+        if (!value["BeginOffset"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PosToken.BeginOffset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_beginOffset = value["BeginOffset"].GetInt64();
+        m_beginOffsetHasBeenSet = true;
     }
 
     if (value.HasMember("Pos") && !value["Pos"].IsNull())
@@ -64,16 +74,6 @@ CoreInternalOutcome PosToken::Deserialize(const Value &value)
         m_posHasBeenSet = true;
     }
 
-    if (value.HasMember("Word") && !value["Word"].IsNull())
-    {
-        if (!value["Word"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `PosToken.Word` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_word = string(value["Word"].GetString());
-        m_wordHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -81,12 +81,12 @@ CoreInternalOutcome PosToken::Deserialize(const Value &value)
 void PosToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
-    if (m_beginOffsetHasBeenSet)
+    if (m_wordHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "BeginOffset";
+        string key = "Word";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_beginOffset, allocator);
+        value.AddMember(iKey, Value(m_word.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lengthHasBeenSet)
@@ -97,6 +97,14 @@ void PosToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         value.AddMember(iKey, m_length, allocator);
     }
 
+    if (m_beginOffsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BeginOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_beginOffset, allocator);
+    }
+
     if (m_posHasBeenSet)
     {
         Value iKey(kStringType);
@@ -105,39 +113,31 @@ void PosToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         value.AddMember(iKey, Value(m_pos.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_wordHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Word";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_word.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
 
-uint64_t PosToken::GetBeginOffset() const
+string PosToken::GetWord() const
 {
-    return m_beginOffset;
+    return m_word;
 }
 
-void PosToken::SetBeginOffset(const uint64_t& _beginOffset)
+void PosToken::SetWord(const string& _word)
 {
-    m_beginOffset = _beginOffset;
-    m_beginOffsetHasBeenSet = true;
+    m_word = _word;
+    m_wordHasBeenSet = true;
 }
 
-bool PosToken::BeginOffsetHasBeenSet() const
+bool PosToken::WordHasBeenSet() const
 {
-    return m_beginOffsetHasBeenSet;
+    return m_wordHasBeenSet;
 }
 
-uint64_t PosToken::GetLength() const
+int64_t PosToken::GetLength() const
 {
     return m_length;
 }
 
-void PosToken::SetLength(const uint64_t& _length)
+void PosToken::SetLength(const int64_t& _length)
 {
     m_length = _length;
     m_lengthHasBeenSet = true;
@@ -146,6 +146,22 @@ void PosToken::SetLength(const uint64_t& _length)
 bool PosToken::LengthHasBeenSet() const
 {
     return m_lengthHasBeenSet;
+}
+
+int64_t PosToken::GetBeginOffset() const
+{
+    return m_beginOffset;
+}
+
+void PosToken::SetBeginOffset(const int64_t& _beginOffset)
+{
+    m_beginOffset = _beginOffset;
+    m_beginOffsetHasBeenSet = true;
+}
+
+bool PosToken::BeginOffsetHasBeenSet() const
+{
+    return m_beginOffsetHasBeenSet;
 }
 
 string PosToken::GetPos() const
@@ -162,21 +178,5 @@ void PosToken::SetPos(const string& _pos)
 bool PosToken::PosHasBeenSet() const
 {
     return m_posHasBeenSet;
-}
-
-string PosToken::GetWord() const
-{
-    return m_word;
-}
-
-void PosToken::SetWord(const string& _word)
-{
-    m_word = _word;
-    m_wordHasBeenSet = true;
-}
-
-bool PosToken::WordHasBeenSet() const
-{
-    return m_wordHasBeenSet;
 }
 

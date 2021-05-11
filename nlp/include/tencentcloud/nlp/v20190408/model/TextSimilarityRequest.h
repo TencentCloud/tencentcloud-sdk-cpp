@@ -61,18 +61,14 @@ namespace TencentCloud
                     bool SrcTextHasBeenSet() const;
 
                     /**
-                     * 获取需要与源句子计算相似度的一个或多个目标句子（仅支持UTF-8格式，目标句子的数量不超过100个，每个句子不超过500字符）
-注意：每成功计算1个目标句子与源句子的相似度算1次调用
-                     * @return TargetText 需要与源句子计算相似度的一个或多个目标句子（仅支持UTF-8格式，目标句子的数量不超过100个，每个句子不超过500字符）
-注意：每成功计算1个目标句子与源句子的相似度算1次调用
+                     * 获取目标句子
+                     * @return TargetText 目标句子
                      */
                     std::vector<std::string> GetTargetText() const;
 
                     /**
-                     * 设置需要与源句子计算相似度的一个或多个目标句子（仅支持UTF-8格式，目标句子的数量不超过100个，每个句子不超过500字符）
-注意：每成功计算1个目标句子与源句子的相似度算1次调用
-                     * @param TargetText 需要与源句子计算相似度的一个或多个目标句子（仅支持UTF-8格式，目标句子的数量不超过100个，每个句子不超过500字符）
-注意：每成功计算1个目标句子与源句子的相似度算1次调用
+                     * 设置目标句子
+                     * @param TargetText 目标句子
                      */
                     void SetTargetText(const std::vector<std::string>& _targetText);
 
@@ -91,8 +87,7 @@ namespace TencentCloud
                     bool m_srcTextHasBeenSet;
 
                     /**
-                     * 需要与源句子计算相似度的一个或多个目标句子（仅支持UTF-8格式，目标句子的数量不超过100个，每个句子不超过500字符）
-注意：每成功计算1个目标句子与源句子的相似度算1次调用
+                     * 目标句子
                      */
                     std::vector<std::string> m_targetText;
                     bool m_targetTextHasBeenSet;

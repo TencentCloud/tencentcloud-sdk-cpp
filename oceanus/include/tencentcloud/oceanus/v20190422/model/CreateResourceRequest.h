@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，占时只支持jar，填1
-                     * @return ResourceType 资源类型，占时只支持jar，填1
+                     * 获取资源类型。目前只支持 JAR，取值为 1
+                     * @return ResourceType 资源类型。目前只支持 JAR，取值为 1
                      */
                     int64_t GetResourceType() const;
 
                     /**
-                     * 设置资源类型，占时只支持jar，填1
-                     * @param ResourceType 资源类型，占时只支持jar，填1
+                     * 设置资源类型。目前只支持 JAR，取值为 1
+                     * @param ResourceType 资源类型。目前只支持 JAR，取值为 1
                      */
                     void SetResourceType(const int64_t& _resourceType);
 
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 资源类型，占时只支持jar，填1
+                     * 资源类型。目前只支持 JAR，取值为 1
                      */
                     int64_t m_resourceType;
                     bool m_resourceTypeHasBeenSet;

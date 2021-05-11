@@ -47,40 +47,58 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始位置
-                     * @return BeginOffset 起始位置
+                     * 获取基础词
+                     * @return Word 基础词
                      */
-                    uint64_t GetBeginOffset() const;
+                    std::string GetWord() const;
 
                     /**
-                     * 设置起始位置
-                     * @param BeginOffset 起始位置
+                     * 设置基础词
+                     * @param Word 基础词
                      */
-                    void SetBeginOffset(const uint64_t& _beginOffset);
+                    void SetWord(const std::string& _word);
 
                     /**
-                     * 判断参数 BeginOffset 是否已赋值
-                     * @return BeginOffset 是否已赋值
+                     * 判断参数 Word 是否已赋值
+                     * @return Word 是否已赋值
                      */
-                    bool BeginOffsetHasBeenSet() const;
+                    bool WordHasBeenSet() const;
 
                     /**
                      * 获取长度
                      * @return Length 长度
                      */
-                    uint64_t GetLength() const;
+                    int64_t GetLength() const;
 
                     /**
                      * 设置长度
                      * @param Length 长度
                      */
-                    void SetLength(const uint64_t& _length);
+                    void SetLength(const int64_t& _length);
 
                     /**
                      * 判断参数 Length 是否已赋值
                      * @return Length 是否已赋值
                      */
                     bool LengthHasBeenSet() const;
+
+                    /**
+                     * 获取起始位置
+                     * @return BeginOffset 起始位置
+                     */
+                    int64_t GetBeginOffset() const;
+
+                    /**
+                     * 设置起始位置
+                     * @param BeginOffset 起始位置
+                     */
+                    void SetBeginOffset(const int64_t& _beginOffset);
+
+                    /**
+                     * 判断参数 BeginOffset 是否已赋值
+                     * @return BeginOffset 是否已赋值
+                     */
+                    bool BeginOffsetHasBeenSet() const;
 
                     /**
                      * 获取词性
@@ -100,49 +118,31 @@ namespace TencentCloud
                      */
                     bool PosHasBeenSet() const;
 
-                    /**
-                     * 获取基础词
-                     * @return Word 基础词
-                     */
-                    std::string GetWord() const;
-
-                    /**
-                     * 设置基础词
-                     * @param Word 基础词
-                     */
-                    void SetWord(const std::string& _word);
-
-                    /**
-                     * 判断参数 Word 是否已赋值
-                     * @return Word 是否已赋值
-                     */
-                    bool WordHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 起始位置
-                     */
-                    uint64_t m_beginOffset;
-                    bool m_beginOffsetHasBeenSet;
-
-                    /**
-                     * 长度
-                     */
-                    uint64_t m_length;
-                    bool m_lengthHasBeenSet;
-
-                    /**
-                     * 词性
-                     */
-                    std::string m_pos;
-                    bool m_posHasBeenSet;
 
                     /**
                      * 基础词
                      */
                     std::string m_word;
                     bool m_wordHasBeenSet;
+
+                    /**
+                     * 长度
+                     */
+                    int64_t m_length;
+                    bool m_lengthHasBeenSet;
+
+                    /**
+                     * 起始位置
+                     */
+                    int64_t m_beginOffset;
+                    bool m_beginOffsetHasBeenSet;
+
+                    /**
+                     * 词性
+                     */
+                    std::string m_pos;
+                    bool m_posHasBeenSet;
 
                 };
             }

@@ -25,8 +25,10 @@ using namespace std;
 
 ModifyInstanceTokenRequest::ModifyInstanceTokenRequest() :
     m_tokenIdHasBeenSet(false),
+    m_registryIdHasBeenSet(false),
     m_enableHasBeenSet(false),
-    m_registryIdHasBeenSet(false)
+    m_descHasBeenSet(false),
+    m_modifyFlagHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,14 @@ string ModifyInstanceTokenRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_tokenId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_registryIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RegistryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_registryId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_enableHasBeenSet)
     {
         Value iKey(kStringType);
@@ -53,12 +63,20 @@ string ModifyInstanceTokenRequest::ToJsonString() const
         d.AddMember(iKey, m_enable, allocator);
     }
 
-    if (m_registryIdHasBeenSet)
+    if (m_descHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "RegistryId";
+        string key = "Desc";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_registryId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_desc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModifyFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modifyFlag, allocator);
     }
 
 
@@ -85,6 +103,22 @@ bool ModifyInstanceTokenRequest::TokenIdHasBeenSet() const
     return m_tokenIdHasBeenSet;
 }
 
+string ModifyInstanceTokenRequest::GetRegistryId() const
+{
+    return m_registryId;
+}
+
+void ModifyInstanceTokenRequest::SetRegistryId(const string& _registryId)
+{
+    m_registryId = _registryId;
+    m_registryIdHasBeenSet = true;
+}
+
+bool ModifyInstanceTokenRequest::RegistryIdHasBeenSet() const
+{
+    return m_registryIdHasBeenSet;
+}
+
 bool ModifyInstanceTokenRequest::GetEnable() const
 {
     return m_enable;
@@ -101,20 +135,36 @@ bool ModifyInstanceTokenRequest::EnableHasBeenSet() const
     return m_enableHasBeenSet;
 }
 
-string ModifyInstanceTokenRequest::GetRegistryId() const
+string ModifyInstanceTokenRequest::GetDesc() const
 {
-    return m_registryId;
+    return m_desc;
 }
 
-void ModifyInstanceTokenRequest::SetRegistryId(const string& _registryId)
+void ModifyInstanceTokenRequest::SetDesc(const string& _desc)
 {
-    m_registryId = _registryId;
-    m_registryIdHasBeenSet = true;
+    m_desc = _desc;
+    m_descHasBeenSet = true;
 }
 
-bool ModifyInstanceTokenRequest::RegistryIdHasBeenSet() const
+bool ModifyInstanceTokenRequest::DescHasBeenSet() const
 {
-    return m_registryIdHasBeenSet;
+    return m_descHasBeenSet;
+}
+
+int64_t ModifyInstanceTokenRequest::GetModifyFlag() const
+{
+    return m_modifyFlag;
+}
+
+void ModifyInstanceTokenRequest::SetModifyFlag(const int64_t& _modifyFlag)
+{
+    m_modifyFlag = _modifyFlag;
+    m_modifyFlagHasBeenSet = true;
+}
+
+bool ModifyInstanceTokenRequest::ModifyFlagHasBeenSet() const
+{
+    return m_modifyFlagHasBeenSet;
 }
 
 

@@ -25,8 +25,8 @@ using namespace std;
 
 ChatBotRequest::ChatBotRequest() :
     m_queryHasBeenSet(false),
-    m_flagHasBeenSet(false),
-    m_openIdHasBeenSet(false)
+    m_openIdHasBeenSet(false),
+    m_flagHasBeenSet(false)
 {
 }
 
@@ -45,20 +45,20 @@ string ChatBotRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_query.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_flagHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Flag";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_flag, allocator);
-    }
-
     if (m_openIdHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "OpenId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_openId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Flag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flag, allocator);
     }
 
 
@@ -85,22 +85,6 @@ bool ChatBotRequest::QueryHasBeenSet() const
     return m_queryHasBeenSet;
 }
 
-uint64_t ChatBotRequest::GetFlag() const
-{
-    return m_flag;
-}
-
-void ChatBotRequest::SetFlag(const uint64_t& _flag)
-{
-    m_flag = _flag;
-    m_flagHasBeenSet = true;
-}
-
-bool ChatBotRequest::FlagHasBeenSet() const
-{
-    return m_flagHasBeenSet;
-}
-
 string ChatBotRequest::GetOpenId() const
 {
     return m_openId;
@@ -115,6 +99,22 @@ void ChatBotRequest::SetOpenId(const string& _openId)
 bool ChatBotRequest::OpenIdHasBeenSet() const
 {
     return m_openIdHasBeenSet;
+}
+
+uint64_t ChatBotRequest::GetFlag() const
+{
+    return m_flag;
+}
+
+void ChatBotRequest::SetFlag(const uint64_t& _flag)
+{
+    m_flag = _flag;
+    m_flagHasBeenSet = true;
+}
+
+bool ChatBotRequest::FlagHasBeenSet() const
+{
+    return m_flagHasBeenSet;
 }
 
 

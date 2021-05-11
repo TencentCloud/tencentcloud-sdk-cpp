@@ -47,7 +47,8 @@ LaunchConfiguration::LaunchConfiguration() :
     m_lastOperationInstanceTypesCheckPolicyHasBeenSet(false),
     m_hostNameSettingsHasBeenSet(false),
     m_instanceNameSettingsHasBeenSet(false),
-    m_instanceChargePrepaidHasBeenSet(false)
+    m_instanceChargePrepaidHasBeenSet(false),
+    m_diskTypePolicyHasBeenSet(false)
 {
 }
 
@@ -408,6 +409,16 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const Value &value)
         m_instanceChargePrepaidHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskTypePolicy") && !value["DiskTypePolicy"].IsNull())
+    {
+        if (!value["DiskTypePolicy"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LaunchConfiguration.DiskTypePolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskTypePolicy = string(value["DiskTypePolicy"].GetString());
+        m_diskTypePolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -660,6 +671,14 @@ void LaunchConfiguration::ToJsonObject(Value &value, Document::AllocatorType& al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_instanceChargePrepaid.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_diskTypePolicyHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskTypePolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_diskTypePolicy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1079,5 +1098,21 @@ void LaunchConfiguration::SetInstanceChargePrepaid(const InstanceChargePrepaid& 
 bool LaunchConfiguration::InstanceChargePrepaidHasBeenSet() const
 {
     return m_instanceChargePrepaidHasBeenSet;
+}
+
+string LaunchConfiguration::GetDiskTypePolicy() const
+{
+    return m_diskTypePolicy;
+}
+
+void LaunchConfiguration::SetDiskTypePolicy(const string& _diskTypePolicy)
+{
+    m_diskTypePolicy = _diskTypePolicy;
+    m_diskTypePolicyHasBeenSet = true;
+}
+
+bool LaunchConfiguration::DiskTypePolicyHasBeenSet() const
+{
+    return m_diskTypePolicyHasBeenSet;
 }
 

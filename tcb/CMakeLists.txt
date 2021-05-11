@@ -33,6 +33,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeEndUsersRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEndUserStatisticRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudRunServiceSimpleVersionSnapshot.h
+  include/tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunServerDBClusterResponse.h
   include/tencentcloud/tcb/v20180608/model/LogServiceInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceForExtendRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyEndUserRequest.h
@@ -54,6 +55,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h
+  include/tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunServerDBClusterRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h
@@ -164,6 +166,7 @@ set(tcb_src
   src/v20180608/model/DescribeEndUsersRequest.cpp
   src/v20180608/model/DescribeEndUserStatisticRequest.cpp
   src/v20180608/model/CloudRunServiceSimpleVersionSnapshot.cpp
+  src/v20180608/model/CreateWxCloudBaseRunServerDBClusterResponse.cpp
   src/v20180608/model/LogServiceInfo.cpp
   src/v20180608/model/DescribeCloudBaseRunResourceForExtendRequest.cpp
   src/v20180608/model/ModifyEndUserRequest.cpp
@@ -185,6 +188,7 @@ set(tcb_src
   src/v20180608/model/CommonServiceAPIRequest.cpp
   src/v20180608/model/CreateWxCloudBaseRunEnvRequest.cpp
   src/v20180608/model/CreateStaticStoreRequest.cpp
+  src/v20180608/model/CreateWxCloudBaseRunServerDBClusterRequest.cpp
   src/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.cpp
   src/v20180608/model/CreateAuthDomainResponse.cpp
   src/v20180608/model/DescribeEnvsRequest.cpp

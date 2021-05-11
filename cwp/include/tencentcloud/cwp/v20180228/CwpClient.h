@@ -95,6 +95,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeESHitsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeESHitsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeExportMachinesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeExportMachinesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeGeneralStatRequest.h>
@@ -377,6 +379,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeComponentsResponse> DescribeComponentsOutcome;
                 typedef std::future<DescribeComponentsOutcome> DescribeComponentsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeComponentsRequest&, DescribeComponentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComponentsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeESHitsResponse> DescribeESHitsOutcome;
+                typedef std::future<DescribeESHitsOutcome> DescribeESHitsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeESHitsRequest&, DescribeESHitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeESHitsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeExportMachinesResponse> DescribeExportMachinesOutcome;
                 typedef std::future<DescribeExportMachinesOutcome> DescribeExportMachinesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeExportMachinesRequest&, DescribeExportMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportMachinesAsyncHandler;
@@ -943,6 +948,15 @@ namespace TencentCloud
                 DescribeComponentsOutcome DescribeComponents(const Model::DescribeComponentsRequest &request);
                 void DescribeComponentsAsync(const Model::DescribeComponentsRequest& request, const DescribeComponentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeComponentsOutcomeCallable DescribeComponentsCallable(const Model::DescribeComponentsRequest& request);
+
+                /**
+                 *获取ES查询文档列表
+                 * @param req DescribeESHitsRequest
+                 * @return DescribeESHitsOutcome
+                 */
+                DescribeESHitsOutcome DescribeESHits(const Model::DescribeESHitsRequest &request);
+                void DescribeESHitsAsync(const Model::DescribeESHitsRequest& request, const DescribeESHitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeESHitsOutcomeCallable DescribeESHitsCallable(const Model::DescribeESHitsRequest& request);
 
                 /**
                  *本接口 (DescribeExportMachines) 用于导出区域主机列表。

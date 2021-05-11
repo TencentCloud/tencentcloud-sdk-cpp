@@ -47,6 +47,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取错别字内容
+                     * @return Word 错别字内容
+                     */
+                    std::string GetWord() const;
+
+                    /**
+                     * 设置错别字内容
+                     * @param Word 错别字内容
+                     */
+                    void SetWord(const std::string& _word);
+
+                    /**
+                     * 判断参数 Word 是否已赋值
+                     * @return Word 是否已赋值
+                     */
+                    bool WordHasBeenSet() const;
+
+                    /**
                      * 获取错别字的起始位置，从0开始
                      * @return BeginOffset 错别字的起始位置，从0开始
                      */
@@ -82,25 +100,13 @@ namespace TencentCloud
                      */
                     bool CorrectWordHasBeenSet() const;
 
-                    /**
-                     * 获取错别字内容
-                     * @return Word 错别字内容
-                     */
-                    std::string GetWord() const;
-
-                    /**
-                     * 设置错别字内容
-                     * @param Word 错别字内容
-                     */
-                    void SetWord(const std::string& _word);
-
-                    /**
-                     * 判断参数 Word 是否已赋值
-                     * @return Word 是否已赋值
-                     */
-                    bool WordHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 错别字内容
+                     */
+                    std::string m_word;
+                    bool m_wordHasBeenSet;
 
                     /**
                      * 错别字的起始位置，从0开始
@@ -113,12 +119,6 @@ namespace TencentCloud
                      */
                     std::string m_correctWord;
                     bool m_correctWordHasBeenSet;
-
-                    /**
-                     * 错别字内容
-                     */
-                    std::string m_word;
-                    bool m_wordHasBeenSet;
 
                 };
             }

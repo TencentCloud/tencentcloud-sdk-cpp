@@ -80,13 +80,21 @@ namespace TencentCloud
 
                     /**
                      * 获取帐号的状态
+<li>ENABLE</li>
+<li>DISABLE</li>
                      * @return Status 帐号的状态
+<li>ENABLE</li>
+<li>DISABLE</li>
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置帐号的状态
+<li>ENABLE</li>
+<li>DISABLE</li>
                      * @param Status 帐号的状态
+<li>ENABLE</li>
+<li>DISABLE</li>
                      */
                     void SetStatus(const std::string& _status);
 
@@ -112,6 +120,8 @@ namespace TencentCloud
 
                     /**
                      * 帐号的状态
+<li>ENABLE</li>
+<li>DISABLE</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

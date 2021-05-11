@@ -41,6 +41,8 @@
 #include <tencentcloud/cvm/v20170312/model/DeleteImagesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteKeyPairsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteKeyPairsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeAccountQuotaRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeAccountQuotaResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupQuotaRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupQuotaResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupsRequest.h>
@@ -198,6 +200,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteKeyPairsResponse> DeleteKeyPairsOutcome;
                 typedef std::future<DeleteKeyPairsOutcome> DeleteKeyPairsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DeleteKeyPairsRequest&, DeleteKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKeyPairsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAccountQuotaResponse> DescribeAccountQuotaOutcome;
+                typedef std::future<DescribeAccountQuotaOutcome> DescribeAccountQuotaOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeAccountQuotaRequest&, DescribeAccountQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountQuotaAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDisasterRecoverGroupQuotaResponse> DescribeDisasterRecoverGroupQuotaOutcome;
                 typedef std::future<DescribeDisasterRecoverGroupQuotaOutcome> DescribeDisasterRecoverGroupQuotaOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeDisasterRecoverGroupQuotaRequest&, DescribeDisasterRecoverGroupQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDisasterRecoverGroupQuotaAsyncHandler;
@@ -474,6 +479,15 @@ namespace TencentCloud
                 DeleteKeyPairsOutcome DeleteKeyPairs(const Model::DeleteKeyPairsRequest &request);
                 void DeleteKeyPairsAsync(const Model::DeleteKeyPairsRequest& request, const DeleteKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteKeyPairsOutcomeCallable DeleteKeyPairsCallable(const Model::DeleteKeyPairsRequest& request);
+
+                /**
+                 *本接口(DescribeAccountQuota)用于查询用户配额详情。
+                 * @param req DescribeAccountQuotaRequest
+                 * @return DescribeAccountQuotaOutcome
+                 */
+                DescribeAccountQuotaOutcome DescribeAccountQuota(const Model::DescribeAccountQuotaRequest &request);
+                void DescribeAccountQuotaAsync(const Model::DescribeAccountQuotaRequest& request, const DescribeAccountQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountQuotaOutcomeCallable DescribeAccountQuotaCallable(const Model::DescribeAccountQuotaRequest& request);
 
                 /**
                  *本接口 (DescribeDisasterRecoverGroupQuota)用于查询[分散置放群组](https://cloud.tencent.com/document/product/213/15486)配额。

@@ -470,6 +470,49 @@ TcbClient::CreateWxCloudBaseRunEnvOutcomeCallable TcbClient::CreateWxCloudBaseRu
     return task->get_future();
 }
 
+TcbClient::CreateWxCloudBaseRunServerDBClusterOutcome TcbClient::CreateWxCloudBaseRunServerDBCluster(const CreateWxCloudBaseRunServerDBClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWxCloudBaseRunServerDBCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWxCloudBaseRunServerDBClusterResponse rsp = CreateWxCloudBaseRunServerDBClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWxCloudBaseRunServerDBClusterOutcome(rsp);
+        else
+            return CreateWxCloudBaseRunServerDBClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWxCloudBaseRunServerDBClusterOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateWxCloudBaseRunServerDBClusterAsync(const CreateWxCloudBaseRunServerDBClusterRequest& request, const CreateWxCloudBaseRunServerDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWxCloudBaseRunServerDBCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::CreateWxCloudBaseRunServerDBClusterOutcomeCallable TcbClient::CreateWxCloudBaseRunServerDBClusterCallable(const CreateWxCloudBaseRunServerDBClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWxCloudBaseRunServerDBClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWxCloudBaseRunServerDBCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DeleteCloudBaseProjectLatestVersionOutcome TcbClient::DeleteCloudBaseProjectLatestVersion(const DeleteCloudBaseProjectLatestVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudBaseProjectLatestVersion");

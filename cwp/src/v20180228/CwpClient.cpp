@@ -1588,6 +1588,49 @@ CwpClient::DescribeComponentsOutcomeCallable CwpClient::DescribeComponentsCallab
     return task->get_future();
 }
 
+CwpClient::DescribeESHitsOutcome CwpClient::DescribeESHits(const DescribeESHitsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeESHits");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeESHitsResponse rsp = DescribeESHitsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeESHitsOutcome(rsp);
+        else
+            return DescribeESHitsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeESHitsOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeESHitsAsync(const DescribeESHitsRequest& request, const DescribeESHitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeESHits(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeESHitsOutcomeCallable CwpClient::DescribeESHitsCallable(const DescribeESHitsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeESHitsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeESHits(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeExportMachinesOutcome CwpClient::DescribeExportMachines(const DescribeExportMachinesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExportMachines");

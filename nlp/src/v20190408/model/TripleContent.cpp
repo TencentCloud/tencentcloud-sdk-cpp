@@ -22,10 +22,10 @@ using namespace rapidjson;
 using namespace std;
 
 TripleContent::TripleContent() :
-    m_idHasBeenSet(false),
+    m_popularHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_popularHasBeenSet(false)
+    m_idHasBeenSet(false)
 {
 }
 
@@ -34,14 +34,14 @@ CoreInternalOutcome TripleContent::Deserialize(const Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("Id") && !value["Id"].IsNull())
+    if (value.HasMember("Popular") && !value["Popular"].IsNull())
     {
-        if (!value["Id"].IsString())
+        if (!value["Popular"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `TripleContent.Id` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TripleContent.Popular` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_id = string(value["Id"].GetString());
-        m_idHasBeenSet = true;
+        m_popular = value["Popular"].GetInt64();
+        m_popularHasBeenSet = true;
     }
 
     if (value.HasMember("Name") && !value["Name"].IsNull())
@@ -64,14 +64,14 @@ CoreInternalOutcome TripleContent::Deserialize(const Value &value)
         m_orderHasBeenSet = true;
     }
 
-    if (value.HasMember("Popular") && !value["Popular"].IsNull())
+    if (value.HasMember("Id") && !value["Id"].IsNull())
     {
-        if (!value["Popular"].IsInt64())
+        if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `TripleContent.Popular` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TripleContent.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_popular = value["Popular"].GetInt64();
-        m_popularHasBeenSet = true;
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
     }
 
 
@@ -81,12 +81,12 @@ CoreInternalOutcome TripleContent::Deserialize(const Value &value)
 void TripleContent::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
-    if (m_idHasBeenSet)
+    if (m_popularHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Id";
+        string key = "Popular";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_popular, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -105,31 +105,31 @@ void TripleContent::ToJsonObject(Value &value, Document::AllocatorType& allocato
         value.AddMember(iKey, m_order, allocator);
     }
 
-    if (m_popularHasBeenSet)
+    if (m_idHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Popular";
+        string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_popular, allocator);
+        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 }
 
 
-string TripleContent::GetId() const
+int64_t TripleContent::GetPopular() const
 {
-    return m_id;
+    return m_popular;
 }
 
-void TripleContent::SetId(const string& _id)
+void TripleContent::SetPopular(const int64_t& _popular)
 {
-    m_id = _id;
-    m_idHasBeenSet = true;
+    m_popular = _popular;
+    m_popularHasBeenSet = true;
 }
 
-bool TripleContent::IdHasBeenSet() const
+bool TripleContent::PopularHasBeenSet() const
 {
-    return m_idHasBeenSet;
+    return m_popularHasBeenSet;
 }
 
 string TripleContent::GetName() const
@@ -164,19 +164,19 @@ bool TripleContent::OrderHasBeenSet() const
     return m_orderHasBeenSet;
 }
 
-int64_t TripleContent::GetPopular() const
+string TripleContent::GetId() const
 {
-    return m_popular;
+    return m_id;
 }
 
-void TripleContent::SetPopular(const int64_t& _popular)
+void TripleContent::SetId(const string& _id)
 {
-    m_popular = _popular;
-    m_popularHasBeenSet = true;
+    m_id = _id;
+    m_idHasBeenSet = true;
 }
 
-bool TripleContent::PopularHasBeenSet() const
+bool TripleContent::IdHasBeenSet() const
 {
-    return m_popularHasBeenSet;
+    return m_idHasBeenSet;
 }
 

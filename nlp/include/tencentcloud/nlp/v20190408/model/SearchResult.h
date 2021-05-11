@@ -47,6 +47,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取被搜索的词条文本。
+                     * @return Text 被搜索的词条文本。
+                     */
+                    std::string GetText() const;
+
+                    /**
+                     * 设置被搜索的词条文本。
+                     * @param Text 被搜索的词条文本。
+                     */
+                    void SetText(const std::string& _text);
+
+                    /**
+                     * 判断参数 Text 是否已赋值
+                     * @return Text 是否已赋值
+                     */
+                    bool TextHasBeenSet() const;
+
+                    /**
                      * 获取0表示词条不存在，1表示存在。
                      * @return IsExist 0表示词条不存在，1表示存在。
                      */
@@ -66,13 +84,17 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配到的词条文本。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchText 匹配到的词条文本。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMatchText() const;
 
                     /**
                      * 设置匹配到的词条文本。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param MatchText 匹配到的词条文本。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMatchText(const std::string& _matchText);
 
@@ -83,32 +105,18 @@ namespace TencentCloud
                     bool MatchTextHasBeenSet() const;
 
                     /**
-                     * 获取被搜索的词条文本。
-                     * @return Text 被搜索的词条文本。
-                     */
-                    std::string GetText() const;
-
-                    /**
-                     * 设置被搜索的词条文本。
-                     * @param Text 被搜索的词条文本。
-                     */
-                    void SetText(const std::string& _text);
-
-                    /**
-                     * 判断参数 Text 是否已赋值
-                     * @return Text 是否已赋值
-                     */
-                    bool TextHasBeenSet() const;
-
-                    /**
                      * 获取词条的词性。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pos 词条的词性。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPos() const;
 
                     /**
                      * 设置词条的词性。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Pos 词条的词性。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPos(const std::string& _pos);
 
@@ -121,6 +129,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 被搜索的词条文本。
+                     */
+                    std::string m_text;
+                    bool m_textHasBeenSet;
+
+                    /**
                      * 0表示词条不存在，1表示存在。
                      */
                     uint64_t m_isExist;
@@ -128,18 +142,14 @@ namespace TencentCloud
 
                     /**
                      * 匹配到的词条文本。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_matchText;
                     bool m_matchTextHasBeenSet;
 
                     /**
-                     * 被搜索的词条文本。
-                     */
-                    std::string m_text;
-                    bool m_textHasBeenSet;
-
-                    /**
                      * 词条的词性。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pos;
                     bool m_posHasBeenSet;

@@ -26,6 +26,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsRequest.h
   include/tencentcloud/es/v20180416/model/OperationDetail.h
+  include/tencentcloud/es/v20180416/model/DiagnoseInstanceResponse.h
   include/tencentcloud/es/v20180416/model/EsPublicAcl.h
   include/tencentcloud/es/v20180416/model/DictInfo.h
   include/tencentcloud/es/v20180416/model/RestartInstanceResponse.h
@@ -43,15 +44,18 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DescribeInstancesResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceLogsResponse.h
   include/tencentcloud/es/v20180416/model/UpdatePluginsResponse.h
+  include/tencentcloud/es/v20180416/model/DiagnoseInstanceRequest.h
   include/tencentcloud/es/v20180416/model/RestartInstanceRequest.h
   include/tencentcloud/es/v20180416/model/ZoneDetail.h
   include/tencentcloud/es/v20180416/model/DescribeInstancesRequest.h
+  include/tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsRequest.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceRequest.h
   include/tencentcloud/es/v20180416/model/EsDictionaryInfo.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h
   include/tencentcloud/es/v20180416/model/RestartNodesRequest.h
   include/tencentcloud/es/v20180416/model/UpdatePluginsRequest.h
   include/tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesResponse.h
+  include/tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsResponse.h
   include/tencentcloud/es/v20180416/model/UpgradeLicenseResponse.h
   include/tencentcloud/es/v20180416/model/EsAcl.h
   include/tencentcloud/es/v20180416/model/MasterNodeInfo.h
@@ -75,6 +79,7 @@ set(es_src
   src/v20180416/model/GetRequestTargetNodeTypesRequest.cpp
   src/v20180416/model/DescribeInstanceOperationsRequest.cpp
   src/v20180416/model/OperationDetail.cpp
+  src/v20180416/model/DiagnoseInstanceResponse.cpp
   src/v20180416/model/EsPublicAcl.cpp
   src/v20180416/model/DictInfo.cpp
   src/v20180416/model/RestartInstanceResponse.cpp
@@ -92,15 +97,18 @@ set(es_src
   src/v20180416/model/DescribeInstancesResponse.cpp
   src/v20180416/model/DescribeInstanceLogsResponse.cpp
   src/v20180416/model/UpdatePluginsResponse.cpp
+  src/v20180416/model/DiagnoseInstanceRequest.cpp
   src/v20180416/model/RestartInstanceRequest.cpp
   src/v20180416/model/ZoneDetail.cpp
   src/v20180416/model/DescribeInstancesRequest.cpp
+  src/v20180416/model/UpdateDiagnoseSettingsRequest.cpp
   src/v20180416/model/UpdateInstanceRequest.cpp
   src/v20180416/model/EsDictionaryInfo.cpp
   src/v20180416/model/DescribeInstanceOperationsResponse.cpp
   src/v20180416/model/RestartNodesRequest.cpp
   src/v20180416/model/UpdatePluginsRequest.cpp
   src/v20180416/model/UpdateRequestTargetNodeTypesResponse.cpp
+  src/v20180416/model/UpdateDiagnoseSettingsResponse.cpp
   src/v20180416/model/UpgradeLicenseResponse.cpp
   src/v20180416/model/EsAcl.cpp
   src/v20180416/model/MasterNodeInfo.cpp

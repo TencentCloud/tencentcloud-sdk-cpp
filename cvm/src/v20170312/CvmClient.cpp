@@ -427,6 +427,49 @@ CvmClient::DeleteKeyPairsOutcomeCallable CvmClient::DeleteKeyPairsCallable(const
     return task->get_future();
 }
 
+CvmClient::DescribeAccountQuotaOutcome CvmClient::DescribeAccountQuota(const DescribeAccountQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountQuotaResponse rsp = DescribeAccountQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountQuotaOutcome(rsp);
+        else
+            return DescribeAccountQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountQuotaOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeAccountQuotaAsync(const DescribeAccountQuotaRequest& request, const DescribeAccountQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccountQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DescribeAccountQuotaOutcomeCallable CvmClient::DescribeAccountQuotaCallable(const DescribeAccountQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccountQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccountQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::DescribeDisasterRecoverGroupQuotaOutcome CvmClient::DescribeDisasterRecoverGroupQuota(const DescribeDisasterRecoverGroupQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDisasterRecoverGroupQuota");

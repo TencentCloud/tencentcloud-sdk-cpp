@@ -47,6 +47,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeBundleDiscountRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeBundleDiscountResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesRequest.h>
@@ -165,6 +167,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBlueprintsResponse> DescribeBlueprintsOutcome;
                 typedef std::future<DescribeBlueprintsOutcome> DescribeBlueprintsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeBlueprintsRequest&, DescribeBlueprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlueprintsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBundleDiscountResponse> DescribeBundleDiscountOutcome;
+                typedef std::future<DescribeBundleDiscountOutcome> DescribeBundleDiscountOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeBundleDiscountRequest&, DescribeBundleDiscountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBundleDiscountAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBundlesResponse> DescribeBundlesOutcome;
                 typedef std::future<DescribeBundlesOutcome> DescribeBundlesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeBundlesRequest&, DescribeBundlesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBundlesAsyncHandler;
@@ -406,6 +411,15 @@ namespace TencentCloud
                 DescribeBlueprintsOutcome DescribeBlueprints(const Model::DescribeBlueprintsRequest &request);
                 void DescribeBlueprintsAsync(const Model::DescribeBlueprintsRequest& request, const DescribeBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBlueprintsOutcomeCallable DescribeBlueprintsCallable(const Model::DescribeBlueprintsRequest& request);
+
+                /**
+                 *本接口（DescribeBundleDiscount）用于查询套餐折扣信息。
+                 * @param req DescribeBundleDiscountRequest
+                 * @return DescribeBundleDiscountOutcome
+                 */
+                DescribeBundleDiscountOutcome DescribeBundleDiscount(const Model::DescribeBundleDiscountRequest &request);
+                void DescribeBundleDiscountAsync(const Model::DescribeBundleDiscountRequest& request, const DescribeBundleDiscountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBundleDiscountOutcomeCallable DescribeBundleDiscountCallable(const Model::DescribeBundleDiscountRequest& request);
 
                 /**
                  *本接口（DescribeBundles）用于查询套餐信息。

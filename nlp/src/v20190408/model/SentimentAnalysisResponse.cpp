@@ -25,9 +25,9 @@ using namespace rapidjson;
 using namespace std;
 
 SentimentAnalysisResponse::SentimentAnalysisResponse() :
-    m_negativeHasBeenSet(false),
-    m_neutralHasBeenSet(false),
     m_positiveHasBeenSet(false),
+    m_neutralHasBeenSet(false),
+    m_negativeHasBeenSet(false),
     m_sentimentHasBeenSet(false)
 {
 }
@@ -66,14 +66,14 @@ CoreInternalOutcome SentimentAnalysisResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("Negative") && !rsp["Negative"].IsNull())
+    if (rsp.HasMember("Positive") && !rsp["Positive"].IsNull())
     {
-        if (!rsp["Negative"].IsLosslessDouble())
+        if (!rsp["Positive"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Negative` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Positive` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_negative = rsp["Negative"].GetDouble();
-        m_negativeHasBeenSet = true;
+        m_positive = rsp["Positive"].GetDouble();
+        m_positiveHasBeenSet = true;
     }
 
     if (rsp.HasMember("Neutral") && !rsp["Neutral"].IsNull())
@@ -86,14 +86,14 @@ CoreInternalOutcome SentimentAnalysisResponse::Deserialize(const string &payload
         m_neutralHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Positive") && !rsp["Positive"].IsNull())
+    if (rsp.HasMember("Negative") && !rsp["Negative"].IsNull())
     {
-        if (!rsp["Positive"].IsLosslessDouble())
+        if (!rsp["Negative"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Error("response `Positive` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Negative` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_positive = rsp["Positive"].GetDouble();
-        m_positiveHasBeenSet = true;
+        m_negative = rsp["Negative"].GetDouble();
+        m_negativeHasBeenSet = true;
     }
 
     if (rsp.HasMember("Sentiment") && !rsp["Sentiment"].IsNull())
@@ -111,14 +111,14 @@ CoreInternalOutcome SentimentAnalysisResponse::Deserialize(const string &payload
 }
 
 
-double SentimentAnalysisResponse::GetNegative() const
+double SentimentAnalysisResponse::GetPositive() const
 {
-    return m_negative;
+    return m_positive;
 }
 
-bool SentimentAnalysisResponse::NegativeHasBeenSet() const
+bool SentimentAnalysisResponse::PositiveHasBeenSet() const
 {
-    return m_negativeHasBeenSet;
+    return m_positiveHasBeenSet;
 }
 
 double SentimentAnalysisResponse::GetNeutral() const
@@ -131,14 +131,14 @@ bool SentimentAnalysisResponse::NeutralHasBeenSet() const
     return m_neutralHasBeenSet;
 }
 
-double SentimentAnalysisResponse::GetPositive() const
+double SentimentAnalysisResponse::GetNegative() const
 {
-    return m_positive;
+    return m_negative;
 }
 
-bool SentimentAnalysisResponse::PositiveHasBeenSet() const
+bool SentimentAnalysisResponse::NegativeHasBeenSet() const
 {
-    return m_positiveHasBeenSet;
+    return m_negativeHasBeenSet;
 }
 
 string SentimentAnalysisResponse::GetSentiment() const

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 命名实体识别结果
+                * 命名实体识别结果  
                 */
                 class NerToken : public AbstractModel
                 {
@@ -45,60 +45,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取起始位置
-                     * @return BeginOffset 起始位置
-                     */
-                    uint64_t GetBeginOffset() const;
-
-                    /**
-                     * 设置起始位置
-                     * @param BeginOffset 起始位置
-                     */
-                    void SetBeginOffset(const uint64_t& _beginOffset);
-
-                    /**
-                     * 判断参数 BeginOffset 是否已赋值
-                     * @return BeginOffset 是否已赋值
-                     */
-                    bool BeginOffsetHasBeenSet() const;
-
-                    /**
-                     * 获取长度
-                     * @return Length 长度
-                     */
-                    uint64_t GetLength() const;
-
-                    /**
-                     * 设置长度
-                     * @param Length 长度
-                     */
-                    void SetLength(const uint64_t& _length);
-
-                    /**
-                     * 判断参数 Length 是否已赋值
-                     * @return Length 是否已赋值
-                     */
-                    bool LengthHasBeenSet() const;
-
-                    /**
-                     * 获取命名实体类型
-                     * @return Type 命名实体类型
-                     */
-                    std::string GetType() const;
-
-                    /**
-                     * 设置命名实体类型
-                     * @param Type 命名实体类型
-                     */
-                    void SetType(const std::string& _type);
-
-                    /**
-                     * 判断参数 Type 是否已赋值
-                     * @return Type 是否已赋值
-                     */
-                    bool TypeHasBeenSet() const;
 
                     /**
                      * 获取基础词
@@ -118,31 +64,85 @@ namespace TencentCloud
                      */
                     bool WordHasBeenSet() const;
 
+                    /**
+                     * 获取长度
+                     * @return Length 长度
+                     */
+                    int64_t GetLength() const;
+
+                    /**
+                     * 设置长度
+                     * @param Length 长度
+                     */
+                    void SetLength(const int64_t& _length);
+
+                    /**
+                     * 判断参数 Length 是否已赋值
+                     * @return Length 是否已赋值
+                     */
+                    bool LengthHasBeenSet() const;
+
+                    /**
+                     * 获取起始位置
+                     * @return BeginOffset 起始位置
+                     */
+                    int64_t GetBeginOffset() const;
+
+                    /**
+                     * 设置起始位置
+                     * @param BeginOffset 起始位置
+                     */
+                    void SetBeginOffset(const int64_t& _beginOffset);
+
+                    /**
+                     * 判断参数 BeginOffset 是否已赋值
+                     * @return BeginOffset 是否已赋值
+                     */
+                    bool BeginOffsetHasBeenSet() const;
+
+                    /**
+                     * 获取命名实体类型
+                     * @return Type 命名实体类型
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置命名实体类型
+                     * @param Type 命名实体类型
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 起始位置
-                     */
-                    uint64_t m_beginOffset;
-                    bool m_beginOffsetHasBeenSet;
-
-                    /**
-                     * 长度
-                     */
-                    uint64_t m_length;
-                    bool m_lengthHasBeenSet;
-
-                    /**
-                     * 命名实体类型
-                     */
-                    std::string m_type;
-                    bool m_typeHasBeenSet;
 
                     /**
                      * 基础词
                      */
                     std::string m_word;
                     bool m_wordHasBeenSet;
+
+                    /**
+                     * 长度
+                     */
+                    int64_t m_length;
+                    bool m_lengthHasBeenSet;
+
+                    /**
+                     * 起始位置
+                     */
+                    int64_t m_beginOffset;
+                    bool m_beginOffsetHasBeenSet;
+
+                    /**
+                     * 命名实体类型
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

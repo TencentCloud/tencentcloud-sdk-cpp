@@ -25,8 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 ChatBotResponse::ChatBotResponse() :
-    m_confidenceHasBeenSet(false),
-    m_replyHasBeenSet(false)
+    m_replyHasBeenSet(false),
+    m_confidenceHasBeenSet(false)
 {
 }
 
@@ -64,16 +64,6 @@ CoreInternalOutcome ChatBotResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Confidence") && !rsp["Confidence"].IsNull())
-    {
-        if (!rsp["Confidence"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Error("response `Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_confidence = rsp["Confidence"].GetDouble();
-        m_confidenceHasBeenSet = true;
-    }
-
     if (rsp.HasMember("Reply") && !rsp["Reply"].IsNull())
     {
         if (!rsp["Reply"].IsString())
@@ -84,20 +74,20 @@ CoreInternalOutcome ChatBotResponse::Deserialize(const string &payload)
         m_replyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Confidence") && !rsp["Confidence"].IsNull())
+    {
+        if (!rsp["Confidence"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_confidence = rsp["Confidence"].GetDouble();
+        m_confidenceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-
-double ChatBotResponse::GetConfidence() const
-{
-    return m_confidence;
-}
-
-bool ChatBotResponse::ConfidenceHasBeenSet() const
-{
-    return m_confidenceHasBeenSet;
-}
 
 string ChatBotResponse::GetReply() const
 {
@@ -107,6 +97,16 @@ string ChatBotResponse::GetReply() const
 bool ChatBotResponse::ReplyHasBeenSet() const
 {
     return m_replyHasBeenSet;
+}
+
+double ChatBotResponse::GetConfidence() const
+{
+    return m_confidence;
+}
+
+bool ChatBotResponse::ConfidenceHasBeenSet() const
+{
+    return m_confidenceHasBeenSet;
 }
 
 

@@ -152,6 +152,24 @@ namespace TencentCloud
                      */
                     bool ModeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取专线网关可用区
+                     * @return Zone 专线网关可用区
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置专线网关可用区
+                     * @param Zone 专线网关可用区
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +206,12 @@ namespace TencentCloud
                      */
                     std::string m_modeType;
                     bool m_modeTypeHasBeenSet;
+
+                    /**
+                     * 专线网关可用区
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

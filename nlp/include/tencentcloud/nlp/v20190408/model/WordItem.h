@@ -84,13 +84,17 @@ namespace TencentCloud
 
                     /**
                      * 获取词条的词性。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pos 词条的词性。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPos() const;
 
                     /**
                      * 设置词条的词性。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Pos 词条的词性。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPos(const std::string& _pos);
 
@@ -116,6 +120,7 @@ namespace TencentCloud
 
                     /**
                      * 词条的词性。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pos;
                     bool m_posHasBeenSet;

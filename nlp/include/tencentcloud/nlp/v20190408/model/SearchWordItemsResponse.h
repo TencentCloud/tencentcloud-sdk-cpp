@@ -45,7 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取词条检索结果集合。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Results 词条检索结果集合。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SearchResult> GetResults() const;
 
@@ -59,6 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 词条检索结果集合。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SearchResult> m_results;
                     bool m_resultsHasBeenSet;

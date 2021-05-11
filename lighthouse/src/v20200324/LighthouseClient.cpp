@@ -556,6 +556,49 @@ LighthouseClient::DescribeBlueprintsOutcomeCallable LighthouseClient::DescribeBl
     return task->get_future();
 }
 
+LighthouseClient::DescribeBundleDiscountOutcome LighthouseClient::DescribeBundleDiscount(const DescribeBundleDiscountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBundleDiscount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBundleDiscountResponse rsp = DescribeBundleDiscountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBundleDiscountOutcome(rsp);
+        else
+            return DescribeBundleDiscountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBundleDiscountOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeBundleDiscountAsync(const DescribeBundleDiscountRequest& request, const DescribeBundleDiscountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBundleDiscount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeBundleDiscountOutcomeCallable LighthouseClient::DescribeBundleDiscountCallable(const DescribeBundleDiscountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBundleDiscountOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBundleDiscount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DescribeBundlesOutcome LighthouseClient::DescribeBundles(const DescribeBundlesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBundles");

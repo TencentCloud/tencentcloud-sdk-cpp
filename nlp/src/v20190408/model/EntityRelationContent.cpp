@@ -23,8 +23,8 @@ using namespace std;
 
 EntityRelationContent::EntityRelationContent() :
     m_objectHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_relationHasBeenSet(false)
+    m_relationHasBeenSet(false),
+    m_subjectHasBeenSet(false)
 {
 }
 
@@ -53,6 +53,16 @@ CoreInternalOutcome EntityRelationContent::Deserialize(const Value &value)
         m_objectHasBeenSet = true;
     }
 
+    if (value.HasMember("Relation") && !value["Relation"].IsNull())
+    {
+        if (!value["Relation"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EntityRelationContent.Relation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_relation = string(value["Relation"].GetString());
+        m_relationHasBeenSet = true;
+    }
+
     if (value.HasMember("Subject") && !value["Subject"].IsNull())
     {
         if (!value["Subject"].IsArray())
@@ -71,16 +81,6 @@ CoreInternalOutcome EntityRelationContent::Deserialize(const Value &value)
             m_subject.push_back(item);
         }
         m_subjectHasBeenSet = true;
-    }
-
-    if (value.HasMember("Relation") && !value["Relation"].IsNull())
-    {
-        if (!value["Relation"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `EntityRelationContent.Relation` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_relation = string(value["Relation"].GetString());
-        m_relationHasBeenSet = true;
     }
 
 
@@ -105,6 +105,14 @@ void EntityRelationContent::ToJsonObject(Value &value, Document::AllocatorType& 
         }
     }
 
+    if (m_relationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Relation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_relation.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_subjectHasBeenSet)
     {
         Value iKey(kStringType);
@@ -118,14 +126,6 @@ void EntityRelationContent::ToJsonObject(Value &value, Document::AllocatorType& 
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_relationHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Relation";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_relation.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -147,22 +147,6 @@ bool EntityRelationContent::ObjectHasBeenSet() const
     return m_objectHasBeenSet;
 }
 
-vector<EntityRelationSubject> EntityRelationContent::GetSubject() const
-{
-    return m_subject;
-}
-
-void EntityRelationContent::SetSubject(const vector<EntityRelationSubject>& _subject)
-{
-    m_subject = _subject;
-    m_subjectHasBeenSet = true;
-}
-
-bool EntityRelationContent::SubjectHasBeenSet() const
-{
-    return m_subjectHasBeenSet;
-}
-
 string EntityRelationContent::GetRelation() const
 {
     return m_relation;
@@ -177,5 +161,21 @@ void EntityRelationContent::SetRelation(const string& _relation)
 bool EntityRelationContent::RelationHasBeenSet() const
 {
     return m_relationHasBeenSet;
+}
+
+vector<EntityRelationSubject> EntityRelationContent::GetSubject() const
+{
+    return m_subject;
+}
+
+void EntityRelationContent::SetSubject(const vector<EntityRelationSubject>& _subject)
+{
+    m_subject = _subject;
+    m_subjectHasBeenSet = true;
+}
+
+bool EntityRelationContent::SubjectHasBeenSet() const
+{
+    return m_subjectHasBeenSet;
 }
 

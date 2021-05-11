@@ -43,18 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取词向量的维度
-                     * @return Dimension 词向量的维度
-                     */
-                    uint64_t GetDimension() const;
-
-                    /**
-                     * 判断参数 Dimension 是否已赋值
-                     * @return Dimension 是否已赋值
-                     */
-                    bool DimensionHasBeenSet() const;
-
-                    /**
                      * 获取词向量数组
                      * @return Vector 词向量数组
                      */
@@ -66,19 +54,31 @@ namespace TencentCloud
                      */
                     bool VectorHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取词向量的维度
+                     * @return Dimension 词向量的维度
+                     */
+                    uint64_t GetDimension() const;
 
                     /**
-                     * 词向量的维度
+                     * 判断参数 Dimension 是否已赋值
+                     * @return Dimension 是否已赋值
                      */
-                    uint64_t m_dimension;
-                    bool m_dimensionHasBeenSet;
+                    bool DimensionHasBeenSet() const;
+
+                private:
 
                     /**
                      * 词向量数组
                      */
                     std::vector<double> m_vector;
                     bool m_vectorHasBeenSet;
+
+                    /**
+                     * 词向量的维度
+                     */
+                    uint64_t m_dimension;
+                    bool m_dimensionHasBeenSet;
 
                 };
             }

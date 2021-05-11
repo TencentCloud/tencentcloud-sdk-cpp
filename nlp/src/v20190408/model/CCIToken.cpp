@@ -22,9 +22,9 @@ using namespace rapidjson;
 using namespace std;
 
 CCIToken::CCIToken() :
+    m_wordHasBeenSet(false),
     m_beginOffsetHasBeenSet(false),
-    m_correctWordHasBeenSet(false),
-    m_wordHasBeenSet(false)
+    m_correctWordHasBeenSet(false)
 {
 }
 
@@ -32,6 +32,16 @@ CoreInternalOutcome CCIToken::Deserialize(const Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Word") && !value["Word"].IsNull())
+    {
+        if (!value["Word"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CCIToken.Word` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_word = string(value["Word"].GetString());
+        m_wordHasBeenSet = true;
+    }
 
     if (value.HasMember("BeginOffset") && !value["BeginOffset"].IsNull())
     {
@@ -53,22 +63,20 @@ CoreInternalOutcome CCIToken::Deserialize(const Value &value)
         m_correctWordHasBeenSet = true;
     }
 
-    if (value.HasMember("Word") && !value["Word"].IsNull())
-    {
-        if (!value["Word"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `CCIToken.Word` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_word = string(value["Word"].GetString());
-        m_wordHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void CCIToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
+
+    if (m_wordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Word";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_word.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_beginOffsetHasBeenSet)
     {
@@ -86,16 +94,24 @@ void CCIToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         value.AddMember(iKey, Value(m_correctWord.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_wordHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Word";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_word.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
+
+string CCIToken::GetWord() const
+{
+    return m_word;
+}
+
+void CCIToken::SetWord(const string& _word)
+{
+    m_word = _word;
+    m_wordHasBeenSet = true;
+}
+
+bool CCIToken::WordHasBeenSet() const
+{
+    return m_wordHasBeenSet;
+}
 
 uint64_t CCIToken::GetBeginOffset() const
 {
@@ -127,21 +143,5 @@ void CCIToken::SetCorrectWord(const string& _correctWord)
 bool CCIToken::CorrectWordHasBeenSet() const
 {
     return m_correctWordHasBeenSet;
-}
-
-string CCIToken::GetWord() const
-{
-    return m_word;
-}
-
-void CCIToken::SetWord(const string& _word)
-{
-    m_word = _word;
-    m_wordHasBeenSet = true;
-}
-
-bool CCIToken::WordHasBeenSet() const
-{
-    return m_wordHasBeenSet;
 }
 

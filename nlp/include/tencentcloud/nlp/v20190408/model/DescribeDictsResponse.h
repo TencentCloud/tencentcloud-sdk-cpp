@@ -44,18 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义词库信息列表。
-                     * @return Dicts 自定义词库信息列表。
-                     */
-                    std::vector<DictInfo> GetDicts() const;
-
-                    /**
-                     * 判断参数 Dicts 是否已赋值
-                     * @return Dicts 是否已赋值
-                     */
-                    bool DictsHasBeenSet() const;
-
-                    /**
                      * 获取记录总条数。
                      * @return TotalCount 记录总条数。
                      */
@@ -67,19 +55,34 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取自定义词库信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Dicts 自定义词库信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DictInfo> GetDicts() const;
 
                     /**
-                     * 自定义词库信息列表。
+                     * 判断参数 Dicts 是否已赋值
+                     * @return Dicts 是否已赋值
                      */
-                    std::vector<DictInfo> m_dicts;
-                    bool m_dictsHasBeenSet;
+                    bool DictsHasBeenSet() const;
+
+                private:
 
                     /**
                      * 记录总条数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 自定义词库信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DictInfo> m_dicts;
+                    bool m_dictsHasBeenSet;
 
                 };
             }

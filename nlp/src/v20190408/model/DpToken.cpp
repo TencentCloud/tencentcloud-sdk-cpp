@@ -22,10 +22,10 @@ using namespace rapidjson;
 using namespace std;
 
 DpToken::DpToken() :
-    m_headIdHasBeenSet(false),
-    m_idHasBeenSet(false),
     m_relationHasBeenSet(false),
-    m_wordHasBeenSet(false)
+    m_headIdHasBeenSet(false),
+    m_wordHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -33,26 +33,6 @@ CoreInternalOutcome DpToken::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("HeadId") && !value["HeadId"].IsNull())
-    {
-        if (!value["HeadId"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `DpToken.HeadId` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_headId = value["HeadId"].GetUint64();
-        m_headIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("Id") && !value["Id"].IsNull())
-    {
-        if (!value["Id"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `DpToken.Id` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_id = value["Id"].GetUint64();
-        m_idHasBeenSet = true;
-    }
 
     if (value.HasMember("Relation") && !value["Relation"].IsNull())
     {
@@ -62,6 +42,16 @@ CoreInternalOutcome DpToken::Deserialize(const Value &value)
         }
         m_relation = string(value["Relation"].GetString());
         m_relationHasBeenSet = true;
+    }
+
+    if (value.HasMember("HeadId") && !value["HeadId"].IsNull())
+    {
+        if (!value["HeadId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DpToken.HeadId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_headId = value["HeadId"].GetUint64();
+        m_headIdHasBeenSet = true;
     }
 
     if (value.HasMember("Word") && !value["Word"].IsNull())
@@ -74,6 +64,16 @@ CoreInternalOutcome DpToken::Deserialize(const Value &value)
         m_wordHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DpToken.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = value["Id"].GetUint64();
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -81,28 +81,20 @@ CoreInternalOutcome DpToken::Deserialize(const Value &value)
 void DpToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
-    if (m_headIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "HeadId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_headId, allocator);
-    }
-
-    if (m_idHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Id";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_id, allocator);
-    }
-
     if (m_relationHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "Relation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_relation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_headIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "HeadId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_headId, allocator);
     }
 
     if (m_wordHasBeenSet)
@@ -113,40 +105,16 @@ void DpToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         value.AddMember(iKey, Value(m_word.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_idHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
+    }
+
 }
 
-
-uint64_t DpToken::GetHeadId() const
-{
-    return m_headId;
-}
-
-void DpToken::SetHeadId(const uint64_t& _headId)
-{
-    m_headId = _headId;
-    m_headIdHasBeenSet = true;
-}
-
-bool DpToken::HeadIdHasBeenSet() const
-{
-    return m_headIdHasBeenSet;
-}
-
-uint64_t DpToken::GetId() const
-{
-    return m_id;
-}
-
-void DpToken::SetId(const uint64_t& _id)
-{
-    m_id = _id;
-    m_idHasBeenSet = true;
-}
-
-bool DpToken::IdHasBeenSet() const
-{
-    return m_idHasBeenSet;
-}
 
 string DpToken::GetRelation() const
 {
@@ -164,6 +132,22 @@ bool DpToken::RelationHasBeenSet() const
     return m_relationHasBeenSet;
 }
 
+uint64_t DpToken::GetHeadId() const
+{
+    return m_headId;
+}
+
+void DpToken::SetHeadId(const uint64_t& _headId)
+{
+    m_headId = _headId;
+    m_headIdHasBeenSet = true;
+}
+
+bool DpToken::HeadIdHasBeenSet() const
+{
+    return m_headIdHasBeenSet;
+}
+
 string DpToken::GetWord() const
 {
     return m_word;
@@ -178,5 +162,21 @@ void DpToken::SetWord(const string& _word)
 bool DpToken::WordHasBeenSet() const
 {
     return m_wordHasBeenSet;
+}
+
+uint64_t DpToken::GetId() const
+{
+    return m_id;
+}
+
+void DpToken::SetId(const uint64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool DpToken::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 

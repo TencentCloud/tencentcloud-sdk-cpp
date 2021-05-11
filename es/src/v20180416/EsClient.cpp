@@ -255,6 +255,49 @@ EsClient::DescribeInstancesOutcomeCallable EsClient::DescribeInstancesCallable(c
     return task->get_future();
 }
 
+EsClient::DiagnoseInstanceOutcome EsClient::DiagnoseInstance(const DiagnoseInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DiagnoseInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DiagnoseInstanceResponse rsp = DiagnoseInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DiagnoseInstanceOutcome(rsp);
+        else
+            return DiagnoseInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DiagnoseInstanceOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DiagnoseInstanceAsync(const DiagnoseInstanceRequest& request, const DiagnoseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DiagnoseInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DiagnoseInstanceOutcomeCallable EsClient::DiagnoseInstanceCallable(const DiagnoseInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DiagnoseInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DiagnoseInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::GetRequestTargetNodeTypesOutcome EsClient::GetRequestTargetNodeTypes(const GetRequestTargetNodeTypesRequest &request)
 {
     auto outcome = MakeRequest(request, "GetRequestTargetNodeTypes");
@@ -420,6 +463,49 @@ EsClient::RestartNodesOutcomeCallable EsClient::RestartNodesCallable(const Resta
         [this, request]()
         {
             return this->RestartNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::UpdateDiagnoseSettingsOutcome EsClient::UpdateDiagnoseSettings(const UpdateDiagnoseSettingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDiagnoseSettings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDiagnoseSettingsResponse rsp = UpdateDiagnoseSettingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDiagnoseSettingsOutcome(rsp);
+        else
+            return UpdateDiagnoseSettingsOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDiagnoseSettingsOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::UpdateDiagnoseSettingsAsync(const UpdateDiagnoseSettingsRequest& request, const UpdateDiagnoseSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDiagnoseSettings(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::UpdateDiagnoseSettingsOutcomeCallable EsClient::UpdateDiagnoseSettingsCallable(const UpdateDiagnoseSettingsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDiagnoseSettingsOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDiagnoseSettings(request);
         }
     );
 

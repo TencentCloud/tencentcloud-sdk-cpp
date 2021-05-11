@@ -22,9 +22,9 @@ using namespace rapidjson;
 using namespace std;
 
 EntityRelationObject::EntityRelationObject() :
+    m_popularHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_popularHasBeenSet(false)
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -32,6 +32,19 @@ CoreInternalOutcome EntityRelationObject::Deserialize(const Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Popular") && !value["Popular"].IsNull())
+    {
+        if (!value["Popular"].IsArray())
+            return CoreInternalOutcome(Error("response `EntityRelationObject.Popular` is not array type"));
+
+        const Value &tmpValue = value["Popular"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_popular.push_back((*itr).GetInt64());
+        }
+        m_popularHasBeenSet = true;
+    }
 
     if (value.HasMember("Id") && !value["Id"].IsNull())
     {
@@ -59,25 +72,25 @@ CoreInternalOutcome EntityRelationObject::Deserialize(const Value &value)
         m_nameHasBeenSet = true;
     }
 
-    if (value.HasMember("Popular") && !value["Popular"].IsNull())
-    {
-        if (!value["Popular"].IsArray())
-            return CoreInternalOutcome(Error("response `EntityRelationObject.Popular` is not array type"));
-
-        const Value &tmpValue = value["Popular"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_popular.push_back((*itr).GetInt64());
-        }
-        m_popularHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void EntityRelationObject::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
+
+    if (m_popularHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Popular";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_popular.begin(); itr != m_popular.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
 
     if (m_idHasBeenSet)
     {
@@ -105,21 +118,24 @@ void EntityRelationObject::ToJsonObject(Value &value, Document::AllocatorType& a
         }
     }
 
-    if (m_popularHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Popular";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_popular.begin(); itr != m_popular.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
-        }
-    }
-
 }
 
+
+vector<int64_t> EntityRelationObject::GetPopular() const
+{
+    return m_popular;
+}
+
+void EntityRelationObject::SetPopular(const vector<int64_t>& _popular)
+{
+    m_popular = _popular;
+    m_popularHasBeenSet = true;
+}
+
+bool EntityRelationObject::PopularHasBeenSet() const
+{
+    return m_popularHasBeenSet;
+}
 
 vector<string> EntityRelationObject::GetId() const
 {
@@ -151,21 +167,5 @@ void EntityRelationObject::SetName(const vector<string>& _name)
 bool EntityRelationObject::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
-}
-
-vector<int64_t> EntityRelationObject::GetPopular() const
-{
-    return m_popular;
-}
-
-void EntityRelationObject::SetPopular(const vector<int64_t>& _popular)
-{
-    m_popular = _popular;
-    m_popularHasBeenSet = true;
-}
-
-bool EntityRelationObject::PopularHasBeenSet() const
-{
-    return m_popularHasBeenSet;
 }
 

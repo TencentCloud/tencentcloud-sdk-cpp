@@ -43,6 +43,8 @@
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunServerDBClusterRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunServerDBClusterResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteEndUserRequest.h>
@@ -159,6 +161,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateWxCloudBaseRunEnvResponse> CreateWxCloudBaseRunEnvOutcome;
                 typedef std::future<CreateWxCloudBaseRunEnvOutcome> CreateWxCloudBaseRunEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateWxCloudBaseRunEnvRequest&, CreateWxCloudBaseRunEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWxCloudBaseRunEnvAsyncHandler;
+                typedef Outcome<Error, Model::CreateWxCloudBaseRunServerDBClusterResponse> CreateWxCloudBaseRunServerDBClusterOutcome;
+                typedef std::future<CreateWxCloudBaseRunServerDBClusterOutcome> CreateWxCloudBaseRunServerDBClusterOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateWxCloudBaseRunServerDBClusterRequest&, CreateWxCloudBaseRunServerDBClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWxCloudBaseRunServerDBClusterAsyncHandler;
                 typedef Outcome<Error, Model::DeleteCloudBaseProjectLatestVersionResponse> DeleteCloudBaseProjectLatestVersionOutcome;
                 typedef std::future<DeleteCloudBaseProjectLatestVersionOutcome> DeleteCloudBaseProjectLatestVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteCloudBaseProjectLatestVersionRequest&, DeleteCloudBaseProjectLatestVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudBaseProjectLatestVersionAsyncHandler;
@@ -359,6 +364,15 @@ namespace TencentCloud
                 CreateWxCloudBaseRunEnvOutcome CreateWxCloudBaseRunEnv(const Model::CreateWxCloudBaseRunEnvRequest &request);
                 void CreateWxCloudBaseRunEnvAsync(const Model::CreateWxCloudBaseRunEnvRequest& request, const CreateWxCloudBaseRunEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateWxCloudBaseRunEnvOutcomeCallable CreateWxCloudBaseRunEnvCallable(const Model::CreateWxCloudBaseRunEnvRequest& request);
+
+                /**
+                 *开通微信云托管MySQL数据库服务
+                 * @param req CreateWxCloudBaseRunServerDBClusterRequest
+                 * @return CreateWxCloudBaseRunServerDBClusterOutcome
+                 */
+                CreateWxCloudBaseRunServerDBClusterOutcome CreateWxCloudBaseRunServerDBCluster(const Model::CreateWxCloudBaseRunServerDBClusterRequest &request);
+                void CreateWxCloudBaseRunServerDBClusterAsync(const Model::CreateWxCloudBaseRunServerDBClusterRequest& request, const CreateWxCloudBaseRunServerDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWxCloudBaseRunServerDBClusterOutcomeCallable CreateWxCloudBaseRunServerDBClusterCallable(const Model::CreateWxCloudBaseRunServerDBClusterRequest& request);
 
                 /**
                  *删除云项目

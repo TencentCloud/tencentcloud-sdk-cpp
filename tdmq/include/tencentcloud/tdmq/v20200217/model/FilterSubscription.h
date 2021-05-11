@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool ConsumerHasExpiredHasBeenSet() const;
 
+                    /**
+                     * 获取按照订阅名过滤，精确查询。
+                     * @return SubscriptionNames 按照订阅名过滤，精确查询。
+                     */
+                    std::vector<std::string> GetSubscriptionNames() const;
+
+                    /**
+                     * 设置按照订阅名过滤，精确查询。
+                     * @param SubscriptionNames 按照订阅名过滤，精确查询。
+                     */
+                    void SetSubscriptionNames(const std::vector<std::string>& _subscriptionNames);
+
+                    /**
+                     * 判断参数 SubscriptionNames 是否已赋值
+                     * @return SubscriptionNames 是否已赋值
+                     */
+                    bool SubscriptionNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     bool m_consumerHasExpired;
                     bool m_consumerHasExpiredHasBeenSet;
+
+                    /**
+                     * 按照订阅名过滤，精确查询。
+                     */
+                    std::vector<std::string> m_subscriptionNames;
+                    bool m_subscriptionNamesHasBeenSet;
 
                 };
             }

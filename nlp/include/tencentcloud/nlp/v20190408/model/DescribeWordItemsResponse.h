@@ -44,18 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取词条信息列表。
-                     * @return WordItems 词条信息列表。
-                     */
-                    std::vector<WordItem> GetWordItems() const;
-
-                    /**
-                     * 判断参数 WordItems 是否已赋值
-                     * @return WordItems 是否已赋值
-                     */
-                    bool WordItemsHasBeenSet() const;
-
-                    /**
                      * 获取词条记录总条数。
                      * @return TotalCount 词条记录总条数。
                      */
@@ -67,19 +55,34 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取词条信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WordItems 词条信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<WordItem> GetWordItems() const;
 
                     /**
-                     * 词条信息列表。
+                     * 判断参数 WordItems 是否已赋值
+                     * @return WordItems 是否已赋值
                      */
-                    std::vector<WordItem> m_wordItems;
-                    bool m_wordItemsHasBeenSet;
+                    bool WordItemsHasBeenSet() const;
+
+                private:
 
                     /**
                      * 词条记录总条数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 词条信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<WordItem> m_wordItems;
+                    bool m_wordItemsHasBeenSet;
 
                 };
             }

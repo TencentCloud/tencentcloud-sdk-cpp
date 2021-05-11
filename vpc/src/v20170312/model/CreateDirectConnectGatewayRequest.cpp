@@ -28,7 +28,8 @@ CreateDirectConnectGatewayRequest::CreateDirectConnectGatewayRequest() :
     m_networkTypeHasBeenSet(false),
     m_networkInstanceIdHasBeenSet(false),
     m_gatewayTypeHasBeenSet(false),
-    m_modeTypeHasBeenSet(false)
+    m_modeTypeHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateDirectConnectGatewayRequest::ToJsonString() const
         string key = "ModeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_modeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void CreateDirectConnectGatewayRequest::SetModeType(const string& _modeType)
 bool CreateDirectConnectGatewayRequest::ModeTypeHasBeenSet() const
 {
     return m_modeTypeHasBeenSet;
+}
+
+string CreateDirectConnectGatewayRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void CreateDirectConnectGatewayRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool CreateDirectConnectGatewayRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/Filter.h>
 
 
 namespace TencentCloud
@@ -174,6 +175,36 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取* TopicName
+按照主题名字查询，精确查询。
+类型：String
+必选：否
+                     * @return Filters * TopicName
+按照主题名字查询，精确查询。
+类型：String
+必选：否
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置* TopicName
+按照主题名字查询，精确查询。
+类型：String
+必选：否
+                     * @param Filters * TopicName
+按照主题名字查询，精确查询。
+类型：String
+必选：否
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +248,15 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * * TopicName
+按照主题名字查询，精确查询。
+类型：String
+必选：否
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

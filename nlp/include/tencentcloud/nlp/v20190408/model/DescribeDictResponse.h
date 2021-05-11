@@ -45,7 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取查询到的词库信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dicts 查询到的词库信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DictInfo> GetDicts() const;
 
@@ -59,6 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 查询到的词库信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DictInfo> m_dicts;
                     bool m_dictsHasBeenSet;

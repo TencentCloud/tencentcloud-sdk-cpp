@@ -23,9 +23,15 @@ using namespace std;
 
 ClassificationResult::ClassificationResult() :
     m_firstClassNameHasBeenSet(false),
-    m_firstClassProbabilityHasBeenSet(false),
     m_secondClassNameHasBeenSet(false),
-    m_secondClassProbabilityHasBeenSet(false)
+    m_firstClassProbabilityHasBeenSet(false),
+    m_secondClassProbabilityHasBeenSet(false),
+    m_thirdClassNameHasBeenSet(false),
+    m_thirdClassProbabilityHasBeenSet(false),
+    m_fourthClassNameHasBeenSet(false),
+    m_fourthClassProbabilityHasBeenSet(false),
+    m_fifthClassNameHasBeenSet(false),
+    m_fifthClassProbabilityHasBeenSet(false)
 {
 }
 
@@ -44,16 +50,6 @@ CoreInternalOutcome ClassificationResult::Deserialize(const Value &value)
         m_firstClassNameHasBeenSet = true;
     }
 
-    if (value.HasMember("FirstClassProbability") && !value["FirstClassProbability"].IsNull())
-    {
-        if (!value["FirstClassProbability"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Error("response `ClassificationResult.FirstClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_firstClassProbability = value["FirstClassProbability"].GetDouble();
-        m_firstClassProbabilityHasBeenSet = true;
-    }
-
     if (value.HasMember("SecondClassName") && !value["SecondClassName"].IsNull())
     {
         if (!value["SecondClassName"].IsString())
@@ -64,6 +60,16 @@ CoreInternalOutcome ClassificationResult::Deserialize(const Value &value)
         m_secondClassNameHasBeenSet = true;
     }
 
+    if (value.HasMember("FirstClassProbability") && !value["FirstClassProbability"].IsNull())
+    {
+        if (!value["FirstClassProbability"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `ClassificationResult.FirstClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstClassProbability = value["FirstClassProbability"].GetDouble();
+        m_firstClassProbabilityHasBeenSet = true;
+    }
+
     if (value.HasMember("SecondClassProbability") && !value["SecondClassProbability"].IsNull())
     {
         if (!value["SecondClassProbability"].IsLosslessDouble())
@@ -72,6 +78,66 @@ CoreInternalOutcome ClassificationResult::Deserialize(const Value &value)
         }
         m_secondClassProbability = value["SecondClassProbability"].GetDouble();
         m_secondClassProbabilityHasBeenSet = true;
+    }
+
+    if (value.HasMember("ThirdClassName") && !value["ThirdClassName"].IsNull())
+    {
+        if (!value["ThirdClassName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClassificationResult.ThirdClassName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_thirdClassName = string(value["ThirdClassName"].GetString());
+        m_thirdClassNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ThirdClassProbability") && !value["ThirdClassProbability"].IsNull())
+    {
+        if (!value["ThirdClassProbability"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `ClassificationResult.ThirdClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_thirdClassProbability = value["ThirdClassProbability"].GetDouble();
+        m_thirdClassProbabilityHasBeenSet = true;
+    }
+
+    if (value.HasMember("FourthClassName") && !value["FourthClassName"].IsNull())
+    {
+        if (!value["FourthClassName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClassificationResult.FourthClassName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fourthClassName = string(value["FourthClassName"].GetString());
+        m_fourthClassNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("FourthClassProbability") && !value["FourthClassProbability"].IsNull())
+    {
+        if (!value["FourthClassProbability"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `ClassificationResult.FourthClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_fourthClassProbability = value["FourthClassProbability"].GetDouble();
+        m_fourthClassProbabilityHasBeenSet = true;
+    }
+
+    if (value.HasMember("FifthClassName") && !value["FifthClassName"].IsNull())
+    {
+        if (!value["FifthClassName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClassificationResult.FifthClassName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fifthClassName = string(value["FifthClassName"].GetString());
+        m_fifthClassNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("FifthClassProbability") && !value["FifthClassProbability"].IsNull())
+    {
+        if (!value["FifthClassProbability"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `ClassificationResult.FifthClassProbability` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_fifthClassProbability = value["FifthClassProbability"].GetDouble();
+        m_fifthClassProbabilityHasBeenSet = true;
     }
 
 
@@ -89,14 +155,6 @@ void ClassificationResult::ToJsonObject(Value &value, Document::AllocatorType& a
         value.AddMember(iKey, Value(m_firstClassName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_firstClassProbabilityHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "FirstClassProbability";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_firstClassProbability, allocator);
-    }
-
     if (m_secondClassNameHasBeenSet)
     {
         Value iKey(kStringType);
@@ -105,12 +163,68 @@ void ClassificationResult::ToJsonObject(Value &value, Document::AllocatorType& a
         value.AddMember(iKey, Value(m_secondClassName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_firstClassProbabilityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FirstClassProbability";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_firstClassProbability, allocator);
+    }
+
     if (m_secondClassProbabilityHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "SecondClassProbability";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_secondClassProbability, allocator);
+    }
+
+    if (m_thirdClassNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ThirdClassName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_thirdClassName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_thirdClassProbabilityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ThirdClassProbability";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_thirdClassProbability, allocator);
+    }
+
+    if (m_fourthClassNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FourthClassName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_fourthClassName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fourthClassProbabilityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FourthClassProbability";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fourthClassProbability, allocator);
+    }
+
+    if (m_fifthClassNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FifthClassName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_fifthClassName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fifthClassProbabilityHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FifthClassProbability";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fifthClassProbability, allocator);
     }
 
 }
@@ -132,22 +246,6 @@ bool ClassificationResult::FirstClassNameHasBeenSet() const
     return m_firstClassNameHasBeenSet;
 }
 
-double ClassificationResult::GetFirstClassProbability() const
-{
-    return m_firstClassProbability;
-}
-
-void ClassificationResult::SetFirstClassProbability(const double& _firstClassProbability)
-{
-    m_firstClassProbability = _firstClassProbability;
-    m_firstClassProbabilityHasBeenSet = true;
-}
-
-bool ClassificationResult::FirstClassProbabilityHasBeenSet() const
-{
-    return m_firstClassProbabilityHasBeenSet;
-}
-
 string ClassificationResult::GetSecondClassName() const
 {
     return m_secondClassName;
@@ -164,6 +262,22 @@ bool ClassificationResult::SecondClassNameHasBeenSet() const
     return m_secondClassNameHasBeenSet;
 }
 
+double ClassificationResult::GetFirstClassProbability() const
+{
+    return m_firstClassProbability;
+}
+
+void ClassificationResult::SetFirstClassProbability(const double& _firstClassProbability)
+{
+    m_firstClassProbability = _firstClassProbability;
+    m_firstClassProbabilityHasBeenSet = true;
+}
+
+bool ClassificationResult::FirstClassProbabilityHasBeenSet() const
+{
+    return m_firstClassProbabilityHasBeenSet;
+}
+
 double ClassificationResult::GetSecondClassProbability() const
 {
     return m_secondClassProbability;
@@ -178,5 +292,101 @@ void ClassificationResult::SetSecondClassProbability(const double& _secondClassP
 bool ClassificationResult::SecondClassProbabilityHasBeenSet() const
 {
     return m_secondClassProbabilityHasBeenSet;
+}
+
+string ClassificationResult::GetThirdClassName() const
+{
+    return m_thirdClassName;
+}
+
+void ClassificationResult::SetThirdClassName(const string& _thirdClassName)
+{
+    m_thirdClassName = _thirdClassName;
+    m_thirdClassNameHasBeenSet = true;
+}
+
+bool ClassificationResult::ThirdClassNameHasBeenSet() const
+{
+    return m_thirdClassNameHasBeenSet;
+}
+
+double ClassificationResult::GetThirdClassProbability() const
+{
+    return m_thirdClassProbability;
+}
+
+void ClassificationResult::SetThirdClassProbability(const double& _thirdClassProbability)
+{
+    m_thirdClassProbability = _thirdClassProbability;
+    m_thirdClassProbabilityHasBeenSet = true;
+}
+
+bool ClassificationResult::ThirdClassProbabilityHasBeenSet() const
+{
+    return m_thirdClassProbabilityHasBeenSet;
+}
+
+string ClassificationResult::GetFourthClassName() const
+{
+    return m_fourthClassName;
+}
+
+void ClassificationResult::SetFourthClassName(const string& _fourthClassName)
+{
+    m_fourthClassName = _fourthClassName;
+    m_fourthClassNameHasBeenSet = true;
+}
+
+bool ClassificationResult::FourthClassNameHasBeenSet() const
+{
+    return m_fourthClassNameHasBeenSet;
+}
+
+double ClassificationResult::GetFourthClassProbability() const
+{
+    return m_fourthClassProbability;
+}
+
+void ClassificationResult::SetFourthClassProbability(const double& _fourthClassProbability)
+{
+    m_fourthClassProbability = _fourthClassProbability;
+    m_fourthClassProbabilityHasBeenSet = true;
+}
+
+bool ClassificationResult::FourthClassProbabilityHasBeenSet() const
+{
+    return m_fourthClassProbabilityHasBeenSet;
+}
+
+string ClassificationResult::GetFifthClassName() const
+{
+    return m_fifthClassName;
+}
+
+void ClassificationResult::SetFifthClassName(const string& _fifthClassName)
+{
+    m_fifthClassName = _fifthClassName;
+    m_fifthClassNameHasBeenSet = true;
+}
+
+bool ClassificationResult::FifthClassNameHasBeenSet() const
+{
+    return m_fifthClassNameHasBeenSet;
+}
+
+double ClassificationResult::GetFifthClassProbability() const
+{
+    return m_fifthClassProbability;
+}
+
+void ClassificationResult::SetFifthClassProbability(const double& _fifthClassProbability)
+{
+    m_fifthClassProbability = _fifthClassProbability;
+    m_fifthClassProbabilityHasBeenSet = true;
+}
+
+bool ClassificationResult::FifthClassProbabilityHasBeenSet() const
+{
+    return m_fifthClassProbabilityHasBeenSet;
 }
 

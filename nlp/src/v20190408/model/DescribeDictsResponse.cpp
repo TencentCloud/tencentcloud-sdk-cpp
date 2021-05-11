@@ -25,8 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeDictsResponse::DescribeDictsResponse() :
-    m_dictsHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_dictsHasBeenSet(false)
 {
 }
 
@@ -64,6 +64,16 @@ CoreInternalOutcome DescribeDictsResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Dicts") && !rsp["Dicts"].IsNull())
     {
         if (!rsp["Dicts"].IsArray())
@@ -84,30 +94,10 @@ CoreInternalOutcome DescribeDictsResponse::Deserialize(const string &payload)
         m_dictsHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-vector<DictInfo> DescribeDictsResponse::GetDicts() const
-{
-    return m_dicts;
-}
-
-bool DescribeDictsResponse::DictsHasBeenSet() const
-{
-    return m_dictsHasBeenSet;
-}
 
 uint64_t DescribeDictsResponse::GetTotalCount() const
 {
@@ -117,6 +107,16 @@ uint64_t DescribeDictsResponse::GetTotalCount() const
 bool DescribeDictsResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<DictInfo> DescribeDictsResponse::GetDicts() const
+{
+    return m_dicts;
+}
+
+bool DescribeDictsResponse::DictsHasBeenSet() const
+{
+    return m_dictsHasBeenSet;
 }
 
 

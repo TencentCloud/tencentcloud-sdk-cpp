@@ -22,9 +22,9 @@ using namespace rapidjson;
 using namespace std;
 
 SearchResult::SearchResult() :
+    m_textHasBeenSet(false),
     m_isExistHasBeenSet(false),
     m_matchTextHasBeenSet(false),
-    m_textHasBeenSet(false),
     m_posHasBeenSet(false)
 {
 }
@@ -33,6 +33,16 @@ CoreInternalOutcome SearchResult::Deserialize(const Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Text") && !value["Text"].IsNull())
+    {
+        if (!value["Text"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SearchResult.Text` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_text = string(value["Text"].GetString());
+        m_textHasBeenSet = true;
+    }
 
     if (value.HasMember("IsExist") && !value["IsExist"].IsNull())
     {
@@ -54,16 +64,6 @@ CoreInternalOutcome SearchResult::Deserialize(const Value &value)
         m_matchTextHasBeenSet = true;
     }
 
-    if (value.HasMember("Text") && !value["Text"].IsNull())
-    {
-        if (!value["Text"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `SearchResult.Text` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_text = string(value["Text"].GetString());
-        m_textHasBeenSet = true;
-    }
-
     if (value.HasMember("Pos") && !value["Pos"].IsNull())
     {
         if (!value["Pos"].IsString())
@@ -81,6 +81,14 @@ CoreInternalOutcome SearchResult::Deserialize(const Value &value)
 void SearchResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
+    if (m_textHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Text";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_isExistHasBeenSet)
     {
         Value iKey(kStringType);
@@ -97,14 +105,6 @@ void SearchResult::ToJsonObject(Value &value, Document::AllocatorType& allocator
         value.AddMember(iKey, Value(m_matchText.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_textHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Text";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_posHasBeenSet)
     {
         Value iKey(kStringType);
@@ -115,6 +115,22 @@ void SearchResult::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
 }
 
+
+string SearchResult::GetText() const
+{
+    return m_text;
+}
+
+void SearchResult::SetText(const string& _text)
+{
+    m_text = _text;
+    m_textHasBeenSet = true;
+}
+
+bool SearchResult::TextHasBeenSet() const
+{
+    return m_textHasBeenSet;
+}
 
 uint64_t SearchResult::GetIsExist() const
 {
@@ -146,22 +162,6 @@ void SearchResult::SetMatchText(const string& _matchText)
 bool SearchResult::MatchTextHasBeenSet() const
 {
     return m_matchTextHasBeenSet;
-}
-
-string SearchResult::GetText() const
-{
-    return m_text;
-}
-
-void SearchResult::SetText(const string& _text)
-{
-    m_text = _text;
-    m_textHasBeenSet = true;
-}
-
-bool SearchResult::TextHasBeenSet() const
-{
-    return m_textHasBeenSet;
 }
 
 string SearchResult::GetPos() const

@@ -61,6 +61,24 @@ namespace TencentCloud
                     bool TokenIdHasBeenSet() const;
 
                     /**
+                     * 获取实例 ID
+                     * @return RegistryId 实例 ID
+                     */
+                    std::string GetRegistryId() const;
+
+                    /**
+                     * 设置实例 ID
+                     * @param RegistryId 实例 ID
+                     */
+                    void SetRegistryId(const std::string& _registryId);
+
+                    /**
+                     * 判断参数 RegistryId 是否已赋值
+                     * @return RegistryId 是否已赋值
+                     */
+                    bool RegistryIdHasBeenSet() const;
+
+                    /**
                      * 获取启用或禁用实例长期访问凭证
                      * @return Enable 启用或禁用实例长期访问凭证
                      */
@@ -79,22 +97,40 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID
-                     * @return RegistryId 实例 ID
+                     * 获取访问凭证描述
+                     * @return Desc 访问凭证描述
                      */
-                    std::string GetRegistryId() const;
+                    std::string GetDesc() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param RegistryId 实例 ID
+                     * 设置访问凭证描述
+                     * @param Desc 访问凭证描述
                      */
-                    void SetRegistryId(const std::string& _registryId);
+                    void SetDesc(const std::string& _desc);
 
                     /**
-                     * 判断参数 RegistryId 是否已赋值
-                     * @return RegistryId 是否已赋值
+                     * 判断参数 Desc 是否已赋值
+                     * @return Desc 是否已赋值
                      */
-                    bool RegistryIdHasBeenSet() const;
+                    bool DescHasBeenSet() const;
+
+                    /**
+                     * 获取1为修改描述 2为启动禁用，不填写默认为修改启动禁用
+                     * @return ModifyFlag 1为修改描述 2为启动禁用，不填写默认为修改启动禁用
+                     */
+                    int64_t GetModifyFlag() const;
+
+                    /**
+                     * 设置1为修改描述 2为启动禁用，不填写默认为修改启动禁用
+                     * @param ModifyFlag 1为修改描述 2为启动禁用，不填写默认为修改启动禁用
+                     */
+                    void SetModifyFlag(const int64_t& _modifyFlag);
+
+                    /**
+                     * 判断参数 ModifyFlag 是否已赋值
+                     * @return ModifyFlag 是否已赋值
+                     */
+                    bool ModifyFlagHasBeenSet() const;
 
                 private:
 
@@ -105,16 +141,28 @@ namespace TencentCloud
                     bool m_tokenIdHasBeenSet;
 
                     /**
+                     * 实例 ID
+                     */
+                    std::string m_registryId;
+                    bool m_registryIdHasBeenSet;
+
+                    /**
                      * 启用或禁用实例长期访问凭证
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 实例 ID
+                     * 访问凭证描述
                      */
-                    std::string m_registryId;
-                    bool m_registryIdHasBeenSet;
+                    std::string m_desc;
+                    bool m_descHasBeenSet;
+
+                    /**
+                     * 1为修改描述 2为启动禁用，不填写默认为修改启动禁用
+                     */
+                    int64_t m_modifyFlag;
+                    bool m_modifyFlagHasBeenSet;
 
                 };
             }

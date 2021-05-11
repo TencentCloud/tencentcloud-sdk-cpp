@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，仅当设置 Limit 时该参数有效
+                     * @return Offset 偏移量，仅当设置 Limit 时该参数有效
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置偏移量，仅当设置 Limit 时该参数有效
+                     * @param Offset 偏移量，仅当设置 Limit 时该参数有效
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回值大小
-                     * @return Limit 返回值大小
+                     * 获取返回值大小，不填则返回全量数据
+                     * @return Limit 返回值大小，不填则返回全量数据
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回值大小
-                     * @param Limit 返回值大小
+                     * 设置返回值大小，不填则返回全量数据
+                     * @param Limit 返回值大小，不填则返回全量数据
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -159,13 +159,13 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量，仅当设置 Limit 时该参数有效
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回值大小
+                     * 返回值大小，不填则返回全量数据
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

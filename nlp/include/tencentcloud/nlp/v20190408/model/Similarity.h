@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取相似度分数
-                     * @return Score 相似度分数
-                     */
-                    double GetScore() const;
-
-                    /**
-                     * 设置相似度分数
-                     * @param Score 相似度分数
-                     */
-                    void SetScore(const double& _score);
-
-                    /**
-                     * 判断参数 Score 是否已赋值
-                     * @return Score 是否已赋值
-                     */
-                    bool ScoreHasBeenSet() const;
-
-                    /**
                      * 获取目标文本句子
                      * @return Text 目标文本句子
                      */
@@ -82,19 +64,37 @@ namespace TencentCloud
                      */
                     bool TextHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取相似度分数
+                     * @return Score 相似度分数
+                     */
+                    double GetScore() const;
 
                     /**
-                     * 相似度分数
+                     * 设置相似度分数
+                     * @param Score 相似度分数
                      */
-                    double m_score;
-                    bool m_scoreHasBeenSet;
+                    void SetScore(const double& _score);
+
+                    /**
+                     * 判断参数 Score 是否已赋值
+                     * @return Score 是否已赋值
+                     */
+                    bool ScoreHasBeenSet() const;
+
+                private:
 
                     /**
                      * 目标文本句子
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
+
+                    /**
+                     * 相似度分数
+                     */
+                    double m_score;
+                    bool m_scoreHasBeenSet;
 
                 };
             }

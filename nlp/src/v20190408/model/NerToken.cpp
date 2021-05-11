@@ -22,10 +22,10 @@ using namespace rapidjson;
 using namespace std;
 
 NerToken::NerToken() :
-    m_beginOffsetHasBeenSet(false),
+    m_wordHasBeenSet(false),
     m_lengthHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_wordHasBeenSet(false)
+    m_beginOffsetHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -34,24 +34,34 @@ CoreInternalOutcome NerToken::Deserialize(const Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("BeginOffset") && !value["BeginOffset"].IsNull())
+    if (value.HasMember("Word") && !value["Word"].IsNull())
     {
-        if (!value["BeginOffset"].IsUint64())
+        if (!value["Word"].IsString())
         {
-            return CoreInternalOutcome(Error("response `NerToken.BeginOffset` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `NerToken.Word` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_beginOffset = value["BeginOffset"].GetUint64();
-        m_beginOffsetHasBeenSet = true;
+        m_word = string(value["Word"].GetString());
+        m_wordHasBeenSet = true;
     }
 
     if (value.HasMember("Length") && !value["Length"].IsNull())
     {
-        if (!value["Length"].IsUint64())
+        if (!value["Length"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `NerToken.Length` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `NerToken.Length` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_length = value["Length"].GetUint64();
+        m_length = value["Length"].GetInt64();
         m_lengthHasBeenSet = true;
+    }
+
+    if (value.HasMember("BeginOffset") && !value["BeginOffset"].IsNull())
+    {
+        if (!value["BeginOffset"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `NerToken.BeginOffset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_beginOffset = value["BeginOffset"].GetInt64();
+        m_beginOffsetHasBeenSet = true;
     }
 
     if (value.HasMember("Type") && !value["Type"].IsNull())
@@ -64,16 +74,6 @@ CoreInternalOutcome NerToken::Deserialize(const Value &value)
         m_typeHasBeenSet = true;
     }
 
-    if (value.HasMember("Word") && !value["Word"].IsNull())
-    {
-        if (!value["Word"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `NerToken.Word` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_word = string(value["Word"].GetString());
-        m_wordHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -81,12 +81,12 @@ CoreInternalOutcome NerToken::Deserialize(const Value &value)
 void NerToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
 
-    if (m_beginOffsetHasBeenSet)
+    if (m_wordHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "BeginOffset";
+        string key = "Word";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_beginOffset, allocator);
+        value.AddMember(iKey, Value(m_word.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lengthHasBeenSet)
@@ -97,6 +97,14 @@ void NerToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         value.AddMember(iKey, m_length, allocator);
     }
 
+    if (m_beginOffsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "BeginOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_beginOffset, allocator);
+    }
+
     if (m_typeHasBeenSet)
     {
         Value iKey(kStringType);
@@ -105,39 +113,31 @@ void NerToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_wordHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Word";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_word.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
 
-uint64_t NerToken::GetBeginOffset() const
+string NerToken::GetWord() const
 {
-    return m_beginOffset;
+    return m_word;
 }
 
-void NerToken::SetBeginOffset(const uint64_t& _beginOffset)
+void NerToken::SetWord(const string& _word)
 {
-    m_beginOffset = _beginOffset;
-    m_beginOffsetHasBeenSet = true;
+    m_word = _word;
+    m_wordHasBeenSet = true;
 }
 
-bool NerToken::BeginOffsetHasBeenSet() const
+bool NerToken::WordHasBeenSet() const
 {
-    return m_beginOffsetHasBeenSet;
+    return m_wordHasBeenSet;
 }
 
-uint64_t NerToken::GetLength() const
+int64_t NerToken::GetLength() const
 {
     return m_length;
 }
 
-void NerToken::SetLength(const uint64_t& _length)
+void NerToken::SetLength(const int64_t& _length)
 {
     m_length = _length;
     m_lengthHasBeenSet = true;
@@ -146,6 +146,22 @@ void NerToken::SetLength(const uint64_t& _length)
 bool NerToken::LengthHasBeenSet() const
 {
     return m_lengthHasBeenSet;
+}
+
+int64_t NerToken::GetBeginOffset() const
+{
+    return m_beginOffset;
+}
+
+void NerToken::SetBeginOffset(const int64_t& _beginOffset)
+{
+    m_beginOffset = _beginOffset;
+    m_beginOffsetHasBeenSet = true;
+}
+
+bool NerToken::BeginOffsetHasBeenSet() const
+{
+    return m_beginOffsetHasBeenSet;
 }
 
 string NerToken::GetType() const
@@ -162,21 +178,5 @@ void NerToken::SetType(const string& _type)
 bool NerToken::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
-}
-
-string NerToken::GetWord() const
-{
-    return m_word;
-}
-
-void NerToken::SetWord(const string& _word)
-{
-    m_word = _word;
-    m_wordHasBeenSet = true;
-}
-
-bool NerToken::WordHasBeenSet() const
-{
-    return m_wordHasBeenSet;
 }
 

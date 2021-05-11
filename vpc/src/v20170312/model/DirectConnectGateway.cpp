@@ -36,7 +36,9 @@ DirectConnectGateway::DirectConnectGateway() :
     m_enableBGPCommunityHasBeenSet(false),
     m_natGatewayIdHasBeenSet(false),
     m_vXLANSupportHasBeenSet(false),
-    m_modeTypeHasBeenSet(false)
+    m_modeTypeHasBeenSet(false),
+    m_localZoneHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -198,6 +200,26 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const Value &value)
         m_modeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("LocalZone") && !value["LocalZone"].IsNull())
+    {
+        if (!value["LocalZone"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectGateway.LocalZone` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_localZone = value["LocalZone"].GetBool();
+        m_localZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectGateway.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -328,6 +350,22 @@ void DirectConnectGateway::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "ModeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_modeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_localZoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LocalZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_localZone, allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -571,5 +609,37 @@ void DirectConnectGateway::SetModeType(const string& _modeType)
 bool DirectConnectGateway::ModeTypeHasBeenSet() const
 {
     return m_modeTypeHasBeenSet;
+}
+
+bool DirectConnectGateway::GetLocalZone() const
+{
+    return m_localZone;
+}
+
+void DirectConnectGateway::SetLocalZone(const bool& _localZone)
+{
+    m_localZone = _localZone;
+    m_localZoneHasBeenSet = true;
+}
+
+bool DirectConnectGateway::LocalZoneHasBeenSet() const
+{
+    return m_localZoneHasBeenSet;
+}
+
+string DirectConnectGateway::GetZone() const
+{
+    return m_zone;
+}
+
+void DirectConnectGateway::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool DirectConnectGateway::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 

@@ -43,18 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对于当前输出回复的自信度
-                     * @return Confidence 对于当前输出回复的自信度
-                     */
-                    double GetConfidence() const;
-
-                    /**
-                     * 判断参数 Confidence 是否已赋值
-                     * @return Confidence 是否已赋值
-                     */
-                    bool ConfidenceHasBeenSet() const;
-
-                    /**
                      * 获取闲聊回复
                      * @return Reply 闲聊回复
                      */
@@ -66,19 +54,31 @@ namespace TencentCloud
                      */
                     bool ReplyHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取对于当前输出回复的自信度
+                     * @return Confidence 对于当前输出回复的自信度
+                     */
+                    double GetConfidence() const;
 
                     /**
-                     * 对于当前输出回复的自信度
+                     * 判断参数 Confidence 是否已赋值
+                     * @return Confidence 是否已赋值
                      */
-                    double m_confidence;
-                    bool m_confidenceHasBeenSet;
+                    bool ConfidenceHasBeenSet() const;
+
+                private:
 
                     /**
                      * 闲聊回复
                      */
                     std::string m_reply;
                     bool m_replyHasBeenSet;
+
+                    /**
+                     * 对于当前输出回复的自信度
+                     */
+                    double m_confidence;
+                    bool m_confidenceHasBeenSet;
 
                 };
             }

@@ -40,7 +40,9 @@ Topic::Topic() :
     m_topicNameHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_producerLimitHasBeenSet(false),
+    m_consumerLimitHasBeenSet(false)
 {
 }
 
@@ -249,6 +251,26 @@ CoreInternalOutcome Topic::Deserialize(const Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProducerLimit") && !value["ProducerLimit"].IsNull())
+    {
+        if (!value["ProducerLimit"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Topic.ProducerLimit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_producerLimit = string(value["ProducerLimit"].GetString());
+        m_producerLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumerLimit") && !value["ConsumerLimit"].IsNull())
+    {
+        if (!value["ConsumerLimit"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Topic.ConsumerLimit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerLimit = string(value["ConsumerLimit"].GetString());
+        m_consumerLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -413,6 +435,22 @@ void Topic::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_producerLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProducerLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_producerLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumerLimitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ConsumerLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_consumerLimit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -720,5 +758,37 @@ void Topic::SetUpdateTime(const string& _updateTime)
 bool Topic::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string Topic::GetProducerLimit() const
+{
+    return m_producerLimit;
+}
+
+void Topic::SetProducerLimit(const string& _producerLimit)
+{
+    m_producerLimit = _producerLimit;
+    m_producerLimitHasBeenSet = true;
+}
+
+bool Topic::ProducerLimitHasBeenSet() const
+{
+    return m_producerLimitHasBeenSet;
+}
+
+string Topic::GetConsumerLimit() const
+{
+    return m_consumerLimit;
+}
+
+void Topic::SetConsumerLimit(const string& _consumerLimit)
+{
+    m_consumerLimit = _consumerLimit;
+    m_consumerLimitHasBeenSet = true;
+}
+
+bool Topic::ConsumerLimitHasBeenSet() const
+{
+    return m_consumerLimitHasBeenSet;
 }
 

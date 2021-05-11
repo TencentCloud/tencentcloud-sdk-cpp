@@ -44,24 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待检索的词条集合。
-                     * @return WordItems 待检索的词条集合。
-                     */
-                    std::vector<WordItem> GetWordItems() const;
-
-                    /**
-                     * 设置待检索的词条集合。
-                     * @param WordItems 待检索的词条集合。
-                     */
-                    void SetWordItems(const std::vector<WordItem>& _wordItems);
-
-                    /**
-                     * 判断参数 WordItems 是否已赋值
-                     * @return WordItems 是否已赋值
-                     */
-                    bool WordItemsHasBeenSet() const;
-
-                    /**
                      * 获取自定义词库ID。
                      * @return DictId 自定义词库ID。
                      */
@@ -79,19 +61,37 @@ namespace TencentCloud
                      */
                     bool DictIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取待检索的词条集合。
+                     * @return WordItems 待检索的词条集合。
+                     */
+                    std::vector<WordItem> GetWordItems() const;
 
                     /**
-                     * 待检索的词条集合。
+                     * 设置待检索的词条集合。
+                     * @param WordItems 待检索的词条集合。
                      */
-                    std::vector<WordItem> m_wordItems;
-                    bool m_wordItemsHasBeenSet;
+                    void SetWordItems(const std::vector<WordItem>& _wordItems);
+
+                    /**
+                     * 判断参数 WordItems 是否已赋值
+                     * @return WordItems 是否已赋值
+                     */
+                    bool WordItemsHasBeenSet() const;
+
+                private:
 
                     /**
                      * 自定义词库ID。
                      */
                     std::string m_dictId;
                     bool m_dictIdHasBeenSet;
+
+                    /**
+                     * 待检索的词条集合。
+                     */
+                    std::vector<WordItem> m_wordItems;
+                    bool m_wordItemsHasBeenSet;
 
                 };
             }

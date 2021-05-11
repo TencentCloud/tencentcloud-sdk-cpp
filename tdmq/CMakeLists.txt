@@ -20,6 +20,7 @@ set(tdmq_public_header
 
 set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DeleteTopicsResponse.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeBindClustersResponse.h
   include/tencentcloud/tdmq/v20200217/model/SubscriptionTopic.h
   include/tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesRequest.h
@@ -67,7 +68,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/Topic.h
   include/tencentcloud/tdmq/v20200217/model/Consumer.h
   include/tencentcloud/tdmq/v20200217/model/DescribeBindVpcsResponse.h
-  include/tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h
+  include/tencentcloud/tdmq/v20200217/model/Filter.h
   include/tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateEnvironmentResponse.h
   include/tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampRequest.h
@@ -88,6 +89,7 @@ set(tdmq_public_header_model
 set(tdmq_src
   src/v20200217/TdmqClient.cpp
   src/v20200217/model/DeleteTopicsResponse.cpp
+  src/v20200217/model/ModifyEnvironmentAttributesResponse.cpp
   src/v20200217/model/DescribeBindClustersResponse.cpp
   src/v20200217/model/SubscriptionTopic.cpp
   src/v20200217/model/ModifyEnvironmentAttributesRequest.cpp
@@ -135,7 +137,7 @@ set(tdmq_src
   src/v20200217/model/Topic.cpp
   src/v20200217/model/Consumer.cpp
   src/v20200217/model/DescribeBindVpcsResponse.cpp
-  src/v20200217/model/ModifyEnvironmentAttributesResponse.cpp
+  src/v20200217/model/Filter.cpp
   src/v20200217/model/DeleteSubscriptionsRequest.cpp
   src/v20200217/model/CreateEnvironmentResponse.cpp
   src/v20200217/model/ResetMsgSubOffsetByTimestampRequest.cpp

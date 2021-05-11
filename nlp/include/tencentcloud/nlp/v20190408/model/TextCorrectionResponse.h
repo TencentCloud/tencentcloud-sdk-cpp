@@ -45,7 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取纠错详情
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CCITokens 纠错详情
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CCIToken> GetCCITokens() const;
 
@@ -71,6 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 纠错详情
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CCIToken> m_cCITokens;
                     bool m_cCITokensHasBeenSet;

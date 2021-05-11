@@ -22,11 +22,11 @@ using namespace rapidjson;
 using namespace std;
 
 DictInfo::DictInfo() :
-    m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -34,16 +34,6 @@ CoreInternalOutcome DictInfo::Deserialize(const Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Id") && !value["Id"].IsNull())
-    {
-        if (!value["Id"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `DictInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_id = string(value["Id"].GetString());
-        m_idHasBeenSet = true;
-    }
 
     if (value.HasMember("Name") && !value["Name"].IsNull())
     {
@@ -55,14 +45,14 @@ CoreInternalOutcome DictInfo::Deserialize(const Value &value)
         m_nameHasBeenSet = true;
     }
 
-    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    if (value.HasMember("Id") && !value["Id"].IsNull())
     {
-        if (!value["CreateTime"].IsString())
+        if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Error("response `DictInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `DictInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_createTime = string(value["CreateTime"].GetString());
-        m_createTimeHasBeenSet = true;
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
     }
 
     if (value.HasMember("Description") && !value["Description"].IsNull())
@@ -85,20 +75,22 @@ CoreInternalOutcome DictInfo::Deserialize(const Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DictInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void DictInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 {
-
-    if (m_idHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Id";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_nameHasBeenSet)
     {
@@ -108,12 +100,12 @@ void DictInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_createTimeHasBeenSet)
+    if (m_idHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "CreateTime";
+        string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -132,24 +124,16 @@ void DictInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string DictInfo::GetId() const
-{
-    return m_id;
-}
-
-void DictInfo::SetId(const string& _id)
-{
-    m_id = _id;
-    m_idHasBeenSet = true;
-}
-
-bool DictInfo::IdHasBeenSet() const
-{
-    return m_idHasBeenSet;
-}
 
 string DictInfo::GetName() const
 {
@@ -167,20 +151,20 @@ bool DictInfo::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-string DictInfo::GetCreateTime() const
+string DictInfo::GetId() const
 {
-    return m_createTime;
+    return m_id;
 }
 
-void DictInfo::SetCreateTime(const string& _createTime)
+void DictInfo::SetId(const string& _id)
 {
-    m_createTime = _createTime;
-    m_createTimeHasBeenSet = true;
+    m_id = _id;
+    m_idHasBeenSet = true;
 }
 
-bool DictInfo::CreateTimeHasBeenSet() const
+bool DictInfo::IdHasBeenSet() const
 {
-    return m_createTimeHasBeenSet;
+    return m_idHasBeenSet;
 }
 
 string DictInfo::GetDescription() const
@@ -213,5 +197,21 @@ void DictInfo::SetUpdateTime(const string& _updateTime)
 bool DictInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string DictInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void DictInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool DictInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

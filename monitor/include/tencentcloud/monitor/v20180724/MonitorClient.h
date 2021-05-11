@@ -29,6 +29,8 @@
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmPolicyRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmPolicyResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateAlertRuleRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateAlertRuleResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryRequest.h>
@@ -37,6 +39,8 @@
 #include <tencentcloud/monitor/v20180724/model/DeleteAlarmNoticesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteAlarmPolicyRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteAlarmPolicyResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteAlertRulesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteAlertRulesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryRequest.h>
@@ -59,6 +63,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmPoliciesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmPolicyRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmPolicyResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlertRulesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlertRulesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAllNamespacesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAllNamespacesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeBaseMetricsRequest.h>
@@ -111,6 +117,10 @@
 #include <tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UnBindingPolicyObjectRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UnBindingPolicyObjectResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateAlertRuleRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateAlertRuleResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateAlertRuleStateRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateAlertRuleStateResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateServiceDiscoveryResponse.h>
 
@@ -136,6 +146,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAlarmPolicyResponse> CreateAlarmPolicyOutcome;
                 typedef std::future<CreateAlarmPolicyOutcome> CreateAlarmPolicyOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateAlarmPolicyRequest&, CreateAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmPolicyAsyncHandler;
+                typedef Outcome<Error, Model::CreateAlertRuleResponse> CreateAlertRuleOutcome;
+                typedef std::future<CreateAlertRuleOutcome> CreateAlertRuleOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateAlertRuleRequest&, CreateAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlertRuleAsyncHandler;
                 typedef Outcome<Error, Model::CreatePolicyGroupResponse> CreatePolicyGroupOutcome;
                 typedef std::future<CreatePolicyGroupOutcome> CreatePolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreatePolicyGroupRequest&, CreatePolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyGroupAsyncHandler;
@@ -148,6 +161,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteAlarmPolicyResponse> DeleteAlarmPolicyOutcome;
                 typedef std::future<DeleteAlarmPolicyOutcome> DeleteAlarmPolicyOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeleteAlarmPolicyRequest&, DeleteAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmPolicyAsyncHandler;
+                typedef Outcome<Error, Model::DeleteAlertRulesResponse> DeleteAlertRulesOutcome;
+                typedef std::future<DeleteAlertRulesOutcome> DeleteAlertRulesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteAlertRulesRequest&, DeleteAlertRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlertRulesAsyncHandler;
                 typedef Outcome<Error, Model::DeletePolicyGroupResponse> DeletePolicyGroupOutcome;
                 typedef std::future<DeletePolicyGroupOutcome> DeletePolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeletePolicyGroupRequest&, DeletePolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyGroupAsyncHandler;
@@ -181,6 +197,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAlarmPolicyResponse> DescribeAlarmPolicyOutcome;
                 typedef std::future<DescribeAlarmPolicyOutcome> DescribeAlarmPolicyOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmPolicyRequest&, DescribeAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmPolicyAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAlertRulesResponse> DescribeAlertRulesOutcome;
+                typedef std::future<DescribeAlertRulesOutcome> DescribeAlertRulesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeAlertRulesRequest&, DescribeAlertRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertRulesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAllNamespacesResponse> DescribeAllNamespacesOutcome;
                 typedef std::future<DescribeAllNamespacesOutcome> DescribeAllNamespacesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAllNamespacesRequest&, DescribeAllNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllNamespacesAsyncHandler;
@@ -259,6 +278,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UnBindingPolicyObjectResponse> UnBindingPolicyObjectOutcome;
                 typedef std::future<UnBindingPolicyObjectOutcome> UnBindingPolicyObjectOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UnBindingPolicyObjectRequest&, UnBindingPolicyObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindingPolicyObjectAsyncHandler;
+                typedef Outcome<Error, Model::UpdateAlertRuleResponse> UpdateAlertRuleOutcome;
+                typedef std::future<UpdateAlertRuleOutcome> UpdateAlertRuleOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdateAlertRuleRequest&, UpdateAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAlertRuleAsyncHandler;
+                typedef Outcome<Error, Model::UpdateAlertRuleStateResponse> UpdateAlertRuleStateOutcome;
+                typedef std::future<UpdateAlertRuleStateOutcome> UpdateAlertRuleStateOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdateAlertRuleStateRequest&, UpdateAlertRuleStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAlertRuleStateAsyncHandler;
                 typedef Outcome<Error, Model::UpdateServiceDiscoveryResponse> UpdateServiceDiscoveryOutcome;
                 typedef std::future<UpdateServiceDiscoveryOutcome> UpdateServiceDiscoveryOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdateServiceDiscoveryRequest&, UpdateServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceDiscoveryAsyncHandler;
@@ -291,6 +316,15 @@ namespace TencentCloud
                 CreateAlarmPolicyOutcome CreateAlarmPolicy(const Model::CreateAlarmPolicyRequest &request);
                 void CreateAlarmPolicyAsync(const Model::CreateAlarmPolicyRequest& request, const CreateAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAlarmPolicyOutcomeCallable CreateAlarmPolicyCallable(const Model::CreateAlarmPolicyRequest& request);
+
+                /**
+                 *创建 Prometheus 告警规则
+                 * @param req CreateAlertRuleRequest
+                 * @return CreateAlertRuleOutcome
+                 */
+                CreateAlertRuleOutcome CreateAlertRule(const Model::CreateAlertRuleRequest &request);
+                void CreateAlertRuleAsync(const Model::CreateAlertRuleRequest& request, const CreateAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAlertRuleOutcomeCallable CreateAlertRuleCallable(const Model::CreateAlertRuleRequest& request);
 
                 /**
                  *增加策略组
@@ -329,6 +363,15 @@ namespace TencentCloud
                 DeleteAlarmPolicyOutcome DeleteAlarmPolicy(const Model::DeleteAlarmPolicyRequest &request);
                 void DeleteAlarmPolicyAsync(const Model::DeleteAlarmPolicyRequest& request, const DeleteAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAlarmPolicyOutcomeCallable DeleteAlarmPolicyCallable(const Model::DeleteAlarmPolicyRequest& request);
+
+                /**
+                 *批量删除 Prometheus 报警规则
+                 * @param req DeleteAlertRulesRequest
+                 * @return DeleteAlertRulesOutcome
+                 */
+                DeleteAlertRulesOutcome DeleteAlertRules(const Model::DeleteAlertRulesRequest &request);
+                void DeleteAlertRulesAsync(const Model::DeleteAlertRulesRequest& request, const DeleteAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAlertRulesOutcomeCallable DeleteAlertRulesCallable(const Model::DeleteAlertRulesRequest& request);
 
                 /**
                  *删除告警策略组
@@ -432,6 +475,15 @@ namespace TencentCloud
                 DescribeAlarmPolicyOutcome DescribeAlarmPolicy(const Model::DescribeAlarmPolicyRequest &request);
                 void DescribeAlarmPolicyAsync(const Model::DescribeAlarmPolicyRequest& request, const DescribeAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAlarmPolicyOutcomeCallable DescribeAlarmPolicyCallable(const Model::DescribeAlarmPolicyRequest& request);
+
+                /**
+                 *Prometheus 报警规则查询接口
+                 * @param req DescribeAlertRulesRequest
+                 * @return DescribeAlertRulesOutcome
+                 */
+                DescribeAlertRulesOutcome DescribeAlertRules(const Model::DescribeAlertRulesRequest &request);
+                void DescribeAlertRulesAsync(const Model::DescribeAlertRulesRequest& request, const DescribeAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlertRulesOutcomeCallable DescribeAlertRulesCallable(const Model::DescribeAlertRulesRequest& request);
 
                 /**
                  *查询所有名字空间
@@ -677,6 +729,24 @@ namespace TencentCloud
                 UnBindingPolicyObjectOutcome UnBindingPolicyObject(const Model::UnBindingPolicyObjectRequest &request);
                 void UnBindingPolicyObjectAsync(const Model::UnBindingPolicyObjectRequest& request, const UnBindingPolicyObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnBindingPolicyObjectOutcomeCallable UnBindingPolicyObjectCallable(const Model::UnBindingPolicyObjectRequest& request);
+
+                /**
+                 *更新 Prometheus 的报警规则
+                 * @param req UpdateAlertRuleRequest
+                 * @return UpdateAlertRuleOutcome
+                 */
+                UpdateAlertRuleOutcome UpdateAlertRule(const Model::UpdateAlertRuleRequest &request);
+                void UpdateAlertRuleAsync(const Model::UpdateAlertRuleRequest& request, const UpdateAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAlertRuleOutcomeCallable UpdateAlertRuleCallable(const Model::UpdateAlertRuleRequest& request);
+
+                /**
+                 *更新 Prometheus 报警策略状态
+                 * @param req UpdateAlertRuleStateRequest
+                 * @return UpdateAlertRuleStateOutcome
+                 */
+                UpdateAlertRuleStateOutcome UpdateAlertRuleState(const Model::UpdateAlertRuleStateRequest &request);
+                void UpdateAlertRuleStateAsync(const Model::UpdateAlertRuleStateRequest& request, const UpdateAlertRuleStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAlertRuleStateOutcomeCallable UpdateAlertRuleStateCallable(const Model::UpdateAlertRuleStateRequest& request);
 
                 /**
                  *在腾讯云容器服务下更新 Prometheus 服务发现。

@@ -135,14 +135,14 @@ namespace TencentCloud
                     bool ParametersHasBeenSet() const;
 
                     /**
-                     * 获取环境别名
-                     * @return EnvAlias 环境别名
+                     * 获取环境别名。要以a-z开头，不能包含a-zA-z0-9-以外的字符
+                     * @return EnvAlias 环境别名。要以a-z开头，不能包含a-zA-z0-9-以外的字符
                      */
                     std::string GetEnvAlias() const;
 
                     /**
-                     * 设置环境别名
-                     * @param EnvAlias 环境别名
+                     * 设置环境别名。要以a-z开头，不能包含a-zA-z0-9-以外的字符
+                     * @param EnvAlias 环境别名。要以a-z开头，不能包含a-zA-z0-9-以外的字符
                      */
                     void SetEnvAlias(const std::string& _envAlias);
 
@@ -225,14 +225,14 @@ namespace TencentCloud
                     bool NetworkConfigHasBeenSet() const;
 
                     /**
-                     * 获取免费额度的"basic", 不使用的用""
-                     * @return FreeQuota 免费额度的"basic", 不使用的用""
+                     * 获取用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
+                     * @return FreeQuota 用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
                      */
                     std::string GetFreeQuota() const;
 
                     /**
-                     * 设置免费额度的"basic", 不使用的用""
-                     * @param FreeQuota 免费额度的"basic", 不使用的用""
+                     * 设置用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
+                     * @param FreeQuota 用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
                      */
                     void SetFreeQuota(const std::string& _freeQuota);
 
@@ -311,7 +311,7 @@ namespace TencentCloud
                     bool m_parametersHasBeenSet;
 
                     /**
-                     * 环境别名
+                     * 环境别名。要以a-z开头，不能包含a-zA-z0-9-以外的字符
                      */
                     std::string m_envAlias;
                     bool m_envAliasHasBeenSet;
@@ -341,7 +341,7 @@ namespace TencentCloud
                     bool m_networkConfigHasBeenSet;
 
                     /**
-                     * 免费额度的"basic", 不使用的用""
+                     * 用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。
                      */
                     std::string m_freeQuota;
                     bool m_freeQuotaHasBeenSet;

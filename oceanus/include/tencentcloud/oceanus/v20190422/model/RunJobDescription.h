@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool RunTypeHasBeenSet() const;
 
                     /**
-                     * 获取SQL类型作业启动参数：指定数据源消费起始时间点
-                     * @return StartMode SQL类型作业启动参数：指定数据源消费起始时间点
+                     * 获取已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点
+                     * @return StartMode 已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点
                      */
                     std::string GetStartMode() const;
 
                     /**
-                     * 设置SQL类型作业启动参数：指定数据源消费起始时间点
-                     * @param StartMode SQL类型作业启动参数：指定数据源消费起始时间点
+                     * 设置已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点
+                     * @param StartMode 已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点
                      */
                     void SetStartMode(const std::string& _startMode);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool StartModeHasBeenSet() const;
 
                     /**
-                     * 获取已发布上线的作业配置版本
-                     * @return JobConfigVersion 已发布上线的作业配置版本
+                     * 获取当前作业的某个版本
+                     * @return JobConfigVersion 当前作业的某个版本
                      */
                     uint64_t GetJobConfigVersion() const;
 
                     /**
-                     * 设置已发布上线的作业配置版本
-                     * @param JobConfigVersion 已发布上线的作业配置版本
+                     * 设置当前作业的某个版本
+                     * @param JobConfigVersion 当前作业的某个版本
                      */
                     void SetJobConfigVersion(const uint64_t& _jobConfigVersion);
 
@@ -133,13 +133,13 @@ namespace TencentCloud
                     bool m_runTypeHasBeenSet;
 
                     /**
-                     * SQL类型作业启动参数：指定数据源消费起始时间点
+                     * 已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点
                      */
                     std::string m_startMode;
                     bool m_startModeHasBeenSet;
 
                     /**
-                     * 已发布上线的作业配置版本
+                     * 当前作业的某个版本
                      */
                     uint64_t m_jobConfigVersion;
                     bool m_jobConfigVersionHasBeenSet;

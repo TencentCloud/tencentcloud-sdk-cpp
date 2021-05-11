@@ -88,7 +88,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeLoginWhiteListRequest.h
   include/tencentcloud/cwp/v20180228/model/ReverseShell.h
   include/tencentcloud/cwp/v20180228/model/UntrustMaliciousRequestRequest.h
-  include/tencentcloud/cwp/v20180228/model/ExportNonlocalLoginPlacesRequest.h
+  include/tencentcloud/cwp/v20180228/model/ExportBruteAttacksResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportVulDetectionReportResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeComponentInfoResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAccountStatisticsResponse.h
@@ -100,7 +100,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeProVersionInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/CreateProcessTaskRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteMaliciousRequestsResponse.h
-  include/tencentcloud/cwp/v20180228/model/ExportBruteAttacksResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeESHitsResponse.h
   include/tencentcloud/cwp/v20180228/model/EditReverseShellRuleResponse.h
   include/tencentcloud/cwp/v20180228/model/OsName.h
   include/tencentcloud/cwp/v20180228/model/ExportBruteAttacksRequest.h
@@ -168,6 +168,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeWeeklyReportMalwaresRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBruteAttacksResponse.h
+  include/tencentcloud/cwp/v20180228/model/ModifyProVersionRenewFlagResponse.h
   include/tencentcloud/cwp/v20180228/model/RegionInfo.h
   include/tencentcloud/cwp/v20180228/model/ExportNonlocalLoginPlacesResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsRequest.h
@@ -245,7 +246,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeMachinesResponse.h
   include/tencentcloud/cwp/v20180228/model/CreateUsualLoginPlacesResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribePrivilegeRulesResponse.h
-  include/tencentcloud/cwp/v20180228/model/ModifyProVersionRenewFlagResponse.h
+  include/tencentcloud/cwp/v20180228/model/ExportNonlocalLoginPlacesRequest.h
   include/tencentcloud/cwp/v20180228/model/Machine.h
   include/tencentcloud/cwp/v20180228/model/ExportVulDetectionReportRequest.h
   include/tencentcloud/cwp/v20180228/model/Malware.h
@@ -255,8 +256,9 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/PrivilegeRule.h
   include/tencentcloud/cwp/v20180228/model/HistoryAccount.h
   include/tencentcloud/cwp/v20180228/model/ModifyProVersionRenewFlagRequest.h
-  include/tencentcloud/cwp/v20180228/model/TrustMaliciousRequestResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeESHitsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeUsualLoginPlacesRequest.h
+  include/tencentcloud/cwp/v20180228/model/TrustMaliciousRequestResponse.h
   include/tencentcloud/cwp/v20180228/model/Component.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAgentVulsResponse.h
@@ -372,7 +374,7 @@ set(cwp_src
   src/v20180228/model/DescribeLoginWhiteListRequest.cpp
   src/v20180228/model/ReverseShell.cpp
   src/v20180228/model/UntrustMaliciousRequestRequest.cpp
-  src/v20180228/model/ExportNonlocalLoginPlacesRequest.cpp
+  src/v20180228/model/ExportBruteAttacksResponse.cpp
   src/v20180228/model/ExportVulDetectionReportResponse.cpp
   src/v20180228/model/DescribeComponentInfoResponse.cpp
   src/v20180228/model/DescribeAccountStatisticsResponse.cpp
@@ -384,7 +386,7 @@ set(cwp_src
   src/v20180228/model/DescribeProVersionInfoRequest.cpp
   src/v20180228/model/CreateProcessTaskRequest.cpp
   src/v20180228/model/DeleteMaliciousRequestsResponse.cpp
-  src/v20180228/model/ExportBruteAttacksResponse.cpp
+  src/v20180228/model/DescribeESHitsResponse.cpp
   src/v20180228/model/EditReverseShellRuleResponse.cpp
   src/v20180228/model/OsName.cpp
   src/v20180228/model/ExportBruteAttacksRequest.cpp
@@ -452,6 +454,7 @@ set(cwp_src
   src/v20180228/model/DescribeAttackLogInfoRequest.cpp
   src/v20180228/model/DescribeWeeklyReportMalwaresRequest.cpp
   src/v20180228/model/DescribeBruteAttacksResponse.cpp
+  src/v20180228/model/ModifyProVersionRenewFlagResponse.cpp
   src/v20180228/model/RegionInfo.cpp
   src/v20180228/model/ExportNonlocalLoginPlacesResponse.cpp
   src/v20180228/model/DescribeComponentStatisticsRequest.cpp
@@ -529,7 +532,7 @@ set(cwp_src
   src/v20180228/model/DescribeMachinesResponse.cpp
   src/v20180228/model/CreateUsualLoginPlacesResponse.cpp
   src/v20180228/model/DescribePrivilegeRulesResponse.cpp
-  src/v20180228/model/ModifyProVersionRenewFlagResponse.cpp
+  src/v20180228/model/ExportNonlocalLoginPlacesRequest.cpp
   src/v20180228/model/Machine.cpp
   src/v20180228/model/ExportVulDetectionReportRequest.cpp
   src/v20180228/model/Malware.cpp
@@ -539,8 +542,9 @@ set(cwp_src
   src/v20180228/model/PrivilegeRule.cpp
   src/v20180228/model/HistoryAccount.cpp
   src/v20180228/model/ModifyProVersionRenewFlagRequest.cpp
-  src/v20180228/model/TrustMaliciousRequestResponse.cpp
+  src/v20180228/model/DescribeESHitsRequest.cpp
   src/v20180228/model/DescribeUsualLoginPlacesRequest.cpp
+  src/v20180228/model/TrustMaliciousRequestResponse.cpp
   src/v20180228/model/Component.cpp
   src/v20180228/model/DescribeVulsRequest.cpp
   src/v20180228/model/DescribeAgentVulsResponse.cpp

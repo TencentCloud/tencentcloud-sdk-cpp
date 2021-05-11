@@ -169,6 +169,49 @@ MonitorClient::CreateAlarmPolicyOutcomeCallable MonitorClient::CreateAlarmPolicy
     return task->get_future();
 }
 
+MonitorClient::CreateAlertRuleOutcome MonitorClient::CreateAlertRule(const CreateAlertRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAlertRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAlertRuleResponse rsp = CreateAlertRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAlertRuleOutcome(rsp);
+        else
+            return CreateAlertRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAlertRuleOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateAlertRuleAsync(const CreateAlertRuleRequest& request, const CreateAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAlertRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateAlertRuleOutcomeCallable MonitorClient::CreateAlertRuleCallable(const CreateAlertRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAlertRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAlertRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreatePolicyGroupOutcome MonitorClient::CreatePolicyGroup(const CreatePolicyGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePolicyGroup");
@@ -334,6 +377,49 @@ MonitorClient::DeleteAlarmPolicyOutcomeCallable MonitorClient::DeleteAlarmPolicy
         [this, request]()
         {
             return this->DeleteAlarmPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DeleteAlertRulesOutcome MonitorClient::DeleteAlertRules(const DeleteAlertRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAlertRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAlertRulesResponse rsp = DeleteAlertRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAlertRulesOutcome(rsp);
+        else
+            return DeleteAlertRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAlertRulesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteAlertRulesAsync(const DeleteAlertRulesRequest& request, const DeleteAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAlertRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeleteAlertRulesOutcomeCallable MonitorClient::DeleteAlertRulesCallable(const DeleteAlertRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAlertRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAlertRules(request);
         }
     );
 
@@ -807,6 +893,49 @@ MonitorClient::DescribeAlarmPolicyOutcomeCallable MonitorClient::DescribeAlarmPo
         [this, request]()
         {
             return this->DescribeAlarmPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeAlertRulesOutcome MonitorClient::DescribeAlertRules(const DescribeAlertRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlertRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlertRulesResponse rsp = DescribeAlertRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlertRulesOutcome(rsp);
+        else
+            return DescribeAlertRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlertRulesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAlertRulesAsync(const DescribeAlertRulesRequest& request, const DescribeAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlertRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeAlertRulesOutcomeCallable MonitorClient::DescribeAlertRulesCallable(const DescribeAlertRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlertRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlertRules(request);
         }
     );
 
@@ -1925,6 +2054,92 @@ MonitorClient::UnBindingPolicyObjectOutcomeCallable MonitorClient::UnBindingPoli
         [this, request]()
         {
             return this->UnBindingPolicyObject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdateAlertRuleOutcome MonitorClient::UpdateAlertRule(const UpdateAlertRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAlertRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAlertRuleResponse rsp = UpdateAlertRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAlertRuleOutcome(rsp);
+        else
+            return UpdateAlertRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAlertRuleOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateAlertRuleAsync(const UpdateAlertRuleRequest& request, const UpdateAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAlertRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdateAlertRuleOutcomeCallable MonitorClient::UpdateAlertRuleCallable(const UpdateAlertRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAlertRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAlertRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdateAlertRuleStateOutcome MonitorClient::UpdateAlertRuleState(const UpdateAlertRuleStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAlertRuleState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAlertRuleStateResponse rsp = UpdateAlertRuleStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAlertRuleStateOutcome(rsp);
+        else
+            return UpdateAlertRuleStateOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAlertRuleStateOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateAlertRuleStateAsync(const UpdateAlertRuleStateRequest& request, const UpdateAlertRuleStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAlertRuleState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdateAlertRuleStateOutcomeCallable MonitorClient::UpdateAlertRuleStateCallable(const UpdateAlertRuleStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAlertRuleStateOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAlertRuleState(request);
         }
     );
 

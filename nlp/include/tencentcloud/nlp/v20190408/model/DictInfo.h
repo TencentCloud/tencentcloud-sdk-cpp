@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义词库ID。
-                     * @return Id 自定义词库ID。
-                     */
-                    std::string GetId() const;
-
-                    /**
-                     * 设置自定义词库ID。
-                     * @param Id 自定义词库ID。
-                     */
-                    void SetId(const std::string& _id);
-
-                    /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
-                     */
-                    bool IdHasBeenSet() const;
-
-                    /**
                      * 获取自定义词库名称。
                      * @return Name 自定义词库名称。
                      */
@@ -83,32 +65,36 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
-                     * @return CreateTime 自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
+                     * 获取自定义词库ID。
+                     * @return Id 自定义词库ID。
                      */
-                    std::string GetCreateTime() const;
+                    std::string GetId() const;
 
                     /**
-                     * 设置自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
-                     * @param CreateTime 自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
+                     * 设置自定义词库ID。
+                     * @param Id 自定义词库ID。
                      */
-                    void SetCreateTime(const std::string& _createTime);
+                    void SetId(const std::string& _id);
 
                     /**
-                     * 判断参数 CreateTime 是否已赋值
-                     * @return CreateTime 是否已赋值
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
                      */
-                    bool CreateTimeHasBeenSet() const;
+                    bool IdHasBeenSet() const;
 
                     /**
                      * 获取自定义词库描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 自定义词库描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置自定义词库描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Description 自定义词库描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -120,13 +106,17 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param UpdateTime 自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -136,13 +126,29 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreateTime() const;
 
                     /**
-                     * 自定义词库ID。
+                     * 设置自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateTime 自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_id;
-                    bool m_idHasBeenSet;
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                private:
 
                     /**
                      * 自定义词库名称。
@@ -151,22 +157,31 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
+                     * 自定义词库ID。
                      */
-                    std::string m_createTime;
-                    bool m_createTimeHasBeenSet;
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                     /**
                      * 自定义词库描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

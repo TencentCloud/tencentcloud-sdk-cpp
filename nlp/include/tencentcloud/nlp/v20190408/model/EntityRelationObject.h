@@ -47,14 +47,40 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取object对应popular值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Popular object对应popular值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> GetPopular() const;
+
+                    /**
+                     * 设置object对应popular值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Popular object对应popular值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPopular(const std::vector<int64_t>& _popular);
+
+                    /**
+                     * 判断参数 Popular 是否已赋值
+                     * @return Popular 是否已赋值
+                     */
+                    bool PopularHasBeenSet() const;
+
+                    /**
                      * 获取object对应id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id object对应id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetId() const;
 
                     /**
                      * 设置object对应id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Id object对应id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetId(const std::vector<std::string>& _id);
 
@@ -66,13 +92,17 @@ namespace TencentCloud
 
                     /**
                      * 获取object对应name
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name object对应name
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetName() const;
 
                     /**
                      * 设置object对应name
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name object对应name
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::vector<std::string>& _name);
 
@@ -82,43 +112,28 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
-                    /**
-                     * 获取object对应popular值
-                     * @return Popular object对应popular值
-                     */
-                    std::vector<int64_t> GetPopular() const;
-
-                    /**
-                     * 设置object对应popular值
-                     * @param Popular object对应popular值
-                     */
-                    void SetPopular(const std::vector<int64_t>& _popular);
-
-                    /**
-                     * 判断参数 Popular 是否已赋值
-                     * @return Popular 是否已赋值
-                     */
-                    bool PopularHasBeenSet() const;
-
                 private:
 
                     /**
+                     * object对应popular值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_popular;
+                    bool m_popularHasBeenSet;
+
+                    /**
                      * object对应id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * object对应name
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_name;
                     bool m_nameHasBeenSet;
-
-                    /**
-                     * object对应popular值
-                     */
-                    std::vector<int64_t> m_popular;
-                    bool m_popularHasBeenSet;
 
                 };
             }

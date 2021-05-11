@@ -25,8 +25,8 @@ using namespace std;
 
 DescribeWordItemsRequest::DescribeWordItemsRequest() :
     m_dictIdHasBeenSet(false),
-    m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
     m_textHasBeenSet(false)
 {
 }
@@ -46,20 +46,20 @@ string DescribeWordItemsRequest::ToJsonString() const
         d.AddMember(iKey, Value(m_dictId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_limitHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
     if (m_offsetHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
     if (m_textHasBeenSet)
@@ -94,22 +94,6 @@ bool DescribeWordItemsRequest::DictIdHasBeenSet() const
     return m_dictIdHasBeenSet;
 }
 
-uint64_t DescribeWordItemsRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void DescribeWordItemsRequest::SetLimit(const uint64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool DescribeWordItemsRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
-
 uint64_t DescribeWordItemsRequest::GetOffset() const
 {
     return m_offset;
@@ -124,6 +108,22 @@ void DescribeWordItemsRequest::SetOffset(const uint64_t& _offset)
 bool DescribeWordItemsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeWordItemsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeWordItemsRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeWordItemsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 string DescribeWordItemsRequest::GetText() const

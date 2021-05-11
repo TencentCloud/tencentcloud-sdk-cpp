@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待纠错的文本（仅支持UTF-8格式，不超过2000字）
-                     * @return Text 待纠错的文本（仅支持UTF-8格式，不超过2000字）
+                     * 获取待纠错的文本（仅支持UTF-8格式，不超过2000字符）
+                     * @return Text 待纠错的文本（仅支持UTF-8格式，不超过2000字符）
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置待纠错的文本（仅支持UTF-8格式，不超过2000字）
-                     * @param Text 待纠错的文本（仅支持UTF-8格式，不超过2000字）
+                     * 设置待纠错的文本（仅支持UTF-8格式，不超过2000字符）
+                     * @param Text 待纠错的文本（仅支持UTF-8格式，不超过2000字符）
                      */
                     void SetText(const std::string& _text);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待纠错的文本（仅支持UTF-8格式，不超过2000字）
+                     * 待纠错的文本（仅支持UTF-8格式，不超过2000字符）
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;

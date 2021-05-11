@@ -24,7 +24,8 @@ using namespace std;
 FilterSubscription::FilterSubscription() :
     m_consumerHasCountHasBeenSet(false),
     m_consumerHasBacklogHasBeenSet(false),
-    m_consumerHasExpiredHasBeenSet(false)
+    m_consumerHasExpiredHasBeenSet(false),
+    m_subscriptionNamesHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,19 @@ CoreInternalOutcome FilterSubscription::Deserialize(const Value &value)
         m_consumerHasExpiredHasBeenSet = true;
     }
 
+    if (value.HasMember("SubscriptionNames") && !value["SubscriptionNames"].IsNull())
+    {
+        if (!value["SubscriptionNames"].IsArray())
+            return CoreInternalOutcome(Error("response `FilterSubscription.SubscriptionNames` is not array type"));
+
+        const Value &tmpValue = value["SubscriptionNames"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_subscriptionNames.push_back((*itr).GetString());
+        }
+        m_subscriptionNamesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +106,19 @@ void FilterSubscription::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "ConsumerHasExpired";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_consumerHasExpired, allocator);
+    }
+
+    if (m_subscriptionNamesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubscriptionNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_subscriptionNames.begin(); itr != m_subscriptionNames.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -143,5 +170,21 @@ void FilterSubscription::SetConsumerHasExpired(const bool& _consumerHasExpired)
 bool FilterSubscription::ConsumerHasExpiredHasBeenSet() const
 {
     return m_consumerHasExpiredHasBeenSet;
+}
+
+vector<string> FilterSubscription::GetSubscriptionNames() const
+{
+    return m_subscriptionNames;
+}
+
+void FilterSubscription::SetSubscriptionNames(const vector<string>& _subscriptionNames)
+{
+    m_subscriptionNames = _subscriptionNames;
+    m_subscriptionNamesHasBeenSet = true;
+}
+
+bool FilterSubscription::SubscriptionNamesHasBeenSet() const
+{
+    return m_subscriptionNamesHasBeenSet;
 }
 

@@ -47,6 +47,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取Subject对应popular
+                     * @return Popular Subject对应popular
+                     */
+                    std::vector<int64_t> GetPopular() const;
+
+                    /**
+                     * 设置Subject对应popular
+                     * @param Popular Subject对应popular
+                     */
+                    void SetPopular(const std::vector<int64_t>& _popular);
+
+                    /**
+                     * 判断参数 Popular 是否已赋值
+                     * @return Popular 是否已赋值
+                     */
+                    bool PopularHasBeenSet() const;
+
+                    /**
                      * 获取Subject对应id
                      * @return Id Subject对应id
                      */
@@ -82,25 +100,13 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
-                    /**
-                     * 获取Subject对应popular
-                     * @return Popular Subject对应popular
-                     */
-                    std::vector<int64_t> GetPopular() const;
-
-                    /**
-                     * 设置Subject对应popular
-                     * @param Popular Subject对应popular
-                     */
-                    void SetPopular(const std::vector<int64_t>& _popular);
-
-                    /**
-                     * 判断参数 Popular 是否已赋值
-                     * @return Popular 是否已赋值
-                     */
-                    bool PopularHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * Subject对应popular
+                     */
+                    std::vector<int64_t> m_popular;
+                    bool m_popularHasBeenSet;
 
                     /**
                      * Subject对应id
@@ -113,12 +119,6 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_name;
                     bool m_nameHasBeenSet;
-
-                    /**
-                     * Subject对应popular
-                     */
-                    std::vector<int64_t> m_popular;
-                    bool m_popularHasBeenSet;
 
                 };
             }

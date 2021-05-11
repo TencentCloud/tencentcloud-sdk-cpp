@@ -489,6 +489,50 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取生产者上限。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProducerLimit 生产者上限。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProducerLimit() const;
+
+                    /**
+                     * 设置生产者上限。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProducerLimit 生产者上限。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProducerLimit(const std::string& _producerLimit);
+
+                    /**
+                     * 判断参数 ProducerLimit 是否已赋值
+                     * @return ProducerLimit 是否已赋值
+                     */
+                    bool ProducerLimitHasBeenSet() const;
+
+                    /**
+                     * 获取消费者上限。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConsumerLimit 消费者上限。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetConsumerLimit() const;
+
+                    /**
+                     * 设置消费者上限。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConsumerLimit 消费者上限。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConsumerLimit(const std::string& _consumerLimit);
+
+                    /**
+                     * 判断参数 ConsumerLimit 是否已赋值
+                     * @return ConsumerLimit 是否已赋值
+                     */
+                    bool ConsumerLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -629,6 +673,20 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 生产者上限。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_producerLimit;
+                    bool m_producerLimitHasBeenSet;
+
+                    /**
+                     * 消费者上限。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_consumerLimit;
+                    bool m_consumerLimitHasBeenSet;
 
                 };
             }

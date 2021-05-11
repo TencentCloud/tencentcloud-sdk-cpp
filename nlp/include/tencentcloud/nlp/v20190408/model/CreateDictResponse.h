@@ -44,7 +44,9 @@ namespace TencentCloud
 
                     /**
                      * 获取创建的自定义词库ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DictId 创建的自定义词库ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDictId() const;
 
@@ -58,6 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 创建的自定义词库ID。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dictId;
                     bool m_dictIdHasBeenSet;

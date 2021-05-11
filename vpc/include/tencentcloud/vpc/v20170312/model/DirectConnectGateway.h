@@ -364,6 +364,50 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      */
                     bool ModeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否为localZone专线网关。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalZone 是否为localZone专线网关。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetLocalZone() const;
+
+                    /**
+                     * 设置是否为localZone专线网关。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LocalZone 是否为localZone专线网关。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocalZone(const bool& _localZone);
+
+                    /**
+                     * 判断参数 LocalZone 是否已赋值
+                     * @return LocalZone 是否已赋值
+                     */
+                    bool LocalZoneHasBeenSet() const;
+
+                    /**
+                     * 获取专线网关所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zone 专线网关所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置专线网关所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Zone 专线网关所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -467,6 +511,20 @@ NAT类型支持网络地址转换配置，类型确定后不能修改；一个�
                      */
                     std::string m_modeType;
                     bool m_modeTypeHasBeenSet;
+
+                    /**
+                     * 是否为localZone专线网关。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_localZone;
+                    bool m_localZoneHasBeenSet;
+
+                    /**
+                     * 专线网关所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

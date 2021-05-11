@@ -33,6 +33,8 @@
 #include <tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstancesRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstancesResponse.h>
+#include <tencentcloud/es/v20180416/model/DiagnoseInstanceRequest.h>
+#include <tencentcloud/es/v20180416/model/DiagnoseInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h>
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/es/v20180416/model/RestartKibanaResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartNodesRequest.h>
 #include <tencentcloud/es/v20180416/model/RestartNodesResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsRequest.h>
+#include <tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdatePluginsRequest.h>
@@ -80,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Error, Model::DiagnoseInstanceResponse> DiagnoseInstanceOutcome;
+                typedef std::future<DiagnoseInstanceOutcome> DiagnoseInstanceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DiagnoseInstanceRequest&, DiagnoseInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DiagnoseInstanceAsyncHandler;
                 typedef Outcome<Error, Model::GetRequestTargetNodeTypesResponse> GetRequestTargetNodeTypesOutcome;
                 typedef std::future<GetRequestTargetNodeTypesOutcome> GetRequestTargetNodeTypesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::GetRequestTargetNodeTypesRequest&, GetRequestTargetNodeTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRequestTargetNodeTypesAsyncHandler;
@@ -92,6 +99,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RestartNodesResponse> RestartNodesOutcome;
                 typedef std::future<RestartNodesOutcome> RestartNodesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RestartNodesRequest&, RestartNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartNodesAsyncHandler;
+                typedef Outcome<Error, Model::UpdateDiagnoseSettingsResponse> UpdateDiagnoseSettingsOutcome;
+                typedef std::future<UpdateDiagnoseSettingsOutcome> UpdateDiagnoseSettingsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpdateDiagnoseSettingsRequest&, UpdateDiagnoseSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDiagnoseSettingsAsyncHandler;
                 typedef Outcome<Error, Model::UpdateInstanceResponse> UpdateInstanceOutcome;
                 typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateInstanceRequest&, UpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAsyncHandler;
@@ -156,6 +166,15 @@ namespace TencentCloud
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
+                 *智能运维诊断集群
+                 * @param req DiagnoseInstanceRequest
+                 * @return DiagnoseInstanceOutcome
+                 */
+                DiagnoseInstanceOutcome DiagnoseInstance(const Model::DiagnoseInstanceRequest &request);
+                void DiagnoseInstanceAsync(const Model::DiagnoseInstanceRequest& request, const DiagnoseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DiagnoseInstanceOutcomeCallable DiagnoseInstanceCallable(const Model::DiagnoseInstanceRequest& request);
+
+                /**
                  *获取接收客户端请求的节点类型
                  * @param req GetRequestTargetNodeTypesRequest
                  * @return GetRequestTargetNodeTypesOutcome
@@ -190,6 +209,15 @@ namespace TencentCloud
                 RestartNodesOutcome RestartNodes(const Model::RestartNodesRequest &request);
                 void RestartNodesAsync(const Model::RestartNodesRequest& request, const RestartNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestartNodesOutcomeCallable RestartNodesCallable(const Model::RestartNodesRequest& request);
+
+                /**
+                 *更新智能运维配置
+                 * @param req UpdateDiagnoseSettingsRequest
+                 * @return UpdateDiagnoseSettingsOutcome
+                 */
+                UpdateDiagnoseSettingsOutcome UpdateDiagnoseSettings(const Model::UpdateDiagnoseSettingsRequest &request);
+                void UpdateDiagnoseSettingsAsync(const Model::UpdateDiagnoseSettingsRequest& request, const UpdateDiagnoseSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateDiagnoseSettingsOutcomeCallable UpdateDiagnoseSettingsCallable(const Model::UpdateDiagnoseSettingsRequest& request);
 
                 /**
                  *对集群进行节点规格变更，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作。参数中InstanceId为必传参数，ForceRestart为选填参数，剩余参数传递组合及含义如下：

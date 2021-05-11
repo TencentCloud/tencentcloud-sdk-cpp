@@ -25,8 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeWordItemsResponse::DescribeWordItemsResponse() :
-    m_wordItemsHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_wordItemsHasBeenSet(false)
 {
 }
 
@@ -64,6 +64,16 @@ CoreInternalOutcome DescribeWordItemsResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
     if (rsp.HasMember("WordItems") && !rsp["WordItems"].IsNull())
     {
         if (!rsp["WordItems"].IsArray())
@@ -84,30 +94,10 @@ CoreInternalOutcome DescribeWordItemsResponse::Deserialize(const string &payload
         m_wordItemsHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-
-vector<WordItem> DescribeWordItemsResponse::GetWordItems() const
-{
-    return m_wordItems;
-}
-
-bool DescribeWordItemsResponse::WordItemsHasBeenSet() const
-{
-    return m_wordItemsHasBeenSet;
-}
 
 uint64_t DescribeWordItemsResponse::GetTotalCount() const
 {
@@ -117,6 +107,16 @@ uint64_t DescribeWordItemsResponse::GetTotalCount() const
 bool DescribeWordItemsResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<WordItem> DescribeWordItemsResponse::GetWordItems() const
+{
+    return m_wordItems;
+}
+
+bool DescribeWordItemsResponse::WordItemsHasBeenSet() const
+{
+    return m_wordItemsHasBeenSet;
 }
 
 

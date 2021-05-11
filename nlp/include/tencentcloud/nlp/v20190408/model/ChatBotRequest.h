@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
-                     * @return Flag 0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
-                     */
-                    uint64_t GetFlag() const;
-
-                    /**
-                     * 设置0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
-                     * @param Flag 0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
-                     */
-                    void SetFlag(const uint64_t& _flag);
-
-                    /**
-                     * 判断参数 Flag 是否已赋值
-                     * @return Flag 是否已赋值
-                     */
-                    bool FlagHasBeenSet() const;
-
-                    /**
                      * 获取服务的id,  主要用于儿童闲聊接口，比如手Q的openid
                      * @return OpenId 服务的id,  主要用于儿童闲聊接口，比如手Q的openid
                      */
@@ -96,6 +78,24 @@ namespace TencentCloud
                      */
                     bool OpenIdHasBeenSet() const;
 
+                    /**
+                     * 获取0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
+                     * @return Flag 0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
+                     */
+                    uint64_t GetFlag() const;
+
+                    /**
+                     * 设置0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
+                     * @param Flag 0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
+                     */
+                    void SetFlag(const uint64_t& _flag);
+
+                    /**
+                     * 判断参数 Flag 是否已赋值
+                     * @return Flag 是否已赋值
+                     */
+                    bool FlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,16 +105,16 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
-                     */
-                    uint64_t m_flag;
-                    bool m_flagHasBeenSet;
-
-                    /**
                      * 服务的id,  主要用于儿童闲聊接口，比如手Q的openid
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
+
+                    /**
+                     * 0: 通用闲聊, 1:儿童闲聊, 默认是通用闲聊
+                     */
+                    uint64_t m_flag;
+                    bool m_flagHasBeenSet;
 
                 };
             }

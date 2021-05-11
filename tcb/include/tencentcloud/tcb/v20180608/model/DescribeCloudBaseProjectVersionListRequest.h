@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取起始时间
-                     * @return StartTime 起始时间
+                     * 获取起始时间 2021-03-27 12:00:00
+                     * @return StartTime 起始时间 2021-03-27 12:00:00
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置起始时间
-                     * @param StartTime 起始时间
+                     * 设置起始时间 2021-03-27 12:00:00
+                     * @param StartTime 起始时间 2021-03-27 12:00:00
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取终止时间
-                     * @return EndTime 终止时间
+                     * 获取终止时间 2021-03-27 12:00:00
+                     * @return EndTime 终止时间 2021-03-27 12:00:00
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置终止时间
-                     * @param EndTime 终止时间
+                     * 设置终止时间 2021-03-27 12:00:00
+                     * @param EndTime 终止时间 2021-03-27 12:00:00
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -177,13 +177,13 @@ namespace TencentCloud
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 起始时间
+                     * 起始时间 2021-03-27 12:00:00
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 终止时间
+                     * 终止时间 2021-03-27 12:00:00
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

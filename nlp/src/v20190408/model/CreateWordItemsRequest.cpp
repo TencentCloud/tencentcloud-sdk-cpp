@@ -24,8 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 CreateWordItemsRequest::CreateWordItemsRequest() :
-    m_wordItemsHasBeenSet(false),
-    m_dictIdHasBeenSet(false)
+    m_dictIdHasBeenSet(false),
+    m_wordItemsHasBeenSet(false)
 {
 }
 
@@ -35,6 +35,14 @@ string CreateWordItemsRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_dictIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DictId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_dictId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_wordItemsHasBeenSet)
     {
@@ -51,14 +59,6 @@ string CreateWordItemsRequest::ToJsonString() const
         }
     }
 
-    if (m_dictIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "DictId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_dictId.c_str(), allocator).Move(), allocator);
-    }
-
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -66,22 +66,6 @@ string CreateWordItemsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<WordItem> CreateWordItemsRequest::GetWordItems() const
-{
-    return m_wordItems;
-}
-
-void CreateWordItemsRequest::SetWordItems(const vector<WordItem>& _wordItems)
-{
-    m_wordItems = _wordItems;
-    m_wordItemsHasBeenSet = true;
-}
-
-bool CreateWordItemsRequest::WordItemsHasBeenSet() const
-{
-    return m_wordItemsHasBeenSet;
-}
 
 string CreateWordItemsRequest::GetDictId() const
 {
@@ -97,6 +81,22 @@ void CreateWordItemsRequest::SetDictId(const string& _dictId)
 bool CreateWordItemsRequest::DictIdHasBeenSet() const
 {
     return m_dictIdHasBeenSet;
+}
+
+vector<WordItem> CreateWordItemsRequest::GetWordItems() const
+{
+    return m_wordItems;
+}
+
+void CreateWordItemsRequest::SetWordItems(const vector<WordItem>& _wordItems)
+{
+    m_wordItems = _wordItems;
+    m_wordItemsHasBeenSet = true;
+}
+
+bool CreateWordItemsRequest::WordItemsHasBeenSet() const
+{
+    return m_wordItemsHasBeenSet;
 }
 
 

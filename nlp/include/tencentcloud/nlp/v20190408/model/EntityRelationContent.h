@@ -50,13 +50,17 @@ namespace TencentCloud
 
                     /**
                      * 获取实体关系查询返回关系的object
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Object 实体关系查询返回关系的object
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EntityRelationObject> GetObject() const;
 
                     /**
                      * 设置实体关系查询返回关系的object
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Object 实体关系查询返回关系的object
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetObject(const std::vector<EntityRelationObject>& _object);
 
@@ -67,32 +71,18 @@ namespace TencentCloud
                     bool ObjectHasBeenSet() const;
 
                     /**
-                     * 获取实体关系查询返回关系的subject
-                     * @return Subject 实体关系查询返回关系的subject
-                     */
-                    std::vector<EntityRelationSubject> GetSubject() const;
-
-                    /**
-                     * 设置实体关系查询返回关系的subject
-                     * @param Subject 实体关系查询返回关系的subject
-                     */
-                    void SetSubject(const std::vector<EntityRelationSubject>& _subject);
-
-                    /**
-                     * 判断参数 Subject 是否已赋值
-                     * @return Subject 是否已赋值
-                     */
-                    bool SubjectHasBeenSet() const;
-
-                    /**
                      * 获取实体关系查询返回的关系名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Relation 实体关系查询返回的关系名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRelation() const;
 
                     /**
                      * 设置实体关系查询返回的关系名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Relation 实体关系查询返回的关系名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRelation(const std::string& _relation);
 
@@ -102,25 +92,50 @@ namespace TencentCloud
                      */
                     bool RelationHasBeenSet() const;
 
+                    /**
+                     * 获取实体关系查询返回关系的subject
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Subject 实体关系查询返回关系的subject
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EntityRelationSubject> GetSubject() const;
+
+                    /**
+                     * 设置实体关系查询返回关系的subject
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Subject 实体关系查询返回关系的subject
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubject(const std::vector<EntityRelationSubject>& _subject);
+
+                    /**
+                     * 判断参数 Subject 是否已赋值
+                     * @return Subject 是否已赋值
+                     */
+                    bool SubjectHasBeenSet() const;
+
                 private:
 
                     /**
                      * 实体关系查询返回关系的object
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EntityRelationObject> m_object;
                     bool m_objectHasBeenSet;
 
                     /**
-                     * 实体关系查询返回关系的subject
-                     */
-                    std::vector<EntityRelationSubject> m_subject;
-                    bool m_subjectHasBeenSet;
-
-                    /**
                      * 实体关系查询返回的关系名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_relation;
                     bool m_relationHasBeenSet;
+
+                    /**
+                     * 实体关系查询返回关系的subject
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EntityRelationSubject> m_subject;
+                    bool m_subjectHasBeenSet;
 
                 };
             }

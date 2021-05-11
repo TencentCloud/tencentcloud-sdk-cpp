@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool DictIdHasBeenSet() const;
 
                     /**
-                     * 获取每页数据量，范围为1~100，默认为10。
-                     * @return Limit 每页数据量，范围为1~100，默认为10。
-                     */
-                    uint64_t GetLimit() const;
-
-                    /**
-                     * 设置每页数据量，范围为1~100，默认为10。
-                     * @param Limit 每页数据量，范围为1~100，默认为10。
-                     */
-                    void SetLimit(const uint64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     */
-                    bool LimitHasBeenSet() const;
-
-                    /**
                      * 获取分页偏移量，从0开始，默认为0。
                      * @return Offset 分页偏移量，从0开始，默认为0。
                      */
@@ -95,6 +77,24 @@ namespace TencentCloud
                      * @return Offset 是否已赋值
                      */
                     bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取每页数据量，范围为1~100，默认为10。
+                     * @return Limit 每页数据量，范围为1~100，默认为10。
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置每页数据量，范围为1~100，默认为10。
+                     * @param Limit 每页数据量，范围为1~100，默认为10。
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
 
                     /**
                      * 获取待检索的词条文本，支持模糊匹配。
@@ -123,16 +123,16 @@ namespace TencentCloud
                     bool m_dictIdHasBeenSet;
 
                     /**
-                     * 每页数据量，范围为1~100，默认为10。
-                     */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
                      * 分页偏移量，从0开始，默认为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 每页数据量，范围为1~100，默认为10。
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                     /**
                      * 待检索的词条文本，支持模糊匹配。

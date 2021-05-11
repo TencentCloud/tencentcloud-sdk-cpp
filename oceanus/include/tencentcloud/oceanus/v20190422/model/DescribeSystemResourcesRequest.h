@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，仅当设置 Limit 参数时有效
+                     * @return Offset 偏移量，仅当设置 Limit 参数时有效
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置偏移量，仅当设置 Limit 参数时有效
+                     * @param Offset 偏移量，仅当设置 Limit 参数时有效
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取条数限制
-                     * @return Limit 条数限制
+                     * 获取条数限制，默认返回 20 条
+                     * @return Limit 条数限制，默认返回 20 条
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置条数限制
-                     * @param Limit 条数限制
+                     * 设置条数限制，默认返回 20 条
+                     * @param Limit 条数限制，默认返回 20 条
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询资源配置列表， 如果不填写，返回该ResourceId下所有作业配置列表
-                     * @return Filters 查询资源配置列表， 如果不填写，返回该ResourceId下所有作业配置列表
+                     * 获取查询资源配置列表， 如果不填写，返回该 ResourceIds.N 下所有作业配置列表
+                     * @return Filters 查询资源配置列表， 如果不填写，返回该 ResourceIds.N 下所有作业配置列表
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询资源配置列表， 如果不填写，返回该ResourceId下所有作业配置列表
-                     * @param Filters 查询资源配置列表， 如果不填写，返回该ResourceId下所有作业配置列表
+                     * 设置查询资源配置列表， 如果不填写，返回该 ResourceIds.N 下所有作业配置列表
+                     * @param Filters 查询资源配置列表， 如果不填写，返回该 ResourceIds.N 下所有作业配置列表
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -142,19 +142,19 @@ namespace TencentCloud
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量，仅当设置 Limit 参数时有效
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 条数限制
+                     * 条数限制，默认返回 20 条
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询资源配置列表， 如果不填写，返回该ResourceId下所有作业配置列表
+                     * 查询资源配置列表， 如果不填写，返回该 ResourceIds.N 下所有作业配置列表
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
