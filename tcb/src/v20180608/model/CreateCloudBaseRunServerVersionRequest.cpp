@@ -59,7 +59,8 @@ CreateCloudBaseRunServerVersionRequest::CreateCloudBaseRunServerVersionRequest()
     m_imageReuseKeyHasBeenSet(false),
     m_sidecarSpecsHasBeenSet(false),
     m_securityHasBeenSet(false),
-    m_serviceVolumesHasBeenSet(false)
+    m_serviceVolumesHasBeenSet(false),
+    m_isCreateJnsGwHasBeenSet(false)
 {
 }
 
@@ -382,6 +383,14 @@ string CreateCloudBaseRunServerVersionRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isCreateJnsGwHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsCreateJnsGw";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isCreateJnsGw, allocator);
     }
 
 
@@ -966,6 +975,22 @@ void CreateCloudBaseRunServerVersionRequest::SetServiceVolumes(const vector<Clou
 bool CreateCloudBaseRunServerVersionRequest::ServiceVolumesHasBeenSet() const
 {
     return m_serviceVolumesHasBeenSet;
+}
+
+int64_t CreateCloudBaseRunServerVersionRequest::GetIsCreateJnsGw() const
+{
+    return m_isCreateJnsGw;
+}
+
+void CreateCloudBaseRunServerVersionRequest::SetIsCreateJnsGw(const int64_t& _isCreateJnsGw)
+{
+    m_isCreateJnsGw = _isCreateJnsGw;
+    m_isCreateJnsGwHasBeenSet = true;
+}
+
+bool CreateCloudBaseRunServerVersionRequest::IsCreateJnsGwHasBeenSet() const
+{
+    return m_isCreateJnsGwHasBeenSet;
 }
 
 

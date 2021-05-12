@@ -100,6 +100,42 @@ namespace TencentCloud
                      */
                     bool ClsLogTopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取cls日志集id
+                     * @return ClsLogsetId cls日志集id
+                     */
+                    std::string GetClsLogsetId() const;
+
+                    /**
+                     * 设置cls日志集id
+                     * @param ClsLogsetId cls日志集id
+                     */
+                    void SetClsLogsetId(const std::string& _clsLogsetId);
+
+                    /**
+                     * 判断参数 ClsLogsetId 是否已赋值
+                     * @return ClsLogsetId 是否已赋值
+                     */
+                    bool ClsLogsetIdHasBeenSet() const;
+
+                    /**
+                     * 获取cls日志名称
+                     * @return ClsLogTopicName cls日志名称
+                     */
+                    std::string GetClsLogTopicName() const;
+
+                    /**
+                     * 设置cls日志名称
+                     * @param ClsLogTopicName cls日志名称
+                     */
+                    void SetClsLogTopicName(const std::string& _clsLogTopicName);
+
+                    /**
+                     * 判断参数 ClsLogTopicName 是否已赋值
+                     * @return ClsLogTopicName 是否已赋值
+                     */
+                    bool ClsLogTopicNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +155,18 @@ namespace TencentCloud
                      */
                     std::string m_clsLogTopicId;
                     bool m_clsLogTopicIdHasBeenSet;
+
+                    /**
+                     * cls日志集id
+                     */
+                    std::string m_clsLogsetId;
+                    bool m_clsLogsetIdHasBeenSet;
+
+                    /**
+                     * cls日志名称
+                     */
+                    std::string m_clsLogTopicName;
+                    bool m_clsLogTopicNameHasBeenSet;
 
                 };
             }

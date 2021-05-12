@@ -599,6 +599,49 @@ MongodbClient::DescribeDBInstancesOutcomeCallable MongodbClient::DescribeDBInsta
     return task->get_future();
 }
 
+MongodbClient::DescribeSecurityGroupOutcome MongodbClient::DescribeSecurityGroup(const DescribeSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityGroupResponse rsp = DescribeSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityGroupOutcome(rsp);
+        else
+            return DescribeSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeSecurityGroupAsync(const DescribeSecurityGroupRequest& request, const DescribeSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeSecurityGroupOutcomeCallable MongodbClient::DescribeSecurityGroupCallable(const DescribeSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeSlowLogPatternsOutcome MongodbClient::DescribeSlowLogPatterns(const DescribeSlowLogPatternsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSlowLogPatterns");

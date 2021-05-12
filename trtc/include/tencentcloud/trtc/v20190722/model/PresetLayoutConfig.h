@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool LocationYHasBeenSet() const;
 
                     /**
-                     * 获取该画面在输出时的层级，单位为像素值，不填默认为0。
-                     * @return ZOrder 该画面在输出时的层级，单位为像素值，不填默认为0。
+                     * 获取该画面在输出时的层级，不填默认为0。
+                     * @return ZOrder 该画面在输出时的层级，不填默认为0。
                      */
                     uint64_t GetZOrder() const;
 
                     /**
-                     * 设置该画面在输出时的层级，单位为像素值，不填默认为0。
-                     * @param ZOrder 该画面在输出时的层级，单位为像素值，不填默认为0。
+                     * 设置该画面在输出时的层级，不填默认为0。
+                     * @param ZOrder 该画面在输出时的层级，不填默认为0。
                      */
                     void SetZOrder(const uint64_t& _zOrder);
 
@@ -265,7 +265,7 @@ namespace TencentCloud
                     bool m_locationYHasBeenSet;
 
                     /**
-                     * 该画面在输出时的层级，单位为像素值，不填默认为0。
+                     * 该画面在输出时的层级，不填默认为0。
                      */
                     uint64_t m_zOrder;
                     bool m_zOrderHasBeenSet;

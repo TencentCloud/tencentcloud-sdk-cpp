@@ -24,12 +24,14 @@ set(ic_public_header_model
   include/tencentcloud/ic/v20190307/model/RenewCardsResponse.h
   include/tencentcloud/ic/v20190307/model/CardList.h
   include/tencentcloud/ic/v20190307/model/DescribeCardsResponse.h
+  include/tencentcloud/ic/v20190307/model/ModifyUserCardRemarkRequest.h
   include/tencentcloud/ic/v20190307/model/DescribeCardResponse.h
   include/tencentcloud/ic/v20190307/model/CardInfo.h
   include/tencentcloud/ic/v20190307/model/DescribeAppResponse.h
   include/tencentcloud/ic/v20190307/model/DescribeCardRequest.h
   include/tencentcloud/ic/v20190307/model/DescribeAppRequest.h
   include/tencentcloud/ic/v20190307/model/SendSmsResponse.h
+  include/tencentcloud/ic/v20190307/model/ModifyUserCardRemarkResponse.h
   include/tencentcloud/ic/v20190307/model/SendSmsRequest.h
   include/tencentcloud/ic/v20190307/model/DescribeCardsRequest.h
   include/tencentcloud/ic/v20190307/model/SendMultiSmsRequest.h
@@ -46,12 +48,14 @@ set(ic_src
   src/v20190307/model/RenewCardsResponse.cpp
   src/v20190307/model/CardList.cpp
   src/v20190307/model/DescribeCardsResponse.cpp
+  src/v20190307/model/ModifyUserCardRemarkRequest.cpp
   src/v20190307/model/DescribeCardResponse.cpp
   src/v20190307/model/CardInfo.cpp
   src/v20190307/model/DescribeAppResponse.cpp
   src/v20190307/model/DescribeCardRequest.cpp
   src/v20190307/model/DescribeAppRequest.cpp
   src/v20190307/model/SendSmsResponse.cpp
+  src/v20190307/model/ModifyUserCardRemarkResponse.cpp
   src/v20190307/model/SendSmsRequest.cpp
   src/v20190307/model/DescribeCardsRequest.cpp
   src/v20190307/model/SendMultiSmsRequest.cpp

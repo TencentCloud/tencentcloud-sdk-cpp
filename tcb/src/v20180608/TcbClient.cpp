@@ -2061,3 +2061,46 @@ TcbClient::ReinstateEnvOutcomeCallable TcbClient::ReinstateEnvCallable(const Rei
     return task->get_future();
 }
 
+TcbClient::RollUpdateCloudBaseRunServerVersionOutcome TcbClient::RollUpdateCloudBaseRunServerVersion(const RollUpdateCloudBaseRunServerVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollUpdateCloudBaseRunServerVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollUpdateCloudBaseRunServerVersionResponse rsp = RollUpdateCloudBaseRunServerVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollUpdateCloudBaseRunServerVersionOutcome(rsp);
+        else
+            return RollUpdateCloudBaseRunServerVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return RollUpdateCloudBaseRunServerVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::RollUpdateCloudBaseRunServerVersionAsync(const RollUpdateCloudBaseRunServerVersionRequest& request, const RollUpdateCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RollUpdateCloudBaseRunServerVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::RollUpdateCloudBaseRunServerVersionOutcomeCallable TcbClient::RollUpdateCloudBaseRunServerVersionCallable(const RollUpdateCloudBaseRunServerVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RollUpdateCloudBaseRunServerVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->RollUpdateCloudBaseRunServerVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

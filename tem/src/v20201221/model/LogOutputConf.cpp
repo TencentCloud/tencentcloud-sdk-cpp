@@ -24,7 +24,9 @@ using namespace std;
 LogOutputConf::LogOutputConf() :
     m_outputTypeHasBeenSet(false),
     m_clsLogsetNameHasBeenSet(false),
-    m_clsLogTopicIdHasBeenSet(false)
+    m_clsLogTopicIdHasBeenSet(false),
+    m_clsLogsetIdHasBeenSet(false),
+    m_clsLogTopicNameHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,26 @@ CoreInternalOutcome LogOutputConf::Deserialize(const Value &value)
         m_clsLogTopicIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ClsLogsetId") && !value["ClsLogsetId"].IsNull())
+    {
+        if (!value["ClsLogsetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LogOutputConf.ClsLogsetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clsLogsetId = string(value["ClsLogsetId"].GetString());
+        m_clsLogsetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClsLogTopicName") && !value["ClsLogTopicName"].IsNull())
+    {
+        if (!value["ClsLogTopicName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LogOutputConf.ClsLogTopicName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clsLogTopicName = string(value["ClsLogTopicName"].GetString());
+        m_clsLogTopicNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +114,22 @@ void LogOutputConf::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "ClsLogTopicId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_clsLogTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsLogsetIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClsLogsetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clsLogsetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsLogTopicNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClsLogTopicName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_clsLogTopicName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -143,5 +181,37 @@ void LogOutputConf::SetClsLogTopicId(const string& _clsLogTopicId)
 bool LogOutputConf::ClsLogTopicIdHasBeenSet() const
 {
     return m_clsLogTopicIdHasBeenSet;
+}
+
+string LogOutputConf::GetClsLogsetId() const
+{
+    return m_clsLogsetId;
+}
+
+void LogOutputConf::SetClsLogsetId(const string& _clsLogsetId)
+{
+    m_clsLogsetId = _clsLogsetId;
+    m_clsLogsetIdHasBeenSet = true;
+}
+
+bool LogOutputConf::ClsLogsetIdHasBeenSet() const
+{
+    return m_clsLogsetIdHasBeenSet;
+}
+
+string LogOutputConf::GetClsLogTopicName() const
+{
+    return m_clsLogTopicName;
+}
+
+void LogOutputConf::SetClsLogTopicName(const string& _clsLogTopicName)
+{
+    m_clsLogTopicName = _clsLogTopicName;
+    m_clsLogTopicNameHasBeenSet = true;
+}
+
+bool LogOutputConf::ClsLogTopicNameHasBeenSet() const
+{
+    return m_clsLogTopicNameHasBeenSet;
 }
 

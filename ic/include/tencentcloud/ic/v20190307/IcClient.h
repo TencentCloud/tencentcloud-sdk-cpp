@@ -29,6 +29,8 @@
 #include <tencentcloud/ic/v20190307/model/DescribeCardResponse.h>
 #include <tencentcloud/ic/v20190307/model/DescribeCardsRequest.h>
 #include <tencentcloud/ic/v20190307/model/DescribeCardsResponse.h>
+#include <tencentcloud/ic/v20190307/model/ModifyUserCardRemarkRequest.h>
+#include <tencentcloud/ic/v20190307/model/ModifyUserCardRemarkResponse.h>
 #include <tencentcloud/ic/v20190307/model/RenewCardsRequest.h>
 #include <tencentcloud/ic/v20190307/model/RenewCardsResponse.h>
 #include <tencentcloud/ic/v20190307/model/SendMultiSmsRequest.h>
@@ -58,6 +60,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCardsResponse> DescribeCardsOutcome;
                 typedef std::future<DescribeCardsOutcome> DescribeCardsOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::DescribeCardsRequest&, DescribeCardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCardsAsyncHandler;
+                typedef Outcome<Error, Model::ModifyUserCardRemarkResponse> ModifyUserCardRemarkOutcome;
+                typedef std::future<ModifyUserCardRemarkOutcome> ModifyUserCardRemarkOutcomeCallable;
+                typedef std::function<void(const IcClient*, const Model::ModifyUserCardRemarkRequest&, ModifyUserCardRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserCardRemarkAsyncHandler;
                 typedef Outcome<Error, Model::RenewCardsResponse> RenewCardsOutcome;
                 typedef std::future<RenewCardsOutcome> RenewCardsOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::RenewCardsRequest&, RenewCardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewCardsAsyncHandler;
@@ -96,6 +101,15 @@ namespace TencentCloud
                 DescribeCardsOutcome DescribeCards(const Model::DescribeCardsRequest &request);
                 void DescribeCardsAsync(const Model::DescribeCardsRequest& request, const DescribeCardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCardsOutcomeCallable DescribeCardsCallable(const Model::DescribeCardsRequest& request);
+
+                /**
+                 *编辑卡片备注
+                 * @param req ModifyUserCardRemarkRequest
+                 * @return ModifyUserCardRemarkOutcome
+                 */
+                ModifyUserCardRemarkOutcome ModifyUserCardRemark(const Model::ModifyUserCardRemarkRequest &request);
+                void ModifyUserCardRemarkAsync(const Model::ModifyUserCardRemarkRequest& request, const ModifyUserCardRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserCardRemarkOutcomeCallable ModifyUserCardRemarkCallable(const Model::ModifyUserCardRemarkRequest& request);
 
                 /**
                  *批量为卡片续费，此接口建议调用至少间隔10s,如果出现返回deal lock failed相关的错误，请过10s再重试。

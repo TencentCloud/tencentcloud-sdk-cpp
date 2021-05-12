@@ -143,9 +143,9 @@ namespace TencentCloud
                     bool FeeRenewHasBeenSet() const;
 
                     /**
-                     * 获取域名真实价格
+                     * 获取域名真实价格, 溢价词时价格跟年限有关，非溢价词时价格为1年的价格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RealPrice 域名真实价格
+                     * @return RealPrice 域名真实价格, 溢价词时价格跟年限有关，非溢价词时价格为1年的价格
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetRealPrice() const;
@@ -259,7 +259,7 @@ namespace TencentCloud
                     bool m_feeRenewHasBeenSet;
 
                     /**
-                     * 域名真实价格
+                     * 域名真实价格, 溢价词时价格跟年限有关，非溢价词时价格为1年的价格
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_realPrice;

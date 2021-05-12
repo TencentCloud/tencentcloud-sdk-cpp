@@ -169,6 +169,49 @@ IcClient::DescribeCardsOutcomeCallable IcClient::DescribeCardsCallable(const Des
     return task->get_future();
 }
 
+IcClient::ModifyUserCardRemarkOutcome IcClient::ModifyUserCardRemark(const ModifyUserCardRemarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserCardRemark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserCardRemarkResponse rsp = ModifyUserCardRemarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserCardRemarkOutcome(rsp);
+        else
+            return ModifyUserCardRemarkOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserCardRemarkOutcome(outcome.GetError());
+    }
+}
+
+void IcClient::ModifyUserCardRemarkAsync(const ModifyUserCardRemarkRequest& request, const ModifyUserCardRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserCardRemark(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IcClient::ModifyUserCardRemarkOutcomeCallable IcClient::ModifyUserCardRemarkCallable(const ModifyUserCardRemarkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserCardRemarkOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserCardRemark(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IcClient::RenewCardsOutcome IcClient::RenewCards(const RenewCardsRequest &request)
 {
     auto outcome = MakeRequest(request, "RenewCards");

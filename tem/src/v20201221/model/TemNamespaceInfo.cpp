@@ -37,7 +37,8 @@ TemNamespaceInfo::TemNamespaceInfo() :
     m_runInstancesNumHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_tcbEnvStatusHasBeenSet(false),
-    m_clusterStatusHasBeenSet(false)
+    m_clusterStatusHasBeenSet(false),
+    m_enableTswTraceServiceHasBeenSet(false)
 {
 }
 
@@ -206,6 +207,16 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const Value &value)
         m_clusterStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableTswTraceService") && !value["EnableTswTraceService"].IsNull())
+    {
+        if (!value["EnableTswTraceService"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `TemNamespaceInfo.EnableTswTraceService` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableTswTraceService = value["EnableTswTraceService"].GetBool();
+        m_enableTswTraceServiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -339,6 +350,14 @@ void TemNamespaceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "ClusterStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_clusterStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableTswTraceServiceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableTswTraceService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableTswTraceService, allocator);
     }
 
 }
@@ -598,5 +617,21 @@ void TemNamespaceInfo::SetClusterStatus(const string& _clusterStatus)
 bool TemNamespaceInfo::ClusterStatusHasBeenSet() const
 {
     return m_clusterStatusHasBeenSet;
+}
+
+bool TemNamespaceInfo::GetEnableTswTraceService() const
+{
+    return m_enableTswTraceService;
+}
+
+void TemNamespaceInfo::SetEnableTswTraceService(const bool& _enableTswTraceService)
+{
+    m_enableTswTraceService = _enableTswTraceService;
+    m_enableTswTraceServiceHasBeenSet = true;
+}
+
+bool TemNamespaceInfo::EnableTswTraceServiceHasBeenSet() const
+{
+    return m_enableTswTraceServiceHasBeenSet;
 }
 

@@ -41,6 +41,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceRequest.h
+  include/tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunVolumeMount.h
   include/tencentcloud/tcb/v20180608/model/DescribePostpayFreeQuotasRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunImageInfo.h
@@ -148,6 +149,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseCodeRepoName.h
+  include/tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionRequest.h
   )
 
 set(tcb_src
@@ -174,6 +176,7 @@ set(tcb_src
   src/v20180608/model/DescribeWxCloudBaseRunEnvsResponse.cpp
   src/v20180608/model/CreateHostingDomainRequest.cpp
   src/v20180608/model/DescribeCloudBaseRunResourceRequest.cpp
+  src/v20180608/model/RollUpdateCloudBaseRunServerVersionResponse.cpp
   src/v20180608/model/CloudBaseRunVolumeMount.cpp
   src/v20180608/model/DescribePostpayFreeQuotasRequest.cpp
   src/v20180608/model/CloudBaseRunImageInfo.cpp
@@ -281,6 +284,7 @@ set(tcb_src
   src/v20180608/model/DescribePostpayPackageFreeQuotasResponse.cpp
   src/v20180608/model/DescribeExtraPkgBillingInfoResponse.cpp
   src/v20180608/model/CloudBaseCodeRepoName.cpp
+  src/v20180608/model/RollUpdateCloudBaseRunServerVersionRequest.cpp
   )
 
 set(tcb_include

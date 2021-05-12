@@ -338,6 +338,24 @@ namespace TencentCloud
                      */
                     bool ClusterStatusHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启tsw
+                     * @return EnableTswTraceService 是否开启tsw
+                     */
+                    bool GetEnableTswTraceService() const;
+
+                    /**
+                     * 设置是否开启tsw
+                     * @param EnableTswTraceService 是否开启tsw
+                     */
+                    void SetEnableTswTraceService(const bool& _enableTswTraceService);
+
+                    /**
+                     * 判断参数 EnableTswTraceService 是否已赋值
+                     * @return EnableTswTraceService 是否已赋值
+                     */
+                    bool EnableTswTraceServiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -436,6 +454,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
+
+                    /**
+                     * 是否开启tsw
+                     */
+                    bool m_enableTswTraceService;
+                    bool m_enableTswTraceServiceHasBeenSet;
 
                 };
             }

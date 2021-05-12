@@ -117,6 +117,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ReinstateEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ReinstateEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionResponse.h>
 
 
 namespace TencentCloud
@@ -272,6 +274,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ReinstateEnvResponse> ReinstateEnvOutcome;
                 typedef std::future<ReinstateEnvOutcome> ReinstateEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ReinstateEnvRequest&, ReinstateEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReinstateEnvAsyncHandler;
+                typedef Outcome<Error, Model::RollUpdateCloudBaseRunServerVersionResponse> RollUpdateCloudBaseRunServerVersionOutcome;
+                typedef std::future<RollUpdateCloudBaseRunServerVersionOutcome> RollUpdateCloudBaseRunServerVersionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::RollUpdateCloudBaseRunServerVersionRequest&, RollUpdateCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollUpdateCloudBaseRunServerVersionAsyncHandler;
 
 
 
@@ -700,6 +705,15 @@ namespace TencentCloud
                 ReinstateEnvOutcome ReinstateEnv(const Model::ReinstateEnvRequest &request);
                 void ReinstateEnvAsync(const Model::ReinstateEnvRequest& request, const ReinstateEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReinstateEnvOutcomeCallable ReinstateEnvCallable(const Model::ReinstateEnvRequest& request);
+
+                /**
+                 *针对特定的版本，进行滚动更新
+                 * @param req RollUpdateCloudBaseRunServerVersionRequest
+                 * @return RollUpdateCloudBaseRunServerVersionOutcome
+                 */
+                RollUpdateCloudBaseRunServerVersionOutcome RollUpdateCloudBaseRunServerVersion(const Model::RollUpdateCloudBaseRunServerVersionRequest &request);
+                void RollUpdateCloudBaseRunServerVersionAsync(const Model::RollUpdateCloudBaseRunServerVersionRequest& request, const RollUpdateCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollUpdateCloudBaseRunServerVersionOutcomeCallable RollUpdateCloudBaseRunServerVersionCallable(const Model::RollUpdateCloudBaseRunServerVersionRequest& request);
 
             };
         }
