@@ -35,6 +35,10 @@
 #include <tencentcloud/cwp/v20180228/model/CreateOpenPortTaskResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateProcessTaskRequest.h>
 #include <tencentcloud/cwp/v20180228/model/CreateProcessTaskResponse.h>
+#include <tencentcloud/cwp/v20180228/model/CreateSearchLogRequest.h>
+#include <tencentcloud/cwp/v20180228/model/CreateSearchLogResponse.h>
+#include <tencentcloud/cwp/v20180228/model/CreateSearchTemplateRequest.h>
+#include <tencentcloud/cwp/v20180228/model/CreateSearchTemplateResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateUsualLoginPlacesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/CreateUsualLoginPlacesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteAttackLogsRequest.h>
@@ -65,6 +69,8 @@
 #include <tencentcloud/cwp/v20180228/model/DeleteReverseShellEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteReverseShellRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteReverseShellRulesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DeleteSearchTemplateRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DeleteSearchTemplateResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteTagsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteTagsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteUsualLoginPlacesRequest.h>
@@ -95,6 +101,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeESAggregationsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeESAggregationsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeESHitsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeESHitsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeExportMachinesRequest.h>
@@ -103,10 +111,16 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeGeneralStatResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeHistoryAccountsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeHistoryAccountsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeHistoryServiceRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeHistoryServiceResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImpactedHostsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImpactedHostsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImportMachineInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImportMachineInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeIndexListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeIndexListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLogStorageStatisticRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLogStorageStatisticResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLoginWhiteListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLoginWhiteListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMachineInfoRequest.h>
@@ -155,6 +169,12 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanMalwareScheduleRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanMalwareScheduleResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSearchExportListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSearchExportListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSearchLogsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSearchLogsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSearchTemplatesRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSearchTemplatesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityDynamicsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityDynamicsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventsCntRequest.h>
@@ -289,6 +309,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateProcessTaskResponse> CreateProcessTaskOutcome;
                 typedef std::future<CreateProcessTaskOutcome> CreateProcessTaskOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::CreateProcessTaskRequest&, CreateProcessTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProcessTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateSearchLogResponse> CreateSearchLogOutcome;
+                typedef std::future<CreateSearchLogOutcome> CreateSearchLogOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::CreateSearchLogRequest&, CreateSearchLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSearchLogAsyncHandler;
+                typedef Outcome<Error, Model::CreateSearchTemplateResponse> CreateSearchTemplateOutcome;
+                typedef std::future<CreateSearchTemplateOutcome> CreateSearchTemplateOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::CreateSearchTemplateRequest&, CreateSearchTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSearchTemplateAsyncHandler;
                 typedef Outcome<Error, Model::CreateUsualLoginPlacesResponse> CreateUsualLoginPlacesOutcome;
                 typedef std::future<CreateUsualLoginPlacesOutcome> CreateUsualLoginPlacesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::CreateUsualLoginPlacesRequest&, CreateUsualLoginPlacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUsualLoginPlacesAsyncHandler;
@@ -334,6 +360,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteReverseShellRulesResponse> DeleteReverseShellRulesOutcome;
                 typedef std::future<DeleteReverseShellRulesOutcome> DeleteReverseShellRulesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DeleteReverseShellRulesRequest&, DeleteReverseShellRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReverseShellRulesAsyncHandler;
+                typedef Outcome<Error, Model::DeleteSearchTemplateResponse> DeleteSearchTemplateOutcome;
+                typedef std::future<DeleteSearchTemplateOutcome> DeleteSearchTemplateOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DeleteSearchTemplateRequest&, DeleteSearchTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSearchTemplateAsyncHandler;
                 typedef Outcome<Error, Model::DeleteTagsResponse> DeleteTagsOutcome;
                 typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DeleteTagsRequest&, DeleteTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTagsAsyncHandler;
@@ -379,6 +408,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeComponentsResponse> DescribeComponentsOutcome;
                 typedef std::future<DescribeComponentsOutcome> DescribeComponentsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeComponentsRequest&, DescribeComponentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComponentsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeESAggregationsResponse> DescribeESAggregationsOutcome;
+                typedef std::future<DescribeESAggregationsOutcome> DescribeESAggregationsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeESAggregationsRequest&, DescribeESAggregationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeESAggregationsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeESHitsResponse> DescribeESHitsOutcome;
                 typedef std::future<DescribeESHitsOutcome> DescribeESHitsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeESHitsRequest&, DescribeESHitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeESHitsAsyncHandler;
@@ -391,12 +423,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeHistoryAccountsResponse> DescribeHistoryAccountsOutcome;
                 typedef std::future<DescribeHistoryAccountsOutcome> DescribeHistoryAccountsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeHistoryAccountsRequest&, DescribeHistoryAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryAccountsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeHistoryServiceResponse> DescribeHistoryServiceOutcome;
+                typedef std::future<DescribeHistoryServiceOutcome> DescribeHistoryServiceOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeHistoryServiceRequest&, DescribeHistoryServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryServiceAsyncHandler;
                 typedef Outcome<Error, Model::DescribeImpactedHostsResponse> DescribeImpactedHostsOutcome;
                 typedef std::future<DescribeImpactedHostsOutcome> DescribeImpactedHostsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeImpactedHostsRequest&, DescribeImpactedHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImpactedHostsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeImportMachineInfoResponse> DescribeImportMachineInfoOutcome;
                 typedef std::future<DescribeImportMachineInfoOutcome> DescribeImportMachineInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeImportMachineInfoRequest&, DescribeImportMachineInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImportMachineInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeIndexListResponse> DescribeIndexListOutcome;
+                typedef std::future<DescribeIndexListOutcome> DescribeIndexListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeIndexListRequest&, DescribeIndexListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLogStorageStatisticResponse> DescribeLogStorageStatisticOutcome;
+                typedef std::future<DescribeLogStorageStatisticOutcome> DescribeLogStorageStatisticOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeLogStorageStatisticRequest&, DescribeLogStorageStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogStorageStatisticAsyncHandler;
                 typedef Outcome<Error, Model::DescribeLoginWhiteListResponse> DescribeLoginWhiteListOutcome;
                 typedef std::future<DescribeLoginWhiteListOutcome> DescribeLoginWhiteListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeLoginWhiteListRequest&, DescribeLoginWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginWhiteListAsyncHandler;
@@ -469,6 +510,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeScanMalwareScheduleResponse> DescribeScanMalwareScheduleOutcome;
                 typedef std::future<DescribeScanMalwareScheduleOutcome> DescribeScanMalwareScheduleOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeScanMalwareScheduleRequest&, DescribeScanMalwareScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanMalwareScheduleAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSearchExportListResponse> DescribeSearchExportListOutcome;
+                typedef std::future<DescribeSearchExportListOutcome> DescribeSearchExportListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeSearchExportListRequest&, DescribeSearchExportListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSearchExportListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSearchLogsResponse> DescribeSearchLogsOutcome;
+                typedef std::future<DescribeSearchLogsOutcome> DescribeSearchLogsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeSearchLogsRequest&, DescribeSearchLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSearchLogsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSearchTemplatesResponse> DescribeSearchTemplatesOutcome;
+                typedef std::future<DescribeSearchTemplatesOutcome> DescribeSearchTemplatesOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeSearchTemplatesRequest&, DescribeSearchTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSearchTemplatesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSecurityDynamicsResponse> DescribeSecurityDynamicsOutcome;
                 typedef std::future<DescribeSecurityDynamicsOutcome> DescribeSecurityDynamicsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeSecurityDynamicsRequest&, DescribeSecurityDynamicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityDynamicsAsyncHandler;
@@ -680,6 +730,24 @@ namespace TencentCloud
                 CreateProcessTaskOutcomeCallable CreateProcessTaskCallable(const Model::CreateProcessTaskRequest& request);
 
                 /**
+                 *添加历史搜索记录
+                 * @param req CreateSearchLogRequest
+                 * @return CreateSearchLogOutcome
+                 */
+                CreateSearchLogOutcome CreateSearchLog(const Model::CreateSearchLogRequest &request);
+                void CreateSearchLogAsync(const Model::CreateSearchLogRequest& request, const CreateSearchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSearchLogOutcomeCallable CreateSearchLogCallable(const Model::CreateSearchLogRequest& request);
+
+                /**
+                 *添加检索模板
+                 * @param req CreateSearchTemplateRequest
+                 * @return CreateSearchTemplateOutcome
+                 */
+                CreateSearchTemplateOutcome CreateSearchTemplate(const Model::CreateSearchTemplateRequest &request);
+                void CreateSearchTemplateAsync(const Model::CreateSearchTemplateRequest& request, const CreateSearchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSearchTemplateOutcomeCallable CreateSearchTemplateCallable(const Model::CreateSearchTemplateRequest& request);
+
+                /**
                  *此接口（CreateUsualLoginPlaces）用于添加常用登录地。
                  * @param req CreateUsualLoginPlacesRequest
                  * @return CreateUsualLoginPlacesOutcome
@@ -813,6 +881,15 @@ namespace TencentCloud
                 DeleteReverseShellRulesOutcome DeleteReverseShellRules(const Model::DeleteReverseShellRulesRequest &request);
                 void DeleteReverseShellRulesAsync(const Model::DeleteReverseShellRulesRequest& request, const DeleteReverseShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteReverseShellRulesOutcomeCallable DeleteReverseShellRulesCallable(const Model::DeleteReverseShellRulesRequest& request);
+
+                /**
+                 *删除检索模板
+                 * @param req DeleteSearchTemplateRequest
+                 * @return DeleteSearchTemplateOutcome
+                 */
+                DeleteSearchTemplateOutcome DeleteSearchTemplate(const Model::DeleteSearchTemplateRequest &request);
+                void DeleteSearchTemplateAsync(const Model::DeleteSearchTemplateRequest& request, const DeleteSearchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSearchTemplateOutcomeCallable DeleteSearchTemplateCallable(const Model::DeleteSearchTemplateRequest& request);
 
                 /**
                  *删除标签
@@ -950,6 +1027,15 @@ namespace TencentCloud
                 DescribeComponentsOutcomeCallable DescribeComponentsCallable(const Model::DescribeComponentsRequest& request);
 
                 /**
+                 *获取ES字段聚合结果
+                 * @param req DescribeESAggregationsRequest
+                 * @return DescribeESAggregationsOutcome
+                 */
+                DescribeESAggregationsOutcome DescribeESAggregations(const Model::DescribeESAggregationsRequest &request);
+                void DescribeESAggregationsAsync(const Model::DescribeESAggregationsRequest& request, const DescribeESAggregationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeESAggregationsOutcomeCallable DescribeESAggregationsCallable(const Model::DescribeESAggregationsRequest& request);
+
+                /**
                  *获取ES查询文档列表
                  * @param req DescribeESHitsRequest
                  * @return DescribeESHitsOutcome
@@ -986,6 +1072,15 @@ namespace TencentCloud
                 DescribeHistoryAccountsOutcomeCallable DescribeHistoryAccountsCallable(const Model::DescribeHistoryAccountsRequest& request);
 
                 /**
+                 *查询日志检索服务信息
+                 * @param req DescribeHistoryServiceRequest
+                 * @return DescribeHistoryServiceOutcome
+                 */
+                DescribeHistoryServiceOutcome DescribeHistoryService(const Model::DescribeHistoryServiceRequest &request);
+                void DescribeHistoryServiceAsync(const Model::DescribeHistoryServiceRequest& request, const DescribeHistoryServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHistoryServiceOutcomeCallable DescribeHistoryServiceCallable(const Model::DescribeHistoryServiceRequest& request);
+
+                /**
                  *本接口 (DescribeImpactedHosts) 用于获取漏洞受影响机器列表。
                  * @param req DescribeImpactedHostsRequest
                  * @return DescribeImpactedHostsOutcome
@@ -1002,6 +1097,24 @@ namespace TencentCloud
                 DescribeImportMachineInfoOutcome DescribeImportMachineInfo(const Model::DescribeImportMachineInfoRequest &request);
                 void DescribeImportMachineInfoAsync(const Model::DescribeImportMachineInfoRequest& request, const DescribeImportMachineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImportMachineInfoOutcomeCallable DescribeImportMachineInfoCallable(const Model::DescribeImportMachineInfoRequest& request);
+
+                /**
+                 *获取索引列表
+                 * @param req DescribeIndexListRequest
+                 * @return DescribeIndexListOutcome
+                 */
+                DescribeIndexListOutcome DescribeIndexList(const Model::DescribeIndexListRequest &request);
+                void DescribeIndexListAsync(const Model::DescribeIndexListRequest& request, const DescribeIndexListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIndexListOutcomeCallable DescribeIndexListCallable(const Model::DescribeIndexListRequest& request);
+
+                /**
+                 *获取日志检索容量使用统计
+                 * @param req DescribeLogStorageStatisticRequest
+                 * @return DescribeLogStorageStatisticOutcome
+                 */
+                DescribeLogStorageStatisticOutcome DescribeLogStorageStatistic(const Model::DescribeLogStorageStatisticRequest &request);
+                void DescribeLogStorageStatisticAsync(const Model::DescribeLogStorageStatisticRequest& request, const DescribeLogStorageStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogStorageStatisticOutcomeCallable DescribeLogStorageStatisticCallable(const Model::DescribeLogStorageStatisticRequest& request);
 
                 /**
                  *获取异地登录白名单列表
@@ -1219,6 +1332,33 @@ namespace TencentCloud
                 DescribeScanMalwareScheduleOutcome DescribeScanMalwareSchedule(const Model::DescribeScanMalwareScheduleRequest &request);
                 void DescribeScanMalwareScheduleAsync(const Model::DescribeScanMalwareScheduleRequest& request, const DescribeScanMalwareScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScanMalwareScheduleOutcomeCallable DescribeScanMalwareScheduleCallable(const Model::DescribeScanMalwareScheduleRequest& request);
+
+                /**
+                 *导出ES查询文档列表
+                 * @param req DescribeSearchExportListRequest
+                 * @return DescribeSearchExportListOutcome
+                 */
+                DescribeSearchExportListOutcome DescribeSearchExportList(const Model::DescribeSearchExportListRequest &request);
+                void DescribeSearchExportListAsync(const Model::DescribeSearchExportListRequest& request, const DescribeSearchExportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSearchExportListOutcomeCallable DescribeSearchExportListCallable(const Model::DescribeSearchExportListRequest& request);
+
+                /**
+                 *获取历史搜索记录
+                 * @param req DescribeSearchLogsRequest
+                 * @return DescribeSearchLogsOutcome
+                 */
+                DescribeSearchLogsOutcome DescribeSearchLogs(const Model::DescribeSearchLogsRequest &request);
+                void DescribeSearchLogsAsync(const Model::DescribeSearchLogsRequest& request, const DescribeSearchLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSearchLogsOutcomeCallable DescribeSearchLogsCallable(const Model::DescribeSearchLogsRequest& request);
+
+                /**
+                 *获取快速检索列表
+                 * @param req DescribeSearchTemplatesRequest
+                 * @return DescribeSearchTemplatesOutcome
+                 */
+                DescribeSearchTemplatesOutcome DescribeSearchTemplates(const Model::DescribeSearchTemplatesRequest &request);
+                void DescribeSearchTemplatesAsync(const Model::DescribeSearchTemplatesRequest& request, const DescribeSearchTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSearchTemplatesOutcomeCallable DescribeSearchTemplatesCallable(const Model::DescribeSearchTemplatesRequest& request);
 
                 /**
                  *本接口 (DescribeSecurityDynamics) 用于获取安全事件消息数据。

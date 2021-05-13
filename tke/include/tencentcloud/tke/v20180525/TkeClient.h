@@ -83,6 +83,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterCommonNamesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterCommonNamesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusRequest.h>
@@ -263,6 +265,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClusterAsGroupsResponse> DescribeClusterAsGroupsOutcome;
                 typedef std::future<DescribeClusterAsGroupsOutcome> DescribeClusterAsGroupsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterAsGroupsRequest&, DescribeClusterAsGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAsGroupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClusterCommonNamesResponse> DescribeClusterCommonNamesOutcome;
+                typedef std::future<DescribeClusterCommonNamesOutcome> DescribeClusterCommonNamesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterCommonNamesRequest&, DescribeClusterCommonNamesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterCommonNamesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClusterEndpointStatusResponse> DescribeClusterEndpointStatusOutcome;
                 typedef std::future<DescribeClusterEndpointStatusOutcome> DescribeClusterEndpointStatusOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterEndpointStatusRequest&, DescribeClusterEndpointStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterEndpointStatusAsyncHandler;
@@ -649,6 +654,15 @@ namespace TencentCloud
                 DescribeClusterAsGroupsOutcome DescribeClusterAsGroups(const Model::DescribeClusterAsGroupsRequest &request);
                 void DescribeClusterAsGroupsAsync(const Model::DescribeClusterAsGroupsRequest& request, const DescribeClusterAsGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterAsGroupsOutcomeCallable DescribeClusterAsGroupsCallable(const Model::DescribeClusterAsGroupsRequest& request);
+
+                /**
+                 *获取指定子账户在RBAC授权模式中对应kube-apiserver客户端证书的CommonName字段，如果没有客户端证书，将会签发一个，此接口有最大传入子账户数量上限，当前为50
+                 * @param req DescribeClusterCommonNamesRequest
+                 * @return DescribeClusterCommonNamesOutcome
+                 */
+                DescribeClusterCommonNamesOutcome DescribeClusterCommonNames(const Model::DescribeClusterCommonNamesRequest &request);
+                void DescribeClusterCommonNamesAsync(const Model::DescribeClusterCommonNamesRequest& request, const DescribeClusterCommonNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterCommonNamesOutcomeCallable DescribeClusterCommonNamesCallable(const Model::DescribeClusterCommonNamesRequest& request);
 
                 /**
                  *查询集群访问端口状态(独立集群开启内网/外网访问，托管集群支持开启内网访问)

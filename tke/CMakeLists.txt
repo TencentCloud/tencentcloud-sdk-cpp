@@ -36,6 +36,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplateSyncResponse.h
   include/tencentcloud/tke/v20180525/model/UpdateEKSClusterRequest.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteTableResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterCommonNamesRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusTemplateModify.h
   include/tencentcloud/tke/v20180525/model/PrometheusNotification.h
@@ -203,7 +204,9 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsRequest.h
   include/tencentcloud/tke/v20180525/model/InstanceUpgradePreCheckResultItem.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAlertHistoryResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterCommonNamesResponse.h
   include/tencentcloud/tke/v20180525/model/ExistedInstancesPara.h
+  include/tencentcloud/tke/v20180525/model/CommonName.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroupAttribute.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterNodePoolResponse.h
@@ -242,6 +245,7 @@ set(tke_src
   src/v20180525/model/DescribePrometheusTemplateSyncResponse.cpp
   src/v20180525/model/UpdateEKSClusterRequest.cpp
   src/v20180525/model/CreateClusterRouteTableResponse.cpp
+  src/v20180525/model/DescribeClusterCommonNamesRequest.cpp
   src/v20180525/model/DeleteClusterEndpointResponse.cpp
   src/v20180525/model/PrometheusTemplateModify.cpp
   src/v20180525/model/PrometheusNotification.cpp
@@ -409,7 +413,9 @@ set(tke_src
   src/v20180525/model/DescribeRouteTableConflictsRequest.cpp
   src/v20180525/model/InstanceUpgradePreCheckResultItem.cpp
   src/v20180525/model/DescribePrometheusAlertHistoryResponse.cpp
+  src/v20180525/model/DescribeClusterCommonNamesResponse.cpp
   src/v20180525/model/ExistedInstancesPara.cpp
+  src/v20180525/model/CommonName.cpp
   src/v20180525/model/DescribeClusterAsGroupOptionResponse.cpp
   src/v20180525/model/ClusterAsGroupAttribute.cpp
   src/v20180525/model/DeleteClusterNodePoolResponse.cpp

@@ -31,7 +31,8 @@ Instance::Instance() :
     m_typeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_weightHasBeenSet(false),
-    m_reserveValueHasBeenSet(false)
+    m_reserveValueHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,16 @@ CoreInternalOutcome Instance::Deserialize(const Value &value)
         m_reserveValueHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivateIpAddress") && !value["PrivateIpAddress"].IsNull())
+    {
+        if (!value["PrivateIpAddress"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.PrivateIpAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privateIpAddress = string(value["PrivateIpAddress"].GetString());
+        m_privateIpAddressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -225,6 +236,14 @@ void Instance::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "ReserveValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reserveValue, allocator);
+    }
+
+    if (m_privateIpAddressHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PrivateIpAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_privateIpAddress.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -388,5 +407,21 @@ void Instance::SetReserveValue(const int64_t& _reserveValue)
 bool Instance::ReserveValueHasBeenSet() const
 {
     return m_reserveValueHasBeenSet;
+}
+
+string Instance::GetPrivateIpAddress() const
+{
+    return m_privateIpAddress;
+}
+
+void Instance::SetPrivateIpAddress(const string& _privateIpAddress)
+{
+    m_privateIpAddress = _privateIpAddress;
+    m_privateIpAddressHasBeenSet = true;
+}
+
+bool Instance::PrivateIpAddressHasBeenSet() const
+{
+    return m_privateIpAddressHasBeenSet;
 }
 

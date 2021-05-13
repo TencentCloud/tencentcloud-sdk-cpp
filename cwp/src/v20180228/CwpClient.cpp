@@ -298,6 +298,92 @@ CwpClient::CreateProcessTaskOutcomeCallable CwpClient::CreateProcessTaskCallable
     return task->get_future();
 }
 
+CwpClient::CreateSearchLogOutcome CwpClient::CreateSearchLog(const CreateSearchLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSearchLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSearchLogResponse rsp = CreateSearchLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSearchLogOutcome(rsp);
+        else
+            return CreateSearchLogOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSearchLogOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::CreateSearchLogAsync(const CreateSearchLogRequest& request, const CreateSearchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSearchLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::CreateSearchLogOutcomeCallable CwpClient::CreateSearchLogCallable(const CreateSearchLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSearchLogOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSearchLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::CreateSearchTemplateOutcome CwpClient::CreateSearchTemplate(const CreateSearchTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSearchTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSearchTemplateResponse rsp = CreateSearchTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSearchTemplateOutcome(rsp);
+        else
+            return CreateSearchTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSearchTemplateOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::CreateSearchTemplateAsync(const CreateSearchTemplateRequest& request, const CreateSearchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSearchTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::CreateSearchTemplateOutcomeCallable CwpClient::CreateSearchTemplateCallable(const CreateSearchTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSearchTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSearchTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::CreateUsualLoginPlacesOutcome CwpClient::CreateUsualLoginPlaces(const CreateUsualLoginPlacesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUsualLoginPlaces");
@@ -936,6 +1022,49 @@ CwpClient::DeleteReverseShellRulesOutcomeCallable CwpClient::DeleteReverseShellR
         [this, request]()
         {
             return this->DeleteReverseShellRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DeleteSearchTemplateOutcome CwpClient::DeleteSearchTemplate(const DeleteSearchTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSearchTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSearchTemplateResponse rsp = DeleteSearchTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSearchTemplateOutcome(rsp);
+        else
+            return DeleteSearchTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSearchTemplateOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DeleteSearchTemplateAsync(const DeleteSearchTemplateRequest& request, const DeleteSearchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSearchTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DeleteSearchTemplateOutcomeCallable CwpClient::DeleteSearchTemplateCallable(const DeleteSearchTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSearchTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSearchTemplate(request);
         }
     );
 
@@ -1588,6 +1717,49 @@ CwpClient::DescribeComponentsOutcomeCallable CwpClient::DescribeComponentsCallab
     return task->get_future();
 }
 
+CwpClient::DescribeESAggregationsOutcome CwpClient::DescribeESAggregations(const DescribeESAggregationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeESAggregations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeESAggregationsResponse rsp = DescribeESAggregationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeESAggregationsOutcome(rsp);
+        else
+            return DescribeESAggregationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeESAggregationsOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeESAggregationsAsync(const DescribeESAggregationsRequest& request, const DescribeESAggregationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeESAggregations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeESAggregationsOutcomeCallable CwpClient::DescribeESAggregationsCallable(const DescribeESAggregationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeESAggregationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeESAggregations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeESHitsOutcome CwpClient::DescribeESHits(const DescribeESHitsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeESHits");
@@ -1760,6 +1932,49 @@ CwpClient::DescribeHistoryAccountsOutcomeCallable CwpClient::DescribeHistoryAcco
     return task->get_future();
 }
 
+CwpClient::DescribeHistoryServiceOutcome CwpClient::DescribeHistoryService(const DescribeHistoryServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHistoryService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHistoryServiceResponse rsp = DescribeHistoryServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHistoryServiceOutcome(rsp);
+        else
+            return DescribeHistoryServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHistoryServiceOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeHistoryServiceAsync(const DescribeHistoryServiceRequest& request, const DescribeHistoryServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHistoryService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeHistoryServiceOutcomeCallable CwpClient::DescribeHistoryServiceCallable(const DescribeHistoryServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHistoryServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHistoryService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeImpactedHostsOutcome CwpClient::DescribeImpactedHosts(const DescribeImpactedHostsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeImpactedHosts");
@@ -1839,6 +2054,92 @@ CwpClient::DescribeImportMachineInfoOutcomeCallable CwpClient::DescribeImportMac
         [this, request]()
         {
             return this->DescribeImportMachineInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeIndexListOutcome CwpClient::DescribeIndexList(const DescribeIndexListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIndexList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIndexListResponse rsp = DescribeIndexListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIndexListOutcome(rsp);
+        else
+            return DescribeIndexListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIndexListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeIndexListAsync(const DescribeIndexListRequest& request, const DescribeIndexListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIndexList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeIndexListOutcomeCallable CwpClient::DescribeIndexListCallable(const DescribeIndexListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIndexListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIndexList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeLogStorageStatisticOutcome CwpClient::DescribeLogStorageStatistic(const DescribeLogStorageStatisticRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogStorageStatistic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogStorageStatisticResponse rsp = DescribeLogStorageStatisticResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogStorageStatisticOutcome(rsp);
+        else
+            return DescribeLogStorageStatisticOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogStorageStatisticOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeLogStorageStatisticAsync(const DescribeLogStorageStatisticRequest& request, const DescribeLogStorageStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogStorageStatistic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeLogStorageStatisticOutcomeCallable CwpClient::DescribeLogStorageStatisticCallable(const DescribeLogStorageStatisticRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogStorageStatisticOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogStorageStatistic(request);
         }
     );
 
@@ -2871,6 +3172,135 @@ CwpClient::DescribeScanMalwareScheduleOutcomeCallable CwpClient::DescribeScanMal
         [this, request]()
         {
             return this->DescribeScanMalwareSchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeSearchExportListOutcome CwpClient::DescribeSearchExportList(const DescribeSearchExportListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSearchExportList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSearchExportListResponse rsp = DescribeSearchExportListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSearchExportListOutcome(rsp);
+        else
+            return DescribeSearchExportListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSearchExportListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeSearchExportListAsync(const DescribeSearchExportListRequest& request, const DescribeSearchExportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSearchExportList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeSearchExportListOutcomeCallable CwpClient::DescribeSearchExportListCallable(const DescribeSearchExportListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSearchExportListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSearchExportList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeSearchLogsOutcome CwpClient::DescribeSearchLogs(const DescribeSearchLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSearchLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSearchLogsResponse rsp = DescribeSearchLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSearchLogsOutcome(rsp);
+        else
+            return DescribeSearchLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSearchLogsOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeSearchLogsAsync(const DescribeSearchLogsRequest& request, const DescribeSearchLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSearchLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeSearchLogsOutcomeCallable CwpClient::DescribeSearchLogsCallable(const DescribeSearchLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSearchLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSearchLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeSearchTemplatesOutcome CwpClient::DescribeSearchTemplates(const DescribeSearchTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSearchTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSearchTemplatesResponse rsp = DescribeSearchTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSearchTemplatesOutcome(rsp);
+        else
+            return DescribeSearchTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSearchTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeSearchTemplatesAsync(const DescribeSearchTemplatesRequest& request, const DescribeSearchTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSearchTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeSearchTemplatesOutcomeCallable CwpClient::DescribeSearchTemplatesCallable(const DescribeSearchTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSearchTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSearchTemplates(request);
         }
     );
 

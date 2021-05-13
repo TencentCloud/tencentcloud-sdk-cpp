@@ -1330,6 +1330,49 @@ TkeClient::DescribeClusterAsGroupsOutcomeCallable TkeClient::DescribeClusterAsGr
     return task->get_future();
 }
 
+TkeClient::DescribeClusterCommonNamesOutcome TkeClient::DescribeClusterCommonNames(const DescribeClusterCommonNamesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterCommonNames");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterCommonNamesResponse rsp = DescribeClusterCommonNamesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterCommonNamesOutcome(rsp);
+        else
+            return DescribeClusterCommonNamesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterCommonNamesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterCommonNamesAsync(const DescribeClusterCommonNamesRequest& request, const DescribeClusterCommonNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterCommonNames(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterCommonNamesOutcomeCallable TkeClient::DescribeClusterCommonNamesCallable(const DescribeClusterCommonNamesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterCommonNamesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterCommonNames(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeClusterEndpointStatusOutcome TkeClient::DescribeClusterEndpointStatus(const DescribeClusterEndpointStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterEndpointStatus");

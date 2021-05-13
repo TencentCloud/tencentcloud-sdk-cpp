@@ -36,6 +36,7 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/DescribeMediaQualityRestorationTaskRusultResponse.h
   include/tencentcloud/ie/v20200304/model/DarInfo.h
   include/tencentcloud/ie/v20200304/model/CreateQualityControlTaskResponse.h
+  include/tencentcloud/ie/v20200304/model/LoudnessInfo.h
   include/tencentcloud/ie/v20200304/model/SubTaskTranscodeInfo.h
   include/tencentcloud/ie/v20200304/model/CreateQualityControlTaskRequest.h
   include/tencentcloud/ie/v20200304/model/FrameTagRec.h
@@ -77,6 +78,7 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/DescribeEditingTaskResultRequest.h
   include/tencentcloud/ie/v20200304/model/AudioInfoResultItem.h
   include/tencentcloud/ie/v20200304/model/EditInfo.h
+  include/tencentcloud/ie/v20200304/model/RemoveReverb.h
   include/tencentcloud/ie/v20200304/model/StopMediaProcessTaskResponse.h
   include/tencentcloud/ie/v20200304/model/DescribeEditingTaskResultResponse.h
   include/tencentcloud/ie/v20200304/model/QualityControlInfoTaskResult.h
@@ -99,6 +101,7 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/QualityControlItem.h
   include/tencentcloud/ie/v20200304/model/CoverTaskResult.h
   include/tencentcloud/ie/v20200304/model/TagTaskResult.h
+  include/tencentcloud/ie/v20200304/model/AudioEnhance.h
   include/tencentcloud/ie/v20200304/model/CosInfo.h
   include/tencentcloud/ie/v20200304/model/MediaResultInfo.h
   include/tencentcloud/ie/v20200304/model/FrameTagResult.h
@@ -141,6 +144,7 @@ set(ie_src
   src/v20200304/model/DescribeMediaQualityRestorationTaskRusultResponse.cpp
   src/v20200304/model/DarInfo.cpp
   src/v20200304/model/CreateQualityControlTaskResponse.cpp
+  src/v20200304/model/LoudnessInfo.cpp
   src/v20200304/model/SubTaskTranscodeInfo.cpp
   src/v20200304/model/CreateQualityControlTaskRequest.cpp
   src/v20200304/model/FrameTagRec.cpp
@@ -182,6 +186,7 @@ set(ie_src
   src/v20200304/model/DescribeEditingTaskResultRequest.cpp
   src/v20200304/model/AudioInfoResultItem.cpp
   src/v20200304/model/EditInfo.cpp
+  src/v20200304/model/RemoveReverb.cpp
   src/v20200304/model/StopMediaProcessTaskResponse.cpp
   src/v20200304/model/DescribeEditingTaskResultResponse.cpp
   src/v20200304/model/QualityControlInfoTaskResult.cpp
@@ -204,6 +209,7 @@ set(ie_src
   src/v20200304/model/QualityControlItem.cpp
   src/v20200304/model/CoverTaskResult.cpp
   src/v20200304/model/TagTaskResult.cpp
+  src/v20200304/model/AudioEnhance.cpp
   src/v20200304/model/CosInfo.cpp
   src/v20200304/model/MediaResultInfo.cpp
   src/v20200304/model/FrameTagResult.cpp

@@ -27,7 +27,10 @@ AudioInfo::AudioInfo() :
     m_channelHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
     m_denoiseHasBeenSet(false),
-    m_enableMuteAudioHasBeenSet(false)
+    m_enableMuteAudioHasBeenSet(false),
+    m_loudnessInfoHasBeenSet(false),
+    m_audioEnhanceHasBeenSet(false),
+    m_removeReverbHasBeenSet(false)
 {
 }
 
@@ -103,6 +106,57 @@ CoreInternalOutcome AudioInfo::Deserialize(const Value &value)
         m_enableMuteAudioHasBeenSet = true;
     }
 
+    if (value.HasMember("LoudnessInfo") && !value["LoudnessInfo"].IsNull())
+    {
+        if (!value["LoudnessInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AudioInfo.LoudnessInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_loudnessInfo.Deserialize(value["LoudnessInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_loudnessInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("AudioEnhance") && !value["AudioEnhance"].IsNull())
+    {
+        if (!value["AudioEnhance"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AudioInfo.AudioEnhance` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_audioEnhance.Deserialize(value["AudioEnhance"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_audioEnhanceHasBeenSet = true;
+    }
+
+    if (value.HasMember("RemoveReverb") && !value["RemoveReverb"].IsNull())
+    {
+        if (!value["RemoveReverb"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AudioInfo.RemoveReverb` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_removeReverb.Deserialize(value["RemoveReverb"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_removeReverbHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -157,6 +211,33 @@ void AudioInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
         string key = "EnableMuteAudio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableMuteAudio, allocator);
+    }
+
+    if (m_loudnessInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "LoudnessInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_loudnessInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_audioEnhanceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AudioEnhance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_audioEnhance.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_removeReverbHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RemoveReverb";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_removeReverb.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -256,5 +337,53 @@ void AudioInfo::SetEnableMuteAudio(const int64_t& _enableMuteAudio)
 bool AudioInfo::EnableMuteAudioHasBeenSet() const
 {
     return m_enableMuteAudioHasBeenSet;
+}
+
+LoudnessInfo AudioInfo::GetLoudnessInfo() const
+{
+    return m_loudnessInfo;
+}
+
+void AudioInfo::SetLoudnessInfo(const LoudnessInfo& _loudnessInfo)
+{
+    m_loudnessInfo = _loudnessInfo;
+    m_loudnessInfoHasBeenSet = true;
+}
+
+bool AudioInfo::LoudnessInfoHasBeenSet() const
+{
+    return m_loudnessInfoHasBeenSet;
+}
+
+AudioEnhance AudioInfo::GetAudioEnhance() const
+{
+    return m_audioEnhance;
+}
+
+void AudioInfo::SetAudioEnhance(const AudioEnhance& _audioEnhance)
+{
+    m_audioEnhance = _audioEnhance;
+    m_audioEnhanceHasBeenSet = true;
+}
+
+bool AudioInfo::AudioEnhanceHasBeenSet() const
+{
+    return m_audioEnhanceHasBeenSet;
+}
+
+RemoveReverb AudioInfo::GetRemoveReverb() const
+{
+    return m_removeReverb;
+}
+
+void AudioInfo::SetRemoveReverb(const RemoveReverb& _removeReverb)
+{
+    m_removeReverb = _removeReverb;
+    m_removeReverbHasBeenSet = true;
+}
+
+bool AudioInfo::RemoveReverbHasBeenSet() const
+{
+    return m_removeReverbHasBeenSet;
 }
 

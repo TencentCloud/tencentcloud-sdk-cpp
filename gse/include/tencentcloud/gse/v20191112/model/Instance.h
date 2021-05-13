@@ -266,6 +266,28 @@ namespace TencentCloud
                      */
                     bool ReserveValueHasBeenSet() const;
 
+                    /**
+                     * 获取实例的私有IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrivateIpAddress 实例的私有IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPrivateIpAddress() const;
+
+                    /**
+                     * 设置实例的私有IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PrivateIpAddress 实例的私有IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPrivateIpAddress(const std::string& _privateIpAddress);
+
+                    /**
+                     * 判断参数 PrivateIpAddress 是否已赋值
+                     * @return PrivateIpAddress 是否已赋值
+                     */
+                    bool PrivateIpAddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +359,13 @@ namespace TencentCloud
                      */
                     int64_t m_reserveValue;
                     bool m_reserveValueHasBeenSet;
+
+                    /**
+                     * 实例的私有IP地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_privateIpAddress;
+                    bool m_privateIpAddressHasBeenSet;
 
                 };
             }

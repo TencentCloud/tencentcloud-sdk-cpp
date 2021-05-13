@@ -25,6 +25,9 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ie/v20200304/model/Denoise.h>
+#include <tencentcloud/ie/v20200304/model/LoudnessInfo.h>
+#include <tencentcloud/ie/v20200304/model/AudioEnhance.h>
+#include <tencentcloud/ie/v20200304/model/RemoveReverb.h>
 
 
 namespace TencentCloud
@@ -183,6 +186,60 @@ namespace TencentCloud
                      */
                     bool EnableMuteAudioHasBeenSet() const;
 
+                    /**
+                     * 获取音频响度信息
+                     * @return LoudnessInfo 音频响度信息
+                     */
+                    LoudnessInfo GetLoudnessInfo() const;
+
+                    /**
+                     * 设置音频响度信息
+                     * @param LoudnessInfo 音频响度信息
+                     */
+                    void SetLoudnessInfo(const LoudnessInfo& _loudnessInfo);
+
+                    /**
+                     * 判断参数 LoudnessInfo 是否已赋值
+                     * @return LoudnessInfo 是否已赋值
+                     */
+                    bool LoudnessInfoHasBeenSet() const;
+
+                    /**
+                     * 获取音频音效增强
+                     * @return AudioEnhance 音频音效增强
+                     */
+                    AudioEnhance GetAudioEnhance() const;
+
+                    /**
+                     * 设置音频音效增强
+                     * @param AudioEnhance 音频音效增强
+                     */
+                    void SetAudioEnhance(const AudioEnhance& _audioEnhance);
+
+                    /**
+                     * 判断参数 AudioEnhance 是否已赋值
+                     * @return AudioEnhance 是否已赋值
+                     */
+                    bool AudioEnhanceHasBeenSet() const;
+
+                    /**
+                     * 获取去除混音
+                     * @return RemoveReverb 去除混音
+                     */
+                    RemoveReverb GetRemoveReverb() const;
+
+                    /**
+                     * 设置去除混音
+                     * @param RemoveReverb 去除混音
+                     */
+                    void SetRemoveReverb(const RemoveReverb& _removeReverb);
+
+                    /**
+                     * 判断参数 RemoveReverb 是否已赋值
+                     * @return RemoveReverb 是否已赋值
+                     */
+                    bool RemoveReverbHasBeenSet() const;
+
                 private:
 
                     /**
@@ -227,6 +284,24 @@ namespace TencentCloud
                      */
                     int64_t m_enableMuteAudio;
                     bool m_enableMuteAudioHasBeenSet;
+
+                    /**
+                     * 音频响度信息
+                     */
+                    LoudnessInfo m_loudnessInfo;
+                    bool m_loudnessInfoHasBeenSet;
+
+                    /**
+                     * 音频音效增强
+                     */
+                    AudioEnhance m_audioEnhance;
+                    bool m_audioEnhanceHasBeenSet;
+
+                    /**
+                     * 去除混音
+                     */
+                    RemoveReverb m_removeReverb;
+                    bool m_removeReverbHasBeenSet;
 
                 };
             }
