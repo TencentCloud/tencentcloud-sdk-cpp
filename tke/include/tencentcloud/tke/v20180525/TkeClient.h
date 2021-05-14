@@ -109,6 +109,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeEKSClusterCredentialResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEKSClustersRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEKSClustersResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeImagesRequest.h>
@@ -133,6 +135,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeRegionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsResponse.h>
+#include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeRequest.h>
+#include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeResponse.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressRequest.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterAsGroupAttributeRequest.h>
@@ -304,6 +308,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeEKSClustersResponse> DescribeEKSClustersOutcome;
                 typedef std::future<DescribeEKSClustersOutcome> DescribeEKSClustersOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeEKSClustersRequest&, DescribeEKSClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEKSClustersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEnableVpcCniProgressResponse> DescribeEnableVpcCniProgressOutcome;
+                typedef std::future<DescribeEnableVpcCniProgressOutcome> DescribeEnableVpcCniProgressOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeEnableVpcCniProgressRequest&, DescribeEnableVpcCniProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnableVpcCniProgressAsyncHandler;
                 typedef Outcome<Error, Model::DescribeExistedInstancesResponse> DescribeExistedInstancesOutcome;
                 typedef std::future<DescribeExistedInstancesOutcome> DescribeExistedInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeExistedInstancesRequest&, DescribeExistedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExistedInstancesAsyncHandler;
@@ -340,6 +347,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRouteTableConflictsResponse> DescribeRouteTableConflictsOutcome;
                 typedef std::future<DescribeRouteTableConflictsOutcome> DescribeRouteTableConflictsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeRouteTableConflictsRequest&, DescribeRouteTableConflictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTableConflictsAsyncHandler;
+                typedef Outcome<Error, Model::EnableVpcCniNetworkTypeResponse> EnableVpcCniNetworkTypeOutcome;
+                typedef std::future<EnableVpcCniNetworkTypeOutcome> EnableVpcCniNetworkTypeOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::EnableVpcCniNetworkTypeRequest&, EnableVpcCniNetworkTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpcCniNetworkTypeAsyncHandler;
                 typedef Outcome<Error, Model::GetUpgradeInstanceProgressResponse> GetUpgradeInstanceProgressOutcome;
                 typedef std::future<GetUpgradeInstanceProgressOutcome> GetUpgradeInstanceProgressOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::GetUpgradeInstanceProgressRequest&, GetUpgradeInstanceProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUpgradeInstanceProgressAsyncHandler;
@@ -773,6 +783,15 @@ namespace TencentCloud
                 DescribeEKSClustersOutcomeCallable DescribeEKSClustersCallable(const Model::DescribeEKSClustersRequest& request);
 
                 /**
+                 *本接口用于查询开启vpc-cni模式的任务进度
+                 * @param req DescribeEnableVpcCniProgressRequest
+                 * @return DescribeEnableVpcCniProgressOutcome
+                 */
+                DescribeEnableVpcCniProgressOutcome DescribeEnableVpcCniProgress(const Model::DescribeEnableVpcCniProgressRequest &request);
+                void DescribeEnableVpcCniProgressAsync(const Model::DescribeEnableVpcCniProgressRequest& request, const DescribeEnableVpcCniProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnableVpcCniProgressOutcomeCallable DescribeEnableVpcCniProgressCallable(const Model::DescribeEnableVpcCniProgressRequest& request);
+
+                /**
                  *查询已经存在的节点，判断是否可以加入集群
                  * @param req DescribeExistedInstancesRequest
                  * @return DescribeExistedInstancesOutcome
@@ -879,6 +898,15 @@ namespace TencentCloud
                 DescribeRouteTableConflictsOutcome DescribeRouteTableConflicts(const Model::DescribeRouteTableConflictsRequest &request);
                 void DescribeRouteTableConflictsAsync(const Model::DescribeRouteTableConflictsRequest& request, const DescribeRouteTableConflictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRouteTableConflictsOutcomeCallable DescribeRouteTableConflictsCallable(const Model::DescribeRouteTableConflictsRequest& request);
+
+                /**
+                 *GR集群可以通过本接口附加vpc-cni容器网络插件，开启vpc-cni容器网络能力
+                 * @param req EnableVpcCniNetworkTypeRequest
+                 * @return EnableVpcCniNetworkTypeOutcome
+                 */
+                EnableVpcCniNetworkTypeOutcome EnableVpcCniNetworkType(const Model::EnableVpcCniNetworkTypeRequest &request);
+                void EnableVpcCniNetworkTypeAsync(const Model::EnableVpcCniNetworkTypeRequest& request, const EnableVpcCniNetworkTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableVpcCniNetworkTypeOutcomeCallable EnableVpcCniNetworkTypeCallable(const Model::EnableVpcCniNetworkTypeRequest& request);
 
                 /**
                  *获得节点升级当前的进度 

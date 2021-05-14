@@ -116,8 +116,8 @@ namespace TencentCloud
                     bool FrNameHasBeenSet() const;
 
                     /**
-                     * 获取经营状态（在营、注销、吊销、其他）
-                     * @return EnterpriseStatus 经营状态（在营、注销、吊销、其他）
+                     * 获取经营状态，包括：成立、筹建、存续、在营、开业、在册、正常经营、开业登记中、登记成立、撤销、撤销登记、非正常户、告解、个体暂时吊销、个体转企业、吊销（未注销）、拟注销、已注销、（待）迁入、（待）迁出、停业、歇业、清算等。
+                     * @return EnterpriseStatus 经营状态，包括：成立、筹建、存续、在营、开业、在册、正常经营、开业登记中、登记成立、撤销、撤销登记、非正常户、告解、个体暂时吊销、个体转企业、吊销（未注销）、拟注销、已注销、（待）迁入、（待）迁出、停业、歇业、清算等。
                      */
                     std::string GetEnterpriseStatus() const;
 
@@ -490,7 +490,7 @@ namespace TencentCloud
                     bool m_frNameHasBeenSet;
 
                     /**
-                     * 经营状态（在营、注销、吊销、其他）
+                     * 经营状态，包括：成立、筹建、存续、在营、开业、在册、正常经营、开业登记中、登记成立、撤销、撤销登记、非正常户、告解、个体暂时吊销、个体转企业、吊销（未注销）、拟注销、已注销、（待）迁入、（待）迁出、停业、歇业、清算等。
                      */
                     std::string m_enterpriseStatus;
                     bool m_enterpriseStatusHasBeenSet;

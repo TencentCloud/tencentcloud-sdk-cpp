@@ -154,15 +154,17 @@ MyKad  身份证
 MyPR    永居证
 MyTentera   军官证
 MyKAS    临时身份证
-POLIS  警察
+POLIS  警察证
 IKAD   劳工证
+MyKid 儿童卡
                      * @return Type 证件类型
 MyKad  身份证
 MyPR    永居证
 MyTentera   军官证
 MyKAS    临时身份证
-POLIS  警察
+POLIS  警察证
 IKAD   劳工证
+MyKid 儿童卡
                      */
                     std::string GetType() const;
 
@@ -245,8 +247,9 @@ MyKad  身份证
 MyPR    永居证
 MyTentera   军官证
 MyKAS    临时身份证
-POLIS  警察
+POLIS  警察证
 IKAD   劳工证
+MyKid 儿童卡
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -427,6 +427,49 @@ CfwClient::DescribeCfwEipsOutcomeCallable CfwClient::DescribeCfwEipsCallable(con
     return task->get_future();
 }
 
+CfwClient::DescribeGuideScanInfoOutcome CfwClient::DescribeGuideScanInfo(const DescribeGuideScanInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGuideScanInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGuideScanInfoResponse rsp = DescribeGuideScanInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGuideScanInfoOutcome(rsp);
+        else
+            return DescribeGuideScanInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGuideScanInfoOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeGuideScanInfoAsync(const DescribeGuideScanInfoRequest& request, const DescribeGuideScanInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGuideScanInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeGuideScanInfoOutcomeCallable CfwClient::DescribeGuideScanInfoCallable(const DescribeGuideScanInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGuideScanInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGuideScanInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeNatRuleOverviewOutcome CfwClient::DescribeNatRuleOverview(const DescribeNatRuleOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatRuleOverview");

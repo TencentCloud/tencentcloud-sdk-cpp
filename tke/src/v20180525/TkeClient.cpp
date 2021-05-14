@@ -1889,6 +1889,49 @@ TkeClient::DescribeEKSClustersOutcomeCallable TkeClient::DescribeEKSClustersCall
     return task->get_future();
 }
 
+TkeClient::DescribeEnableVpcCniProgressOutcome TkeClient::DescribeEnableVpcCniProgress(const DescribeEnableVpcCniProgressRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnableVpcCniProgress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnableVpcCniProgressResponse rsp = DescribeEnableVpcCniProgressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnableVpcCniProgressOutcome(rsp);
+        else
+            return DescribeEnableVpcCniProgressOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnableVpcCniProgressOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEnableVpcCniProgressAsync(const DescribeEnableVpcCniProgressRequest& request, const DescribeEnableVpcCniProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEnableVpcCniProgress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEnableVpcCniProgressOutcomeCallable TkeClient::DescribeEnableVpcCniProgressCallable(const DescribeEnableVpcCniProgressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEnableVpcCniProgressOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEnableVpcCniProgress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeExistedInstancesOutcome TkeClient::DescribeExistedInstances(const DescribeExistedInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExistedInstances");
@@ -2398,6 +2441,49 @@ TkeClient::DescribeRouteTableConflictsOutcomeCallable TkeClient::DescribeRouteTa
         [this, request]()
         {
             return this->DescribeRouteTableConflicts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::EnableVpcCniNetworkTypeOutcome TkeClient::EnableVpcCniNetworkType(const EnableVpcCniNetworkTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableVpcCniNetworkType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableVpcCniNetworkTypeResponse rsp = EnableVpcCniNetworkTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableVpcCniNetworkTypeOutcome(rsp);
+        else
+            return EnableVpcCniNetworkTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableVpcCniNetworkTypeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::EnableVpcCniNetworkTypeAsync(const EnableVpcCniNetworkTypeRequest& request, const EnableVpcCniNetworkTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableVpcCniNetworkType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::EnableVpcCniNetworkTypeOutcomeCallable TkeClient::EnableVpcCniNetworkTypeCallable(const EnableVpcCniNetworkTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableVpcCniNetworkTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableVpcCniNetworkType(request);
         }
     );
 

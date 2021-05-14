@@ -19,6 +19,7 @@ set(tke_public_header
   )
 
 set(tke_public_header_model
+  include/tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterSecurityResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterSecurityRequest.h
@@ -44,6 +45,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreatePrometheusTemplateRequest.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusTemplateRequest.h
   include/tencentcloud/tke/v20180525/model/InstanceUpgradeProgressItem.h
+  include/tencentcloud/tke/v20180525/model/NodePool.h
   include/tencentcloud/tke/v20180525/model/DescribeEKSClustersResponse.h
   include/tencentcloud/tke/v20180525/model/RouteTableInfo.h
   include/tencentcloud/tke/v20180525/model/IPAddress.h
@@ -59,7 +61,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/PrometheusTemplateSyncTarget.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesRequest.h
   include/tencentcloud/tke/v20180525/model/AddNodeToNodePoolRequest.h
-  include/tencentcloud/tke/v20180525/model/NodePool.h
+  include/tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAlertRuleResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroup.h
   include/tencentcloud/tke/v20180525/model/Instance.h
@@ -133,6 +135,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DnsServerConf.h
   include/tencentcloud/tke/v20180525/model/EksCluster.h
   include/tencentcloud/tke/v20180525/model/CreateClusterNodePoolFromExistingAsgResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterAttributeResponse.h
   include/tencentcloud/tke/v20180525/model/EnhancedService.h
@@ -151,6 +154,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/InstanceAdvancedSettings.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAgentsRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusAgentOverview.h
   include/tencentcloud/tke/v20180525/model/Filter.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterNodePoolRequest.h
@@ -228,6 +232,7 @@ set(tke_public_header_model
 
 set(tke_src
   src/v20180525/TkeClient.cpp
+  src/v20180525/model/EnableVpcCniNetworkTypeRequest.cpp
   src/v20180525/model/DescribeClusterEndpointVipStatusRequest.cpp
   src/v20180525/model/DescribeClusterSecurityResponse.cpp
   src/v20180525/model/DescribeClusterSecurityRequest.cpp
@@ -253,6 +258,7 @@ set(tke_src
   src/v20180525/model/CreatePrometheusTemplateRequest.cpp
   src/v20180525/model/DeletePrometheusTemplateRequest.cpp
   src/v20180525/model/InstanceUpgradeProgressItem.cpp
+  src/v20180525/model/NodePool.cpp
   src/v20180525/model/DescribeEKSClustersResponse.cpp
   src/v20180525/model/RouteTableInfo.cpp
   src/v20180525/model/IPAddress.cpp
@@ -268,7 +274,7 @@ set(tke_src
   src/v20180525/model/PrometheusTemplateSyncTarget.cpp
   src/v20180525/model/DescribePrometheusTemplatesRequest.cpp
   src/v20180525/model/AddNodeToNodePoolRequest.cpp
-  src/v20180525/model/NodePool.cpp
+  src/v20180525/model/EnableVpcCniNetworkTypeResponse.cpp
   src/v20180525/model/DescribePrometheusAlertRuleResponse.cpp
   src/v20180525/model/ClusterAsGroup.cpp
   src/v20180525/model/Instance.cpp
@@ -342,6 +348,7 @@ set(tke_src
   src/v20180525/model/DnsServerConf.cpp
   src/v20180525/model/EksCluster.cpp
   src/v20180525/model/CreateClusterNodePoolFromExistingAsgResponse.cpp
+  src/v20180525/model/DescribeEnableVpcCniProgressRequest.cpp
   src/v20180525/model/DescribeClusterEndpointStatusRequest.cpp
   src/v20180525/model/ModifyClusterAttributeResponse.cpp
   src/v20180525/model/EnhancedService.cpp
@@ -360,6 +367,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterInstancesRequest.cpp
   src/v20180525/model/InstanceAdvancedSettings.cpp
   src/v20180525/model/DescribePrometheusAgentsRequest.cpp
+  src/v20180525/model/DescribeEnableVpcCniProgressResponse.cpp
   src/v20180525/model/PrometheusAgentOverview.cpp
   src/v20180525/model/Filter.cpp
   src/v20180525/model/ModifyClusterNodePoolRequest.cpp

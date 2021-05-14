@@ -41,6 +41,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeRuleOverviewRequest.h>
@@ -118,6 +120,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCfwEipsResponse> DescribeCfwEipsOutcome;
                 typedef std::future<DescribeCfwEipsOutcome> DescribeCfwEipsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeCfwEipsRequest&, DescribeCfwEipsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwEipsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeGuideScanInfoResponse> DescribeGuideScanInfoOutcome;
+                typedef std::future<DescribeGuideScanInfoOutcome> DescribeGuideScanInfoOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeGuideScanInfoRequest&, DescribeGuideScanInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGuideScanInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeNatRuleOverviewResponse> DescribeNatRuleOverviewOutcome;
                 typedef std::future<DescribeNatRuleOverviewOutcome> DescribeNatRuleOverviewOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatRuleOverviewRequest&, DescribeNatRuleOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatRuleOverviewAsyncHandler;
@@ -255,6 +260,15 @@ namespace TencentCloud
                 DescribeCfwEipsOutcome DescribeCfwEips(const Model::DescribeCfwEipsRequest &request);
                 void DescribeCfwEipsAsync(const Model::DescribeCfwEipsRequest& request, const DescribeCfwEipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCfwEipsOutcomeCallable DescribeCfwEipsCallable(const Model::DescribeCfwEipsRequest& request);
+
+                /**
+                 *DescribeGuideScanInfo新手引导扫描接口信息
+                 * @param req DescribeGuideScanInfoRequest
+                 * @return DescribeGuideScanInfoOutcome
+                 */
+                DescribeGuideScanInfoOutcome DescribeGuideScanInfo(const Model::DescribeGuideScanInfoRequest &request);
+                void DescribeGuideScanInfoAsync(const Model::DescribeGuideScanInfoRequest& request, const DescribeGuideScanInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGuideScanInfoOutcomeCallable DescribeGuideScanInfoCallable(const Model::DescribeGuideScanInfoRequest& request);
 
                 /**
                  *nat规则列表概况

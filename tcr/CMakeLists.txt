@@ -61,6 +61,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/RenewInstanceRequest.h
   include/tencentcloud/tcr/v20190924/model/CreateTagRetentionRuleResponse.h
   include/tencentcloud/tcr/v20190924/model/Limit.h
+  include/tencentcloud/tcr/v20190924/model/DescribeChartDownloadInfoResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeExternalEndpointStatusRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteRepositoryResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImagePersonalResponse.h
@@ -155,6 +156,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/CreateNamespaceRequest.h
   include/tencentcloud/tcr/v20190924/model/BatchDeleteRepositoryPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/TriggerInvokeCondition.h
+  include/tencentcloud/tcr/v20190924/model/DescribeChartDownloadInfoRequest.h
   include/tencentcloud/tcr/v20190924/model/ValidateRepositoryExistPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeExternalEndpointStatusResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifySecurityPolicyRequest.h
@@ -283,6 +285,7 @@ set(tcr_src
   src/v20190924/model/RenewInstanceRequest.cpp
   src/v20190924/model/CreateTagRetentionRuleResponse.cpp
   src/v20190924/model/Limit.cpp
+  src/v20190924/model/DescribeChartDownloadInfoResponse.cpp
   src/v20190924/model/DescribeExternalEndpointStatusRequest.cpp
   src/v20190924/model/DeleteRepositoryResponse.cpp
   src/v20190924/model/DeleteImagePersonalResponse.cpp
@@ -377,6 +380,7 @@ set(tcr_src
   src/v20190924/model/CreateNamespaceRequest.cpp
   src/v20190924/model/BatchDeleteRepositoryPersonalRequest.cpp
   src/v20190924/model/TriggerInvokeCondition.cpp
+  src/v20190924/model/DescribeChartDownloadInfoRequest.cpp
   src/v20190924/model/ValidateRepositoryExistPersonalResponse.cpp
   src/v20190924/model/DescribeExternalEndpointStatusResponse.cpp
   src/v20190924/model/ModifySecurityPolicyRequest.cpp

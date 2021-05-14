@@ -1545,6 +1545,49 @@ TcrClient::DescribeApplicationTriggerPersonalOutcomeCallable TcrClient::Describe
     return task->get_future();
 }
 
+TcrClient::DescribeChartDownloadInfoOutcome TcrClient::DescribeChartDownloadInfo(const DescribeChartDownloadInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChartDownloadInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChartDownloadInfoResponse rsp = DescribeChartDownloadInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChartDownloadInfoOutcome(rsp);
+        else
+            return DescribeChartDownloadInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChartDownloadInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeChartDownloadInfoAsync(const DescribeChartDownloadInfoRequest& request, const DescribeChartDownloadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeChartDownloadInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeChartDownloadInfoOutcomeCallable TcrClient::DescribeChartDownloadInfoCallable(const DescribeChartDownloadInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeChartDownloadInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeChartDownloadInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DescribeExternalEndpointStatusOutcome TcrClient::DescribeExternalEndpointStatus(const DescribeExternalEndpointStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExternalEndpointStatus");
