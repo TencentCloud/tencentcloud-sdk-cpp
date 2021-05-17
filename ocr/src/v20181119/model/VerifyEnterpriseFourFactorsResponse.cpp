@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionResponse.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyEnterpriseFourFactorsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tke::V20180525::Model;
+using namespace TencentCloud::Ocr::V20181119::Model;
 using namespace rapidjson;
 using namespace std;
 
-SetNodePoolNodeProtectionResponse::SetNodePoolNodeProtectionResponse() :
-    m_succeedInstanceIdsHasBeenSet(false),
-    m_failedInstanceIdsHasBeenSet(false)
+VerifyEnterpriseFourFactorsResponse::VerifyEnterpriseFourFactorsResponse() :
+    m_stateHasBeenSet(false),
+    m_detailHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome SetNodePoolNodeProtectionResponse::Deserialize(const string &payload)
+CoreInternalOutcome VerifyEnterpriseFourFactorsResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,30 +64,31 @@ CoreInternalOutcome SetNodePoolNodeProtectionResponse::Deserialize(const string 
     }
 
 
-    if (rsp.HasMember("SucceedInstanceIds") && !rsp["SucceedInstanceIds"].IsNull())
+    if (rsp.HasMember("State") && !rsp["State"].IsNull())
     {
-        if (!rsp["SucceedInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `SucceedInstanceIds` is not array type"));
-
-        const Value &tmpValue = rsp["SucceedInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["State"].IsInt64())
         {
-            m_succeedInstanceIds.push_back((*itr).GetString());
+            return CoreInternalOutcome(Error("response `State` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_succeedInstanceIdsHasBeenSet = true;
+        m_state = rsp["State"].GetInt64();
+        m_stateHasBeenSet = true;
     }
 
-    if (rsp.HasMember("FailedInstanceIds") && !rsp["FailedInstanceIds"].IsNull())
+    if (rsp.HasMember("Detail") && !rsp["Detail"].IsNull())
     {
-        if (!rsp["FailedInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `FailedInstanceIds` is not array type"));
-
-        const Value &tmpValue = rsp["FailedInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Detail"].IsObject())
         {
-            m_failedInstanceIds.push_back((*itr).GetString());
+            return CoreInternalOutcome(Error("response `Detail` is not object type").SetRequestId(requestId));
         }
-        m_failedInstanceIdsHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_detail.Deserialize(rsp["Detail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_detailHasBeenSet = true;
     }
 
 
@@ -95,24 +96,24 @@ CoreInternalOutcome SetNodePoolNodeProtectionResponse::Deserialize(const string 
 }
 
 
-vector<string> SetNodePoolNodeProtectionResponse::GetSucceedInstanceIds() const
+int64_t VerifyEnterpriseFourFactorsResponse::GetState() const
 {
-    return m_succeedInstanceIds;
+    return m_state;
 }
 
-bool SetNodePoolNodeProtectionResponse::SucceedInstanceIdsHasBeenSet() const
+bool VerifyEnterpriseFourFactorsResponse::StateHasBeenSet() const
 {
-    return m_succeedInstanceIdsHasBeenSet;
+    return m_stateHasBeenSet;
 }
 
-vector<string> SetNodePoolNodeProtectionResponse::GetFailedInstanceIds() const
+Detail VerifyEnterpriseFourFactorsResponse::GetDetail() const
 {
-    return m_failedInstanceIds;
+    return m_detail;
 }
 
-bool SetNodePoolNodeProtectionResponse::FailedInstanceIdsHasBeenSet() const
+bool VerifyEnterpriseFourFactorsResponse::DetailHasBeenSet() const
 {
-    return m_failedInstanceIdsHasBeenSet;
+    return m_detailHasBeenSet;
 }
 
 

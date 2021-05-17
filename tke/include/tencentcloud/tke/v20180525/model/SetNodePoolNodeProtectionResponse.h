@@ -42,7 +42,49 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SucceedInstanceIds 成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSucceedInstanceIds() const;
+
+                    /**
+                     * 判断参数 SucceedInstanceIds 是否已赋值
+                     * @return SucceedInstanceIds 是否已赋值
+                     */
+                    bool SucceedInstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取没有成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailedInstanceIds 没有成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetFailedInstanceIds() const;
+
+                    /**
+                     * 判断参数 FailedInstanceIds 是否已赋值
+                     * @return FailedInstanceIds 是否已赋值
+                     */
+                    bool FailedInstanceIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_succeedInstanceIds;
+                    bool m_succeedInstanceIdsHasBeenSet;
+
+                    /**
+                     * 没有成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_failedInstanceIds;
+                    bool m_failedInstanceIdsHasBeenSet;
 
                 };
             }

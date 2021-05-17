@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool EksNamespaceHasBeenSet() const;
 
                     /**
-                     * 获取来源
-                     * @return SourceChannel 来源
+                     * 获取来源渠道
+                     * @return SourceChannel 来源渠道
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
-                     * 设置来源
-                     * @param SourceChannel 来源
+                     * 设置来源渠道
+                     * @param SourceChannel 来源渠道
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_eksNamespaceHasBeenSet;
 
                     /**
-                     * 来源
+                     * 来源渠道
                      */
                     int64_t m_sourceChannel;
                     bool m_sourceChannelHasBeenSet;

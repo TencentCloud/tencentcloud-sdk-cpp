@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型
-                     * @return ResourceType 资源类型
+                     * 获取资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE
+                     * @return ResourceType 资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型
-                     * @param ResourceType 资源类型
+                     * 设置资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE
+                     * @param ResourceType 资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE
                      */
                     void SetResourceType(const std::string& _resourceType);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取来源
-                     * @return SourceChannel 来源
+                     * 获取来源渠道
+                     * @return SourceChannel 来源渠道
                      */
                     int64_t GetSourceChannel() const;
 
                     /**
-                     * 设置来源
-                     * @param SourceChannel 来源
+                     * 设置来源渠道
+                     * @param SourceChannel 来源渠道
                      */
                     void SetSourceChannel(const int64_t& _sourceChannel);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 资源类型
+                     * 资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 来源
+                     * 来源渠道
                      */
                     int64_t m_sourceChannel;
                     bool m_sourceChannelHasBeenSet;

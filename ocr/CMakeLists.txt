@@ -115,9 +115,11 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/GeneralEfficientOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/AdvertiseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/Detail.h
   include/tencentcloud/ocr/v20181119/model/EnglishOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyResponse.h
   include/tencentcloud/ocr/v20181119/model/PassportOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/VerifyEnterpriseFourFactorsRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralAccurateOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/OrgCodeCertOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/FlightInvoiceOCRResponse.h
@@ -198,6 +200,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/BankCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/BusinessCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/FinanBillOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/VerifyEnterpriseFourFactorsResponse.h
   include/tencentcloud/ocr/v20181119/model/GeneralFastOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/QrcodePositionObj.h
   )
@@ -300,9 +303,11 @@ set(ocr_src
   src/v20181119/model/GeneralEfficientOCRRequest.cpp
   src/v20181119/model/AdvertiseOCRRequest.cpp
   src/v20181119/model/RideHailingDriverLicenseOCRResponse.cpp
+  src/v20181119/model/Detail.cpp
   src/v20181119/model/EnglishOCRRequest.cpp
   src/v20181119/model/VatInvoiceVerifyResponse.cpp
   src/v20181119/model/PassportOCRResponse.cpp
+  src/v20181119/model/VerifyEnterpriseFourFactorsRequest.cpp
   src/v20181119/model/GeneralAccurateOCRRequest.cpp
   src/v20181119/model/OrgCodeCertOCRRequest.cpp
   src/v20181119/model/FlightInvoiceOCRResponse.cpp
@@ -383,6 +388,7 @@ set(ocr_src
   src/v20181119/model/BankCardOCRResponse.cpp
   src/v20181119/model/BusinessCardOCRRequest.cpp
   src/v20181119/model/FinanBillOCRRequest.cpp
+  src/v20181119/model/VerifyEnterpriseFourFactorsResponse.cpp
   src/v20181119/model/GeneralFastOCRResponse.cpp
   src/v20181119/model/QrcodePositionObj.cpp
   )

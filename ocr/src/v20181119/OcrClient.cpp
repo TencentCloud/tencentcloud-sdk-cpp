@@ -2663,6 +2663,49 @@ OcrClient::VerifyBizLicenseOutcomeCallable OcrClient::VerifyBizLicenseCallable(c
     return task->get_future();
 }
 
+OcrClient::VerifyEnterpriseFourFactorsOutcome OcrClient::VerifyEnterpriseFourFactors(const VerifyEnterpriseFourFactorsRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyEnterpriseFourFactors");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyEnterpriseFourFactorsResponse rsp = VerifyEnterpriseFourFactorsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyEnterpriseFourFactorsOutcome(rsp);
+        else
+            return VerifyEnterpriseFourFactorsOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyEnterpriseFourFactorsOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::VerifyEnterpriseFourFactorsAsync(const VerifyEnterpriseFourFactorsRequest& request, const VerifyEnterpriseFourFactorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyEnterpriseFourFactors(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::VerifyEnterpriseFourFactorsOutcomeCallable OcrClient::VerifyEnterpriseFourFactorsCallable(const VerifyEnterpriseFourFactorsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyEnterpriseFourFactorsOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyEnterpriseFourFactors(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::VerifyOfdVatInvoiceOCROutcome OcrClient::VerifyOfdVatInvoiceOCR(const VerifyOfdVatInvoiceOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "VerifyOfdVatInvoiceOCR");

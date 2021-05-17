@@ -42,7 +42,103 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取集群id
+                     * @return ClusterId 集群id
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群id
+                     * @param ClusterId 集群id
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取节点池id
+                     * @return NodePoolId 节点池id
+                     */
+                    std::string GetNodePoolId() const;
+
+                    /**
+                     * 设置节点池id
+                     * @param NodePoolId 节点池id
+                     */
+                    void SetNodePoolId(const std::string& _nodePoolId);
+
+                    /**
+                     * 判断参数 NodePoolId 是否已赋值
+                     * @return NodePoolId 是否已赋值
+                     */
+                    bool NodePoolIdHasBeenSet() const;
+
+                    /**
+                     * 获取节点id
+                     * @return InstanceIds 节点id
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 设置节点id
+                     * @param InstanceIds 节点id
+                     */
+                    void SetInstanceIds(const std::vector<std::string>& _instanceIds);
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取节点是否需要移出保护
+                     * @return ProtectedFromScaleIn 节点是否需要移出保护
+                     */
+                    bool GetProtectedFromScaleIn() const;
+
+                    /**
+                     * 设置节点是否需要移出保护
+                     * @param ProtectedFromScaleIn 节点是否需要移出保护
+                     */
+                    void SetProtectedFromScaleIn(const bool& _protectedFromScaleIn);
+
+                    /**
+                     * 判断参数 ProtectedFromScaleIn 是否已赋值
+                     * @return ProtectedFromScaleIn 是否已赋值
+                     */
+                    bool ProtectedFromScaleInHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 集群id
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 节点池id
+                     */
+                    std::string m_nodePoolId;
+                    bool m_nodePoolIdHasBeenSet;
+
+                    /**
+                     * 节点id
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 节点是否需要移出保护
+                     */
+                    bool m_protectedFromScaleIn;
+                    bool m_protectedFromScaleInHasBeenSet;
 
                 };
             }

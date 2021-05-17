@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取单页条数
-                     * @return Limit 单页条数
+                     * 获取单页条数，默认值20
+                     * @return Limit 单页条数，默认值20
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单页条数
-                     * @param Limit 单页条数
+                     * 设置单页条数，默认值20
+                     * @param Limit 单页条数，默认值20
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页下标
-                     * @return Offset 分页下标
+                     * 获取分页下标，默认值0
+                     * @return Offset 分页下标，默认值0
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页下标
-                     * @param Offset 分页下标
+                     * 设置分页下标，默认值0
+                     * @param Offset 分页下标，默认值0
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -115,14 +115,26 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取pod状态
-                     * @return Status pod状态
+                     * 获取实例状态 
+- Running 
+- Pending 
+- Error
+                     * @return Status 实例状态 
+- Running 
+- Pending 
+- Error
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置pod状态
-                     * @param Status pod状态
+                     * 设置实例状态 
+- Running 
+- Pending 
+- Error
+                     * @param Status 实例状态 
+- Running 
+- Pending 
+- Error
                      */
                     void SetStatus(const std::string& _status);
 
@@ -133,14 +145,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取名字
-                     * @return PodName 名字
+                     * 获取实例名字
+                     * @return PodName 实例名字
                      */
                     std::string GetPodName() const;
 
                     /**
-                     * 设置名字
-                     * @param PodName 名字
+                     * 设置实例名字
+                     * @param PodName 实例名字
                      */
                     void SetPodName(const std::string& _podName);
 
@@ -183,25 +195,28 @@ namespace TencentCloud
                     bool m_serviceIdHasBeenSet;
 
                     /**
-                     * 单页条数
+                     * 单页条数，默认值20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页下标
+                     * 分页下标，默认值0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * pod状态
+                     * 实例状态 
+- Running 
+- Pending 
+- Error
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 名字
+                     * 实例名字
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;

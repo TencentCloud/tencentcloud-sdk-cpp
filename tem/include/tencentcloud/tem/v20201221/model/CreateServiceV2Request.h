@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取是否使用默认镜像服务
-                     * @return UseDefaultImageService 是否使用默认镜像服务
+                     * 获取是否使用默认镜像服务 1-是，0-否
+                     * @return UseDefaultImageService 是否使用默认镜像服务 1-是，0-否
                      */
                     int64_t GetUseDefaultImageService() const;
 
                     /**
-                     * 设置是否使用默认镜像服务
-                     * @param UseDefaultImageService 是否使用默认镜像服务
+                     * 设置是否使用默认镜像服务 1-是，0-否
+                     * @param UseDefaultImageService 是否使用默认镜像服务 1-是，0-否
                      */
                     void SetUseDefaultImageService(const int64_t& _useDefaultImageService);
 
@@ -205,14 +205,22 @@ namespace TencentCloud
                     bool SubnetListHasBeenSet() const;
 
                     /**
-                     * 获取编程语言
-                     * @return CodingLanguage 编程语言
+                     * 获取编程语言 
+- JAVA
+- OTHER
+                     * @return CodingLanguage 编程语言 
+- JAVA
+- OTHER
                      */
                     std::string GetCodingLanguage() const;
 
                     /**
-                     * 设置编程语言
-                     * @param CodingLanguage 编程语言
+                     * 设置编程语言 
+- JAVA
+- OTHER
+                     * @param CodingLanguage 编程语言 
+- JAVA
+- OTHER
                      */
                     void SetCodingLanguage(const std::string& _codingLanguage);
 
@@ -223,14 +231,26 @@ namespace TencentCloud
                     bool CodingLanguageHasBeenSet() const;
 
                     /**
-                     * 获取部署方式
-                     * @return DeployMode 部署方式
+                     * 获取部署方式 
+- IMAGE
+- JAR
+- WAR
+                     * @return DeployMode 部署方式 
+- IMAGE
+- JAR
+- WAR
                      */
                     std::string GetDeployMode() const;
 
                     /**
-                     * 设置部署方式
-                     * @param DeployMode 部署方式
+                     * 设置部署方式 
+- IMAGE
+- JAR
+- WAR
+                     * @param DeployMode 部署方式 
+- IMAGE
+- JAR
+- WAR
                      */
                     void SetDeployMode(const std::string& _deployMode);
 
@@ -255,7 +275,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 是否使用默认镜像服务
+                     * 是否使用默认镜像服务 1-是，0-否
                      */
                     int64_t m_useDefaultImageService;
                     bool m_useDefaultImageServiceHasBeenSet;
@@ -297,13 +317,18 @@ namespace TencentCloud
                     bool m_subnetListHasBeenSet;
 
                     /**
-                     * 编程语言
+                     * 编程语言 
+- JAVA
+- OTHER
                      */
                     std::string m_codingLanguage;
                     bool m_codingLanguageHasBeenSet;
 
                     /**
-                     * 部署方式
+                     * 部署方式 
+- IMAGE
+- JAR
+- WAR
                      */
                     std::string m_deployMode;
                     bool m_deployModeHasBeenSet;

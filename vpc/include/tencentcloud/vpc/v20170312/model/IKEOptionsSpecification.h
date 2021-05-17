@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，默认为3DES-CBC
-                     * @return PropoEncryAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，默认为3DES-CBC
+                     * 获取加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
+                     * @return PropoEncryAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
                      */
                     std::string GetPropoEncryAlgorithm() const;
 
                     /**
-                     * 设置加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，默认为3DES-CBC
-                     * @param PropoEncryAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，默认为3DES-CBC
+                     * 设置加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
+                     * @param PropoEncryAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
                      */
                     void SetPropoEncryAlgorithm(const std::string& _propoEncryAlgorithm);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool PropoEncryAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取认证算法：可选值：'MD5', 'SHA1'，默认为MD5
-                     * @return PropoAuthenAlgorithm 认证算法：可选值：'MD5', 'SHA1'，默认为MD5
+                     * 获取认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
+                     * @return PropoAuthenAlgorithm 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
                      */
                     std::string GetPropoAuthenAlgorithm() const;
 
                     /**
-                     * 设置认证算法：可选值：'MD5', 'SHA1'，默认为MD5
-                     * @param PropoAuthenAlgorithm 认证算法：可选值：'MD5', 'SHA1'，默认为MD5
+                     * 设置认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
+                     * @param PropoAuthenAlgorithm 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
                      */
                     void SetPropoAuthenAlgorithm(const std::string& _propoAuthenAlgorithm);
 
@@ -265,13 +265,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，默认为3DES-CBC
+                     * 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC
                      */
                     std::string m_propoEncryAlgorithm;
                     bool m_propoEncryAlgorithmHasBeenSet;
 
                     /**
-                     * 认证算法：可选值：'MD5', 'SHA1'，默认为MD5
+                     * 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5
                      */
                     std::string m_propoAuthenAlgorithm;
                     bool m_propoAuthenAlgorithmHasBeenSet;

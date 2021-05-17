@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionResponse.h>
+#include <tencentcloud/mna/v20210119/model/DeleteQosResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tke::V20180525::Model;
+using namespace TencentCloud::Mna::V20210119::Model;
 using namespace rapidjson;
 using namespace std;
 
-SetNodePoolNodeProtectionResponse::SetNodePoolNodeProtectionResponse() :
-    m_succeedInstanceIdsHasBeenSet(false),
-    m_failedInstanceIdsHasBeenSet(false)
+DeleteQosResponse::DeleteQosResponse() :
+    m_sessionIdHasBeenSet(false),
+    m_durationHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome SetNodePoolNodeProtectionResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteQosResponse::Deserialize(const string &payload)
 {
     Document d;
     d.Parse(payload.c_str());
@@ -64,30 +64,24 @@ CoreInternalOutcome SetNodePoolNodeProtectionResponse::Deserialize(const string 
     }
 
 
-    if (rsp.HasMember("SucceedInstanceIds") && !rsp["SucceedInstanceIds"].IsNull())
+    if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
     {
-        if (!rsp["SucceedInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `SucceedInstanceIds` is not array type"));
-
-        const Value &tmpValue = rsp["SucceedInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["SessionId"].IsString())
         {
-            m_succeedInstanceIds.push_back((*itr).GetString());
+            return CoreInternalOutcome(Error("response `SessionId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_succeedInstanceIdsHasBeenSet = true;
+        m_sessionId = string(rsp["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
     }
 
-    if (rsp.HasMember("FailedInstanceIds") && !rsp["FailedInstanceIds"].IsNull())
+    if (rsp.HasMember("Duration") && !rsp["Duration"].IsNull())
     {
-        if (!rsp["FailedInstanceIds"].IsArray())
-            return CoreInternalOutcome(Error("response `FailedInstanceIds` is not array type"));
-
-        const Value &tmpValue = rsp["FailedInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Duration"].IsUint64())
         {
-            m_failedInstanceIds.push_back((*itr).GetString());
+            return CoreInternalOutcome(Error("response `Duration` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_failedInstanceIdsHasBeenSet = true;
+        m_duration = rsp["Duration"].GetUint64();
+        m_durationHasBeenSet = true;
     }
 
 
@@ -95,24 +89,24 @@ CoreInternalOutcome SetNodePoolNodeProtectionResponse::Deserialize(const string 
 }
 
 
-vector<string> SetNodePoolNodeProtectionResponse::GetSucceedInstanceIds() const
+string DeleteQosResponse::GetSessionId() const
 {
-    return m_succeedInstanceIds;
+    return m_sessionId;
 }
 
-bool SetNodePoolNodeProtectionResponse::SucceedInstanceIdsHasBeenSet() const
+bool DeleteQosResponse::SessionIdHasBeenSet() const
 {
-    return m_succeedInstanceIdsHasBeenSet;
+    return m_sessionIdHasBeenSet;
 }
 
-vector<string> SetNodePoolNodeProtectionResponse::GetFailedInstanceIds() const
+uint64_t DeleteQosResponse::GetDuration() const
 {
-    return m_failedInstanceIds;
+    return m_duration;
 }
 
-bool SetNodePoolNodeProtectionResponse::FailedInstanceIdsHasBeenSet() const
+bool DeleteQosResponse::DurationHasBeenSet() const
 {
-    return m_failedInstanceIdsHasBeenSet;
+    return m_durationHasBeenSet;
 }
 
 

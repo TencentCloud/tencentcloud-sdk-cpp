@@ -145,6 +145,8 @@
 #include <tencentcloud/ocr/v20181119/model/VerifyBasicBizLicenseResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyBizLicenseResponse.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyEnterpriseFourFactorsRequest.h>
+#include <tencentcloud/ocr/v20181119/model/VerifyEnterpriseFourFactorsResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VinOCRRequest.h>
@@ -348,6 +350,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::VerifyBizLicenseResponse> VerifyBizLicenseOutcome;
                 typedef std::future<VerifyBizLicenseOutcome> VerifyBizLicenseOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VerifyBizLicenseRequest&, VerifyBizLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyBizLicenseAsyncHandler;
+                typedef Outcome<Error, Model::VerifyEnterpriseFourFactorsResponse> VerifyEnterpriseFourFactorsOutcome;
+                typedef std::future<VerifyEnterpriseFourFactorsOutcome> VerifyEnterpriseFourFactorsOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::VerifyEnterpriseFourFactorsRequest&, VerifyEnterpriseFourFactorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyEnterpriseFourFactorsAsyncHandler;
                 typedef Outcome<Error, Model::VerifyOfdVatInvoiceOCRResponse> VerifyOfdVatInvoiceOCROutcome;
                 typedef std::future<VerifyOfdVatInvoiceOCROutcome> VerifyOfdVatInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VerifyOfdVatInvoiceOCRRequest&, VerifyOfdVatInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyOfdVatInvoiceOCRAsyncHandler;
@@ -1187,6 +1192,15 @@ namespace TencentCloud
                 VerifyBizLicenseOutcome VerifyBizLicense(const Model::VerifyBizLicenseRequest &request);
                 void VerifyBizLicenseAsync(const Model::VerifyBizLicenseRequest& request, const VerifyBizLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VerifyBizLicenseOutcomeCallable VerifyBizLicenseCallable(const Model::VerifyBizLicenseRequest& request);
+
+                /**
+                 *此接口基于企业四要素授权“姓名、证件号码、企业标识、企业全称”，验证企业信息是否一致。
+                 * @param req VerifyEnterpriseFourFactorsRequest
+                 * @return VerifyEnterpriseFourFactorsOutcome
+                 */
+                VerifyEnterpriseFourFactorsOutcome VerifyEnterpriseFourFactors(const Model::VerifyEnterpriseFourFactorsRequest &request);
+                void VerifyEnterpriseFourFactorsAsync(const Model::VerifyEnterpriseFourFactorsRequest& request, const VerifyEnterpriseFourFactorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyEnterpriseFourFactorsOutcomeCallable VerifyEnterpriseFourFactorsCallable(const Model::VerifyEnterpriseFourFactorsRequest& request);
 
                 /**
                  *本接口支持OFD格式的增值税电子普通发票和增值税电子专用发票的识别，返回发票代码、发票号码、开票日期、验证码、机器编号、密码区，购买方和销售方信息，包括名称、纳税人识别号、地址电话、开户行及账号，以及价税合计、开票人、收款人、复核人、税额、不含税金额等字段信息。

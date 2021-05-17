@@ -1,0 +1,217 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/mna/v20210119/model/DeviceInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Mna::V20210119::Model;
+using namespace rapidjson;
+using namespace std;
+
+DeviceInfo::DeviceInfo() :
+    m_vendorHasBeenSet(false),
+    m_oSHasBeenSet(false),
+    m_deviceIdHasBeenSet(false),
+    m_phoneNumHasBeenSet(false),
+    m_wirelessHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Vendor") && !value["Vendor"].IsNull())
+    {
+        if (!value["Vendor"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.Vendor` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vendor = value["Vendor"].GetUint64();
+        m_vendorHasBeenSet = true;
+    }
+
+    if (value.HasMember("OS") && !value["OS"].IsNull())
+    {
+        if (!value["OS"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.OS` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_oS = value["OS"].GetUint64();
+        m_oSHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceId") && !value["DeviceId"].IsNull())
+    {
+        if (!value["DeviceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceId = string(value["DeviceId"].GetString());
+        m_deviceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PhoneNum") && !value["PhoneNum"].IsNull())
+    {
+        if (!value["PhoneNum"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.PhoneNum` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_phoneNum = string(value["PhoneNum"].GetString());
+        m_phoneNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("Wireless") && !value["Wireless"].IsNull())
+    {
+        if (!value["Wireless"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.Wireless` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wireless = value["Wireless"].GetUint64();
+        m_wirelessHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_vendorHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Vendor";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vendor, allocator);
+    }
+
+    if (m_oSHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_oS, allocator);
+    }
+
+    if (m_deviceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_phoneNumHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PhoneNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_phoneNum.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wirelessHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Wireless";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wireless, allocator);
+    }
+
+}
+
+
+uint64_t DeviceInfo::GetVendor() const
+{
+    return m_vendor;
+}
+
+void DeviceInfo::SetVendor(const uint64_t& _vendor)
+{
+    m_vendor = _vendor;
+    m_vendorHasBeenSet = true;
+}
+
+bool DeviceInfo::VendorHasBeenSet() const
+{
+    return m_vendorHasBeenSet;
+}
+
+uint64_t DeviceInfo::GetOS() const
+{
+    return m_oS;
+}
+
+void DeviceInfo::SetOS(const uint64_t& _oS)
+{
+    m_oS = _oS;
+    m_oSHasBeenSet = true;
+}
+
+bool DeviceInfo::OSHasBeenSet() const
+{
+    return m_oSHasBeenSet;
+}
+
+string DeviceInfo::GetDeviceId() const
+{
+    return m_deviceId;
+}
+
+void DeviceInfo::SetDeviceId(const string& _deviceId)
+{
+    m_deviceId = _deviceId;
+    m_deviceIdHasBeenSet = true;
+}
+
+bool DeviceInfo::DeviceIdHasBeenSet() const
+{
+    return m_deviceIdHasBeenSet;
+}
+
+string DeviceInfo::GetPhoneNum() const
+{
+    return m_phoneNum;
+}
+
+void DeviceInfo::SetPhoneNum(const string& _phoneNum)
+{
+    m_phoneNum = _phoneNum;
+    m_phoneNumHasBeenSet = true;
+}
+
+bool DeviceInfo::PhoneNumHasBeenSet() const
+{
+    return m_phoneNumHasBeenSet;
+}
+
+uint64_t DeviceInfo::GetWireless() const
+{
+    return m_wireless;
+}
+
+void DeviceInfo::SetWireless(const uint64_t& _wireless)
+{
+    m_wireless = _wireless;
+    m_wirelessHasBeenSet = true;
+}
+
+bool DeviceInfo::WirelessHasBeenSet() const
+{
+    return m_wirelessHasBeenSet;
+}
+

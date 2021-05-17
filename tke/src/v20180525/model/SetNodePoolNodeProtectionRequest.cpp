@@ -23,7 +23,11 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace rapidjson;
 using namespace std;
 
-SetNodePoolNodeProtectionRequest::SetNodePoolNodeProtectionRequest()
+SetNodePoolNodeProtectionRequest::SetNodePoolNodeProtectionRequest() :
+    m_clusterIdHasBeenSet(false),
+    m_nodePoolIdHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false),
+    m_protectedFromScaleInHasBeenSet(false)
 {
 }
 
@@ -34,6 +38,43 @@ string SetNodePoolNodeProtectionRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_clusterIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodePoolIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "NodePoolId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_nodePoolId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_protectedFromScaleInHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ProtectedFromScaleIn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_protectedFromScaleIn, allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -41,5 +82,69 @@ string SetNodePoolNodeProtectionRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string SetNodePoolNodeProtectionRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void SetNodePoolNodeProtectionRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool SetNodePoolNodeProtectionRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+string SetNodePoolNodeProtectionRequest::GetNodePoolId() const
+{
+    return m_nodePoolId;
+}
+
+void SetNodePoolNodeProtectionRequest::SetNodePoolId(const string& _nodePoolId)
+{
+    m_nodePoolId = _nodePoolId;
+    m_nodePoolIdHasBeenSet = true;
+}
+
+bool SetNodePoolNodeProtectionRequest::NodePoolIdHasBeenSet() const
+{
+    return m_nodePoolIdHasBeenSet;
+}
+
+vector<string> SetNodePoolNodeProtectionRequest::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void SetNodePoolNodeProtectionRequest::SetInstanceIds(const vector<string>& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool SetNodePoolNodeProtectionRequest::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
+}
+
+bool SetNodePoolNodeProtectionRequest::GetProtectedFromScaleIn() const
+{
+    return m_protectedFromScaleIn;
+}
+
+void SetNodePoolNodeProtectionRequest::SetProtectedFromScaleIn(const bool& _protectedFromScaleIn)
+{
+    m_protectedFromScaleIn = _protectedFromScaleIn;
+    m_protectedFromScaleInHasBeenSet = true;
+}
+
+bool SetNodePoolNodeProtectionRequest::ProtectedFromScaleInHasBeenSet() const
+{
+    return m_protectedFromScaleInHasBeenSet;
+}
 
 

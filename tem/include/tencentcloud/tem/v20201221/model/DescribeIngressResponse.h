@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ingressInfo
-                     * @return Result ingressInfo
+                     * 获取Ingress 规则配置
+                     * @return Result Ingress 规则配置
                      */
                     IngressInfo GetResult() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ingressInfo
+                     * Ingress 规则配置
                      */
                     IngressInfo m_result;
                     bool m_resultHasBeenSet;
