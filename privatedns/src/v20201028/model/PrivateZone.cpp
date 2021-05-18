@@ -1,0 +1,461 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/privatedns/v20201028/model/PrivateZone.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Privatedns::V20201028::Model;
+using namespace rapidjson;
+using namespace std;
+
+PrivateZone::PrivateZone() :
+    m_zoneIdHasBeenSet(false),
+    m_ownerUinHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_createdOnHasBeenSet(false),
+    m_updatedOnHasBeenSet(false),
+    m_recordCountHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_vpcSetHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_dnsForwardStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome PrivateZone::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrivateZone.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = string(value["ZoneId"].GetString());
+        m_zoneIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerUin") && !value["OwnerUin"].IsNull())
+    {
+        if (!value["OwnerUin"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PrivateZone.OwnerUin` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerUin = value["OwnerUin"].GetInt64();
+        m_ownerUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrivateZone.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatedOn") && !value["CreatedOn"].IsNull())
+    {
+        if (!value["CreatedOn"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrivateZone.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdOn = string(value["CreatedOn"].GetString());
+        m_createdOnHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdatedOn") && !value["UpdatedOn"].IsNull())
+    {
+        if (!value["UpdatedOn"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrivateZone.UpdatedOn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedOn = string(value["UpdatedOn"].GetString());
+        m_updatedOnHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordCount") && !value["RecordCount"].IsNull())
+    {
+        if (!value["RecordCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PrivateZone.RecordCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordCount = value["RecordCount"].GetInt64();
+        m_recordCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrivateZone.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcSet") && !value["VpcSet"].IsNull())
+    {
+        if (!value["VpcSet"].IsArray())
+            return CoreInternalOutcome(Error("response `PrivateZone.VpcSet` is not array type"));
+
+        const Value &tmpValue = value["VpcSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpcInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vpcSet.push_back(item);
+        }
+        m_vpcSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrivateZone.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DnsForwardStatus") && !value["DnsForwardStatus"].IsNull())
+    {
+        if (!value["DnsForwardStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrivateZone.DnsForwardStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dnsForwardStatus = string(value["DnsForwardStatus"].GetString());
+        m_dnsForwardStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Error("response `PrivateZone.Tags` is not array type"));
+
+        const Value &tmpValue = value["Tags"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void PrivateZone::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_zoneIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerUinHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OwnerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ownerUin, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdOnHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreatedOn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createdOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatedOnHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdatedOn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_updatedOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordCountHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RecordCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordCount, allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VpcSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vpcSet.begin(); itr != m_vpcSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dnsForwardStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DnsForwardStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_dnsForwardStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+}
+
+
+string PrivateZone::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void PrivateZone::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool PrivateZone::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
+int64_t PrivateZone::GetOwnerUin() const
+{
+    return m_ownerUin;
+}
+
+void PrivateZone::SetOwnerUin(const int64_t& _ownerUin)
+{
+    m_ownerUin = _ownerUin;
+    m_ownerUinHasBeenSet = true;
+}
+
+bool PrivateZone::OwnerUinHasBeenSet() const
+{
+    return m_ownerUinHasBeenSet;
+}
+
+string PrivateZone::GetDomain() const
+{
+    return m_domain;
+}
+
+void PrivateZone::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool PrivateZone::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string PrivateZone::GetCreatedOn() const
+{
+    return m_createdOn;
+}
+
+void PrivateZone::SetCreatedOn(const string& _createdOn)
+{
+    m_createdOn = _createdOn;
+    m_createdOnHasBeenSet = true;
+}
+
+bool PrivateZone::CreatedOnHasBeenSet() const
+{
+    return m_createdOnHasBeenSet;
+}
+
+string PrivateZone::GetUpdatedOn() const
+{
+    return m_updatedOn;
+}
+
+void PrivateZone::SetUpdatedOn(const string& _updatedOn)
+{
+    m_updatedOn = _updatedOn;
+    m_updatedOnHasBeenSet = true;
+}
+
+bool PrivateZone::UpdatedOnHasBeenSet() const
+{
+    return m_updatedOnHasBeenSet;
+}
+
+int64_t PrivateZone::GetRecordCount() const
+{
+    return m_recordCount;
+}
+
+void PrivateZone::SetRecordCount(const int64_t& _recordCount)
+{
+    m_recordCount = _recordCount;
+    m_recordCountHasBeenSet = true;
+}
+
+bool PrivateZone::RecordCountHasBeenSet() const
+{
+    return m_recordCountHasBeenSet;
+}
+
+string PrivateZone::GetRemark() const
+{
+    return m_remark;
+}
+
+void PrivateZone::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool PrivateZone::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
+}
+
+vector<VpcInfo> PrivateZone::GetVpcSet() const
+{
+    return m_vpcSet;
+}
+
+void PrivateZone::SetVpcSet(const vector<VpcInfo>& _vpcSet)
+{
+    m_vpcSet = _vpcSet;
+    m_vpcSetHasBeenSet = true;
+}
+
+bool PrivateZone::VpcSetHasBeenSet() const
+{
+    return m_vpcSetHasBeenSet;
+}
+
+string PrivateZone::GetStatus() const
+{
+    return m_status;
+}
+
+void PrivateZone::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool PrivateZone::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string PrivateZone::GetDnsForwardStatus() const
+{
+    return m_dnsForwardStatus;
+}
+
+void PrivateZone::SetDnsForwardStatus(const string& _dnsForwardStatus)
+{
+    m_dnsForwardStatus = _dnsForwardStatus;
+    m_dnsForwardStatusHasBeenSet = true;
+}
+
+bool PrivateZone::DnsForwardStatusHasBeenSet() const
+{
+    return m_dnsForwardStatusHasBeenSet;
+}
+
+vector<TagInfo> PrivateZone::GetTags() const
+{
+    return m_tags;
+}
+
+void PrivateZone::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool PrivateZone::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
