@@ -32,7 +32,8 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_certificateHasBeenSet(false),
     m_schedulerHasBeenSet(false),
     m_sniSwitchHasBeenSet(false),
-    m_keepaliveEnableHasBeenSet(false)
+    m_keepaliveEnableHasBeenSet(false),
+    m_deregisterTargetRstHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,14 @@ string ModifyListenerRequest::ToJsonString() const
         string key = "KeepaliveEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_keepaliveEnable, allocator);
+    }
+
+    if (m_deregisterTargetRstHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeregisterTargetRst";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deregisterTargetRst, allocator);
     }
 
 
@@ -267,6 +276,22 @@ void ModifyListenerRequest::SetKeepaliveEnable(const int64_t& _keepaliveEnable)
 bool ModifyListenerRequest::KeepaliveEnableHasBeenSet() const
 {
     return m_keepaliveEnableHasBeenSet;
+}
+
+bool ModifyListenerRequest::GetDeregisterTargetRst() const
+{
+    return m_deregisterTargetRst;
+}
+
+void ModifyListenerRequest::SetDeregisterTargetRst(const bool& _deregisterTargetRst)
+{
+    m_deregisterTargetRst = _deregisterTargetRst;
+    m_deregisterTargetRstHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::DeregisterTargetRstHasBeenSet() const
+{
+    return m_deregisterTargetRstHasBeenSet;
 }
 
 

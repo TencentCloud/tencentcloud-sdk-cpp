@@ -670,17 +670,17 @@ namespace TencentCloud
                     bool LocalZoneHasBeenSet() const;
 
                     /**
-                     * 获取该物理专线下vlan 0的专线通道数量
+                     * 获取该物理专线下vlan 0的专用通道数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VlanZeroDirectConnectTunnelCount 该物理专线下vlan 0的专线通道数量
+                     * @return VlanZeroDirectConnectTunnelCount 该物理专线下vlan 0的专用通道数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetVlanZeroDirectConnectTunnelCount() const;
 
                     /**
-                     * 设置该物理专线下vlan 0的专线通道数量
+                     * 设置该物理专线下vlan 0的专用通道数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VlanZeroDirectConnectTunnelCount 该物理专线下vlan 0的专线通道数量
+                     * @param VlanZeroDirectConnectTunnelCount 该物理专线下vlan 0的专用通道数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVlanZeroDirectConnectTunnelCount(const uint64_t& _vlanZeroDirectConnectTunnelCount);
@@ -692,17 +692,17 @@ namespace TencentCloud
                     bool VlanZeroDirectConnectTunnelCountHasBeenSet() const;
 
                     /**
-                     * 获取该物理专线下非vlan 0的专线通道数量
+                     * 获取该物理专线下非vlan 0的专用通道数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OtherVlanDirectConnectTunnelCount 该物理专线下非vlan 0的专线通道数量
+                     * @return OtherVlanDirectConnectTunnelCount 该物理专线下非vlan 0的专用通道数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetOtherVlanDirectConnectTunnelCount() const;
 
                     /**
-                     * 设置该物理专线下非vlan 0的专线通道数量
+                     * 设置该物理专线下非vlan 0的专用通道数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OtherVlanDirectConnectTunnelCount 该物理专线下非vlan 0的专线通道数量
+                     * @param OtherVlanDirectConnectTunnelCount 该物理专线下非vlan 0的专用通道数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOtherVlanDirectConnectTunnelCount(const uint64_t& _otherVlanDirectConnectTunnelCount);
@@ -937,14 +937,14 @@ namespace TencentCloud
                     bool m_localZoneHasBeenSet;
 
                     /**
-                     * 该物理专线下vlan 0的专线通道数量
+                     * 该物理专线下vlan 0的专用通道数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vlanZeroDirectConnectTunnelCount;
                     bool m_vlanZeroDirectConnectTunnelCountHasBeenSet;
 
                     /**
-                     * 该物理专线下非vlan 0的专线通道数量
+                     * 该物理专线下非vlan 0的专用通道数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_otherVlanDirectConnectTunnelCount;

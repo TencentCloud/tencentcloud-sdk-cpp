@@ -47,6 +47,10 @@
 #include <tencentcloud/iotvideo/v20201215/model/DeleteForwardRuleResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DeleteProductRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DeleteProductResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeBalanceRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeBalanceResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeBalanceTransactionsRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeBalanceTransactionsResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeBatchRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeBatchResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeBatchsRequest.h>
@@ -177,6 +181,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteProductResponse> DeleteProductOutcome;
                 typedef std::future<DeleteProductOutcome> DeleteProductOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DeleteProductRequest&, DeleteProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProductAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBalanceResponse> DescribeBalanceOutcome;
+                typedef std::future<DescribeBalanceOutcome> DescribeBalanceOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeBalanceRequest&, DescribeBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBalanceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBalanceTransactionsResponse> DescribeBalanceTransactionsOutcome;
+                typedef std::future<DescribeBalanceTransactionsOutcome> DescribeBalanceTransactionsOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeBalanceTransactionsRequest&, DescribeBalanceTransactionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBalanceTransactionsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBatchResponse> DescribeBatchOutcome;
                 typedef std::future<DescribeBatchOutcome> DescribeBatchOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeBatchRequest&, DescribeBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchAsyncHandler;
@@ -407,6 +417,24 @@ namespace TencentCloud
                 DeleteProductOutcome DeleteProduct(const Model::DeleteProductRequest &request);
                 void DeleteProductAsync(const Model::DeleteProductRequest& request, const DeleteProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteProductOutcomeCallable DeleteProductCallable(const Model::DeleteProductRequest& request);
+
+                /**
+                 *查询账户余额
+                 * @param req DescribeBalanceRequest
+                 * @return DescribeBalanceOutcome
+                 */
+                DescribeBalanceOutcome DescribeBalance(const Model::DescribeBalanceRequest &request);
+                void DescribeBalanceAsync(const Model::DescribeBalanceRequest& request, const DescribeBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBalanceOutcomeCallable DescribeBalanceCallable(const Model::DescribeBalanceRequest& request);
+
+                /**
+                 *拉取账户流水
+                 * @param req DescribeBalanceTransactionsRequest
+                 * @return DescribeBalanceTransactionsOutcome
+                 */
+                DescribeBalanceTransactionsOutcome DescribeBalanceTransactions(const Model::DescribeBalanceTransactionsRequest &request);
+                void DescribeBalanceTransactionsAsync(const Model::DescribeBalanceTransactionsRequest& request, const DescribeBalanceTransactionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBalanceTransactionsOutcomeCallable DescribeBalanceTransactionsCallable(const Model::DescribeBalanceTransactionsRequest& request);
 
                 /**
                  *获取批次详情

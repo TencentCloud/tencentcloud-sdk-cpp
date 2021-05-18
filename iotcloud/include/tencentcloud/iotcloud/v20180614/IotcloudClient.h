@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/iotcloud/v20180614/model/BatchUpdateFirmwareRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/BatchUpdateFirmwareResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/BindDevicesRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/BindDevicesResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/CancelDeviceFirmwareTaskRequest.h>
@@ -111,6 +113,8 @@
 #include <tencentcloud/iotcloud/v20180614/model/EditFirmwareResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/EnableTopicRuleRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/EnableTopicRuleResponse.h>
+#include <tencentcloud/iotcloud/v20180614/model/GetCOSURLRequest.h>
+#include <tencentcloud/iotcloud/v20180614/model/GetCOSURLResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/GetUserResourceInfoRequest.h>
 #include <tencentcloud/iotcloud/v20180614/model/GetUserResourceInfoResponse.h>
 #include <tencentcloud/iotcloud/v20180614/model/PublishAsDeviceRequest.h>
@@ -153,6 +157,9 @@ namespace TencentCloud
                 IotcloudClient(const Credential &credential, const std::string &region);
                 IotcloudClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::BatchUpdateFirmwareResponse> BatchUpdateFirmwareOutcome;
+                typedef std::future<BatchUpdateFirmwareOutcome> BatchUpdateFirmwareOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::BatchUpdateFirmwareRequest&, BatchUpdateFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchUpdateFirmwareAsyncHandler;
                 typedef Outcome<Error, Model::BindDevicesResponse> BindDevicesOutcome;
                 typedef std::future<BindDevicesOutcome> BindDevicesOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::BindDevicesRequest&, BindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDevicesAsyncHandler;
@@ -285,6 +292,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EnableTopicRuleResponse> EnableTopicRuleOutcome;
                 typedef std::future<EnableTopicRuleOutcome> EnableTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::EnableTopicRuleRequest&, EnableTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTopicRuleAsyncHandler;
+                typedef Outcome<Error, Model::GetCOSURLResponse> GetCOSURLOutcome;
+                typedef std::future<GetCOSURLOutcome> GetCOSURLOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::GetCOSURLRequest&, GetCOSURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCOSURLAsyncHandler;
                 typedef Outcome<Error, Model::GetUserResourceInfoResponse> GetUserResourceInfoOutcome;
                 typedef std::future<GetUserResourceInfoOutcome> GetUserResourceInfoOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::GetUserResourceInfoRequest&, GetUserResourceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserResourceInfoAsyncHandler;
@@ -329,6 +339,15 @@ namespace TencentCloud
                 typedef std::function<void(const IotcloudClient*, const Model::UploadFirmwareRequest&, UploadFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFirmwareAsyncHandler;
 
 
+
+                /**
+                 *本接口（BatchUpdateFirmware）用于批量更新设备固件 
+                 * @param req BatchUpdateFirmwareRequest
+                 * @return BatchUpdateFirmwareOutcome
+                 */
+                BatchUpdateFirmwareOutcome BatchUpdateFirmware(const Model::BatchUpdateFirmwareRequest &request);
+                void BatchUpdateFirmwareAsync(const Model::BatchUpdateFirmwareRequest& request, const BatchUpdateFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchUpdateFirmwareOutcomeCallable BatchUpdateFirmwareCallable(const Model::BatchUpdateFirmwareRequest& request);
 
                 /**
                  *本接口（BindDevices）用于网关设备批量绑定子设备 
@@ -725,6 +744,15 @@ namespace TencentCloud
                 EnableTopicRuleOutcome EnableTopicRule(const Model::EnableTopicRuleRequest &request);
                 void EnableTopicRuleAsync(const Model::EnableTopicRuleRequest& request, const EnableTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableTopicRuleOutcomeCallable EnableTopicRuleCallable(const Model::EnableTopicRuleRequest& request);
+
+                /**
+                 *本接口（GetCOSURL）用于获取固件存储在COS的URL 
+                 * @param req GetCOSURLRequest
+                 * @return GetCOSURLOutcome
+                 */
+                GetCOSURLOutcome GetCOSURL(const Model::GetCOSURLRequest &request);
+                void GetCOSURLAsync(const Model::GetCOSURLRequest& request, const GetCOSURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetCOSURLOutcomeCallable GetCOSURLCallable(const Model::GetCOSURLRequest& request);
 
                 /**
                  *本接口（GetUserResourceInfo）用于查询用户资源使用信息。

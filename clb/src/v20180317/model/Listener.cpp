@@ -38,7 +38,8 @@ Listener::Listener() :
     m_targetGroupHasBeenSet(false),
     m_sessionTypeHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
-    m_toaHasBeenSet(false)
+    m_toaHasBeenSet(false),
+    m_deregisterTargetRstHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome Listener::Deserialize(const Value &value)
         m_toaHasBeenSet = true;
     }
 
+    if (value.HasMember("DeregisterTargetRst") && !value["DeregisterTargetRst"].IsNull())
+    {
+        if (!value["DeregisterTargetRst"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Listener.DeregisterTargetRst` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deregisterTargetRst = value["DeregisterTargetRst"].GetBool();
+        m_deregisterTargetRstHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -399,6 +410,14 @@ void Listener::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
         string key = "Toa";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_toa, allocator);
+    }
+
+    if (m_deregisterTargetRstHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeregisterTargetRst";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deregisterTargetRst, allocator);
     }
 
 }
@@ -674,5 +693,21 @@ void Listener::SetToa(const bool& _toa)
 bool Listener::ToaHasBeenSet() const
 {
     return m_toaHasBeenSet;
+}
+
+bool Listener::GetDeregisterTargetRst() const
+{
+    return m_deregisterTargetRst;
+}
+
+void Listener::SetDeregisterTargetRst(const bool& _deregisterTargetRst)
+{
+    m_deregisterTargetRst = _deregisterTargetRst;
+    m_deregisterTargetRstHasBeenSet = true;
+}
+
+bool Listener::DeregisterTargetRstHasBeenSet() const
+{
+    return m_deregisterTargetRstHasBeenSet;
 }
 

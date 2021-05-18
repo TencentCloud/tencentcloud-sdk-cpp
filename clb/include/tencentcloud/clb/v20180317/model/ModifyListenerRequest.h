@@ -210,6 +210,24 @@ namespace TencentCloud
                      */
                     bool KeepaliveEnableHasBeenSet() const;
 
+                    /**
+                     * 获取解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+                     * @return DeregisterTargetRst 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+                     */
+                    bool GetDeregisterTargetRst() const;
+
+                    /**
+                     * 设置解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+                     * @param DeregisterTargetRst 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+                     */
+                    void SetDeregisterTargetRst(const bool& _deregisterTargetRst);
+
+                    /**
+                     * 判断参数 DeregisterTargetRst 是否已赋值
+                     * @return DeregisterTargetRst 是否已赋值
+                     */
+                    bool DeregisterTargetRstHasBeenSet() const;
+
                 private:
 
                     /**
@@ -266,6 +284,12 @@ namespace TencentCloud
                      */
                     int64_t m_keepaliveEnable;
                     bool m_keepaliveEnableHasBeenSet;
+
+                    /**
+                     * 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
+                     */
+                    bool m_deregisterTargetRst;
+                    bool m_deregisterTargetRstHasBeenSet;
 
                 };
             }

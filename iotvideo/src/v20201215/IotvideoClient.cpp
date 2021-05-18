@@ -556,6 +556,92 @@ IotvideoClient::DeleteProductOutcomeCallable IotvideoClient::DeleteProductCallab
     return task->get_future();
 }
 
+IotvideoClient::DescribeBalanceOutcome IotvideoClient::DescribeBalance(const DescribeBalanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBalance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBalanceResponse rsp = DescribeBalanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBalanceOutcome(rsp);
+        else
+            return DescribeBalanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBalanceOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeBalanceAsync(const DescribeBalanceRequest& request, const DescribeBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBalance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeBalanceOutcomeCallable IotvideoClient::DescribeBalanceCallable(const DescribeBalanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBalanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBalance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeBalanceTransactionsOutcome IotvideoClient::DescribeBalanceTransactions(const DescribeBalanceTransactionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBalanceTransactions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBalanceTransactionsResponse rsp = DescribeBalanceTransactionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBalanceTransactionsOutcome(rsp);
+        else
+            return DescribeBalanceTransactionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBalanceTransactionsOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeBalanceTransactionsAsync(const DescribeBalanceTransactionsRequest& request, const DescribeBalanceTransactionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBalanceTransactions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeBalanceTransactionsOutcomeCallable IotvideoClient::DescribeBalanceTransactionsCallable(const DescribeBalanceTransactionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBalanceTransactionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBalanceTransactions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeBatchOutcome IotvideoClient::DescribeBatch(const DescribeBatchRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBatch");

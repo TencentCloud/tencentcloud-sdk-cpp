@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeClientBalanceResponse::DescribeClientBalanceResponse() :
-    m_balanceHasBeenSet(false)
+    m_balanceHasBeenSet(false),
+    m_cashHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome DescribeClientBalanceResponse::Deserialize(const string &pay
         m_balanceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Cash") && !rsp["Cash"].IsNull())
+    {
+        if (!rsp["Cash"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Cash` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cash = rsp["Cash"].GetInt64();
+        m_cashHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ uint64_t DescribeClientBalanceResponse::GetBalance() const
 bool DescribeClientBalanceResponse::BalanceHasBeenSet() const
 {
     return m_balanceHasBeenSet;
+}
+
+int64_t DescribeClientBalanceResponse::GetCash() const
+{
+    return m_cash;
+}
+
+bool DescribeClientBalanceResponse::CashHasBeenSet() const
+{
+    return m_cashHasBeenSet;
 }
 
 

@@ -40,6 +40,49 @@ IotcloudClient::IotcloudClient(const Credential &credential, const string &regio
 }
 
 
+IotcloudClient::BatchUpdateFirmwareOutcome IotcloudClient::BatchUpdateFirmware(const BatchUpdateFirmwareRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchUpdateFirmware");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchUpdateFirmwareResponse rsp = BatchUpdateFirmwareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchUpdateFirmwareOutcome(rsp);
+        else
+            return BatchUpdateFirmwareOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchUpdateFirmwareOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::BatchUpdateFirmwareAsync(const BatchUpdateFirmwareRequest& request, const BatchUpdateFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchUpdateFirmware(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::BatchUpdateFirmwareOutcomeCallable IotcloudClient::BatchUpdateFirmwareCallable(const BatchUpdateFirmwareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchUpdateFirmwareOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchUpdateFirmware(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotcloudClient::BindDevicesOutcome IotcloudClient::BindDevices(const BindDevicesRequest &request)
 {
     auto outcome = MakeRequest(request, "BindDevices");
@@ -1925,6 +1968,49 @@ IotcloudClient::EnableTopicRuleOutcomeCallable IotcloudClient::EnableTopicRuleCa
         [this, request]()
         {
             return this->EnableTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotcloudClient::GetCOSURLOutcome IotcloudClient::GetCOSURL(const GetCOSURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCOSURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCOSURLResponse rsp = GetCOSURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCOSURLOutcome(rsp);
+        else
+            return GetCOSURLOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCOSURLOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::GetCOSURLAsync(const GetCOSURLRequest& request, const GetCOSURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetCOSURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::GetCOSURLOutcomeCallable IotcloudClient::GetCOSURLCallable(const GetCOSURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetCOSURLOutcome()>>(
+        [this, request]()
+        {
+            return this->GetCOSURL(request);
         }
     );
 

@@ -412,6 +412,28 @@ namespace TencentCloud
                      */
                     bool ToaHasBeenSet() const;
 
+                    /**
+                     * 获取解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeregisterTargetRst 解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDeregisterTargetRst() const;
+
+                    /**
+                     * 设置解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeregisterTargetRst 解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeregisterTargetRst(const bool& _deregisterTargetRst);
+
+                    /**
+                     * 判断参数 DeregisterTargetRst 是否已赋值
+                     * @return DeregisterTargetRst 是否已赋值
+                     */
+                    bool DeregisterTargetRstHasBeenSet() const;
+
                 private:
 
                     /**
@@ -529,6 +551,13 @@ namespace TencentCloud
                      */
                     bool m_toa;
                     bool m_toaHasBeenSet;
+
+                    /**
+                     * 解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_deregisterTargetRst;
+                    bool m_deregisterTargetRstHasBeenSet;
 
                 };
             }

@@ -23,8 +23,18 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tdmq/v20200217/model/ClearCmqQueueRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ClearCmqQueueResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ClearCmqSubscriptionFilterTagsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ClearCmqSubscriptionFilterTagsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateClusterResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateCmqQueueRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateCmqQueueResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateCmqSubscribeRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateCmqSubscribeResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateCmqTopicRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateCmqTopicResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateEnvironmentResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateSubscriptionRequest.h>
@@ -33,6 +43,12 @@
 #include <tencentcloud/tdmq/v20200217/model/CreateTopicResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteClusterResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteCmqQueueRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteCmqQueueResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteCmqSubscribeRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteCmqSubscribeResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteCmqTopicRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteCmqTopicResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsRequest.h>
@@ -47,6 +63,18 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeClusterDetailResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeClustersRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeClustersResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeCmqDeadLetterSourceQueuesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeCmqDeadLetterSourceQueuesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeCmqQueueDetailRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeCmqQueueDetailResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeCmqQueuesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeCmqQueuesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeCmqSubscriptionDetailRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeCmqSubscriptionDetailResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeCmqTopicDetailRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeCmqTopicDetailResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeCmqTopicsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeCmqTopicsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentAttributesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentAttributesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesRequest.h>
@@ -61,16 +89,30 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyClusterResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyCmqQueueAttributeRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyCmqQueueAttributeResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyCmqSubscriptionAttributeRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyCmqSubscriptionAttributeResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyCmqTopicAttributeRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyCmqTopicAttributeResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyTopicRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyTopicResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/PublishCmqMsgRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/PublishCmqMsgResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/RewindCmqQueueRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/RewindCmqQueueResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/SendBatchMessagesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/SendBatchMessagesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/SendCmqMsgRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/SendCmqMsgResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/SendMessagesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/SendMessagesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/UnbindCmqDeadLetterRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/UnbindCmqDeadLetterResponse.h>
 
 
 namespace TencentCloud
@@ -85,9 +127,24 @@ namespace TencentCloud
                 TdmqClient(const Credential &credential, const std::string &region);
                 TdmqClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::ClearCmqQueueResponse> ClearCmqQueueOutcome;
+                typedef std::future<ClearCmqQueueOutcome> ClearCmqQueueOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ClearCmqQueueRequest&, ClearCmqQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearCmqQueueAsyncHandler;
+                typedef Outcome<Error, Model::ClearCmqSubscriptionFilterTagsResponse> ClearCmqSubscriptionFilterTagsOutcome;
+                typedef std::future<ClearCmqSubscriptionFilterTagsOutcome> ClearCmqSubscriptionFilterTagsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ClearCmqSubscriptionFilterTagsRequest&, ClearCmqSubscriptionFilterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearCmqSubscriptionFilterTagsAsyncHandler;
                 typedef Outcome<Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
+                typedef Outcome<Error, Model::CreateCmqQueueResponse> CreateCmqQueueOutcome;
+                typedef std::future<CreateCmqQueueOutcome> CreateCmqQueueOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateCmqQueueRequest&, CreateCmqQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCmqQueueAsyncHandler;
+                typedef Outcome<Error, Model::CreateCmqSubscribeResponse> CreateCmqSubscribeOutcome;
+                typedef std::future<CreateCmqSubscribeOutcome> CreateCmqSubscribeOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateCmqSubscribeRequest&, CreateCmqSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCmqSubscribeAsyncHandler;
+                typedef Outcome<Error, Model::CreateCmqTopicResponse> CreateCmqTopicOutcome;
+                typedef std::future<CreateCmqTopicOutcome> CreateCmqTopicOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateCmqTopicRequest&, CreateCmqTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCmqTopicAsyncHandler;
                 typedef Outcome<Error, Model::CreateEnvironmentResponse> CreateEnvironmentOutcome;
                 typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateEnvironmentRequest&, CreateEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvironmentAsyncHandler;
@@ -100,6 +157,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteClusterResponse> DeleteClusterOutcome;
                 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteClusterRequest&, DeleteClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
+                typedef Outcome<Error, Model::DeleteCmqQueueResponse> DeleteCmqQueueOutcome;
+                typedef std::future<DeleteCmqQueueOutcome> DeleteCmqQueueOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteCmqQueueRequest&, DeleteCmqQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCmqQueueAsyncHandler;
+                typedef Outcome<Error, Model::DeleteCmqSubscribeResponse> DeleteCmqSubscribeOutcome;
+                typedef std::future<DeleteCmqSubscribeOutcome> DeleteCmqSubscribeOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteCmqSubscribeRequest&, DeleteCmqSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCmqSubscribeAsyncHandler;
+                typedef Outcome<Error, Model::DeleteCmqTopicResponse> DeleteCmqTopicOutcome;
+                typedef std::future<DeleteCmqTopicOutcome> DeleteCmqTopicOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteCmqTopicRequest&, DeleteCmqTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCmqTopicAsyncHandler;
                 typedef Outcome<Error, Model::DeleteEnvironmentsResponse> DeleteEnvironmentsOutcome;
                 typedef std::future<DeleteEnvironmentsOutcome> DeleteEnvironmentsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteEnvironmentsRequest&, DeleteEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnvironmentsAsyncHandler;
@@ -121,6 +187,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCmqDeadLetterSourceQueuesResponse> DescribeCmqDeadLetterSourceQueuesOutcome;
+                typedef std::future<DescribeCmqDeadLetterSourceQueuesOutcome> DescribeCmqDeadLetterSourceQueuesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeCmqDeadLetterSourceQueuesRequest&, DescribeCmqDeadLetterSourceQueuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCmqDeadLetterSourceQueuesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCmqQueueDetailResponse> DescribeCmqQueueDetailOutcome;
+                typedef std::future<DescribeCmqQueueDetailOutcome> DescribeCmqQueueDetailOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeCmqQueueDetailRequest&, DescribeCmqQueueDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCmqQueueDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCmqQueuesResponse> DescribeCmqQueuesOutcome;
+                typedef std::future<DescribeCmqQueuesOutcome> DescribeCmqQueuesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeCmqQueuesRequest&, DescribeCmqQueuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCmqQueuesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCmqSubscriptionDetailResponse> DescribeCmqSubscriptionDetailOutcome;
+                typedef std::future<DescribeCmqSubscriptionDetailOutcome> DescribeCmqSubscriptionDetailOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeCmqSubscriptionDetailRequest&, DescribeCmqSubscriptionDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCmqSubscriptionDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCmqTopicDetailResponse> DescribeCmqTopicDetailOutcome;
+                typedef std::future<DescribeCmqTopicDetailOutcome> DescribeCmqTopicDetailOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeCmqTopicDetailRequest&, DescribeCmqTopicDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCmqTopicDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCmqTopicsResponse> DescribeCmqTopicsOutcome;
+                typedef std::future<DescribeCmqTopicsOutcome> DescribeCmqTopicsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeCmqTopicsRequest&, DescribeCmqTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCmqTopicsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeEnvironmentAttributesResponse> DescribeEnvironmentAttributesOutcome;
                 typedef std::future<DescribeEnvironmentAttributesOutcome> DescribeEnvironmentAttributesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeEnvironmentAttributesRequest&, DescribeEnvironmentAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentAttributesAsyncHandler;
@@ -142,23 +226,62 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyClusterResponse> ModifyClusterOutcome;
                 typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyClusterRequest&, ModifyClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterAsyncHandler;
+                typedef Outcome<Error, Model::ModifyCmqQueueAttributeResponse> ModifyCmqQueueAttributeOutcome;
+                typedef std::future<ModifyCmqQueueAttributeOutcome> ModifyCmqQueueAttributeOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyCmqQueueAttributeRequest&, ModifyCmqQueueAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCmqQueueAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyCmqSubscriptionAttributeResponse> ModifyCmqSubscriptionAttributeOutcome;
+                typedef std::future<ModifyCmqSubscriptionAttributeOutcome> ModifyCmqSubscriptionAttributeOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyCmqSubscriptionAttributeRequest&, ModifyCmqSubscriptionAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCmqSubscriptionAttributeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyCmqTopicAttributeResponse> ModifyCmqTopicAttributeOutcome;
+                typedef std::future<ModifyCmqTopicAttributeOutcome> ModifyCmqTopicAttributeOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyCmqTopicAttributeRequest&, ModifyCmqTopicAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCmqTopicAttributeAsyncHandler;
                 typedef Outcome<Error, Model::ModifyEnvironmentAttributesResponse> ModifyEnvironmentAttributesOutcome;
                 typedef std::future<ModifyEnvironmentAttributesOutcome> ModifyEnvironmentAttributesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyEnvironmentAttributesRequest&, ModifyEnvironmentAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvironmentAttributesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTopicResponse> ModifyTopicOutcome;
                 typedef std::future<ModifyTopicOutcome> ModifyTopicOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyTopicRequest&, ModifyTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAsyncHandler;
+                typedef Outcome<Error, Model::PublishCmqMsgResponse> PublishCmqMsgOutcome;
+                typedef std::future<PublishCmqMsgOutcome> PublishCmqMsgOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::PublishCmqMsgRequest&, PublishCmqMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishCmqMsgAsyncHandler;
                 typedef Outcome<Error, Model::ResetMsgSubOffsetByTimestampResponse> ResetMsgSubOffsetByTimestampOutcome;
                 typedef std::future<ResetMsgSubOffsetByTimestampOutcome> ResetMsgSubOffsetByTimestampOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ResetMsgSubOffsetByTimestampRequest&, ResetMsgSubOffsetByTimestampOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetMsgSubOffsetByTimestampAsyncHandler;
+                typedef Outcome<Error, Model::RewindCmqQueueResponse> RewindCmqQueueOutcome;
+                typedef std::future<RewindCmqQueueOutcome> RewindCmqQueueOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::RewindCmqQueueRequest&, RewindCmqQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RewindCmqQueueAsyncHandler;
                 typedef Outcome<Error, Model::SendBatchMessagesResponse> SendBatchMessagesOutcome;
                 typedef std::future<SendBatchMessagesOutcome> SendBatchMessagesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::SendBatchMessagesRequest&, SendBatchMessagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendBatchMessagesAsyncHandler;
+                typedef Outcome<Error, Model::SendCmqMsgResponse> SendCmqMsgOutcome;
+                typedef std::future<SendCmqMsgOutcome> SendCmqMsgOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::SendCmqMsgRequest&, SendCmqMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendCmqMsgAsyncHandler;
                 typedef Outcome<Error, Model::SendMessagesResponse> SendMessagesOutcome;
                 typedef std::future<SendMessagesOutcome> SendMessagesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::SendMessagesRequest&, SendMessagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMessagesAsyncHandler;
+                typedef Outcome<Error, Model::UnbindCmqDeadLetterResponse> UnbindCmqDeadLetterOutcome;
+                typedef std::future<UnbindCmqDeadLetterOutcome> UnbindCmqDeadLetterOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::UnbindCmqDeadLetterRequest&, UnbindCmqDeadLetterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindCmqDeadLetterAsyncHandler;
 
 
+
+                /**
+                 *清空cmq消息队列中的消息
+                 * @param req ClearCmqQueueRequest
+                 * @return ClearCmqQueueOutcome
+                 */
+                ClearCmqQueueOutcome ClearCmqQueue(const Model::ClearCmqQueueRequest &request);
+                void ClearCmqQueueAsync(const Model::ClearCmqQueueRequest& request, const ClearCmqQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ClearCmqQueueOutcomeCallable ClearCmqQueueCallable(const Model::ClearCmqQueueRequest& request);
+
+                /**
+                 *清空订阅者消息标签
+                 * @param req ClearCmqSubscriptionFilterTagsRequest
+                 * @return ClearCmqSubscriptionFilterTagsOutcome
+                 */
+                ClearCmqSubscriptionFilterTagsOutcome ClearCmqSubscriptionFilterTags(const Model::ClearCmqSubscriptionFilterTagsRequest &request);
+                void ClearCmqSubscriptionFilterTagsAsync(const Model::ClearCmqSubscriptionFilterTagsRequest& request, const ClearCmqSubscriptionFilterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ClearCmqSubscriptionFilterTagsOutcomeCallable ClearCmqSubscriptionFilterTagsCallable(const Model::ClearCmqSubscriptionFilterTagsRequest& request);
 
                 /**
                  *创建用户的集群
@@ -168,6 +291,33 @@ namespace TencentCloud
                 CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest &request);
                 void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
+
+                /**
+                 *创建cmq队列接口
+                 * @param req CreateCmqQueueRequest
+                 * @return CreateCmqQueueOutcome
+                 */
+                CreateCmqQueueOutcome CreateCmqQueue(const Model::CreateCmqQueueRequest &request);
+                void CreateCmqQueueAsync(const Model::CreateCmqQueueRequest& request, const CreateCmqQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCmqQueueOutcomeCallable CreateCmqQueueCallable(const Model::CreateCmqQueueRequest& request);
+
+                /**
+                 *创建cmq订阅接口
+                 * @param req CreateCmqSubscribeRequest
+                 * @return CreateCmqSubscribeOutcome
+                 */
+                CreateCmqSubscribeOutcome CreateCmqSubscribe(const Model::CreateCmqSubscribeRequest &request);
+                void CreateCmqSubscribeAsync(const Model::CreateCmqSubscribeRequest& request, const CreateCmqSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCmqSubscribeOutcomeCallable CreateCmqSubscribeCallable(const Model::CreateCmqSubscribeRequest& request);
+
+                /**
+                 *创建cmq主题
+                 * @param req CreateCmqTopicRequest
+                 * @return CreateCmqTopicOutcome
+                 */
+                CreateCmqTopicOutcome CreateCmqTopic(const Model::CreateCmqTopicRequest &request);
+                void CreateCmqTopicAsync(const Model::CreateCmqTopicRequest& request, const CreateCmqTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCmqTopicOutcomeCallable CreateCmqTopicCallable(const Model::CreateCmqTopicRequest& request);
 
                 /**
                  *用于在用户账户下创建消息队列 Tdmq 命名空间
@@ -204,6 +354,33 @@ namespace TencentCloud
                 DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest &request);
                 void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteClusterOutcomeCallable DeleteClusterCallable(const Model::DeleteClusterRequest& request);
+
+                /**
+                 *删除cmq队列
+                 * @param req DeleteCmqQueueRequest
+                 * @return DeleteCmqQueueOutcome
+                 */
+                DeleteCmqQueueOutcome DeleteCmqQueue(const Model::DeleteCmqQueueRequest &request);
+                void DeleteCmqQueueAsync(const Model::DeleteCmqQueueRequest& request, const DeleteCmqQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCmqQueueOutcomeCallable DeleteCmqQueueCallable(const Model::DeleteCmqQueueRequest& request);
+
+                /**
+                 *删除cmq订阅
+                 * @param req DeleteCmqSubscribeRequest
+                 * @return DeleteCmqSubscribeOutcome
+                 */
+                DeleteCmqSubscribeOutcome DeleteCmqSubscribe(const Model::DeleteCmqSubscribeRequest &request);
+                void DeleteCmqSubscribeAsync(const Model::DeleteCmqSubscribeRequest& request, const DeleteCmqSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCmqSubscribeOutcomeCallable DeleteCmqSubscribeCallable(const Model::DeleteCmqSubscribeRequest& request);
+
+                /**
+                 *删除cmq主题
+                 * @param req DeleteCmqTopicRequest
+                 * @return DeleteCmqTopicOutcome
+                 */
+                DeleteCmqTopicOutcome DeleteCmqTopic(const Model::DeleteCmqTopicRequest &request);
+                void DeleteCmqTopicAsync(const Model::DeleteCmqTopicRequest& request, const DeleteCmqTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCmqTopicOutcomeCallable DeleteCmqTopicCallable(const Model::DeleteCmqTopicRequest& request);
 
                 /**
                  *批量删除租户下的命名空间
@@ -269,6 +446,60 @@ namespace TencentCloud
                 DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
 
                 /**
+                 *枚举cmq死信队列源队列
+                 * @param req DescribeCmqDeadLetterSourceQueuesRequest
+                 * @return DescribeCmqDeadLetterSourceQueuesOutcome
+                 */
+                DescribeCmqDeadLetterSourceQueuesOutcome DescribeCmqDeadLetterSourceQueues(const Model::DescribeCmqDeadLetterSourceQueuesRequest &request);
+                void DescribeCmqDeadLetterSourceQueuesAsync(const Model::DescribeCmqDeadLetterSourceQueuesRequest& request, const DescribeCmqDeadLetterSourceQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCmqDeadLetterSourceQueuesOutcomeCallable DescribeCmqDeadLetterSourceQueuesCallable(const Model::DescribeCmqDeadLetterSourceQueuesRequest& request);
+
+                /**
+                 *查询cmq队列详情
+                 * @param req DescribeCmqQueueDetailRequest
+                 * @return DescribeCmqQueueDetailOutcome
+                 */
+                DescribeCmqQueueDetailOutcome DescribeCmqQueueDetail(const Model::DescribeCmqQueueDetailRequest &request);
+                void DescribeCmqQueueDetailAsync(const Model::DescribeCmqQueueDetailRequest& request, const DescribeCmqQueueDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCmqQueueDetailOutcomeCallable DescribeCmqQueueDetailCallable(const Model::DescribeCmqQueueDetailRequest& request);
+
+                /**
+                 *查询cmq全量队列
+                 * @param req DescribeCmqQueuesRequest
+                 * @return DescribeCmqQueuesOutcome
+                 */
+                DescribeCmqQueuesOutcome DescribeCmqQueues(const Model::DescribeCmqQueuesRequest &request);
+                void DescribeCmqQueuesAsync(const Model::DescribeCmqQueuesRequest& request, const DescribeCmqQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCmqQueuesOutcomeCallable DescribeCmqQueuesCallable(const Model::DescribeCmqQueuesRequest& request);
+
+                /**
+                 *查询cmq订阅详情
+                 * @param req DescribeCmqSubscriptionDetailRequest
+                 * @return DescribeCmqSubscriptionDetailOutcome
+                 */
+                DescribeCmqSubscriptionDetailOutcome DescribeCmqSubscriptionDetail(const Model::DescribeCmqSubscriptionDetailRequest &request);
+                void DescribeCmqSubscriptionDetailAsync(const Model::DescribeCmqSubscriptionDetailRequest& request, const DescribeCmqSubscriptionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCmqSubscriptionDetailOutcomeCallable DescribeCmqSubscriptionDetailCallable(const Model::DescribeCmqSubscriptionDetailRequest& request);
+
+                /**
+                 *查询cmq主题详情
+                 * @param req DescribeCmqTopicDetailRequest
+                 * @return DescribeCmqTopicDetailOutcome
+                 */
+                DescribeCmqTopicDetailOutcome DescribeCmqTopicDetail(const Model::DescribeCmqTopicDetailRequest &request);
+                void DescribeCmqTopicDetailAsync(const Model::DescribeCmqTopicDetailRequest& request, const DescribeCmqTopicDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCmqTopicDetailOutcomeCallable DescribeCmqTopicDetailCallable(const Model::DescribeCmqTopicDetailRequest& request);
+
+                /**
+                 *枚举cmq全量主题
+                 * @param req DescribeCmqTopicsRequest
+                 * @return DescribeCmqTopicsOutcome
+                 */
+                DescribeCmqTopicsOutcome DescribeCmqTopics(const Model::DescribeCmqTopicsRequest &request);
+                void DescribeCmqTopicsAsync(const Model::DescribeCmqTopicsRequest& request, const DescribeCmqTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCmqTopicsOutcomeCallable DescribeCmqTopicsCallable(const Model::DescribeCmqTopicsRequest& request);
+
+                /**
                  *获取指定命名空间的属性
                  * @param req DescribeEnvironmentAttributesRequest
                  * @return DescribeEnvironmentAttributesOutcome
@@ -332,6 +563,33 @@ namespace TencentCloud
                 ModifyClusterOutcomeCallable ModifyClusterCallable(const Model::ModifyClusterRequest& request);
 
                 /**
+                 *修改cmq队列属性
+                 * @param req ModifyCmqQueueAttributeRequest
+                 * @return ModifyCmqQueueAttributeOutcome
+                 */
+                ModifyCmqQueueAttributeOutcome ModifyCmqQueueAttribute(const Model::ModifyCmqQueueAttributeRequest &request);
+                void ModifyCmqQueueAttributeAsync(const Model::ModifyCmqQueueAttributeRequest& request, const ModifyCmqQueueAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCmqQueueAttributeOutcomeCallable ModifyCmqQueueAttributeCallable(const Model::ModifyCmqQueueAttributeRequest& request);
+
+                /**
+                 *修改cmq订阅属性
+                 * @param req ModifyCmqSubscriptionAttributeRequest
+                 * @return ModifyCmqSubscriptionAttributeOutcome
+                 */
+                ModifyCmqSubscriptionAttributeOutcome ModifyCmqSubscriptionAttribute(const Model::ModifyCmqSubscriptionAttributeRequest &request);
+                void ModifyCmqSubscriptionAttributeAsync(const Model::ModifyCmqSubscriptionAttributeRequest& request, const ModifyCmqSubscriptionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCmqSubscriptionAttributeOutcomeCallable ModifyCmqSubscriptionAttributeCallable(const Model::ModifyCmqSubscriptionAttributeRequest& request);
+
+                /**
+                 *修改cmq主题属性
+                 * @param req ModifyCmqTopicAttributeRequest
+                 * @return ModifyCmqTopicAttributeOutcome
+                 */
+                ModifyCmqTopicAttributeOutcome ModifyCmqTopicAttribute(const Model::ModifyCmqTopicAttributeRequest &request);
+                void ModifyCmqTopicAttributeAsync(const Model::ModifyCmqTopicAttributeRequest& request, const ModifyCmqTopicAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCmqTopicAttributeOutcomeCallable ModifyCmqTopicAttributeCallable(const Model::ModifyCmqTopicAttributeRequest& request);
+
+                /**
                  *修改指定命名空间的属性值
                  * @param req ModifyEnvironmentAttributesRequest
                  * @return ModifyEnvironmentAttributesOutcome
@@ -350,6 +608,15 @@ namespace TencentCloud
                 ModifyTopicOutcomeCallable ModifyTopicCallable(const Model::ModifyTopicRequest& request);
 
                 /**
+                 *发送cmq主题消息
+                 * @param req PublishCmqMsgRequest
+                 * @return PublishCmqMsgOutcome
+                 */
+                PublishCmqMsgOutcome PublishCmqMsg(const Model::PublishCmqMsgRequest &request);
+                void PublishCmqMsgAsync(const Model::PublishCmqMsgRequest& request, const PublishCmqMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PublishCmqMsgOutcomeCallable PublishCmqMsgCallable(const Model::PublishCmqMsgRequest& request);
+
+                /**
                  *根据时间戳进行消息回溯，精确到毫秒
                  * @param req ResetMsgSubOffsetByTimestampRequest
                  * @return ResetMsgSubOffsetByTimestampOutcome
@@ -357,6 +624,15 @@ namespace TencentCloud
                 ResetMsgSubOffsetByTimestampOutcome ResetMsgSubOffsetByTimestamp(const Model::ResetMsgSubOffsetByTimestampRequest &request);
                 void ResetMsgSubOffsetByTimestampAsync(const Model::ResetMsgSubOffsetByTimestampRequest& request, const ResetMsgSubOffsetByTimestampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetMsgSubOffsetByTimestampOutcomeCallable ResetMsgSubOffsetByTimestampCallable(const Model::ResetMsgSubOffsetByTimestampRequest& request);
+
+                /**
+                 *回溯cmq队列
+                 * @param req RewindCmqQueueRequest
+                 * @return RewindCmqQueueOutcome
+                 */
+                RewindCmqQueueOutcome RewindCmqQueue(const Model::RewindCmqQueueRequest &request);
+                void RewindCmqQueueAsync(const Model::RewindCmqQueueRequest& request, const RewindCmqQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RewindCmqQueueOutcomeCallable RewindCmqQueueCallable(const Model::RewindCmqQueueRequest& request);
 
                 /**
                  *批量发送消息
@@ -368,6 +644,15 @@ namespace TencentCloud
                 SendBatchMessagesOutcomeCallable SendBatchMessagesCallable(const Model::SendBatchMessagesRequest& request);
 
                 /**
+                 *发送cmq消息
+                 * @param req SendCmqMsgRequest
+                 * @return SendCmqMsgOutcome
+                 */
+                SendCmqMsgOutcome SendCmqMsg(const Model::SendCmqMsgRequest &request);
+                void SendCmqMsgAsync(const Model::SendCmqMsgRequest& request, const SendCmqMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendCmqMsgOutcomeCallable SendCmqMsgCallable(const Model::SendCmqMsgRequest& request);
+
+                /**
                  *发送单条消息
                  * @param req SendMessagesRequest
                  * @return SendMessagesOutcome
@@ -375,6 +660,15 @@ namespace TencentCloud
                 SendMessagesOutcome SendMessages(const Model::SendMessagesRequest &request);
                 void SendMessagesAsync(const Model::SendMessagesRequest& request, const SendMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SendMessagesOutcomeCallable SendMessagesCallable(const Model::SendMessagesRequest& request);
+
+                /**
+                 *解绑cmq死信队列
+                 * @param req UnbindCmqDeadLetterRequest
+                 * @return UnbindCmqDeadLetterOutcome
+                 */
+                UnbindCmqDeadLetterOutcome UnbindCmqDeadLetter(const Model::UnbindCmqDeadLetterRequest &request);
+                void UnbindCmqDeadLetterAsync(const Model::UnbindCmqDeadLetterRequest& request, const UnbindCmqDeadLetterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindCmqDeadLetterOutcomeCallable UnbindCmqDeadLetterCallable(const Model::UnbindCmqDeadLetterRequest& request);
 
             };
         }

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ECM 地域
-                     * @return EcmRegion ECM 地域
+                     * 获取ECM 地域，形如ap-xian-ecm。
+                     * @return EcmRegion ECM 地域，形如ap-xian-ecm。
                      */
                     std::string GetEcmRegion() const;
 
                     /**
-                     * 设置ECM 地域
-                     * @param EcmRegion ECM 地域
+                     * 设置ECM 地域，形如ap-xian-ecm。
+                     * @param EcmRegion ECM 地域，形如ap-xian-ecm。
                      */
                     void SetEcmRegion(const std::string& _ecmRegion);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool EcmRegionHasBeenSet() const;
 
                     /**
-                     * 获取当内网IP绑定的弹性网卡实例ID，例如：eni-11112222。
-                     * @return SourceNetworkInterfaceId 当内网IP绑定的弹性网卡实例ID，例如：eni-11112222。
+                     * 获取当前内网IP绑定的弹性网卡实例ID，例如：eni-11112222。
+                     * @return SourceNetworkInterfaceId 当前内网IP绑定的弹性网卡实例ID，例如：eni-11112222。
                      */
                     std::string GetSourceNetworkInterfaceId() const;
 
                     /**
-                     * 设置当内网IP绑定的弹性网卡实例ID，例如：eni-11112222。
-                     * @param SourceNetworkInterfaceId 当内网IP绑定的弹性网卡实例ID，例如：eni-11112222。
+                     * 设置当前内网IP绑定的弹性网卡实例ID，例如：eni-11112222。
+                     * @param SourceNetworkInterfaceId 当前内网IP绑定的弹性网卡实例ID，例如：eni-11112222。
                      */
                     void SetSourceNetworkInterfaceId(const std::string& _sourceNetworkInterfaceId);
 
@@ -117,13 +117,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ECM 地域
+                     * ECM 地域，形如ap-xian-ecm。
                      */
                     std::string m_ecmRegion;
                     bool m_ecmRegionHasBeenSet;
 
                     /**
-                     * 当内网IP绑定的弹性网卡实例ID，例如：eni-11112222。
+                     * 当前内网IP绑定的弹性网卡实例ID，例如：eni-11112222。
                      */
                     std::string m_sourceNetworkInterfaceId;
                     bool m_sourceNetworkInterfaceIdHasBeenSet;

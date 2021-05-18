@@ -53,6 +53,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsV2Response.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeClientBaseInfoRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeClientBaseInfoResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeSalesmansRequest.h>
@@ -122,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClientBalanceResponse> DescribeClientBalanceOutcome;
                 typedef std::future<DescribeClientBalanceOutcome> DescribeClientBalanceOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeClientBalanceRequest&, DescribeClientBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientBalanceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClientBaseInfoResponse> DescribeClientBaseInfoOutcome;
+                typedef std::future<DescribeClientBaseInfoOutcome> DescribeClientBaseInfoOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeClientBaseInfoRequest&, DescribeClientBaseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientBaseInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeRebateInfosResponse> DescribeRebateInfosOutcome;
                 typedef std::future<DescribeRebateInfosOutcome> DescribeRebateInfosOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeRebateInfosRequest&, DescribeRebateInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRebateInfosAsyncHandler;
@@ -275,6 +280,15 @@ namespace TencentCloud
                 DescribeClientBalanceOutcome DescribeClientBalance(const Model::DescribeClientBalanceRequest &request);
                 void DescribeClientBalanceAsync(const Model::DescribeClientBalanceRequest& request, const DescribeClientBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClientBalanceOutcomeCallable DescribeClientBalanceCallable(const Model::DescribeClientBalanceRequest& request);
+
+                /**
+                 *国际站根据UIN查询代客基础信息
+                 * @param req DescribeClientBaseInfoRequest
+                 * @return DescribeClientBaseInfoOutcome
+                 */
+                DescribeClientBaseInfoOutcome DescribeClientBaseInfo(const Model::DescribeClientBaseInfoRequest &request);
+                void DescribeClientBaseInfoAsync(const Model::DescribeClientBaseInfoRequest& request, const DescribeClientBaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClientBaseInfoOutcomeCallable DescribeClientBaseInfoCallable(const Model::DescribeClientBaseInfoRequest& request);
 
                 /**
                  *代理商可查询自己名下全部返佣信息

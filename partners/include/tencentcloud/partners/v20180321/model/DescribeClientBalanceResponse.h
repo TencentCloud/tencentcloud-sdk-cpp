@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账户余额，单位分
-                     * @return Balance 账户余额，单位分
+                     * 获取账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）
+                     * @return Balance 账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）
                      */
                     uint64_t GetBalance() const;
 
@@ -54,13 +54,31 @@ namespace TencentCloud
                      */
                     bool BalanceHasBeenSet() const;
 
+                    /**
+                     * 获取账户现金余额，单位分
+                     * @return Cash 账户现金余额，单位分
+                     */
+                    int64_t GetCash() const;
+
+                    /**
+                     * 判断参数 Cash 是否已赋值
+                     * @return Cash 是否已赋值
+                     */
+                    bool CashHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 账户余额，单位分
+                     * 账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）
                      */
                     uint64_t m_balance;
                     bool m_balanceHasBeenSet;
+
+                    /**
+                     * 账户现金余额，单位分
+                     */
+                    int64_t m_cash;
+                    bool m_cashHasBeenSet;
 
                 };
             }

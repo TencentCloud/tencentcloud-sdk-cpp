@@ -40,6 +40,92 @@ TdmqClient::TdmqClient(const Credential &credential, const string &region, const
 }
 
 
+TdmqClient::ClearCmqQueueOutcome TdmqClient::ClearCmqQueue(const ClearCmqQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "ClearCmqQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ClearCmqQueueResponse rsp = ClearCmqQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ClearCmqQueueOutcome(rsp);
+        else
+            return ClearCmqQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return ClearCmqQueueOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ClearCmqQueueAsync(const ClearCmqQueueRequest& request, const ClearCmqQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ClearCmqQueue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ClearCmqQueueOutcomeCallable TdmqClient::ClearCmqQueueCallable(const ClearCmqQueueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ClearCmqQueueOutcome()>>(
+        [this, request]()
+        {
+            return this->ClearCmqQueue(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::ClearCmqSubscriptionFilterTagsOutcome TdmqClient::ClearCmqSubscriptionFilterTags(const ClearCmqSubscriptionFilterTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ClearCmqSubscriptionFilterTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ClearCmqSubscriptionFilterTagsResponse rsp = ClearCmqSubscriptionFilterTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ClearCmqSubscriptionFilterTagsOutcome(rsp);
+        else
+            return ClearCmqSubscriptionFilterTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return ClearCmqSubscriptionFilterTagsOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ClearCmqSubscriptionFilterTagsAsync(const ClearCmqSubscriptionFilterTagsRequest& request, const ClearCmqSubscriptionFilterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ClearCmqSubscriptionFilterTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ClearCmqSubscriptionFilterTagsOutcomeCallable TdmqClient::ClearCmqSubscriptionFilterTagsCallable(const ClearCmqSubscriptionFilterTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ClearCmqSubscriptionFilterTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->ClearCmqSubscriptionFilterTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::CreateClusterOutcome TdmqClient::CreateCluster(const CreateClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCluster");
@@ -76,6 +162,135 @@ TdmqClient::CreateClusterOutcomeCallable TdmqClient::CreateClusterCallable(const
         [this, request]()
         {
             return this->CreateCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::CreateCmqQueueOutcome TdmqClient::CreateCmqQueue(const CreateCmqQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCmqQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCmqQueueResponse rsp = CreateCmqQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCmqQueueOutcome(rsp);
+        else
+            return CreateCmqQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCmqQueueOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateCmqQueueAsync(const CreateCmqQueueRequest& request, const CreateCmqQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCmqQueue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::CreateCmqQueueOutcomeCallable TdmqClient::CreateCmqQueueCallable(const CreateCmqQueueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCmqQueueOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCmqQueue(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::CreateCmqSubscribeOutcome TdmqClient::CreateCmqSubscribe(const CreateCmqSubscribeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCmqSubscribe");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCmqSubscribeResponse rsp = CreateCmqSubscribeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCmqSubscribeOutcome(rsp);
+        else
+            return CreateCmqSubscribeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCmqSubscribeOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateCmqSubscribeAsync(const CreateCmqSubscribeRequest& request, const CreateCmqSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCmqSubscribe(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::CreateCmqSubscribeOutcomeCallable TdmqClient::CreateCmqSubscribeCallable(const CreateCmqSubscribeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCmqSubscribeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCmqSubscribe(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::CreateCmqTopicOutcome TdmqClient::CreateCmqTopic(const CreateCmqTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCmqTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCmqTopicResponse rsp = CreateCmqTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCmqTopicOutcome(rsp);
+        else
+            return CreateCmqTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCmqTopicOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateCmqTopicAsync(const CreateCmqTopicRequest& request, const CreateCmqTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCmqTopic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::CreateCmqTopicOutcomeCallable TdmqClient::CreateCmqTopicCallable(const CreateCmqTopicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCmqTopicOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCmqTopic(request);
         }
     );
 
@@ -248,6 +463,135 @@ TdmqClient::DeleteClusterOutcomeCallable TdmqClient::DeleteClusterCallable(const
         [this, request]()
         {
             return this->DeleteCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DeleteCmqQueueOutcome TdmqClient::DeleteCmqQueue(const DeleteCmqQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCmqQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCmqQueueResponse rsp = DeleteCmqQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCmqQueueOutcome(rsp);
+        else
+            return DeleteCmqQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCmqQueueOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteCmqQueueAsync(const DeleteCmqQueueRequest& request, const DeleteCmqQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCmqQueue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteCmqQueueOutcomeCallable TdmqClient::DeleteCmqQueueCallable(const DeleteCmqQueueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCmqQueueOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCmqQueue(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DeleteCmqSubscribeOutcome TdmqClient::DeleteCmqSubscribe(const DeleteCmqSubscribeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCmqSubscribe");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCmqSubscribeResponse rsp = DeleteCmqSubscribeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCmqSubscribeOutcome(rsp);
+        else
+            return DeleteCmqSubscribeOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCmqSubscribeOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteCmqSubscribeAsync(const DeleteCmqSubscribeRequest& request, const DeleteCmqSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCmqSubscribe(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteCmqSubscribeOutcomeCallable TdmqClient::DeleteCmqSubscribeCallable(const DeleteCmqSubscribeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCmqSubscribeOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCmqSubscribe(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DeleteCmqTopicOutcome TdmqClient::DeleteCmqTopic(const DeleteCmqTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCmqTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCmqTopicResponse rsp = DeleteCmqTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCmqTopicOutcome(rsp);
+        else
+            return DeleteCmqTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCmqTopicOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteCmqTopicAsync(const DeleteCmqTopicRequest& request, const DeleteCmqTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCmqTopic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteCmqTopicOutcomeCallable TdmqClient::DeleteCmqTopicCallable(const DeleteCmqTopicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCmqTopicOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCmqTopic(request);
         }
     );
 
@@ -556,6 +900,264 @@ TdmqClient::DescribeClustersOutcomeCallable TdmqClient::DescribeClustersCallable
     return task->get_future();
 }
 
+TdmqClient::DescribeCmqDeadLetterSourceQueuesOutcome TdmqClient::DescribeCmqDeadLetterSourceQueues(const DescribeCmqDeadLetterSourceQueuesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCmqDeadLetterSourceQueues");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCmqDeadLetterSourceQueuesResponse rsp = DescribeCmqDeadLetterSourceQueuesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCmqDeadLetterSourceQueuesOutcome(rsp);
+        else
+            return DescribeCmqDeadLetterSourceQueuesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCmqDeadLetterSourceQueuesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeCmqDeadLetterSourceQueuesAsync(const DescribeCmqDeadLetterSourceQueuesRequest& request, const DescribeCmqDeadLetterSourceQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCmqDeadLetterSourceQueues(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeCmqDeadLetterSourceQueuesOutcomeCallable TdmqClient::DescribeCmqDeadLetterSourceQueuesCallable(const DescribeCmqDeadLetterSourceQueuesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCmqDeadLetterSourceQueuesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCmqDeadLetterSourceQueues(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeCmqQueueDetailOutcome TdmqClient::DescribeCmqQueueDetail(const DescribeCmqQueueDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCmqQueueDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCmqQueueDetailResponse rsp = DescribeCmqQueueDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCmqQueueDetailOutcome(rsp);
+        else
+            return DescribeCmqQueueDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCmqQueueDetailOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeCmqQueueDetailAsync(const DescribeCmqQueueDetailRequest& request, const DescribeCmqQueueDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCmqQueueDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeCmqQueueDetailOutcomeCallable TdmqClient::DescribeCmqQueueDetailCallable(const DescribeCmqQueueDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCmqQueueDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCmqQueueDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeCmqQueuesOutcome TdmqClient::DescribeCmqQueues(const DescribeCmqQueuesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCmqQueues");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCmqQueuesResponse rsp = DescribeCmqQueuesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCmqQueuesOutcome(rsp);
+        else
+            return DescribeCmqQueuesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCmqQueuesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeCmqQueuesAsync(const DescribeCmqQueuesRequest& request, const DescribeCmqQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCmqQueues(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeCmqQueuesOutcomeCallable TdmqClient::DescribeCmqQueuesCallable(const DescribeCmqQueuesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCmqQueuesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCmqQueues(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeCmqSubscriptionDetailOutcome TdmqClient::DescribeCmqSubscriptionDetail(const DescribeCmqSubscriptionDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCmqSubscriptionDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCmqSubscriptionDetailResponse rsp = DescribeCmqSubscriptionDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCmqSubscriptionDetailOutcome(rsp);
+        else
+            return DescribeCmqSubscriptionDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCmqSubscriptionDetailOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeCmqSubscriptionDetailAsync(const DescribeCmqSubscriptionDetailRequest& request, const DescribeCmqSubscriptionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCmqSubscriptionDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeCmqSubscriptionDetailOutcomeCallable TdmqClient::DescribeCmqSubscriptionDetailCallable(const DescribeCmqSubscriptionDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCmqSubscriptionDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCmqSubscriptionDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeCmqTopicDetailOutcome TdmqClient::DescribeCmqTopicDetail(const DescribeCmqTopicDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCmqTopicDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCmqTopicDetailResponse rsp = DescribeCmqTopicDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCmqTopicDetailOutcome(rsp);
+        else
+            return DescribeCmqTopicDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCmqTopicDetailOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeCmqTopicDetailAsync(const DescribeCmqTopicDetailRequest& request, const DescribeCmqTopicDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCmqTopicDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeCmqTopicDetailOutcomeCallable TdmqClient::DescribeCmqTopicDetailCallable(const DescribeCmqTopicDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCmqTopicDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCmqTopicDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeCmqTopicsOutcome TdmqClient::DescribeCmqTopics(const DescribeCmqTopicsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCmqTopics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCmqTopicsResponse rsp = DescribeCmqTopicsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCmqTopicsOutcome(rsp);
+        else
+            return DescribeCmqTopicsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCmqTopicsOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeCmqTopicsAsync(const DescribeCmqTopicsRequest& request, const DescribeCmqTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCmqTopics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeCmqTopicsOutcomeCallable TdmqClient::DescribeCmqTopicsCallable(const DescribeCmqTopicsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCmqTopicsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCmqTopics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeEnvironmentAttributesOutcome TdmqClient::DescribeEnvironmentAttributes(const DescribeEnvironmentAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnvironmentAttributes");
@@ -857,6 +1459,135 @@ TdmqClient::ModifyClusterOutcomeCallable TdmqClient::ModifyClusterCallable(const
     return task->get_future();
 }
 
+TdmqClient::ModifyCmqQueueAttributeOutcome TdmqClient::ModifyCmqQueueAttribute(const ModifyCmqQueueAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCmqQueueAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCmqQueueAttributeResponse rsp = ModifyCmqQueueAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCmqQueueAttributeOutcome(rsp);
+        else
+            return ModifyCmqQueueAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCmqQueueAttributeOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ModifyCmqQueueAttributeAsync(const ModifyCmqQueueAttributeRequest& request, const ModifyCmqQueueAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCmqQueueAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ModifyCmqQueueAttributeOutcomeCallable TdmqClient::ModifyCmqQueueAttributeCallable(const ModifyCmqQueueAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCmqQueueAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCmqQueueAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::ModifyCmqSubscriptionAttributeOutcome TdmqClient::ModifyCmqSubscriptionAttribute(const ModifyCmqSubscriptionAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCmqSubscriptionAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCmqSubscriptionAttributeResponse rsp = ModifyCmqSubscriptionAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCmqSubscriptionAttributeOutcome(rsp);
+        else
+            return ModifyCmqSubscriptionAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCmqSubscriptionAttributeOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ModifyCmqSubscriptionAttributeAsync(const ModifyCmqSubscriptionAttributeRequest& request, const ModifyCmqSubscriptionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCmqSubscriptionAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ModifyCmqSubscriptionAttributeOutcomeCallable TdmqClient::ModifyCmqSubscriptionAttributeCallable(const ModifyCmqSubscriptionAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCmqSubscriptionAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCmqSubscriptionAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::ModifyCmqTopicAttributeOutcome TdmqClient::ModifyCmqTopicAttribute(const ModifyCmqTopicAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCmqTopicAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCmqTopicAttributeResponse rsp = ModifyCmqTopicAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCmqTopicAttributeOutcome(rsp);
+        else
+            return ModifyCmqTopicAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCmqTopicAttributeOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ModifyCmqTopicAttributeAsync(const ModifyCmqTopicAttributeRequest& request, const ModifyCmqTopicAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCmqTopicAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ModifyCmqTopicAttributeOutcomeCallable TdmqClient::ModifyCmqTopicAttributeCallable(const ModifyCmqTopicAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCmqTopicAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCmqTopicAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::ModifyEnvironmentAttributesOutcome TdmqClient::ModifyEnvironmentAttributes(const ModifyEnvironmentAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyEnvironmentAttributes");
@@ -943,6 +1674,49 @@ TdmqClient::ModifyTopicOutcomeCallable TdmqClient::ModifyTopicCallable(const Mod
     return task->get_future();
 }
 
+TdmqClient::PublishCmqMsgOutcome TdmqClient::PublishCmqMsg(const PublishCmqMsgRequest &request)
+{
+    auto outcome = MakeRequest(request, "PublishCmqMsg");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PublishCmqMsgResponse rsp = PublishCmqMsgResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PublishCmqMsgOutcome(rsp);
+        else
+            return PublishCmqMsgOutcome(o.GetError());
+    }
+    else
+    {
+        return PublishCmqMsgOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::PublishCmqMsgAsync(const PublishCmqMsgRequest& request, const PublishCmqMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PublishCmqMsg(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::PublishCmqMsgOutcomeCallable TdmqClient::PublishCmqMsgCallable(const PublishCmqMsgRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PublishCmqMsgOutcome()>>(
+        [this, request]()
+        {
+            return this->PublishCmqMsg(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::ResetMsgSubOffsetByTimestampOutcome TdmqClient::ResetMsgSubOffsetByTimestamp(const ResetMsgSubOffsetByTimestampRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetMsgSubOffsetByTimestamp");
@@ -979,6 +1753,49 @@ TdmqClient::ResetMsgSubOffsetByTimestampOutcomeCallable TdmqClient::ResetMsgSubO
         [this, request]()
         {
             return this->ResetMsgSubOffsetByTimestamp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::RewindCmqQueueOutcome TdmqClient::RewindCmqQueue(const RewindCmqQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "RewindCmqQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RewindCmqQueueResponse rsp = RewindCmqQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RewindCmqQueueOutcome(rsp);
+        else
+            return RewindCmqQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return RewindCmqQueueOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::RewindCmqQueueAsync(const RewindCmqQueueRequest& request, const RewindCmqQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RewindCmqQueue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::RewindCmqQueueOutcomeCallable TdmqClient::RewindCmqQueueCallable(const RewindCmqQueueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RewindCmqQueueOutcome()>>(
+        [this, request]()
+        {
+            return this->RewindCmqQueue(request);
         }
     );
 
@@ -1029,6 +1846,49 @@ TdmqClient::SendBatchMessagesOutcomeCallable TdmqClient::SendBatchMessagesCallab
     return task->get_future();
 }
 
+TdmqClient::SendCmqMsgOutcome TdmqClient::SendCmqMsg(const SendCmqMsgRequest &request)
+{
+    auto outcome = MakeRequest(request, "SendCmqMsg");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SendCmqMsgResponse rsp = SendCmqMsgResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SendCmqMsgOutcome(rsp);
+        else
+            return SendCmqMsgOutcome(o.GetError());
+    }
+    else
+    {
+        return SendCmqMsgOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::SendCmqMsgAsync(const SendCmqMsgRequest& request, const SendCmqMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SendCmqMsg(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::SendCmqMsgOutcomeCallable TdmqClient::SendCmqMsgCallable(const SendCmqMsgRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SendCmqMsgOutcome()>>(
+        [this, request]()
+        {
+            return this->SendCmqMsg(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::SendMessagesOutcome TdmqClient::SendMessages(const SendMessagesRequest &request)
 {
     auto outcome = MakeRequest(request, "SendMessages");
@@ -1065,6 +1925,49 @@ TdmqClient::SendMessagesOutcomeCallable TdmqClient::SendMessagesCallable(const S
         [this, request]()
         {
             return this->SendMessages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::UnbindCmqDeadLetterOutcome TdmqClient::UnbindCmqDeadLetter(const UnbindCmqDeadLetterRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindCmqDeadLetter");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindCmqDeadLetterResponse rsp = UnbindCmqDeadLetterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindCmqDeadLetterOutcome(rsp);
+        else
+            return UnbindCmqDeadLetterOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindCmqDeadLetterOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::UnbindCmqDeadLetterAsync(const UnbindCmqDeadLetterRequest& request, const UnbindCmqDeadLetterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindCmqDeadLetter(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::UnbindCmqDeadLetterOutcomeCallable TdmqClient::UnbindCmqDeadLetterCallable(const UnbindCmqDeadLetterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindCmqDeadLetterOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindCmqDeadLetter(request);
         }
     );
 

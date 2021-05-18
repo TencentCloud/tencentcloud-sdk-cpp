@@ -27,7 +27,8 @@ EnableVpcCniNetworkTypeRequest::EnableVpcCniNetworkTypeRequest() :
     m_clusterIdHasBeenSet(false),
     m_vpcCniTypeHasBeenSet(false),
     m_enableStaticIpHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+    m_subnetsHasBeenSet(false),
+    m_expiredSecondsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,14 @@ string EnableVpcCniNetworkTypeRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_expiredSecondsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExpiredSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expiredSeconds, allocator);
     }
 
 
@@ -145,6 +154,22 @@ void EnableVpcCniNetworkTypeRequest::SetSubnets(const vector<string>& _subnets)
 bool EnableVpcCniNetworkTypeRequest::SubnetsHasBeenSet() const
 {
     return m_subnetsHasBeenSet;
+}
+
+uint64_t EnableVpcCniNetworkTypeRequest::GetExpiredSeconds() const
+{
+    return m_expiredSeconds;
+}
+
+void EnableVpcCniNetworkTypeRequest::SetExpiredSeconds(const uint64_t& _expiredSeconds)
+{
+    m_expiredSeconds = _expiredSeconds;
+    m_expiredSecondsHasBeenSet = true;
+}
+
+bool EnableVpcCniNetworkTypeRequest::ExpiredSecondsHasBeenSet() const
+{
+    return m_expiredSecondsHasBeenSet;
 }
 
 

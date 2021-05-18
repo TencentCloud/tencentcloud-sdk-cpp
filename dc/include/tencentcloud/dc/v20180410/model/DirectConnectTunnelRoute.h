@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 专线通道路由
+                * 专用通道路由
                 */
                 class DirectConnectTunnelRoute : public AbstractModel
                 {

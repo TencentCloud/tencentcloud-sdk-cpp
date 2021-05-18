@@ -36,7 +36,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_targetTypeHasBeenSet(false),
     m_sessionTypeHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
-    m_endPortHasBeenSet(false)
+    m_endPortHasBeenSet(false),
+    m_deregisterTargetRstHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,14 @@ string CreateListenerRequest::ToJsonString() const
         string key = "EndPort";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endPort, allocator);
+    }
+
+    if (m_deregisterTargetRstHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeregisterTargetRst";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deregisterTargetRst, allocator);
     }
 
 
@@ -377,6 +386,22 @@ void CreateListenerRequest::SetEndPort(const uint64_t& _endPort)
 bool CreateListenerRequest::EndPortHasBeenSet() const
 {
     return m_endPortHasBeenSet;
+}
+
+bool CreateListenerRequest::GetDeregisterTargetRst() const
+{
+    return m_deregisterTargetRst;
+}
+
+void CreateListenerRequest::SetDeregisterTargetRst(const bool& _deregisterTargetRst)
+{
+    m_deregisterTargetRst = _deregisterTargetRst;
+    m_deregisterTargetRstHasBeenSet = true;
+}
+
+bool CreateListenerRequest::DeregisterTargetRstHasBeenSet() const
+{
+    return m_deregisterTargetRstHasBeenSet;
 }
 
 

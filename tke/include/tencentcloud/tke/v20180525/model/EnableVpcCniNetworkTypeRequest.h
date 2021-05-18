@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool SubnetsHasBeenSet() const;
 
+                    /**
+                     * 获取在固定IP模式下，Pod销毁后退还IP的时间，传参必须大于300；不传默认IP永不销毁。
+                     * @return ExpiredSeconds 在固定IP模式下，Pod销毁后退还IP的时间，传参必须大于300；不传默认IP永不销毁。
+                     */
+                    uint64_t GetExpiredSeconds() const;
+
+                    /**
+                     * 设置在固定IP模式下，Pod销毁后退还IP的时间，传参必须大于300；不传默认IP永不销毁。
+                     * @param ExpiredSeconds 在固定IP模式下，Pod销毁后退还IP的时间，传参必须大于300；不传默认IP永不销毁。
+                     */
+                    void SetExpiredSeconds(const uint64_t& _expiredSeconds);
+
+                    /**
+                     * 判断参数 ExpiredSeconds 是否已赋值
+                     * @return ExpiredSeconds 是否已赋值
+                     */
+                    bool ExpiredSecondsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_subnets;
                     bool m_subnetsHasBeenSet;
+
+                    /**
+                     * 在固定IP模式下，Pod销毁后退还IP的时间，传参必须大于300；不传默认IP永不销毁。
+                     */
+                    uint64_t m_expiredSeconds;
+                    bool m_expiredSecondsHasBeenSet;
 
                 };
             }
