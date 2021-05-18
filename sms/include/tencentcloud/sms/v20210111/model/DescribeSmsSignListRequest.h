@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_SMS_V20210111_MODEL_DESCRIBESMSTEMPLATELISTREQUEST_H_
-#define TENCENTCLOUD_SMS_V20210111_MODEL_DESCRIBESMSTEMPLATELISTREQUEST_H_
+#ifndef TENCENTCLOUD_SMS_V20210111_MODEL_DESCRIBESMSSIGNLISTREQUEST_H_
+#define TENCENTCLOUD_SMS_V20210111_MODEL_DESCRIBESMSSIGNLISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -32,37 +32,37 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeSmsTemplateList请求参数结构体
+                * DescribeSmsSignList请求参数结构体
                 */
-                class DescribeSmsTemplateListRequest : public AbstractModel
+                class DescribeSmsSignListRequest : public AbstractModel
                 {
                 public:
-                    DescribeSmsTemplateListRequest();
-                    ~DescribeSmsTemplateListRequest() = default;
+                    DescribeSmsSignListRequest();
+                    ~DescribeSmsSignListRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取模板 ID 数组。
-注：默认数组长度最大100。
-                     * @return TemplateIdSet 模板 ID 数组。
-注：默认数组长度最大100。
+                     * 获取签名 ID 数组。
+注：默认数组最大长度100。
+                     * @return SignIdSet 签名 ID 数组。
+注：默认数组最大长度100。
                      */
-                    std::vector<uint64_t> GetTemplateIdSet() const;
+                    std::vector<uint64_t> GetSignIdSet() const;
 
                     /**
-                     * 设置模板 ID 数组。
-注：默认数组长度最大100。
-                     * @param TemplateIdSet 模板 ID 数组。
-注：默认数组长度最大100。
+                     * 设置签名 ID 数组。
+注：默认数组最大长度100。
+                     * @param SignIdSet 签名 ID 数组。
+注：默认数组最大长度100。
                      */
-                    void SetTemplateIdSet(const std::vector<uint64_t>& _templateIdSet);
+                    void SetSignIdSet(const std::vector<uint64_t>& _signIdSet);
 
                     /**
-                     * 判断参数 TemplateIdSet 是否已赋值
-                     * @return TemplateIdSet 是否已赋值
+                     * 判断参数 SignIdSet 是否已赋值
+                     * @return SignIdSet 是否已赋值
                      */
-                    bool TemplateIdSetHasBeenSet() const;
+                    bool SignIdSetHasBeenSet() const;
 
                     /**
                      * 获取是否国际/港澳台短信：
@@ -93,11 +93,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板 ID 数组。
-注：默认数组长度最大100。
+                     * 签名 ID 数组。
+注：默认数组最大长度100。
                      */
-                    std::vector<uint64_t> m_templateIdSet;
-                    bool m_templateIdSetHasBeenSet;
+                    std::vector<uint64_t> m_signIdSet;
+                    bool m_signIdSetHasBeenSet;
 
                     /**
                      * 是否国际/港澳台短信：
@@ -113,4 +113,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_SMS_V20210111_MODEL_DESCRIBESMSTEMPLATELISTREQUEST_H_
+#endif // !TENCENTCLOUD_SMS_V20210111_MODEL_DESCRIBESMSSIGNLISTREQUEST_H_

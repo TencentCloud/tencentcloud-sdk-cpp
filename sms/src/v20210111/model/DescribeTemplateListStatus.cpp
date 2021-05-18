@@ -27,7 +27,8 @@ DescribeTemplateListStatus::DescribeTemplateListStatus() :
     m_statusCodeHasBeenSet(false),
     m_reviewReplyHasBeenSet(false),
     m_templateNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_templateContentHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome DescribeTemplateListStatus::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateContent") && !value["TemplateContent"].IsNull())
+    {
+        if (!value["TemplateContent"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DescribeTemplateListStatus.TemplateContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateContent = string(value["TemplateContent"].GetString());
+        m_templateContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void DescribeTemplateListStatus::ToJsonObject(Value &value, Document::AllocatorT
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_templateContentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TemplateContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_templateContent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void DescribeTemplateListStatus::SetCreateTime(const uint64_t& _createTime)
 bool DescribeTemplateListStatus::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string DescribeTemplateListStatus::GetTemplateContent() const
+{
+    return m_templateContent;
+}
+
+void DescribeTemplateListStatus::SetTemplateContent(const string& _templateContent)
+{
+    m_templateContent = _templateContent;
+    m_templateContentHasBeenSet = true;
+}
+
+bool DescribeTemplateListStatus::TemplateContentHasBeenSet() const
+{
+    return m_templateContentHasBeenSet;
 }
 

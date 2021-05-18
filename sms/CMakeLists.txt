@@ -20,9 +20,52 @@ set(sms_public_header
   )
 
 set(sms_public_header_model
-  include/tencentcloud/sms/v20210111/model/DescribeTemplateListStatus.h
+  include/tencentcloud/sms/v20210111/model/PullSmsReplyStatusRequest.h
+  include/tencentcloud/sms/v20210111/model/DeleteSmsTemplateResponse.h
+  include/tencentcloud/sms/v20210111/model/ModifySmsTemplateResponse.h
+  include/tencentcloud/sms/v20210111/model/ModifySmsSignRequest.h
+  include/tencentcloud/sms/v20210111/model/AddSmsSignRequest.h
+  include/tencentcloud/sms/v20210111/model/AddTemplateStatus.h
   include/tencentcloud/sms/v20210111/model/DescribeSmsTemplateListResponse.h
+  include/tencentcloud/sms/v20210111/model/PullSmsSendStatusByPhoneNumberRequest.h
+  include/tencentcloud/sms/v20210111/model/AddSmsTemplateRequest.h
+  include/tencentcloud/sms/v20210111/model/ModifySmsTemplateRequest.h
+  include/tencentcloud/sms/v20210111/model/PullSmsReplyStatus.h
+  include/tencentcloud/sms/v20210111/model/CallbackStatusStatisticsResponse.h
+  include/tencentcloud/sms/v20210111/model/PullSmsSendStatusRequest.h
+  include/tencentcloud/sms/v20210111/model/SmsPackagesStatistics.h
+  include/tencentcloud/sms/v20210111/model/PullSmsSendStatusByPhoneNumberResponse.h
+  include/tencentcloud/sms/v20210111/model/ModifySignStatus.h
+  include/tencentcloud/sms/v20210111/model/DescribeSignListStatus.h
+  include/tencentcloud/sms/v20210111/model/SendSmsResponse.h
+  include/tencentcloud/sms/v20210111/model/SendStatusStatisticsResponse.h
+  include/tencentcloud/sms/v20210111/model/SendSmsRequest.h
+  include/tencentcloud/sms/v20210111/model/SendStatusStatistics.h
+  include/tencentcloud/sms/v20210111/model/CallbackStatusStatisticsRequest.h
+  include/tencentcloud/sms/v20210111/model/DeleteTemplateStatus.h
+  include/tencentcloud/sms/v20210111/model/DescribeSmsSignListRequest.h
+  include/tencentcloud/sms/v20210111/model/SmsPackagesStatisticsRequest.h
+  include/tencentcloud/sms/v20210111/model/DescribeTemplateListStatus.h
+  include/tencentcloud/sms/v20210111/model/AddSmsTemplateResponse.h
+  include/tencentcloud/sms/v20210111/model/PullSmsSendStatus.h
+  include/tencentcloud/sms/v20210111/model/DescribeSmsSignListResponse.h
   include/tencentcloud/sms/v20210111/model/DescribeSmsTemplateListRequest.h
+  include/tencentcloud/sms/v20210111/model/CallbackStatusStatistics.h
+  include/tencentcloud/sms/v20210111/model/SendStatusStatisticsRequest.h
+  include/tencentcloud/sms/v20210111/model/DeleteSmsTemplateRequest.h
+  include/tencentcloud/sms/v20210111/model/PullSmsReplyStatusByPhoneNumberResponse.h
+  include/tencentcloud/sms/v20210111/model/SendStatus.h
+  include/tencentcloud/sms/v20210111/model/DeleteSmsSignResponse.h
+  include/tencentcloud/sms/v20210111/model/AddSmsSignResponse.h
+  include/tencentcloud/sms/v20210111/model/DeleteSmsSignRequest.h
+  include/tencentcloud/sms/v20210111/model/PullSmsReplyStatusByPhoneNumberRequest.h
+  include/tencentcloud/sms/v20210111/model/ModifySmsSignResponse.h
+  include/tencentcloud/sms/v20210111/model/AddSignStatus.h
+  include/tencentcloud/sms/v20210111/model/ModifyTemplateStatus.h
+  include/tencentcloud/sms/v20210111/model/PullSmsSendStatusResponse.h
+  include/tencentcloud/sms/v20210111/model/SmsPackagesStatisticsResponse.h
+  include/tencentcloud/sms/v20210111/model/DeleteSignStatus.h
+  include/tencentcloud/sms/v20210111/model/PullSmsReplyStatusResponse.h
   include/tencentcloud/sms/v20190711/model/PullSmsReplyStatusRequest.h
   include/tencentcloud/sms/v20190711/model/DeleteSmsTemplateResponse.h
   include/tencentcloud/sms/v20190711/model/ModifySmsTemplateResponse.h
@@ -74,9 +117,52 @@ set(sms_public_header_model
 set(sms_src
   src/v20210111/SmsClient.cpp
   src/v20190711/SmsClient.cpp
-  src/v20210111/model/DescribeTemplateListStatus.cpp
+  src/v20210111/model/PullSmsReplyStatusRequest.cpp
+  src/v20210111/model/DeleteSmsTemplateResponse.cpp
+  src/v20210111/model/ModifySmsTemplateResponse.cpp
+  src/v20210111/model/ModifySmsSignRequest.cpp
+  src/v20210111/model/AddSmsSignRequest.cpp
+  src/v20210111/model/AddTemplateStatus.cpp
   src/v20210111/model/DescribeSmsTemplateListResponse.cpp
+  src/v20210111/model/PullSmsSendStatusByPhoneNumberRequest.cpp
+  src/v20210111/model/AddSmsTemplateRequest.cpp
+  src/v20210111/model/ModifySmsTemplateRequest.cpp
+  src/v20210111/model/PullSmsReplyStatus.cpp
+  src/v20210111/model/CallbackStatusStatisticsResponse.cpp
+  src/v20210111/model/PullSmsSendStatusRequest.cpp
+  src/v20210111/model/SmsPackagesStatistics.cpp
+  src/v20210111/model/PullSmsSendStatusByPhoneNumberResponse.cpp
+  src/v20210111/model/ModifySignStatus.cpp
+  src/v20210111/model/DescribeSignListStatus.cpp
+  src/v20210111/model/SendSmsResponse.cpp
+  src/v20210111/model/SendStatusStatisticsResponse.cpp
+  src/v20210111/model/SendSmsRequest.cpp
+  src/v20210111/model/SendStatusStatistics.cpp
+  src/v20210111/model/CallbackStatusStatisticsRequest.cpp
+  src/v20210111/model/DeleteTemplateStatus.cpp
+  src/v20210111/model/DescribeSmsSignListRequest.cpp
+  src/v20210111/model/SmsPackagesStatisticsRequest.cpp
+  src/v20210111/model/DescribeTemplateListStatus.cpp
+  src/v20210111/model/AddSmsTemplateResponse.cpp
+  src/v20210111/model/PullSmsSendStatus.cpp
+  src/v20210111/model/DescribeSmsSignListResponse.cpp
   src/v20210111/model/DescribeSmsTemplateListRequest.cpp
+  src/v20210111/model/CallbackStatusStatistics.cpp
+  src/v20210111/model/SendStatusStatisticsRequest.cpp
+  src/v20210111/model/DeleteSmsTemplateRequest.cpp
+  src/v20210111/model/PullSmsReplyStatusByPhoneNumberResponse.cpp
+  src/v20210111/model/SendStatus.cpp
+  src/v20210111/model/DeleteSmsSignResponse.cpp
+  src/v20210111/model/AddSmsSignResponse.cpp
+  src/v20210111/model/DeleteSmsSignRequest.cpp
+  src/v20210111/model/PullSmsReplyStatusByPhoneNumberRequest.cpp
+  src/v20210111/model/ModifySmsSignResponse.cpp
+  src/v20210111/model/AddSignStatus.cpp
+  src/v20210111/model/ModifyTemplateStatus.cpp
+  src/v20210111/model/PullSmsSendStatusResponse.cpp
+  src/v20210111/model/SmsPackagesStatisticsResponse.cpp
+  src/v20210111/model/DeleteSignStatus.cpp
+  src/v20210111/model/PullSmsReplyStatusResponse.cpp
   src/v20190711/model/PullSmsReplyStatusRequest.cpp
   src/v20190711/model/DeleteSmsTemplateResponse.cpp
   src/v20190711/model/ModifySmsTemplateResponse.cpp

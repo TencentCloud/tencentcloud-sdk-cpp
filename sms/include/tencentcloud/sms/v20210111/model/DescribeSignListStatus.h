@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_SMS_V20210111_MODEL_DESCRIBETEMPLATELISTSTATUS_H_
-#define TENCENTCLOUD_SMS_V20210111_MODEL_DESCRIBETEMPLATELISTSTATUS_H_
+#ifndef TENCENTCLOUD_SMS_V20210111_MODEL_DESCRIBESIGNLISTSTATUS_H_
+#define TENCENTCLOUD_SMS_V20210111_MODEL_DESCRIBESIGNLISTSTATUS_H_
 
 #include <string>
 #include <vector>
@@ -35,34 +35,34 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 获取短信模板信息响应
+                * 获取短信签名信息响应
                 */
-                class DescribeTemplateListStatus : public AbstractModel
+                class DescribeSignListStatus : public AbstractModel
                 {
                 public:
-                    DescribeTemplateListStatus();
-                    ~DescribeTemplateListStatus() = default;
+                    DescribeSignListStatus();
+                    ~DescribeSignListStatus() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取模板ID。
-                     * @return TemplateId 模板ID。
+                     * 获取签名ID。
+                     * @return SignId 签名ID。
                      */
-                    uint64_t GetTemplateId() const;
+                    uint64_t GetSignId() const;
 
                     /**
-                     * 设置模板ID。
-                     * @param TemplateId 模板ID。
+                     * 设置签名ID。
+                     * @param SignId 签名ID。
                      */
-                    void SetTemplateId(const uint64_t& _templateId);
+                    void SetSignId(const uint64_t& _signId);
 
                     /**
-                     * 判断参数 TemplateId 是否已赋值
-                     * @return TemplateId 是否已赋值
+                     * 判断参数 SignId 是否已赋值
+                     * @return SignId 是否已赋值
                      */
-                    bool TemplateIdHasBeenSet() const;
+                    bool SignIdHasBeenSet() const;
 
                     /**
                      * 获取是否国际/港澳台短信，其中0表示国内短信，1表示国际/港澳台短信。
@@ -83,14 +83,18 @@ namespace TencentCloud
                     bool InternationalHasBeenSet() const;
 
                     /**
-                     * 获取申请模板状态，其中0表示审核通过，1表示审核中，-1表示审核未通过或审核失败。
-                     * @return StatusCode 申请模板状态，其中0表示审核通过，1表示审核中，-1表示审核未通过或审核失败。
+                     * 获取申请签名状态，其中0表示审核通过，1表示审核中。
+-1：表示审核未通过或审核失败。
+                     * @return StatusCode 申请签名状态，其中0表示审核通过，1表示审核中。
+-1：表示审核未通过或审核失败。
                      */
                     int64_t GetStatusCode() const;
 
                     /**
-                     * 设置申请模板状态，其中0表示审核通过，1表示审核中，-1表示审核未通过或审核失败。
-                     * @param StatusCode 申请模板状态，其中0表示审核通过，1表示审核中，-1表示审核未通过或审核失败。
+                     * 设置申请签名状态，其中0表示审核通过，1表示审核中。
+-1：表示审核未通过或审核失败。
+                     * @param StatusCode 申请签名状态，其中0表示审核通过，1表示审核中。
+-1：表示审核未通过或审核失败。
                      */
                     void SetStatusCode(const int64_t& _statusCode);
 
@@ -119,22 +123,22 @@ namespace TencentCloud
                     bool ReviewReplyHasBeenSet() const;
 
                     /**
-                     * 获取模板名称。
-                     * @return TemplateName 模板名称。
+                     * 获取签名名称。
+                     * @return SignName 签名名称。
                      */
-                    std::string GetTemplateName() const;
+                    std::string GetSignName() const;
 
                     /**
-                     * 设置模板名称。
-                     * @param TemplateName 模板名称。
+                     * 设置签名名称。
+                     * @param SignName 签名名称。
                      */
-                    void SetTemplateName(const std::string& _templateName);
+                    void SetSignName(const std::string& _signName);
 
                     /**
-                     * 判断参数 TemplateName 是否已赋值
-                     * @return TemplateName 是否已赋值
+                     * 判断参数 SignName 是否已赋值
+                     * @return SignName 是否已赋值
                      */
-                    bool TemplateNameHasBeenSet() const;
+                    bool SignNameHasBeenSet() const;
 
                     /**
                      * 获取提交审核时间，UNIX 时间戳（单位：秒）。
@@ -154,31 +158,13 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
-                    /**
-                     * 获取模板内容。
-                     * @return TemplateContent 模板内容。
-                     */
-                    std::string GetTemplateContent() const;
-
-                    /**
-                     * 设置模板内容。
-                     * @param TemplateContent 模板内容。
-                     */
-                    void SetTemplateContent(const std::string& _templateContent);
-
-                    /**
-                     * 判断参数 TemplateContent 是否已赋值
-                     * @return TemplateContent 是否已赋值
-                     */
-                    bool TemplateContentHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 模板ID。
+                     * 签名ID。
                      */
-                    uint64_t m_templateId;
-                    bool m_templateIdHasBeenSet;
+                    uint64_t m_signId;
+                    bool m_signIdHasBeenSet;
 
                     /**
                      * 是否国际/港澳台短信，其中0表示国内短信，1表示国际/港澳台短信。
@@ -187,7 +173,8 @@ namespace TencentCloud
                     bool m_internationalHasBeenSet;
 
                     /**
-                     * 申请模板状态，其中0表示审核通过，1表示审核中，-1表示审核未通过或审核失败。
+                     * 申请签名状态，其中0表示审核通过，1表示审核中。
+-1：表示审核未通过或审核失败。
                      */
                     int64_t m_statusCode;
                     bool m_statusCodeHasBeenSet;
@@ -199,10 +186,10 @@ namespace TencentCloud
                     bool m_reviewReplyHasBeenSet;
 
                     /**
-                     * 模板名称。
+                     * 签名名称。
                      */
-                    std::string m_templateName;
-                    bool m_templateNameHasBeenSet;
+                    std::string m_signName;
+                    bool m_signNameHasBeenSet;
 
                     /**
                      * 提交审核时间，UNIX 时间戳（单位：秒）。
@@ -210,16 +197,10 @@ namespace TencentCloud
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
-                    /**
-                     * 模板内容。
-                     */
-                    std::string m_templateContent;
-                    bool m_templateContentHasBeenSet;
-
                 };
             }
         }
     }
 }
 
-#endif // !TENCENTCLOUD_SMS_V20210111_MODEL_DESCRIBETEMPLATELISTSTATUS_H_
+#endif // !TENCENTCLOUD_SMS_V20210111_MODEL_DESCRIBESIGNLISTSTATUS_H_
