@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Vpc实例ID，例如：vpc-f1xjkw1b。
-                     * @return VpcId Vpc实例ID，例如：vpc-f1xjkw1b。
+                     * 获取Vpc实例ID，例如：vpc-bq4bzxpj。
+                     * @return VpcId Vpc实例ID，例如：vpc-bq4bzxpj。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置Vpc实例ID，例如：vpc-f1xjkw1b。
-                     * @param VpcId Vpc实例ID，例如：vpc-f1xjkw1b。
+                     * 设置Vpc实例ID，例如：vpc-bq4bzxpj。
+                     * @param VpcId Vpc实例ID，例如：vpc-bq4bzxpj。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool PcxHasBeenSet() const;
 
                     /**
-                     * 获取当前已使用的IP总数。
-                     * @return Ip 当前已使用的IP总数。
+                     * 获取统计当前除云服务器 IP、弹性网卡IP和网络探测IP以外的所有已使用的IP总数。云服务器 IP、弹性网卡IP和网络探测IP单独计数。
+                     * @return Ip 统计当前除云服务器 IP、弹性网卡IP和网络探测IP以外的所有已使用的IP总数。云服务器 IP、弹性网卡IP和网络探测IP单独计数。
                      */
                     uint64_t GetIp() const;
 
                     /**
-                     * 设置当前已使用的IP总数。
-                     * @param Ip 当前已使用的IP总数。
+                     * 设置统计当前除云服务器 IP、弹性网卡IP和网络探测IP以外的所有已使用的IP总数。云服务器 IP、弹性网卡IP和网络探测IP单独计数。
+                     * @param Ip 统计当前除云服务器 IP、弹性网卡IP和网络探测IP以外的所有已使用的IP总数。云服务器 IP、弹性网卡IP和网络探测IP单独计数。
                      */
                     void SetIp(const uint64_t& _ip);
 
@@ -805,7 +805,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Vpc实例ID，例如：vpc-f1xjkw1b。
+                     * Vpc实例ID，例如：vpc-bq4bzxpj。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -835,7 +835,7 @@ namespace TencentCloud
                     bool m_pcxHasBeenSet;
 
                     /**
-                     * 当前已使用的IP总数。
+                     * 统计当前除云服务器 IP、弹性网卡IP和网络探测IP以外的所有已使用的IP总数。云服务器 IP、弹性网卡IP和网络探测IP单独计数。
                      */
                     uint64_t m_ip;
                     bool m_ipHasBeenSet;
