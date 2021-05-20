@@ -28,7 +28,8 @@ InstanceAdvancedSettings::InstanceAdvancedSettings() :
     m_unschedulableHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
-    m_extraArgsHasBeenSet(false)
+    m_extraArgsHasBeenSet(false),
+    m_desiredPodNumberHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,16 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const Value &value)
         m_extraArgsHasBeenSet = true;
     }
 
+    if (value.HasMember("DesiredPodNumber") && !value["DesiredPodNumber"].IsNull())
+    {
+        if (!value["DesiredPodNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.DesiredPodNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_desiredPodNumber = value["DesiredPodNumber"].GetInt64();
+        m_desiredPodNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -210,6 +221,14 @@ void InstanceAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorTyp
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_extraArgs.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_desiredPodNumberHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DesiredPodNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_desiredPodNumber, allocator);
     }
 
 }
@@ -325,5 +344,21 @@ void InstanceAdvancedSettings::SetExtraArgs(const InstanceExtraArgs& _extraArgs)
 bool InstanceAdvancedSettings::ExtraArgsHasBeenSet() const
 {
     return m_extraArgsHasBeenSet;
+}
+
+int64_t InstanceAdvancedSettings::GetDesiredPodNumber() const
+{
+    return m_desiredPodNumber;
+}
+
+void InstanceAdvancedSettings::SetDesiredPodNumber(const int64_t& _desiredPodNumber)
+{
+    m_desiredPodNumber = _desiredPodNumber;
+    m_desiredPodNumberHasBeenSet = true;
+}
+
+bool InstanceAdvancedSettings::DesiredPodNumberHasBeenSet() const
+{
+    return m_desiredPodNumberHasBeenSet;
 }
 

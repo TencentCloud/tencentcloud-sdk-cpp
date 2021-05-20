@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取是否使用代金券
-                     * @return AutoVoucher 是否使用代金券
+                     * 获取是否使用代金券：true-使用,false-不使用，默认不使用
+                     * @return AutoVoucher 是否使用代金券：true-使用,false-不使用，默认不使用
                      */
                     bool GetAutoVoucher() const;
 
                     /**
-                     * 设置是否使用代金券
-                     * @param AutoVoucher 是否使用代金券
+                     * 设置是否使用代金券：true-使用,false-不使用，默认不使用
+                     * @param AutoVoucher 是否使用代金券：true-使用,false-不使用，默认不使用
                      */
                     void SetAutoVoucher(const bool& _autoVoucher);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 是否使用代金券
+                     * 是否使用代金券：true-使用,false-不使用，默认不使用
                      */
                     bool m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;

@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取域名所有者筛选
+                     * @return Keyword 域名所有者筛选
+                     */
+                    std::string GetKeyword() const;
+
+                    /**
+                     * 设置域名所有者筛选
+                     * @param Keyword 域名所有者筛选
+                     */
+                    void SetKeyword(const std::string& _keyword);
+
+                    /**
+                     * 判断参数 Keyword 是否已赋值
+                     * @return Keyword 是否已赋值
+                     */
+                    bool KeywordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 域名所有者筛选
+                     */
+                    std::string m_keyword;
+                    bool m_keywordHasBeenSet;
 
                 };
             }

@@ -125,6 +125,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainCertResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainPlayInfoListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveDomainRefererRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveDomainRefererResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainsRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainsResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveForbidStreamListRequest.h>
@@ -211,6 +213,8 @@
 #include <tencentcloud/live/v20180801/model/ModifyLiveCertResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveDomainCertRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveDomainCertResponse.h>
+#include <tencentcloud/live/v20180801/model/ModifyLiveDomainRefererRequest.h>
+#include <tencentcloud/live/v20180801/model/ModifyLiveDomainRefererResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLivePlayAuthKeyRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyLivePlayAuthKeyResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLivePlayDomainRequest.h>
@@ -406,6 +410,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeLiveDomainPlayInfoListResponse> DescribeLiveDomainPlayInfoListOutcome;
                 typedef std::future<DescribeLiveDomainPlayInfoListOutcome> DescribeLiveDomainPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainPlayInfoListRequest&, DescribeLiveDomainPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainPlayInfoListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLiveDomainRefererResponse> DescribeLiveDomainRefererOutcome;
+                typedef std::future<DescribeLiveDomainRefererOutcome> DescribeLiveDomainRefererOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainRefererRequest&, DescribeLiveDomainRefererOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainRefererAsyncHandler;
                 typedef Outcome<Error, Model::DescribeLiveDomainsResponse> DescribeLiveDomainsOutcome;
                 typedef std::future<DescribeLiveDomainsOutcome> DescribeLiveDomainsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainsRequest&, DescribeLiveDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainsAsyncHandler;
@@ -535,6 +542,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyLiveDomainCertResponse> ModifyLiveDomainCertOutcome;
                 typedef std::future<ModifyLiveDomainCertOutcome> ModifyLiveDomainCertOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyLiveDomainCertRequest&, ModifyLiveDomainCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveDomainCertAsyncHandler;
+                typedef Outcome<Error, Model::ModifyLiveDomainRefererResponse> ModifyLiveDomainRefererOutcome;
+                typedef std::future<ModifyLiveDomainRefererOutcome> ModifyLiveDomainRefererOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ModifyLiveDomainRefererRequest&, ModifyLiveDomainRefererOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveDomainRefererAsyncHandler;
                 typedef Outcome<Error, Model::ModifyLivePlayAuthKeyResponse> ModifyLivePlayAuthKeyOutcome;
                 typedef std::future<ModifyLivePlayAuthKeyOutcome> ModifyLivePlayAuthKeyOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyLivePlayAuthKeyRequest&, ModifyLivePlayAuthKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLivePlayAuthKeyAsyncHandler;
@@ -1088,6 +1098,16 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveDomainPlayInfoListOutcomeCallable DescribeLiveDomainPlayInfoListCallable(const Model::DescribeLiveDomainPlayInfoListRequest& request);
 
                 /**
+                 *查询直播域名 Referer 黑白名单配置。
+由于 Referer 信息包含在 http 协议中，在开启配置后，播放协议为 rtmp 或 webrtc 不会校验 Referer 配置，仍可正常播放。如需配置 Referer 鉴权建议使用 http-flv 或 http-hls 协议播放。
+                 * @param req DescribeLiveDomainRefererRequest
+                 * @return DescribeLiveDomainRefererOutcome
+                 */
+                DescribeLiveDomainRefererOutcome DescribeLiveDomainReferer(const Model::DescribeLiveDomainRefererRequest &request);
+                void DescribeLiveDomainRefererAsync(const Model::DescribeLiveDomainRefererRequest& request, const DescribeLiveDomainRefererAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveDomainRefererOutcomeCallable DescribeLiveDomainRefererCallable(const Model::DescribeLiveDomainRefererRequest& request);
+
+                /**
                  *根据域名状态、类型等信息查询用户的域名信息。
                  * @param req DescribeLiveDomainsRequest
                  * @return DescribeLiveDomainsOutcome
@@ -1480,6 +1500,16 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ModifyLiveDomainCertOutcome ModifyLiveDomainCert(const Model::ModifyLiveDomainCertRequest &request);
                 void ModifyLiveDomainCertAsync(const Model::ModifyLiveDomainCertRequest& request, const ModifyLiveDomainCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLiveDomainCertOutcomeCallable ModifyLiveDomainCertCallable(const Model::ModifyLiveDomainCertRequest& request);
+
+                /**
+                 *设置直播域名 Referer 黑白名单。
+由于 Referer 信息包含在 http 协议中，在开启配置后，播放协议为 rtmp 或 webrtc 不会校验 Referer 配置，仍可正常播放。如需配置 Referer 鉴权建议使用 http-flv 或 http-hls 协议播放。
+                 * @param req ModifyLiveDomainRefererRequest
+                 * @return ModifyLiveDomainRefererOutcome
+                 */
+                ModifyLiveDomainRefererOutcome ModifyLiveDomainReferer(const Model::ModifyLiveDomainRefererRequest &request);
+                void ModifyLiveDomainRefererAsync(const Model::ModifyLiveDomainRefererRequest& request, const ModifyLiveDomainRefererAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLiveDomainRefererOutcomeCallable ModifyLiveDomainRefererCallable(const Model::ModifyLiveDomainRefererRequest& request);
 
                 /**
                  *修改播放鉴权key

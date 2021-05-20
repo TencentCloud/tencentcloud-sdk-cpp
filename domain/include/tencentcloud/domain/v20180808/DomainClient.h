@@ -224,8 +224,6 @@ namespace TencentCloud
                 /**
                  *本接口 (  DescribeDomainBaseInfo) 获取域名基础信息。
 
-默认接口请求频率限制：20次/秒。
-
                  * @param req DescribeDomainBaseInfoRequest
                  * @return DescribeDomainBaseInfoOutcome
                  */

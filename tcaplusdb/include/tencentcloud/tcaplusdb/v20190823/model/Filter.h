@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取过滤字段值
+                     * @return Values 过滤字段值
+                     */
+                    std::vector<std::string> GetValues() const;
+
+                    /**
+                     * 设置过滤字段值
+                     * @param Values 过滤字段值
+                     */
+                    void SetValues(const std::vector<std::string>& _values);
+
+                    /**
+                     * 判断参数 Values 是否已赋值
+                     * @return Values 是否已赋值
+                     */
+                    bool ValuesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 过滤字段值
+                     */
+                    std::vector<std::string> m_values;
+                    bool m_valuesHasBeenSet;
 
                 };
             }

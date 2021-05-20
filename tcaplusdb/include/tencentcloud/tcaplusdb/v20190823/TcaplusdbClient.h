@@ -49,6 +49,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTableIndexResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTablesResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeApplicationsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeApplicationsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeClusterTagsRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeClusterTagsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeClustersRequest.h>
@@ -81,6 +83,10 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/EnableRestProxyResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ImportSnapshotsRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ImportSnapshotsResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/MergeTablesDataRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/MergeTablesDataResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyCensorshipRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/ModifyCensorshipResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterMachineRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterMachineResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyClusterNameRequest.h>
@@ -109,6 +115,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/RollbackTablesResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/SetTableIndexRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/SetTableIndexResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/UpdateApplyRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/UpdateApplyResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/VerifyIdlFilesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/VerifyIdlFilesResponse.h>
 
@@ -164,6 +172,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteTablesResponse> DeleteTablesOutcome;
                 typedef std::future<DeleteTablesOutcome> DeleteTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DeleteTablesRequest&, DeleteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTablesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeApplicationsResponse> DescribeApplicationsOutcome;
+                typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DescribeApplicationsRequest&, DescribeApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClusterTagsResponse> DescribeClusterTagsOutcome;
                 typedef std::future<DescribeClusterTagsOutcome> DescribeClusterTagsOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeClusterTagsRequest&, DescribeClusterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterTagsAsyncHandler;
@@ -212,6 +223,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ImportSnapshotsResponse> ImportSnapshotsOutcome;
                 typedef std::future<ImportSnapshotsOutcome> ImportSnapshotsOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ImportSnapshotsRequest&, ImportSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportSnapshotsAsyncHandler;
+                typedef Outcome<Error, Model::MergeTablesDataResponse> MergeTablesDataOutcome;
+                typedef std::future<MergeTablesDataOutcome> MergeTablesDataOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::MergeTablesDataRequest&, MergeTablesDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MergeTablesDataAsyncHandler;
+                typedef Outcome<Error, Model::ModifyCensorshipResponse> ModifyCensorshipOutcome;
+                typedef std::future<ModifyCensorshipOutcome> ModifyCensorshipOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::ModifyCensorshipRequest&, ModifyCensorshipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCensorshipAsyncHandler;
                 typedef Outcome<Error, Model::ModifyClusterMachineResponse> ModifyClusterMachineOutcome;
                 typedef std::future<ModifyClusterMachineOutcome> ModifyClusterMachineOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::ModifyClusterMachineRequest&, ModifyClusterMachineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterMachineAsyncHandler;
@@ -254,6 +271,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SetTableIndexResponse> SetTableIndexOutcome;
                 typedef std::future<SetTableIndexOutcome> SetTableIndexOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::SetTableIndexRequest&, SetTableIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetTableIndexAsyncHandler;
+                typedef Outcome<Error, Model::UpdateApplyResponse> UpdateApplyOutcome;
+                typedef std::future<UpdateApplyOutcome> UpdateApplyOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::UpdateApplyRequest&, UpdateApplyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateApplyAsyncHandler;
                 typedef Outcome<Error, Model::VerifyIdlFilesResponse> VerifyIdlFilesOutcome;
                 typedef std::future<VerifyIdlFilesOutcome> VerifyIdlFilesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::VerifyIdlFilesRequest&, VerifyIdlFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyIdlFilesAsyncHandler;
@@ -376,6 +396,15 @@ namespace TencentCloud
                 DeleteTablesOutcome DeleteTables(const Model::DeleteTablesRequest &request);
                 void DeleteTablesAsync(const Model::DeleteTablesRequest& request, const DeleteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTablesOutcomeCallable DeleteTablesCallable(const Model::DeleteTablesRequest& request);
+
+                /**
+                 *获取审批管理的申请单
+                 * @param req DescribeApplicationsRequest
+                 * @return DescribeApplicationsOutcome
+                 */
+                DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest &request);
+                void DescribeApplicationsAsync(const Model::DescribeApplicationsRequest& request, const DescribeApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const Model::DescribeApplicationsRequest& request);
 
                 /**
                  *获取集群关联的标签列表
@@ -522,6 +551,24 @@ namespace TencentCloud
                 ImportSnapshotsOutcomeCallable ImportSnapshotsCallable(const Model::ImportSnapshotsRequest& request);
 
                 /**
+                 *合并指定表格
+                 * @param req MergeTablesDataRequest
+                 * @return MergeTablesDataOutcome
+                 */
+                MergeTablesDataOutcome MergeTablesData(const Model::MergeTablesDataRequest &request);
+                void MergeTablesDataAsync(const Model::MergeTablesDataRequest& request, const MergeTablesDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MergeTablesDataOutcomeCallable MergeTablesDataCallable(const Model::MergeTablesDataRequest& request);
+
+                /**
+                 *修改集群审批状态
+                 * @param req ModifyCensorshipRequest
+                 * @return ModifyCensorshipOutcome
+                 */
+                ModifyCensorshipOutcome ModifyCensorship(const Model::ModifyCensorshipRequest &request);
+                void ModifyCensorshipAsync(const Model::ModifyCensorshipRequest& request, const ModifyCensorshipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCensorshipOutcomeCallable ModifyCensorshipCallable(const Model::ModifyCensorshipRequest& request);
+
+                /**
                  *修改独占集群机器
                  * @param req ModifyClusterMachineRequest
                  * @return ModifyClusterMachineOutcome
@@ -646,6 +693,15 @@ namespace TencentCloud
                 SetTableIndexOutcome SetTableIndex(const Model::SetTableIndexRequest &request);
                 void SetTableIndexAsync(const Model::SetTableIndexRequest& request, const SetTableIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetTableIndexOutcomeCallable SetTableIndexCallable(const Model::SetTableIndexRequest& request);
+
+                /**
+                 *更新申请单状态
+                 * @param req UpdateApplyRequest
+                 * @return UpdateApplyOutcome
+                 */
+                UpdateApplyOutcome UpdateApply(const Model::UpdateApplyRequest &request);
+                void UpdateApplyAsync(const Model::UpdateApplyRequest& request, const UpdateApplyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateApplyOutcomeCallable UpdateApplyCallable(const Model::UpdateApplyRequest& request);
 
                 /**
                  *上传并校验创建表格文件，返回校验合法的表格定义

@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool SpecCodeHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。
-                     * @return DBVersion PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。
+                     * 获取PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。
+                     * @return DBVersion PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。
                      */
                     std::string GetDBVersion() const;
 
                     /**
-                     * 设置PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。
-                     * @param DBVersion PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。
+                     * 设置PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。
+                     * @param DBVersion PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。
                      */
                     void SetDBVersion(const std::string& _dBVersion);
 
@@ -376,7 +376,7 @@ namespace TencentCloud
                     bool m_specCodeHasBeenSet;
 
                     /**
-                     * PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4三种版本。
+                     * PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;

@@ -203,6 +203,28 @@ namespace TencentCloud
                      */
                     bool ExtraArgsHasBeenSet() const;
 
+                    /**
+                     * 获取该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DesiredPodNumber 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDesiredPodNumber() const;
+
+                    /**
+                     * 设置该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DesiredPodNumber 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDesiredPodNumber(const int64_t& _desiredPodNumber);
+
+                    /**
+                     * 判断参数 DesiredPodNumber 是否已赋值
+                     * @return DesiredPodNumber 是否已赋值
+                     */
+                    bool DesiredPodNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -253,6 +275,13 @@ namespace TencentCloud
                      */
                     InstanceExtraArgs m_extraArgs;
                     bool m_extraArgsHasBeenSet;
+
+                    /**
+                     * 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_desiredPodNumber;
+                    bool m_desiredPodNumberHasBeenSet;
 
                 };
             }

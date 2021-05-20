@@ -43,7 +43,9 @@ ClusterInfo::ClusterInfo() :
     m_writeCapacityUnitHasBeenSet(false),
     m_diskVolumeHasBeenSet(false),
     m_serverListHasBeenSet(false),
-    m_proxyListHasBeenSet(false)
+    m_proxyListHasBeenSet(false),
+    m_censorshipHasBeenSet(false),
+    m_dbaUinsHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,29 @@ CoreInternalOutcome ClusterInfo::Deserialize(const Value &value)
         m_proxyListHasBeenSet = true;
     }
 
+    if (value.HasMember("Censorship") && !value["Censorship"].IsNull())
+    {
+        if (!value["Censorship"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInfo.Censorship` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_censorship = value["Censorship"].GetInt64();
+        m_censorshipHasBeenSet = true;
+    }
+
+    if (value.HasMember("DbaUins") && !value["DbaUins"].IsNull())
+    {
+        if (!value["DbaUins"].IsArray())
+            return CoreInternalOutcome(Error("response `ClusterInfo.DbaUins` is not array type"));
+
+        const Value &tmpValue = value["DbaUins"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_dbaUins.push_back((*itr).GetString());
+        }
+        m_dbaUinsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -486,6 +511,27 @@ void ClusterInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         {
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_censorshipHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Censorship";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_censorship, allocator);
+    }
+
+    if (m_dbaUinsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DbaUins";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_dbaUins.begin(); itr != m_dbaUins.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -842,5 +888,37 @@ void ClusterInfo::SetProxyList(const vector<ProxyDetailInfo>& _proxyList)
 bool ClusterInfo::ProxyListHasBeenSet() const
 {
     return m_proxyListHasBeenSet;
+}
+
+int64_t ClusterInfo::GetCensorship() const
+{
+    return m_censorship;
+}
+
+void ClusterInfo::SetCensorship(const int64_t& _censorship)
+{
+    m_censorship = _censorship;
+    m_censorshipHasBeenSet = true;
+}
+
+bool ClusterInfo::CensorshipHasBeenSet() const
+{
+    return m_censorshipHasBeenSet;
+}
+
+vector<string> ClusterInfo::GetDbaUins() const
+{
+    return m_dbaUins;
+}
+
+void ClusterInfo::SetDbaUins(const vector<string>& _dbaUins)
+{
+    m_dbaUins = _dbaUins;
+    m_dbaUinsHasBeenSet = true;
+}
+
+bool ClusterInfo::DbaUinsHasBeenSet() const
+{
+    return m_dbaUinsHasBeenSet;
 }
 

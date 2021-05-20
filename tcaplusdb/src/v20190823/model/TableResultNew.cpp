@@ -29,7 +29,8 @@ TableResultNew::TableResultNew() :
     m_tableIdlTypeHasBeenSet(false),
     m_tableGroupIdHasBeenSet(false),
     m_errorHasBeenSet(false),
-    m_taskIdsHasBeenSet(false)
+    m_taskIdsHasBeenSet(false),
+    m_applicationIdHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome TableResultNew::Deserialize(const Value &value)
         m_taskIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationId") && !value["ApplicationId"].IsNull())
+    {
+        if (!value["ApplicationId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TableResultNew.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationId = string(value["ApplicationId"].GetString());
+        m_applicationIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void TableResultNew::ToJsonObject(Value &value, Document::AllocatorType& allocat
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void TableResultNew::SetTaskIds(const vector<string>& _taskIds)
 bool TableResultNew::TaskIdsHasBeenSet() const
 {
     return m_taskIdsHasBeenSet;
+}
+
+string TableResultNew::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void TableResultNew::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool TableResultNew::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
 }
 

@@ -27,7 +27,8 @@ DescribeTemplateListRequest::DescribeTemplateListRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_keywordHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string DescribeTemplateListRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_keyword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void DescribeTemplateListRequest::SetStatus(const string& _status)
 bool DescribeTemplateListRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DescribeTemplateListRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void DescribeTemplateListRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool DescribeTemplateListRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ using namespace std;
 DeleteNonlocalLoginPlacesRequest::DeleteNonlocalLoginPlacesRequest() :
     m_delTypeHasBeenSet(false),
     m_idsHasBeenSet(false),
-    m_ipHasBeenSet(false)
+    m_ipHasBeenSet(false),
+    m_uuidHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,14 @@ string DeleteNonlocalLoginPlacesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_uuidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Uuid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -125,6 +134,22 @@ void DeleteNonlocalLoginPlacesRequest::SetIp(const vector<string>& _ip)
 bool DeleteNonlocalLoginPlacesRequest::IpHasBeenSet() const
 {
     return m_ipHasBeenSet;
+}
+
+string DeleteNonlocalLoginPlacesRequest::GetUuid() const
+{
+    return m_uuid;
+}
+
+void DeleteNonlocalLoginPlacesRequest::SetUuid(const string& _uuid)
+{
+    m_uuid = _uuid;
+    m_uuidHasBeenSet = true;
+}
+
+bool DeleteNonlocalLoginPlacesRequest::UuidHasBeenSet() const
+{
+    return m_uuidHasBeenSet;
 }
 
 

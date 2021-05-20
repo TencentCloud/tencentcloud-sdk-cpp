@@ -2233,6 +2233,49 @@ LiveClient::DescribeLiveDomainPlayInfoListOutcomeCallable LiveClient::DescribeLi
     return task->get_future();
 }
 
+LiveClient::DescribeLiveDomainRefererOutcome LiveClient::DescribeLiveDomainReferer(const DescribeLiveDomainRefererRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveDomainReferer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveDomainRefererResponse rsp = DescribeLiveDomainRefererResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveDomainRefererOutcome(rsp);
+        else
+            return DescribeLiveDomainRefererOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveDomainRefererOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveDomainRefererAsync(const DescribeLiveDomainRefererRequest& request, const DescribeLiveDomainRefererAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveDomainReferer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainRefererOutcomeCallable LiveClient::DescribeLiveDomainRefererCallable(const DescribeLiveDomainRefererRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveDomainRefererOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveDomainReferer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeLiveDomainsOutcome LiveClient::DescribeLiveDomains(const DescribeLiveDomainsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLiveDomains");
@@ -4075,6 +4118,49 @@ LiveClient::ModifyLiveDomainCertOutcomeCallable LiveClient::ModifyLiveDomainCert
         [this, request]()
         {
             return this->ModifyLiveDomainCert(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::ModifyLiveDomainRefererOutcome LiveClient::ModifyLiveDomainReferer(const ModifyLiveDomainRefererRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLiveDomainReferer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLiveDomainRefererResponse rsp = ModifyLiveDomainRefererResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLiveDomainRefererOutcome(rsp);
+        else
+            return ModifyLiveDomainRefererOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLiveDomainRefererOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyLiveDomainRefererAsync(const ModifyLiveDomainRefererRequest& request, const ModifyLiveDomainRefererAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLiveDomainReferer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::ModifyLiveDomainRefererOutcomeCallable LiveClient::ModifyLiveDomainRefererCallable(const ModifyLiveDomainRefererRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLiveDomainRefererOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLiveDomainReferer(request);
         }
     );
 

@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool IpHasBeenSet() const;
 
+                    /**
+                     * 获取主机Uuid
+                     * @return Uuid 主机Uuid
+                     */
+                    std::string GetUuid() const;
+
+                    /**
+                     * 设置主机Uuid
+                     * @param Uuid 主机Uuid
+                     */
+                    void SetUuid(const std::string& _uuid);
+
+                    /**
+                     * 判断参数 Uuid 是否已赋值
+                     * @return Uuid 是否已赋值
+                     */
+                    bool UuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ip;
                     bool m_ipHasBeenSet;
+
+                    /**
+                     * 主机Uuid
+                     */
+                    std::string m_uuid;
+                    bool m_uuidHasBeenSet;
 
                 };
             }

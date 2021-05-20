@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 CreateBackupResponse::CreateBackupResponse() :
-    m_taskIdsHasBeenSet(false)
+    m_taskIdsHasBeenSet(false),
+    m_applicationIdsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,19 @@ CoreInternalOutcome CreateBackupResponse::Deserialize(const string &payload)
         m_taskIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ApplicationIds") && !rsp["ApplicationIds"].IsNull())
+    {
+        if (!rsp["ApplicationIds"].IsArray())
+            return CoreInternalOutcome(Error("response `ApplicationIds` is not array type"));
+
+        const Value &tmpValue = rsp["ApplicationIds"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_applicationIds.push_back((*itr).GetString());
+        }
+        m_applicationIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +103,16 @@ vector<string> CreateBackupResponse::GetTaskIds() const
 bool CreateBackupResponse::TaskIdsHasBeenSet() const
 {
     return m_taskIdsHasBeenSet;
+}
+
+vector<string> CreateBackupResponse::GetApplicationIds() const
+{
+    return m_applicationIds;
+}
+
+bool CreateBackupResponse::ApplicationIdsHasBeenSet() const
+{
+    return m_applicationIdsHasBeenSet;
 }
 
 

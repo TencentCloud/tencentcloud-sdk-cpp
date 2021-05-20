@@ -31,6 +31,8 @@
 #include <tencentcloud/postgres/v20170312/model/CloseServerlessDBExtranetAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDBInstancesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDBInstancesResponse.h>
+#include <tencentcloud/postgres/v20170312/model/CreateInstancesRequest.h>
+#include <tencentcloud/postgres/v20170312/model/CreateInstancesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateReadOnlyDBInstanceRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateReadOnlyDBInstanceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateReadOnlyGroupRequest.h>
@@ -137,6 +139,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateDBInstancesResponse> CreateDBInstancesOutcome;
                 typedef std::future<CreateDBInstancesOutcome> CreateDBInstancesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateDBInstancesRequest&, CreateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstancesAsyncHandler;
+                typedef Outcome<Error, Model::CreateInstancesResponse> CreateInstancesOutcome;
+                typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::CreateInstancesRequest&, CreateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancesAsyncHandler;
                 typedef Outcome<Error, Model::CreateReadOnlyDBInstanceResponse> CreateReadOnlyDBInstanceOutcome;
                 typedef std::future<CreateReadOnlyDBInstanceOutcome> CreateReadOnlyDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateReadOnlyDBInstanceRequest&, CreateReadOnlyDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReadOnlyDBInstanceAsyncHandler;
@@ -288,13 +293,22 @@ namespace TencentCloud
                 CloseServerlessDBExtranetAccessOutcomeCallable CloseServerlessDBExtranetAccessCallable(const Model::CloseServerlessDBExtranetAccessRequest& request);
 
                 /**
-                 *本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例。
+                 *本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例,仅发货实例不会进行初始化。
                  * @param req CreateDBInstancesRequest
                  * @return CreateDBInstancesOutcome
                  */
                 CreateDBInstancesOutcome CreateDBInstances(const Model::CreateDBInstancesRequest &request);
                 void CreateDBInstancesAsync(const Model::CreateDBInstancesRequest& request, const CreateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBInstancesOutcomeCallable CreateDBInstancesCallable(const Model::CreateDBInstancesRequest& request);
+
+                /**
+                 *本接口 (CreateInstances) 用于创建一个或者多个PostgreSQL实例，通过此接口创建的实例无需进行初始化，可直接使用。
+                 * @param req CreateInstancesRequest
+                 * @return CreateInstancesOutcome
+                 */
+                CreateInstancesOutcome CreateInstances(const Model::CreateInstancesRequest &request);
+                void CreateInstancesAsync(const Model::CreateInstancesRequest& request, const CreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstancesOutcomeCallable CreateInstancesCallable(const Model::CreateInstancesRequest& request);
 
                 /**
                  *本接口(CreateReadOnlyDBInstance)用于创建只读实例

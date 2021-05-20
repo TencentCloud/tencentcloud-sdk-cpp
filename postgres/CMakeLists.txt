@@ -25,6 +25,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeDBXlogsRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeAccountsRequest.h
   include/tencentcloud/postgres/v20170312/model/DeleteReadOnlyGroupResponse.h
+  include/tencentcloud/postgres/v20170312/model/CreateInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/SpecItemInfo.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceReadOnlyGroupResponse.h
   include/tencentcloud/postgres/v20170312/model/OpenServerlessDBExtranetAccessRequest.h
@@ -48,6 +49,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceReadOnlyGroupRequest.h
   include/tencentcloud/postgres/v20170312/model/AddDBInstanceToReadOnlyGroupResponse.h
   include/tencentcloud/postgres/v20170312/model/CreateReadOnlyDBInstanceResponse.h
+  include/tencentcloud/postgres/v20170312/model/CreateInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeOrdersResponse.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceCreateDBInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/DisIsolateDBInstancesRequest.h
@@ -77,12 +79,12 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/IsolateDBInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceUpgradeDBInstanceRequest.h
-  include/tencentcloud/postgres/v20170312/model/IsolateDBInstancesRequest.h
+  include/tencentcloud/postgres/v20170312/model/RebalanceReadOnlyGroupResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceRenewDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/ErrLogDetail.h
   include/tencentcloud/postgres/v20170312/model/DescribeServerlessDBInstancesResponse.h
-  include/tencentcloud/postgres/v20170312/model/RebalanceReadOnlyGroupResponse.h
+  include/tencentcloud/postgres/v20170312/model/IsolateDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/InitDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/DBInstance.h
   include/tencentcloud/postgres/v20170312/model/DescribeProductConfigResponse.h
@@ -136,6 +138,7 @@ set(postgres_src
   src/v20170312/model/DescribeDBXlogsRequest.cpp
   src/v20170312/model/DescribeAccountsRequest.cpp
   src/v20170312/model/DeleteReadOnlyGroupResponse.cpp
+  src/v20170312/model/CreateInstancesRequest.cpp
   src/v20170312/model/SpecItemInfo.cpp
   src/v20170312/model/ModifyDBInstanceReadOnlyGroupResponse.cpp
   src/v20170312/model/OpenServerlessDBExtranetAccessRequest.cpp
@@ -159,6 +162,7 @@ set(postgres_src
   src/v20170312/model/ModifyDBInstanceReadOnlyGroupRequest.cpp
   src/v20170312/model/AddDBInstanceToReadOnlyGroupResponse.cpp
   src/v20170312/model/CreateReadOnlyDBInstanceResponse.cpp
+  src/v20170312/model/CreateInstancesResponse.cpp
   src/v20170312/model/DescribeOrdersResponse.cpp
   src/v20170312/model/InquiryPriceCreateDBInstancesResponse.cpp
   src/v20170312/model/DisIsolateDBInstancesRequest.cpp
@@ -188,12 +192,12 @@ set(postgres_src
   src/v20170312/model/IsolateDBInstancesResponse.cpp
   src/v20170312/model/OpenDBExtranetAccessResponse.cpp
   src/v20170312/model/InquiryPriceUpgradeDBInstanceRequest.cpp
-  src/v20170312/model/IsolateDBInstancesRequest.cpp
+  src/v20170312/model/RebalanceReadOnlyGroupResponse.cpp
   src/v20170312/model/ModifyDBInstanceNameRequest.cpp
   src/v20170312/model/InquiryPriceRenewDBInstanceResponse.cpp
   src/v20170312/model/ErrLogDetail.cpp
   src/v20170312/model/DescribeServerlessDBInstancesResponse.cpp
-  src/v20170312/model/RebalanceReadOnlyGroupResponse.cpp
+  src/v20170312/model/IsolateDBInstancesRequest.cpp
   src/v20170312/model/InitDBInstancesRequest.cpp
   src/v20170312/model/DBInstance.cpp
   src/v20170312/model/DescribeProductConfigResponse.cpp

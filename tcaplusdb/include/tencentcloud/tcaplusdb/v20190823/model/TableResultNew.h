@@ -223,6 +223,28 @@ namespace TencentCloud
                      */
                     bool TaskIdsHasBeenSet() const;
 
+                    /**
+                     * 获取腾讯云申请审核单Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationId 腾讯云申请审核单Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置腾讯云申请审核单Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationId 腾讯云申请审核单Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -280,6 +302,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_taskIds;
                     bool m_taskIdsHasBeenSet;
+
+                    /**
+                     * 腾讯云申请审核单Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
 
                 };
             }

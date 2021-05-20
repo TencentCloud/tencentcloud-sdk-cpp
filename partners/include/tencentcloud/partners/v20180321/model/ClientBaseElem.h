@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 代客基础信息，for国际站查代客API
+                * 代客基础信息
                 */
                 class ClientBaseElem : public AbstractModel
                 {

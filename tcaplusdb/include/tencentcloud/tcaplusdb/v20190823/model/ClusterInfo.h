@@ -480,6 +480,46 @@ namespace TencentCloud
                      */
                     bool ProxyListHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启审核 0-不开启 1-开启
+                     * @return Censorship 是否开启审核 0-不开启 1-开启
+                     */
+                    int64_t GetCensorship() const;
+
+                    /**
+                     * 设置是否开启审核 0-不开启 1-开启
+                     * @param Censorship 是否开启审核 0-不开启 1-开启
+                     */
+                    void SetCensorship(const int64_t& _censorship);
+
+                    /**
+                     * 判断参数 Censorship 是否已赋值
+                     * @return Censorship 是否已赋值
+                     */
+                    bool CensorshipHasBeenSet() const;
+
+                    /**
+                     * 获取审批人uin列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DbaUins 审批人uin列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetDbaUins() const;
+
+                    /**
+                     * 设置审批人uin列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DbaUins 审批人uin列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDbaUins(const std::vector<std::string>& _dbaUins);
+
+                    /**
+                     * 判断参数 DbaUins 是否已赋值
+                     * @return DbaUins 是否已赋值
+                     */
+                    bool DbaUinsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -622,6 +662,19 @@ namespace TencentCloud
                      */
                     std::vector<ProxyDetailInfo> m_proxyList;
                     bool m_proxyListHasBeenSet;
+
+                    /**
+                     * 是否开启审核 0-不开启 1-开启
+                     */
+                    int64_t m_censorship;
+                    bool m_censorshipHasBeenSet;
+
+                    /**
+                     * 审批人uin列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_dbaUins;
+                    bool m_dbaUinsHasBeenSet;
 
                 };
             }

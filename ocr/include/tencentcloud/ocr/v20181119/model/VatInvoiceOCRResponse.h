@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool ItemsHasBeenSet() const;
 
                     /**
-                     * 获取图片为PDF时，返回PDF的总页数，默认为0
-                     * @return PdfPageSize 图片为PDF时，返回PDF的总页数，默认为0
+                     * 获取默认值为0。如果图片为PDF时，返回PDF的总页数。
+                     * @return PdfPageSize 默认值为0。如果图片为PDF时，返回PDF的总页数。
                      */
                     int64_t GetPdfPageSize() const;
 
@@ -107,7 +107,7 @@ namespace TencentCloud
                     bool m_itemsHasBeenSet;
 
                     /**
-                     * 图片为PDF时，返回PDF的总页数，默认为0
+                     * 默认值为0。如果图片为PDF时，返回PDF的总页数。
                      */
                     int64_t m_pdfPageSize;
                     bool m_pdfPageSizeHasBeenSet;

@@ -23,7 +23,8 @@ using namespace std;
 
 Filter::Filter() :
     m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_valuesHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,19 @@ CoreInternalOutcome Filter::Deserialize(const Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Values") && !value["Values"].IsNull())
+    {
+        if (!value["Values"].IsArray())
+            return CoreInternalOutcome(Error("response `Filter.Values` is not array type"));
+
+        const Value &tmpValue = value["Values"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_values.push_back((*itr).GetString());
+        }
+        m_valuesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -73,6 +87,19 @@ void Filter::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valuesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Values";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_values.begin(); itr != m_values.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -108,5 +135,21 @@ void Filter::SetValue(const string& _value)
 bool Filter::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+vector<string> Filter::GetValues() const
+{
+    return m_values;
+}
+
+void Filter::SetValues(const vector<string>& _values)
+{
+    m_values = _values;
+    m_valuesHasBeenSet = true;
+}
+
+bool Filter::ValuesHasBeenSet() const
+{
+    return m_valuesHasBeenSet;
 }
 
