@@ -1,0 +1,392 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/dnspod/v20210323/model/AddRecordBatch.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Dnspod::V20210323::Model;
+using namespace rapidjson;
+using namespace std;
+
+AddRecordBatch::AddRecordBatch() :
+    m_recordTypeHasBeenSet(false),
+    m_valueHasBeenSet(false),
+    m_subDomainHasBeenSet(false),
+    m_recordLineHasBeenSet(false),
+    m_recordLineIdHasBeenSet(false),
+    m_weightHasBeenSet(false),
+    m_mXHasBeenSet(false),
+    m_tTLHasBeenSet(false),
+    m_enabledHasBeenSet(false),
+    m_remarkHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome AddRecordBatch::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("RecordType") && !value["RecordType"].IsNull())
+    {
+        if (!value["RecordType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AddRecordBatch.RecordType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordType = string(value["RecordType"].GetString());
+        m_recordTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Value") && !value["Value"].IsNull())
+    {
+        if (!value["Value"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AddRecordBatch.Value` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_value = string(value["Value"].GetString());
+        m_valueHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubDomain") && !value["SubDomain"].IsNull())
+    {
+        if (!value["SubDomain"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AddRecordBatch.SubDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subDomain = string(value["SubDomain"].GetString());
+        m_subDomainHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordLine") && !value["RecordLine"].IsNull())
+    {
+        if (!value["RecordLine"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AddRecordBatch.RecordLine` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordLine = string(value["RecordLine"].GetString());
+        m_recordLineHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordLineId") && !value["RecordLineId"].IsNull())
+    {
+        if (!value["RecordLineId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AddRecordBatch.RecordLineId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordLineId = string(value["RecordLineId"].GetString());
+        m_recordLineIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `AddRecordBatch.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetUint64();
+        m_weightHasBeenSet = true;
+    }
+
+    if (value.HasMember("MX") && !value["MX"].IsNull())
+    {
+        if (!value["MX"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `AddRecordBatch.MX` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mX = value["MX"].GetUint64();
+        m_mXHasBeenSet = true;
+    }
+
+    if (value.HasMember("TTL") && !value["TTL"].IsNull())
+    {
+        if (!value["TTL"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `AddRecordBatch.TTL` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tTL = value["TTL"].GetUint64();
+        m_tTLHasBeenSet = true;
+    }
+
+    if (value.HasMember("Enabled") && !value["Enabled"].IsNull())
+    {
+        if (!value["Enabled"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `AddRecordBatch.Enabled` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enabled = value["Enabled"].GetUint64();
+        m_enabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AddRecordBatch.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void AddRecordBatch::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_recordTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RecordType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_recordType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valueHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Value";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subDomainHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_subDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordLineHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RecordLine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_recordLine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordLineIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RecordLineId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_recordLineId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
+    }
+
+    if (m_mXHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MX";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mX, allocator);
+    }
+
+    if (m_tTLHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TTL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tTL, allocator);
+    }
+
+    if (m_enabledHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Enabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enabled, allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string AddRecordBatch::GetRecordType() const
+{
+    return m_recordType;
+}
+
+void AddRecordBatch::SetRecordType(const string& _recordType)
+{
+    m_recordType = _recordType;
+    m_recordTypeHasBeenSet = true;
+}
+
+bool AddRecordBatch::RecordTypeHasBeenSet() const
+{
+    return m_recordTypeHasBeenSet;
+}
+
+string AddRecordBatch::GetValue() const
+{
+    return m_value;
+}
+
+void AddRecordBatch::SetValue(const string& _value)
+{
+    m_value = _value;
+    m_valueHasBeenSet = true;
+}
+
+bool AddRecordBatch::ValueHasBeenSet() const
+{
+    return m_valueHasBeenSet;
+}
+
+string AddRecordBatch::GetSubDomain() const
+{
+    return m_subDomain;
+}
+
+void AddRecordBatch::SetSubDomain(const string& _subDomain)
+{
+    m_subDomain = _subDomain;
+    m_subDomainHasBeenSet = true;
+}
+
+bool AddRecordBatch::SubDomainHasBeenSet() const
+{
+    return m_subDomainHasBeenSet;
+}
+
+string AddRecordBatch::GetRecordLine() const
+{
+    return m_recordLine;
+}
+
+void AddRecordBatch::SetRecordLine(const string& _recordLine)
+{
+    m_recordLine = _recordLine;
+    m_recordLineHasBeenSet = true;
+}
+
+bool AddRecordBatch::RecordLineHasBeenSet() const
+{
+    return m_recordLineHasBeenSet;
+}
+
+string AddRecordBatch::GetRecordLineId() const
+{
+    return m_recordLineId;
+}
+
+void AddRecordBatch::SetRecordLineId(const string& _recordLineId)
+{
+    m_recordLineId = _recordLineId;
+    m_recordLineIdHasBeenSet = true;
+}
+
+bool AddRecordBatch::RecordLineIdHasBeenSet() const
+{
+    return m_recordLineIdHasBeenSet;
+}
+
+uint64_t AddRecordBatch::GetWeight() const
+{
+    return m_weight;
+}
+
+void AddRecordBatch::SetWeight(const uint64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool AddRecordBatch::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
+}
+
+uint64_t AddRecordBatch::GetMX() const
+{
+    return m_mX;
+}
+
+void AddRecordBatch::SetMX(const uint64_t& _mX)
+{
+    m_mX = _mX;
+    m_mXHasBeenSet = true;
+}
+
+bool AddRecordBatch::MXHasBeenSet() const
+{
+    return m_mXHasBeenSet;
+}
+
+uint64_t AddRecordBatch::GetTTL() const
+{
+    return m_tTL;
+}
+
+void AddRecordBatch::SetTTL(const uint64_t& _tTL)
+{
+    m_tTL = _tTL;
+    m_tTLHasBeenSet = true;
+}
+
+bool AddRecordBatch::TTLHasBeenSet() const
+{
+    return m_tTLHasBeenSet;
+}
+
+uint64_t AddRecordBatch::GetEnabled() const
+{
+    return m_enabled;
+}
+
+void AddRecordBatch::SetEnabled(const uint64_t& _enabled)
+{
+    m_enabled = _enabled;
+    m_enabledHasBeenSet = true;
+}
+
+bool AddRecordBatch::EnabledHasBeenSet() const
+{
+    return m_enabledHasBeenSet;
+}
+
+string AddRecordBatch::GetRemark() const
+{
+    return m_remark;
+}
+
+void AddRecordBatch::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool AddRecordBatch::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
+}
+
