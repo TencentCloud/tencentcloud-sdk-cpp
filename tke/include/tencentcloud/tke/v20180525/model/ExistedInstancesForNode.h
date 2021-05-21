@@ -102,6 +102,24 @@ namespace TencentCloud
                      */
                     bool InstanceAdvancedSettingsOverrideHasBeenSet() const;
 
+                    /**
+                     * 获取自定义模式集群，可指定每个节点的pod数量
+                     * @return DesiredPodNumbers 自定义模式集群，可指定每个节点的pod数量
+                     */
+                    std::vector<int64_t> GetDesiredPodNumbers() const;
+
+                    /**
+                     * 设置自定义模式集群，可指定每个节点的pod数量
+                     * @param DesiredPodNumbers 自定义模式集群，可指定每个节点的pod数量
+                     */
+                    void SetDesiredPodNumbers(const std::vector<int64_t>& _desiredPodNumbers);
+
+                    /**
+                     * 判断参数 DesiredPodNumbers 是否已赋值
+                     * @return DesiredPodNumbers 是否已赋值
+                     */
+                    bool DesiredPodNumbersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -121,6 +139,12 @@ namespace TencentCloud
                      */
                     InstanceAdvancedSettings m_instanceAdvancedSettingsOverride;
                     bool m_instanceAdvancedSettingsOverrideHasBeenSet;
+
+                    /**
+                     * 自定义模式集群，可指定每个节点的pod数量
+                     */
+                    std::vector<int64_t> m_desiredPodNumbers;
+                    bool m_desiredPodNumbersHasBeenSet;
 
                 };
             }

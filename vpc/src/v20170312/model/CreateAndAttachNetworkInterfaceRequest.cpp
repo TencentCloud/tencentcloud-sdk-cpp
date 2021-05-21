@@ -32,7 +32,8 @@ CreateAndAttachNetworkInterfaceRequest::CreateAndAttachNetworkInterfaceRequest()
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_networkInterfaceDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_attachTypeHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,14 @@ string CreateAndAttachNetworkInterfaceRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_attachTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttachType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_attachType, allocator);
     }
 
 
@@ -284,6 +293,22 @@ void CreateAndAttachNetworkInterfaceRequest::SetTags(const vector<Tag>& _tags)
 bool CreateAndAttachNetworkInterfaceRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+uint64_t CreateAndAttachNetworkInterfaceRequest::GetAttachType() const
+{
+    return m_attachType;
+}
+
+void CreateAndAttachNetworkInterfaceRequest::SetAttachType(const uint64_t& _attachType)
+{
+    m_attachType = _attachType;
+    m_attachTypeHasBeenSet = true;
+}
+
+bool CreateAndAttachNetworkInterfaceRequest::AttachTypeHasBeenSet() const
+{
+    return m_attachTypeHasBeenSet;
 }
 
 

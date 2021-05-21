@@ -24,9 +24,10 @@ using namespace rapidjson;
 using namespace std;
 
 AttachDisksRequest::AttachDisksRequest() :
-    m_diskIdsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_deleteWithInstanceHasBeenSet(false)
+    m_diskIdsHasBeenSet(false),
+    m_deleteWithInstanceHasBeenSet(false),
+    m_attachModeHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,14 @@ string AttachDisksRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_diskIdsHasBeenSet)
     {
@@ -50,20 +59,20 @@ string AttachDisksRequest::ToJsonString() const
         }
     }
 
-    if (m_instanceIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_deleteWithInstanceHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "DeleteWithInstance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteWithInstance, allocator);
+    }
+
+    if (m_attachModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttachMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_attachMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -73,22 +82,6 @@ string AttachDisksRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<string> AttachDisksRequest::GetDiskIds() const
-{
-    return m_diskIds;
-}
-
-void AttachDisksRequest::SetDiskIds(const vector<string>& _diskIds)
-{
-    m_diskIds = _diskIds;
-    m_diskIdsHasBeenSet = true;
-}
-
-bool AttachDisksRequest::DiskIdsHasBeenSet() const
-{
-    return m_diskIdsHasBeenSet;
-}
 
 string AttachDisksRequest::GetInstanceId() const
 {
@@ -106,6 +99,22 @@ bool AttachDisksRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
+vector<string> AttachDisksRequest::GetDiskIds() const
+{
+    return m_diskIds;
+}
+
+void AttachDisksRequest::SetDiskIds(const vector<string>& _diskIds)
+{
+    m_diskIds = _diskIds;
+    m_diskIdsHasBeenSet = true;
+}
+
+bool AttachDisksRequest::DiskIdsHasBeenSet() const
+{
+    return m_diskIdsHasBeenSet;
+}
+
 bool AttachDisksRequest::GetDeleteWithInstance() const
 {
     return m_deleteWithInstance;
@@ -120,6 +129,22 @@ void AttachDisksRequest::SetDeleteWithInstance(const bool& _deleteWithInstance)
 bool AttachDisksRequest::DeleteWithInstanceHasBeenSet() const
 {
     return m_deleteWithInstanceHasBeenSet;
+}
+
+string AttachDisksRequest::GetAttachMode() const
+{
+    return m_attachMode;
+}
+
+void AttachDisksRequest::SetAttachMode(const string& _attachMode)
+{
+    m_attachMode = _attachMode;
+    m_attachModeHasBeenSet = true;
+}
+
+bool AttachDisksRequest::AttachModeHasBeenSet() const
+{
+    return m_attachModeHasBeenSet;
 }
 
 

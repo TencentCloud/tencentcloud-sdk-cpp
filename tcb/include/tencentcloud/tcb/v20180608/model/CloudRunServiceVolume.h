@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseRunNfsVolumeSource.h>
+#include <tencentcloud/tcb/v20180608/model/CloudBaseRunEmptyDirVolumeSource.h>
 
 
 namespace TencentCloud
@@ -114,17 +115,17 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取是否开启临时目录
+                     * 获取是否开启临时目录逐步废弃，请使用 EmptyDir
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableEmptyDirVolume 是否开启临时目录
+                     * @return EnableEmptyDirVolume 是否开启临时目录逐步废弃，请使用 EmptyDir
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetEnableEmptyDirVolume() const;
 
                     /**
-                     * 设置是否开启临时目录
+                     * 设置是否开启临时目录逐步废弃，请使用 EmptyDir
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableEmptyDirVolume 是否开启临时目录
+                     * @param EnableEmptyDirVolume 是否开启临时目录逐步废弃，请使用 EmptyDir
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEnableEmptyDirVolume(const bool& _enableEmptyDirVolume);
@@ -134,6 +135,28 @@ namespace TencentCloud
                      * @return EnableEmptyDirVolume 是否已赋值
                      */
                     bool EnableEmptyDirVolumeHasBeenSet() const;
+
+                    /**
+                     * 获取emptydir数据卷详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EmptyDir emptydir数据卷详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CloudBaseRunEmptyDirVolumeSource GetEmptyDir() const;
+
+                    /**
+                     * 设置emptydir数据卷详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EmptyDir emptydir数据卷详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEmptyDir(const CloudBaseRunEmptyDirVolumeSource& _emptyDir);
+
+                    /**
+                     * 判断参数 EmptyDir 是否已赋值
+                     * @return EmptyDir 是否已赋值
+                     */
+                    bool EmptyDirHasBeenSet() const;
 
                 private:
 
@@ -159,11 +182,18 @@ namespace TencentCloud
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 是否开启临时目录
+                     * 是否开启临时目录逐步废弃，请使用 EmptyDir
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableEmptyDirVolume;
                     bool m_enableEmptyDirVolumeHasBeenSet;
+
+                    /**
+                     * emptydir数据卷详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CloudBaseRunEmptyDirVolumeSource m_emptyDir;
+                    bool m_emptyDirHasBeenSet;
 
                 };
             }

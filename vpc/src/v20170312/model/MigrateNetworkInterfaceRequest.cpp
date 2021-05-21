@@ -26,7 +26,8 @@ using namespace std;
 MigrateNetworkInterfaceRequest::MigrateNetworkInterfaceRequest() :
     m_networkInterfaceIdHasBeenSet(false),
     m_sourceInstanceIdHasBeenSet(false),
-    m_destinationInstanceIdHasBeenSet(false)
+    m_destinationInstanceIdHasBeenSet(false),
+    m_attachTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string MigrateNetworkInterfaceRequest::ToJsonString() const
         string key = "DestinationInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_destinationInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attachTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttachType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_attachType, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void MigrateNetworkInterfaceRequest::SetDestinationInstanceId(const string& _des
 bool MigrateNetworkInterfaceRequest::DestinationInstanceIdHasBeenSet() const
 {
     return m_destinationInstanceIdHasBeenSet;
+}
+
+uint64_t MigrateNetworkInterfaceRequest::GetAttachType() const
+{
+    return m_attachType;
+}
+
+void MigrateNetworkInterfaceRequest::SetAttachType(const uint64_t& _attachType)
+{
+    m_attachType = _attachType;
+    m_attachTypeHasBeenSet = true;
+}
+
+bool MigrateNetworkInterfaceRequest::AttachTypeHasBeenSet() const
+{
+    return m_attachTypeHasBeenSet;
 }
 
 

@@ -26,7 +26,9 @@ using namespace std;
 
 DescribeNetworkInterfaceLimitResponse::DescribeNetworkInterfaceLimitResponse() :
     m_eniQuantityHasBeenSet(false),
-    m_eniPrivateIpAddressQuantityHasBeenSet(false)
+    m_eniPrivateIpAddressQuantityHasBeenSet(false),
+    m_extendEniQuantityHasBeenSet(false),
+    m_extendEniPrivateIpAddressQuantityHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome DescribeNetworkInterfaceLimitResponse::Deserialize(const str
         m_eniPrivateIpAddressQuantityHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExtendEniQuantity") && !rsp["ExtendEniQuantity"].IsNull())
+    {
+        if (!rsp["ExtendEniQuantity"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ExtendEniQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_extendEniQuantity = rsp["ExtendEniQuantity"].GetInt64();
+        m_extendEniQuantityHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExtendEniPrivateIpAddressQuantity") && !rsp["ExtendEniPrivateIpAddressQuantity"].IsNull())
+    {
+        if (!rsp["ExtendEniPrivateIpAddressQuantity"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ExtendEniPrivateIpAddressQuantity` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_extendEniPrivateIpAddressQuantity = rsp["ExtendEniPrivateIpAddressQuantity"].GetInt64();
+        m_extendEniPrivateIpAddressQuantityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,26 @@ int64_t DescribeNetworkInterfaceLimitResponse::GetEniPrivateIpAddressQuantity() 
 bool DescribeNetworkInterfaceLimitResponse::EniPrivateIpAddressQuantityHasBeenSet() const
 {
     return m_eniPrivateIpAddressQuantityHasBeenSet;
+}
+
+int64_t DescribeNetworkInterfaceLimitResponse::GetExtendEniQuantity() const
+{
+    return m_extendEniQuantity;
+}
+
+bool DescribeNetworkInterfaceLimitResponse::ExtendEniQuantityHasBeenSet() const
+{
+    return m_extendEniQuantityHasBeenSet;
+}
+
+int64_t DescribeNetworkInterfaceLimitResponse::GetExtendEniPrivateIpAddressQuantity() const
+{
+    return m_extendEniPrivateIpAddressQuantity;
+}
+
+bool DescribeNetworkInterfaceLimitResponse::ExtendEniPrivateIpAddressQuantityHasBeenSet() const
+{
+    return m_extendEniPrivateIpAddressQuantityHasBeenSet;
 }
 
 

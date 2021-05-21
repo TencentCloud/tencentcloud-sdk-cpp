@@ -206,6 +206,24 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取绑定类型：0 标准型 1 扩展型。
+                     * @return AttachType 绑定类型：0 标准型 1 扩展型。
+                     */
+                    uint64_t GetAttachType() const;
+
+                    /**
+                     * 设置绑定类型：0 标准型 1 扩展型。
+                     * @param AttachType 绑定类型：0 标准型 1 扩展型。
+                     */
+                    void SetAttachType(const uint64_t& _attachType);
+
+                    /**
+                     * 判断参数 AttachType 是否已赋值
+                     * @return AttachType 是否已赋值
+                     */
+                    bool AttachTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +279,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 绑定类型：0 标准型 1 扩展型。
+                     */
+                    uint64_t m_attachType;
+                    bool m_attachTypeHasBeenSet;
 
                 };
             }

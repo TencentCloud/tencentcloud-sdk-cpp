@@ -39,7 +39,8 @@ NetworkInterface::NetworkInterface() :
     m_tagSetHasBeenSet(false),
     m_eniTypeHasBeenSet(false),
     m_businessHasBeenSet(false),
-    m_cdcIdHasBeenSet(false)
+    m_cdcIdHasBeenSet(false),
+    m_attachTypeHasBeenSet(false)
 {
 }
 
@@ -268,6 +269,16 @@ CoreInternalOutcome NetworkInterface::Deserialize(const Value &value)
         m_cdcIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AttachType") && !value["AttachType"].IsNull())
+    {
+        if (!value["AttachType"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `NetworkInterface.AttachType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_attachType = value["AttachType"].GetUint64();
+        m_attachTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -444,6 +455,14 @@ void NetworkInterface::ToJsonObject(Value &value, Document::AllocatorType& alloc
         string key = "CdcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_cdcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attachTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttachType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_attachType, allocator);
     }
 
 }
@@ -735,5 +754,21 @@ void NetworkInterface::SetCdcId(const string& _cdcId)
 bool NetworkInterface::CdcIdHasBeenSet() const
 {
     return m_cdcIdHasBeenSet;
+}
+
+uint64_t NetworkInterface::GetAttachType() const
+{
+    return m_attachType;
+}
+
+void NetworkInterface::SetAttachType(const uint64_t& _attachType)
+{
+    m_attachType = _attachType;
+    m_attachTypeHasBeenSet = true;
+}
+
+bool NetworkInterface::AttachTypeHasBeenSet() const
+{
+    return m_attachTypeHasBeenSet;
 }
 

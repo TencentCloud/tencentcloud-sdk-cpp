@@ -29,6 +29,7 @@
 #include <tencentcloud/tcb/v20180608/model/FunctionInfo.h>
 #include <tencentcloud/tcb/v20180608/model/LogServiceInfo.h>
 #include <tencentcloud/tcb/v20180608/model/StaticStorageInfo.h>
+#include <tencentcloud/tcb/v20180608/model/Tag.h>
 
 
 namespace TencentCloud
@@ -435,6 +436,28 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取环境标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 环境标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置环境标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 环境标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +582,13 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 环境标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

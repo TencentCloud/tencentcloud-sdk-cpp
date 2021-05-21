@@ -24,7 +24,8 @@ using namespace std;
 ExistedInstancesForNode::ExistedInstancesForNode() :
     m_nodeRoleHasBeenSet(false),
     m_existedInstancesParaHasBeenSet(false),
-    m_instanceAdvancedSettingsOverrideHasBeenSet(false)
+    m_instanceAdvancedSettingsOverrideHasBeenSet(false),
+    m_desiredPodNumbersHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,19 @@ CoreInternalOutcome ExistedInstancesForNode::Deserialize(const Value &value)
         m_instanceAdvancedSettingsOverrideHasBeenSet = true;
     }
 
+    if (value.HasMember("DesiredPodNumbers") && !value["DesiredPodNumbers"].IsNull())
+    {
+        if (!value["DesiredPodNumbers"].IsArray())
+            return CoreInternalOutcome(Error("response `ExistedInstancesForNode.DesiredPodNumbers` is not array type"));
+
+        const Value &tmpValue = value["DesiredPodNumbers"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_desiredPodNumbers.push_back((*itr).GetInt64());
+        }
+        m_desiredPodNumbersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +122,19 @@ void ExistedInstancesForNode::ToJsonObject(Value &value, Document::AllocatorType
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_instanceAdvancedSettingsOverride.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_desiredPodNumbersHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DesiredPodNumbers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_desiredPodNumbers.begin(); itr != m_desiredPodNumbers.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -159,5 +186,21 @@ void ExistedInstancesForNode::SetInstanceAdvancedSettingsOverride(const Instance
 bool ExistedInstancesForNode::InstanceAdvancedSettingsOverrideHasBeenSet() const
 {
     return m_instanceAdvancedSettingsOverrideHasBeenSet;
+}
+
+vector<int64_t> ExistedInstancesForNode::GetDesiredPodNumbers() const
+{
+    return m_desiredPodNumbers;
+}
+
+void ExistedInstancesForNode::SetDesiredPodNumbers(const vector<int64_t>& _desiredPodNumbers)
+{
+    m_desiredPodNumbers = _desiredPodNumbers;
+    m_desiredPodNumbersHasBeenSet = true;
+}
+
+bool ExistedInstancesForNode::DesiredPodNumbersHasBeenSet() const
+{
+    return m_desiredPodNumbersHasBeenSet;
 }
 

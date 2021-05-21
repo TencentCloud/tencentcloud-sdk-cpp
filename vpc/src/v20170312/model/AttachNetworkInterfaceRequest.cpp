@@ -25,7 +25,8 @@ using namespace std;
 
 AttachNetworkInterfaceRequest::AttachNetworkInterfaceRequest() :
     m_networkInterfaceIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_attachTypeHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string AttachNetworkInterfaceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attachTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AttachType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_attachType, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void AttachNetworkInterfaceRequest::SetInstanceId(const string& _instanceId)
 bool AttachNetworkInterfaceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+uint64_t AttachNetworkInterfaceRequest::GetAttachType() const
+{
+    return m_attachType;
+}
+
+void AttachNetworkInterfaceRequest::SetAttachType(const uint64_t& _attachType)
+{
+    m_attachType = _attachType;
+    m_attachTypeHasBeenSet = true;
+}
+
+bool AttachNetworkInterfaceRequest::AttachTypeHasBeenSet() const
+{
+    return m_attachTypeHasBeenSet;
 }
 
 

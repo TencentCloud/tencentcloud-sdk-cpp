@@ -185,6 +185,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeProvinceIspPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribePullStreamConfigsRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribePullStreamConfigsResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeRecordTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeScreenShotSheetNumListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeScreenShotSheetNumListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamDayPlayInfoListRequest.h>
@@ -500,6 +502,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePullStreamConfigsResponse> DescribePullStreamConfigsOutcome;
                 typedef std::future<DescribePullStreamConfigsOutcome> DescribePullStreamConfigsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribePullStreamConfigsRequest&, DescribePullStreamConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePullStreamConfigsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRecordTaskResponse> DescribeRecordTaskOutcome;
+                typedef std::future<DescribeRecordTaskOutcome> DescribeRecordTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeRecordTaskRequest&, DescribeRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordTaskAsyncHandler;
                 typedef Outcome<Error, Model::DescribeScreenShotSheetNumListResponse> DescribeScreenShotSheetNumListOutcome;
                 typedef std::future<DescribeScreenShotSheetNumListOutcome> DescribeScreenShotSheetNumListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeScreenShotSheetNumListRequest&, DescribeScreenShotSheetNumListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScreenShotSheetNumListAsyncHandler;
@@ -1373,6 +1378,19 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribePullStreamConfigsOutcome DescribePullStreamConfigs(const Model::DescribePullStreamConfigsRequest &request);
                 void DescribePullStreamConfigsAsync(const Model::DescribePullStreamConfigsRequest& request, const DescribePullStreamConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePullStreamConfigsOutcomeCallable DescribePullStreamConfigsCallable(const Model::DescribePullStreamConfigsRequest& request);
+
+                /**
+                 *查询指定时间段范围内启动和结束的录制任务列表。
+- 使用前提
+1. 仅用于查询由 CreateRecordTask 接口创建的录制任务。
+2. 不能查询被 DeleteRecordTask 接口删除以及已过期（平台侧保留3个月）的录制任务。
+
+                 * @param req DescribeRecordTaskRequest
+                 * @return DescribeRecordTaskOutcome
+                 */
+                DescribeRecordTaskOutcome DescribeRecordTask(const Model::DescribeRecordTaskRequest &request);
+                void DescribeRecordTaskAsync(const Model::DescribeRecordTaskRequest& request, const DescribeRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordTaskOutcomeCallable DescribeRecordTaskCallable(const Model::DescribeRecordTaskRequest& request);
 
                 /**
                  *接口用来查询直播增值业务--截图的张数

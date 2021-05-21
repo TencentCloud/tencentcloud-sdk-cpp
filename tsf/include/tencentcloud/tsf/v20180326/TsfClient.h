@@ -235,6 +235,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeTaskRecordsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeTaskRecordsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUnitApiUseDetailRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUnitApiUseDetailResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUnitNamespacesRequest.h>
@@ -677,6 +679,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTaskLastStatusResponse> DescribeTaskLastStatusOutcome;
                 typedef std::future<DescribeTaskLastStatusOutcome> DescribeTaskLastStatusOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeTaskLastStatusRequest&, DescribeTaskLastStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskLastStatusAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTaskRecordsResponse> DescribeTaskRecordsOutcome;
+                typedef std::future<DescribeTaskRecordsOutcome> DescribeTaskRecordsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeTaskRecordsRequest&, DescribeTaskRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskRecordsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUnitApiUseDetailResponse> DescribeUnitApiUseDetailOutcome;
                 typedef std::future<DescribeUnitApiUseDetailOutcome> DescribeUnitApiUseDetailOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeUnitApiUseDetailRequest&, DescribeUnitApiUseDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnitApiUseDetailAsyncHandler;
@@ -1800,6 +1805,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeTaskLastStatusOutcome DescribeTaskLastStatus(const Model::DescribeTaskLastStatusRequest &request);
                 void DescribeTaskLastStatusAsync(const Model::DescribeTaskLastStatusRequest& request, const DescribeTaskLastStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTaskLastStatusOutcomeCallable DescribeTaskLastStatusCallable(const Model::DescribeTaskLastStatusRequest& request);
+
+                /**
+                 *翻页查询任务列表
+                 * @param req DescribeTaskRecordsRequest
+                 * @return DescribeTaskRecordsOutcome
+                 */
+                DescribeTaskRecordsOutcome DescribeTaskRecords(const Model::DescribeTaskRecordsRequest &request);
+                void DescribeTaskRecordsAsync(const Model::DescribeTaskRecordsRequest& request, const DescribeTaskRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskRecordsOutcomeCallable DescribeTaskRecordsCallable(const Model::DescribeTaskRecordsRequest& request);
 
                 /**
                  *查询网关API监控明细数据（仅单元化网关），非单元化网关使用DescribeApiUseDetail

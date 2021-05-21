@@ -39,7 +39,8 @@ Address::Address() :
     m_internetServiceProviderHasBeenSet(false),
     m_localBgpHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_internetChargeTypeHasBeenSet(false)
+    m_internetChargeTypeHasBeenSet(false),
+    m_tagSetHasBeenSet(false)
 {
 }
 
@@ -235,6 +236,26 @@ CoreInternalOutcome Address::Deserialize(const Value &value)
         m_internetChargeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Error("response `Address.TagSet` is not array type"));
+
+        const Value &tmpValue = value["TagSet"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -385,6 +406,21 @@ void Address::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
         string key = "InternetChargeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_internetChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -676,5 +712,21 @@ void Address::SetInternetChargeType(const string& _internetChargeType)
 bool Address::InternetChargeTypeHasBeenSet() const
 {
     return m_internetChargeTypeHasBeenSet;
+}
+
+vector<Tag> Address::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void Address::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool Address::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
 }
 

@@ -32,7 +32,8 @@ AddExistedInstancesRequest::AddExistedInstancesRequest() :
     m_hostNameHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_nodePoolHasBeenSet(false),
-    m_skipValidateOptionsHasBeenSet(false)
+    m_skipValidateOptionsHasBeenSet(false),
+    m_instanceAdvancedSettingsOverridesHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,21 @@ string AddExistedInstancesRequest::ToJsonString() const
         for (auto itr = m_skipValidateOptions.begin(); itr != m_skipValidateOptions.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_instanceAdvancedSettingsOverridesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceAdvancedSettingsOverrides";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceAdvancedSettingsOverrides.begin(); itr != m_instanceAdvancedSettingsOverrides.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -284,6 +300,22 @@ void AddExistedInstancesRequest::SetSkipValidateOptions(const vector<string>& _s
 bool AddExistedInstancesRequest::SkipValidateOptionsHasBeenSet() const
 {
     return m_skipValidateOptionsHasBeenSet;
+}
+
+vector<InstanceAdvancedSettings> AddExistedInstancesRequest::GetInstanceAdvancedSettingsOverrides() const
+{
+    return m_instanceAdvancedSettingsOverrides;
+}
+
+void AddExistedInstancesRequest::SetInstanceAdvancedSettingsOverrides(const vector<InstanceAdvancedSettings>& _instanceAdvancedSettingsOverrides)
+{
+    m_instanceAdvancedSettingsOverrides = _instanceAdvancedSettingsOverrides;
+    m_instanceAdvancedSettingsOverridesHasBeenSet = true;
+}
+
+bool AddExistedInstancesRequest::InstanceAdvancedSettingsOverridesHasBeenSet() const
+{
+    return m_instanceAdvancedSettingsOverridesHasBeenSet;
 }
 
 

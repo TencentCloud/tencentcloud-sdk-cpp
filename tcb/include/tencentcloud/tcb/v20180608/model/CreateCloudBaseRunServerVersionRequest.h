@@ -29,6 +29,7 @@
 #include <tencentcloud/tcb/v20180608/model/CloudBaseRunSideSpec.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseSecurityContext.h>
 #include <tencentcloud/tcb/v20180608/model/CloudRunServiceVolume.h>
+#include <tencentcloud/tcb/v20180608/model/CloudBaseRunServiceVolumeMount.h>
 
 
 namespace TencentCloud
@@ -716,6 +717,24 @@ namespace TencentCloud
                      */
                     bool IsCreateJnsGwHasBeenSet() const;
 
+                    /**
+                     * 获取数据卷挂载参数
+                     * @return ServiceVolumeMounts 数据卷挂载参数
+                     */
+                    std::vector<CloudBaseRunServiceVolumeMount> GetServiceVolumeMounts() const;
+
+                    /**
+                     * 设置数据卷挂载参数
+                     * @param ServiceVolumeMounts 数据卷挂载参数
+                     */
+                    void SetServiceVolumeMounts(const std::vector<CloudBaseRunServiceVolumeMount>& _serviceVolumeMounts);
+
+                    /**
+                     * 判断参数 ServiceVolumeMounts 是否已赋值
+                     * @return ServiceVolumeMounts 是否已赋值
+                     */
+                    bool ServiceVolumeMountsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -939,6 +958,12 @@ namespace TencentCloud
                      */
                     int64_t m_isCreateJnsGw;
                     bool m_isCreateJnsGwHasBeenSet;
+
+                    /**
+                     * 数据卷挂载参数
+                     */
+                    std::vector<CloudBaseRunServiceVolumeMount> m_serviceVolumeMounts;
+                    bool m_serviceVolumeMountsHasBeenSet;
 
                 };
             }

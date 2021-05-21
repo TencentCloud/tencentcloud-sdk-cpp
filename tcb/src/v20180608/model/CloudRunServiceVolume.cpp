@@ -25,7 +25,8 @@ CloudRunServiceVolume::CloudRunServiceVolume() :
     m_nameHasBeenSet(false),
     m_nFSHasBeenSet(false),
     m_secretNameHasBeenSet(false),
-    m_enableEmptyDirVolumeHasBeenSet(false)
+    m_enableEmptyDirVolumeHasBeenSet(false),
+    m_emptyDirHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,23 @@ CoreInternalOutcome CloudRunServiceVolume::Deserialize(const Value &value)
         m_enableEmptyDirVolumeHasBeenSet = true;
     }
 
+    if (value.HasMember("EmptyDir") && !value["EmptyDir"].IsNull())
+    {
+        if (!value["EmptyDir"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `CloudRunServiceVolume.EmptyDir` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_emptyDir.Deserialize(value["EmptyDir"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_emptyDirHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -119,6 +137,15 @@ void CloudRunServiceVolume::ToJsonObject(Value &value, Document::AllocatorType& 
         string key = "EnableEmptyDirVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableEmptyDirVolume, allocator);
+    }
+
+    if (m_emptyDirHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EmptyDir";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_emptyDir.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -186,5 +213,21 @@ void CloudRunServiceVolume::SetEnableEmptyDirVolume(const bool& _enableEmptyDirV
 bool CloudRunServiceVolume::EnableEmptyDirVolumeHasBeenSet() const
 {
     return m_enableEmptyDirVolumeHasBeenSet;
+}
+
+CloudBaseRunEmptyDirVolumeSource CloudRunServiceVolume::GetEmptyDir() const
+{
+    return m_emptyDir;
+}
+
+void CloudRunServiceVolume::SetEmptyDir(const CloudBaseRunEmptyDirVolumeSource& _emptyDir)
+{
+    m_emptyDir = _emptyDir;
+    m_emptyDirHasBeenSet = true;
+}
+
+bool CloudRunServiceVolume::EmptyDirHasBeenSet() const
+{
+    return m_emptyDirHasBeenSet;
 }
 

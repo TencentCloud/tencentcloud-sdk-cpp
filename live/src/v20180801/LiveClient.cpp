@@ -3523,6 +3523,49 @@ LiveClient::DescribePullStreamConfigsOutcomeCallable LiveClient::DescribePullStr
     return task->get_future();
 }
 
+LiveClient::DescribeRecordTaskOutcome LiveClient::DescribeRecordTask(const DescribeRecordTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordTaskResponse rsp = DescribeRecordTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordTaskOutcome(rsp);
+        else
+            return DescribeRecordTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeRecordTaskAsync(const DescribeRecordTaskRequest& request, const DescribeRecordTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeRecordTaskOutcomeCallable LiveClient::DescribeRecordTaskCallable(const DescribeRecordTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeScreenShotSheetNumListOutcome LiveClient::DescribeScreenShotSheetNumList(const DescribeScreenShotSheetNumListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScreenShotSheetNumList");

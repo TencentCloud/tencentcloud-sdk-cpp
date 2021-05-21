@@ -53,6 +53,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/ModifyUploadInfoResponse.h
   include/tencentcloud/tsf/v20180326/model/TsfPageConfig.h
   include/tencentcloud/tsf/v20180326/model/CreateApiRateLimitRuleRequest.h
+  include/tencentcloud/tsf/v20180326/model/TaskRecordPage.h
   include/tencentcloud/tsf/v20180326/model/DeleteServerlessGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/ChangeApiUsableStatusRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeApiRateLimitRulesRequest.h
@@ -256,6 +257,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/ExecuteTaskFlowRequest.h
   include/tencentcloud/tsf/v20180326/model/TerminateTaskFlowBatchRequest.h
   include/tencentcloud/tsf/v20180326/model/CreateUnitRuleResponse.h
+  include/tencentcloud/tsf/v20180326/model/DescribeTaskRecordsResponse.h
   include/tencentcloud/tsf/v20180326/model/VmGroup.h
   include/tencentcloud/tsf/v20180326/model/DescribeApiUseDetailResponse.h
   include/tencentcloud/tsf/v20180326/model/ServiceSetting.h
@@ -298,6 +300,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeConfigResponse.h
   include/tencentcloud/tsf/v20180326/model/SimpleGroup.h
   include/tencentcloud/tsf/v20180326/model/DescribeContainerEventsResponse.h
+  include/tencentcloud/tsf/v20180326/model/DescribeTaskRecordsRequest.h
   include/tencentcloud/tsf/v20180326/model/ModifyContainerGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/DeleteApplicationRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeUnitNamespacesRequest.h
@@ -499,6 +502,7 @@ set(tsf_src
   src/v20180326/model/ModifyUploadInfoResponse.cpp
   src/v20180326/model/TsfPageConfig.cpp
   src/v20180326/model/CreateApiRateLimitRuleRequest.cpp
+  src/v20180326/model/TaskRecordPage.cpp
   src/v20180326/model/DeleteServerlessGroupRequest.cpp
   src/v20180326/model/ChangeApiUsableStatusRequest.cpp
   src/v20180326/model/DescribeApiRateLimitRulesRequest.cpp
@@ -702,6 +706,7 @@ set(tsf_src
   src/v20180326/model/ExecuteTaskFlowRequest.cpp
   src/v20180326/model/TerminateTaskFlowBatchRequest.cpp
   src/v20180326/model/CreateUnitRuleResponse.cpp
+  src/v20180326/model/DescribeTaskRecordsResponse.cpp
   src/v20180326/model/VmGroup.cpp
   src/v20180326/model/DescribeApiUseDetailResponse.cpp
   src/v20180326/model/ServiceSetting.cpp
@@ -744,6 +749,7 @@ set(tsf_src
   src/v20180326/model/DescribeConfigResponse.cpp
   src/v20180326/model/SimpleGroup.cpp
   src/v20180326/model/DescribeContainerEventsResponse.cpp
+  src/v20180326/model/DescribeTaskRecordsRequest.cpp
   src/v20180326/model/ModifyContainerGroupResponse.cpp
   src/v20180326/model/DeleteApplicationRequest.cpp
   src/v20180326/model/DescribeUnitNamespacesRequest.cpp

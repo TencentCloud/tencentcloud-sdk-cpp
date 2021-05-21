@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool DestinationInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取网卡绑定类型：0 标准型 1 扩展型。
+                     * @return AttachType 网卡绑定类型：0 标准型 1 扩展型。
+                     */
+                    uint64_t GetAttachType() const;
+
+                    /**
+                     * 设置网卡绑定类型：0 标准型 1 扩展型。
+                     * @param AttachType 网卡绑定类型：0 标准型 1 扩展型。
+                     */
+                    void SetAttachType(const uint64_t& _attachType);
+
+                    /**
+                     * 判断参数 AttachType 是否已赋值
+                     * @return AttachType 是否已赋值
+                     */
+                    bool AttachTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_destinationInstanceId;
                     bool m_destinationInstanceIdHasBeenSet;
+
+                    /**
+                     * 网卡绑定类型：0 标准型 1 扩展型。
+                     */
+                    uint64_t m_attachType;
+                    bool m_attachTypeHasBeenSet;
 
                 };
             }
