@@ -3437,6 +3437,49 @@ CdbClient::ModifyAccountDescriptionOutcomeCallable CdbClient::ModifyAccountDescr
     return task->get_future();
 }
 
+CdbClient::ModifyAccountMaxUserConnectionsOutcome CdbClient::ModifyAccountMaxUserConnections(const ModifyAccountMaxUserConnectionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccountMaxUserConnections");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccountMaxUserConnectionsResponse rsp = ModifyAccountMaxUserConnectionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccountMaxUserConnectionsOutcome(rsp);
+        else
+            return ModifyAccountMaxUserConnectionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccountMaxUserConnectionsOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyAccountMaxUserConnectionsAsync(const ModifyAccountMaxUserConnectionsRequest& request, const ModifyAccountMaxUserConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccountMaxUserConnections(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyAccountMaxUserConnectionsOutcomeCallable CdbClient::ModifyAccountMaxUserConnectionsCallable(const ModifyAccountMaxUserConnectionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccountMaxUserConnectionsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccountMaxUserConnections(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::ModifyAccountPasswordOutcome CdbClient::ModifyAccountPassword(const ModifyAccountPasswordRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAccountPassword");

@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool ModifyPasswordTimeHasBeenSet() const;
 
                     /**
-                     * 获取账号的创建时间
-                     * @return CreateTime 账号的创建时间
+                     * 获取该值已废弃
+                     * @return CreateTime 该值已废弃
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置账号的创建时间
-                     * @param CreateTime 账号的创建时间
+                     * 设置该值已废弃
+                     * @param CreateTime 该值已废弃
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -153,6 +153,24 @@ namespace TencentCloud
                      * @return CreateTime 是否已赋值
                      */
                     bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取用户最大可用实例连接数
+                     * @return MaxUserConnections 用户最大可用实例连接数
+                     */
+                    int64_t GetMaxUserConnections() const;
+
+                    /**
+                     * 设置用户最大可用实例连接数
+                     * @param MaxUserConnections 用户最大可用实例连接数
+                     */
+                    void SetMaxUserConnections(const int64_t& _maxUserConnections);
+
+                    /**
+                     * 判断参数 MaxUserConnections 是否已赋值
+                     * @return MaxUserConnections 是否已赋值
+                     */
+                    bool MaxUserConnectionsHasBeenSet() const;
 
                 private:
 
@@ -187,10 +205,16 @@ namespace TencentCloud
                     bool m_modifyPasswordTimeHasBeenSet;
 
                     /**
-                     * 账号的创建时间
+                     * 该值已废弃
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 用户最大可用实例连接数
+                     */
+                    int64_t m_maxUserConnections;
+                    bool m_maxUserConnectionsHasBeenSet;
 
                 };
             }

@@ -42,6 +42,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeSlowLogsRequest.h
   include/tencentcloud/cdb/v20170320/model/Inbound.h
   include/tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsRequest.h
+  include/tencentcloud/cdb/v20170320/model/TagInfoItem.h
   include/tencentcloud/cdb/v20170320/model/CreateAccountsResponse.h
   include/tencentcloud/cdb/v20170320/model/RegionSellConf.h
   include/tencentcloud/cdb/v20170320/model/InstanceRollbackRangeTime.h
@@ -86,6 +87,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/CreateParamTemplateResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateDBInstanceHourResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeCloneListResponse.h
+  include/tencentcloud/cdb/v20170320/model/ModifyAccountMaxUserConnectionsRequest.h
   include/tencentcloud/cdb/v20170320/model/ReleaseIsolatedDBInstancesRequest.h
   include/tencentcloud/cdb/v20170320/model/BinlogInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeAccountsRequest.h
@@ -138,6 +140,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesResponse.h
   include/tencentcloud/cdb/v20170320/model/VerifyRootAccountRequest.h
   include/tencentcloud/cdb/v20170320/model/SwitchForUpgradeResponse.h
+  include/tencentcloud/cdb/v20170320/model/ModifyAccountMaxUserConnectionsResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupSummariesResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsRequest.h
   include/tencentcloud/cdb/v20170320/model/SwitchDBInstanceMasterSlaveRequest.h
@@ -344,6 +347,7 @@ set(cdb_src
   src/v20170320/model/DescribeSlowLogsRequest.cpp
   src/v20170320/model/Inbound.cpp
   src/v20170320/model/AssociateSecurityGroupsRequest.cpp
+  src/v20170320/model/TagInfoItem.cpp
   src/v20170320/model/CreateAccountsResponse.cpp
   src/v20170320/model/RegionSellConf.cpp
   src/v20170320/model/InstanceRollbackRangeTime.cpp
@@ -388,6 +392,7 @@ set(cdb_src
   src/v20170320/model/CreateParamTemplateResponse.cpp
   src/v20170320/model/CreateDBInstanceHourResponse.cpp
   src/v20170320/model/DescribeCloneListResponse.cpp
+  src/v20170320/model/ModifyAccountMaxUserConnectionsRequest.cpp
   src/v20170320/model/ReleaseIsolatedDBInstancesRequest.cpp
   src/v20170320/model/BinlogInfo.cpp
   src/v20170320/model/DescribeAccountsRequest.cpp
@@ -440,6 +445,7 @@ set(cdb_src
   src/v20170320/model/DescribeBackupDatabasesResponse.cpp
   src/v20170320/model/VerifyRootAccountRequest.cpp
   src/v20170320/model/SwitchForUpgradeResponse.cpp
+  src/v20170320/model/ModifyAccountMaxUserConnectionsResponse.cpp
   src/v20170320/model/DescribeBackupSummariesResponse.cpp
   src/v20170320/model/DescribeInstanceParamRecordsRequest.cpp
   src/v20170320/model/SwitchDBInstanceMasterSlaveRequest.cpp

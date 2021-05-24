@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/CreateAccountsRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyAccountMaxUserConnectionsRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,29 +23,19 @@ using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace rapidjson;
 using namespace std;
 
-CreateAccountsRequest::CreateAccountsRequest() :
-    m_instanceIdHasBeenSet(false),
+ModifyAccountMaxUserConnectionsRequest::ModifyAccountMaxUserConnectionsRequest() :
     m_accountsHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_maxUserConnectionsHasBeenSet(false)
 {
 }
 
-string CreateAccountsRequest::ToJsonString() const
+string ModifyAccountMaxUserConnectionsRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_instanceIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_accountsHasBeenSet)
     {
@@ -62,20 +52,12 @@ string CreateAccountsRequest::ToJsonString() const
         }
     }
 
-    if (m_passwordHasBeenSet)
+    if (m_instanceIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Password";
+        string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_descriptionHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Description";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxUserConnectionsHasBeenSet)
@@ -94,82 +76,50 @@ string CreateAccountsRequest::ToJsonString() const
 }
 
 
-string CreateAccountsRequest::GetInstanceId() const
-{
-    return m_instanceId;
-}
-
-void CreateAccountsRequest::SetInstanceId(const string& _instanceId)
-{
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
-}
-
-bool CreateAccountsRequest::InstanceIdHasBeenSet() const
-{
-    return m_instanceIdHasBeenSet;
-}
-
-vector<Account> CreateAccountsRequest::GetAccounts() const
+vector<Account> ModifyAccountMaxUserConnectionsRequest::GetAccounts() const
 {
     return m_accounts;
 }
 
-void CreateAccountsRequest::SetAccounts(const vector<Account>& _accounts)
+void ModifyAccountMaxUserConnectionsRequest::SetAccounts(const vector<Account>& _accounts)
 {
     m_accounts = _accounts;
     m_accountsHasBeenSet = true;
 }
 
-bool CreateAccountsRequest::AccountsHasBeenSet() const
+bool ModifyAccountMaxUserConnectionsRequest::AccountsHasBeenSet() const
 {
     return m_accountsHasBeenSet;
 }
 
-string CreateAccountsRequest::GetPassword() const
+string ModifyAccountMaxUserConnectionsRequest::GetInstanceId() const
 {
-    return m_password;
+    return m_instanceId;
 }
 
-void CreateAccountsRequest::SetPassword(const string& _password)
+void ModifyAccountMaxUserConnectionsRequest::SetInstanceId(const string& _instanceId)
 {
-    m_password = _password;
-    m_passwordHasBeenSet = true;
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
 }
 
-bool CreateAccountsRequest::PasswordHasBeenSet() const
+bool ModifyAccountMaxUserConnectionsRequest::InstanceIdHasBeenSet() const
 {
-    return m_passwordHasBeenSet;
+    return m_instanceIdHasBeenSet;
 }
 
-string CreateAccountsRequest::GetDescription() const
-{
-    return m_description;
-}
-
-void CreateAccountsRequest::SetDescription(const string& _description)
-{
-    m_description = _description;
-    m_descriptionHasBeenSet = true;
-}
-
-bool CreateAccountsRequest::DescriptionHasBeenSet() const
-{
-    return m_descriptionHasBeenSet;
-}
-
-int64_t CreateAccountsRequest::GetMaxUserConnections() const
+int64_t ModifyAccountMaxUserConnectionsRequest::GetMaxUserConnections() const
 {
     return m_maxUserConnections;
 }
 
-void CreateAccountsRequest::SetMaxUserConnections(const int64_t& _maxUserConnections)
+void ModifyAccountMaxUserConnectionsRequest::SetMaxUserConnections(const int64_t& _maxUserConnections)
 {
     m_maxUserConnections = _maxUserConnections;
     m_maxUserConnectionsHasBeenSet = true;
 }
 
-bool CreateAccountsRequest::MaxUserConnectionsHasBeenSet() const
+bool ModifyAccountMaxUserConnectionsRequest::MaxUserConnectionsHasBeenSet() const
 {
     return m_maxUserConnectionsHasBeenSet;
 }

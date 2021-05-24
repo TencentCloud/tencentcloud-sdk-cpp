@@ -67,6 +67,18 @@ namespace TencentCloud
                      */
                     bool ItemsHasBeenSet() const;
 
+                    /**
+                     * 获取用户可设置实例最大连接数。
+                     * @return MaxUserConnections 用户可设置实例最大连接数。
+                     */
+                    int64_t GetMaxUserConnections() const;
+
+                    /**
+                     * 判断参数 MaxUserConnections 是否已赋值
+                     * @return MaxUserConnections 是否已赋值
+                     */
+                    bool MaxUserConnectionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +92,12 @@ namespace TencentCloud
                      */
                     std::vector<AccountInfo> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * 用户可设置实例最大连接数。
+                     */
+                    int64_t m_maxUserConnections;
+                    bool m_maxUserConnectionsHasBeenSet;
 
                 };
             }

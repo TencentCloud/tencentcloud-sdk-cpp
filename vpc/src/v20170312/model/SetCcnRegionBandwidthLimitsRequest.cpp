@@ -25,7 +25,8 @@ using namespace std;
 
 SetCcnRegionBandwidthLimitsRequest::SetCcnRegionBandwidthLimitsRequest() :
     m_ccnIdHasBeenSet(false),
-    m_ccnRegionBandwidthLimitsHasBeenSet(false)
+    m_ccnRegionBandwidthLimitsHasBeenSet(false),
+    m_setDefaultLimitFlagHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,14 @@ string SetCcnRegionBandwidthLimitsRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_setDefaultLimitFlagHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SetDefaultLimitFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_setDefaultLimitFlag, allocator);
     }
 
 
@@ -97,6 +106,22 @@ void SetCcnRegionBandwidthLimitsRequest::SetCcnRegionBandwidthLimits(const vecto
 bool SetCcnRegionBandwidthLimitsRequest::CcnRegionBandwidthLimitsHasBeenSet() const
 {
     return m_ccnRegionBandwidthLimitsHasBeenSet;
+}
+
+bool SetCcnRegionBandwidthLimitsRequest::GetSetDefaultLimitFlag() const
+{
+    return m_setDefaultLimitFlag;
+}
+
+void SetCcnRegionBandwidthLimitsRequest::SetSetDefaultLimitFlag(const bool& _setDefaultLimitFlag)
+{
+    m_setDefaultLimitFlag = _setDefaultLimitFlag;
+    m_setDefaultLimitFlagHasBeenSet = true;
+}
+
+bool SetCcnRegionBandwidthLimitsRequest::SetDefaultLimitFlagHasBeenSet() const
+{
+    return m_setDefaultLimitFlagHasBeenSet;
 }
 
 

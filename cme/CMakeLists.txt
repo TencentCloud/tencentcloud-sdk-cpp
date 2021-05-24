@@ -40,6 +40,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DeleteTeamResponse.h
   include/tencentcloud/cme/v20191029/model/StreamConnectOutput.h
   include/tencentcloud/cme/v20191029/model/VideoSegmentationProjectInput.h
+  include/tencentcloud/cme/v20191029/model/SearchScope.h
   include/tencentcloud/cme/v20191029/model/RevokeResourceAuthorizationResponse.h
   include/tencentcloud/cme/v20191029/model/HandleStreamConnectProjectRequest.h
   include/tencentcloud/cme/v20191029/model/ProjectInfo.h
@@ -63,7 +64,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DescribePlatformsResponse.h
   include/tencentcloud/cme/v20191029/model/DescribeTasksRequest.h
   include/tencentcloud/cme/v20191029/model/MediaTrackItem.h
-  include/tencentcloud/cme/v20191029/model/TimeRange.h
+  include/tencentcloud/cme/v20191029/model/StorageNewFileCreatedEvent.h
   include/tencentcloud/cme/v20191029/model/DescribeLoginStatusRequest.h
   include/tencentcloud/cme/v20191029/model/MediaTrack.h
   include/tencentcloud/cme/v20191029/model/DeleteLoginStatusResponse.h
@@ -75,6 +76,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/ListMediaResponse.h
   include/tencentcloud/cme/v20191029/model/SearchMaterialResponse.h
   include/tencentcloud/cme/v20191029/model/StreamConnectOutputInfo.h
+  include/tencentcloud/cme/v20191029/model/ParseEventRequest.h
   include/tencentcloud/cme/v20191029/model/EmptyTrackItem.h
   include/tencentcloud/cme/v20191029/model/PlatformInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeJoinTeamsRequest.h
@@ -102,6 +104,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DescribeAccountsResponse.h
   include/tencentcloud/cme/v20191029/model/MoveResourceResponse.h
   include/tencentcloud/cme/v20191029/model/MoveClassRequest.h
+  include/tencentcloud/cme/v20191029/model/TimeRange.h
   include/tencentcloud/cme/v20191029/model/DeleteTeamMembersResponse.h
   include/tencentcloud/cme/v20191029/model/MoveClassResponse.h
   include/tencentcloud/cme/v20191029/model/ImportMediaToProjectResponse.h
@@ -134,7 +137,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/ExportVideoByTemplateRequest.h
   include/tencentcloud/cme/v20191029/model/DescribePlatformsRequest.h
   include/tencentcloud/cme/v20191029/model/OtherMaterial.h
-  include/tencentcloud/cme/v20191029/model/SearchScope.h
+  include/tencentcloud/cme/v20191029/model/EventContent.h
   include/tencentcloud/cme/v20191029/model/VideoMaterial.h
   include/tencentcloud/cme/v20191029/model/DescribeResourceAuthorizationResponse.h
   include/tencentcloud/cme/v20191029/model/FlattenListMediaResponse.h
@@ -149,6 +152,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/AuthorizationInfo.h
   include/tencentcloud/cme/v20191029/model/VideoEditTemplateMaterial.h
   include/tencentcloud/cme/v20191029/model/SlotReplacementInfo.h
+  include/tencentcloud/cme/v20191029/model/ParseEventResponse.h
   include/tencentcloud/cme/v20191029/model/DeleteMaterialResponse.h
   include/tencentcloud/cme/v20191029/model/RevokeResourceAuthorizationRequest.h
   include/tencentcloud/cme/v20191029/model/DescribeTaskDetailRequest.h
@@ -196,6 +200,7 @@ set(cme_src
   src/v20191029/model/DeleteTeamResponse.cpp
   src/v20191029/model/StreamConnectOutput.cpp
   src/v20191029/model/VideoSegmentationProjectInput.cpp
+  src/v20191029/model/SearchScope.cpp
   src/v20191029/model/RevokeResourceAuthorizationResponse.cpp
   src/v20191029/model/HandleStreamConnectProjectRequest.cpp
   src/v20191029/model/ProjectInfo.cpp
@@ -219,7 +224,7 @@ set(cme_src
   src/v20191029/model/DescribePlatformsResponse.cpp
   src/v20191029/model/DescribeTasksRequest.cpp
   src/v20191029/model/MediaTrackItem.cpp
-  src/v20191029/model/TimeRange.cpp
+  src/v20191029/model/StorageNewFileCreatedEvent.cpp
   src/v20191029/model/DescribeLoginStatusRequest.cpp
   src/v20191029/model/MediaTrack.cpp
   src/v20191029/model/DeleteLoginStatusResponse.cpp
@@ -231,6 +236,7 @@ set(cme_src
   src/v20191029/model/ListMediaResponse.cpp
   src/v20191029/model/SearchMaterialResponse.cpp
   src/v20191029/model/StreamConnectOutputInfo.cpp
+  src/v20191029/model/ParseEventRequest.cpp
   src/v20191029/model/EmptyTrackItem.cpp
   src/v20191029/model/PlatformInfo.cpp
   src/v20191029/model/DescribeJoinTeamsRequest.cpp
@@ -258,6 +264,7 @@ set(cme_src
   src/v20191029/model/DescribeAccountsResponse.cpp
   src/v20191029/model/MoveResourceResponse.cpp
   src/v20191029/model/MoveClassRequest.cpp
+  src/v20191029/model/TimeRange.cpp
   src/v20191029/model/DeleteTeamMembersResponse.cpp
   src/v20191029/model/MoveClassResponse.cpp
   src/v20191029/model/ImportMediaToProjectResponse.cpp
@@ -290,7 +297,7 @@ set(cme_src
   src/v20191029/model/ExportVideoByTemplateRequest.cpp
   src/v20191029/model/DescribePlatformsRequest.cpp
   src/v20191029/model/OtherMaterial.cpp
-  src/v20191029/model/SearchScope.cpp
+  src/v20191029/model/EventContent.cpp
   src/v20191029/model/VideoMaterial.cpp
   src/v20191029/model/DescribeResourceAuthorizationResponse.cpp
   src/v20191029/model/FlattenListMediaResponse.cpp
@@ -305,6 +312,7 @@ set(cme_src
   src/v20191029/model/AuthorizationInfo.cpp
   src/v20191029/model/VideoEditTemplateMaterial.cpp
   src/v20191029/model/SlotReplacementInfo.cpp
+  src/v20191029/model/ParseEventResponse.cpp
   src/v20191029/model/DeleteMaterialResponse.cpp
   src/v20191029/model/RevokeResourceAuthorizationRequest.cpp
   src/v20191029/model/DescribeTaskDetailRequest.cpp

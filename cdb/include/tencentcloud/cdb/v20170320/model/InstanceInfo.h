@@ -29,6 +29,7 @@
 #include <tencentcloud/cdb/v20170320/model/RoGroup.h>
 #include <tencentcloud/cdb/v20170320/model/MasterInfo.h>
 #include <tencentcloud/cdb/v20170320/model/DrInfo.h>
+#include <tencentcloud/cdb/v20170320/model/TagInfoItem.h>
 
 
 namespace TencentCloud
@@ -839,6 +840,28 @@ namespace TencentCloud
                      */
                     bool InstanceNodesHasBeenSet() const;
 
+                    /**
+                     * 获取标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagList 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInfoItem> GetTagList() const;
+
+                    /**
+                     * 设置标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagList 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagList(const std::vector<TagInfoItem>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1100,6 +1123,13 @@ namespace TencentCloud
                      */
                     int64_t m_instanceNodes;
                     bool m_instanceNodesHasBeenSet;
+
+                    /**
+                     * 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInfoItem> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

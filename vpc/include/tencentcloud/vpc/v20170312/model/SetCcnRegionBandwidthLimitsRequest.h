@@ -79,6 +79,24 @@ namespace TencentCloud
                      */
                     bool CcnRegionBandwidthLimitsHasBeenSet() const;
 
+                    /**
+                     * 获取是否设置带宽为默认值。
+                     * @return SetDefaultLimitFlag 是否设置带宽为默认值。
+                     */
+                    bool GetSetDefaultLimitFlag() const;
+
+                    /**
+                     * 设置是否设置带宽为默认值。
+                     * @param SetDefaultLimitFlag 是否设置带宽为默认值。
+                     */
+                    void SetSetDefaultLimitFlag(const bool& _setDefaultLimitFlag);
+
+                    /**
+                     * 判断参数 SetDefaultLimitFlag 是否已赋值
+                     * @return SetDefaultLimitFlag 是否已赋值
+                     */
+                    bool SetDefaultLimitFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,6 +110,12 @@ namespace TencentCloud
                      */
                     std::vector<CcnRegionBandwidthLimit> m_ccnRegionBandwidthLimits;
                     bool m_ccnRegionBandwidthLimitsHasBeenSet;
+
+                    /**
+                     * 是否设置带宽为默认值。
+                     */
+                    bool m_setDefaultLimitFlag;
+                    bool m_setDefaultLimitFlagHasBeenSet;
 
                 };
             }

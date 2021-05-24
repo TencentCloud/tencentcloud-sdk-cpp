@@ -27,7 +27,8 @@ AccountInfo::AccountInfo() :
     m_userHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_modifyPasswordTimeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_maxUserConnectionsHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ CoreInternalOutcome AccountInfo::Deserialize(const Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxUserConnections") && !value["MaxUserConnections"].IsNull())
+    {
+        if (!value["MaxUserConnections"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `AccountInfo.MaxUserConnections` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxUserConnections = value["MaxUserConnections"].GetInt64();
+        m_maxUserConnectionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -149,6 +160,14 @@ void AccountInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxUserConnectionsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "MaxUserConnections";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxUserConnections, allocator);
     }
 
 }
@@ -248,5 +267,21 @@ void AccountInfo::SetCreateTime(const string& _createTime)
 bool AccountInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+int64_t AccountInfo::GetMaxUserConnections() const
+{
+    return m_maxUserConnections;
+}
+
+void AccountInfo::SetMaxUserConnections(const int64_t& _maxUserConnections)
+{
+    m_maxUserConnections = _maxUserConnections;
+    m_maxUserConnectionsHasBeenSet = true;
+}
+
+bool AccountInfo::MaxUserConnectionsHasBeenSet() const
+{
+    return m_maxUserConnectionsHasBeenSet;
 }
 

@@ -181,6 +181,8 @@
 #include <tencentcloud/cdb/v20170320/model/IsolateDBInstanceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyAccountDescriptionRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyAccountDescriptionResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyAccountMaxUserConnectionsRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyAccountMaxUserConnectionsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyAccountPasswordRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyAccountPasswordResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyAccountPrivilegesRequest.h>
@@ -502,6 +504,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAccountDescriptionResponse> ModifyAccountDescriptionOutcome;
                 typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyAccountDescriptionRequest&, ModifyAccountDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAccountMaxUserConnectionsResponse> ModifyAccountMaxUserConnectionsOutcome;
+                typedef std::future<ModifyAccountMaxUserConnectionsOutcome> ModifyAccountMaxUserConnectionsOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyAccountMaxUserConnectionsRequest&, ModifyAccountMaxUserConnectionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountMaxUserConnectionsAsyncHandler;
                 typedef Outcome<Error, Model::ModifyAccountPasswordResponse> ModifyAccountPasswordOutcome;
                 typedef std::future<ModifyAccountPasswordOutcome> ModifyAccountPasswordOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyAccountPasswordRequest&, ModifyAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountPasswordAsyncHandler;
@@ -647,7 +652,7 @@ namespace TencentCloud
                 CloseWanServiceOutcomeCallable CloseWanServiceCallable(const Model::CloseWanServiceRequest& request);
 
                 /**
-                 *本接口(CreateAccounts)用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息。
+                 *本接口(CreateAccounts)用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息以及最大可用连接数。
                  * @param req CreateAccountsRequest
                  * @return CreateAccountsOutcome
                  */
@@ -1344,6 +1349,15 @@ namespace TencentCloud
                 ModifyAccountDescriptionOutcome ModifyAccountDescription(const Model::ModifyAccountDescriptionRequest &request);
                 void ModifyAccountDescriptionAsync(const Model::ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAccountDescriptionOutcomeCallable ModifyAccountDescriptionCallable(const Model::ModifyAccountDescriptionRequest& request);
+
+                /**
+                 *本接口(ModifyAccountMaxUserConnections)用于修改云数据库账户最大可用连接数。
+                 * @param req ModifyAccountMaxUserConnectionsRequest
+                 * @return ModifyAccountMaxUserConnectionsOutcome
+                 */
+                ModifyAccountMaxUserConnectionsOutcome ModifyAccountMaxUserConnections(const Model::ModifyAccountMaxUserConnectionsRequest &request);
+                void ModifyAccountMaxUserConnectionsAsync(const Model::ModifyAccountMaxUserConnectionsRequest& request, const ModifyAccountMaxUserConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccountMaxUserConnectionsOutcomeCallable ModifyAccountMaxUserConnectionsCallable(const Model::ModifyAccountMaxUserConnectionsRequest& request);
 
                 /**
                  *本接口(ModifyAccountPassword)用于修改云数据库账户的密码。

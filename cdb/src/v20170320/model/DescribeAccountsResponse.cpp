@@ -26,7 +26,8 @@ using namespace std;
 
 DescribeAccountsResponse::DescribeAccountsResponse() :
     m_totalCountHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_maxUserConnectionsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeAccountsResponse::Deserialize(const string &payload)
         m_itemsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MaxUserConnections") && !rsp["MaxUserConnections"].IsNull())
+    {
+        if (!rsp["MaxUserConnections"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `MaxUserConnections` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxUserConnections = rsp["MaxUserConnections"].GetInt64();
+        m_maxUserConnectionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -117,6 +128,16 @@ vector<AccountInfo> DescribeAccountsResponse::GetItems() const
 bool DescribeAccountsResponse::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+int64_t DescribeAccountsResponse::GetMaxUserConnections() const
+{
+    return m_maxUserConnections;
+}
+
+bool DescribeAccountsResponse::MaxUserConnectionsHasBeenSet() const
+{
+    return m_maxUserConnectionsHasBeenSet;
 }
 
 

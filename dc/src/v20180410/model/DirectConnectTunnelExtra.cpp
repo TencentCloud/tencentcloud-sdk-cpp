@@ -59,7 +59,8 @@ DirectConnectTunnelExtra::DirectConnectTunnelExtra() :
     m_tencentIPv6AddressHasBeenSet(false),
     m_tencentBackupIPv6AddressHasBeenSet(false),
     m_bgpIPv6StatusHasBeenSet(false),
-    m_customerIPv6AddressHasBeenSet(false)
+    m_customerIPv6AddressHasBeenSet(false),
+    m_jumboEnableHasBeenSet(false)
 {
 }
 
@@ -503,6 +504,16 @@ CoreInternalOutcome DirectConnectTunnelExtra::Deserialize(const Value &value)
         m_customerIPv6AddressHasBeenSet = true;
     }
 
+    if (value.HasMember("JumboEnable") && !value["JumboEnable"].IsNull())
+    {
+        if (!value["JumboEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DirectConnectTunnelExtra.JumboEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_jumboEnable = value["JumboEnable"].GetInt64();
+        m_jumboEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -831,6 +842,14 @@ void DirectConnectTunnelExtra::ToJsonObject(Value &value, Document::AllocatorTyp
         string key = "CustomerIPv6Address";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_customerIPv6Address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jumboEnableHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "JumboEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jumboEnable, allocator);
     }
 
 }
@@ -1442,5 +1461,21 @@ void DirectConnectTunnelExtra::SetCustomerIPv6Address(const string& _customerIPv
 bool DirectConnectTunnelExtra::CustomerIPv6AddressHasBeenSet() const
 {
     return m_customerIPv6AddressHasBeenSet;
+}
+
+int64_t DirectConnectTunnelExtra::GetJumboEnable() const
+{
+    return m_jumboEnable;
+}
+
+void DirectConnectTunnelExtra::SetJumboEnable(const int64_t& _jumboEnable)
+{
+    m_jumboEnable = _jumboEnable;
+    m_jumboEnableHasBeenSet = true;
+}
+
+bool DirectConnectTunnelExtra::JumboEnableHasBeenSet() const
+{
+    return m_jumboEnableHasBeenSet;
 }
 

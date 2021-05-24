@@ -105,6 +105,8 @@
 #include <tencentcloud/cme/v20191029/model/MoveClassResponse.h>
 #include <tencentcloud/cme/v20191029/model/MoveResourceRequest.h>
 #include <tencentcloud/cme/v20191029/model/MoveResourceResponse.h>
+#include <tencentcloud/cme/v20191029/model/ParseEventRequest.h>
+#include <tencentcloud/cme/v20191029/model/ParseEventResponse.h>
 #include <tencentcloud/cme/v20191029/model/RevokeResourceAuthorizationRequest.h>
 #include <tencentcloud/cme/v20191029/model/RevokeResourceAuthorizationResponse.h>
 #include <tencentcloud/cme/v20191029/model/SearchMaterialRequest.h>
@@ -246,6 +248,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::MoveResourceResponse> MoveResourceOutcome;
                 typedef std::future<MoveResourceOutcome> MoveResourceOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::MoveResourceRequest&, MoveResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MoveResourceAsyncHandler;
+                typedef Outcome<Error, Model::ParseEventResponse> ParseEventOutcome;
+                typedef std::future<ParseEventOutcome> ParseEventOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::ParseEventRequest&, ParseEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ParseEventAsyncHandler;
                 typedef Outcome<Error, Model::RevokeResourceAuthorizationResponse> RevokeResourceAuthorizationOutcome;
                 typedef std::future<RevokeResourceAuthorizationOutcome> RevokeResourceAuthorizationOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::RevokeResourceAuthorizationRequest&, RevokeResourceAuthorizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeResourceAuthorizationAsyncHandler;
@@ -663,6 +668,15 @@ namespace TencentCloud
                 MoveResourceOutcome MoveResource(const Model::MoveResourceRequest &request);
                 void MoveResourceAsync(const Model::MoveResourceRequest& request, const MoveResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 MoveResourceOutcomeCallable MoveResourceCallable(const Model::MoveResourceRequest& request);
+
+                /**
+                 *该接口接受制作云回调给客户的事件内容，将其转化为对应的 EventContent 结构，请不要实际调用该接口，只需要将接收到的事件内容直接使用 JSON 解析到 EventContent  即可使用。
+                 * @param req ParseEventRequest
+                 * @return ParseEventOutcome
+                 */
+                ParseEventOutcome ParseEvent(const Model::ParseEventRequest &request);
+                void ParseEventAsync(const Model::ParseEventRequest& request, const ParseEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ParseEventOutcomeCallable ParseEventCallable(const Model::ParseEventRequest& request);
 
                 /**
                  * 资源所属实体对目标实体回收目标资源的相应权限，若原本没有相应权限则不产生变更。

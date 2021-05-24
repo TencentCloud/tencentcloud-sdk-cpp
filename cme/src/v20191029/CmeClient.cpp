@@ -1803,6 +1803,49 @@ CmeClient::MoveResourceOutcomeCallable CmeClient::MoveResourceCallable(const Mov
     return task->get_future();
 }
 
+CmeClient::ParseEventOutcome CmeClient::ParseEvent(const ParseEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "ParseEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ParseEventResponse rsp = ParseEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ParseEventOutcome(rsp);
+        else
+            return ParseEventOutcome(o.GetError());
+    }
+    else
+    {
+        return ParseEventOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::ParseEventAsync(const ParseEventRequest& request, const ParseEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ParseEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::ParseEventOutcomeCallable CmeClient::ParseEventCallable(const ParseEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ParseEventOutcome()>>(
+        [this, request]()
+        {
+            return this->ParseEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmeClient::RevokeResourceAuthorizationOutcome CmeClient::RevokeResourceAuthorization(const RevokeResourceAuthorizationRequest &request)
 {
     auto outcome = MakeRequest(request, "RevokeResourceAuthorization");

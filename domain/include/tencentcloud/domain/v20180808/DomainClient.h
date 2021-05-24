@@ -156,8 +156,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 ( CheckBatchStatus ) 用于查询批量操作日志状态 。
-
-默认接口请求频率限制：20次/秒。
                  * @param req CheckBatchStatusRequest
                  * @return CheckBatchStatusOutcome
                  */
@@ -175,9 +173,7 @@ namespace TencentCloud
                 CheckDomainOutcomeCallable CheckDomainCallable(const Model::CheckDomainRequest& request);
 
                 /**
-                 *本接口 ( CreateDomainBatch ) 用于批量注册域名 。
-
-默认接口请求频率限制：20次/秒。
+                 *本接口 ( CreateDomainBatch ) 用于批量域名注册 。
                  * @param req CreateDomainBatchRequest
                  * @return CreateDomainBatchOutcome
                  */
@@ -195,7 +191,7 @@ namespace TencentCloud
                 CreateTemplateOutcomeCallable CreateTemplateCallable(const Model::CreateTemplateRequest& request);
 
                 /**
-                 *本接口 ( DeleteTemplate ) 用于删除域名信息模板。
+                 *本接口 ( DeleteTemplate ) 用于删除信息模板。
                  * @param req DeleteTemplateRequest
                  * @return DeleteTemplateOutcome
                  */
@@ -222,7 +218,7 @@ namespace TencentCloud
                 DescribeBatchOperationLogsOutcomeCallable DescribeBatchOperationLogsCallable(const Model::DescribeBatchOperationLogsRequest& request);
 
                 /**
-                 *本接口 (  DescribeDomainBaseInfo) 获取域名基础信息。
+                 *本接口 (  DescribeDomainBaseInfo) 获取域名基本信息。
 
                  * @param req DescribeDomainBaseInfoRequest
                  * @return DescribeDomainBaseInfoOutcome
@@ -232,7 +228,7 @@ namespace TencentCloud
                 DescribeDomainBaseInfoOutcomeCallable DescribeDomainBaseInfoCallable(const Model::DescribeDomainBaseInfoRequest& request);
 
                 /**
-                 *本接口 (  DescribeDomainNameList ) 获取域名列表。
+                 *本接口 (  DescribeDomainNameList ) 我的域名列表。
 
                  * @param req DescribeDomainNameListRequest
                  * @return DescribeDomainNameListOutcome
@@ -260,7 +256,7 @@ namespace TencentCloud
                 DescribeTemplateOutcomeCallable DescribeTemplateCallable(const Model::DescribeTemplateRequest& request);
 
                 /**
-                 *本接口 (DescribeTemplateList) 用于获取模板列表。
+                 *本接口 (DescribeTemplateList) 用于获取信息模板列表。
 
                  * @param req DescribeTemplateListRequest
                  * @return DescribeTemplateListOutcome
@@ -270,9 +266,7 @@ namespace TencentCloud
                 DescribeTemplateListOutcomeCallable DescribeTemplateListCallable(const Model::DescribeTemplateListRequest& request);
 
                 /**
-                 *本接口 ( ModifyDomainDNSBatch) 用于批量修改域名DNS信息 。
-
-默认接口请求频率限制：20次/秒。
+                 *本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。
                  * @param req ModifyDomainDNSBatchRequest
                  * @return ModifyDomainDNSBatchOutcome
                  */
@@ -292,8 +286,6 @@ namespace TencentCloud
                 /**
                  *本接口 ( RenewDomainBatch ) 用于批量续费域名 。
 
-默认接口请求频率限制：20次/秒。
-
                  * @param req RenewDomainBatchRequest
                  * @return RenewDomainBatchOutcome
                  */
@@ -303,8 +295,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 ( SetDomainAutoRenew ) 用于设置域名自动续费。
-
-默认接口请求频率限制：20次/秒。
                  * @param req SetDomainAutoRenewRequest
                  * @return SetDomainAutoRenewOutcome
                  */
@@ -314,8 +304,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 ( TransferInDomainBatch ) 用于批量转入域名 。
-
-默认接口请求频率限制：20次/秒。
                  * @param req TransferInDomainBatchRequest
                  * @return TransferInDomainBatchOutcome
                  */
@@ -324,9 +312,7 @@ namespace TencentCloud
                 TransferInDomainBatchOutcomeCallable TransferInDomainBatchCallable(const Model::TransferInDomainBatchRequest& request);
 
                 /**
-                 *本接口 ( TransferInDomainBatch ) 用于批量禁止域名转移 。
-
-默认接口请求频率限制：20次/秒。
+                 *本接口 ( TransferProhibitionBatch ) 用于批量禁止域名转移 。
                  * @param req TransferProhibitionBatchRequest
                  * @return TransferProhibitionBatchOutcome
                  */
@@ -335,7 +321,7 @@ namespace TencentCloud
                 TransferProhibitionBatchOutcomeCallable TransferProhibitionBatchCallable(const Model::TransferProhibitionBatchRequest& request);
 
                 /**
-                 *本接口 ( UpdateProhibitionBatch ) 用于批量设置禁止域名更新 。
+                 *本接口 ( UpdateProhibitionBatch ) 用于批量禁止更新锁。
                  * @param req UpdateProhibitionBatchRequest
                  * @return UpdateProhibitionBatchOutcome
                  */
@@ -344,7 +330,7 @@ namespace TencentCloud
                 UpdateProhibitionBatchOutcomeCallable UpdateProhibitionBatchCallable(const Model::UpdateProhibitionBatchRequest& request);
 
                 /**
-                 *本接口 ( UploadImage ) 用于上传资质照片 。
+                 *本接口 ( UploadImage ) 用于证件图片上传 。
                  * @param req UploadImageRequest
                  * @return UploadImageOutcome
                  */

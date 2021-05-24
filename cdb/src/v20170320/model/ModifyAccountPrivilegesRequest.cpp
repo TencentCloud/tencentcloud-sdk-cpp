@@ -29,7 +29,8 @@ ModifyAccountPrivilegesRequest::ModifyAccountPrivilegesRequest() :
     m_globalPrivilegesHasBeenSet(false),
     m_databasePrivilegesHasBeenSet(false),
     m_tablePrivilegesHasBeenSet(false),
-    m_columnPrivilegesHasBeenSet(false)
+    m_columnPrivilegesHasBeenSet(false),
+    m_modifyActionHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string ModifyAccountPrivilegesRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_modifyActionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ModifyAction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_modifyAction.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -223,6 +232,22 @@ void ModifyAccountPrivilegesRequest::SetColumnPrivileges(const vector<ColumnPriv
 bool ModifyAccountPrivilegesRequest::ColumnPrivilegesHasBeenSet() const
 {
     return m_columnPrivilegesHasBeenSet;
+}
+
+string ModifyAccountPrivilegesRequest::GetModifyAction() const
+{
+    return m_modifyAction;
+}
+
+void ModifyAccountPrivilegesRequest::SetModifyAction(const string& _modifyAction)
+{
+    m_modifyAction = _modifyAction;
+    m_modifyActionHasBeenSet = true;
+}
+
+bool ModifyAccountPrivilegesRequest::ModifyActionHasBeenSet() const
+{
+    return m_modifyActionHasBeenSet;
 }
 
 

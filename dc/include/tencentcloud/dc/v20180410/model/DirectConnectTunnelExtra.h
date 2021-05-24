@@ -795,6 +795,28 @@ REJECTED:拒绝
                      */
                     bool CustomerIPv6AddressHasBeenSet() const;
 
+                    /**
+                     * 获取专线通道是否支持巨帧。1 支持，0 不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JumboEnable 专线通道是否支持巨帧。1 支持，0 不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetJumboEnable() const;
+
+                    /**
+                     * 设置专线通道是否支持巨帧。1 支持，0 不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param JumboEnable 专线通道是否支持巨帧。1 支持，0 不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJumboEnable(const int64_t& _jumboEnable);
+
+                    /**
+                     * 判断参数 JumboEnable 是否已赋值
+                     * @return JumboEnable 是否已赋值
+                     */
+                    bool JumboEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1039,6 +1061,13 @@ REJECTED:拒绝
                      */
                     std::string m_customerIPv6Address;
                     bool m_customerIPv6AddressHasBeenSet;
+
+                    /**
+                     * 专线通道是否支持巨帧。1 支持，0 不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_jumboEnable;
+                    bool m_jumboEnableHasBeenSet;
 
                 };
             }

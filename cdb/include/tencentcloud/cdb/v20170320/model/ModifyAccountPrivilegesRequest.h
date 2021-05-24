@@ -170,6 +170,24 @@ namespace TencentCloud
                      */
                     bool ColumnPrivilegesHasBeenSet() const;
 
+                    /**
+                     * 获取该参数不为空时，为批量修改权限。可选值为：grant，revoke。
+                     * @return ModifyAction 该参数不为空时，为批量修改权限。可选值为：grant，revoke。
+                     */
+                    std::string GetModifyAction() const;
+
+                    /**
+                     * 设置该参数不为空时，为批量修改权限。可选值为：grant，revoke。
+                     * @param ModifyAction 该参数不为空时，为批量修改权限。可选值为：grant，revoke。
+                     */
+                    void SetModifyAction(const std::string& _modifyAction);
+
+                    /**
+                     * 判断参数 ModifyAction 是否已赋值
+                     * @return ModifyAction 是否已赋值
+                     */
+                    bool ModifyActionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::vector<ColumnPrivilege> m_columnPrivileges;
                     bool m_columnPrivilegesHasBeenSet;
+
+                    /**
+                     * 该参数不为空时，为批量修改权限。可选值为：grant，revoke。
+                     */
+                    std::string m_modifyAction;
+                    bool m_modifyActionHasBeenSet;
 
                 };
             }
