@@ -43,96 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区信息，格式如 "ap-guangzhou-2"。具体能设置的值请通过 <a href="https://cloud.tencent.com/document/api/236/17229">DescribeDBZoneConfig</a> 接口查询。
-                     * @return Zone 可用区信息，格式如 "ap-guangzhou-2"。具体能设置的值请通过 <a href="https://cloud.tencent.com/document/api/236/17229">DescribeDBZoneConfig</a> 接口查询。
-                     */
-                    std::string GetZone() const;
-
-                    /**
-                     * 设置可用区信息，格式如 "ap-guangzhou-2"。具体能设置的值请通过 <a href="https://cloud.tencent.com/document/api/236/17229">DescribeDBZoneConfig</a> 接口查询。
-                     * @param Zone 可用区信息，格式如 "ap-guangzhou-2"。具体能设置的值请通过 <a href="https://cloud.tencent.com/document/api/236/17229">DescribeDBZoneConfig</a> 接口查询。
-                     */
-                    void SetZone(const std::string& _zone);
-
-                    /**
-                     * 判断参数 Zone 是否已赋值
-                     * @return Zone 是否已赋值
-                     */
-                    bool ZoneHasBeenSet() const;
-
-                    /**
-                     * 获取实例数量，默认值为 1，最小值 1，最大值为 100。
-                     * @return GoodsNum 实例数量，默认值为 1，最小值 1，最大值为 100。
-                     */
-                    int64_t GetGoodsNum() const;
-
-                    /**
-                     * 设置实例数量，默认值为 1，最小值 1，最大值为 100。
-                     * @param GoodsNum 实例数量，默认值为 1，最小值 1，最大值为 100。
-                     */
-                    void SetGoodsNum(const int64_t& _goodsNum);
-
-                    /**
-                     * 判断参数 GoodsNum 是否已赋值
-                     * @return GoodsNum 是否已赋值
-                     */
-                    bool GoodsNumHasBeenSet() const;
-
-                    /**
-                     * 获取实例内存大小，单位：MB。
-                     * @return Memory 实例内存大小，单位：MB。
-                     */
-                    int64_t GetMemory() const;
-
-                    /**
-                     * 设置实例内存大小，单位：MB。
-                     * @param Memory 实例内存大小，单位：MB。
-                     */
-                    void SetMemory(const int64_t& _memory);
-
-                    /**
-                     * 判断参数 Memory 是否已赋值
-                     * @return Memory 是否已赋值
-                     */
-                    bool MemoryHasBeenSet() const;
-
-                    /**
-                     * 获取实例硬盘大小，单位：GB。
-                     * @return Volume 实例硬盘大小，单位：GB。
-                     */
-                    int64_t GetVolume() const;
-
-                    /**
-                     * 设置实例硬盘大小，单位：GB。
-                     * @param Volume 实例硬盘大小，单位：GB。
-                     */
-                    void SetVolume(const int64_t& _volume);
-
-                    /**
-                     * 判断参数 Volume 是否已赋值
-                     * @return Volume 是否已赋值
-                     */
-                    bool VolumeHasBeenSet() const;
-
-                    /**
-                     * 获取付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。
-                     * @return PayType 付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。
-                     */
-                    std::string GetPayType() const;
-
-                    /**
-                     * 设置付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。
-                     * @param PayType 付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。
-                     */
-                    void SetPayType(const std::string& _payType);
-
-                    /**
-                     * 判断参数 PayType 是否已赋值
-                     * @return PayType 是否已赋值
-                     */
-                    bool PayTypeHasBeenSet() const;
-
-                    /**
                      * 获取实例时长，单位：月，最小值 1，最大值为 36；查询按量计费价格时，该字段无效。
                      * @return Period 实例时长，单位：月，最小值 1，最大值为 36；查询按量计费价格时，该字段无效。
                      */
@@ -151,14 +61,86 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。
-                     * @return InstanceRole 实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。
+                     * 获取可用区信息，格式如 "ap-guangzhou-2"。具体能设置的值请通过 <a href="https://cloud.tencent.com/document/api/236/17229">DescribeDBZoneConfig</a> 接口查询。InstanceId为空时该参数为必填项。
+                     * @return Zone 可用区信息，格式如 "ap-guangzhou-2"。具体能设置的值请通过 <a href="https://cloud.tencent.com/document/api/236/17229">DescribeDBZoneConfig</a> 接口查询。InstanceId为空时该参数为必填项。
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置可用区信息，格式如 "ap-guangzhou-2"。具体能设置的值请通过 <a href="https://cloud.tencent.com/document/api/236/17229">DescribeDBZoneConfig</a> 接口查询。InstanceId为空时该参数为必填项。
+                     * @param Zone 可用区信息，格式如 "ap-guangzhou-2"。具体能设置的值请通过 <a href="https://cloud.tencent.com/document/api/236/17229">DescribeDBZoneConfig</a> 接口查询。InstanceId为空时该参数为必填项。
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取实例数量，默认值为 1，最小值 1，最大值为 100。InstanceId为空时该参数为必填项。
+                     * @return GoodsNum 实例数量，默认值为 1，最小值 1，最大值为 100。InstanceId为空时该参数为必填项。
+                     */
+                    int64_t GetGoodsNum() const;
+
+                    /**
+                     * 设置实例数量，默认值为 1，最小值 1，最大值为 100。InstanceId为空时该参数为必填项。
+                     * @param GoodsNum 实例数量，默认值为 1，最小值 1，最大值为 100。InstanceId为空时该参数为必填项。
+                     */
+                    void SetGoodsNum(const int64_t& _goodsNum);
+
+                    /**
+                     * 判断参数 GoodsNum 是否已赋值
+                     * @return GoodsNum 是否已赋值
+                     */
+                    bool GoodsNumHasBeenSet() const;
+
+                    /**
+                     * 获取实例内存大小，单位：MB。InstanceId为空时该参数为必填项。
+                     * @return Memory 实例内存大小，单位：MB。InstanceId为空时该参数为必填项。
+                     */
+                    int64_t GetMemory() const;
+
+                    /**
+                     * 设置实例内存大小，单位：MB。InstanceId为空时该参数为必填项。
+                     * @param Memory 实例内存大小，单位：MB。InstanceId为空时该参数为必填项。
+                     */
+                    void SetMemory(const int64_t& _memory);
+
+                    /**
+                     * 判断参数 Memory 是否已赋值
+                     * @return Memory 是否已赋值
+                     */
+                    bool MemoryHasBeenSet() const;
+
+                    /**
+                     * 获取实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。
+                     * @return Volume 实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。
+                     */
+                    int64_t GetVolume() const;
+
+                    /**
+                     * 设置实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。
+                     * @param Volume 实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。
+                     */
+                    void SetVolume(const int64_t& _volume);
+
+                    /**
+                     * 判断参数 Volume 是否已赋值
+                     * @return Volume 是否已赋值
+                     */
+                    bool VolumeHasBeenSet() const;
+
+                    /**
+                     * 获取实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。InstanceId为空时该参数为必填项。
+                     * @return InstanceRole 实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。InstanceId为空时该参数为必填项。
                      */
                     std::string GetInstanceRole() const;
 
                     /**
-                     * 设置实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。
-                     * @param InstanceRole 实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。
+                     * 设置实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。InstanceId为空时该参数为必填项。
+                     * @param InstanceRole 实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。InstanceId为空时该参数为必填项。
                      */
                     void SetInstanceRole(const std::string& _instanceRole);
 
@@ -167,6 +149,24 @@ namespace TencentCloud
                      * @return InstanceRole 是否已赋值
                      */
                     bool InstanceRoleHasBeenSet() const;
+
+                    /**
+                     * 获取付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。InstanceId为空时该参数为必填项。
+                     * @return PayType 付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。InstanceId为空时该参数为必填项。
+                     */
+                    std::string GetPayType() const;
+
+                    /**
+                     * 设置付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。InstanceId为空时该参数为必填项。
+                     * @param PayType 付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。InstanceId为空时该参数为必填项。
+                     */
+                    void SetPayType(const std::string& _payType);
+
+                    /**
+                     * 判断参数 PayType 是否已赋值
+                     * @return PayType 是否已赋值
+                     */
+                    bool PayTypeHasBeenSet() const;
 
                     /**
                      * 获取数据复制方式，默认为 0，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。
@@ -240,37 +240,25 @@ namespace TencentCloud
                      */
                     bool CpuHasBeenSet() const;
 
+                    /**
+                     * 获取续费询价实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
+                     * @return InstanceId 续费询价实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置续费询价实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
+                     * @param InstanceId 续费询价实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 可用区信息，格式如 "ap-guangzhou-2"。具体能设置的值请通过 <a href="https://cloud.tencent.com/document/api/236/17229">DescribeDBZoneConfig</a> 接口查询。
-                     */
-                    std::string m_zone;
-                    bool m_zoneHasBeenSet;
-
-                    /**
-                     * 实例数量，默认值为 1，最小值 1，最大值为 100。
-                     */
-                    int64_t m_goodsNum;
-                    bool m_goodsNumHasBeenSet;
-
-                    /**
-                     * 实例内存大小，单位：MB。
-                     */
-                    int64_t m_memory;
-                    bool m_memoryHasBeenSet;
-
-                    /**
-                     * 实例硬盘大小，单位：GB。
-                     */
-                    int64_t m_volume;
-                    bool m_volumeHasBeenSet;
-
-                    /**
-                     * 付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。
-                     */
-                    std::string m_payType;
-                    bool m_payTypeHasBeenSet;
 
                     /**
                      * 实例时长，单位：月，最小值 1，最大值为 36；查询按量计费价格时，该字段无效。
@@ -279,10 +267,40 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。
+                     * 可用区信息，格式如 "ap-guangzhou-2"。具体能设置的值请通过 <a href="https://cloud.tencent.com/document/api/236/17229">DescribeDBZoneConfig</a> 接口查询。InstanceId为空时该参数为必填项。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 实例数量，默认值为 1，最小值 1，最大值为 100。InstanceId为空时该参数为必填项。
+                     */
+                    int64_t m_goodsNum;
+                    bool m_goodsNumHasBeenSet;
+
+                    /**
+                     * 实例内存大小，单位：MB。InstanceId为空时该参数为必填项。
+                     */
+                    int64_t m_memory;
+                    bool m_memoryHasBeenSet;
+
+                    /**
+                     * 实例硬盘大小，单位：GB。InstanceId为空时该参数为必填项。
+                     */
+                    int64_t m_volume;
+                    bool m_volumeHasBeenSet;
+
+                    /**
+                     * 实例类型，默认为 master，支持值包括：master - 表示主实例，ro - 表示只读实例，dr - 表示灾备实例。InstanceId为空时该参数为必填项。
                      */
                     std::string m_instanceRole;
                     bool m_instanceRoleHasBeenSet;
+
+                    /**
+                     * 付费类型，支持值包括：PRE_PAID - 包年包月，HOUR_PAID - 按量计费。InstanceId为空时该参数为必填项。
+                     */
+                    std::string m_payType;
+                    bool m_payTypeHasBeenSet;
 
                     /**
                      * 数据复制方式，默认为 0，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。
@@ -307,6 +325,12 @@ namespace TencentCloud
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
+
+                    /**
+                     * 续费询价实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

@@ -24,17 +24,18 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeDBPriceRequest::DescribeDBPriceRequest() :
+    m_periodHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_goodsNumHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_volumeHasBeenSet(false),
-    m_payTypeHasBeenSet(false),
-    m_periodHasBeenSet(false),
     m_instanceRoleHasBeenSet(false),
+    m_payTypeHasBeenSet(false),
     m_protectModeHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
     m_instanceNodesHasBeenSet(false),
-    m_cpuHasBeenSet(false)
+    m_cpuHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,14 @@ string DescribeDBPriceRequest::ToJsonString() const
     d.SetObject();
     Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_periodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_period, allocator);
+    }
 
     if (m_zoneHasBeenSet)
     {
@@ -77,28 +86,20 @@ string DescribeDBPriceRequest::ToJsonString() const
         d.AddMember(iKey, m_volume, allocator);
     }
 
-    if (m_payTypeHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PayType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_periodHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Period";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_period, allocator);
-    }
-
     if (m_instanceRoleHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "InstanceRole";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceRole.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_payType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protectModeHasBeenSet)
@@ -133,6 +134,14 @@ string DescribeDBPriceRequest::ToJsonString() const
         d.AddMember(iKey, m_cpu, allocator);
     }
 
+    if (m_instanceIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -140,6 +149,22 @@ string DescribeDBPriceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeDBPriceRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void DescribeDBPriceRequest::SetPeriod(const int64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool DescribeDBPriceRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
+}
 
 string DescribeDBPriceRequest::GetZone() const
 {
@@ -205,38 +230,6 @@ bool DescribeDBPriceRequest::VolumeHasBeenSet() const
     return m_volumeHasBeenSet;
 }
 
-string DescribeDBPriceRequest::GetPayType() const
-{
-    return m_payType;
-}
-
-void DescribeDBPriceRequest::SetPayType(const string& _payType)
-{
-    m_payType = _payType;
-    m_payTypeHasBeenSet = true;
-}
-
-bool DescribeDBPriceRequest::PayTypeHasBeenSet() const
-{
-    return m_payTypeHasBeenSet;
-}
-
-int64_t DescribeDBPriceRequest::GetPeriod() const
-{
-    return m_period;
-}
-
-void DescribeDBPriceRequest::SetPeriod(const int64_t& _period)
-{
-    m_period = _period;
-    m_periodHasBeenSet = true;
-}
-
-bool DescribeDBPriceRequest::PeriodHasBeenSet() const
-{
-    return m_periodHasBeenSet;
-}
-
 string DescribeDBPriceRequest::GetInstanceRole() const
 {
     return m_instanceRole;
@@ -251,6 +244,22 @@ void DescribeDBPriceRequest::SetInstanceRole(const string& _instanceRole)
 bool DescribeDBPriceRequest::InstanceRoleHasBeenSet() const
 {
     return m_instanceRoleHasBeenSet;
+}
+
+string DescribeDBPriceRequest::GetPayType() const
+{
+    return m_payType;
+}
+
+void DescribeDBPriceRequest::SetPayType(const string& _payType)
+{
+    m_payType = _payType;
+    m_payTypeHasBeenSet = true;
+}
+
+bool DescribeDBPriceRequest::PayTypeHasBeenSet() const
+{
+    return m_payTypeHasBeenSet;
 }
 
 int64_t DescribeDBPriceRequest::GetProtectMode() const
@@ -315,6 +324,22 @@ void DescribeDBPriceRequest::SetCpu(const int64_t& _cpu)
 bool DescribeDBPriceRequest::CpuHasBeenSet() const
 {
     return m_cpuHasBeenSet;
+}
+
+string DescribeDBPriceRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeDBPriceRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeDBPriceRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

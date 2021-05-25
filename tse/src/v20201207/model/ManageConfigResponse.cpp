@@ -25,7 +25,8 @@ using namespace rapidjson;
 using namespace std;
 
 ManageConfigResponse::ManageConfigResponse() :
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_opResultHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ManageConfigResponse::Deserialize(const string &payload)
         m_resultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OpResult") && !rsp["OpResult"].IsNull())
+    {
+        if (!rsp["OpResult"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `OpResult` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_opResult = rsp["OpResult"].GetBool();
+        m_opResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,6 +97,16 @@ string ManageConfigResponse::GetResult() const
 bool ManageConfigResponse::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+bool ManageConfigResponse::GetOpResult() const
+{
+    return m_opResult;
+}
+
+bool ManageConfigResponse::OpResultHasBeenSet() const
+{
+    return m_opResultHasBeenSet;
 }
 
 

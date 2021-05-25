@@ -510,6 +510,24 @@ namespace TencentCloud
                      */
                     bool DeployGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否以标签键为过滤条件。
+                     * @return TagKeysForSearch 是否以标签键为过滤条件。
+                     */
+                    std::vector<std::string> GetTagKeysForSearch() const;
+
+                    /**
+                     * 设置是否以标签键为过滤条件。
+                     * @param TagKeysForSearch 是否以标签键为过滤条件。
+                     */
+                    void SetTagKeysForSearch(const std::vector<std::string>& _tagKeysForSearch);
+
+                    /**
+                     * 判断参数 TagKeysForSearch 是否已赋值
+                     * @return TagKeysForSearch 是否已赋值
+                     */
+                    bool TagKeysForSearchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -667,6 +685,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_deployGroupIds;
                     bool m_deployGroupIdsHasBeenSet;
+
+                    /**
+                     * 是否以标签键为过滤条件。
+                     */
+                    std::vector<std::string> m_tagKeysForSearch;
+                    bool m_tagKeysForSearchHasBeenSet;
 
                 };
             }

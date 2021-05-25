@@ -56,6 +56,20 @@ namespace TencentCloud
                      */
                     bool ResultHasBeenSet() const;
 
+                    /**
+                     * 获取操作是否成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OpResult 操作是否成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetOpResult() const;
+
+                    /**
+                     * 判断参数 OpResult 是否已赋值
+                     * @return OpResult 是否已赋值
+                     */
+                    bool OpResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +78,13 @@ namespace TencentCloud
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * 操作是否成功
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_opResult;
+                    bool m_opResultHasBeenSet;
 
                 };
             }

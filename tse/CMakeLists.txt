@@ -23,7 +23,9 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/ManageConfigRequest.h
   include/tencentcloud/tse/v20201207/model/SREInstance.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressResponse.h
+  include/tencentcloud/tse/v20201207/model/DescribeConfigRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstancesResponse.h
+  include/tencentcloud/tse/v20201207/model/DescribeConfigResponse.h
   include/tencentcloud/tse/v20201207/model/Filter.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h
   include/tencentcloud/tse/v20201207/model/ManageConfigResponse.h
@@ -35,7 +37,9 @@ set(tse_src
   src/v20201207/model/ManageConfigRequest.cpp
   src/v20201207/model/SREInstance.cpp
   src/v20201207/model/DescribeSREInstanceAccessAddressResponse.cpp
+  src/v20201207/model/DescribeConfigRequest.cpp
   src/v20201207/model/DescribeSREInstancesResponse.cpp
+  src/v20201207/model/DescribeConfigResponse.cpp
   src/v20201207/model/Filter.cpp
   src/v20201207/model/DescribeSREInstanceAccessAddressRequest.cpp
   src/v20201207/model/ManageConfigResponse.cpp

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/SmallVideoLayoutParams.h>
 #include <tencentcloud/trtc/v20190722/model/PresetLayoutConfig.h>
+#include <tencentcloud/trtc/v20190722/model/WaterMarkParams.h>
 
 
 namespace TencentCloud
@@ -210,6 +211,24 @@ namespace TencentCloud
                      */
                     bool PureAudioHoldPlaceModeHasBeenSet() const;
 
+                    /**
+                     * 获取水印参数。
+                     * @return WaterMarkParams 水印参数。
+                     */
+                    WaterMarkParams GetWaterMarkParams() const;
+
+                    /**
+                     * 设置水印参数。
+                     * @param WaterMarkParams 水印参数。
+                     */
+                    void SetWaterMarkParams(const WaterMarkParams& _waterMarkParams);
+
+                    /**
+                     * 判断参数 WaterMarkParams 是否已赋值
+                     * @return WaterMarkParams 是否已赋值
+                     */
+                    bool WaterMarkParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -265,6 +284,12 @@ namespace TencentCloud
                      */
                     uint64_t m_pureAudioHoldPlaceMode;
                     bool m_pureAudioHoldPlaceModeHasBeenSet;
+
+                    /**
+                     * 水印参数。
+                     */
+                    WaterMarkParams m_waterMarkParams;
+                    bool m_waterMarkParamsHasBeenSet;
 
                 };
             }

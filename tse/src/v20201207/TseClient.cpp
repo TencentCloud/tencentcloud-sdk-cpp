@@ -40,6 +40,49 @@ TseClient::TseClient(const Credential &credential, const string &region, const C
 }
 
 
+TseClient::DescribeConfigOutcome TseClient::DescribeConfig(const DescribeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigResponse rsp = DescribeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigOutcome(rsp);
+        else
+            return DescribeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeConfigAsync(const DescribeConfigRequest& request, const DescribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeConfigOutcomeCallable TseClient::DescribeConfigCallable(const DescribeConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DescribeSREInstanceAccessAddressOutcome TseClient::DescribeSREInstanceAccessAddress(const DescribeSREInstanceAccessAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSREInstanceAccessAddress");

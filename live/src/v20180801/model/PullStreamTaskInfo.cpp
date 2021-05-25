@@ -1,0 +1,871 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/live/v20180801/model/PullStreamTaskInfo.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Live::V20180801::Model;
+using namespace rapidjson;
+using namespace std;
+
+PullStreamTaskInfo::PullStreamTaskInfo() :
+    m_taskIdHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
+    m_sourceUrlsHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_appNameHasBeenSet(false),
+    m_streamNameHasBeenSet(false),
+    m_pushArgsHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_vodLoopTimesHasBeenSet(false),
+    m_vodRefreshTypeHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_createByHasBeenSet(false),
+    m_updateByHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false),
+    m_callbackEventsHasBeenSet(false),
+    m_callbackInfoHasBeenSet(false),
+    m_errorInfoHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_recentPullInfoHasBeenSet(false),
+    m_commentHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome PullStreamTaskInfo::Deserialize(const Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("TaskId") && !value["TaskId"].IsNull())
+    {
+        if (!value["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(value["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    {
+        if (!value["SourceType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceType = string(value["SourceType"].GetString());
+        m_sourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceUrls") && !value["SourceUrls"].IsNull())
+    {
+        if (!value["SourceUrls"].IsArray())
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.SourceUrls` is not array type"));
+
+        const Value &tmpValue = value["SourceUrls"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sourceUrls.push_back((*itr).GetString());
+        }
+        m_sourceUrlsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DomainName") && !value["DomainName"].IsNull())
+    {
+        if (!value["DomainName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainName = string(value["DomainName"].GetString());
+        m_domainNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppName") && !value["AppName"].IsNull())
+    {
+        if (!value["AppName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appName = string(value["AppName"].GetString());
+        m_appNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("StreamName") && !value["StreamName"].IsNull())
+    {
+        if (!value["StreamName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.StreamName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_streamName = string(value["StreamName"].GetString());
+        m_streamNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PushArgs") && !value["PushArgs"].IsNull())
+    {
+        if (!value["PushArgs"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.PushArgs` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pushArgs = string(value["PushArgs"].GetString());
+        m_pushArgsHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = string(value["EndTime"].GetString());
+        m_endTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("VodLoopTimes") && !value["VodLoopTimes"].IsNull())
+    {
+        if (!value["VodLoopTimes"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.VodLoopTimes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodLoopTimes = value["VodLoopTimes"].GetInt64();
+        m_vodLoopTimesHasBeenSet = true;
+    }
+
+    if (value.HasMember("VodRefreshType") && !value["VodRefreshType"].IsNull())
+    {
+        if (!value["VodRefreshType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.VodRefreshType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodRefreshType = string(value["VodRefreshType"].GetString());
+        m_vodRefreshTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateBy") && !value["CreateBy"].IsNull())
+    {
+        if (!value["CreateBy"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.CreateBy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createBy = string(value["CreateBy"].GetString());
+        m_createByHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateBy") && !value["UpdateBy"].IsNull())
+    {
+        if (!value["UpdateBy"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.UpdateBy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateBy = string(value["UpdateBy"].GetString());
+        m_updateByHasBeenSet = true;
+    }
+
+    if (value.HasMember("CallbackUrl") && !value["CallbackUrl"].IsNull())
+    {
+        if (!value["CallbackUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackUrl = string(value["CallbackUrl"].GetString());
+        m_callbackUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("CallbackEvents") && !value["CallbackEvents"].IsNull())
+    {
+        if (!value["CallbackEvents"].IsArray())
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.CallbackEvents` is not array type"));
+
+        const Value &tmpValue = value["CallbackEvents"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_callbackEvents.push_back((*itr).GetString());
+        }
+        m_callbackEventsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CallbackInfo") && !value["CallbackInfo"].IsNull())
+    {
+        if (!value["CallbackInfo"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.CallbackInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackInfo = string(value["CallbackInfo"].GetString());
+        m_callbackInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrorInfo") && !value["ErrorInfo"].IsNull())
+    {
+        if (!value["ErrorInfo"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.ErrorInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorInfo = string(value["ErrorInfo"].GetString());
+        m_errorInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecentPullInfo") && !value["RecentPullInfo"].IsNull())
+    {
+        if (!value["RecentPullInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.RecentPullInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_recentPullInfo.Deserialize(value["RecentPullInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_recentPullInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("Comment") && !value["Comment"].IsNull())
+    {
+        if (!value["Comment"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PullStreamTaskInfo.Comment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comment = string(value["Comment"].GetString());
+        m_commentHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void PullStreamTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+{
+
+    if (m_taskIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceUrlsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SourceUrls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_sourceUrls.begin(); itr != m_sourceUrls.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_domainNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DomainName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_domainName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AppName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_appName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_streamNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StreamName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_streamName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pushArgsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PushArgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_pushArgs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vodLoopTimesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VodLoopTimes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vodLoopTimes, allocator);
+    }
+
+    if (m_vodRefreshTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "VodRefreshType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_vodRefreshType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createByHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateBy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateByHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UpdateBy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_updateBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackEventsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CallbackEvents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_callbackEvents.begin(); itr != m_callbackEvents.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_callbackInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CallbackInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_callbackInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ErrorInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_errorInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recentPullInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RecentPullInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_recentPullInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string PullStreamTaskInfo::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void PullStreamTaskInfo::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void PullStreamTaskInfo::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
+}
+
+vector<string> PullStreamTaskInfo::GetSourceUrls() const
+{
+    return m_sourceUrls;
+}
+
+void PullStreamTaskInfo::SetSourceUrls(const vector<string>& _sourceUrls)
+{
+    m_sourceUrls = _sourceUrls;
+    m_sourceUrlsHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::SourceUrlsHasBeenSet() const
+{
+    return m_sourceUrlsHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetDomainName() const
+{
+    return m_domainName;
+}
+
+void PullStreamTaskInfo::SetDomainName(const string& _domainName)
+{
+    m_domainName = _domainName;
+    m_domainNameHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::DomainNameHasBeenSet() const
+{
+    return m_domainNameHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetAppName() const
+{
+    return m_appName;
+}
+
+void PullStreamTaskInfo::SetAppName(const string& _appName)
+{
+    m_appName = _appName;
+    m_appNameHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::AppNameHasBeenSet() const
+{
+    return m_appNameHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetStreamName() const
+{
+    return m_streamName;
+}
+
+void PullStreamTaskInfo::SetStreamName(const string& _streamName)
+{
+    m_streamName = _streamName;
+    m_streamNameHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::StreamNameHasBeenSet() const
+{
+    return m_streamNameHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetPushArgs() const
+{
+    return m_pushArgs;
+}
+
+void PullStreamTaskInfo::SetPushArgs(const string& _pushArgs)
+{
+    m_pushArgs = _pushArgs;
+    m_pushArgsHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::PushArgsHasBeenSet() const
+{
+    return m_pushArgsHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void PullStreamTaskInfo::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void PullStreamTaskInfo::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetRegion() const
+{
+    return m_region;
+}
+
+void PullStreamTaskInfo::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+int64_t PullStreamTaskInfo::GetVodLoopTimes() const
+{
+    return m_vodLoopTimes;
+}
+
+void PullStreamTaskInfo::SetVodLoopTimes(const int64_t& _vodLoopTimes)
+{
+    m_vodLoopTimes = _vodLoopTimes;
+    m_vodLoopTimesHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::VodLoopTimesHasBeenSet() const
+{
+    return m_vodLoopTimesHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetVodRefreshType() const
+{
+    return m_vodRefreshType;
+}
+
+void PullStreamTaskInfo::SetVodRefreshType(const string& _vodRefreshType)
+{
+    m_vodRefreshType = _vodRefreshType;
+    m_vodRefreshTypeHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::VodRefreshTypeHasBeenSet() const
+{
+    return m_vodRefreshTypeHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void PullStreamTaskInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void PullStreamTaskInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetCreateBy() const
+{
+    return m_createBy;
+}
+
+void PullStreamTaskInfo::SetCreateBy(const string& _createBy)
+{
+    m_createBy = _createBy;
+    m_createByHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::CreateByHasBeenSet() const
+{
+    return m_createByHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetUpdateBy() const
+{
+    return m_updateBy;
+}
+
+void PullStreamTaskInfo::SetUpdateBy(const string& _updateBy)
+{
+    m_updateBy = _updateBy;
+    m_updateByHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::UpdateByHasBeenSet() const
+{
+    return m_updateByHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void PullStreamTaskInfo::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
+}
+
+vector<string> PullStreamTaskInfo::GetCallbackEvents() const
+{
+    return m_callbackEvents;
+}
+
+void PullStreamTaskInfo::SetCallbackEvents(const vector<string>& _callbackEvents)
+{
+    m_callbackEvents = _callbackEvents;
+    m_callbackEventsHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::CallbackEventsHasBeenSet() const
+{
+    return m_callbackEventsHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetCallbackInfo() const
+{
+    return m_callbackInfo;
+}
+
+void PullStreamTaskInfo::SetCallbackInfo(const string& _callbackInfo)
+{
+    m_callbackInfo = _callbackInfo;
+    m_callbackInfoHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::CallbackInfoHasBeenSet() const
+{
+    return m_callbackInfoHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetErrorInfo() const
+{
+    return m_errorInfo;
+}
+
+void PullStreamTaskInfo::SetErrorInfo(const string& _errorInfo)
+{
+    m_errorInfo = _errorInfo;
+    m_errorInfoHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::ErrorInfoHasBeenSet() const
+{
+    return m_errorInfoHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void PullStreamTaskInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+RecentPullInfo PullStreamTaskInfo::GetRecentPullInfo() const
+{
+    return m_recentPullInfo;
+}
+
+void PullStreamTaskInfo::SetRecentPullInfo(const RecentPullInfo& _recentPullInfo)
+{
+    m_recentPullInfo = _recentPullInfo;
+    m_recentPullInfoHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::RecentPullInfoHasBeenSet() const
+{
+    return m_recentPullInfoHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetComment() const
+{
+    return m_comment;
+}
+
+void PullStreamTaskInfo::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
+}
+

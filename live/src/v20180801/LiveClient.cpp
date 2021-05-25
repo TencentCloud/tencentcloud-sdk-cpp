@@ -427,6 +427,49 @@ LiveClient::CreateLiveCertOutcomeCallable LiveClient::CreateLiveCertCallable(con
     return task->get_future();
 }
 
+LiveClient::CreateLivePullStreamTaskOutcome LiveClient::CreateLivePullStreamTask(const CreateLivePullStreamTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLivePullStreamTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLivePullStreamTaskResponse rsp = CreateLivePullStreamTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLivePullStreamTaskOutcome(rsp);
+        else
+            return CreateLivePullStreamTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLivePullStreamTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateLivePullStreamTaskAsync(const CreateLivePullStreamTaskRequest& request, const CreateLivePullStreamTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLivePullStreamTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateLivePullStreamTaskOutcomeCallable LiveClient::CreateLivePullStreamTaskCallable(const CreateLivePullStreamTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLivePullStreamTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLivePullStreamTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::CreateLiveRecordOutcome LiveClient::CreateLiveRecord(const CreateLiveRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLiveRecord");
@@ -1022,6 +1065,49 @@ LiveClient::DeleteLiveDomainOutcomeCallable LiveClient::DeleteLiveDomainCallable
         [this, request]()
         {
             return this->DeleteLiveDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DeleteLivePullStreamTaskOutcome LiveClient::DeleteLivePullStreamTask(const DeleteLivePullStreamTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLivePullStreamTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLivePullStreamTaskResponse rsp = DeleteLivePullStreamTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLivePullStreamTaskOutcome(rsp);
+        else
+            return DeleteLivePullStreamTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLivePullStreamTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteLivePullStreamTaskAsync(const DeleteLivePullStreamTaskRequest& request, const DeleteLivePullStreamTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLivePullStreamTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteLivePullStreamTaskOutcomeCallable LiveClient::DeleteLivePullStreamTaskCallable(const DeleteLivePullStreamTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLivePullStreamTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLivePullStreamTask(request);
         }
     );
 
@@ -2441,6 +2527,49 @@ LiveClient::DescribeLivePlayAuthKeyOutcomeCallable LiveClient::DescribeLivePlayA
         [this, request]()
         {
             return this->DescribeLivePlayAuthKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeLivePullStreamTasksOutcome LiveClient::DescribeLivePullStreamTasks(const DescribeLivePullStreamTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLivePullStreamTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLivePullStreamTasksResponse rsp = DescribeLivePullStreamTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLivePullStreamTasksOutcome(rsp);
+        else
+            return DescribeLivePullStreamTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLivePullStreamTasksOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLivePullStreamTasksAsync(const DescribeLivePullStreamTasksRequest& request, const DescribeLivePullStreamTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLivePullStreamTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLivePullStreamTasksOutcomeCallable LiveClient::DescribeLivePullStreamTasksCallable(const DescribeLivePullStreamTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLivePullStreamTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLivePullStreamTasks(request);
         }
     );
 
@@ -4290,6 +4419,49 @@ LiveClient::ModifyLivePlayDomainOutcomeCallable LiveClient::ModifyLivePlayDomain
         [this, request]()
         {
             return this->ModifyLivePlayDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::ModifyLivePullStreamTaskOutcome LiveClient::ModifyLivePullStreamTask(const ModifyLivePullStreamTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLivePullStreamTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLivePullStreamTaskResponse rsp = ModifyLivePullStreamTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLivePullStreamTaskOutcome(rsp);
+        else
+            return ModifyLivePullStreamTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLivePullStreamTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyLivePullStreamTaskAsync(const ModifyLivePullStreamTaskRequest& request, const ModifyLivePullStreamTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLivePullStreamTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::ModifyLivePullStreamTaskOutcomeCallable LiveClient::ModifyLivePullStreamTaskCallable(const ModifyLivePullStreamTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLivePullStreamTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLivePullStreamTask(request);
         }
     );
 

@@ -30,7 +30,8 @@ LayoutParams::LayoutParams() :
     m_mixVideoUidsHasBeenSet(false),
     m_presetLayoutConfigHasBeenSet(false),
     m_placeHolderModeHasBeenSet(false),
-    m_pureAudioHoldPlaceModeHasBeenSet(false)
+    m_pureAudioHoldPlaceModeHasBeenSet(false),
+    m_waterMarkParamsHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,23 @@ CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
         m_pureAudioHoldPlaceModeHasBeenSet = true;
     }
 
+    if (value.HasMember("WaterMarkParams") && !value["WaterMarkParams"].IsNull())
+    {
+        if (!value["WaterMarkParams"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `LayoutParams.WaterMarkParams` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_waterMarkParams.Deserialize(value["WaterMarkParams"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_waterMarkParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -239,6 +257,15 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
         string key = "PureAudioHoldPlaceMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pureAudioHoldPlaceMode, allocator);
+    }
+
+    if (m_waterMarkParamsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "WaterMarkParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_waterMarkParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -386,5 +413,21 @@ void LayoutParams::SetPureAudioHoldPlaceMode(const uint64_t& _pureAudioHoldPlace
 bool LayoutParams::PureAudioHoldPlaceModeHasBeenSet() const
 {
     return m_pureAudioHoldPlaceModeHasBeenSet;
+}
+
+WaterMarkParams LayoutParams::GetWaterMarkParams() const
+{
+    return m_waterMarkParams;
+}
+
+void LayoutParams::SetWaterMarkParams(const WaterMarkParams& _waterMarkParams)
+{
+    m_waterMarkParams = _waterMarkParams;
+    m_waterMarkParamsHasBeenSet = true;
+}
+
+bool LayoutParams::WaterMarkParamsHasBeenSet() const
+{
+    return m_waterMarkParamsHasBeenSet;
 }
 

@@ -49,7 +49,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_withDrHasBeenSet(false),
     m_withRoHasBeenSet(false),
     m_withMasterHasBeenSet(false),
-    m_deployGroupIdsHasBeenSet(false)
+    m_deployGroupIdsHasBeenSet(false),
+    m_tagKeysForSearchHasBeenSet(false)
 {
 }
 
@@ -328,6 +329,19 @@ string DescribeDBInstancesRequest::ToJsonString() const
         d.AddMember(iKey, Value(kArrayType).Move(), allocator);
 
         for (auto itr = m_deployGroupIds.begin(); itr != m_deployGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagKeysForSearchHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "TagKeysForSearch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagKeysForSearch.begin(); itr != m_tagKeysForSearch.end(); ++itr)
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -755,6 +769,22 @@ void DescribeDBInstancesRequest::SetDeployGroupIds(const vector<string>& _deploy
 bool DescribeDBInstancesRequest::DeployGroupIdsHasBeenSet() const
 {
     return m_deployGroupIdsHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetTagKeysForSearch() const
+{
+    return m_tagKeysForSearch;
+}
+
+void DescribeDBInstancesRequest::SetTagKeysForSearch(const vector<string>& _tagKeysForSearch)
+{
+    m_tagKeysForSearch = _tagKeysForSearch;
+    m_tagKeysForSearchHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::TagKeysForSearchHasBeenSet() const
+{
+    return m_tagKeysForSearchHasBeenSet;
 }
 
 
