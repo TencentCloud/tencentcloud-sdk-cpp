@@ -25,7 +25,8 @@ ThirdPartyPublishInfo::ThirdPartyPublishInfo() :
     m_channelMaterialIdHasBeenSet(false),
     m_penguinMediaPlatformPublishInfoHasBeenSet(false),
     m_weiboPublishInfoHasBeenSet(false),
-    m_kuaishouPublishInfoHasBeenSet(false)
+    m_kuaishouPublishInfoHasBeenSet(false),
+    m_cosPublishInfoHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,23 @@ CoreInternalOutcome ThirdPartyPublishInfo::Deserialize(const Value &value)
         m_kuaishouPublishInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("CosPublishInfo") && !value["CosPublishInfo"].IsNull())
+    {
+        if (!value["CosPublishInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ThirdPartyPublishInfo.CosPublishInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cosPublishInfo.Deserialize(value["CosPublishInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cosPublishInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -135,6 +153,15 @@ void ThirdPartyPublishInfo::ToJsonObject(Value &value, Document::AllocatorType& 
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_kuaishouPublishInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cosPublishInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CosPublishInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_cosPublishInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -202,5 +229,21 @@ void ThirdPartyPublishInfo::SetKuaishouPublishInfo(const KuaishouPublishInfo& _k
 bool ThirdPartyPublishInfo::KuaishouPublishInfoHasBeenSet() const
 {
     return m_kuaishouPublishInfoHasBeenSet;
+}
+
+CosPublishInputInfo ThirdPartyPublishInfo::GetCosPublishInfo() const
+{
+    return m_cosPublishInfo;
+}
+
+void ThirdPartyPublishInfo::SetCosPublishInfo(const CosPublishInputInfo& _cosPublishInfo)
+{
+    m_cosPublishInfo = _cosPublishInfo;
+    m_cosPublishInfoHasBeenSet = true;
+}
+
+bool ThirdPartyPublishInfo::CosPublishInfoHasBeenSet() const
+{
+    return m_cosPublishInfoHasBeenSet;
 }
 

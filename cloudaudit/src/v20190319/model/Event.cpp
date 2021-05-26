@@ -37,7 +37,8 @@ Event::Event() :
     m_sourceIPAddressHasBeenSet(false),
     m_eventNameCnHasBeenSet(false),
     m_resourcesHasBeenSet(false),
-    m_eventRegionHasBeenSet(false)
+    m_eventRegionHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -213,6 +214,16 @@ CoreInternalOutcome Event::Deserialize(const Value &value)
         m_eventRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("Location") && !value["Location"].IsNull())
+    {
+        if (!value["Location"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Event.Location` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_location = string(value["Location"].GetString());
+        m_locationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -347,6 +358,14 @@ void Event::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
         string key = "EventRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_eventRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_location.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -606,5 +625,21 @@ void Event::SetEventRegion(const string& _eventRegion)
 bool Event::EventRegionHasBeenSet() const
 {
     return m_eventRegionHasBeenSet;
+}
+
+string Event::GetLocation() const
+{
+    return m_location;
+}
+
+void Event::SetLocation(const string& _location)
+{
+    m_location = _location;
+    m_locationHasBeenSet = true;
+}
+
+bool Event::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
 }
 

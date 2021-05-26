@@ -27,6 +27,7 @@
 #include <tencentcloud/cme/v20191029/model/PenguinMediaPlatformPublishInfo.h>
 #include <tencentcloud/cme/v20191029/model/WeiboPublishInfo.h>
 #include <tencentcloud/cme/v20191029/model/KuaishouPublishInfo.h>
+#include <tencentcloud/cme/v20191029/model/CosPublishInputInfo.h>
 
 
 namespace TencentCloud
@@ -121,6 +122,24 @@ namespace TencentCloud
                      */
                     bool KuaishouPublishInfoHasBeenSet() const;
 
+                    /**
+                     * 获取腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。
+                     * @return CosPublishInfo 腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。
+                     */
+                    CosPublishInputInfo GetCosPublishInfo() const;
+
+                    /**
+                     * 设置腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。
+                     * @param CosPublishInfo 腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。
+                     */
+                    void SetCosPublishInfo(const CosPublishInputInfo& _cosPublishInfo);
+
+                    /**
+                     * 判断参数 CosPublishInfo 是否已赋值
+                     * @return CosPublishInfo 是否已赋值
+                     */
+                    bool CosPublishInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -146,6 +165,12 @@ namespace TencentCloud
                      */
                     KuaishouPublishInfo m_kuaishouPublishInfo;
                     bool m_kuaishouPublishInfoHasBeenSet;
+
+                    /**
+                     * 腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。
+                     */
+                    CosPublishInputInfo m_cosPublishInfo;
+                    bool m_cosPublishInfoHasBeenSet;
 
                 };
             }

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EID商户id
-                     * @return MerchantId EID商户id
+                     * 获取EID商户id，字段长度最长50位。
+                     * @return MerchantId EID商户id，字段长度最长50位。
                      */
                     std::string GetMerchantId() const;
 
                     /**
-                     * 设置EID商户id
-                     * @param MerchantId EID商户id
+                     * 设置EID商户id，字段长度最长50位。
+                     * @param MerchantId EID商户id，字段长度最长50位。
                      */
                     void SetMerchantId(const std::string& _merchantId);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取透传字段，在获取验证结果时返回。
-                     * @return Extra 透传字段，在获取验证结果时返回。
+                     * 获取透传字段，在获取验证结果时返回。最长长度1024位。
+                     * @return Extra 透传字段，在获取验证结果时返回。最长长度1024位。
                      */
                     std::string GetExtra() const;
 
                     /**
-                     * 设置透传字段，在获取验证结果时返回。
-                     * @param Extra 透传字段，在获取验证结果时返回。
+                     * 设置透传字段，在获取验证结果时返回。最长长度1024位。
+                     * @param Extra 透传字段，在获取验证结果时返回。最长长度1024位。
                      */
                     void SetExtra(const std::string& _extra);
 
@@ -140,7 +140,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * EID商户id
+                     * EID商户id，字段长度最长50位。
                      */
                     std::string m_merchantId;
                     bool m_merchantIdHasBeenSet;
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 透传字段，在获取验证结果时返回。
+                     * 透传字段，在获取验证结果时返回。最长长度1024位。
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;

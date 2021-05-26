@@ -343,6 +343,24 @@ namespace TencentCloud
                      */
                     bool EventRegionHasBeenSet() const;
 
+                    /**
+                     * 获取IP 归属地
+                     * @return Location IP 归属地
+                     */
+                    std::string GetLocation() const;
+
+                    /**
+                     * 设置IP 归属地
+                     * @param Location IP 归属地
+                     */
+                    void SetLocation(const std::string& _location);
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     */
+                    bool LocationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -442,6 +460,12 @@ namespace TencentCloud
                      */
                     std::string m_eventRegion;
                     bool m_eventRegionHasBeenSet;
+
+                    /**
+                     * IP 归属地
+                     */
+                    std::string m_location;
+                    bool m_locationHasBeenSet;
 
                 };
             }

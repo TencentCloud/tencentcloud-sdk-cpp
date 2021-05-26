@@ -156,6 +156,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DeleteMaterialResponse.h
   include/tencentcloud/cme/v20191029/model/RevokeResourceAuthorizationRequest.h
   include/tencentcloud/cme/v20191029/model/DescribeTaskDetailRequest.h
+  include/tencentcloud/cme/v20191029/model/CosPublishInputInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeTasksResponse.h
   include/tencentcloud/cme/v20191029/model/ModifyProjectRequest.h
   include/tencentcloud/cme/v20191029/model/MaterialInfo.h
@@ -316,6 +317,7 @@ set(cme_src
   src/v20191029/model/DeleteMaterialResponse.cpp
   src/v20191029/model/RevokeResourceAuthorizationRequest.cpp
   src/v20191029/model/DescribeTaskDetailRequest.cpp
+  src/v20191029/model/CosPublishInputInfo.cpp
   src/v20191029/model/DescribeTasksResponse.cpp
   src/v20191029/model/ModifyProjectRequest.cpp
   src/v20191029/model/MaterialInfo.cpp
