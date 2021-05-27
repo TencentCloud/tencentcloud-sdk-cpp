@@ -126,6 +126,42 @@ namespace TencentCloud
                      */
                     bool StandardStorageHasBeenSet() const;
 
+                    /**
+                     * 获取当前归档存储量，单位是字节。
+                     * @return ArchiveStorage 当前归档存储量，单位是字节。
+                     */
+                    uint64_t GetArchiveStorage() const;
+
+                    /**
+                     * 设置当前归档存储量，单位是字节。
+                     * @param ArchiveStorage 当前归档存储量，单位是字节。
+                     */
+                    void SetArchiveStorage(const uint64_t& _archiveStorage);
+
+                    /**
+                     * 判断参数 ArchiveStorage 是否已赋值
+                     * @return ArchiveStorage 是否已赋值
+                     */
+                    bool ArchiveStorageHasBeenSet() const;
+
+                    /**
+                     * 获取当前深度归档存储量，单位是字节。
+                     * @return DeepArchiveStorage 当前深度归档存储量，单位是字节。
+                     */
+                    uint64_t GetDeepArchiveStorage() const;
+
+                    /**
+                     * 设置当前深度归档存储量，单位是字节。
+                     * @param DeepArchiveStorage 当前深度归档存储量，单位是字节。
+                     */
+                    void SetDeepArchiveStorage(const uint64_t& _deepArchiveStorage);
+
+                    /**
+                     * 判断参数 DeepArchiveStorage 是否已赋值
+                     * @return DeepArchiveStorage 是否已赋值
+                     */
+                    bool DeepArchiveStorageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +189,18 @@ namespace TencentCloud
                      */
                     uint64_t m_standardStorage;
                     bool m_standardStorageHasBeenSet;
+
+                    /**
+                     * 当前归档存储量，单位是字节。
+                     */
+                    uint64_t m_archiveStorage;
+                    bool m_archiveStorageHasBeenSet;
+
+                    /**
+                     * 当前深度归档存储量，单位是字节。
+                     */
+                    uint64_t m_deepArchiveStorage;
+                    bool m_deepArchiveStorageHasBeenSet;
 
                 };
             }

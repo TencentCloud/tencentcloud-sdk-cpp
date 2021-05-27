@@ -69,6 +69,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeDatabaseTableResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDatabasesRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDatabasesResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeDcnDetailRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeDcnDetailResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsRequest.h>
@@ -192,6 +194,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDcnDetailResponse> DescribeDcnDetailOutcome;
+                typedef std::future<DescribeDcnDetailOutcome> DescribeDcnDetailOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeDcnDetailRequest&, DescribeDcnDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcnDetailAsyncHandler;
                 typedef Outcome<Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
                 typedef std::future<DescribeOrdersOutcome> DescribeOrdersOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeOrdersRequest&, DescribeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrdersAsyncHandler;
@@ -464,6 +469,15 @@ namespace TencentCloud
                 DescribeDatabasesOutcome DescribeDatabases(const Model::DescribeDatabasesRequest &request);
                 void DescribeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatabasesOutcomeCallable DescribeDatabasesCallable(const Model::DescribeDatabasesRequest& request);
+
+                /**
+                 *获取实例灾备详情
+                 * @param req DescribeDcnDetailRequest
+                 * @return DescribeDcnDetailOutcome
+                 */
+                DescribeDcnDetailOutcome DescribeDcnDetail(const Model::DescribeDcnDetailRequest &request);
+                void DescribeDcnDetailAsync(const Model::DescribeDcnDetailRequest& request, const DescribeDcnDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDcnDetailOutcomeCallable DescribeDcnDetailCallable(const Model::DescribeDcnDetailRequest& request);
 
                 /**
                  *本接口（DescribeOrders）用于查询分布式数据库订单信息。传入订单ID来查询订单关联的分布式数据库实例，和对应的任务流程ID。

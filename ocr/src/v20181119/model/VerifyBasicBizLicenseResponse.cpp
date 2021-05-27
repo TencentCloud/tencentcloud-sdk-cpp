@@ -41,7 +41,8 @@ VerifyBasicBizLicenseResponse::VerifyBasicBizLicenseResponse() :
     m_verifyDomHasBeenSet(false),
     m_domHasBeenSet(false),
     m_regNumResultHasBeenSet(false),
-    m_regCapitalHasBeenSet(false)
+    m_regCapitalHasBeenSet(false),
+    m_establishTimeHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,16 @@ CoreInternalOutcome VerifyBasicBizLicenseResponse::Deserialize(const string &pay
         m_regCapitalHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EstablishTime") && !rsp["EstablishTime"].IsNull())
+    {
+        if (!rsp["EstablishTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EstablishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_establishTime = string(rsp["EstablishTime"].GetString());
+        m_establishTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -429,6 +440,16 @@ string VerifyBasicBizLicenseResponse::GetRegCapital() const
 bool VerifyBasicBizLicenseResponse::RegCapitalHasBeenSet() const
 {
     return m_regCapitalHasBeenSet;
+}
+
+string VerifyBasicBizLicenseResponse::GetEstablishTime() const
+{
+    return m_establishTime;
+}
+
+bool VerifyBasicBizLicenseResponse::EstablishTimeHasBeenSet() const
+{
+    return m_establishTimeHasBeenSet;
 }
 
 

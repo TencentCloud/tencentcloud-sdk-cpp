@@ -24,7 +24,8 @@ using namespace std;
 ClusterPublicLB::ClusterPublicLB() :
     m_enabledHasBeenSet(false),
     m_allowFromCidrsHasBeenSet(false),
-    m_securityPoliciesHasBeenSet(false)
+    m_securityPoliciesHasBeenSet(false),
+    m_extraParamHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,16 @@ CoreInternalOutcome ClusterPublicLB::Deserialize(const Value &value)
         m_securityPoliciesHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtraParam") && !value["ExtraParam"].IsNull())
+    {
+        if (!value["ExtraParam"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterPublicLB.ExtraParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extraParam = string(value["ExtraParam"].GetString());
+        m_extraParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void ClusterPublicLB::ToJsonObject(Value &value, Document::AllocatorType& alloca
         {
             value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_extraParamHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExtraParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_extraParam.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void ClusterPublicLB::SetSecurityPolicies(const vector<string>& _securityPolicie
 bool ClusterPublicLB::SecurityPoliciesHasBeenSet() const
 {
     return m_securityPoliciesHasBeenSet;
+}
+
+string ClusterPublicLB::GetExtraParam() const
+{
+    return m_extraParam;
+}
+
+void ClusterPublicLB::SetExtraParam(const string& _extraParam)
+{
+    m_extraParam = _extraParam;
+    m_extraParamHasBeenSet = true;
+}
+
+bool ClusterPublicLB::ExtraParamHasBeenSet() const
+{
+    return m_extraParamHasBeenSet;
 }
 

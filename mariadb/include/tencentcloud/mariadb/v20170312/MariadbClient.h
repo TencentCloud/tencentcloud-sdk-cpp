@@ -67,6 +67,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSlowLogsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDatabasesRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDatabasesResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDcnDetailRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDcnDetailResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeFlowRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeFlowResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoRequest.h>
@@ -201,6 +203,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDcnDetailResponse> DescribeDcnDetailOutcome;
+                typedef std::future<DescribeDcnDetailOutcome> DescribeDcnDetailOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DescribeDcnDetailRequest&, DescribeDcnDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcnDetailAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFlowResponse> DescribeFlowOutcome;
                 typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeFlowRequest&, DescribeFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowAsyncHandler;
@@ -485,6 +490,15 @@ namespace TencentCloud
                 DescribeDatabasesOutcome DescribeDatabases(const Model::DescribeDatabasesRequest &request);
                 void DescribeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatabasesOutcomeCallable DescribeDatabasesCallable(const Model::DescribeDatabasesRequest& request);
+
+                /**
+                 *获取实例灾备详情
+                 * @param req DescribeDcnDetailRequest
+                 * @return DescribeDcnDetailOutcome
+                 */
+                DescribeDcnDetailOutcome DescribeDcnDetail(const Model::DescribeDcnDetailRequest &request);
+                void DescribeDcnDetailAsync(const Model::DescribeDcnDetailRequest& request, const DescribeDcnDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDcnDetailOutcomeCallable DescribeDcnDetailCallable(const Model::DescribeDcnDetailRequest& request);
 
                 /**
                  *本接口（DescribeFlow）用于查询流程状态。

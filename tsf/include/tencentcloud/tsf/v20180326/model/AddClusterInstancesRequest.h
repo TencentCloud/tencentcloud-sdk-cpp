@@ -242,14 +242,14 @@ namespace TencentCloud
                     bool InstanceAdvancedSettingsHasBeenSet() const;
 
                     /**
-                     * 获取部署组ID
-                     * @return SecurityGroupIds 部署组ID
+                     * 获取安全组 ID 列表
+                     * @return SecurityGroupIds 安全组 ID 列表
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置部署组ID
-                     * @param SecurityGroupIds 部署组ID
+                     * 设置安全组 ID 列表
+                     * @param SecurityGroupIds 安全组 ID 列表
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
@@ -328,7 +328,7 @@ namespace TencentCloud
                     bool m_instanceAdvancedSettingsHasBeenSet;
 
                     /**
-                     * 部署组ID
+                     * 安全组 ID 列表
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;

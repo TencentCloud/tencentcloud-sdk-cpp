@@ -208,6 +208,24 @@ Config = {"Name":true,"Address":true}
                      */
                     bool RegCapitalHasBeenSet() const;
 
+                    /**
+                     * 获取true表示展示成立/注册日期
+                     * @return EstablishTime true表示展示成立/注册日期
+                     */
+                    bool GetEstablishTime() const;
+
+                    /**
+                     * 设置true表示展示成立/注册日期
+                     * @param EstablishTime true表示展示成立/注册日期
+                     */
+                    void SetEstablishTime(const bool& _establishTime);
+
+                    /**
+                     * 判断参数 EstablishTime 是否已赋值
+                     * @return EstablishTime 是否已赋值
+                     */
+                    bool EstablishTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +279,12 @@ Config = {"Name":true,"Address":true}
                      */
                     int64_t m_regCapital;
                     bool m_regCapitalHasBeenSet;
+
+                    /**
+                     * true表示展示成立/注册日期
+                     */
+                    bool m_establishTime;
+                    bool m_establishTimeHasBeenSet;
 
                 };
             }

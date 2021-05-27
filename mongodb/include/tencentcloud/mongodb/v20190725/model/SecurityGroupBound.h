@@ -118,6 +118,78 @@ namespace TencentCloud
                      */
                     bool IpProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取安全组id代表的地址集合
+                     * @return Id 安全组id代表的地址集合
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置安全组id代表的地址集合
+                     * @param Id 安全组id代表的地址集合
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取地址组id代表的地址集合
+                     * @return AddressModule 地址组id代表的地址集合
+                     */
+                    std::string GetAddressModule() const;
+
+                    /**
+                     * 设置地址组id代表的地址集合
+                     * @param AddressModule 地址组id代表的地址集合
+                     */
+                    void SetAddressModule(const std::string& _addressModule);
+
+                    /**
+                     * 判断参数 AddressModule 是否已赋值
+                     * @return AddressModule 是否已赋值
+                     */
+                    bool AddressModuleHasBeenSet() const;
+
+                    /**
+                     * 获取服务组id代表的协议和端口集合
+                     * @return ServiceModule 服务组id代表的协议和端口集合
+                     */
+                    std::string GetServiceModule() const;
+
+                    /**
+                     * 设置服务组id代表的协议和端口集合
+                     * @param ServiceModule 服务组id代表的协议和端口集合
+                     */
+                    void SetServiceModule(const std::string& _serviceModule);
+
+                    /**
+                     * 判断参数 ServiceModule 是否已赋值
+                     * @return ServiceModule 是否已赋值
+                     */
+                    bool ServiceModuleHasBeenSet() const;
+
+                    /**
+                     * 获取描述
+                     * @return Desc 描述
+                     */
+                    std::string GetDesc() const;
+
+                    /**
+                     * 设置描述
+                     * @param Desc 描述
+                     */
+                    void SetDesc(const std::string& _desc);
+
+                    /**
+                     * 判断参数 Desc 是否已赋值
+                     * @return Desc 是否已赋值
+                     */
+                    bool DescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +215,30 @@ namespace TencentCloud
                      */
                     std::string m_ipProtocol;
                     bool m_ipProtocolHasBeenSet;
+
+                    /**
+                     * 安全组id代表的地址集合
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 地址组id代表的地址集合
+                     */
+                    std::string m_addressModule;
+                    bool m_addressModuleHasBeenSet;
+
+                    /**
+                     * 服务组id代表的协议和端口集合
+                     */
+                    std::string m_serviceModule;
+                    bool m_serviceModuleHasBeenSet;
+
+                    /**
+                     * 描述
+                     */
+                    std::string m_desc;
+                    bool m_descHasBeenSet;
 
                 };
             }

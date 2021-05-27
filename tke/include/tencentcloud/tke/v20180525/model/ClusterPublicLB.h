@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool SecurityPoliciesHasBeenSet() const;
 
+                    /**
+                     * 获取外网访问相关的扩展参数，格式为json
+                     * @return ExtraParam 外网访问相关的扩展参数，格式为json
+                     */
+                    std::string GetExtraParam() const;
+
+                    /**
+                     * 设置外网访问相关的扩展参数，格式为json
+                     * @param ExtraParam 外网访问相关的扩展参数，格式为json
+                     */
+                    void SetExtraParam(const std::string& _extraParam);
+
+                    /**
+                     * 判断参数 ExtraParam 是否已赋值
+                     * @return ExtraParam 是否已赋值
+                     */
+                    bool ExtraParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityPolicies;
                     bool m_securityPoliciesHasBeenSet;
+
+                    /**
+                     * 外网访问相关的扩展参数，格式为json
+                     */
+                    std::string m_extraParam;
+                    bool m_extraParamHasBeenSet;
 
                 };
             }

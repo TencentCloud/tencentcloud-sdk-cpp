@@ -986,6 +986,49 @@ MariadbClient::DescribeDatabasesOutcomeCallable MariadbClient::DescribeDatabases
     return task->get_future();
 }
 
+MariadbClient::DescribeDcnDetailOutcome MariadbClient::DescribeDcnDetail(const DescribeDcnDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDcnDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDcnDetailResponse rsp = DescribeDcnDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDcnDetailOutcome(rsp);
+        else
+            return DescribeDcnDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDcnDetailOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::DescribeDcnDetailAsync(const DescribeDcnDetailRequest& request, const DescribeDcnDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDcnDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::DescribeDcnDetailOutcomeCallable MariadbClient::DescribeDcnDetailCallable(const DescribeDcnDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDcnDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDcnDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::DescribeFlowOutcome MariadbClient::DescribeFlow(const DescribeFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFlow");

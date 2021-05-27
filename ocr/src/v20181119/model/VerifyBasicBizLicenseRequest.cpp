@@ -30,7 +30,8 @@ VerifyBasicBizLicenseRequest::VerifyBasicBizLicenseRequest() :
     m_regNumHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_addressHasBeenSet(false),
-    m_regCapitalHasBeenSet(false)
+    m_regCapitalHasBeenSet(false),
+    m_establishTimeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string VerifyBasicBizLicenseRequest::ToJsonString() const
         string key = "RegCapital";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_regCapital, allocator);
+    }
+
+    if (m_establishTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EstablishTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_establishTime, allocator);
     }
 
 
@@ -215,6 +224,22 @@ void VerifyBasicBizLicenseRequest::SetRegCapital(const int64_t& _regCapital)
 bool VerifyBasicBizLicenseRequest::RegCapitalHasBeenSet() const
 {
     return m_regCapitalHasBeenSet;
+}
+
+bool VerifyBasicBizLicenseRequest::GetEstablishTime() const
+{
+    return m_establishTime;
+}
+
+void VerifyBasicBizLicenseRequest::SetEstablishTime(const bool& _establishTime)
+{
+    m_establishTime = _establishTime;
+    m_establishTimeHasBeenSet = true;
+}
+
+bool VerifyBasicBizLicenseRequest::EstablishTimeHasBeenSet() const
+{
+    return m_establishTimeHasBeenSet;
 }
 
 

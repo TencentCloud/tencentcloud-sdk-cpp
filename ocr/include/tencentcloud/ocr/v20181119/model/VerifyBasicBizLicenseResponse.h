@@ -247,6 +247,18 @@ namespace TencentCloud
                      */
                     bool RegCapitalHasBeenSet() const;
 
+                    /**
+                     * 获取成立/注册日期，只有输入参数EstablishTime为true时展示，默认为空
+                     * @return EstablishTime 成立/注册日期，只有输入参数EstablishTime为true时展示，默认为空
+                     */
+                    std::string GetEstablishTime() const;
+
+                    /**
+                     * 判断参数 EstablishTime 是否已赋值
+                     * @return EstablishTime 是否已赋值
+                     */
+                    bool EstablishTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -350,6 +362,12 @@ namespace TencentCloud
                      */
                     std::string m_regCapital;
                     bool m_regCapitalHasBeenSet;
+
+                    /**
+                     * 成立/注册日期，只有输入参数EstablishTime为true时展示，默认为空
+                     */
+                    std::string m_establishTime;
+                    bool m_establishTimeHasBeenSet;
 
                 };
             }

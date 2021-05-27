@@ -25,7 +25,9 @@ StorageStatData::StorageStatData() :
     m_areaHasBeenSet(false),
     m_totalStorageHasBeenSet(false),
     m_infrequentStorageHasBeenSet(false),
-    m_standardStorageHasBeenSet(false)
+    m_standardStorageHasBeenSet(false),
+    m_archiveStorageHasBeenSet(false),
+    m_deepArchiveStorageHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,26 @@ CoreInternalOutcome StorageStatData::Deserialize(const Value &value)
         m_standardStorageHasBeenSet = true;
     }
 
+    if (value.HasMember("ArchiveStorage") && !value["ArchiveStorage"].IsNull())
+    {
+        if (!value["ArchiveStorage"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `StorageStatData.ArchiveStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_archiveStorage = value["ArchiveStorage"].GetUint64();
+        m_archiveStorageHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeepArchiveStorage") && !value["DeepArchiveStorage"].IsNull())
+    {
+        if (!value["DeepArchiveStorage"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `StorageStatData.DeepArchiveStorage` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deepArchiveStorage = value["DeepArchiveStorage"].GetUint64();
+        m_deepArchiveStorageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +133,22 @@ void StorageStatData::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "StandardStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_standardStorage, allocator);
+    }
+
+    if (m_archiveStorageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ArchiveStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_archiveStorage, allocator);
+    }
+
+    if (m_deepArchiveStorageHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeepArchiveStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deepArchiveStorage, allocator);
     }
 
 }
@@ -178,5 +216,37 @@ void StorageStatData::SetStandardStorage(const uint64_t& _standardStorage)
 bool StorageStatData::StandardStorageHasBeenSet() const
 {
     return m_standardStorageHasBeenSet;
+}
+
+uint64_t StorageStatData::GetArchiveStorage() const
+{
+    return m_archiveStorage;
+}
+
+void StorageStatData::SetArchiveStorage(const uint64_t& _archiveStorage)
+{
+    m_archiveStorage = _archiveStorage;
+    m_archiveStorageHasBeenSet = true;
+}
+
+bool StorageStatData::ArchiveStorageHasBeenSet() const
+{
+    return m_archiveStorageHasBeenSet;
+}
+
+uint64_t StorageStatData::GetDeepArchiveStorage() const
+{
+    return m_deepArchiveStorage;
+}
+
+void StorageStatData::SetDeepArchiveStorage(const uint64_t& _deepArchiveStorage)
+{
+    m_deepArchiveStorage = _deepArchiveStorage;
+    m_deepArchiveStorageHasBeenSet = true;
+}
+
+bool StorageStatData::DeepArchiveStorageHasBeenSet() const
+{
+    return m_deepArchiveStorageHasBeenSet;
 }
 

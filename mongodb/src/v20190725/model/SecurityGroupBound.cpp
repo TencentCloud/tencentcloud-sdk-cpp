@@ -25,7 +25,11 @@ SecurityGroupBound::SecurityGroupBound() :
     m_actionHasBeenSet(false),
     m_cidrIpHasBeenSet(false),
     m_portRangeHasBeenSet(false),
-    m_ipProtocolHasBeenSet(false)
+    m_ipProtocolHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_addressModuleHasBeenSet(false),
+    m_serviceModuleHasBeenSet(false),
+    m_descHasBeenSet(false)
 {
 }
 
@@ -74,6 +78,46 @@ CoreInternalOutcome SecurityGroupBound::Deserialize(const Value &value)
         m_ipProtocolHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupBound.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("AddressModule") && !value["AddressModule"].IsNull())
+    {
+        if (!value["AddressModule"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupBound.AddressModule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addressModule = string(value["AddressModule"].GetString());
+        m_addressModuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceModule") && !value["ServiceModule"].IsNull())
+    {
+        if (!value["ServiceModule"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupBound.ServiceModule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceModule = string(value["ServiceModule"].GetString());
+        m_serviceModuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("Desc") && !value["Desc"].IsNull())
+    {
+        if (!value["Desc"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupBound.Desc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_desc = string(value["Desc"].GetString());
+        m_descHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -111,6 +155,38 @@ void SecurityGroupBound::ToJsonObject(Value &value, Document::AllocatorType& all
         string key = "IpProtocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_ipProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressModuleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AddressModule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_addressModule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceModuleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceModule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_serviceModule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Desc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_desc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +254,69 @@ void SecurityGroupBound::SetIpProtocol(const string& _ipProtocol)
 bool SecurityGroupBound::IpProtocolHasBeenSet() const
 {
     return m_ipProtocolHasBeenSet;
+}
+
+string SecurityGroupBound::GetId() const
+{
+    return m_id;
+}
+
+void SecurityGroupBound::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool SecurityGroupBound::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+string SecurityGroupBound::GetAddressModule() const
+{
+    return m_addressModule;
+}
+
+void SecurityGroupBound::SetAddressModule(const string& _addressModule)
+{
+    m_addressModule = _addressModule;
+    m_addressModuleHasBeenSet = true;
+}
+
+bool SecurityGroupBound::AddressModuleHasBeenSet() const
+{
+    return m_addressModuleHasBeenSet;
+}
+
+string SecurityGroupBound::GetServiceModule() const
+{
+    return m_serviceModule;
+}
+
+void SecurityGroupBound::SetServiceModule(const string& _serviceModule)
+{
+    m_serviceModule = _serviceModule;
+    m_serviceModuleHasBeenSet = true;
+}
+
+bool SecurityGroupBound::ServiceModuleHasBeenSet() const
+{
+    return m_serviceModuleHasBeenSet;
+}
+
+string SecurityGroupBound::GetDesc() const
+{
+    return m_desc;
+}
+
+void SecurityGroupBound::SetDesc(const string& _desc)
+{
+    m_desc = _desc;
+    m_descHasBeenSet = true;
+}
+
+bool SecurityGroupBound::DescHasBeenSet() const
+{
+    return m_descHasBeenSet;
 }
 
