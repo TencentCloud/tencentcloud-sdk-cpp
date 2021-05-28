@@ -154,6 +154,114 @@ namespace TencentCloud
                      */
                     bool ScoreHasBeenSet() const;
 
+                    /**
+                     * 获取场景信息
+                     * @return Scene 场景信息
+                     */
+                    std::vector<std::string> GetScene() const;
+
+                    /**
+                     * 设置场景信息
+                     * @param Scene 场景信息
+                     */
+                    void SetScene(const std::vector<std::string>& _scene);
+
+                    /**
+                     * 判断参数 Scene 是否已赋值
+                     * @return Scene 是否已赋值
+                     */
+                    bool SceneHasBeenSet() const;
+
+                    /**
+                     * 获取应用地域
+                     * @return Region 应用地域
+                     */
+                    std::vector<std::string> GetRegion() const;
+
+                    /**
+                     * 设置应用地域
+                     * @param Region 应用地域
+                     */
+                    void SetRegion(const std::vector<std::string>& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取授权期限
+                     * @return AuthPeriod 授权期限
+                     */
+                    std::string GetAuthPeriod() const;
+
+                    /**
+                     * 设置授权期限
+                     * @param AuthPeriod 授权期限
+                     */
+                    void SetAuthPeriod(const std::string& _authPeriod);
+
+                    /**
+                     * 判断参数 AuthPeriod 是否已赋值
+                     * @return AuthPeriod 是否已赋值
+                     */
+                    bool AuthPeriodHasBeenSet() const;
+
+                    /**
+                     * 获取商业化权益
+                     * @return Commercialization 商业化权益
+                     */
+                    std::string GetCommercialization() const;
+
+                    /**
+                     * 设置商业化权益
+                     * @param Commercialization 商业化权益
+                     */
+                    void SetCommercialization(const std::string& _commercialization);
+
+                    /**
+                     * 判断参数 Commercialization 是否已赋值
+                     * @return Commercialization 是否已赋值
+                     */
+                    bool CommercializationHasBeenSet() const;
+
+                    /**
+                     * 获取跨平台传播权益
+                     * @return Platform 跨平台传播权益
+                     */
+                    std::string GetPlatform() const;
+
+                    /**
+                     * 设置跨平台传播权益
+                     * @param Platform 跨平台传播权益
+                     */
+                    void SetPlatform(const std::string& _platform);
+
+                    /**
+                     * 判断参数 Platform 是否已赋值
+                     * @return Platform 是否已赋值
+                     */
+                    bool PlatformHasBeenSet() const;
+
+                    /**
+                     * 获取传播渠道
+                     * @return Channel 传播渠道
+                     */
+                    std::string GetChannel() const;
+
+                    /**
+                     * 设置传播渠道
+                     * @param Channel 传播渠道
+                     */
+                    void SetChannel(const std::string& _channel);
+
+                    /**
+                     * 判断参数 Channel 是否已赋值
+                     * @return Channel 是否已赋值
+                     */
+                    bool ChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +299,42 @@ namespace TencentCloud
                      */
                     double m_score;
                     bool m_scoreHasBeenSet;
+
+                    /**
+                     * 场景信息
+                     */
+                    std::vector<std::string> m_scene;
+                    bool m_sceneHasBeenSet;
+
+                    /**
+                     * 应用地域
+                     */
+                    std::vector<std::string> m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 授权期限
+                     */
+                    std::string m_authPeriod;
+                    bool m_authPeriodHasBeenSet;
+
+                    /**
+                     * 商业化权益
+                     */
+                    std::string m_commercialization;
+                    bool m_commercializationHasBeenSet;
+
+                    /**
+                     * 跨平台传播权益
+                     */
+                    std::string m_platform;
+                    bool m_platformHasBeenSet;
+
+                    /**
+                     * 传播渠道
+                     */
+                    std::string m_channel;
+                    bool m_channelHasBeenSet;
 
                 };
             }

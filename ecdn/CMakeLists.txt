@@ -24,7 +24,7 @@ set(ecdn_public_header_model
   include/tencentcloud/ecdn/v20191012/model/StartEcdnDomainRequest.h
   include/tencentcloud/ecdn/v20191012/model/DescribeDomainsConfigResponse.h
   include/tencentcloud/ecdn/v20191012/model/Https.h
-  include/tencentcloud/ecdn/v20191012/model/PurgeUrlsCacheRequest.h
+  include/tencentcloud/ecdn/v20191012/model/CreateVerifyRecordResponse.h
   include/tencentcloud/ecdn/v20191012/model/ResourceData.h
   include/tencentcloud/ecdn/v20191012/model/Cache.h
   include/tencentcloud/ecdn/v20191012/model/ForceRedirect.h
@@ -39,6 +39,7 @@ set(ecdn_public_header_model
   include/tencentcloud/ecdn/v20191012/model/DescribeEcdnStatisticsResponse.h
   include/tencentcloud/ecdn/v20191012/model/DomainLogs.h
   include/tencentcloud/ecdn/v20191012/model/Hsts.h
+  include/tencentcloud/ecdn/v20191012/model/PurgeUrlsCacheRequest.h
   include/tencentcloud/ecdn/v20191012/model/HttpHeaderPathRule.h
   include/tencentcloud/ecdn/v20191012/model/UpdateDomainConfigResponse.h
   include/tencentcloud/ecdn/v20191012/model/DetailData.h
@@ -77,6 +78,7 @@ set(ecdn_public_header_model
   include/tencentcloud/ecdn/v20191012/model/DomainDetailInfo.h
   include/tencentcloud/ecdn/v20191012/model/DescribeIpStatusRequest.h
   include/tencentcloud/ecdn/v20191012/model/DescribeDomainsRequest.h
+  include/tencentcloud/ecdn/v20191012/model/CreateVerifyRecordRequest.h
   )
 
 set(ecdn_src
@@ -86,7 +88,7 @@ set(ecdn_src
   src/v20191012/model/StartEcdnDomainRequest.cpp
   src/v20191012/model/DescribeDomainsConfigResponse.cpp
   src/v20191012/model/Https.cpp
-  src/v20191012/model/PurgeUrlsCacheRequest.cpp
+  src/v20191012/model/CreateVerifyRecordResponse.cpp
   src/v20191012/model/ResourceData.cpp
   src/v20191012/model/Cache.cpp
   src/v20191012/model/ForceRedirect.cpp
@@ -101,6 +103,7 @@ set(ecdn_src
   src/v20191012/model/DescribeEcdnStatisticsResponse.cpp
   src/v20191012/model/DomainLogs.cpp
   src/v20191012/model/Hsts.cpp
+  src/v20191012/model/PurgeUrlsCacheRequest.cpp
   src/v20191012/model/HttpHeaderPathRule.cpp
   src/v20191012/model/UpdateDomainConfigResponse.cpp
   src/v20191012/model/DetailData.cpp
@@ -139,6 +142,7 @@ set(ecdn_src
   src/v20191012/model/DomainDetailInfo.cpp
   src/v20191012/model/DescribeIpStatusRequest.cpp
   src/v20191012/model/DescribeDomainsRequest.cpp
+  src/v20191012/model/CreateVerifyRecordRequest.cpp
   )
 
 set(ecdn_include

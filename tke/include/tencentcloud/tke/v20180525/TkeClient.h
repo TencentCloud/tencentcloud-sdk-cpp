@@ -29,6 +29,8 @@
 #include <tencentcloud/tke/v20180525/model/AddExistedInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/AddNodeToNodePoolRequest.h>
 #include <tencentcloud/tke/v20180525/model/AddNodeToNodePoolResponse.h>
+#include <tencentcloud/tke/v20180525/model/AddVpcCniSubnetsRequest.h>
+#include <tencentcloud/tke/v20180525/model/AddVpcCniSubnetsResponse.h>
 #include <tencentcloud/tke/v20180525/model/CheckInstancesUpgradeAbleRequest.h>
 #include <tencentcloud/tke/v20180525/model/CheckInstancesUpgradeAbleResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterRequest.h>
@@ -188,6 +190,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AddNodeToNodePoolResponse> AddNodeToNodePoolOutcome;
                 typedef std::future<AddNodeToNodePoolOutcome> AddNodeToNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::AddNodeToNodePoolRequest&, AddNodeToNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddNodeToNodePoolAsyncHandler;
+                typedef Outcome<Error, Model::AddVpcCniSubnetsResponse> AddVpcCniSubnetsOutcome;
+                typedef std::future<AddVpcCniSubnetsOutcome> AddVpcCniSubnetsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::AddVpcCniSubnetsRequest&, AddVpcCniSubnetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddVpcCniSubnetsAsyncHandler;
                 typedef Outcome<Error, Model::CheckInstancesUpgradeAbleResponse> CheckInstancesUpgradeAbleOutcome;
                 typedef std::future<CheckInstancesUpgradeAbleOutcome> CheckInstancesUpgradeAbleOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CheckInstancesUpgradeAbleRequest&, CheckInstancesUpgradeAbleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckInstancesUpgradeAbleAsyncHandler;
@@ -421,6 +426,15 @@ namespace TencentCloud
                 AddNodeToNodePoolOutcome AddNodeToNodePool(const Model::AddNodeToNodePoolRequest &request);
                 void AddNodeToNodePoolAsync(const Model::AddNodeToNodePoolRequest& request, const AddNodeToNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddNodeToNodePoolOutcomeCallable AddNodeToNodePoolCallable(const Model::AddNodeToNodePoolRequest& request);
+
+                /**
+                 *针对VPC-CNI模式的集群，增加集群容器网络可使用的子网
+                 * @param req AddVpcCniSubnetsRequest
+                 * @return AddVpcCniSubnetsOutcome
+                 */
+                AddVpcCniSubnetsOutcome AddVpcCniSubnets(const Model::AddVpcCniSubnetsRequest &request);
+                void AddVpcCniSubnetsAsync(const Model::AddVpcCniSubnetsRequest& request, const AddVpcCniSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddVpcCniSubnetsOutcomeCallable AddVpcCniSubnetsCallable(const Model::AddVpcCniSubnetsRequest& request);
 
                 /**
                  *检查给定节点列表中哪些是可升级的 

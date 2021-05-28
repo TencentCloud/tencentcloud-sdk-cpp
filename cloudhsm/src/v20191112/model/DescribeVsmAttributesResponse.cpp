@@ -46,7 +46,8 @@ DescribeVsmAttributesResponse::DescribeVsmAttributesResponse() :
     m_vpcCidrBlockHasBeenSet(false),
     m_subnetCidrBlockHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_renewFlagHasBeenSet(false),
+    m_manufacturerHasBeenSet(false)
 {
 }
 
@@ -324,6 +325,16 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
         m_renewFlagHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Manufacturer") && !rsp["Manufacturer"].IsNull())
+    {
+        if (!rsp["Manufacturer"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Manufacturer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_manufacturer = string(rsp["Manufacturer"].GetString());
+        m_manufacturerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -547,6 +558,16 @@ int64_t DescribeVsmAttributesResponse::GetRenewFlag() const
 bool DescribeVsmAttributesResponse::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
+}
+
+string DescribeVsmAttributesResponse::GetManufacturer() const
+{
+    return m_manufacturer;
+}
+
+bool DescribeVsmAttributesResponse::ManufacturerHasBeenSet() const
+{
+    return m_manufacturerHasBeenSet;
 }
 
 

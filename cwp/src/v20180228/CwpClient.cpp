@@ -1545,6 +1545,49 @@ CwpClient::DescribeBashRulesOutcomeCallable CwpClient::DescribeBashRulesCallable
     return task->get_future();
 }
 
+CwpClient::DescribeBruteAttackListOutcome CwpClient::DescribeBruteAttackList(const DescribeBruteAttackListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBruteAttackList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBruteAttackListResponse rsp = DescribeBruteAttackListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBruteAttackListOutcome(rsp);
+        else
+            return DescribeBruteAttackListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBruteAttackListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBruteAttackListAsync(const DescribeBruteAttackListRequest& request, const DescribeBruteAttackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBruteAttackList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBruteAttackListOutcomeCallable CwpClient::DescribeBruteAttackListCallable(const DescribeBruteAttackListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBruteAttackListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBruteAttackList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeBruteAttacksOutcome CwpClient::DescribeBruteAttacks(const DescribeBruteAttacksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBruteAttacks");

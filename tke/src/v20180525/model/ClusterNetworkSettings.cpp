@@ -28,7 +28,10 @@ ClusterNetworkSettings::ClusterNetworkSettings() :
     m_maxClusterServiceNumHasBeenSet(false),
     m_ipvsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_cniHasBeenSet(false)
+    m_cniHasBeenSet(false),
+    m_kubeProxyModeHasBeenSet(false),
+    m_serviceCIDRHasBeenSet(false),
+    m_subnetsHasBeenSet(false)
 {
 }
 
@@ -107,6 +110,39 @@ CoreInternalOutcome ClusterNetworkSettings::Deserialize(const Value &value)
         m_cniHasBeenSet = true;
     }
 
+    if (value.HasMember("KubeProxyMode") && !value["KubeProxyMode"].IsNull())
+    {
+        if (!value["KubeProxyMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterNetworkSettings.KubeProxyMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kubeProxyMode = string(value["KubeProxyMode"].GetString());
+        m_kubeProxyModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceCIDR") && !value["ServiceCIDR"].IsNull())
+    {
+        if (!value["ServiceCIDR"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterNetworkSettings.ServiceCIDR` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceCIDR = string(value["ServiceCIDR"].GetString());
+        m_serviceCIDRHasBeenSet = true;
+    }
+
+    if (value.HasMember("Subnets") && !value["Subnets"].IsNull())
+    {
+        if (!value["Subnets"].IsArray())
+            return CoreInternalOutcome(Error("response `ClusterNetworkSettings.Subnets` is not array type"));
+
+        const Value &tmpValue = value["Subnets"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_subnets.push_back((*itr).GetString());
+        }
+        m_subnetsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -168,6 +204,35 @@ void ClusterNetworkSettings::ToJsonObject(Value &value, Document::AllocatorType&
         string key = "Cni";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cni, allocator);
+    }
+
+    if (m_kubeProxyModeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "KubeProxyMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_kubeProxyMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceCIDRHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServiceCIDR";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_serviceCIDR.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Subnets";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_subnets.begin(); itr != m_subnets.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -283,5 +348,53 @@ void ClusterNetworkSettings::SetCni(const bool& _cni)
 bool ClusterNetworkSettings::CniHasBeenSet() const
 {
     return m_cniHasBeenSet;
+}
+
+string ClusterNetworkSettings::GetKubeProxyMode() const
+{
+    return m_kubeProxyMode;
+}
+
+void ClusterNetworkSettings::SetKubeProxyMode(const string& _kubeProxyMode)
+{
+    m_kubeProxyMode = _kubeProxyMode;
+    m_kubeProxyModeHasBeenSet = true;
+}
+
+bool ClusterNetworkSettings::KubeProxyModeHasBeenSet() const
+{
+    return m_kubeProxyModeHasBeenSet;
+}
+
+string ClusterNetworkSettings::GetServiceCIDR() const
+{
+    return m_serviceCIDR;
+}
+
+void ClusterNetworkSettings::SetServiceCIDR(const string& _serviceCIDR)
+{
+    m_serviceCIDR = _serviceCIDR;
+    m_serviceCIDRHasBeenSet = true;
+}
+
+bool ClusterNetworkSettings::ServiceCIDRHasBeenSet() const
+{
+    return m_serviceCIDRHasBeenSet;
+}
+
+vector<string> ClusterNetworkSettings::GetSubnets() const
+{
+    return m_subnets;
+}
+
+void ClusterNetworkSettings::SetSubnets(const vector<string>& _subnets)
+{
+    m_subnets = _subnets;
+    m_subnetsHasBeenSet = true;
+}
+
+bool ClusterNetworkSettings::SubnetsHasBeenSet() const
+{
+    return m_subnetsHasBeenSet;
 }
 

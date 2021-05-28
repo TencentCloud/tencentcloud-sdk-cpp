@@ -330,6 +330,20 @@ namespace TencentCloud
                      */
                     bool RenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Manufacturer 厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetManufacturer() const;
+
+                    /**
+                     * 判断参数 Manufacturer 是否已赋值
+                     * @return Manufacturer 是否已赋值
+                     */
+                    bool ManufacturerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -474,6 +488,13 @@ namespace TencentCloud
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_manufacturer;
+                    bool m_manufacturerHasBeenSet;
 
                 };
             }

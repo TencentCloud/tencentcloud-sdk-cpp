@@ -61,18 +61,30 @@ namespace TencentCloud
                     bool MusicIdHasBeenSet() const;
 
                     /**
-                     * 获取MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
-MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
-                     * @return MusicType MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
-MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
+                     * 获取歌曲类型，可选值有：
+<li>MP3-128K-FTW：含有水印的试听资源；</li>
+<li>MP3-320K-FTD-P：320kbps歌曲热门片段；</li>
+<li>MP3-320K-FTD：320kbps已核验歌曲完整资源。</li>
+默认为：MP3-128K-FTW
+                     * @return MusicType 歌曲类型，可选值有：
+<li>MP3-128K-FTW：含有水印的试听资源；</li>
+<li>MP3-320K-FTD-P：320kbps歌曲热门片段；</li>
+<li>MP3-320K-FTD：320kbps已核验歌曲完整资源。</li>
+默认为：MP3-128K-FTW
                      */
                     std::string GetMusicType() const;
 
                     /**
-                     * 设置MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
-MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
-                     * @param MusicType MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
-MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
+                     * 设置歌曲类型，可选值有：
+<li>MP3-128K-FTW：含有水印的试听资源；</li>
+<li>MP3-320K-FTD-P：320kbps歌曲热门片段；</li>
+<li>MP3-320K-FTD：320kbps已核验歌曲完整资源。</li>
+默认为：MP3-128K-FTW
+                     * @param MusicType 歌曲类型，可选值有：
+<li>MP3-128K-FTW：含有水印的试听资源；</li>
+<li>MP3-320K-FTD-P：320kbps歌曲热门片段；</li>
+<li>MP3-320K-FTD：320kbps已核验歌曲完整资源。</li>
+默认为：MP3-128K-FTW
                      */
                     void SetMusicType(const std::string& _musicType);
 
@@ -91,8 +103,11 @@ MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
                     bool m_musicIdHasBeenSet;
 
                     /**
-                     * MP3-320K-FTD-P  为获取320kbps歌曲热门片段。
-MP3-320K-FTD 为获取320kbps已核验歌曲完整资源。
+                     * 歌曲类型，可选值有：
+<li>MP3-128K-FTW：含有水印的试听资源；</li>
+<li>MP3-320K-FTD-P：320kbps歌曲热门片段；</li>
+<li>MP3-320K-FTD：320kbps已核验歌曲完整资源。</li>
+默认为：MP3-128K-FTW
                      */
                     std::string m_musicType;
                     bool m_musicTypeHasBeenSet;

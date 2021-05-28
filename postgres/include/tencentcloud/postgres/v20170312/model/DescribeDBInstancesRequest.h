@@ -44,14 +44,34 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode、db-tag-key。
-                     * @return Filters 过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode、db-tag-key。
+                     * 获取按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
+db-instance-id：按照实例ID过滤，类型为string
+db-instance-name：按照实例名过滤，类型为string
+db-project-id：按照项目ID过滤，类型为integer
+db-pay-mode：按照付费模式过滤，类型为string
+db-tag-key：按照标签键过滤，类型为string
+                     * @return Filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
+db-instance-id：按照实例ID过滤，类型为string
+db-instance-name：按照实例名过滤，类型为string
+db-project-id：按照项目ID过滤，类型为integer
+db-pay-mode：按照付费模式过滤，类型为string
+db-tag-key：按照标签键过滤，类型为string
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode、db-tag-key。
-                     * @param Filters 过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode、db-tag-key。
+                     * 设置按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
+db-instance-id：按照实例ID过滤，类型为string
+db-instance-name：按照实例名过滤，类型为string
+db-project-id：按照项目ID过滤，类型为integer
+db-pay-mode：按照付费模式过滤，类型为string
+db-tag-key：按照标签键过滤，类型为string
+                     * @param Filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
+db-instance-id：按照实例ID过滤，类型为string
+db-instance-name：按照实例名过滤，类型为string
+db-project-id：按照项目ID过滤，类型为integer
+db-pay-mode：按照付费模式过滤，类型为string
+db-tag-key：按照标签键过滤，类型为string
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -62,14 +82,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取每页显示数量，默认返回10条。
-                     * @return Limit 每页显示数量，默认返回10条。
+                     * 获取每页显示数量，取值范围为1-100，默认为返回10条。
+                     * @return Limit 每页显示数量，取值范围为1-100，默认为返回10条。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页显示数量，默认返回10条。
-                     * @param Limit 每页显示数量，默认返回10条。
+                     * 设置每页显示数量，取值范围为1-100，默认为返回10条。
+                     * @param Limit 每页显示数量，取值范围为1-100，默认为返回10条。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -78,24 +98,6 @@ namespace TencentCloud
                      * @return Limit 是否已赋值
                      */
                     bool LimitHasBeenSet() const;
-
-                    /**
-                     * 获取数据偏移量，从0开始。
-                     * @return Offset 数据偏移量，从0开始。
-                     */
-                    uint64_t GetOffset() const;
-
-                    /**
-                     * 设置数据偏移量，从0开始。
-                     * @param Offset 数据偏移量，从0开始。
-                     */
-                    void SetOffset(const uint64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     */
-                    bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
@@ -116,14 +118,32 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，包括升序、降序
-                     * @return OrderByType 排序方式，包括升序、降序
+                     * 获取页码偏移量，从0开始。
+                     * @return Offset 页码偏移量，从0开始。
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置页码偏移量，从0开始。
+                     * @param Offset 页码偏移量，从0开始。
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式，包括升序：asc、降序：desc。
+                     * @return OrderByType 排序方式，包括升序：asc、降序：desc。
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置排序方式，包括升序、降序
-                     * @param OrderByType 排序方式，包括升序、降序
+                     * 设置排序方式，包括升序：asc、降序：desc。
+                     * @param OrderByType 排序方式，包括升序：asc、降序：desc。
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
@@ -136,22 +156,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤条件，目前支持：db-instance-id、db-instance-name、db-project-id、db-pay-mode、db-tag-key。
+                     * 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
+db-instance-id：按照实例ID过滤，类型为string
+db-instance-name：按照实例名过滤，类型为string
+db-project-id：按照项目ID过滤，类型为integer
+db-pay-mode：按照付费模式过滤，类型为string
+db-tag-key：按照标签键过滤，类型为string
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 每页显示数量，默认返回10条。
+                     * 每页显示数量，取值范围为1-100，默认为返回10条。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
-
-                    /**
-                     * 数据偏移量，从0开始。
-                     */
-                    uint64_t m_offset;
-                    bool m_offsetHasBeenSet;
 
                     /**
                      * 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
@@ -160,7 +179,13 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序方式，包括升序、降序
+                     * 页码偏移量，从0开始。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 排序方式，包括升序：asc、降序：desc。
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;

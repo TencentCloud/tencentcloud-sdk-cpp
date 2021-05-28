@@ -172,6 +172,72 @@ namespace TencentCloud
                      */
                     bool CniHasBeenSet() const;
 
+                    /**
+                     * 获取service的网络模式，当前参数只适用于ipvs+bpf模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KubeProxyMode service的网络模式，当前参数只适用于ipvs+bpf模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKubeProxyMode() const;
+
+                    /**
+                     * 设置service的网络模式，当前参数只适用于ipvs+bpf模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KubeProxyMode service的网络模式，当前参数只适用于ipvs+bpf模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKubeProxyMode(const std::string& _kubeProxyMode);
+
+                    /**
+                     * 判断参数 KubeProxyMode 是否已赋值
+                     * @return KubeProxyMode 是否已赋值
+                     */
+                    bool KubeProxyModeHasBeenSet() const;
+
+                    /**
+                     * 获取用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceCIDR 用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetServiceCIDR() const;
+
+                    /**
+                     * 设置用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServiceCIDR 用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServiceCIDR(const std::string& _serviceCIDR);
+
+                    /**
+                     * 判断参数 ServiceCIDR 是否已赋值
+                     * @return ServiceCIDR 是否已赋值
+                     */
+                    bool ServiceCIDRHasBeenSet() const;
+
+                    /**
+                     * 获取集群关联的容器子网
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Subnets 集群关联的容器子网
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSubnets() const;
+
+                    /**
+                     * 设置集群关联的容器子网
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Subnets 集群关联的容器子网
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubnets(const std::vector<std::string>& _subnets);
+
+                    /**
+                     * 判断参数 Subnets 是否已赋值
+                     * @return Subnets 是否已赋值
+                     */
+                    bool SubnetsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +281,27 @@ namespace TencentCloud
                      */
                     bool m_cni;
                     bool m_cniHasBeenSet;
+
+                    /**
+                     * service的网络模式，当前参数只适用于ipvs+bpf模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kubeProxyMode;
+                    bool m_kubeProxyModeHasBeenSet;
+
+                    /**
+                     * 用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serviceCIDR;
+                    bool m_serviceCIDRHasBeenSet;
+
+                    /**
+                     * 集群关联的容器子网
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_subnets;
+                    bool m_subnetsHasBeenSet;
 
                 };
             }

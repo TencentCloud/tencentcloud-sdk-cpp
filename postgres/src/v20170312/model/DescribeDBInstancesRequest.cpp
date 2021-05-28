@@ -26,8 +26,8 @@ using namespace std;
 DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false),
     m_orderByHasBeenSet(false),
+    m_offsetHasBeenSet(false),
     m_orderByTypeHasBeenSet(false)
 {
 }
@@ -62,20 +62,20 @@ string DescribeDBInstancesRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
-    if (m_offsetHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
     if (m_orderByHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "OrderBy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_orderByTypeHasBeenSet)
@@ -126,22 +126,6 @@ bool DescribeDBInstancesRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
-uint64_t DescribeDBInstancesRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeDBInstancesRequest::SetOffset(const uint64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeDBInstancesRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
 string DescribeDBInstancesRequest::GetOrderBy() const
 {
     return m_orderBy;
@@ -156,6 +140,22 @@ void DescribeDBInstancesRequest::SetOrderBy(const string& _orderBy)
 bool DescribeDBInstancesRequest::OrderByHasBeenSet() const
 {
     return m_orderByHasBeenSet;
+}
+
+uint64_t DescribeDBInstancesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeDBInstancesRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 string DescribeDBInstancesRequest::GetOrderByType() const

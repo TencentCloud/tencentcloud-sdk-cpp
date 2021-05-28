@@ -42,7 +42,8 @@ ResourceInfo::ResourceInfo() :
     m_vpcNameHasBeenSet(false),
     m_createUinHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_manufacturerHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,16 @@ CoreInternalOutcome ResourceInfo::Deserialize(const Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("Manufacturer") && !value["Manufacturer"].IsNull())
+    {
+        if (!value["Manufacturer"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceInfo.Manufacturer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_manufacturer = string(value["Manufacturer"].GetString());
+        m_manufacturerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -468,6 +479,14 @@ void ResourceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_manufacturerHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Manufacturer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_manufacturer.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -807,5 +826,21 @@ void ResourceInfo::SetTags(const vector<Tag>& _tags)
 bool ResourceInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string ResourceInfo::GetManufacturer() const
+{
+    return m_manufacturer;
+}
+
+void ResourceInfo::SetManufacturer(const string& _manufacturer)
+{
+    m_manufacturer = _manufacturer;
+    m_manufacturerHasBeenSet = true;
+}
+
+bool ResourceInfo::ManufacturerHasBeenSet() const
+{
+    return m_manufacturerHasBeenSet;
 }
 

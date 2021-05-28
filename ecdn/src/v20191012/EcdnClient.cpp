@@ -83,6 +83,49 @@ EcdnClient::AddEcdnDomainOutcomeCallable EcdnClient::AddEcdnDomainCallable(const
     return task->get_future();
 }
 
+EcdnClient::CreateVerifyRecordOutcome EcdnClient::CreateVerifyRecord(const CreateVerifyRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVerifyRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVerifyRecordResponse rsp = CreateVerifyRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVerifyRecordOutcome(rsp);
+        else
+            return CreateVerifyRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVerifyRecordOutcome(outcome.GetError());
+    }
+}
+
+void EcdnClient::CreateVerifyRecordAsync(const CreateVerifyRecordRequest& request, const CreateVerifyRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVerifyRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EcdnClient::CreateVerifyRecordOutcomeCallable EcdnClient::CreateVerifyRecordCallable(const CreateVerifyRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVerifyRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVerifyRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EcdnClient::DeleteEcdnDomainOutcome EcdnClient::DeleteEcdnDomain(const DeleteEcdnDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteEcdnDomain");

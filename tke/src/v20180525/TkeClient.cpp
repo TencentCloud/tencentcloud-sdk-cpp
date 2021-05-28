@@ -169,6 +169,49 @@ TkeClient::AddNodeToNodePoolOutcomeCallable TkeClient::AddNodeToNodePoolCallable
     return task->get_future();
 }
 
+TkeClient::AddVpcCniSubnetsOutcome TkeClient::AddVpcCniSubnets(const AddVpcCniSubnetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddVpcCniSubnets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddVpcCniSubnetsResponse rsp = AddVpcCniSubnetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddVpcCniSubnetsOutcome(rsp);
+        else
+            return AddVpcCniSubnetsOutcome(o.GetError());
+    }
+    else
+    {
+        return AddVpcCniSubnetsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::AddVpcCniSubnetsAsync(const AddVpcCniSubnetsRequest& request, const AddVpcCniSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddVpcCniSubnets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::AddVpcCniSubnetsOutcomeCallable TkeClient::AddVpcCniSubnetsCallable(const AddVpcCniSubnetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddVpcCniSubnetsOutcome()>>(
+        [this, request]()
+        {
+            return this->AddVpcCniSubnets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CheckInstancesUpgradeAbleOutcome TkeClient::CheckInstancesUpgradeAble(const CheckInstancesUpgradeAbleRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckInstancesUpgradeAble");

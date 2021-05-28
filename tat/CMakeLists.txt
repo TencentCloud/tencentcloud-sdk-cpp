@@ -47,6 +47,7 @@ set(tat_public_header_model
   include/tencentcloud/tat/v20201028/model/DeleteCommandRequest.h
   include/tencentcloud/tat/v20201028/model/InvokeCommandRequest.h
   include/tencentcloud/tat/v20201028/model/DescribeRegionsRequest.h
+  include/tencentcloud/tat/v20201028/model/Tag.h
   include/tencentcloud/tat/v20201028/model/RunCommandResponse.h
   include/tencentcloud/tat/v20201028/model/DescribeRegionsResponse.h
   include/tencentcloud/tat/v20201028/model/CreateCommandRequest.h
@@ -82,6 +83,7 @@ set(tat_src
   src/v20201028/model/DeleteCommandRequest.cpp
   src/v20201028/model/InvokeCommandRequest.cpp
   src/v20201028/model/DescribeRegionsRequest.cpp
+  src/v20201028/model/Tag.cpp
   src/v20201028/model/RunCommandResponse.cpp
   src/v20201028/model/DescribeRegionsResponse.cpp
   src/v20201028/model/CreateCommandRequest.cpp

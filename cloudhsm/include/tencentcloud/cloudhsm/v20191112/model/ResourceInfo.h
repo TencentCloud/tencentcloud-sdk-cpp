@@ -510,6 +510,28 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Manufacturer 厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetManufacturer() const;
+
+                    /**
+                     * 设置厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Manufacturer 厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetManufacturer(const std::string& _manufacturer);
+
+                    /**
+                     * 判断参数 Manufacturer 是否已赋值
+                     * @return Manufacturer 是否已赋值
+                     */
+                    bool ManufacturerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -658,6 +680,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 厂商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_manufacturer;
+                    bool m_manufacturerHasBeenSet;
 
                 };
             }

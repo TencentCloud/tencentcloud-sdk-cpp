@@ -1680,7 +1680,7 @@ EIP 如果被封堵，则不能进行解绑定操作。
                 ResetRoutesOutcomeCallable ResetRoutesCallable(const Model::ResetRoutesRequest& request);
 
                 /**
-                 *创建ECM实例
+                 *创建ECM实例。
                  * @param req RunInstancesRequest
                  * @return RunInstancesOutcome
                  */

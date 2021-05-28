@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ecdn/v20191012/model/AddEcdnDomainRequest.h>
 #include <tencentcloud/ecdn/v20191012/model/AddEcdnDomainResponse.h>
+#include <tencentcloud/ecdn/v20191012/model/CreateVerifyRecordRequest.h>
+#include <tencentcloud/ecdn/v20191012/model/CreateVerifyRecordResponse.h>
 #include <tencentcloud/ecdn/v20191012/model/DeleteEcdnDomainRequest.h>
 #include <tencentcloud/ecdn/v20191012/model/DeleteEcdnDomainResponse.h>
 #include <tencentcloud/ecdn/v20191012/model/DescribeDomainsRequest.h>
@@ -70,6 +72,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AddEcdnDomainResponse> AddEcdnDomainOutcome;
                 typedef std::future<AddEcdnDomainOutcome> AddEcdnDomainOutcomeCallable;
                 typedef std::function<void(const EcdnClient*, const Model::AddEcdnDomainRequest&, AddEcdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddEcdnDomainAsyncHandler;
+                typedef Outcome<Error, Model::CreateVerifyRecordResponse> CreateVerifyRecordOutcome;
+                typedef std::future<CreateVerifyRecordOutcome> CreateVerifyRecordOutcomeCallable;
+                typedef std::function<void(const EcdnClient*, const Model::CreateVerifyRecordRequest&, CreateVerifyRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVerifyRecordAsyncHandler;
                 typedef Outcome<Error, Model::DeleteEcdnDomainResponse> DeleteEcdnDomainOutcome;
                 typedef std::future<DeleteEcdnDomainOutcome> DeleteEcdnDomainOutcomeCallable;
                 typedef std::function<void(const EcdnClient*, const Model::DeleteEcdnDomainRequest&, DeleteEcdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEcdnDomainAsyncHandler;
@@ -123,6 +128,15 @@ namespace TencentCloud
                 AddEcdnDomainOutcome AddEcdnDomain(const Model::AddEcdnDomainRequest &request);
                 void AddEcdnDomainAsync(const Model::AddEcdnDomainRequest& request, const AddEcdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddEcdnDomainOutcomeCallable AddEcdnDomainCallable(const Model::AddEcdnDomainRequest& request);
+
+                /**
+                 *生成一条子域名解析，提示客户添加到域名解析上，用于泛域名及域名取回校验归属权
+                 * @param req CreateVerifyRecordRequest
+                 * @return CreateVerifyRecordOutcome
+                 */
+                CreateVerifyRecordOutcome CreateVerifyRecord(const Model::CreateVerifyRecordRequest &request);
+                void CreateVerifyRecordAsync(const Model::CreateVerifyRecordRequest& request, const CreateVerifyRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVerifyRecordOutcomeCallable CreateVerifyRecordCallable(const Model::CreateVerifyRecordRequest& request);
 
                 /**
                  *本接口（DeleteEcdnDomain）用于删除指定加速域名。待删除域名必须处于已停用状态。

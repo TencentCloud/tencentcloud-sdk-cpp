@@ -22,11 +22,14 @@ set(cloudhsm_public_header_model
   include/tencentcloud/cloudhsm/v20191112/model/Subnet.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeSubnetRequest.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeVsmsResponse.h
+  include/tencentcloud/cloudhsm/v20191112/model/DescribeSupportedHsmResponse.h
   include/tencentcloud/cloudhsm/v20191112/model/InquiryPriceBuyVsmRequest.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeVpcResponse.h
   include/tencentcloud/cloudhsm/v20191112/model/ModifyVsmAttributesRequest.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeSubnetResponse.h
-  include/tencentcloud/cloudhsm/v20191112/model/DescribeHSMByVpcIdRequest.h
+  include/tencentcloud/cloudhsm/v20191112/model/VsmInfo.h
+  include/tencentcloud/cloudhsm/v20191112/model/DescribeSupportedHsmRequest.h
+  include/tencentcloud/cloudhsm/v20191112/model/SgUnit.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeHSMByVpcIdResponse.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeUsgRuleResponse.h
   include/tencentcloud/cloudhsm/v20191112/model/Tag.h
@@ -36,13 +39,15 @@ set(cloudhsm_public_header_model
   include/tencentcloud/cloudhsm/v20191112/model/DescribeUsgRequest.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeVsmAttributesResponse.h
   include/tencentcloud/cloudhsm/v20191112/model/TagFilter.h
-  include/tencentcloud/cloudhsm/v20191112/model/SgUnit.h
+  include/tencentcloud/cloudhsm/v20191112/model/DescribeHSMByVpcIdRequest.h
   include/tencentcloud/cloudhsm/v20191112/model/UsgRuleDetail.h
   include/tencentcloud/cloudhsm/v20191112/model/InquiryPriceBuyVsmResponse.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeHSMBySubnetIdResponse.h
+  include/tencentcloud/cloudhsm/v20191112/model/HsmInfo.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeUsgResponse.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeHSMBySubnetIdRequest.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeVsmsRequest.h
+  include/tencentcloud/cloudhsm/v20191112/model/DeviceInfo.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeUsgRuleRequest.h
   include/tencentcloud/cloudhsm/v20191112/model/ModifyVsmAttributesResponse.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeVsmAttributesRequest.h
@@ -54,11 +59,14 @@ set(cloudhsm_src
   src/v20191112/model/Subnet.cpp
   src/v20191112/model/DescribeSubnetRequest.cpp
   src/v20191112/model/DescribeVsmsResponse.cpp
+  src/v20191112/model/DescribeSupportedHsmResponse.cpp
   src/v20191112/model/InquiryPriceBuyVsmRequest.cpp
   src/v20191112/model/DescribeVpcResponse.cpp
   src/v20191112/model/ModifyVsmAttributesRequest.cpp
   src/v20191112/model/DescribeSubnetResponse.cpp
-  src/v20191112/model/DescribeHSMByVpcIdRequest.cpp
+  src/v20191112/model/VsmInfo.cpp
+  src/v20191112/model/DescribeSupportedHsmRequest.cpp
+  src/v20191112/model/SgUnit.cpp
   src/v20191112/model/DescribeHSMByVpcIdResponse.cpp
   src/v20191112/model/DescribeUsgRuleResponse.cpp
   src/v20191112/model/Tag.cpp
@@ -68,13 +76,15 @@ set(cloudhsm_src
   src/v20191112/model/DescribeUsgRequest.cpp
   src/v20191112/model/DescribeVsmAttributesResponse.cpp
   src/v20191112/model/TagFilter.cpp
-  src/v20191112/model/SgUnit.cpp
+  src/v20191112/model/DescribeHSMByVpcIdRequest.cpp
   src/v20191112/model/UsgRuleDetail.cpp
   src/v20191112/model/InquiryPriceBuyVsmResponse.cpp
   src/v20191112/model/DescribeHSMBySubnetIdResponse.cpp
+  src/v20191112/model/HsmInfo.cpp
   src/v20191112/model/DescribeUsgResponse.cpp
   src/v20191112/model/DescribeHSMBySubnetIdRequest.cpp
   src/v20191112/model/DescribeVsmsRequest.cpp
+  src/v20191112/model/DeviceInfo.cpp
   src/v20191112/model/DescribeUsgRuleRequest.cpp
   src/v20191112/model/ModifyVsmAttributesResponse.cpp
   src/v20191112/model/DescribeVsmAttributesRequest.cpp

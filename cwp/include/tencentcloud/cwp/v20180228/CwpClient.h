@@ -93,6 +93,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeBashEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashRulesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBruteAttackListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBruteAttackListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBruteAttacksRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBruteAttacksResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentInfoRequest.h>
@@ -396,6 +398,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBashRulesResponse> DescribeBashRulesOutcome;
                 typedef std::future<DescribeBashRulesOutcome> DescribeBashRulesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBashRulesRequest&, DescribeBashRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBashRulesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBruteAttackListResponse> DescribeBruteAttackListOutcome;
+                typedef std::future<DescribeBruteAttackListOutcome> DescribeBruteAttackListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBruteAttackListRequest&, DescribeBruteAttackListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBruteAttackListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBruteAttacksResponse> DescribeBruteAttacksOutcome;
                 typedef std::future<DescribeBruteAttacksOutcome> DescribeBruteAttacksOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBruteAttacksRequest&, DescribeBruteAttacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBruteAttacksAsyncHandler;
@@ -989,6 +994,15 @@ namespace TencentCloud
                 DescribeBashRulesOutcome DescribeBashRules(const Model::DescribeBashRulesRequest &request);
                 void DescribeBashRulesAsync(const Model::DescribeBashRulesRequest& request, const DescribeBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBashRulesOutcomeCallable DescribeBashRulesCallable(const Model::DescribeBashRulesRequest& request);
+
+                /**
+                 *获取密码破解列表
+                 * @param req DescribeBruteAttackListRequest
+                 * @return DescribeBruteAttackListOutcome
+                 */
+                DescribeBruteAttackListOutcome DescribeBruteAttackList(const Model::DescribeBruteAttackListRequest &request);
+                void DescribeBruteAttackListAsync(const Model::DescribeBruteAttackListRequest& request, const DescribeBruteAttackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBruteAttackListOutcomeCallable DescribeBruteAttackListCallable(const Model::DescribeBruteAttackListRequest& request);
 
                 /**
                  *本接口{DescribeBruteAttacks}用于获取暴力破解事件列表。

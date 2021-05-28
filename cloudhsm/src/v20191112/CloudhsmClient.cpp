@@ -169,6 +169,49 @@ CloudhsmClient::DescribeSubnetOutcomeCallable CloudhsmClient::DescribeSubnetCall
     return task->get_future();
 }
 
+CloudhsmClient::DescribeSupportedHsmOutcome CloudhsmClient::DescribeSupportedHsm(const DescribeSupportedHsmRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSupportedHsm");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSupportedHsmResponse rsp = DescribeSupportedHsmResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSupportedHsmOutcome(rsp);
+        else
+            return DescribeSupportedHsmOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSupportedHsmOutcome(outcome.GetError());
+    }
+}
+
+void CloudhsmClient::DescribeSupportedHsmAsync(const DescribeSupportedHsmRequest& request, const DescribeSupportedHsmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSupportedHsm(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CloudhsmClient::DescribeSupportedHsmOutcomeCallable CloudhsmClient::DescribeSupportedHsmCallable(const DescribeSupportedHsmRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSupportedHsmOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSupportedHsm(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CloudhsmClient::DescribeUsgOutcome CloudhsmClient::DescribeUsg(const DescribeUsgRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUsg");

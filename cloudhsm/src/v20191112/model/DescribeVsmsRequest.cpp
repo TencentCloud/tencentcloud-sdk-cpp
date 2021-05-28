@@ -27,7 +27,8 @@ DescribeVsmsRequest::DescribeVsmsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_searchWordHasBeenSet(false),
-    m_tagFiltersHasBeenSet(false)
+    m_tagFiltersHasBeenSet(false),
+    m_manufacturerHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,14 @@ string DescribeVsmsRequest::ToJsonString() const
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_manufacturerHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Manufacturer";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_manufacturer.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -147,6 +156,22 @@ void DescribeVsmsRequest::SetTagFilters(const vector<TagFilter>& _tagFilters)
 bool DescribeVsmsRequest::TagFiltersHasBeenSet() const
 {
     return m_tagFiltersHasBeenSet;
+}
+
+string DescribeVsmsRequest::GetManufacturer() const
+{
+    return m_manufacturer;
+}
+
+void DescribeVsmsRequest::SetManufacturer(const string& _manufacturer)
+{
+    m_manufacturer = _manufacturer;
+    m_manufacturerHasBeenSet = true;
+}
+
+bool DescribeVsmsRequest::ManufacturerHasBeenSet() const
+{
+    return m_manufacturerHasBeenSet;
 }
 
 

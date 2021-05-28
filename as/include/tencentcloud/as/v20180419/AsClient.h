@@ -105,6 +105,10 @@
 #include <tencentcloud/as/v20180419/model/PreviewPaiDomainNameResponse.h>
 #include <tencentcloud/as/v20180419/model/RemoveInstancesRequest.h>
 #include <tencentcloud/as/v20180419/model/RemoveInstancesResponse.h>
+#include <tencentcloud/as/v20180419/model/ScaleInInstancesRequest.h>
+#include <tencentcloud/as/v20180419/model/ScaleInInstancesResponse.h>
+#include <tencentcloud/as/v20180419/model/ScaleOutInstancesRequest.h>
+#include <tencentcloud/as/v20180419/model/ScaleOutInstancesResponse.h>
 #include <tencentcloud/as/v20180419/model/SetInstancesProtectionRequest.h>
 #include <tencentcloud/as/v20180419/model/SetInstancesProtectionResponse.h>
 #include <tencentcloud/as/v20180419/model/StartAutoScalingInstancesRequest.h>
@@ -252,6 +256,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RemoveInstancesResponse> RemoveInstancesOutcome;
                 typedef std::future<RemoveInstancesOutcome> RemoveInstancesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::RemoveInstancesRequest&, RemoveInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveInstancesAsyncHandler;
+                typedef Outcome<Error, Model::ScaleInInstancesResponse> ScaleInInstancesOutcome;
+                typedef std::future<ScaleInInstancesOutcome> ScaleInInstancesOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::ScaleInInstancesRequest&, ScaleInInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleInInstancesAsyncHandler;
+                typedef Outcome<Error, Model::ScaleOutInstancesResponse> ScaleOutInstancesOutcome;
+                typedef std::future<ScaleOutInstancesOutcome> ScaleOutInstancesOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::ScaleOutInstancesRequest&, ScaleOutInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleOutInstancesAsyncHandler;
                 typedef Outcome<Error, Model::SetInstancesProtectionResponse> SetInstancesProtectionOutcome;
                 typedef std::future<SetInstancesProtectionOutcome> SetInstancesProtectionOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::SetInstancesProtectionRequest&, SetInstancesProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetInstancesProtectionAsyncHandler;
@@ -708,6 +718,32 @@ namespace TencentCloud
                 RemoveInstancesOutcome RemoveInstances(const Model::RemoveInstancesRequest &request);
                 void RemoveInstancesAsync(const Model::RemoveInstancesRequest& request, const RemoveInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveInstancesOutcomeCallable RemoveInstancesCallable(const Model::RemoveInstancesRequest& request);
+
+                /**
+                 *为伸缩组指定数量缩容实例，返回缩容活动的 ActivityId。
+* 伸缩组需要未处于活动中
+* 根据伸缩组的`TerminationPolicies`策略，选择被缩容的实例，可参考[缩容处理](https://cloud.tencent.com/document/product/377/8563)
+* 接口只会选择`IN_SERVICE`实例缩容，如果需要缩容其他状态实例，可以使用 [DetachInstances](https://cloud.tencent.com/document/api/377/20436) 或 [RemoveInstances](https://cloud.tencent.com/document/api/377/20431) 接口
+* 接口会减少期望实例数，新的期望实例数需要大于等于最小实例数
+* 缩容如果失败或者部分成功，最后期望实例数只会扣减实际缩容成功的实例数量
+                 * @param req ScaleInInstancesRequest
+                 * @return ScaleInInstancesOutcome
+                 */
+                ScaleInInstancesOutcome ScaleInInstances(const Model::ScaleInInstancesRequest &request);
+                void ScaleInInstancesAsync(const Model::ScaleInInstancesRequest& request, const ScaleInInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleInInstancesOutcomeCallable ScaleInInstancesCallable(const Model::ScaleInInstancesRequest& request);
+
+                /**
+                 *为伸缩组指定数量扩容实例，返回扩容活动的 ActivityId。
+* 伸缩组需要未处于活动中
+* 接口会增加期望实例数，新的期望实例数需要小于等于最大实例数
+* 扩容如果失败或者部分成功，最后期望实例数只会增加实际成功的实例数量
+                 * @param req ScaleOutInstancesRequest
+                 * @return ScaleOutInstancesOutcome
+                 */
+                ScaleOutInstancesOutcome ScaleOutInstances(const Model::ScaleOutInstancesRequest &request);
+                void ScaleOutInstancesAsync(const Model::ScaleOutInstancesRequest& request, const ScaleOutInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleOutInstancesOutcomeCallable ScaleOutInstancesCallable(const Model::ScaleOutInstancesRequest& request);
 
                 /**
                  *本接口（SetInstancesProtection）用于设置实例移除保护。

@@ -27,7 +27,13 @@ MusicDetailInfo::MusicDetailInfo() :
     m_tagsHasBeenSet(false),
     m_hitWordsHasBeenSet(false),
     m_bpmHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_sceneHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_authPeriodHasBeenSet(false),
+    m_commercializationHasBeenSet(false),
+    m_platformHasBeenSet(false),
+    m_channelHasBeenSet(false)
 {
 }
 
@@ -102,6 +108,72 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const Value &value)
         m_scoreHasBeenSet = true;
     }
 
+    if (value.HasMember("Scene") && !value["Scene"].IsNull())
+    {
+        if (!value["Scene"].IsArray())
+            return CoreInternalOutcome(Error("response `MusicDetailInfo.Scene` is not array type"));
+
+        const Value &tmpValue = value["Scene"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_scene.push_back((*itr).GetString());
+        }
+        m_sceneHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsArray())
+            return CoreInternalOutcome(Error("response `MusicDetailInfo.Region` is not array type"));
+
+        const Value &tmpValue = value["Region"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_region.push_back((*itr).GetString());
+        }
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthPeriod") && !value["AuthPeriod"].IsNull())
+    {
+        if (!value["AuthPeriod"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MusicDetailInfo.AuthPeriod` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_authPeriod = string(value["AuthPeriod"].GetString());
+        m_authPeriodHasBeenSet = true;
+    }
+
+    if (value.HasMember("Commercialization") && !value["Commercialization"].IsNull())
+    {
+        if (!value["Commercialization"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MusicDetailInfo.Commercialization` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_commercialization = string(value["Commercialization"].GetString());
+        m_commercializationHasBeenSet = true;
+    }
+
+    if (value.HasMember("Platform") && !value["Platform"].IsNull())
+    {
+        if (!value["Platform"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MusicDetailInfo.Platform` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_platform = string(value["Platform"].GetString());
+        m_platformHasBeenSet = true;
+    }
+
+    if (value.HasMember("Channel") && !value["Channel"].IsNull())
+    {
+        if (!value["Channel"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MusicDetailInfo.Channel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channel = string(value["Channel"].GetString());
+        m_channelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +237,64 @@ void MusicDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
+    }
+
+    if (m_sceneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Scene";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_scene.begin(); itr != m_scene.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_region.begin(); itr != m_region.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_authPeriodHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AuthPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_authPeriod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commercializationHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Commercialization";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_commercialization.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_platformHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Platform";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_platform.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Channel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_channel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -264,5 +394,101 @@ void MusicDetailInfo::SetScore(const double& _score)
 bool MusicDetailInfo::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+vector<string> MusicDetailInfo::GetScene() const
+{
+    return m_scene;
+}
+
+void MusicDetailInfo::SetScene(const vector<string>& _scene)
+{
+    m_scene = _scene;
+    m_sceneHasBeenSet = true;
+}
+
+bool MusicDetailInfo::SceneHasBeenSet() const
+{
+    return m_sceneHasBeenSet;
+}
+
+vector<string> MusicDetailInfo::GetRegion() const
+{
+    return m_region;
+}
+
+void MusicDetailInfo::SetRegion(const vector<string>& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool MusicDetailInfo::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+string MusicDetailInfo::GetAuthPeriod() const
+{
+    return m_authPeriod;
+}
+
+void MusicDetailInfo::SetAuthPeriod(const string& _authPeriod)
+{
+    m_authPeriod = _authPeriod;
+    m_authPeriodHasBeenSet = true;
+}
+
+bool MusicDetailInfo::AuthPeriodHasBeenSet() const
+{
+    return m_authPeriodHasBeenSet;
+}
+
+string MusicDetailInfo::GetCommercialization() const
+{
+    return m_commercialization;
+}
+
+void MusicDetailInfo::SetCommercialization(const string& _commercialization)
+{
+    m_commercialization = _commercialization;
+    m_commercializationHasBeenSet = true;
+}
+
+bool MusicDetailInfo::CommercializationHasBeenSet() const
+{
+    return m_commercializationHasBeenSet;
+}
+
+string MusicDetailInfo::GetPlatform() const
+{
+    return m_platform;
+}
+
+void MusicDetailInfo::SetPlatform(const string& _platform)
+{
+    m_platform = _platform;
+    m_platformHasBeenSet = true;
+}
+
+bool MusicDetailInfo::PlatformHasBeenSet() const
+{
+    return m_platformHasBeenSet;
+}
+
+string MusicDetailInfo::GetChannel() const
+{
+    return m_channel;
+}
+
+void MusicDetailInfo::SetChannel(const string& _channel)
+{
+    m_channel = _channel;
+    m_channelHasBeenSet = true;
+}
+
+bool MusicDetailInfo::ChannelHasBeenSet() const
+{
+    return m_channelHasBeenSet;
 }
 

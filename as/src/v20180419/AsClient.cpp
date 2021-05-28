@@ -1803,6 +1803,92 @@ AsClient::RemoveInstancesOutcomeCallable AsClient::RemoveInstancesCallable(const
     return task->get_future();
 }
 
+AsClient::ScaleInInstancesOutcome AsClient::ScaleInInstances(const ScaleInInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleInInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleInInstancesResponse rsp = ScaleInInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleInInstancesOutcome(rsp);
+        else
+            return ScaleInInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleInInstancesOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::ScaleInInstancesAsync(const ScaleInInstancesRequest& request, const ScaleInInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScaleInInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::ScaleInInstancesOutcomeCallable AsClient::ScaleInInstancesCallable(const ScaleInInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScaleInInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->ScaleInInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AsClient::ScaleOutInstancesOutcome AsClient::ScaleOutInstances(const ScaleOutInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleOutInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleOutInstancesResponse rsp = ScaleOutInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleOutInstancesOutcome(rsp);
+        else
+            return ScaleOutInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleOutInstancesOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::ScaleOutInstancesAsync(const ScaleOutInstancesRequest& request, const ScaleOutInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScaleOutInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::ScaleOutInstancesOutcomeCallable AsClient::ScaleOutInstancesCallable(const ScaleOutInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScaleOutInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->ScaleOutInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::SetInstancesProtectionOutcome AsClient::SetInstancesProtection(const SetInstancesProtectionRequest &request)
 {
     auto outcome = MakeRequest(request, "SetInstancesProtection");

@@ -29,6 +29,8 @@
 #include <tencentcloud/cloudhsm/v20191112/model/DescribeHSMByVpcIdResponse.h>
 #include <tencentcloud/cloudhsm/v20191112/model/DescribeSubnetRequest.h>
 #include <tencentcloud/cloudhsm/v20191112/model/DescribeSubnetResponse.h>
+#include <tencentcloud/cloudhsm/v20191112/model/DescribeSupportedHsmRequest.h>
+#include <tencentcloud/cloudhsm/v20191112/model/DescribeSupportedHsmResponse.h>
 #include <tencentcloud/cloudhsm/v20191112/model/DescribeUsgRequest.h>
 #include <tencentcloud/cloudhsm/v20191112/model/DescribeUsgResponse.h>
 #include <tencentcloud/cloudhsm/v20191112/model/DescribeUsgRuleRequest.h>
@@ -66,6 +68,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSubnetResponse> DescribeSubnetOutcome;
                 typedef std::future<DescribeSubnetOutcome> DescribeSubnetOutcomeCallable;
                 typedef std::function<void(const CloudhsmClient*, const Model::DescribeSubnetRequest&, DescribeSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubnetAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSupportedHsmResponse> DescribeSupportedHsmOutcome;
+                typedef std::future<DescribeSupportedHsmOutcome> DescribeSupportedHsmOutcomeCallable;
+                typedef std::function<void(const CloudhsmClient*, const Model::DescribeSupportedHsmRequest&, DescribeSupportedHsmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSupportedHsmAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUsgResponse> DescribeUsgOutcome;
                 typedef std::future<DescribeUsgOutcome> DescribeUsgOutcomeCallable;
                 typedef std::function<void(const CloudhsmClient*, const Model::DescribeUsgRequest&, DescribeUsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsgAsyncHandler;
@@ -116,6 +121,15 @@ namespace TencentCloud
                 DescribeSubnetOutcome DescribeSubnet(const Model::DescribeSubnetRequest &request);
                 void DescribeSubnetAsync(const Model::DescribeSubnetRequest& request, const DescribeSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSubnetOutcomeCallable DescribeSubnetCallable(const Model::DescribeSubnetRequest& request);
+
+                /**
+                 *获取当前地域所支持的设备列表
+                 * @param req DescribeSupportedHsmRequest
+                 * @return DescribeSupportedHsmOutcome
+                 */
+                DescribeSupportedHsmOutcome DescribeSupportedHsm(const Model::DescribeSupportedHsmRequest &request);
+                void DescribeSupportedHsmAsync(const Model::DescribeSupportedHsmRequest& request, const DescribeSupportedHsmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSupportedHsmOutcomeCallable DescribeSupportedHsmCallable(const Model::DescribeSupportedHsmRequest& request);
 
                 /**
                  *根据用户的AppId获取用户安全组列表

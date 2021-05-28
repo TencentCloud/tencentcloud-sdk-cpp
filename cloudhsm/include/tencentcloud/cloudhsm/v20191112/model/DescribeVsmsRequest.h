@@ -115,6 +115,24 @@ namespace TencentCloud
                      */
                     bool TagFiltersHasBeenSet() const;
 
+                    /**
+                     * 获取设备所属的厂商名称，根据厂商来进行筛选
+                     * @return Manufacturer 设备所属的厂商名称，根据厂商来进行筛选
+                     */
+                    std::string GetManufacturer() const;
+
+                    /**
+                     * 设置设备所属的厂商名称，根据厂商来进行筛选
+                     * @param Manufacturer 设备所属的厂商名称，根据厂商来进行筛选
+                     */
+                    void SetManufacturer(const std::string& _manufacturer);
+
+                    /**
+                     * 判断参数 Manufacturer 是否已赋值
+                     * @return Manufacturer 是否已赋值
+                     */
+                    bool ManufacturerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +158,12 @@ namespace TencentCloud
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
+
+                    /**
+                     * 设备所属的厂商名称，根据厂商来进行筛选
+                     */
+                    std::string m_manufacturer;
+                    bool m_manufacturerHasBeenSet;
 
                 };
             }
