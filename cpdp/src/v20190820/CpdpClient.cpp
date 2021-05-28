@@ -599,6 +599,49 @@ CpdpClient::CloseOrderOutcomeCallable CpdpClient::CloseOrderCallable(const Close
     return task->get_future();
 }
 
+CpdpClient::ContractOrderOutcome CpdpClient::ContractOrder(const ContractOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "ContractOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ContractOrderResponse rsp = ContractOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ContractOrderOutcome(rsp);
+        else
+            return ContractOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return ContractOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::ContractOrderAsync(const ContractOrderRequest& request, const ContractOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ContractOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::ContractOrderOutcomeCallable CpdpClient::ContractOrderCallable(const ContractOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ContractOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->ContractOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::CreateAcctOutcome CpdpClient::CreateAcct(const CreateAcctRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAcct");
@@ -2018,6 +2061,49 @@ CpdpClient::QueryCommonTransferRechargeOutcomeCallable CpdpClient::QueryCommonTr
     return task->get_future();
 }
 
+CpdpClient::QueryContractOutcome CpdpClient::QueryContract(const QueryContractRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryContract");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryContractResponse rsp = QueryContractResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryContractOutcome(rsp);
+        else
+            return QueryContractOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryContractOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryContractAsync(const QueryContractRequest& request, const QueryContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryContract(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryContractOutcomeCallable CpdpClient::QueryContractCallable(const QueryContractRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryContractOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryContract(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryCustAcctIdBalanceOutcome CpdpClient::QueryCustAcctIdBalance(const QueryCustAcctIdBalanceRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryCustAcctIdBalance");
@@ -3301,6 +3387,92 @@ CpdpClient::RevokeRechargeByThirdPayOutcomeCallable CpdpClient::RevokeRechargeBy
         [this, request]()
         {
             return this->RevokeRechargeByThirdPay(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::SyncContractDataOutcome CpdpClient::SyncContractData(const SyncContractDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncContractData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncContractDataResponse rsp = SyncContractDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncContractDataOutcome(rsp);
+        else
+            return SyncContractDataOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncContractDataOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::SyncContractDataAsync(const SyncContractDataRequest& request, const SyncContractDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SyncContractData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::SyncContractDataOutcomeCallable CpdpClient::SyncContractDataCallable(const SyncContractDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SyncContractDataOutcome()>>(
+        [this, request]()
+        {
+            return this->SyncContractData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::TerminateContractOutcome CpdpClient::TerminateContract(const TerminateContractRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateContract");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateContractResponse rsp = TerminateContractResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateContractOutcome(rsp);
+        else
+            return TerminateContractOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateContractOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::TerminateContractAsync(const TerminateContractRequest& request, const TerminateContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateContract(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::TerminateContractOutcomeCallable CpdpClient::TerminateContractCallable(const TerminateContractRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateContractOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateContract(request);
         }
     );
 

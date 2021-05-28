@@ -49,6 +49,8 @@
 #include <tencentcloud/cpdp/v20190820/model/CheckAmountResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CloseOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CloseOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ContractOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ContractOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateAcctRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateAcctResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateAgentTaxPaymentInfosRequest.h>
@@ -115,6 +117,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryBillDownloadURLResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryContractRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryContractResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCustAcctIdBalanceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCustAcctIdBalanceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateRequest.h>
@@ -175,6 +179,10 @@
 #include <tencentcloud/cpdp/v20190820/model/RevokeMemberRechargeThirdPayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RevokeRechargeByThirdPayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RevokeRechargeByThirdPayResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/SyncContractDataRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/SyncContractDataResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/TerminateContractRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/TerminateContractResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/TransferSinglePayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/TransferSinglePayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnBindAcctRequest.h>
@@ -242,6 +250,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CloseOrderResponse> CloseOrderOutcome;
                 typedef std::future<CloseOrderOutcome> CloseOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CloseOrderRequest&, CloseOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseOrderAsyncHandler;
+                typedef Outcome<Error, Model::ContractOrderResponse> ContractOrderOutcome;
+                typedef std::future<ContractOrderOutcome> ContractOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ContractOrderRequest&, ContractOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ContractOrderAsyncHandler;
                 typedef Outcome<Error, Model::CreateAcctResponse> CreateAcctOutcome;
                 typedef std::future<CreateAcctOutcome> CreateAcctOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateAcctRequest&, CreateAcctOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAcctAsyncHandler;
@@ -341,6 +352,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryCommonTransferRechargeResponse> QueryCommonTransferRechargeOutcome;
                 typedef std::future<QueryCommonTransferRechargeOutcome> QueryCommonTransferRechargeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryCommonTransferRechargeRequest&, QueryCommonTransferRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCommonTransferRechargeAsyncHandler;
+                typedef Outcome<Error, Model::QueryContractResponse> QueryContractOutcome;
+                typedef std::future<QueryContractOutcome> QueryContractOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryContractRequest&, QueryContractOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryContractAsyncHandler;
                 typedef Outcome<Error, Model::QueryCustAcctIdBalanceResponse> QueryCustAcctIdBalanceOutcome;
                 typedef std::future<QueryCustAcctIdBalanceOutcome> QueryCustAcctIdBalanceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryCustAcctIdBalanceRequest&, QueryCustAcctIdBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustAcctIdBalanceAsyncHandler;
@@ -431,6 +445,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RevokeRechargeByThirdPayResponse> RevokeRechargeByThirdPayOutcome;
                 typedef std::future<RevokeRechargeByThirdPayOutcome> RevokeRechargeByThirdPayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RevokeRechargeByThirdPayRequest&, RevokeRechargeByThirdPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeRechargeByThirdPayAsyncHandler;
+                typedef Outcome<Error, Model::SyncContractDataResponse> SyncContractDataOutcome;
+                typedef std::future<SyncContractDataOutcome> SyncContractDataOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::SyncContractDataRequest&, SyncContractDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncContractDataAsyncHandler;
+                typedef Outcome<Error, Model::TerminateContractResponse> TerminateContractOutcome;
+                typedef std::future<TerminateContractOutcome> TerminateContractOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::TerminateContractRequest&, TerminateContractOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateContractAsyncHandler;
                 typedef Outcome<Error, Model::TransferSinglePayResponse> TransferSinglePayOutcome;
                 typedef std::future<TransferSinglePayOutcome> TransferSinglePayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::TransferSinglePayRequest&, TransferSinglePayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferSinglePayAsyncHandler;
@@ -578,6 +598,15 @@ namespace TencentCloud
                 CloseOrderOutcome CloseOrder(const Model::CloseOrderRequest &request);
                 void CloseOrderAsync(const Model::CloseOrderRequest& request, const CloseOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloseOrderOutcomeCallable CloseOrderCallable(const Model::CloseOrderRequest& request);
+
+                /**
+                 *应用需要先带上签约信息调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。
+                 * @param req ContractOrderRequest
+                 * @return ContractOrderOutcome
+                 */
+                ContractOrderOutcome ContractOrder(const Model::ContractOrderRequest &request);
+                void ContractOrderAsync(const Model::ContractOrderRequest& request, const ContractOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ContractOrderOutcomeCallable ContractOrderCallable(const Model::ContractOrderRequest& request);
 
                 /**
                  *子商户入驻聚鑫平台
@@ -878,6 +907,15 @@ namespace TencentCloud
                 QueryCommonTransferRechargeOutcomeCallable QueryCommonTransferRechargeCallable(const Model::QueryCommonTransferRechargeRequest& request);
 
                 /**
+                 *通过此接口查询签约数据
+                 * @param req QueryContractRequest
+                 * @return QueryContractOutcome
+                 */
+                QueryContractOutcome QueryContract(const Model::QueryContractRequest &request);
+                void QueryContractAsync(const Model::QueryContractRequest& request, const QueryContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryContractOutcomeCallable QueryContractCallable(const Model::QueryContractRequest& request);
+
+                /**
                  *查询银行子账户余额。查询会员子账户以及平台的功能子账户的余额。
                  * @param req QueryCustAcctIdBalanceRequest
                  * @return QueryCustAcctIdBalanceOutcome
@@ -1147,6 +1185,24 @@ namespace TencentCloud
                 RevokeRechargeByThirdPayOutcome RevokeRechargeByThirdPay(const Model::RevokeRechargeByThirdPayRequest &request);
                 void RevokeRechargeByThirdPayAsync(const Model::RevokeRechargeByThirdPayRequest& request, const RevokeRechargeByThirdPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RevokeRechargeByThirdPayOutcomeCallable RevokeRechargeByThirdPayCallable(const Model::RevokeRechargeByThirdPayRequest& request);
+
+                /**
+                 *对于存量的签约关系导入或者部分场景下米大师无法收到签约通知的场景，需要由调用方主动将签约状态同步至米大师
+                 * @param req SyncContractDataRequest
+                 * @return SyncContractDataOutcome
+                 */
+                SyncContractDataOutcome SyncContractData(const Model::SyncContractDataRequest &request);
+                void SyncContractDataAsync(const Model::SyncContractDataRequest& request, const SyncContractDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncContractDataOutcomeCallable SyncContractDataCallable(const Model::SyncContractDataRequest& request);
+
+                /**
+                 *通过此接口进行解约
+                 * @param req TerminateContractRequest
+                 * @return TerminateContractOutcome
+                 */
+                TerminateContractOutcome TerminateContract(const Model::TerminateContractRequest &request);
+                void TerminateContractAsync(const Model::TerminateContractRequest& request, const TerminateContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateContractOutcomeCallable TerminateContractCallable(const Model::TerminateContractRequest& request);
 
                 /**
                  *智能代发-单笔代发转账接口
