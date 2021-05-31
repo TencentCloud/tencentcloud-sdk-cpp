@@ -463,6 +463,40 @@ namespace TencentCloud
                      */
                     bool ResourceTagsHasBeenSet() const;
 
+                    /**
+                     * 获取当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+resuming
+pause
+pausing
+                     * @return ServerlessStatus 当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+resuming
+pause
+pausing
+                     */
+                    std::string GetServerlessStatus() const;
+
+                    /**
+                     * 设置当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+resuming
+pause
+pausing
+                     * @param ServerlessStatus 当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+resuming
+pause
+pausing
+                     */
+                    void SetServerlessStatus(const std::string& _serverlessStatus);
+
+                    /**
+                     * 判断参数 ServerlessStatus 是否已赋值
+                     * @return ServerlessStatus 是否已赋值
+                     */
+                    bool ServerlessStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -602,6 +636,16 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * 当Db类型为SERVERLESS时，serverless集群状态，可选值:
+resume
+resuming
+pause
+pausing
+                     */
+                    std::string m_serverlessStatus;
+                    bool m_serverlessStatusHasBeenSet;
 
                 };
             }

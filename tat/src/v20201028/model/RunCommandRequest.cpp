@@ -34,7 +34,8 @@ RunCommandRequest::RunCommandRequest() :
     m_saveCommandHasBeenSet(false),
     m_enableParameterHasBeenSet(false),
     m_defaultParametersHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,21 @@ string RunCommandRequest::ToJsonString() const
         string key = "Parameters";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_parameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -320,6 +336,22 @@ void RunCommandRequest::SetParameters(const string& _parameters)
 bool RunCommandRequest::ParametersHasBeenSet() const
 {
     return m_parametersHasBeenSet;
+}
+
+vector<Tag> RunCommandRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void RunCommandRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool RunCommandRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

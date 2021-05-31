@@ -25,19 +25,21 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/ModifyMusicOnShelvesResponse.h
   include/tencentcloud/ame/v20190916/model/Station.h
   include/tencentcloud/ame/v20190916/model/Music.h
+  include/tencentcloud/ame/v20190916/model/DescribeKTVMusicDetailRequest.h
   include/tencentcloud/ame/v20190916/model/DescribeStationsResponse.h
   include/tencentcloud/ame/v20190916/model/DescribePackageItemsResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeCloudMusicPurchasedRequest.h
   include/tencentcloud/ame/v20190916/model/PackageItem.h
   include/tencentcloud/ame/v20190916/model/DescribeCloudMusicPurchasedResponse.h
   include/tencentcloud/ame/v20190916/model/DataInfo.h
-  include/tencentcloud/ame/v20190916/model/MusicOpenDetail.h
+  include/tencentcloud/ame/v20190916/model/KTVMusicBaseInfo.h
   include/tencentcloud/ame/v20190916/model/Package.h
   include/tencentcloud/ame/v20190916/model/ReportDataResponse.h
   include/tencentcloud/ame/v20190916/model/ModifyMusicOnShelvesRequest.h
   include/tencentcloud/ame/v20190916/model/DescribePackageItemsRequest.h
   include/tencentcloud/ame/v20190916/model/AuthInfo.h
   include/tencentcloud/ame/v20190916/model/TakeMusicOffShelvesRequest.h
+  include/tencentcloud/ame/v20190916/model/SearchKTVMusicsResponse.h
   include/tencentcloud/ame/v20190916/model/TakeMusicOffShelves.h
   include/tencentcloud/ame/v20190916/model/Lyric.h
   include/tencentcloud/ame/v20190916/model/DescribeItemByIdRequest.h
@@ -49,8 +51,10 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeItemsRequest.h
   include/tencentcloud/ame/v20190916/model/Item.h
   include/tencentcloud/ame/v20190916/model/DescribeCloudMusicResponse.h
+  include/tencentcloud/ame/v20190916/model/MusicOpenDetail.h
   include/tencentcloud/ame/v20190916/model/DescribePackagesRequest.h
   include/tencentcloud/ame/v20190916/model/MusicDetailInfo.h
+  include/tencentcloud/ame/v20190916/model/SearchKTVMusicsRequest.h
   include/tencentcloud/ame/v20190916/model/ImagePath.h
   include/tencentcloud/ame/v20190916/model/DescribeItemsResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeItemByIdResponse.h
@@ -60,6 +64,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeAuthInfoResponse.h
   include/tencentcloud/ame/v20190916/model/TakeMusicOffShelvesResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeLyricRequest.h
+  include/tencentcloud/ame/v20190916/model/DescribeKTVMusicDetailResponse.h
   include/tencentcloud/ame/v20190916/model/DescribeAuthInfoRequest.h
   include/tencentcloud/ame/v20190916/model/ReportDataRequest.h
   )
@@ -72,19 +77,21 @@ set(ame_src
   src/v20190916/model/ModifyMusicOnShelvesResponse.cpp
   src/v20190916/model/Station.cpp
   src/v20190916/model/Music.cpp
+  src/v20190916/model/DescribeKTVMusicDetailRequest.cpp
   src/v20190916/model/DescribeStationsResponse.cpp
   src/v20190916/model/DescribePackageItemsResponse.cpp
   src/v20190916/model/DescribeCloudMusicPurchasedRequest.cpp
   src/v20190916/model/PackageItem.cpp
   src/v20190916/model/DescribeCloudMusicPurchasedResponse.cpp
   src/v20190916/model/DataInfo.cpp
-  src/v20190916/model/MusicOpenDetail.cpp
+  src/v20190916/model/KTVMusicBaseInfo.cpp
   src/v20190916/model/Package.cpp
   src/v20190916/model/ReportDataResponse.cpp
   src/v20190916/model/ModifyMusicOnShelvesRequest.cpp
   src/v20190916/model/DescribePackageItemsRequest.cpp
   src/v20190916/model/AuthInfo.cpp
   src/v20190916/model/TakeMusicOffShelvesRequest.cpp
+  src/v20190916/model/SearchKTVMusicsResponse.cpp
   src/v20190916/model/TakeMusicOffShelves.cpp
   src/v20190916/model/Lyric.cpp
   src/v20190916/model/DescribeItemByIdRequest.cpp
@@ -96,8 +103,10 @@ set(ame_src
   src/v20190916/model/DescribeItemsRequest.cpp
   src/v20190916/model/Item.cpp
   src/v20190916/model/DescribeCloudMusicResponse.cpp
+  src/v20190916/model/MusicOpenDetail.cpp
   src/v20190916/model/DescribePackagesRequest.cpp
   src/v20190916/model/MusicDetailInfo.cpp
+  src/v20190916/model/SearchKTVMusicsRequest.cpp
   src/v20190916/model/ImagePath.cpp
   src/v20190916/model/DescribeItemsResponse.cpp
   src/v20190916/model/DescribeItemByIdResponse.cpp
@@ -107,6 +116,7 @@ set(ame_src
   src/v20190916/model/DescribeAuthInfoResponse.cpp
   src/v20190916/model/TakeMusicOffShelvesResponse.cpp
   src/v20190916/model/DescribeLyricRequest.cpp
+  src/v20190916/model/DescribeKTVMusicDetailResponse.cpp
   src/v20190916/model/DescribeAuthInfoRequest.cpp
   src/v20190916/model/ReportDataRequest.cpp
   )

@@ -34,7 +34,8 @@ EstablishCloudBaseRunServerRequest::EstablishCloudBaseRunServerRequest() :
     m_operatorRemarkHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_vpcInfoHasBeenSet(false),
-    m_publicAccessHasBeenSet(false)
+    m_publicAccessHasBeenSet(false),
+    m_openAccessTypesHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,19 @@ string EstablishCloudBaseRunServerRequest::ToJsonString() const
         string key = "PublicAccess";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_publicAccess, allocator);
+    }
+
+    if (m_openAccessTypesHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OpenAccessTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_openAccessTypes.begin(); itr != m_openAccessTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -317,6 +331,22 @@ void EstablishCloudBaseRunServerRequest::SetPublicAccess(const int64_t& _publicA
 bool EstablishCloudBaseRunServerRequest::PublicAccessHasBeenSet() const
 {
     return m_publicAccessHasBeenSet;
+}
+
+vector<string> EstablishCloudBaseRunServerRequest::GetOpenAccessTypes() const
+{
+    return m_openAccessTypes;
+}
+
+void EstablishCloudBaseRunServerRequest::SetOpenAccessTypes(const vector<string>& _openAccessTypes)
+{
+    m_openAccessTypes = _openAccessTypes;
+    m_openAccessTypesHasBeenSet = true;
+}
+
+bool EstablishCloudBaseRunServerRequest::OpenAccessTypesHasBeenSet() const
+{
+    return m_openAccessTypesHasBeenSet;
 }
 
 

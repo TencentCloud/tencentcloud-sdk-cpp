@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool FirmwareDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取固件类型：选填 mcu、moudule。默认：mcu
+                     * @return FwType 固件类型：选填 mcu、moudule。默认：mcu
+                     */
+                    std::string GetFwType() const;
+
+                    /**
+                     * 设置固件类型：选填 mcu、moudule。默认：mcu
+                     * @param FwType 固件类型：选填 mcu、moudule。默认：mcu
+                     */
+                    void SetFwType(const std::string& _fwType);
+
+                    /**
+                     * 判断参数 FwType 是否已赋值
+                     * @return FwType 是否已赋值
+                     */
+                    bool FwTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_firmwareDescription;
                     bool m_firmwareDescriptionHasBeenSet;
+
+                    /**
+                     * 固件类型：选填 mcu、moudule。默认：mcu
+                     */
+                    std::string m_fwType;
+                    bool m_fwTypeHasBeenSet;
 
                 };
             }

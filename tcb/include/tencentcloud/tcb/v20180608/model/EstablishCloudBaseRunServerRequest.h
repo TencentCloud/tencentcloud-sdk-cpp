@@ -242,6 +242,24 @@ namespace TencentCloud
                      */
                     bool PublicAccessHasBeenSet() const;
 
+                    /**
+                     * 获取OA PUBLIC MINIAPP VPC
+                     * @return OpenAccessTypes OA PUBLIC MINIAPP VPC
+                     */
+                    std::vector<std::string> GetOpenAccessTypes() const;
+
+                    /**
+                     * 设置OA PUBLIC MINIAPP VPC
+                     * @param OpenAccessTypes OA PUBLIC MINIAPP VPC
+                     */
+                    void SetOpenAccessTypes(const std::vector<std::string>& _openAccessTypes);
+
+                    /**
+                     * 判断参数 OpenAccessTypes 是否已赋值
+                     * @return OpenAccessTypes 是否已赋值
+                     */
+                    bool OpenAccessTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -309,6 +327,12 @@ namespace TencentCloud
                      */
                     int64_t m_publicAccess;
                     bool m_publicAccessHasBeenSet;
+
+                    /**
+                     * OA PUBLIC MINIAPP VPC
+                     */
+                    std::vector<std::string> m_openAccessTypes;
+                    bool m_openAccessTypesHasBeenSet;
 
                 };
             }

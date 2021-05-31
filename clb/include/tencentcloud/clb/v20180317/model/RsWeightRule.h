@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡监听器 ID
-                     * @return ListenerId 负载均衡监听器 ID
+                     * 获取负载均衡监听器 ID。
+                     * @return ListenerId 负载均衡监听器 ID。
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置负载均衡监听器 ID
-                     * @param ListenerId 负载均衡监听器 ID
+                     * 设置负载均衡监听器 ID。
+                     * @param ListenerId 负载均衡监听器 ID。
                      */
                     void SetListenerId(const std::string& _listenerId);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取要修改权重的后端机器列表
-                     * @return Targets 要修改权重的后端机器列表
+                     * 获取要修改权重的后端机器列表。
+                     * @return Targets 要修改权重的后端机器列表。
                      */
                     std::vector<Target> GetTargets() const;
 
                     /**
-                     * 设置要修改权重的后端机器列表
-                     * @param Targets 要修改权重的后端机器列表
+                     * 设置要修改权重的后端机器列表。
+                     * @param Targets 要修改权重的后端机器列表。
                      */
                     void SetTargets(const std::vector<Target>& _targets);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool TargetsHasBeenSet() const;
 
                     /**
-                     * 获取转发规则的ID，七层规则时需要此参数，4层规则不需要
-                     * @return LocationId 转发规则的ID，七层规则时需要此参数，4层规则不需要
+                     * 获取转发规则的ID，七层规则时需要此参数，4层规则不需要。
+                     * @return LocationId 转发规则的ID，七层规则时需要此参数，4层规则不需要。
                      */
                     std::string GetLocationId() const;
 
                     /**
-                     * 设置转发规则的ID，七层规则时需要此参数，4层规则不需要
-                     * @param LocationId 转发规则的ID，七层规则时需要此参数，4层规则不需要
+                     * 设置转发规则的ID，七层规则时需要此参数，4层规则不需要。
+                     * @param LocationId 转发规则的ID，七层规则时需要此参数，4层规则不需要。
                      */
                     void SetLocationId(const std::string& _locationId);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool LocationIdHasBeenSet() const;
 
                     /**
-                     * 获取目标规则的域名，提供LocationId参数时本参数不生效
-                     * @return Domain 目标规则的域名，提供LocationId参数时本参数不生效
+                     * 获取目标规则的域名，提供LocationId参数时本参数不生效。
+                     * @return Domain 目标规则的域名，提供LocationId参数时本参数不生效。
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置目标规则的域名，提供LocationId参数时本参数不生效
-                     * @param Domain 目标规则的域名，提供LocationId参数时本参数不生效
+                     * 设置目标规则的域名，提供LocationId参数时本参数不生效。
+                     * @param Domain 目标规则的域名，提供LocationId参数时本参数不生效。
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取目标规则的URL，提供LocationId参数时本参数不生效
-                     * @return Url 目标规则的URL，提供LocationId参数时本参数不生效
+                     * 获取目标规则的URL，提供LocationId参数时本参数不生效。
+                     * @return Url 目标规则的URL，提供LocationId参数时本参数不生效。
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置目标规则的URL，提供LocationId参数时本参数不生效
-                     * @param Url 目标规则的URL，提供LocationId参数时本参数不生效
+                     * 设置目标规则的URL，提供LocationId参数时本参数不生效。
+                     * @param Url 目标规则的URL，提供LocationId参数时本参数不生效。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -138,14 +138,14 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取后端服务新的转发权重，取值范围：0~100。
-                     * @return Weight 后端服务新的转发权重，取值范围：0~100。
+                     * 获取后端服务修改后的转发权重，取值范围：[0，100]。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Weight参数，即最终的权重值以Target中的Weight参数值为准，仅当Target中的Weight参数为空时，才以RsWeightRule中的Weight参数为准。
+                     * @return Weight 后端服务修改后的转发权重，取值范围：[0，100]。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Weight参数，即最终的权重值以Target中的Weight参数值为准，仅当Target中的Weight参数为空时，才以RsWeightRule中的Weight参数为准。
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置后端服务新的转发权重，取值范围：0~100。
-                     * @param Weight 后端服务新的转发权重，取值范围：0~100。
+                     * 设置后端服务修改后的转发权重，取值范围：[0，100]。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Weight参数，即最终的权重值以Target中的Weight参数值为准，仅当Target中的Weight参数为空时，才以RsWeightRule中的Weight参数为准。
+                     * @param Weight 后端服务修改后的转发权重，取值范围：[0，100]。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Weight参数，即最终的权重值以Target中的Weight参数值为准，仅当Target中的Weight参数为空时，才以RsWeightRule中的Weight参数为准。
                      */
                     void SetWeight(const int64_t& _weight);
 
@@ -158,37 +158,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡监听器 ID
+                     * 负载均衡监听器 ID。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 要修改权重的后端机器列表
+                     * 要修改权重的后端机器列表。
                      */
                     std::vector<Target> m_targets;
                     bool m_targetsHasBeenSet;
 
                     /**
-                     * 转发规则的ID，七层规则时需要此参数，4层规则不需要
+                     * 转发规则的ID，七层规则时需要此参数，4层规则不需要。
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;
 
                     /**
-                     * 目标规则的域名，提供LocationId参数时本参数不生效
+                     * 目标规则的域名，提供LocationId参数时本参数不生效。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 目标规则的URL，提供LocationId参数时本参数不生效
+                     * 目标规则的URL，提供LocationId参数时本参数不生效。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 后端服务新的转发权重，取值范围：0~100。
+                     * 后端服务修改后的转发权重，取值范围：[0，100]。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Weight参数，即最终的权重值以Target中的Weight参数值为准，仅当Target中的Weight参数为空时，才以RsWeightRule中的Weight参数为准。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;

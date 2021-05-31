@@ -29,7 +29,8 @@ UploadFirmwareRequest::UploadFirmwareRequest() :
     m_md5sumHasBeenSet(false),
     m_fileSizeHasBeenSet(false),
     m_firmwareNameHasBeenSet(false),
-    m_firmwareDescriptionHasBeenSet(false)
+    m_firmwareDescriptionHasBeenSet(false),
+    m_fwTypeHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string UploadFirmwareRequest::ToJsonString() const
         string key = "FirmwareDescription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_firmwareDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fwTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FwType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_fwType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void UploadFirmwareRequest::SetFirmwareDescription(const string& _firmwareDescri
 bool UploadFirmwareRequest::FirmwareDescriptionHasBeenSet() const
 {
     return m_firmwareDescriptionHasBeenSet;
+}
+
+string UploadFirmwareRequest::GetFwType() const
+{
+    return m_fwType;
+}
+
+void UploadFirmwareRequest::SetFwType(const string& _fwType)
+{
+    m_fwType = _fwType;
+    m_fwTypeHasBeenSet = true;
+}
+
+bool UploadFirmwareRequest::FwTypeHasBeenSet() const
+{
+    return m_fwTypeHasBeenSet;
 }
 
 

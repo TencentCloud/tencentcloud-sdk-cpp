@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取年限
-                     * @return Period 年限
+                     * 获取年限。该参数为空时无法查询溢价词域名
+                     * @return Period 年限。该参数为空时无法查询溢价词域名
                      */
                     std::string GetPeriod() const;
 
                     /**
-                     * 设置年限
-                     * @param Period 年限
+                     * 设置年限。该参数为空时无法查询溢价词域名
+                     * @param Period 年限。该参数为空时无法查询溢价词域名
                      */
                     void SetPeriod(const std::string& _period);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 年限
+                     * 年限。该参数为空时无法查询溢价词域名
                      */
                     std::string m_period;
                     bool m_periodHasBeenSet;

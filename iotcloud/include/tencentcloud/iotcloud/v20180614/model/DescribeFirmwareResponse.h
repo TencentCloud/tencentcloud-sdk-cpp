@@ -134,6 +134,18 @@ namespace TencentCloud
                      */
                     bool ProductNameHasBeenSet() const;
 
+                    /**
+                     * 获取固件类型。选项：mcu、module
+                     * @return FwType 固件类型。选项：mcu、module
+                     */
+                    std::string GetFwType() const;
+
+                    /**
+                     * 判断参数 FwType 是否已赋值
+                     * @return FwType 是否已赋值
+                     */
+                    bool FwTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -181,6 +193,12 @@ namespace TencentCloud
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
+
+                    /**
+                     * 固件类型。选项：mcu、module
+                     */
+                    std::string m_fwType;
+                    bool m_fwTypeHasBeenSet;
 
                 };
             }

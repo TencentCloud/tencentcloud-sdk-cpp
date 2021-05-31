@@ -255,6 +255,49 @@ AmeClient::DescribeItemsOutcomeCallable AmeClient::DescribeItemsCallable(const D
     return task->get_future();
 }
 
+AmeClient::DescribeKTVMusicDetailOutcome AmeClient::DescribeKTVMusicDetail(const DescribeKTVMusicDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKTVMusicDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKTVMusicDetailResponse rsp = DescribeKTVMusicDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKTVMusicDetailOutcome(rsp);
+        else
+            return DescribeKTVMusicDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKTVMusicDetailOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::DescribeKTVMusicDetailAsync(const DescribeKTVMusicDetailRequest& request, const DescribeKTVMusicDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKTVMusicDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::DescribeKTVMusicDetailOutcomeCallable AmeClient::DescribeKTVMusicDetailCallable(const DescribeKTVMusicDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKTVMusicDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKTVMusicDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmeClient::DescribeLyricOutcome AmeClient::DescribeLyric(const DescribeLyricRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLyric");
@@ -592,6 +635,49 @@ AmeClient::ReportDataOutcomeCallable AmeClient::ReportDataCallable(const ReportD
         [this, request]()
         {
             return this->ReportData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AmeClient::SearchKTVMusicsOutcome AmeClient::SearchKTVMusics(const SearchKTVMusicsRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchKTVMusics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchKTVMusicsResponse rsp = SearchKTVMusicsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchKTVMusicsOutcome(rsp);
+        else
+            return SearchKTVMusicsOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchKTVMusicsOutcome(outcome.GetError());
+    }
+}
+
+void AmeClient::SearchKTVMusicsAsync(const SearchKTVMusicsRequest& request, const SearchKTVMusicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchKTVMusics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmeClient::SearchKTVMusicsOutcomeCallable AmeClient::SearchKTVMusicsCallable(const SearchKTVMusicsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchKTVMusicsOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchKTVMusics(request);
         }
     );
 

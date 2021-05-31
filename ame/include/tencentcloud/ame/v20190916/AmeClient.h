@@ -33,6 +33,8 @@
 #include <tencentcloud/ame/v20190916/model/DescribeItemByIdResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeItemsRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeItemsResponse.h>
+#include <tencentcloud/ame/v20190916/model/DescribeKTVMusicDetailRequest.h>
+#include <tencentcloud/ame/v20190916/model/DescribeKTVMusicDetailResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeLyricRequest.h>
 #include <tencentcloud/ame/v20190916/model/DescribeLyricResponse.h>
 #include <tencentcloud/ame/v20190916/model/DescribeMusicRequest.h>
@@ -49,6 +51,8 @@
 #include <tencentcloud/ame/v20190916/model/PutMusicOnTheShelvesResponse.h>
 #include <tencentcloud/ame/v20190916/model/ReportDataRequest.h>
 #include <tencentcloud/ame/v20190916/model/ReportDataResponse.h>
+#include <tencentcloud/ame/v20190916/model/SearchKTVMusicsRequest.h>
+#include <tencentcloud/ame/v20190916/model/SearchKTVMusicsResponse.h>
 #include <tencentcloud/ame/v20190916/model/TakeMusicOffShelvesRequest.h>
 #include <tencentcloud/ame/v20190916/model/TakeMusicOffShelvesResponse.h>
 
@@ -80,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeItemsResponse> DescribeItemsOutcome;
                 typedef std::future<DescribeItemsOutcome> DescribeItemsOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeItemsRequest&, DescribeItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeItemsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeKTVMusicDetailResponse> DescribeKTVMusicDetailOutcome;
+                typedef std::future<DescribeKTVMusicDetailOutcome> DescribeKTVMusicDetailOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::DescribeKTVMusicDetailRequest&, DescribeKTVMusicDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVMusicDetailAsyncHandler;
                 typedef Outcome<Error, Model::DescribeLyricResponse> DescribeLyricOutcome;
                 typedef std::future<DescribeLyricOutcome> DescribeLyricOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::DescribeLyricRequest&, DescribeLyricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLyricAsyncHandler;
@@ -104,6 +111,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ReportDataResponse> ReportDataOutcome;
                 typedef std::future<ReportDataOutcome> ReportDataOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::ReportDataRequest&, ReportDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportDataAsyncHandler;
+                typedef Outcome<Error, Model::SearchKTVMusicsResponse> SearchKTVMusicsOutcome;
+                typedef std::future<SearchKTVMusicsOutcome> SearchKTVMusicsOutcomeCallable;
+                typedef std::function<void(const AmeClient*, const Model::SearchKTVMusicsRequest&, SearchKTVMusicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchKTVMusicsAsyncHandler;
                 typedef Outcome<Error, Model::TakeMusicOffShelvesResponse> TakeMusicOffShelvesOutcome;
                 typedef std::future<TakeMusicOffShelvesOutcome> TakeMusicOffShelvesOutcomeCallable;
                 typedef std::function<void(const AmeClient*, const Model::TakeMusicOffShelvesRequest&, TakeMusicOffShelvesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TakeMusicOffShelvesAsyncHandler;
@@ -154,6 +164,15 @@ namespace TencentCloud
                 DescribeItemsOutcome DescribeItems(const Model::DescribeItemsRequest &request);
                 void DescribeItemsAsync(const Model::DescribeItemsRequest& request, const DescribeItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeItemsOutcomeCallable DescribeItemsCallable(const Model::DescribeItemsRequest& request);
+
+                /**
+                 *根据 Id 查询歌曲的详细信息，包含基础信息及播放信息。
+                 * @param req DescribeKTVMusicDetailRequest
+                 * @return DescribeKTVMusicDetailOutcome
+                 */
+                DescribeKTVMusicDetailOutcome DescribeKTVMusicDetail(const Model::DescribeKTVMusicDetailRequest &request);
+                void DescribeKTVMusicDetailAsync(const Model::DescribeKTVMusicDetailRequest& request, const DescribeKTVMusicDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKTVMusicDetailOutcomeCallable DescribeKTVMusicDetailCallable(const Model::DescribeKTVMusicDetailRequest& request);
 
                 /**
                  *根据接口的模式及歌曲ID来取得歌词信息。
@@ -226,6 +245,15 @@ namespace TencentCloud
                 ReportDataOutcome ReportData(const Model::ReportDataRequest &request);
                 void ReportDataAsync(const Model::ReportDataRequest& request, const ReportDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReportDataOutcomeCallable ReportDataCallable(const Model::ReportDataRequest& request);
+
+                /**
+                 *根据搜索条件，返回匹配的歌曲列表。
+                 * @param req SearchKTVMusicsRequest
+                 * @return SearchKTVMusicsOutcome
+                 */
+                SearchKTVMusicsOutcome SearchKTVMusics(const Model::SearchKTVMusicsRequest &request);
+                void SearchKTVMusicsAsync(const Model::SearchKTVMusicsRequest& request, const SearchKTVMusicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchKTVMusicsOutcomeCallable SearchKTVMusicsCallable(const Model::SearchKTVMusicsRequest& request);
 
                 /**
                  *根据资源方所传MusicId进行将歌曲进行下架，多个MusicId使用逗号隔开

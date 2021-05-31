@@ -24,8 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 UpdateFunctionCodeRequest::UpdateFunctionCodeRequest() :
-    m_handlerHasBeenSet(false),
     m_functionNameHasBeenSet(false),
+    m_handlerHasBeenSet(false),
     m_cosBucketNameHasBeenSet(false),
     m_cosObjectNameHasBeenSet(false),
     m_zipFileHasBeenSet(false),
@@ -45,20 +45,20 @@ string UpdateFunctionCodeRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_handlerHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Handler";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_handler.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_functionNameHasBeenSet)
     {
         Value iKey(kStringType);
         string key = "FunctionName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_functionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_handlerHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Handler";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_handler.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosBucketNameHasBeenSet)
@@ -142,22 +142,6 @@ string UpdateFunctionCodeRequest::ToJsonString() const
 }
 
 
-string UpdateFunctionCodeRequest::GetHandler() const
-{
-    return m_handler;
-}
-
-void UpdateFunctionCodeRequest::SetHandler(const string& _handler)
-{
-    m_handler = _handler;
-    m_handlerHasBeenSet = true;
-}
-
-bool UpdateFunctionCodeRequest::HandlerHasBeenSet() const
-{
-    return m_handlerHasBeenSet;
-}
-
 string UpdateFunctionCodeRequest::GetFunctionName() const
 {
     return m_functionName;
@@ -172,6 +156,22 @@ void UpdateFunctionCodeRequest::SetFunctionName(const string& _functionName)
 bool UpdateFunctionCodeRequest::FunctionNameHasBeenSet() const
 {
     return m_functionNameHasBeenSet;
+}
+
+string UpdateFunctionCodeRequest::GetHandler() const
+{
+    return m_handler;
+}
+
+void UpdateFunctionCodeRequest::SetHandler(const string& _handler)
+{
+    m_handler = _handler;
+    m_handlerHasBeenSet = true;
+}
+
+bool UpdateFunctionCodeRequest::HandlerHasBeenSet() const
+{
+    return m_handlerHasBeenSet;
 }
 
 string UpdateFunctionCodeRequest::GetCosBucketName() const

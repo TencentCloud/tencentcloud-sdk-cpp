@@ -31,7 +31,8 @@ CreateCommandRequest::CreateCommandRequest() :
     m_workingDirectoryHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_enableParameterHasBeenSet(false),
-    m_defaultParametersHasBeenSet(false)
+    m_defaultParametersHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,21 @@ string CreateCommandRequest::ToJsonString() const
         string key = "DefaultParameters";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_defaultParameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -240,6 +256,22 @@ void CreateCommandRequest::SetDefaultParameters(const string& _defaultParameters
 bool CreateCommandRequest::DefaultParametersHasBeenSet() const
 {
     return m_defaultParametersHasBeenSet;
+}
+
+vector<Tag> CreateCommandRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateCommandRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateCommandRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

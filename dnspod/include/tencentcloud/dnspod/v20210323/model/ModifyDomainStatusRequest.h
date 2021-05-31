@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名状态，”enable” 、”disable” 分别代表启用和暂
-                     * @return Status 域名状态，”enable” 、”disable” 分别代表启用和暂
+                     * 获取域名状态，”enable” 、”disable” 分别代表启用和暂停
+                     * @return Status 域名状态，”enable” 、”disable” 分别代表启用和暂停
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置域名状态，”enable” 、”disable” 分别代表启用和暂
-                     * @param Status 域名状态，”enable” 、”disable” 分别代表启用和暂
+                     * 设置域名状态，”enable” 、”disable” 分别代表启用和暂停
+                     * @param Status 域名状态，”enable” 、”disable” 分别代表启用和暂停
                      */
                     void SetStatus(const std::string& _status);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名状态，”enable” 、”disable” 分别代表启用和暂
+                     * 域名状态，”enable” 、”disable” 分别代表启用和暂停
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

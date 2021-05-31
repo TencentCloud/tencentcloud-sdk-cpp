@@ -27,7 +27,8 @@ EditFirmwareRequest::EditFirmwareRequest() :
     m_productIDHasBeenSet(false),
     m_firmwareVersionHasBeenSet(false),
     m_firmwareNameHasBeenSet(false),
-    m_firmwareDescriptionHasBeenSet(false)
+    m_firmwareDescriptionHasBeenSet(false),
+    m_fwTypeHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string EditFirmwareRequest::ToJsonString() const
         string key = "FirmwareDescription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_firmwareDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fwTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "FwType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_fwType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void EditFirmwareRequest::SetFirmwareDescription(const string& _firmwareDescript
 bool EditFirmwareRequest::FirmwareDescriptionHasBeenSet() const
 {
     return m_firmwareDescriptionHasBeenSet;
+}
+
+string EditFirmwareRequest::GetFwType() const
+{
+    return m_fwType;
+}
+
+void EditFirmwareRequest::SetFwType(const string& _fwType)
+{
+    m_fwType = _fwType;
+    m_fwTypeHasBeenSet = true;
+}
+
+bool EditFirmwareRequest::FwTypeHasBeenSet() const
+{
+    return m_fwTypeHasBeenSet;
 }
 
 

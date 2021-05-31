@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段
-                     * @return SortField 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段
+                     * 获取排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。默认值为updated_on。
+                     * @return SortField 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。默认值为updated_on。
                      */
                     std::string GetSortField() const;
 
                     /**
-                     * 设置排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段
-                     * @param SortField 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段
+                     * 设置排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。默认值为updated_on。
+                     * @param SortField 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。默认值为updated_on。
                      */
                     void SetSortField(const std::string& _sortField);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool SortFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，正序：ASC，逆序：DESC
-                     * @return SortType 排序方式，正序：ASC，逆序：DESC
+                     * 获取排序方式，正序：ASC，逆序：DESC。默认值为ASC。
+                     * @return SortType 排序方式，正序：ASC，逆序：DESC。默认值为ASC。
                      */
                     std::string GetSortType() const;
 
                     /**
-                     * 设置排序方式，正序：ASC，逆序：DESC
-                     * @param SortType 排序方式，正序：ASC，逆序：DESC
+                     * 设置排序方式，正序：ASC，逆序：DESC。默认值为ASC。
+                     * @param SortType 排序方式，正序：ASC，逆序：DESC。默认值为ASC。
                      */
                     void SetSortType(const std::string& _sortType);
 
@@ -223,14 +223,14 @@ namespace TencentCloud
                     bool SortTypeHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，默认值为0。
+                     * @return Offset 偏移量，默认值为0。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置偏移量，默认值为0。
+                     * @param Offset 偏移量，默认值为0。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -241,14 +241,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数量，当前Limit最大支持3000
-                     * @return Limit 限制数量，当前Limit最大支持3000
+                     * 获取限制数量，当前Limit最大支持3000。默认值为3000。
+                     * @return Limit 限制数量，当前Limit最大支持3000。默认值为3000。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数量，当前Limit最大支持3000
-                     * @param Limit 限制数量，当前Limit最大支持3000
+                     * 设置限制数量，当前Limit最大支持3000。默认值为3000。
+                     * @param Limit 限制数量，当前Limit最大支持3000。默认值为3000。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -309,25 +309,25 @@ namespace TencentCloud
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段
+                     * 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。默认值为updated_on。
                      */
                     std::string m_sortField;
                     bool m_sortFieldHasBeenSet;
 
                     /**
-                     * 排序方式，正序：ASC，逆序：DESC
+                     * 排序方式，正序：ASC，逆序：DESC。默认值为ASC。
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量，默认值为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数量，当前Limit最大支持3000
+                     * 限制数量，当前Limit最大支持3000。默认值为3000。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

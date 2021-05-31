@@ -44,7 +44,8 @@ CynosdbClusterDetail::CynosdbClusterDetail() :
     m_vportHasBeenSet(false),
     m_projectIDHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_serverlessStatusHasBeenSet(false)
 {
 }
 
@@ -313,6 +314,16 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const Value &value)
         m_resourceTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("ServerlessStatus") && !value["ServerlessStatus"].IsNull())
+    {
+        if (!value["ServerlessStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CynosdbClusterDetail.ServerlessStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverlessStatus = string(value["ServerlessStatus"].GetString());
+        m_serverlessStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -523,6 +534,14 @@ void CynosdbClusterDetail::ToJsonObject(Value &value, Document::AllocatorType& a
             value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_serverlessStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ServerlessStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_serverlessStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -894,5 +913,21 @@ void CynosdbClusterDetail::SetResourceTags(const vector<Tag>& _resourceTags)
 bool CynosdbClusterDetail::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetServerlessStatus() const
+{
+    return m_serverlessStatus;
+}
+
+void CynosdbClusterDetail::SetServerlessStatus(const string& _serverlessStatus)
+{
+    m_serverlessStatus = _serverlessStatus;
+    m_serverlessStatusHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::ServerlessStatusHasBeenSet() const
+{
+    return m_serverlessStatusHasBeenSet;
 }
 

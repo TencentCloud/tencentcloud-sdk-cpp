@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名分组类型，默认为ALL
-                     * @return Type 域名分组类型，默认为ALL
+                     * 获取域名分组类型，默认为ALL。可取值为ALL，MINE，SHARE，ISMARK，PAUSE，VIP，RECENT，SHARE_OUT。
+                     * @return Type 域名分组类型，默认为ALL。可取值为ALL，MINE，SHARE，ISMARK，PAUSE，VIP，RECENT，SHARE_OUT。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置域名分组类型，默认为ALL
-                     * @param Type 域名分组类型，默认为ALL
+                     * 设置域名分组类型，默认为ALL。可取值为ALL，MINE，SHARE，ISMARK，PAUSE，VIP，RECENT，SHARE_OUT。
+                     * @param Type 域名分组类型，默认为ALL。可取值为ALL，MINE，SHARE，ISMARK，PAUSE，VIP，RECENT，SHARE_OUT。
                      */
                     void SetType(const std::string& _type);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取记录开始的偏移, 第一条记录为 0, 依次类推
-                     * @return Offset 记录开始的偏移, 第一条记录为 0, 依次类推
+                     * 获取记录开始的偏移, 第一条记录为 0, 依次类推。默认值为0。
+                     * @return Offset 记录开始的偏移, 第一条记录为 0, 依次类推。默认值为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置记录开始的偏移, 第一条记录为 0, 依次类推
-                     * @param Offset 记录开始的偏移, 第一条记录为 0, 依次类推
+                     * 设置记录开始的偏移, 第一条记录为 0, 依次类推。默认值为0。
+                     * @param Offset 记录开始的偏移, 第一条记录为 0, 依次类推。默认值为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取要获取的域名数量, 比如获取20个, 则为20
-                     * @return Limit 要获取的域名数量, 比如获取20个, 则为20
+                     * 获取要获取的域名数量, 比如获取20个, 则为20。默认值为3000。
+                     * @return Limit 要获取的域名数量, 比如获取20个, 则为20。默认值为3000。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置要获取的域名数量, 比如获取20个, 则为20
-                     * @param Limit 要获取的域名数量, 比如获取20个, 则为20
+                     * 设置要获取的域名数量, 比如获取20个, 则为20。默认值为3000。
+                     * @param Limit 要获取的域名数量, 比如获取20个, 则为20。默认值为3000。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -135,19 +135,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名分组类型，默认为ALL
+                     * 域名分组类型，默认为ALL。可取值为ALL，MINE，SHARE，ISMARK，PAUSE，VIP，RECENT，SHARE_OUT。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 记录开始的偏移, 第一条记录为 0, 依次类推
+                     * 记录开始的偏移, 第一条记录为 0, 依次类推。默认值为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 要获取的域名数量, 比如获取20个, 则为20
+                     * 要获取的域名数量, 比如获取20个, 则为20。默认值为3000。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
