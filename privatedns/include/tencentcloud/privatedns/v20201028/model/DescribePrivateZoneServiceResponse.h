@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私有域解析服务开通状态
-                     * @return ServiceStatus 私有域解析服务开通状态
+                     * 获取私有域解析服务开通状态。ENABLED已开通，DISABLED未开通
+                     * @return ServiceStatus 私有域解析服务开通状态。ENABLED已开通，DISABLED未开通
                      */
                     std::string GetServiceStatus() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 私有域解析服务开通状态
+                     * 私有域解析服务开通状态。ENABLED已开通，DISABLED未开通
                      */
                     std::string m_serviceStatus;
                     bool m_serviceStatusHasBeenSet;

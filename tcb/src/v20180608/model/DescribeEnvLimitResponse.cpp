@@ -32,7 +32,9 @@ DescribeEnvLimitResponse::DescribeEnvLimitResponse() :
     m_maxDeleteTotalHasBeenSet(false),
     m_currentDeleteTotalHasBeenSet(false),
     m_maxDeleteMonthlyHasBeenSet(false),
-    m_currentDeleteMonthlyHasBeenSet(false)
+    m_currentDeleteMonthlyHasBeenSet(false),
+    m_maxFreeTrialNumHasBeenSet(false),
+    m_currentFreeTrialNumHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
         m_currentDeleteMonthlyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MaxFreeTrialNum") && !rsp["MaxFreeTrialNum"].IsNull())
+    {
+        if (!rsp["MaxFreeTrialNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `MaxFreeTrialNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxFreeTrialNum = rsp["MaxFreeTrialNum"].GetInt64();
+        m_maxFreeTrialNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CurrentFreeTrialNum") && !rsp["CurrentFreeTrialNum"].IsNull())
+    {
+        if (!rsp["CurrentFreeTrialNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `CurrentFreeTrialNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentFreeTrialNum = rsp["CurrentFreeTrialNum"].GetInt64();
+        m_currentFreeTrialNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -233,6 +255,26 @@ int64_t DescribeEnvLimitResponse::GetCurrentDeleteMonthly() const
 bool DescribeEnvLimitResponse::CurrentDeleteMonthlyHasBeenSet() const
 {
     return m_currentDeleteMonthlyHasBeenSet;
+}
+
+int64_t DescribeEnvLimitResponse::GetMaxFreeTrialNum() const
+{
+    return m_maxFreeTrialNum;
+}
+
+bool DescribeEnvLimitResponse::MaxFreeTrialNumHasBeenSet() const
+{
+    return m_maxFreeTrialNumHasBeenSet;
+}
+
+int64_t DescribeEnvLimitResponse::GetCurrentFreeTrialNum() const
+{
+    return m_currentFreeTrialNum;
+}
+
+bool DescribeEnvLimitResponse::CurrentFreeTrialNumHasBeenSet() const
+{
+    return m_currentFreeTrialNumHasBeenSet;
 }
 
 

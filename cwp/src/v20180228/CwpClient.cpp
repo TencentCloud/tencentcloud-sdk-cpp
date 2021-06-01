@@ -4168,6 +4168,49 @@ CwpClient::EditTagsOutcomeCallable CwpClient::EditTagsCallable(const EditTagsReq
     return task->get_future();
 }
 
+CwpClient::ExportAssetCoreModuleListOutcome CwpClient::ExportAssetCoreModuleList(const ExportAssetCoreModuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportAssetCoreModuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportAssetCoreModuleListResponse rsp = ExportAssetCoreModuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportAssetCoreModuleListOutcome(rsp);
+        else
+            return ExportAssetCoreModuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportAssetCoreModuleListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportAssetCoreModuleListAsync(const ExportAssetCoreModuleListRequest& request, const ExportAssetCoreModuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportAssetCoreModuleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ExportAssetCoreModuleListOutcomeCallable CwpClient::ExportAssetCoreModuleListCallable(const ExportAssetCoreModuleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportAssetCoreModuleListOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportAssetCoreModuleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::ExportAttackLogsOutcome CwpClient::ExportAttackLogs(const ExportAttackLogsRequest &request)
 {
     auto outcome = MakeRequest(request, "ExportAttackLogs");

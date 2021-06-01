@@ -39,7 +39,9 @@ DescribeDCDBInstancesRequest::DescribeDCDBInstancesRequest() :
     m_isFilterExclusterHasBeenSet(false),
     m_exclusterIdsHasBeenSet(false),
     m_tagKeysHasBeenSet(false),
-    m_filterInstanceTypeHasBeenSet(false)
+    m_filterInstanceTypeHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_excludeStatusHasBeenSet(false)
 {
 }
 
@@ -196,6 +198,32 @@ string DescribeDCDBInstancesRequest::ToJsonString() const
         string key = "FilterInstanceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_filterInstanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_status.begin(); itr != m_status.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_excludeStatusHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "ExcludeStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeStatus.begin(); itr != m_excludeStatus.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -460,6 +488,38 @@ void DescribeDCDBInstancesRequest::SetFilterInstanceType(const string& _filterIn
 bool DescribeDCDBInstancesRequest::FilterInstanceTypeHasBeenSet() const
 {
     return m_filterInstanceTypeHasBeenSet;
+}
+
+vector<int64_t> DescribeDCDBInstancesRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeDCDBInstancesRequest::SetStatus(const vector<int64_t>& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeDCDBInstancesRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+vector<int64_t> DescribeDCDBInstancesRequest::GetExcludeStatus() const
+{
+    return m_excludeStatus;
+}
+
+void DescribeDCDBInstancesRequest::SetExcludeStatus(const vector<int64_t>& _excludeStatus)
+{
+    m_excludeStatus = _excludeStatus;
+    m_excludeStatusHasBeenSet = true;
+}
+
+bool DescribeDCDBInstancesRequest::ExcludeStatusHasBeenSet() const
+{
+    return m_excludeStatusHasBeenSet;
 }
 
 

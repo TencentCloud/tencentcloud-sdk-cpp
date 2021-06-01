@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取是否开启子域名递归, ENABLED， DISABLED
-                     * @return DnsForwardStatus 是否开启子域名递归, ENABLED， DISABLED
+                     * 获取是否开启子域名递归, ENABLED， DISABLED。默认值为DISABLED
+                     * @return DnsForwardStatus 是否开启子域名递归, ENABLED， DISABLED。默认值为DISABLED
                      */
                     std::string GetDnsForwardStatus() const;
 
                     /**
-                     * 设置是否开启子域名递归, ENABLED， DISABLED
-                     * @param DnsForwardStatus 是否开启子域名递归, ENABLED， DISABLED
+                     * 设置是否开启子域名递归, ENABLED， DISABLED。默认值为DISABLED
+                     * @param DnsForwardStatus 是否开启子域名递归, ENABLED， DISABLED。默认值为DISABLED
                      */
                     void SetDnsForwardStatus(const std::string& _dnsForwardStatus);
 
@@ -179,7 +179,7 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 是否开启子域名递归, ENABLED， DISABLED
+                     * 是否开启子域名递归, ENABLED， DISABLED。默认值为DISABLED
                      */
                     std::string m_dnsForwardStatus;
                     bool m_dnsForwardStatusHasBeenSet;

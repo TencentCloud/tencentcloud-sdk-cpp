@@ -274,6 +274,18 @@ namespace TencentCloud
                      */
                     bool ProVersionDeadlineHasBeenSet() const;
 
+                    /**
+                     * 获取是否有资产扫描记录，0无，1有
+                     * @return HasAssetScan 是否有资产扫描记录，0无，1有
+                     */
+                    uint64_t GetHasAssetScan() const;
+
+                    /**
+                     * 判断参数 HasAssetScan 是否已赋值
+                     * @return HasAssetScan 是否已赋值
+                     */
+                    bool HasAssetScanHasBeenSet() const;
+
                 private:
 
                     /**
@@ -391,6 +403,12 @@ namespace TencentCloud
                      */
                     std::string m_proVersionDeadline;
                     bool m_proVersionDeadlineHasBeenSet;
+
+                    /**
+                     * 是否有资产扫描记录，0无，1有
+                     */
+                    uint64_t m_hasAssetScan;
+                    bool m_hasAssetScanHasBeenSet;
 
                 };
             }

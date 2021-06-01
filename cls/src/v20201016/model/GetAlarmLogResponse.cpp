@@ -1,0 +1,219 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cls/v20201016/model/GetAlarmLogResponse.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Cls::V20201016::Model;
+using namespace rapidjson;
+using namespace std;
+
+GetAlarmLogResponse::GetAlarmLogResponse() :
+    m_contextHasBeenSet(false),
+    m_listOverHasBeenSet(false),
+    m_analysisHasBeenSet(false),
+    m_colNamesHasBeenSet(false),
+    m_resultsHasBeenSet(false),
+    m_analysisResultsHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome GetAlarmLogResponse::Deserialize(const string &payload)
+{
+    Document d;
+    d.Parse(payload.c_str());
+    if (d.HasParseError() || !d.IsObject())
+    {
+        return CoreInternalOutcome(Error("response not json format"));
+    }
+    if (!d.HasMember("Response") || !d["Response"].IsObject())
+    {
+        return CoreInternalOutcome(Error("response `Response` is null or not object"));
+    }
+    Value &rsp = d["Response"];
+    if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
+    {
+        return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
+    }
+    string requestId(rsp["RequestId"].GetString());
+    SetRequestId(requestId);
+
+    if (rsp.HasMember("Error"))
+    {
+        if (!rsp["Error"].IsObject() ||
+            !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
+            !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Response.Error` format error").SetRequestId(requestId));
+        }
+        string errorCode(rsp["Error"]["Code"].GetString());
+        string errorMsg(rsp["Error"]["Message"].GetString());
+        return CoreInternalOutcome(Error(errorCode, errorMsg).SetRequestId(requestId));
+    }
+
+
+    if (rsp.HasMember("Context") && !rsp["Context"].IsNull())
+    {
+        if (!rsp["Context"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Context` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_context = string(rsp["Context"].GetString());
+        m_contextHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ListOver") && !rsp["ListOver"].IsNull())
+    {
+        if (!rsp["ListOver"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ListOver` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_listOver = rsp["ListOver"].GetBool();
+        m_listOverHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Analysis") && !rsp["Analysis"].IsNull())
+    {
+        if (!rsp["Analysis"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Analysis` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_analysis = rsp["Analysis"].GetBool();
+        m_analysisHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ColNames") && !rsp["ColNames"].IsNull())
+    {
+        if (!rsp["ColNames"].IsArray())
+            return CoreInternalOutcome(Error("response `ColNames` is not array type"));
+
+        const Value &tmpValue = rsp["ColNames"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_colNames.push_back((*itr).GetString());
+        }
+        m_colNamesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Results") && !rsp["Results"].IsNull())
+    {
+        if (!rsp["Results"].IsArray())
+            return CoreInternalOutcome(Error("response `Results` is not array type"));
+
+        const Value &tmpValue = rsp["Results"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LogInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_results.push_back(item);
+        }
+        m_resultsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AnalysisResults") && !rsp["AnalysisResults"].IsNull())
+    {
+        if (!rsp["AnalysisResults"].IsArray())
+            return CoreInternalOutcome(Error("response `AnalysisResults` is not array type"));
+
+        const Value &tmpValue = rsp["AnalysisResults"];
+        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LogItems item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_analysisResults.push_back(item);
+        }
+        m_analysisResultsHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+
+string GetAlarmLogResponse::GetContext() const
+{
+    return m_context;
+}
+
+bool GetAlarmLogResponse::ContextHasBeenSet() const
+{
+    return m_contextHasBeenSet;
+}
+
+bool GetAlarmLogResponse::GetListOver() const
+{
+    return m_listOver;
+}
+
+bool GetAlarmLogResponse::ListOverHasBeenSet() const
+{
+    return m_listOverHasBeenSet;
+}
+
+bool GetAlarmLogResponse::GetAnalysis() const
+{
+    return m_analysis;
+}
+
+bool GetAlarmLogResponse::AnalysisHasBeenSet() const
+{
+    return m_analysisHasBeenSet;
+}
+
+vector<string> GetAlarmLogResponse::GetColNames() const
+{
+    return m_colNames;
+}
+
+bool GetAlarmLogResponse::ColNamesHasBeenSet() const
+{
+    return m_colNamesHasBeenSet;
+}
+
+vector<LogInfo> GetAlarmLogResponse::GetResults() const
+{
+    return m_results;
+}
+
+bool GetAlarmLogResponse::ResultsHasBeenSet() const
+{
+    return m_resultsHasBeenSet;
+}
+
+vector<LogItems> GetAlarmLogResponse::GetAnalysisResults() const
+{
+    return m_analysisResults;
+}
+
+bool GetAlarmLogResponse::AnalysisResultsHasBeenSet() const
+{
+    return m_analysisResultsHasBeenSet;
+}
+
+

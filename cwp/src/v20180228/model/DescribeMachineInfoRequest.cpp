@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 DescribeMachineInfoRequest::DescribeMachineInfoRequest() :
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_quuidHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string DescribeMachineInfoRequest::ToJsonString() const
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quuidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Quuid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void DescribeMachineInfoRequest::SetUuid(const string& _uuid)
 bool DescribeMachineInfoRequest::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+string DescribeMachineInfoRequest::GetQuuid() const
+{
+    return m_quuid;
+}
+
+void DescribeMachineInfoRequest::SetQuuid(const string& _quuid)
+{
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
+}
+
+bool DescribeMachineInfoRequest::QuuidHasBeenSet() const
+{
+    return m_quuidHasBeenSet;
 }
 
 

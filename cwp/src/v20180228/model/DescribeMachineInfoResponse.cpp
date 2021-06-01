@@ -42,7 +42,8 @@ DescribeMachineInfoResponse::DescribeMachineInfoResponse() :
     m_freeMalwaresLeftHasBeenSet(false),
     m_freeVulsLeftHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
-    m_proVersionDeadlineHasBeenSet(false)
+    m_proVersionDeadlineHasBeenSet(false),
+    m_hasAssetScanHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome DescribeMachineInfoResponse::Deserialize(const string &paylo
         m_proVersionDeadlineHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HasAssetScan") && !rsp["HasAssetScan"].IsNull())
+    {
+        if (!rsp["HasAssetScan"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `HasAssetScan` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasAssetScan = rsp["HasAssetScan"].GetUint64();
+        m_hasAssetScanHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -443,6 +454,16 @@ string DescribeMachineInfoResponse::GetProVersionDeadline() const
 bool DescribeMachineInfoResponse::ProVersionDeadlineHasBeenSet() const
 {
     return m_proVersionDeadlineHasBeenSet;
+}
+
+uint64_t DescribeMachineInfoResponse::GetHasAssetScan() const
+{
+    return m_hasAssetScan;
+}
+
+bool DescribeMachineInfoResponse::HasAssetScanHasBeenSet() const
+{
+    return m_hasAssetScanHasBeenSet;
 }
 
 

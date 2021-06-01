@@ -51,6 +51,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeSearchTemplatesRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportMalwaresRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeProcessesResponse.h
+  include/tencentcloud/cwp/v20180228/model/ReverseShellRule.h
   include/tencentcloud/cwp/v20180228/model/DeleteBashEventsResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeMalwareInfoResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportPrivilegeEventsRequest.h
@@ -77,7 +78,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DeleteMachineTagRequest.h
   include/tencentcloud/cwp/v20180228/model/CreateBaselineStrategyResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeMaliciousRequestsResponse.h
-  include/tencentcloud/cwp/v20180228/model/ReverseShellRule.h
+  include/tencentcloud/cwp/v20180228/model/ExportAssetCoreModuleListResponse.h
   include/tencentcloud/cwp/v20180228/model/OpenPortStatistics.h
   include/tencentcloud/cwp/v20180228/model/DescribeBruteAttackListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeExportMachinesResponse.h
@@ -140,6 +141,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ExportAttackLogsRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyMalwareTimingScanSettingsRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteMachineRequest.h
+  include/tencentcloud/cwp/v20180228/model/ExportAssetCoreModuleListRequest.h
   include/tencentcloud/cwp/v20180228/model/SetBashEventsStatusResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/UntrustMaliciousRequestResponse.h
@@ -361,6 +363,7 @@ set(cwp_src
   src/v20180228/model/DescribeSearchTemplatesRequest.cpp
   src/v20180228/model/ExportMalwaresRequest.cpp
   src/v20180228/model/DescribeProcessesResponse.cpp
+  src/v20180228/model/ReverseShellRule.cpp
   src/v20180228/model/DeleteBashEventsResponse.cpp
   src/v20180228/model/DescribeMalwareInfoResponse.cpp
   src/v20180228/model/ExportPrivilegeEventsRequest.cpp
@@ -387,7 +390,7 @@ set(cwp_src
   src/v20180228/model/DeleteMachineTagRequest.cpp
   src/v20180228/model/CreateBaselineStrategyResponse.cpp
   src/v20180228/model/DescribeMaliciousRequestsResponse.cpp
-  src/v20180228/model/ReverseShellRule.cpp
+  src/v20180228/model/ExportAssetCoreModuleListResponse.cpp
   src/v20180228/model/OpenPortStatistics.cpp
   src/v20180228/model/DescribeBruteAttackListResponse.cpp
   src/v20180228/model/DescribeExportMachinesResponse.cpp
@@ -450,6 +453,7 @@ set(cwp_src
   src/v20180228/model/ExportAttackLogsRequest.cpp
   src/v20180228/model/ModifyMalwareTimingScanSettingsRequest.cpp
   src/v20180228/model/DeleteMachineRequest.cpp
+  src/v20180228/model/ExportAssetCoreModuleListRequest.cpp
   src/v20180228/model/SetBashEventsStatusResponse.cpp
   src/v20180228/model/DescribeVulInfoRequest.cpp
   src/v20180228/model/UntrustMaliciousRequestResponse.cpp

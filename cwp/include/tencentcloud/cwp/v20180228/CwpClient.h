@@ -215,6 +215,8 @@
 #include <tencentcloud/cwp/v20180228/model/EditReverseShellRuleResponse.h>
 #include <tencentcloud/cwp/v20180228/model/EditTagsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/EditTagsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ExportAssetCoreModuleListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ExportAssetCoreModuleListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportAttackLogsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportAttackLogsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportBashEventsRequest.h>
@@ -581,6 +583,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EditTagsResponse> EditTagsOutcome;
                 typedef std::future<EditTagsOutcome> EditTagsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::EditTagsRequest&, EditTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditTagsAsyncHandler;
+                typedef Outcome<Error, Model::ExportAssetCoreModuleListResponse> ExportAssetCoreModuleListOutcome;
+                typedef std::future<ExportAssetCoreModuleListOutcome> ExportAssetCoreModuleListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ExportAssetCoreModuleListRequest&, ExportAssetCoreModuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportAssetCoreModuleListAsyncHandler;
                 typedef Outcome<Error, Model::ExportAttackLogsResponse> ExportAttackLogsOutcome;
                 typedef std::future<ExportAttackLogsOutcome> ExportAttackLogsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportAttackLogsRequest&, ExportAttackLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportAttackLogsAsyncHandler;
@@ -1546,6 +1551,15 @@ namespace TencentCloud
                 EditTagsOutcome EditTags(const Model::EditTagsRequest &request);
                 void EditTagsAsync(const Model::EditTagsRequest& request, const EditTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EditTagsOutcomeCallable EditTagsCallable(const Model::EditTagsRequest& request);
+
+                /**
+                 *导出资产管理内核模块列表
+                 * @param req ExportAssetCoreModuleListRequest
+                 * @return ExportAssetCoreModuleListOutcome
+                 */
+                ExportAssetCoreModuleListOutcome ExportAssetCoreModuleList(const Model::ExportAssetCoreModuleListRequest &request);
+                void ExportAssetCoreModuleListAsync(const Model::ExportAssetCoreModuleListRequest& request, const ExportAssetCoreModuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportAssetCoreModuleListOutcomeCallable ExportAssetCoreModuleListCallable(const Model::ExportAssetCoreModuleListRequest& request);
 
                 /**
                  *导出网络攻击日志

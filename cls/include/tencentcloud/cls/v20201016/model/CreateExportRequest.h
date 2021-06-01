@@ -1,0 +1,221 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CLS_V20201016_MODEL_CREATEEXPORTREQUEST_H_
+#define TENCENTCLOUD_CLS_V20201016_MODEL_CREATEEXPORTREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Cls
+    {
+        namespace V20201016
+        {
+            namespace Model
+            {
+                /**
+                * CreateExport请求参数结构体
+                */
+                class CreateExportRequest : public AbstractModel
+                {
+                public:
+                    CreateExportRequest();
+                    ~CreateExportRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取日志主题
+                     * @return TopicId 日志主题
+                     */
+                    std::string GetTopicId() const;
+
+                    /**
+                     * 设置日志主题
+                     * @param TopicId 日志主题
+                     */
+                    void SetTopicId(const std::string& _topicId);
+
+                    /**
+                     * 判断参数 TopicId 是否已赋值
+                     * @return TopicId 是否已赋值
+                     */
+                    bool TopicIdHasBeenSet() const;
+
+                    /**
+                     * 获取日志导出检索语句
+                     * @return Query 日志导出检索语句
+                     */
+                    std::string GetQuery() const;
+
+                    /**
+                     * 设置日志导出检索语句
+                     * @param Query 日志导出检索语句
+                     */
+                    void SetQuery(const std::string& _query);
+
+                    /**
+                     * 判断参数 Query 是否已赋值
+                     * @return Query 是否已赋值
+                     */
+                    bool QueryHasBeenSet() const;
+
+                    /**
+                     * 获取日志导出数量
+                     * @return Count 日志导出数量
+                     */
+                    uint64_t GetCount() const;
+
+                    /**
+                     * 设置日志导出数量
+                     * @param Count 日志导出数量
+                     */
+                    void SetCount(const uint64_t& _count);
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     */
+                    bool CountHasBeenSet() const;
+
+                    /**
+                     * 获取日志导出起始时间，毫秒时间戳
+                     * @return From 日志导出起始时间，毫秒时间戳
+                     */
+                    int64_t GetFrom() const;
+
+                    /**
+                     * 设置日志导出起始时间，毫秒时间戳
+                     * @param From 日志导出起始时间，毫秒时间戳
+                     */
+                    void SetFrom(const int64_t& _from);
+
+                    /**
+                     * 判断参数 From 是否已赋值
+                     * @return From 是否已赋值
+                     */
+                    bool FromHasBeenSet() const;
+
+                    /**
+                     * 获取日志导出结束时间，毫秒时间戳
+                     * @return To 日志导出结束时间，毫秒时间戳
+                     */
+                    int64_t GetTo() const;
+
+                    /**
+                     * 设置日志导出结束时间，毫秒时间戳
+                     * @param To 日志导出结束时间，毫秒时间戳
+                     */
+                    void SetTo(const int64_t& _to);
+
+                    /**
+                     * 判断参数 To 是否已赋值
+                     * @return To 是否已赋值
+                     */
+                    bool ToHasBeenSet() const;
+
+                    /**
+                     * 获取日志导出时间排序。desc，asc，默认为desc
+                     * @return Order 日志导出时间排序。desc，asc，默认为desc
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置日志导出时间排序。desc，asc，默认为desc
+                     * @param Order 日志导出时间排序。desc，asc，默认为desc
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     */
+                    bool OrderHasBeenSet() const;
+
+                    /**
+                     * 获取日志导出数据格式。json，csv，默认为json
+                     * @return Format 日志导出数据格式。json，csv，默认为json
+                     */
+                    std::string GetFormat() const;
+
+                    /**
+                     * 设置日志导出数据格式。json，csv，默认为json
+                     * @param Format 日志导出数据格式。json，csv，默认为json
+                     */
+                    void SetFormat(const std::string& _format);
+
+                    /**
+                     * 判断参数 Format 是否已赋值
+                     * @return Format 是否已赋值
+                     */
+                    bool FormatHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 日志主题
+                     */
+                    std::string m_topicId;
+                    bool m_topicIdHasBeenSet;
+
+                    /**
+                     * 日志导出检索语句
+                     */
+                    std::string m_query;
+                    bool m_queryHasBeenSet;
+
+                    /**
+                     * 日志导出数量
+                     */
+                    uint64_t m_count;
+                    bool m_countHasBeenSet;
+
+                    /**
+                     * 日志导出起始时间，毫秒时间戳
+                     */
+                    int64_t m_from;
+                    bool m_fromHasBeenSet;
+
+                    /**
+                     * 日志导出结束时间，毫秒时间戳
+                     */
+                    int64_t m_to;
+                    bool m_toHasBeenSet;
+
+                    /**
+                     * 日志导出时间排序。desc，asc，默认为desc
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
+
+                    /**
+                     * 日志导出数据格式。json，csv，默认为json
+                     */
+                    std::string m_format;
+                    bool m_formatHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CLS_V20201016_MODEL_CREATEEXPORTREQUEST_H_

@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool UuidHasBeenSet() const;
 
+                    /**
+                     * 获取cvm id， quuid、uuid必填一个
+                     * @return Quuid cvm id， quuid、uuid必填一个
+                     */
+                    std::string GetQuuid() const;
+
+                    /**
+                     * 设置cvm id， quuid、uuid必填一个
+                     * @param Quuid cvm id， quuid、uuid必填一个
+                     */
+                    void SetQuuid(const std::string& _quuid);
+
+                    /**
+                     * 判断参数 Quuid 是否已赋值
+                     * @return Quuid 是否已赋值
+                     */
+                    bool QuuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
+
+                    /**
+                     * cvm id， quuid、uuid必填一个
+                     */
+                    std::string m_quuid;
+                    bool m_quuidHasBeenSet;
 
                 };
             }

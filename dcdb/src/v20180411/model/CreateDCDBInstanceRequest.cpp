@@ -40,7 +40,8 @@ CreateDCDBInstanceRequest::CreateDCDBInstanceRequest() :
     m_securityGroupIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_ipv6FlagHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_initParamsHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,21 @@ string CreateDCDBInstanceRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_initParamsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "InitParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_initParams.begin(); itr != m_initParams.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -482,6 +498,22 @@ void CreateDCDBInstanceRequest::SetResourceTags(const vector<ResourceTag>& _reso
 bool CreateDCDBInstanceRequest::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+vector<DBParamValue> CreateDCDBInstanceRequest::GetInitParams() const
+{
+    return m_initParams;
+}
+
+void CreateDCDBInstanceRequest::SetInitParams(const vector<DBParamValue>& _initParams)
+{
+    m_initParams = _initParams;
+    m_initParamsHasBeenSet = true;
+}
+
+bool CreateDCDBInstanceRequest::InitParamsHasBeenSet() const
+{
+    return m_initParamsHasBeenSet;
 }
 
 

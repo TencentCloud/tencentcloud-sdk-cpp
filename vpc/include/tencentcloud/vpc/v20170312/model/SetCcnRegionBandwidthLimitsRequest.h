@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool CcnRegionBandwidthLimitsHasBeenSet() const;
 
                     /**
-                     * 获取是否设置带宽为默认值。
-                     * @return SetDefaultLimitFlag 是否设置带宽为默认值。
+                     * 获取是否恢复云联网地域出口/地域间带宽限速为默认值（1Gbps）。false表示不恢复；true表示恢复。恢复默认值后，限速实例将不在控制台展示。该参数默认为 false，不恢复。
+                     * @return SetDefaultLimitFlag 是否恢复云联网地域出口/地域间带宽限速为默认值（1Gbps）。false表示不恢复；true表示恢复。恢复默认值后，限速实例将不在控制台展示。该参数默认为 false，不恢复。
                      */
                     bool GetSetDefaultLimitFlag() const;
 
                     /**
-                     * 设置是否设置带宽为默认值。
-                     * @param SetDefaultLimitFlag 是否设置带宽为默认值。
+                     * 设置是否恢复云联网地域出口/地域间带宽限速为默认值（1Gbps）。false表示不恢复；true表示恢复。恢复默认值后，限速实例将不在控制台展示。该参数默认为 false，不恢复。
+                     * @param SetDefaultLimitFlag 是否恢复云联网地域出口/地域间带宽限速为默认值（1Gbps）。false表示不恢复；true表示恢复。恢复默认值后，限速实例将不在控制台展示。该参数默认为 false，不恢复。
                      */
                     void SetSetDefaultLimitFlag(const bool& _setDefaultLimitFlag);
 
@@ -112,7 +112,7 @@ namespace TencentCloud
                     bool m_ccnRegionBandwidthLimitsHasBeenSet;
 
                     /**
-                     * 是否设置带宽为默认值。
+                     * 是否恢复云联网地域出口/地域间带宽限速为默认值（1Gbps）。false表示不恢复；true表示恢复。恢复默认值后，限速实例将不在控制台展示。该参数默认为 false，不恢复。
                      */
                     bool m_setDefaultLimitFlag;
                     bool m_setDefaultLimitFlagHasBeenSet;

@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool TimeRangeBeginHasBeenSet() const;
 
                     /**
-                     * 获取筛选参数：
-                     * @return Filters 筛选参数：
+                     * 获取筛选参数：ZoneId：私有域ID；Domain：私有域；OperatorUin：操作者账号ID
+                     * @return Filters 筛选参数：ZoneId：私有域ID；Domain：私有域；OperatorUin：操作者账号ID
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置筛选参数：
-                     * @param Filters 筛选参数：
+                     * 设置筛选参数：ZoneId：私有域ID；Domain：私有域；OperatorUin：操作者账号ID
+                     * @param Filters 筛选参数：ZoneId：私有域ID；Domain：私有域；OperatorUin：操作者账号ID
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_timeRangeBeginHasBeenSet;
 
                     /**
-                     * 筛选参数：
+                     * 筛选参数：ZoneId：私有域ID；Domain：私有域；OperatorUin：操作者账号ID
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

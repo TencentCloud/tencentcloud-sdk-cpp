@@ -24,7 +24,8 @@ using namespace rapidjson;
 using namespace std;
 
 RestartDBInstancesRequest::RestartDBInstancesRequest() :
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_restartTimeHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,14 @@ string RestartDBInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_restartTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "RestartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_restartTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -70,6 +79,22 @@ void RestartDBInstancesRequest::SetInstanceIds(const vector<string>& _instanceId
 bool RestartDBInstancesRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string RestartDBInstancesRequest::GetRestartTime() const
+{
+    return m_restartTime;
+}
+
+void RestartDBInstancesRequest::SetRestartTime(const string& _restartTime)
+{
+    m_restartTime = _restartTime;
+    m_restartTimeHasBeenSet = true;
+}
+
+bool RestartDBInstancesRequest::RestartTimeHasBeenSet() const
+{
+    return m_restartTimeHasBeenSet;
 }
 
 

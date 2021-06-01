@@ -330,6 +330,42 @@ namespace TencentCloud
                      */
                     bool FilterInstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取按实例状态筛选
+                     * @return Status 按实例状态筛选
+                     */
+                    std::vector<int64_t> GetStatus() const;
+
+                    /**
+                     * 设置按实例状态筛选
+                     * @param Status 按实例状态筛选
+                     */
+                    void SetStatus(const std::vector<int64_t>& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取排除实例状态
+                     * @return ExcludeStatus 排除实例状态
+                     */
+                    std::vector<int64_t> GetExcludeStatus() const;
+
+                    /**
+                     * 设置排除实例状态
+                     * @param ExcludeStatus 排除实例状态
+                     */
+                    void SetExcludeStatus(const std::vector<int64_t>& _excludeStatus);
+
+                    /**
+                     * 判断参数 ExcludeStatus 是否已赋值
+                     * @return ExcludeStatus 是否已赋值
+                     */
+                    bool ExcludeStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +463,18 @@ namespace TencentCloud
                      */
                     std::string m_filterInstanceType;
                     bool m_filterInstanceTypeHasBeenSet;
+
+                    /**
+                     * 按实例状态筛选
+                     */
+                    std::vector<int64_t> m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 排除实例状态
+                     */
+                    std::vector<int64_t> m_excludeStatus;
+                    bool m_excludeStatusHasBeenSet;
 
                 };
             }

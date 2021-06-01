@@ -138,6 +138,30 @@ namespace TencentCloud
                      */
                     bool CurrentDeleteMonthlyHasBeenSet() const;
 
+                    /**
+                     * 获取微信网关体验版可购买月份数
+                     * @return MaxFreeTrialNum 微信网关体验版可购买月份数
+                     */
+                    int64_t GetMaxFreeTrialNum() const;
+
+                    /**
+                     * 判断参数 MaxFreeTrialNum 是否已赋值
+                     * @return MaxFreeTrialNum 是否已赋值
+                     */
+                    bool MaxFreeTrialNumHasBeenSet() const;
+
+                    /**
+                     * 获取微信网关体验版已购买月份数
+                     * @return CurrentFreeTrialNum 微信网关体验版已购买月份数
+                     */
+                    int64_t GetCurrentFreeTrialNum() const;
+
+                    /**
+                     * 判断参数 CurrentFreeTrialNum 是否已赋值
+                     * @return CurrentFreeTrialNum 是否已赋值
+                     */
+                    bool CurrentFreeTrialNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +211,18 @@ namespace TencentCloud
                      */
                     int64_t m_currentDeleteMonthly;
                     bool m_currentDeleteMonthlyHasBeenSet;
+
+                    /**
+                     * 微信网关体验版可购买月份数
+                     */
+                    int64_t m_maxFreeTrialNum;
+                    bool m_maxFreeTrialNumHasBeenSet;
+
+                    /**
+                     * 微信网关体验版已购买月份数
+                     */
+                    int64_t m_currentFreeTrialNum;
+                    bool m_currentFreeTrialNumHasBeenSet;
 
                 };
             }

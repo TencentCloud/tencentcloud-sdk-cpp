@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取重启时间
+                     * @return RestartTime 重启时间
+                     */
+                    std::string GetRestartTime() const;
+
+                    /**
+                     * 设置重启时间
+                     * @param RestartTime 重启时间
+                     */
+                    void SetRestartTime(const std::string& _restartTime);
+
+                    /**
+                     * 判断参数 RestartTime 是否已赋值
+                     * @return RestartTime 是否已赋值
+                     */
+                    bool RestartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 重启时间
+                     */
+                    std::string m_restartTime;
+                    bool m_restartTimeHasBeenSet;
 
                 };
             }

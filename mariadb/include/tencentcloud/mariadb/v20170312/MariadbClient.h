@@ -89,6 +89,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeSqlLogsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DestroyHourDBInstanceRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DestroyHourDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/FlushBinlogRequest.h>
@@ -101,6 +103,8 @@
 #include <tencentcloud/mariadb/v20170312/model/KillSessionResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyAccountDescriptionRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyAccountDescriptionResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyAccountPrivilegesRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyAccountPrivilegesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyBackupTimeRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyBackupTimeResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameRequest.h>
@@ -236,6 +240,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUpgradePriceResponse> DescribeUpgradePriceOutcome;
                 typedef std::future<DescribeUpgradePriceOutcome> DescribeUpgradePriceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeUpgradePriceRequest&, DescribeUpgradePriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradePriceAsyncHandler;
+                typedef Outcome<Error, Model::DestroyHourDBInstanceResponse> DestroyHourDBInstanceOutcome;
+                typedef std::future<DestroyHourDBInstanceOutcome> DestroyHourDBInstanceOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DestroyHourDBInstanceRequest&, DestroyHourDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyHourDBInstanceAsyncHandler;
                 typedef Outcome<Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
                 typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
@@ -254,6 +261,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAccountDescriptionResponse> ModifyAccountDescriptionOutcome;
                 typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyAccountDescriptionRequest&, ModifyAccountDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAccountPrivilegesResponse> ModifyAccountPrivilegesOutcome;
+                typedef std::future<ModifyAccountPrivilegesOutcome> ModifyAccountPrivilegesOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::ModifyAccountPrivilegesRequest&, ModifyAccountPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountPrivilegesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyBackupTimeResponse> ModifyBackupTimeOutcome;
                 typedef std::future<ModifyBackupTimeOutcome> ModifyBackupTimeOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyBackupTimeRequest&, ModifyBackupTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupTimeAsyncHandler;
@@ -591,6 +601,15 @@ namespace TencentCloud
                 DescribeUpgradePriceOutcomeCallable DescribeUpgradePriceCallable(const Model::DescribeUpgradePriceRequest& request);
 
                 /**
+                 *本接口（DestroyHourDBInstance）用于销毁按量计费实例。
+                 * @param req DestroyHourDBInstanceRequest
+                 * @return DestroyHourDBInstanceOutcome
+                 */
+                DestroyHourDBInstanceOutcome DestroyHourDBInstance(const Model::DestroyHourDBInstanceRequest &request);
+                void DestroyHourDBInstanceAsync(const Model::DestroyHourDBInstanceRequest& request, const DestroyHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyHourDBInstanceOutcomeCallable DestroyHourDBInstanceCallable(const Model::DestroyHourDBInstanceRequest& request);
+
+                /**
                  *本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。
                  * @param req DisassociateSecurityGroupsRequest
                  * @return DisassociateSecurityGroupsOutcome
@@ -645,6 +664,20 @@ namespace TencentCloud
                 ModifyAccountDescriptionOutcome ModifyAccountDescription(const Model::ModifyAccountDescriptionRequest &request);
                 void ModifyAccountDescriptionAsync(const Model::ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAccountDescriptionOutcomeCallable ModifyAccountDescriptionCallable(const Model::ModifyAccountDescriptionRequest& request);
+
+                /**
+                 *本接口(ModifyAccountPrivileges)用于修改云数据库的账户的权限信息。
+
+**注意**
+- 系统保留库："mysql"，只开放["SELECT"]权限
+- 只读账号授予读写权限会报错
+- 不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组
+                 * @param req ModifyAccountPrivilegesRequest
+                 * @return ModifyAccountPrivilegesOutcome
+                 */
+                ModifyAccountPrivilegesOutcome ModifyAccountPrivileges(const Model::ModifyAccountPrivilegesRequest &request);
+                void ModifyAccountPrivilegesAsync(const Model::ModifyAccountPrivilegesRequest& request, const ModifyAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccountPrivilegesOutcomeCallable ModifyAccountPrivilegesCallable(const Model::ModifyAccountPrivilegesRequest& request);
 
                 /**
                  *本接口（ModifyBackupTime）用于设置云数据库实例的备份时间。后台系统将根据此配置定期进行实例备份。

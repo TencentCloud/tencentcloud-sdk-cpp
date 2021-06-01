@@ -26,7 +26,8 @@ using namespace std;
 CreateCloudStorageRequest::CreateCloudStorageRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_packageIdHasBeenSet(false)
+    m_packageIdHasBeenSet(false),
+    m_overrideHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string CreateCloudStorageRequest::ToJsonString() const
         string key = "PackageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_packageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_overrideHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Override";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_override, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void CreateCloudStorageRequest::SetPackageId(const string& _packageId)
 bool CreateCloudStorageRequest::PackageIdHasBeenSet() const
 {
     return m_packageIdHasBeenSet;
+}
+
+uint64_t CreateCloudStorageRequest::GetOverride() const
+{
+    return m_override;
+}
+
+void CreateCloudStorageRequest::SetOverride(const uint64_t& _override)
+{
+    m_override = _override;
+    m_overrideHasBeenSet = true;
+}
+
+bool CreateCloudStorageRequest::OverrideHasBeenSet() const
+{
+    return m_overrideHasBeenSet;
 }
 
 

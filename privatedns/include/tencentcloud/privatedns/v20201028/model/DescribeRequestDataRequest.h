@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求量统计起始时间
-                     * @return TimeRangeBegin 请求量统计起始时间
+                     * 获取请求量统计起始时间，格式：2020-11-22 00:00:00
+                     * @return TimeRangeBegin 请求量统计起始时间，格式：2020-11-22 00:00:00
                      */
                     std::string GetTimeRangeBegin() const;
 
                     /**
-                     * 设置请求量统计起始时间
-                     * @param TimeRangeBegin 请求量统计起始时间
+                     * 设置请求量统计起始时间，格式：2020-11-22 00:00:00
+                     * @param TimeRangeBegin 请求量统计起始时间，格式：2020-11-22 00:00:00
                      */
                     void SetTimeRangeBegin(const std::string& _timeRangeBegin);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取请求量统计结束时间
-                     * @return TimeRangeEnd 请求量统计结束时间
+                     * 获取请求量统计结束时间，格式：2020-11-22 23:59:59
+                     * @return TimeRangeEnd 请求量统计结束时间，格式：2020-11-22 23:59:59
                      */
                     std::string GetTimeRangeEnd() const;
 
                     /**
-                     * 设置请求量统计结束时间
-                     * @param TimeRangeEnd 请求量统计结束时间
+                     * 设置请求量统计结束时间，格式：2020-11-22 23:59:59
+                     * @param TimeRangeEnd 请求量统计结束时间，格式：2020-11-22 23:59:59
                      */
                     void SetTimeRangeEnd(const std::string& _timeRangeEnd);
 
@@ -100,7 +100,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求量统计起始时间
+                     * 请求量统计起始时间，格式：2020-11-22 00:00:00
                      */
                     std::string m_timeRangeBegin;
                     bool m_timeRangeBeginHasBeenSet;
@@ -112,7 +112,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 请求量统计结束时间
+                     * 请求量统计结束时间，格式：2020-11-22 23:59:59
                      */
                     std::string m_timeRangeEnd;
                     bool m_timeRangeEndHasBeenSet;

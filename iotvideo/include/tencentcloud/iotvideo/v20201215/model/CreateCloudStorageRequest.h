@@ -152,6 +152,24 @@ ye1w7d : 事件7天存储周套餐。
                      */
                     bool PackageIdHasBeenSet() const;
 
+                    /**
+                     * 获取如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
+                     * @return Override 如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
+                     */
+                    uint64_t GetOverride() const;
+
+                    /**
+                     * 设置如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
+                     * @param Override 如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
+                     */
+                    void SetOverride(const uint64_t& _override);
+
+                    /**
+                     * 判断参数 Override 是否已赋值
+                     * @return Override 是否已赋值
+                     */
+                    bool OverrideHasBeenSet() const;
+
                 private:
 
                     /**
@@ -185,6 +203,12 @@ ye1w7d : 事件7天存储周套餐。
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
+
+                    /**
+                     * 如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。
+                     */
+                    uint64_t m_override;
+                    bool m_overrideHasBeenSet;
 
                 };
             }

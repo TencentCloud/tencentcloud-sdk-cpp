@@ -71,6 +71,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDcnDetailRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDcnDetailResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeFlowRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeFlowResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsRequest.h>
@@ -83,6 +85,10 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeSqlLogsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeUserTasksRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeUserTasksResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DestroyDCDBInstanceRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DestroyDCDBInstanceResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DestroyHourDCDBInstanceRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DestroyHourDCDBInstanceResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DisassociateSecurityGroupsRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DisassociateSecurityGroupsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/FlushBinlogRequest.h>
@@ -197,6 +203,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDcnDetailResponse> DescribeDcnDetailOutcome;
                 typedef std::future<DescribeDcnDetailOutcome> DescribeDcnDetailOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeDcnDetailRequest&, DescribeDcnDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDcnDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFlowResponse> DescribeFlowOutcome;
+                typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeFlowRequest&, DescribeFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowAsyncHandler;
                 typedef Outcome<Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
                 typedef std::future<DescribeOrdersOutcome> DescribeOrdersOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeOrdersRequest&, DescribeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrdersAsyncHandler;
@@ -215,6 +224,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUserTasksResponse> DescribeUserTasksOutcome;
                 typedef std::future<DescribeUserTasksOutcome> DescribeUserTasksOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeUserTasksRequest&, DescribeUserTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserTasksAsyncHandler;
+                typedef Outcome<Error, Model::DestroyDCDBInstanceResponse> DestroyDCDBInstanceOutcome;
+                typedef std::future<DestroyDCDBInstanceOutcome> DestroyDCDBInstanceOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DestroyDCDBInstanceRequest&, DestroyDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyDCDBInstanceAsyncHandler;
+                typedef Outcome<Error, Model::DestroyHourDCDBInstanceResponse> DestroyHourDCDBInstanceOutcome;
+                typedef std::future<DestroyHourDCDBInstanceOutcome> DestroyHourDCDBInstanceOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DestroyHourDCDBInstanceRequest&, DestroyHourDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyHourDCDBInstanceAsyncHandler;
                 typedef Outcome<Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
                 typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
@@ -480,6 +495,15 @@ namespace TencentCloud
                 DescribeDcnDetailOutcomeCallable DescribeDcnDetailCallable(const Model::DescribeDcnDetailRequest& request);
 
                 /**
+                 *本接口（DescribeFlow）用于查询流程状态
+                 * @param req DescribeFlowRequest
+                 * @return DescribeFlowOutcome
+                 */
+                DescribeFlowOutcome DescribeFlow(const Model::DescribeFlowRequest &request);
+                void DescribeFlowAsync(const Model::DescribeFlowRequest& request, const DescribeFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowOutcomeCallable DescribeFlowCallable(const Model::DescribeFlowRequest& request);
+
+                /**
                  *本接口（DescribeOrders）用于查询分布式数据库订单信息。传入订单ID来查询订单关联的分布式数据库实例，和对应的任务流程ID。
                  * @param req DescribeOrdersRequest
                  * @return DescribeOrdersOutcome
@@ -532,6 +556,24 @@ namespace TencentCloud
                 DescribeUserTasksOutcome DescribeUserTasks(const Model::DescribeUserTasksRequest &request);
                 void DescribeUserTasksAsync(const Model::DescribeUserTasksRequest& request, const DescribeUserTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserTasksOutcomeCallable DescribeUserTasksCallable(const Model::DescribeUserTasksRequest& request);
+
+                /**
+                 *本接口(DestroyDCDBInstance)用于销毁已隔离的包年包月实例。
+                 * @param req DestroyDCDBInstanceRequest
+                 * @return DestroyDCDBInstanceOutcome
+                 */
+                DestroyDCDBInstanceOutcome DestroyDCDBInstance(const Model::DestroyDCDBInstanceRequest &request);
+                void DestroyDCDBInstanceAsync(const Model::DestroyDCDBInstanceRequest& request, const DestroyDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyDCDBInstanceOutcomeCallable DestroyDCDBInstanceCallable(const Model::DestroyDCDBInstanceRequest& request);
+
+                /**
+                 *本接口（DestroyHourDCDBInstance）用于销毁按量计费实例。
+                 * @param req DestroyHourDCDBInstanceRequest
+                 * @return DestroyHourDCDBInstanceOutcome
+                 */
+                DestroyHourDCDBInstanceOutcome DestroyHourDCDBInstance(const Model::DestroyHourDCDBInstanceRequest &request);
+                void DestroyHourDCDBInstanceAsync(const Model::DestroyHourDCDBInstanceRequest& request, const DestroyHourDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyHourDCDBInstanceOutcomeCallable DestroyHourDCDBInstanceCallable(const Model::DestroyHourDCDBInstanceRequest& request);
 
                 /**
                  *本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。
