@@ -167,6 +167,8 @@
 #include <tencentcloud/cpdp/v20190820/model/RefundResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundMemberTransactionRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundMemberTransactionResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/RegisterBehaviorRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/RegisterBehaviorResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RegisterBillSupportWithdrawRequest.h>
@@ -427,6 +429,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RefundMemberTransactionResponse> RefundMemberTransactionOutcome;
                 typedef std::future<RefundMemberTransactionOutcome> RefundMemberTransactionOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RefundMemberTransactionRequest&, RefundMemberTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundMemberTransactionAsyncHandler;
+                typedef Outcome<Error, Model::RegisterBehaviorResponse> RegisterBehaviorOutcome;
+                typedef std::future<RegisterBehaviorOutcome> RegisterBehaviorOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::RegisterBehaviorRequest&, RegisterBehaviorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterBehaviorAsyncHandler;
                 typedef Outcome<Error, Model::RegisterBillResponse> RegisterBillOutcome;
                 typedef std::future<RegisterBillOutcome> RegisterBillOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RegisterBillRequest&, RegisterBillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterBillAsyncHandler;
@@ -1131,6 +1136,15 @@ namespace TencentCloud
                 RefundMemberTransactionOutcome RefundMemberTransaction(const Model::RefundMemberTransactionRequest &request);
                 void RefundMemberTransactionAsync(const Model::RefundMemberTransactionRequest& request, const RefundMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RefundMemberTransactionOutcomeCallable RefundMemberTransactionCallable(const Model::RefundMemberTransactionRequest& request);
+
+                /**
+                 *商户查询是否签约和签约行为上报
+                 * @param req RegisterBehaviorRequest
+                 * @return RegisterBehaviorOutcome
+                 */
+                RegisterBehaviorOutcome RegisterBehavior(const Model::RegisterBehaviorRequest &request);
+                void RegisterBehaviorAsync(const Model::RegisterBehaviorRequest& request, const RegisterBehaviorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RegisterBehaviorOutcomeCallable RegisterBehaviorCallable(const Model::RegisterBehaviorRequest& request);
 
                 /**
                  *登记挂账(支持撤销)

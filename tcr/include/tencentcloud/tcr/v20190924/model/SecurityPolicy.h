@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取192.168.1.0/24
-                     * @return CidrBlock 192.168.1.0/24
+                     * 获取运行访问的公网IP地址端
+                     * @return CidrBlock 运行访问的公网IP地址端
                      */
                     std::string GetCidrBlock() const;
 
                     /**
-                     * 设置192.168.1.0/24
-                     * @param CidrBlock 192.168.1.0/24
+                     * 设置运行访问的公网IP地址端
+                     * @param CidrBlock 运行访问的公网IP地址端
                      */
                     void SetCidrBlock(const std::string& _cidrBlock);
 
@@ -133,7 +133,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 192.168.1.0/24
+                     * 运行访问的公网IP地址端
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;

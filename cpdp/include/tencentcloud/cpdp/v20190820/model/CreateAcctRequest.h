@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cpdp/v20190820/model/OrganizationInfo.h>
 
 
 namespace TencentCloud
@@ -220,10 +221,12 @@ namespace TencentCloud
                      * 获取子商户类型：
 个人: personal
 企业: enterprise
+个体工商户: individual
 缺省: enterprise
                      * @return SubMchType 子商户类型：
 个人: personal
 企业: enterprise
+个体工商户: individual
 缺省: enterprise
                      */
                     std::string GetSubMchType() const;
@@ -232,10 +235,12 @@ namespace TencentCloud
                      * 设置子商户类型：
 个人: personal
 企业: enterprise
+个体工商户: individual
 缺省: enterprise
                      * @param SubMchType 子商户类型：
 个人: personal
 企业: enterprise
+个体工商户: individual
 缺省: enterprise
                      */
                     void SetSubMchType(const std::string& _subMchType);
@@ -420,6 +425,46 @@ development: 开发环境
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 
+                    /**
+                     * 获取店铺名称
+企业、个体工商户必输
+                     * @return SubMerchantStoreName 店铺名称
+企业、个体工商户必输
+                     */
+                    std::string GetSubMerchantStoreName() const;
+
+                    /**
+                     * 设置店铺名称
+企业、个体工商户必输
+                     * @param SubMerchantStoreName 店铺名称
+企业、个体工商户必输
+                     */
+                    void SetSubMerchantStoreName(const std::string& _subMerchantStoreName);
+
+                    /**
+                     * 判断参数 SubMerchantStoreName 是否已赋值
+                     * @return SubMerchantStoreName 是否已赋值
+                     */
+                    bool SubMerchantStoreNameHasBeenSet() const;
+
+                    /**
+                     * 获取公司信息
+                     * @return OrganizationInfo 公司信息
+                     */
+                    OrganizationInfo GetOrganizationInfo() const;
+
+                    /**
+                     * 设置公司信息
+                     * @param OrganizationInfo 公司信息
+                     */
+                    void SetOrganizationInfo(const OrganizationInfo& _organizationInfo);
+
+                    /**
+                     * 判断参数 OrganizationInfo 是否已赋值
+                     * @return OrganizationInfo 是否已赋值
+                     */
+                    bool OrganizationInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -483,6 +528,7 @@ development: 开发环境
                      * 子商户类型：
 个人: personal
 企业: enterprise
+个体工商户: individual
 缺省: enterprise
                      */
                     std::string m_subMchType;
@@ -541,6 +587,19 @@ development: 开发环境
                      */
                     std::string m_midasEnvironment;
                     bool m_midasEnvironmentHasBeenSet;
+
+                    /**
+                     * 店铺名称
+企业、个体工商户必输
+                     */
+                    std::string m_subMerchantStoreName;
+                    bool m_subMerchantStoreNameHasBeenSet;
+
+                    /**
+                     * 公司信息
+                     */
+                    OrganizationInfo m_organizationInfo;
+                    bool m_organizationInfoHasBeenSet;
 
                 };
             }

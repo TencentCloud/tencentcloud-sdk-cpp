@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128
-                     * @return EncryptAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128
+                     * 获取加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128
+                     * @return EncryptAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128
                      */
                     std::string GetEncryptAlgorithm() const;
 
                     /**
-                     * 设置加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128
-                     * @param EncryptAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128
+                     * 设置加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128
+                     * @param EncryptAlgorithm 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128
                      */
                     void SetEncryptAlgorithm(const std::string& _encryptAlgorithm);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool EncryptAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取认证算法：可选值：'MD5', 'SHA1'，默认为
-                     * @return IntegrityAlgorith 认证算法：可选值：'MD5', 'SHA1'，默认为
+                     * 获取认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
+                     * @return IntegrityAlgorith 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
                      */
                     std::string GetIntegrityAlgorith() const;
 
                     /**
-                     * 设置认证算法：可选值：'MD5', 'SHA1'，默认为
-                     * @param IntegrityAlgorith 认证算法：可选值：'MD5', 'SHA1'，默认为
+                     * 设置认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
+                     * @param IntegrityAlgorith 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
                      */
                     void SetIntegrityAlgorith(const std::string& _integrityAlgorith);
 
@@ -139,13 +139,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128
+                     * 加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128
                      */
                     std::string m_encryptAlgorithm;
                     bool m_encryptAlgorithmHasBeenSet;
 
                     /**
-                     * 认证算法：可选值：'MD5', 'SHA1'，默认为
+                     * 认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为
                      */
                     std::string m_integrityAlgorith;
                     bool m_integrityAlgorithHasBeenSet;

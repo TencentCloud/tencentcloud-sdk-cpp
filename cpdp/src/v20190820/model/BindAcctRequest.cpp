@@ -39,7 +39,8 @@ BindAcctRequest::BindAcctRequest() :
     m_cnapsBranchIdHasBeenSet(false),
     m_eiconBankBranchIdHasBeenSet(false),
     m_encryptTypeHasBeenSet(false),
-    m_midasEnvironmentHasBeenSet(false)
+    m_midasEnvironmentHasBeenSet(false),
+    m_agencyClientInfoHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,15 @@ string BindAcctRequest::ToJsonString() const
         string key = "MidasEnvironment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agencyClientInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "AgencyClientInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_agencyClientInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -440,6 +450,22 @@ void BindAcctRequest::SetMidasEnvironment(const string& _midasEnvironment)
 bool BindAcctRequest::MidasEnvironmentHasBeenSet() const
 {
     return m_midasEnvironmentHasBeenSet;
+}
+
+AgencyClientInfo BindAcctRequest::GetAgencyClientInfo() const
+{
+    return m_agencyClientInfo;
+}
+
+void BindAcctRequest::SetAgencyClientInfo(const AgencyClientInfo& _agencyClientInfo)
+{
+    m_agencyClientInfo = _agencyClientInfo;
+    m_agencyClientInfoHasBeenSet = true;
+}
+
+bool BindAcctRequest::AgencyClientInfoHasBeenSet() const
+{
+    return m_agencyClientInfoHasBeenSet;
 }
 
 

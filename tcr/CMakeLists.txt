@@ -58,7 +58,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/FavorResp.h
   include/tencentcloud/tcr/v20190924/model/DeleteNamespacePersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/NamespaceInfo.h
-  include/tencentcloud/tcr/v20190924/model/RenewInstanceRequest.h
+  include/tencentcloud/tcr/v20190924/model/CreateMultipleSecurityPolicyResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateTagRetentionRuleResponse.h
   include/tencentcloud/tcr/v20190924/model/Limit.h
   include/tencentcloud/tcr/v20190924/model/DescribeChartDownloadInfoResponse.h
@@ -116,11 +116,13 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeImagesResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifyRepositoryInfoPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerLogRequest.h
+  include/tencentcloud/tcr/v20190924/model/RenewInstanceRequest.h
   include/tencentcloud/tcr/v20190924/model/CreateUserPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionTaskRequest.h
   include/tencentcloud/tcr/v20190924/model/ReplicationRule.h
   include/tencentcloud/tcr/v20190924/model/RepoInfoResp.h
   include/tencentcloud/tcr/v20190924/model/DeleteTagRetentionRuleResponse.h
+  include/tencentcloud/tcr/v20190924/model/DeleteMultipleSecurityPolicyRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteSecurityPolicyResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeInternalEndpointDnsStatusResponse.h
   include/tencentcloud/tcr/v20190924/model/RegistryStatus.h
@@ -145,6 +147,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DeleteImageRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyRepositoryAccessPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/TagSpecification.h
+  include/tencentcloud/tcr/v20190924/model/CreateMultipleSecurityPolicyRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeNamespacesRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageLifecycleGlobalPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageLifecyclePersonalRequest.h
@@ -188,6 +191,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeFavorRepositoryPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/DeleteMultipleSecurityPolicyResponse.h
   include/tencentcloud/tcr/v20190924/model/ManageInternalEndpointResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeRepositoryFilterPersonalResponse.h
@@ -282,7 +286,7 @@ set(tcr_src
   src/v20190924/model/FavorResp.cpp
   src/v20190924/model/DeleteNamespacePersonalRequest.cpp
   src/v20190924/model/NamespaceInfo.cpp
-  src/v20190924/model/RenewInstanceRequest.cpp
+  src/v20190924/model/CreateMultipleSecurityPolicyResponse.cpp
   src/v20190924/model/CreateTagRetentionRuleResponse.cpp
   src/v20190924/model/Limit.cpp
   src/v20190924/model/DescribeChartDownloadInfoResponse.cpp
@@ -340,11 +344,13 @@ set(tcr_src
   src/v20190924/model/DescribeImagesResponse.cpp
   src/v20190924/model/ModifyRepositoryInfoPersonalResponse.cpp
   src/v20190924/model/DescribeWebhookTriggerLogRequest.cpp
+  src/v20190924/model/RenewInstanceRequest.cpp
   src/v20190924/model/CreateUserPersonalRequest.cpp
   src/v20190924/model/DescribeTagRetentionExecutionTaskRequest.cpp
   src/v20190924/model/ReplicationRule.cpp
   src/v20190924/model/RepoInfoResp.cpp
   src/v20190924/model/DeleteTagRetentionRuleResponse.cpp
+  src/v20190924/model/DeleteMultipleSecurityPolicyRequest.cpp
   src/v20190924/model/DeleteSecurityPolicyResponse.cpp
   src/v20190924/model/DescribeInternalEndpointDnsStatusResponse.cpp
   src/v20190924/model/RegistryStatus.cpp
@@ -369,6 +375,7 @@ set(tcr_src
   src/v20190924/model/DeleteImageRequest.cpp
   src/v20190924/model/ModifyRepositoryAccessPersonalRequest.cpp
   src/v20190924/model/TagSpecification.cpp
+  src/v20190924/model/CreateMultipleSecurityPolicyRequest.cpp
   src/v20190924/model/DescribeNamespacesRequest.cpp
   src/v20190924/model/DescribeImageLifecycleGlobalPersonalRequest.cpp
   src/v20190924/model/DescribeImageLifecyclePersonalRequest.cpp
@@ -412,6 +419,7 @@ set(tcr_src
   src/v20190924/model/DescribeApplicationTriggerLogPersonalRequest.cpp
   src/v20190924/model/DescribeFavorRepositoryPersonalRequest.cpp
   src/v20190924/model/DescribeApplicationTriggerLogPersonalResponse.cpp
+  src/v20190924/model/DeleteMultipleSecurityPolicyResponse.cpp
   src/v20190924/model/ManageInternalEndpointResponse.cpp
   src/v20190924/model/CreateRepositoryPersonalResponse.cpp
   src/v20190924/model/DescribeRepositoryFilterPersonalResponse.cpp

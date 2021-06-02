@@ -39,6 +39,8 @@
 #include <tencentcloud/tcr/v20190924/model/CreateInstanceTokenResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInternalEndpointDnsRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInternalEndpointDnsResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateMultipleSecurityPolicyRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateMultipleSecurityPolicyResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateNamespaceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateNamespaceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateNamespacePersonalRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceTokenResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInternalEndpointDnsRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInternalEndpointDnsResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteMultipleSecurityPolicyRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteMultipleSecurityPolicyResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteNamespaceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteNamespaceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteNamespacePersonalRequest.h>
@@ -229,6 +233,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateInternalEndpointDnsResponse> CreateInternalEndpointDnsOutcome;
                 typedef std::future<CreateInternalEndpointDnsOutcome> CreateInternalEndpointDnsOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateInternalEndpointDnsRequest&, CreateInternalEndpointDnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInternalEndpointDnsAsyncHandler;
+                typedef Outcome<Error, Model::CreateMultipleSecurityPolicyResponse> CreateMultipleSecurityPolicyOutcome;
+                typedef std::future<CreateMultipleSecurityPolicyOutcome> CreateMultipleSecurityPolicyOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateMultipleSecurityPolicyRequest&, CreateMultipleSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultipleSecurityPolicyAsyncHandler;
                 typedef Outcome<Error, Model::CreateNamespaceResponse> CreateNamespaceOutcome;
                 typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateNamespaceRequest&, CreateNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNamespaceAsyncHandler;
@@ -283,6 +290,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteInternalEndpointDnsResponse> DeleteInternalEndpointDnsOutcome;
                 typedef std::future<DeleteInternalEndpointDnsOutcome> DeleteInternalEndpointDnsOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteInternalEndpointDnsRequest&, DeleteInternalEndpointDnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInternalEndpointDnsAsyncHandler;
+                typedef Outcome<Error, Model::DeleteMultipleSecurityPolicyResponse> DeleteMultipleSecurityPolicyOutcome;
+                typedef std::future<DeleteMultipleSecurityPolicyOutcome> DeleteMultipleSecurityPolicyOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteMultipleSecurityPolicyRequest&, DeleteMultipleSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMultipleSecurityPolicyAsyncHandler;
                 typedef Outcome<Error, Model::DeleteNamespaceResponse> DeleteNamespaceOutcome;
                 typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteNamespaceRequest&, DeleteNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNamespaceAsyncHandler;
@@ -533,6 +543,15 @@ namespace TencentCloud
                 CreateInternalEndpointDnsOutcomeCallable CreateInternalEndpointDnsCallable(const Model::CreateInternalEndpointDnsRequest& request);
 
                 /**
+                 *用于在TCR实例中，创建多个白名单策略
+                 * @param req CreateMultipleSecurityPolicyRequest
+                 * @return CreateMultipleSecurityPolicyOutcome
+                 */
+                CreateMultipleSecurityPolicyOutcome CreateMultipleSecurityPolicy(const Model::CreateMultipleSecurityPolicyRequest &request);
+                void CreateMultipleSecurityPolicyAsync(const Model::CreateMultipleSecurityPolicyRequest& request, const CreateMultipleSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMultipleSecurityPolicyOutcomeCallable CreateMultipleSecurityPolicyCallable(const Model::CreateMultipleSecurityPolicyRequest& request);
+
+                /**
                  *用于在企业版中创建命名空间
                  * @param req CreateNamespaceRequest
                  * @return CreateNamespaceOutcome
@@ -693,6 +712,15 @@ namespace TencentCloud
                 DeleteInternalEndpointDnsOutcome DeleteInternalEndpointDns(const Model::DeleteInternalEndpointDnsRequest &request);
                 void DeleteInternalEndpointDnsAsync(const Model::DeleteInternalEndpointDnsRequest& request, const DeleteInternalEndpointDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInternalEndpointDnsOutcomeCallable DeleteInternalEndpointDnsCallable(const Model::DeleteInternalEndpointDnsRequest& request);
+
+                /**
+                 *用于删除实例多个公网访问白名单策略
+                 * @param req DeleteMultipleSecurityPolicyRequest
+                 * @return DeleteMultipleSecurityPolicyOutcome
+                 */
+                DeleteMultipleSecurityPolicyOutcome DeleteMultipleSecurityPolicy(const Model::DeleteMultipleSecurityPolicyRequest &request);
+                void DeleteMultipleSecurityPolicyAsync(const Model::DeleteMultipleSecurityPolicyRequest& request, const DeleteMultipleSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteMultipleSecurityPolicyOutcomeCallable DeleteMultipleSecurityPolicyCallable(const Model::DeleteMultipleSecurityPolicyRequest& request);
 
                 /**
                  *删除命名空间

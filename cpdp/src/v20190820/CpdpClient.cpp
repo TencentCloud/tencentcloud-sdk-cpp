@@ -3136,6 +3136,49 @@ CpdpClient::RefundMemberTransactionOutcomeCallable CpdpClient::RefundMemberTrans
     return task->get_future();
 }
 
+CpdpClient::RegisterBehaviorOutcome CpdpClient::RegisterBehavior(const RegisterBehaviorRequest &request)
+{
+    auto outcome = MakeRequest(request, "RegisterBehavior");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RegisterBehaviorResponse rsp = RegisterBehaviorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RegisterBehaviorOutcome(rsp);
+        else
+            return RegisterBehaviorOutcome(o.GetError());
+    }
+    else
+    {
+        return RegisterBehaviorOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::RegisterBehaviorAsync(const RegisterBehaviorRequest& request, const RegisterBehaviorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RegisterBehavior(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::RegisterBehaviorOutcomeCallable CpdpClient::RegisterBehaviorCallable(const RegisterBehaviorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RegisterBehaviorOutcome()>>(
+        [this, request]()
+        {
+            return this->RegisterBehavior(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::RegisterBillOutcome CpdpClient::RegisterBill(const RegisterBillRequest &request)
 {
     auto outcome = MakeRequest(request, "RegisterBill");

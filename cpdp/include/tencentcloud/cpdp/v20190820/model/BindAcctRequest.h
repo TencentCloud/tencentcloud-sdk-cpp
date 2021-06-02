@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cpdp/v20190820/model/AgencyClientInfo.h>
 
 
 namespace TencentCloud
@@ -406,6 +407,24 @@ development: 开发环境
                      */
                     bool MidasEnvironmentHasBeenSet() const;
 
+                    /**
+                     * 获取经办人信息
+                     * @return AgencyClientInfo 经办人信息
+                     */
+                    AgencyClientInfo GetAgencyClientInfo() const;
+
+                    /**
+                     * 设置经办人信息
+                     * @param AgencyClientInfo 经办人信息
+                     */
+                    void SetAgencyClientInfo(const AgencyClientInfo& _agencyClientInfo);
+
+                    /**
+                     * 判断参数 AgencyClientInfo 是否已赋值
+                     * @return AgencyClientInfo 是否已赋值
+                     */
+                    bool AgencyClientInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -522,6 +541,12 @@ development: 开发环境
                      */
                     std::string m_midasEnvironment;
                     bool m_midasEnvironmentHasBeenSet;
+
+                    /**
+                     * 经办人信息
+                     */
+                    AgencyClientInfo m_agencyClientInfo;
+                    bool m_agencyClientInfoHasBeenSet;
 
                 };
             }

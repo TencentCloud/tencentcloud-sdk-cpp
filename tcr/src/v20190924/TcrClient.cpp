@@ -384,6 +384,49 @@ TcrClient::CreateInternalEndpointDnsOutcomeCallable TcrClient::CreateInternalEnd
     return task->get_future();
 }
 
+TcrClient::CreateMultipleSecurityPolicyOutcome TcrClient::CreateMultipleSecurityPolicy(const CreateMultipleSecurityPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMultipleSecurityPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMultipleSecurityPolicyResponse rsp = CreateMultipleSecurityPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMultipleSecurityPolicyOutcome(rsp);
+        else
+            return CreateMultipleSecurityPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMultipleSecurityPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateMultipleSecurityPolicyAsync(const CreateMultipleSecurityPolicyRequest& request, const CreateMultipleSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMultipleSecurityPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CreateMultipleSecurityPolicyOutcomeCallable TcrClient::CreateMultipleSecurityPolicyCallable(const CreateMultipleSecurityPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMultipleSecurityPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMultipleSecurityPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::CreateNamespaceOutcome TcrClient::CreateNamespace(const CreateNamespaceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNamespace");
@@ -1151,6 +1194,49 @@ TcrClient::DeleteInternalEndpointDnsOutcomeCallable TcrClient::DeleteInternalEnd
         [this, request]()
         {
             return this->DeleteInternalEndpointDns(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DeleteMultipleSecurityPolicyOutcome TcrClient::DeleteMultipleSecurityPolicy(const DeleteMultipleSecurityPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMultipleSecurityPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMultipleSecurityPolicyResponse rsp = DeleteMultipleSecurityPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMultipleSecurityPolicyOutcome(rsp);
+        else
+            return DeleteMultipleSecurityPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMultipleSecurityPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteMultipleSecurityPolicyAsync(const DeleteMultipleSecurityPolicyRequest& request, const DeleteMultipleSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteMultipleSecurityPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteMultipleSecurityPolicyOutcomeCallable TcrClient::DeleteMultipleSecurityPolicyCallable(const DeleteMultipleSecurityPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteMultipleSecurityPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteMultipleSecurityPolicy(request);
         }
     );
 

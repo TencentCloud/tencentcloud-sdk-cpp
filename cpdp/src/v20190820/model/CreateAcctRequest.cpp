@@ -40,7 +40,9 @@ CreateAcctRequest::CreateAcctRequest() :
     m_subMerchantPrivateKeyHasBeenSet(false),
     m_encryptTypeHasBeenSet(false),
     m_subAcctNoHasBeenSet(false),
-    m_midasEnvironmentHasBeenSet(false)
+    m_midasEnvironmentHasBeenSet(false),
+    m_subMerchantStoreNameHasBeenSet(false),
+    m_organizationInfoHasBeenSet(false)
 {
 }
 
@@ -185,6 +187,23 @@ string CreateAcctRequest::ToJsonString() const
         string key = "MidasEnvironment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subMerchantStoreNameHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "SubMerchantStoreName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_subMerchantStoreName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationInfoHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "OrganizationInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        m_organizationInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -465,6 +484,38 @@ void CreateAcctRequest::SetMidasEnvironment(const string& _midasEnvironment)
 bool CreateAcctRequest::MidasEnvironmentHasBeenSet() const
 {
     return m_midasEnvironmentHasBeenSet;
+}
+
+string CreateAcctRequest::GetSubMerchantStoreName() const
+{
+    return m_subMerchantStoreName;
+}
+
+void CreateAcctRequest::SetSubMerchantStoreName(const string& _subMerchantStoreName)
+{
+    m_subMerchantStoreName = _subMerchantStoreName;
+    m_subMerchantStoreNameHasBeenSet = true;
+}
+
+bool CreateAcctRequest::SubMerchantStoreNameHasBeenSet() const
+{
+    return m_subMerchantStoreNameHasBeenSet;
+}
+
+OrganizationInfo CreateAcctRequest::GetOrganizationInfo() const
+{
+    return m_organizationInfo;
+}
+
+void CreateAcctRequest::SetOrganizationInfo(const OrganizationInfo& _organizationInfo)
+{
+    m_organizationInfo = _organizationInfo;
+    m_organizationInfoHasBeenSet = true;
+}
+
+bool CreateAcctRequest::OrganizationInfoHasBeenSet() const
+{
+    return m_organizationInfoHasBeenSet;
 }
 
 
