@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取“”
+                     * 获取英文缩写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Code “”
+                     * @return Code 英文缩写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置“”
+                     * 设置英文缩写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code “”
+                     * @param Code 英文缩写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCode(const std::string& _code);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取标准缩写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Scode “”
+                     * @return Scode 标准缩写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetScode() const;
 
                     /**
-                     * 设置“”
+                     * 设置标准缩写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scode “”
+                     * @param Scode 标准缩写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetScode(const std::string& _scode);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool ScodeHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取项目名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name “”
+                     * @return Name 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置“”
+                     * 设置项目名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name “”
+                     * @param Name 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取标准名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Sname “”
+                     * @return Sname 标准名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSname() const;
 
                     /**
-                     * 设置“”
+                     * 设置标准名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Sname “”
+                     * @param Sname 标准名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSname(const std::string& _sname);
@@ -135,17 +135,17 @@ namespace TencentCloud
                     bool SnameHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Result “”
+                     * @return Result 结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResult() const;
 
                     /**
-                     * 设置“”
+                     * 设置结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Result “”
+                     * @param Result 结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResult(const std::string& _result);
@@ -157,17 +157,17 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Unit “”
+                     * @return Unit 单位
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUnit() const;
 
                     /**
-                     * 设置“”
+                     * 设置单位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unit “”
+                     * @param Unit 单位
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUnit(const std::string& _unit);
@@ -179,17 +179,17 @@ namespace TencentCloud
                     bool UnitHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取参考范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Range “”
+                     * @return Range 参考范围
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRange() const;
 
                     /**
-                     * 设置“”
+                     * 设置参考范围
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Range “”
+                     * @param Range 参考范围
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRange(const std::string& _range);
@@ -201,17 +201,17 @@ namespace TencentCloud
                     bool RangeHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取上下箭头
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Arrow “”
+                     * @return Arrow 上下箭头
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetArrow() const;
 
                     /**
-                     * 设置“”
+                     * 设置上下箭头
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Arrow “”
+                     * @param Arrow 上下箭头
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetArrow(const std::string& _arrow);
@@ -247,56 +247,56 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * “”
+                     * 英文缩写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * “”
+                     * 标准缩写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scode;
                     bool m_scodeHasBeenSet;
 
                     /**
-                     * “”
+                     * 项目名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * “”
+                     * 标准名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sname;
                     bool m_snameHasBeenSet;
 
                     /**
-                     * “”
+                     * 结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
 
                     /**
-                     * “”
+                     * 单位
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
-                     * “”
+                     * 参考范围
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_range;
                     bool m_rangeHasBeenSet;
 
                     /**
-                     * “”
+                     * 上下箭头
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_arrow;

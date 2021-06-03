@@ -87,6 +87,24 @@ namespace TencentCloud
                      */
                     bool HostHasBeenSet() const;
 
+                    /**
+                     * 获取协议，选项为 http， https，默认为 http
+                     * @return Protocol 协议，选项为 http， https，默认为 http
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置协议，选项为 http， https，默认为 http
+                     * @param Protocol 协议，选项为 http， https，默认为 http
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     */
+                    bool ProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +119,12 @@ namespace TencentCloud
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
+
+                    /**
+                     * 协议，选项为 http， https，默认为 http
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
 
                 };
             }

@@ -26,7 +26,9 @@ RunVersionPod::RunVersionPod() :
     m_podIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_podIpHasBeenSet(false)
+    m_podIpHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_deployVersionHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,26 @@ CoreInternalOutcome RunVersionPod::Deserialize(const Value &value)
         m_podIpHasBeenSet = true;
     }
 
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RunVersionPod.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployVersion") && !value["DeployVersion"].IsNull())
+    {
+        if (!value["DeployVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RunVersionPod.DeployVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployVersion = string(value["DeployVersion"].GetString());
+        m_deployVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +152,22 @@ void RunVersionPod::ToJsonObject(Value &value, Document::AllocatorType& allocato
         string key = "PodIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_podIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployVersionHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeployVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_deployVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -213,5 +251,37 @@ void RunVersionPod::SetPodIp(const string& _podIp)
 bool RunVersionPod::PodIpHasBeenSet() const
 {
     return m_podIpHasBeenSet;
+}
+
+string RunVersionPod::GetZone() const
+{
+    return m_zone;
+}
+
+void RunVersionPod::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool RunVersionPod::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+string RunVersionPod::GetDeployVersion() const
+{
+    return m_deployVersion;
+}
+
+void RunVersionPod::SetDeployVersion(const string& _deployVersion)
+{
+    m_deployVersion = _deployVersion;
+    m_deployVersionHasBeenSet = true;
+}
+
+bool RunVersionPod::DeployVersionHasBeenSet() const
+{
+    return m_deployVersionHasBeenSet;
 }
 

@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取“”
+                     * 获取等级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Grade “”
+                     * @return Grade 等级
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetGrade() const;
 
                     /**
-                     * 设置“”
+                     * 设置等级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Grade “”
+                     * @param Grade 等级
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetGrade(const std::string& _grade);
@@ -115,7 +115,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * “”
+                     * 等级
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_grade;

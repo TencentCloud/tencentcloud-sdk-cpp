@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取""
+                     * 获取入院
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DmissionCondition ""
+                     * @return DmissionCondition 入院
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDmissionCondition() const;
 
                     /**
-                     * 设置""
+                     * 设置入院
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DmissionCondition ""
+                     * @param DmissionCondition 入院
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDmissionCondition(const std::string& _dmissionCondition);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool DmissionConditionHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取主诉
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChiefComplaint ""
+                     * @return ChiefComplaint 主诉
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetChiefComplaint() const;
 
                     /**
-                     * 设置""
+                     * 设置主诉
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChiefComplaint ""
+                     * @param ChiefComplaint 主诉
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetChiefComplaint(const std::string& _chiefComplaint);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool ChiefComplaintHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取现病史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiseasePresent ""
+                     * @return DiseasePresent 现病史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDiseasePresent() const;
 
                     /**
-                     * 设置""
+                     * 设置现病史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiseasePresent ""
+                     * @param DiseasePresent 现病史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDiseasePresent(const std::string& _diseasePresent);
@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool DiseasePresentHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取主要症状体征
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SymptomsAndSigns ""
+                     * @return SymptomsAndSigns 主要症状体征
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSymptomsAndSigns() const;
 
                     /**
-                     * 设置""
+                     * 设置主要症状体征
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SymptomsAndSigns ""
+                     * @param SymptomsAndSigns 主要症状体征
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSymptomsAndSigns(const std::string& _symptomsAndSigns);
@@ -135,17 +135,17 @@ namespace TencentCloud
                     bool SymptomsAndSignsHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取辅助检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AuxiliaryExamination “”
+                     * @return AuxiliaryExamination 辅助检查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAuxiliaryExamination() const;
 
                     /**
-                     * 设置“”
+                     * 设置辅助检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuxiliaryExamination “”
+                     * @param AuxiliaryExamination 辅助检查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAuxiliaryExamination(const std::string& _auxiliaryExamination);
@@ -157,17 +157,17 @@ namespace TencentCloud
                     bool AuxiliaryExaminationHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取体格检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BodyExamination “”
+                     * @return BodyExamination 体格检查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBodyExamination() const;
 
                     /**
-                     * 设置“”
+                     * 设置体格检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BodyExamination “”
+                     * @param BodyExamination 体格检查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBodyExamination(const std::string& _bodyExamination);
@@ -179,17 +179,17 @@ namespace TencentCloud
                     bool BodyExaminationHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取专科检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SpecialistExamination “”
+                     * @return SpecialistExamination 专科检查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSpecialistExamination() const;
 
                     /**
-                     * 设置“”
+                     * 设置专科检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SpecialistExamination “”
+                     * @param SpecialistExamination 专科检查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSpecialistExamination(const std::string& _specialistExamination);
@@ -201,17 +201,17 @@ namespace TencentCloud
                     bool SpecialistExaminationHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取精神检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MentalExamination “”
+                     * @return MentalExamination 精神检查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMentalExamination() const;
 
                     /**
-                     * 设置“”
+                     * 设置精神检查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MentalExamination “”
+                     * @param MentalExamination 精神检查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMentalExamination(const std::string& _mentalExamination);
@@ -223,17 +223,17 @@ namespace TencentCloud
                     bool MentalExaminationHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取检查记录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CheckRecord “”
+                     * @return CheckRecord 检查记录
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCheckRecord() const;
 
                     /**
-                     * 设置“”
+                     * 设置检查记录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckRecord “”
+                     * @param CheckRecord 检查记录
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCheckRecord(const std::string& _checkRecord);
@@ -245,17 +245,17 @@ namespace TencentCloud
                     bool CheckRecordHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取化验结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InspectResult “”
+                     * @return InspectResult 化验结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInspectResult() const;
 
                     /**
-                     * 设置“”
+                     * 设置化验结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InspectResult “”
+                     * @param InspectResult 化验结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInspectResult(const std::string& _inspectResult);
@@ -267,17 +267,17 @@ namespace TencentCloud
                     bool InspectResultHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取切口愈合情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IncisionHealing “”
+                     * @return IncisionHealing 切口愈合情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIncisionHealing() const;
 
                     /**
-                     * 设置“”
+                     * 设置切口愈合情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IncisionHealing “”
+                     * @param IncisionHealing 切口愈合情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIncisionHealing(const std::string& _incisionHealing);
@@ -289,17 +289,17 @@ namespace TencentCloud
                     bool IncisionHealingHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取处理意见
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TreatmentSuggestion “”
+                     * @return TreatmentSuggestion 处理意见
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTreatmentSuggestion() const;
 
                     /**
-                     * 设置“”
+                     * 设置处理意见
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TreatmentSuggestion “”
+                     * @param TreatmentSuggestion 处理意见
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTreatmentSuggestion(const std::string& _treatmentSuggestion);
@@ -311,17 +311,17 @@ namespace TencentCloud
                     bool TreatmentSuggestionHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取门诊随访要求
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FollowUpRequirements “”
+                     * @return FollowUpRequirements 门诊随访要求
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFollowUpRequirements() const;
 
                     /**
-                     * 设置“”
+                     * 设置门诊随访要求
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FollowUpRequirements “”
+                     * @param FollowUpRequirements 门诊随访要求
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFollowUpRequirements(const std::string& _followUpRequirements);
@@ -333,17 +333,17 @@ namespace TencentCloud
                     bool FollowUpRequirementsHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取诊疗经过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CheckAndTreatmentProcess “”
+                     * @return CheckAndTreatmentProcess 诊疗经过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCheckAndTreatmentProcess() const;
 
                     /**
-                     * 设置“”
+                     * 设置诊疗经过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CheckAndTreatmentProcess “”
+                     * @param CheckAndTreatmentProcess 诊疗经过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCheckAndTreatmentProcess(const std::string& _checkAndTreatmentProcess);
@@ -355,17 +355,17 @@ namespace TencentCloud
                     bool CheckAndTreatmentProcessHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取手术经过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SurgeryCondition “”
+                     * @return SurgeryCondition 手术经过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSurgeryCondition() const;
 
                     /**
-                     * 设置“”
+                     * 设置手术经过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SurgeryCondition “”
+                     * @param SurgeryCondition 手术经过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSurgeryCondition(const std::string& _surgeryCondition);
@@ -377,17 +377,17 @@ namespace TencentCloud
                     bool SurgeryConditionHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取入院情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConditionChanges “”
+                     * @return ConditionChanges 入院情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetConditionChanges() const;
 
                     /**
-                     * 设置“”
+                     * 设置入院情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConditionChanges “”
+                     * @param ConditionChanges 入院情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetConditionChanges(const std::string& _conditionChanges);
@@ -399,17 +399,17 @@ namespace TencentCloud
                     bool ConditionChangesHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取出院情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DischargeCondition “”
+                     * @return DischargeCondition 出院情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDischargeCondition() const;
 
                     /**
-                     * 设置“”
+                     * 设置出院情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DischargeCondition “”
+                     * @param DischargeCondition 出院情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDischargeCondition(const std::string& _dischargeCondition);
@@ -421,17 +421,17 @@ namespace TencentCloud
                     bool DischargeConditionHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取pTNM信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PTNM “”
+                     * @return PTNM pTNM信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPTNM() const;
 
                     /**
-                     * 设置“”
+                     * 设置pTNM信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PTNM “”
+                     * @param PTNM pTNM信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPTNM(const std::string& _pTNM);
@@ -443,17 +443,17 @@ namespace TencentCloud
                     bool PTNMHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取pTNMM信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PTNMM “”
+                     * @return PTNMM pTNMM信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPTNMM() const;
 
                     /**
-                     * 设置“”
+                     * 设置pTNMM信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PTNMM “”
+                     * @param PTNMM pTNMM信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPTNMM(const std::string& _pTNMM);
@@ -465,17 +465,17 @@ namespace TencentCloud
                     bool PTNMMHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取pTNMN信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PTNMN “”
+                     * @return PTNMN pTNMN信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPTNMN() const;
 
                     /**
-                     * 设置“”
+                     * 设置pTNMN信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PTNMN “”
+                     * @param PTNMN pTNMN信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPTNMN(const std::string& _pTNMN);
@@ -487,17 +487,17 @@ namespace TencentCloud
                     bool PTNMNHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取pTNMT信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PTNMT “”
+                     * @return PTNMT pTNMT信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPTNMT() const;
 
                     /**
-                     * 设置“”
+                     * 设置pTNMT信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PTNMT “”
+                     * @param PTNMT pTNMT信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPTNMT(const std::string& _pTNMT);
@@ -509,17 +509,17 @@ namespace TencentCloud
                     bool PTNMTHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取ECOG信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ECOG “”
+                     * @return ECOG ECOG信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetECOG() const;
 
                     /**
-                     * 设置“”
+                     * 设置ECOG信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ECOG “”
+                     * @param ECOG ECOG信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetECOG(const std::string& _eCOG);
@@ -531,17 +531,17 @@ namespace TencentCloud
                     bool ECOGHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取NRS信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NRS “”
+                     * @return NRS NRS信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNRS() const;
 
                     /**
-                     * 设置“”
+                     * 设置NRS信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NRS “”
+                     * @param NRS NRS信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNRS(const std::string& _nRS);
@@ -553,17 +553,17 @@ namespace TencentCloud
                     bool NRSHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取KPS信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KPS “”
+                     * @return KPS KPS信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetKPS() const;
 
                     /**
-                     * 设置“”
+                     * 设置KPS信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KPS “”
+                     * @param KPS KPS信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetKPS(const std::string& _kPS);
@@ -575,17 +575,17 @@ namespace TencentCloud
                     bool KPSHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取死亡日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeathDate “”
+                     * @return DeathDate 死亡日期
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDeathDate() const;
 
                     /**
-                     * 设置“”
+                     * 设置死亡日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeathDate “”
+                     * @param DeathDate 死亡日期
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeathDate(const std::string& _deathDate);
@@ -597,17 +597,17 @@ namespace TencentCloud
                     bool DeathDateHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取复发日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RelapseDate “”
+                     * @return RelapseDate 复发日期
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRelapseDate() const;
 
                     /**
-                     * 设置“”
+                     * 设置复发日期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelapseDate “”
+                     * @param RelapseDate 复发日期
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRelapseDate(const std::string& _relapseDate);
@@ -619,17 +619,17 @@ namespace TencentCloud
                     bool RelapseDateHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取观测天数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ObservationDays “”
+                     * @return ObservationDays 观测天数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetObservationDays() const;
 
                     /**
-                     * 设置“”
+                     * 设置观测天数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObservationDays “”
+                     * @param ObservationDays 观测天数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetObservationDays(const std::string& _observationDays);
@@ -643,189 +643,189 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ""
+                     * 入院
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dmissionCondition;
                     bool m_dmissionConditionHasBeenSet;
 
                     /**
-                     * ""
+                     * 主诉
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chiefComplaint;
                     bool m_chiefComplaintHasBeenSet;
 
                     /**
-                     * ""
+                     * 现病史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diseasePresent;
                     bool m_diseasePresentHasBeenSet;
 
                     /**
-                     * ""
+                     * 主要症状体征
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_symptomsAndSigns;
                     bool m_symptomsAndSignsHasBeenSet;
 
                     /**
-                     * “”
+                     * 辅助检查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_auxiliaryExamination;
                     bool m_auxiliaryExaminationHasBeenSet;
 
                     /**
-                     * “”
+                     * 体格检查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bodyExamination;
                     bool m_bodyExaminationHasBeenSet;
 
                     /**
-                     * “”
+                     * 专科检查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specialistExamination;
                     bool m_specialistExaminationHasBeenSet;
 
                     /**
-                     * “”
+                     * 精神检查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mentalExamination;
                     bool m_mentalExaminationHasBeenSet;
 
                     /**
-                     * “”
+                     * 检查记录
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkRecord;
                     bool m_checkRecordHasBeenSet;
 
                     /**
-                     * “”
+                     * 化验结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inspectResult;
                     bool m_inspectResultHasBeenSet;
 
                     /**
-                     * “”
+                     * 切口愈合情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_incisionHealing;
                     bool m_incisionHealingHasBeenSet;
 
                     /**
-                     * “”
+                     * 处理意见
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_treatmentSuggestion;
                     bool m_treatmentSuggestionHasBeenSet;
 
                     /**
-                     * “”
+                     * 门诊随访要求
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_followUpRequirements;
                     bool m_followUpRequirementsHasBeenSet;
 
                     /**
-                     * “”
+                     * 诊疗经过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkAndTreatmentProcess;
                     bool m_checkAndTreatmentProcessHasBeenSet;
 
                     /**
-                     * “”
+                     * 手术经过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_surgeryCondition;
                     bool m_surgeryConditionHasBeenSet;
 
                     /**
-                     * “”
+                     * 入院情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_conditionChanges;
                     bool m_conditionChangesHasBeenSet;
 
                     /**
-                     * “”
+                     * 出院情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dischargeCondition;
                     bool m_dischargeConditionHasBeenSet;
 
                     /**
-                     * “”
+                     * pTNM信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pTNM;
                     bool m_pTNMHasBeenSet;
 
                     /**
-                     * “”
+                     * pTNMM信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pTNMM;
                     bool m_pTNMMHasBeenSet;
 
                     /**
-                     * “”
+                     * pTNMN信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pTNMN;
                     bool m_pTNMNHasBeenSet;
 
                     /**
-                     * “”
+                     * pTNMT信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pTNMT;
                     bool m_pTNMTHasBeenSet;
 
                     /**
-                     * “”
+                     * ECOG信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eCOG;
                     bool m_eCOGHasBeenSet;
 
                     /**
-                     * “”
+                     * NRS信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nRS;
                     bool m_nRSHasBeenSet;
 
                     /**
-                     * “”
+                     * KPS信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kPS;
                     bool m_kPSHasBeenSet;
 
                     /**
-                     * “”
+                     * 死亡日期
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deathDate;
                     bool m_deathDateHasBeenSet;
 
                     /**
-                     * “”
+                     * 复发日期
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_relapseDate;
                     bool m_relapseDateHasBeenSet;
 
                     /**
-                     * “”
+                     * 观测天数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_observationDays;

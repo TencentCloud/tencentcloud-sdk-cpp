@@ -1296,8 +1296,7 @@ namespace TencentCloud
                 DescribeStorageDetailsOutcomeCallable DescribeStorageDetailsCallable(const Model::DescribeStorageDetailsRequest& request);
 
                 /**
-                 *该接口用于获取当前账号有权限的子应用列表，包含主应用。若尚未开通子应用功能，接口将返回 
- FailedOperation。
+                 *该接口用于获取当前账号的子应用列表，包含主应用。
                  * @param req DescribeSubAppIdsRequest
                  * @return DescribeSubAppIdsOutcome
                  */

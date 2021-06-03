@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool IndexHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Src “”
+                     * @return Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSrc() const;
 
                     /**
-                     * 设置“”
+                     * 设置原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Src “”
+                     * @param Src 原文
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSrc(const std::string& _src);
@@ -92,17 +92,17 @@ namespace TencentCloud
                     bool SrcHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name “”
+                     * @return Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置“”
+                     * 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name “”
+                     * @param Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
@@ -114,14 +114,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取“”
-                     * @return Value “”
+                     * 获取值
+                     * @return Value 值
                      */
                     Value GetValue() const;
 
                     /**
-                     * 设置“”
-                     * @param Value “”
+                     * 设置值
+                     * @param Value 值
                      */
                     void SetValue(const Value& _value);
 
@@ -141,21 +141,21 @@ namespace TencentCloud
                     bool m_indexHasBeenSet;
 
                     /**
-                     * “”
+                     * 原文
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
 
                     /**
-                     * “”
+                     * 名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * “”
+                     * 值
                      */
                     Value m_value;
                     bool m_valueHasBeenSet;

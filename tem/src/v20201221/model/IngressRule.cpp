@@ -23,7 +23,8 @@ using namespace std;
 
 IngressRule::IngressRule() :
     m_httpHasBeenSet(false),
-    m_hostHasBeenSet(false)
+    m_hostHasBeenSet(false),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,16 @@ CoreInternalOutcome IngressRule::Deserialize(const Value &value)
         m_hostHasBeenSet = true;
     }
 
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IngressRule.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -81,6 +92,14 @@ void IngressRule::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "Host";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_host.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -116,5 +135,21 @@ void IngressRule::SetHost(const string& _host)
 bool IngressRule::HostHasBeenSet() const
 {
     return m_hostHasBeenSet;
+}
+
+string IngressRule::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void IngressRule::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool IngressRule::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 

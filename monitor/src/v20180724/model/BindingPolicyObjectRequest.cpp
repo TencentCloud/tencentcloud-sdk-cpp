@@ -24,11 +24,11 @@ using namespace rapidjson;
 using namespace std;
 
 BindingPolicyObjectRequest::BindingPolicyObjectRequest() :
-    m_groupIdHasBeenSet(false),
     m_moduleHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_policyIdHasBeenSet(false),
     m_instanceGroupIdHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_policyIdHasBeenSet(false)
+    m_dimensionsHasBeenSet(false)
 {
 }
 
@@ -39,6 +39,14 @@ string BindingPolicyObjectRequest::ToJsonString() const
     Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_moduleHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Module";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_module.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_groupIdHasBeenSet)
     {
         Value iKey(kStringType);
@@ -47,12 +55,12 @@ string BindingPolicyObjectRequest::ToJsonString() const
         d.AddMember(iKey, m_groupId, allocator);
     }
 
-    if (m_moduleHasBeenSet)
+    if (m_policyIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Module";
+        string key = "PolicyId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_module.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, Value(m_policyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceGroupIdHasBeenSet)
@@ -78,14 +86,6 @@ string BindingPolicyObjectRequest::ToJsonString() const
         }
     }
 
-    if (m_policyIdHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "PolicyId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_policyId.c_str(), allocator).Move(), allocator);
-    }
-
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
@@ -93,6 +93,22 @@ string BindingPolicyObjectRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string BindingPolicyObjectRequest::GetModule() const
+{
+    return m_module;
+}
+
+void BindingPolicyObjectRequest::SetModule(const string& _module)
+{
+    m_module = _module;
+    m_moduleHasBeenSet = true;
+}
+
+bool BindingPolicyObjectRequest::ModuleHasBeenSet() const
+{
+    return m_moduleHasBeenSet;
+}
 
 int64_t BindingPolicyObjectRequest::GetGroupId() const
 {
@@ -110,20 +126,20 @@ bool BindingPolicyObjectRequest::GroupIdHasBeenSet() const
     return m_groupIdHasBeenSet;
 }
 
-string BindingPolicyObjectRequest::GetModule() const
+string BindingPolicyObjectRequest::GetPolicyId() const
 {
-    return m_module;
+    return m_policyId;
 }
 
-void BindingPolicyObjectRequest::SetModule(const string& _module)
+void BindingPolicyObjectRequest::SetPolicyId(const string& _policyId)
 {
-    m_module = _module;
-    m_moduleHasBeenSet = true;
+    m_policyId = _policyId;
+    m_policyIdHasBeenSet = true;
 }
 
-bool BindingPolicyObjectRequest::ModuleHasBeenSet() const
+bool BindingPolicyObjectRequest::PolicyIdHasBeenSet() const
 {
-    return m_moduleHasBeenSet;
+    return m_policyIdHasBeenSet;
 }
 
 int64_t BindingPolicyObjectRequest::GetInstanceGroupId() const
@@ -156,22 +172,6 @@ void BindingPolicyObjectRequest::SetDimensions(const vector<BindingPolicyObjectD
 bool BindingPolicyObjectRequest::DimensionsHasBeenSet() const
 {
     return m_dimensionsHasBeenSet;
-}
-
-string BindingPolicyObjectRequest::GetPolicyId() const
-{
-    return m_policyId;
-}
-
-void BindingPolicyObjectRequest::SetPolicyId(const string& _policyId)
-{
-    m_policyId = _policyId;
-    m_policyIdHasBeenSet = true;
-}
-
-bool BindingPolicyObjectRequest::PolicyIdHasBeenSet() const
-{
-    return m_policyIdHasBeenSet;
 }
 
 

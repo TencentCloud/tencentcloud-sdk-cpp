@@ -109,6 +109,8 @@
 #include <tencentcloud/gse/v20191112/model/DescribeUserQuotasResponse.h>
 #include <tencentcloud/gse/v20191112/model/DetachCcnInstancesRequest.h>
 #include <tencentcloud/gse/v20191112/model/DetachCcnInstancesResponse.h>
+#include <tencentcloud/gse/v20191112/model/EndGameServerSessionAndProcessRequest.h>
+#include <tencentcloud/gse/v20191112/model/EndGameServerSessionAndProcessResponse.h>
 #include <tencentcloud/gse/v20191112/model/GetGameServerInstanceLogUrlRequest.h>
 #include <tencentcloud/gse/v20191112/model/GetGameServerInstanceLogUrlResponse.h>
 #include <tencentcloud/gse/v20191112/model/GetGameServerSessionLogUrlRequest.h>
@@ -312,6 +314,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DetachCcnInstancesResponse> DetachCcnInstancesOutcome;
                 typedef std::future<DetachCcnInstancesOutcome> DetachCcnInstancesOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::DetachCcnInstancesRequest&, DetachCcnInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachCcnInstancesAsyncHandler;
+                typedef Outcome<Error, Model::EndGameServerSessionAndProcessResponse> EndGameServerSessionAndProcessOutcome;
+                typedef std::future<EndGameServerSessionAndProcessOutcome> EndGameServerSessionAndProcessOutcomeCallable;
+                typedef std::function<void(const GseClient*, const Model::EndGameServerSessionAndProcessRequest&, EndGameServerSessionAndProcessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EndGameServerSessionAndProcessAsyncHandler;
                 typedef Outcome<Error, Model::GetGameServerInstanceLogUrlResponse> GetGameServerInstanceLogUrlOutcome;
                 typedef std::future<GetGameServerInstanceLogUrlOutcome> GetGameServerInstanceLogUrlOutcomeCallable;
                 typedef std::function<void(const GseClient*, const Model::GetGameServerInstanceLogUrlRequest&, GetGameServerInstanceLogUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGameServerInstanceLogUrlAsyncHandler;
@@ -808,6 +813,15 @@ namespace TencentCloud
                 DetachCcnInstancesOutcome DetachCcnInstances(const Model::DetachCcnInstancesRequest &request);
                 void DetachCcnInstancesAsync(const Model::DetachCcnInstancesRequest& request, const DetachCcnInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetachCcnInstancesOutcomeCallable DetachCcnInstancesCallable(const Model::DetachCcnInstancesRequest& request);
+
+                /**
+                 *本接口（EndGameServerSessionAndProcess）用于终止游戏服务器会话和对应的进程。
+                 * @param req EndGameServerSessionAndProcessRequest
+                 * @return EndGameServerSessionAndProcessOutcome
+                 */
+                EndGameServerSessionAndProcessOutcome EndGameServerSessionAndProcess(const Model::EndGameServerSessionAndProcessRequest &request);
+                void EndGameServerSessionAndProcessAsync(const Model::EndGameServerSessionAndProcessRequest& request, const EndGameServerSessionAndProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EndGameServerSessionAndProcessOutcomeCallable EndGameServerSessionAndProcessCallable(const Model::EndGameServerSessionAndProcessRequest& request);
 
                 /**
                  *本接口用于获取游戏服务器实例的日志URL。

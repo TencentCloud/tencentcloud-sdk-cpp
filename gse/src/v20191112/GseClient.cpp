@@ -1889,6 +1889,49 @@ GseClient::DetachCcnInstancesOutcomeCallable GseClient::DetachCcnInstancesCallab
     return task->get_future();
 }
 
+GseClient::EndGameServerSessionAndProcessOutcome GseClient::EndGameServerSessionAndProcess(const EndGameServerSessionAndProcessRequest &request)
+{
+    auto outcome = MakeRequest(request, "EndGameServerSessionAndProcess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EndGameServerSessionAndProcessResponse rsp = EndGameServerSessionAndProcessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EndGameServerSessionAndProcessOutcome(rsp);
+        else
+            return EndGameServerSessionAndProcessOutcome(o.GetError());
+    }
+    else
+    {
+        return EndGameServerSessionAndProcessOutcome(outcome.GetError());
+    }
+}
+
+void GseClient::EndGameServerSessionAndProcessAsync(const EndGameServerSessionAndProcessRequest& request, const EndGameServerSessionAndProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EndGameServerSessionAndProcess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GseClient::EndGameServerSessionAndProcessOutcomeCallable GseClient::EndGameServerSessionAndProcessCallable(const EndGameServerSessionAndProcessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EndGameServerSessionAndProcessOutcome()>>(
+        [this, request]()
+        {
+            return this->EndGameServerSessionAndProcess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GseClient::GetGameServerInstanceLogUrlOutcome GseClient::GetGameServerInstanceLogUrl(const GetGameServerInstanceLogUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "GetGameServerInstanceLogUrl");

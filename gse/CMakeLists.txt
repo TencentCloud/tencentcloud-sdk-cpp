@@ -171,6 +171,7 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/PlayerLatencyPolicy.h
   include/tencentcloud/gse/v20191112/model/FleetRelatedResource.h
   include/tencentcloud/gse/v20191112/model/UpdateRuntimeConfigurationRequest.h
+  include/tencentcloud/gse/v20191112/model/EndGameServerSessionAndProcessRequest.h
   include/tencentcloud/gse/v20191112/model/GameProperty.h
   include/tencentcloud/gse/v20191112/model/CreateAssetWithImageResponse.h
   include/tencentcloud/gse/v20191112/model/FleetStatisticTimes.h
@@ -185,6 +186,7 @@ set(gse_public_header_model
   include/tencentcloud/gse/v20191112/model/GetUploadFederationTokenRequest.h
   include/tencentcloud/gse/v20191112/model/DescribeTimerScalingPoliciesResponse.h
   include/tencentcloud/gse/v20191112/model/CopyFleetRequest.h
+  include/tencentcloud/gse/v20191112/model/EndGameServerSessionAndProcessResponse.h
   include/tencentcloud/gse/v20191112/model/SearchGameServerSessionsResponse.h
   include/tencentcloud/gse/v20191112/model/PutTimerScalingPolicyResponse.h
   include/tencentcloud/gse/v20191112/model/DescribeFleetEventsResponse.h
@@ -372,6 +374,7 @@ set(gse_src
   src/v20191112/model/PlayerLatencyPolicy.cpp
   src/v20191112/model/FleetRelatedResource.cpp
   src/v20191112/model/UpdateRuntimeConfigurationRequest.cpp
+  src/v20191112/model/EndGameServerSessionAndProcessRequest.cpp
   src/v20191112/model/GameProperty.cpp
   src/v20191112/model/CreateAssetWithImageResponse.cpp
   src/v20191112/model/FleetStatisticTimes.cpp
@@ -386,6 +389,7 @@ set(gse_src
   src/v20191112/model/GetUploadFederationTokenRequest.cpp
   src/v20191112/model/DescribeTimerScalingPoliciesResponse.cpp
   src/v20191112/model/CopyFleetRequest.cpp
+  src/v20191112/model/EndGameServerSessionAndProcessResponse.cpp
   src/v20191112/model/SearchGameServerSessionsResponse.cpp
   src/v20191112/model/PutTimerScalingPolicyResponse.cpp
   src/v20191112/model/DescribeFleetEventsResponse.cpp

@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片列表
-                     * @return ImageInfoList 图片列表
+                     * 获取图片列表，允许传入多张图片，支持传入图片的url或base64编码
+                     * @return ImageInfoList 图片列表，允许传入多张图片，支持传入图片的url或base64编码
                      */
                     std::vector<ImageInfo> GetImageInfoList() const;
 
                     /**
-                     * 设置图片列表
-                     * @param ImageInfoList 图片列表
+                     * 设置图片列表，允许传入多张图片，支持传入图片的url或base64编码
+                     * @param ImageInfoList 图片列表，允许传入多张图片，支持传入图片的url或base64编码
                      */
                     void SetImageInfoList(const std::vector<ImageInfo>& _imageInfoList);
 
@@ -119,7 +119,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片列表
+                     * 图片列表，允许传入多张图片，支持传入图片的url或base64编码
                      */
                     std::vector<ImageInfo> m_imageInfoList;
                     bool m_imageInfoListHasBeenSet;

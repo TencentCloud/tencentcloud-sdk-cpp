@@ -23,7 +23,8 @@ using namespace std;
 
 IngressTls::IngressTls() :
     m_hostsHasBeenSet(false),
-    m_secretNameHasBeenSet(false)
+    m_secretNameHasBeenSet(false),
+    m_certificateIdHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,16 @@ CoreInternalOutcome IngressTls::Deserialize(const Value &value)
         m_secretNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CertificateId") && !value["CertificateId"].IsNull())
+    {
+        if (!value["CertificateId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IngressTls.CertificateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certificateId = string(value["CertificateId"].GetString());
+        m_certificateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -81,6 +92,14 @@ void IngressTls::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
         string key = "SecretName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_secretName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certificateIdHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_certificateId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -116,5 +135,21 @@ void IngressTls::SetSecretName(const string& _secretName)
 bool IngressTls::SecretNameHasBeenSet() const
 {
     return m_secretNameHasBeenSet;
+}
+
+string IngressTls::GetCertificateId() const
+{
+    return m_certificateId;
+}
+
+void IngressTls::SetCertificateId(const string& _certificateId)
+{
+    m_certificateId = _certificateId;
+    m_certificateIdHasBeenSet = true;
+}
+
+bool IngressTls::CertificateIdHasBeenSet() const
+{
+    return m_certificateIdHasBeenSet;
 }
 

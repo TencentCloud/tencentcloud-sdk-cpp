@@ -35,6 +35,8 @@
 #include <tencentcloud/waf/v20180125/model/DeleteSessionResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCustomRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCustomRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeFlowTrendRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeFlowTrendResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusRequest.h>
@@ -71,6 +73,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCustomRulesResponse> DescribeCustomRulesOutcome;
                 typedef std::future<DescribeCustomRulesOutcome> DescribeCustomRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeCustomRulesRequest&, DescribeCustomRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomRulesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFlowTrendResponse> DescribeFlowTrendOutcome;
+                typedef std::future<DescribeFlowTrendOutcome> DescribeFlowTrendOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeFlowTrendRequest&, DescribeFlowTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowTrendAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUserClbWafRegionsResponse> DescribeUserClbWafRegionsOutcome;
                 typedef std::future<DescribeUserClbWafRegionsOutcome> DescribeUserClbWafRegionsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeUserClbWafRegionsRequest&, DescribeUserClbWafRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserClbWafRegionsAsyncHandler;
@@ -133,6 +138,15 @@ namespace TencentCloud
                 DescribeCustomRulesOutcome DescribeCustomRules(const Model::DescribeCustomRulesRequest &request);
                 void DescribeCustomRulesAsync(const Model::DescribeCustomRulesRequest& request, const DescribeCustomRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCustomRulesOutcomeCallable DescribeCustomRulesCallable(const Model::DescribeCustomRulesRequest& request);
+
+                /**
+                 *获取waf流量访问趋势
+                 * @param req DescribeFlowTrendRequest
+                 * @return DescribeFlowTrendOutcome
+                 */
+                DescribeFlowTrendOutcome DescribeFlowTrend(const Model::DescribeFlowTrendRequest &request);
+                void DescribeFlowTrendAsync(const Model::DescribeFlowTrendRequest& request, const DescribeFlowTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowTrendOutcomeCallable DescribeFlowTrendCallable(const Model::DescribeFlowTrendRequest& request);
 
                 /**
                  *在负载均衡型WAF的添加、编辑域名配置的时候，需要展示负载均衡型WAF（clb-waf)支持的地域列表，通过DescribeUserClbWafRegions既可以获得当前对客户已经开放的地域列表

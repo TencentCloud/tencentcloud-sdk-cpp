@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取""
+                     * 获取家族成员史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RelativeHistory ""
+                     * @return RelativeHistory 家族成员史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRelativeHistory() const;
 
                     /**
-                     * 设置""
+                     * 设置家族成员史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelativeHistory ""
+                     * @param RelativeHistory 家族成员史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRelativeHistory(const std::string& _relativeHistory);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool RelativeHistoryHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取家族肿瘤史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RelativeCancerHistory ""
+                     * @return RelativeCancerHistory 家族肿瘤史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRelativeCancerHistory() const;
 
                     /**
-                     * 设置""
+                     * 设置家族肿瘤史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelativeCancerHistory ""
+                     * @param RelativeCancerHistory 家族肿瘤史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRelativeCancerHistory(const std::string& _relativeCancerHistory);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool RelativeCancerHistoryHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取家族遗传史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GeneticHistory ""
+                     * @return GeneticHistory 家族遗传史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetGeneticHistory() const;
 
                     /**
-                     * 设置""
+                     * 设置家族遗传史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GeneticHistory ""
+                     * @param GeneticHistory 家族遗传史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetGeneticHistory(const std::string& _geneticHistory);
@@ -115,21 +115,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ""
+                     * 家族成员史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_relativeHistory;
                     bool m_relativeHistoryHasBeenSet;
 
                     /**
-                     * ""
+                     * 家族肿瘤史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_relativeCancerHistory;
                     bool m_relativeCancerHistoryHasBeenSet;
 
                     /**
-                     * ""
+                     * 家族遗传史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_geneticHistory;

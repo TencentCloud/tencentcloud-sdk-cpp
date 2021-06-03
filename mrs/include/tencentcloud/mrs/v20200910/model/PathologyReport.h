@@ -55,17 +55,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取""
+                     * 获取癌症部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CancerPart ""
+                     * @return CancerPart 癌症部位
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Part GetCancerPart() const;
 
                     /**
-                     * 设置""
+                     * 设置癌症部位
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CancerPart ""
+                     * @param CancerPart 癌症部位
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCancerPart(const Part& _cancerPart);
@@ -77,17 +77,17 @@ namespace TencentCloud
                     bool CancerPartHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取癌症部位大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CancerSize ""
+                     * @return CancerSize 癌症部位大小
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Size> GetCancerSize() const;
 
                     /**
-                     * 设置""
+                     * 设置癌症部位大小
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CancerSize ""
+                     * @param CancerSize 癌症部位大小
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCancerSize(const std::vector<Size>& _cancerSize);
@@ -121,17 +121,17 @@ namespace TencentCloud
                     bool DescTextHasBeenSet() const;
 
                     /**
-                     * 获取癌症
+                     * 获取组织学等级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HistologyLevel 癌症
+                     * @return HistologyLevel 组织学等级
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HistologyLevel GetHistologyLevel() const;
 
                     /**
-                     * 设置癌症
+                     * 设置组织学等级
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HistologyLevel 癌症
+                     * @param HistologyLevel 组织学等级
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHistologyLevel(const HistologyLevel& _histologyLevel);
@@ -143,17 +143,17 @@ namespace TencentCloud
                     bool HistologyLevelHasBeenSet() const;
 
                     /**
-                     * 获取扩散
+                     * 获取组织学类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HistologyType 扩散
+                     * @return HistologyType 组织学类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HistologyType GetHistologyType() const;
 
                     /**
-                     * 设置扩散
+                     * 设置组织学类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HistologyType 扩散
+                     * @param HistologyType 组织学类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHistologyType(const HistologyType& _histologyType);
@@ -165,17 +165,17 @@ namespace TencentCloud
                     bool HistologyTypeHasBeenSet() const;
 
                     /**
-                     * 获取淋巴
+                     * 获取IHC信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IHC 淋巴
+                     * @return IHC IHC信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IHCInfo> GetIHC() const;
 
                     /**
-                     * 设置淋巴
+                     * 设置IHC信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IHC 淋巴
+                     * @param IHC IHC信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIHC(const std::vector<IHCInfo>& _iHC);
@@ -187,17 +187,17 @@ namespace TencentCloud
                     bool IHCHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取浸润深度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InfiltrationDepth ""
+                     * @return InfiltrationDepth 浸润深度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo GetInfiltrationDepth() const;
 
                     /**
-                     * 设置""
+                     * 设置浸润深度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InfiltrationDepth ""
+                     * @param InfiltrationDepth 浸润深度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInfiltrationDepth(const BlockInfo& _infiltrationDepth);
@@ -209,17 +209,17 @@ namespace TencentCloud
                     bool InfiltrationDepthHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取肿瘤扩散
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Invasive ""
+                     * @return Invasive 肿瘤扩散
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Invas> GetInvasive() const;
 
                     /**
-                     * 设置""
+                     * 设置肿瘤扩散
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Invasive ""
+                     * @param Invasive 肿瘤扩散
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInvasive(const std::vector<Invas>& _invasive);
@@ -231,17 +231,17 @@ namespace TencentCloud
                     bool InvasiveHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取淋巴结
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LymphNodes ""
+                     * @return LymphNodes 淋巴结
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Lymph> GetLymphNodes() const;
 
                     /**
-                     * 设置""
+                     * 设置淋巴结
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LymphNodes ""
+                     * @param LymphNodes 淋巴结
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLymphNodes(const std::vector<Lymph>& _lymphNodes);
@@ -253,17 +253,17 @@ namespace TencentCloud
                     bool LymphNodesHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取PTNM信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PTNM ""
+                     * @return PTNM PTNM信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo GetPTNM() const;
 
                     /**
-                     * 设置""
+                     * 设置PTNM信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PTNM ""
+                     * @param PTNM PTNM信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPTNM(const BlockInfo& _pTNM);
@@ -275,17 +275,17 @@ namespace TencentCloud
                     bool PTNMHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取病理报告类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PathologicalReportType ""
+                     * @return PathologicalReportType 病理报告类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo GetPathologicalReportType() const;
 
                     /**
-                     * 设置""
+                     * 设置病理报告类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PathologicalReportType ""
+                     * @param PathologicalReportType 病理报告类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPathologicalReportType(const BlockInfo& _pathologicalReportType);
@@ -297,17 +297,17 @@ namespace TencentCloud
                     bool PathologicalReportTypeHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取报告原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReportText ""
+                     * @return ReportText 报告原文
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetReportText() const;
 
                     /**
-                     * 设置""
+                     * 设置报告原文
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReportText ""
+                     * @param ReportText 报告原文
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetReportText(const std::string& _reportText);
@@ -319,17 +319,17 @@ namespace TencentCloud
                     bool ReportTextHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取标本类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SampleType ""
+                     * @return SampleType 标本类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo GetSampleType() const;
 
                     /**
-                     * 设置""
+                     * 设置标本类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SampleType ""
+                     * @param SampleType 标本类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSampleType(const BlockInfo& _sampleType);
@@ -341,17 +341,17 @@ namespace TencentCloud
                     bool SampleTypeHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取结论文本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SummaryText ""
+                     * @return SummaryText 结论文本
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSummaryText() const;
 
                     /**
-                     * 设置""
+                     * 设置结论文本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SummaryText ""
+                     * @param SummaryText 结论文本
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSummaryText(const std::string& _summaryText);
@@ -365,14 +365,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ""
+                     * 癌症部位
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Part m_cancerPart;
                     bool m_cancerPartHasBeenSet;
 
                     /**
-                     * ""
+                     * 癌症部位大小
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Size> m_cancerSize;
@@ -386,77 +386,77 @@ namespace TencentCloud
                     bool m_descTextHasBeenSet;
 
                     /**
-                     * 癌症
+                     * 组织学等级
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HistologyLevel m_histologyLevel;
                     bool m_histologyLevelHasBeenSet;
 
                     /**
-                     * 扩散
+                     * 组织学类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HistologyType m_histologyType;
                     bool m_histologyTypeHasBeenSet;
 
                     /**
-                     * 淋巴
+                     * IHC信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IHCInfo> m_iHC;
                     bool m_iHCHasBeenSet;
 
                     /**
-                     * ""
+                     * 浸润深度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_infiltrationDepth;
                     bool m_infiltrationDepthHasBeenSet;
 
                     /**
-                     * ""
+                     * 肿瘤扩散
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Invas> m_invasive;
                     bool m_invasiveHasBeenSet;
 
                     /**
-                     * ""
+                     * 淋巴结
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Lymph> m_lymphNodes;
                     bool m_lymphNodesHasBeenSet;
 
                     /**
-                     * ""
+                     * PTNM信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_pTNM;
                     bool m_pTNMHasBeenSet;
 
                     /**
-                     * ""
+                     * 病理报告类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_pathologicalReportType;
                     bool m_pathologicalReportTypeHasBeenSet;
 
                     /**
-                     * ""
+                     * 报告原文
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportText;
                     bool m_reportTextHasBeenSet;
 
                     /**
-                     * ""
+                     * 标本类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_sampleType;
                     bool m_sampleTypeHasBeenSet;
 
                     /**
-                     * ""
+                     * 结论文本
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_summaryText;

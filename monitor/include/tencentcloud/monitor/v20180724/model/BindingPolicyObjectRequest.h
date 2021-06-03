@@ -44,6 +44,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取必填。固定值"monitor"
+                     * @return Module 必填。固定值"monitor"
+                     */
+                    std::string GetModule() const;
+
+                    /**
+                     * 设置必填。固定值"monitor"
+                     * @param Module 必填。固定值"monitor"
+                     */
+                    void SetModule(const std::string& _module);
+
+                    /**
+                     * 判断参数 Module 是否已赋值
+                     * @return Module 是否已赋值
+                     */
+                    bool ModuleHasBeenSet() const;
+
+                    /**
                      * 获取策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
                      * @return GroupId 策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
                      */
@@ -62,22 +80,22 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取必填。固定值"monitor"
-                     * @return Module 必填。固定值"monitor"
+                     * 获取告警策略ID，使用此字段时 GroupId 会被忽略
+                     * @return PolicyId 告警策略ID，使用此字段时 GroupId 会被忽略
                      */
-                    std::string GetModule() const;
+                    std::string GetPolicyId() const;
 
                     /**
-                     * 设置必填。固定值"monitor"
-                     * @param Module 必填。固定值"monitor"
+                     * 设置告警策略ID，使用此字段时 GroupId 会被忽略
+                     * @param PolicyId 告警策略ID，使用此字段时 GroupId 会被忽略
                      */
-                    void SetModule(const std::string& _module);
+                    void SetPolicyId(const std::string& _policyId);
 
                     /**
-                     * 判断参数 Module 是否已赋值
-                     * @return Module 是否已赋值
+                     * 判断参数 PolicyId 是否已赋值
+                     * @return PolicyId 是否已赋值
                      */
-                    bool ModuleHasBeenSet() const;
+                    bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取实例分组ID
@@ -115,25 +133,13 @@ namespace TencentCloud
                      */
                     bool DimensionsHasBeenSet() const;
 
-                    /**
-                     * 获取告警策略ID，使用此字段时 GroupId 会被忽略
-                     * @return PolicyId 告警策略ID，使用此字段时 GroupId 会被忽略
-                     */
-                    std::string GetPolicyId() const;
-
-                    /**
-                     * 设置告警策略ID，使用此字段时 GroupId 会被忽略
-                     * @param PolicyId 告警策略ID，使用此字段时 GroupId 会被忽略
-                     */
-                    void SetPolicyId(const std::string& _policyId);
-
-                    /**
-                     * 判断参数 PolicyId 是否已赋值
-                     * @return PolicyId 是否已赋值
-                     */
-                    bool PolicyIdHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 必填。固定值"monitor"
+                     */
+                    std::string m_module;
+                    bool m_moduleHasBeenSet;
 
                     /**
                      * 策略组id，如传入 PolicyId 则该字段会被忽略可传入任意值如 0
@@ -142,10 +148,10 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 必填。固定值"monitor"
+                     * 告警策略ID，使用此字段时 GroupId 会被忽略
                      */
-                    std::string m_module;
-                    bool m_moduleHasBeenSet;
+                    std::string m_policyId;
+                    bool m_policyIdHasBeenSet;
 
                     /**
                      * 实例分组ID
@@ -158,12 +164,6 @@ namespace TencentCloud
                      */
                     std::vector<BindingPolicyObjectDimension> m_dimensions;
                     bool m_dimensionsHasBeenSet;
-
-                    /**
-                     * 告警策略ID，使用此字段时 GroupId 会被忽略
-                     */
-                    std::string m_policyId;
-                    bool m_policyIdHasBeenSet;
 
                 };
             }

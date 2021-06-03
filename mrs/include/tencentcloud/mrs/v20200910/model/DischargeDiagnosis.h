@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool TableIndexHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取出院诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutDiagnosis ""
+                     * @return OutDiagnosis 出院诊断
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo GetOutDiagnosis() const;
 
                     /**
-                     * 设置""
+                     * 设置出院诊断
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutDiagnosis ""
+                     * @param OutDiagnosis 出院诊断
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOutDiagnosis(const BlockInfo& _outDiagnosis);
@@ -92,17 +92,17 @@ namespace TencentCloud
                     bool OutDiagnosisHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取疾病编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiseaseCode ""
+                     * @return DiseaseCode 疾病编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo GetDiseaseCode() const;
 
                     /**
-                     * 设置""
+                     * 设置疾病编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiseaseCode ""
+                     * @param DiseaseCode 疾病编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDiseaseCode(const BlockInfo& _diseaseCode);
@@ -114,17 +114,17 @@ namespace TencentCloud
                     bool DiseaseCodeHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取入院情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InStatus ""
+                     * @return InStatus 入院情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo GetInStatus() const;
 
                     /**
-                     * 设置""
+                     * 设置入院情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InStatus ""
+                     * @param InStatus 入院情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInStatus(const BlockInfo& _inStatus);
@@ -136,17 +136,17 @@ namespace TencentCloud
                     bool InStatusHasBeenSet() const;
 
                     /**
-                     * 获取""
+                     * 获取出院情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutStatus ""
+                     * @return OutStatus 出院情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo GetOutStatus() const;
 
                     /**
-                     * 设置""
+                     * 设置出院情况
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutStatus ""
+                     * @param OutStatus 出院情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOutStatus(const BlockInfo& _outStatus);
@@ -167,28 +167,28 @@ namespace TencentCloud
                     bool m_tableIndexHasBeenSet;
 
                     /**
-                     * ""
+                     * 出院诊断
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_outDiagnosis;
                     bool m_outDiagnosisHasBeenSet;
 
                     /**
-                     * ""
+                     * 疾病编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_diseaseCode;
                     bool m_diseaseCodeHasBeenSet;
 
                     /**
-                     * ""
+                     * 入院情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_inStatus;
                     bool m_inStatusHasBeenSet;
 
                     /**
-                     * ""
+                     * 出院情况
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BlockInfo m_outStatus;

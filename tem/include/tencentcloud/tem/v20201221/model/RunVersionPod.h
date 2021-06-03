@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取pod的ip
-                     * @return PodIp pod的ip
+                     * 获取实例的ip
+                     * @return PodIp 实例的ip
                      */
                     std::string GetPodIp() const;
 
                     /**
-                     * 设置pod的ip
-                     * @param PodIp pod的ip
+                     * 设置实例的ip
+                     * @param PodIp 实例的ip
                      */
                     void SetPodIp(const std::string& _podIp);
 
@@ -135,6 +135,50 @@ namespace TencentCloud
                      * @return PodIp 是否已赋值
                      */
                     bool PodIpHasBeenSet() const;
+
+                    /**
+                     * 获取可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zone 可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Zone 可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取部署版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployVersion 部署版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeployVersion() const;
+
+                    /**
+                     * 设置部署版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeployVersion 部署版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeployVersion(const std::string& _deployVersion);
+
+                    /**
+                     * 判断参数 DeployVersion 是否已赋值
+                     * @return DeployVersion 是否已赋值
+                     */
+                    bool DeployVersionHasBeenSet() const;
 
                 private:
 
@@ -163,10 +207,24 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * pod的ip
+                     * 实例的ip
                      */
                     std::string m_podIp;
                     bool m_podIpHasBeenSet;
+
+                    /**
+                     * 可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 部署版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deployVersion;
+                    bool m_deployVersionHasBeenSet;
 
                 };
             }

@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取“”
+                     * 获取浸润
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Infiltration “”
+                     * @return Infiltration 浸润
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInfiltration() const;
 
                     /**
-                     * 设置“”
+                     * 设置浸润
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Infiltration “”
+                     * @param Infiltration 浸润
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInfiltration(const std::string& _infiltration);
@@ -137,7 +137,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * “”
+                     * 浸润
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_infiltration;

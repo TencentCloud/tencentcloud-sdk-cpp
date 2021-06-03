@@ -55,17 +55,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取“”
+                     * 获取建议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Advice “”
+                     * @return Advice 建议
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Advice GetAdvice() const;
 
                     /**
-                     * 设置“”
+                     * 设置建议
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Advice “”
+                     * @param Advice 建议
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAdvice(const Advice& _advice);
@@ -77,17 +77,17 @@ namespace TencentCloud
                     bool AdviceHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取诊断结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Diagnosis “”
+                     * @return Diagnosis 诊断结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DiagCertItem> GetDiagnosis() const;
 
                     /**
-                     * 设置“”
+                     * 设置诊断结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Diagnosis “”
+                     * @param Diagnosis 诊断结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDiagnosis(const std::vector<DiagCertItem>& _diagnosis);
@@ -99,17 +99,17 @@ namespace TencentCloud
                     bool DiagnosisHasBeenSet() const;
 
                     /**
-                     * 获取“”
+                     * 获取疾病史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiseaseMedicalHistory “”
+                     * @return DiseaseMedicalHistory 疾病史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseaseMedicalHistory GetDiseaseMedicalHistory() const;
 
                     /**
-                     * 设置“”
+                     * 设置疾病史
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiseaseMedicalHistory “”
+                     * @param DiseaseMedicalHistory 疾病史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDiseaseMedicalHistory(const DiseaseMedicalHistory& _diseaseMedicalHistory);
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool DiseaseMedicalHistoryHasBeenSet() const;
 
                     /**
-                     * 获取“”
-                     * @return PersonalMedicalHistory “”
+                     * 获取个人史
+                     * @return PersonalMedicalHistory 个人史
                      */
                     PersonalMedicalHistory GetPersonalMedicalHistory() const;
 
                     /**
-                     * 设置“”
-                     * @param PersonalMedicalHistory “”
+                     * 设置个人史
+                     * @param PersonalMedicalHistory 个人史
                      */
                     void SetPersonalMedicalHistory(const PersonalMedicalHistory& _personalMedicalHistory);
 
@@ -139,14 +139,14 @@ namespace TencentCloud
                     bool PersonalMedicalHistoryHasBeenSet() const;
 
                     /**
-                     * 获取“”
-                     * @return ObstericalMedicalHistory “”
+                     * 获取婚孕史
+                     * @return ObstericalMedicalHistory 婚孕史
                      */
                     ObstericalMedicalHistory GetObstericalMedicalHistory() const;
 
                     /**
-                     * 设置“”
-                     * @param ObstericalMedicalHistory “”
+                     * 设置婚孕史
+                     * @param ObstericalMedicalHistory 婚孕史
                      */
                     void SetObstericalMedicalHistory(const ObstericalMedicalHistory& _obstericalMedicalHistory);
 
@@ -157,14 +157,14 @@ namespace TencentCloud
                     bool ObstericalMedicalHistoryHasBeenSet() const;
 
                     /**
-                     * 获取“”
-                     * @return FamilyMedicalHistory “”
+                     * 获取家族史
+                     * @return FamilyMedicalHistory 家族史
                      */
                     FamilyMedicalHistory GetFamilyMedicalHistory() const;
 
                     /**
-                     * 设置“”
-                     * @param FamilyMedicalHistory “”
+                     * 设置家族史
+                     * @param FamilyMedicalHistory 家族史
                      */
                     void SetFamilyMedicalHistory(const FamilyMedicalHistory& _familyMedicalHistory);
 
@@ -175,14 +175,14 @@ namespace TencentCloud
                     bool FamilyMedicalHistoryHasBeenSet() const;
 
                     /**
-                     * 获取“”
-                     * @return MenstrualMedicalHistory “”
+                     * 获取月经史
+                     * @return MenstrualMedicalHistory 月经史
                      */
                     MenstrualMedicalHistory GetMenstrualMedicalHistory() const;
 
                     /**
-                     * 设置“”
-                     * @param MenstrualMedicalHistory “”
+                     * 设置月经史
+                     * @param MenstrualMedicalHistory 月经史
                      */
                     void SetMenstrualMedicalHistory(const MenstrualMedicalHistory& _menstrualMedicalHistory);
 
@@ -193,14 +193,14 @@ namespace TencentCloud
                     bool MenstrualMedicalHistoryHasBeenSet() const;
 
                     /**
-                     * 获取“”
-                     * @return TreatmentRecord “”
+                     * 获取诊疗记录
+                     * @return TreatmentRecord 诊疗记录
                      */
                     TreatmentRecord GetTreatmentRecord() const;
 
                     /**
-                     * 设置“”
-                     * @param TreatmentRecord “”
+                     * 设置诊疗记录
+                     * @param TreatmentRecord 诊疗记录
                      */
                     void SetTreatmentRecord(const TreatmentRecord& _treatmentRecord);
 
@@ -213,52 +213,52 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * “”
+                     * 建议
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Advice m_advice;
                     bool m_adviceHasBeenSet;
 
                     /**
-                     * “”
+                     * 诊断结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DiagCertItem> m_diagnosis;
                     bool m_diagnosisHasBeenSet;
 
                     /**
-                     * “”
+                     * 疾病史
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiseaseMedicalHistory m_diseaseMedicalHistory;
                     bool m_diseaseMedicalHistoryHasBeenSet;
 
                     /**
-                     * “”
+                     * 个人史
                      */
                     PersonalMedicalHistory m_personalMedicalHistory;
                     bool m_personalMedicalHistoryHasBeenSet;
 
                     /**
-                     * “”
+                     * 婚孕史
                      */
                     ObstericalMedicalHistory m_obstericalMedicalHistory;
                     bool m_obstericalMedicalHistoryHasBeenSet;
 
                     /**
-                     * “”
+                     * 家族史
                      */
                     FamilyMedicalHistory m_familyMedicalHistory;
                     bool m_familyMedicalHistoryHasBeenSet;
 
                     /**
-                     * “”
+                     * 月经史
                      */
                     MenstrualMedicalHistory m_menstrualMedicalHistory;
                     bool m_menstrualMedicalHistoryHasBeenSet;
 
                     /**
-                     * “”
+                     * 诊疗记录
                      */
                     TreatmentRecord m_treatmentRecord;
                     bool m_treatmentRecordHasBeenSet;

@@ -230,6 +230,46 @@ namespace TencentCloud
                      */
                     bool VipHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否混合 https，默认 false，可选值 true 代表有 https 协议监听
+                     * @return Mixed 是否混合 https，默认 false，可选值 true 代表有 https 协议监听
+                     */
+                    bool GetMixed() const;
+
+                    /**
+                     * 设置是否混合 https，默认 false，可选值 true 代表有 https 协议监听
+                     * @param Mixed 是否混合 https，默认 false，可选值 true 代表有 https 协议监听
+                     */
+                    void SetMixed(const bool& _mixed);
+
+                    /**
+                     * 判断参数 Mixed 是否已赋值
+                     * @return Mixed 是否已赋值
+                     */
+                    bool MixedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +330,19 @@ namespace TencentCloud
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 是否混合 https，默认 false，可选值 true 代表有 https 协议监听
+                     */
+                    bool m_mixed;
+                    bool m_mixedHasBeenSet;
 
                 };
             }

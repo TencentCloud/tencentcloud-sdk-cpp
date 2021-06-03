@@ -30,7 +30,9 @@ IngressInfo::IngressInfo() :
     m_clbIdHasBeenSet(false),
     m_tlsHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_vipHasBeenSet(false)
+    m_vipHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_mixedHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome IngressInfo::Deserialize(const Value &value)
         m_vipHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IngressInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Mixed") && !value["Mixed"].IsNull())
+    {
+        if (!value["Mixed"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `IngressInfo.Mixed` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mixed = value["Mixed"].GetBool();
+        m_mixedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +262,22 @@ void IngressInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
         string key = "Vip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_vip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mixedHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Mixed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mixed, allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void IngressInfo::SetVip(const string& _vip)
 bool IngressInfo::VipHasBeenSet() const
 {
     return m_vipHasBeenSet;
+}
+
+string IngressInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void IngressInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool IngressInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+bool IngressInfo::GetMixed() const
+{
+    return m_mixed;
+}
+
+void IngressInfo::SetMixed(const bool& _mixed)
+{
+    m_mixed = _mixed;
+    m_mixedHasBeenSet = true;
+}
+
+bool IngressInfo::MixedHasBeenSet() const
+{
+    return m_mixedHasBeenSet;
 }
 

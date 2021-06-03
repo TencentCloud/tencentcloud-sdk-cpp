@@ -298,6 +298,49 @@ WafClient::DescribeCustomRulesOutcomeCallable WafClient::DescribeCustomRulesCall
     return task->get_future();
 }
 
+WafClient::DescribeFlowTrendOutcome WafClient::DescribeFlowTrend(const DescribeFlowTrendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlowTrend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlowTrendResponse rsp = DescribeFlowTrendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlowTrendOutcome(rsp);
+        else
+            return DescribeFlowTrendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlowTrendOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeFlowTrendAsync(const DescribeFlowTrendRequest& request, const DescribeFlowTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFlowTrend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeFlowTrendOutcomeCallable WafClient::DescribeFlowTrendCallable(const DescribeFlowTrendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFlowTrendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFlowTrend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeUserClbWafRegionsOutcome WafClient::DescribeUserClbWafRegions(const DescribeUserClbWafRegionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserClbWafRegions");

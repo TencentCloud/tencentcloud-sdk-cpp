@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取host 数组
-                     * @return Hosts host 数组
+                     * 获取host 数组, 空数组表示全部域名的默认证书
+                     * @return Hosts host 数组, 空数组表示全部域名的默认证书
                      */
                     std::vector<std::string> GetHosts() const;
 
                     /**
-                     * 设置host 数组
-                     * @param Hosts host 数组
+                     * 设置host 数组, 空数组表示全部域名的默认证书
+                     * @param Hosts host 数组, 空数组表示全部域名的默认证书
                      */
                     void SetHosts(const std::vector<std::string>& _hosts);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool HostsHasBeenSet() const;
 
                     /**
-                     * 获取secret name
-                     * @return SecretName secret name
+                     * 获取secret name，如使用证书，则填空字符串
+                     * @return SecretName secret name，如使用证书，则填空字符串
                      */
                     std::string GetSecretName() const;
 
                     /**
-                     * 设置secret name
-                     * @param SecretName secret name
+                     * 设置secret name，如使用证书，则填空字符串
+                     * @param SecretName secret name，如使用证书，则填空字符串
                      */
                     void SetSecretName(const std::string& _secretName);
 
@@ -82,19 +82,43 @@ namespace TencentCloud
                      */
                     bool SecretNameHasBeenSet() const;
 
+                    /**
+                     * 获取SSL Certificate Id
+                     * @return CertificateId SSL Certificate Id
+                     */
+                    std::string GetCertificateId() const;
+
+                    /**
+                     * 设置SSL Certificate Id
+                     * @param CertificateId SSL Certificate Id
+                     */
+                    void SetCertificateId(const std::string& _certificateId);
+
+                    /**
+                     * 判断参数 CertificateId 是否已赋值
+                     * @return CertificateId 是否已赋值
+                     */
+                    bool CertificateIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * host 数组
+                     * host 数组, 空数组表示全部域名的默认证书
                      */
                     std::vector<std::string> m_hosts;
                     bool m_hostsHasBeenSet;
 
                     /**
-                     * secret name
+                     * secret name，如使用证书，则填空字符串
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
+
+                    /**
+                     * SSL Certificate Id
+                     */
+                    std::string m_certificateId;
+                    bool m_certificateIdHasBeenSet;
 
                 };
             }
