@@ -65,12 +65,13 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceShardsResponse.h
   include/tencentcloud/redis/v20180412/model/DestroyPrepaidInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/ManualBackupInstanceResponse.h
+  include/tencentcloud/redis/v20180412/model/DisableReplicaReadonlyResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceTagInfo.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceDTSInfoResponse.h
   include/tencentcloud/redis/v20180412/model/DestroyPostpaidInstanceResponse.h
-  include/tencentcloud/redis/v20180412/model/ModifyInstanceResponse.h
+  include/tencentcloud/redis/v20180412/model/ChangeReplicaToMasterRequest.h
   include/tencentcloud/redis/v20180412/model/ProxyNodes.h
-  include/tencentcloud/redis/v20180412/model/TradeDealDetail.h
+  include/tencentcloud/redis/v20180412/model/ModifyInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/RedisCommonInstanceList.h
   include/tencentcloud/redis/v20180412/model/SourceInfo.h
   include/tencentcloud/redis/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.h
@@ -100,7 +101,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceAccountRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceParamRecordsRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskListRequest.h
-  include/tencentcloud/redis/v20180412/model/DisableReplicaReadonlyResponse.h
+  include/tencentcloud/redis/v20180412/model/ChangeReplicaToMasterResponse.h
   include/tencentcloud/redis/v20180412/model/CreateInstancesResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskInfoRequest.h
   include/tencentcloud/redis/v20180412/model/RedisNodes.h
@@ -127,6 +128,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/InstanceNode.h
   include/tencentcloud/redis/v20180412/model/StartupInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceDTSInstanceInfo.h
+  include/tencentcloud/redis/v20180412/model/TradeDealDetail.h
   include/tencentcloud/redis/v20180412/model/ResourceTag.h
   include/tencentcloud/redis/v20180412/model/AssociateSecurityGroupsResponse.h
   include/tencentcloud/redis/v20180412/model/ReplicaGroup.h
@@ -240,12 +242,13 @@ set(redis_src
   src/v20180412/model/DescribeInstanceShardsResponse.cpp
   src/v20180412/model/DestroyPrepaidInstanceRequest.cpp
   src/v20180412/model/ManualBackupInstanceResponse.cpp
+  src/v20180412/model/DisableReplicaReadonlyResponse.cpp
   src/v20180412/model/InstanceTagInfo.cpp
   src/v20180412/model/DescribeInstanceDTSInfoResponse.cpp
   src/v20180412/model/DestroyPostpaidInstanceResponse.cpp
-  src/v20180412/model/ModifyInstanceResponse.cpp
+  src/v20180412/model/ChangeReplicaToMasterRequest.cpp
   src/v20180412/model/ProxyNodes.cpp
-  src/v20180412/model/TradeDealDetail.cpp
+  src/v20180412/model/ModifyInstanceResponse.cpp
   src/v20180412/model/RedisCommonInstanceList.cpp
   src/v20180412/model/SourceInfo.cpp
   src/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.cpp
@@ -275,7 +278,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceAccountRequest.cpp
   src/v20180412/model/DescribeInstanceParamRecordsRequest.cpp
   src/v20180412/model/DescribeTaskListRequest.cpp
-  src/v20180412/model/DisableReplicaReadonlyResponse.cpp
+  src/v20180412/model/ChangeReplicaToMasterResponse.cpp
   src/v20180412/model/CreateInstancesResponse.cpp
   src/v20180412/model/DescribeTaskInfoRequest.cpp
   src/v20180412/model/RedisNodes.cpp
@@ -302,6 +305,7 @@ set(redis_src
   src/v20180412/model/InstanceNode.cpp
   src/v20180412/model/StartupInstanceResponse.cpp
   src/v20180412/model/DescribeInstanceDTSInstanceInfo.cpp
+  src/v20180412/model/TradeDealDetail.cpp
   src/v20180412/model/ResourceTag.cpp
   src/v20180412/model/AssociateSecurityGroupsResponse.cpp
   src/v20180412/model/ReplicaGroup.cpp

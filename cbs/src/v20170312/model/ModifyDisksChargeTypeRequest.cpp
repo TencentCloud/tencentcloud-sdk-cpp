@@ -25,7 +25,8 @@ using namespace std;
 
 ModifyDisksChargeTypeRequest::ModifyDisksChargeTypeRequest() :
     m_diskIdsHasBeenSet(false),
-    m_diskChargePrepaidHasBeenSet(false)
+    m_diskChargePrepaidHasBeenSet(false),
+    m_diskChargePostpaidHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string ModifyDisksChargeTypeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(kObjectType).Move(), allocator);
         m_diskChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_diskChargePostpaidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DiskChargePostpaid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_diskChargePostpaid, allocator);
     }
 
 
@@ -96,6 +105,22 @@ void ModifyDisksChargeTypeRequest::SetDiskChargePrepaid(const DiskChargePrepaid&
 bool ModifyDisksChargeTypeRequest::DiskChargePrepaidHasBeenSet() const
 {
     return m_diskChargePrepaidHasBeenSet;
+}
+
+bool ModifyDisksChargeTypeRequest::GetDiskChargePostpaid() const
+{
+    return m_diskChargePostpaid;
+}
+
+void ModifyDisksChargeTypeRequest::SetDiskChargePostpaid(const bool& _diskChargePostpaid)
+{
+    m_diskChargePostpaid = _diskChargePostpaid;
+    m_diskChargePostpaidHasBeenSet = true;
+}
+
+bool ModifyDisksChargeTypeRequest::DiskChargePostpaidHasBeenSet() const
+{
+    return m_diskChargePostpaidHasBeenSet;
 }
 
 

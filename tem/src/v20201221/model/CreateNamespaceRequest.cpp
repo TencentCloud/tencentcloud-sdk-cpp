@@ -29,7 +29,8 @@ CreateNamespaceRequest::CreateNamespaceRequest() :
     m_subnetIdsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_k8sVersionHasBeenSet(false),
-    m_sourceChannelHasBeenSet(false)
+    m_sourceChannelHasBeenSet(false),
+    m_enableTswTraceServiceHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,14 @@ string CreateNamespaceRequest::ToJsonString() const
         string key = "SourceChannel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sourceChannel, allocator);
+    }
+
+    if (m_enableTswTraceServiceHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "EnableTswTraceService";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableTswTraceService, allocator);
     }
 
 
@@ -195,6 +204,22 @@ void CreateNamespaceRequest::SetSourceChannel(const int64_t& _sourceChannel)
 bool CreateNamespaceRequest::SourceChannelHasBeenSet() const
 {
     return m_sourceChannelHasBeenSet;
+}
+
+bool CreateNamespaceRequest::GetEnableTswTraceService() const
+{
+    return m_enableTswTraceService;
+}
+
+void CreateNamespaceRequest::SetEnableTswTraceService(const bool& _enableTswTraceService)
+{
+    m_enableTswTraceService = _enableTswTraceService;
+    m_enableTswTraceServiceHasBeenSet = true;
+}
+
+bool CreateNamespaceRequest::EnableTswTraceServiceHasBeenSet() const
+{
+    return m_enableTswTraceServiceHasBeenSet;
 }
 
 

@@ -43,12 +43,18 @@
 #include <tencentcloud/tem/v20201221/model/DescribeIngressesResponse.h>
 #include <tencentcloud/tem/v20201221/model/DescribeNamespacesRequest.h>
 #include <tencentcloud/tem/v20201221/model/DescribeNamespacesResponse.h>
+#include <tencentcloud/tem/v20201221/model/DescribeRelatedIngressesRequest.h>
+#include <tencentcloud/tem/v20201221/model/DescribeRelatedIngressesResponse.h>
 #include <tencentcloud/tem/v20201221/model/DescribeServiceRunPodListV2Request.h>
 #include <tencentcloud/tem/v20201221/model/DescribeServiceRunPodListV2Response.h>
 #include <tencentcloud/tem/v20201221/model/ModifyIngressRequest.h>
 #include <tencentcloud/tem/v20201221/model/ModifyIngressResponse.h>
 #include <tencentcloud/tem/v20201221/model/ModifyNamespaceRequest.h>
 #include <tencentcloud/tem/v20201221/model/ModifyNamespaceResponse.h>
+#include <tencentcloud/tem/v20201221/model/ModifyServiceInfoRequest.h>
+#include <tencentcloud/tem/v20201221/model/ModifyServiceInfoResponse.h>
+#include <tencentcloud/tem/v20201221/model/RestartServiceRunPodRequest.h>
+#include <tencentcloud/tem/v20201221/model/RestartServiceRunPodResponse.h>
 
 
 namespace TencentCloud
@@ -93,6 +99,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeNamespacesResponse> DescribeNamespacesOutcome;
                 typedef std::future<DescribeNamespacesOutcome> DescribeNamespacesOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeNamespacesRequest&, DescribeNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNamespacesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRelatedIngressesResponse> DescribeRelatedIngressesOutcome;
+                typedef std::future<DescribeRelatedIngressesOutcome> DescribeRelatedIngressesOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeRelatedIngressesRequest&, DescribeRelatedIngressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedIngressesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeServiceRunPodListV2Response> DescribeServiceRunPodListV2Outcome;
                 typedef std::future<DescribeServiceRunPodListV2Outcome> DescribeServiceRunPodListV2OutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeServiceRunPodListV2Request&, DescribeServiceRunPodListV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceRunPodListV2AsyncHandler;
@@ -102,6 +111,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyNamespaceResponse> ModifyNamespaceOutcome;
                 typedef std::future<ModifyNamespaceOutcome> ModifyNamespaceOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyNamespaceRequest&, ModifyNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNamespaceAsyncHandler;
+                typedef Outcome<Error, Model::ModifyServiceInfoResponse> ModifyServiceInfoOutcome;
+                typedef std::future<ModifyServiceInfoOutcome> ModifyServiceInfoOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::ModifyServiceInfoRequest&, ModifyServiceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceInfoAsyncHandler;
+                typedef Outcome<Error, Model::RestartServiceRunPodResponse> RestartServiceRunPodOutcome;
+                typedef std::future<RestartServiceRunPodOutcome> RestartServiceRunPodOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::RestartServiceRunPodRequest&, RestartServiceRunPodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartServiceRunPodAsyncHandler;
 
 
 
@@ -196,6 +211,15 @@ namespace TencentCloud
                 DescribeNamespacesOutcomeCallable DescribeNamespacesCallable(const Model::DescribeNamespacesRequest& request);
 
                 /**
+                 *查询服务关联的 Ingress 规则列表
+                 * @param req DescribeRelatedIngressesRequest
+                 * @return DescribeRelatedIngressesOutcome
+                 */
+                DescribeRelatedIngressesOutcome DescribeRelatedIngresses(const Model::DescribeRelatedIngressesRequest &request);
+                void DescribeRelatedIngressesAsync(const Model::DescribeRelatedIngressesRequest& request, const DescribeRelatedIngressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRelatedIngressesOutcomeCallable DescribeRelatedIngressesCallable(const Model::DescribeRelatedIngressesRequest& request);
+
+                /**
                  *获取服务下面运行pod列表
                  * @param req DescribeServiceRunPodListV2Request
                  * @return DescribeServiceRunPodListV2Outcome
@@ -221,6 +245,24 @@ namespace TencentCloud
                 ModifyNamespaceOutcome ModifyNamespace(const Model::ModifyNamespaceRequest &request);
                 void ModifyNamespaceAsync(const Model::ModifyNamespaceRequest& request, const ModifyNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNamespaceOutcomeCallable ModifyNamespaceCallable(const Model::ModifyNamespaceRequest& request);
+
+                /**
+                 *修改服务基本信息
+                 * @param req ModifyServiceInfoRequest
+                 * @return ModifyServiceInfoOutcome
+                 */
+                ModifyServiceInfoOutcome ModifyServiceInfo(const Model::ModifyServiceInfoRequest &request);
+                void ModifyServiceInfoAsync(const Model::ModifyServiceInfoRequest& request, const ModifyServiceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyServiceInfoOutcomeCallable ModifyServiceInfoCallable(const Model::ModifyServiceInfoRequest& request);
+
+                /**
+                 *重启实例
+                 * @param req RestartServiceRunPodRequest
+                 * @return RestartServiceRunPodOutcome
+                 */
+                RestartServiceRunPodOutcome RestartServiceRunPod(const Model::RestartServiceRunPodRequest &request);
+                void RestartServiceRunPodAsync(const Model::RestartServiceRunPodRequest& request, const RestartServiceRunPodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartServiceRunPodOutcomeCallable RestartServiceRunPodCallable(const Model::RestartServiceRunPodRequest& request);
 
             };
         }

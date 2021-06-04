@@ -47,7 +47,9 @@ DeployServiceV2Request::DeployServiceV2Request() :
     m_sourceChannelHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_imageCommandHasBeenSet(false),
-    m_imageArgsHasBeenSet(false)
+    m_imageArgsHasBeenSet(false),
+    m_portMappingsHasBeenSet(false),
+    m_useRegistryDefaultConfigHasBeenSet(false)
 {
 }
 
@@ -286,6 +288,29 @@ string DeployServiceV2Request::ToJsonString() const
         {
             d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_portMappingsHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PortMappings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_portMappings.begin(); itr != m_portMappings.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_useRegistryDefaultConfigHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "UseRegistryDefaultConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useRegistryDefaultConfig, allocator);
     }
 
 
@@ -678,6 +703,38 @@ void DeployServiceV2Request::SetImageArgs(const vector<string>& _imageArgs)
 bool DeployServiceV2Request::ImageArgsHasBeenSet() const
 {
     return m_imageArgsHasBeenSet;
+}
+
+vector<PortMapping> DeployServiceV2Request::GetPortMappings() const
+{
+    return m_portMappings;
+}
+
+void DeployServiceV2Request::SetPortMappings(const vector<PortMapping>& _portMappings)
+{
+    m_portMappings = _portMappings;
+    m_portMappingsHasBeenSet = true;
+}
+
+bool DeployServiceV2Request::PortMappingsHasBeenSet() const
+{
+    return m_portMappingsHasBeenSet;
+}
+
+bool DeployServiceV2Request::GetUseRegistryDefaultConfig() const
+{
+    return m_useRegistryDefaultConfig;
+}
+
+void DeployServiceV2Request::SetUseRegistryDefaultConfig(const bool& _useRegistryDefaultConfig)
+{
+    m_useRegistryDefaultConfig = _useRegistryDefaultConfig;
+    m_useRegistryDefaultConfigHasBeenSet = true;
+}
+
+bool DeployServiceV2Request::UseRegistryDefaultConfigHasBeenSet() const
+{
+    return m_useRegistryDefaultConfigHasBeenSet;
 }
 
 

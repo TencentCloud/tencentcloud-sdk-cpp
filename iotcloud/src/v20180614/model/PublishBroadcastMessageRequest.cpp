@@ -26,7 +26,8 @@ using namespace std;
 PublishBroadcastMessageRequest::PublishBroadcastMessageRequest() :
     m_productIdHasBeenSet(false),
     m_payloadHasBeenSet(false),
-    m_qosHasBeenSet(false)
+    m_qosHasBeenSet(false),
+    m_payloadEncodingHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string PublishBroadcastMessageRequest::ToJsonString() const
         string key = "Qos";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_qos, allocator);
+    }
+
+    if (m_payloadEncodingHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "PayloadEncoding";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_payloadEncoding.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void PublishBroadcastMessageRequest::SetQos(const int64_t& _qos)
 bool PublishBroadcastMessageRequest::QosHasBeenSet() const
 {
     return m_qosHasBeenSet;
+}
+
+string PublishBroadcastMessageRequest::GetPayloadEncoding() const
+{
+    return m_payloadEncoding;
+}
+
+void PublishBroadcastMessageRequest::SetPayloadEncoding(const string& _payloadEncoding)
+{
+    m_payloadEncoding = _payloadEncoding;
+    m_payloadEncodingHasBeenSet = true;
+}
+
+bool PublishBroadcastMessageRequest::PayloadEncodingHasBeenSet() const
+{
+    return m_payloadEncodingHasBeenSet;
 }
 
 

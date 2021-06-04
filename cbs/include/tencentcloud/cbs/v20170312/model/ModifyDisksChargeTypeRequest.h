@@ -79,6 +79,24 @@ namespace TencentCloud
                      */
                     bool DiskChargePrepaidHasBeenSet() const;
 
+                    /**
+                     * 获取后付费模式
+                     * @return DiskChargePostpaid 后付费模式
+                     */
+                    bool GetDiskChargePostpaid() const;
+
+                    /**
+                     * 设置后付费模式
+                     * @param DiskChargePostpaid 后付费模式
+                     */
+                    void SetDiskChargePostpaid(const bool& _diskChargePostpaid);
+
+                    /**
+                     * 判断参数 DiskChargePostpaid 是否已赋值
+                     * @return DiskChargePostpaid 是否已赋值
+                     */
+                    bool DiskChargePostpaidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,6 +110,12 @@ namespace TencentCloud
                      */
                     DiskChargePrepaid m_diskChargePrepaid;
                     bool m_diskChargePrepaidHasBeenSet;
+
+                    /**
+                     * 后付费模式
+                     */
+                    bool m_diskChargePostpaid;
+                    bool m_diskChargePostpaidHasBeenSet;
 
                 };
             }

@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool ImportTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否仅支持专业版机器的查询（true：仅专业版   false：专业版+基础版）
+                     * @return IsQueryProMachine 是否仅支持专业版机器的查询（true：仅专业版   false：专业版+基础版）
+                     */
+                    bool GetIsQueryProMachine() const;
+
+                    /**
+                     * 设置是否仅支持专业版机器的查询（true：仅专业版   false：专业版+基础版）
+                     * @param IsQueryProMachine 是否仅支持专业版机器的查询（true：仅专业版   false：专业版+基础版）
+                     */
+                    void SetIsQueryProMachine(const bool& _isQueryProMachine);
+
+                    /**
+                     * 判断参数 IsQueryProMachine 是否已赋值
+                     * @return IsQueryProMachine 是否已赋值
+                     */
+                    bool IsQueryProMachineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_importType;
                     bool m_importTypeHasBeenSet;
+
+                    /**
+                     * 是否仅支持专业版机器的查询（true：仅专业版   false：专业版+基础版）
+                     */
+                    bool m_isQueryProMachine;
+                    bool m_isQueryProMachineHasBeenSet;
 
                 };
             }

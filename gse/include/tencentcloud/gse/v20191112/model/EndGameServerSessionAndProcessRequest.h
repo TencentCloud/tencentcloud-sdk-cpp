@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取游戏服务器会话ID
-                     * @return GameServerSessionId 游戏服务器会话ID
+                     * 获取游戏服务器会话ID，如果传入游戏服务器会话ID，结束对应进程以及游戏服务器会话和玩家会话。
+                     * @return GameServerSessionId 游戏服务器会话ID，如果传入游戏服务器会话ID，结束对应进程以及游戏服务器会话和玩家会话。
                      */
                     std::string GetGameServerSessionId() const;
 
                     /**
-                     * 设置游戏服务器会话ID
-                     * @param GameServerSessionId 游戏服务器会话ID
+                     * 设置游戏服务器会话ID，如果传入游戏服务器会话ID，结束对应进程以及游戏服务器会话和玩家会话。
+                     * @param GameServerSessionId 游戏服务器会话ID，如果传入游戏服务器会话ID，结束对应进程以及游戏服务器会话和玩家会话。
                      */
                     void SetGameServerSessionId(const std::string& _gameServerSessionId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool GameServerSessionIdHasBeenSet() const;
 
                     /**
-                     * 获取CVM的公网IP地址
-                     * @return IpAddress CVM的公网IP地址
+                     * 获取CVM的公网IP地址，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入IpAddress不生效。
+                     * @return IpAddress CVM的公网IP地址，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入IpAddress不生效。
                      */
                     std::string GetIpAddress() const;
 
                     /**
-                     * 设置CVM的公网IP地址
-                     * @param IpAddress CVM的公网IP地址
+                     * 设置CVM的公网IP地址，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入IpAddress不生效。
+                     * @param IpAddress CVM的公网IP地址，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入IpAddress不生效。
                      */
                     void SetIpAddress(const std::string& _ipAddress);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool IpAddressHasBeenSet() const;
 
                     /**
-                     * 获取端口号，最小值不小于1，最大值不超过60000
-                     * @return Port 端口号，最小值不小于1，最大值不超过60000
+                     * 获取端口号，取值范围1025-60000，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入Port不生效。
+                     * @return Port 端口号，取值范围1025-60000，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入Port不生效。
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置端口号，最小值不小于1，最大值不超过60000
-                     * @param Port 端口号，最小值不小于1，最大值不超过60000
+                     * 设置端口号，取值范围1025-60000，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入Port不生效。
+                     * @param Port 端口号，取值范围1025-60000，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入Port不生效。
                      */
                     void SetPort(const int64_t& _port);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 游戏服务器会话ID
+                     * 游戏服务器会话ID，如果传入游戏服务器会话ID，结束对应进程以及游戏服务器会话和玩家会话。
                      */
                     std::string m_gameServerSessionId;
                     bool m_gameServerSessionIdHasBeenSet;
 
                     /**
-                     * CVM的公网IP地址
+                     * CVM的公网IP地址，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入IpAddress不生效。
                      */
                     std::string m_ipAddress;
                     bool m_ipAddressHasBeenSet;
 
                     /**
-                     * 端口号，最小值不小于1，最大值不超过60000
+                     * 端口号，取值范围1025-60000，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入Port不生效。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;

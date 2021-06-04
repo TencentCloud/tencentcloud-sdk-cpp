@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeImportMachineInfoRequest::DescribeImportMachineInfoRequest() :
     m_machineListHasBeenSet(false),
-    m_importTypeHasBeenSet(false)
+    m_importTypeHasBeenSet(false),
+    m_isQueryProMachineHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,14 @@ string DescribeImportMachineInfoRequest::ToJsonString() const
         string key = "ImportType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_importType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isQueryProMachineHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "IsQueryProMachine";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isQueryProMachine, allocator);
     }
 
 
@@ -95,6 +104,22 @@ void DescribeImportMachineInfoRequest::SetImportType(const string& _importType)
 bool DescribeImportMachineInfoRequest::ImportTypeHasBeenSet() const
 {
     return m_importTypeHasBeenSet;
+}
+
+bool DescribeImportMachineInfoRequest::GetIsQueryProMachine() const
+{
+    return m_isQueryProMachine;
+}
+
+void DescribeImportMachineInfoRequest::SetIsQueryProMachine(const bool& _isQueryProMachine)
+{
+    m_isQueryProMachine = _isQueryProMachine;
+    m_isQueryProMachineHasBeenSet = true;
+}
+
+bool DescribeImportMachineInfoRequest::IsQueryProMachineHasBeenSet() const
+{
+    return m_isQueryProMachineHasBeenSet;
 }
 
 

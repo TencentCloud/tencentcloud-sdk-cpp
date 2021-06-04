@@ -83,6 +83,49 @@ RedisClient::AssociateSecurityGroupsOutcomeCallable RedisClient::AssociateSecuri
     return task->get_future();
 }
 
+RedisClient::ChangeReplicaToMasterOutcome RedisClient::ChangeReplicaToMaster(const ChangeReplicaToMasterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChangeReplicaToMaster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChangeReplicaToMasterResponse rsp = ChangeReplicaToMasterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChangeReplicaToMasterOutcome(rsp);
+        else
+            return ChangeReplicaToMasterOutcome(o.GetError());
+    }
+    else
+    {
+        return ChangeReplicaToMasterOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ChangeReplicaToMasterAsync(const ChangeReplicaToMasterRequest& request, const ChangeReplicaToMasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChangeReplicaToMaster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::ChangeReplicaToMasterOutcomeCallable RedisClient::ChangeReplicaToMasterCallable(const ChangeReplicaToMasterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChangeReplicaToMasterOutcome()>>(
+        [this, request]()
+        {
+            return this->ChangeReplicaToMaster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::CleanUpInstanceOutcome RedisClient::CleanUpInstance(const CleanUpInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CleanUpInstance");

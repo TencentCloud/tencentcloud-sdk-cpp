@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEM_V20201221_MODEL_DESCRIBEINGRESSESREQUEST_H_
-#define TENCENTCLOUD_TEM_V20201221_MODEL_DESCRIBEINGRESSESREQUEST_H_
+#ifndef TENCENTCLOUD_TEM_V20201221_MODEL_DESCRIBERELATEDINGRESSESREQUEST_H_
+#define TENCENTCLOUD_TEM_V20201221_MODEL_DESCRIBERELATEDINGRESSESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -32,25 +32,25 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeIngresses请求参数结构体
+                * DescribeRelatedIngresses请求参数结构体
                 */
-                class DescribeIngressesRequest : public AbstractModel
+                class DescribeRelatedIngressesRequest : public AbstractModel
                 {
                 public:
-                    DescribeIngressesRequest();
-                    ~DescribeIngressesRequest() = default;
+                    DescribeRelatedIngressesRequest();
+                    ~DescribeRelatedIngressesRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取namespace id
-                     * @return NamespaceId namespace id
+                     * 获取环境 id
+                     * @return NamespaceId 环境 id
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置namespace id
-                     * @param NamespaceId namespace id
+                     * 设置环境 id
+                     * @param NamespaceId 环境 id
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取namespace
-                     * @return EksNamespace namespace
+                     * 获取EKS namespace
+                     * @return EksNamespace EKS namespace
                      */
                     std::string GetEksNamespace() const;
 
                     /**
-                     * 设置namespace
-                     * @param EksNamespace namespace
+                     * 设置EKS namespace
+                     * @param EksNamespace EKS namespace
                      */
                     void SetEksNamespace(const std::string& _eksNamespace);
 
@@ -97,33 +97,33 @@ namespace TencentCloud
                     bool SourceChannelHasBeenSet() const;
 
                     /**
-                     * 获取ingress 规则名列表
-                     * @return Names ingress 规则名列表
+                     * 获取服务 ID
+                     * @return ServiceId 服务 ID
                      */
-                    std::vector<std::string> GetNames() const;
+                    std::string GetServiceId() const;
 
                     /**
-                     * 设置ingress 规则名列表
-                     * @param Names ingress 规则名列表
+                     * 设置服务 ID
+                     * @param ServiceId 服务 ID
                      */
-                    void SetNames(const std::vector<std::string>& _names);
+                    void SetServiceId(const std::string& _serviceId);
 
                     /**
-                     * 判断参数 Names 是否已赋值
-                     * @return Names 是否已赋值
+                     * 判断参数 ServiceId 是否已赋值
+                     * @return ServiceId 是否已赋值
                      */
-                    bool NamesHasBeenSet() const;
+                    bool ServiceIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * namespace id
+                     * 环境 id
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * namespace
+                     * EKS namespace
                      */
                     std::string m_eksNamespace;
                     bool m_eksNamespaceHasBeenSet;
@@ -135,10 +135,10 @@ namespace TencentCloud
                     bool m_sourceChannelHasBeenSet;
 
                     /**
-                     * ingress 规则名列表
+                     * 服务 ID
                      */
-                    std::vector<std::string> m_names;
-                    bool m_namesHasBeenSet;
+                    std::string m_serviceId;
+                    bool m_serviceIdHasBeenSet;
 
                 };
             }
@@ -146,4 +146,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEM_V20201221_MODEL_DESCRIBEINGRESSESREQUEST_H_
+#endif // !TENCENTCLOUD_TEM_V20201221_MODEL_DESCRIBERELATEDINGRESSESREQUEST_H_

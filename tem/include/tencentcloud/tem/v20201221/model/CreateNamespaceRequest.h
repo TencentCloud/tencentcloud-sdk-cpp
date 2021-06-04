@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool SourceChannelHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启tsw服务
+                     * @return EnableTswTraceService 是否开启tsw服务
+                     */
+                    bool GetEnableTswTraceService() const;
+
+                    /**
+                     * 设置是否开启tsw服务
+                     * @param EnableTswTraceService 是否开启tsw服务
+                     */
+                    void SetEnableTswTraceService(const bool& _enableTswTraceService);
+
+                    /**
+                     * 判断参数 EnableTswTraceService 是否已赋值
+                     * @return EnableTswTraceService 是否已赋值
+                     */
+                    bool EnableTswTraceServiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     int64_t m_sourceChannel;
                     bool m_sourceChannelHasBeenSet;
+
+                    /**
+                     * 是否开启tsw服务
+                     */
+                    bool m_enableTswTraceService;
+                    bool m_enableTswTraceServiceHasBeenSet;
 
                 };
             }

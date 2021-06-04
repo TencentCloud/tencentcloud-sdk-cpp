@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tem/v20201221/model/DescribeIngressesRequest.h>
+#include <tencentcloud/tem/v20201221/model/DescribeRelatedIngressesRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,15 +23,15 @@ using namespace TencentCloud::Tem::V20201221::Model;
 using namespace rapidjson;
 using namespace std;
 
-DescribeIngressesRequest::DescribeIngressesRequest() :
+DescribeRelatedIngressesRequest::DescribeRelatedIngressesRequest() :
     m_namespaceIdHasBeenSet(false),
     m_eksNamespaceHasBeenSet(false),
     m_sourceChannelHasBeenSet(false),
-    m_namesHasBeenSet(false)
+    m_serviceIdHasBeenSet(false)
 {
 }
 
-string DescribeIngressesRequest::ToJsonString() const
+string DescribeRelatedIngressesRequest::ToJsonString() const
 {
     Document d;
     d.SetObject();
@@ -62,17 +62,12 @@ string DescribeIngressesRequest::ToJsonString() const
         d.AddMember(iKey, m_sourceChannel, allocator);
     }
 
-    if (m_namesHasBeenSet)
+    if (m_serviceIdHasBeenSet)
     {
         Value iKey(kStringType);
-        string key = "Names";
+        string key = "ServiceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_names.begin(); itr != m_names.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        d.AddMember(iKey, Value(m_serviceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -83,68 +78,68 @@ string DescribeIngressesRequest::ToJsonString() const
 }
 
 
-string DescribeIngressesRequest::GetNamespaceId() const
+string DescribeRelatedIngressesRequest::GetNamespaceId() const
 {
     return m_namespaceId;
 }
 
-void DescribeIngressesRequest::SetNamespaceId(const string& _namespaceId)
+void DescribeRelatedIngressesRequest::SetNamespaceId(const string& _namespaceId)
 {
     m_namespaceId = _namespaceId;
     m_namespaceIdHasBeenSet = true;
 }
 
-bool DescribeIngressesRequest::NamespaceIdHasBeenSet() const
+bool DescribeRelatedIngressesRequest::NamespaceIdHasBeenSet() const
 {
     return m_namespaceIdHasBeenSet;
 }
 
-string DescribeIngressesRequest::GetEksNamespace() const
+string DescribeRelatedIngressesRequest::GetEksNamespace() const
 {
     return m_eksNamespace;
 }
 
-void DescribeIngressesRequest::SetEksNamespace(const string& _eksNamespace)
+void DescribeRelatedIngressesRequest::SetEksNamespace(const string& _eksNamespace)
 {
     m_eksNamespace = _eksNamespace;
     m_eksNamespaceHasBeenSet = true;
 }
 
-bool DescribeIngressesRequest::EksNamespaceHasBeenSet() const
+bool DescribeRelatedIngressesRequest::EksNamespaceHasBeenSet() const
 {
     return m_eksNamespaceHasBeenSet;
 }
 
-int64_t DescribeIngressesRequest::GetSourceChannel() const
+int64_t DescribeRelatedIngressesRequest::GetSourceChannel() const
 {
     return m_sourceChannel;
 }
 
-void DescribeIngressesRequest::SetSourceChannel(const int64_t& _sourceChannel)
+void DescribeRelatedIngressesRequest::SetSourceChannel(const int64_t& _sourceChannel)
 {
     m_sourceChannel = _sourceChannel;
     m_sourceChannelHasBeenSet = true;
 }
 
-bool DescribeIngressesRequest::SourceChannelHasBeenSet() const
+bool DescribeRelatedIngressesRequest::SourceChannelHasBeenSet() const
 {
     return m_sourceChannelHasBeenSet;
 }
 
-vector<string> DescribeIngressesRequest::GetNames() const
+string DescribeRelatedIngressesRequest::GetServiceId() const
 {
-    return m_names;
+    return m_serviceId;
 }
 
-void DescribeIngressesRequest::SetNames(const vector<string>& _names)
+void DescribeRelatedIngressesRequest::SetServiceId(const string& _serviceId)
 {
-    m_names = _names;
-    m_namesHasBeenSet = true;
+    m_serviceId = _serviceId;
+    m_serviceIdHasBeenSet = true;
 }
 
-bool DescribeIngressesRequest::NamesHasBeenSet() const
+bool DescribeRelatedIngressesRequest::ServiceIdHasBeenSet() const
 {
-    return m_namesHasBeenSet;
+    return m_serviceIdHasBeenSet;
 }
 
 

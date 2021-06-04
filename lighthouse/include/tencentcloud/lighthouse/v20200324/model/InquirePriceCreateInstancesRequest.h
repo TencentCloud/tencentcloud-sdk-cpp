@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取应用镜像 ID，使用收费应用镜像时必填。
-                     * @return BlueprintId 应用镜像 ID，使用收费应用镜像时必填。
+                     * 获取应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
+                     * @return BlueprintId 应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
                      */
                     std::string GetBlueprintId() const;
 
                     /**
-                     * 设置应用镜像 ID，使用收费应用镜像时必填。
-                     * @param BlueprintId 应用镜像 ID，使用收费应用镜像时必填。
+                     * 设置应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
+                     * @param BlueprintId 应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
                      */
                     void SetBlueprintId(const std::string& _blueprintId);
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_instanceChargePrepaidHasBeenSet;
 
                     /**
-                     * 应用镜像 ID，使用收费应用镜像时必填。
+                     * 应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
                      */
                     std::string m_blueprintId;
                     bool m_blueprintIdHasBeenSet;

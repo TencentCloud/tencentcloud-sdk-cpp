@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/redis/v20180412/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/redis/v20180412/model/AssociateSecurityGroupsResponse.h>
+#include <tencentcloud/redis/v20180412/model/ChangeReplicaToMasterRequest.h>
+#include <tencentcloud/redis/v20180412/model/ChangeReplicaToMasterResponse.h>
 #include <tencentcloud/redis/v20180412/model/CleanUpInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/CleanUpInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ClearInstanceRequest.h>
@@ -168,6 +170,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Error, Model::ChangeReplicaToMasterResponse> ChangeReplicaToMasterOutcome;
+                typedef std::future<ChangeReplicaToMasterOutcome> ChangeReplicaToMasterOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ChangeReplicaToMasterRequest&, ChangeReplicaToMasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeReplicaToMasterAsyncHandler;
                 typedef Outcome<Error, Model::CleanUpInstanceResponse> CleanUpInstanceOutcome;
                 typedef std::future<CleanUpInstanceOutcome> CleanUpInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::CleanUpInstanceRequest&, CleanUpInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CleanUpInstanceAsyncHandler;
@@ -368,6 +373,15 @@ namespace TencentCloud
                 AssociateSecurityGroupsOutcome AssociateSecurityGroups(const Model::AssociateSecurityGroupsRequest &request);
                 void AssociateSecurityGroupsAsync(const Model::AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
+
+                /**
+                 *该接口仅支持多AZ实例副本组提主
+                 * @param req ChangeReplicaToMasterRequest
+                 * @return ChangeReplicaToMasterOutcome
+                 */
+                ChangeReplicaToMasterOutcome ChangeReplicaToMaster(const Model::ChangeReplicaToMasterRequest &request);
+                void ChangeReplicaToMasterAsync(const Model::ChangeReplicaToMasterRequest& request, const ChangeReplicaToMasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChangeReplicaToMasterOutcomeCallable ChangeReplicaToMasterCallable(const Model::ChangeReplicaToMasterRequest& request);
 
                 /**
                  *回收站实例立即下线

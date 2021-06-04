@@ -26,6 +26,7 @@
 #include <tencentcloud/tem/v20201221/model/StorageConf.h>
 #include <tencentcloud/tem/v20201221/model/StorageMountConf.h>
 #include <tencentcloud/tem/v20201221/model/LogOutputConf.h>
+#include <tencentcloud/tem/v20201221/model/PortMapping.h>
 
 
 namespace TencentCloud
@@ -503,6 +504,42 @@ namespace TencentCloud
                      */
                     bool ImageArgsHasBeenSet() const;
 
+                    /**
+                     * 获取服务端口映射
+                     * @return PortMappings 服务端口映射
+                     */
+                    std::vector<PortMapping> GetPortMappings() const;
+
+                    /**
+                     * 设置服务端口映射
+                     * @param PortMappings 服务端口映射
+                     */
+                    void SetPortMappings(const std::vector<PortMapping>& _portMappings);
+
+                    /**
+                     * 判断参数 PortMappings 是否已赋值
+                     * @return PortMappings 是否已赋值
+                     */
+                    bool PortMappingsHasBeenSet() const;
+
+                    /**
+                     * 获取是否添加默认注册中心配置
+                     * @return UseRegistryDefaultConfig 是否添加默认注册中心配置
+                     */
+                    bool GetUseRegistryDefaultConfig() const;
+
+                    /**
+                     * 设置是否添加默认注册中心配置
+                     * @param UseRegistryDefaultConfig 是否添加默认注册中心配置
+                     */
+                    void SetUseRegistryDefaultConfig(const bool& _useRegistryDefaultConfig);
+
+                    /**
+                     * 判断参数 UseRegistryDefaultConfig 是否已赋值
+                     * @return UseRegistryDefaultConfig 是否已赋值
+                     */
+                    bool UseRegistryDefaultConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -654,6 +691,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_imageArgs;
                     bool m_imageArgsHasBeenSet;
+
+                    /**
+                     * 服务端口映射
+                     */
+                    std::vector<PortMapping> m_portMappings;
+                    bool m_portMappingsHasBeenSet;
+
+                    /**
+                     * 是否添加默认注册中心配置
+                     */
+                    bool m_useRegistryDefaultConfig;
+                    bool m_useRegistryDefaultConfigHasBeenSet;
 
                 };
             }

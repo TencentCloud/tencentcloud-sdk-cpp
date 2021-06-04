@@ -470,6 +470,49 @@ TemClient::DescribeNamespacesOutcomeCallable TemClient::DescribeNamespacesCallab
     return task->get_future();
 }
 
+TemClient::DescribeRelatedIngressesOutcome TemClient::DescribeRelatedIngresses(const DescribeRelatedIngressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRelatedIngresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRelatedIngressesResponse rsp = DescribeRelatedIngressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRelatedIngressesOutcome(rsp);
+        else
+            return DescribeRelatedIngressesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRelatedIngressesOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DescribeRelatedIngressesAsync(const DescribeRelatedIngressesRequest& request, const DescribeRelatedIngressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRelatedIngresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DescribeRelatedIngressesOutcomeCallable TemClient::DescribeRelatedIngressesCallable(const DescribeRelatedIngressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRelatedIngressesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRelatedIngresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::DescribeServiceRunPodListV2Outcome TemClient::DescribeServiceRunPodListV2(const DescribeServiceRunPodListV2Request &request)
 {
     auto outcome = MakeRequest(request, "DescribeServiceRunPodListV2");
@@ -592,6 +635,92 @@ TemClient::ModifyNamespaceOutcomeCallable TemClient::ModifyNamespaceCallable(con
         [this, request]()
         {
             return this->ModifyNamespace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::ModifyServiceInfoOutcome TemClient::ModifyServiceInfo(const ModifyServiceInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyServiceInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyServiceInfoResponse rsp = ModifyServiceInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyServiceInfoOutcome(rsp);
+        else
+            return ModifyServiceInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyServiceInfoOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::ModifyServiceInfoAsync(const ModifyServiceInfoRequest& request, const ModifyServiceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyServiceInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::ModifyServiceInfoOutcomeCallable TemClient::ModifyServiceInfoCallable(const ModifyServiceInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyServiceInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyServiceInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::RestartServiceRunPodOutcome TemClient::RestartServiceRunPod(const RestartServiceRunPodRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartServiceRunPod");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartServiceRunPodResponse rsp = RestartServiceRunPodResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartServiceRunPodOutcome(rsp);
+        else
+            return RestartServiceRunPodOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartServiceRunPodOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::RestartServiceRunPodAsync(const RestartServiceRunPodRequest& request, const RestartServiceRunPodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestartServiceRunPod(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::RestartServiceRunPodOutcomeCallable TemClient::RestartServiceRunPodCallable(const RestartServiceRunPodRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestartServiceRunPodOutcome()>>(
+        [this, request]()
+        {
+            return this->RestartServiceRunPod(request);
         }
     );
 

@@ -26,7 +26,8 @@ EffectiveMachineInfo::EffectiveMachineInfo() :
     m_machinePublicIpHasBeenSet(false),
     m_machinePrivateIpHasBeenSet(false),
     m_machineTagHasBeenSet(false),
-    m_quuidHasBeenSet(false)
+    m_quuidHasBeenSet(false),
+    m_uuidHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const Value &value)
         m_quuidHasBeenSet = true;
     }
 
+    if (value.HasMember("Uuid") && !value["Uuid"].IsNull())
+    {
+        if (!value["Uuid"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EffectiveMachineInfo.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uuid = string(value["Uuid"].GetString());
+        m_uuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -147,6 +158,14 @@ void EffectiveMachineInfo::ToJsonObject(Value &value, Document::AllocatorType& a
         string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, Value(m_quuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uuidHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Uuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -230,5 +249,21 @@ void EffectiveMachineInfo::SetQuuid(const string& _quuid)
 bool EffectiveMachineInfo::QuuidHasBeenSet() const
 {
     return m_quuidHasBeenSet;
+}
+
+string EffectiveMachineInfo::GetUuid() const
+{
+    return m_uuid;
+}
+
+void EffectiveMachineInfo::SetUuid(const string& _uuid)
+{
+    m_uuid = _uuid;
+    m_uuidHasBeenSet = true;
+}
+
+bool EffectiveMachineInfo::UuidHasBeenSet() const
+{
+    return m_uuidHasBeenSet;
 }
 

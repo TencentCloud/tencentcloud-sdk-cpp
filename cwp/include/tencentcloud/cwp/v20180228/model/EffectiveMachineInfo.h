@@ -157,6 +157,28 @@ namespace TencentCloud
                      */
                     bool QuuidHasBeenSet() const;
 
+                    /**
+                     * 获取云镜Uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uuid 云镜Uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUuid() const;
+
+                    /**
+                     * 设置云镜Uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Uuid 云镜Uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUuid(const std::string& _uuid);
+
+                    /**
+                     * 判断参数 Uuid 是否已赋值
+                     * @return Uuid 是否已赋值
+                     */
+                    bool UuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +215,13 @@ namespace TencentCloud
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
+
+                    /**
+                     * 云镜Uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uuid;
+                    bool m_uuidHasBeenSet;
 
                 };
             }
