@@ -58,6 +58,7 @@ namespace TencentCloud
 - https：是否配置https，on，off或processing。
 - originPullProtocol：回源协议类型，支持http，follow或https。
 - area：加速区域，支持mainland，overseas或global。
+- tagKey：标签键。
                      * @return Name 过滤字段名，支持的列表如下：
 - origin：主源站。
 - domain：域名。
@@ -69,6 +70,7 @@ namespace TencentCloud
 - https：是否配置https，on，off或processing。
 - originPullProtocol：回源协议类型，支持http，follow或https。
 - area：加速区域，支持mainland，overseas或global。
+- tagKey：标签键。
                      */
                     std::string GetName() const;
 
@@ -84,6 +86,7 @@ namespace TencentCloud
 - https：是否配置https，on，off或processing。
 - originPullProtocol：回源协议类型，支持http，follow或https。
 - area：加速区域，支持mainland，overseas或global。
+- tagKey：标签键。
                      * @param Name 过滤字段名，支持的列表如下：
 - origin：主源站。
 - domain：域名。
@@ -95,6 +98,7 @@ namespace TencentCloud
 - https：是否配置https，on，off或processing。
 - originPullProtocol：回源协议类型，支持http，follow或https。
 - area：加速区域，支持mainland，overseas或global。
+- tagKey：标签键。
                      */
                     void SetName(const std::string& _name);
 
@@ -154,6 +158,7 @@ namespace TencentCloud
 - https：是否配置https，on，off或processing。
 - originPullProtocol：回源协议类型，支持http，follow或https。
 - area：加速区域，支持mainland，overseas或global。
+- tagKey：标签键。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

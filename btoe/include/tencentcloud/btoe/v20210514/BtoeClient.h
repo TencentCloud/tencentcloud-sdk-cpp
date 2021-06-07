@@ -206,7 +206,7 @@ namespace TencentCloud
                 GetDepositInfoOutcomeCallable GetDepositInfoCallable(const Model::GetDepositInfoRequest& request);
 
                 /**
-                 *用户向BTOE核验存证结果中的区块链交易hash
+                 *用户向BTOE核验存证结果中的区块链交易hash的真实性
                  * @param req VerifyEvidenceBlockChainTxHashRequest
                  * @return VerifyEvidenceBlockChainTxHashOutcome
                  */

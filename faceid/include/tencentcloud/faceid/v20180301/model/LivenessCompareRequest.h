@@ -117,21 +117,21 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
                     bool LivenessTypeHasBeenSet() const;
 
                     /**
-                     * 获取数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；
-动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；
+                     * 获取数字模式传参：传数字验证码，验证码需先调用<a href="https://cloud.tencent.com/document/product/1007/31821">获取数字验证码接口</a>得到；
+动作模式传参：传动作顺序，动作顺序需先调用<a href="https://cloud.tencent.com/document/product/1007/31822">获取动作顺序接口</a>得到；
 静默模式传参：空。
-                     * @return ValidateData 数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；
-动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；
+                     * @return ValidateData 数字模式传参：传数字验证码，验证码需先调用<a href="https://cloud.tencent.com/document/product/1007/31821">获取数字验证码接口</a>得到；
+动作模式传参：传动作顺序，动作顺序需先调用<a href="https://cloud.tencent.com/document/product/1007/31822">获取动作顺序接口</a>得到；
 静默模式传参：空。
                      */
                     std::string GetValidateData() const;
 
                     /**
-                     * 设置数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；
-动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；
+                     * 设置数字模式传参：传数字验证码，验证码需先调用<a href="https://cloud.tencent.com/document/product/1007/31821">获取数字验证码接口</a>得到；
+动作模式传参：传动作顺序，动作顺序需先调用<a href="https://cloud.tencent.com/document/product/1007/31822">获取动作顺序接口</a>得到；
 静默模式传参：空。
-                     * @param ValidateData 数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；
-动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；
+                     * @param ValidateData 数字模式传参：传数字验证码，验证码需先调用<a href="https://cloud.tencent.com/document/product/1007/31821">获取数字验证码接口</a>得到；
+动作模式传参：传动作顺序，动作顺序需先调用<a href="https://cloud.tencent.com/document/product/1007/31822">获取动作顺序接口</a>得到；
 静默模式传参：空。
                      */
                     void SetValidateData(const std::string& _validateData);
@@ -145,11 +145,11 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
                     /**
                      * 获取额外配置，传入JSON字符串。
 {
-"BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
+"BestFrameNum": 2  //需要返回多张最佳截图，取值范围2-10
 }
                      * @return Optional 额外配置，传入JSON字符串。
 {
-"BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
+"BestFrameNum": 2  //需要返回多张最佳截图，取值范围2-10
 }
                      */
                     std::string GetOptional() const;
@@ -157,11 +157,11 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
                     /**
                      * 设置额外配置，传入JSON字符串。
 {
-"BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
+"BestFrameNum": 2  //需要返回多张最佳截图，取值范围2-10
 }
                      * @param Optional 额外配置，传入JSON字符串。
 {
-"BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
+"BestFrameNum": 2  //需要返回多张最佳截图，取值范围2-10
 }
                      */
                     void SetOptional(const std::string& _optional);
@@ -198,8 +198,8 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
                     bool m_livenessTypeHasBeenSet;
 
                     /**
-                     * 数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；
-动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；
+                     * 数字模式传参：传数字验证码，验证码需先调用<a href="https://cloud.tencent.com/document/product/1007/31821">获取数字验证码接口</a>得到；
+动作模式传参：传动作顺序，动作顺序需先调用<a href="https://cloud.tencent.com/document/product/1007/31822">获取动作顺序接口</a>得到；
 静默模式传参：空。
                      */
                     std::string m_validateData;
@@ -208,7 +208,7 @@ LIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模�
                     /**
                      * 额外配置，传入JSON字符串。
 {
-"BestFrameNum": 2  //需要返回多张最佳截图，取值范围1-10
+"BestFrameNum": 2  //需要返回多张最佳截图，取值范围2-10
 }
                      */
                     std::string m_optional;

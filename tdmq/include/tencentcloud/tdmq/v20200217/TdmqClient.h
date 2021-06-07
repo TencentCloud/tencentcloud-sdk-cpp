@@ -111,6 +111,8 @@
 #include <tencentcloud/tdmq/v20200217/model/SendCmqMsgResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/SendMessagesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/SendMessagesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/SendMsgRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/SendMsgResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/UnbindCmqDeadLetterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/UnbindCmqDeadLetterResponse.h>
 
@@ -259,6 +261,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SendMessagesResponse> SendMessagesOutcome;
                 typedef std::future<SendMessagesOutcome> SendMessagesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::SendMessagesRequest&, SendMessagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMessagesAsyncHandler;
+                typedef Outcome<Error, Model::SendMsgResponse> SendMsgOutcome;
+                typedef std::future<SendMsgOutcome> SendMsgOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::SendMsgRequest&, SendMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMsgAsyncHandler;
                 typedef Outcome<Error, Model::UnbindCmqDeadLetterResponse> UnbindCmqDeadLetterOutcome;
                 typedef std::future<UnbindCmqDeadLetterOutcome> UnbindCmqDeadLetterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::UnbindCmqDeadLetterRequest&, UnbindCmqDeadLetterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindCmqDeadLetterAsyncHandler;
@@ -660,6 +665,15 @@ namespace TencentCloud
                 SendMessagesOutcome SendMessages(const Model::SendMessagesRequest &request);
                 void SendMessagesAsync(const Model::SendMessagesRequest& request, const SendMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SendMessagesOutcomeCallable SendMessagesCallable(const Model::SendMessagesRequest& request);
+
+                /**
+                 *此接口仅用于测试发生消息，不能作为现网正式生产使用
+                 * @param req SendMsgRequest
+                 * @return SendMsgOutcome
+                 */
+                SendMsgOutcome SendMsg(const Model::SendMsgRequest &request);
+                void SendMsgAsync(const Model::SendMsgRequest& request, const SendMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SendMsgOutcomeCallable SendMsgCallable(const Model::SendMsgRequest& request);
 
                 /**
                  *解绑cmq死信队列

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取‘区块链交易hash，在"存证基本信息查询”中可以获取
-                     * @return EvidenceTxHash ‘区块链交易hash，在"存证基本信息查询”中可以获取
+                     * 获取区块链交易 hash，在“存证基本信息查询（GetDepositInfo）”接口中可以获取。
+                     * @return EvidenceTxHash 区块链交易 hash，在“存证基本信息查询（GetDepositInfo）”接口中可以获取。
                      */
                     std::string GetEvidenceTxHash() const;
 
                     /**
-                     * 设置‘区块链交易hash，在"存证基本信息查询”中可以获取
-                     * @param EvidenceTxHash ‘区块链交易hash，在"存证基本信息查询”中可以获取
+                     * 设置区块链交易 hash，在“存证基本信息查询（GetDepositInfo）”接口中可以获取。
+                     * @param EvidenceTxHash 区块链交易 hash，在“存证基本信息查询（GetDepositInfo）”接口中可以获取。
                      */
                     void SetEvidenceTxHash(const std::string& _evidenceTxHash);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ‘区块链交易hash，在"存证基本信息查询”中可以获取
+                     * 区块链交易 hash，在“存证基本信息查询（GetDepositInfo）”接口中可以获取。
                      */
                     std::string m_evidenceTxHash;
                     bool m_evidenceTxHashHasBeenSet;

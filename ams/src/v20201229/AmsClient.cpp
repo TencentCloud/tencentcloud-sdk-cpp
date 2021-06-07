@@ -83,6 +83,49 @@ AmsClient::CancelTaskOutcomeCallable AmsClient::CancelTaskCallable(const CancelT
     return task->get_future();
 }
 
+AmsClient::CreateAudioModerationSyncTaskOutcome AmsClient::CreateAudioModerationSyncTask(const CreateAudioModerationSyncTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAudioModerationSyncTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAudioModerationSyncTaskResponse rsp = CreateAudioModerationSyncTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAudioModerationSyncTaskOutcome(rsp);
+        else
+            return CreateAudioModerationSyncTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAudioModerationSyncTaskOutcome(outcome.GetError());
+    }
+}
+
+void AmsClient::CreateAudioModerationSyncTaskAsync(const CreateAudioModerationSyncTaskRequest& request, const CreateAudioModerationSyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAudioModerationSyncTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AmsClient::CreateAudioModerationSyncTaskOutcomeCallable AmsClient::CreateAudioModerationSyncTaskCallable(const CreateAudioModerationSyncTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAudioModerationSyncTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAudioModerationSyncTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AmsClient::CreateAudioModerationTaskOutcome AmsClient::CreateAudioModerationTask(const CreateAudioModerationTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAudioModerationTask");
