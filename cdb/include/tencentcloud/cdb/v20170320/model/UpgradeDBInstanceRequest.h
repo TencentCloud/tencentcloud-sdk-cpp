@@ -222,6 +222,42 @@ namespace TencentCloud
                      */
                     bool InstanceRoleHasBeenSet() const;
 
+                    /**
+                     * 获取实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC" - 基础版实例。
+                     * @return DeviceType 实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC" - 基础版实例。
+                     */
+                    std::string GetDeviceType() const;
+
+                    /**
+                     * 设置实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC" - 基础版实例。
+                     * @param DeviceType 实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC" - 基础版实例。
+                     */
+                    void SetDeviceType(const std::string& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取升级后的实例cpu核数， 如果不传将根据 Memory 指定的内存值自动填充对应的cpu值。
+                     * @return Cpu 升级后的实例cpu核数， 如果不传将根据 Memory 指定的内存值自动填充对应的cpu值。
+                     */
+                    int64_t GetCpu() const;
+
+                    /**
+                     * 设置升级后的实例cpu核数， 如果不传将根据 Memory 指定的内存值自动填充对应的cpu值。
+                     * @param Cpu 升级后的实例cpu核数， 如果不传将根据 Memory 指定的内存值自动填充对应的cpu值。
+                     */
+                    void SetCpu(const int64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +319,18 @@ namespace TencentCloud
                      */
                     std::string m_instanceRole;
                     bool m_instanceRoleHasBeenSet;
+
+                    /**
+                     * 实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC" - 基础版实例。
+                     */
+                    std::string m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
+
+                    /**
+                     * 升级后的实例cpu核数， 如果不传将根据 Memory 指定的内存值自动填充对应的cpu值。
+                     */
+                    int64_t m_cpu;
+                    bool m_cpuHasBeenSet;
 
                 };
             }

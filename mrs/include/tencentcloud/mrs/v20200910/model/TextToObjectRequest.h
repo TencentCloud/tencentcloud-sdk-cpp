@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取报告类型
-                     * @return Type 报告类型
+                     * 获取报告类型，目前支持12（检查报告单），15（病理报告），218（诊断证明）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）
+                     * @return Type 报告类型，目前支持12（检查报告单），15（病理报告），218（诊断证明）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置报告类型
-                     * @param Type 报告类型
+                     * 设置报告类型，目前支持12（检查报告单），15（病理报告），218（诊断证明）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）
+                     * @param Type 报告类型，目前支持12（检查报告单），15（病理报告），218（诊断证明）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）
                      */
                     void SetType(const uint64_t& _type);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取是否使用分类引擎
-                     * @return IsUsedClassify 是否使用分类引擎
+                     * 获取是否使用分类引擎，当不确定报告类型时，可以使用收费的报告分类引擎服务。若该字段为False，则Type字段不能为0，否则无法输出结果。
+                     * @return IsUsedClassify 是否使用分类引擎，当不确定报告类型时，可以使用收费的报告分类引擎服务。若该字段为False，则Type字段不能为0，否则无法输出结果。
                      */
                     bool GetIsUsedClassify() const;
 
                     /**
-                     * 设置是否使用分类引擎
-                     * @param IsUsedClassify 是否使用分类引擎
+                     * 设置是否使用分类引擎，当不确定报告类型时，可以使用收费的报告分类引擎服务。若该字段为False，则Type字段不能为0，否则无法输出结果。
+                     * @param IsUsedClassify 是否使用分类引擎，当不确定报告类型时，可以使用收费的报告分类引擎服务。若该字段为False，则Type字段不能为0，否则无法输出结果。
                      */
                     void SetIsUsedClassify(const bool& _isUsedClassify);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_textHasBeenSet;
 
                     /**
-                     * 报告类型
+                     * 报告类型，目前支持12（检查报告单），15（病理报告），218（诊断证明）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 是否使用分类引擎
+                     * 是否使用分类引擎，当不确定报告类型时，可以使用收费的报告分类引擎服务。若该字段为False，则Type字段不能为0，否则无法输出结果。
                      */
                     bool m_isUsedClassify;
                     bool m_isUsedClassifyHasBeenSet;

@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网络计费类型。
-                     * @return InternetChargeType 网络计费类型。
+                     * 获取网络计费类型,，取值范围：
+<li>按流量包付费：TRAFFIC_POSTPAID_BY_HOUR</li>
+<li>按带宽付费： BANDWIDTH_POSTPAID_BY_HOUR</li>
+                     * @return InternetChargeType 网络计费类型,，取值范围：
+<li>按流量包付费：TRAFFIC_POSTPAID_BY_HOUR</li>
+<li>按带宽付费： BANDWIDTH_POSTPAID_BY_HOUR</li>
                      */
                     std::string GetInternetChargeType() const;
 
                     /**
-                     * 设置网络计费类型。
-                     * @param InternetChargeType 网络计费类型。
+                     * 设置网络计费类型,，取值范围：
+<li>按流量包付费：TRAFFIC_POSTPAID_BY_HOUR</li>
+<li>按带宽付费： BANDWIDTH_POSTPAID_BY_HOUR</li>
+                     * @param InternetChargeType 网络计费类型,，取值范围：
+<li>按流量包付费：TRAFFIC_POSTPAID_BY_HOUR</li>
+<li>按带宽付费： BANDWIDTH_POSTPAID_BY_HOUR</li>
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
 
@@ -103,7 +111,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网络计费类型。
+                     * 网络计费类型,，取值范围：
+<li>按流量包付费：TRAFFIC_POSTPAID_BY_HOUR</li>
+<li>按带宽付费： BANDWIDTH_POSTPAID_BY_HOUR</li>
                      */
                     std::string m_internetChargeType;
                     bool m_internetChargeTypeHasBeenSet;

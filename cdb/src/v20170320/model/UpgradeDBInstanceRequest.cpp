@@ -33,7 +33,9 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_engineVersionHasBeenSet(false),
     m_waitSwitchHasBeenSet(false),
     m_backupZoneHasBeenSet(false),
-    m_instanceRoleHasBeenSet(false)
+    m_instanceRoleHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -122,6 +124,22 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "InstanceRole";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, Value(m_instanceRole.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, Value(m_deviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        Value iKey(kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
     }
 
 
@@ -290,6 +308,38 @@ void UpgradeDBInstanceRequest::SetInstanceRole(const string& _instanceRole)
 bool UpgradeDBInstanceRequest::InstanceRoleHasBeenSet() const
 {
     return m_instanceRoleHasBeenSet;
+}
+
+string UpgradeDBInstanceRequest::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void UpgradeDBInstanceRequest::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void UpgradeDBInstanceRequest::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 
 

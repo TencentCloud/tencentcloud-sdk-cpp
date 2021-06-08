@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监听器ID
-                     * @return ListenerId 监听器ID
+                     * 获取监听器 ID。
+                     * @return ListenerId 监听器 ID。
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器ID
-                     * @param ListenerId 监听器ID
+                     * 设置监听器 ID。
+                     * @param ListenerId 监听器 ID。
                      */
                     void SetListenerId(const std::string& _listenerId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定端口
-                     * @return Port 绑定端口
+                     * 获取绑定端口。
+                     * @return Port 绑定端口。
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置绑定端口
-                     * @param Port 绑定端口
+                     * 设置绑定端口。
+                     * @param Port 绑定端口。
                      */
                     void SetPort(const int64_t& _port);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取子机ID。表示绑定主网卡主IP
-                     * @return InstanceId 子机ID。表示绑定主网卡主IP
+                     * 获取子机 ID。表示绑定主网卡主 IP。
+                     * @return InstanceId 子机 ID。表示绑定主网卡主 IP。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置子机ID。表示绑定主网卡主IP
-                     * @param InstanceId 子机ID。表示绑定主网卡主IP
+                     * 设置子机 ID。表示绑定主网卡主 IP。
+                     * @param InstanceId 子机 ID。表示绑定主网卡主 IP。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -101,14 +101,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取弹性网卡ip或其他内网IP。如果是双栈IPV6子机，必须传该参数。
-                     * @return EniIp 弹性网卡ip或其他内网IP。如果是双栈IPV6子机，必须传该参数。
+                     * 获取绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。
+注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。
+                     * @return EniIp 绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。
+注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。
                      */
                     std::string GetEniIp() const;
 
                     /**
-                     * 设置弹性网卡ip或其他内网IP。如果是双栈IPV6子机，必须传该参数。
-                     * @param EniIp 弹性网卡ip或其他内网IP。如果是双栈IPV6子机，必须传该参数。
+                     * 设置绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。
+注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。
+                     * @param EniIp 绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。
+注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。
                      */
                     void SetEniIp(const std::string& _eniIp);
 
@@ -119,14 +123,14 @@ namespace TencentCloud
                     bool EniIpHasBeenSet() const;
 
                     /**
-                     * 获取子机权重，范围[0, 100]。绑定时如果不存在，则默认为10
-                     * @return Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10
+                     * 获取子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
+                     * @return Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置子机权重，范围[0, 100]。绑定时如果不存在，则默认为10
-                     * @param Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10
+                     * 设置子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
+                     * @param Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
                      */
                     void SetWeight(const int64_t& _weight);
 
@@ -137,14 +141,14 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取七层规则ID
-                     * @return LocationId 七层规则ID
+                     * 获取七层规则 ID。
+                     * @return LocationId 七层规则 ID。
                      */
                     std::string GetLocationId() const;
 
                     /**
-                     * 设置七层规则ID
-                     * @param LocationId 七层规则ID
+                     * 设置七层规则 ID。
+                     * @param LocationId 七层规则 ID。
                      */
                     void SetLocationId(const std::string& _locationId);
 
@@ -157,37 +161,38 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监听器ID
+                     * 监听器 ID。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 绑定端口
+                     * 绑定端口。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 子机ID。表示绑定主网卡主IP
+                     * 子机 ID。表示绑定主网卡主 IP。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 弹性网卡ip或其他内网IP。如果是双栈IPV6子机，必须传该参数。
+                     * 绑定 IP 时需要传入此参数，支持弹性网卡的 IP 和其他内网 IP，如果是弹性网卡则必须先绑定至CVM，然后才能绑定到负载均衡实例。
+注意：参数 InstanceId、EniIp 只能传入一个且必须传入一个。如果绑定双栈IPV6子机，必须传该参数。
                      */
                     std::string m_eniIp;
                     bool m_eniIpHasBeenSet;
 
                     /**
-                     * 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10
+                     * 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 七层规则ID
+                     * 七层规则 ID。
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;
