@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 AccessRegionDetial::AccessRegionDetial() :
@@ -29,7 +28,7 @@ AccessRegionDetial::AccessRegionDetial() :
 {
 }
 
-CoreInternalOutcome AccessRegionDetial::Deserialize(const Value &value)
+CoreInternalOutcome AccessRegionDetial::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -59,8 +58,8 @@ CoreInternalOutcome AccessRegionDetial::Deserialize(const Value &value)
         if (!value["ConcurrentList"].IsArray())
             return CoreInternalOutcome(Error("response `AccessRegionDetial.ConcurrentList` is not array type"));
 
-        const Value &tmpValue = value["ConcurrentList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ConcurrentList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_concurrentList.push_back((*itr).GetInt64());
         }
@@ -72,8 +71,8 @@ CoreInternalOutcome AccessRegionDetial::Deserialize(const Value &value)
         if (!value["BandwidthList"].IsArray())
             return CoreInternalOutcome(Error("response `AccessRegionDetial.BandwidthList` is not array type"));
 
-        const Value &tmpValue = value["BandwidthList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BandwidthList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_bandwidthList.push_back((*itr).GetInt64());
         }
@@ -84,48 +83,48 @@ CoreInternalOutcome AccessRegionDetial::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AccessRegionDetial::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AccessRegionDetial::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_concurrentListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConcurrentList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_concurrentList.begin(); itr != m_concurrentList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_bandwidthListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BandwidthList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_bandwidthList.begin(); itr != m_bandwidthList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

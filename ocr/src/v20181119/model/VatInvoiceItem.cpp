@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 VatInvoiceItem::VatInvoiceItem() :
@@ -34,7 +33,7 @@ VatInvoiceItem::VatInvoiceItem() :
 {
 }
 
-CoreInternalOutcome VatInvoiceItem::Deserialize(const Value &value)
+CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,79 +132,79 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VatInvoiceItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VatInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_lineNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LineNo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lineNo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lineNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_specHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Spec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_spec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_spec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_unitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Unit";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_unit.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
     }
 
     if (m_quantityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Quantity";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_quantity.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quantity.c_str(), allocator).Move(), allocator);
     }
 
     if (m_unitPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitPrice";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_unitPrice.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unitPrice.c_str(), allocator).Move(), allocator);
     }
 
     if (m_amountWithoutTaxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AmountWithoutTax";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_amountWithoutTax.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_amountWithoutTax.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taxRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaxRate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taxRate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxRate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taxAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaxAmount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taxAmount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxAmount.c_str(), allocator).Move(), allocator);
     }
 
 }

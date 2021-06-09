@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 Metric::Metric() :
@@ -33,7 +32,7 @@ Metric::Metric() :
 {
 }
 
-CoreInternalOutcome Metric::Deserialize(const Value &value)
+CoreInternalOutcome Metric::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -93,8 +92,8 @@ CoreInternalOutcome Metric::Deserialize(const Value &value)
         if (!value["Dimensions"].IsArray())
             return CoreInternalOutcome(Error("response `Metric.Dimensions` is not array type"));
 
-        const Value &tmpValue = value["Dimensions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Dimensions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_dimensions.push_back((*itr).GetString());
         }
@@ -132,36 +131,36 @@ CoreInternalOutcome Metric::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Metric::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Metric::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_namespaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_metricNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetricName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metricName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_minHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Min";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_min, allocator);
@@ -169,7 +168,7 @@ void Metric::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_maxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Max";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_max, allocator);
@@ -177,31 +176,31 @@ void Metric::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_dimensionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Dimensions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_dimensions.begin(); itr != m_dimensions.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_unitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Unit";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_unit.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
     }
 
     if (m_metricConfigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetricConfig";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_metricConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 

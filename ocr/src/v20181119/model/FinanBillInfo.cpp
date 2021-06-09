@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 FinanBillInfo::FinanBillInfo() :
@@ -27,7 +26,7 @@ FinanBillInfo::FinanBillInfo() :
 {
 }
 
-CoreInternalOutcome FinanBillInfo::Deserialize(const Value &value)
+CoreInternalOutcome FinanBillInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome FinanBillInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FinanBillInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FinanBillInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
     }
 
 }

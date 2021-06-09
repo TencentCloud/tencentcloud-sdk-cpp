@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaImageSpriteItem::MediaImageSpriteItem() :
@@ -32,7 +31,7 @@ MediaImageSpriteItem::MediaImageSpriteItem() :
 {
 }
 
-CoreInternalOutcome MediaImageSpriteItem::Deserialize(const Value &value)
+CoreInternalOutcome MediaImageSpriteItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -82,8 +81,8 @@ CoreInternalOutcome MediaImageSpriteItem::Deserialize(const Value &value)
         if (!value["ImagePathSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaImageSpriteItem.ImagePathSet` is not array type"));
 
-        const Value &tmpValue = value["ImagePathSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ImagePathSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_imagePathSet.push_back((*itr).GetString());
         }
@@ -121,12 +120,12 @@ CoreInternalOutcome MediaImageSpriteItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaImageSpriteItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaImageSpriteItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_definitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
@@ -134,7 +133,7 @@ void MediaImageSpriteItem::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -142,7 +141,7 @@ void MediaImageSpriteItem::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -150,7 +149,7 @@ void MediaImageSpriteItem::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -158,31 +157,31 @@ void MediaImageSpriteItem::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_imagePathSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImagePathSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_imagePathSet.begin(); itr != m_imagePathSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_webVttPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WebVttPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_webVttPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webVttPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Storage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_storage.ToJsonObject(value[key.c_str()], allocator);
     }
 

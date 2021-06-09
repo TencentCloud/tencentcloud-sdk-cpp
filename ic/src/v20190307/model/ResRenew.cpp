@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ic::V20190307::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResRenew::ResRenew() :
@@ -26,7 +25,7 @@ ResRenew::ResRenew() :
 {
 }
 
-CoreInternalOutcome ResRenew::Deserialize(const Value &value)
+CoreInternalOutcome ResRenew::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome ResRenew::Deserialize(const Value &value)
         if (!value["OrderIds"].IsArray())
             return CoreInternalOutcome(Error("response `ResRenew.OrderIds` is not array type"));
 
-        const Value &tmpValue = value["OrderIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["OrderIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_orderIds.push_back((*itr).GetString());
         }
@@ -48,19 +47,19 @@ CoreInternalOutcome ResRenew::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResRenew::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResRenew::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_orderIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_orderIds.begin(); itr != m_orderIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

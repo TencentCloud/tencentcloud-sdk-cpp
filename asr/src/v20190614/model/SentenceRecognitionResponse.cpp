@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Asr::V20190614::Model;
-using namespace rapidjson;
 using namespace std;
 
 SentenceRecognitionResponse::SentenceRecognitionResponse() :
@@ -34,7 +33,7 @@ SentenceRecognitionResponse::SentenceRecognitionResponse() :
 
 CoreInternalOutcome SentenceRecognitionResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -44,7 +43,7 @@ CoreInternalOutcome SentenceRecognitionResponse::Deserialize(const string &paylo
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -101,8 +100,8 @@ CoreInternalOutcome SentenceRecognitionResponse::Deserialize(const string &paylo
         if (!rsp["WordList"].IsArray())
             return CoreInternalOutcome(Error("response `WordList` is not array type"));
 
-        const Value &tmpValue = rsp["WordList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["WordList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SentenceWord item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

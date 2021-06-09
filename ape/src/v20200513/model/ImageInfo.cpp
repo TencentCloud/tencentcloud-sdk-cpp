@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ape::V20200513::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageInfo::ImageInfo() :
@@ -31,7 +30,7 @@ ImageInfo::ImageInfo() :
 {
 }
 
-CoreInternalOutcome ImageInfo::Deserialize(const Value &value)
+CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome ImageInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_imageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageId, allocator);
@@ -113,7 +112,7 @@ void ImageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_licenseScopeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LicenseScopeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_licenseScopeId, allocator);
@@ -121,7 +120,7 @@ void ImageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_dimensionsNameIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DimensionsNameId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dimensionsNameId, allocator);
@@ -129,15 +128,15 @@ void ImageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_userIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_downloadPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DownloadPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_downloadPrice, allocator);
@@ -145,10 +144,10 @@ void ImageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_downloadTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DownloadType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_downloadType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_downloadType.c_str(), allocator).Move(), allocator);
     }
 
 }

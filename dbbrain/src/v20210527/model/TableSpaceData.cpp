@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20210527::Model;
-using namespace rapidjson;
 using namespace std;
 
 TableSpaceData::TableSpaceData() :
@@ -35,7 +34,7 @@ TableSpaceData::TableSpaceData() :
 {
 }
 
-CoreInternalOutcome TableSpaceData::Deserialize(const Value &value)
+CoreInternalOutcome TableSpaceData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,36 +143,36 @@ CoreInternalOutcome TableSpaceData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TableSpaceData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TableSpaceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tableNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tableName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableSchemaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableSchema";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tableSchema.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableSchema.c_str(), allocator).Move(), allocator);
     }
 
     if (m_engineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Engine";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_engine.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engine.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataLengthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataLength";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataLength, allocator);
@@ -181,7 +180,7 @@ void TableSpaceData::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_indexLengthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IndexLength";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_indexLength, allocator);
@@ -189,7 +188,7 @@ void TableSpaceData::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_dataFreeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataFree";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataFree, allocator);
@@ -197,7 +196,7 @@ void TableSpaceData::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_totalLengthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalLength";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalLength, allocator);
@@ -205,7 +204,7 @@ void TableSpaceData::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_fragRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FragRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fragRatio, allocator);
@@ -213,7 +212,7 @@ void TableSpaceData::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_tableRowsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableRows";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tableRows, allocator);
@@ -221,7 +220,7 @@ void TableSpaceData::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_physicalFileSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PhysicalFileSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_physicalFileSize, allocator);

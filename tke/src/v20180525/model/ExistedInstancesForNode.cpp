@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 ExistedInstancesForNode::ExistedInstancesForNode() :
@@ -29,7 +28,7 @@ ExistedInstancesForNode::ExistedInstancesForNode() :
 {
 }
 
-CoreInternalOutcome ExistedInstancesForNode::Deserialize(const Value &value)
+CoreInternalOutcome ExistedInstancesForNode::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -83,8 +82,8 @@ CoreInternalOutcome ExistedInstancesForNode::Deserialize(const Value &value)
         if (!value["DesiredPodNumbers"].IsArray())
             return CoreInternalOutcome(Error("response `ExistedInstancesForNode.DesiredPodNumbers` is not array type"));
 
-        const Value &tmpValue = value["DesiredPodNumbers"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DesiredPodNumbers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_desiredPodNumbers.push_back((*itr).GetInt64());
         }
@@ -95,45 +94,45 @@ CoreInternalOutcome ExistedInstancesForNode::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ExistedInstancesForNode::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ExistedInstancesForNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nodeRoleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeRole";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeRole.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeRole.c_str(), allocator).Move(), allocator);
     }
 
     if (m_existedInstancesParaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExistedInstancesPara";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_existedInstancesPara.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_instanceAdvancedSettingsOverrideHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceAdvancedSettingsOverride";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceAdvancedSettingsOverride.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_desiredPodNumbersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DesiredPodNumbers";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_desiredPodNumbers.begin(); itr != m_desiredPodNumbers.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

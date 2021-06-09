@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Taf::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 OutputRecognizeTargetAudienceValue::OutputRecognizeTargetAudienceValue() :
@@ -28,7 +27,7 @@ OutputRecognizeTargetAudienceValue::OutputRecognizeTargetAudienceValue() :
 {
 }
 
-CoreInternalOutcome OutputRecognizeTargetAudienceValue::Deserialize(const Value &value)
+CoreInternalOutcome OutputRecognizeTargetAudienceValue::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome OutputRecognizeTargetAudienceValue::Deserialize(const Value 
     return CoreInternalOutcome(true);
 }
 
-void OutputRecognizeTargetAudienceValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OutputRecognizeTargetAudienceValue::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_modelIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modelId, allocator);
@@ -80,7 +79,7 @@ void OutputRecognizeTargetAudienceValue::ToJsonObject(Value &value, Document::Al
 
     if (m_isFoundHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsFound";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isFound, allocator);
@@ -88,7 +87,7 @@ void OutputRecognizeTargetAudienceValue::ToJsonObject(Value &value, Document::Al
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 MigrateOrderRefundRequest::MigrateOrderRefundRequest() :
@@ -38,46 +37,46 @@ MigrateOrderRefundRequest::MigrateOrderRefundRequest() :
 
 string MigrateOrderRefundRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_merchantIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MerchantId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_merchantId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_merchantId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payChannelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayChannel";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payChannel.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payChannel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payOrderIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayOrderId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payOrderId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payOrderId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_refundOrderIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RefundOrderId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_refundOrderId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_refundOrderId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_refundAmtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RefundAmt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_refundAmt, allocator);
@@ -85,15 +84,15 @@ string MigrateOrderRefundRequest::ToJsonString() const
 
     if (m_thirdChannelOrderIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ThirdChannelOrderId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_thirdChannelOrderId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_thirdChannelOrderId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payAmtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayAmt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_payAmt, allocator);
@@ -101,23 +100,23 @@ string MigrateOrderRefundRequest::ToJsonString() const
 
     if (m_profileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Profile";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
     if (m_refundReasonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RefundReason";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_refundReason.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_refundReason.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

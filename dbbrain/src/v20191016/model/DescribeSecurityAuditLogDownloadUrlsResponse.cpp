@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20191016::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeSecurityAuditLogDownloadUrlsResponse::DescribeSecurityAuditLogDownloadUrlsResponse() :
@@ -31,7 +30,7 @@ DescribeSecurityAuditLogDownloadUrlsResponse::DescribeSecurityAuditLogDownloadUr
 
 CoreInternalOutcome DescribeSecurityAuditLogDownloadUrlsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeSecurityAuditLogDownloadUrlsResponse::Deserialize(co
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeSecurityAuditLogDownloadUrlsResponse::Deserialize(co
         if (!rsp["Urls"].IsArray())
             return CoreInternalOutcome(Error("response `Urls` is not array type"));
 
-        const Value &tmpValue = rsp["Urls"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Urls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_urls.push_back((*itr).GetString());
         }

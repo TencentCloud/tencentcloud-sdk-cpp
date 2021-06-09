@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 TendisNodes::TendisNodes() :
@@ -27,7 +26,7 @@ TendisNodes::TendisNodes() :
 {
 }
 
-CoreInternalOutcome TendisNodes::Deserialize(const Value &value)
+CoreInternalOutcome TendisNodes::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome TendisNodes::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TendisNodes::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TendisNodes::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nodeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeRoleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeRole";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeRole.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeRole.c_str(), allocator).Move(), allocator);
     }
 
 }

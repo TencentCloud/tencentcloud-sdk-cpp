@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 MenstrualMedicalHistory::MenstrualMedicalHistory() :
@@ -31,7 +30,7 @@ MenstrualMedicalHistory::MenstrualMedicalHistory() :
 {
 }
 
-CoreInternalOutcome MenstrualMedicalHistory::Deserialize(const Value &value)
+CoreInternalOutcome MenstrualMedicalHistory::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,55 +99,55 @@ CoreInternalOutcome MenstrualMedicalHistory::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MenstrualMedicalHistory::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MenstrualMedicalHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_lastMenstrualPeriodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastMenstrualPeriod";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastMenstrualPeriod.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastMenstrualPeriod.c_str(), allocator).Move(), allocator);
     }
 
     if (m_menstrualFlowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MenstrualFlow";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_menstrualFlow.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_menstrualFlow.c_str(), allocator).Move(), allocator);
     }
 
     if (m_menarcheAgeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MenarcheAge";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_menarcheAge.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_menarcheAge.c_str(), allocator).Move(), allocator);
     }
 
     if (m_menstruationOrNotHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MenstruationOrNot";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_menstruationOrNot.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_menstruationOrNot.c_str(), allocator).Move(), allocator);
     }
 
     if (m_menstrualCyclesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MenstrualCycles";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_menstrualCycles.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_menstrualCycles.c_str(), allocator).Move(), allocator);
     }
 
     if (m_menstrualPeriodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MenstrualPeriod";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_menstrualPeriod.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_menstrualPeriod.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 DevicesBindInfoLoadBalancer::DevicesBindInfoLoadBalancer() :
@@ -34,7 +33,7 @@ DevicesBindInfoLoadBalancer::DevicesBindInfoLoadBalancer() :
 {
 }
 
-CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const Value &value)
+CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -114,8 +113,8 @@ CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const Value &value)
         if (!value["L4ListenerSet"].IsArray())
             return CoreInternalOutcome(Error("response `DevicesBindInfoLoadBalancer.L4ListenerSet` is not array type"));
 
-        const Value &tmpValue = value["L4ListenerSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["L4ListenerSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DevicesBindInfoL4Listener item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -134,8 +133,8 @@ CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const Value &value)
         if (!value["L7ListenerSet"].IsArray())
             return CoreInternalOutcome(Error("response `DevicesBindInfoLoadBalancer.L7ListenerSet` is not array type"));
 
-        const Value &tmpValue = value["L7ListenerSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["L7ListenerSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DevicesBindInfoL7Listener item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -153,20 +152,20 @@ CoreInternalOutcome DevicesBindInfoLoadBalancer::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DevicesBindInfoLoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DevicesBindInfoLoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_loadBalancerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoadBalancerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appId, allocator);
@@ -174,7 +173,7 @@ void DevicesBindInfoLoadBalancer::ToJsonObject(Value &value, Document::Allocator
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
@@ -182,31 +181,31 @@ void DevicesBindInfoLoadBalancer::ToJsonObject(Value &value, Document::Allocator
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tgwSetTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TgwSetType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tgwSetType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tgwSetType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_exclusiveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Exclusive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exclusive, allocator);
@@ -214,30 +213,30 @@ void DevicesBindInfoLoadBalancer::ToJsonObject(Value &value, Document::Allocator
 
     if (m_l4ListenerSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "L4ListenerSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_l4ListenerSet.begin(); itr != m_l4ListenerSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_l7ListenerSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "L7ListenerSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_l7ListenerSet.begin(); itr != m_l7ListenerSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20210527::Model;
-using namespace rapidjson;
 using namespace std;
 
 HealthStatus::HealthStatus() :
@@ -29,7 +28,7 @@ HealthStatus::HealthStatus() :
 {
 }
 
-CoreInternalOutcome HealthStatus::Deserialize(const Value &value)
+CoreInternalOutcome HealthStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome HealthStatus::Deserialize(const Value &value)
         if (!value["ScoreDetails"].IsArray())
             return CoreInternalOutcome(Error("response `HealthStatus.ScoreDetails` is not array type"));
 
-        const Value &tmpValue = value["ScoreDetails"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ScoreDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ScoreDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,12 +87,12 @@ CoreInternalOutcome HealthStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HealthStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HealthStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_healthScoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_healthScore, allocator);
@@ -101,15 +100,15 @@ void HealthStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_healthLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthLevel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_healthLevel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthLevel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scoreLostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScoreLost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scoreLost, allocator);
@@ -117,15 +116,15 @@ void HealthStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_scoreDetailsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScoreDetails";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_scoreDetails.begin(); itr != m_scoreDetails.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

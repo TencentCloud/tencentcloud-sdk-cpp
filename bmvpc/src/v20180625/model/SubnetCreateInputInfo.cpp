@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmvpc::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 SubnetCreateInputInfo::SubnetCreateInputInfo() :
@@ -34,7 +33,7 @@ SubnetCreateInputInfo::SubnetCreateInputInfo() :
 {
 }
 
-CoreInternalOutcome SubnetCreateInputInfo::Deserialize(const Value &value)
+CoreInternalOutcome SubnetCreateInputInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -84,8 +83,8 @@ CoreInternalOutcome SubnetCreateInputInfo::Deserialize(const Value &value)
         if (!value["DhcpServerIp"].IsArray())
             return CoreInternalOutcome(Error("response `SubnetCreateInputInfo.DhcpServerIp` is not array type"));
 
-        const Value &tmpValue = value["DhcpServerIp"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DhcpServerIp"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_dhcpServerIp.push_back((*itr).GetString());
         }
@@ -136,28 +135,28 @@ CoreInternalOutcome SubnetCreateInputInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SubnetCreateInputInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SubnetCreateInputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_subnetNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subnetName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cidrBlockHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CidrBlock";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
     }
 
     if (m_distributedFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DistributedFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_distributedFlag, allocator);
@@ -165,7 +164,7 @@ void SubnetCreateInputInfo::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_dhcpEnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DhcpEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dhcpEnable, allocator);
@@ -173,20 +172,20 @@ void SubnetCreateInputInfo::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_dhcpServerIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DhcpServerIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_dhcpServerIp.begin(); itr != m_dhcpServerIp.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_ipReserveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpReserve";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ipReserve, allocator);
@@ -194,7 +193,7 @@ void SubnetCreateInputInfo::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_vlanIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VlanId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vlanId, allocator);
@@ -202,15 +201,15 @@ void SubnetCreateInputInfo::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isSmartNicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsSmartNic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSmartNic, allocator);

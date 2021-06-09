@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 HttpHeaderRule::HttpHeaderRule() :
@@ -28,7 +27,7 @@ HttpHeaderRule::HttpHeaderRule() :
 {
 }
 
-CoreInternalOutcome HttpHeaderRule::Deserialize(const Value &value)
+CoreInternalOutcome HttpHeaderRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome HttpHeaderRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HttpHeaderRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HttpHeaderRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_headerModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeaderMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_headerMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_headerMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_headerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeaderName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_headerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_headerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_headerValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeaderValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_headerValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_headerValue.c_str(), allocator).Move(), allocator);
     }
 
 }

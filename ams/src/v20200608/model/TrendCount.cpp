@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ams::V20200608::Model;
-using namespace rapidjson;
 using namespace std;
 
 TrendCount::TrendCount() :
@@ -34,7 +33,7 @@ TrendCount::TrendCount() :
 {
 }
 
-CoreInternalOutcome TrendCount::Deserialize(const Value &value)
+CoreInternalOutcome TrendCount::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome TrendCount::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TrendCount::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TrendCount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -146,7 +145,7 @@ void TrendCount::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_totalHourHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalHour";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalHour, allocator);
@@ -154,7 +153,7 @@ void TrendCount::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_passCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PassCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_passCount, allocator);
@@ -162,7 +161,7 @@ void TrendCount::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_passHourHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PassHour";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_passHour, allocator);
@@ -170,7 +169,7 @@ void TrendCount::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_evilCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilCount, allocator);
@@ -178,7 +177,7 @@ void TrendCount::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_evilHourHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilHour";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilHour, allocator);
@@ -186,7 +185,7 @@ void TrendCount::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_suspectCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuspectCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_suspectCount, allocator);
@@ -194,7 +193,7 @@ void TrendCount::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_suspectHourHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuspectHour";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_suspectHour, allocator);
@@ -202,10 +201,10 @@ void TrendCount::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_dateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Waf::V20180125::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCustomRulesResponse::DescribeCustomRulesResponse() :
@@ -32,7 +31,7 @@ DescribeCustomRulesResponse::DescribeCustomRulesResponse() :
 
 CoreInternalOutcome DescribeCustomRulesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeCustomRulesResponse::Deserialize(const string &paylo
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeCustomRulesResponse::Deserialize(const string &paylo
         if (!rsp["RuleList"].IsArray())
             return CoreInternalOutcome(Error("response `RuleList` is not array type"));
 
-        const Value &tmpValue = rsp["RuleList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["RuleList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DescribeCustomRulesRspRuleListItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

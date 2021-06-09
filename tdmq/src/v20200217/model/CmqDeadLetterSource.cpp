@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tdmq::V20200217::Model;
-using namespace rapidjson;
 using namespace std;
 
 CmqDeadLetterSource::CmqDeadLetterSource() :
@@ -27,7 +26,7 @@ CmqDeadLetterSource::CmqDeadLetterSource() :
 {
 }
 
-CoreInternalOutcome CmqDeadLetterSource::Deserialize(const Value &value)
+CoreInternalOutcome CmqDeadLetterSource::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome CmqDeadLetterSource::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CmqDeadLetterSource::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CmqDeadLetterSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_queueIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueueId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_queueId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queueNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueueName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_queueName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
 }

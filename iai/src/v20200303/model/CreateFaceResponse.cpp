@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateFaceResponse::CreateFaceResponse() :
@@ -36,7 +35,7 @@ CreateFaceResponse::CreateFaceResponse() :
 
 CoreInternalOutcome CreateFaceResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -46,7 +45,7 @@ CoreInternalOutcome CreateFaceResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -83,8 +82,8 @@ CoreInternalOutcome CreateFaceResponse::Deserialize(const string &payload)
         if (!rsp["SucFaceIds"].IsArray())
             return CoreInternalOutcome(Error("response `SucFaceIds` is not array type"));
 
-        const Value &tmpValue = rsp["SucFaceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SucFaceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_sucFaceIds.push_back((*itr).GetString());
         }
@@ -96,8 +95,8 @@ CoreInternalOutcome CreateFaceResponse::Deserialize(const string &payload)
         if (!rsp["RetCode"].IsArray())
             return CoreInternalOutcome(Error("response `RetCode` is not array type"));
 
-        const Value &tmpValue = rsp["RetCode"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["RetCode"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_retCode.push_back((*itr).GetInt64());
         }
@@ -109,8 +108,8 @@ CoreInternalOutcome CreateFaceResponse::Deserialize(const string &payload)
         if (!rsp["SucIndexes"].IsArray())
             return CoreInternalOutcome(Error("response `SucIndexes` is not array type"));
 
-        const Value &tmpValue = rsp["SucIndexes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SucIndexes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_sucIndexes.push_back((*itr).GetUint64());
         }
@@ -122,8 +121,8 @@ CoreInternalOutcome CreateFaceResponse::Deserialize(const string &payload)
         if (!rsp["SucFaceRects"].IsArray())
             return CoreInternalOutcome(Error("response `SucFaceRects` is not array type"));
 
-        const Value &tmpValue = rsp["SucFaceRects"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SucFaceRects"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             FaceRect item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

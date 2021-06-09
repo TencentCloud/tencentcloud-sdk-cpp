@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ssm::V20190923::Model;
-using namespace rapidjson;
 using namespace std;
 
 ListSecretsResponse::ListSecretsResponse() :
@@ -32,7 +31,7 @@ ListSecretsResponse::ListSecretsResponse() :
 
 CoreInternalOutcome ListSecretsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome ListSecretsResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome ListSecretsResponse::Deserialize(const string &payload)
         if (!rsp["SecretMetadatas"].IsArray())
             return CoreInternalOutcome(Error("response `SecretMetadatas` is not array type"));
 
-        const Value &tmpValue = rsp["SecretMetadatas"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SecretMetadatas"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SecretMetadata item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

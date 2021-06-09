@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vm::V20200709::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageResultsResultDetailLocation::ImageResultsResultDetailLocation() :
@@ -30,7 +29,7 @@ ImageResultsResultDetailLocation::ImageResultsResultDetailLocation() :
 {
 }
 
-CoreInternalOutcome ImageResultsResultDetailLocation::Deserialize(const Value &value)
+CoreInternalOutcome ImageResultsResultDetailLocation::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome ImageResultsResultDetailLocation::Deserialize(const Value &v
     return CoreInternalOutcome(true);
 }
 
-void ImageResultsResultDetailLocation::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageResultsResultDetailLocation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_xHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "X";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_x, allocator);
@@ -102,7 +101,7 @@ void ImageResultsResultDetailLocation::ToJsonObject(Value &value, Document::Allo
 
     if (m_yHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Y";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_y, allocator);
@@ -110,7 +109,7 @@ void ImageResultsResultDetailLocation::ToJsonObject(Value &value, Document::Allo
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -118,7 +117,7 @@ void ImageResultsResultDetailLocation::ToJsonObject(Value &value, Document::Allo
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -126,7 +125,7 @@ void ImageResultsResultDetailLocation::ToJsonObject(Value &value, Document::Allo
 
     if (m_rotateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rotate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rotate, allocator);

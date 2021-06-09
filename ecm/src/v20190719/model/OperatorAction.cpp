@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 OperatorAction::OperatorAction() :
@@ -28,7 +27,7 @@ OperatorAction::OperatorAction() :
 {
 }
 
-CoreInternalOutcome OperatorAction::Deserialize(const Value &value)
+CoreInternalOutcome OperatorAction::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome OperatorAction::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OperatorAction::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OperatorAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_actionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Action";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_action.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
     }
 
     if (m_codeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_code.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
     }
 
     if (m_messageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
 }

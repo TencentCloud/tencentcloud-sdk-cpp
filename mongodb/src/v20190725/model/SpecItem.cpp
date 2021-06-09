@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20190725::Model;
-using namespace rapidjson;
 using namespace std;
 
 SpecItem::SpecItem() :
@@ -46,7 +45,7 @@ SpecItem::SpecItem() :
 {
 }
 
-CoreInternalOutcome SpecItem::Deserialize(const Value &value)
+CoreInternalOutcome SpecItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -265,20 +264,20 @@ CoreInternalOutcome SpecItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SpecItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_specCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SpecCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_specCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -286,7 +285,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_cpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);
@@ -294,7 +293,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_memoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memory, allocator);
@@ -302,7 +301,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_defaultStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defaultStorage, allocator);
@@ -310,7 +309,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_maxStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxStorage, allocator);
@@ -318,7 +317,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_minStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minStorage, allocator);
@@ -326,7 +325,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_qpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Qps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qps, allocator);
@@ -334,7 +333,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_connsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Conns";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_conns, allocator);
@@ -342,15 +341,15 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_mongoVersionCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MongoVersionCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mongoVersionCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mongoVersionCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mongoVersionValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MongoVersionValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mongoVersionValue, allocator);
@@ -358,23 +357,23 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_versionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     if (m_engineNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EngineName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_engineName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterType, allocator);
@@ -382,7 +381,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_minNodeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinNodeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minNodeNum, allocator);
@@ -390,7 +389,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_maxNodeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxNodeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxNodeNum, allocator);
@@ -398,7 +397,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_minReplicateSetNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinReplicateSetNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minReplicateSetNum, allocator);
@@ -406,7 +405,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_maxReplicateSetNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxReplicateSetNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxReplicateSetNum, allocator);
@@ -414,7 +413,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_minReplicateSetNodeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinReplicateSetNodeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minReplicateSetNodeNum, allocator);
@@ -422,7 +421,7 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_maxReplicateSetNodeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxReplicateSetNodeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxReplicateSetNodeNum, allocator);
@@ -430,10 +429,10 @@ void SpecItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_machineTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_machineType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
 }

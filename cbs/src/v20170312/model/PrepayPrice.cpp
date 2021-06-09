@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cbs::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 PrepayPrice::PrepayPrice() :
@@ -34,7 +33,7 @@ PrepayPrice::PrepayPrice() :
 {
 }
 
-CoreInternalOutcome PrepayPrice::Deserialize(const Value &value)
+CoreInternalOutcome PrepayPrice::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome PrepayPrice::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PrepayPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PrepayPrice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_originalPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalPrice, allocator);
@@ -146,7 +145,7 @@ void PrepayPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_discountPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountPrice, allocator);
@@ -154,23 +153,23 @@ void PrepayPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_originalPriceHighHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalPriceHigh";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_originalPriceHigh.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalPriceHigh.c_str(), allocator).Move(), allocator);
     }
 
     if (m_discountPriceHighHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountPriceHigh";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_discountPriceHigh.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_discountPriceHigh.c_str(), allocator).Move(), allocator);
     }
 
     if (m_unitPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unitPrice, allocator);
@@ -178,15 +177,15 @@ void PrepayPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_chargeUnitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChargeUnit";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_chargeUnit.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chargeUnit.c_str(), allocator).Move(), allocator);
     }
 
     if (m_unitPriceDiscountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitPriceDiscount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unitPriceDiscount, allocator);
@@ -194,18 +193,18 @@ void PrepayPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_unitPriceHighHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitPriceHigh";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_unitPriceHigh.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unitPriceHigh.c_str(), allocator).Move(), allocator);
     }
 
     if (m_unitPriceDiscountHighHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitPriceDiscountHigh";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_unitPriceDiscountHigh.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unitPriceDiscountHigh.c_str(), allocator).Move(), allocator);
     }
 
 }

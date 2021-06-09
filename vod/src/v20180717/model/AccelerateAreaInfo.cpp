@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AccelerateAreaInfo::AccelerateAreaInfo() :
@@ -28,7 +27,7 @@ AccelerateAreaInfo::AccelerateAreaInfo() :
 {
 }
 
-CoreInternalOutcome AccelerateAreaInfo::Deserialize(const Value &value)
+CoreInternalOutcome AccelerateAreaInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome AccelerateAreaInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AccelerateAreaInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AccelerateAreaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_areaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tencentDisableReasonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TencentDisableReason";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tencentDisableReason.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tencentDisableReason.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tencentEdgeDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TencentEdgeDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tencentEdgeDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tencentEdgeDomain.c_str(), allocator).Move(), allocator);
     }
 
 }

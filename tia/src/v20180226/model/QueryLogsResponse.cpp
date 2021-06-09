@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tia::V20180226::Model;
-using namespace rapidjson;
 using namespace std;
 
 QueryLogsResponse::QueryLogsResponse() :
@@ -33,7 +32,7 @@ QueryLogsResponse::QueryLogsResponse() :
 
 CoreInternalOutcome QueryLogsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome QueryLogsResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -80,8 +79,8 @@ CoreInternalOutcome QueryLogsResponse::Deserialize(const string &payload)
         if (!rsp["Logs"].IsArray())
             return CoreInternalOutcome(Error("response `Logs` is not array type"));
 
-        const Value &tmpValue = rsp["Logs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Logs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Log item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

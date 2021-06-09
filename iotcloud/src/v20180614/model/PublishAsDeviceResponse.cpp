@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 PublishAsDeviceResponse::PublishAsDeviceResponse()
@@ -30,7 +29,7 @@ PublishAsDeviceResponse::PublishAsDeviceResponse()
 
 CoreInternalOutcome PublishAsDeviceResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -40,7 +39,7 @@ CoreInternalOutcome PublishAsDeviceResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));

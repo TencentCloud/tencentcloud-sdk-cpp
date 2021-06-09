@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 WaterPrintKey::WaterPrintKey() :
@@ -30,7 +29,7 @@ WaterPrintKey::WaterPrintKey() :
 {
 }
 
-CoreInternalOutcome WaterPrintKey::Deserialize(const Value &value)
+CoreInternalOutcome WaterPrintKey::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,36 +88,36 @@ CoreInternalOutcome WaterPrintKey::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WaterPrintKey::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WaterPrintKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_keyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyContent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_openStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpenStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_openStatus, allocator);
@@ -126,10 +125,10 @@ void WaterPrintKey::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }

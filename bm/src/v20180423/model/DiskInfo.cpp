@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 DiskInfo::DiskInfo() :
@@ -28,7 +27,7 @@ DiskInfo::DiskInfo() :
 {
 }
 
-CoreInternalOutcome DiskInfo::Deserialize(const Value &value)
+CoreInternalOutcome DiskInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome DiskInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DiskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DiskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_diskTypeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskTypeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskTypeId, allocator);
@@ -80,7 +79,7 @@ void DiskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_sizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
@@ -88,10 +87,10 @@ void DiskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_diskDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diskDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskDescription.c_str(), allocator).Move(), allocator);
     }
 
 }

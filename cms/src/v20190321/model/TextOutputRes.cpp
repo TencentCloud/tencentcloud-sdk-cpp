@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 TextOutputRes::TextOutputRes() :
@@ -29,7 +28,7 @@ TextOutputRes::TextOutputRes() :
 {
 }
 
-CoreInternalOutcome TextOutputRes::Deserialize(const Value &value)
+CoreInternalOutcome TextOutputRes::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome TextOutputRes::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TextOutputRes::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TextOutputRes::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_operatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_operator.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resultCode, allocator);
@@ -99,15 +98,15 @@ void TextOutputRes::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_resultMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resultMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resultType, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 PrometheusAlertRule::PrometheusAlertRule() :
@@ -31,7 +30,7 @@ PrometheusAlertRule::PrometheusAlertRule() :
 {
 }
 
-CoreInternalOutcome PrometheusAlertRule::Deserialize(const Value &value)
+CoreInternalOutcome PrometheusAlertRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -61,8 +60,8 @@ CoreInternalOutcome PrometheusAlertRule::Deserialize(const Value &value)
         if (!value["Labels"].IsArray())
             return CoreInternalOutcome(Error("response `PrometheusAlertRule.Labels` is not array type"));
 
-        const Value &tmpValue = value["Labels"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Labels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Label item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,62 +109,62 @@ CoreInternalOutcome PrometheusAlertRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PrometheusAlertRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PrometheusAlertRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rule";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rule.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rule.c_str(), allocator).Move(), allocator);
     }
 
     if (m_labelsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Labels";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_templateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Template";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_template.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_template.c_str(), allocator).Move(), allocator);
     }
 
     if (m_forHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "For";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_for.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_for.c_str(), allocator).Move(), allocator);
     }
 
     if (m_describeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Describe";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_describe.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_describe.c_str(), allocator).Move(), allocator);
     }
 
 }

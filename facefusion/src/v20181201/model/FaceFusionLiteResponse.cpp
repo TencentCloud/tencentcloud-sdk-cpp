@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Facefusion::V20181201::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceFusionLiteResponse::FaceFusionLiteResponse() :
@@ -32,7 +31,7 @@ FaceFusionLiteResponse::FaceFusionLiteResponse() :
 
 CoreInternalOutcome FaceFusionLiteResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome FaceFusionLiteResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome FaceFusionLiteResponse::Deserialize(const string &payload)
         if (!rsp["ReviewResultSet"].IsArray())
             return CoreInternalOutcome(Error("response `ReviewResultSet` is not array type"));
 
-        const Value &tmpValue = rsp["ReviewResultSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ReviewResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             FuseFaceReviewResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

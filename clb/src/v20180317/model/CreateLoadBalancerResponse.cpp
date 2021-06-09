@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Clb::V20180317::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateLoadBalancerResponse::CreateLoadBalancerResponse() :
@@ -31,7 +30,7 @@ CreateLoadBalancerResponse::CreateLoadBalancerResponse() :
 
 CoreInternalOutcome CreateLoadBalancerResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome CreateLoadBalancerResponse::Deserialize(const string &payloa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome CreateLoadBalancerResponse::Deserialize(const string &payloa
         if (!rsp["LoadBalancerIds"].IsArray())
             return CoreInternalOutcome(Error("response `LoadBalancerIds` is not array type"));
 
-        const Value &tmpValue = rsp["LoadBalancerIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["LoadBalancerIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_loadBalancerIds.push_back((*itr).GetString());
         }

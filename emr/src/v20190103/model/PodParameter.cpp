@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 PodParameter::PodParameter() :
@@ -28,7 +27,7 @@ PodParameter::PodParameter() :
 {
 }
 
-CoreInternalOutcome PodParameter::Deserialize(const Value &value)
+CoreInternalOutcome PodParameter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome PodParameter::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PodParameter::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PodParameter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_clusterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_configHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Config";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_config.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parameterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Parameter";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_parameter.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parameter.c_str(), allocator).Move(), allocator);
     }
 
 }

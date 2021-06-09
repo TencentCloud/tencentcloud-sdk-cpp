@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 DevicesData::DevicesData() :
@@ -35,7 +34,7 @@ DevicesData::DevicesData() :
 {
 }
 
-CoreInternalOutcome DevicesData::Deserialize(const Value &value)
+CoreInternalOutcome DevicesData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,28 +143,28 @@ CoreInternalOutcome DevicesData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DevicesData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DevicesData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_activeTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActiveTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_activeTime, allocator);
@@ -173,7 +172,7 @@ void DevicesData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_disabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Disabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disabled, allocator);
@@ -181,7 +180,7 @@ void DevicesData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_streamStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_streamStatus, allocator);
@@ -189,15 +188,15 @@ void DevicesData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_otaVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OtaVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_otaVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_otaVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_onlineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Online";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_online, allocator);
@@ -205,7 +204,7 @@ void DevicesData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_lastOnlineTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastOnlineTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastOnlineTime, allocator);
@@ -213,15 +212,15 @@ void DevicesData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_iotModelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IotModel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iotModel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iotModel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastUpdateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastUpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastUpdateTime, allocator);

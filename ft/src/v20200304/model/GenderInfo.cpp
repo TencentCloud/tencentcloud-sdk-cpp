@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ft::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 GenderInfo::GenderInfo() :
@@ -27,7 +26,7 @@ GenderInfo::GenderInfo() :
 {
 }
 
-CoreInternalOutcome GenderInfo::Deserialize(const Value &value)
+CoreInternalOutcome GenderInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,12 +62,12 @@ CoreInternalOutcome GenderInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GenderInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GenderInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_genderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gender, allocator);
@@ -76,10 +75,10 @@ void GenderInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_faceRectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceRect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_faceRect.ToJsonObject(value[key.c_str()], allocator);
     }
 

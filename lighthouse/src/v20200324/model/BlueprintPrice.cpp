@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 BlueprintPrice::BlueprintPrice() :
@@ -29,7 +28,7 @@ BlueprintPrice::BlueprintPrice() :
 {
 }
 
-CoreInternalOutcome BlueprintPrice::Deserialize(const Value &value)
+CoreInternalOutcome BlueprintPrice::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome BlueprintPrice::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BlueprintPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BlueprintPrice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_originalBlueprintPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalBlueprintPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalBlueprintPrice, allocator);
@@ -91,7 +90,7 @@ void BlueprintPrice::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_originalPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalPrice, allocator);
@@ -99,7 +98,7 @@ void BlueprintPrice::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_discountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Discount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discount, allocator);
@@ -107,7 +106,7 @@ void BlueprintPrice::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_discountPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountPrice, allocator);

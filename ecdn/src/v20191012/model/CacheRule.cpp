@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecdn::V20191012::Model;
-using namespace rapidjson;
 using namespace std;
 
 CacheRule::CacheRule() :
@@ -28,7 +27,7 @@ CacheRule::CacheRule() :
 {
 }
 
-CoreInternalOutcome CacheRule::Deserialize(const Value &value)
+CoreInternalOutcome CacheRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome CacheRule::Deserialize(const Value &value)
         if (!value["CacheContents"].IsArray())
             return CoreInternalOutcome(Error("response `CacheRule.CacheContents` is not array type"));
 
-        const Value &tmpValue = value["CacheContents"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CacheContents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_cacheContents.push_back((*itr).GetString());
         }
@@ -70,33 +69,33 @@ CoreInternalOutcome CacheRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CacheRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CacheRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cacheTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CacheType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cacheType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cacheType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cacheContentsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CacheContents";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_cacheContents.begin(); itr != m_cacheContents.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_cacheTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CacheTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cacheTime, allocator);

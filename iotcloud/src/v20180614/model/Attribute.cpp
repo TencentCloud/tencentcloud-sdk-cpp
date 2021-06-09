@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 Attribute::Attribute() :
@@ -26,7 +25,7 @@ Attribute::Attribute() :
 {
 }
 
-CoreInternalOutcome Attribute::Deserialize(const Value &value)
+CoreInternalOutcome Attribute::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome Attribute::Deserialize(const Value &value)
         if (!value["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `Attribute.Tags` is not array type"));
 
-        const Value &tmpValue = value["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DeviceTag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -55,20 +54,20 @@ CoreInternalOutcome Attribute::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Attribute::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Attribute::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

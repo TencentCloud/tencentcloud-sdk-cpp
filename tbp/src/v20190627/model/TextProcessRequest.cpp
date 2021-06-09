@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tbp::V20190627::Model;
-using namespace rapidjson;
 using namespace std;
 
 TextProcessRequest::TextProcessRequest() :
@@ -36,70 +35,70 @@ TextProcessRequest::TextProcessRequest() :
 
 string TextProcessRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_botIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BotId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_botId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_botId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_botEnvHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BotEnv";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_botEnv.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_botEnv.c_str(), allocator).Move(), allocator);
     }
 
     if (m_terminalIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TerminalId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_terminalId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_terminalId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_inputTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputText";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_inputText.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inputText.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionAttributesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SessionAttributes";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sessionAttributes.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionAttributes.c_str(), allocator).Move(), allocator);
     }
 
     if (m_platformTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlatformType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_platformType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_platformType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_platformIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlatformId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_platformId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_platformId.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

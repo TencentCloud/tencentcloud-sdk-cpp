@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 SegmentInfo::SegmentInfo() :
@@ -28,7 +27,7 @@ SegmentInfo::SegmentInfo() :
 {
 }
 
-CoreInternalOutcome SegmentInfo::Deserialize(const Value &value)
+CoreInternalOutcome SegmentInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome SegmentInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SegmentInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SegmentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fragmentTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FragmentTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fragmentTime, allocator);
@@ -80,18 +79,18 @@ void SegmentInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_segmentTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SegmentType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_segmentType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_segmentType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fragmentNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FragmentName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fragmentName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fragmentName.c_str(), allocator).Move(), allocator);
     }
 
 }

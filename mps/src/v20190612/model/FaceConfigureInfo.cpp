@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceConfigureInfo::FaceConfigureInfo() :
@@ -30,7 +29,7 @@ FaceConfigureInfo::FaceConfigureInfo() :
 {
 }
 
-CoreInternalOutcome FaceConfigureInfo::Deserialize(const Value &value)
+CoreInternalOutcome FaceConfigureInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -60,8 +59,8 @@ CoreInternalOutcome FaceConfigureInfo::Deserialize(const Value &value)
         if (!value["DefaultLibraryLabelSet"].IsArray())
             return CoreInternalOutcome(Error("response `FaceConfigureInfo.DefaultLibraryLabelSet` is not array type"));
 
-        const Value &tmpValue = value["DefaultLibraryLabelSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DefaultLibraryLabelSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_defaultLibraryLabelSet.push_back((*itr).GetString());
         }
@@ -73,8 +72,8 @@ CoreInternalOutcome FaceConfigureInfo::Deserialize(const Value &value)
         if (!value["UserDefineLibraryLabelSet"].IsArray())
             return CoreInternalOutcome(Error("response `FaceConfigureInfo.UserDefineLibraryLabelSet` is not array type"));
 
-        const Value &tmpValue = value["UserDefineLibraryLabelSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["UserDefineLibraryLabelSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_userDefineLibraryLabelSet.push_back((*itr).GetString());
         }
@@ -95,20 +94,20 @@ CoreInternalOutcome FaceConfigureInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FaceConfigureInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FaceConfigureInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
@@ -116,36 +115,36 @@ void FaceConfigureInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_defaultLibraryLabelSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultLibraryLabelSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_defaultLibraryLabelSet.begin(); itr != m_defaultLibraryLabelSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_userDefineLibraryLabelSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserDefineLibraryLabelSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_userDefineLibraryLabelSet.begin(); itr != m_userDefineLibraryLabelSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_faceLibraryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceLibrary";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_faceLibrary.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_faceLibrary.c_str(), allocator).Move(), allocator);
     }
 
 }

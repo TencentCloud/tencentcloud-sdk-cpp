@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 SoInfo::SoInfo() :
@@ -26,7 +25,7 @@ SoInfo::SoInfo() :
 {
 }
 
-CoreInternalOutcome SoInfo::Deserialize(const Value &value)
+CoreInternalOutcome SoInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome SoInfo::Deserialize(const Value &value)
         if (!value["SoFileNames"].IsArray())
             return CoreInternalOutcome(Error("response `SoInfo.SoFileNames` is not array type"));
 
-        const Value &tmpValue = value["SoFileNames"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SoFileNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_soFileNames.push_back((*itr).GetString());
         }
@@ -48,19 +47,19 @@ CoreInternalOutcome SoInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SoInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SoInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_soFileNamesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SoFileNames";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_soFileNames.begin(); itr != m_soFileNames.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

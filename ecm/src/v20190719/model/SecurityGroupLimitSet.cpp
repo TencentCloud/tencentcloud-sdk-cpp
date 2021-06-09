@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 SecurityGroupLimitSet::SecurityGroupLimitSet() :
@@ -32,7 +31,7 @@ SecurityGroupLimitSet::SecurityGroupLimitSet() :
 {
 }
 
-CoreInternalOutcome SecurityGroupLimitSet::Deserialize(const Value &value)
+CoreInternalOutcome SecurityGroupLimitSet::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome SecurityGroupLimitSet::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SecurityGroupLimitSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SecurityGroupLimitSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_securityGroupLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityGroupLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_securityGroupLimit, allocator);
@@ -124,7 +123,7 @@ void SecurityGroupLimitSet::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_securityGroupPolicyLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityGroupPolicyLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_securityGroupPolicyLimit, allocator);
@@ -132,7 +131,7 @@ void SecurityGroupLimitSet::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_referedSecurityGroupLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReferedSecurityGroupLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_referedSecurityGroupLimit, allocator);
@@ -140,7 +139,7 @@ void SecurityGroupLimitSet::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_securityGroupInstanceLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityGroupInstanceLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_securityGroupInstanceLimit, allocator);
@@ -148,7 +147,7 @@ void SecurityGroupLimitSet::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_instanceSecurityGroupLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceSecurityGroupLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceSecurityGroupLimit, allocator);
@@ -156,7 +155,7 @@ void SecurityGroupLimitSet::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_securityGroupModuleLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityGroupModuleLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_securityGroupModuleLimit, allocator);
@@ -164,7 +163,7 @@ void SecurityGroupLimitSet::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_moduleSecurityGroupLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModuleSecurityGroupLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_moduleSecurityGroupLimit, allocator);

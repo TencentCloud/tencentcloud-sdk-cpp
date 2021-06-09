@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Oceanus::V20190422::Model;
-using namespace rapidjson;
 using namespace std;
 
 RunJobDescription::RunJobDescription() :
@@ -29,7 +28,7 @@ RunJobDescription::RunJobDescription() :
 {
 }
 
-CoreInternalOutcome RunJobDescription::Deserialize(const Value &value)
+CoreInternalOutcome RunJobDescription::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome RunJobDescription::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RunJobDescription::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RunJobDescription::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_jobIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_jobId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_runTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runType, allocator);
@@ -99,15 +98,15 @@ void RunJobDescription::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_startModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_jobConfigVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobConfigVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_jobConfigVersion, allocator);

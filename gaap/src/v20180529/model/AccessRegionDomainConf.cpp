@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 AccessRegionDomainConf::AccessRegionDomainConf() :
@@ -27,7 +26,7 @@ AccessRegionDomainConf::AccessRegionDomainConf() :
 {
 }
 
-CoreInternalOutcome AccessRegionDomainConf::Deserialize(const Value &value)
+CoreInternalOutcome AccessRegionDomainConf::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome AccessRegionDomainConf::Deserialize(const Value &value)
         if (!value["NationCountryInnerList"].IsArray())
             return CoreInternalOutcome(Error("response `AccessRegionDomainConf.NationCountryInnerList` is not array type"));
 
-        const Value &tmpValue = value["NationCountryInnerList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["NationCountryInnerList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_nationCountryInnerList.push_back((*itr).GetString());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome AccessRegionDomainConf::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AccessRegionDomainConf::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AccessRegionDomainConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nationCountryInnerListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NationCountryInnerList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_nationCountryInnerList.begin(); itr != m_nationCountryInnerList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

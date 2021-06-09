@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 UploadInfo::UploadInfo() :
@@ -27,7 +26,7 @@ UploadInfo::UploadInfo() :
 {
 }
 
-CoreInternalOutcome UploadInfo::Deserialize(const Value &value)
+CoreInternalOutcome UploadInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome UploadInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UploadInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UploadInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_allSliceNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AllSliceNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allSliceNum, allocator);
@@ -69,7 +68,7 @@ void UploadInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_completeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompleteNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_completeNum, allocator);

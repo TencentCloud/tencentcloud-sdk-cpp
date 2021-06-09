@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 MigrationAction::MigrationAction() :
@@ -27,7 +26,7 @@ MigrationAction::MigrationAction() :
 {
 }
 
-CoreInternalOutcome MigrationAction::Deserialize(const Value &value)
+CoreInternalOutcome MigrationAction::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome MigrationAction::Deserialize(const Value &value)
         if (!value["AllAction"].IsArray())
             return CoreInternalOutcome(Error("response `MigrationAction.AllAction` is not array type"));
 
-        const Value &tmpValue = value["AllAction"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AllAction"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_allAction.push_back((*itr).GetString());
         }
@@ -50,8 +49,8 @@ CoreInternalOutcome MigrationAction::Deserialize(const Value &value)
         if (!value["AllowedAction"].IsArray())
             return CoreInternalOutcome(Error("response `MigrationAction.AllowedAction` is not array type"));
 
-        const Value &tmpValue = value["AllowedAction"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AllowedAction"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_allowedAction.push_back((*itr).GetString());
         }
@@ -62,32 +61,32 @@ CoreInternalOutcome MigrationAction::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MigrationAction::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MigrationAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_allActionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AllAction";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_allAction.begin(); itr != m_allAction.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_allowedActionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AllowedAction";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_allowedAction.begin(); itr != m_allowedAction.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

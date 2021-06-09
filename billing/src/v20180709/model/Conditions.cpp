@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Billing::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 Conditions::Conditions() :
@@ -44,7 +43,7 @@ Conditions::Conditions() :
 {
 }
 
-CoreInternalOutcome Conditions::Deserialize(const Value &value)
+CoreInternalOutcome Conditions::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -114,8 +113,8 @@ CoreInternalOutcome Conditions::Deserialize(const Value &value)
         if (!value["BusinessCodes"].IsArray())
             return CoreInternalOutcome(Error("response `Conditions.BusinessCodes` is not array type"));
 
-        const Value &tmpValue = value["BusinessCodes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BusinessCodes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_businessCodes.push_back((*itr).GetString());
         }
@@ -127,8 +126,8 @@ CoreInternalOutcome Conditions::Deserialize(const Value &value)
         if (!value["ProductCodes"].IsArray())
             return CoreInternalOutcome(Error("response `Conditions.ProductCodes` is not array type"));
 
-        const Value &tmpValue = value["ProductCodes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ProductCodes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_productCodes.push_back((*itr).GetString());
         }
@@ -140,8 +139,8 @@ CoreInternalOutcome Conditions::Deserialize(const Value &value)
         if (!value["RegionIds"].IsArray())
             return CoreInternalOutcome(Error("response `Conditions.RegionIds` is not array type"));
 
-        const Value &tmpValue = value["RegionIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RegionIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_regionIds.push_back((*itr).GetInt64());
         }
@@ -153,8 +152,8 @@ CoreInternalOutcome Conditions::Deserialize(const Value &value)
         if (!value["ProjectIds"].IsArray())
             return CoreInternalOutcome(Error("response `Conditions.ProjectIds` is not array type"));
 
-        const Value &tmpValue = value["ProjectIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ProjectIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_projectIds.push_back((*itr).GetInt64());
         }
@@ -166,8 +165,8 @@ CoreInternalOutcome Conditions::Deserialize(const Value &value)
         if (!value["PayModes"].IsArray())
             return CoreInternalOutcome(Error("response `Conditions.PayModes` is not array type"));
 
-        const Value &tmpValue = value["PayModes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PayModes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_payModes.push_back((*itr).GetString());
         }
@@ -179,8 +178,8 @@ CoreInternalOutcome Conditions::Deserialize(const Value &value)
         if (!value["ActionTypes"].IsArray())
             return CoreInternalOutcome(Error("response `Conditions.ActionTypes` is not array type"));
 
-        const Value &tmpValue = value["ActionTypes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ActionTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_actionTypes.push_back((*itr).GetString());
         }
@@ -212,8 +211,8 @@ CoreInternalOutcome Conditions::Deserialize(const Value &value)
         if (!value["BillIds"].IsArray())
             return CoreInternalOutcome(Error("response `Conditions.BillIds` is not array type"));
 
-        const Value &tmpValue = value["BillIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BillIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_billIds.push_back((*itr).GetString());
         }
@@ -225,8 +224,8 @@ CoreInternalOutcome Conditions::Deserialize(const Value &value)
         if (!value["ComponentCodes"].IsArray())
             return CoreInternalOutcome(Error("response `Conditions.ComponentCodes` is not array type"));
 
-        const Value &tmpValue = value["ComponentCodes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ComponentCodes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_componentCodes.push_back((*itr).GetString());
         }
@@ -238,8 +237,8 @@ CoreInternalOutcome Conditions::Deserialize(const Value &value)
         if (!value["FileIds"].IsArray())
             return CoreInternalOutcome(Error("response `Conditions.FileIds` is not array type"));
 
-        const Value &tmpValue = value["FileIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FileIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_fileIds.push_back((*itr).GetString());
         }
@@ -251,8 +250,8 @@ CoreInternalOutcome Conditions::Deserialize(const Value &value)
         if (!value["FileTypes"].IsArray())
             return CoreInternalOutcome(Error("response `Conditions.FileTypes` is not array type"));
 
-        const Value &tmpValue = value["FileTypes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FileTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_fileTypes.push_back((*itr).GetString());
         }
@@ -264,8 +263,8 @@ CoreInternalOutcome Conditions::Deserialize(const Value &value)
         if (!value["Status"].IsArray())
             return CoreInternalOutcome(Error("response `Conditions.Status` is not array type"));
 
-        const Value &tmpValue = value["Status"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Status"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_status.push_back((*itr).GetUint64());
         }
@@ -276,12 +275,12 @@ CoreInternalOutcome Conditions::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Conditions::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Conditions::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeRangeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeRange";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeRange, allocator);
@@ -289,15 +288,15 @@ void Conditions::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_businessCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BusinessCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_businessCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
@@ -305,7 +304,7 @@ void Conditions::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionId, allocator);
@@ -313,101 +312,101 @@ void Conditions::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_payModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_payMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceKeywordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceKeyword";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceKeyword.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceKeyword.c_str(), allocator).Move(), allocator);
     }
 
     if (m_businessCodesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BusinessCodes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_businessCodes.begin(); itr != m_businessCodes.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_productCodesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductCodes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_productCodes.begin(); itr != m_productCodes.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_regionIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_regionIds.begin(); itr != m_regionIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_projectIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_payModesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayModes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_payModes.begin(); itr != m_payModes.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_actionTypesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActionTypes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_actionTypes.begin(); itr != m_actionTypes.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_hideFreeCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HideFreeCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hideFreeCost, allocator);
@@ -415,74 +414,74 @@ void Conditions::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_orderByCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderByCost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_orderByCost.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderByCost.c_str(), allocator).Move(), allocator);
     }
 
     if (m_billIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BillIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_billIds.begin(); itr != m_billIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_componentCodesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComponentCodes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_componentCodes.begin(); itr != m_componentCodes.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_fileIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_fileIds.begin(); itr != m_fileIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_fileTypesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileTypes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_fileTypes.begin(); itr != m_fileTypes.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_status.begin(); itr != m_status.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 

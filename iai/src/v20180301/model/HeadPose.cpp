@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 HeadPose::HeadPose() :
@@ -28,7 +27,7 @@ HeadPose::HeadPose() :
 {
 }
 
-CoreInternalOutcome HeadPose::Deserialize(const Value &value)
+CoreInternalOutcome HeadPose::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome HeadPose::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HeadPose::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HeadPose::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_pitchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pitch, allocator);
@@ -80,7 +79,7 @@ void HeadPose::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_yawHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Yaw";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_yaw, allocator);
@@ -88,7 +87,7 @@ void HeadPose::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_rollHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Roll";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_roll, allocator);

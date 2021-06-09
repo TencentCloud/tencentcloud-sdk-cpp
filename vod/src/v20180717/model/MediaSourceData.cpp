@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaSourceData::MediaSourceData() :
@@ -27,7 +26,7 @@ MediaSourceData::MediaSourceData() :
 {
 }
 
-CoreInternalOutcome MediaSourceData::Deserialize(const Value &value)
+CoreInternalOutcome MediaSourceData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome MediaSourceData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaSourceData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaSourceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sourceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sourceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sourceContextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceContext";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sourceContext.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceContext.c_str(), allocator).Move(), allocator);
     }
 
 }

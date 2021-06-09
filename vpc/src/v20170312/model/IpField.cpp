@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 IpField::IpField() :
@@ -33,7 +32,7 @@ IpField::IpField() :
 {
 }
 
-CoreInternalOutcome IpField::Deserialize(const Value &value)
+CoreInternalOutcome IpField::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome IpField::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IpField::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IpField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_countryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Country";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_country, allocator);
@@ -135,7 +134,7 @@ void IpField::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_provinceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Province";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_province, allocator);
@@ -143,7 +142,7 @@ void IpField::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_cityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "City";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_city, allocator);
@@ -151,7 +150,7 @@ void IpField::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_region, allocator);
@@ -159,7 +158,7 @@ void IpField::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_ispHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Isp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isp, allocator);
@@ -167,7 +166,7 @@ void IpField::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_asNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AsName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_asName, allocator);
@@ -175,7 +174,7 @@ void IpField::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_asIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AsId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_asId, allocator);
@@ -183,7 +182,7 @@ void IpField::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_commentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_comment, allocator);

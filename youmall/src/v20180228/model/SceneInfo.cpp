@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 SceneInfo::SceneInfo() :
@@ -30,7 +29,7 @@ SceneInfo::SceneInfo() :
 {
 }
 
-CoreInternalOutcome SceneInfo::Deserialize(const Value &value)
+CoreInternalOutcome SceneInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome SceneInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SceneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SceneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_scenePictureURLHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScenePictureURL";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scenePictureURL.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scenePictureURL.c_str(), allocator).Move(), allocator);
     }
 
     if (m_headXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeadX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_headX, allocator);
@@ -110,7 +109,7 @@ void SceneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_headYHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeadY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_headY, allocator);
@@ -118,7 +117,7 @@ void SceneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_headWidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeadWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_headWidth, allocator);
@@ -126,7 +125,7 @@ void SceneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_headHeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeadHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_headHeight, allocator);

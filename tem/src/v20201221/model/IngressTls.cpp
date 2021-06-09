@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tem::V20201221::Model;
-using namespace rapidjson;
 using namespace std;
 
 IngressTls::IngressTls() :
@@ -28,7 +27,7 @@ IngressTls::IngressTls() :
 {
 }
 
-CoreInternalOutcome IngressTls::Deserialize(const Value &value)
+CoreInternalOutcome IngressTls::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome IngressTls::Deserialize(const Value &value)
         if (!value["Hosts"].IsArray())
             return CoreInternalOutcome(Error("response `IngressTls.Hosts` is not array type"));
 
-        const Value &tmpValue = value["Hosts"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Hosts"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_hosts.push_back((*itr).GetString());
         }
@@ -70,36 +69,36 @@ CoreInternalOutcome IngressTls::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IngressTls::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IngressTls::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_hostsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hosts";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_hosts.begin(); itr != m_hosts.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_secretNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecretName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secretName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certificateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertificateId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certificateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
     }
 
 }

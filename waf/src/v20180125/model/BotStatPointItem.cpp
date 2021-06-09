@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Waf::V20180125::Model;
-using namespace rapidjson;
 using namespace std;
 
 BotStatPointItem::BotStatPointItem() :
@@ -29,7 +28,7 @@ BotStatPointItem::BotStatPointItem() :
 {
 }
 
-CoreInternalOutcome BotStatPointItem::Deserialize(const Value &value)
+CoreInternalOutcome BotStatPointItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,28 +77,28 @@ CoreInternalOutcome BotStatPointItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BotStatPointItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BotStatPointItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeStampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeStamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timeStamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeStamp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Key";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_key.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_value, allocator);
@@ -107,10 +106,10 @@ void BotStatPointItem::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_labelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
 }

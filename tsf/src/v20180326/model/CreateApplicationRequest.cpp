@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateApplicationRequest::CreateApplicationRequest() :
@@ -38,93 +37,93 @@ CreateApplicationRequest::CreateApplicationRequest() :
 
 string CreateApplicationRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_applicationNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applicationTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_microserviceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MicroserviceType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_microserviceType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_microserviceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applicationDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationDesc";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationDesc.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applicationLogConfigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationLogConfig";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationLogConfig.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationLogConfig.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applicationResourceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationResourceType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationResourceType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationResourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applicationRuntimeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationRuntimeType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applicationRuntimeType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationRuntimeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_programIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProgramId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_programId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_programId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceConfigListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceConfigList";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_serviceConfigList.begin(); itr != m_serviceConfigList.end(); ++itr, ++i)
         {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 Config::Config() :
@@ -37,7 +36,7 @@ Config::Config() :
 {
 }
 
-CoreInternalOutcome Config::Deserialize(const Value &value)
+CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -166,84 +165,84 @@ CoreInternalOutcome Config::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Config::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_configIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConfigId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_configId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_configNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConfigName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_configName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_configVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConfigVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_configVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_configVersionDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConfigVersionDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_configVersionDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configVersionDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_configValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConfigValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_configValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_configTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConfigType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_configType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_creationTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreationTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creationTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creationTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applicationIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applicationNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_applicationName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deleteFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeleteFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deleteFlag, allocator);
@@ -251,15 +250,15 @@ void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_lastUpdateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastUpdateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastUpdateTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastUpdateTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_configVersionCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConfigVersionCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_configVersionCount, allocator);

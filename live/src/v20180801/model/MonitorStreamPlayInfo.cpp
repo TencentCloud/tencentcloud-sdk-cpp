@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 MonitorStreamPlayInfo::MonitorStreamPlayInfo() :
@@ -32,7 +31,7 @@ MonitorStreamPlayInfo::MonitorStreamPlayInfo() :
 {
 }
 
-CoreInternalOutcome MonitorStreamPlayInfo::Deserialize(const Value &value)
+CoreInternalOutcome MonitorStreamPlayInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,28 +110,28 @@ CoreInternalOutcome MonitorStreamPlayInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MonitorStreamPlayInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MonitorStreamPlayInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_playDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlayDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_playDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_playDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_streamNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_streamName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_streamName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rate, allocator);
@@ -140,15 +139,15 @@ void MonitorStreamPlayInfo::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
@@ -156,7 +155,7 @@ void MonitorStreamPlayInfo::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_onlineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Online";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_online, allocator);
@@ -164,7 +163,7 @@ void MonitorStreamPlayInfo::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_requestHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Request";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_request, allocator);

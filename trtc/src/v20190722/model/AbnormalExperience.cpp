@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 AbnormalExperience::AbnormalExperience() :
@@ -30,7 +29,7 @@ AbnormalExperience::AbnormalExperience() :
 {
 }
 
-CoreInternalOutcome AbnormalExperience::Deserialize(const Value &value)
+CoreInternalOutcome AbnormalExperience::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,8 +69,8 @@ CoreInternalOutcome AbnormalExperience::Deserialize(const Value &value)
         if (!value["AbnormalEventList"].IsArray())
             return CoreInternalOutcome(Error("response `AbnormalExperience.AbnormalEventList` is not array type"));
 
-        const Value &tmpValue = value["AbnormalEventList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AbnormalEventList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AbnormalEvent item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -99,20 +98,20 @@ CoreInternalOutcome AbnormalExperience::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AbnormalExperience::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AbnormalExperience::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_userIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_experienceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExperienceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_experienceId, allocator);
@@ -120,30 +119,30 @@ void AbnormalExperience::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_roomIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoomId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_roomId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roomId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_abnormalEventListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AbnormalEventList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_abnormalEventList.begin(); itr != m_abnormalEventList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_eventTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eventTime, allocator);

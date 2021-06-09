@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Dcdb::V20180411::Model;
-using namespace rapidjson;
 using namespace std;
 
 CopyAccountPrivilegesRequest::CopyAccountPrivilegesRequest() :
@@ -36,70 +35,70 @@ CopyAccountPrivilegesRequest::CopyAccountPrivilegesRequest() :
 
 string CopyAccountPrivilegesRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcUserNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcUserName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_srcUserName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_srcUserName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcHostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcHost";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_srcHost.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_srcHost.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstUserNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstUserName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_dstUserName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dstUserName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstHostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstHost";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_dstHost.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dstHost.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcReadOnlyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcReadOnly";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_srcReadOnly.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_srcReadOnly.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstReadOnlyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstReadOnly";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_dstReadOnly.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dstReadOnly.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

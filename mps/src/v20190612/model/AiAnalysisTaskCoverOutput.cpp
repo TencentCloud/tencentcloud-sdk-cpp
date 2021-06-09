@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiAnalysisTaskCoverOutput::AiAnalysisTaskCoverOutput() :
@@ -27,7 +26,7 @@ AiAnalysisTaskCoverOutput::AiAnalysisTaskCoverOutput() :
 {
 }
 
-CoreInternalOutcome AiAnalysisTaskCoverOutput::Deserialize(const Value &value)
+CoreInternalOutcome AiAnalysisTaskCoverOutput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome AiAnalysisTaskCoverOutput::Deserialize(const Value &value)
         if (!value["CoverSet"].IsArray())
             return CoreInternalOutcome(Error("response `AiAnalysisTaskCoverOutput.CoverSet` is not array type"));
 
-        const Value &tmpValue = value["CoverSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CoverSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MediaAiAnalysisCoverItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -73,30 +72,30 @@ CoreInternalOutcome AiAnalysisTaskCoverOutput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AiAnalysisTaskCoverOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiAnalysisTaskCoverOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_coverSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CoverSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_coverSet.begin(); itr != m_coverSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_outputStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputStorage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_outputStorage.ToJsonObject(value[key.c_str()], allocator);
     }
 

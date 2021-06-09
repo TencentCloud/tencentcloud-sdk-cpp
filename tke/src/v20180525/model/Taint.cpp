@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 Taint::Taint() :
@@ -28,7 +27,7 @@ Taint::Taint() :
 {
 }
 
-CoreInternalOutcome Taint::Deserialize(const Value &value)
+CoreInternalOutcome Taint::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome Taint::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Taint::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Taint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_keyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Key";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_key.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
     }
 
     if (m_effectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Effect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_effect.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_effect.c_str(), allocator).Move(), allocator);
     }
 
 }

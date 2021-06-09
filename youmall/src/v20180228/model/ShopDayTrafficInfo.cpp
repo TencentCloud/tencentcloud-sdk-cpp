@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 ShopDayTrafficInfo::ShopDayTrafficInfo() :
@@ -28,7 +27,7 @@ ShopDayTrafficInfo::ShopDayTrafficInfo() :
 {
 }
 
-CoreInternalOutcome ShopDayTrafficInfo::Deserialize(const Value &value)
+CoreInternalOutcome ShopDayTrafficInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome ShopDayTrafficInfo::Deserialize(const Value &value)
         if (!value["GenderAgeTrafficDetailSet"].IsArray())
             return CoreInternalOutcome(Error("response `ShopDayTrafficInfo.GenderAgeTrafficDetailSet` is not array type"));
 
-        const Value &tmpValue = value["GenderAgeTrafficDetailSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["GenderAgeTrafficDetailSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             GenderAgeTrafficDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,20 +76,20 @@ CoreInternalOutcome ShopDayTrafficInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ShopDayTrafficInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ShopDayTrafficInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dayTrafficTotalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DayTrafficTotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dayTrafficTotalCount, allocator);
@@ -98,15 +97,15 @@ void ShopDayTrafficInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_genderAgeTrafficDetailSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GenderAgeTrafficDetailSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_genderAgeTrafficDetailSet.begin(); itr != m_genderAgeTrafficDetailSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

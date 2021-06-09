@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 DriverLicenseOCRResponse::DriverLicenseOCRResponse() :
@@ -45,7 +44,7 @@ DriverLicenseOCRResponse::DriverLicenseOCRResponse() :
 
 CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -55,7 +54,7 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -202,8 +201,8 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
         if (!rsp["RecognizeWarnCode"].IsArray())
             return CoreInternalOutcome(Error("response `RecognizeWarnCode` is not array type"));
 
-        const Value &tmpValue = rsp["RecognizeWarnCode"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["RecognizeWarnCode"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_recognizeWarnCode.push_back((*itr).GetInt64());
         }
@@ -215,8 +214,8 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
         if (!rsp["RecognizeWarnMsg"].IsArray())
             return CoreInternalOutcome(Error("response `RecognizeWarnMsg` is not array type"));
 
-        const Value &tmpValue = rsp["RecognizeWarnMsg"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["RecognizeWarnMsg"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_recognizeWarnMsg.push_back((*itr).GetString());
         }

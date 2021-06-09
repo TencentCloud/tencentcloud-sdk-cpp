@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 MuteSlice::MuteSlice() :
@@ -27,7 +26,7 @@ MuteSlice::MuteSlice() :
 {
 }
 
-CoreInternalOutcome MuteSlice::Deserialize(const Value &value)
+CoreInternalOutcome MuteSlice::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome MuteSlice::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MuteSlice::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MuteSlice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_muteBtmHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MuteBtm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_muteBtm, allocator);
@@ -69,7 +68,7 @@ void MuteSlice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_muteEtmHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MuteEtm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_muteEtm, allocator);

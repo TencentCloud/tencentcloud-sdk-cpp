@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Hcm::V20181106::Model;
-using namespace rapidjson;
 using namespace std;
 
 EvaluationRequest::EvaluationRequest() :
@@ -42,46 +41,46 @@ EvaluationRequest::EvaluationRequest() :
 
 string EvaluationRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_sessionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_image.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hcmAppidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HcmAppid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_hcmAppid.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hcmAppid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_supportHorizontalImageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SupportHorizontalImage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_supportHorizontalImage, allocator);
@@ -89,7 +88,7 @@ string EvaluationRequest::ToJsonString() const
 
     if (m_rejectNonArithmeticImageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RejectNonArithmeticImage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rejectNonArithmeticImage, allocator);
@@ -97,7 +96,7 @@ string EvaluationRequest::ToJsonString() const
 
     if (m_isAsyncHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsAsync";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isAsync, allocator);
@@ -105,7 +104,7 @@ string EvaluationRequest::ToJsonString() const
 
     if (m_enableDispRelatedVerticalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableDispRelatedVertical";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDispRelatedVertical, allocator);
@@ -113,7 +112,7 @@ string EvaluationRequest::ToJsonString() const
 
     if (m_enableDispMidresultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableDispMidresult";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDispMidresult, allocator);
@@ -121,7 +120,7 @@ string EvaluationRequest::ToJsonString() const
 
     if (m_enablePdfRecognizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnablePdfRecognize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enablePdfRecognize, allocator);
@@ -129,7 +128,7 @@ string EvaluationRequest::ToJsonString() const
 
     if (m_pdfPageIndexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PdfPageIndex";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pdfPageIndex, allocator);
@@ -137,7 +136,7 @@ string EvaluationRequest::ToJsonString() const
 
     if (m_laTexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LaTex";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_laTex, allocator);
@@ -145,15 +144,15 @@ string EvaluationRequest::ToJsonString() const
 
     if (m_rejectVagueArithmeticHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RejectVagueArithmetic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rejectVagueArithmetic, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

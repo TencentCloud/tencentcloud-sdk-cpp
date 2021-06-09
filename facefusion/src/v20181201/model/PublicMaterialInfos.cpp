@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Facefusion::V20181201::Model;
-using namespace rapidjson;
 using namespace std;
 
 PublicMaterialInfos::PublicMaterialInfos() :
@@ -35,7 +34,7 @@ PublicMaterialInfos::PublicMaterialInfos() :
 {
 }
 
-CoreInternalOutcome PublicMaterialInfos::Deserialize(const Value &value)
+CoreInternalOutcome PublicMaterialInfos::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -135,8 +134,8 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const Value &value)
         if (!value["MaterialFaceList"].IsArray())
             return CoreInternalOutcome(Error("response `PublicMaterialInfos.MaterialFaceList` is not array type"));
 
-        const Value &tmpValue = value["MaterialFaceList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MaterialFaceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MaterialFaceList item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -154,20 +153,20 @@ CoreInternalOutcome PublicMaterialInfos::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PublicMaterialInfos::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PublicMaterialInfos::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_materialIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaterialId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_materialId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_materialId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_materialStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaterialStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_materialStatus, allocator);
@@ -175,7 +174,7 @@ void PublicMaterialInfos::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_blendParamPtuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlendParamPtu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blendParamPtu, allocator);
@@ -183,7 +182,7 @@ void PublicMaterialInfos::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_positionParamPtuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PositionParamPtu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_positionParamPtu, allocator);
@@ -191,7 +190,7 @@ void PublicMaterialInfos::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_blendParamYoutuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlendParamYoutu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blendParamYoutu, allocator);
@@ -199,7 +198,7 @@ void PublicMaterialInfos::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_positionParamYoutuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PositionParamYoutu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_positionParamYoutu, allocator);
@@ -207,39 +206,39 @@ void PublicMaterialInfos::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_materialFaceListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaterialFaceList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_materialFaceList.begin(); itr != m_materialFaceList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

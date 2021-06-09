@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Sts::V20180813::Model;
-using namespace rapidjson;
 using namespace std;
 
 AssumeRoleWithSAMLRequest::AssumeRoleWithSAMLRequest() :
@@ -34,54 +33,54 @@ AssumeRoleWithSAMLRequest::AssumeRoleWithSAMLRequest() :
 
 string AssumeRoleWithSAMLRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_sAMLAssertionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SAMLAssertion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sAMLAssertion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sAMLAssertion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_principalArnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrincipalArn";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_principalArn.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_principalArn.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roleArnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoleArn";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_roleArn.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roleArn.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roleSessionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoleSessionName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_roleSessionName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roleSessionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_durationSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DurationSeconds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_durationSeconds, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

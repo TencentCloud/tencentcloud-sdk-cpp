@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 RouteTableConflict::RouteTableConflict() :
@@ -29,7 +28,7 @@ RouteTableConflict::RouteTableConflict() :
 {
 }
 
-CoreInternalOutcome RouteTableConflict::Deserialize(const Value &value)
+CoreInternalOutcome RouteTableConflict::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome RouteTableConflict::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RouteTableConflict::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RouteTableConflict::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_routeTableTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteTableType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_routeTableType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeTableType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_routeTableCidrBlockHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteTableCidrBlock";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_routeTableCidrBlock.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeTableCidrBlock.c_str(), allocator).Move(), allocator);
     }
 
     if (m_routeTableNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteTableName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_routeTableName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeTableName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_routeTableIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteTableId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_routeTableId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeTableId.c_str(), allocator).Move(), allocator);
     }
 
 }

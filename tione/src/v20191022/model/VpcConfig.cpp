@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 VpcConfig::VpcConfig() :
@@ -27,7 +26,7 @@ VpcConfig::VpcConfig() :
 {
 }
 
-CoreInternalOutcome VpcConfig::Deserialize(const Value &value)
+CoreInternalOutcome VpcConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome VpcConfig::Deserialize(const Value &value)
         if (!value["SecurityGroupIds"].IsArray())
             return CoreInternalOutcome(Error("response `VpcConfig.SecurityGroupIds` is not array type"));
 
-        const Value &tmpValue = value["SecurityGroupIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_securityGroupIds.push_back((*itr).GetString());
         }
@@ -59,28 +58,28 @@ CoreInternalOutcome VpcConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VpcConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VpcConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_securityGroupIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityGroupIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_subnetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 }

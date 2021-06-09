@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vm::V20200709::Model;
-using namespace rapidjson;
 using namespace std;
 
 AudioResult::AudioResult() :
@@ -36,7 +35,7 @@ AudioResult::AudioResult() :
 {
 }
 
-CoreInternalOutcome AudioResult::Deserialize(const Value &value)
+CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -126,8 +125,8 @@ CoreInternalOutcome AudioResult::Deserialize(const Value &value)
         if (!value["TextResults"].IsArray())
             return CoreInternalOutcome(Error("response `AudioResult.TextResults` is not array type"));
 
-        const Value &tmpValue = value["TextResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TextResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AudioResultDetailTextResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -146,8 +145,8 @@ CoreInternalOutcome AudioResult::Deserialize(const Value &value)
         if (!value["MoanResults"].IsArray())
             return CoreInternalOutcome(Error("response `AudioResult.MoanResults` is not array type"));
 
-        const Value &tmpValue = value["MoanResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MoanResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AudioResultDetailMoanResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -166,8 +165,8 @@ CoreInternalOutcome AudioResult::Deserialize(const Value &value)
         if (!value["LanguageResults"].IsArray())
             return CoreInternalOutcome(Error("response `AudioResult.LanguageResults` is not array type"));
 
-        const Value &tmpValue = value["LanguageResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LanguageResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AudioResultDetailLanguageResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -185,12 +184,12 @@ CoreInternalOutcome AudioResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AudioResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AudioResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_hitFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HitFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hitFlag, allocator);
@@ -198,23 +197,23 @@ void AudioResult::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_labelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
     if (m_suggestionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_suggestion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
@@ -222,77 +221,77 @@ void AudioResult::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_textHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_duration.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_duration.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extraHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_extra.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
     }
 
     if (m_textResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TextResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_textResults.begin(); itr != m_textResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_moanResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MoanResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_moanResults.begin(); itr != m_moanResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_languageResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LanguageResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_languageResults.begin(); itr != m_languageResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

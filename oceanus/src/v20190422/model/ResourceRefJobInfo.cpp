@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Oceanus::V20190422::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResourceRefJobInfo::ResourceRefJobInfo() :
@@ -28,7 +27,7 @@ ResourceRefJobInfo::ResourceRefJobInfo() :
 {
 }
 
-CoreInternalOutcome ResourceRefJobInfo::Deserialize(const Value &value)
+CoreInternalOutcome ResourceRefJobInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome ResourceRefJobInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResourceRefJobInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResourceRefJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_jobIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_jobId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_jobConfigVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobConfigVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_jobConfigVersion, allocator);
@@ -88,7 +87,7 @@ void ResourceRefJobInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_resourceVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceVersion, allocator);

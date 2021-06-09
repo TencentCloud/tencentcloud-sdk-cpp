@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 CallBackTemplateInfo::CallBackTemplateInfo() :
@@ -35,7 +34,7 @@ CallBackTemplateInfo::CallBackTemplateInfo() :
 {
 }
 
-CoreInternalOutcome CallBackTemplateInfo::Deserialize(const Value &value)
+CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,12 +143,12 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CallBackTemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CallBackTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templateId, allocator);
@@ -157,74 +156,74 @@ void CallBackTemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_templateNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_templateName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_streamBeginNotifyUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamBeginNotifyUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_streamBeginNotifyUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_streamBeginNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_streamEndNotifyUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamEndNotifyUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_streamEndNotifyUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_streamEndNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_streamMixNotifyUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamMixNotifyUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_streamMixNotifyUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_streamMixNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recordNotifyUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordNotifyUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_recordNotifyUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_snapshotNotifyUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SnapshotNotifyUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_snapshotNotifyUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshotNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pornCensorshipNotifyUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PornCensorshipNotifyUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pornCensorshipNotifyUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pornCensorshipNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_callbackKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CallbackKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_callbackKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callbackKey.c_str(), allocator).Move(), allocator);
     }
 
 }

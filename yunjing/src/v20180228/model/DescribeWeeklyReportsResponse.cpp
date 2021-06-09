@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Yunjing::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeWeeklyReportsResponse::DescribeWeeklyReportsResponse() :
@@ -32,7 +31,7 @@ DescribeWeeklyReportsResponse::DescribeWeeklyReportsResponse() :
 
 CoreInternalOutcome DescribeWeeklyReportsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeWeeklyReportsResponse::Deserialize(const string &pay
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeWeeklyReportsResponse::Deserialize(const string &pay
         if (!rsp["WeeklyReports"].IsArray())
             return CoreInternalOutcome(Error("response `WeeklyReports` is not array type"));
 
-        const Value &tmpValue = rsp["WeeklyReports"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["WeeklyReports"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             WeeklyReport item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 MetricObjectMeaning::MetricObjectMeaning() :
@@ -27,7 +26,7 @@ MetricObjectMeaning::MetricObjectMeaning() :
 {
 }
 
-CoreInternalOutcome MetricObjectMeaning::Deserialize(const Value &value)
+CoreInternalOutcome MetricObjectMeaning::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome MetricObjectMeaning::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MetricObjectMeaning::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MetricObjectMeaning::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "En";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_en.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_en.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zhHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zh";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zh.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zh.c_str(), allocator).Move(), allocator);
     }
 
 }

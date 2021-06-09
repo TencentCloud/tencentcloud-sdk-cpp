@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 QuotaResource::QuotaResource() :
@@ -29,7 +28,7 @@ QuotaResource::QuotaResource() :
 {
 }
 
-CoreInternalOutcome QuotaResource::Deserialize(const Value &value)
+CoreInternalOutcome QuotaResource::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome QuotaResource::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void QuotaResource::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QuotaResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceType, allocator);
@@ -91,7 +90,7 @@ void QuotaResource::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_hardLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HardLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hardLimit, allocator);
@@ -99,7 +98,7 @@ void QuotaResource::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_remainingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remaining";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_remaining, allocator);
@@ -107,10 +106,10 @@ void QuotaResource::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_extraInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExtraInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_extraInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extraInfo.c_str(), allocator).Move(), allocator);
     }
 
 }

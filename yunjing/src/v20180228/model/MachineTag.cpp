@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Yunjing::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 MachineTag::MachineTag() :
@@ -28,7 +27,7 @@ MachineTag::MachineTag() :
 {
 }
 
-CoreInternalOutcome MachineTag::Deserialize(const Value &value)
+CoreInternalOutcome MachineTag::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome MachineTag::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MachineTag::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MachineTag::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ridHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rid, allocator);
@@ -80,15 +79,15 @@ void MachineTag::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tagId, allocator);

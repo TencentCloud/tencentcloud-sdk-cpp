@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 PlayDataInfoByStream::PlayDataInfoByStream() :
@@ -27,7 +26,7 @@ PlayDataInfoByStream::PlayDataInfoByStream() :
 {
 }
 
-CoreInternalOutcome PlayDataInfoByStream::Deserialize(const Value &value)
+CoreInternalOutcome PlayDataInfoByStream::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome PlayDataInfoByStream::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PlayDataInfoByStream::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PlayDataInfoByStream::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_streamNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_streamName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_streamName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalFluxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalFlux";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalFlux, allocator);

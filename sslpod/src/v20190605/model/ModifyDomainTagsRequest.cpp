@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Sslpod::V20190605::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyDomainTagsRequest::ModifyDomainTagsRequest() :
@@ -31,14 +30,14 @@ ModifyDomainTagsRequest::ModifyDomainTagsRequest() :
 
 string ModifyDomainTagsRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_accountDomainIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccountDomainId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_accountDomainId, allocator);
@@ -46,15 +45,15 @@ string ModifyDomainTagsRequest::ToJsonString() const
 
     if (m_tagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_tags.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tags.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

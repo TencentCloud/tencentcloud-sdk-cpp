@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 FleetUtilization::FleetUtilization() :
@@ -30,7 +29,7 @@ FleetUtilization::FleetUtilization() :
 {
 }
 
-CoreInternalOutcome FleetUtilization::Deserialize(const Value &value)
+CoreInternalOutcome FleetUtilization::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome FleetUtilization::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FleetUtilization::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FleetUtilization::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_activeGameServerSessionCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActiveGameServerSessionCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_activeGameServerSessionCount, allocator);
@@ -102,7 +101,7 @@ void FleetUtilization::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_activeServerProcessCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActiveServerProcessCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_activeServerProcessCount, allocator);
@@ -110,7 +109,7 @@ void FleetUtilization::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_currentPlayerSessionCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CurrentPlayerSessionCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_currentPlayerSessionCount, allocator);
@@ -118,15 +117,15 @@ void FleetUtilization::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_fleetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FleetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fleetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fleetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maximumPlayerSessionCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaximumPlayerSessionCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maximumPlayerSessionCount, allocator);

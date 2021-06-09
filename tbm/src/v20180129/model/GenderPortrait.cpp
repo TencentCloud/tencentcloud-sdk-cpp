@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbm::V20180129::Model;
-using namespace rapidjson;
 using namespace std;
 
 GenderPortrait::GenderPortrait() :
@@ -27,7 +26,7 @@ GenderPortrait::GenderPortrait() :
 {
 }
 
-CoreInternalOutcome GenderPortrait::Deserialize(const Value &value)
+CoreInternalOutcome GenderPortrait::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome GenderPortrait::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GenderPortrait::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GenderPortrait::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_genderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gender.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gender.c_str(), allocator).Move(), allocator);
     }
 
     if (m_percentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Percent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_percent, allocator);

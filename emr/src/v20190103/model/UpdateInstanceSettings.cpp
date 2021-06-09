@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 UpdateInstanceSettings::UpdateInstanceSettings() :
@@ -29,7 +28,7 @@ UpdateInstanceSettings::UpdateInstanceSettings() :
 {
 }
 
-CoreInternalOutcome UpdateInstanceSettings::Deserialize(const Value &value)
+CoreInternalOutcome UpdateInstanceSettings::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome UpdateInstanceSettings::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UpdateInstanceSettings::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UpdateInstanceSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_memoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memory, allocator);
@@ -91,7 +90,7 @@ void UpdateInstanceSettings::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_cPUCoresHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CPUCores";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cPUCores, allocator);
@@ -99,18 +98,18 @@ void UpdateInstanceSettings::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_resourceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 }

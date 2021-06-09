@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 CMEExportInfo::CMEExportInfo() :
@@ -31,7 +30,7 @@ CMEExportInfo::CMEExportInfo() :
 {
 }
 
-CoreInternalOutcome CMEExportInfo::Deserialize(const Value &value)
+CoreInternalOutcome CMEExportInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -88,8 +87,8 @@ CoreInternalOutcome CMEExportInfo::Deserialize(const Value &value)
         if (!value["TagSet"].IsArray())
             return CoreInternalOutcome(Error("response `CMEExportInfo.TagSet` is not array type"));
 
-        const Value &tmpValue = value["TagSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TagSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_tagSet.push_back((*itr).GetString());
         }
@@ -101,8 +100,8 @@ CoreInternalOutcome CMEExportInfo::Deserialize(const Value &value)
         if (!value["ThirdPartyPublishInfos"].IsArray())
             return CoreInternalOutcome(Error("response `CMEExportInfo.ThirdPartyPublishInfos` is not array type"));
 
-        const Value &tmpValue = value["ThirdPartyPublishInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ThirdPartyPublishInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ThirdPartyPublishInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -120,66 +119,66 @@ CoreInternalOutcome CMEExportInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CMEExportInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CMEExportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ownerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Owner";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_owner.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_classPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClassPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_classPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_classPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_thirdPartyPublishInfosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ThirdPartyPublishInfos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_thirdPartyPublishInfos.begin(); itr != m_thirdPartyPublishInfos.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

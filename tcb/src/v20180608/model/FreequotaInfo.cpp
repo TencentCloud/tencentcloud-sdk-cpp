@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 FreequotaInfo::FreequotaInfo() :
@@ -31,7 +30,7 @@ FreequotaInfo::FreequotaInfo() :
 {
 }
 
-CoreInternalOutcome FreequotaInfo::Deserialize(const Value &value)
+CoreInternalOutcome FreequotaInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,28 +99,28 @@ CoreInternalOutcome FreequotaInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FreequotaInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FreequotaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceMetricHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceMetric";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceMetric.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceMetric.c_str(), allocator).Move(), allocator);
     }
 
     if (m_freeQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FreeQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_freeQuota, allocator);
@@ -129,26 +128,26 @@ void FreequotaInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_metricUnitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetricUnit";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metricUnit.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metricUnit.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deductTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeductType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deductType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deductType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_freeQuotaTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FreeQuotaType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_freeQuotaType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_freeQuotaType.c_str(), allocator).Move(), allocator);
     }
 
 }

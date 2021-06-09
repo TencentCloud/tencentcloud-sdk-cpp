@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCameraPersonRequest::DescribeCameraPersonRequest() :
@@ -37,22 +36,22 @@ DescribeCameraPersonRequest::DescribeCameraPersonRequest() :
 
 string DescribeCameraPersonRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_companyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompanyId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_companyId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_companyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shopIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShopId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shopId, allocator);
@@ -60,7 +59,7 @@ string DescribeCameraPersonRequest::ToJsonString() const
 
     if (m_cameraIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cameraId, allocator);
@@ -68,7 +67,7 @@ string DescribeCameraPersonRequest::ToJsonString() const
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_startTime, allocator);
@@ -76,7 +75,7 @@ string DescribeCameraPersonRequest::ToJsonString() const
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTime, allocator);
@@ -84,15 +83,15 @@ string DescribeCameraPersonRequest::ToJsonString() const
 
     if (m_posIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PosId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_posId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_posId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_numHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Num";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_num, allocator);
@@ -100,15 +99,15 @@ string DescribeCameraPersonRequest::ToJsonString() const
 
     if (m_isNeedPicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsNeedPic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isNeedPic, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

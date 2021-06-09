@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tiems::V20190416::Model;
-using namespace rapidjson;
 using namespace std;
 
 UpdateRsgAsGroupRequest::UpdateRsgAsGroupRequest() :
@@ -34,30 +33,30 @@ UpdateRsgAsGroupRequest::UpdateRsgAsGroupRequest() :
 
 string UpdateRsgAsGroupRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxSize, allocator);
@@ -65,7 +64,7 @@ string UpdateRsgAsGroupRequest::ToJsonString() const
 
     if (m_minSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_minSize, allocator);
@@ -73,15 +72,15 @@ string UpdateRsgAsGroupRequest::ToJsonString() const
 
     if (m_desiredSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DesiredSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_desiredSize, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

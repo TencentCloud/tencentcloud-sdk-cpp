@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ticm::V20181127::Model;
-using namespace rapidjson;
 using namespace std;
 
 PornResult::PornResult() :
@@ -31,7 +30,7 @@ PornResult::PornResult() :
 {
 }
 
-CoreInternalOutcome PornResult::Deserialize(const Value &value)
+CoreInternalOutcome PornResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome PornResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PornResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PornResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_codeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_code, allocator);
@@ -113,23 +112,23 @@ void PornResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_msgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Msg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_msg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_suggestionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_suggestion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -137,18 +136,18 @@ void PornResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_advancedInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AdvancedInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }

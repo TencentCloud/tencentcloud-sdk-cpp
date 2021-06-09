@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 SecurityEventInfo::SecurityEventInfo() :
@@ -27,7 +26,7 @@ SecurityEventInfo::SecurityEventInfo() :
 {
 }
 
-CoreInternalOutcome SecurityEventInfo::Deserialize(const Value &value)
+CoreInternalOutcome SecurityEventInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome SecurityEventInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SecurityEventInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SecurityEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eventCntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eventCnt, allocator);
@@ -69,7 +68,7 @@ void SecurityEventInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_uuidCntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UuidCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_uuidCnt, allocator);

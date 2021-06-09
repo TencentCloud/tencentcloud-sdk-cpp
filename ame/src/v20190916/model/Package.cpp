@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ame::V20190916::Model;
-using namespace rapidjson;
 using namespace std;
 
 Package::Package() :
@@ -36,7 +35,7 @@ Package::Package() :
 {
 }
 
-CoreInternalOutcome Package::Deserialize(const Value &value)
+CoreInternalOutcome Package::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -146,8 +145,8 @@ CoreInternalOutcome Package::Deserialize(const Value &value)
         if (!value["UseRanges"].IsArray())
             return CoreInternalOutcome(Error("response `Package.UseRanges` is not array type"));
 
-        const Value &tmpValue = value["UseRanges"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["UseRanges"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             UseRange item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -165,36 +164,36 @@ CoreInternalOutcome Package::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Package::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Package::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_orderIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_orderId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authorizedAreaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuthorizedArea";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_authorizedArea.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authorizedArea.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authorizedLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuthorizedLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_authorizedLimit, allocator);
@@ -202,7 +201,7 @@ void Package::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_termOfValidityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TermOfValidity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_termOfValidity, allocator);
@@ -210,7 +209,7 @@ void Package::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_commercialHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Commercial";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_commercial, allocator);
@@ -218,7 +217,7 @@ void Package::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_packagePriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PackagePrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_packagePrice, allocator);
@@ -226,23 +225,23 @@ void Package::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_effectTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EffectTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_effectTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_effectTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_expireTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usedCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedCount, allocator);
@@ -250,15 +249,15 @@ void Package::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_useRangesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UseRanges";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_useRanges.begin(); itr != m_useRanges.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

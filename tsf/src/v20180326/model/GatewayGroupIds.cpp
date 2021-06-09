@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 GatewayGroupIds::GatewayGroupIds() :
@@ -27,7 +26,7 @@ GatewayGroupIds::GatewayGroupIds() :
 {
 }
 
-CoreInternalOutcome GatewayGroupIds::Deserialize(const Value &value)
+CoreInternalOutcome GatewayGroupIds::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome GatewayGroupIds::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GatewayGroupIds::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GatewayGroupIds::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_gatewayDeployGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GatewayDeployGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gatewayDeployGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayDeployGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 }

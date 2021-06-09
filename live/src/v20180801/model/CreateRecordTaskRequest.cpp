@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateRecordTaskRequest::CreateRecordTaskRequest() :
@@ -37,38 +36,38 @@ CreateRecordTaskRequest::CreateRecordTaskRequest() :
 
 string CreateRecordTaskRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_streamNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_streamName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_streamName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_domainName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_appName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTime, allocator);
@@ -76,7 +75,7 @@ string CreateRecordTaskRequest::ToJsonString() const
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_startTime, allocator);
@@ -84,7 +83,7 @@ string CreateRecordTaskRequest::ToJsonString() const
 
     if (m_streamTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_streamType, allocator);
@@ -92,7 +91,7 @@ string CreateRecordTaskRequest::ToJsonString() const
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_templateId, allocator);
@@ -100,15 +99,15 @@ string CreateRecordTaskRequest::ToJsonString() const
 
     if (m_extensionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Extension";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_extension.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extension.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

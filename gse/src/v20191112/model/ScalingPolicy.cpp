@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScalingPolicy::ScalingPolicy() :
@@ -36,7 +35,7 @@ ScalingPolicy::ScalingPolicy() :
 {
 }
 
-CoreInternalOutcome ScalingPolicy::Deserialize(const Value &value)
+CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -162,95 +161,95 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScalingPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScalingPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fleetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FleetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fleetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fleetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scalingAdjustmentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScalingAdjustment";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scalingAdjustment.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scalingAdjustment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scalingAdjustmentTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScalingAdjustmentType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scalingAdjustmentType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scalingAdjustmentType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_comparisonOperatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComparisonOperator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_comparisonOperator.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_comparisonOperator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_thresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Threshold";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_threshold.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_threshold.c_str(), allocator).Move(), allocator);
     }
 
     if (m_evaluationPeriodsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvaluationPeriods";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_evaluationPeriods.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_evaluationPeriods.c_str(), allocator).Move(), allocator);
     }
 
     if (m_metricNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetricName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metricName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_policyTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_policyType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetConfigurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetConfiguration";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_targetConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 

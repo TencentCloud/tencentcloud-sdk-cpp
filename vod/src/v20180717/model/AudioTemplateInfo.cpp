@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AudioTemplateInfo::AudioTemplateInfo() :
@@ -29,7 +28,7 @@ AudioTemplateInfo::AudioTemplateInfo() :
 {
 }
 
-CoreInternalOutcome AudioTemplateInfo::Deserialize(const Value &value)
+CoreInternalOutcome AudioTemplateInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome AudioTemplateInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AudioTemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AudioTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_codecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Codec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_codec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bitrate, allocator);
@@ -99,7 +98,7 @@ void AudioTemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_sampleRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SampleRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sampleRate, allocator);
@@ -107,7 +106,7 @@ void AudioTemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_audioChannelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioChannel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioChannel, allocator);

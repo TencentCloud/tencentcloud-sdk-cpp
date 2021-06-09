@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateInstancePreData::CreateInstancePreData() :
@@ -27,7 +26,7 @@ CreateInstancePreData::CreateInstancePreData() :
 {
 }
 
-CoreInternalOutcome CreateInstancePreData::Deserialize(const Value &value)
+CoreInternalOutcome CreateInstancePreData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome CreateInstancePreData::Deserialize(const Value &value)
         if (!value["DealNames"].IsArray())
             return CoreInternalOutcome(Error("response `CreateInstancePreData.DealNames` is not array type"));
 
-        const Value &tmpValue = value["DealNames"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DealNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_dealNames.push_back((*itr).GetString());
         }
@@ -59,12 +58,12 @@ CoreInternalOutcome CreateInstancePreData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CreateInstancePreData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CreateInstancePreData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_flowIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowId, allocator);
@@ -72,14 +71,14 @@ void CreateInstancePreData::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_dealNamesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DealNames";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_dealNames.begin(); itr != m_dealNames.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

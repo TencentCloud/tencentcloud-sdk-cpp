@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cmq::V20190304::Model;
-using namespace rapidjson;
 using namespace std;
 
 TopicSet::TopicSet() :
@@ -37,7 +36,7 @@ TopicSet::TopicSet() :
 {
 }
 
-CoreInternalOutcome TopicSet::Deserialize(const Value &value)
+CoreInternalOutcome TopicSet::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -147,8 +146,8 @@ CoreInternalOutcome TopicSet::Deserialize(const Value &value)
         if (!value["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `TopicSet.Tags` is not array type"));
 
-        const Value &tmpValue = value["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Tag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -176,28 +175,28 @@ CoreInternalOutcome TopicSet::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TopicSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TopicSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_topicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topicId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topicNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topicName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_msgRetentionSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgRetentionSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_msgRetentionSeconds, allocator);
@@ -205,7 +204,7 @@ void TopicSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_maxMsgSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxMsgSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxMsgSize, allocator);
@@ -213,7 +212,7 @@ void TopicSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_qpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Qps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qps, allocator);
@@ -221,7 +220,7 @@ void TopicSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_filterTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FilterType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_filterType, allocator);
@@ -229,7 +228,7 @@ void TopicSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -237,7 +236,7 @@ void TopicSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_lastModifyTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastModifyTime, allocator);
@@ -245,7 +244,7 @@ void TopicSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_msgCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_msgCount, allocator);
@@ -253,7 +252,7 @@ void TopicSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_createUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createUin, allocator);
@@ -261,22 +260,22 @@ void TopicSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_tagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_traceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Trace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trace, allocator);

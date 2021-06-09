@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 TargetInfo::TargetInfo() :
@@ -27,7 +26,7 @@ TargetInfo::TargetInfo() :
 {
 }
 
-CoreInternalOutcome TargetInfo::Deserialize(const Value &value)
+CoreInternalOutcome TargetInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome TargetInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TargetInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TargetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_segmentInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SegmentInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_segmentInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

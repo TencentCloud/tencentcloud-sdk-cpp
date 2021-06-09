@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Nlp::V20190408::Model;
-using namespace rapidjson;
 using namespace std;
 
 WordSimilarityRequest::WordSimilarityRequest() :
@@ -31,30 +30,30 @@ WordSimilarityRequest::WordSimilarityRequest() :
 
 string WordSimilarityRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_srcWordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcWord";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_srcWord.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_srcWord.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetWordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetWord";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_targetWord.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetWord.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

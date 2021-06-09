@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReservedInstancePriceItem::ReservedInstancePriceItem() :
@@ -32,7 +31,7 @@ ReservedInstancePriceItem::ReservedInstancePriceItem() :
 {
 }
 
-CoreInternalOutcome ReservedInstancePriceItem::Deserialize(const Value &value)
+CoreInternalOutcome ReservedInstancePriceItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,20 +110,20 @@ CoreInternalOutcome ReservedInstancePriceItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReservedInstancePriceItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReservedInstancePriceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_offeringTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OfferingType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_offeringType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_offeringType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fixedPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FixedPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fixedPrice, allocator);
@@ -132,7 +131,7 @@ void ReservedInstancePriceItem::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_usagePriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsagePrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usagePrice, allocator);
@@ -140,23 +139,23 @@ void ReservedInstancePriceItem::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_reservedInstancesOfferingIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReservedInstancesOfferingId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reservedInstancesOfferingId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reservedInstancesOfferingId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -164,10 +163,10 @@ void ReservedInstancePriceItem::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_productDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productDescription.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 DismissRoomRequest::DismissRoomRequest() :
@@ -31,14 +30,14 @@ DismissRoomRequest::DismissRoomRequest() :
 
 string DismissRoomRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_sdkAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sdkAppId, allocator);
@@ -46,15 +45,15 @@ string DismissRoomRequest::ToJsonString() const
 
     if (m_roomIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoomId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_roomId, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

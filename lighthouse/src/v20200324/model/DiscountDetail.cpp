@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 DiscountDetail::DiscountDetail() :
@@ -31,7 +30,7 @@ DiscountDetail::DiscountDetail() :
 {
 }
 
-CoreInternalOutcome DiscountDetail::Deserialize(const Value &value)
+CoreInternalOutcome DiscountDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -107,12 +106,12 @@ CoreInternalOutcome DiscountDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DiscountDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DiscountDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeSpanHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeSpan, allocator);
@@ -120,15 +119,15 @@ void DiscountDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_timeUnitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeUnit";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timeUnit.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeUnit.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCost, allocator);
@@ -136,7 +135,7 @@ void DiscountDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_realTotalCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realTotalCost, allocator);
@@ -144,7 +143,7 @@ void DiscountDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_discountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Discount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discount, allocator);
@@ -152,10 +151,10 @@ void DiscountDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_policyDetailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_policyDetail.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Yunsou::V20180504::Model;
-using namespace rapidjson;
 using namespace std;
 
 DataSearchRequest::DataSearchRequest() :
@@ -52,14 +51,14 @@ DataSearchRequest::DataSearchRequest() :
 
 string DataSearchRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_resourceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_resourceId, allocator);
@@ -67,15 +66,15 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_searchQueryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SearchQuery";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_searchQuery.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_searchQuery.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageId, allocator);
@@ -83,7 +82,7 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_numPerPageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NumPerPage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_numPerPage, allocator);
@@ -91,15 +90,15 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_searchIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SearchId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_searchId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_searchId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queryEncodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueryEncode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_queryEncode, allocator);
@@ -107,7 +106,7 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_rankTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RankType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rankType, allocator);
@@ -115,31 +114,31 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_numFilterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NumFilter";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_numFilter.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_numFilter.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clFilterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClFilter";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_clFilter.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clFilter.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extraHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_extra.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sourceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sourceId, allocator);
@@ -147,7 +146,7 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_secondSearchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecondSearch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_secondSearch, allocator);
@@ -155,7 +154,7 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_maxDocReturnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxDocReturn";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxDocReturn, allocator);
@@ -163,7 +162,7 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_isSmartboxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsSmartbox";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isSmartbox, allocator);
@@ -171,7 +170,7 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_enableAbsHighlightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableAbsHighlight";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableAbsHighlight, allocator);
@@ -179,7 +178,7 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_qcBidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QcBid";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_qcBid, allocator);
@@ -187,39 +186,39 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_groupByHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupBy";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_groupBy.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupBy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_distinctHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Distinct";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_distinct.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_distinct.c_str(), allocator).Move(), allocator);
     }
 
     if (m_l4RankExpressionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "L4RankExpression";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_l4RankExpression.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_l4RankExpression.c_str(), allocator).Move(), allocator);
     }
 
     if (m_matchValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchValue";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_matchValue.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_matchValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_longitudeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Longitude";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_longitude, allocator);
@@ -227,7 +226,7 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_latitudeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Latitude";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_latitude, allocator);
@@ -235,20 +234,20 @@ string DataSearchRequest::ToJsonString() const
 
     if (m_multiFilterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MultiFilter";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_multiFilter.begin(); itr != m_multiFilter.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

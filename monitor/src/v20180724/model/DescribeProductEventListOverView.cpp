@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeProductEventListOverView::DescribeProductEventListOverView() :
@@ -29,7 +28,7 @@ DescribeProductEventListOverView::DescribeProductEventListOverView() :
 {
 }
 
-CoreInternalOutcome DescribeProductEventListOverView::Deserialize(const Value &value)
+CoreInternalOutcome DescribeProductEventListOverView::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome DescribeProductEventListOverView::Deserialize(const Value &v
     return CoreInternalOutcome(true);
 }
 
-void DescribeProductEventListOverView::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribeProductEventListOverView::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_statusChangeAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusChangeAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_statusChangeAmount, allocator);
@@ -91,7 +90,7 @@ void DescribeProductEventListOverView::ToJsonObject(Value &value, Document::Allo
 
     if (m_unConfigAlarmAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnConfigAlarmAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unConfigAlarmAmount, allocator);
@@ -99,7 +98,7 @@ void DescribeProductEventListOverView::ToJsonObject(Value &value, Document::Allo
 
     if (m_unNormalEventAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnNormalEventAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unNormalEventAmount, allocator);
@@ -107,7 +106,7 @@ void DescribeProductEventListOverView::ToJsonObject(Value &value, Document::Allo
 
     if (m_unRecoverAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnRecoverAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unRecoverAmount, allocator);

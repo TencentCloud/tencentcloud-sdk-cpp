@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyCCThresholdRequest::ModifyCCThresholdRequest() :
@@ -41,22 +40,22 @@ ModifyCCThresholdRequest::ModifyCCThresholdRequest() :
 
 string ModifyCCThresholdRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_businessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Business";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_business.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
     }
 
     if (m_thresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Threshold";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_threshold, allocator);
@@ -64,71 +63,71 @@ string ModifyCCThresholdRequest::ToJsonString() const
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ruleId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_basicIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BasicIp";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_basicIp.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_basicIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_basicRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BasicRegion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_basicRegion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_basicRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_basicBizTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BasicBizType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_basicBizType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_basicBizType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_basicDeviceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BasicDeviceType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_basicDeviceType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_basicDeviceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_basicIpInstanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BasicIpInstance";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_basicIpInstance.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_basicIpInstance.c_str(), allocator).Move(), allocator);
     }
 
     if (m_basicIspCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BasicIspCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_basicIspCode, allocator);
@@ -136,15 +135,15 @@ string ModifyCCThresholdRequest::ToJsonString() const
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

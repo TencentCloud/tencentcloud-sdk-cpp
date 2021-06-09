@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 CameraConfig::CameraConfig() :
@@ -39,7 +38,7 @@ CameraConfig::CameraConfig() :
 {
 }
 
-CoreInternalOutcome CameraConfig::Deserialize(const Value &value)
+CoreInternalOutcome CameraConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -195,20 +194,20 @@ CoreInternalOutcome CameraConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CameraConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CameraConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_groupCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mallIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MallId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mallId, allocator);
@@ -216,7 +215,7 @@ void CameraConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_floorIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FloorId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_floorId, allocator);
@@ -224,7 +223,7 @@ void CameraConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_cameraIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cameraId, allocator);
@@ -232,23 +231,23 @@ void CameraConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_cameraIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cameraIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cameraIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cameraMacHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraMac";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cameraMac.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cameraMac.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cameraTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cameraType, allocator);
@@ -256,7 +255,7 @@ void CameraConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_cameraFeatureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraFeature";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cameraFeature, allocator);
@@ -264,7 +263,7 @@ void CameraConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_cameraStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cameraState, allocator);
@@ -272,7 +271,7 @@ void CameraConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneId, allocator);
@@ -280,7 +279,7 @@ void CameraConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_zoneTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneType, allocator);
@@ -288,16 +287,16 @@ void CameraConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_configHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Config";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_config.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -305,7 +304,7 @@ void CameraConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);

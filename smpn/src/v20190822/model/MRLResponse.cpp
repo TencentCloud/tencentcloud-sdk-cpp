@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Smpn::V20190822::Model;
-using namespace rapidjson;
 using namespace std;
 
 MRLResponse::MRLResponse() :
@@ -30,7 +29,7 @@ MRLResponse::MRLResponse() :
 {
 }
 
-CoreInternalOutcome MRLResponse::Deserialize(const Value &value)
+CoreInternalOutcome MRLResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome MRLResponse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MRLResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MRLResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_disturbLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisturbLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disturbLevel, allocator);
@@ -102,7 +101,7 @@ void MRLResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_houseAgentLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HouseAgentLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_houseAgentLevel, allocator);
@@ -110,7 +109,7 @@ void MRLResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_insuranceLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InsuranceLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_insuranceLevel, allocator);
@@ -118,7 +117,7 @@ void MRLResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_salesLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SalesLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_salesLevel, allocator);
@@ -126,7 +125,7 @@ void MRLResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_cheatLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CheatLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cheatLevel, allocator);

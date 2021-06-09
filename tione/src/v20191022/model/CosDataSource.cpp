@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 CosDataSource::CosDataSource() :
@@ -29,7 +28,7 @@ CosDataSource::CosDataSource() :
 {
 }
 
-CoreInternalOutcome CosDataSource::Deserialize(const Value &value)
+CoreInternalOutcome CosDataSource::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome CosDataSource::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CosDataSource::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CosDataSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bucketHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bucket";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bucket.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bucket.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyPrefixHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyPrefix";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyPrefix.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyPrefix.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataDistributionTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataDistributionType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dataDistributionType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataDistributionType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dataType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataType.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 NodePoolOption::NodePoolOption() :
@@ -28,7 +27,7 @@ NodePoolOption::NodePoolOption() :
 {
 }
 
-CoreInternalOutcome NodePoolOption::Deserialize(const Value &value)
+CoreInternalOutcome NodePoolOption::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome NodePoolOption::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NodePoolOption::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NodePoolOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_addToNodePoolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddToNodePool";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_addToNodePool, allocator);
@@ -80,15 +79,15 @@ void NodePoolOption::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_nodePoolIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodePoolId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodePoolId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodePoolId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_inheritConfigurationFromNodePoolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InheritConfigurationFromNodePool";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inheritConfigurationFromNodePool, allocator);

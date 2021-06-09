@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResponseQueryContract::ResponseQueryContract() :
@@ -35,7 +34,7 @@ ResponseQueryContract::ResponseQueryContract() :
 {
 }
 
-CoreInternalOutcome ResponseQueryContract::Deserialize(const Value &value)
+CoreInternalOutcome ResponseQueryContract::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -151,88 +150,88 @@ CoreInternalOutcome ResponseQueryContract::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResponseQueryContract::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResponseQueryContract::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_externalReturnCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnMessageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnMessage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnMessage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnMessage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnData.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelMerchantIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelMerchantId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelMerchantId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelMerchantId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelSubMerchantIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelSubMerchantId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelSubMerchantId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelSubMerchantId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelAppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelAppId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelSubAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelSubAppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelSubAppId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelSubAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_returnContractInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReturnContractInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_returnContractInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_notifyUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotifyUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_notifyUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notifyUrl.c_str(), allocator).Move(), allocator);
     }
 
 }

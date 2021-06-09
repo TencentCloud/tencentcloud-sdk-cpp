@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Waf::V20180125::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCustomRulesPagingInfo::DescribeCustomRulesPagingInfo() :
@@ -27,7 +26,7 @@ DescribeCustomRulesPagingInfo::DescribeCustomRulesPagingInfo() :
 {
 }
 
-CoreInternalOutcome DescribeCustomRulesPagingInfo::Deserialize(const Value &value)
+CoreInternalOutcome DescribeCustomRulesPagingInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome DescribeCustomRulesPagingInfo::Deserialize(const Value &valu
     return CoreInternalOutcome(true);
 }
 
-void DescribeCustomRulesPagingInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribeCustomRulesPagingInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_offsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offset, allocator);
@@ -69,7 +68,7 @@ void DescribeCustomRulesPagingInfo::ToJsonObject(Value &value, Document::Allocat
 
     if (m_limitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_limit, allocator);

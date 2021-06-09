@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceClusterShard::InstanceClusterShard() :
@@ -34,7 +33,7 @@ InstanceClusterShard::InstanceClusterShard() :
 {
 }
 
-CoreInternalOutcome InstanceClusterShard::Deserialize(const Value &value)
+CoreInternalOutcome InstanceClusterShard::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,28 +132,28 @@ CoreInternalOutcome InstanceClusterShard::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceClusterShard::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceClusterShard::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_shardNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shardName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shardName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shardIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shardId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shardId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_role, allocator);
@@ -162,7 +161,7 @@ void InstanceClusterShard::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_keysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Keys";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_keys, allocator);
@@ -170,15 +169,15 @@ void InstanceClusterShard::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_slotsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Slots";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_slots.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_slots.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Storage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storage, allocator);
@@ -186,7 +185,7 @@ void InstanceClusterShard::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_storageSlopeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageSlope";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storageSlope, allocator);
@@ -194,15 +193,15 @@ void InstanceClusterShard::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_runidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Runid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_runid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_connectedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Connected";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_connected, allocator);

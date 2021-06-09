@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 AssignIpv6SubnetCidrBlockResponse::AssignIpv6SubnetCidrBlockResponse() :
@@ -31,7 +30,7 @@ AssignIpv6SubnetCidrBlockResponse::AssignIpv6SubnetCidrBlockResponse() :
 
 CoreInternalOutcome AssignIpv6SubnetCidrBlockResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome AssignIpv6SubnetCidrBlockResponse::Deserialize(const string 
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome AssignIpv6SubnetCidrBlockResponse::Deserialize(const string 
         if (!rsp["Ipv6SubnetCidrBlockSet"].IsArray())
             return CoreInternalOutcome(Error("response `Ipv6SubnetCidrBlockSet` is not array type"));
 
-        const Value &tmpValue = rsp["Ipv6SubnetCidrBlockSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Ipv6SubnetCidrBlockSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Ipv6SubnetCidrBlock item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

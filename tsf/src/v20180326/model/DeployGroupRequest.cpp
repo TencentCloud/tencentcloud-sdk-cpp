@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeployGroupRequest::DeployGroupRequest() :
@@ -43,46 +42,46 @@ DeployGroupRequest::DeployGroupRequest() :
 
 string DeployGroupRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pkgIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PkgId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_pkgId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pkgId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startupParametersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartupParameters";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_startupParameters.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startupParameters.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deployDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeployDesc";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_deployDesc.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deployDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_forceStartHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ForceStart";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceStart, allocator);
@@ -90,7 +89,7 @@ string DeployGroupRequest::ToJsonString() const
 
     if (m_enableHealthCheckHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableHealthCheck";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableHealthCheck, allocator);
@@ -98,16 +97,16 @@ string DeployGroupRequest::ToJsonString() const
 
     if (m_healthCheckSettingsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthCheckSettings";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_healthCheckSettings.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_updateTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_updateType, allocator);
@@ -115,7 +114,7 @@ string DeployGroupRequest::ToJsonString() const
 
     if (m_deployBetaEnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeployBetaEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deployBetaEnable, allocator);
@@ -123,28 +122,28 @@ string DeployGroupRequest::ToJsonString() const
 
     if (m_deployBatchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeployBatch";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_deployBatch.begin(); itr != m_deployBatch.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_deployExeModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeployExeMode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_deployExeMode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deployExeMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deployWaitTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeployWaitTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deployWaitTime, allocator);
@@ -152,23 +151,23 @@ string DeployGroupRequest::ToJsonString() const
 
     if (m_startScriptHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartScript";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_startScript.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startScript.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stopScriptHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StopScript";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_stopScript.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stopScript.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

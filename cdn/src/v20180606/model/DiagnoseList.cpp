@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 DiagnoseList::DiagnoseList() :
@@ -30,7 +29,7 @@ DiagnoseList::DiagnoseList() :
 {
 }
 
-CoreInternalOutcome DiagnoseList::Deserialize(const Value &value)
+CoreInternalOutcome DiagnoseList::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -60,8 +59,8 @@ CoreInternalOutcome DiagnoseList::Deserialize(const Value &value)
         if (!value["ClientInfo"].IsArray())
             return CoreInternalOutcome(Error("response `DiagnoseList.ClientInfo` is not array type"));
 
-        const Value &tmpValue = value["ClientInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ClientInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ClientInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -99,43 +98,43 @@ CoreInternalOutcome DiagnoseList::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DiagnoseList::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DiagnoseList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_diagnoseTagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiagnoseTag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diagnoseTag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diagnoseTag.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reportIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReportId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reportId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reportId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_clientInfo.begin(); itr != m_clientInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_finalDiagnoseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FinalDiagnose";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_finalDiagnose, allocator);
@@ -143,10 +142,10 @@ void DiagnoseList::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }

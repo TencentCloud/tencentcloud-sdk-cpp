@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 URLNotice::URLNotice() :
@@ -28,7 +27,7 @@ URLNotice::URLNotice() :
 {
 }
 
-CoreInternalOutcome URLNotice::Deserialize(const Value &value)
+CoreInternalOutcome URLNotice::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome URLNotice::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void URLNotice::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void URLNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_uRLHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "URL";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uRL.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uRL.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isValidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsValid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isValid, allocator);
@@ -88,10 +87,10 @@ void URLNotice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_validationCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ValidationCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_validationCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_validationCode.c_str(), allocator).Move(), allocator);
     }
 
 }

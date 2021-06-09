@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 CCRule::CCRule() :
@@ -28,7 +27,7 @@ CCRule::CCRule() :
 {
 }
 
-CoreInternalOutcome CCRule::Deserialize(const Value &value)
+CoreInternalOutcome CCRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome CCRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CCRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CCRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_skeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Skey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_skey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_skey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_operator.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
     }
 
 }

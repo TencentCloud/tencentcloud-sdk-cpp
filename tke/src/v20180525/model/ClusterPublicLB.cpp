@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClusterPublicLB::ClusterPublicLB() :
@@ -29,7 +28,7 @@ ClusterPublicLB::ClusterPublicLB() :
 {
 }
 
-CoreInternalOutcome ClusterPublicLB::Deserialize(const Value &value)
+CoreInternalOutcome ClusterPublicLB::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -49,8 +48,8 @@ CoreInternalOutcome ClusterPublicLB::Deserialize(const Value &value)
         if (!value["AllowFromCidrs"].IsArray())
             return CoreInternalOutcome(Error("response `ClusterPublicLB.AllowFromCidrs` is not array type"));
 
-        const Value &tmpValue = value["AllowFromCidrs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AllowFromCidrs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_allowFromCidrs.push_back((*itr).GetString());
         }
@@ -62,8 +61,8 @@ CoreInternalOutcome ClusterPublicLB::Deserialize(const Value &value)
         if (!value["SecurityPolicies"].IsArray())
             return CoreInternalOutcome(Error("response `ClusterPublicLB.SecurityPolicies` is not array type"));
 
-        const Value &tmpValue = value["SecurityPolicies"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SecurityPolicies"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_securityPolicies.push_back((*itr).GetString());
         }
@@ -84,12 +83,12 @@ CoreInternalOutcome ClusterPublicLB::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClusterPublicLB::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClusterPublicLB::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enabled, allocator);
@@ -97,36 +96,36 @@ void ClusterPublicLB::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_allowFromCidrsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AllowFromCidrs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_allowFromCidrs.begin(); itr != m_allowFromCidrs.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_securityPoliciesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityPolicies";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_securityPolicies.begin(); itr != m_securityPolicies.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_extraParamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExtraParam";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_extraParam.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extraParam.c_str(), allocator).Move(), allocator);
     }
 
 }

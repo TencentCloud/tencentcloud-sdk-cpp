@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 RedirectInfo::RedirectInfo() :
@@ -29,7 +28,7 @@ RedirectInfo::RedirectInfo() :
 {
 }
 
-CoreInternalOutcome RedirectInfo::Deserialize(const Value &value)
+CoreInternalOutcome RedirectInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome RedirectInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RedirectInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RedirectInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_stdoutRedirectPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StdoutRedirectPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stdoutRedirectPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stdoutRedirectPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stderrRedirectPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StderrRedirectPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stderrRedirectPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stderrRedirectPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stdoutRedirectFileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StdoutRedirectFileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stdoutRedirectFileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stdoutRedirectFileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stderrRedirectFileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StderrRedirectFileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stderrRedirectFileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stderrRedirectFileName.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool NickHasBeenSet() const;
 
+                    /**
+                     * 获取绑定过程中的会话token，由设备通过SDK接口确认是否允许绑定的token，用于增加设备被绑定的安全性
+                     * @return BindToken 绑定过程中的会话token，由设备通过SDK接口确认是否允许绑定的token，用于增加设备被绑定的安全性
+                     */
+                    std::string GetBindToken() const;
+
+                    /**
+                     * 设置绑定过程中的会话token，由设备通过SDK接口确认是否允许绑定的token，用于增加设备被绑定的安全性
+                     * @param BindToken 绑定过程中的会话token，由设备通过SDK接口确认是否允许绑定的token，用于增加设备被绑定的安全性
+                     */
+                    void SetBindToken(const std::string& _bindToken);
+
+                    /**
+                     * 判断参数 BindToken 是否已赋值
+                     * @return BindToken 是否已赋值
+                     */
+                    bool BindTokenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
+
+                    /**
+                     * 绑定过程中的会话token，由设备通过SDK接口确认是否允许绑定的token，用于增加设备被绑定的安全性
+                     */
+                    std::string m_bindToken;
+                    bool m_bindTokenHasBeenSet;
 
                 };
             }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apcas::V20201127::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskListData::TaskListData() :
@@ -29,7 +28,7 @@ TaskListData::TaskListData() :
 {
 }
 
-CoreInternalOutcome TaskListData::Deserialize(const Value &value)
+CoreInternalOutcome TaskListData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome TaskListData::Deserialize(const Value &value)
         if (!value["TaskList"].IsArray())
             return CoreInternalOutcome(Error("response `TaskListData.TaskList` is not array type"));
 
-        const Value &tmpValue = value["TaskList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TaskList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ListModel item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,12 +87,12 @@ CoreInternalOutcome TaskListData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskListData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskListData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_pageNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pageNumber, allocator);
@@ -101,7 +100,7 @@ void TaskListData::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_pageSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pageSize, allocator);
@@ -109,7 +108,7 @@ void TaskListData::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -117,15 +116,15 @@ void TaskListData::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_taskListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_taskList.begin(); itr != m_taskList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

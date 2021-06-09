@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 UnifiedOrderInSubOrderList::UnifiedOrderInSubOrderList() :
@@ -34,7 +33,7 @@ UnifiedOrderInSubOrderList::UnifiedOrderInSubOrderList() :
 {
 }
 
-CoreInternalOutcome UnifiedOrderInSubOrderList::Deserialize(const Value &value)
+CoreInternalOutcome UnifiedOrderInSubOrderList::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome UnifiedOrderInSubOrderList::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UnifiedOrderInSubOrderList::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UnifiedOrderInSubOrderList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_subMchIncomeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubMchIncome";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subMchIncome, allocator);
@@ -146,7 +145,7 @@ void UnifiedOrderInSubOrderList::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_platformIncomeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlatformIncome";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_platformIncome, allocator);
@@ -154,39 +153,39 @@ void UnifiedOrderInSubOrderList::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_productDetailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productDetail.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productDetail.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subAppId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subOutTradeNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubOutTradeNo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subOutTradeNo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subOutTradeNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_amtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Amt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_amt, allocator);
@@ -194,15 +193,15 @@ void UnifiedOrderInSubOrderList::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_metadataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Metadata";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metadata.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metadata.c_str(), allocator).Move(), allocator);
     }
 
     if (m_originalAmtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalAmt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalAmt, allocator);

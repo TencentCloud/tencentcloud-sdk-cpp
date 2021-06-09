@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Clb::V20180317::Model;
-using namespace rapidjson;
 using namespace std;
 
 LBChargePrepaid::LBChargePrepaid() :
@@ -27,7 +26,7 @@ LBChargePrepaid::LBChargePrepaid() :
 {
 }
 
-CoreInternalOutcome LBChargePrepaid::Deserialize(const Value &value)
+CoreInternalOutcome LBChargePrepaid::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome LBChargePrepaid::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LBChargePrepaid::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LBChargePrepaid::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_renewFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_renewFlag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_renewFlag.c_str(), allocator).Move(), allocator);
     }
 
     if (m_periodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_period, allocator);

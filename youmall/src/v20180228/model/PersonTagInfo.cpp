@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 PersonTagInfo::PersonTagInfo() :
@@ -28,7 +27,7 @@ PersonTagInfo::PersonTagInfo() :
 {
 }
 
-CoreInternalOutcome PersonTagInfo::Deserialize(const Value &value)
+CoreInternalOutcome PersonTagInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome PersonTagInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PersonTagInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PersonTagInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_oldTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OldType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_oldType, allocator);
@@ -80,7 +79,7 @@ void PersonTagInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_newTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_newType, allocator);
@@ -88,7 +87,7 @@ void PersonTagInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_personIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_personId, allocator);

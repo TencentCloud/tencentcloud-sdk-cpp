@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResourceConfig::ResourceConfig() :
@@ -28,7 +27,7 @@ ResourceConfig::ResourceConfig() :
 {
 }
 
-CoreInternalOutcome ResourceConfig::Deserialize(const Value &value)
+CoreInternalOutcome ResourceConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome ResourceConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResourceConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResourceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceCount, allocator);
@@ -80,15 +79,15 @@ void ResourceConfig::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_instanceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_volumeSizeInGBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VolumeSizeInGB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_volumeSizeInGB, allocator);

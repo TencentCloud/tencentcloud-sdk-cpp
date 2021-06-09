@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20201215::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloudStorageEvent::CloudStorageEvent() :
@@ -29,7 +28,7 @@ CloudStorageEvent::CloudStorageEvent() :
 {
 }
 
-CoreInternalOutcome CloudStorageEvent::Deserialize(const Value &value)
+CoreInternalOutcome CloudStorageEvent::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome CloudStorageEvent::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CloudStorageEvent::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloudStorageEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTime, allocator);
@@ -91,7 +90,7 @@ void CloudStorageEvent::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTime, allocator);
@@ -99,18 +98,18 @@ void CloudStorageEvent::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_thumbnailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Thumbnail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_thumbnail.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_thumbnail.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eventIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eventId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
     }
 
 }

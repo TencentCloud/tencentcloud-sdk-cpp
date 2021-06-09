@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateLoadBalancerBzConf::CreateLoadBalancerBzConf() :
@@ -28,7 +27,7 @@ CreateLoadBalancerBzConf::CreateLoadBalancerBzConf() :
 {
 }
 
-CoreInternalOutcome CreateLoadBalancerBzConf::Deserialize(const Value &value)
+CoreInternalOutcome CreateLoadBalancerBzConf::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome CreateLoadBalancerBzConf::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CreateLoadBalancerBzConf::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CreateLoadBalancerBzConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bzPayModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BzPayMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bzPayMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bzPayMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bzL4MetricsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BzL4Metrics";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bzL4Metrics.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bzL4Metrics.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bzL7MetricsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BzL7Metrics";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bzL7Metrics.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bzL7Metrics.c_str(), allocator).Move(), allocator);
     }
 
 }

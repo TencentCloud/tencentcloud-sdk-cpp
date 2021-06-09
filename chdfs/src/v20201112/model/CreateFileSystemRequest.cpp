@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Chdfs::V20201112::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateFileSystemRequest::CreateFileSystemRequest() :
@@ -36,22 +35,22 @@ CreateFileSystemRequest::CreateFileSystemRequest() :
 
 string CreateFileSystemRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_fileSystemNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSystemName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_fileSystemName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileSystemName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_capacityQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CapacityQuota";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_capacityQuota, allocator);
@@ -59,7 +58,7 @@ string CreateFileSystemRequest::ToJsonString() const
 
     if (m_posixAclHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PosixAcl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_posixAcl, allocator);
@@ -67,44 +66,44 @@ string CreateFileSystemRequest::ToJsonString() const
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_superUsersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuperUsers";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_superUsers.begin(); itr != m_superUsers.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_rootInodeUserHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RootInodeUser";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_rootInodeUser.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rootInodeUser.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rootInodeGroupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RootInodeGroup";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_rootInodeGroup.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rootInodeGroup.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

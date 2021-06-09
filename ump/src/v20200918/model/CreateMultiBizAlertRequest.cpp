@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateMultiBizAlertRequest::CreateMultiBizAlertRequest() :
@@ -37,22 +36,22 @@ CreateMultiBizAlertRequest::CreateMultiBizAlertRequest() :
 
 string CreateMultiBizAlertRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_groupCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupCode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_groupCode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mallIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MallId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_mallId, allocator);
@@ -60,7 +59,7 @@ string CreateMultiBizAlertRequest::ToJsonString() const
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_zoneId, allocator);
@@ -68,7 +67,7 @@ string CreateMultiBizAlertRequest::ToJsonString() const
 
     if (m_cameraIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cameraId, allocator);
@@ -76,7 +75,7 @@ string CreateMultiBizAlertRequest::ToJsonString() const
 
     if (m_captureTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CaptureTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_captureTime, allocator);
@@ -84,7 +83,7 @@ string CreateMultiBizAlertRequest::ToJsonString() const
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_state, allocator);
@@ -92,30 +91,30 @@ string CreateMultiBizAlertRequest::ToJsonString() const
 
     if (m_imageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_image.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
     if (m_warningsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Warnings";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_warnings.begin(); itr != m_warnings.end(); ++itr, ++i)
         {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

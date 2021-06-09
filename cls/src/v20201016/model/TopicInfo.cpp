@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
-using namespace rapidjson;
 using namespace std;
 
 TopicInfo::TopicInfo() :
@@ -36,7 +35,7 @@ TopicInfo::TopicInfo() :
 {
 }
 
-CoreInternalOutcome TopicInfo::Deserialize(const Value &value)
+CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -116,8 +115,8 @@ CoreInternalOutcome TopicInfo::Deserialize(const Value &value)
         if (!value["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `TopicInfo.Tags` is not array type"));
 
-        const Value &tmpValue = value["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Tag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -165,36 +164,36 @@ CoreInternalOutcome TopicInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TopicInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_logsetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogsetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_logsetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logsetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topicId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topicNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topicName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_partitionCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PartitionCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_partitionCount, allocator);
@@ -202,7 +201,7 @@ void TopicInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_indexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Index";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_index, allocator);
@@ -210,15 +209,15 @@ void TopicInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -226,22 +225,22 @@ void TopicInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_tagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_autoSplitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoSplit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoSplit, allocator);
@@ -249,7 +248,7 @@ void TopicInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_maxSplitPartitionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxSplitPartitions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxSplitPartitions, allocator);
@@ -257,10 +256,10 @@ void TopicInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_storageTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_storageType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 CertInfo::CertInfo() :
@@ -33,7 +32,7 @@ CertInfo::CertInfo() :
 {
 }
 
-CoreInternalOutcome CertInfo::Deserialize(const Value &value)
+CoreInternalOutcome CertInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -113,8 +112,8 @@ CoreInternalOutcome CertInfo::Deserialize(const Value &value)
         if (!value["DomainList"].IsArray())
             return CoreInternalOutcome(Error("response `CertInfo.DomainList` is not array type"));
 
-        const Value &tmpValue = value["DomainList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DomainList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_domainList.push_back((*itr).GetString());
         }
@@ -125,12 +124,12 @@ CoreInternalOutcome CertInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CertInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CertInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_certIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_certId, allocator);
@@ -138,39 +137,39 @@ void CertInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_certNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_httpsCrtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpsCrt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_httpsCrt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpsCrt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_certType, allocator);
@@ -178,22 +177,22 @@ void CertInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_certExpireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertExpireTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certExpireTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certExpireTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_domainList.begin(); itr != m_domainList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 GetUpgradeGroupFaceModelVersionJobListResponse::GetUpgradeGroupFaceModelVersionJobListResponse() :
@@ -32,7 +31,7 @@ GetUpgradeGroupFaceModelVersionJobListResponse::GetUpgradeGroupFaceModelVersionJ
 
 CoreInternalOutcome GetUpgradeGroupFaceModelVersionJobListResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome GetUpgradeGroupFaceModelVersionJobListResponse::Deserialize(
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome GetUpgradeGroupFaceModelVersionJobListResponse::Deserialize(
         if (!rsp["JobInfos"].IsArray())
             return CoreInternalOutcome(Error("response `JobInfos` is not array type"));
 
-        const Value &tmpValue = rsp["JobInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["JobInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             UpgradeJobInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

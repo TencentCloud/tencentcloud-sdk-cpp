@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 DomainAccessRegionDict::DomainAccessRegionDict() :
@@ -31,7 +30,7 @@ DomainAccessRegionDict::DomainAccessRegionDict() :
 {
 }
 
-CoreInternalOutcome DomainAccessRegionDict::Deserialize(const Value &value)
+CoreInternalOutcome DomainAccessRegionDict::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -41,8 +40,8 @@ CoreInternalOutcome DomainAccessRegionDict::Deserialize(const Value &value)
         if (!value["NationCountryInnerList"].IsArray())
             return CoreInternalOutcome(Error("response `DomainAccessRegionDict.NationCountryInnerList` is not array type"));
 
-        const Value &tmpValue = value["NationCountryInnerList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["NationCountryInnerList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             NationCountryInnerInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -61,8 +60,8 @@ CoreInternalOutcome DomainAccessRegionDict::Deserialize(const Value &value)
         if (!value["ProxyList"].IsArray())
             return CoreInternalOutcome(Error("response `DomainAccessRegionDict.ProxyList` is not array type"));
 
-        const Value &tmpValue = value["ProxyList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ProxyList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ProxyIdDict item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -120,69 +119,69 @@ CoreInternalOutcome DomainAccessRegionDict::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DomainAccessRegionDict::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DomainAccessRegionDict::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nationCountryInnerListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NationCountryInnerList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_nationCountryInnerList.begin(); itr != m_nationCountryInnerList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_proxyListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProxyList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_proxyList.begin(); itr != m_proxyList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_geographicalZoneInnerCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GeographicalZoneInnerCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_geographicalZoneInnerCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_geographicalZoneInnerCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_continentInnerCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContinentInnerCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_continentInnerCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_continentInnerCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
 }

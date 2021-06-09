@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 TransferDetailResponse::TransferDetailResponse() :
@@ -28,7 +27,7 @@ TransferDetailResponse::TransferDetailResponse() :
 {
 }
 
-CoreInternalOutcome TransferDetailResponse::Deserialize(const Value &value)
+CoreInternalOutcome TransferDetailResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome TransferDetailResponse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TransferDetailResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TransferDetailResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_merchantDetailNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MerchantDetailNo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_merchantDetailNo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_merchantDetailNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_detailIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DetailId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_detailId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_detailId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_detailStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DetailStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_detailStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_detailStatus.c_str(), allocator).Move(), allocator);
     }
 
 }

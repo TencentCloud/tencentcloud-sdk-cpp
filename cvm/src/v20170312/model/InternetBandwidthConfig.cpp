@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 InternetBandwidthConfig::InternetBandwidthConfig() :
@@ -28,7 +27,7 @@ InternetBandwidthConfig::InternetBandwidthConfig() :
 {
 }
 
-CoreInternalOutcome InternetBandwidthConfig::Deserialize(const Value &value)
+CoreInternalOutcome InternetBandwidthConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,31 +73,31 @@ CoreInternalOutcome InternetBandwidthConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InternetBandwidthConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InternetBandwidthConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_internetAccessibleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InternetAccessible";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_internetAccessible.ToJsonObject(value[key.c_str()], allocator);
     }
 

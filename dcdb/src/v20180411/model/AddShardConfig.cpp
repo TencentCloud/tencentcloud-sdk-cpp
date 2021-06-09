@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dcdb::V20180411::Model;
-using namespace rapidjson;
 using namespace std;
 
 AddShardConfig::AddShardConfig() :
@@ -28,7 +27,7 @@ AddShardConfig::AddShardConfig() :
 {
 }
 
-CoreInternalOutcome AddShardConfig::Deserialize(const Value &value)
+CoreInternalOutcome AddShardConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome AddShardConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AddShardConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AddShardConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_shardCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shardCount, allocator);
@@ -80,7 +79,7 @@ void AddShardConfig::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_shardMemoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardMemory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shardMemory, allocator);
@@ -88,7 +87,7 @@ void AddShardConfig::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_shardStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shardStorage, allocator);

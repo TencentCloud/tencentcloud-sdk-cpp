@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 SaveInfo::SaveInfo() :
@@ -27,7 +26,7 @@ SaveInfo::SaveInfo() :
 {
 }
 
-CoreInternalOutcome SaveInfo::Deserialize(const Value &value)
+CoreInternalOutcome SaveInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,12 +62,12 @@ CoreInternalOutcome SaveInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SaveInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SaveInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -76,10 +75,10 @@ void SaveInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_cosInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsw::V20200924::Model;
-using namespace rapidjson;
 using namespace std;
 
 AgentShell::AgentShell() :
@@ -33,7 +32,7 @@ AgentShell::AgentShell() :
 {
 }
 
-CoreInternalOutcome AgentShell::Deserialize(const Value &value)
+CoreInternalOutcome AgentShell::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,71 +121,71 @@ CoreInternalOutcome AgentShell::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AgentShell::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AgentShell::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Token";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_token.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
     }
 
     if (m_etlIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EtlIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_etlIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_etlIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_etlPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EtlPort";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_etlPort.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_etlPort.c_str(), allocator).Move(), allocator);
     }
 
     if (m_byHandAccessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ByHandAccess";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_byHandAccess.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_byHandAccess.c_str(), allocator).Move(), allocator);
     }
 
     if (m_byShellAccessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ByShellAccess";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_byShellAccess.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_byShellAccess.c_str(), allocator).Move(), allocator);
     }
 
     if (m_skyWalkingPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SkyWalkingPort";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_skyWalkingPort.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_skyWalkingPort.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zipkinPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZipkinPort";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zipkinPort.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zipkinPort.c_str(), allocator).Move(), allocator);
     }
 
     if (m_jaegerPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JaegerPort";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_jaegerPort.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jaegerPort.c_str(), allocator).Move(), allocator);
     }
 
 }

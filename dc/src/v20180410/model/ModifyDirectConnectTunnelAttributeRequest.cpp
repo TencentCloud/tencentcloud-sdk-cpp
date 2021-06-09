@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Dc::V20180410::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyDirectConnectTunnelAttributeRequest::ModifyDirectConnectTunnelAttributeRequest() :
@@ -37,70 +36,70 @@ ModifyDirectConnectTunnelAttributeRequest::ModifyDirectConnectTunnelAttributeReq
 
 string ModifyDirectConnectTunnelAttributeRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_directConnectTunnelIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectConnectTunnelId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_directConnectTunnelId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_directConnectTunnelId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_directConnectTunnelNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectConnectTunnelName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_directConnectTunnelName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_directConnectTunnelName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bgpPeerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BgpPeer";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bgpPeer.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_routeFilterPrefixesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteFilterPrefixes";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_routeFilterPrefixes.begin(); itr != m_routeFilterPrefixes.end(); ++itr, ++i)
         {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
     if (m_tencentAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TencentAddress";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_tencentAddress.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tencentAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customerAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomerAddress";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_customerAddress.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customerAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bandwidth, allocator);
@@ -108,15 +107,15 @@ string ModifyDirectConnectTunnelAttributeRequest::ToJsonString() const
 
     if (m_tencentBackupAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TencentBackupAddress";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_tencentBackupAddress.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tencentBackupAddress.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cloudhsm::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 Vpc::Vpc() :
@@ -29,7 +28,7 @@ Vpc::Vpc() :
 {
 }
 
-CoreInternalOutcome Vpc::Deserialize(const Value &value)
+CoreInternalOutcome Vpc::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,36 +77,36 @@ CoreInternalOutcome Vpc::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Vpc::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Vpc::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_vpcNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isDefaultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsDefault";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDefault, allocator);

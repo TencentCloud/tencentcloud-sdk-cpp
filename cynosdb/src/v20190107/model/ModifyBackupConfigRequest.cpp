@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cynosdb::V20190107::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyBackupConfigRequest::ModifyBackupConfigRequest() :
@@ -35,22 +34,22 @@ ModifyBackupConfigRequest::ModifyBackupConfigRequest() :
 
 string ModifyBackupConfigRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_clusterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_backupTimeBegHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupTimeBeg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_backupTimeBeg, allocator);
@@ -58,7 +57,7 @@ string ModifyBackupConfigRequest::ToJsonString() const
 
     if (m_backupTimeEndHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupTimeEnd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_backupTimeEnd, allocator);
@@ -66,7 +65,7 @@ string ModifyBackupConfigRequest::ToJsonString() const
 
     if (m_reserveDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReserveDuration";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_reserveDuration, allocator);
@@ -74,28 +73,28 @@ string ModifyBackupConfigRequest::ToJsonString() const
 
     if (m_backupFreqHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupFreq";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_backupFreq.begin(); itr != m_backupFreq.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_backupTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_backupType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupType.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

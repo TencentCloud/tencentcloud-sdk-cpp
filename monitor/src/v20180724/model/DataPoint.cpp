@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DataPoint::DataPoint() :
@@ -28,7 +27,7 @@ DataPoint::DataPoint() :
 {
 }
 
-CoreInternalOutcome DataPoint::Deserialize(const Value &value)
+CoreInternalOutcome DataPoint::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome DataPoint::Deserialize(const Value &value)
         if (!value["Dimensions"].IsArray())
             return CoreInternalOutcome(Error("response `DataPoint.Dimensions` is not array type"));
 
-        const Value &tmpValue = value["Dimensions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Dimensions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Dimension item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -58,8 +57,8 @@ CoreInternalOutcome DataPoint::Deserialize(const Value &value)
         if (!value["Timestamps"].IsArray())
             return CoreInternalOutcome(Error("response `DataPoint.Timestamps` is not array type"));
 
-        const Value &tmpValue = value["Timestamps"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Timestamps"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_timestamps.push_back((*itr).GetDouble());
         }
@@ -71,8 +70,8 @@ CoreInternalOutcome DataPoint::Deserialize(const Value &value)
         if (!value["Values"].IsArray())
             return CoreInternalOutcome(Error("response `DataPoint.Values` is not array type"));
 
-        const Value &tmpValue = value["Values"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Values"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_values.push_back((*itr).GetDouble());
         }
@@ -83,47 +82,47 @@ CoreInternalOutcome DataPoint::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DataPoint::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DataPoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dimensionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Dimensions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_dimensions.begin(); itr != m_dimensions.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_timestampsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Timestamps";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_timestamps.begin(); itr != m_timestamps.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_valuesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Values";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_values.begin(); itr != m_values.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 

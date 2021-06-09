@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 VulInfo::VulInfo() :
@@ -27,7 +26,7 @@ VulInfo::VulInfo() :
 {
 }
 
-CoreInternalOutcome VulInfo::Deserialize(const Value &value)
+CoreInternalOutcome VulInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome VulInfo::Deserialize(const Value &value)
         if (!value["VulList"].IsArray())
             return CoreInternalOutcome(Error("response `VulInfo.VulList` is not array type"));
 
-        const Value &tmpValue = value["VulList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["VulList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             VulList item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,27 +65,27 @@ CoreInternalOutcome VulInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VulInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VulInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_vulListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_vulList.begin(); itr != m_vulList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_vulFileScoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulFileScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulFileScore, allocator);

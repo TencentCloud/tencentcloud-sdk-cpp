@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
-using namespace rapidjson;
 using namespace std;
 
 StatisticItem::StatisticItem() :
@@ -27,7 +26,7 @@ StatisticItem::StatisticItem() :
 {
 }
 
-CoreInternalOutcome StatisticItem::Deserialize(const Value &value)
+CoreInternalOutcome StatisticItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome StatisticItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StatisticItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StatisticItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sum, allocator);

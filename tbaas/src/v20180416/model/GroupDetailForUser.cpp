@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbaas::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 GroupDetailForUser::GroupDetailForUser() :
@@ -27,7 +26,7 @@ GroupDetailForUser::GroupDetailForUser() :
 {
 }
 
-CoreInternalOutcome GroupDetailForUser::Deserialize(const Value &value)
+CoreInternalOutcome GroupDetailForUser::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome GroupDetailForUser::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GroupDetailForUser::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GroupDetailForUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_groupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupMSPIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupMSPId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupMSPId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupMSPId.c_str(), allocator).Move(), allocator);
     }
 
 }

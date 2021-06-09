@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyPersonTypeRequest::ModifyPersonTypeRequest() :
@@ -34,22 +33,22 @@ ModifyPersonTypeRequest::ModifyPersonTypeRequest() :
 
 string ModifyPersonTypeRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_companyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompanyId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_companyId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_companyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shopIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShopId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shopId, allocator);
@@ -57,7 +56,7 @@ string ModifyPersonTypeRequest::ToJsonString() const
 
     if (m_personIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_personId, allocator);
@@ -65,7 +64,7 @@ string ModifyPersonTypeRequest::ToJsonString() const
 
     if (m_personTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_personType, allocator);
@@ -73,15 +72,15 @@ string ModifyPersonTypeRequest::ToJsonString() const
 
     if (m_personSubTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonSubType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_personSubType, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

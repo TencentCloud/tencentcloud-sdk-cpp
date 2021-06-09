@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ccc::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 SeatUserInfo::SeatUserInfo() :
@@ -32,7 +31,7 @@ SeatUserInfo::SeatUserInfo() :
 {
 }
 
-CoreInternalOutcome SeatUserInfo::Deserialize(const Value &value)
+CoreInternalOutcome SeatUserInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -92,8 +91,8 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const Value &value)
         if (!value["SkillGroupNameList"].IsArray())
             return CoreInternalOutcome(Error("response `SeatUserInfo.SkillGroupNameList` is not array type"));
 
-        const Value &tmpValue = value["SkillGroupNameList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SkillGroupNameList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_skillGroupNameList.push_back((*itr).GetString());
         }
@@ -114,68 +113,68 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SeatUserInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SeatUserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mail.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mail.c_str(), allocator).Move(), allocator);
     }
 
     if (m_phoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Phone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_phone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nickHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Nick";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nick.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nick.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_skillGroupNameListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SkillGroupNameList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_skillGroupNameList.begin(); itr != m_skillGroupNameList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_staffNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StaffNumber";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_staffNumber.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_staffNumber.c_str(), allocator).Move(), allocator);
     }
 
 }

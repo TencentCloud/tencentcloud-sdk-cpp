@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iot::V20180123::Model;
-using namespace rapidjson;
 using namespace std;
 
 DataTemplate::DataTemplate() :
@@ -29,7 +28,7 @@ DataTemplate::DataTemplate() :
 {
 }
 
-CoreInternalOutcome DataTemplate::Deserialize(const Value &value)
+CoreInternalOutcome DataTemplate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -106,42 +105,42 @@ CoreInternalOutcome DataTemplate::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DataTemplate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DataTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_numberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Number";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_number.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_stringHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "String";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_string.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_enumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enum.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_boolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bool";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bool.ToJsonObject(value[key.c_str()], allocator);
     }
 

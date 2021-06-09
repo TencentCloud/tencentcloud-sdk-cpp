@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tat::V20201028::Model;
-using namespace rapidjson;
 using namespace std;
 
 AutomationAgentInfo::AutomationAgentInfo() :
@@ -30,7 +29,7 @@ AutomationAgentInfo::AutomationAgentInfo() :
 {
 }
 
-CoreInternalOutcome AutomationAgentInfo::Deserialize(const Value &value)
+CoreInternalOutcome AutomationAgentInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,47 +88,47 @@ CoreInternalOutcome AutomationAgentInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AutomationAgentInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AutomationAgentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_versionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastHeartbeatTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastHeartbeatTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastHeartbeatTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastHeartbeatTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_agentStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AgentStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_agentStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_environmentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Environment";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_environment.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 }

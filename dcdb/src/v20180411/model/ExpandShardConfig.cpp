@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dcdb::V20180411::Model;
-using namespace rapidjson;
 using namespace std;
 
 ExpandShardConfig::ExpandShardConfig() :
@@ -28,7 +27,7 @@ ExpandShardConfig::ExpandShardConfig() :
 {
 }
 
-CoreInternalOutcome ExpandShardConfig::Deserialize(const Value &value)
+CoreInternalOutcome ExpandShardConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome ExpandShardConfig::Deserialize(const Value &value)
         if (!value["ShardInstanceIds"].IsArray())
             return CoreInternalOutcome(Error("response `ExpandShardConfig.ShardInstanceIds` is not array type"));
 
-        const Value &tmpValue = value["ShardInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ShardInstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_shardInstanceIds.push_back((*itr).GetString());
         }
@@ -70,25 +69,25 @@ CoreInternalOutcome ExpandShardConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ExpandShardConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ExpandShardConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_shardInstanceIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardInstanceIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_shardInstanceIds.begin(); itr != m_shardInstanceIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_shardMemoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardMemory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shardMemory, allocator);
@@ -96,7 +95,7 @@ void ExpandShardConfig::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_shardStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shardStorage, allocator);

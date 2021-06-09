@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfs::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 FileSystemInfo::FileSystemInfo() :
@@ -43,7 +42,7 @@ FileSystemInfo::FileSystemInfo() :
 {
 }
 
-CoreInternalOutcome FileSystemInfo::Deserialize(const Value &value)
+CoreInternalOutcome FileSystemInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -239,44 +238,44 @@ CoreInternalOutcome FileSystemInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FileSystemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FileSystemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_creationTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreationTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creationTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creationTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_creationTokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreationToken";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creationToken.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creationToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileSystemIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSystemId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileSystemId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSystemId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lifeCycleStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifeCycleState";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lifeCycleState.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lifeCycleState.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sizeByteHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SizeByte";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sizeByte, allocator);
@@ -284,7 +283,7 @@ void FileSystemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_sizeLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SizeLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sizeLimit, allocator);
@@ -292,7 +291,7 @@ void FileSystemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneId, allocator);
@@ -300,64 +299,64 @@ void FileSystemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_storageType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageResourcePkgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageResourcePkg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_storageResourcePkg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageResourcePkg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthResourcePkgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BandwidthResourcePkg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bandwidthResourcePkg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bandwidthResourcePkg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pGroupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PGroup";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_pGroup.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_fsNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FsName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fsName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fsName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_encryptedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Encrypted";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_encrypted, allocator);
@@ -365,15 +364,15 @@ void FileSystemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_kmsKeyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KmsKeyId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appId, allocator);
@@ -381,7 +380,7 @@ void FileSystemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_bandwidthLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BandwidthLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidthLimit, allocator);

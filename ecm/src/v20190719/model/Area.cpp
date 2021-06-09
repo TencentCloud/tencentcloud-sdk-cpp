@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 Area::Area() :
@@ -27,7 +26,7 @@ Area::Area() :
 {
 }
 
-CoreInternalOutcome Area::Deserialize(const Value &value)
+CoreInternalOutcome Area::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome Area::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Area::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Area::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_areaIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AreaId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_areaId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_areaId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_areaNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AreaName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_areaName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_areaName.c_str(), allocator).Move(), allocator);
     }
 
 }

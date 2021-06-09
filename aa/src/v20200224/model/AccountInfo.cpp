@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Aa::V20200224::Model;
-using namespace rapidjson;
 using namespace std;
 
 AccountInfo::AccountInfo() :
@@ -29,7 +28,7 @@ AccountInfo::AccountInfo() :
 {
 }
 
-CoreInternalOutcome AccountInfo::Deserialize(const Value &value)
+CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -99,12 +98,12 @@ CoreInternalOutcome AccountInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AccountInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AccountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_accountTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccountType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accountType, allocator);
@@ -112,28 +111,28 @@ void AccountInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_qQAccountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QQAccount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qQAccount.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_weChatAccountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WeChatAccount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_weChatAccount.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_otherAccountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OtherAccount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_otherAccount.ToJsonObject(value[key.c_str()], allocator);
     }
 

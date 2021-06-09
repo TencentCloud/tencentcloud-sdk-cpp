@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceQualityCompleteness::FaceQualityCompleteness() :
@@ -31,7 +30,7 @@ FaceQualityCompleteness::FaceQualityCompleteness() :
 {
 }
 
-CoreInternalOutcome FaceQualityCompleteness::Deserialize(const Value &value)
+CoreInternalOutcome FaceQualityCompleteness::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome FaceQualityCompleteness::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FaceQualityCompleteness::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FaceQualityCompleteness::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eyebrowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Eyebrow";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eyebrow, allocator);
@@ -113,7 +112,7 @@ void FaceQualityCompleteness::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_eyeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Eye";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eye, allocator);
@@ -121,7 +120,7 @@ void FaceQualityCompleteness::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_noseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Nose";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nose, allocator);
@@ -129,7 +128,7 @@ void FaceQualityCompleteness::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_cheekHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cheek";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cheek, allocator);
@@ -137,7 +136,7 @@ void FaceQualityCompleteness::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_mouthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mouth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mouth, allocator);
@@ -145,7 +144,7 @@ void FaceQualityCompleteness::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_chinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Chin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_chin, allocator);

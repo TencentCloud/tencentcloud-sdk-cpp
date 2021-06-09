@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 SnapshotDeniedActions::SnapshotDeniedActions() :
@@ -27,7 +26,7 @@ SnapshotDeniedActions::SnapshotDeniedActions() :
 {
 }
 
-CoreInternalOutcome SnapshotDeniedActions::Deserialize(const Value &value)
+CoreInternalOutcome SnapshotDeniedActions::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome SnapshotDeniedActions::Deserialize(const Value &value)
         if (!value["DeniedActions"].IsArray())
             return CoreInternalOutcome(Error("response `SnapshotDeniedActions.DeniedActions` is not array type"));
 
-        const Value &tmpValue = value["DeniedActions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DeniedActions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DeniedAction item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome SnapshotDeniedActions::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SnapshotDeniedActions::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SnapshotDeniedActions::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_snapshotIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SnapshotId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_snapshotId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshotId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deniedActionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeniedActions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_deniedActions.begin(); itr != m_deniedActions.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 SummarizedData::SummarizedData() :
@@ -27,7 +26,7 @@ SummarizedData::SummarizedData() :
 {
 }
 
-CoreInternalOutcome SummarizedData::Deserialize(const Value &value)
+CoreInternalOutcome SummarizedData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome SummarizedData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SummarizedData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SummarizedData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_value, allocator);

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeLiveCertsResponse::DescribeLiveCertsResponse() :
@@ -31,7 +30,7 @@ DescribeLiveCertsResponse::DescribeLiveCertsResponse() :
 
 CoreInternalOutcome DescribeLiveCertsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeLiveCertsResponse::Deserialize(const string &payload
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeLiveCertsResponse::Deserialize(const string &payload
         if (!rsp["CertInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `CertInfoSet` is not array type"));
 
-        const Value &tmpValue = rsp["CertInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["CertInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CertInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

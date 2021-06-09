@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 DiskInfo::DiskInfo() :
@@ -27,7 +26,7 @@ DiskInfo::DiskInfo() :
 {
 }
 
-CoreInternalOutcome DiskInfo::Deserialize(const Value &value)
+CoreInternalOutcome DiskInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome DiskInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DiskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DiskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_diskNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diskName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Usage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usage, allocator);

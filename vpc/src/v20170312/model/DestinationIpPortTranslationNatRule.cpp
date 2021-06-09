@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 DestinationIpPortTranslationNatRule::DestinationIpPortTranslationNatRule() :
@@ -31,7 +30,7 @@ DestinationIpPortTranslationNatRule::DestinationIpPortTranslationNatRule() :
 {
 }
 
-CoreInternalOutcome DestinationIpPortTranslationNatRule::Deserialize(const Value &value)
+CoreInternalOutcome DestinationIpPortTranslationNatRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,28 +99,28 @@ CoreInternalOutcome DestinationIpPortTranslationNatRule::Deserialize(const Value
     return CoreInternalOutcome(true);
 }
 
-void DestinationIpPortTranslationNatRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DestinationIpPortTranslationNatRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ipProtocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpProtocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ipProtocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipProtocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publicIpAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicIpAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_publicIpAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIpAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publicPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publicPort, allocator);
@@ -129,15 +128,15 @@ void DestinationIpPortTranslationNatRule::ToJsonObject(Value &value, Document::A
 
     if (m_privateIpAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrivateIpAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_privateIpAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privateIpAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_privatePortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrivatePort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_privatePort, allocator);
@@ -145,10 +144,10 @@ void DestinationIpPortTranslationNatRule::ToJsonObject(Value &value, Document::A
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }

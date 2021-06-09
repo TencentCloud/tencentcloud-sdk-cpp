@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaQualityRestorationTaskResult::MediaQualityRestorationTaskResult() :
@@ -27,7 +26,7 @@ MediaQualityRestorationTaskResult::MediaQualityRestorationTaskResult() :
 {
 }
 
-CoreInternalOutcome MediaQualityRestorationTaskResult::Deserialize(const Value &value)
+CoreInternalOutcome MediaQualityRestorationTaskResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome MediaQualityRestorationTaskResult::Deserialize(const Value &
         if (!value["SubTaskResult"].IsArray())
             return CoreInternalOutcome(Error("response `MediaQualityRestorationTaskResult.SubTaskResult` is not array type"));
 
-        const Value &tmpValue = value["SubTaskResult"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SubTaskResult"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SubTaskResultItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome MediaQualityRestorationTaskResult::Deserialize(const Value &
     return CoreInternalOutcome(true);
 }
 
-void MediaQualityRestorationTaskResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaQualityRestorationTaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subTaskResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubTaskResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_subTaskResult.begin(); itr != m_subTaskResult.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

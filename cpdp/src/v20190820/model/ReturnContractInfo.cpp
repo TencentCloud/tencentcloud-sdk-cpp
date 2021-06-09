@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReturnContractInfo::ReturnContractInfo() :
@@ -28,7 +27,7 @@ ReturnContractInfo::ReturnContractInfo() :
 {
 }
 
-CoreInternalOutcome ReturnContractInfo::Deserialize(const Value &value)
+CoreInternalOutcome ReturnContractInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -88,33 +87,33 @@ CoreInternalOutcome ReturnContractInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReturnContractInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReturnContractInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_contractInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContractInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_contractInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_channelReturnContractInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelReturnContractInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_channelReturnContractInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_externalReturnContractInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnContractInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_externalReturnContractInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

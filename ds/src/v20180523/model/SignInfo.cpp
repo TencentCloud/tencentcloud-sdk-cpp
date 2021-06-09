@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ds::V20180523::Model;
-using namespace rapidjson;
 using namespace std;
 
 SignInfo::SignInfo() :
@@ -32,7 +31,7 @@ SignInfo::SignInfo() :
 {
 }
 
-CoreInternalOutcome SignInfo::Deserialize(const Value &value)
+CoreInternalOutcome SignInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,52 +110,52 @@ CoreInternalOutcome SignInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SignInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SignInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_accountResIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccountResId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_accountResId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accountResId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authorizationTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuthorizationTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_authorizationTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authorizationTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_locationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Location";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_location.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sealIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SealId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sealId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sealId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageData.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_certType, allocator);
@@ -164,10 +163,10 @@ void SignInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_signLocationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignLocation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_signLocation.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signLocation.c_str(), allocator).Move(), allocator);
     }
 
 }

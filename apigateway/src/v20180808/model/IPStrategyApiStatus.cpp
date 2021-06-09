@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 IPStrategyApiStatus::IPStrategyApiStatus() :
@@ -27,7 +26,7 @@ IPStrategyApiStatus::IPStrategyApiStatus() :
 {
 }
 
-CoreInternalOutcome IPStrategyApiStatus::Deserialize(const Value &value)
+CoreInternalOutcome IPStrategyApiStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome IPStrategyApiStatus::Deserialize(const Value &value)
         if (!value["ApiIdStatusSet"].IsArray())
             return CoreInternalOutcome(Error("response `IPStrategyApiStatus.ApiIdStatusSet` is not array type"));
 
-        const Value &tmpValue = value["ApiIdStatusSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ApiIdStatusSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             IPStrategyApi item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,12 +65,12 @@ CoreInternalOutcome IPStrategyApiStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IPStrategyApiStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IPStrategyApiStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -79,15 +78,15 @@ void IPStrategyApiStatus::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_apiIdStatusSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiIdStatusSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_apiIdStatusSet.begin(); itr != m_apiIdStatusSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

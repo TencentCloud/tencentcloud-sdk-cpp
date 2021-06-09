@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::As::V20180419::Model;
-using namespace rapidjson;
 using namespace std;
 
 LimitedLoginSettings::LimitedLoginSettings() :
@@ -26,7 +25,7 @@ LimitedLoginSettings::LimitedLoginSettings() :
 {
 }
 
-CoreInternalOutcome LimitedLoginSettings::Deserialize(const Value &value)
+CoreInternalOutcome LimitedLoginSettings::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome LimitedLoginSettings::Deserialize(const Value &value)
         if (!value["KeyIds"].IsArray())
             return CoreInternalOutcome(Error("response `LimitedLoginSettings.KeyIds` is not array type"));
 
-        const Value &tmpValue = value["KeyIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["KeyIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_keyIds.push_back((*itr).GetString());
         }
@@ -48,19 +47,19 @@ CoreInternalOutcome LimitedLoginSettings::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LimitedLoginSettings::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LimitedLoginSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_keyIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_keyIds.begin(); itr != m_keyIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

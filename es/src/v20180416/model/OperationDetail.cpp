@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Es::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 OperationDetail::OperationDetail() :
@@ -27,7 +26,7 @@ OperationDetail::OperationDetail() :
 {
 }
 
-CoreInternalOutcome OperationDetail::Deserialize(const Value &value)
+CoreInternalOutcome OperationDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome OperationDetail::Deserialize(const Value &value)
         if (!value["OldInfo"].IsArray())
             return CoreInternalOutcome(Error("response `OperationDetail.OldInfo` is not array type"));
 
-        const Value &tmpValue = value["OldInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["OldInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             KeyValue item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -57,8 +56,8 @@ CoreInternalOutcome OperationDetail::Deserialize(const Value &value)
         if (!value["NewInfo"].IsArray())
             return CoreInternalOutcome(Error("response `OperationDetail.NewInfo` is not array type"));
 
-        const Value &tmpValue = value["NewInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["NewInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             KeyValue item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -76,35 +75,35 @@ CoreInternalOutcome OperationDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OperationDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OperationDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_oldInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OldInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_oldInfo.begin(); itr != m_oldInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_newInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_newInfo.begin(); itr != m_newInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

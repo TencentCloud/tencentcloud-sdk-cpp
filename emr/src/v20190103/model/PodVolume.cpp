@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 PodVolume::PodVolume() :
@@ -28,7 +27,7 @@ PodVolume::PodVolume() :
 {
 }
 
-CoreInternalOutcome PodVolume::Deserialize(const Value &value)
+CoreInternalOutcome PodVolume::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,32 +80,32 @@ CoreInternalOutcome PodVolume::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PodVolume::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PodVolume::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_volumeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VolumeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_volumeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_volumeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pVCVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PVCVolume";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_pVCVolume.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_hostVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HostVolume";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hostVolume.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Nlp::V20190408::Model;
-using namespace rapidjson;
 using namespace std;
 
 Similarity::Similarity() :
@@ -27,7 +26,7 @@ Similarity::Similarity() :
 {
 }
 
-CoreInternalOutcome Similarity::Deserialize(const Value &value)
+CoreInternalOutcome Similarity::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome Similarity::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Similarity::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Similarity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_textHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);

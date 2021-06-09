@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 ActionCountStatistic::ActionCountStatistic() :
@@ -27,7 +26,7 @@ ActionCountStatistic::ActionCountStatistic() :
 {
 }
 
-CoreInternalOutcome ActionCountStatistic::Deserialize(const Value &value)
+CoreInternalOutcome ActionCountStatistic::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome ActionCountStatistic::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ActionCountStatistic::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ActionCountStatistic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
@@ -69,10 +68,10 @@ void ActionCountStatistic::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }

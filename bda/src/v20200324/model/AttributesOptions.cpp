@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bda::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 AttributesOptions::AttributesOptions() :
@@ -31,7 +30,7 @@ AttributesOptions::AttributesOptions() :
 {
 }
 
-CoreInternalOutcome AttributesOptions::Deserialize(const Value &value)
+CoreInternalOutcome AttributesOptions::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome AttributesOptions::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AttributesOptions::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AttributesOptions::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Age";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_age, allocator);
@@ -113,7 +112,7 @@ void AttributesOptions::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_bagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bag, allocator);
@@ -121,7 +120,7 @@ void AttributesOptions::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_genderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gender, allocator);
@@ -129,7 +128,7 @@ void AttributesOptions::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_orientationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Orientation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_orientation, allocator);
@@ -137,7 +136,7 @@ void AttributesOptions::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_upperBodyClothHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpperBodyCloth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_upperBodyCloth, allocator);
@@ -145,7 +144,7 @@ void AttributesOptions::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_lowerBodyClothHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LowerBodyCloth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lowerBodyCloth, allocator);

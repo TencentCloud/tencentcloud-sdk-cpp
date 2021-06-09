@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mariadb::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ZoneChooseInfo::ZoneChooseInfo() :
@@ -27,7 +26,7 @@ ZoneChooseInfo::ZoneChooseInfo() :
 {
 }
 
-CoreInternalOutcome ZoneChooseInfo::Deserialize(const Value &value)
+CoreInternalOutcome ZoneChooseInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -54,8 +53,8 @@ CoreInternalOutcome ZoneChooseInfo::Deserialize(const Value &value)
         if (!value["SlaveZones"].IsArray())
             return CoreInternalOutcome(Error("response `ZoneChooseInfo.SlaveZones` is not array type"));
 
-        const Value &tmpValue = value["SlaveZones"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SlaveZones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ZonesInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -73,29 +72,29 @@ CoreInternalOutcome ZoneChooseInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ZoneChooseInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ZoneChooseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_masterZoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterZone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_masterZone.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_slaveZonesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SlaveZones";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_slaveZones.begin(); itr != m_slaveZones.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

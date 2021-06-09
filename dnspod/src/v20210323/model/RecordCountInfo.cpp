@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dnspod::V20210323::Model;
-using namespace rapidjson;
 using namespace std;
 
 RecordCountInfo::RecordCountInfo() :
@@ -28,7 +27,7 @@ RecordCountInfo::RecordCountInfo() :
 {
 }
 
-CoreInternalOutcome RecordCountInfo::Deserialize(const Value &value)
+CoreInternalOutcome RecordCountInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome RecordCountInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RecordCountInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RecordCountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_subdomainCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubdomainCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subdomainCount, allocator);
@@ -80,7 +79,7 @@ void RecordCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_listCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_listCount, allocator);
@@ -88,7 +87,7 @@ void RecordCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcex::V20200727::Model;
-using namespace rapidjson;
 using namespace std;
 
 AlgorithmResult::AlgorithmResult() :
@@ -30,7 +29,7 @@ AlgorithmResult::AlgorithmResult() :
 {
 }
 
-CoreInternalOutcome AlgorithmResult::Deserialize(const Value &value)
+CoreInternalOutcome AlgorithmResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,44 +88,44 @@ CoreInternalOutcome AlgorithmResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AlgorithmResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AlgorithmResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_algoIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlgoId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_algoId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_algoId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_algoNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlgoName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_algoName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_algoName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_result.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
     }
 
     if (m_errorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Error";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_error.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_error.c_str(), allocator).Move(), allocator);
     }
 
     if (m_algoTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlgoType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_algoType, allocator);

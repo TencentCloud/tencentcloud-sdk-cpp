@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 DisasterRecoverGroupQuota::DisasterRecoverGroupQuota() :
@@ -30,7 +29,7 @@ DisasterRecoverGroupQuota::DisasterRecoverGroupQuota() :
 {
 }
 
-CoreInternalOutcome DisasterRecoverGroupQuota::Deserialize(const Value &value)
+CoreInternalOutcome DisasterRecoverGroupQuota::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome DisasterRecoverGroupQuota::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DisasterRecoverGroupQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DisasterRecoverGroupQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_groupQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupQuota, allocator);
@@ -102,7 +101,7 @@ void DisasterRecoverGroupQuota::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_currentNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CurrentNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_currentNum, allocator);
@@ -110,7 +109,7 @@ void DisasterRecoverGroupQuota::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_cvmInHostGroupQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CvmInHostGroupQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cvmInHostGroupQuota, allocator);
@@ -118,7 +117,7 @@ void DisasterRecoverGroupQuota::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_cvmInSwitchGroupQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CvmInSwitchGroupQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cvmInSwitchGroupQuota, allocator);
@@ -126,7 +125,7 @@ void DisasterRecoverGroupQuota::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_cvmInRackGroupQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CvmInRackGroupQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cvmInRackGroupQuota, allocator);

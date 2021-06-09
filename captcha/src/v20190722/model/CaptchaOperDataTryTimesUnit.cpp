@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Captcha::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 CaptchaOperDataTryTimesUnit::CaptchaOperDataTryTimesUnit() :
@@ -28,7 +27,7 @@ CaptchaOperDataTryTimesUnit::CaptchaOperDataTryTimesUnit() :
 {
 }
 
-CoreInternalOutcome CaptchaOperDataTryTimesUnit::Deserialize(const Value &value)
+CoreInternalOutcome CaptchaOperDataTryTimesUnit::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome CaptchaOperDataTryTimesUnit::Deserialize(const Value &value)
         if (!value["CntPerPass"].IsArray())
             return CoreInternalOutcome(Error("response `CaptchaOperDataTryTimesUnit.CntPerPass` is not array type"));
 
-        const Value &tmpValue = value["CntPerPass"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CntPerPass"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_cntPerPass.push_back((*itr).GetDouble());
         }
@@ -70,33 +69,33 @@ CoreInternalOutcome CaptchaOperDataTryTimesUnit::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CaptchaOperDataTryTimesUnit::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CaptchaOperDataTryTimesUnit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dateKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DateKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dateKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dateKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cntPerPassHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CntPerPass";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_cntPerPass.begin(); itr != m_cntPerPass.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_marketCntPerPassHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MarketCntPerPass";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_marketCntPerPass, allocator);

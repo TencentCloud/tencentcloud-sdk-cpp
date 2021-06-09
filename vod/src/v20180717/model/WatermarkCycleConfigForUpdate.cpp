@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 WatermarkCycleConfigForUpdate::WatermarkCycleConfigForUpdate() :
@@ -28,7 +27,7 @@ WatermarkCycleConfigForUpdate::WatermarkCycleConfigForUpdate() :
 {
 }
 
-CoreInternalOutcome WatermarkCycleConfigForUpdate::Deserialize(const Value &value)
+CoreInternalOutcome WatermarkCycleConfigForUpdate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome WatermarkCycleConfigForUpdate::Deserialize(const Value &valu
     return CoreInternalOutcome(true);
 }
 
-void WatermarkCycleConfigForUpdate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WatermarkCycleConfigForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTime, allocator);
@@ -80,7 +79,7 @@ void WatermarkCycleConfigForUpdate::ToJsonObject(Value &value, Document::Allocat
 
     if (m_displayDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisplayDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_displayDuration, allocator);
@@ -88,7 +87,7 @@ void WatermarkCycleConfigForUpdate::ToJsonObject(Value &value, Document::Allocat
 
     if (m_cycleDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CycleDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cycleDuration, allocator);

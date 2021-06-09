@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 NetDetectIpState::NetDetectIpState() :
@@ -29,7 +28,7 @@ NetDetectIpState::NetDetectIpState() :
 {
 }
 
-CoreInternalOutcome NetDetectIpState::Deserialize(const Value &value)
+CoreInternalOutcome NetDetectIpState::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome NetDetectIpState::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NetDetectIpState::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NetDetectIpState::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_detectDestinationIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DetectDestinationIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_detectDestinationIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_detectDestinationIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
@@ -99,7 +98,7 @@ void NetDetectIpState::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_delayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Delay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_delay, allocator);
@@ -107,7 +106,7 @@ void NetDetectIpState::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_packetLossRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PacketLossRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_packetLossRate, allocator);

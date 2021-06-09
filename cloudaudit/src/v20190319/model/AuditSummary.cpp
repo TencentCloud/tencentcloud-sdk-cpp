@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cloudaudit::V20190319::Model;
-using namespace rapidjson;
 using namespace std;
 
 AuditSummary::AuditSummary() :
@@ -29,7 +28,7 @@ AuditSummary::AuditSummary() :
 {
 }
 
-CoreInternalOutcome AuditSummary::Deserialize(const Value &value)
+CoreInternalOutcome AuditSummary::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome AuditSummary::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AuditSummary::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AuditSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_auditStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuditStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_auditStatus, allocator);
@@ -91,26 +90,26 @@ void AuditSummary::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_cosBucketNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosBucketName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cosBucketName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosBucketName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_auditNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuditName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_auditName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_auditName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_logFilePrefixHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogFilePrefix";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_logFilePrefix.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logFilePrefix.c_str(), allocator).Move(), allocator);
     }
 
 }

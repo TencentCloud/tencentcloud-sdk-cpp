@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cam::V20190116::Model;
-using namespace rapidjson;
 using namespace std;
 
 OffsiteFlag::OffsiteFlag() :
@@ -30,7 +29,7 @@ OffsiteFlag::OffsiteFlag() :
 {
 }
 
-CoreInternalOutcome OffsiteFlag::Deserialize(const Value &value)
+CoreInternalOutcome OffsiteFlag::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome OffsiteFlag::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OffsiteFlag::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OffsiteFlag::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_verifyFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VerifyFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_verifyFlag, allocator);
@@ -102,7 +101,7 @@ void OffsiteFlag::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_notifyPhoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotifyPhone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notifyPhone, allocator);
@@ -110,7 +109,7 @@ void OffsiteFlag::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_notifyEmailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotifyEmail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notifyEmail, allocator);
@@ -118,7 +117,7 @@ void OffsiteFlag::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_notifyWechatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotifyWechat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notifyWechat, allocator);
@@ -126,7 +125,7 @@ void OffsiteFlag::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_tipsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tips";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tips, allocator);

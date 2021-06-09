@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 EnhancedService::EnhancedService() :
@@ -28,7 +27,7 @@ EnhancedService::EnhancedService() :
 {
 }
 
-CoreInternalOutcome EnhancedService::Deserialize(const Value &value)
+CoreInternalOutcome EnhancedService::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -88,33 +87,33 @@ CoreInternalOutcome EnhancedService::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EnhancedService::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EnhancedService::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_securityServiceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityService";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_securityService.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_monitorServiceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MonitorService";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_monitorService.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_eIPDirectServiceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EIPDirectService";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eIPDirectService.ToJsonObject(value[key.c_str()], allocator);
     }
 

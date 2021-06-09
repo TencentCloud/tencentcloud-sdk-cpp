@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcaplusdb::V20190823::Model;
-using namespace rapidjson;
 using namespace std;
 
 FieldInfo::FieldInfo() :
@@ -29,7 +28,7 @@ FieldInfo::FieldInfo() :
 {
 }
 
-CoreInternalOutcome FieldInfo::Deserialize(const Value &value)
+CoreInternalOutcome FieldInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,36 +77,36 @@ CoreInternalOutcome FieldInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FieldInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FieldInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fieldNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FieldName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fieldName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fieldName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isPrimaryKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsPrimaryKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_isPrimaryKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isPrimaryKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fieldTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FieldType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fieldType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fieldType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fieldSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FieldSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fieldSize, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 ZoneAgeGroupAvrStayTime::ZoneAgeGroupAvrStayTime() :
@@ -27,7 +26,7 @@ ZoneAgeGroupAvrStayTime::ZoneAgeGroupAvrStayTime() :
 {
 }
 
-CoreInternalOutcome ZoneAgeGroupAvrStayTime::Deserialize(const Value &value)
+CoreInternalOutcome ZoneAgeGroupAvrStayTime::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome ZoneAgeGroupAvrStayTime::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ZoneAgeGroupAvrStayTime::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ZoneAgeGroupAvrStayTime::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_maleAvrStayTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaleAvrStayTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maleAvrStayTime, allocator);
@@ -69,7 +68,7 @@ void ZoneAgeGroupAvrStayTime::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_femaleAvrStayTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FemaleAvrStayTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_femaleAvrStayTime, allocator);

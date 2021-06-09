@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCertDetailResponse::DescribeCertDetailResponse() :
@@ -40,7 +39,7 @@ DescribeCertDetailResponse::DescribeCertDetailResponse() :
 
 CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -50,7 +49,7 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -127,8 +126,8 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
         if (!rsp["CertSubjectDomain"].IsArray())
             return CoreInternalOutcome(Error("response `CertSubjectDomain` is not array type"));
 
-        const Value &tmpValue = rsp["CertSubjectDomain"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["CertSubjectDomain"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_certSubjectDomain.push_back((*itr).GetString());
         }
@@ -170,8 +169,8 @@ CoreInternalOutcome DescribeCertDetailResponse::Deserialize(const string &payloa
         if (!rsp["CertLoadBalancerSet"].IsArray())
             return CoreInternalOutcome(Error("response `CertLoadBalancerSet` is not array type"));
 
-        const Value &tmpValue = rsp["CertLoadBalancerSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["CertLoadBalancerSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CertDetailLoadBalancer item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

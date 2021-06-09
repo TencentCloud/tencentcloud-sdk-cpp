@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 L7ListenerInfoBackend::L7ListenerInfoBackend() :
@@ -32,7 +31,7 @@ L7ListenerInfoBackend::L7ListenerInfoBackend() :
 {
 }
 
-CoreInternalOutcome L7ListenerInfoBackend::Deserialize(const Value &value)
+CoreInternalOutcome L7ListenerInfoBackend::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome L7ListenerInfoBackend::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void L7ListenerInfoBackend::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void L7ListenerInfoBackend::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bindTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BindType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bindType, allocator);
@@ -124,7 +123,7 @@ void L7ListenerInfoBackend::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
@@ -132,7 +131,7 @@ void L7ListenerInfoBackend::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_weightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Weight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_weight, allocator);
@@ -140,34 +139,34 @@ void L7ListenerInfoBackend::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aliasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Alias";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_alias.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lanIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LanIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lanIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lanIp.c_str(), allocator).Move(), allocator);
     }
 
 }

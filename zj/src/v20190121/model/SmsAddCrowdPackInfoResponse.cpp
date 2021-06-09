@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 SmsAddCrowdPackInfoResponse::SmsAddCrowdPackInfoResponse() :
@@ -26,7 +25,7 @@ SmsAddCrowdPackInfoResponse::SmsAddCrowdPackInfoResponse() :
 {
 }
 
-CoreInternalOutcome SmsAddCrowdPackInfoResponse::Deserialize(const Value &value)
+CoreInternalOutcome SmsAddCrowdPackInfoResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome SmsAddCrowdPackInfoResponse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SmsAddCrowdPackInfoResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SmsAddCrowdPackInfoResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_iDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iD, allocator);

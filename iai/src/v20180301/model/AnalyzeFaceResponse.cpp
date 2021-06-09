@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 AnalyzeFaceResponse::AnalyzeFaceResponse() :
@@ -34,7 +33,7 @@ AnalyzeFaceResponse::AnalyzeFaceResponse() :
 
 CoreInternalOutcome AnalyzeFaceResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -44,7 +43,7 @@ CoreInternalOutcome AnalyzeFaceResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -91,8 +90,8 @@ CoreInternalOutcome AnalyzeFaceResponse::Deserialize(const string &payload)
         if (!rsp["FaceShapeSet"].IsArray())
             return CoreInternalOutcome(Error("response `FaceShapeSet` is not array type"));
 
-        const Value &tmpValue = rsp["FaceShapeSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["FaceShapeSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             FaceShape item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Billing::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 ConsumptionProjectSummaryDataItem::ConsumptionProjectSummaryDataItem() :
@@ -30,7 +29,7 @@ ConsumptionProjectSummaryDataItem::ConsumptionProjectSummaryDataItem() :
 {
 }
 
-CoreInternalOutcome ConsumptionProjectSummaryDataItem::Deserialize(const Value &value)
+CoreInternalOutcome ConsumptionProjectSummaryDataItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -87,8 +86,8 @@ CoreInternalOutcome ConsumptionProjectSummaryDataItem::Deserialize(const Value &
         if (!value["Business"].IsArray())
             return CoreInternalOutcome(Error("response `ConsumptionProjectSummaryDataItem.Business` is not array type"));
 
-        const Value &tmpValue = value["Business"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Business"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ConsumptionBusinessSummaryDataItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -106,53 +105,53 @@ CoreInternalOutcome ConsumptionProjectSummaryDataItem::Deserialize(const Value &
     return CoreInternalOutcome(true);
 }
 
-void ConsumptionProjectSummaryDataItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ConsumptionProjectSummaryDataItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_projectId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_projectName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_realTotalCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
     }
 
     if (m_trendHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Trend";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_trend.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_businessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Business";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_business.begin(); itr != m_business.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

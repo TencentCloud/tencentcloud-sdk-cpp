@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iot::V20180123::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceStatData::DeviceStatData() :
@@ -29,7 +28,7 @@ DeviceStatData::DeviceStatData() :
 {
 }
 
-CoreInternalOutcome DeviceStatData::Deserialize(const Value &value)
+CoreInternalOutcome DeviceStatData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome DeviceStatData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceStatData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceStatData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_datetimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Datetime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_datetime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datetime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceOnlineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceOnline";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deviceOnline, allocator);
@@ -99,7 +98,7 @@ void DeviceStatData::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_deviceActiveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceActive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deviceActive, allocator);
@@ -107,7 +106,7 @@ void DeviceStatData::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_deviceTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deviceTotal, allocator);

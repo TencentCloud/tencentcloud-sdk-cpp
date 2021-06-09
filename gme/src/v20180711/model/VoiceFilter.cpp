@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gme::V20180711::Model;
-using namespace rapidjson;
 using namespace std;
 
 VoiceFilter::VoiceFilter() :
@@ -27,7 +26,7 @@ VoiceFilter::VoiceFilter() :
 {
 }
 
-CoreInternalOutcome VoiceFilter::Deserialize(const Value &value)
+CoreInternalOutcome VoiceFilter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome VoiceFilter::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VoiceFilter::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VoiceFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -69,10 +68,10 @@ void VoiceFilter::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_wordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Word";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_word.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_word.c_str(), allocator).Move(), allocator);
     }
 
 }

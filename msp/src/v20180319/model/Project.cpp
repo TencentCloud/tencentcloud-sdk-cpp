@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Msp::V20180319::Model;
-using namespace rapidjson;
 using namespace std;
 
 Project::Project() :
@@ -27,7 +26,7 @@ Project::Project() :
 {
 }
 
-CoreInternalOutcome Project::Deserialize(const Value &value)
+CoreInternalOutcome Project::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome Project::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Project::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Project::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
@@ -69,10 +68,10 @@ void Project::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_projectNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_projectName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
     }
 
 }

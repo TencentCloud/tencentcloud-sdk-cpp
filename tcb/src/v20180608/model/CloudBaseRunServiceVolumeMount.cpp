@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloudBaseRunServiceVolumeMount::CloudBaseRunServiceVolumeMount() :
@@ -30,7 +29,7 @@ CloudBaseRunServiceVolumeMount::CloudBaseRunServiceVolumeMount() :
 {
 }
 
-CoreInternalOutcome CloudBaseRunServiceVolumeMount::Deserialize(const Value &value)
+CoreInternalOutcome CloudBaseRunServiceVolumeMount::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome CloudBaseRunServiceVolumeMount::Deserialize(const Value &val
     return CoreInternalOutcome(true);
 }
 
-void CloudBaseRunServiceVolumeMount::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloudBaseRunServiceVolumeMount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mountPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MountPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mountPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_readOnly, allocator);
@@ -118,18 +117,18 @@ void CloudBaseRunServiceVolumeMount::ToJsonObject(Value &value, Document::Alloca
 
     if (m_subPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mountPropagationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MountPropagation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mountPropagation.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountPropagation.c_str(), allocator).Move(), allocator);
     }
 
 }

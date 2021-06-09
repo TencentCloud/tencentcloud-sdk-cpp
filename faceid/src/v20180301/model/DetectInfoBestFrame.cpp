@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Faceid::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 DetectInfoBestFrame::DetectInfoBestFrame() :
@@ -27,7 +26,7 @@ DetectInfoBestFrame::DetectInfoBestFrame() :
 {
 }
 
-CoreInternalOutcome DetectInfoBestFrame::Deserialize(const Value &value)
+CoreInternalOutcome DetectInfoBestFrame::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome DetectInfoBestFrame::Deserialize(const Value &value)
         if (!value["BestFrames"].IsArray())
             return CoreInternalOutcome(Error("response `DetectInfoBestFrame.BestFrames` is not array type"));
 
-        const Value &tmpValue = value["BestFrames"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BestFrames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_bestFrames.push_back((*itr).GetString());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome DetectInfoBestFrame::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DetectInfoBestFrame::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DetectInfoBestFrame::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bestFrameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BestFrame";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bestFrame.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bestFrame.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bestFramesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BestFrames";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_bestFrames.begin(); itr != m_bestFrames.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

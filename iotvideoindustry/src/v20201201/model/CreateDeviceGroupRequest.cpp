@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateDeviceGroupRequest::CreateDeviceGroupRequest() :
@@ -32,38 +31,38 @@ CreateDeviceGroupRequest::CreateDeviceGroupRequest() :
 
 string CreateDeviceGroupRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_groupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_groupName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parentIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParentId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_parentId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_parentId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupDescribeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupDescribe";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_groupDescribe.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupDescribe.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

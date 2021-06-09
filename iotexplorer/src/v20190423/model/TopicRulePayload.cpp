@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
-using namespace rapidjson;
 using namespace std;
 
 TopicRulePayload::TopicRulePayload() :
@@ -29,7 +28,7 @@ TopicRulePayload::TopicRulePayload() :
 {
 }
 
-CoreInternalOutcome TopicRulePayload::Deserialize(const Value &value)
+CoreInternalOutcome TopicRulePayload::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,36 +77,36 @@ CoreInternalOutcome TopicRulePayload::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TopicRulePayload::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TopicRulePayload::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sqlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sql";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sql.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sql.c_str(), allocator).Move(), allocator);
     }
 
     if (m_actionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Actions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_actions.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_actions.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleDisabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleDisabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ruleDisabled, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tem::V20201221::Model;
-using namespace rapidjson;
 using namespace std;
 
 IngressRulePath::IngressRulePath() :
@@ -27,7 +26,7 @@ IngressRulePath::IngressRulePath() :
 {
 }
 
-CoreInternalOutcome IngressRulePath::Deserialize(const Value &value)
+CoreInternalOutcome IngressRulePath::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome IngressRulePath::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IngressRulePath::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IngressRulePath::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_pathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_path.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
     if (m_backendHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Backend";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_backend.ToJsonObject(value[key.c_str()], allocator);
     }
 

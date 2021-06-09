@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfw::V20190904::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeSwitchListsResponse::DescribeSwitchListsResponse() :
@@ -35,7 +34,7 @@ DescribeSwitchListsResponse::DescribeSwitchListsResponse() :
 
 CoreInternalOutcome DescribeSwitchListsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -45,7 +44,7 @@ CoreInternalOutcome DescribeSwitchListsResponse::Deserialize(const string &paylo
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -82,8 +81,8 @@ CoreInternalOutcome DescribeSwitchListsResponse::Deserialize(const string &paylo
         if (!rsp["Data"].IsArray())
             return CoreInternalOutcome(Error("response `Data` is not array type"));
 
-        const Value &tmpValue = rsp["Data"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Data"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SwitchListsData item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -102,8 +101,8 @@ CoreInternalOutcome DescribeSwitchListsResponse::Deserialize(const string &paylo
         if (!rsp["AreaLists"].IsArray())
             return CoreInternalOutcome(Error("response `AreaLists` is not array type"));
 
-        const Value &tmpValue = rsp["AreaLists"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["AreaLists"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_areaLists.push_back((*itr).GetString());
         }

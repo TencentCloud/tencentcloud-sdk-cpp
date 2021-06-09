@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 AuditFilter::AuditFilter() :
@@ -28,7 +27,7 @@ AuditFilter::AuditFilter() :
 {
 }
 
-CoreInternalOutcome AuditFilter::Deserialize(const Value &value)
+CoreInternalOutcome AuditFilter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome AuditFilter::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AuditFilter::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AuditFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_compareHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Compare";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_compare.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_compare.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
     }
 
 }

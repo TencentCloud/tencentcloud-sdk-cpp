@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 InputDataConfig::InputDataConfig() :
@@ -29,7 +28,7 @@ InputDataConfig::InputDataConfig() :
 {
 }
 
-CoreInternalOutcome InputDataConfig::Deserialize(const Value &value)
+CoreInternalOutcome InputDataConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,40 +84,40 @@ CoreInternalOutcome InputDataConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InputDataConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InputDataConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_channelNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataSourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataSource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dataSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_inputModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inputMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contentTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContentType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_contentType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contentType.c_str(), allocator).Move(), allocator);
     }
 
 }

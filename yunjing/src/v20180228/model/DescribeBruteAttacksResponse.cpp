@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Yunjing::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeBruteAttacksResponse::DescribeBruteAttacksResponse() :
@@ -32,7 +31,7 @@ DescribeBruteAttacksResponse::DescribeBruteAttacksResponse() :
 
 CoreInternalOutcome DescribeBruteAttacksResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeBruteAttacksResponse::Deserialize(const string &payl
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeBruteAttacksResponse::Deserialize(const string &payl
         if (!rsp["BruteAttacks"].IsArray())
             return CoreInternalOutcome(Error("response `BruteAttacks` is not array type"));
 
-        const Value &tmpValue = rsp["BruteAttacks"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["BruteAttacks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             BruteAttack item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

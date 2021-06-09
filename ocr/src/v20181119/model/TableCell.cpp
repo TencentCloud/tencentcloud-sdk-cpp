@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 TableCell::TableCell() :
@@ -35,7 +34,7 @@ TableCell::TableCell() :
 {
 }
 
-CoreInternalOutcome TableCell::Deserialize(const Value &value)
+CoreInternalOutcome TableCell::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -115,8 +114,8 @@ CoreInternalOutcome TableCell::Deserialize(const Value &value)
         if (!value["Polygon"].IsArray())
             return CoreInternalOutcome(Error("response `TableCell.Polygon` is not array type"));
 
-        const Value &tmpValue = value["Polygon"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Polygon"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Coord item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -145,8 +144,8 @@ CoreInternalOutcome TableCell::Deserialize(const Value &value)
         if (!value["Contents"].IsArray())
             return CoreInternalOutcome(Error("response `TableCell.Contents` is not array type"));
 
-        const Value &tmpValue = value["Contents"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Contents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CellContent item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -164,12 +163,12 @@ CoreInternalOutcome TableCell::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TableCell::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TableCell::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_colTlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ColTl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_colTl, allocator);
@@ -177,7 +176,7 @@ void TableCell::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_rowTlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RowTl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rowTl, allocator);
@@ -185,7 +184,7 @@ void TableCell::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_colBrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ColBr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_colBr, allocator);
@@ -193,7 +192,7 @@ void TableCell::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_rowBrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RowBr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rowBr, allocator);
@@ -201,23 +200,23 @@ void TableCell::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_textHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -225,38 +224,38 @@ void TableCell::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_polygonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Polygon";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_polygon.begin(); itr != m_polygon.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_advancedInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AdvancedInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contentsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Contents";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_contents.begin(); itr != m_contents.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

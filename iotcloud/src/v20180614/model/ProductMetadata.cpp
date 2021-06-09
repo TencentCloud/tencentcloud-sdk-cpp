@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProductMetadata::ProductMetadata() :
@@ -26,7 +25,7 @@ ProductMetadata::ProductMetadata() :
 {
 }
 
-CoreInternalOutcome ProductMetadata::Deserialize(const Value &value)
+CoreInternalOutcome ProductMetadata::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome ProductMetadata::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProductMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProductMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_creationDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreationDate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_creationDate, allocator);

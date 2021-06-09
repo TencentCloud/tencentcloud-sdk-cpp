@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 WholeTextItem::WholeTextItem() :
@@ -30,7 +29,7 @@ WholeTextItem::WholeTextItem() :
 {
 }
 
-CoreInternalOutcome WholeTextItem::Deserialize(const Value &value)
+CoreInternalOutcome WholeTextItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -96,21 +95,21 @@ CoreInternalOutcome WholeTextItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WholeTextItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WholeTextItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_textItemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TextItem";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_textItem.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_avgVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvgVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_avgVolume, allocator);
@@ -118,7 +117,7 @@ void WholeTextItem::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_maxVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxVolume, allocator);
@@ -126,7 +125,7 @@ void WholeTextItem::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_minVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minVolume, allocator);
@@ -134,7 +133,7 @@ void WholeTextItem::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_speedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Speed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_speed, allocator);

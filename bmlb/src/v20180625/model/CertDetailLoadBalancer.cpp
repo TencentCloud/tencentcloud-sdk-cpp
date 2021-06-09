@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 CertDetailLoadBalancer::CertDetailLoadBalancer() :
@@ -29,7 +28,7 @@ CertDetailLoadBalancer::CertDetailLoadBalancer() :
 {
 }
 
-CoreInternalOutcome CertDetailLoadBalancer::Deserialize(const Value &value)
+CoreInternalOutcome CertDetailLoadBalancer::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,36 +77,36 @@ CoreInternalOutcome CertDetailLoadBalancer::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CertDetailLoadBalancer::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CertDetailLoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_loadBalancerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoadBalancerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_loadBalancerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoadBalancerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_loadBalancerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionId, allocator);

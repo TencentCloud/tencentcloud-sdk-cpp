@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 CodeDetect::CodeDetect() :
@@ -27,7 +26,7 @@ CodeDetect::CodeDetect() :
 {
 }
 
-CoreInternalOutcome CodeDetect::Deserialize(const Value &value)
+CoreInternalOutcome CodeDetect::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome CodeDetect::Deserialize(const Value &value)
         if (!value["ModerationDetail"].IsArray())
             return CoreInternalOutcome(Error("response `CodeDetect.ModerationDetail` is not array type"));
 
-        const Value &tmpValue = value["ModerationDetail"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ModerationDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CodeDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,27 +65,27 @@ CoreInternalOutcome CodeDetect::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CodeDetect::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CodeDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_moderationDetailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModerationDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_moderationDetail.begin(); itr != m_moderationDetail.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_moderationCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModerationCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_moderationCode, allocator);

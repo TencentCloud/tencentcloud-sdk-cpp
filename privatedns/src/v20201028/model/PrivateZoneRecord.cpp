@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Privatedns::V20201028::Model;
-using namespace rapidjson;
 using namespace std;
 
 PrivateZoneRecord::PrivateZoneRecord() :
@@ -37,7 +36,7 @@ PrivateZoneRecord::PrivateZoneRecord() :
 {
 }
 
-CoreInternalOutcome PrivateZoneRecord::Deserialize(const Value &value)
+CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -166,52 +165,52 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PrivateZoneRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PrivateZoneRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_recordIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_recordId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zoneId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recordTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_recordType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recordValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_recordValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tTLHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TTL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tTL, allocator);
@@ -219,7 +218,7 @@ void PrivateZoneRecord::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_mXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mX, allocator);
@@ -227,15 +226,15 @@ void PrivateZoneRecord::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_weightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Weight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_weight, allocator);
@@ -243,26 +242,26 @@ void PrivateZoneRecord::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_createdOnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedOn";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdOn.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdOn.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updatedOnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdatedOn";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updatedOn.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedOn.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extraHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_extra.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
     }
 
 }

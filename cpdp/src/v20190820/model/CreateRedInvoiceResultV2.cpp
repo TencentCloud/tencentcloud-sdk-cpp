@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateRedInvoiceResultV2::CreateRedInvoiceResultV2() :
@@ -26,7 +25,7 @@ CreateRedInvoiceResultV2::CreateRedInvoiceResultV2() :
 {
 }
 
-CoreInternalOutcome CreateRedInvoiceResultV2::Deserialize(const Value &value)
+CoreInternalOutcome CreateRedInvoiceResultV2::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome CreateRedInvoiceResultV2::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CreateRedInvoiceResultV2::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CreateRedInvoiceResultV2::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_invoiceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InvoiceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_invoiceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invoiceId.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceExtraArgs::InstanceExtraArgs() :
@@ -26,7 +25,7 @@ InstanceExtraArgs::InstanceExtraArgs() :
 {
 }
 
-CoreInternalOutcome InstanceExtraArgs::Deserialize(const Value &value)
+CoreInternalOutcome InstanceExtraArgs::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome InstanceExtraArgs::Deserialize(const Value &value)
         if (!value["Kubelet"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceExtraArgs.Kubelet` is not array type"));
 
-        const Value &tmpValue = value["Kubelet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Kubelet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_kubelet.push_back((*itr).GetString());
         }
@@ -48,19 +47,19 @@ CoreInternalOutcome InstanceExtraArgs::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceExtraArgs::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceExtraArgs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_kubeletHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Kubelet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_kubelet.begin(); itr != m_kubelet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

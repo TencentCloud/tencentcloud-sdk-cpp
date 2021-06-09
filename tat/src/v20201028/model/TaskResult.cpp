@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tat::V20201028::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskResult::TaskResult() :
@@ -30,7 +29,7 @@ TaskResult::TaskResult() :
 {
 }
 
-CoreInternalOutcome TaskResult::Deserialize(const Value &value)
+CoreInternalOutcome TaskResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome TaskResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_exitCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExitCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exitCode, allocator);
@@ -102,31 +101,31 @@ void TaskResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_outputHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Output";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_output.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_output.c_str(), allocator).Move(), allocator);
     }
 
     if (m_execStartTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExecStartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_execStartTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_execStartTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_execEndTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExecEndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_execEndTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_execEndTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_droppedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Dropped";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dropped, allocator);

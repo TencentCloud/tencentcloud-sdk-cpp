@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Asr::V20190614::Model;
-using namespace rapidjson;
 using namespace std;
 
 Task::Task() :
@@ -26,7 +25,7 @@ Task::Task() :
 {
 }
 
-CoreInternalOutcome Task::Deserialize(const Value &value)
+CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome Task::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Task::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Task::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);

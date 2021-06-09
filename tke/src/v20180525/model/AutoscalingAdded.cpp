@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 AutoscalingAdded::AutoscalingAdded() :
@@ -29,7 +28,7 @@ AutoscalingAdded::AutoscalingAdded() :
 {
 }
 
-CoreInternalOutcome AutoscalingAdded::Deserialize(const Value &value)
+CoreInternalOutcome AutoscalingAdded::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome AutoscalingAdded::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AutoscalingAdded::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AutoscalingAdded::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_joiningHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Joining";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_joining, allocator);
@@ -91,7 +90,7 @@ void AutoscalingAdded::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_initializingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Initializing";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_initializing, allocator);
@@ -99,7 +98,7 @@ void AutoscalingAdded::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_normalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Normal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_normal, allocator);
@@ -107,7 +106,7 @@ void AutoscalingAdded::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_totalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Total";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_total, allocator);

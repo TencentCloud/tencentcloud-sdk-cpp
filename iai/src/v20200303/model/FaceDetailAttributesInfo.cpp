@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceDetailAttributesInfo::FaceDetailAttributesInfo() :
@@ -41,7 +40,7 @@ FaceDetailAttributesInfo::FaceDetailAttributesInfo() :
 {
 }
 
-CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const Value &value)
+CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -301,12 +300,12 @@ CoreInternalOutcome FaceDetailAttributesInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FaceDetailAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FaceDetailAttributesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Age";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_age, allocator);
@@ -314,7 +313,7 @@ void FaceDetailAttributesInfo::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_beautyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Beauty";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_beauty, allocator);
@@ -322,124 +321,124 @@ void FaceDetailAttributesInfo::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_emotionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Emotion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_emotion.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_eyeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Eye";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eye.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_eyebrowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Eyebrow";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eyebrow.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_genderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_gender.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_hairHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hair";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hair.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_hatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hat.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_headPoseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeadPose";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_headPose.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_maskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mask";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_mouthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mouth";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mouth.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_moustacheHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Moustache";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_moustache.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_noseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Nose";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_nose.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_shapeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Shape";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_shape.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_skinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Skin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_skin.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_smileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Smile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_smile, allocator);

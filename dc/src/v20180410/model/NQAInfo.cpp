@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dc::V20180410::Model;
-using namespace rapidjson;
 using namespace std;
 
 NQAInfo::NQAInfo() :
@@ -28,7 +27,7 @@ NQAInfo::NQAInfo() :
 {
 }
 
-CoreInternalOutcome NQAInfo::Deserialize(const Value &value)
+CoreInternalOutcome NQAInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome NQAInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NQAInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NQAInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_probeFailedTimesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProbeFailedTimes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_probeFailedTimes, allocator);
@@ -80,7 +79,7 @@ void NQAInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_intervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Interval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_interval, allocator);
@@ -88,10 +87,10 @@ void NQAInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_destinationIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DestinationIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_destinationIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destinationIp.c_str(), allocator).Move(), allocator);
     }
 
 }

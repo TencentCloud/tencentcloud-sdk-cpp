@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 ServiceParameter::ServiceParameter() :
@@ -32,7 +31,7 @@ ServiceParameter::ServiceParameter() :
 {
 }
 
-CoreInternalOutcome ServiceParameter::Deserialize(const Value &value)
+CoreInternalOutcome ServiceParameter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,63 +110,63 @@ CoreInternalOutcome ServiceParameter::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ServiceParameter::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ServiceParameter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_positionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Position";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_position.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_position.c_str(), allocator).Move(), allocator);
     }
 
     if (m_relevantRequestParameterPositionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RelevantRequestParameterPosition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_relevantRequestParameterPosition.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_relevantRequestParameterPosition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_relevantRequestParameterNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RelevantRequestParameterName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_relevantRequestParameterName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_relevantRequestParameterName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_defaultValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_defaultValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_relevantRequestParameterDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RelevantRequestParameterDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_relevantRequestParameterDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_relevantRequestParameterDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_relevantRequestParameterTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RelevantRequestParameterType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_relevantRequestParameterType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_relevantRequestParameterType.c_str(), allocator).Move(), allocator);
     }
 
 }

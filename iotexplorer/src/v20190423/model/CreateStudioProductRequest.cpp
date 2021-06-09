@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateStudioProductRequest::CreateStudioProductRequest() :
@@ -37,22 +36,22 @@ CreateStudioProductRequest::CreateStudioProductRequest() :
 
 string CreateStudioProductRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_productNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_productName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_categoryIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CategoryId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_categoryId, allocator);
@@ -60,7 +59,7 @@ string CreateStudioProductRequest::ToJsonString() const
 
     if (m_productTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_productType, allocator);
@@ -68,23 +67,23 @@ string CreateStudioProductRequest::ToJsonString() const
 
     if (m_encryptionTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EncryptionType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_encryptionType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptionType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_netTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_netType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_netType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataProtocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataProtocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dataProtocol, allocator);
@@ -92,23 +91,23 @@ string CreateStudioProductRequest::ToJsonString() const
 
     if (m_productDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductDesc";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_productDesc.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_projectId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

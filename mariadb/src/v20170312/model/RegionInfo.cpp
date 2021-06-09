@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mariadb::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 RegionInfo::RegionInfo() :
@@ -30,7 +29,7 @@ RegionInfo::RegionInfo() :
 {
 }
 
-CoreInternalOutcome RegionInfo::Deserialize(const Value &value)
+CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,8 +69,8 @@ CoreInternalOutcome RegionInfo::Deserialize(const Value &value)
         if (!value["ZoneList"].IsArray())
             return CoreInternalOutcome(Error("response `RegionInfo.ZoneList` is not array type"));
 
-        const Value &tmpValue = value["ZoneList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ZoneList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ZonesInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -90,8 +89,8 @@ CoreInternalOutcome RegionInfo::Deserialize(const Value &value)
         if (!value["AvailableChoice"].IsArray())
             return CoreInternalOutcome(Error("response `RegionInfo.AvailableChoice` is not array type"));
 
-        const Value &tmpValue = value["AvailableChoice"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AvailableChoice"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ZoneChooseInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -109,20 +108,20 @@ CoreInternalOutcome RegionInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RegionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionId, allocator);
@@ -130,38 +129,38 @@ void RegionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_regionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zoneListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_zoneList.begin(); itr != m_zoneList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_availableChoiceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvailableChoice";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_availableChoice.begin(); itr != m_availableChoice.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

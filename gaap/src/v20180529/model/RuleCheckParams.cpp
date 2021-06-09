@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 RuleCheckParams::RuleCheckParams() :
@@ -34,7 +33,7 @@ RuleCheckParams::RuleCheckParams() :
 {
 }
 
-CoreInternalOutcome RuleCheckParams::Deserialize(const Value &value)
+CoreInternalOutcome RuleCheckParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -84,8 +83,8 @@ CoreInternalOutcome RuleCheckParams::Deserialize(const Value &value)
         if (!value["StatusCode"].IsArray())
             return CoreInternalOutcome(Error("response `RuleCheckParams.StatusCode` is not array type"));
 
-        const Value &tmpValue = value["StatusCode"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["StatusCode"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_statusCode.push_back((*itr).GetUint64());
         }
@@ -136,12 +135,12 @@ CoreInternalOutcome RuleCheckParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RuleCheckParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RuleCheckParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_delayLoopHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DelayLoop";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_delayLoop, allocator);
@@ -149,7 +148,7 @@ void RuleCheckParams::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_connectTimeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConnectTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_connectTimeout, allocator);
@@ -157,44 +156,44 @@ void RuleCheckParams::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_pathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_path.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
     if (m_methodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Method";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_method.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_method.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_statusCode.begin(); itr != m_statusCode.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_failedCountInterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FailedCountInter";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failedCountInter, allocator);
@@ -202,7 +201,7 @@ void RuleCheckParams::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_failedThresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FailedThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failedThreshold, allocator);
@@ -210,7 +209,7 @@ void RuleCheckParams::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_blockInterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockInter";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blockInter, allocator);

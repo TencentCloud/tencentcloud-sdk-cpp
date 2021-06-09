@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 EnvDataCpm::EnvDataCpm() :
@@ -46,7 +45,7 @@ EnvDataCpm::EnvDataCpm() :
 {
 }
 
-CoreInternalOutcome EnvDataCpm::Deserialize(const Value &value)
+CoreInternalOutcome EnvDataCpm::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,8 +55,8 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const Value &value)
         if (!value["Zones"].IsArray())
             return CoreInternalOutcome(Error("response `EnvDataCpm.Zones` is not array type"));
 
-        const Value &tmpValue = value["Zones"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Zones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_zones.push_back((*itr).GetString());
         }
@@ -69,8 +68,8 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const Value &value)
         if (!value["InstanceTypes"].IsArray())
             return CoreInternalOutcome(Error("response `EnvDataCpm.InstanceTypes` is not array type"));
 
-        const Value &tmpValue = value["InstanceTypes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InstanceTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_instanceTypes.push_back((*itr).GetString());
         }
@@ -122,8 +121,8 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const Value &value)
         if (!value["VirtualPrivateClouds"].IsArray())
             return CoreInternalOutcome(Error("response `EnvDataCpm.VirtualPrivateClouds` is not array type"));
 
-        const Value &tmpValue = value["VirtualPrivateClouds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["VirtualPrivateClouds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CpmVirtualPrivateCloud item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -272,8 +271,8 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const Value &value)
         if (!value["LanIps"].IsArray())
             return CoreInternalOutcome(Error("response `EnvDataCpm.LanIps` is not array type"));
 
-        const Value &tmpValue = value["LanIps"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LanIps"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_lanIps.push_back((*itr).GetString());
         }
@@ -284,46 +283,46 @@ CoreInternalOutcome EnvDataCpm::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EnvDataCpm::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_zonesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zones";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_instanceTypesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceTypes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_instanceTypes.begin(); itr != m_instanceTypes.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_timeUnitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeUnit";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timeUnit.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeUnit.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeSpanHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeSpan, allocator);
@@ -331,7 +330,7 @@ void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_raidIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RaidId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_raidId, allocator);
@@ -339,7 +338,7 @@ void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_osTypeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OsTypeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_osTypeId, allocator);
@@ -347,22 +346,22 @@ void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_virtualPrivateCloudsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VirtualPrivateClouds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_virtualPrivateClouds.begin(); itr != m_virtualPrivateClouds.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_needSecurityAgentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedSecurityAgent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needSecurityAgent, allocator);
@@ -370,7 +369,7 @@ void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_needMonitorAgentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedMonitorAgent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needMonitorAgent, allocator);
@@ -378,7 +377,7 @@ void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_autoRenewFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRenewFlag, allocator);
@@ -386,7 +385,7 @@ void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_isZoningHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsZoning";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isZoning, allocator);
@@ -394,23 +393,23 @@ void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_fileSystemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSystem";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileSystem.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSystem.c_str(), allocator).Move(), allocator);
     }
 
     if (m_passwordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applyEipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplyEip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_applyEip, allocator);
@@ -418,15 +417,15 @@ void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_eipPayModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EipPayMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eipPayMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eipPayMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eipBandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EipBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eipBandwidth, allocator);
@@ -434,15 +433,15 @@ void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_imageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sysRootSpaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SysRootSpace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sysRootSpace, allocator);
@@ -450,7 +449,7 @@ void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_sysDataSpaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SysDataSpace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sysDataSpace, allocator);
@@ -458,7 +457,7 @@ void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_hyperThreadingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HyperThreading";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hyperThreading, allocator);
@@ -466,14 +465,14 @@ void EnvDataCpm::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_lanIpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LanIps";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_lanIps.begin(); itr != m_lanIps.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

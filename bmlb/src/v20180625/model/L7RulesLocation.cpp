@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 L7RulesLocation::L7RulesLocation() :
@@ -38,7 +37,7 @@ L7RulesLocation::L7RulesLocation() :
 {
 }
 
-CoreInternalOutcome L7RulesLocation::Deserialize(const Value &value)
+CoreInternalOutcome L7RulesLocation::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -138,8 +137,8 @@ CoreInternalOutcome L7RulesLocation::Deserialize(const Value &value)
         if (!value["HttpCodes"].IsArray())
             return CoreInternalOutcome(Error("response `L7RulesLocation.HttpCodes` is not array type"));
 
-        const Value &tmpValue = value["HttpCodes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["HttpCodes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_httpCodes.push_back((*itr).GetUint64());
         }
@@ -180,28 +179,28 @@ CoreInternalOutcome L7RulesLocation::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void L7RulesLocation::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void L7RulesLocation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_locationIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocationId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_locationId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_locationId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionExpireHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SessionExpire";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sessionExpire, allocator);
@@ -209,7 +208,7 @@ void L7RulesLocation::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_healthSwitchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_healthSwitch, allocator);
@@ -217,23 +216,23 @@ void L7RulesLocation::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_httpCheckPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpCheckPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_httpCheckPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpCheckPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_httpCheckDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpCheckDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_httpCheckDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpCheckDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_intervalTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IntervalTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_intervalTime, allocator);
@@ -241,7 +240,7 @@ void L7RulesLocation::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_healthNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_healthNum, allocator);
@@ -249,7 +248,7 @@ void L7RulesLocation::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_unhealthNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnhealthNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unhealthNum, allocator);
@@ -257,28 +256,28 @@ void L7RulesLocation::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_httpCodesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpCodes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_httpCodes.begin(); itr != m_httpCodes.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
     if (m_balanceModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BalanceMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_balanceMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_balanceMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -286,10 +285,10 @@ void L7RulesLocation::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_addTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddTimestamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_addTimestamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addTimestamp.c_str(), allocator).Move(), allocator);
     }
 
 }

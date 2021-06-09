@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apcas::V20201127::Model;
-using namespace rapidjson;
 using namespace std;
 
 ListModel::ListModel() :
@@ -31,7 +30,7 @@ ListModel::ListModel() :
 {
 }
 
-CoreInternalOutcome ListModel::Deserialize(const Value &value)
+CoreInternalOutcome ListModel::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome ListModel::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ListModel::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ListModel::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_iDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iD, allocator);
@@ -113,15 +112,15 @@ void ListModel::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_taskNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTime, allocator);
@@ -129,7 +128,7 @@ void ListModel::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -137,7 +136,7 @@ void ListModel::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_availableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Available";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_available, allocator);
@@ -145,10 +144,10 @@ void ListModel::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_errMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
     }
 
 }

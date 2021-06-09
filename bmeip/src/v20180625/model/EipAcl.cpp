@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmeip::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 EipAcl::EipAcl() :
@@ -32,7 +31,7 @@ EipAcl::EipAcl() :
 {
 }
 
-CoreInternalOutcome EipAcl::Deserialize(const Value &value)
+CoreInternalOutcome EipAcl::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -92,8 +91,8 @@ CoreInternalOutcome EipAcl::Deserialize(const Value &value)
         if (!value["OutRules"].IsArray())
             return CoreInternalOutcome(Error("response `EipAcl.OutRules` is not array type"));
 
-        const Value &tmpValue = value["OutRules"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["OutRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             EipAclRule item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -112,8 +111,8 @@ CoreInternalOutcome EipAcl::Deserialize(const Value &value)
         if (!value["InRules"].IsArray())
             return CoreInternalOutcome(Error("response `EipAcl.InRules` is not array type"));
 
-        const Value &tmpValue = value["InRules"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             EipAclRule item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -131,44 +130,44 @@ CoreInternalOutcome EipAcl::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EipAcl::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EipAcl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_aclIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AclId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_aclId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aclId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aclNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AclName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_aclName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aclName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eipNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EipNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eipNum, allocator);
@@ -176,30 +175,30 @@ void EipAcl::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_outRulesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutRules";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_outRules.begin(); itr != m_outRules.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_inRulesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InRules";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_inRules.begin(); itr != m_inRules.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

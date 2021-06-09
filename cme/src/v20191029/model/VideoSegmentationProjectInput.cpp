@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 VideoSegmentationProjectInput::VideoSegmentationProjectInput() :
@@ -27,7 +26,7 @@ VideoSegmentationProjectInput::VideoSegmentationProjectInput() :
 {
 }
 
-CoreInternalOutcome VideoSegmentationProjectInput::Deserialize(const Value &value)
+CoreInternalOutcome VideoSegmentationProjectInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome VideoSegmentationProjectInput::Deserialize(const Value &valu
     return CoreInternalOutcome(true);
 }
 
-void VideoSegmentationProjectInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VideoSegmentationProjectInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_aspectRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AspectRatio";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
     }
 
     if (m_processModelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProcessModel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_processModel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processModel.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Yunjing::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 BashEvent::BashEvent() :
@@ -38,7 +37,7 @@ BashEvent::BashEvent() :
 {
 }
 
-CoreInternalOutcome BashEvent::Deserialize(const Value &value)
+CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -177,12 +176,12 @@ CoreInternalOutcome BashEvent::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BashEvent::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BashEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -190,39 +189,39 @@ void BashEvent::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_uuidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_quuidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_quuid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hostipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hostip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_hostip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "User";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_user.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_user.c_str(), allocator).Move(), allocator);
     }
 
     if (m_platformHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Platform";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_platform, allocator);
@@ -230,15 +229,15 @@ void BashEvent::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_bashCmdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BashCmd";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bashCmd.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bashCmd.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ruleId, allocator);
@@ -246,15 +245,15 @@ void BashEvent::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_ruleNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ruleName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ruleLevel, allocator);
@@ -262,7 +261,7 @@ void BashEvent::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -270,18 +269,18 @@ void BashEvent::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_machineNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_machineName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineName.c_str(), allocator).Move(), allocator);
     }
 
 }

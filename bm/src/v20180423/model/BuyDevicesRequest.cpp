@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 BuyDevicesRequest::BuyDevicesRequest() :
@@ -69,22 +68,22 @@ BuyDevicesRequest::BuyDevicesRequest() :
 
 string BuyDevicesRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_osTypeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OsTypeId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_osTypeId, allocator);
@@ -92,7 +91,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_raidIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RaidId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_raidId, allocator);
@@ -100,7 +99,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_goodsCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GoodsCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_goodsCount, allocator);
@@ -108,39 +107,39 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subnetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceClassCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceClassCode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_deviceClassCode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceClassCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeUnitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeUnit";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_timeUnit.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeUnit.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeSpanHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeSpan, allocator);
@@ -148,7 +147,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_needSecurityAgentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedSecurityAgent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needSecurityAgent, allocator);
@@ -156,7 +155,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_needMonitorAgentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedMonitorAgent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needMonitorAgent, allocator);
@@ -164,7 +163,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_needEMRAgentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedEMRAgent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needEMRAgent, allocator);
@@ -172,7 +171,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_needEMRSoftwareHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedEMRSoftware";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needEMRSoftware, allocator);
@@ -180,7 +179,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_applyEipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplyEip";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_applyEip, allocator);
@@ -188,15 +187,15 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_eipPayModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EipPayMode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_eipPayMode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eipPayMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eipBandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EipBandwidth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_eipBandwidth, allocator);
@@ -204,7 +203,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_isZoningHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsZoning";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isZoning, allocator);
@@ -212,7 +211,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_cpmPayModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpmPayMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cpmPayMode, allocator);
@@ -220,23 +219,23 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_imageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_imageId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_passwordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoRenewFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRenewFlag, allocator);
@@ -244,7 +243,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_sysRootSpaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SysRootSpace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sysRootSpace, allocator);
@@ -252,7 +251,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_sysSwaporuefiSpaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SysSwaporuefiSpace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sysSwaporuefiSpace, allocator);
@@ -260,7 +259,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_sysUsrlocalSpaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SysUsrlocalSpace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sysUsrlocalSpace, allocator);
@@ -268,7 +267,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_sysDataSpaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SysDataSpace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sysDataSpace, allocator);
@@ -276,7 +275,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_hyperThreadingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HyperThreading";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_hyperThreading, allocator);
@@ -284,33 +283,33 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_lanIpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LanIps";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_lanIps.begin(); itr != m_lanIps.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_aliasesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Aliases";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_aliases.begin(); itr != m_aliases.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_cpuIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpuId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cpuId, allocator);
@@ -318,7 +317,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_containRaidCardHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContainRaidCard";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_containRaidCard, allocator);
@@ -326,7 +325,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_memSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_memSize, allocator);
@@ -334,7 +333,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_systemDiskTypeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SystemDiskTypeId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_systemDiskTypeId, allocator);
@@ -342,7 +341,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_systemDiskCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SystemDiskCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_systemDiskCount, allocator);
@@ -350,7 +349,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_dataDiskTypeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataDiskTypeId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dataDiskTypeId, allocator);
@@ -358,7 +357,7 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_dataDiskCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataDiskCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dataDiskCount, allocator);
@@ -366,54 +365,54 @@ string BuyDevicesRequest::ToJsonString() const
 
     if (m_tagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
         {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
     if (m_fileSystemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSystem";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_fileSystem.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileSystem.c_str(), allocator).Move(), allocator);
     }
 
     if (m_buySessionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BuySession";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_buySession.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_buySession.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sgIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SgId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sgId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sgId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_templateId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Domain::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 PriceInfo::PriceInfo() :
@@ -30,7 +29,7 @@ PriceInfo::PriceInfo() :
 {
 }
 
-CoreInternalOutcome PriceInfo::Deserialize(const Value &value)
+CoreInternalOutcome PriceInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome PriceInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PriceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PriceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tldHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tld";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tld.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tld.c_str(), allocator).Move(), allocator);
     }
 
     if (m_yearHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Year";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_year, allocator);
@@ -110,7 +109,7 @@ void PriceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_priceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Price";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_price, allocator);
@@ -118,7 +117,7 @@ void PriceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_realPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realPrice, allocator);
@@ -126,10 +125,10 @@ void PriceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_operationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Operation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_operation.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operation.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 FrameTagRec::FrameTagRec() :
@@ -27,7 +26,7 @@ FrameTagRec::FrameTagRec() :
 {
 }
 
-CoreInternalOutcome FrameTagRec::Deserialize(const Value &value)
+CoreInternalOutcome FrameTagRec::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome FrameTagRec::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FrameTagRec::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FrameTagRec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tagTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tagType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tagType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gameExtendTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameExtendType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gameExtendType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gameExtendType.c_str(), allocator).Move(), allocator);
     }
 
 }

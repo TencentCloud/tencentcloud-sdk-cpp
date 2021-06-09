@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Oceanus::V20190422::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResourceRefDetail::ResourceRefDetail() :
@@ -30,7 +29,7 @@ ResourceRefDetail::ResourceRefDetail() :
 {
 }
 
-CoreInternalOutcome ResourceRefDetail::Deserialize(const Value &value)
+CoreInternalOutcome ResourceRefDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome ResourceRefDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResourceRefDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResourceRefDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_versionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_version, allocator);
@@ -110,15 +109,15 @@ void ResourceRefDetail::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -126,7 +125,7 @@ void ResourceRefDetail::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_systemProvideHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SystemProvide";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_systemProvide, allocator);

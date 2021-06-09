@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 LiveStreamAiReviewVoicePornResult::LiveStreamAiReviewVoicePornResult() :
@@ -30,7 +29,7 @@ LiveStreamAiReviewVoicePornResult::LiveStreamAiReviewVoicePornResult() :
 {
 }
 
-CoreInternalOutcome LiveStreamAiReviewVoicePornResult::Deserialize(const Value &value)
+CoreInternalOutcome LiveStreamAiReviewVoicePornResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome LiveStreamAiReviewVoicePornResult::Deserialize(const Value &
     return CoreInternalOutcome(true);
 }
 
-void LiveStreamAiReviewVoicePornResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LiveStreamAiReviewVoicePornResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startPtsTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartPtsTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startPtsTime, allocator);
@@ -102,7 +101,7 @@ void LiveStreamAiReviewVoicePornResult::ToJsonObject(Value &value, Document::All
 
     if (m_endPtsTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndPtsTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endPtsTime, allocator);
@@ -110,7 +109,7 @@ void LiveStreamAiReviewVoicePornResult::ToJsonObject(Value &value, Document::All
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -118,18 +117,18 @@ void LiveStreamAiReviewVoicePornResult::ToJsonObject(Value &value, Document::All
 
     if (m_suggestionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_suggestion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_labelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
 }

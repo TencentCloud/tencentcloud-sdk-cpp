@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeTimeWindowResponse::DescribeTimeWindowResponse() :
@@ -37,7 +36,7 @@ DescribeTimeWindowResponse::DescribeTimeWindowResponse() :
 
 CoreInternalOutcome DescribeTimeWindowResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -47,7 +46,7 @@ CoreInternalOutcome DescribeTimeWindowResponse::Deserialize(const string &payloa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -74,8 +73,8 @@ CoreInternalOutcome DescribeTimeWindowResponse::Deserialize(const string &payloa
         if (!rsp["Monday"].IsArray())
             return CoreInternalOutcome(Error("response `Monday` is not array type"));
 
-        const Value &tmpValue = rsp["Monday"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Monday"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_monday.push_back((*itr).GetString());
         }
@@ -87,8 +86,8 @@ CoreInternalOutcome DescribeTimeWindowResponse::Deserialize(const string &payloa
         if (!rsp["Tuesday"].IsArray())
             return CoreInternalOutcome(Error("response `Tuesday` is not array type"));
 
-        const Value &tmpValue = rsp["Tuesday"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Tuesday"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_tuesday.push_back((*itr).GetString());
         }
@@ -100,8 +99,8 @@ CoreInternalOutcome DescribeTimeWindowResponse::Deserialize(const string &payloa
         if (!rsp["Wednesday"].IsArray())
             return CoreInternalOutcome(Error("response `Wednesday` is not array type"));
 
-        const Value &tmpValue = rsp["Wednesday"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Wednesday"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_wednesday.push_back((*itr).GetString());
         }
@@ -113,8 +112,8 @@ CoreInternalOutcome DescribeTimeWindowResponse::Deserialize(const string &payloa
         if (!rsp["Thursday"].IsArray())
             return CoreInternalOutcome(Error("response `Thursday` is not array type"));
 
-        const Value &tmpValue = rsp["Thursday"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Thursday"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_thursday.push_back((*itr).GetString());
         }
@@ -126,8 +125,8 @@ CoreInternalOutcome DescribeTimeWindowResponse::Deserialize(const string &payloa
         if (!rsp["Friday"].IsArray())
             return CoreInternalOutcome(Error("response `Friday` is not array type"));
 
-        const Value &tmpValue = rsp["Friday"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Friday"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_friday.push_back((*itr).GetString());
         }
@@ -139,8 +138,8 @@ CoreInternalOutcome DescribeTimeWindowResponse::Deserialize(const string &payloa
         if (!rsp["Saturday"].IsArray())
             return CoreInternalOutcome(Error("response `Saturday` is not array type"));
 
-        const Value &tmpValue = rsp["Saturday"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Saturday"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_saturday.push_back((*itr).GetString());
         }
@@ -152,8 +151,8 @@ CoreInternalOutcome DescribeTimeWindowResponse::Deserialize(const string &payloa
         if (!rsp["Sunday"].IsArray())
             return CoreInternalOutcome(Error("response `Sunday` is not array type"));
 
-        const Value &tmpValue = rsp["Sunday"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Sunday"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_sunday.push_back((*itr).GetString());
         }

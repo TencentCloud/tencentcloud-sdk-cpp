@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 DatabaseTupleStatus::DatabaseTupleStatus() :
@@ -29,7 +28,7 @@ DatabaseTupleStatus::DatabaseTupleStatus() :
 {
 }
 
-CoreInternalOutcome DatabaseTupleStatus::Deserialize(const Value &value)
+CoreInternalOutcome DatabaseTupleStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome DatabaseTupleStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DatabaseTupleStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DatabaseTupleStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_publishDatabaseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishDatabase";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_publishDatabase.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publishDatabase.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subscribeDatabaseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubscribeDatabase";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subscribeDatabase.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subscribeDatabase.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastSyncTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastSyncTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastSyncTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastSyncTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }

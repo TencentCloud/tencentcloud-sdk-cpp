@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 LightDistributionStatistic::LightDistributionStatistic() :
@@ -27,7 +26,7 @@ LightDistributionStatistic::LightDistributionStatistic() :
 {
 }
 
-CoreInternalOutcome LightDistributionStatistic::Deserialize(const Value &value)
+CoreInternalOutcome LightDistributionStatistic::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome LightDistributionStatistic::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LightDistributionStatistic::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LightDistributionStatistic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_time, allocator);
@@ -69,7 +68,7 @@ void LightDistributionStatistic::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_value, allocator);

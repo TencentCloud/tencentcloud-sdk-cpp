@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfw::V20190904::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyAllSwitchStatusResponse::ModifyAllSwitchStatusResponse() :
@@ -31,7 +30,7 @@ ModifyAllSwitchStatusResponse::ModifyAllSwitchStatusResponse() :
 
 CoreInternalOutcome ModifyAllSwitchStatusResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome ModifyAllSwitchStatusResponse::Deserialize(const string &pay
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeFleetStatisticDetailsResponse::DescribeFleetStatisticDetailsResponse() :
@@ -33,7 +32,7 @@ DescribeFleetStatisticDetailsResponse::DescribeFleetStatisticDetailsResponse() :
 
 CoreInternalOutcome DescribeFleetStatisticDetailsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DescribeFleetStatisticDetailsResponse::Deserialize(const str
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -70,8 +69,8 @@ CoreInternalOutcome DescribeFleetStatisticDetailsResponse::Deserialize(const str
         if (!rsp["DetailList"].IsArray())
             return CoreInternalOutcome(Error("response `DetailList` is not array type"));
 
-        const Value &tmpValue = rsp["DetailList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DetailList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             FleetStatisticDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

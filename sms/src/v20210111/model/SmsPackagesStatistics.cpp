@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sms::V20210111::Model;
-using namespace rapidjson;
 using namespace std;
 
 SmsPackagesStatistics::SmsPackagesStatistics() :
@@ -32,7 +31,7 @@ SmsPackagesStatistics::SmsPackagesStatistics() :
 {
 }
 
-CoreInternalOutcome SmsPackagesStatistics::Deserialize(const Value &value)
+CoreInternalOutcome SmsPackagesStatistics::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome SmsPackagesStatistics::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SmsPackagesStatistics::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SmsPackagesStatistics::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_packageCreateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PackageCreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_packageCreateTime, allocator);
@@ -124,7 +123,7 @@ void SmsPackagesStatistics::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_packageEffectiveTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PackageEffectiveTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_packageEffectiveTime, allocator);
@@ -132,7 +131,7 @@ void SmsPackagesStatistics::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_packageExpiredTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PackageExpiredTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_packageExpiredTime, allocator);
@@ -140,7 +139,7 @@ void SmsPackagesStatistics::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_packageAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PackageAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_packageAmount, allocator);
@@ -148,7 +147,7 @@ void SmsPackagesStatistics::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_packageTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PackageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_packageType, allocator);
@@ -156,7 +155,7 @@ void SmsPackagesStatistics::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_packageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PackageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_packageId, allocator);
@@ -164,7 +163,7 @@ void SmsPackagesStatistics::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_currentUsageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CurrentUsage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_currentUsage, allocator);

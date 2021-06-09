@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 EditMediaOutputConfig::EditMediaOutputConfig() :
@@ -29,7 +28,7 @@ EditMediaOutputConfig::EditMediaOutputConfig() :
 {
 }
 
-CoreInternalOutcome EditMediaOutputConfig::Deserialize(const Value &value)
+CoreInternalOutcome EditMediaOutputConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,28 +77,28 @@ CoreInternalOutcome EditMediaOutputConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EditMediaOutputConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EditMediaOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mediaNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MediaName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mediaName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mediaName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_classIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClassId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_classId, allocator);
@@ -107,10 +106,10 @@ void EditMediaOutputConfig::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_expireTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
 }

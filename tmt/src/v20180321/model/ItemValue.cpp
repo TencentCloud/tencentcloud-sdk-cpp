@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tmt::V20180321::Model;
-using namespace rapidjson;
 using namespace std;
 
 ItemValue::ItemValue() :
@@ -31,7 +30,7 @@ ItemValue::ItemValue() :
 {
 }
 
-CoreInternalOutcome ItemValue::Deserialize(const Value &value)
+CoreInternalOutcome ItemValue::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,28 +99,28 @@ CoreInternalOutcome ItemValue::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ItemValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ItemValue::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sourceTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceText";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sourceText.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceText.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetText";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_targetText.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetText.c_str(), allocator).Move(), allocator);
     }
 
     if (m_xHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "X";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_x, allocator);
@@ -129,7 +128,7 @@ void ItemValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_yHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Y";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_y, allocator);
@@ -137,7 +136,7 @@ void ItemValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_wHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "W";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_w, allocator);
@@ -145,7 +144,7 @@ void ItemValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_hHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "H";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_h, allocator);

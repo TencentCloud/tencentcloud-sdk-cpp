@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 DailyPlayStatInfo::DailyPlayStatInfo() :
@@ -29,7 +28,7 @@ DailyPlayStatInfo::DailyPlayStatInfo() :
 {
 }
 
-CoreInternalOutcome DailyPlayStatInfo::Deserialize(const Value &value)
+CoreInternalOutcome DailyPlayStatInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,28 +77,28 @@ CoreInternalOutcome DailyPlayStatInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DailyPlayStatInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DailyPlayStatInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_playTimesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlayTimes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_playTimes, allocator);
@@ -107,7 +106,7 @@ void DailyPlayStatInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_trafficHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Traffic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_traffic, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tem::V20201221::Model;
-using namespace rapidjson;
 using namespace std;
 
 IngressRule::IngressRule() :
@@ -28,7 +27,7 @@ IngressRule::IngressRule() :
 {
 }
 
-CoreInternalOutcome IngressRule::Deserialize(const Value &value)
+CoreInternalOutcome IngressRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,32 +73,32 @@ CoreInternalOutcome IngressRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IngressRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IngressRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_httpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Http";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_http.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_hostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Host";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_host.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_host.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
 }

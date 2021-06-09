@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 TreatmentRecord::TreatmentRecord() :
@@ -52,7 +51,7 @@ TreatmentRecord::TreatmentRecord() :
 {
 }
 
-CoreInternalOutcome TreatmentRecord::Deserialize(const Value &value)
+CoreInternalOutcome TreatmentRecord::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -331,223 +330,223 @@ CoreInternalOutcome TreatmentRecord::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TreatmentRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TreatmentRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dmissionConditionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DmissionCondition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dmissionCondition.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dmissionCondition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_chiefComplaintHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChiefComplaint";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_chiefComplaint.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chiefComplaint.c_str(), allocator).Move(), allocator);
     }
 
     if (m_diseasePresentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiseasePresent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diseasePresent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diseasePresent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_symptomsAndSignsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SymptomsAndSigns";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_symptomsAndSigns.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_symptomsAndSigns.c_str(), allocator).Move(), allocator);
     }
 
     if (m_auxiliaryExaminationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuxiliaryExamination";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_auxiliaryExamination.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_auxiliaryExamination.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bodyExaminationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BodyExamination";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bodyExamination.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bodyExamination.c_str(), allocator).Move(), allocator);
     }
 
     if (m_specialistExaminationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SpecialistExamination";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_specialistExamination.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specialistExamination.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mentalExaminationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MentalExamination";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mentalExamination.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mentalExamination.c_str(), allocator).Move(), allocator);
     }
 
     if (m_checkRecordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CheckRecord";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_checkRecord.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkRecord.c_str(), allocator).Move(), allocator);
     }
 
     if (m_inspectResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InspectResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inspectResult.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inspectResult.c_str(), allocator).Move(), allocator);
     }
 
     if (m_incisionHealingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IncisionHealing";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_incisionHealing.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_incisionHealing.c_str(), allocator).Move(), allocator);
     }
 
     if (m_treatmentSuggestionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TreatmentSuggestion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_treatmentSuggestion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_treatmentSuggestion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_followUpRequirementsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FollowUpRequirements";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_followUpRequirements.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_followUpRequirements.c_str(), allocator).Move(), allocator);
     }
 
     if (m_checkAndTreatmentProcessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CheckAndTreatmentProcess";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_checkAndTreatmentProcess.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkAndTreatmentProcess.c_str(), allocator).Move(), allocator);
     }
 
     if (m_surgeryConditionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SurgeryCondition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_surgeryCondition.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_surgeryCondition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_conditionChangesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConditionChanges";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_conditionChanges.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_conditionChanges.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dischargeConditionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DischargeCondition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dischargeCondition.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dischargeCondition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pTNMHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PTNM";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pTNM.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pTNM.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pTNMMHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PTNMM";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pTNMM.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pTNMM.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pTNMNHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PTNMN";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pTNMN.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pTNMN.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pTNMTHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PTNMT";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pTNMT.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pTNMT.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eCOGHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ECOG";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eCOG.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eCOG.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nRSHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NRS";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nRS.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nRS.c_str(), allocator).Move(), allocator);
     }
 
     if (m_kPSHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KPS";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_kPS.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kPS.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deathDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeathDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deathDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deathDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_relapseDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RelapseDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_relapseDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_relapseDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_observationDaysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ObservationDays";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_observationDays.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_observationDays.c_str(), allocator).Move(), allocator);
     }
 
 }

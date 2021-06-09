@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Rkp::V20191209::Model;
-using namespace rapidjson;
 using namespace std;
 
 DevInfoQ::DevInfoQ() :
@@ -29,7 +28,7 @@ DevInfoQ::DevInfoQ() :
 {
 }
 
-CoreInternalOutcome DevInfoQ::Deserialize(const Value &value)
+CoreInternalOutcome DevInfoQ::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -59,8 +58,8 @@ CoreInternalOutcome DevInfoQ::Deserialize(const Value &value)
         if (!value["RiskInfo"].IsArray())
             return CoreInternalOutcome(Error("response `DevInfoQ.RiskInfo` is not array type"));
 
-        const Value &tmpValue = value["RiskInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RiskInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RiskDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,20 +87,20 @@ CoreInternalOutcome DevInfoQ::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DevInfoQ::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DevInfoQ::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_openIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpenId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_openId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_riskScoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RiskScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_riskScore, allocator);
@@ -109,22 +108,22 @@ void DevInfoQ::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_riskInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RiskInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_riskInfo.begin(); itr != m_riskInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_probabilityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Probability";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_probability, allocator);

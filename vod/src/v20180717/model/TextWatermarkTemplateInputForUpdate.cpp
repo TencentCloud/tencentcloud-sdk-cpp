@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 TextWatermarkTemplateInputForUpdate::TextWatermarkTemplateInputForUpdate() :
@@ -29,7 +28,7 @@ TextWatermarkTemplateInputForUpdate::TextWatermarkTemplateInputForUpdate() :
 {
 }
 
-CoreInternalOutcome TextWatermarkTemplateInputForUpdate::Deserialize(const Value &value)
+CoreInternalOutcome TextWatermarkTemplateInputForUpdate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,36 +77,36 @@ CoreInternalOutcome TextWatermarkTemplateInputForUpdate::Deserialize(const Value
     return CoreInternalOutcome(true);
 }
 
-void TextWatermarkTemplateInputForUpdate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TextWatermarkTemplateInputForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fontTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FontType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fontType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fontType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fontSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FontSize";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fontSize.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fontSize.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fontColorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FontColor";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fontColor.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fontColor.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fontAlphaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FontAlpha";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fontAlpha, allocator);

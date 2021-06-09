@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageTaskStatistic::ImageTaskStatistic() :
@@ -33,7 +32,7 @@ ImageTaskStatistic::ImageTaskStatistic() :
 {
 }
 
-CoreInternalOutcome ImageTaskStatistic::Deserialize(const Value &value)
+CoreInternalOutcome ImageTaskStatistic::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -43,8 +42,8 @@ CoreInternalOutcome ImageTaskStatistic::Deserialize(const Value &value)
         if (!value["FaceDetect"].IsArray())
             return CoreInternalOutcome(Error("response `ImageTaskStatistic.FaceDetect` is not array type"));
 
-        const Value &tmpValue = value["FaceDetect"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FaceDetect"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             FaceDetectStatistic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -63,8 +62,8 @@ CoreInternalOutcome ImageTaskStatistic::Deserialize(const Value &value)
         if (!value["FaceExpression"].IsArray())
             return CoreInternalOutcome(Error("response `ImageTaskStatistic.FaceExpression` is not array type"));
 
-        const Value &tmpValue = value["FaceExpression"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FaceExpression"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             FaceExpressStatistic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -83,8 +82,8 @@ CoreInternalOutcome ImageTaskStatistic::Deserialize(const Value &value)
         if (!value["FaceIdentify"].IsArray())
             return CoreInternalOutcome(Error("response `ImageTaskStatistic.FaceIdentify` is not array type"));
 
-        const Value &tmpValue = value["FaceIdentify"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FaceIdentify"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             FaceIdentifyStatistic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -187,96 +186,96 @@ CoreInternalOutcome ImageTaskStatistic::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageTaskStatistic::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageTaskStatistic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_faceDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceDetect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_faceDetect.begin(); itr != m_faceDetect.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_faceExpressionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceExpression";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_faceExpression.begin(); itr != m_faceExpression.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_faceIdentifyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceIdentify";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_faceIdentify.begin(); itr != m_faceIdentify.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_gestureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gesture";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_gesture.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_handtrackingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Handtracking";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_handtracking.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_lightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Light";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_light.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_studentMovementHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StudentMovement";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_studentMovement.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_teacherMovementHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TeacherMovement";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_teacherMovement.ToJsonObject(value[key.c_str()], allocator);
     }
 

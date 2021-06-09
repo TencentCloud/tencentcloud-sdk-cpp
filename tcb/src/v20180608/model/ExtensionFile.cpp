@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 ExtensionFile::ExtensionFile() :
@@ -27,7 +26,7 @@ ExtensionFile::ExtensionFile() :
 {
 }
 
-CoreInternalOutcome ExtensionFile::Deserialize(const Value &value)
+CoreInternalOutcome ExtensionFile::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome ExtensionFile::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ExtensionFile::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ExtensionFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fileTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
 }

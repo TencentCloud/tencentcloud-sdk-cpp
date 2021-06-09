@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Iotvideo::V20201215::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateForwardRuleRequest::CreateForwardRuleRequest() :
@@ -39,22 +38,22 @@ CreateForwardRuleRequest::CreateForwardRuleRequest() :
 
 string CreateForwardRuleRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_productIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductID";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_productID.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_msgTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_msgType, allocator);
@@ -62,23 +61,23 @@ string CreateForwardRuleRequest::ToJsonString() const
 
     if (m_skeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Skey";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_skey.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_skey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queueRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueueRegion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_queueRegion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queueRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queueTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueueType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_queueType, allocator);
@@ -86,47 +85,47 @@ string CreateForwardRuleRequest::ToJsonString() const
 
     if (m_consecretidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Consecretid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_consecretid.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_consecretid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queueIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueueID";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_queueID.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queueID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queueNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueueName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_queueName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sms::V20190711::Model;
-using namespace rapidjson;
 using namespace std;
 
 AddSignStatus::AddSignStatus() :
@@ -27,7 +26,7 @@ AddSignStatus::AddSignStatus() :
 {
 }
 
-CoreInternalOutcome AddSignStatus::Deserialize(const Value &value)
+CoreInternalOutcome AddSignStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome AddSignStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AddSignStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AddSignStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_signIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_signId, allocator);
@@ -69,7 +68,7 @@ void AddSignStatus::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_signApplyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignApplyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_signApplyId, allocator);

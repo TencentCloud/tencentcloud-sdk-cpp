@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 PublicIPAddressInfo::PublicIPAddressInfo() :
@@ -30,7 +29,7 @@ PublicIPAddressInfo::PublicIPAddressInfo() :
 {
 }
 
-CoreInternalOutcome PublicIPAddressInfo::Deserialize(const Value &value)
+CoreInternalOutcome PublicIPAddressInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -96,37 +95,37 @@ CoreInternalOutcome PublicIPAddressInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PublicIPAddressInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PublicIPAddressInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_chargeModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChargeMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_chargeMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chargeMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publicIPAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicIPAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_publicIPAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIPAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iSPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ISP";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_iSP.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_maxBandwidthOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxBandwidthOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxBandwidthOut, allocator);
@@ -134,7 +133,7 @@ void PublicIPAddressInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_maxBandwidthInHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxBandwidthIn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxBandwidthIn, allocator);

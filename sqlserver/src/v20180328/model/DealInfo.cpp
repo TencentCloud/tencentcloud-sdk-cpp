@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 DealInfo::DealInfo() :
@@ -31,7 +30,7 @@ DealInfo::DealInfo() :
 {
 }
 
-CoreInternalOutcome DealInfo::Deserialize(const Value &value)
+CoreInternalOutcome DealInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -71,8 +70,8 @@ CoreInternalOutcome DealInfo::Deserialize(const Value &value)
         if (!value["InstanceIdSet"].IsArray())
             return CoreInternalOutcome(Error("response `DealInfo.InstanceIdSet` is not array type"));
 
-        const Value &tmpValue = value["InstanceIdSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InstanceIdSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_instanceIdSet.push_back((*itr).GetString());
         }
@@ -103,20 +102,20 @@ CoreInternalOutcome DealInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DealInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DealInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dealNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DealName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dealName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
@@ -124,7 +123,7 @@ void DealInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_flowIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowId, allocator);
@@ -132,31 +131,31 @@ void DealInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_instanceIdSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceIdSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_instanceIdSet.begin(); itr != m_instanceIdSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_ownerUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OwnerUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ownerUin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceChargeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceChargeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
     }
 
 }

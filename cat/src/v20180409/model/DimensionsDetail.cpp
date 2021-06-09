@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cat::V20180409::Model;
-using namespace rapidjson;
 using namespace std;
 
 DimensionsDetail::DimensionsDetail() :
@@ -27,7 +26,7 @@ DimensionsDetail::DimensionsDetail() :
 {
 }
 
-CoreInternalOutcome DimensionsDetail::Deserialize(const Value &value)
+CoreInternalOutcome DimensionsDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome DimensionsDetail::Deserialize(const Value &value)
         if (!value["Isp"].IsArray())
             return CoreInternalOutcome(Error("response `DimensionsDetail.Isp` is not array type"));
 
-        const Value &tmpValue = value["Isp"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Isp"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_isp.push_back((*itr).GetString());
         }
@@ -50,8 +49,8 @@ CoreInternalOutcome DimensionsDetail::Deserialize(const Value &value)
         if (!value["Province"].IsArray())
             return CoreInternalOutcome(Error("response `DimensionsDetail.Province` is not array type"));
 
-        const Value &tmpValue = value["Province"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Province"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_province.push_back((*itr).GetString());
         }
@@ -62,32 +61,32 @@ CoreInternalOutcome DimensionsDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DimensionsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DimensionsDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ispHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Isp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_isp.begin(); itr != m_isp.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_provinceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Province";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_province.begin(); itr != m_province.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

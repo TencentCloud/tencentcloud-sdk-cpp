@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tiems::V20190416::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateServiceRequest::CreateServiceRequest() :
@@ -43,55 +42,55 @@ CreateServiceRequest::CreateServiceRequest() :
 
 string CreateServiceRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_scalerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Scaler";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_scaler.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_serviceConfigIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceConfigId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_serviceConfigId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceConfigId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scaleModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScaleMode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_scaleMode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scaleMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceGroupId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cpu, allocator);
@@ -99,7 +98,7 @@ string CreateServiceRequest::ToJsonString() const
 
     if (m_memoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_memory, allocator);
@@ -107,23 +106,23 @@ string CreateServiceRequest::ToJsonString() const
 
     if (m_clusterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cluster";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cluster.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cluster.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authenticationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Authentication";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_authentication.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_authentication.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gpu";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_gpu, allocator);
@@ -131,7 +130,7 @@ string CreateServiceRequest::ToJsonString() const
 
     if (m_gpuMemoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GpuMemory";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_gpuMemory, allocator);
@@ -139,31 +138,31 @@ string CreateServiceRequest::ToJsonString() const
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gpuTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GpuType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_gpuType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gpuType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_logTopicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogTopicId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_logTopicId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logTopicId.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

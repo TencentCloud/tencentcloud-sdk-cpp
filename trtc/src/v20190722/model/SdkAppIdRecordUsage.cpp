@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 SdkAppIdRecordUsage::SdkAppIdRecordUsage() :
@@ -27,7 +26,7 @@ SdkAppIdRecordUsage::SdkAppIdRecordUsage() :
 {
 }
 
-CoreInternalOutcome SdkAppIdRecordUsage::Deserialize(const Value &value)
+CoreInternalOutcome SdkAppIdRecordUsage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome SdkAppIdRecordUsage::Deserialize(const Value &value)
         if (!value["Usages"].IsArray())
             return CoreInternalOutcome(Error("response `SdkAppIdRecordUsage.Usages` is not array type"));
 
-        const Value &tmpValue = value["Usages"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Usages"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RecordUsage item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome SdkAppIdRecordUsage::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SdkAppIdRecordUsage::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SdkAppIdRecordUsage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sdkAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sdkAppId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sdkAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usagesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Usages";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_usages.begin(); itr != m_usages.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

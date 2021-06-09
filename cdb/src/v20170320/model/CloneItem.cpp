@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloneItem::CloneItem() :
@@ -33,7 +32,7 @@ CloneItem::CloneItem() :
 {
 }
 
-CoreInternalOutcome CloneItem::Deserialize(const Value &value)
+CoreInternalOutcome CloneItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,28 +121,28 @@ CoreInternalOutcome CloneItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CloneItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloneItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_srcInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_srcInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dstInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cloneJobIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CloneJobId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cloneJobId, allocator);
@@ -151,42 +150,42 @@ void CloneItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_rollbackStrategyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RollbackStrategy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rollbackStrategy.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rollbackStrategy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rollbackTargetTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RollbackTargetTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rollbackTargetTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rollbackTargetTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskStatus.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dts::V20180330::Model;
-using namespace rapidjson;
 using namespace std;
 
 MigrateJobInfo::MigrateJobInfo() :
@@ -41,7 +40,7 @@ MigrateJobInfo::MigrateJobInfo() :
 {
 }
 
-CoreInternalOutcome MigrateJobInfo::Deserialize(const Value &value)
+CoreInternalOutcome MigrateJobInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -229,8 +228,8 @@ CoreInternalOutcome MigrateJobInfo::Deserialize(const Value &value)
         if (!value["ErrorInfo"].IsArray())
             return CoreInternalOutcome(Error("response `MigrateJobInfo.ErrorInfo` is not array type"));
 
-        const Value &tmpValue = value["ErrorInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ErrorInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ErrorInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -248,119 +247,119 @@ CoreInternalOutcome MigrateJobInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MigrateJobInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MigrateJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_jobIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_jobId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_jobNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_jobName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_migrateOptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MigrateOption";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_migrateOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_srcDatabaseTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcDatabaseType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_srcDatabaseType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcDatabaseType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcAccessTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcAccessType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_srcAccessType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcAccessType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_srcInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_dstDatabaseTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstDatabaseType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dstDatabaseType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstDatabaseType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstAccessTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstAccessType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dstAccessType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstAccessType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dstInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_databaseInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DatabaseInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_databaseInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -368,24 +367,24 @@ void MigrateJobInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_detailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Detail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_detail.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_errorInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_errorInfo.begin(); itr != m_errorInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

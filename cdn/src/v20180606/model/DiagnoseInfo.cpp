@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 DiagnoseInfo::DiagnoseInfo() :
@@ -32,7 +31,7 @@ DiagnoseInfo::DiagnoseInfo() :
 {
 }
 
-CoreInternalOutcome DiagnoseInfo::Deserialize(const Value &value)
+CoreInternalOutcome DiagnoseInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -92,8 +91,8 @@ CoreInternalOutcome DiagnoseInfo::Deserialize(const Value &value)
         if (!value["ClientList"].IsArray())
             return CoreInternalOutcome(Error("response `DiagnoseInfo.ClientList` is not array type"));
 
-        const Value &tmpValue = value["ClientList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ClientList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DiagnoseList item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -121,44 +120,44 @@ CoreInternalOutcome DiagnoseInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DiagnoseInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DiagnoseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_diagnoseUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiagnoseUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diagnoseUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diagnoseUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_diagnoseLinkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiagnoseLink";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diagnoseLink.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diagnoseLink.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_expireDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_visitCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VisitCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_visitCount, allocator);
@@ -166,25 +165,25 @@ void DiagnoseInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_clientListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_clientList.begin(); itr != m_clientList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_areaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }

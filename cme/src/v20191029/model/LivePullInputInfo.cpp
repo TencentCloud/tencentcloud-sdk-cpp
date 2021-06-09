@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 LivePullInputInfo::LivePullInputInfo() :
@@ -26,7 +25,7 @@ LivePullInputInfo::LivePullInputInfo() :
 {
 }
 
-CoreInternalOutcome LivePullInputInfo::Deserialize(const Value &value)
+CoreInternalOutcome LivePullInputInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome LivePullInputInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LivePullInputInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LivePullInputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_inputUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inputUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputUrl.c_str(), allocator).Move(), allocator);
     }
 
 }

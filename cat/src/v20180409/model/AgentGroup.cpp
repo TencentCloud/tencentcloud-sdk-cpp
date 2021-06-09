@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cat::V20180409::Model;
-using namespace rapidjson;
 using namespace std;
 
 AgentGroup::AgentGroup() :
@@ -31,7 +30,7 @@ AgentGroup::AgentGroup() :
 {
 }
 
-CoreInternalOutcome AgentGroup::Deserialize(const Value &value)
+CoreInternalOutcome AgentGroup::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,8 +80,8 @@ CoreInternalOutcome AgentGroup::Deserialize(const Value &value)
         if (!value["GroupDetail"].IsArray())
             return CoreInternalOutcome(Error("response `AgentGroup.GroupDetail` is not array type"));
 
-        const Value &tmpValue = value["GroupDetail"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["GroupDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CatAgent item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,12 +109,12 @@ CoreInternalOutcome AgentGroup::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AgentGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AgentGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupId, allocator);
@@ -123,15 +122,15 @@ void AgentGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_groupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isDefaultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsDefault";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDefault, allocator);
@@ -139,7 +138,7 @@ void AgentGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_taskNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskNum, allocator);
@@ -147,22 +146,22 @@ void AgentGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_groupDetailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_groupDetail.begin(); itr != m_groupDetail.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_maxGroupNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxGroupNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxGroupNum, allocator);

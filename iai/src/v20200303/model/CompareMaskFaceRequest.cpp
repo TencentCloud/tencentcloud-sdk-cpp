@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 CompareMaskFaceRequest::CompareMaskFaceRequest() :
@@ -35,62 +34,62 @@ CompareMaskFaceRequest::CompareMaskFaceRequest() :
 
 string CompareMaskFaceRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_imageAHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageA";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_imageA.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageA.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageB";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_imageB.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageB.c_str(), allocator).Move(), allocator);
     }
 
     if (m_urlAHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UrlA";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_urlA.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_urlA.c_str(), allocator).Move(), allocator);
     }
 
     if (m_urlBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UrlB";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_urlB.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_urlB.c_str(), allocator).Move(), allocator);
     }
 
     if (m_faceModelVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceModelVersion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_faceModelVersion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_faceModelVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_qualityControlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QualityControl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_qualityControl, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Captcha::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCaptchaAppIdInfoResponse::DescribeCaptchaAppIdInfoResponse() :
@@ -45,7 +44,7 @@ DescribeCaptchaAppIdInfoResponse::DescribeCaptchaAppIdInfoResponse() :
 
 CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -55,7 +54,7 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -172,8 +171,8 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
         if (!rsp["MailAlarm"].IsArray())
             return CoreInternalOutcome(Error("response `MailAlarm` is not array type"));
 
-        const Value &tmpValue = rsp["MailAlarm"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["MailAlarm"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_mailAlarm.push_back((*itr).GetString());
         }

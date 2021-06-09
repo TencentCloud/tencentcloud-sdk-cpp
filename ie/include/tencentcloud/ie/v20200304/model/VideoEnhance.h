@@ -31,6 +31,8 @@
 #include <tencentcloud/ie/v20200304/model/FaceProtect.h>
 #include <tencentcloud/ie/v20200304/model/ScratchRepair.h>
 #include <tencentcloud/ie/v20200304/model/LowLightEnhance.h>
+#include <tencentcloud/ie/v20200304/model/VideoSuperResolution.h>
+#include <tencentcloud/ie/v20200304/model/VideoRepair.h>
 
 
 namespace TencentCloud
@@ -127,13 +129,17 @@ namespace TencentCloud
 
                     /**
                      * 获取超分参数，可选项：2，目前仅支持2倍超分。
+注意：此参数已经弃用，超分可以使用VideoSuperResolution参数
                      * @return WdSuperResolution 超分参数，可选项：2，目前仅支持2倍超分。
+注意：此参数已经弃用，超分可以使用VideoSuperResolution参数
                      */
                     int64_t GetWdSuperResolution() const;
 
                     /**
                      * 设置超分参数，可选项：2，目前仅支持2倍超分。
+注意：此参数已经弃用，超分可以使用VideoSuperResolution参数
                      * @param WdSuperResolution 超分参数，可选项：2，目前仅支持2倍超分。
+注意：此参数已经弃用，超分可以使用VideoSuperResolution参数
                      */
                     void SetWdSuperResolution(const int64_t& _wdSuperResolution);
 
@@ -219,6 +225,42 @@ namespace TencentCloud
                      */
                     bool LowLightEnhanceHasBeenSet() const;
 
+                    /**
+                     * 获取视频超分参数
+                     * @return VideoSuperResolution 视频超分参数
+                     */
+                    VideoSuperResolution GetVideoSuperResolution() const;
+
+                    /**
+                     * 设置视频超分参数
+                     * @param VideoSuperResolution 视频超分参数
+                     */
+                    void SetVideoSuperResolution(const VideoSuperResolution& _videoSuperResolution);
+
+                    /**
+                     * 判断参数 VideoSuperResolution 是否已赋值
+                     * @return VideoSuperResolution 是否已赋值
+                     */
+                    bool VideoSuperResolutionHasBeenSet() const;
+
+                    /**
+                     * 获取视频画质修复参数
+                     * @return VideoRepair 视频画质修复参数
+                     */
+                    VideoRepair GetVideoRepair() const;
+
+                    /**
+                     * 设置视频画质修复参数
+                     * @param VideoRepair 视频画质修复参数
+                     */
+                    void SetVideoRepair(const VideoRepair& _videoRepair);
+
+                    /**
+                     * 判断参数 VideoRepair 是否已赋值
+                     * @return VideoRepair 是否已赋值
+                     */
+                    bool VideoRepairHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +289,7 @@ namespace TencentCloud
 
                     /**
                      * 超分参数，可选项：2，目前仅支持2倍超分。
+注意：此参数已经弃用，超分可以使用VideoSuperResolution参数
                      */
                     int64_t m_wdSuperResolution;
                     bool m_wdSuperResolutionHasBeenSet;
@@ -275,6 +318,18 @@ namespace TencentCloud
                      */
                     LowLightEnhance m_lowLightEnhance;
                     bool m_lowLightEnhanceHasBeenSet;
+
+                    /**
+                     * 视频超分参数
+                     */
+                    VideoSuperResolution m_videoSuperResolution;
+                    bool m_videoSuperResolutionHasBeenSet;
+
+                    /**
+                     * 视频画质修复参数
+                     */
+                    VideoRepair m_videoRepair;
+                    bool m_videoRepairHasBeenSet;
 
                 };
             }

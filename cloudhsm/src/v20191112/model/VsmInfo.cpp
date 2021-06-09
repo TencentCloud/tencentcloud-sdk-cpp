@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cloudhsm::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 VsmInfo::VsmInfo() :
@@ -27,7 +26,7 @@ VsmInfo::VsmInfo() :
 {
 }
 
-CoreInternalOutcome VsmInfo::Deserialize(const Value &value)
+CoreInternalOutcome VsmInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome VsmInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VsmInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VsmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TypeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_typeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_typeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TypeID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_typeID, allocator);

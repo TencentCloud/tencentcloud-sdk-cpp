@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 PartitionInfo::PartitionInfo() :
@@ -27,7 +26,7 @@ PartitionInfo::PartitionInfo() :
 {
 }
 
-CoreInternalOutcome PartitionInfo::Deserialize(const Value &value)
+CoreInternalOutcome PartitionInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome PartitionInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PartitionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PartitionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ses::V20201002::Model;
-using namespace rapidjson;
 using namespace std;
 
 Volume::Volume() :
@@ -33,7 +32,7 @@ Volume::Volume() :
 {
 }
 
-CoreInternalOutcome Volume::Deserialize(const Value &value)
+CoreInternalOutcome Volume::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,20 +121,20 @@ CoreInternalOutcome Volume::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Volume::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Volume::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sendDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SendDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sendDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sendDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_requestCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RequestCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_requestCount, allocator);
@@ -143,7 +142,7 @@ void Volume::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_acceptedCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AcceptedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_acceptedCount, allocator);
@@ -151,7 +150,7 @@ void Volume::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_deliveredCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeliveredCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deliveredCount, allocator);
@@ -159,7 +158,7 @@ void Volume::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_openedCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpenedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_openedCount, allocator);
@@ -167,7 +166,7 @@ void Volume::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_clickedCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClickedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clickedCount, allocator);
@@ -175,7 +174,7 @@ void Volume::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_bounceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BounceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bounceCount, allocator);
@@ -183,7 +182,7 @@ void Volume::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_unsubscribeCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnsubscribeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unsubscribeCount, allocator);

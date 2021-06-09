@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ims::V20201229::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageModerationResponse::ImageModerationResponse() :
@@ -42,7 +41,7 @@ ImageModerationResponse::ImageModerationResponse() :
 
 CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -52,7 +51,7 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -119,8 +118,8 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
         if (!rsp["LabelResults"].IsArray())
             return CoreInternalOutcome(Error("response `LabelResults` is not array type"));
 
-        const Value &tmpValue = rsp["LabelResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["LabelResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LabelResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -139,8 +138,8 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
         if (!rsp["ObjectResults"].IsArray())
             return CoreInternalOutcome(Error("response `ObjectResults` is not array type"));
 
-        const Value &tmpValue = rsp["ObjectResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ObjectResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ObjectResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -159,8 +158,8 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
         if (!rsp["OcrResults"].IsArray())
             return CoreInternalOutcome(Error("response `OcrResults` is not array type"));
 
-        const Value &tmpValue = rsp["OcrResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["OcrResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             OcrResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -179,8 +178,8 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
         if (!rsp["LibResults"].IsArray())
             return CoreInternalOutcome(Error("response `LibResults` is not array type"));
 
-        const Value &tmpValue = rsp["LibResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["LibResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LibResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

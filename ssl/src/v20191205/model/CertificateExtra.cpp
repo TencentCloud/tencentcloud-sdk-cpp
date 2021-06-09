@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ssl::V20191205::Model;
-using namespace rapidjson;
 using namespace std;
 
 CertificateExtra::CertificateExtra() :
@@ -30,7 +29,7 @@ CertificateExtra::CertificateExtra() :
 {
 }
 
-CoreInternalOutcome CertificateExtra::Deserialize(const Value &value)
+CoreInternalOutcome CertificateExtra::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,47 +88,47 @@ CoreInternalOutcome CertificateExtra::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CertificateExtra::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CertificateExtra::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_domainNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainNumber";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domainNumber.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainNumber.c_str(), allocator).Move(), allocator);
     }
 
     if (m_originCertificateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginCertificateId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_originCertificateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originCertificateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_replacedByHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplacedBy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replacedBy.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replacedBy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_replacedForHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplacedFor";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replacedFor.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replacedFor.c_str(), allocator).Move(), allocator);
     }
 
     if (m_renewOrderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RenewOrder";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_renewOrder.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_renewOrder.c_str(), allocator).Move(), allocator);
     }
 
 }

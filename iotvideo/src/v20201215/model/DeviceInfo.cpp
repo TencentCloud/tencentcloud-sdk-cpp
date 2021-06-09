@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20201215::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceInfo::DeviceInfo() :
@@ -31,7 +30,7 @@ DeviceInfo::DeviceInfo() :
 {
 }
 
-CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
+CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,20 +99,20 @@ CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deviceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_onlineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Online";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_online, allocator);
@@ -121,7 +120,7 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_loginTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoginTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loginTime, allocator);
@@ -129,15 +128,15 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_devicePskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DevicePsk";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_devicePsk.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_devicePsk.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableState, allocator);
@@ -145,7 +144,7 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expireTime, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bda::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 Trace::Trace() :
@@ -28,7 +27,7 @@ Trace::Trace() :
 {
 }
 
-CoreInternalOutcome Trace::Deserialize(const Value &value)
+CoreInternalOutcome Trace::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome Trace::Deserialize(const Value &value)
         if (!value["Images"].IsArray())
             return CoreInternalOutcome(Error("response `Trace.Images` is not array type"));
 
-        const Value &tmpValue = value["Images"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Images"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_images.push_back((*itr).GetString());
         }
@@ -51,8 +50,8 @@ CoreInternalOutcome Trace::Deserialize(const Value &value)
         if (!value["Urls"].IsArray())
             return CoreInternalOutcome(Error("response `Trace.Urls` is not array type"));
 
-        const Value &tmpValue = value["Urls"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Urls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_urls.push_back((*itr).GetString());
         }
@@ -64,8 +63,8 @@ CoreInternalOutcome Trace::Deserialize(const Value &value)
         if (!value["BodyRects"].IsArray())
             return CoreInternalOutcome(Error("response `Trace.BodyRects` is not array type"));
 
-        const Value &tmpValue = value["BodyRects"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BodyRects"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             BodyRect item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -83,46 +82,46 @@ CoreInternalOutcome Trace::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Trace::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Trace::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_imagesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Images";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_images.begin(); itr != m_images.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_urlsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Urls";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_urls.begin(); itr != m_urls.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_bodyRectsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BodyRects";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_bodyRects.begin(); itr != m_bodyRects.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

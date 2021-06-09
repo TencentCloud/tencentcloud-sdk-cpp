@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProductInstance::ProductInstance() :
@@ -34,7 +33,7 @@ ProductInstance::ProductInstance() :
 {
 }
 
-CoreInternalOutcome ProductInstance::Deserialize(const Value &value)
+CoreInternalOutcome ProductInstance::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -104,8 +103,8 @@ CoreInternalOutcome ProductInstance::Deserialize(const Value &value)
         if (!value["ProductInstanceResourceSet"].IsArray())
             return CoreInternalOutcome(Error("response `ProductInstance.ProductInstanceResourceSet` is not array type"));
 
-        const Value &tmpValue = value["ProductInstanceResourceSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ProductInstanceResourceSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ProductInstanceRecource item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -143,52 +142,52 @@ CoreInternalOutcome ProductInstance::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProductInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProductInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_productTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_expireTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastConsumeDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastConsumeDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastConsumeDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastConsumeDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bindStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BindStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bindStatus, allocator);
@@ -196,33 +195,33 @@ void ProductInstance::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_productInstanceResourceSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductInstanceResourceSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_productInstanceResourceSet.begin(); itr != m_productInstanceResourceSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_productInstanceStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductInstanceStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productInstanceStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productInstanceStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_refundStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RefundStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_refundStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_refundStatus.c_str(), allocator).Move(), allocator);
     }
 
 }

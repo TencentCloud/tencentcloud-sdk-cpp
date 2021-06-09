@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiw::V20190919::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeOnlineRecordResponse::DescribeOnlineRecordResponse() :
@@ -43,7 +42,7 @@ DescribeOnlineRecordResponse::DescribeOnlineRecordResponse() :
 
 CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -53,7 +52,7 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -180,8 +179,8 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
         if (!rsp["OmittedDurations"].IsArray())
             return CoreInternalOutcome(Error("response `OmittedDurations` is not array type"));
 
-        const Value &tmpValue = rsp["OmittedDurations"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["OmittedDurations"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             OmittedDuration item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -200,8 +199,8 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
         if (!rsp["VideoInfos"].IsArray())
             return CoreInternalOutcome(Error("response `VideoInfos` is not array type"));
 
-        const Value &tmpValue = rsp["VideoInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["VideoInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             VideoInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

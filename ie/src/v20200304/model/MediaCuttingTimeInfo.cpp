@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaCuttingTimeInfo::MediaCuttingTimeInfo() :
@@ -29,7 +28,7 @@ MediaCuttingTimeInfo::MediaCuttingTimeInfo() :
 {
 }
 
-CoreInternalOutcome MediaCuttingTimeInfo::Deserialize(const Value &value)
+CoreInternalOutcome MediaCuttingTimeInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -49,8 +48,8 @@ CoreInternalOutcome MediaCuttingTimeInfo::Deserialize(const Value &value)
         if (!value["PointSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaCuttingTimeInfo.PointSet` is not array type"));
 
-        const Value &tmpValue = value["PointSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PointSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_pointSet.push_back((*itr).GetInt64());
         }
@@ -79,8 +78,8 @@ CoreInternalOutcome MediaCuttingTimeInfo::Deserialize(const Value &value)
         if (!value["SectionSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaCuttingTimeInfo.SectionSet` is not array type"));
 
-        const Value &tmpValue = value["SectionSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SectionSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SectionTime item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -98,50 +97,50 @@ CoreInternalOutcome MediaCuttingTimeInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaCuttingTimeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaCuttingTimeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pointSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PointSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_pointSet.begin(); itr != m_pointSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_intervalPointHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IntervalPoint";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_intervalPoint.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_sectionSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SectionSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_sectionSet.begin(); itr != m_sectionSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

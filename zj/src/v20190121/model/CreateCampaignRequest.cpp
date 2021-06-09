@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateCampaignRequest::CreateCampaignRequest() :
@@ -36,22 +35,22 @@ CreateCampaignRequest::CreateCampaignRequest() :
 
 string CreateCampaignRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_licenseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "License";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_license.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_license.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sendTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SendTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sendTime, allocator);
@@ -59,30 +58,30 @@ string CreateCampaignRequest::ToJsonString() const
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_strategiesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Strategies";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_strategies.begin(); itr != m_strategies.end(); ++itr, ++i)
         {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_templateId, allocator);
@@ -90,7 +89,7 @@ string CreateCampaignRequest::ToJsonString() const
 
     if (m_crowdIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CrowdID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_crowdID, allocator);
@@ -98,15 +97,15 @@ string CreateCampaignRequest::ToJsonString() const
 
     if (m_smsTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SmsType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_smsType, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

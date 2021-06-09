@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cls::V20201016::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeLogContextRequest::DescribeLogContextRequest() :
@@ -35,38 +34,38 @@ DescribeLogContextRequest::DescribeLogContextRequest() :
 
 string DescribeLogContextRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_topicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_topicId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BTime";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_bTime.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pkgIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PkgId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_pkgId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pkgId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pkgLogIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PkgLogId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pkgLogId, allocator);
@@ -74,7 +73,7 @@ string DescribeLogContextRequest::ToJsonString() const
 
     if (m_prevLogsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrevLogs";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_prevLogs, allocator);
@@ -82,15 +81,15 @@ string DescribeLogContextRequest::ToJsonString() const
 
     if (m_nextLogsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NextLogs";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_nextLogs, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

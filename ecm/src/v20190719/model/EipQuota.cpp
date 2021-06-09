@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 EipQuota::EipQuota() :
@@ -28,7 +27,7 @@ EipQuota::EipQuota() :
 {
 }
 
-CoreInternalOutcome EipQuota::Deserialize(const Value &value)
+CoreInternalOutcome EipQuota::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome EipQuota::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EipQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EipQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_quotaIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QuotaId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_quotaId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quotaId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_quotaCurrentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QuotaCurrent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quotaCurrent, allocator);
@@ -88,7 +87,7 @@ void EipQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_quotaLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QuotaLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quotaLimit, allocator);

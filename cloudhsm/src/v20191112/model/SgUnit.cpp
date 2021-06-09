@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cloudhsm::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 SgUnit::SgUnit() :
@@ -29,7 +28,7 @@ SgUnit::SgUnit() :
 {
 }
 
-CoreInternalOutcome SgUnit::Deserialize(const Value &value)
+CoreInternalOutcome SgUnit::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome SgUnit::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SgUnit::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SgUnit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sgIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SgId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sgId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sgId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sgNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SgName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sgName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sgName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sgRemarkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SgRemark";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sgRemark.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sgRemark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }

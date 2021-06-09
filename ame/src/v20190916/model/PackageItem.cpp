@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ame::V20190916::Model;
-using namespace rapidjson;
 using namespace std;
 
 PackageItem::PackageItem() :
@@ -32,7 +31,7 @@ PackageItem::PackageItem() :
 {
 }
 
-CoreInternalOutcome PackageItem::Deserialize(const Value &value)
+CoreInternalOutcome PackageItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,63 +110,63 @@ CoreInternalOutcome PackageItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PackageItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PackageItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_orderIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_orderId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_trackNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TrackName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_trackName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trackName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_itemIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ItemID";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_itemID.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_itemID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Img";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_img.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_img.c_str(), allocator).Move(), allocator);
     }
 
     if (m_artistNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ArtistName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_artistName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_artistName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_duration.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_duration.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authorizedAreaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuthorizedArea";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_authorizedArea.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authorizedArea.c_str(), allocator).Move(), allocator);
     }
 
 }

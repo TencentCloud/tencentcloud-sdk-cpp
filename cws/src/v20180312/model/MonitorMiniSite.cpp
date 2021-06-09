@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cws::V20180312::Model;
-using namespace rapidjson;
 using namespace std;
 
 MonitorMiniSite::MonitorMiniSite() :
@@ -27,7 +26,7 @@ MonitorMiniSite::MonitorMiniSite() :
 {
 }
 
-CoreInternalOutcome MonitorMiniSite::Deserialize(const Value &value)
+CoreInternalOutcome MonitorMiniSite::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome MonitorMiniSite::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MonitorMiniSite::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MonitorMiniSite::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_siteIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SiteId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_siteId, allocator);
@@ -69,10 +68,10 @@ void MonitorMiniSite::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 }

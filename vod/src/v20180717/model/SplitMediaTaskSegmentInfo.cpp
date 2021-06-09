@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 SplitMediaTaskSegmentInfo::SplitMediaTaskSegmentInfo() :
@@ -28,7 +27,7 @@ SplitMediaTaskSegmentInfo::SplitMediaTaskSegmentInfo() :
 {
 }
 
-CoreInternalOutcome SplitMediaTaskSegmentInfo::Deserialize(const Value &value)
+CoreInternalOutcome SplitMediaTaskSegmentInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,33 +80,33 @@ CoreInternalOutcome SplitMediaTaskSegmentInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SplitMediaTaskSegmentInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SplitMediaTaskSegmentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_inputHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Input";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_input.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_outputHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Output";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_output.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_procedureTaskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProcedureTaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_procedureTaskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_procedureTaskId.c_str(), allocator).Move(), allocator);
     }
 
 }

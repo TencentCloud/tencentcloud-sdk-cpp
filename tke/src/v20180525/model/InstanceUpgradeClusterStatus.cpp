@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceUpgradeClusterStatus::InstanceUpgradeClusterStatus() :
@@ -27,7 +26,7 @@ InstanceUpgradeClusterStatus::InstanceUpgradeClusterStatus() :
 {
 }
 
-CoreInternalOutcome InstanceUpgradeClusterStatus::Deserialize(const Value &value)
+CoreInternalOutcome InstanceUpgradeClusterStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome InstanceUpgradeClusterStatus::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void InstanceUpgradeClusterStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceUpgradeClusterStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_podTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PodTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_podTotal, allocator);
@@ -69,7 +68,7 @@ void InstanceUpgradeClusterStatus::ToJsonObject(Value &value, Document::Allocato
 
     if (m_notReadyPodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotReadyPod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notReadyPod, allocator);

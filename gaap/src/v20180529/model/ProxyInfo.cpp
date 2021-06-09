@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProxyInfo::ProxyInfo() :
@@ -52,7 +51,7 @@ ProxyInfo::ProxyInfo() :
 {
 }
 
-CoreInternalOutcome ProxyInfo::Deserialize(const Value &value)
+CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -202,8 +201,8 @@ CoreInternalOutcome ProxyInfo::Deserialize(const Value &value)
         if (!value["SupportProtocols"].IsArray())
             return CoreInternalOutcome(Error("response `ProxyInfo.SupportProtocols` is not array type"));
 
-        const Value &tmpValue = value["SupportProtocols"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SupportProtocols"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_supportProtocols.push_back((*itr).GetString());
         }
@@ -279,8 +278,8 @@ CoreInternalOutcome ProxyInfo::Deserialize(const Value &value)
         if (!value["TagSet"].IsArray())
             return CoreInternalOutcome(Error("response `ProxyInfo.TagSet` is not array type"));
 
-        const Value &tmpValue = value["TagSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TagSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TagPair item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -319,8 +318,8 @@ CoreInternalOutcome ProxyInfo::Deserialize(const Value &value)
         if (!value["RelatedGlobalDomains"].IsArray())
             return CoreInternalOutcome(Error("response `ProxyInfo.RelatedGlobalDomains` is not array type"));
 
-        const Value &tmpValue = value["RelatedGlobalDomains"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RelatedGlobalDomains"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_relatedGlobalDomains.push_back((*itr).GetString());
         }
@@ -352,8 +351,8 @@ CoreInternalOutcome ProxyInfo::Deserialize(const Value &value)
         if (!value["ClientIPMethod"].IsArray())
             return CoreInternalOutcome(Error("response `ProxyInfo.ClientIPMethod` is not array type"));
 
-        const Value &tmpValue = value["ClientIPMethod"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ClientIPMethod"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_clientIPMethod.push_back((*itr).GetInt64());
         }
@@ -364,20 +363,20 @@ CoreInternalOutcome ProxyInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProxyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -385,7 +384,7 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
@@ -393,31 +392,31 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_proxyNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProxyName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_proxyName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_accessRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccessRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_accessRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_realServerRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realServerRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realServerRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
@@ -425,7 +424,7 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_concurrentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Concurrent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_concurrent, allocator);
@@ -433,47 +432,47 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IP";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iP.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iP.c_str(), allocator).Move(), allocator);
     }
 
     if (m_versionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     if (m_proxyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProxyId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_proxyId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scalarableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Scalarable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scalarable, allocator);
@@ -481,77 +480,77 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_supportProtocolsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SupportProtocols";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_supportProtocols.begin(); itr != m_supportProtocols.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_policyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_policyId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_accessRegionInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccessRegionInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_accessRegionInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_realServerRegionInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerRegionInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_realServerRegionInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_forwardIPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ForwardIP";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_forwardIP.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forwardIP.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_supportSecurityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SupportSecurity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportSecurity, allocator);
@@ -559,7 +558,7 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_billingTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BillingType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_billingType, allocator);
@@ -567,20 +566,20 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_relatedGlobalDomainsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RelatedGlobalDomains";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_relatedGlobalDomains.begin(); itr != m_relatedGlobalDomains.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_modifyConfigTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModifyConfigTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modifyConfigTime, allocator);
@@ -588,7 +587,7 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_proxyTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProxyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_proxyType, allocator);
@@ -596,14 +595,14 @@ void ProxyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_clientIPMethodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientIPMethod";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_clientIPMethod.begin(); itr != m_clientIPMethod.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

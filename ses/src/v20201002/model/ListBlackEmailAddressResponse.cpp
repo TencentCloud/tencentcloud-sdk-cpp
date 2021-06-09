@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ses::V20201002::Model;
-using namespace rapidjson;
 using namespace std;
 
 ListBlackEmailAddressResponse::ListBlackEmailAddressResponse() :
@@ -32,7 +31,7 @@ ListBlackEmailAddressResponse::ListBlackEmailAddressResponse() :
 
 CoreInternalOutcome ListBlackEmailAddressResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome ListBlackEmailAddressResponse::Deserialize(const string &pay
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome ListBlackEmailAddressResponse::Deserialize(const string &pay
         if (!rsp["BlackList"].IsArray())
             return CoreInternalOutcome(Error("response `BlackList` is not array type"));
 
-        const Value &tmpValue = rsp["BlackList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["BlackList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             BlackEmailAddress item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mariadb::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ParamModifyResult::ParamModifyResult() :
@@ -27,7 +26,7 @@ ParamModifyResult::ParamModifyResult() :
 {
 }
 
-CoreInternalOutcome ParamModifyResult::Deserialize(const Value &value)
+CoreInternalOutcome ParamModifyResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome ParamModifyResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ParamModifyResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ParamModifyResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_paramHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Param";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_param.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_param.c_str(), allocator).Move(), allocator);
     }
 
     if (m_codeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_code, allocator);

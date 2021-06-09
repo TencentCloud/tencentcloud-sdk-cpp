@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 RollbackTableName::RollbackTableName() :
@@ -27,7 +26,7 @@ RollbackTableName::RollbackTableName() :
 {
 }
 
-CoreInternalOutcome RollbackTableName::Deserialize(const Value &value)
+CoreInternalOutcome RollbackTableName::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome RollbackTableName::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RollbackTableName::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RollbackTableName::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tableNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tableName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_newTableNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewTableName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_newTableName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newTableName.c_str(), allocator).Move(), allocator);
     }
 
 }

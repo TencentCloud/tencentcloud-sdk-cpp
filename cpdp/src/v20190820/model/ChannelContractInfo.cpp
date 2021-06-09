@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ChannelContractInfo::ChannelContractInfo() :
@@ -27,7 +26,7 @@ ChannelContractInfo::ChannelContractInfo() :
 {
 }
 
-CoreInternalOutcome ChannelContractInfo::Deserialize(const Value &value)
+CoreInternalOutcome ChannelContractInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome ChannelContractInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ChannelContractInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ChannelContractInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_outContractCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutContractCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outContractCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outContractCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelContractCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelContractCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelContractCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelContractCode.c_str(), allocator).Move(), allocator);
     }
 
 }

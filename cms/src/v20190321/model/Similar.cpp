@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 Similar::Similar() :
@@ -28,7 +27,7 @@ Similar::Similar() :
 {
 }
 
-CoreInternalOutcome Similar::Deserialize(const Value &value)
+CoreInternalOutcome Similar::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome Similar::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Similar::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Similar::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_evilTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilType, allocator);
@@ -80,7 +79,7 @@ void Similar::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_hitFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HitFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hitFlag, allocator);
@@ -88,10 +87,10 @@ void Similar::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_seedUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SeedUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_seedUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_seedUrl.c_str(), allocator).Move(), allocator);
     }
 
 }

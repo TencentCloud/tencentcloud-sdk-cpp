@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 OriginIp::OriginIp() :
@@ -26,7 +25,7 @@ OriginIp::OriginIp() :
 {
 }
 
-CoreInternalOutcome OriginIp::Deserialize(const Value &value)
+CoreInternalOutcome OriginIp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome OriginIp::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OriginIp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OriginIp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
 }

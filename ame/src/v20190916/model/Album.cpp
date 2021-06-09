@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ame::V20190916::Model;
-using namespace rapidjson;
 using namespace std;
 
 Album::Album() :
@@ -27,7 +26,7 @@ Album::Album() :
 {
 }
 
-CoreInternalOutcome Album::Deserialize(const Value &value)
+CoreInternalOutcome Album::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome Album::Deserialize(const Value &value)
         if (!value["ImagePathMap"].IsArray())
             return CoreInternalOutcome(Error("response `Album.ImagePathMap` is not array type"));
 
-        const Value &tmpValue = value["ImagePathMap"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ImagePathMap"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ImagePath item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome Album::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Album::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Album::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_albumNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlbumName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_albumName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_albumName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imagePathMapHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImagePathMap";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_imagePathMap.begin(); itr != m_imagePathMap.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

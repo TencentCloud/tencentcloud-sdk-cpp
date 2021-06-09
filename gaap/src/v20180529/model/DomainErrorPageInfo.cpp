@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 DomainErrorPageInfo::DomainErrorPageInfo() :
@@ -34,7 +33,7 @@ DomainErrorPageInfo::DomainErrorPageInfo() :
 {
 }
 
-CoreInternalOutcome DomainErrorPageInfo::Deserialize(const Value &value)
+CoreInternalOutcome DomainErrorPageInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,8 +73,8 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const Value &value)
         if (!value["ErrorNos"].IsArray())
             return CoreInternalOutcome(Error("response `DomainErrorPageInfo.ErrorNos` is not array type"));
 
-        const Value &tmpValue = value["ErrorNos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ErrorNos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_errorNos.push_back((*itr).GetInt64());
         }
@@ -97,8 +96,8 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const Value &value)
         if (!value["ClearHeaders"].IsArray())
             return CoreInternalOutcome(Error("response `DomainErrorPageInfo.ClearHeaders` is not array type"));
 
-        const Value &tmpValue = value["ClearHeaders"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ClearHeaders"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_clearHeaders.push_back((*itr).GetString());
         }
@@ -110,8 +109,8 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const Value &value)
         if (!value["SetHeaders"].IsArray())
             return CoreInternalOutcome(Error("response `DomainErrorPageInfo.SetHeaders` is not array type"));
 
-        const Value &tmpValue = value["SetHeaders"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SetHeaders"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             HttpHeaderParam item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -149,49 +148,49 @@ CoreInternalOutcome DomainErrorPageInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DomainErrorPageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DomainErrorPageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_errorPageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorPageId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errorPageId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorPageId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_listenerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_listenerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listenerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_errorNosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorNos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_errorNos.begin(); itr != m_errorNos.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_newErrorNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewErrorNo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_newErrorNo, allocator);
@@ -199,43 +198,43 @@ void DomainErrorPageInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_clearHeadersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClearHeaders";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_clearHeaders.begin(); itr != m_clearHeaders.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_setHeadersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SetHeaders";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_setHeaders.begin(); itr != m_setHeaders.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_bodyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Body";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_body.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_body.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);

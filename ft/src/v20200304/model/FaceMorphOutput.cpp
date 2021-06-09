@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ft::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceMorphOutput::FaceMorphOutput() :
@@ -28,7 +27,7 @@ FaceMorphOutput::FaceMorphOutput() :
 {
 }
 
-CoreInternalOutcome FaceMorphOutput::Deserialize(const Value &value)
+CoreInternalOutcome FaceMorphOutput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome FaceMorphOutput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FaceMorphOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FaceMorphOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_morphUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MorphUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_morphUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_morphUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_morphMd5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MorphMd5";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_morphMd5.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_morphMd5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_coverImageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CoverImage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_coverImage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_coverImage.c_str(), allocator).Move(), allocator);
     }
 
 }

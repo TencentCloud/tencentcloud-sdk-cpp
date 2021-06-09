@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 VersionData::VersionData() :
@@ -43,7 +42,7 @@ VersionData::VersionData() :
 {
 }
 
-CoreInternalOutcome VersionData::Deserialize(const Value &value)
+CoreInternalOutcome VersionData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -239,28 +238,28 @@ CoreInternalOutcome VersionData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VersionData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VersionData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_productIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_otaVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OtaVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_otaVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_otaVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pubStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PubStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pubStatus, allocator);
@@ -268,15 +267,15 @@ void VersionData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_versionUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VersionUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_versionUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_versionUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fileSize, allocator);
@@ -284,31 +283,31 @@ void VersionData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_md5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Md5";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_md5.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_md5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_oldVersionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OldVersions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_oldVersions.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldVersions.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tidsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tids";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tids.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tids.c_str(), allocator).Move(), allocator);
     }
 
     if (m_grayValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GrayValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_grayValue, allocator);
@@ -316,7 +315,7 @@ void VersionData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_publishTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publishTime, allocator);
@@ -324,7 +323,7 @@ void VersionData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_activeCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActiveCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_activeCount, allocator);
@@ -332,7 +331,7 @@ void VersionData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_onlineCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OnlineCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_onlineCount, allocator);
@@ -340,7 +339,7 @@ void VersionData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
@@ -348,7 +347,7 @@ void VersionData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_uploadTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UploadTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_uploadTime, allocator);
@@ -356,7 +355,7 @@ void VersionData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_modifyTimesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModifyTimes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modifyTimes, allocator);
@@ -364,24 +363,24 @@ void VersionData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_remarkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contentsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Contents";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_contents.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_aliveInMonthCntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AliveInMonthCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aliveInMonthCnt, allocator);

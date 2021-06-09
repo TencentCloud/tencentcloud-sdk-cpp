@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 UnitRuleTag::UnitRuleTag() :
@@ -31,7 +30,7 @@ UnitRuleTag::UnitRuleTag() :
 {
 }
 
-CoreInternalOutcome UnitRuleTag::Deserialize(const Value &value)
+CoreInternalOutcome UnitRuleTag::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,55 +99,55 @@ CoreInternalOutcome UnitRuleTag::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UnitRuleTag::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UnitRuleTag::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tagTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tagType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tagType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagFieldHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagField";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tagField.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tagField.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagOperatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagOperator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tagOperator.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tagOperator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tagValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tagValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_unitRuleItemIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitRuleItemId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_unitRuleItemId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unitRuleItemId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 }

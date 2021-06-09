@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 RealServerStatus::RealServerStatus() :
@@ -28,7 +27,7 @@ RealServerStatus::RealServerStatus() :
 {
 }
 
-CoreInternalOutcome RealServerStatus::Deserialize(const Value &value)
+CoreInternalOutcome RealServerStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome RealServerStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RealServerStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RealServerStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_realServerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realServerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realServerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bindStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BindStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bindStatus, allocator);
@@ -88,10 +87,10 @@ void RealServerStatus::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_proxyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProxyId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_proxyId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyId.c_str(), allocator).Move(), allocator);
     }
 
 }

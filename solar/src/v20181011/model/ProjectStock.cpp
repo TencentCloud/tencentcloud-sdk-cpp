@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Solar::V20181011::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProjectStock::ProjectStock() :
@@ -32,7 +31,7 @@ ProjectStock::ProjectStock() :
 {
 }
 
-CoreInternalOutcome ProjectStock::Deserialize(const Value &value)
+CoreInternalOutcome ProjectStock::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,20 +110,20 @@ CoreInternalOutcome ProjectStock::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProjectStock::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProjectStock::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_prizeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrizeId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_prizeId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_prizeId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_prizeBatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrizeBat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_prizeBat, allocator);
@@ -132,15 +131,15 @@ void ProjectStock::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_prizeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrizeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_prizeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_prizeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usedStockHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsedStock";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedStock, allocator);
@@ -148,7 +147,7 @@ void ProjectStock::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_remainStockHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RemainStock";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_remainStock, allocator);
@@ -156,7 +155,7 @@ void ProjectStock::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_poolIdxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PoolIdx";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_poolIdx, allocator);
@@ -164,10 +163,10 @@ void ProjectStock::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_poolNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PoolName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_poolName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_poolName.c_str(), allocator).Move(), allocator);
     }
 
 }

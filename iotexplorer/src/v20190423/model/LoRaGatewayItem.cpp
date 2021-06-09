@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
-using namespace rapidjson;
 using namespace std;
 
 LoRaGatewayItem::LoRaGatewayItem() :
@@ -36,7 +35,7 @@ LoRaGatewayItem::LoRaGatewayItem() :
 {
 }
 
-CoreInternalOutcome LoRaGatewayItem::Deserialize(const Value &value)
+CoreInternalOutcome LoRaGatewayItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -162,20 +161,20 @@ CoreInternalOutcome LoRaGatewayItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LoRaGatewayItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LoRaGatewayItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_gatewayIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GatewayId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gatewayId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isPublicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsPublic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isPublic, allocator);
@@ -183,75 +182,75 @@ void LoRaGatewayItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_positionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Position";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_position.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_position.c_str(), allocator).Move(), allocator);
     }
 
     if (m_positionDetailsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PositionDetails";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_positionDetails.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_positionDetails.c_str(), allocator).Move(), allocator);
     }
 
     if (m_locationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Location";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_location.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_updatedAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastSeenAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastSeenAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastSeenAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastSeenAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_frequencyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FrequencyId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_frequencyId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_frequencyId.c_str(), allocator).Move(), allocator);
     }
 
 }

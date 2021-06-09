@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 AdaptiveDynamicStreamingInfoItem::AdaptiveDynamicStreamingInfoItem() :
@@ -29,7 +28,7 @@ AdaptiveDynamicStreamingInfoItem::AdaptiveDynamicStreamingInfoItem() :
 {
 }
 
-CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const Value &value)
+CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,12 +84,12 @@ CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const Value &v
     return CoreInternalOutcome(true);
 }
 
-void AdaptiveDynamicStreamingInfoItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AdaptiveDynamicStreamingInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_definitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
@@ -98,26 +97,26 @@ void AdaptiveDynamicStreamingInfoItem::ToJsonObject(Value &value, Document::Allo
 
     if (m_packageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Package";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_package.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_package.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_path.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Storage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_storage.ToJsonObject(value[key.c_str()], allocator);
     }
 

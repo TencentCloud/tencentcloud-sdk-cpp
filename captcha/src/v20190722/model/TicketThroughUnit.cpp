@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Captcha::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 TicketThroughUnit::TicketThroughUnit() :
@@ -27,7 +26,7 @@ TicketThroughUnit::TicketThroughUnit() :
 {
 }
 
-CoreInternalOutcome TicketThroughUnit::Deserialize(const Value &value)
+CoreInternalOutcome TicketThroughUnit::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome TicketThroughUnit::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TicketThroughUnit::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TicketThroughUnit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dateKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DateKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dateKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dateKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_throughHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Through";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_through, allocator);

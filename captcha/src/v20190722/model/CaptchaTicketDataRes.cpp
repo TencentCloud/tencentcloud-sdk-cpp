@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Captcha::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 CaptchaTicketDataRes::CaptchaTicketDataRes() :
@@ -28,7 +27,7 @@ CaptchaTicketDataRes::CaptchaTicketDataRes() :
 {
 }
 
-CoreInternalOutcome CaptchaTicketDataRes::Deserialize(const Value &value)
+CoreInternalOutcome CaptchaTicketDataRes::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome CaptchaTicketDataRes::Deserialize(const Value &value)
         if (!value["TicketAmountArray"].IsArray())
             return CoreInternalOutcome(Error("response `CaptchaTicketDataRes.TicketAmountArray` is not array type"));
 
-        const Value &tmpValue = value["TicketAmountArray"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TicketAmountArray"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TicketAmountUnit item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -58,8 +57,8 @@ CoreInternalOutcome CaptchaTicketDataRes::Deserialize(const Value &value)
         if (!value["TicketThroughArray"].IsArray())
             return CoreInternalOutcome(Error("response `CaptchaTicketDataRes.TicketThroughArray` is not array type"));
 
-        const Value &tmpValue = value["TicketThroughArray"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TicketThroughArray"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TicketThroughUnit item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -78,8 +77,8 @@ CoreInternalOutcome CaptchaTicketDataRes::Deserialize(const Value &value)
         if (!value["TicketInterceptArray"].IsArray())
             return CoreInternalOutcome(Error("response `CaptchaTicketDataRes.TicketInterceptArray` is not array type"));
 
-        const Value &tmpValue = value["TicketInterceptArray"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TicketInterceptArray"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TicketInterceptUnit item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -97,50 +96,50 @@ CoreInternalOutcome CaptchaTicketDataRes::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CaptchaTicketDataRes::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CaptchaTicketDataRes::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ticketAmountArrayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TicketAmountArray";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_ticketAmountArray.begin(); itr != m_ticketAmountArray.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_ticketThroughArrayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TicketThroughArray";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_ticketThroughArray.begin(); itr != m_ticketThroughArray.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_ticketInterceptArrayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TicketInterceptArray";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_ticketInterceptArray.begin(); itr != m_ticketInterceptArray.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeRealServerStatisticsResponse::DescribeRealServerStatisticsResponse() :
@@ -32,7 +31,7 @@ DescribeRealServerStatisticsResponse::DescribeRealServerStatisticsResponse() :
 
 CoreInternalOutcome DescribeRealServerStatisticsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeRealServerStatisticsResponse::Deserialize(const stri
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeRealServerStatisticsResponse::Deserialize(const stri
         if (!rsp["StatisticsData"].IsArray())
             return CoreInternalOutcome(Error("response `StatisticsData` is not array type"));
 
-        const Value &tmpValue = rsp["StatisticsData"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["StatisticsData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatisticsDataInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -89,8 +88,8 @@ CoreInternalOutcome DescribeRealServerStatisticsResponse::Deserialize(const stri
         if (!rsp["RsStatisticsData"].IsArray())
             return CoreInternalOutcome(Error("response `RsStatisticsData` is not array type"));
 
-        const Value &tmpValue = rsp["RsStatisticsData"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["RsStatisticsData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MetricStatisticsInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClientConnection::ClientConnection() :
@@ -27,7 +26,7 @@ ClientConnection::ClientConnection() :
 {
 }
 
-CoreInternalOutcome ClientConnection::Deserialize(const Value &value)
+CoreInternalOutcome ClientConnection::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome ClientConnection::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClientConnection::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClientConnection::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_iPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IP";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iP.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iP.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);

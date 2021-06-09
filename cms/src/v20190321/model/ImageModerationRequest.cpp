@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageModerationRequest::ImageModerationRequest() :
@@ -32,38 +31,38 @@ ImageModerationRequest::ImageModerationRequest() :
 
 string ImageModerationRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_fileContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileContent";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_fileContent.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileContent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileMD5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileMD5";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_fileMD5.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileMD5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_fileUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileUrl.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

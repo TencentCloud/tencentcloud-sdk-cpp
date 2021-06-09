@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Es::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 EsDictionaryInfo::EsDictionaryInfo() :
@@ -30,7 +29,7 @@ EsDictionaryInfo::EsDictionaryInfo() :
 {
 }
 
-CoreInternalOutcome EsDictionaryInfo::Deserialize(const Value &value)
+CoreInternalOutcome EsDictionaryInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -40,8 +39,8 @@ CoreInternalOutcome EsDictionaryInfo::Deserialize(const Value &value)
         if (!value["MainDict"].IsArray())
             return CoreInternalOutcome(Error("response `EsDictionaryInfo.MainDict` is not array type"));
 
-        const Value &tmpValue = value["MainDict"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MainDict"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DictInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -60,8 +59,8 @@ CoreInternalOutcome EsDictionaryInfo::Deserialize(const Value &value)
         if (!value["Stopwords"].IsArray())
             return CoreInternalOutcome(Error("response `EsDictionaryInfo.Stopwords` is not array type"));
 
-        const Value &tmpValue = value["Stopwords"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Stopwords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DictInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -80,8 +79,8 @@ CoreInternalOutcome EsDictionaryInfo::Deserialize(const Value &value)
         if (!value["QQDict"].IsArray())
             return CoreInternalOutcome(Error("response `EsDictionaryInfo.QQDict` is not array type"));
 
-        const Value &tmpValue = value["QQDict"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["QQDict"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DictInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -100,8 +99,8 @@ CoreInternalOutcome EsDictionaryInfo::Deserialize(const Value &value)
         if (!value["Synonym"].IsArray())
             return CoreInternalOutcome(Error("response `EsDictionaryInfo.Synonym` is not array type"));
 
-        const Value &tmpValue = value["Synonym"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Synonym"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DictInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -129,75 +128,75 @@ CoreInternalOutcome EsDictionaryInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EsDictionaryInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EsDictionaryInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mainDictHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MainDict";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_mainDict.begin(); itr != m_mainDict.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_stopwordsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Stopwords";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_stopwords.begin(); itr != m_stopwords.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_qQDictHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QQDict";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_qQDict.begin(); itr != m_qQDict.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_synonymHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Synonym";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_synonym.begin(); itr != m_synonym.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_updateTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updateType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateType.c_str(), allocator).Move(), allocator);
     }
 
 }

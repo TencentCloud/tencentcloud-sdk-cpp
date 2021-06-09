@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 AdvancedAuthenticationTypeE::AdvancedAuthenticationTypeE() :
@@ -31,7 +30,7 @@ AdvancedAuthenticationTypeE::AdvancedAuthenticationTypeE() :
 {
 }
 
-CoreInternalOutcome AdvancedAuthenticationTypeE::Deserialize(const Value &value)
+CoreInternalOutcome AdvancedAuthenticationTypeE::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,55 +99,55 @@ CoreInternalOutcome AdvancedAuthenticationTypeE::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AdvancedAuthenticationTypeE::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AdvancedAuthenticationTypeE::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_secretKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecretKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secretKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signParamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignParam";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_signParam.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signParam.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aclSignParamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AclSignParam";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_aclSignParam.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aclSignParam.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeParamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeParam";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTimeParam.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTimeParam.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeParamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTimeParam";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_expireTimeParam.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTimeParam.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeFormatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeFormat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timeFormat.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeFormat.c_str(), allocator).Move(), allocator);
     }
 
 }

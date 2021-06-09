@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 GroupInfoTopics::GroupInfoTopics() :
@@ -27,7 +26,7 @@ GroupInfoTopics::GroupInfoTopics() :
 {
 }
 
-CoreInternalOutcome GroupInfoTopics::Deserialize(const Value &value)
+CoreInternalOutcome GroupInfoTopics::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome GroupInfoTopics::Deserialize(const Value &value)
         if (!value["Partitions"].IsArray())
             return CoreInternalOutcome(Error("response `GroupInfoTopics.Partitions` is not array type"));
 
-        const Value &tmpValue = value["Partitions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Partitions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_partitions.push_back((*itr).GetInt64());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome GroupInfoTopics::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GroupInfoTopics::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GroupInfoTopics::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_topicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Topic";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topic.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_partitionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Partitions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_partitions.begin(); itr != m_partitions.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

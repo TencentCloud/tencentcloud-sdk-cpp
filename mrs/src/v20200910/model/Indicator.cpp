@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 Indicator::Indicator() :
@@ -26,7 +25,7 @@ Indicator::Indicator() :
 {
 }
 
-CoreInternalOutcome Indicator::Deserialize(const Value &value)
+CoreInternalOutcome Indicator::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome Indicator::Deserialize(const Value &value)
         if (!value["Indicators"].IsArray())
             return CoreInternalOutcome(Error("response `Indicator.Indicators` is not array type"));
 
-        const Value &tmpValue = value["Indicators"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Indicators"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             IndicatorItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -55,20 +54,20 @@ CoreInternalOutcome Indicator::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Indicator::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Indicator::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_indicatorsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Indicators";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_indicators.begin(); itr != m_indicators.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

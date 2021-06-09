@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bda::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 UpperBodyClothColor::UpperBodyClothColor() :
@@ -27,7 +26,7 @@ UpperBodyClothColor::UpperBodyClothColor() :
 {
 }
 
-CoreInternalOutcome UpperBodyClothColor::Deserialize(const Value &value)
+CoreInternalOutcome UpperBodyClothColor::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome UpperBodyClothColor::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UpperBodyClothColor::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UpperBodyClothColor::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_probabilityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Probability";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_probability, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Privatedns::V20201028::Model;
-using namespace rapidjson;
 using namespace std;
 
 AuditLog::AuditLog() :
@@ -29,7 +28,7 @@ AuditLog::AuditLog() :
 {
 }
 
-CoreInternalOutcome AuditLog::Deserialize(const Value &value)
+CoreInternalOutcome AuditLog::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome AuditLog::Deserialize(const Value &value)
         if (!value["DataSet"].IsArray())
             return CoreInternalOutcome(Error("response `AuditLog.DataSet` is not array type"));
 
-        const Value &tmpValue = value["DataSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DataSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AuditLogInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,28 +87,28 @@ CoreInternalOutcome AuditLog::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AuditLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AuditLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Resource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resource.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_metricHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Metric";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metric.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metric.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -117,15 +116,15 @@ void AuditLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_dataSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_dataSet.begin(); itr != m_dataSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

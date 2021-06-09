@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbm::V20180129::Model;
-using namespace rapidjson;
 using namespace std;
 
 Comment::Comment() :
@@ -28,7 +27,7 @@ Comment::Comment() :
 {
 }
 
-CoreInternalOutcome Comment::Deserialize(const Value &value)
+CoreInternalOutcome Comment::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome Comment::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Comment::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Comment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
     if (m_negCommentCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NegCommentCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_negCommentCount, allocator);
@@ -88,7 +87,7 @@ void Comment::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_posCommentCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PosCommentCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_posCommentCount, allocator);

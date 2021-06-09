@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceDetectStatistic::FaceDetectStatistic() :
@@ -33,7 +32,7 @@ FaceDetectStatistic::FaceDetectStatistic() :
 {
 }
 
-CoreInternalOutcome FaceDetectStatistic::Deserialize(const Value &value)
+CoreInternalOutcome FaceDetectStatistic::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome FaceDetectStatistic::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FaceDetectStatistic::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FaceDetectStatistic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_faceSizeRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceSizeRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_faceSizeRatio, allocator);
@@ -135,7 +134,7 @@ void FaceDetectStatistic::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_frontalFaceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FrontalFaceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frontalFaceCount, allocator);
@@ -143,7 +142,7 @@ void FaceDetectStatistic::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_frontalFaceRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FrontalFaceRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frontalFaceRatio, allocator);
@@ -151,7 +150,7 @@ void FaceDetectStatistic::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_frontalFaceRealRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FrontalFaceRealRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frontalFaceRealRatio, allocator);
@@ -159,15 +158,15 @@ void FaceDetectStatistic::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_personIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sideFaceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SideFaceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sideFaceCount, allocator);
@@ -175,7 +174,7 @@ void FaceDetectStatistic::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_sideFaceRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SideFaceRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sideFaceRatio, allocator);
@@ -183,7 +182,7 @@ void FaceDetectStatistic::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_sideFaceRealRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SideFaceRealRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sideFaceRealRatio, allocator);

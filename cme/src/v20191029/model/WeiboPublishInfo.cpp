@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 WeiboPublishInfo::WeiboPublishInfo() :
@@ -28,7 +27,7 @@ WeiboPublishInfo::WeiboPublishInfo() :
 {
 }
 
-CoreInternalOutcome WeiboPublishInfo::Deserialize(const Value &value)
+CoreInternalOutcome WeiboPublishInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome WeiboPublishInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WeiboPublishInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WeiboPublishInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_titleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Title";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_title.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_visibleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Visible";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_visible.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_visible.c_str(), allocator).Move(), allocator);
     }
 
 }

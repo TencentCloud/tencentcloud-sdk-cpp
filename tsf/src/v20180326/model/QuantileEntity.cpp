@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 QuantileEntity::QuantileEntity() :
@@ -29,7 +28,7 @@ QuantileEntity::QuantileEntity() :
 {
 }
 
-CoreInternalOutcome QuantileEntity::Deserialize(const Value &value)
+CoreInternalOutcome QuantileEntity::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome QuantileEntity::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void QuantileEntity::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QuantileEntity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_maxValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_maxValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maxValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_minValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_minValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_minValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fifthPositionValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FifthPositionValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fifthPositionValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fifthPositionValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ninthPositionValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NinthPositionValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ninthPositionValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ninthPositionValue.c_str(), allocator).Move(), allocator);
     }
 
 }

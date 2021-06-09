@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 WaybillObj::WaybillObj() :
@@ -26,7 +25,7 @@ WaybillObj::WaybillObj() :
 {
 }
 
-CoreInternalOutcome WaybillObj::Deserialize(const Value &value)
+CoreInternalOutcome WaybillObj::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome WaybillObj::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WaybillObj::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WaybillObj::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_textHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 TimeValue::TimeValue() :
@@ -27,7 +26,7 @@ TimeValue::TimeValue() :
 {
 }
 
-CoreInternalOutcome TimeValue::Deserialize(const Value &value)
+CoreInternalOutcome TimeValue::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome TimeValue::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TimeValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TimeValue::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_time, allocator);
@@ -69,7 +68,7 @@ void TimeValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_value, allocator);

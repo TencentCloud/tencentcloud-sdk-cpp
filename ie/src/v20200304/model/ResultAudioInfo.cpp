@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResultAudioInfo::ResultAudioInfo() :
@@ -27,7 +26,7 @@ ResultAudioInfo::ResultAudioInfo() :
 {
 }
 
-CoreInternalOutcome ResultAudioInfo::Deserialize(const Value &value)
+CoreInternalOutcome ResultAudioInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome ResultAudioInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResultAudioInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResultAudioInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_streamIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_streamId, allocator);
@@ -69,7 +68,7 @@ void ResultAudioInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);

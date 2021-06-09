@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sms::V20210111::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeTemplateListStatus::DescribeTemplateListStatus() :
@@ -32,7 +31,7 @@ DescribeTemplateListStatus::DescribeTemplateListStatus() :
 {
 }
 
-CoreInternalOutcome DescribeTemplateListStatus::Deserialize(const Value &value)
+CoreInternalOutcome DescribeTemplateListStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome DescribeTemplateListStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DescribeTemplateListStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribeTemplateListStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templateId, allocator);
@@ -124,7 +123,7 @@ void DescribeTemplateListStatus::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_internationalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "International";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_international, allocator);
@@ -132,7 +131,7 @@ void DescribeTemplateListStatus::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_statusCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_statusCode, allocator);
@@ -140,23 +139,23 @@ void DescribeTemplateListStatus::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_reviewReplyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReviewReply";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reviewReply.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reviewReply.c_str(), allocator).Move(), allocator);
     }
 
     if (m_templateNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_templateName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -164,10 +163,10 @@ void DescribeTemplateListStatus::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_templateContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_templateContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateContent.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 TraceStatus::TraceStatus() :
@@ -27,7 +26,7 @@ TraceStatus::TraceStatus() :
 {
 }
 
-CoreInternalOutcome TraceStatus::Deserialize(const Value &value)
+CoreInternalOutcome TraceStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome TraceStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TraceStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TraceStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isExistHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsExist";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isExist, allocator);

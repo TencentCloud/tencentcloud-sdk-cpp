@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageInstance::ImageInstance() :
@@ -29,7 +28,7 @@ ImageInstance::ImageInstance() :
 {
 }
 
-CoreInternalOutcome ImageInstance::Deserialize(const Value &value)
+CoreInternalOutcome ImageInstance::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome ImageInstance::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_aliasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Alias";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_alias.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_osNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OsName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_osName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_osCustomizeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OsCustomizeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_osCustomizeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osCustomizeType.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 RetentionRule::RetentionRule() :
@@ -27,7 +26,7 @@ RetentionRule::RetentionRule() :
 {
 }
 
-CoreInternalOutcome RetentionRule::Deserialize(const Value &value)
+CoreInternalOutcome RetentionRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome RetentionRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RetentionRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RetentionRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_keyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Key";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_key.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_value, allocator);

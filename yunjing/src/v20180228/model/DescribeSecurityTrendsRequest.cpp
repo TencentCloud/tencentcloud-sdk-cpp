@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Yunjing::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeSecurityTrendsRequest::DescribeSecurityTrendsRequest() :
@@ -31,30 +30,30 @@ DescribeSecurityTrendsRequest::DescribeSecurityTrendsRequest() :
 
 string DescribeSecurityTrendsRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_beginDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BeginDate";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_beginDate.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_beginDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndDate";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_endDate.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endDate.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

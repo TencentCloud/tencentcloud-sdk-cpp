@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 VODExportInfo::VODExportInfo() :
@@ -28,7 +27,7 @@ VODExportInfo::VODExportInfo() :
 {
 }
 
-CoreInternalOutcome VODExportInfo::Deserialize(const Value &value)
+CoreInternalOutcome VODExportInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome VODExportInfo::Deserialize(const Value &value)
         if (!value["ThirdPartyPublishInfos"].IsArray())
             return CoreInternalOutcome(Error("response `VODExportInfo.ThirdPartyPublishInfos` is not array type"));
 
-        const Value &tmpValue = value["ThirdPartyPublishInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ThirdPartyPublishInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ThirdPartyPublishInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,20 +76,20 @@ CoreInternalOutcome VODExportInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VODExportInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VODExportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_classIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClassId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_classId, allocator);
@@ -98,15 +97,15 @@ void VODExportInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_thirdPartyPublishInfosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ThirdPartyPublishInfos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_thirdPartyPublishInfos.begin(); itr != m_thirdPartyPublishInfos.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Soe::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 TransmitOralProcessWithInitResponse::TransmitOralProcessWithInitResponse() :
@@ -39,7 +38,7 @@ TransmitOralProcessWithInitResponse::TransmitOralProcessWithInitResponse() :
 
 CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -49,7 +48,7 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -106,8 +105,8 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
         if (!rsp["Words"].IsArray())
             return CoreInternalOutcome(Error("response `Words` is not array type"));
 
-        const Value &tmpValue = rsp["Words"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Words"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             WordRsp item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -146,8 +145,8 @@ CoreInternalOutcome TransmitOralProcessWithInitResponse::Deserialize(const strin
         if (!rsp["SentenceInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `SentenceInfoSet` is not array type"));
 
-        const Value &tmpValue = rsp["SentenceInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SentenceInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SentenceInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

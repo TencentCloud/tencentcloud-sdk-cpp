@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 SearchPersonsRequest::SearchPersonsRequest() :
@@ -39,43 +38,43 @@ SearchPersonsRequest::SearchPersonsRequest() :
 
 string SearchPersonsRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_groupIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupIds";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_groupIds.begin(); itr != m_groupIds.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_imageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_image.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxFaceNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxFaceNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxFaceNum, allocator);
@@ -83,7 +82,7 @@ string SearchPersonsRequest::ToJsonString() const
 
     if (m_minFaceSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinFaceSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_minFaceSize, allocator);
@@ -91,7 +90,7 @@ string SearchPersonsRequest::ToJsonString() const
 
     if (m_maxPersonNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxPersonNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxPersonNum, allocator);
@@ -99,7 +98,7 @@ string SearchPersonsRequest::ToJsonString() const
 
     if (m_qualityControlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QualityControl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_qualityControl, allocator);
@@ -107,7 +106,7 @@ string SearchPersonsRequest::ToJsonString() const
 
     if (m_faceMatchThresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceMatchThreshold";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_faceMatchThreshold, allocator);
@@ -115,7 +114,7 @@ string SearchPersonsRequest::ToJsonString() const
 
     if (m_needPersonInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedPersonInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needPersonInfo, allocator);
@@ -123,15 +122,15 @@ string SearchPersonsRequest::ToJsonString() const
 
     if (m_needRotateDetectionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedRotateDetection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needRotateDetection, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

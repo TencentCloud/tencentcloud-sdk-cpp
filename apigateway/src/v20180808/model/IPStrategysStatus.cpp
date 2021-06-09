@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 IPStrategysStatus::IPStrategysStatus() :
@@ -27,7 +26,7 @@ IPStrategysStatus::IPStrategysStatus() :
 {
 }
 
-CoreInternalOutcome IPStrategysStatus::Deserialize(const Value &value)
+CoreInternalOutcome IPStrategysStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome IPStrategysStatus::Deserialize(const Value &value)
         if (!value["StrategySet"].IsArray())
             return CoreInternalOutcome(Error("response `IPStrategysStatus.StrategySet` is not array type"));
 
-        const Value &tmpValue = value["StrategySet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["StrategySet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             IPStrategy item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,12 +65,12 @@ CoreInternalOutcome IPStrategysStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IPStrategysStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IPStrategysStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -79,15 +78,15 @@ void IPStrategysStatus::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_strategySetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StrategySet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_strategySet.begin(); itr != m_strategySet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

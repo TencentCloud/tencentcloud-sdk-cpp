@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Ds::V20180523::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreatePersonalAccountRequest::CreatePersonalAccountRequest() :
@@ -35,38 +34,38 @@ CreatePersonalAccountRequest::CreatePersonalAccountRequest() :
 
 string CreatePersonalAccountRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_moduleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Module";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_module.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_module.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Operation";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_operation.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operation.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_identTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IdentType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_identType, allocator);
@@ -74,23 +73,23 @@ string CreatePersonalAccountRequest::ToJsonString() const
 
     if (m_identNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IdentNo";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_identNo.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_identNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mobilePhoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MobilePhone";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_mobilePhone.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mobilePhone.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

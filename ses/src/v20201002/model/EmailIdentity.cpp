@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ses::V20201002::Model;
-using namespace rapidjson;
 using namespace std;
 
 EmailIdentity::EmailIdentity() :
@@ -28,7 +27,7 @@ EmailIdentity::EmailIdentity() :
 {
 }
 
-CoreInternalOutcome EmailIdentity::Deserialize(const Value &value)
+CoreInternalOutcome EmailIdentity::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome EmailIdentity::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EmailIdentity::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EmailIdentity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_identityNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IdentityName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_identityName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_identityName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_identityTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IdentityType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_identityType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_identityType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sendingEnabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SendingEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sendingEnabled, allocator);

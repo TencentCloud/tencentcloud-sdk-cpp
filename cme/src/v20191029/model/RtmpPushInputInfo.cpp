@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 RtmpPushInputInfo::RtmpPushInputInfo() :
@@ -27,7 +26,7 @@ RtmpPushInputInfo::RtmpPushInputInfo() :
 {
 }
 
-CoreInternalOutcome RtmpPushInputInfo::Deserialize(const Value &value)
+CoreInternalOutcome RtmpPushInputInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome RtmpPushInputInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RtmpPushInputInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RtmpPushInputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_expiredSecondHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpiredSecond";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expiredSecond, allocator);
@@ -69,10 +68,10 @@ void RtmpPushInputInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_pushUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PushUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pushUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pushUrl.c_str(), allocator).Move(), allocator);
     }
 
 }

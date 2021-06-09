@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bda::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 SegmentationOptions::SegmentationOptions() :
@@ -46,7 +45,7 @@ SegmentationOptions::SegmentationOptions() :
 {
 }
 
-CoreInternalOutcome SegmentationOptions::Deserialize(const Value &value)
+CoreInternalOutcome SegmentationOptions::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -265,12 +264,12 @@ CoreInternalOutcome SegmentationOptions::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SegmentationOptions::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_backgroundHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Background";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_background, allocator);
@@ -278,7 +277,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_hairHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hair";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hair, allocator);
@@ -286,7 +285,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_leftEyebrowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeftEyebrow";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_leftEyebrow, allocator);
@@ -294,7 +293,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_rightEyebrowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RightEyebrow";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rightEyebrow, allocator);
@@ -302,7 +301,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_leftEyeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeftEye";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_leftEye, allocator);
@@ -310,7 +309,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_rightEyeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RightEye";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rightEye, allocator);
@@ -318,7 +317,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_noseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Nose";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nose, allocator);
@@ -326,7 +325,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_upperLipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpperLip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_upperLip, allocator);
@@ -334,7 +333,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_lowerLipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LowerLip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lowerLip, allocator);
@@ -342,7 +341,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_toothHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tooth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tooth, allocator);
@@ -350,7 +349,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_mouthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mouth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mouth, allocator);
@@ -358,7 +357,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_leftEarHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeftEar";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_leftEar, allocator);
@@ -366,7 +365,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_rightEarHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RightEar";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rightEar, allocator);
@@ -374,7 +373,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_faceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Face";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_face, allocator);
@@ -382,7 +381,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_headHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Head";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_head, allocator);
@@ -390,7 +389,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_bodyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Body";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_body, allocator);
@@ -398,7 +397,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_hatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hat, allocator);
@@ -406,7 +405,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_headdressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Headdress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_headdress, allocator);
@@ -414,7 +413,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_earringsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Earrings";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_earrings, allocator);
@@ -422,7 +421,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_necklaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Necklace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_necklace, allocator);
@@ -430,7 +429,7 @@ void SegmentationOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_belongingsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Belongings";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_belongings, allocator);

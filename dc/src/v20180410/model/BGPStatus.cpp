@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dc::V20180410::Model;
-using namespace rapidjson;
 using namespace std;
 
 BGPStatus::BGPStatus() :
@@ -27,7 +26,7 @@ BGPStatus::BGPStatus() :
 {
 }
 
-CoreInternalOutcome BGPStatus::Deserialize(const Value &value)
+CoreInternalOutcome BGPStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome BGPStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BGPStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BGPStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tencentAddressBgpStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TencentAddressBgpState";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tencentAddressBgpState.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tencentAddressBgpState.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tencentBackupAddressBgpStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TencentBackupAddressBgpState";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tencentBackupAddressBgpState.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tencentBackupAddressBgpState.c_str(), allocator).Move(), allocator);
     }
 
 }

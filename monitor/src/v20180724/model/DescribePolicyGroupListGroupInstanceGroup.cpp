@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribePolicyGroupListGroupInstanceGroup::DescribePolicyGroupListGroupInstanceGroup() :
@@ -32,7 +31,7 @@ DescribePolicyGroupListGroupInstanceGroup::DescribePolicyGroupListGroupInstanceG
 {
 }
 
-CoreInternalOutcome DescribePolicyGroupListGroupInstanceGroup::Deserialize(const Value &value)
+CoreInternalOutcome DescribePolicyGroupListGroupInstanceGroup::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome DescribePolicyGroupListGroupInstanceGroup::Deserialize(const
     return CoreInternalOutcome(true);
 }
 
-void DescribePolicyGroupListGroupInstanceGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribePolicyGroupListGroupInstanceGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceGroupId, allocator);
@@ -124,31 +123,31 @@ void DescribePolicyGroupListGroupInstanceGroup::ToJsonObject(Value &value, Docum
 
     if (m_viewNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ViewName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_viewName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_viewName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastEditUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastEditUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastEditUin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastEditUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceSumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceSum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceSum, allocator);
@@ -156,7 +155,7 @@ void DescribePolicyGroupListGroupInstanceGroup::ToJsonObject(Value &value, Docum
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
@@ -164,7 +163,7 @@ void DescribePolicyGroupListGroupInstanceGroup::ToJsonObject(Value &value, Docum
 
     if (m_insertTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InsertTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_insertTime, allocator);

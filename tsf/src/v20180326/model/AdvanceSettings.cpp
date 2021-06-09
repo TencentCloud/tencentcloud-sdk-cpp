@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 AdvanceSettings::AdvanceSettings() :
@@ -26,7 +25,7 @@ AdvanceSettings::AdvanceSettings() :
 {
 }
 
-CoreInternalOutcome AdvanceSettings::Deserialize(const Value &value)
+CoreInternalOutcome AdvanceSettings::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome AdvanceSettings::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AdvanceSettings::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AdvanceSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_subTaskConcurrencyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubTaskConcurrency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subTaskConcurrency, allocator);

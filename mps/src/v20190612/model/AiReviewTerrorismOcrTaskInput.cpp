@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiReviewTerrorismOcrTaskInput::AiReviewTerrorismOcrTaskInput() :
@@ -26,7 +25,7 @@ AiReviewTerrorismOcrTaskInput::AiReviewTerrorismOcrTaskInput() :
 {
 }
 
-CoreInternalOutcome AiReviewTerrorismOcrTaskInput::Deserialize(const Value &value)
+CoreInternalOutcome AiReviewTerrorismOcrTaskInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome AiReviewTerrorismOcrTaskInput::Deserialize(const Value &valu
     return CoreInternalOutcome(true);
 }
 
-void AiReviewTerrorismOcrTaskInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiReviewTerrorismOcrTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_definitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyLiveSnapshotTemplateRequest::ModifyLiveSnapshotTemplateRequest() :
@@ -41,14 +40,14 @@ ModifyLiveSnapshotTemplateRequest::ModifyLiveSnapshotTemplateRequest() :
 
 string ModifyLiveSnapshotTemplateRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_templateId, allocator);
@@ -56,23 +55,23 @@ string ModifyLiveSnapshotTemplateRequest::ToJsonString() const
 
     if (m_templateNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_templateName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_snapshotIntervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SnapshotInterval";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_snapshotInterval, allocator);
@@ -80,7 +79,7 @@ string ModifyLiveSnapshotTemplateRequest::ToJsonString() const
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_width, allocator);
@@ -88,7 +87,7 @@ string ModifyLiveSnapshotTemplateRequest::ToJsonString() const
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_height, allocator);
@@ -96,7 +95,7 @@ string ModifyLiveSnapshotTemplateRequest::ToJsonString() const
 
     if (m_pornFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PornFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pornFlag, allocator);
@@ -104,7 +103,7 @@ string ModifyLiveSnapshotTemplateRequest::ToJsonString() const
 
     if (m_cosAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cosAppId, allocator);
@@ -112,39 +111,39 @@ string ModifyLiveSnapshotTemplateRequest::ToJsonString() const
 
     if (m_cosBucketHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosBucket";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cosBucket.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cosBucket.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosRegion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cosRegion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cosRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosPrefixHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosPrefix";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cosPrefix.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cosPrefix.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosFileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosFileName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cosFileName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cosFileName.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

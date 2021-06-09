@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤键的名称。
-                     * @return Name 过滤键的名称。
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置过滤键的名称。
-                     * @param Name 过滤键的名称。
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     */
-                    bool NameHasBeenSet() const;
-
-                    /**
                      * 获取一个或者多个过滤值。
                      * @return Values 一个或者多个过滤值。
                      */
@@ -82,19 +64,37 @@ namespace TencentCloud
                      */
                     bool ValuesHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取过滤键的名称。
+                     * @return Name 过滤键的名称。
+                     */
+                    std::string GetName() const;
 
                     /**
-                     * 过滤键的名称。
+                     * 设置过滤键的名称。
+                     * @param Name 过滤键的名称。
                      */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                private:
 
                     /**
                      * 一个或者多个过滤值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
+
+                    /**
+                     * 过滤键的名称。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

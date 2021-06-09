@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 InvoiceDetectInfo::InvoiceDetectInfo() :
@@ -29,7 +28,7 @@ InvoiceDetectInfo::InvoiceDetectInfo() :
 {
 }
 
-CoreInternalOutcome InvoiceDetectInfo::Deserialize(const Value &value)
+CoreInternalOutcome InvoiceDetectInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,12 +84,12 @@ CoreInternalOutcome InvoiceDetectInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InvoiceDetectInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InvoiceDetectInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_angleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Angle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_angle, allocator);
@@ -98,7 +97,7 @@ void InvoiceDetectInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -106,19 +105,19 @@ void InvoiceDetectInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_rectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_imageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_image.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
 }

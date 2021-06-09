@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Smpn::V20190822::Model;
-using namespace rapidjson;
 using namespace std;
 
 CHPRequest::CHPRequest() :
@@ -26,7 +25,7 @@ CHPRequest::CHPRequest() :
 {
 }
 
-CoreInternalOutcome CHPRequest::Deserialize(const Value &value)
+CoreInternalOutcome CHPRequest::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome CHPRequest::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CHPRequest::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CHPRequest::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_phoneNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PhoneNumber";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_phoneNumber.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phoneNumber.c_str(), allocator).Move(), allocator);
     }
 
 }

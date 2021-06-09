@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 CodeRepoSummary::CodeRepoSummary() :
@@ -30,7 +29,7 @@ CodeRepoSummary::CodeRepoSummary() :
 {
 }
 
-CoreInternalOutcome CodeRepoSummary::Deserialize(const Value &value)
+CoreInternalOutcome CodeRepoSummary::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -96,45 +95,45 @@ CoreInternalOutcome CodeRepoSummary::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CodeRepoSummary::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CodeRepoSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_creationTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreationTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creationTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creationTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastModifiedTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastModifiedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastModifiedTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastModifiedTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_codeRepositoryNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CodeRepositoryName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_codeRepositoryName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codeRepositoryName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gitConfigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GitConfig";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_gitConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_noSecretHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NoSecret";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_noSecret, allocator);

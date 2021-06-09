@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 LogoDetail::LogoDetail() :
@@ -26,7 +25,7 @@ LogoDetail::LogoDetail() :
 {
 }
 
-CoreInternalOutcome LogoDetail::Deserialize(const Value &value)
+CoreInternalOutcome LogoDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome LogoDetail::Deserialize(const Value &value)
         if (!value["AppLogoDetail"].IsArray())
             return CoreInternalOutcome(Error("response `LogoDetail.AppLogoDetail` is not array type"));
 
-        const Value &tmpValue = value["AppLogoDetail"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AppLogoDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Logo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -55,20 +54,20 @@ CoreInternalOutcome LogoDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LogoDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LogoDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_appLogoDetailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppLogoDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_appLogoDetail.begin(); itr != m_appLogoDetail.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

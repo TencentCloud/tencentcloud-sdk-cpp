@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeTransmitStatisResponse::DescribeTransmitStatisResponse() :
@@ -33,7 +32,7 @@ DescribeTransmitStatisResponse::DescribeTransmitStatisResponse() :
 
 CoreInternalOutcome DescribeTransmitStatisResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DescribeTransmitStatisResponse::Deserialize(const string &pa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -70,8 +69,8 @@ CoreInternalOutcome DescribeTransmitStatisResponse::Deserialize(const string &pa
         if (!rsp["InDataList"].IsArray())
             return CoreInternalOutcome(Error("response `InDataList` is not array type"));
 
-        const Value &tmpValue = rsp["InDataList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["InDataList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_inDataList.push_back((*itr).GetDouble());
         }
@@ -83,8 +82,8 @@ CoreInternalOutcome DescribeTransmitStatisResponse::Deserialize(const string &pa
         if (!rsp["OutDataList"].IsArray())
             return CoreInternalOutcome(Error("response `OutDataList` is not array type"));
 
-        const Value &tmpValue = rsp["OutDataList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["OutDataList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_outDataList.push_back((*itr).GetDouble());
         }

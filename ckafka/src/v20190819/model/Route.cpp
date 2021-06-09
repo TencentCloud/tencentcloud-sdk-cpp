@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 Route::Route() :
@@ -31,7 +30,7 @@ Route::Route() :
 {
 }
 
-CoreInternalOutcome Route::Deserialize(const Value &value)
+CoreInternalOutcome Route::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -71,8 +70,8 @@ CoreInternalOutcome Route::Deserialize(const Value &value)
         if (!value["VipList"].IsArray())
             return CoreInternalOutcome(Error("response `Route.VipList` is not array type"));
 
-        const Value &tmpValue = value["VipList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["VipList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             VipEntity item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,12 +109,12 @@ CoreInternalOutcome Route::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Route::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Route::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_accessTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccessType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accessType, allocator);
@@ -123,7 +122,7 @@ void Route::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_routeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_routeId, allocator);
@@ -131,7 +130,7 @@ void Route::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_vipTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VipType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vipType, allocator);
@@ -139,30 +138,30 @@ void Route::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_vipListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VipList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_vipList.begin(); itr != m_vipList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_domainPort, allocator);

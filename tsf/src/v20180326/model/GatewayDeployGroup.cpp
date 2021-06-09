@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 GatewayDeployGroup::GatewayDeployGroup() :
@@ -32,7 +31,7 @@ GatewayDeployGroup::GatewayDeployGroup() :
 {
 }
 
-CoreInternalOutcome GatewayDeployGroup::Deserialize(const Value &value)
+CoreInternalOutcome GatewayDeployGroup::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,63 +110,63 @@ CoreInternalOutcome GatewayDeployGroup::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GatewayDeployGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GatewayDeployGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deployGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeployGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deployGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deployGroupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeployGroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deployGroupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployGroupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applicationIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applicationNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_applicationName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applicationTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_applicationType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
 }

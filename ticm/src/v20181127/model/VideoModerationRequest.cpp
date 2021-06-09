@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Ticm::V20181127::Model;
-using namespace rapidjson;
 using namespace std;
 
 VideoModerationRequest::VideoModerationRequest() :
@@ -33,46 +32,46 @@ VideoModerationRequest::VideoModerationRequest() :
 
 string VideoModerationRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_videoUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_videoUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_videoUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_developerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeveloperId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_developerId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_developerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cBUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CBUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cBUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cBUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extraHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_extra.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

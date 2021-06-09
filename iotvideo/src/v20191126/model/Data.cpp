@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 Data::Data() :
@@ -30,7 +29,7 @@ Data::Data() :
 {
 }
 
-CoreInternalOutcome Data::Deserialize(const Value &value)
+CoreInternalOutcome Data::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome Data::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Data::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Data::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_uRIHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "URI";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uRI.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uRI.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expireTime, allocator);
@@ -118,18 +117,18 @@ void Data::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_videoCodecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoCodec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_videoCodec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_videoCodec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_audioCodecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioCodec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_audioCodec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audioCodec.c_str(), allocator).Move(), allocator);
     }
 
 }

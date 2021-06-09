@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImportRecord::ImportRecord() :
@@ -38,7 +37,7 @@ ImportRecord::ImportRecord() :
 {
 }
 
-CoreInternalOutcome ImportRecord::Deserialize(const Value &value)
+CoreInternalOutcome ImportRecord::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -177,12 +176,12 @@ CoreInternalOutcome ImportRecord::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImportRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImportRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -190,7 +189,7 @@ void ImportRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_codeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_code, allocator);
@@ -198,7 +197,7 @@ void ImportRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_costTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CostTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_costTime, allocator);
@@ -206,31 +205,31 @@ void ImportRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_workIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WorkId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_workId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_processHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Process";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_process, allocator);
@@ -238,31 +237,31 @@ void ImportRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileSize.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSize.c_str(), allocator).Move(), allocator);
     }
 
     if (m_messageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
     if (m_jobIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_jobId, allocator);
@@ -270,18 +269,18 @@ void ImportRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_dbNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DbName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dbName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_asyncRequestIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AsyncRequestId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_asyncRequestId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_asyncRequestId.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cis::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeContainerInstancesResponse::DescribeContainerInstancesResponse() :
@@ -32,7 +31,7 @@ DescribeContainerInstancesResponse::DescribeContainerInstancesResponse() :
 
 CoreInternalOutcome DescribeContainerInstancesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeContainerInstancesResponse::Deserialize(const string
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeContainerInstancesResponse::Deserialize(const string
         if (!rsp["ContainerInstanceList"].IsArray())
             return CoreInternalOutcome(Error("response `ContainerInstanceList` is not array type"));
 
-        const Value &tmpValue = rsp["ContainerInstanceList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ContainerInstanceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ContainerInstance item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

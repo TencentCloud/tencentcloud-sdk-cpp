@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyBundle::ModifyBundle() :
@@ -28,7 +27,7 @@ ModifyBundle::ModifyBundle() :
 {
 }
 
-CoreInternalOutcome ModifyBundle::Deserialize(const Value &value)
+CoreInternalOutcome ModifyBundle::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,32 +80,32 @@ CoreInternalOutcome ModifyBundle::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ModifyBundle::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ModifyBundle::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_modifyPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModifyPrice";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_modifyPrice.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_modifyBundleStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModifyBundleState";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modifyBundleState.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyBundleState.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bundleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bundle";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bundle.ToJsonObject(value[key.c_str()], allocator);
     }
 

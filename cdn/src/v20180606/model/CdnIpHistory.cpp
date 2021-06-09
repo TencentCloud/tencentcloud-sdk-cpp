@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 CdnIpHistory::CdnIpHistory() :
@@ -27,7 +26,7 @@ CdnIpHistory::CdnIpHistory() :
 {
 }
 
-CoreInternalOutcome CdnIpHistory::Deserialize(const Value &value)
+CoreInternalOutcome CdnIpHistory::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome CdnIpHistory::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CdnIpHistory::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CdnIpHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_datetimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Datetime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_datetime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datetime.c_str(), allocator).Move(), allocator);
     }
 
 }

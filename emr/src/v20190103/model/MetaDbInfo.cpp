@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 MetaDbInfo::MetaDbInfo() :
@@ -28,7 +27,7 @@ MetaDbInfo::MetaDbInfo() :
 {
 }
 
-CoreInternalOutcome MetaDbInfo::Deserialize(const Value &value)
+CoreInternalOutcome MetaDbInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,31 +73,31 @@ CoreInternalOutcome MetaDbInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MetaDbInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MetaDbInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_metaTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetaType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metaType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metaType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_unifyMetaInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnifyMetaInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_unifyMetaInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unifyMetaInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_metaDBInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetaDBInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_metaDBInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

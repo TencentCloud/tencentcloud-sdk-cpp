@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cfw::V20190904::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCfwEipsRequest::DescribeCfwEipsRequest() :
@@ -32,14 +31,14 @@ DescribeCfwEipsRequest::DescribeCfwEipsRequest() :
 
 string DescribeCfwEipsRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_modeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_mode, allocator);
@@ -47,23 +46,23 @@ string DescribeCfwEipsRequest::ToJsonString() const
 
     if (m_natGatewayIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NatGatewayId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_natGatewayId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_natGatewayId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cfwInstanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CfwInstance";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cfwInstance.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfwInstance.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

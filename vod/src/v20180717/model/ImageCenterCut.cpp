@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageCenterCut::ImageCenterCut() :
@@ -29,7 +28,7 @@ ImageCenterCut::ImageCenterCut() :
 {
 }
 
-CoreInternalOutcome ImageCenterCut::Deserialize(const Value &value)
+CoreInternalOutcome ImageCenterCut::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome ImageCenterCut::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageCenterCut::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageCenterCut::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -99,7 +98,7 @@ void ImageCenterCut::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -107,7 +106,7 @@ void ImageCenterCut::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_radiusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Radius";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_radius, allocator);

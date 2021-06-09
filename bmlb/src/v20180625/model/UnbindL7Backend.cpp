@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 UnbindL7Backend::UnbindL7Backend() :
@@ -27,7 +26,7 @@ UnbindL7Backend::UnbindL7Backend() :
 {
 }
 
-CoreInternalOutcome UnbindL7Backend::Deserialize(const Value &value)
+CoreInternalOutcome UnbindL7Backend::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome UnbindL7Backend::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UnbindL7Backend::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UnbindL7Backend::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
@@ -69,10 +68,10 @@ void UnbindL7Backend::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }

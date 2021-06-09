@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 FleetStatisticFlows::FleetStatisticFlows() :
@@ -27,7 +26,7 @@ FleetStatisticFlows::FleetStatisticFlows() :
 {
 }
 
-CoreInternalOutcome FleetStatisticFlows::Deserialize(const Value &value)
+CoreInternalOutcome FleetStatisticFlows::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome FleetStatisticFlows::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FleetStatisticFlows::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FleetStatisticFlows::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalUsedFlowMegaBytesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalUsedFlowMegaBytes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalUsedFlowMegaBytes, allocator);
@@ -69,10 +68,10 @@ void FleetStatisticFlows::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_beginTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BeginTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_beginTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_beginTime.c_str(), allocator).Move(), allocator);
     }
 
 }

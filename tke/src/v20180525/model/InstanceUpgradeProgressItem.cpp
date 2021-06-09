@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceUpgradeProgressItem::InstanceUpgradeProgressItem() :
@@ -31,7 +30,7 @@ InstanceUpgradeProgressItem::InstanceUpgradeProgressItem() :
 {
 }
 
-CoreInternalOutcome InstanceUpgradeProgressItem::Deserialize(const Value &value)
+CoreInternalOutcome InstanceUpgradeProgressItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -98,8 +97,8 @@ CoreInternalOutcome InstanceUpgradeProgressItem::Deserialize(const Value &value)
         if (!value["Detail"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceUpgradeProgressItem.Detail` is not array type"));
 
-        const Value &tmpValue = value["Detail"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Detail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TaskStepInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -117,61 +116,61 @@ CoreInternalOutcome InstanceUpgradeProgressItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceUpgradeProgressItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceUpgradeProgressItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceID";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceID.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lifeStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifeState";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lifeState.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lifeState.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_checkResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CheckResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_checkResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_detailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Detail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_detail.begin(); itr != m_detail.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

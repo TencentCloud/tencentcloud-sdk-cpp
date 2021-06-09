@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 BandwidthAlert::BandwidthAlert() :
@@ -29,7 +28,7 @@ BandwidthAlert::BandwidthAlert() :
 {
 }
 
-CoreInternalOutcome BandwidthAlert::Deserialize(const Value &value)
+CoreInternalOutcome BandwidthAlert::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome BandwidthAlert::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BandwidthAlert::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BandwidthAlert::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bpsThresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BpsThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bpsThreshold, allocator);
@@ -99,18 +98,18 @@ void BandwidthAlert::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_counterMeasureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CounterMeasure";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_counterMeasure.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_counterMeasure.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastTriggerTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastTriggerTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastTriggerTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastTriggerTime.c_str(), allocator).Move(), allocator);
     }
 
 }

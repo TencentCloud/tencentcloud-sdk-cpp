@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 AccountAttribute::AccountAttribute() :
@@ -27,7 +26,7 @@ AccountAttribute::AccountAttribute() :
 {
 }
 
-CoreInternalOutcome AccountAttribute::Deserialize(const Value &value)
+CoreInternalOutcome AccountAttribute::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome AccountAttribute::Deserialize(const Value &value)
         if (!value["AttributeValues"].IsArray())
             return CoreInternalOutcome(Error("response `AccountAttribute.AttributeValues` is not array type"));
 
-        const Value &tmpValue = value["AttributeValues"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AttributeValues"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_attributeValues.push_back((*itr).GetString());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome AccountAttribute::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AccountAttribute::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AccountAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_attributeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AttributeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_attributeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_attributeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_attributeValuesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AttributeValues";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_attributeValues.begin(); itr != m_attributeValues.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

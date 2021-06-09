@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Asw::V20200722::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateFlowServiceRequest::CreateFlowServiceRequest() :
@@ -38,30 +37,30 @@ CreateFlowServiceRequest::CreateFlowServiceRequest() :
 
 string CreateFlowServiceRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_definitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_definition.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_definition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flowServiceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowServiceName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_flowServiceName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowServiceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isNewRoleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsNewRole";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isNewRole, allocator);
@@ -69,39 +68,39 @@ string CreateFlowServiceRequest::ToJsonString() const
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flowServiceChineseNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowServiceChineseName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_flowServiceChineseName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowServiceChineseName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roleResourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoleResource";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_roleResource.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roleResource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableCLSHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableCLS";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableCLS, allocator);
@@ -109,15 +108,15 @@ string CreateFlowServiceRequest::ToJsonString() const
 
     if (m_inputHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Input";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_input.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_input.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

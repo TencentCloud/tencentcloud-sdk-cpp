@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Yunjing::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeReverseShellEventsResponse::DescribeReverseShellEventsResponse() :
@@ -32,7 +31,7 @@ DescribeReverseShellEventsResponse::DescribeReverseShellEventsResponse() :
 
 CoreInternalOutcome DescribeReverseShellEventsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeReverseShellEventsResponse::Deserialize(const string
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeReverseShellEventsResponse::Deserialize(const string
         if (!rsp["List"].IsArray())
             return CoreInternalOutcome(Error("response `List` is not array type"));
 
-        const Value &tmpValue = rsp["List"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["List"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ReverseShell item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

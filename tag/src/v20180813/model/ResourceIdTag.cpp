@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tag::V20180813::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResourceIdTag::ResourceIdTag() :
@@ -27,7 +26,7 @@ ResourceIdTag::ResourceIdTag() :
 {
 }
 
-CoreInternalOutcome ResourceIdTag::Deserialize(const Value &value)
+CoreInternalOutcome ResourceIdTag::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome ResourceIdTag::Deserialize(const Value &value)
         if (!value["TagKeyValues"].IsArray())
             return CoreInternalOutcome(Error("response `ResourceIdTag.TagKeyValues` is not array type"));
 
-        const Value &tmpValue = value["TagKeyValues"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TagKeyValues"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Tag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome ResourceIdTag::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResourceIdTag::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResourceIdTag::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagKeyValuesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagKeyValues";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tagKeyValues.begin(); itr != m_tagKeyValues.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

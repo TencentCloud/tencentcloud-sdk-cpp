@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceClusterNode::InstanceClusterNode() :
@@ -38,7 +37,7 @@ InstanceClusterNode::InstanceClusterNode() :
 {
 }
 
-CoreInternalOutcome InstanceClusterNode::Deserialize(const Value &value)
+CoreInternalOutcome InstanceClusterNode::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -177,28 +176,28 @@ CoreInternalOutcome InstanceClusterNode::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceClusterNode::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceClusterNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_runIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_runId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_role, allocator);
@@ -206,7 +205,7 @@ void InstanceClusterNode::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -214,7 +213,7 @@ void InstanceClusterNode::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_connectedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Connected";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_connected, allocator);
@@ -222,31 +221,31 @@ void InstanceClusterNode::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_downTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DownTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_downTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_downTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_slotsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Slots";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_slots.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_slots.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Keys";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_keys, allocator);
@@ -254,7 +253,7 @@ void InstanceClusterNode::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_qpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Qps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qps, allocator);
@@ -262,7 +261,7 @@ void InstanceClusterNode::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_qpsSlopeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QpsSlope";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qpsSlope, allocator);
@@ -270,7 +269,7 @@ void InstanceClusterNode::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_storageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Storage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storage, allocator);
@@ -278,7 +277,7 @@ void InstanceClusterNode::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_storageSlopeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageSlope";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storageSlope, allocator);

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Captcha::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCaptchaResultRequest::DescribeCaptchaResultRequest() :
@@ -40,14 +39,14 @@ DescribeCaptchaResultRequest::DescribeCaptchaResultRequest() :
 
 string DescribeCaptchaResultRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_captchaTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CaptchaType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_captchaType, allocator);
@@ -55,31 +54,31 @@ string DescribeCaptchaResultRequest::ToJsonString() const
 
     if (m_ticketHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ticket";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ticket.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ticket.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserIp";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_userIp.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_randstrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Randstr";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_randstr.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_randstr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_captchaAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CaptchaAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_captchaAppId, allocator);
@@ -87,15 +86,15 @@ string DescribeCaptchaResultRequest::ToJsonString() const
 
     if (m_appSecretKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppSecretKey";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_appSecretKey.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appSecretKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_businessIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BusinessId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_businessId, allocator);
@@ -103,7 +102,7 @@ string DescribeCaptchaResultRequest::ToJsonString() const
 
     if (m_sceneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SceneId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sceneId, allocator);
@@ -111,31 +110,31 @@ string DescribeCaptchaResultRequest::ToJsonString() const
 
     if (m_macAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MacAddress";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_macAddress.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_macAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imeiHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Imei";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_imei.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imei.c_str(), allocator).Move(), allocator);
     }
 
     if (m_needGetCaptchaTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedGetCaptchaTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needGetCaptchaTime, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

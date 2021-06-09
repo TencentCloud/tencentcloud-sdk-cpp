@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeZoneTrafficInfoResponse::DescribeZoneTrafficInfoResponse() :
@@ -34,7 +33,7 @@ DescribeZoneTrafficInfoResponse::DescribeZoneTrafficInfoResponse() :
 
 CoreInternalOutcome DescribeZoneTrafficInfoResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -44,7 +43,7 @@ CoreInternalOutcome DescribeZoneTrafficInfoResponse::Deserialize(const string &p
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -101,8 +100,8 @@ CoreInternalOutcome DescribeZoneTrafficInfoResponse::Deserialize(const string &p
         if (!rsp["ZoneTrafficInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `ZoneTrafficInfoSet` is not array type"));
 
-        const Value &tmpValue = rsp["ZoneTrafficInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ZoneTrafficInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ZoneTrafficInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

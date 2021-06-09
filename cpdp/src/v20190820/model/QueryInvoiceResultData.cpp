@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 QueryInvoiceResultData::QueryInvoiceResultData() :
@@ -38,7 +37,7 @@ QueryInvoiceResultData::QueryInvoiceResultData() :
 {
 }
 
-CoreInternalOutcome QueryInvoiceResultData::Deserialize(const Value &value)
+CoreInternalOutcome QueryInvoiceResultData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -177,28 +176,28 @@ CoreInternalOutcome QueryInvoiceResultData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void QueryInvoiceResultData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QueryInvoiceResultData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_orderIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_orderId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_orderSnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderSn";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_orderSn.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderSn.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -206,71 +205,71 @@ void QueryInvoiceResultData::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_messageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ticketDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TicketDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ticketDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ticketDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ticketSnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TicketSn";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ticketSn.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ticketSn.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ticketCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TicketCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ticketCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ticketCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_checkCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CheckCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_checkCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_amountWithTaxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AmountWithTax";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_amountWithTax.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_amountWithTax.c_str(), allocator).Move(), allocator);
     }
 
     if (m_amountWithoutTaxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AmountWithoutTax";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_amountWithoutTax.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_amountWithoutTax.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taxAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaxAmount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taxAmount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxAmount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isRedWashedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsRedWashed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isRedWashed, allocator);
@@ -278,10 +277,10 @@ void QueryInvoiceResultData::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_pdfUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PdfUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pdfUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pdfUrl.c_str(), allocator).Move(), allocator);
     }
 
 }

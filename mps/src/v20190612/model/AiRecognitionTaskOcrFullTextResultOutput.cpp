@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiRecognitionTaskOcrFullTextResultOutput::AiRecognitionTaskOcrFullTextResultOutput() :
@@ -26,7 +25,7 @@ AiRecognitionTaskOcrFullTextResultOutput::AiRecognitionTaskOcrFullTextResultOutp
 {
 }
 
-CoreInternalOutcome AiRecognitionTaskOcrFullTextResultOutput::Deserialize(const Value &value)
+CoreInternalOutcome AiRecognitionTaskOcrFullTextResultOutput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextResultOutput::Deserialize(const 
         if (!value["SegmentSet"].IsArray())
             return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrFullTextResultOutput.SegmentSet` is not array type"));
 
-        const Value &tmpValue = value["SegmentSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SegmentSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AiRecognitionTaskOcrFullTextSegmentItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -55,20 +54,20 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextResultOutput::Deserialize(const 
     return CoreInternalOutcome(true);
 }
 
-void AiRecognitionTaskOcrFullTextResultOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiRecognitionTaskOcrFullTextResultOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_segmentSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SegmentSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_segmentSet.begin(); itr != m_segmentSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 FileDeleteTask::FileDeleteTask() :
@@ -26,7 +25,7 @@ FileDeleteTask::FileDeleteTask() :
 {
 }
 
-CoreInternalOutcome FileDeleteTask::Deserialize(const Value &value)
+CoreInternalOutcome FileDeleteTask::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome FileDeleteTask::Deserialize(const Value &value)
         if (!value["FileIdSet"].IsArray())
             return CoreInternalOutcome(Error("response `FileDeleteTask.FileIdSet` is not array type"));
 
-        const Value &tmpValue = value["FileIdSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FileIdSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_fileIdSet.push_back((*itr).GetString());
         }
@@ -48,19 +47,19 @@ CoreInternalOutcome FileDeleteTask::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FileDeleteTask::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FileDeleteTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fileIdSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileIdSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_fileIdSet.begin(); itr != m_fileIdSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

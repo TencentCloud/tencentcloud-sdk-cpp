@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 ArrivedMallInfo::ArrivedMallInfo() :
@@ -31,7 +30,7 @@ ArrivedMallInfo::ArrivedMallInfo() :
 {
 }
 
-CoreInternalOutcome ArrivedMallInfo::Deserialize(const Value &value)
+CoreInternalOutcome ArrivedMallInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,28 +99,28 @@ CoreInternalOutcome ArrivedMallInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ArrivedMallInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ArrivedMallInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_arrivedTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ArrivedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_arrivedTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arrivedTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_leaveTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeaveTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_leaveTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_leaveTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_staySecondHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StaySecond";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_staySecond, allocator);
@@ -129,26 +128,26 @@ void ArrivedMallInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_inCapPicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InCapPic";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inCapPic.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inCapPic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outCapPicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutCapPic";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outCapPic.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outCapPic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_traceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TraceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_traceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_traceId.c_str(), allocator).Move(), allocator);
     }
 
 }

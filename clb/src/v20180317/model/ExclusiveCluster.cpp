@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Clb::V20180317::Model;
-using namespace rapidjson;
 using namespace std;
 
 ExclusiveCluster::ExclusiveCluster() :
@@ -28,7 +27,7 @@ ExclusiveCluster::ExclusiveCluster() :
 {
 }
 
-CoreInternalOutcome ExclusiveCluster::Deserialize(const Value &value)
+CoreInternalOutcome ExclusiveCluster::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome ExclusiveCluster::Deserialize(const Value &value)
         if (!value["L4Clusters"].IsArray())
             return CoreInternalOutcome(Error("response `ExclusiveCluster.L4Clusters` is not array type"));
 
-        const Value &tmpValue = value["L4Clusters"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["L4Clusters"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ClusterItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -58,8 +57,8 @@ CoreInternalOutcome ExclusiveCluster::Deserialize(const Value &value)
         if (!value["L7Clusters"].IsArray())
             return CoreInternalOutcome(Error("response `ExclusiveCluster.L7Clusters` is not array type"));
 
-        const Value &tmpValue = value["L7Clusters"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["L7Clusters"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ClusterItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -94,45 +93,45 @@ CoreInternalOutcome ExclusiveCluster::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ExclusiveCluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ExclusiveCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_l4ClustersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "L4Clusters";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_l4Clusters.begin(); itr != m_l4Clusters.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_l7ClustersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "L7Clusters";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_l7Clusters.begin(); itr != m_l7Clusters.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_classicalClusterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClassicalCluster";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_classicalCluster.ToJsonObject(value[key.c_str()], allocator);
     }
 

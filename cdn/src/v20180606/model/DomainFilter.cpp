@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 DomainFilter::DomainFilter() :
@@ -28,7 +27,7 @@ DomainFilter::DomainFilter() :
 {
 }
 
-CoreInternalOutcome DomainFilter::Deserialize(const Value &value)
+CoreInternalOutcome DomainFilter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome DomainFilter::Deserialize(const Value &value)
         if (!value["Value"].IsArray())
             return CoreInternalOutcome(Error("response `DomainFilter.Value` is not array type"));
 
-        const Value &tmpValue = value["Value"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Value"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_value.push_back((*itr).GetString());
         }
@@ -70,33 +69,33 @@ CoreInternalOutcome DomainFilter::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DomainFilter::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DomainFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_value.begin(); itr != m_value.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_fuzzyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Fuzzy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fuzzy, allocator);

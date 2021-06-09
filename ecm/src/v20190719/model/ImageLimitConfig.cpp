@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageLimitConfig::ImageLimitConfig() :
@@ -26,7 +25,7 @@ ImageLimitConfig::ImageLimitConfig() :
 {
 }
 
-CoreInternalOutcome ImageLimitConfig::Deserialize(const Value &value)
+CoreInternalOutcome ImageLimitConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome ImageLimitConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageLimitConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageLimitConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_maxImageSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxImageSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxImageSize, allocator);

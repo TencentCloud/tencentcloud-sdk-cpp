@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20190725::Model;
-using namespace rapidjson;
 using namespace std;
 
 BackupDownloadTask::BackupDownloadTask() :
@@ -33,7 +32,7 @@ BackupDownloadTask::BackupDownloadTask() :
 {
 }
 
-CoreInternalOutcome BackupDownloadTask::Deserialize(const Value &value)
+CoreInternalOutcome BackupDownloadTask::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,36 +121,36 @@ CoreInternalOutcome BackupDownloadTask::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BackupDownloadTask::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BackupDownloadTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_backupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_backupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_replicaSetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicaSetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replicaSetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replicaSetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_backupSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backupSize, allocator);
@@ -159,7 +158,7 @@ void BackupDownloadTask::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -167,7 +166,7 @@ void BackupDownloadTask::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_percentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Percent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_percent, allocator);
@@ -175,7 +174,7 @@ void BackupDownloadTask::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_timeSpendHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeSpend";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeSpend, allocator);
@@ -183,10 +182,10 @@ void BackupDownloadTask::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 }

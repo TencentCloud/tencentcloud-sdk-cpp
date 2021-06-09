@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 SellType::SellType() :
@@ -28,7 +27,7 @@ SellType::SellType() :
 {
 }
 
-CoreInternalOutcome SellType::Deserialize(const Value &value)
+CoreInternalOutcome SellType::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome SellType::Deserialize(const Value &value)
         if (!value["EngineVersion"].IsArray())
             return CoreInternalOutcome(Error("response `SellType.EngineVersion` is not array type"));
 
-        const Value &tmpValue = value["EngineVersion"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["EngineVersion"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_engineVersion.push_back((*itr).GetString());
         }
@@ -61,8 +60,8 @@ CoreInternalOutcome SellType::Deserialize(const Value &value)
         if (!value["Configs"].IsArray())
             return CoreInternalOutcome(Error("response `SellType.Configs` is not array type"));
 
-        const Value &tmpValue = value["Configs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Configs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SellConfig item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -80,41 +79,41 @@ CoreInternalOutcome SellType::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SellType::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SellType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TypeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_typeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_typeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_engineVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EngineVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_engineVersion.begin(); itr != m_engineVersion.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_configsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Configs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_configs.begin(); itr != m_configs.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

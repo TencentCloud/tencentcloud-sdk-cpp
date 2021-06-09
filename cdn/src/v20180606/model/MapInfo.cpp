@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 MapInfo::MapInfo() :
@@ -27,7 +26,7 @@ MapInfo::MapInfo() :
 {
 }
 
-CoreInternalOutcome MapInfo::Deserialize(const Value &value)
+CoreInternalOutcome MapInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome MapInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MapInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MapInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -69,10 +68,10 @@ void MapInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }

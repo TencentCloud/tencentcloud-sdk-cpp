@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 SmsCampaignStatisticsData::SmsCampaignStatisticsData() :
@@ -27,7 +26,7 @@ SmsCampaignStatisticsData::SmsCampaignStatisticsData() :
 {
 }
 
-CoreInternalOutcome SmsCampaignStatisticsData::Deserialize(const Value &value)
+CoreInternalOutcome SmsCampaignStatisticsData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome SmsCampaignStatisticsData::Deserialize(const Value &value)
         if (!value["Statistics"].IsArray())
             return CoreInternalOutcome(Error("response `SmsCampaignStatisticsData.Statistics` is not array type"));
 
-        const Value &tmpValue = value["Statistics"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Statistics"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SmsCampaignStatisticsCrowdData item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,12 +65,12 @@ CoreInternalOutcome SmsCampaignStatisticsData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SmsCampaignStatisticsData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SmsCampaignStatisticsData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_campaignIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CampaignId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_campaignId, allocator);
@@ -79,15 +78,15 @@ void SmsCampaignStatisticsData::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_statisticsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Statistics";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_statistics.begin(); itr != m_statistics.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

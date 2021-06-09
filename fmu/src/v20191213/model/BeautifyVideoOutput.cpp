@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Fmu::V20191213::Model;
-using namespace rapidjson;
 using namespace std;
 
 BeautifyVideoOutput::BeautifyVideoOutput() :
@@ -32,7 +31,7 @@ BeautifyVideoOutput::BeautifyVideoOutput() :
 {
 }
 
-CoreInternalOutcome BeautifyVideoOutput::Deserialize(const Value &value)
+CoreInternalOutcome BeautifyVideoOutput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,36 +110,36 @@ CoreInternalOutcome BeautifyVideoOutput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BeautifyVideoOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BeautifyVideoOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_videoUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_videoUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_videoUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_videoMD5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoMD5";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_videoMD5.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_videoMD5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_coverImageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CoverImage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_coverImage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_coverImage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -148,7 +147,7 @@ void BeautifyVideoOutput::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -156,7 +155,7 @@ void BeautifyVideoOutput::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_fpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Fps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fps, allocator);
@@ -164,7 +163,7 @@ void BeautifyVideoOutput::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_durationInSecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DurationInSec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_durationInSec, allocator);

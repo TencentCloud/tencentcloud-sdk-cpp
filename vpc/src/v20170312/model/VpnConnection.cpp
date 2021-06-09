@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 VpnConnection::VpnConnection() :
@@ -44,7 +43,7 @@ VpnConnection::VpnConnection() :
 {
 }
 
-CoreInternalOutcome VpnConnection::Deserialize(const Value &value)
+CoreInternalOutcome VpnConnection::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -174,8 +173,8 @@ CoreInternalOutcome VpnConnection::Deserialize(const Value &value)
         if (!value["SecurityPolicyDatabaseSet"].IsArray())
             return CoreInternalOutcome(Error("response `VpnConnection.SecurityPolicyDatabaseSet` is not array type"));
 
-        const Value &tmpValue = value["SecurityPolicyDatabaseSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SecurityPolicyDatabaseSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SecurityPolicyDatabase item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -267,141 +266,141 @@ CoreInternalOutcome VpnConnection::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VpnConnection::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VpnConnection::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_vpnConnectionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpnConnectionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpnConnectionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpnConnectionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpnConnectionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpnConnectionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpnConnectionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpnConnectionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpnGatewayIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpnGatewayId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpnGatewayId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpnGatewayId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customerGatewayIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomerGatewayId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_customerGatewayId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customerGatewayId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_preShareKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PreShareKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_preShareKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preShareKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpnProtoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpnProto";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpnProto.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpnProto.c_str(), allocator).Move(), allocator);
     }
 
     if (m_encryptProtoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EncryptProto";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_encryptProto.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptProto.c_str(), allocator).Move(), allocator);
     }
 
     if (m_routeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_routeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_state.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
     if (m_netStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_netStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_securityPolicyDatabaseSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityPolicyDatabaseSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_securityPolicyDatabaseSet.begin(); itr != m_securityPolicyDatabaseSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_iKEOptionsSpecificationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IKEOptionsSpecification";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_iKEOptionsSpecification.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_iPSECOptionsSpecificationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IPSECOptionsSpecification";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_iPSECOptionsSpecification.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_enableHealthCheckHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableHealthCheck";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableHealthCheck, allocator);
@@ -409,26 +408,26 @@ void VpnConnection::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_healthCheckLocalIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthCheckLocalIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_healthCheckLocalIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthCheckLocalIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_healthCheckRemoteIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthCheckRemoteIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_healthCheckRemoteIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthCheckRemoteIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_healthCheckStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthCheckStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_healthCheckStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthCheckStatus.c_str(), allocator).Move(), allocator);
     }
 
 }

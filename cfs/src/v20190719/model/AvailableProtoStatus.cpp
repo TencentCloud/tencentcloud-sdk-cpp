@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfs::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 AvailableProtoStatus::AvailableProtoStatus() :
@@ -27,7 +26,7 @@ AvailableProtoStatus::AvailableProtoStatus() :
 {
 }
 
-CoreInternalOutcome AvailableProtoStatus::Deserialize(const Value &value)
+CoreInternalOutcome AvailableProtoStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome AvailableProtoStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AvailableProtoStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AvailableProtoStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_saleStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SaleStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_saleStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_saleStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
 }

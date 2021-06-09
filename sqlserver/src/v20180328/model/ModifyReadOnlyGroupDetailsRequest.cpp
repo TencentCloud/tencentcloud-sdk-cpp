@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyReadOnlyGroupDetailsRequest::ModifyReadOnlyGroupDetailsRequest() :
@@ -38,38 +37,38 @@ ModifyReadOnlyGroupDetailsRequest::ModifyReadOnlyGroupDetailsRequest() :
 
 string ModifyReadOnlyGroupDetailsRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyGroupId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_readOnlyGroupId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_readOnlyGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyGroupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyGroupName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_readOnlyGroupName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_readOnlyGroupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isOfflineDelayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsOfflineDelay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isOfflineDelay, allocator);
@@ -77,7 +76,7 @@ string ModifyReadOnlyGroupDetailsRequest::ToJsonString() const
 
     if (m_readOnlyMaxDelayTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyMaxDelayTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_readOnlyMaxDelayTime, allocator);
@@ -85,7 +84,7 @@ string ModifyReadOnlyGroupDetailsRequest::ToJsonString() const
 
     if (m_minReadOnlyInGroupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinReadOnlyInGroup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_minReadOnlyInGroup, allocator);
@@ -93,22 +92,22 @@ string ModifyReadOnlyGroupDetailsRequest::ToJsonString() const
 
     if (m_weightPairsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WeightPairs";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_weightPairs.begin(); itr != m_weightPairs.end(); ++itr, ++i)
         {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
     if (m_autoWeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoWeight";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoWeight, allocator);
@@ -116,15 +115,15 @@ string ModifyReadOnlyGroupDetailsRequest::ToJsonString() const
 
     if (m_balanceWeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BalanceWeight";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_balanceWeight, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

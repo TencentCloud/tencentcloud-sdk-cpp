@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 OutputDataConfig::OutputDataConfig() :
@@ -28,7 +27,7 @@ OutputDataConfig::OutputDataConfig() :
 {
 }
 
-CoreInternalOutcome OutputDataConfig::Deserialize(const Value &value)
+CoreInternalOutcome OutputDataConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,31 +73,31 @@ CoreInternalOutcome OutputDataConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OutputDataConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OutputDataConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cosOutputBucketHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosOutputBucket";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cosOutputBucket.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosOutputBucket.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosOutputKeyPrefixHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosOutputKeyPrefix";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cosOutputKeyPrefix.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosOutputKeyPrefix.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileSystemDataSourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSystemDataSource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_fileSystemDataSource.ToJsonObject(value[key.c_str()], allocator);
     }
 

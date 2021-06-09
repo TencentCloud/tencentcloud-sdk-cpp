@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiRecognitionTaskFaceResultOutput::AiRecognitionTaskFaceResultOutput() :
@@ -26,7 +25,7 @@ AiRecognitionTaskFaceResultOutput::AiRecognitionTaskFaceResultOutput() :
 {
 }
 
-CoreInternalOutcome AiRecognitionTaskFaceResultOutput::Deserialize(const Value &value)
+CoreInternalOutcome AiRecognitionTaskFaceResultOutput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome AiRecognitionTaskFaceResultOutput::Deserialize(const Value &
         if (!value["ResultSet"].IsArray())
             return CoreInternalOutcome(Error("response `AiRecognitionTaskFaceResultOutput.ResultSet` is not array type"));
 
-        const Value &tmpValue = value["ResultSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AiRecognitionTaskFaceResultItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -55,20 +54,20 @@ CoreInternalOutcome AiRecognitionTaskFaceResultOutput::Deserialize(const Value &
     return CoreInternalOutcome(true);
 }
 
-void AiRecognitionTaskFaceResultOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiRecognitionTaskFaceResultOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resultSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_resultSet.begin(); itr != m_resultSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

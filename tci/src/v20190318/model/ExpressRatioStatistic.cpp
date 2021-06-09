@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 ExpressRatioStatistic::ExpressRatioStatistic() :
@@ -29,7 +28,7 @@ ExpressRatioStatistic::ExpressRatioStatistic() :
 {
 }
 
-CoreInternalOutcome ExpressRatioStatistic::Deserialize(const Value &value)
+CoreInternalOutcome ExpressRatioStatistic::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome ExpressRatioStatistic::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ExpressRatioStatistic::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ExpressRatioStatistic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
@@ -91,15 +90,15 @@ void ExpressRatioStatistic::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_expressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Express";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_express.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_express.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ratioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ratio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ratio, allocator);
@@ -107,7 +106,7 @@ void ExpressRatioStatistic::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_ratioUseDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RatioUseDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ratioUseDuration, allocator);

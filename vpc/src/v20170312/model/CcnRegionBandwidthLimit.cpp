@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 CcnRegionBandwidthLimit::CcnRegionBandwidthLimit() :
@@ -30,7 +29,7 @@ CcnRegionBandwidthLimit::CcnRegionBandwidthLimit() :
 {
 }
 
-CoreInternalOutcome CcnRegionBandwidthLimit::Deserialize(const Value &value)
+CoreInternalOutcome CcnRegionBandwidthLimit::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome CcnRegionBandwidthLimit::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CcnRegionBandwidthLimit::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CcnRegionBandwidthLimit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BandwidthLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidthLimit, allocator);
@@ -110,7 +109,7 @@ void CcnRegionBandwidthLimit::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_isBmHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsBm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isBm, allocator);
@@ -118,15 +117,15 @@ void CcnRegionBandwidthLimit::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_dstRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dstRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstIsBmHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstIsBm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dstIsBm, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 HLFunction::HLFunction() :
@@ -30,7 +29,7 @@ HLFunction::HLFunction() :
 {
 }
 
-CoreInternalOutcome HLFunction::Deserialize(const Value &value)
+CoreInternalOutcome HLFunction::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome HLFunction::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HLFunction::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HLFunction::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enableFaceDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableFaceDetect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableFaceDetect, allocator);
@@ -102,7 +101,7 @@ void HLFunction::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_enableFaceExpressionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableFaceExpression";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableFaceExpression, allocator);
@@ -110,7 +109,7 @@ void HLFunction::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_enableFaceIdentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableFaceIdent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableFaceIdent, allocator);
@@ -118,7 +117,7 @@ void HLFunction::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_enableKeywordWonderfulTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableKeywordWonderfulTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableKeywordWonderfulTime, allocator);
@@ -126,7 +125,7 @@ void HLFunction::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_enableSmileWonderfulTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableSmileWonderfulTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableSmileWonderfulTime, allocator);

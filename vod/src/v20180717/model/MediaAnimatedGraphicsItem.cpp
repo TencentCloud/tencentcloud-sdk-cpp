@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaAnimatedGraphicsItem::MediaAnimatedGraphicsItem() :
@@ -35,7 +34,7 @@ MediaAnimatedGraphicsItem::MediaAnimatedGraphicsItem() :
 {
 }
 
-CoreInternalOutcome MediaAnimatedGraphicsItem::Deserialize(const Value &value)
+CoreInternalOutcome MediaAnimatedGraphicsItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,20 +143,20 @@ CoreInternalOutcome MediaAnimatedGraphicsItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaAnimatedGraphicsItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaAnimatedGraphicsItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_definitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
@@ -165,15 +164,15 @@ void MediaAnimatedGraphicsItem::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_containerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Container";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_container.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_container.c_str(), allocator).Move(), allocator);
     }
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -181,7 +180,7 @@ void MediaAnimatedGraphicsItem::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -189,7 +188,7 @@ void MediaAnimatedGraphicsItem::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_bitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bitrate, allocator);
@@ -197,7 +196,7 @@ void MediaAnimatedGraphicsItem::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_sizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
@@ -205,15 +204,15 @@ void MediaAnimatedGraphicsItem::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_md5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Md5";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_md5.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_md5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -221,7 +220,7 @@ void MediaAnimatedGraphicsItem::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);

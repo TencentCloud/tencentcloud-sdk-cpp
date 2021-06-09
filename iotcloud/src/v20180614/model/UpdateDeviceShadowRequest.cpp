@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 UpdateDeviceShadowRequest::UpdateDeviceShadowRequest() :
@@ -34,38 +33,38 @@ UpdateDeviceShadowRequest::UpdateDeviceShadowRequest() :
 
 string UpdateDeviceShadowRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_productIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_productId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_state.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shadowVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShadowVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shadowVersion, allocator);
@@ -73,15 +72,15 @@ string UpdateDeviceShadowRequest::ToJsonString() const
 
     if (m_prefixHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Prefix";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_prefix.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_prefix.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

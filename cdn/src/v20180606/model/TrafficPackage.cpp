@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 TrafficPackage::TrafficPackage() :
@@ -40,7 +39,7 @@ TrafficPackage::TrafficPackage() :
 {
 }
 
-CoreInternalOutcome TrafficPackage::Deserialize(const Value &value)
+CoreInternalOutcome TrafficPackage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -199,12 +198,12 @@ CoreInternalOutcome TrafficPackage::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TrafficPackage::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TrafficPackage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -212,15 +211,15 @@ void TrafficPackage::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bytesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bytes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bytes, allocator);
@@ -228,7 +227,7 @@ void TrafficPackage::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_bytesUsedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BytesUsed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bytesUsed, allocator);
@@ -236,39 +235,39 @@ void TrafficPackage::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_enableTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_enableTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_expireTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contractExtensionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContractExtension";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_contractExtension, allocator);
@@ -276,7 +275,7 @@ void TrafficPackage::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_autoExtensionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoExtension";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoExtension, allocator);
@@ -284,23 +283,23 @@ void TrafficPackage::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_channelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_areaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lifeTimeMonthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifeTimeMonth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lifeTimeMonth, allocator);
@@ -308,7 +307,7 @@ void TrafficPackage::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_extensionAvailableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExtensionAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_extensionAvailable, allocator);
@@ -316,7 +315,7 @@ void TrafficPackage::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_refundAvailableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RefundAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_refundAvailable, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 TcrImageInfo::TcrImageInfo() :
@@ -29,7 +28,7 @@ TcrImageInfo::TcrImageInfo() :
 {
 }
 
-CoreInternalOutcome TcrImageInfo::Deserialize(const Value &value)
+CoreInternalOutcome TcrImageInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome TcrImageInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TcrImageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TcrImageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_digestHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Digest";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_digest.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_digest.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
@@ -99,18 +98,18 @@ void TcrImageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_imageVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }

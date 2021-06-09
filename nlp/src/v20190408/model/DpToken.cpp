@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Nlp::V20190408::Model;
-using namespace rapidjson;
 using namespace std;
 
 DpToken::DpToken() :
@@ -29,7 +28,7 @@ DpToken::DpToken() :
 {
 }
 
-CoreInternalOutcome DpToken::Deserialize(const Value &value)
+CoreInternalOutcome DpToken::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome DpToken::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DpToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DpToken::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_relationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Relation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_relation.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_relation.c_str(), allocator).Move(), allocator);
     }
 
     if (m_headIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeadId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_headId, allocator);
@@ -99,15 +98,15 @@ void DpToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_wordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Word";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_word.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_word.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);

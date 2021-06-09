@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 CappingRule::CappingRule() :
@@ -28,7 +27,7 @@ CappingRule::CappingRule() :
 {
 }
 
-CoreInternalOutcome CappingRule::Deserialize(const Value &value)
+CoreInternalOutcome CappingRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome CappingRule::Deserialize(const Value &value)
         if (!value["RulePaths"].IsArray())
             return CoreInternalOutcome(Error("response `CappingRule.RulePaths` is not array type"));
 
-        const Value &tmpValue = value["RulePaths"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RulePaths"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_rulePaths.push_back((*itr).GetString());
         }
@@ -70,33 +69,33 @@ CoreInternalOutcome CappingRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CappingRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CappingRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ruleTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ruleType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rulePathsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RulePaths";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_rulePaths.begin(); itr != m_rulePaths.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_kBpsThresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KBpsThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_kBpsThreshold, allocator);

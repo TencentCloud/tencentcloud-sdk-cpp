@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 ValueFrom::ValueFrom() :
@@ -27,7 +26,7 @@ ValueFrom::ValueFrom() :
 {
 }
 
-CoreInternalOutcome ValueFrom::Deserialize(const Value &value)
+CoreInternalOutcome ValueFrom::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,24 +69,24 @@ CoreInternalOutcome ValueFrom::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ValueFrom::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ValueFrom::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fieldRefHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FieldRef";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_fieldRef.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_resourceFieldRefHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceFieldRef";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_resourceFieldRef.ToJsonObject(value[key.c_str()], allocator);
     }
 

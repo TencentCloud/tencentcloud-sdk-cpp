@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaSnapshotByTimePicInfoItem::MediaSnapshotByTimePicInfoItem() :
@@ -28,7 +27,7 @@ MediaSnapshotByTimePicInfoItem::MediaSnapshotByTimePicInfoItem() :
 {
 }
 
-CoreInternalOutcome MediaSnapshotByTimePicInfoItem::Deserialize(const Value &value)
+CoreInternalOutcome MediaSnapshotByTimePicInfoItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome MediaSnapshotByTimePicInfoItem::Deserialize(const Value &val
         if (!value["WaterMarkDefinition"].IsArray())
             return CoreInternalOutcome(Error("response `MediaSnapshotByTimePicInfoItem.WaterMarkDefinition` is not array type"));
 
-        const Value &tmpValue = value["WaterMarkDefinition"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["WaterMarkDefinition"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_waterMarkDefinition.push_back((*itr).GetInt64());
         }
@@ -70,12 +69,12 @@ CoreInternalOutcome MediaSnapshotByTimePicInfoItem::Deserialize(const Value &val
     return CoreInternalOutcome(true);
 }
 
-void MediaSnapshotByTimePicInfoItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaSnapshotByTimePicInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeOffset, allocator);
@@ -83,22 +82,22 @@ void MediaSnapshotByTimePicInfoItem::ToJsonObject(Value &value, Document::Alloca
 
     if (m_pathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_path.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
     if (m_waterMarkDefinitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WaterMarkDefinition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_waterMarkDefinition.begin(); itr != m_waterMarkDefinition.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

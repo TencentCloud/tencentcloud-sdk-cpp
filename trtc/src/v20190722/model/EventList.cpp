@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 EventList::EventList() :
@@ -27,7 +26,7 @@ EventList::EventList() :
 {
 }
 
-CoreInternalOutcome EventList::Deserialize(const Value &value)
+CoreInternalOutcome EventList::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome EventList::Deserialize(const Value &value)
         if (!value["Content"].IsArray())
             return CoreInternalOutcome(Error("response `EventList.Content` is not array type"));
 
-        const Value &tmpValue = value["Content"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Content"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             EventMessage item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,30 +65,30 @@ CoreInternalOutcome EventList::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EventList::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EventList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_contentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_content.begin(); itr != m_content.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_peerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_peerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_peerId.c_str(), allocator).Move(), allocator);
     }
 
 }

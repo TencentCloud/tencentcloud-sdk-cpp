@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 TopicRetentionTimeConfigRsp::TopicRetentionTimeConfigRsp() :
@@ -28,7 +27,7 @@ TopicRetentionTimeConfigRsp::TopicRetentionTimeConfigRsp() :
 {
 }
 
-CoreInternalOutcome TopicRetentionTimeConfigRsp::Deserialize(const Value &value)
+CoreInternalOutcome TopicRetentionTimeConfigRsp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome TopicRetentionTimeConfigRsp::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TopicRetentionTimeConfigRsp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TopicRetentionTimeConfigRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_expectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Expect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expect, allocator);
@@ -80,7 +79,7 @@ void TopicRetentionTimeConfigRsp::ToJsonObject(Value &value, Document::Allocator
 
     if (m_currentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Current";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_current, allocator);
@@ -88,7 +87,7 @@ void TopicRetentionTimeConfigRsp::ToJsonObject(Value &value, Document::Allocator
 
     if (m_modTimeStampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModTimeStamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modTimeStamp, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 LayoutParams::LayoutParams() :
@@ -35,7 +34,7 @@ LayoutParams::LayoutParams() :
 {
 }
 
-CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
+CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -102,8 +101,8 @@ CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
         if (!value["MixVideoUids"].IsArray())
             return CoreInternalOutcome(Error("response `LayoutParams.MixVideoUids` is not array type"));
 
-        const Value &tmpValue = value["MixVideoUids"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MixVideoUids"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_mixVideoUids.push_back((*itr).GetString());
         }
@@ -115,8 +114,8 @@ CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
         if (!value["PresetLayoutConfig"].IsArray())
             return CoreInternalOutcome(Error("response `LayoutParams.PresetLayoutConfig` is not array type"));
 
-        const Value &tmpValue = value["PresetLayoutConfig"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PresetLayoutConfig"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PresetLayoutConfig item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -171,12 +170,12 @@ CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LayoutParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_templateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Template";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_template, allocator);
@@ -184,15 +183,15 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_mainVideoUserIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MainVideoUserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mainVideoUserId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mainVideoUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mainVideoStreamTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MainVideoStreamType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mainVideoStreamType, allocator);
@@ -200,16 +199,16 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_smallVideoLayoutParamsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SmallVideoLayoutParams";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_smallVideoLayoutParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_mainVideoRightAlignHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MainVideoRightAlign";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mainVideoRightAlign, allocator);
@@ -217,35 +216,35 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_mixVideoUidsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MixVideoUids";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_mixVideoUids.begin(); itr != m_mixVideoUids.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_presetLayoutConfigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PresetLayoutConfig";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_presetLayoutConfig.begin(); itr != m_presetLayoutConfig.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_placeHolderModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlaceHolderMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_placeHolderMode, allocator);
@@ -253,7 +252,7 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_pureAudioHoldPlaceModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PureAudioHoldPlaceMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pureAudioHoldPlaceMode, allocator);
@@ -261,10 +260,10 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_waterMarkParamsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WaterMarkParams";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_waterMarkParams.ToJsonObject(value[key.c_str()], allocator);
     }
 

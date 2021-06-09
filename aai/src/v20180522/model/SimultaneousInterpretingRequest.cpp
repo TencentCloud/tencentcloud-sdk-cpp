@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Aai::V20180522::Model;
-using namespace rapidjson;
 using namespace std;
 
 SimultaneousInterpretingRequest::SimultaneousInterpretingRequest() :
@@ -41,14 +40,14 @@ SimultaneousInterpretingRequest::SimultaneousInterpretingRequest() :
 
 string SimultaneousInterpretingRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
@@ -56,7 +55,7 @@ string SimultaneousInterpretingRequest::ToJsonString() const
 
     if (m_subServiceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubServiceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subServiceType, allocator);
@@ -64,23 +63,23 @@ string SimultaneousInterpretingRequest::ToJsonString() const
 
     if (m_recEngineModelTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecEngineModelType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_recEngineModelType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recEngineModelType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_data.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataLenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataLen";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dataLen, allocator);
@@ -88,15 +87,15 @@ string SimultaneousInterpretingRequest::ToJsonString() const
 
     if (m_voiceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VoiceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_voiceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_voiceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isEndHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsEnd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isEnd, allocator);
@@ -104,7 +103,7 @@ string SimultaneousInterpretingRequest::ToJsonString() const
 
     if (m_voiceFormatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VoiceFormat";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_voiceFormat, allocator);
@@ -112,7 +111,7 @@ string SimultaneousInterpretingRequest::ToJsonString() const
 
     if (m_openTranslateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpenTranslate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_openTranslate, allocator);
@@ -120,31 +119,31 @@ string SimultaneousInterpretingRequest::ToJsonString() const
 
     if (m_sourceLanguageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceLanguage";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sourceLanguage.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceLanguage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetLanguageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetLanguage";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_targetLanguage.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetLanguage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_seqHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Seq";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_seq, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

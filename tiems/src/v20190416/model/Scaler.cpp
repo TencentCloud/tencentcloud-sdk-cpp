@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiems::V20190416::Model;
-using namespace rapidjson;
 using namespace std;
 
 Scaler::Scaler() :
@@ -29,7 +28,7 @@ Scaler::Scaler() :
 {
 }
 
-CoreInternalOutcome Scaler::Deserialize(const Value &value)
+CoreInternalOutcome Scaler::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome Scaler::Deserialize(const Value &value)
         if (!value["HpaMetrics"].IsArray())
             return CoreInternalOutcome(Error("response `Scaler.HpaMetrics` is not array type"));
 
-        const Value &tmpValue = value["HpaMetrics"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["HpaMetrics"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Option item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,12 +87,12 @@ CoreInternalOutcome Scaler::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Scaler::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Scaler::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_maxReplicasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxReplicas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxReplicas, allocator);
@@ -101,7 +100,7 @@ void Scaler::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_minReplicasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinReplicas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minReplicas, allocator);
@@ -109,7 +108,7 @@ void Scaler::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_startReplicasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartReplicas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startReplicas, allocator);
@@ -117,15 +116,15 @@ void Scaler::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_hpaMetricsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HpaMetrics";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_hpaMetrics.begin(); itr != m_hpaMetrics.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

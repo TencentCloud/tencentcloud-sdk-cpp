@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmvpc::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 NatGatewayInfo::NatGatewayInfo() :
@@ -41,7 +40,7 @@ NatGatewayInfo::NatGatewayInfo() :
 {
 }
 
-CoreInternalOutcome NatGatewayInfo::Deserialize(const Value &value)
+CoreInternalOutcome NatGatewayInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -101,8 +100,8 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const Value &value)
         if (!value["Eips"].IsArray())
             return CoreInternalOutcome(Error("response `NatGatewayInfo.Eips` is not array type"));
 
-        const Value &tmpValue = value["Eips"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Eips"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_eips.push_back((*itr).GetString());
         }
@@ -213,44 +212,44 @@ CoreInternalOutcome NatGatewayInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NatGatewayInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NatGatewayInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_natIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NatId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_natId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_natId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_natNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NatName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_natName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_natName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productionStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductionStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_productionStatus, allocator);
@@ -258,20 +257,20 @@ void NatGatewayInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_eipsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Eips";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_eips.begin(); itr != m_eips.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_maxConcurrentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxConcurrent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxConcurrent, allocator);
@@ -279,15 +278,15 @@ void NatGatewayInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_exclusiveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Exclusive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exclusive, allocator);
@@ -295,7 +294,7 @@ void NatGatewayInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_forwardModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ForwardMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forwardMode, allocator);
@@ -303,31 +302,31 @@ void NatGatewayInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_vpcCidrBlockHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcCidrBlock";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcCidrBlock.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcCidrBlock.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
@@ -335,7 +334,7 @@ void NatGatewayInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_intVpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IntVpcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_intVpcId, allocator);
@@ -343,7 +342,7 @@ void NatGatewayInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_natResourceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NatResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_natResourceId, allocator);

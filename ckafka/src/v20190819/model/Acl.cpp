@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 Acl::Acl() :
@@ -31,7 +30,7 @@ Acl::Acl() :
 {
 }
 
-CoreInternalOutcome Acl::Deserialize(const Value &value)
+CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome Acl::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Acl::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Acl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceType, allocator);
@@ -113,31 +112,31 @@ void Acl::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_resourceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_principalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Principal";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_principal.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_principal.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Host";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_host.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_host.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Operation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_operation, allocator);
@@ -145,7 +144,7 @@ void Acl::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_permissionTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PermissionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_permissionType, allocator);

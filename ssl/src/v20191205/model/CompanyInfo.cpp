@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ssl::V20191205::Model;
-using namespace rapidjson;
 using namespace std;
 
 CompanyInfo::CompanyInfo() :
@@ -32,7 +31,7 @@ CompanyInfo::CompanyInfo() :
 {
 }
 
-CoreInternalOutcome CompanyInfo::Deserialize(const Value &value)
+CoreInternalOutcome CompanyInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,20 +110,20 @@ CoreInternalOutcome CompanyInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CompanyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CompanyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_companyNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompanyName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_companyName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_companyName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_companyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompanyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_companyId, allocator);
@@ -132,42 +131,42 @@ void CompanyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_companyCountryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompanyCountry";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_companyCountry.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_companyCountry.c_str(), allocator).Move(), allocator);
     }
 
     if (m_companyProvinceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompanyProvince";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_companyProvince.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_companyProvince.c_str(), allocator).Move(), allocator);
     }
 
     if (m_companyCityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompanyCity";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_companyCity.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_companyCity.c_str(), allocator).Move(), allocator);
     }
 
     if (m_companyAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompanyAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_companyAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_companyAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_companyPhoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompanyPhone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_companyPhone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_companyPhone.c_str(), allocator).Move(), allocator);
     }
 
 }

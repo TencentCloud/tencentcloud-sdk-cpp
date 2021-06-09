@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Ccc::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeTelCdrRequest::DescribeTelCdrRequest() :
@@ -37,14 +36,14 @@ DescribeTelCdrRequest::DescribeTelCdrRequest() :
 
 string DescribeTelCdrRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_startTimeStampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeStamp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_startTimeStamp, allocator);
@@ -52,7 +51,7 @@ string DescribeTelCdrRequest::ToJsonString() const
 
     if (m_endTimeStampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeStamp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTimeStamp, allocator);
@@ -60,7 +59,7 @@ string DescribeTelCdrRequest::ToJsonString() const
 
     if (m_limitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
@@ -68,7 +67,7 @@ string DescribeTelCdrRequest::ToJsonString() const
 
     if (m_offsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
@@ -76,7 +75,7 @@ string DescribeTelCdrRequest::ToJsonString() const
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_instanceId, allocator);
@@ -84,7 +83,7 @@ string DescribeTelCdrRequest::ToJsonString() const
 
     if (m_sdkAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sdkAppId, allocator);
@@ -92,7 +91,7 @@ string DescribeTelCdrRequest::ToJsonString() const
 
     if (m_pageSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
@@ -100,15 +99,15 @@ string DescribeTelCdrRequest::ToJsonString() const
 
     if (m_pageNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageNumber, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProxyNodes::ProxyNodes() :
@@ -26,7 +25,7 @@ ProxyNodes::ProxyNodes() :
 {
 }
 
-CoreInternalOutcome ProxyNodes::Deserialize(const Value &value)
+CoreInternalOutcome ProxyNodes::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome ProxyNodes::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProxyNodes::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProxyNodes::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nodeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
     }
 
 }

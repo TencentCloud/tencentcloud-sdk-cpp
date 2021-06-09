@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 PersonVisitInfo::PersonVisitInfo() :
@@ -34,7 +33,7 @@ PersonVisitInfo::PersonVisitInfo() :
 {
 }
 
-CoreInternalOutcome PersonVisitInfo::Deserialize(const Value &value)
+CoreInternalOutcome PersonVisitInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -140,12 +139,12 @@ CoreInternalOutcome PersonVisitInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PersonVisitInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PersonVisitInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_personIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_personId, allocator);
@@ -153,7 +152,7 @@ void PersonVisitInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_visitIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VisitId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_visitId, allocator);
@@ -161,7 +160,7 @@ void PersonVisitInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_inTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inTime, allocator);
@@ -169,15 +168,15 @@ void PersonVisitInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_capturedPictureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CapturedPicture";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_capturedPicture.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_capturedPicture.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maskTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaskType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maskType, allocator);
@@ -185,7 +184,7 @@ void PersonVisitInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_glassTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GlassType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_glassType, allocator);
@@ -193,7 +192,7 @@ void PersonVisitInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_hairTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HairType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hairType, allocator);
@@ -201,18 +200,18 @@ void PersonVisitInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_capturedPictureUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CapturedPictureUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_capturedPictureUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_capturedPictureUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sceneInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SceneInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sceneInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

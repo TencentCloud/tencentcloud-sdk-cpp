@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iot::V20180123::Model;
-using namespace rapidjson;
 using namespace std;
 
 RuleQuery::RuleQuery() :
@@ -29,7 +28,7 @@ RuleQuery::RuleQuery() :
 {
 }
 
-CoreInternalOutcome RuleQuery::Deserialize(const Value &value)
+CoreInternalOutcome RuleQuery::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome RuleQuery::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RuleQuery::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RuleQuery::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fieldHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Field";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_field.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_field.c_str(), allocator).Move(), allocator);
     }
 
     if (m_conditionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Condition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_condition.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_condition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Topic";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topic.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
 }

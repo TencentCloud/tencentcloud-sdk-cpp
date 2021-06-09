@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ame::V20190916::Model;
-using namespace rapidjson;
 using namespace std;
 
 MusicOpenDetail::MusicOpenDetail() :
@@ -34,7 +33,7 @@ MusicOpenDetail::MusicOpenDetail() :
 {
 }
 
-CoreInternalOutcome MusicOpenDetail::Deserialize(const Value &value)
+CoreInternalOutcome MusicOpenDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -94,8 +93,8 @@ CoreInternalOutcome MusicOpenDetail::Deserialize(const Value &value)
         if (!value["Singers"].IsArray())
             return CoreInternalOutcome(Error("response `MusicOpenDetail.Singers` is not array type"));
 
-        const Value &tmpValue = value["Singers"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Singers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_singers.push_back((*itr).GetString());
         }
@@ -117,8 +116,8 @@ CoreInternalOutcome MusicOpenDetail::Deserialize(const Value &value)
         if (!value["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `MusicOpenDetail.Tags` is not array type"));
 
-        const Value &tmpValue = value["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_tags.push_back((*itr).GetString());
         }
@@ -139,65 +138,65 @@ CoreInternalOutcome MusicOpenDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MusicOpenDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MusicOpenDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_musicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MusicId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_musicId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_musicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_albumNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlbumName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_albumName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_albumName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_albumImageUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlbumImageUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_albumImageUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_albumImageUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_musicNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MusicName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_musicName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_musicName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_musicImageUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MusicImageUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_musicImageUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_musicImageUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_singersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Singers";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_singers.begin(); itr != m_singers.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -205,23 +204,23 @@ void MusicOpenDetail::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_tagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_lyricUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LyricUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lyricUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lyricUrl.c_str(), allocator).Move(), allocator);
     }
 
 }

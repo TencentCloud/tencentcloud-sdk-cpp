@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 StorageStatData::StorageStatData() :
@@ -31,7 +30,7 @@ StorageStatData::StorageStatData() :
 {
 }
 
-CoreInternalOutcome StorageStatData::Deserialize(const Value &value)
+CoreInternalOutcome StorageStatData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,20 +99,20 @@ CoreInternalOutcome StorageStatData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StorageStatData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StorageStatData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_areaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalStorage, allocator);
@@ -121,7 +120,7 @@ void StorageStatData::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_infrequentStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InfrequentStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_infrequentStorage, allocator);
@@ -129,7 +128,7 @@ void StorageStatData::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_standardStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StandardStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_standardStorage, allocator);
@@ -137,7 +136,7 @@ void StorageStatData::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_archiveStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ArchiveStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_archiveStorage, allocator);
@@ -145,7 +144,7 @@ void StorageStatData::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_deepArchiveStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeepArchiveStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deepArchiveStorage, allocator);

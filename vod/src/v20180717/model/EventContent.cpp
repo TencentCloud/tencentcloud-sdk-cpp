@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 EventContent::EventContent() :
@@ -41,7 +40,7 @@ EventContent::EventContent() :
 {
 }
 
-CoreInternalOutcome EventContent::Deserialize(const Value &value)
+CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -308,148 +307,148 @@ CoreInternalOutcome EventContent::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EventContent::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eventHandleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventHandle";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eventHandle.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventHandle.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eventTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eventType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileUploadEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileUploadEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_fileUploadEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_procedureStateChangeEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProcedureStateChangeEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_procedureStateChangeEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_fileDeleteEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileDeleteEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_fileDeleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_pullCompleteEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PullCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_pullCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_editMediaCompleteEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EditMediaCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_editMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_splitMediaCompleteEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SplitMediaCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_splitMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_composeMediaCompleteEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComposeMediaCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_composeMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_clipCompleteEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClipCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clipCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_transcodeCompleteEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TranscodeCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_transcodeCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createImageSpriteCompleteEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateImageSpriteCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_createImageSpriteCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_concatCompleteEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConcatCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_concatCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_snapshotByTimeOffsetCompleteEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SnapshotByTimeOffsetCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_snapshotByTimeOffsetCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_wechatPublishCompleteEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WechatPublishCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_wechatPublishCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_wechatMiniProgramPublishCompleteEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WechatMiniProgramPublishCompleteEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_wechatMiniProgramPublishCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 

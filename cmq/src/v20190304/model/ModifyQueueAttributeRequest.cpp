@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cmq::V20190304::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyQueueAttributeRequest::ModifyQueueAttributeRequest() :
@@ -43,22 +42,22 @@ ModifyQueueAttributeRequest::ModifyQueueAttributeRequest() :
 
 string ModifyQueueAttributeRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_queueNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueueName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_queueName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxMsgHeapNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxMsgHeapNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxMsgHeapNum, allocator);
@@ -66,7 +65,7 @@ string ModifyQueueAttributeRequest::ToJsonString() const
 
     if (m_pollingWaitSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PollingWaitSeconds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pollingWaitSeconds, allocator);
@@ -74,7 +73,7 @@ string ModifyQueueAttributeRequest::ToJsonString() const
 
     if (m_visibilityTimeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VisibilityTimeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_visibilityTimeout, allocator);
@@ -82,7 +81,7 @@ string ModifyQueueAttributeRequest::ToJsonString() const
 
     if (m_maxMsgSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxMsgSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxMsgSize, allocator);
@@ -90,7 +89,7 @@ string ModifyQueueAttributeRequest::ToJsonString() const
 
     if (m_msgRetentionSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgRetentionSeconds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_msgRetentionSeconds, allocator);
@@ -98,7 +97,7 @@ string ModifyQueueAttributeRequest::ToJsonString() const
 
     if (m_rewindSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RewindSeconds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rewindSeconds, allocator);
@@ -106,7 +105,7 @@ string ModifyQueueAttributeRequest::ToJsonString() const
 
     if (m_firstQueryIntervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstQueryInterval";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_firstQueryInterval, allocator);
@@ -114,7 +113,7 @@ string ModifyQueueAttributeRequest::ToJsonString() const
 
     if (m_maxQueryCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxQueryCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxQueryCount, allocator);
@@ -122,15 +121,15 @@ string ModifyQueueAttributeRequest::ToJsonString() const
 
     if (m_deadLetterQueueNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeadLetterQueueName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_deadLetterQueueName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deadLetterQueueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxTimeToLiveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxTimeToLive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxTimeToLive, allocator);
@@ -138,7 +137,7 @@ string ModifyQueueAttributeRequest::ToJsonString() const
 
     if (m_maxReceiveCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxReceiveCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxReceiveCount, allocator);
@@ -146,7 +145,7 @@ string ModifyQueueAttributeRequest::ToJsonString() const
 
     if (m_policyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Policy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_policy, allocator);
@@ -154,15 +153,15 @@ string ModifyQueueAttributeRequest::ToJsonString() const
 
     if (m_traceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Trace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_trace, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

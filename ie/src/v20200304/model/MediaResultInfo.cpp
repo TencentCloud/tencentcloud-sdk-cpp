@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaResultInfo::MediaResultInfo() :
@@ -28,7 +27,7 @@ MediaResultInfo::MediaResultInfo() :
 {
 }
 
-CoreInternalOutcome MediaResultInfo::Deserialize(const Value &value)
+CoreInternalOutcome MediaResultInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome MediaResultInfo::Deserialize(const Value &value)
         if (!value["ResultVideoInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaResultInfo.ResultVideoInfoSet` is not array type"));
 
-        const Value &tmpValue = value["ResultVideoInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ResultVideoInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ResultVideoInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -68,8 +67,8 @@ CoreInternalOutcome MediaResultInfo::Deserialize(const Value &value)
         if (!value["ResultAudioInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaResultInfo.ResultAudioInfoSet` is not array type"));
 
-        const Value &tmpValue = value["ResultAudioInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ResultAudioInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ResultAudioInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -87,12 +86,12 @@ CoreInternalOutcome MediaResultInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaResultInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaResultInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -100,30 +99,30 @@ void MediaResultInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_resultVideoInfoSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultVideoInfoSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_resultVideoInfoSet.begin(); itr != m_resultVideoInfoSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_resultAudioInfoSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultAudioInfoSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_resultAudioInfoSet.begin(); itr != m_resultAudioInfoSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

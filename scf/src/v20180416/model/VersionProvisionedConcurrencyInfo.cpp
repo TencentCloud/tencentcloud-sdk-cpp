@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 VersionProvisionedConcurrencyInfo::VersionProvisionedConcurrencyInfo() :
@@ -30,7 +29,7 @@ VersionProvisionedConcurrencyInfo::VersionProvisionedConcurrencyInfo() :
 {
 }
 
-CoreInternalOutcome VersionProvisionedConcurrencyInfo::Deserialize(const Value &value)
+CoreInternalOutcome VersionProvisionedConcurrencyInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome VersionProvisionedConcurrencyInfo::Deserialize(const Value &
     return CoreInternalOutcome(true);
 }
 
-void VersionProvisionedConcurrencyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VersionProvisionedConcurrencyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_allocatedProvisionedConcurrencyNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AllocatedProvisionedConcurrencyNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allocatedProvisionedConcurrencyNum, allocator);
@@ -102,7 +101,7 @@ void VersionProvisionedConcurrencyInfo::ToJsonObject(Value &value, Document::All
 
     if (m_availableProvisionedConcurrencyNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvailableProvisionedConcurrencyNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_availableProvisionedConcurrencyNum, allocator);
@@ -110,26 +109,26 @@ void VersionProvisionedConcurrencyInfo::ToJsonObject(Value &value, Document::All
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusReasonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusReason";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_statusReason.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusReason.c_str(), allocator).Move(), allocator);
     }
 
     if (m_qualifierHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Qualifier";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_qualifier.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_qualifier.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 TemplateInfo::TemplateInfo() :
@@ -46,7 +45,7 @@ TemplateInfo::TemplateInfo() :
 {
 }
 
-CoreInternalOutcome TemplateInfo::Deserialize(const Value &value)
+CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -265,20 +264,20 @@ CoreInternalOutcome TemplateInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_vcodecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vcodec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vcodec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vcodec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_videoBitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoBitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoBitrate, allocator);
@@ -286,15 +285,15 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_acodecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Acodec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_acodec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_acodec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_audioBitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioBitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioBitrate, allocator);
@@ -302,7 +301,7 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -310,7 +309,7 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -318,7 +317,7 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_fpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Fps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fps, allocator);
@@ -326,7 +325,7 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_gopHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gop";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gop, allocator);
@@ -334,7 +333,7 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_rotateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rotate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rotate, allocator);
@@ -342,15 +341,15 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_profileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Profile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bitrateToOrigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BitrateToOrig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bitrateToOrig, allocator);
@@ -358,7 +357,7 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_heightToOrigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeightToOrig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_heightToOrig, allocator);
@@ -366,7 +365,7 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_fpsToOrigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FpsToOrig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fpsToOrig, allocator);
@@ -374,7 +373,7 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_needVideoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedVideo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needVideo, allocator);
@@ -382,7 +381,7 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_needAudioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedAudio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needAudio, allocator);
@@ -390,7 +389,7 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templateId, allocator);
@@ -398,23 +397,23 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_templateNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_templateName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aiTransCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AiTransCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aiTransCode, allocator);
@@ -422,7 +421,7 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_adaptBitratePercentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AdaptBitratePercent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_adaptBitratePercent, allocator);
@@ -430,7 +429,7 @@ void TemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_shortEdgeAsHeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShortEdgeAsHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shortEdgeAsHeight, allocator);

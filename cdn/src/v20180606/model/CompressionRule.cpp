@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 CompressionRule::CompressionRule() :
@@ -30,7 +29,7 @@ CompressionRule::CompressionRule() :
 {
 }
 
-CoreInternalOutcome CompressionRule::Deserialize(const Value &value)
+CoreInternalOutcome CompressionRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -50,8 +49,8 @@ CoreInternalOutcome CompressionRule::Deserialize(const Value &value)
         if (!value["FileExtensions"].IsArray())
             return CoreInternalOutcome(Error("response `CompressionRule.FileExtensions` is not array type"));
 
-        const Value &tmpValue = value["FileExtensions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FileExtensions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_fileExtensions.push_back((*itr).GetString());
         }
@@ -83,8 +82,8 @@ CoreInternalOutcome CompressionRule::Deserialize(const Value &value)
         if (!value["Algorithms"].IsArray())
             return CoreInternalOutcome(Error("response `CompressionRule.Algorithms` is not array type"));
 
-        const Value &tmpValue = value["Algorithms"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Algorithms"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_algorithms.push_back((*itr).GetString());
         }
@@ -95,12 +94,12 @@ CoreInternalOutcome CompressionRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CompressionRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CompressionRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_compressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Compress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_compress, allocator);
@@ -108,20 +107,20 @@ void CompressionRule::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_fileExtensionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileExtensions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_fileExtensions.begin(); itr != m_fileExtensions.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_minLengthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinLength";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minLength, allocator);
@@ -129,7 +128,7 @@ void CompressionRule::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_maxLengthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxLength";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxLength, allocator);
@@ -137,14 +136,14 @@ void CompressionRule::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_algorithmsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Algorithms";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_algorithms.begin(); itr != m_algorithms.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

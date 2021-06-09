@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeConfigResponse::DescribeConfigResponse() :
@@ -35,7 +34,7 @@ DescribeConfigResponse::DescribeConfigResponse() :
 
 CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -45,7 +44,7 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -89,8 +88,8 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
         if (!rsp["ImageWhiteSet"].IsArray())
             return CoreInternalOutcome(Error("response `ImageWhiteSet` is not array type"));
 
-        const Value &tmpValue = rsp["ImageWhiteSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ImageWhiteSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_imageWhiteSet.push_back((*itr).GetString());
         }
@@ -102,8 +101,8 @@ CoreInternalOutcome DescribeConfigResponse::Deserialize(const string &payload)
         if (!rsp["InstanceNetworkLimitConfigs"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceNetworkLimitConfigs` is not array type"));
 
-        const Value &tmpValue = rsp["InstanceNetworkLimitConfigs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["InstanceNetworkLimitConfigs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InstanceNetworkLimitConfig item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

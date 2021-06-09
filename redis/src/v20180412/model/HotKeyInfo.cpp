@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 HotKeyInfo::HotKeyInfo() :
@@ -28,7 +27,7 @@ HotKeyInfo::HotKeyInfo() :
 {
 }
 
-CoreInternalOutcome HotKeyInfo::Deserialize(const Value &value)
+CoreInternalOutcome HotKeyInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome HotKeyInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HotKeyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HotKeyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_keyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Key";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_key.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);

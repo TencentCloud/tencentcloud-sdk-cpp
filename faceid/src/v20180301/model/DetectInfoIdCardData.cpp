@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Faceid::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 DetectInfoIdCardData::DetectInfoIdCardData() :
@@ -30,7 +29,7 @@ DetectInfoIdCardData::DetectInfoIdCardData() :
 {
 }
 
-CoreInternalOutcome DetectInfoIdCardData::Deserialize(const Value &value)
+CoreInternalOutcome DetectInfoIdCardData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,47 +88,47 @@ CoreInternalOutcome DetectInfoIdCardData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DetectInfoIdCardData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DetectInfoIdCardData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ocrFrontHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OcrFront";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ocrFront.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ocrFront.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ocrBackHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OcrBack";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ocrBack.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ocrBack.c_str(), allocator).Move(), allocator);
     }
 
     if (m_processedFrontImageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProcessedFrontImage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_processedFrontImage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processedFrontImage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_processedBackImageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProcessedBackImage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_processedBackImage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processedBackImage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_avatarHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Avatar";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_avatar.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_avatar.c_str(), allocator).Move(), allocator);
     }
 
 }

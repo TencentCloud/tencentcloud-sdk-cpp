@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 APIDocInfo::APIDocInfo() :
@@ -39,7 +38,7 @@ APIDocInfo::APIDocInfo() :
 {
 }
 
-CoreInternalOutcome APIDocInfo::Deserialize(const Value &value)
+CoreInternalOutcome APIDocInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -159,8 +158,8 @@ CoreInternalOutcome APIDocInfo::Deserialize(const Value &value)
         if (!value["ApiIds"].IsArray())
             return CoreInternalOutcome(Error("response `APIDocInfo.ApiIds` is not array type"));
 
-        const Value &tmpValue = value["ApiIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ApiIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_apiIds.push_back((*itr).GetString());
         }
@@ -182,8 +181,8 @@ CoreInternalOutcome APIDocInfo::Deserialize(const Value &value)
         if (!value["ApiNames"].IsArray())
             return CoreInternalOutcome(Error("response `APIDocInfo.ApiNames` is not array type"));
 
-        const Value &tmpValue = value["ApiNames"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ApiNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_apiNames.push_back((*itr).GetString());
         }
@@ -194,36 +193,36 @@ CoreInternalOutcome APIDocInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void APIDocInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void APIDocInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_apiDocIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiDocId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_apiDocId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiDocId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_apiDocNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiDocName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_apiDocName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiDocName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_apiDocStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiDocStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_apiDocStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiDocStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_apiCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_apiCount, allocator);
@@ -231,7 +230,7 @@ void APIDocInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_viewCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ViewCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_viewCount, allocator);
@@ -239,7 +238,7 @@ void APIDocInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_releaseCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReleaseCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_releaseCount, allocator);
@@ -247,75 +246,75 @@ void APIDocInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_apiDocUriHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiDocUri";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_apiDocUri.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiDocUri.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sharePasswordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SharePassword";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sharePassword.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sharePassword.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updatedTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdatedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updatedTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serviceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_environmentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Environment";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_environment.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_apiIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_apiIds.begin(); itr != m_apiIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_serviceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serviceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_apiNamesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiNames";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_apiNames.begin(); itr != m_apiNames.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

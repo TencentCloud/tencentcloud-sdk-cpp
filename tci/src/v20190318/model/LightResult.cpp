@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 LightResult::LightResult() :
@@ -27,7 +26,7 @@ LightResult::LightResult() :
 {
 }
 
-CoreInternalOutcome LightResult::Deserialize(const Value &value)
+CoreInternalOutcome LightResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome LightResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LightResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LightResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_lightLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LightLevel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lightLevel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lightLevel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lightValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LightValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lightValue, allocator);

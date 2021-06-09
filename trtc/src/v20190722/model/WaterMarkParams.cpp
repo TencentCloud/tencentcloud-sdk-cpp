@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 WaterMarkParams::WaterMarkParams() :
@@ -30,7 +29,7 @@ WaterMarkParams::WaterMarkParams() :
 {
 }
 
-CoreInternalOutcome WaterMarkParams::Deserialize(const Value &value)
+CoreInternalOutcome WaterMarkParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome WaterMarkParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WaterMarkParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WaterMarkParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_waterMarkIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WaterMarkId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_waterMarkId, allocator);
@@ -102,7 +101,7 @@ void WaterMarkParams::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_waterMarkWidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WaterMarkWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_waterMarkWidth, allocator);
@@ -110,7 +109,7 @@ void WaterMarkParams::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_waterMarkHeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WaterMarkHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_waterMarkHeight, allocator);
@@ -118,7 +117,7 @@ void WaterMarkParams::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_locationXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocationX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_locationX, allocator);
@@ -126,7 +125,7 @@ void WaterMarkParams::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_locationYHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocationY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_locationY, allocator);

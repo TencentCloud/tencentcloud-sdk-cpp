@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cwp::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeAttackVulTypeListRequest::DescribeAttackVulTypeListRequest()
@@ -29,14 +28,14 @@ DescribeAttackVulTypeListRequest::DescribeAttackVulTypeListRequest()
 
 string DescribeAttackVulTypeListRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ssm::V20190923::Model;
-using namespace rapidjson;
 using namespace std;
 
 SecretMetadata::SecretMetadata() :
@@ -33,7 +32,7 @@ SecretMetadata::SecretMetadata() :
 {
 }
 
-CoreInternalOutcome SecretMetadata::Deserialize(const Value &value)
+CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,36 +121,36 @@ CoreInternalOutcome SecretMetadata::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SecretMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SecretMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_secretNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecretName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secretName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_kmsKeyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KmsKeyId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createUin, allocator);
@@ -159,15 +158,15 @@ void SecretMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deleteTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeleteTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deleteTime, allocator);
@@ -175,7 +174,7 @@ void SecretMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -183,10 +182,10 @@ void SecretMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_kmsKeyTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KmsKeyType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_kmsKeyType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsKeyType.c_str(), allocator).Move(), allocator);
     }
 
 }

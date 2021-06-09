@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 PlacedPlayerSession::PlacedPlayerSession() :
@@ -27,7 +26,7 @@ PlacedPlayerSession::PlacedPlayerSession() :
 {
 }
 
-CoreInternalOutcome PlacedPlayerSession::Deserialize(const Value &value)
+CoreInternalOutcome PlacedPlayerSession::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome PlacedPlayerSession::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PlacedPlayerSession::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PlacedPlayerSession::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_playerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlayerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_playerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_playerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_playerSessionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlayerSessionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_playerSessionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_playerSessionId.c_str(), allocator).Move(), allocator);
     }
 
 }

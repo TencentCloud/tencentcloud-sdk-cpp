@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 CosUploadBackupFile::CosUploadBackupFile() :
@@ -27,7 +26,7 @@ CosUploadBackupFile::CosUploadBackupFile() :
 {
 }
 
-CoreInternalOutcome CosUploadBackupFile::Deserialize(const Value &value)
+CoreInternalOutcome CosUploadBackupFile::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome CosUploadBackupFile::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CosUploadBackupFile::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CosUploadBackupFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);

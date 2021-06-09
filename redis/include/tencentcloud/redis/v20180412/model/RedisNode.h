@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取节点角色
+                     * @return Role 节点角色
+                     */
+                    std::string GetRole() const;
+
+                    /**
+                     * 设置节点角色
+                     * @param Role 节点角色
+                     */
+                    void SetRole(const std::string& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     */
+                    bool RoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 节点角色
+                     */
+                    std::string m_role;
+                    bool m_roleHasBeenSet;
 
                 };
             }

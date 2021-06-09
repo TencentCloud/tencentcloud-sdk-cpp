@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 SplitMediaTaskInput::SplitMediaTaskInput() :
@@ -30,7 +29,7 @@ SplitMediaTaskInput::SplitMediaTaskInput() :
 {
 }
 
-CoreInternalOutcome SplitMediaTaskInput::Deserialize(const Value &value)
+CoreInternalOutcome SplitMediaTaskInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -96,20 +95,20 @@ CoreInternalOutcome SplitMediaTaskInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SplitMediaTaskInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SplitMediaTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fileIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -117,7 +116,7 @@ void SplitMediaTaskInput::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
@@ -125,18 +124,18 @@ void SplitMediaTaskInput::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_procedureNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProcedureName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_procedureName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_procedureName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outputConfigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputConfig";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_outputConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 

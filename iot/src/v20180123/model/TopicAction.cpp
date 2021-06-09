@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iot::V20180123::Model;
-using namespace rapidjson;
 using namespace std;
 
 TopicAction::TopicAction() :
@@ -26,7 +25,7 @@ TopicAction::TopicAction() :
 {
 }
 
-CoreInternalOutcome TopicAction::Deserialize(const Value &value)
+CoreInternalOutcome TopicAction::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome TopicAction::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TopicAction::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TopicAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_topicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Topic";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topic.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
     }
 
 }

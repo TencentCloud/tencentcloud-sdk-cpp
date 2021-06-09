@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 TerrorismConfigureInfo::TerrorismConfigureInfo() :
@@ -27,7 +26,7 @@ TerrorismConfigureInfo::TerrorismConfigureInfo() :
 {
 }
 
-CoreInternalOutcome TerrorismConfigureInfo::Deserialize(const Value &value)
+CoreInternalOutcome TerrorismConfigureInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,24 +69,24 @@ CoreInternalOutcome TerrorismConfigureInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TerrorismConfigureInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TerrorismConfigureInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_imgReviewInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImgReviewInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imgReviewInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_ocrReviewInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OcrReviewInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ocrReviewInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

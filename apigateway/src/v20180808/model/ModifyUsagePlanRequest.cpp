@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyUsagePlanRequest::ModifyUsagePlanRequest() :
@@ -34,38 +33,38 @@ ModifyUsagePlanRequest::ModifyUsagePlanRequest() :
 
 string ModifyUsagePlanRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_usagePlanIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsagePlanId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_usagePlanId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_usagePlanId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usagePlanNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsagePlanName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_usagePlanName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_usagePlanName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usagePlanDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsagePlanDesc";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_usagePlanDesc.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_usagePlanDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxRequestNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxRequestNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxRequestNum, allocator);
@@ -73,15 +72,15 @@ string ModifyUsagePlanRequest::ToJsonString() const
 
     if (m_maxRequestNumPreSecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxRequestNumPreSec";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxRequestNumPreSec, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vm::V20201229::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskFilter::TaskFilter() :
@@ -29,7 +28,7 @@ TaskFilter::TaskFilter() :
 {
 }
 
-CoreInternalOutcome TaskFilter::Deserialize(const Value &value)
+CoreInternalOutcome TaskFilter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -39,8 +38,8 @@ CoreInternalOutcome TaskFilter::Deserialize(const Value &value)
         if (!value["BizType"].IsArray())
             return CoreInternalOutcome(Error("response `TaskFilter.BizType` is not array type"));
 
-        const Value &tmpValue = value["BizType"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BizType"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_bizType.push_back((*itr).GetString());
         }
@@ -81,44 +80,44 @@ CoreInternalOutcome TaskFilter::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskFilter::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bizTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BizType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_bizType.begin(); itr != m_bizType.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_suggestionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_suggestion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskStatus.c_str(), allocator).Move(), allocator);
     }
 
 }

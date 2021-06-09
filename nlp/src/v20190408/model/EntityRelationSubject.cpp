@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Nlp::V20190408::Model;
-using namespace rapidjson;
 using namespace std;
 
 EntityRelationSubject::EntityRelationSubject() :
@@ -28,7 +27,7 @@ EntityRelationSubject::EntityRelationSubject() :
 {
 }
 
-CoreInternalOutcome EntityRelationSubject::Deserialize(const Value &value)
+CoreInternalOutcome EntityRelationSubject::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome EntityRelationSubject::Deserialize(const Value &value)
         if (!value["Popular"].IsArray())
             return CoreInternalOutcome(Error("response `EntityRelationSubject.Popular` is not array type"));
 
-        const Value &tmpValue = value["Popular"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Popular"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_popular.push_back((*itr).GetInt64());
         }
@@ -51,8 +50,8 @@ CoreInternalOutcome EntityRelationSubject::Deserialize(const Value &value)
         if (!value["Id"].IsArray())
             return CoreInternalOutcome(Error("response `EntityRelationSubject.Id` is not array type"));
 
-        const Value &tmpValue = value["Id"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Id"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_id.push_back((*itr).GetString());
         }
@@ -64,8 +63,8 @@ CoreInternalOutcome EntityRelationSubject::Deserialize(const Value &value)
         if (!value["Name"].IsArray())
             return CoreInternalOutcome(Error("response `EntityRelationSubject.Name` is not array type"));
 
-        const Value &tmpValue = value["Name"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Name"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_name.push_back((*itr).GetString());
         }
@@ -76,45 +75,45 @@ CoreInternalOutcome EntityRelationSubject::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EntityRelationSubject::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EntityRelationSubject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_popularHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Popular";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_popular.begin(); itr != m_popular.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_id.begin(); itr != m_id.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_name.begin(); itr != m_name.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

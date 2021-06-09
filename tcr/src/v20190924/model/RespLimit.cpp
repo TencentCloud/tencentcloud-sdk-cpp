@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 RespLimit::RespLimit() :
@@ -26,7 +25,7 @@ RespLimit::RespLimit() :
 {
 }
 
-CoreInternalOutcome RespLimit::Deserialize(const Value &value)
+CoreInternalOutcome RespLimit::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome RespLimit::Deserialize(const Value &value)
         if (!value["LimitInfo"].IsArray())
             return CoreInternalOutcome(Error("response `RespLimit.LimitInfo` is not array type"));
 
-        const Value &tmpValue = value["LimitInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LimitInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Limit item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -55,20 +54,20 @@ CoreInternalOutcome RespLimit::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RespLimit::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RespLimit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_limitInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LimitInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_limitInfo.begin(); itr != m_limitInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

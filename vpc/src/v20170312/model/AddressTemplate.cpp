@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 AddressTemplate::AddressTemplate() :
@@ -29,7 +28,7 @@ AddressTemplate::AddressTemplate() :
 {
 }
 
-CoreInternalOutcome AddressTemplate::Deserialize(const Value &value)
+CoreInternalOutcome AddressTemplate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -59,8 +58,8 @@ CoreInternalOutcome AddressTemplate::Deserialize(const Value &value)
         if (!value["AddressSet"].IsArray())
             return CoreInternalOutcome(Error("response `AddressTemplate.AddressSet` is not array type"));
 
-        const Value &tmpValue = value["AddressSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AddressSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_addressSet.push_back((*itr).GetString());
         }
@@ -81,44 +80,44 @@ CoreInternalOutcome AddressTemplate::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AddressTemplate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AddressTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_addressTemplateNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddressTemplateName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_addressTemplateName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressTemplateName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_addressTemplateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddressTemplateId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_addressTemplateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressTemplateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_addressSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddressSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_addressSet.begin(); itr != m_addressSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_createdTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
 }

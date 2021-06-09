@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 NetworkInfo::NetworkInfo() :
@@ -34,7 +33,7 @@ NetworkInfo::NetworkInfo() :
 {
 }
 
-CoreInternalOutcome NetworkInfo::Deserialize(const Value &value)
+CoreInternalOutcome NetworkInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome NetworkInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NetworkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NetworkInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_uploadHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Upload";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_upload, allocator);
@@ -146,7 +145,7 @@ void NetworkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_downloadHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Download";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_download, allocator);
@@ -154,7 +153,7 @@ void NetworkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_minRttHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinRtt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minRtt, allocator);
@@ -162,7 +161,7 @@ void NetworkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_avgRttHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvgRtt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_avgRtt, allocator);
@@ -170,7 +169,7 @@ void NetworkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_maxRttHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxRtt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxRtt, allocator);
@@ -178,7 +177,7 @@ void NetworkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_mdevRttHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MdevRtt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mdevRtt, allocator);
@@ -186,7 +185,7 @@ void NetworkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_lossHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Loss";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loss, allocator);
@@ -194,7 +193,7 @@ void NetworkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
@@ -202,10 +201,10 @@ void NetworkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_macHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mac";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mac.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mac.c_str(), allocator).Move(), allocator);
     }
 
 }

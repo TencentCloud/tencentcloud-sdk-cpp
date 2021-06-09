@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmeip::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 EipInfo::EipInfo() :
@@ -53,7 +52,7 @@ EipInfo::EipInfo() :
 {
 }
 
-CoreInternalOutcome EipInfo::Deserialize(const Value &value)
+CoreInternalOutcome EipInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -342,36 +341,36 @@ CoreInternalOutcome EipInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EipInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EipInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eipIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EipId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eipId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eipId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eipNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EipName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eipName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eipName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Eip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ispIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IspId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ispId, allocator);
@@ -379,7 +378,7 @@ void EipInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -387,7 +386,7 @@ void EipInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_arrearsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Arrears";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_arrears, allocator);
@@ -395,47 +394,47 @@ void EipInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceAliasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceAlias";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceAlias.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceAlias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_freeAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FreeAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_freeAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_freeAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updatedAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_freeSecondHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FreeSecond";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_freeSecond, allocator);
@@ -443,7 +442,7 @@ void EipInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -451,15 +450,15 @@ void EipInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_payModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_payMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
@@ -467,15 +466,15 @@ void EipInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_latestPayModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LatestPayMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_latestPayMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestPayMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_latestBandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LatestBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_latestBandwidth, allocator);
@@ -483,15 +482,15 @@ void EipInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_vpcNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_natIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NatId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_natId, allocator);
@@ -499,31 +498,31 @@ void EipInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_natUidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NatUid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_natUid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_natUid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_exclusiveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Exclusive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exclusive, allocator);
@@ -531,42 +530,42 @@ void EipInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_vpcCidrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcCidr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcCidr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcCidr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aclIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AclId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_aclId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aclId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aclNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AclName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_aclName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aclName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_hInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hInstanceAliasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HInstanceAlias";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_hInstanceAlias.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hInstanceAlias.c_str(), allocator).Move(), allocator);
     }
 
 }

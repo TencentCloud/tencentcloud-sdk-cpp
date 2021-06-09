@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 PersonTracePoint::PersonTracePoint() :
@@ -33,7 +32,7 @@ PersonTracePoint::PersonTracePoint() :
 {
 }
 
-CoreInternalOutcome PersonTracePoint::Deserialize(const Value &value)
+CoreInternalOutcome PersonTracePoint::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome PersonTracePoint::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PersonTracePoint::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PersonTracePoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mallAreaIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MallAreaId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mallAreaId, allocator);
@@ -135,7 +134,7 @@ void PersonTracePoint::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_shopIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShopId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shopId, allocator);
@@ -143,7 +142,7 @@ void PersonTracePoint::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_mallAreaTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MallAreaType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mallAreaType, allocator);
@@ -151,7 +150,7 @@ void PersonTracePoint::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_traceEventTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TraceEventType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_traceEventType, allocator);
@@ -159,23 +158,23 @@ void PersonTracePoint::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_traceEventTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TraceEventTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_traceEventTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_traceEventTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_capPicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CapPic";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_capPic.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_capPic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shoppingBagTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShoppingBagType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shoppingBagType, allocator);
@@ -183,7 +182,7 @@ void PersonTracePoint::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_shoppingBagCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShoppingBagCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shoppingBagCount, allocator);

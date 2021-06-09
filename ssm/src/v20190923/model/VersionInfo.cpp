@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ssm::V20190923::Model;
-using namespace rapidjson;
 using namespace std;
 
 VersionInfo::VersionInfo() :
@@ -27,7 +26,7 @@ VersionInfo::VersionInfo() :
 {
 }
 
-CoreInternalOutcome VersionInfo::Deserialize(const Value &value)
+CoreInternalOutcome VersionInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome VersionInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VersionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_versionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VersionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_versionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);

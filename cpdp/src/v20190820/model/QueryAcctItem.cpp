@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 QueryAcctItem::QueryAcctItem() :
@@ -36,7 +35,7 @@ QueryAcctItem::QueryAcctItem() :
 {
 }
 
-CoreInternalOutcome QueryAcctItem::Deserialize(const Value &value)
+CoreInternalOutcome QueryAcctItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -155,95 +154,95 @@ CoreInternalOutcome QueryAcctItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void QueryAcctItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QueryAcctItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_subMchTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubMchType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subMchType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subMchType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subMchNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubMchName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subMchName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subMchName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAcctNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubAcctNo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subAcctNo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAcctNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shortNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShortName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shortName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shortName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subMchIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubMchId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subMchId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subMchId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subAppId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contactHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Contact";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_contact.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contact.c_str(), allocator).Move(), allocator);
     }
 
     if (m_addressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Address";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_address.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mobileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mobile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mobile.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
     }
 
     if (m_emailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Email";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_email.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_email.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subMerchantMemberTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubMerchantMemberType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subMerchantMemberType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subMerchantMemberType.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cam::V20190116::Model;
-using namespace rapidjson;
 using namespace std;
 
 AttachPolicyInfo::AttachPolicyInfo() :
@@ -36,7 +35,7 @@ AttachPolicyInfo::AttachPolicyInfo() :
 {
 }
 
-CoreInternalOutcome AttachPolicyInfo::Deserialize(const Value &value)
+CoreInternalOutcome AttachPolicyInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -146,8 +145,8 @@ CoreInternalOutcome AttachPolicyInfo::Deserialize(const Value &value)
         if (!value["DeactivedDetail"].IsArray())
             return CoreInternalOutcome(Error("response `AttachPolicyInfo.DeactivedDetail` is not array type"));
 
-        const Value &tmpValue = value["DeactivedDetail"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DeactivedDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_deactivedDetail.push_back((*itr).GetString());
         }
@@ -158,12 +157,12 @@ CoreInternalOutcome AttachPolicyInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AttachPolicyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AttachPolicyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_policyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_policyId, allocator);
@@ -171,23 +170,23 @@ void AttachPolicyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_policyNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_policyName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_addTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_addTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createMode, allocator);
@@ -195,39 +194,39 @@ void AttachPolicyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_policyTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_policyType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_remarkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operateOwnerUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OperateOwnerUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_operateOwnerUin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operateOwnerUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operateUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OperateUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_operateUin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operateUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operateUinTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OperateUinType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_operateUinType, allocator);
@@ -235,7 +234,7 @@ void AttachPolicyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_deactivedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Deactived";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deactived, allocator);
@@ -243,14 +242,14 @@ void AttachPolicyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_deactivedDetailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeactivedDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_deactivedDetail.begin(); itr != m_deactivedDetail.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

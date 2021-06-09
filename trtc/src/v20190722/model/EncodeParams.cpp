@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 EncodeParams::EncodeParams() :
@@ -36,7 +35,7 @@ EncodeParams::EncodeParams() :
 {
 }
 
-CoreInternalOutcome EncodeParams::Deserialize(const Value &value)
+CoreInternalOutcome EncodeParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -155,12 +154,12 @@ CoreInternalOutcome EncodeParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EncodeParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_audioSampleRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioSampleRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioSampleRate, allocator);
@@ -168,7 +167,7 @@ void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_audioBitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioBitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioBitrate, allocator);
@@ -176,7 +175,7 @@ void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_audioChannelsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioChannels";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioChannels, allocator);
@@ -184,7 +183,7 @@ void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_videoWidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoWidth, allocator);
@@ -192,7 +191,7 @@ void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_videoHeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoHeight, allocator);
@@ -200,7 +199,7 @@ void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_videoBitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoBitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoBitrate, allocator);
@@ -208,7 +207,7 @@ void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_videoFramerateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoFramerate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoFramerate, allocator);
@@ -216,7 +215,7 @@ void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_videoGopHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoGop";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoGop, allocator);
@@ -224,7 +223,7 @@ void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_backgroundColorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackgroundColor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backgroundColor, allocator);
@@ -232,7 +231,7 @@ void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_backgroundImageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackgroundImageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backgroundImageId, allocator);
@@ -240,7 +239,7 @@ void EncodeParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_audioCodecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioCodec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioCodec, allocator);

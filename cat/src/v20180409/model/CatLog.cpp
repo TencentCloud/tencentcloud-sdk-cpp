@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cat::V20180409::Model;
-using namespace rapidjson;
 using namespace std;
 
 CatLog::CatLog() :
@@ -47,7 +46,7 @@ CatLog::CatLog() :
 {
 }
 
-CoreInternalOutcome CatLog::Deserialize(const Value &value)
+CoreInternalOutcome CatLog::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -276,28 +275,28 @@ CoreInternalOutcome CatLog::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CatLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CatLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_time.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_time.c_str(), allocator).Move(), allocator);
     }
 
     if (m_catTypeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CatTypeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_catTypeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_catTypeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
@@ -305,39 +304,39 @@ void CatLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_cityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "City";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_city.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_city.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ispHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Isp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_isp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serverIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serverIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domainName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalTime, allocator);
@@ -345,7 +344,7 @@ void CatLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_resultTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resultType, allocator);
@@ -353,7 +352,7 @@ void CatLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_resultCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resultCode, allocator);
@@ -361,7 +360,7 @@ void CatLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_reqPkgSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReqPkgSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reqPkgSize, allocator);
@@ -369,7 +368,7 @@ void CatLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_rspPkgSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RspPkgSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rspPkgSize, allocator);
@@ -377,47 +376,47 @@ void CatLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_reqMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReqMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reqMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reqMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_respMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RespMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_respMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_respMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clientIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cityNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CityName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cityName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cityName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ispNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IspName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ispName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ispName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parseTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParseTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_parseTime, allocator);
@@ -425,7 +424,7 @@ void CatLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_connectTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConnectTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_connectTime, allocator);
@@ -433,7 +432,7 @@ void CatLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_sendTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SendTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sendTime, allocator);
@@ -441,7 +440,7 @@ void CatLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_waitTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WaitTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_waitTime, allocator);
@@ -449,7 +448,7 @@ void CatLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_receiveTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReceiveTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_receiveTime, allocator);

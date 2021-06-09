@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cws::V20180312::Model;
-using namespace rapidjson;
 using namespace std;
 
 SitesVerification::SitesVerification() :
@@ -36,7 +35,7 @@ SitesVerification::SitesVerification() :
 {
 }
 
-CoreInternalOutcome SitesVerification::Deserialize(const Value &value)
+CoreInternalOutcome SitesVerification::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -155,44 +154,44 @@ CoreInternalOutcome SitesVerification::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SitesVerification::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SitesVerification::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_txtNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TxtName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_txtName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_txtName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_txtTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TxtText";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_txtText.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_txtText.c_str(), allocator).Move(), allocator);
     }
 
     if (m_validToHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ValidTo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_validTo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_validTo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_verifyStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VerifyStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_verifyStatus, allocator);
@@ -200,23 +199,23 @@ void SitesVerification::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_createdAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updatedAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -224,7 +223,7 @@ void SitesVerification::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_appidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Appid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appid, allocator);
@@ -232,18 +231,18 @@ void SitesVerification::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_verifyUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VerifyUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_verifyUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_verifyUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_verifyFileUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VerifyFileUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_verifyFileUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_verifyFileUrl.c_str(), allocator).Move(), allocator);
     }
 
 }

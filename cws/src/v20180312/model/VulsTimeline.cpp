@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cws::V20180312::Model;
-using namespace rapidjson;
 using namespace std;
 
 VulsTimeline::VulsTimeline() :
@@ -37,7 +36,7 @@ VulsTimeline::VulsTimeline() :
 {
 }
 
-CoreInternalOutcome VulsTimeline::Deserialize(const Value &value)
+CoreInternalOutcome VulsTimeline::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -166,12 +165,12 @@ CoreInternalOutcome VulsTimeline::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VulsTimeline::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VulsTimeline::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -179,7 +178,7 @@ void VulsTimeline::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_appidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Appid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appid, allocator);
@@ -187,15 +186,15 @@ void VulsTimeline::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_dateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pageCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pageCount, allocator);
@@ -203,7 +202,7 @@ void VulsTimeline::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_siteNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SiteNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_siteNum, allocator);
@@ -211,7 +210,7 @@ void VulsTimeline::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_impactSiteNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImpactSiteNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_impactSiteNum, allocator);
@@ -219,7 +218,7 @@ void VulsTimeline::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_vulsHighNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulsHighNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulsHighNum, allocator);
@@ -227,7 +226,7 @@ void VulsTimeline::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_vulsMiddleNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulsMiddleNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulsMiddleNum, allocator);
@@ -235,7 +234,7 @@ void VulsTimeline::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_vulsLowNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulsLowNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulsLowNum, allocator);
@@ -243,7 +242,7 @@ void VulsTimeline::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_vulsNoticeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulsNoticeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulsNoticeNum, allocator);
@@ -251,18 +250,18 @@ void VulsTimeline::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_createdAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updatedAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
     }
 
 }

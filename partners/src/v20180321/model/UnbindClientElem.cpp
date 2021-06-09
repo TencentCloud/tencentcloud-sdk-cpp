@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Partners::V20180321::Model;
-using namespace rapidjson;
 using namespace std;
 
 UnbindClientElem::UnbindClientElem() :
@@ -30,7 +29,7 @@ UnbindClientElem::UnbindClientElem() :
 {
 }
 
-CoreInternalOutcome UnbindClientElem::Deserialize(const Value &value)
+CoreInternalOutcome UnbindClientElem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome UnbindClientElem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UnbindClientElem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UnbindClientElem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_uinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -118,18 +117,18 @@ void UnbindClientElem::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_applyTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplyTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_applyTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applyTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_actionTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActionTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_actionTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_actionTime.c_str(), allocator).Move(), allocator);
     }
 
 }

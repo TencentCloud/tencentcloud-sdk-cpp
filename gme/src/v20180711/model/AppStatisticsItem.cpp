@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gme::V20180711::Model;
-using namespace rapidjson;
 using namespace std;
 
 AppStatisticsItem::AppStatisticsItem() :
@@ -29,7 +28,7 @@ AppStatisticsItem::AppStatisticsItem() :
 {
 }
 
-CoreInternalOutcome AppStatisticsItem::Deserialize(const Value &value)
+CoreInternalOutcome AppStatisticsItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -99,42 +98,42 @@ CoreInternalOutcome AppStatisticsItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AppStatisticsItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AppStatisticsItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_realtimeSpeechStatisticsItemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealtimeSpeechStatisticsItem";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_realtimeSpeechStatisticsItem.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_voiceMessageStatisticsItemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VoiceMessageStatisticsItem";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_voiceMessageStatisticsItem.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_voiceFilterStatisticsItemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VoiceFilterStatisticsItem";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_voiceFilterStatisticsItem.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_dateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
 }

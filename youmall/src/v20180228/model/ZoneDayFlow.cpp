@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 ZoneDayFlow::ZoneDayFlow() :
@@ -27,7 +26,7 @@ ZoneDayFlow::ZoneDayFlow() :
 {
 }
 
-CoreInternalOutcome ZoneDayFlow::Deserialize(const Value &value)
+CoreInternalOutcome ZoneDayFlow::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome ZoneDayFlow::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ZoneDayFlow::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ZoneDayFlow::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Day";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_day.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_day.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flowCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowCount, allocator);

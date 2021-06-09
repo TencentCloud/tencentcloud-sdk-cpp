@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sms::V20210111::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeleteSignStatus::DeleteSignStatus() :
@@ -27,7 +26,7 @@ DeleteSignStatus::DeleteSignStatus() :
 {
 }
 
-CoreInternalOutcome DeleteSignStatus::Deserialize(const Value &value)
+CoreInternalOutcome DeleteSignStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome DeleteSignStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeleteSignStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeleteSignStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deleteStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeleteStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deleteStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deleteStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deleteTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeleteTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deleteTime, allocator);

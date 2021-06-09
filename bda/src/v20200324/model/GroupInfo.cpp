@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bda::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 GroupInfo::GroupInfo() :
@@ -30,7 +29,7 @@ GroupInfo::GroupInfo() :
 {
 }
 
-CoreInternalOutcome GroupInfo::Deserialize(const Value &value)
+CoreInternalOutcome GroupInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,44 +88,44 @@ CoreInternalOutcome GroupInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GroupInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_groupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bodyModelVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BodyModelVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bodyModelVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bodyModelVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_creationTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreationTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_creationTimestamp, allocator);

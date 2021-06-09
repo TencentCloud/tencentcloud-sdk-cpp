@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Partners::V20180321::Model;
-using namespace rapidjson;
 using namespace std;
 
 DealGoodsPriceElem::DealGoodsPriceElem() :
@@ -26,7 +25,7 @@ DealGoodsPriceElem::DealGoodsPriceElem() :
 {
 }
 
-CoreInternalOutcome DealGoodsPriceElem::Deserialize(const Value &value)
+CoreInternalOutcome DealGoodsPriceElem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome DealGoodsPriceElem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DealGoodsPriceElem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DealGoodsPriceElem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_realTotalCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realTotalCost, allocator);

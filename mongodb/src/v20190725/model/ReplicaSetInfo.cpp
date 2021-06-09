@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20190725::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReplicaSetInfo::ReplicaSetInfo() :
@@ -26,7 +25,7 @@ ReplicaSetInfo::ReplicaSetInfo() :
 {
 }
 
-CoreInternalOutcome ReplicaSetInfo::Deserialize(const Value &value)
+CoreInternalOutcome ReplicaSetInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome ReplicaSetInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReplicaSetInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReplicaSetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_replicaSetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicaSetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replicaSetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replicaSetId.c_str(), allocator).Move(), allocator);
     }
 
 }

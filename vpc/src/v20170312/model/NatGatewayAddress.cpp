@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 NatGatewayAddress::NatGatewayAddress() :
@@ -28,7 +27,7 @@ NatGatewayAddress::NatGatewayAddress() :
 {
 }
 
-CoreInternalOutcome NatGatewayAddress::Deserialize(const Value &value)
+CoreInternalOutcome NatGatewayAddress::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome NatGatewayAddress::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NatGatewayAddress::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NatGatewayAddress::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_addressIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddressId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_addressId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publicIpAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicIpAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_publicIpAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIpAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isBlockedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsBlocked";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isBlocked, allocator);

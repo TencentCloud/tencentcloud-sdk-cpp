@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 Config::Config() :
@@ -35,7 +34,7 @@ Config::Config() :
 {
 }
 
-CoreInternalOutcome Config::Deserialize(const Value &value)
+CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -105,8 +104,8 @@ CoreInternalOutcome Config::Deserialize(const Value &value)
         if (!value["MallArea"].IsArray())
             return CoreInternalOutcome(Error("response `Config.MallArea` is not array type"));
 
-        const Value &tmpValue = value["MallArea"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MallArea"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -125,8 +124,8 @@ CoreInternalOutcome Config::Deserialize(const Value &value)
         if (!value["ShopArea"].IsArray())
             return CoreInternalOutcome(Error("response `Config.ShopArea` is not array type"));
 
-        const Value &tmpValue = value["ShopArea"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ShopArea"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -145,8 +144,8 @@ CoreInternalOutcome Config::Deserialize(const Value &value)
         if (!value["TrackAreas"].IsArray())
             return CoreInternalOutcome(Error("response `Config.TrackAreas` is not array type"));
 
-        const Value &tmpValue = value["TrackAreas"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TrackAreas"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Polygon item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -165,8 +164,8 @@ CoreInternalOutcome Config::Deserialize(const Value &value)
         if (!value["Zones"].IsArray())
             return CoreInternalOutcome(Error("response `Config.Zones` is not array type"));
 
-        const Value &tmpValue = value["Zones"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Zones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ZoneArea item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -184,28 +183,28 @@ CoreInternalOutcome Config::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Config::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cameraProducerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraProducer";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cameraProducer.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cameraProducer.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rTSPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RTSP";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rTSP.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rTSP.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Fps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fps, allocator);
@@ -213,7 +212,7 @@ void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_decodeFpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DecodeFps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_decodeFps, allocator);
@@ -221,7 +220,7 @@ void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_passengerFlowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PassengerFlow";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_passengerFlow, allocator);
@@ -229,7 +228,7 @@ void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_faceExposeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceExpose";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_faceExpose, allocator);
@@ -237,60 +236,60 @@ void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_mallAreaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MallArea";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_mallArea.begin(); itr != m_mallArea.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_shopAreaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShopArea";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_shopArea.begin(); itr != m_shopArea.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_trackAreasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TrackAreas";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_trackAreas.begin(); itr != m_trackAreas.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_zonesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zones";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

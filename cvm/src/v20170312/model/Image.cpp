@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 Image::Image() :
@@ -40,7 +39,7 @@ Image::Image() :
 {
 }
 
-CoreInternalOutcome Image::Deserialize(const Value &value)
+CoreInternalOutcome Image::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -190,8 +189,8 @@ CoreInternalOutcome Image::Deserialize(const Value &value)
         if (!value["SnapshotSet"].IsArray())
             return CoreInternalOutcome(Error("response `Image.SnapshotSet` is not array type"));
 
-        const Value &tmpValue = value["SnapshotSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SnapshotSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Snapshot item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -209,60 +208,60 @@ CoreInternalOutcome Image::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Image::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Image::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_imageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_osNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OsName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_osName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageSize, allocator);
@@ -270,47 +269,47 @@ void Image::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_architectureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Architecture";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_architecture.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_architecture.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageState";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageState.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageState.c_str(), allocator).Move(), allocator);
     }
 
     if (m_platformHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Platform";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_platform.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_platform.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageCreatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageCreator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageCreator.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageCreator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageSourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageSource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageSource.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_syncPercentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SyncPercent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_syncPercent, allocator);
@@ -318,7 +317,7 @@ void Image::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_isSupportCloudinitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsSupportCloudinit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSupportCloudinit, allocator);
@@ -326,15 +325,15 @@ void Image::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_snapshotSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SnapshotSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_snapshotSet.begin(); itr != m_snapshotSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ams::V20201229::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaInfo::MediaInfo() :
@@ -30,7 +29,7 @@ MediaInfo::MediaInfo() :
 {
 }
 
-CoreInternalOutcome MediaInfo::Deserialize(const Value &value)
+CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome MediaInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_codecsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Codecs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_codecs.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codecs.c_str(), allocator).Move(), allocator);
     }
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -110,7 +109,7 @@ void MediaInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -118,7 +117,7 @@ void MediaInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -126,10 +125,10 @@ void MediaInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_thumbnailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Thumbnail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_thumbnail.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_thumbnail.c_str(), allocator).Move(), allocator);
     }
 
 }

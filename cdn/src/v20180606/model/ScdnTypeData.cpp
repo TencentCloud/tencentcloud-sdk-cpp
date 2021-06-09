@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScdnTypeData::ScdnTypeData() :
@@ -27,7 +26,7 @@ ScdnTypeData::ScdnTypeData() :
 {
 }
 
-CoreInternalOutcome ScdnTypeData::Deserialize(const Value &value)
+CoreInternalOutcome ScdnTypeData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome ScdnTypeData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScdnTypeData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScdnTypeData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_attackTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AttackType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_attackType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_attackType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_value, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 SuccessTaskInfo::SuccessTaskInfo() :
@@ -28,7 +27,7 @@ SuccessTaskInfo::SuccessTaskInfo() :
 {
 }
 
-CoreInternalOutcome SuccessTaskInfo::Deserialize(const Value &value)
+CoreInternalOutcome SuccessTaskInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome SuccessTaskInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SuccessTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SuccessTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
@@ -88,10 +87,10 @@ void SuccessTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_cmdTaskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CmdTaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cmdTaskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmdTaskId.c_str(), allocator).Move(), allocator);
     }
 
 }

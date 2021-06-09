@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaCuttingInfo::MediaCuttingInfo() :
@@ -29,7 +28,7 @@ MediaCuttingInfo::MediaCuttingInfo() :
 {
 }
 
-CoreInternalOutcome MediaCuttingInfo::Deserialize(const Value &value)
+CoreInternalOutcome MediaCuttingInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -99,42 +98,42 @@ CoreInternalOutcome MediaCuttingInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaCuttingInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaCuttingInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_timeInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_targetInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_targetInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_outFormHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutForm";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_outForm.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_resultListSaveTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultListSaveType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resultListSaveType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultListSaveType.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Fmu::V20191213::Model;
-using namespace rapidjson;
 using namespace std;
 
 GetModelListResponse::GetModelListResponse() :
@@ -32,7 +31,7 @@ GetModelListResponse::GetModelListResponse() :
 
 CoreInternalOutcome GetModelListResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome GetModelListResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome GetModelListResponse::Deserialize(const string &payload)
         if (!rsp["ModelInfos"].IsArray())
             return CoreInternalOutcome(Error("response `ModelInfos` is not array type"));
 
-        const Value &tmpValue = rsp["ModelInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ModelInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ModelInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 OperateResponseData::OperateResponseData() :
@@ -26,7 +25,7 @@ OperateResponseData::OperateResponseData() :
 {
 }
 
-CoreInternalOutcome OperateResponseData::Deserialize(const Value &value)
+CoreInternalOutcome OperateResponseData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome OperateResponseData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OperateResponseData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OperateResponseData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_flowIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowId, allocator);

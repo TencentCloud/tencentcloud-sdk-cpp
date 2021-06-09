@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceUpgradePreCheckResultItem::InstanceUpgradePreCheckResultItem() :
@@ -31,7 +30,7 @@ InstanceUpgradePreCheckResultItem::InstanceUpgradePreCheckResultItem() :
 {
 }
 
-CoreInternalOutcome InstanceUpgradePreCheckResultItem::Deserialize(const Value &value)
+CoreInternalOutcome InstanceUpgradePreCheckResultItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -91,8 +90,8 @@ CoreInternalOutcome InstanceUpgradePreCheckResultItem::Deserialize(const Value &
         if (!value["Pods"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceUpgradePreCheckResultItem.Pods` is not array type"));
 
-        const Value &tmpValue = value["Pods"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Pods"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_pods.push_back((*itr).GetString());
         }
@@ -103,36 +102,36 @@ CoreInternalOutcome InstanceUpgradePreCheckResultItem::Deserialize(const Value &
     return CoreInternalOutcome(true);
 }
 
-void InstanceUpgradePreCheckResultItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceUpgradePreCheckResultItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_namespaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_workLoadKindHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WorkLoadKind";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_workLoadKind.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workLoadKind.c_str(), allocator).Move(), allocator);
     }
 
     if (m_workLoadNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WorkLoadName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_workLoadName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workLoadName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_beforeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Before";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_before, allocator);
@@ -140,7 +139,7 @@ void InstanceUpgradePreCheckResultItem::ToJsonObject(Value &value, Document::All
 
     if (m_afterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "After";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_after, allocator);
@@ -148,14 +147,14 @@ void InstanceUpgradePreCheckResultItem::ToJsonObject(Value &value, Document::All
 
     if (m_podsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pods";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_pods.begin(); itr != m_pods.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

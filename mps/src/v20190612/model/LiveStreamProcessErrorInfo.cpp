@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 LiveStreamProcessErrorInfo::LiveStreamProcessErrorInfo() :
@@ -27,7 +26,7 @@ LiveStreamProcessErrorInfo::LiveStreamProcessErrorInfo() :
 {
 }
 
-CoreInternalOutcome LiveStreamProcessErrorInfo::Deserialize(const Value &value)
+CoreInternalOutcome LiveStreamProcessErrorInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome LiveStreamProcessErrorInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LiveStreamProcessErrorInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LiveStreamProcessErrorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_errCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_errCode, allocator);
@@ -69,10 +68,10 @@ void LiveStreamProcessErrorInfo::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_messageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
 }

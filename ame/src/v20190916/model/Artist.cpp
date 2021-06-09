@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ame::V20190916::Model;
-using namespace rapidjson;
 using namespace std;
 
 Artist::Artist() :
@@ -26,7 +25,7 @@ Artist::Artist() :
 {
 }
 
-CoreInternalOutcome Artist::Deserialize(const Value &value)
+CoreInternalOutcome Artist::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome Artist::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Artist::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Artist::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_artistNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ArtistName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_artistName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_artistName.c_str(), allocator).Move(), allocator);
     }
 
 }

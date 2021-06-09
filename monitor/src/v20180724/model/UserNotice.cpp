@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 UserNotice::UserNotice() :
@@ -36,7 +35,7 @@ UserNotice::UserNotice() :
 {
 }
 
-CoreInternalOutcome UserNotice::Deserialize(const Value &value)
+CoreInternalOutcome UserNotice::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -76,8 +75,8 @@ CoreInternalOutcome UserNotice::Deserialize(const Value &value)
         if (!value["NoticeWay"].IsArray())
             return CoreInternalOutcome(Error("response `UserNotice.NoticeWay` is not array type"));
 
-        const Value &tmpValue = value["NoticeWay"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["NoticeWay"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_noticeWay.push_back((*itr).GetString());
         }
@@ -89,8 +88,8 @@ CoreInternalOutcome UserNotice::Deserialize(const Value &value)
         if (!value["UserIds"].IsArray())
             return CoreInternalOutcome(Error("response `UserNotice.UserIds` is not array type"));
 
-        const Value &tmpValue = value["UserIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["UserIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_userIds.push_back((*itr).GetInt64());
         }
@@ -102,8 +101,8 @@ CoreInternalOutcome UserNotice::Deserialize(const Value &value)
         if (!value["GroupIds"].IsArray())
             return CoreInternalOutcome(Error("response `UserNotice.GroupIds` is not array type"));
 
-        const Value &tmpValue = value["GroupIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["GroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_groupIds.push_back((*itr).GetInt64());
         }
@@ -115,8 +114,8 @@ CoreInternalOutcome UserNotice::Deserialize(const Value &value)
         if (!value["PhoneOrder"].IsArray())
             return CoreInternalOutcome(Error("response `UserNotice.PhoneOrder` is not array type"));
 
-        const Value &tmpValue = value["PhoneOrder"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PhoneOrder"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_phoneOrder.push_back((*itr).GetInt64());
         }
@@ -167,20 +166,20 @@ CoreInternalOutcome UserNotice::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UserNotice::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UserNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_receiverTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReceiverType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_receiverType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_receiverType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTime, allocator);
@@ -188,7 +187,7 @@ void UserNotice::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTime, allocator);
@@ -196,59 +195,59 @@ void UserNotice::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_noticeWayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NoticeWay";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_noticeWay.begin(); itr != m_noticeWay.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_userIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_userIds.begin(); itr != m_userIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_groupIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_groupIds.begin(); itr != m_groupIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_phoneOrderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PhoneOrder";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_phoneOrder.begin(); itr != m_phoneOrder.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_phoneCircleTimesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PhoneCircleTimes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_phoneCircleTimes, allocator);
@@ -256,7 +255,7 @@ void UserNotice::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_phoneInnerIntervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PhoneInnerInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_phoneInnerInterval, allocator);
@@ -264,7 +263,7 @@ void UserNotice::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_phoneCircleIntervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PhoneCircleInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_phoneCircleInterval, allocator);
@@ -272,7 +271,7 @@ void UserNotice::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_needPhoneArriveNoticeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedPhoneArriveNotice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needPhoneArriveNotice, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeBindingPolicyObjectListInstanceGroup::DescribeBindingPolicyObjectListInstanceGroup() :
@@ -33,7 +32,7 @@ DescribeBindingPolicyObjectListInstanceGroup::DescribeBindingPolicyObjectListIns
 {
 }
 
-CoreInternalOutcome DescribeBindingPolicyObjectListInstanceGroup::Deserialize(const Value &value)
+CoreInternalOutcome DescribeBindingPolicyObjectListInstanceGroup::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -113,8 +112,8 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstanceGroup::Deserialize(co
         if (!value["Regions"].IsArray())
             return CoreInternalOutcome(Error("response `DescribeBindingPolicyObjectListInstanceGroup.Regions` is not array type"));
 
-        const Value &tmpValue = value["Regions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Regions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_regions.push_back((*itr).GetString());
         }
@@ -125,12 +124,12 @@ CoreInternalOutcome DescribeBindingPolicyObjectListInstanceGroup::Deserialize(co
     return CoreInternalOutcome(true);
 }
 
-void DescribeBindingPolicyObjectListInstanceGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribeBindingPolicyObjectListInstanceGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceGroupId, allocator);
@@ -138,31 +137,31 @@ void DescribeBindingPolicyObjectListInstanceGroup::ToJsonObject(Value &value, Do
 
     if (m_viewNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ViewName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_viewName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_viewName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastEditUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastEditUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastEditUin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastEditUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceSumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceSum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceSum, allocator);
@@ -170,7 +169,7 @@ void DescribeBindingPolicyObjectListInstanceGroup::ToJsonObject(Value &value, Do
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
@@ -178,7 +177,7 @@ void DescribeBindingPolicyObjectListInstanceGroup::ToJsonObject(Value &value, Do
 
     if (m_insertTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InsertTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_insertTime, allocator);
@@ -186,14 +185,14 @@ void DescribeBindingPolicyObjectListInstanceGroup::ToJsonObject(Value &value, Do
 
     if (m_regionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Regions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_regions.begin(); itr != m_regions.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

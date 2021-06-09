@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 CommonNamespace::CommonNamespace() :
@@ -33,7 +32,7 @@ CommonNamespace::CommonNamespace() :
 {
 }
 
-CoreInternalOutcome CommonNamespace::Deserialize(const Value &value)
+CoreInternalOutcome CommonNamespace::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -93,8 +92,8 @@ CoreInternalOutcome CommonNamespace::Deserialize(const Value &value)
         if (!value["AvailableRegions"].IsArray())
             return CoreInternalOutcome(Error("response `CommonNamespace.AvailableRegions` is not array type"));
 
-        const Value &tmpValue = value["AvailableRegions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AvailableRegions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_availableRegions.push_back((*itr).GetString());
         }
@@ -125,65 +124,65 @@ CoreInternalOutcome CommonNamespace::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CommonNamespace::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CommonNamespace::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_value.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_configHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Config";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_config.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
     }
 
     if (m_availableRegionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvailableRegions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_availableRegions.begin(); itr != m_availableRegions.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_sortIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SortId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sortId, allocator);
@@ -191,10 +190,10 @@ void CommonNamespace::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_dashboardIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DashboardId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dashboardId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dashboardId.c_str(), allocator).Move(), allocator);
     }
 
 }

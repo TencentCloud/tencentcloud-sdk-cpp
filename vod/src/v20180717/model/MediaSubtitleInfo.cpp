@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaSubtitleInfo::MediaSubtitleInfo() :
@@ -26,7 +25,7 @@ MediaSubtitleInfo::MediaSubtitleInfo() :
 {
 }
 
-CoreInternalOutcome MediaSubtitleInfo::Deserialize(const Value &value)
+CoreInternalOutcome MediaSubtitleInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome MediaSubtitleInfo::Deserialize(const Value &value)
         if (!value["SubtitleSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaSubtitleInfo.SubtitleSet` is not array type"));
 
-        const Value &tmpValue = value["SubtitleSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SubtitleSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MediaSubtitleItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -55,20 +54,20 @@ CoreInternalOutcome MediaSubtitleInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaSubtitleInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaSubtitleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_subtitleSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubtitleSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_subtitleSet.begin(); itr != m_subtitleSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

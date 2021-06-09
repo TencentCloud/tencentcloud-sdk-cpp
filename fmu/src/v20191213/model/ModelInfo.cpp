@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Fmu::V20191213::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModelInfo::ModelInfo() :
@@ -28,7 +27,7 @@ ModelInfo::ModelInfo() :
 {
 }
 
-CoreInternalOutcome ModelInfo::Deserialize(const Value &value)
+CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome ModelInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ModelInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_modelIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modelId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lUTFileUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LUTFileUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lUTFileUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lUTFileUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }

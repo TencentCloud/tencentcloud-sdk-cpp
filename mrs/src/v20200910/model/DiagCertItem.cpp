@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 DiagCertItem::DiagCertItem() :
@@ -28,7 +27,7 @@ DiagCertItem::DiagCertItem() :
 {
 }
 
-CoreInternalOutcome DiagCertItem::Deserialize(const Value &value)
+CoreInternalOutcome DiagCertItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome DiagCertItem::Deserialize(const Value &value)
         if (!value["Value"].IsArray())
             return CoreInternalOutcome(Error("response `DiagCertItem.Value` is not array type"));
 
-        const Value &tmpValue = value["Value"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Value"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_value.push_back((*itr).GetString());
         }
@@ -70,35 +69,35 @@ CoreInternalOutcome DiagCertItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DiagCertItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DiagCertItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_textHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_value.begin(); itr != m_value.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

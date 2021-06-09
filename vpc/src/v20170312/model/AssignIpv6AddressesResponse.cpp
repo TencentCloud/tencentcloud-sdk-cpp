@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 AssignIpv6AddressesResponse::AssignIpv6AddressesResponse() :
@@ -31,7 +30,7 @@ AssignIpv6AddressesResponse::AssignIpv6AddressesResponse() :
 
 CoreInternalOutcome AssignIpv6AddressesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome AssignIpv6AddressesResponse::Deserialize(const string &paylo
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome AssignIpv6AddressesResponse::Deserialize(const string &paylo
         if (!rsp["Ipv6AddressSet"].IsArray())
             return CoreInternalOutcome(Error("response `Ipv6AddressSet` is not array type"));
 
-        const Value &tmpValue = rsp["Ipv6AddressSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Ipv6AddressSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Ipv6Address item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

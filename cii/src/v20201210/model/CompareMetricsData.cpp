@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cii::V20201210::Model;
-using namespace rapidjson;
 using namespace std;
 
 CompareMetricsData::CompareMetricsData() :
@@ -31,7 +30,7 @@ CompareMetricsData::CompareMetricsData() :
 {
 }
 
-CoreInternalOutcome CompareMetricsData::Deserialize(const Value &value)
+CoreInternalOutcome CompareMetricsData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,55 +99,55 @@ CoreInternalOutcome CompareMetricsData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CompareMetricsData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CompareMetricsData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_shortStructAccuracyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShortStructAccuracy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shortStructAccuracy.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shortStructAccuracy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shortStructRecallHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShortStructRecall";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shortStructRecall.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shortStructRecall.c_str(), allocator).Move(), allocator);
     }
 
     if (m_longStructAccuracyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LongStructAccuracy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_longStructAccuracy.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_longStructAccuracy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_longStructRecallHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LongStructRecall";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_longStructRecall.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_longStructRecall.c_str(), allocator).Move(), allocator);
     }
 
     if (m_longContentAccuracyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LongContentAccuracy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_longContentAccuracy.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_longContentAccuracy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_longContentRecallHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LongContentRecall";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_longContentRecall.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_longContentRecall.c_str(), allocator).Move(), allocator);
     }
 
 }

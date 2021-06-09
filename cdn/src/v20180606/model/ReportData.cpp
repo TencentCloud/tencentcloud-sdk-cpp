@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReportData::ReportData() :
@@ -31,7 +30,7 @@ ReportData::ReportData() :
 {
 }
 
-CoreInternalOutcome ReportData::Deserialize(const Value &value)
+CoreInternalOutcome ReportData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,28 +99,28 @@ CoreInternalOutcome ReportData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReportData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReportData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Resource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resource.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_value, allocator);
@@ -129,7 +128,7 @@ void ReportData::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_percentageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Percentage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_percentage, allocator);
@@ -137,7 +136,7 @@ void ReportData::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_billingValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BillingValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_billingValue, allocator);
@@ -145,7 +144,7 @@ void ReportData::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_billingPercentageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BillingPercentage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_billingPercentage, allocator);

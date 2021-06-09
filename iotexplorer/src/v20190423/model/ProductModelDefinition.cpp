@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProductModelDefinition::ProductModelDefinition() :
@@ -31,7 +30,7 @@ ProductModelDefinition::ProductModelDefinition() :
 {
 }
 
-CoreInternalOutcome ProductModelDefinition::Deserialize(const Value &value)
+CoreInternalOutcome ProductModelDefinition::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,28 +99,28 @@ CoreInternalOutcome ProductModelDefinition::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProductModelDefinition::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProductModelDefinition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_productIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modelDefineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelDefine";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modelDefine.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelDefine.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
@@ -129,7 +128,7 @@ void ProductModelDefinition::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -137,18 +136,18 @@ void ProductModelDefinition::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_categoryModelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CategoryModel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_categoryModel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_categoryModel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_netTypeModelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetTypeModel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_netTypeModel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netTypeModel.c_str(), allocator).Move(), allocator);
     }
 
 }

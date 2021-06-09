@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiReviewPornOcrTaskOutput::AiReviewPornOcrTaskOutput() :
@@ -28,7 +27,7 @@ AiReviewPornOcrTaskOutput::AiReviewPornOcrTaskOutput() :
 {
 }
 
-CoreInternalOutcome AiReviewPornOcrTaskOutput::Deserialize(const Value &value)
+CoreInternalOutcome AiReviewPornOcrTaskOutput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome AiReviewPornOcrTaskOutput::Deserialize(const Value &value)
         if (!value["SegmentSet"].IsArray())
             return CoreInternalOutcome(Error("response `AiReviewPornOcrTaskOutput.SegmentSet` is not array type"));
 
-        const Value &tmpValue = value["SegmentSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SegmentSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MediaContentReviewOcrTextSegmentItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,12 +76,12 @@ CoreInternalOutcome AiReviewPornOcrTaskOutput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AiReviewPornOcrTaskOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiReviewPornOcrTaskOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -90,23 +89,23 @@ void AiReviewPornOcrTaskOutput::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_suggestionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_suggestion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_segmentSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SegmentSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_segmentSet.begin(); itr != m_segmentSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

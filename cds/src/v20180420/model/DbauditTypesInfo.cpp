@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cds::V20180420::Model;
-using namespace rapidjson;
 using namespace std;
 
 DbauditTypesInfo::DbauditTypesInfo() :
@@ -32,7 +31,7 @@ DbauditTypesInfo::DbauditTypesInfo() :
 {
 }
 
-CoreInternalOutcome DbauditTypesInfo::Deserialize(const Value &value)
+CoreInternalOutcome DbauditTypesInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,28 +110,28 @@ CoreInternalOutcome DbauditTypesInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DbauditTypesInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DbauditTypesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceVersionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceVersionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceVersionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceVersionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceVersionKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceVersionKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceVersionKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceVersionKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_qpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Qps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qps, allocator);
@@ -140,7 +139,7 @@ void DbauditTypesInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_maxInstancesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxInstances";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxInstances, allocator);
@@ -148,7 +147,7 @@ void DbauditTypesInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_insertSpeedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InsertSpeed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_insertSpeed, allocator);
@@ -156,7 +155,7 @@ void DbauditTypesInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_onlineStorageCapacityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OnlineStorageCapacity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_onlineStorageCapacity, allocator);
@@ -164,7 +163,7 @@ void DbauditTypesInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_archivingStorageCapacityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ArchivingStorageCapacity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_archivingStorageCapacity, allocator);

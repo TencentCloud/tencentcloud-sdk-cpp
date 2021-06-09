@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 ContainerEvent::ContainerEvent() :
@@ -33,7 +32,7 @@ ContainerEvent::ContainerEvent() :
 {
 }
 
-CoreInternalOutcome ContainerEvent::Deserialize(const Value &value)
+CoreInternalOutcome ContainerEvent::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome ContainerEvent::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ContainerEvent::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ContainerEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_firstTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_firstTimestamp, allocator);
@@ -135,7 +134,7 @@ void ContainerEvent::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_lastTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastTimestamp, allocator);
@@ -143,47 +142,47 @@ void ContainerEvent::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_kindHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Kind";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_kind.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kind.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reasonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Reason";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reason.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
     if (m_messageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);

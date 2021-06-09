@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 JobIdInfo::JobIdInfo() :
@@ -28,7 +27,7 @@ JobIdInfo::JobIdInfo() :
 {
 }
 
-CoreInternalOutcome JobIdInfo::Deserialize(const Value &value)
+CoreInternalOutcome JobIdInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome JobIdInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void JobIdInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void JobIdInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_jobIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_jobId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTime, allocator);
@@ -88,7 +87,7 @@ void JobIdInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_jobStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_jobStatus, allocator);

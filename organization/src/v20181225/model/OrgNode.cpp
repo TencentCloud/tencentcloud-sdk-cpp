@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Organization::V20181225::Model;
-using namespace rapidjson;
 using namespace std;
 
 OrgNode::OrgNode() :
@@ -29,7 +28,7 @@ OrgNode::OrgNode() :
 {
 }
 
-CoreInternalOutcome OrgNode::Deserialize(const Value &value)
+CoreInternalOutcome OrgNode::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome OrgNode::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OrgNode::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OrgNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nodeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodeId, allocator);
@@ -91,15 +90,15 @@ void OrgNode::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parentNodeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParentNodeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_parentNodeId, allocator);
@@ -107,7 +106,7 @@ void OrgNode::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_memberCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemberCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memberCount, allocator);

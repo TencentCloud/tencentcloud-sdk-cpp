@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ApplyPayerInfoRequest::ApplyPayerInfoRequest() :
@@ -39,94 +38,94 @@ ApplyPayerInfoRequest::ApplyPayerInfoRequest() :
 
 string ApplyPayerInfoRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_payerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayerId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payerTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayerType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payerType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayerName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payerIdTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayerIdType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerIdType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payerIdType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payerIdNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayerIdNo";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerIdNo.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payerIdNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payerCountryCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayerCountryCode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerCountryCode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payerCountryCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payerContactNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayerContactName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerContactName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payerContactName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payerContactNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayerContactNumber";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerContactNumber.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payerContactNumber.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payerEmailAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayerEmailAddress";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payerEmailAddress.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payerEmailAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_profileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Profile";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

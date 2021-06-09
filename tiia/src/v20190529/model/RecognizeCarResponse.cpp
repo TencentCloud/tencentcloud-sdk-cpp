@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiia::V20190529::Model;
-using namespace rapidjson;
 using namespace std;
 
 RecognizeCarResponse::RecognizeCarResponse() :
@@ -32,7 +31,7 @@ RecognizeCarResponse::RecognizeCarResponse() :
 
 CoreInternalOutcome RecognizeCarResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome RecognizeCarResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome RecognizeCarResponse::Deserialize(const string &payload)
         if (!rsp["CarCoords"].IsArray())
             return CoreInternalOutcome(Error("response `CarCoords` is not array type"));
 
-        const Value &tmpValue = rsp["CarCoords"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["CarCoords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Coord item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -89,8 +88,8 @@ CoreInternalOutcome RecognizeCarResponse::Deserialize(const string &payload)
         if (!rsp["CarTags"].IsArray())
             return CoreInternalOutcome(Error("response `CarTags` is not array type"));
 
-        const Value &tmpValue = rsp["CarTags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["CarTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CarTagItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

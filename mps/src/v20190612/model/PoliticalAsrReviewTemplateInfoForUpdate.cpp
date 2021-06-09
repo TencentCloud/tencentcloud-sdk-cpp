@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 PoliticalAsrReviewTemplateInfoForUpdate::PoliticalAsrReviewTemplateInfoForUpdate() :
@@ -28,7 +27,7 @@ PoliticalAsrReviewTemplateInfoForUpdate::PoliticalAsrReviewTemplateInfoForUpdate
 {
 }
 
-CoreInternalOutcome PoliticalAsrReviewTemplateInfoForUpdate::Deserialize(const Value &value)
+CoreInternalOutcome PoliticalAsrReviewTemplateInfoForUpdate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome PoliticalAsrReviewTemplateInfoForUpdate::Deserialize(const V
     return CoreInternalOutcome(true);
 }
 
-void PoliticalAsrReviewTemplateInfoForUpdate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PoliticalAsrReviewTemplateInfoForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_blockConfidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blockConfidence, allocator);
@@ -88,7 +87,7 @@ void PoliticalAsrReviewTemplateInfoForUpdate::ToJsonObject(Value &value, Documen
 
     if (m_reviewConfidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReviewConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reviewConfidence, allocator);

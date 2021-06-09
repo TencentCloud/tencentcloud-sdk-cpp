@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 CommonMixLayoutParams::CommonMixLayoutParams() :
@@ -33,7 +32,7 @@ CommonMixLayoutParams::CommonMixLayoutParams() :
 {
 }
 
-CoreInternalOutcome CommonMixLayoutParams::Deserialize(const Value &value)
+CoreInternalOutcome CommonMixLayoutParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CommonMixLayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CommonMixLayoutParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_imageLayerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageLayer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageLayer, allocator);
@@ -135,7 +134,7 @@ void CommonMixLayoutParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_inputTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inputType, allocator);
@@ -143,7 +142,7 @@ void CommonMixLayoutParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_imageWidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageWidth, allocator);
@@ -151,7 +150,7 @@ void CommonMixLayoutParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_imageHeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageHeight, allocator);
@@ -159,7 +158,7 @@ void CommonMixLayoutParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_locationXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocationX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_locationX, allocator);
@@ -167,7 +166,7 @@ void CommonMixLayoutParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_locationYHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocationY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_locationY, allocator);
@@ -175,15 +174,15 @@ void CommonMixLayoutParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_colorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Color";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_color.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_color.c_str(), allocator).Move(), allocator);
     }
 
     if (m_watermarkIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WatermarkId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_watermarkId, allocator);

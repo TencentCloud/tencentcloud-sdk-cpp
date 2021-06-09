@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReportInfo::ReportInfo() :
@@ -42,7 +41,7 @@ ReportInfo::ReportInfo() :
 {
 }
 
-CoreInternalOutcome ReportInfo::Deserialize(const Value &value)
+CoreInternalOutcome ReportInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -221,143 +220,143 @@ CoreInternalOutcome ReportInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReportInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_hospitalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hospital";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_hospital.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hospital.c_str(), allocator).Move(), allocator);
     }
 
     if (m_departmentNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DepartmentName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_departmentName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_departmentName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_billingTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BillingTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_billingTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reportTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReportTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reportTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reportTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_inspectTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InspectTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inspectTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inspectTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_checkNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CheckNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_checkNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkNum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageNum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_radiationNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RadiationNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_radiationNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_radiationNum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_testNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TestNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_testNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_testNum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outpatientNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutpatientNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outpatientNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outpatientNum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pathologyNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PathologyNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pathologyNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pathologyNum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_inHospitalNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InHospitalNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inHospitalNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inHospitalNum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sampleNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SampleNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sampleNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sampleNum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sampleTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SampleType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sampleType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sampleType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_medicalRecordNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MedicalRecordNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_medicalRecordNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_medicalRecordNum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reportNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReportName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reportName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reportName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ultraNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UltraNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ultraNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ultraNum.c_str(), allocator).Move(), allocator);
     }
 
 }

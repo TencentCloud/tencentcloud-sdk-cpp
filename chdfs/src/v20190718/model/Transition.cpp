@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Chdfs::V20190718::Model;
-using namespace rapidjson;
 using namespace std;
 
 Transition::Transition() :
@@ -27,7 +26,7 @@ Transition::Transition() :
 {
 }
 
-CoreInternalOutcome Transition::Deserialize(const Value &value)
+CoreInternalOutcome Transition::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome Transition::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Transition::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Transition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_daysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Days";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_days, allocator);
@@ -69,7 +68,7 @@ void Transition::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);

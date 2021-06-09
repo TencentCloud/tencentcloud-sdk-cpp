@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaInputInfo::MediaInputInfo() :
@@ -28,7 +27,7 @@ MediaInputInfo::MediaInputInfo() :
 {
 }
 
-CoreInternalOutcome MediaInputInfo::Deserialize(const Value &value)
+CoreInternalOutcome MediaInputInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,32 +80,32 @@ CoreInternalOutcome MediaInputInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaInputInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaInputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosInputInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosInputInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosInputInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_urlInputInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UrlInputInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_urlInputInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

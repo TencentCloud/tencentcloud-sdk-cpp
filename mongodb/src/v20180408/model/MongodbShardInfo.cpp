@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 MongodbShardInfo::MongodbShardInfo() :
@@ -33,7 +32,7 @@ MongodbShardInfo::MongodbShardInfo() :
 {
 }
 
-CoreInternalOutcome MongodbShardInfo::Deserialize(const Value &value)
+CoreInternalOutcome MongodbShardInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome MongodbShardInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MongodbShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MongodbShardInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_usedVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsedVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedVolume, allocator);
@@ -135,23 +134,23 @@ void MongodbShardInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_replicaSetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicaSetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replicaSetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replicaSetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_replicaSetNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicaSetName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replicaSetName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replicaSetName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_memoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memory, allocator);
@@ -159,7 +158,7 @@ void MongodbShardInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_volumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Volume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_volume, allocator);
@@ -167,7 +166,7 @@ void MongodbShardInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_oplogSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OplogSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_oplogSize, allocator);
@@ -175,7 +174,7 @@ void MongodbShardInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_secondaryNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecondaryNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_secondaryNum, allocator);
@@ -183,10 +182,10 @@ void MongodbShardInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_realReplicaSetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealReplicaSetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realReplicaSetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realReplicaSetId.c_str(), allocator).Move(), allocator);
     }
 
 }

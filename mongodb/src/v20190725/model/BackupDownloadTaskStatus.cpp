@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20190725::Model;
-using namespace rapidjson;
 using namespace std;
 
 BackupDownloadTaskStatus::BackupDownloadTaskStatus() :
@@ -27,7 +26,7 @@ BackupDownloadTaskStatus::BackupDownloadTaskStatus() :
 {
 }
 
-CoreInternalOutcome BackupDownloadTaskStatus::Deserialize(const Value &value)
+CoreInternalOutcome BackupDownloadTaskStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome BackupDownloadTaskStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BackupDownloadTaskStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BackupDownloadTaskStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_replicaSetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicaSetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replicaSetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replicaSetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);

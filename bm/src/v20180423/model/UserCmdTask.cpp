@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 UserCmdTask::UserCmdTask() :
@@ -34,7 +33,7 @@ UserCmdTask::UserCmdTask() :
 {
 }
 
-CoreInternalOutcome UserCmdTask::Deserialize(const Value &value)
+CoreInternalOutcome UserCmdTask::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,20 +132,20 @@ CoreInternalOutcome UserCmdTask::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UserCmdTask::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UserCmdTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -154,23 +153,23 @@ void UserCmdTask::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_aliasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Alias";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_alias.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cmdIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CmdId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cmdId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmdId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceCount, allocator);
@@ -178,7 +177,7 @@ void UserCmdTask::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_successCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuccessCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_successCount, allocator);
@@ -186,7 +185,7 @@ void UserCmdTask::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_failureCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FailureCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failureCount, allocator);
@@ -194,18 +193,18 @@ void UserCmdTask::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_runBeginTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunBeginTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_runBeginTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runBeginTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_runEndTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunEndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_runEndTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runEndTime.c_str(), allocator).Move(), allocator);
     }
 
 }

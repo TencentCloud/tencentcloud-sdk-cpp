@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apcas::V20201127::Model;
-using namespace rapidjson;
 using namespace std;
 
 LabelValue::LabelValue() :
@@ -28,7 +27,7 @@ LabelValue::LabelValue() :
 {
 }
 
-CoreInternalOutcome LabelValue::Deserialize(const Value &value)
+CoreInternalOutcome LabelValue::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome LabelValue::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LabelValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LabelValue::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_proportionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Proportion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_proportion, allocator);
@@ -80,7 +79,7 @@ void LabelValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_marketHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Market";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_market, allocator);
@@ -88,7 +87,7 @@ void LabelValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_tgiHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tgi";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tgi, allocator);

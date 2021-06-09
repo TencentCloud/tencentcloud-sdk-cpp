@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 PlayAuthKeyInfo::PlayAuthKeyInfo() :
@@ -30,7 +29,7 @@ PlayAuthKeyInfo::PlayAuthKeyInfo() :
 {
 }
 
-CoreInternalOutcome PlayAuthKeyInfo::Deserialize(const Value &value)
+CoreInternalOutcome PlayAuthKeyInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome PlayAuthKeyInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PlayAuthKeyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PlayAuthKeyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_domainNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domainName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enable, allocator);
@@ -110,15 +109,15 @@ void PlayAuthKeyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_authKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuthKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_authKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authDeltaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuthDelta";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_authDelta, allocator);
@@ -126,10 +125,10 @@ void PlayAuthKeyInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_authBackKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuthBackKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_authBackKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authBackKey.c_str(), allocator).Move(), allocator);
     }
 
 }

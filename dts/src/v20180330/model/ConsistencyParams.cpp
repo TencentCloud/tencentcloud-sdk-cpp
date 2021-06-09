@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dts::V20180330::Model;
-using namespace rapidjson;
 using namespace std;
 
 ConsistencyParams::ConsistencyParams() :
@@ -28,7 +27,7 @@ ConsistencyParams::ConsistencyParams() :
 {
 }
 
-CoreInternalOutcome ConsistencyParams::Deserialize(const Value &value)
+CoreInternalOutcome ConsistencyParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome ConsistencyParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ConsistencyParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ConsistencyParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_selectRowsPerTableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SelectRowsPerTable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_selectRowsPerTable, allocator);
@@ -80,7 +79,7 @@ void ConsistencyParams::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_tablesSelectAllHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TablesSelectAll";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tablesSelectAll, allocator);
@@ -88,7 +87,7 @@ void ConsistencyParams::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_tablesSelectCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TablesSelectCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tablesSelectCount, allocator);

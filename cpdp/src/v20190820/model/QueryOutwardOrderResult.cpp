@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 QueryOutwardOrderResult::QueryOutwardOrderResult() :
@@ -27,7 +26,7 @@ QueryOutwardOrderResult::QueryOutwardOrderResult() :
 {
 }
 
-CoreInternalOutcome QueryOutwardOrderResult::Deserialize(const Value &value)
+CoreInternalOutcome QueryOutwardOrderResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome QueryOutwardOrderResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void QueryOutwardOrderResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QueryOutwardOrderResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_codeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_code.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 

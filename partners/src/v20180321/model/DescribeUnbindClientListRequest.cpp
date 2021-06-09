@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Partners::V20180321::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeUnbindClientListRequest::DescribeUnbindClientListRequest() :
@@ -36,14 +35,14 @@ DescribeUnbindClientListRequest::DescribeUnbindClientListRequest() :
 
 string DescribeUnbindClientListRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
@@ -51,7 +50,7 @@ string DescribeUnbindClientListRequest::ToJsonString() const
 
     if (m_offsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
@@ -59,7 +58,7 @@ string DescribeUnbindClientListRequest::ToJsonString() const
 
     if (m_limitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
@@ -67,39 +66,39 @@ string DescribeUnbindClientListRequest::ToJsonString() const
 
     if (m_unbindUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnbindUin";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_unbindUin.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_unbindUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applyTimeStartHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplyTimeStart";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applyTimeStart.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applyTimeStart.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applyTimeEndHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplyTimeEnd";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_applyTimeEnd.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applyTimeEnd.c_str(), allocator).Move(), allocator);
     }
 
     if (m_orderDirectionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderDirection";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_orderDirection.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderDirection.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

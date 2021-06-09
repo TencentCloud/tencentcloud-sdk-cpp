@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tdmq::V20200217::Model;
-using namespace rapidjson;
 using namespace std;
 
 CmqTransactionPolicy::CmqTransactionPolicy() :
@@ -27,7 +26,7 @@ CmqTransactionPolicy::CmqTransactionPolicy() :
 {
 }
 
-CoreInternalOutcome CmqTransactionPolicy::Deserialize(const Value &value)
+CoreInternalOutcome CmqTransactionPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome CmqTransactionPolicy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CmqTransactionPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CmqTransactionPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_firstQueryIntervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstQueryInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_firstQueryInterval, allocator);
@@ -69,7 +68,7 @@ void CmqTransactionPolicy::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_maxQueryCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxQueryCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxQueryCount, allocator);

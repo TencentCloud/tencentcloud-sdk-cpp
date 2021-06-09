@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Postgres::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyReadOnlyGroupConfigRequest::ModifyReadOnlyGroupConfigRequest() :
@@ -37,30 +36,30 @@ ModifyReadOnlyGroupConfigRequest::ModifyReadOnlyGroupConfigRequest() :
 
 string ModifyReadOnlyGroupConfigRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_readOnlyGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyGroupId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_readOnlyGroupId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_readOnlyGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyGroupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyGroupName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_readOnlyGroupName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_readOnlyGroupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_replayLagEliminateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplayLagEliminate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_replayLagEliminate, allocator);
@@ -68,7 +67,7 @@ string ModifyReadOnlyGroupConfigRequest::ToJsonString() const
 
     if (m_replayLatencyEliminateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplayLatencyEliminate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_replayLatencyEliminate, allocator);
@@ -76,7 +75,7 @@ string ModifyReadOnlyGroupConfigRequest::ToJsonString() const
 
     if (m_maxReplayLatencyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxReplayLatency";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxReplayLatency, allocator);
@@ -84,7 +83,7 @@ string ModifyReadOnlyGroupConfigRequest::ToJsonString() const
 
     if (m_maxReplayLagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxReplayLag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxReplayLag, allocator);
@@ -92,7 +91,7 @@ string ModifyReadOnlyGroupConfigRequest::ToJsonString() const
 
     if (m_rebalanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rebalance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rebalance, allocator);
@@ -100,15 +99,15 @@ string ModifyReadOnlyGroupConfigRequest::ToJsonString() const
 
     if (m_minDelayEliminateReserveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinDelayEliminateReserve";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_minDelayEliminateReserve, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

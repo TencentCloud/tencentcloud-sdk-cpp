@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 SegmentConfigureInfoForUpdate::SegmentConfigureInfoForUpdate() :
@@ -26,7 +25,7 @@ SegmentConfigureInfoForUpdate::SegmentConfigureInfoForUpdate() :
 {
 }
 
-CoreInternalOutcome SegmentConfigureInfoForUpdate::Deserialize(const Value &value)
+CoreInternalOutcome SegmentConfigureInfoForUpdate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome SegmentConfigureInfoForUpdate::Deserialize(const Value &valu
     return CoreInternalOutcome(true);
 }
 
-void SegmentConfigureInfoForUpdate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SegmentConfigureInfoForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
 }

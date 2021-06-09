@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaAiAnalysisFrameTagSegmentItem::MediaAiAnalysisFrameTagSegmentItem() :
@@ -28,7 +27,7 @@ MediaAiAnalysisFrameTagSegmentItem::MediaAiAnalysisFrameTagSegmentItem() :
 {
 }
 
-CoreInternalOutcome MediaAiAnalysisFrameTagSegmentItem::Deserialize(const Value &value)
+CoreInternalOutcome MediaAiAnalysisFrameTagSegmentItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome MediaAiAnalysisFrameTagSegmentItem::Deserialize(const Value 
         if (!value["TagSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaAiAnalysisFrameTagSegmentItem.TagSet` is not array type"));
 
-        const Value &tmpValue = value["TagSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TagSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MediaAiAnalysisFrameTagItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,12 +76,12 @@ CoreInternalOutcome MediaAiAnalysisFrameTagSegmentItem::Deserialize(const Value 
     return CoreInternalOutcome(true);
 }
 
-void MediaAiAnalysisFrameTagSegmentItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaAiAnalysisFrameTagSegmentItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -90,7 +89,7 @@ void MediaAiAnalysisFrameTagSegmentItem::ToJsonObject(Value &value, Document::Al
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
@@ -98,15 +97,15 @@ void MediaAiAnalysisFrameTagSegmentItem::ToJsonObject(Value &value, Document::Al
 
     if (m_tagSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

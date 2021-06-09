@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 CustomerGatewayVendor::CustomerGatewayVendor() :
@@ -28,7 +27,7 @@ CustomerGatewayVendor::CustomerGatewayVendor() :
 {
 }
 
-CoreInternalOutcome CustomerGatewayVendor::Deserialize(const Value &value)
+CoreInternalOutcome CustomerGatewayVendor::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome CustomerGatewayVendor::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CustomerGatewayVendor::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CustomerGatewayVendor::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_platformHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Platform";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_platform.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_platform.c_str(), allocator).Move(), allocator);
     }
 
     if (m_softwareVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SoftwareVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_softwareVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_softwareVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vendorNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VendorName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vendorName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vendorName.c_str(), allocator).Move(), allocator);
     }
 
 }

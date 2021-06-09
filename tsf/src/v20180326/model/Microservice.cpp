@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 Microservice::Microservice() :
@@ -33,7 +32,7 @@ Microservice::Microservice() :
 {
 }
 
-CoreInternalOutcome Microservice::Deserialize(const Value &value)
+CoreInternalOutcome Microservice::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,36 +121,36 @@ CoreInternalOutcome Microservice::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Microservice::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Microservice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_microserviceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MicroserviceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_microserviceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_microserviceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_microserviceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MicroserviceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_microserviceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_microserviceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_microserviceDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MicroserviceDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_microserviceDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_microserviceDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -159,7 +158,7 @@ void Microservice::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
@@ -167,15 +166,15 @@ void Microservice::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_namespaceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NamespaceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespaceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespaceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_runInstanceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunInstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runInstanceCount, allocator);
@@ -183,7 +182,7 @@ void Microservice::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_criticalInstanceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CriticalInstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_criticalInstanceCount, allocator);

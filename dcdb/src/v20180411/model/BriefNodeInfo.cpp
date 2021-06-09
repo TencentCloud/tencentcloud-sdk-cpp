@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dcdb::V20180411::Model;
-using namespace rapidjson;
 using namespace std;
 
 BriefNodeInfo::BriefNodeInfo() :
@@ -28,7 +27,7 @@ BriefNodeInfo::BriefNodeInfo() :
 {
 }
 
-CoreInternalOutcome BriefNodeInfo::Deserialize(const Value &value)
+CoreInternalOutcome BriefNodeInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome BriefNodeInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BriefNodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BriefNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nodeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_role.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shardIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shardId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shardId.c_str(), allocator).Move(), allocator);
     }
 
 }

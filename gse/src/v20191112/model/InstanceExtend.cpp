@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceExtend::InstanceExtend() :
@@ -33,7 +32,7 @@ InstanceExtend::InstanceExtend() :
 {
 }
 
-CoreInternalOutcome InstanceExtend::Deserialize(const Value &value)
+CoreInternalOutcome InstanceExtend::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -129,29 +128,29 @@ CoreInternalOutcome InstanceExtend::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceExtend::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceExtend::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Instance";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instance.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_state.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
     if (m_healthyProcessCntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthyProcessCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_healthyProcessCnt, allocator);
@@ -159,7 +158,7 @@ void InstanceExtend::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_activeProcessCntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActiveProcessCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_activeProcessCnt, allocator);
@@ -167,7 +166,7 @@ void InstanceExtend::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_gameSessionCntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameSessionCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gameSessionCnt, allocator);
@@ -175,7 +174,7 @@ void InstanceExtend::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_maxGameSessionCntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxGameSessionCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxGameSessionCnt, allocator);
@@ -183,7 +182,7 @@ void InstanceExtend::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_playerSessionCntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlayerSessionCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_playerSessionCnt, allocator);
@@ -191,7 +190,7 @@ void InstanceExtend::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_maxPlayerSessionCntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxPlayerSessionCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxPlayerSessionCnt, allocator);

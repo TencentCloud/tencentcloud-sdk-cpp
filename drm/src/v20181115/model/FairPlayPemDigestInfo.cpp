@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Drm::V20181115::Model;
-using namespace rapidjson;
 using namespace std;
 
 FairPlayPemDigestInfo::FairPlayPemDigestInfo() :
@@ -30,7 +29,7 @@ FairPlayPemDigestInfo::FairPlayPemDigestInfo() :
 {
 }
 
-CoreInternalOutcome FairPlayPemDigestInfo::Deserialize(const Value &value)
+CoreInternalOutcome FairPlayPemDigestInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome FairPlayPemDigestInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FairPlayPemDigestInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FairPlayPemDigestInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fairPlayPemIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FairPlayPemId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fairPlayPemId, allocator);
@@ -102,7 +101,7 @@ void FairPlayPemDigestInfo::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_priorityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Priority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_priority, allocator);
@@ -110,26 +109,26 @@ void FairPlayPemDigestInfo::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_md5PemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Md5Pem";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_md5Pem.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_md5Pem.c_str(), allocator).Move(), allocator);
     }
 
     if (m_md5AskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Md5Ask";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_md5Ask.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_md5Ask.c_str(), allocator).Move(), allocator);
     }
 
     if (m_md5PemDecryptKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Md5PemDecryptKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_md5PemDecryptKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_md5PemDecryptKey.c_str(), allocator).Move(), allocator);
     }
 
 }

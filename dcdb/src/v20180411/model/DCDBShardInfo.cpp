@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dcdb::V20180411::Model;
-using namespace rapidjson;
 using namespace std;
 
 DCDBShardInfo::DCDBShardInfo() :
@@ -50,7 +49,7 @@ DCDBShardInfo::DCDBShardInfo() :
 {
 }
 
-CoreInternalOutcome DCDBShardInfo::Deserialize(const Value &value)
+CoreInternalOutcome DCDBShardInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -280,8 +279,8 @@ CoreInternalOutcome DCDBShardInfo::Deserialize(const Value &value)
         if (!value["ShardSlaveZones"].IsArray())
             return CoreInternalOutcome(Error("response `DCDBShardInfo.ShardSlaveZones` is not array type"));
 
-        const Value &tmpValue = value["ShardSlaveZones"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ShardSlaveZones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_shardSlaveZones.push_back((*itr).GetString());
         }
@@ -312,36 +311,36 @@ CoreInternalOutcome DCDBShardInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DCDBShardInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shardSerialIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardSerialId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shardSerialId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shardSerialId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shardInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shardInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shardInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -349,39 +348,39 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_statusDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_statusDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subnetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
@@ -389,23 +388,23 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_memoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memory, allocator);
@@ -413,7 +412,7 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_storageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Storage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storage, allocator);
@@ -421,15 +420,15 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_periodEndTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeriodEndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_periodEndTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_periodEndTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodeCount, allocator);
@@ -437,7 +436,7 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_storageUsageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageUsage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storageUsage, allocator);
@@ -445,7 +444,7 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_memoryUsageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemoryUsage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memoryUsage, allocator);
@@ -453,7 +452,7 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_shardIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shardId, allocator);
@@ -461,7 +460,7 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_pidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pid, allocator);
@@ -469,44 +468,44 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_proxyVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProxyVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_proxyVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_paymodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Paymode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_paymode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paymode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shardMasterZoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardMasterZone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shardMasterZone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shardMasterZone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shardSlaveZonesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardSlaveZones";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_shardSlaveZones.begin(); itr != m_shardSlaveZones.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_cpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);
@@ -514,10 +513,10 @@ void DCDBShardInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_rangeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Range";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_range.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_range.c_str(), allocator).Move(), allocator);
     }
 
 }

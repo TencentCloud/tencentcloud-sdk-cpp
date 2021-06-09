@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 DomainHTTPSConfig::DomainHTTPSConfig() :
@@ -26,7 +25,7 @@ DomainHTTPSConfig::DomainHTTPSConfig() :
 {
 }
 
-CoreInternalOutcome DomainHTTPSConfig::Deserialize(const Value &value)
+CoreInternalOutcome DomainHTTPSConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome DomainHTTPSConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DomainHTTPSConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DomainHTTPSConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_certExpireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertExpireTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certExpireTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certExpireTime.c_str(), allocator).Move(), allocator);
     }
 
 }

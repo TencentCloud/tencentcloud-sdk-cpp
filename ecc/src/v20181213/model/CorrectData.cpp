@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecc::V20181213::Model;
-using namespace rapidjson;
 using namespace std;
 
 CorrectData::CorrectData() :
@@ -29,7 +28,7 @@ CorrectData::CorrectData() :
 {
 }
 
-CoreInternalOutcome CorrectData::Deserialize(const Value &value)
+CoreInternalOutcome CorrectData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -76,8 +75,8 @@ CoreInternalOutcome CorrectData::Deserialize(const Value &value)
         if (!value["SentenceComments"].IsArray())
             return CoreInternalOutcome(Error("response `CorrectData.SentenceComments` is not array type"));
 
-        const Value &tmpValue = value["SentenceComments"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SentenceComments"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SentenceCom item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -95,12 +94,12 @@ CoreInternalOutcome CorrectData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CorrectData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CorrectData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
@@ -108,32 +107,32 @@ void CorrectData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_scoreCatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScoreCat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_scoreCat.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_commentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_comment.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sentenceCommentsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SentenceComments";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_sentenceComments.begin(); itr != m_sentenceComments.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 Hat::Hat() :
@@ -27,7 +26,7 @@ Hat::Hat() :
 {
 }
 
-CoreInternalOutcome Hat::Deserialize(const Value &value)
+CoreInternalOutcome Hat::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,24 +69,24 @@ CoreInternalOutcome Hat::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Hat::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Hat::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_styleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Style";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_style.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_colorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Color";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_color.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Clb::V20180317::Model;
-using namespace rapidjson;
 using namespace std;
 
 CertificateInput::CertificateInput() :
@@ -33,7 +32,7 @@ CertificateInput::CertificateInput() :
 {
 }
 
-CoreInternalOutcome CertificateInput::Deserialize(const Value &value)
+CoreInternalOutcome CertificateInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,71 +121,71 @@ CoreInternalOutcome CertificateInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CertificateInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CertificateInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sSLModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SSLMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sSLMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sSLMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certCaIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertCaId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certCaId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certCaId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certContent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certCaNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertCaName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certCaName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certCaName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certCaContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertCaContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certCaContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certCaContent.c_str(), allocator).Move(), allocator);
     }
 
 }

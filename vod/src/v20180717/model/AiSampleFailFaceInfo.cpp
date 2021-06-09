@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiSampleFailFaceInfo::AiSampleFailFaceInfo() :
@@ -28,7 +27,7 @@ AiSampleFailFaceInfo::AiSampleFailFaceInfo() :
 {
 }
 
-CoreInternalOutcome AiSampleFailFaceInfo::Deserialize(const Value &value)
+CoreInternalOutcome AiSampleFailFaceInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome AiSampleFailFaceInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AiSampleFailFaceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiSampleFailFaceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_indexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Index";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_index, allocator);
@@ -80,7 +79,7 @@ void AiSampleFailFaceInfo::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_errCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_errCode, allocator);
@@ -88,10 +87,10 @@ void AiSampleFailFaceInfo::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_messageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
 }

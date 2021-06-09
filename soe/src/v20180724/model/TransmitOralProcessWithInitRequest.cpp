@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Soe::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 TransmitOralProcessWithInitRequest::TransmitOralProcessWithInitRequest() :
@@ -46,14 +45,14 @@ TransmitOralProcessWithInitRequest::TransmitOralProcessWithInitRequest() :
 
 string TransmitOralProcessWithInitRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_seqIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SeqId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_seqId, allocator);
@@ -61,7 +60,7 @@ string TransmitOralProcessWithInitRequest::ToJsonString() const
 
     if (m_isEndHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsEnd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isEnd, allocator);
@@ -69,7 +68,7 @@ string TransmitOralProcessWithInitRequest::ToJsonString() const
 
     if (m_voiceFileTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VoiceFileType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_voiceFileType, allocator);
@@ -77,7 +76,7 @@ string TransmitOralProcessWithInitRequest::ToJsonString() const
 
     if (m_voiceEncodeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VoiceEncodeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_voiceEncodeType, allocator);
@@ -85,31 +84,31 @@ string TransmitOralProcessWithInitRequest::ToJsonString() const
 
     if (m_userVoiceDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserVoiceData";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_userVoiceData.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userVoiceData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_refTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RefText";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_refText.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_refText.c_str(), allocator).Move(), allocator);
     }
 
     if (m_workModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WorkMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_workMode, allocator);
@@ -117,7 +116,7 @@ string TransmitOralProcessWithInitRequest::ToJsonString() const
 
     if (m_evalModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvalMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_evalMode, allocator);
@@ -125,7 +124,7 @@ string TransmitOralProcessWithInitRequest::ToJsonString() const
 
     if (m_scoreCoeffHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScoreCoeff";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_scoreCoeff, allocator);
@@ -133,15 +132,15 @@ string TransmitOralProcessWithInitRequest::ToJsonString() const
 
     if (m_soeAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SoeAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_soeAppId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_soeAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_storageMode, allocator);
@@ -149,7 +148,7 @@ string TransmitOralProcessWithInitRequest::ToJsonString() const
 
     if (m_sentenceInfoEnabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SentenceInfoEnabled";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sentenceInfoEnabled, allocator);
@@ -157,7 +156,7 @@ string TransmitOralProcessWithInitRequest::ToJsonString() const
 
     if (m_serverTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_serverType, allocator);
@@ -165,7 +164,7 @@ string TransmitOralProcessWithInitRequest::ToJsonString() const
 
     if (m_isAsyncHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsAsync";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isAsync, allocator);
@@ -173,7 +172,7 @@ string TransmitOralProcessWithInitRequest::ToJsonString() const
 
     if (m_isQueryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsQuery";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isQuery, allocator);
@@ -181,15 +180,15 @@ string TransmitOralProcessWithInitRequest::ToJsonString() const
 
     if (m_textModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TextMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_textMode, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

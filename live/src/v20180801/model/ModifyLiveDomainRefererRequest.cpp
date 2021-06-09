@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyLiveDomainRefererRequest::ModifyLiveDomainRefererRequest() :
@@ -34,22 +33,22 @@ ModifyLiveDomainRefererRequest::ModifyLiveDomainRefererRequest() :
 
 string ModifyLiveDomainRefererRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_domainNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_domainName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enable, allocator);
@@ -57,7 +56,7 @@ string ModifyLiveDomainRefererRequest::ToJsonString() const
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_type, allocator);
@@ -65,7 +64,7 @@ string ModifyLiveDomainRefererRequest::ToJsonString() const
 
     if (m_allowEmptyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AllowEmpty";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_allowEmpty, allocator);
@@ -73,15 +72,15 @@ string ModifyLiveDomainRefererRequest::ToJsonString() const
 
     if (m_rulesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rules";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_rules.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rules.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

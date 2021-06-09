@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Postgres::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ServerlessDBInstanceNetInfo::ServerlessDBInstanceNetInfo() :
@@ -30,7 +29,7 @@ ServerlessDBInstanceNetInfo::ServerlessDBInstanceNetInfo() :
 {
 }
 
-CoreInternalOutcome ServerlessDBInstanceNetInfo::Deserialize(const Value &value)
+CoreInternalOutcome ServerlessDBInstanceNetInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome ServerlessDBInstanceNetInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ServerlessDBInstanceNetInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ServerlessDBInstanceNetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_addressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Address";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_address.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
@@ -118,18 +117,18 @@ void ServerlessDBInstanceNetInfo::ToJsonObject(Value &value, Document::Allocator
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_netTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_netType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netType.c_str(), allocator).Move(), allocator);
     }
 
 }

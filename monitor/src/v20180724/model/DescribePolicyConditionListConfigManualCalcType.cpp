@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribePolicyConditionListConfigManualCalcType::DescribePolicyConditionListConfigManualCalcType() :
@@ -27,7 +26,7 @@ DescribePolicyConditionListConfigManualCalcType::DescribePolicyConditionListConf
 {
 }
 
-CoreInternalOutcome DescribePolicyConditionListConfigManualCalcType::Deserialize(const Value &value)
+CoreInternalOutcome DescribePolicyConditionListConfigManualCalcType::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualCalcType::Deserialize
         if (!value["Keys"].IsArray())
             return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualCalcType.Keys` is not array type"));
 
-        const Value &tmpValue = value["Keys"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Keys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_keys.push_back((*itr).GetInt64());
         }
@@ -59,25 +58,25 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualCalcType::Deserialize
     return CoreInternalOutcome(true);
 }
 
-void DescribePolicyConditionListConfigManualCalcType::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribePolicyConditionListConfigManualCalcType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_keysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Keys";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_keys.begin(); itr != m_keys.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_needHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Need";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_need, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 CellContent::CellContent() :
@@ -27,7 +26,7 @@ CellContent::CellContent() :
 {
 }
 
-CoreInternalOutcome CellContent::Deserialize(const Value &value)
+CoreInternalOutcome CellContent::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome CellContent::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CellContent::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CellContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_paragNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParagNo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_paragNo, allocator);
@@ -69,7 +68,7 @@ void CellContent::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_wordSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WordSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wordSize, allocator);

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCrossBorderComplianceRequest::DescribeCrossBorderComplianceRequest() :
@@ -45,22 +44,22 @@ DescribeCrossBorderComplianceRequest::DescribeCrossBorderComplianceRequest() :
 
 string DescribeCrossBorderComplianceRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_serviceProviderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceProvider";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_serviceProvider.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceProvider.c_str(), allocator).Move(), allocator);
     }
 
     if (m_complianceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComplianceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_complianceId, allocator);
@@ -68,47 +67,47 @@ string DescribeCrossBorderComplianceRequest::ToJsonString() const
 
     if (m_companyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Company";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_company.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_company.c_str(), allocator).Move(), allocator);
     }
 
     if (m_uniformSocialCreditCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UniformSocialCreditCode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_uniformSocialCreditCode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uniformSocialCreditCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_legalPersonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LegalPerson";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_legalPerson.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_legalPerson.c_str(), allocator).Move(), allocator);
     }
 
     if (m_issuingAuthorityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IssuingAuthority";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_issuingAuthority.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_issuingAuthority.c_str(), allocator).Move(), allocator);
     }
 
     if (m_businessAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BusinessAddress";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_businessAddress.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_businessAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_postCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PostCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_postCode, allocator);
@@ -116,71 +115,71 @@ string DescribeCrossBorderComplianceRequest::ToJsonString() const
 
     if (m_managerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Manager";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_manager.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_manager.c_str(), allocator).Move(), allocator);
     }
 
     if (m_managerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ManagerId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_managerId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_managerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_managerAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ManagerAddress";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_managerAddress.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_managerAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_managerTelephoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ManagerTelephone";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_managerTelephone.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_managerTelephone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_emailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Email";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_email.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_email.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceStartDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceStartDate";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_serviceStartDate.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceStartDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceEndDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceEndDate";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_serviceEndDate.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceEndDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_state.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

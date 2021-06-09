@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 DomainRuleSet::DomainRuleSet() :
@@ -44,7 +43,7 @@ DomainRuleSet::DomainRuleSet() :
 {
 }
 
-CoreInternalOutcome DomainRuleSet::Deserialize(const Value &value)
+CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -64,8 +63,8 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const Value &value)
         if (!value["RuleSet"].IsArray())
             return CoreInternalOutcome(Error("response `DomainRuleSet.RuleSet` is not array type"));
 
-        const Value &tmpValue = value["RuleSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RuleSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RuleInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -224,8 +223,8 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const Value &value)
         if (!value["PolyClientCertificateAliasInfo"].IsArray())
             return CoreInternalOutcome(Error("response `DomainRuleSet.PolyClientCertificateAliasInfo` is not array type"));
 
-        const Value &tmpValue = value["PolyClientCertificateAliasInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PolyClientCertificateAliasInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CertificateAliasInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -244,8 +243,8 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const Value &value)
         if (!value["PolyRealServerCertificateAliasInfo"].IsArray())
             return CoreInternalOutcome(Error("response `DomainRuleSet.PolyRealServerCertificateAliasInfo` is not array type"));
 
-        const Value &tmpValue = value["PolyRealServerCertificateAliasInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PolyRealServerCertificateAliasInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CertificateAliasInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -273,75 +272,75 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DomainRuleSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DomainRuleSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_ruleSet.begin(); itr != m_ruleSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_certificateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertificateId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certificateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certificateAliasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertificateAlias";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certificateAlias.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certificateAlias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientCertificateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientCertificateId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clientCertificateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientCertificateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientCertificateAliasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientCertificateAlias";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clientCertificateAlias.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientCertificateAlias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_basicAuthConfIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BasicAuthConfId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_basicAuthConfId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_basicAuthConfId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_basicAuthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BasicAuth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_basicAuth, allocator);
@@ -349,23 +348,23 @@ void DomainRuleSet::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_basicAuthConfAliasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BasicAuthConfAlias";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_basicAuthConfAlias.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_basicAuthConfAlias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_realServerCertificateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerCertificateId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realServerCertificateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realServerCertificateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_realServerAuthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerAuth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realServerAuth, allocator);
@@ -373,23 +372,23 @@ void DomainRuleSet::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_realServerCertificateAliasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerCertificateAlias";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realServerCertificateAlias.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realServerCertificateAlias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gaapCertificateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GaapCertificateId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gaapCertificateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gaapCertificateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gaapAuthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GaapAuth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gaapAuth, allocator);
@@ -397,53 +396,53 @@ void DomainRuleSet::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_gaapCertificateAliasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GaapCertificateAlias";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gaapCertificateAlias.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gaapCertificateAlias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_realServerCertificateDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerCertificateDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realServerCertificateDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realServerCertificateDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_polyClientCertificateAliasInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolyClientCertificateAliasInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_polyClientCertificateAliasInfo.begin(); itr != m_polyClientCertificateAliasInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_polyRealServerCertificateAliasInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolyRealServerCertificateAliasInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_polyRealServerCertificateAliasInfo.begin(); itr != m_polyRealServerCertificateAliasInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_domainStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_domainStatus, allocator);

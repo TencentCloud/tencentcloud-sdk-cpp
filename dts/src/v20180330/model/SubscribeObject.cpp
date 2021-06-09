@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dts::V20180330::Model;
-using namespace rapidjson;
 using namespace std;
 
 SubscribeObject::SubscribeObject() :
@@ -28,7 +27,7 @@ SubscribeObject::SubscribeObject() :
 {
 }
 
-CoreInternalOutcome SubscribeObject::Deserialize(const Value &value)
+CoreInternalOutcome SubscribeObject::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome SubscribeObject::Deserialize(const Value &value)
         if (!value["TableNames"].IsArray())
             return CoreInternalOutcome(Error("response `SubscribeObject.TableNames` is not array type"));
 
-        const Value &tmpValue = value["TableNames"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TableNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_tableNames.push_back((*itr).GetString());
         }
@@ -70,12 +69,12 @@ CoreInternalOutcome SubscribeObject::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SubscribeObject::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SubscribeObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_objectsTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ObjectsType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_objectsType, allocator);
@@ -83,22 +82,22 @@ void SubscribeObject::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_databaseNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DatabaseName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_databaseName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableNamesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableNames";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_tableNames.begin(); itr != m_tableNames.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

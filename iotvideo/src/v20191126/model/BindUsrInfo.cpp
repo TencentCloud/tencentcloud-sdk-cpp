@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 BindUsrInfo::BindUsrInfo() :
@@ -27,7 +26,7 @@ BindUsrInfo::BindUsrInfo() :
 {
 }
 
-CoreInternalOutcome BindUsrInfo::Deserialize(const Value &value)
+CoreInternalOutcome BindUsrInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome BindUsrInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BindUsrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BindUsrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_accessIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccessId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_accessId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_role.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
     }
 
 }

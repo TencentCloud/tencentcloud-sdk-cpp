@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Captcha::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 CaptchaOperDataTryTimesDistributeUnit::CaptchaOperDataTryTimesDistributeUnit() :
@@ -27,7 +26,7 @@ CaptchaOperDataTryTimesDistributeUnit::CaptchaOperDataTryTimesDistributeUnit() :
 {
 }
 
-CoreInternalOutcome CaptchaOperDataTryTimesDistributeUnit::Deserialize(const Value &value)
+CoreInternalOutcome CaptchaOperDataTryTimesDistributeUnit::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome CaptchaOperDataTryTimesDistributeUnit::Deserialize(const Val
     return CoreInternalOutcome(true);
 }
 
-void CaptchaOperDataTryTimesDistributeUnit::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CaptchaOperDataTryTimesDistributeUnit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tryCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TryCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tryCount, allocator);
@@ -69,7 +68,7 @@ void CaptchaOperDataTryTimesDistributeUnit::ToJsonObject(Value &value, Document:
 
     if (m_userCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_userCount, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReadOnlyGroup::ReadOnlyGroup() :
@@ -39,7 +38,7 @@ ReadOnlyGroup::ReadOnlyGroup() :
 {
 }
 
-CoreInternalOutcome ReadOnlyGroup::Deserialize(const Value &value)
+CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -179,8 +178,8 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const Value &value)
         if (!value["ReadOnlyInstanceSet"].IsArray())
             return CoreInternalOutcome(Error("response `ReadOnlyGroup.ReadOnlyInstanceSet` is not array type"));
 
-        const Value &tmpValue = value["ReadOnlyInstanceSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ReadOnlyInstanceSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ReadOnlyInstance item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -198,44 +197,44 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReadOnlyGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_readOnlyGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_readOnlyGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_readOnlyGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyGroupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyGroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_readOnlyGroupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_readOnlyGroupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zoneId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isOfflineDelayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsOfflineDelay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isOfflineDelay, allocator);
@@ -243,7 +242,7 @@ void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_readOnlyMaxDelayTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyMaxDelayTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_readOnlyMaxDelayTime, allocator);
@@ -251,7 +250,7 @@ void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_minReadOnlyInGroupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinReadOnlyInGroup";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minReadOnlyInGroup, allocator);
@@ -259,15 +258,15 @@ void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_vipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vportHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vport";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vport, allocator);
@@ -275,23 +274,23 @@ void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subnetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -299,23 +298,23 @@ void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_masterInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_masterInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_masterInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyInstanceSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyInstanceSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_readOnlyInstanceSet.begin(); itr != m_readOnlyInstanceSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

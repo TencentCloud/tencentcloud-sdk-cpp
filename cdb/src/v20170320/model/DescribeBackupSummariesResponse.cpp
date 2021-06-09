@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeBackupSummariesResponse::DescribeBackupSummariesResponse() :
@@ -32,7 +31,7 @@ DescribeBackupSummariesResponse::DescribeBackupSummariesResponse() :
 
 CoreInternalOutcome DescribeBackupSummariesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeBackupSummariesResponse::Deserialize(const string &p
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeBackupSummariesResponse::Deserialize(const string &p
         if (!rsp["Items"].IsArray())
             return CoreInternalOutcome(Error("response `Items` is not array type"));
 
-        const Value &tmpValue = rsp["Items"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Items"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             BackupSummaryItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

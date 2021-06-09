@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Faceid::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 EidInfo::EidInfo() :
@@ -27,7 +26,7 @@ EidInfo::EidInfo() :
 {
 }
 
-CoreInternalOutcome EidInfo::Deserialize(const Value &value)
+CoreInternalOutcome EidInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome EidInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EidInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EidInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eidCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EidCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eidCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eidCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eidSignHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EidSign";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eidSign.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eidSign.c_str(), allocator).Move(), allocator);
     }
 
 }

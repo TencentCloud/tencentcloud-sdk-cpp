@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
-using namespace rapidjson;
 using namespace std;
 
 RecordTaskItem::RecordTaskItem() :
@@ -32,7 +31,7 @@ RecordTaskItem::RecordTaskItem() :
 {
 }
 
-CoreInternalOutcome RecordTaskItem::Deserialize(const Value &value)
+CoreInternalOutcome RecordTaskItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,28 +110,28 @@ CoreInternalOutcome RecordTaskItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RecordTaskItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RecordTaskItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_recordTaskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordTaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_recordTaskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordTaskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recordPlanIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordPlanId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_recordPlanId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordPlanId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTime, allocator);
@@ -140,7 +139,7 @@ void RecordTaskItem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTime, allocator);
@@ -148,7 +147,7 @@ void RecordTaskItem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_eventIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eventId, allocator);
@@ -156,15 +155,15 @@ void RecordTaskItem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_videoUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_videoUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_videoUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recordStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recordStatus, allocator);

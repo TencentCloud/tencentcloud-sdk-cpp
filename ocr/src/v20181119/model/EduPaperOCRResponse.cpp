@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 EduPaperOCRResponse::EduPaperOCRResponse() :
@@ -33,7 +32,7 @@ EduPaperOCRResponse::EduPaperOCRResponse() :
 
 CoreInternalOutcome EduPaperOCRResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome EduPaperOCRResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -70,8 +69,8 @@ CoreInternalOutcome EduPaperOCRResponse::Deserialize(const string &payload)
         if (!rsp["EduPaperInfos"].IsArray())
             return CoreInternalOutcome(Error("response `EduPaperInfos` is not array type"));
 
-        const Value &tmpValue = rsp["EduPaperInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["EduPaperInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TextEduPaper item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -100,8 +99,8 @@ CoreInternalOutcome EduPaperOCRResponse::Deserialize(const string &payload)
         if (!rsp["QuestionBlockInfos"].IsArray())
             return CoreInternalOutcome(Error("response `QuestionBlockInfos` is not array type"));
 
-        const Value &tmpValue = rsp["QuestionBlockInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["QuestionBlockInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             QuestionBlockObj item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

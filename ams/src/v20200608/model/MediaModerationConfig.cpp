@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ams::V20200608::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaModerationConfig::MediaModerationConfig() :
@@ -31,7 +30,7 @@ MediaModerationConfig::MediaModerationConfig() :
 {
 }
 
-CoreInternalOutcome MediaModerationConfig::Deserialize(const Value &value)
+CoreInternalOutcome MediaModerationConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -107,12 +106,12 @@ CoreInternalOutcome MediaModerationConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaModerationConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaModerationConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_audioFrequencyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioFrequency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioFrequency, allocator);
@@ -120,7 +119,7 @@ void MediaModerationConfig::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_imageFrequencyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageFrequency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageFrequency, allocator);
@@ -128,24 +127,24 @@ void MediaModerationConfig::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_callbackUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_segmentOutputHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SegmentOutput";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_segmentOutput.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_useOCRHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UseOCR";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useOCR, allocator);
@@ -153,7 +152,7 @@ void MediaModerationConfig::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_useAudioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UseAudio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useAudio, allocator);

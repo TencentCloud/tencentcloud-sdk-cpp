@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 DirectConnectGateway::DirectConnectGateway() :
@@ -42,7 +41,7 @@ DirectConnectGateway::DirectConnectGateway() :
 {
 }
 
-CoreInternalOutcome DirectConnectGateway::Deserialize(const Value &value)
+CoreInternalOutcome DirectConnectGateway::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -182,8 +181,8 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const Value &value)
         if (!value["VXLANSupport"].IsArray())
             return CoreInternalOutcome(Error("response `DirectConnectGateway.VXLANSupport` is not array type"));
 
-        const Value &tmpValue = value["VXLANSupport"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["VXLANSupport"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_vXLANSupport.push_back((*itr).GetBool());
         }
@@ -224,92 +223,92 @@ CoreInternalOutcome DirectConnectGateway::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DirectConnectGateway::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DirectConnectGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_directConnectGatewayIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectConnectGatewayId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_directConnectGatewayId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_directConnectGatewayId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_directConnectGatewayNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectConnectGatewayName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_directConnectGatewayName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_directConnectGatewayName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_networkTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetworkType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_networkType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_networkInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetworkInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_networkInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gatewayTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GatewayType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gatewayType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_directConnectGatewayIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectConnectGatewayIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_directConnectGatewayIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_directConnectGatewayIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ccnIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CcnId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ccnId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ccnId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ccnRouteTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CcnRouteType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ccnRouteType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ccnRouteType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableBGPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableBGP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableBGP, allocator);
@@ -317,7 +316,7 @@ void DirectConnectGateway::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_enableBGPCommunityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableBGPCommunity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableBGPCommunity, allocator);
@@ -325,36 +324,36 @@ void DirectConnectGateway::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_natGatewayIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NatGatewayId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_natGatewayId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_natGatewayId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vXLANSupportHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VXLANSupport";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_vXLANSupport.begin(); itr != m_vXLANSupport.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetBool(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetBool(*itr), allocator);
         }
     }
 
     if (m_modeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_localZoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocalZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_localZone, allocator);
@@ -362,10 +361,10 @@ void DirectConnectGateway::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }

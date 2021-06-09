@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 L4HealthConfig::L4HealthConfig() :
@@ -33,7 +32,7 @@ L4HealthConfig::L4HealthConfig() :
 {
 }
 
-CoreInternalOutcome L4HealthConfig::Deserialize(const Value &value)
+CoreInternalOutcome L4HealthConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,20 +121,20 @@ CoreInternalOutcome L4HealthConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void L4HealthConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void L4HealthConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_virtualPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VirtualPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_virtualPort, allocator);
@@ -143,7 +142,7 @@ void L4HealthConfig::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_enableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enable, allocator);
@@ -151,7 +150,7 @@ void L4HealthConfig::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_timeOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeOut, allocator);
@@ -159,7 +158,7 @@ void L4HealthConfig::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_intervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Interval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_interval, allocator);
@@ -167,7 +166,7 @@ void L4HealthConfig::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_kickNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KickNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_kickNum, allocator);
@@ -175,7 +174,7 @@ void L4HealthConfig::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_aliveNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AliveNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aliveNum, allocator);
@@ -183,7 +182,7 @@ void L4HealthConfig::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_keepTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeepTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_keepTime, allocator);

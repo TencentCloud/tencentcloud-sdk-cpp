@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 CustomImageProcess::CustomImageProcess() :
@@ -28,7 +27,7 @@ CustomImageProcess::CustomImageProcess() :
 {
 }
 
-CoreInternalOutcome CustomImageProcess::Deserialize(const Value &value)
+CoreInternalOutcome CustomImageProcess::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome CustomImageProcess::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CustomImageProcess::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CustomImageProcess::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_stepNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stepName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stepName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stepTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stepType, allocator);

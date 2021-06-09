@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 FleetCapacity::FleetCapacity() :
@@ -29,7 +28,7 @@ FleetCapacity::FleetCapacity() :
 {
 }
 
-CoreInternalOutcome FleetCapacity::Deserialize(const Value &value)
+CoreInternalOutcome FleetCapacity::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,37 +84,37 @@ CoreInternalOutcome FleetCapacity::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FleetCapacity::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FleetCapacity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fleetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FleetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fleetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fleetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceCountsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceCounts";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceCounts.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_scalingIntervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScalingInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scalingInterval, allocator);

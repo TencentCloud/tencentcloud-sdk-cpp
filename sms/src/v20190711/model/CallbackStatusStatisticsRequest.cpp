@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Sms::V20190711::Model;
-using namespace rapidjson;
 using namespace std;
 
 CallbackStatusStatisticsRequest::CallbackStatusStatisticsRequest() :
@@ -34,14 +33,14 @@ CallbackStatusStatisticsRequest::CallbackStatusStatisticsRequest() :
 
 string CallbackStatusStatisticsRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_startDateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartDateTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_startDateTime, allocator);
@@ -49,7 +48,7 @@ string CallbackStatusStatisticsRequest::ToJsonString() const
 
     if (m_endDataTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndDataTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endDataTime, allocator);
@@ -57,15 +56,15 @@ string CallbackStatusStatisticsRequest::ToJsonString() const
 
     if (m_smsSdkAppidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SmsSdkAppid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_smsSdkAppid.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_smsSdkAppid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
@@ -73,15 +72,15 @@ string CallbackStatusStatisticsRequest::ToJsonString() const
 
     if (m_offsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

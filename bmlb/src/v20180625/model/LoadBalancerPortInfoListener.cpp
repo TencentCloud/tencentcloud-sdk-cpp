@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 LoadBalancerPortInfoListener::LoadBalancerPortInfoListener() :
@@ -32,7 +31,7 @@ LoadBalancerPortInfoListener::LoadBalancerPortInfoListener() :
 {
 }
 
-CoreInternalOutcome LoadBalancerPortInfoListener::Deserialize(const Value &value)
+CoreInternalOutcome LoadBalancerPortInfoListener::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,36 +110,36 @@ CoreInternalOutcome LoadBalancerPortInfoListener::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void LoadBalancerPortInfoListener::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LoadBalancerPortInfoListener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_listenerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_listenerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listenerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_listenerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_listenerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listenerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_loadBalancerPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoadBalancerPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loadBalancerPort, allocator);
@@ -148,7 +147,7 @@ void LoadBalancerPortInfoListener::ToJsonObject(Value &value, Document::Allocato
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
@@ -156,7 +155,7 @@ void LoadBalancerPortInfoListener::ToJsonObject(Value &value, Document::Allocato
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -164,7 +163,7 @@ void LoadBalancerPortInfoListener::ToJsonObject(Value &value, Document::Allocato
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);

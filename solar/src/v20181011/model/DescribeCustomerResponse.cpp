@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Solar::V20181011::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCustomerResponse::DescribeCustomerResponse() :
@@ -59,7 +58,7 @@ DescribeCustomerResponse::DescribeCustomerResponse() :
 
 CoreInternalOutcome DescribeCustomerResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -69,7 +68,7 @@ CoreInternalOutcome DescribeCustomerResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -96,8 +95,8 @@ CoreInternalOutcome DescribeCustomerResponse::Deserialize(const string &payload)
         if (!rsp["AddressList"].IsArray())
             return CoreInternalOutcome(Error("response `AddressList` is not array type"));
 
-        const Value &tmpValue = rsp["AddressList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["AddressList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_addressList.push_back((*itr).GetString());
         }
@@ -169,8 +168,8 @@ CoreInternalOutcome DescribeCustomerResponse::Deserialize(const string &payload)
         if (!rsp["Industrys"].IsArray())
             return CoreInternalOutcome(Error("response `Industrys` is not array type"));
 
-        const Value &tmpValue = rsp["Industrys"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Industrys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_industrys.push_back((*itr).GetString());
         }
@@ -312,8 +311,8 @@ CoreInternalOutcome DescribeCustomerResponse::Deserialize(const string &payload)
         if (!rsp["SubWechats"].IsArray())
             return CoreInternalOutcome(Error("response `SubWechats` is not array type"));
 
-        const Value &tmpValue = rsp["SubWechats"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SubWechats"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_subWechats.push_back((*itr).GetString());
         }
@@ -345,8 +344,8 @@ CoreInternalOutcome DescribeCustomerResponse::Deserialize(const string &payload)
         if (!rsp["UserTypes"].IsArray())
             return CoreInternalOutcome(Error("response `UserTypes` is not array type"));
 
-        const Value &tmpValue = rsp["UserTypes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["UserTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_userTypes.push_back((*itr).GetString());
         }

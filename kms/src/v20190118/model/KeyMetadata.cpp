@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Kms::V20190118::Model;
-using namespace rapidjson;
 using namespace std;
 
 KeyMetadata::KeyMetadata() :
@@ -40,7 +39,7 @@ KeyMetadata::KeyMetadata() :
 {
 }
 
-CoreInternalOutcome KeyMetadata::Deserialize(const Value &value)
+CoreInternalOutcome KeyMetadata::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -199,28 +198,28 @@ CoreInternalOutcome KeyMetadata::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void KeyMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void KeyMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_keyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aliasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Alias";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_alias.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -228,31 +227,31 @@ void KeyMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyState";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyState.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyState.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyUsageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyUsage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyUsage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyUsage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -260,7 +259,7 @@ void KeyMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_creatorUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatorUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_creatorUin, allocator);
@@ -268,7 +267,7 @@ void KeyMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_keyRotationEnabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyRotationEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_keyRotationEnabled, allocator);
@@ -276,15 +275,15 @@ void KeyMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_ownerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Owner";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_owner.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nextRotateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NextRotateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nextRotateTime, allocator);
@@ -292,7 +291,7 @@ void KeyMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_deletionDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeletionDate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deletionDate, allocator);
@@ -300,15 +299,15 @@ void KeyMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_originHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Origin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_origin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_origin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_validToHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ValidTo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_validTo, allocator);
@@ -316,10 +315,10 @@ void KeyMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_resourceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dcdb::V20180411::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeDatabaseObjectsResponse::DescribeDatabaseObjectsResponse() :
@@ -36,7 +35,7 @@ DescribeDatabaseObjectsResponse::DescribeDatabaseObjectsResponse() :
 
 CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -46,7 +45,7 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -93,8 +92,8 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
         if (!rsp["Tables"].IsArray())
             return CoreInternalOutcome(Error("response `Tables` is not array type"));
 
-        const Value &tmpValue = rsp["Tables"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Tables"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DatabaseTable item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -113,8 +112,8 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
         if (!rsp["Views"].IsArray())
             return CoreInternalOutcome(Error("response `Views` is not array type"));
 
-        const Value &tmpValue = rsp["Views"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Views"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DatabaseView item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -133,8 +132,8 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
         if (!rsp["Procs"].IsArray())
             return CoreInternalOutcome(Error("response `Procs` is not array type"));
 
-        const Value &tmpValue = rsp["Procs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Procs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DatabaseProcedure item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -153,8 +152,8 @@ CoreInternalOutcome DescribeDatabaseObjectsResponse::Deserialize(const string &p
         if (!rsp["Funcs"].IsArray())
             return CoreInternalOutcome(Error("response `Funcs` is not array type"));
 
-        const Value &tmpValue = rsp["Funcs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Funcs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DatabaseFunction item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

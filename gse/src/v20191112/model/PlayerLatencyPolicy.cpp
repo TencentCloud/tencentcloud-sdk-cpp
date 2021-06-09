@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 PlayerLatencyPolicy::PlayerLatencyPolicy() :
@@ -27,7 +26,7 @@ PlayerLatencyPolicy::PlayerLatencyPolicy() :
 {
 }
 
-CoreInternalOutcome PlayerLatencyPolicy::Deserialize(const Value &value)
+CoreInternalOutcome PlayerLatencyPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome PlayerLatencyPolicy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PlayerLatencyPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PlayerLatencyPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaximumIndividualPlayerLatencyMilliseconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maximumIndividualPlayerLatencyMilliseconds, allocator);
@@ -69,7 +68,7 @@ void PlayerLatencyPolicy::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_policyDurationSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyDurationSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_policyDurationSeconds, allocator);

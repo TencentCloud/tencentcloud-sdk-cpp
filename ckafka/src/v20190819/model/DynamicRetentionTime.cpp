@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 DynamicRetentionTime::DynamicRetentionTime() :
@@ -29,7 +28,7 @@ DynamicRetentionTime::DynamicRetentionTime() :
 {
 }
 
-CoreInternalOutcome DynamicRetentionTime::Deserialize(const Value &value)
+CoreInternalOutcome DynamicRetentionTime::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome DynamicRetentionTime::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DynamicRetentionTime::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DynamicRetentionTime::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enable, allocator);
@@ -91,7 +90,7 @@ void DynamicRetentionTime::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_diskQuotaPercentageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskQuotaPercentage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskQuotaPercentage, allocator);
@@ -99,7 +98,7 @@ void DynamicRetentionTime::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_stepForwardPercentageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepForwardPercentage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stepForwardPercentage, allocator);
@@ -107,7 +106,7 @@ void DynamicRetentionTime::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_bottomRetentionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BottomRetention";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bottomRetention, allocator);

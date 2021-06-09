@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 LogFilter::LogFilter() :
@@ -26,7 +25,7 @@ LogFilter::LogFilter() :
 {
 }
 
-CoreInternalOutcome LogFilter::Deserialize(const Value &value)
+CoreInternalOutcome LogFilter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome LogFilter::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LogFilter::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LogFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_retCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RetCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_retCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_retCode.c_str(), allocator).Move(), allocator);
     }
 
 }

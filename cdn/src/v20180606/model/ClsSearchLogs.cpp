@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClsSearchLogs::ClsSearchLogs() :
@@ -28,7 +27,7 @@ ClsSearchLogs::ClsSearchLogs() :
 {
 }
 
-CoreInternalOutcome ClsSearchLogs::Deserialize(const Value &value)
+CoreInternalOutcome ClsSearchLogs::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome ClsSearchLogs::Deserialize(const Value &value)
         if (!value["Results"].IsArray())
             return CoreInternalOutcome(Error("response `ClsSearchLogs.Results` is not array type"));
 
-        const Value &tmpValue = value["Results"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Results"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ClsLogObject item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,20 +76,20 @@ CoreInternalOutcome ClsSearchLogs::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClsSearchLogs::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClsSearchLogs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_contextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Context";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_context.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
     }
 
     if (m_listoverHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Listover";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_listover, allocator);
@@ -98,15 +97,15 @@ void ClsSearchLogs::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_resultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Results";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_results.begin(); itr != m_results.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

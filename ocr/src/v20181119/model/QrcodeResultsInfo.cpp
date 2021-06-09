@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 QrcodeResultsInfo::QrcodeResultsInfo() :
@@ -28,7 +27,7 @@ QrcodeResultsInfo::QrcodeResultsInfo() :
 {
 }
 
-CoreInternalOutcome QrcodeResultsInfo::Deserialize(const Value &value)
+CoreInternalOutcome QrcodeResultsInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,31 +73,31 @@ CoreInternalOutcome QrcodeResultsInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void QrcodeResultsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QrcodeResultsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TypeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_typeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_typeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_positionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Position";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_position.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 MonitorOverview::MonitorOverview() :
@@ -31,7 +30,7 @@ MonitorOverview::MonitorOverview() :
 {
 }
 
-CoreInternalOutcome MonitorOverview::Deserialize(const Value &value)
+CoreInternalOutcome MonitorOverview::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,55 +99,55 @@ CoreInternalOutcome MonitorOverview::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MonitorOverview::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MonitorOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_invocationCountOfDayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InvocationCountOfDay";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_invocationCountOfDay.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invocationCountOfDay.c_str(), allocator).Move(), allocator);
     }
 
     if (m_invocationCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InvocationCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_invocationCount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invocationCount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_errorCountOfDayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorCountOfDay";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errorCountOfDay.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorCountOfDay.c_str(), allocator).Move(), allocator);
     }
 
     if (m_errorCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errorCount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorCount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_successRatioOfDayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuccessRatioOfDay";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_successRatioOfDay.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_successRatioOfDay.c_str(), allocator).Move(), allocator);
     }
 
     if (m_successRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuccessRatio";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_successRatio.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_successRatio.c_str(), allocator).Move(), allocator);
     }
 
 }

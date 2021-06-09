@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbaas::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 LogDetailForUser::LogDetailForUser() :
@@ -27,7 +26,7 @@ LogDetailForUser::LogDetailForUser() :
 {
 }
 
-CoreInternalOutcome LogDetailForUser::Deserialize(const Value &value)
+CoreInternalOutcome LogDetailForUser::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome LogDetailForUser::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LogDetailForUser::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LogDetailForUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_lineNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LineNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lineNumber, allocator);
@@ -69,10 +68,10 @@ void LogDetailForUser::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_logMessageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogMessage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_logMessage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logMessage.c_str(), allocator).Move(), allocator);
     }
 
 }

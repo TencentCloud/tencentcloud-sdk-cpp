@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribePolicyGroupListGroup::DescribePolicyGroupListGroup() :
@@ -45,7 +44,7 @@ DescribePolicyGroupListGroup::DescribePolicyGroupListGroup() :
 {
 }
 
-CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const Value &value)
+CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -195,8 +194,8 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const Value &value
         if (!value["Conditions"].IsArray())
             return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.Conditions` is not array type"));
 
-        const Value &tmpValue = value["Conditions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Conditions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DescribePolicyGroupInfoCondition item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -215,8 +214,8 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const Value &value
         if (!value["EventConditions"].IsArray())
             return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.EventConditions` is not array type"));
 
-        const Value &tmpValue = value["EventConditions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["EventConditions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DescribePolicyGroupInfoEventCondition item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -235,8 +234,8 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const Value &value
         if (!value["ReceiverInfos"].IsArray())
             return CoreInternalOutcome(Error("response `DescribePolicyGroupListGroup.ReceiverInfos` is not array type"));
 
-        const Value &tmpValue = value["ReceiverInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ReceiverInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DescribePolicyGroupInfoReceiverInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -298,12 +297,12 @@ CoreInternalOutcome DescribePolicyGroupListGroup::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void DescribePolicyGroupListGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribePolicyGroupListGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupId, allocator);
@@ -311,15 +310,15 @@ void DescribePolicyGroupListGroup::ToJsonObject(Value &value, Document::Allocato
 
     if (m_groupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isOpenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsOpen";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isOpen, allocator);
@@ -327,23 +326,23 @@ void DescribePolicyGroupListGroup::ToJsonObject(Value &value, Document::Allocato
 
     if (m_viewNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ViewName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_viewName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_viewName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastEditUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastEditUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastEditUin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastEditUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
@@ -351,7 +350,7 @@ void DescribePolicyGroupListGroup::ToJsonObject(Value &value, Document::Allocato
 
     if (m_insertTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InsertTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_insertTime, allocator);
@@ -359,7 +358,7 @@ void DescribePolicyGroupListGroup::ToJsonObject(Value &value, Document::Allocato
 
     if (m_useSumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UseSum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useSum, allocator);
@@ -367,7 +366,7 @@ void DescribePolicyGroupListGroup::ToJsonObject(Value &value, Document::Allocato
 
     if (m_noShieldedSumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NoShieldedSum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_noShieldedSum, allocator);
@@ -375,7 +374,7 @@ void DescribePolicyGroupListGroup::ToJsonObject(Value &value, Document::Allocato
 
     if (m_isDefaultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsDefault";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDefault, allocator);
@@ -383,7 +382,7 @@ void DescribePolicyGroupListGroup::ToJsonObject(Value &value, Document::Allocato
 
     if (m_canSetDefaultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CanSetDefault";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_canSetDefault, allocator);
@@ -391,7 +390,7 @@ void DescribePolicyGroupListGroup::ToJsonObject(Value &value, Document::Allocato
 
     if (m_parentGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParentGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_parentGroupId, allocator);
@@ -399,15 +398,15 @@ void DescribePolicyGroupListGroup::ToJsonObject(Value &value, Document::Allocato
 
     if (m_remarkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
@@ -415,70 +414,70 @@ void DescribePolicyGroupListGroup::ToJsonObject(Value &value, Document::Allocato
 
     if (m_conditionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Conditions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_conditions.begin(); itr != m_conditions.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_eventConditionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventConditions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_eventConditions.begin(); itr != m_eventConditions.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_receiverInfosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReceiverInfos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_receiverInfos.begin(); itr != m_receiverInfos.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_conditionsTempHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConditionsTemp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_conditionsTemp.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_instanceGroupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceGroup";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceGroup.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_isUnionRuleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsUnionRule";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isUnionRule, allocator);

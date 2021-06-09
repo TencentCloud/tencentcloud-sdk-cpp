@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cws::V20180312::Model;
-using namespace rapidjson;
 using namespace std;
 
 Site::Site() :
@@ -59,7 +58,7 @@ Site::Site() :
 {
 }
 
-CoreInternalOutcome Site::Deserialize(const Value &value)
+CoreInternalOutcome Site::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -408,12 +407,12 @@ CoreInternalOutcome Site::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Site::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -421,7 +420,7 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_monitorIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MonitorId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_monitorId, allocator);
@@ -429,23 +428,23 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_verifyStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VerifyStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_verifyStatus, allocator);
@@ -453,7 +452,7 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_monitorStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MonitorStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_monitorStatus, allocator);
@@ -461,7 +460,7 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_scanStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScanStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scanStatus, allocator);
@@ -469,7 +468,7 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_lastScanTaskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanTaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastScanTaskId, allocator);
@@ -477,31 +476,31 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_lastScanStartTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanStartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastScanStartTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastScanStartTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastScanFinishTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanFinishTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastScanFinishTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastScanFinishTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastScanCancelTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanCancelTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastScanCancelTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastScanCancelTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastScanPageCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanPageCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastScanPageCount, allocator);
@@ -509,15 +508,15 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_lastScanScannerTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanScannerType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastScanScannerType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastScanScannerType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastScanVulsHighNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanVulsHighNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastScanVulsHighNum, allocator);
@@ -525,7 +524,7 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_lastScanVulsMiddleNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanVulsMiddleNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastScanVulsMiddleNum, allocator);
@@ -533,7 +532,7 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_lastScanVulsLowNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanVulsLowNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastScanVulsLowNum, allocator);
@@ -541,7 +540,7 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_lastScanVulsNoticeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanVulsNoticeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastScanVulsNoticeNum, allocator);
@@ -549,23 +548,23 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_createdAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updatedAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastScanRateLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanRateLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastScanRateLimit, allocator);
@@ -573,7 +572,7 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_lastScanVulsNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanVulsNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastScanVulsNum, allocator);
@@ -581,7 +580,7 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_lastScanNoticeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanNoticeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastScanNoticeNum, allocator);
@@ -589,7 +588,7 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_progressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
@@ -597,7 +596,7 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_appidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Appid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appid, allocator);
@@ -605,15 +604,15 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_uinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_needLoginHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedLogin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needLogin, allocator);
@@ -621,15 +620,15 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_loginCookieHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoginCookie";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_loginCookie.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loginCookie.c_str(), allocator).Move(), allocator);
     }
 
     if (m_loginCookieValidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoginCookieValid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loginCookieValid, allocator);
@@ -637,39 +636,39 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_loginCheckUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoginCheckUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_loginCheckUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loginCheckUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_loginCheckKwHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoginCheckKw";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_loginCheckKw.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loginCheckKw.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scanDisallowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScanDisallow";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scanDisallow.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanDisallow.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userAgentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserAgent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userAgent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userAgent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contentStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContentStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_contentStatus, allocator);
@@ -677,7 +676,7 @@ void Site::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_lastScanContentNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastScanContentNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastScanContentNum, allocator);

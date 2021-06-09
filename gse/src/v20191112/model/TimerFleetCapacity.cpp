@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 TimerFleetCapacity::TimerFleetCapacity() :
@@ -32,7 +31,7 @@ TimerFleetCapacity::TimerFleetCapacity() :
 {
 }
 
-CoreInternalOutcome TimerFleetCapacity::Deserialize(const Value &value)
+CoreInternalOutcome TimerFleetCapacity::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -118,20 +117,20 @@ CoreInternalOutcome TimerFleetCapacity::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TimerFleetCapacity::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TimerFleetCapacity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fleetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FleetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fleetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fleetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_desiredInstancesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DesiredInstances";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_desiredInstances, allocator);
@@ -139,7 +138,7 @@ void TimerFleetCapacity::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_minSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minSize, allocator);
@@ -147,7 +146,7 @@ void TimerFleetCapacity::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_maxSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxSize, allocator);
@@ -155,7 +154,7 @@ void TimerFleetCapacity::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_scalingIntervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScalingInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scalingInterval, allocator);
@@ -163,7 +162,7 @@ void TimerFleetCapacity::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_scalingTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScalingType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scalingType, allocator);
@@ -171,10 +170,10 @@ void TimerFleetCapacity::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_targetConfigurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetConfiguration";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_targetConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 

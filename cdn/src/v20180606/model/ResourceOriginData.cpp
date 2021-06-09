@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResourceOriginData::ResourceOriginData() :
@@ -27,7 +26,7 @@ ResourceOriginData::ResourceOriginData() :
 {
 }
 
-CoreInternalOutcome ResourceOriginData::Deserialize(const Value &value)
+CoreInternalOutcome ResourceOriginData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome ResourceOriginData::Deserialize(const Value &value)
         if (!value["OriginData"].IsArray())
             return CoreInternalOutcome(Error("response `ResourceOriginData.OriginData` is not array type"));
 
-        const Value &tmpValue = value["OriginData"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["OriginData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CdnData item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome ResourceOriginData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResourceOriginData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResourceOriginData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Resource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resource.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_originDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_originData.begin(); itr != m_originData.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

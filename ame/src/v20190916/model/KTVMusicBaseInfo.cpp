@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ame::V20190916::Model;
-using namespace rapidjson;
 using namespace std;
 
 KTVMusicBaseInfo::KTVMusicBaseInfo() :
@@ -31,7 +30,7 @@ KTVMusicBaseInfo::KTVMusicBaseInfo() :
 {
 }
 
-CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const Value &value)
+CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -61,8 +60,8 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const Value &value)
         if (!value["SingerSet"].IsArray())
             return CoreInternalOutcome(Error("response `KTVMusicBaseInfo.SingerSet` is not array type"));
 
-        const Value &tmpValue = value["SingerSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SingerSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_singerSet.push_back((*itr).GetString());
         }
@@ -74,8 +73,8 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const Value &value)
         if (!value["LyricistSet"].IsArray())
             return CoreInternalOutcome(Error("response `KTVMusicBaseInfo.LyricistSet` is not array type"));
 
-        const Value &tmpValue = value["LyricistSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LyricistSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_lyricistSet.push_back((*itr).GetString());
         }
@@ -87,8 +86,8 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const Value &value)
         if (!value["ComposerSet"].IsArray())
             return CoreInternalOutcome(Error("response `KTVMusicBaseInfo.ComposerSet` is not array type"));
 
-        const Value &tmpValue = value["ComposerSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ComposerSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_composerSet.push_back((*itr).GetString());
         }
@@ -100,8 +99,8 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const Value &value)
         if (!value["TagSet"].IsArray())
             return CoreInternalOutcome(Error("response `KTVMusicBaseInfo.TagSet` is not array type"));
 
-        const Value &tmpValue = value["TagSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TagSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_tagSet.push_back((*itr).GetString());
         }
@@ -112,74 +111,74 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void KTVMusicBaseInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void KTVMusicBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_musicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MusicId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_musicId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_musicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_singerSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SingerSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_singerSet.begin(); itr != m_singerSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_lyricistSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LyricistSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_lyricistSet.begin(); itr != m_lyricistSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_composerSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComposerSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_composerSet.begin(); itr != m_composerSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_tagSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

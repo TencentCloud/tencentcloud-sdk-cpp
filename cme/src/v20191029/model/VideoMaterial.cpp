@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 VideoMaterial::VideoMaterial() :
@@ -33,7 +32,7 @@ VideoMaterial::VideoMaterial() :
 {
 }
 
-CoreInternalOutcome VideoMaterial::Deserialize(const Value &value)
+CoreInternalOutcome VideoMaterial::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -143,74 +142,74 @@ CoreInternalOutcome VideoMaterial::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VideoMaterial::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VideoMaterial::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_metaDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetaData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_metaData.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_imageSpriteInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageSpriteInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageSpriteInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_materialUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaterialUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_materialUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_materialUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_coverUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CoverUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_coverUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_coverUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resolutionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Resolution";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resolution.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
     }
 
     if (m_materialStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaterialStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_materialStatus.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_originalUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_originalUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vodFileIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VodFileId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vodFileId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vodFileId.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 OtherMaterial::OtherMaterial() :
@@ -27,7 +26,7 @@ OtherMaterial::OtherMaterial() :
 {
 }
 
-CoreInternalOutcome OtherMaterial::Deserialize(const Value &value)
+CoreInternalOutcome OtherMaterial::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome OtherMaterial::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OtherMaterial::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OtherMaterial::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_materialUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaterialUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_materialUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_materialUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vodFileIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VodFileId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vodFileId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vodFileId.c_str(), allocator).Move(), allocator);
     }
 
 }

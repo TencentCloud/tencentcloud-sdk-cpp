@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCdnLogsResponse::DescribeCdnLogsResponse() :
@@ -33,7 +32,7 @@ DescribeCdnLogsResponse::DescribeCdnLogsResponse() :
 
 CoreInternalOutcome DescribeCdnLogsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DescribeCdnLogsResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -80,8 +79,8 @@ CoreInternalOutcome DescribeCdnLogsResponse::Deserialize(const string &payload)
         if (!rsp["OverseaCdnLogs"].IsArray())
             return CoreInternalOutcome(Error("response `OverseaCdnLogs` is not array type"));
 
-        const Value &tmpValue = rsp["OverseaCdnLogs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["OverseaCdnLogs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CdnLogInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -100,8 +99,8 @@ CoreInternalOutcome DescribeCdnLogsResponse::Deserialize(const string &payload)
         if (!rsp["DomesticCdnLogs"].IsArray())
             return CoreInternalOutcome(Error("response `DomesticCdnLogs` is not array type"));
 
-        const Value &tmpValue = rsp["DomesticCdnLogs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DomesticCdnLogs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CdnLogInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

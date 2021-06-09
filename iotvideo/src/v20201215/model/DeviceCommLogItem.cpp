@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20201215::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceCommLogItem::DeviceCommLogItem() :
@@ -28,7 +27,7 @@ DeviceCommLogItem::DeviceCommLogItem() :
 {
 }
 
-CoreInternalOutcome DeviceCommLogItem::Deserialize(const Value &value)
+CoreInternalOutcome DeviceCommLogItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome DeviceCommLogItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceCommLogItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceCommLogItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_time.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_time.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_data.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
     }
 
 }

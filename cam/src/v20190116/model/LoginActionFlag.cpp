@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cam::V20190116::Model;
-using namespace rapidjson;
 using namespace std;
 
 LoginActionFlag::LoginActionFlag() :
@@ -30,7 +29,7 @@ LoginActionFlag::LoginActionFlag() :
 {
 }
 
-CoreInternalOutcome LoginActionFlag::Deserialize(const Value &value)
+CoreInternalOutcome LoginActionFlag::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome LoginActionFlag::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LoginActionFlag::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LoginActionFlag::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_phoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Phone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_phone, allocator);
@@ -102,7 +101,7 @@ void LoginActionFlag::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_tokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Token";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_token, allocator);
@@ -110,7 +109,7 @@ void LoginActionFlag::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_stokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Stoken";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stoken, allocator);
@@ -118,7 +117,7 @@ void LoginActionFlag::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_wechatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Wechat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wechat, allocator);
@@ -126,7 +125,7 @@ void LoginActionFlag::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_customHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Custom";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_custom, allocator);

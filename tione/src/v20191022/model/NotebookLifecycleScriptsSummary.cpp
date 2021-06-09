@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 NotebookLifecycleScriptsSummary::NotebookLifecycleScriptsSummary() :
@@ -28,7 +27,7 @@ NotebookLifecycleScriptsSummary::NotebookLifecycleScriptsSummary() :
 {
 }
 
-CoreInternalOutcome NotebookLifecycleScriptsSummary::Deserialize(const Value &value)
+CoreInternalOutcome NotebookLifecycleScriptsSummary::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome NotebookLifecycleScriptsSummary::Deserialize(const Value &va
     return CoreInternalOutcome(true);
 }
 
-void NotebookLifecycleScriptsSummary::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NotebookLifecycleScriptsSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_notebookLifecycleScriptsNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotebookLifecycleScriptsName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_notebookLifecycleScriptsName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notebookLifecycleScriptsName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_creationTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreationTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creationTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creationTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastModifiedTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastModifiedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastModifiedTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastModifiedTime.c_str(), allocator).Move(), allocator);
     }
 
 }

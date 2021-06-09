@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sms::V20190711::Model;
-using namespace rapidjson;
 using namespace std;
 
 SendStatusStatistics::SendStatusStatistics() :
@@ -28,7 +27,7 @@ SendStatusStatistics::SendStatusStatistics() :
 {
 }
 
-CoreInternalOutcome SendStatusStatistics::Deserialize(const Value &value)
+CoreInternalOutcome SendStatusStatistics::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome SendStatusStatistics::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SendStatusStatistics::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SendStatusStatistics::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_feeCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FeeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_feeCount, allocator);
@@ -80,7 +79,7 @@ void SendStatusStatistics::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_requestCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RequestCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_requestCount, allocator);
@@ -88,7 +87,7 @@ void SendStatusStatistics::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_requestSuccessCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RequestSuccessCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_requestSuccessCount, allocator);

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeDeviceClassPartitionRequest::DescribeDeviceClassPartitionRequest() :
@@ -38,30 +37,30 @@ DescribeDeviceClassPartitionRequest::DescribeDeviceClassPartitionRequest() :
 
 string DescribeDeviceClassPartitionRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_deviceClassCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceClassCode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_deviceClassCode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceClassCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cpuIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpuId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cpuId, allocator);
@@ -69,7 +68,7 @@ string DescribeDeviceClassPartitionRequest::ToJsonString() const
 
     if (m_memSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_memSize, allocator);
@@ -77,7 +76,7 @@ string DescribeDeviceClassPartitionRequest::ToJsonString() const
 
     if (m_containRaidCardHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContainRaidCard";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_containRaidCard, allocator);
@@ -85,7 +84,7 @@ string DescribeDeviceClassPartitionRequest::ToJsonString() const
 
     if (m_systemDiskTypeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SystemDiskTypeId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_systemDiskTypeId, allocator);
@@ -93,7 +92,7 @@ string DescribeDeviceClassPartitionRequest::ToJsonString() const
 
     if (m_systemDiskCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SystemDiskCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_systemDiskCount, allocator);
@@ -101,7 +100,7 @@ string DescribeDeviceClassPartitionRequest::ToJsonString() const
 
     if (m_dataDiskTypeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataDiskTypeId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dataDiskTypeId, allocator);
@@ -109,15 +108,15 @@ string DescribeDeviceClassPartitionRequest::ToJsonString() const
 
     if (m_dataDiskCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataDiskCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dataDiskCount, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

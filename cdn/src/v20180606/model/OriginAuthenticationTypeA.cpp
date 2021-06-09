@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 OriginAuthenticationTypeA::OriginAuthenticationTypeA() :
@@ -26,7 +25,7 @@ OriginAuthenticationTypeA::OriginAuthenticationTypeA() :
 {
 }
 
-CoreInternalOutcome OriginAuthenticationTypeA::Deserialize(const Value &value)
+CoreInternalOutcome OriginAuthenticationTypeA::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome OriginAuthenticationTypeA::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OriginAuthenticationTypeA::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OriginAuthenticationTypeA::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_secretKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecretKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secretKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretKey.c_str(), allocator).Move(), allocator);
     }
 
 }

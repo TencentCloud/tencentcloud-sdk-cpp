@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 DDoSAlarmThreshold::DDoSAlarmThreshold() :
@@ -27,7 +26,7 @@ DDoSAlarmThreshold::DDoSAlarmThreshold() :
 {
 }
 
-CoreInternalOutcome DDoSAlarmThreshold::Deserialize(const Value &value)
+CoreInternalOutcome DDoSAlarmThreshold::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome DDoSAlarmThreshold::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DDoSAlarmThreshold::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DDoSAlarmThreshold::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_alarmTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlarmType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_alarmType, allocator);
@@ -69,7 +68,7 @@ void DDoSAlarmThreshold::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_alarmThresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlarmThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_alarmThreshold, allocator);

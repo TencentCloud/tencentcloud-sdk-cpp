@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 TrafficMirrorPortStatus::TrafficMirrorPortStatus() :
@@ -27,7 +26,7 @@ TrafficMirrorPortStatus::TrafficMirrorPortStatus() :
 {
 }
 
-CoreInternalOutcome TrafficMirrorPortStatus::Deserialize(const Value &value)
+CoreInternalOutcome TrafficMirrorPortStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome TrafficMirrorPortStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TrafficMirrorPortStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TrafficMirrorPortStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
@@ -69,10 +68,10 @@ void TrafficMirrorPortStatus::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }

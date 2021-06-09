@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ame::V20190916::Model;
-using namespace rapidjson;
 using namespace std;
 
 UseRange::UseRange() :
@@ -27,7 +26,7 @@ UseRange::UseRange() :
 {
 }
 
-CoreInternalOutcome UseRange::Deserialize(const Value &value)
+CoreInternalOutcome UseRange::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome UseRange::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UseRange::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UseRange::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_useRangeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UseRangeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useRangeId, allocator);
@@ -69,10 +68,10 @@ void UseRange::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }

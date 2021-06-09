@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ame::V20190916::Model;
-using namespace rapidjson;
 using namespace std;
 
 Music::Music() :
@@ -31,7 +30,7 @@ Music::Music() :
 {
 }
 
-CoreInternalOutcome Music::Deserialize(const Value &value)
+CoreInternalOutcome Music::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,20 +99,20 @@ CoreInternalOutcome Music::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Music::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Music::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fileSize, allocator);
@@ -121,15 +120,15 @@ void Music::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_fileExtensionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileExtension";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileExtension.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileExtension.c_str(), allocator).Move(), allocator);
     }
 
     if (m_auditionBeginHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuditionBegin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_auditionBegin, allocator);
@@ -137,7 +136,7 @@ void Music::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_auditionEndHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuditionEnd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_auditionEnd, allocator);
@@ -145,10 +144,10 @@ void Music::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_fullUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FullUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fullUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullUrl.c_str(), allocator).Move(), allocator);
     }
 
 }

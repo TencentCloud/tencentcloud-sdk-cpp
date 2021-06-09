@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Privatedns::V20201028::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyPrivateZoneVpcResponse::ModifyPrivateZoneVpcResponse() :
@@ -32,7 +31,7 @@ ModifyPrivateZoneVpcResponse::ModifyPrivateZoneVpcResponse() :
 
 CoreInternalOutcome ModifyPrivateZoneVpcResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome ModifyPrivateZoneVpcResponse::Deserialize(const string &payl
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome ModifyPrivateZoneVpcResponse::Deserialize(const string &payl
         if (!rsp["VpcSet"].IsArray())
             return CoreInternalOutcome(Error("response `VpcSet` is not array type"));
 
-        const Value &tmpValue = rsp["VpcSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["VpcSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             VpcInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

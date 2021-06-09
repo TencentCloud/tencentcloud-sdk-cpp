@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 UserDefineFaceReviewTemplateInfo::UserDefineFaceReviewTemplateInfo() :
@@ -29,7 +28,7 @@ UserDefineFaceReviewTemplateInfo::UserDefineFaceReviewTemplateInfo() :
 {
 }
 
-CoreInternalOutcome UserDefineFaceReviewTemplateInfo::Deserialize(const Value &value)
+CoreInternalOutcome UserDefineFaceReviewTemplateInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -49,8 +48,8 @@ CoreInternalOutcome UserDefineFaceReviewTemplateInfo::Deserialize(const Value &v
         if (!value["LabelSet"].IsArray())
             return CoreInternalOutcome(Error("response `UserDefineFaceReviewTemplateInfo.LabelSet` is not array type"));
 
-        const Value &tmpValue = value["LabelSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LabelSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_labelSet.push_back((*itr).GetString());
         }
@@ -81,33 +80,33 @@ CoreInternalOutcome UserDefineFaceReviewTemplateInfo::Deserialize(const Value &v
     return CoreInternalOutcome(true);
 }
 
-void UserDefineFaceReviewTemplateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UserDefineFaceReviewTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_labelSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LabelSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_labelSet.begin(); itr != m_labelSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_blockConfidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blockConfidence, allocator);
@@ -115,7 +114,7 @@ void UserDefineFaceReviewTemplateInfo::ToJsonObject(Value &value, Document::Allo
 
     if (m_reviewConfidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReviewConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reviewConfidence, allocator);

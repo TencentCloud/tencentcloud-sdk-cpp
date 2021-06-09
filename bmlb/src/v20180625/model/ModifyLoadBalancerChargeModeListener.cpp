@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyLoadBalancerChargeModeListener::ModifyLoadBalancerChargeModeListener() :
@@ -28,7 +27,7 @@ ModifyLoadBalancerChargeModeListener::ModifyLoadBalancerChargeModeListener() :
 {
 }
 
-CoreInternalOutcome ModifyLoadBalancerChargeModeListener::Deserialize(const Value &value)
+CoreInternalOutcome ModifyLoadBalancerChargeModeListener::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome ModifyLoadBalancerChargeModeListener::Deserialize(const Valu
     return CoreInternalOutcome(true);
 }
 
-void ModifyLoadBalancerChargeModeListener::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ModifyLoadBalancerChargeModeListener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_listenerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_listenerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listenerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);

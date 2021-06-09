@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 OsName::OsName() :
@@ -27,7 +26,7 @@ OsName::OsName() :
 {
 }
 
-CoreInternalOutcome OsName::Deserialize(const Value &value)
+CoreInternalOutcome OsName::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome OsName::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OsName::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OsName::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_machineOSTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineOSType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_machineOSType, allocator);

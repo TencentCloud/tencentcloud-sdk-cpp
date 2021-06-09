@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 StorageBlock::StorageBlock() :
@@ -28,7 +27,7 @@ StorageBlock::StorageBlock() :
 {
 }
 
-CoreInternalOutcome StorageBlock::Deserialize(const Value &value)
+CoreInternalOutcome StorageBlock::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome StorageBlock::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StorageBlock::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StorageBlock::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_minSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minSize, allocator);
@@ -88,7 +87,7 @@ void StorageBlock::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_maxSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxSize, allocator);

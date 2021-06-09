@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apcas::V20201127::Model;
-using namespace rapidjson;
 using namespace std;
 
 LabelDetailData::LabelDetailData() :
@@ -27,7 +26,7 @@ LabelDetailData::LabelDetailData() :
 {
 }
 
-CoreInternalOutcome LabelDetailData::Deserialize(const Value &value)
+CoreInternalOutcome LabelDetailData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,24 +62,24 @@ CoreInternalOutcome LabelDetailData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LabelDetailData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LabelDetailData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_value.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_labelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
 }

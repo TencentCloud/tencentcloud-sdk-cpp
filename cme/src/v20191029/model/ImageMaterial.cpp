@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageMaterial::ImageMaterial() :
@@ -31,7 +30,7 @@ ImageMaterial::ImageMaterial() :
 {
 }
 
-CoreInternalOutcome ImageMaterial::Deserialize(const Value &value)
+CoreInternalOutcome ImageMaterial::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome ImageMaterial::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageMaterial::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageMaterial::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -113,7 +112,7 @@ void ImageMaterial::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -121,15 +120,15 @@ void ImageMaterial::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_materialUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaterialUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_materialUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_materialUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
@@ -137,18 +136,18 @@ void ImageMaterial::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_originalUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_originalUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vodFileIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VodFileId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vodFileId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vodFileId.c_str(), allocator).Move(), allocator);
     }
 
 }

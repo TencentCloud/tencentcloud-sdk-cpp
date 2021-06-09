@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceUpgradePreCheckResult::InstanceUpgradePreCheckResult() :
@@ -28,7 +27,7 @@ InstanceUpgradePreCheckResult::InstanceUpgradePreCheckResult() :
 {
 }
 
-CoreInternalOutcome InstanceUpgradePreCheckResult::Deserialize(const Value &value)
+CoreInternalOutcome InstanceUpgradePreCheckResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome InstanceUpgradePreCheckResult::Deserialize(const Value &valu
         if (!value["Items"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceUpgradePreCheckResult.Items` is not array type"));
 
-        const Value &tmpValue = value["Items"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Items"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InstanceUpgradePreCheckResultItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -68,8 +67,8 @@ CoreInternalOutcome InstanceUpgradePreCheckResult::Deserialize(const Value &valu
         if (!value["SinglePods"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceUpgradePreCheckResult.SinglePods` is not array type"));
 
-        const Value &tmpValue = value["SinglePods"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SinglePods"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_singlePods.push_back((*itr).GetString());
         }
@@ -80,12 +79,12 @@ CoreInternalOutcome InstanceUpgradePreCheckResult::Deserialize(const Value &valu
     return CoreInternalOutcome(true);
 }
 
-void InstanceUpgradePreCheckResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceUpgradePreCheckResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_checkPassHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CheckPass";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_checkPass, allocator);
@@ -93,29 +92,29 @@ void InstanceUpgradePreCheckResult::ToJsonObject(Value &value, Document::Allocat
 
     if (m_itemsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Items";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_singlePodsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SinglePods";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_singlePods.begin(); itr != m_singlePods.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

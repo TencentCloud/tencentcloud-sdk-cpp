@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 NamespaceLimit::NamespaceLimit() :
@@ -35,7 +34,7 @@ NamespaceLimit::NamespaceLimit() :
 {
 }
 
-CoreInternalOutcome NamespaceLimit::Deserialize(const Value &value)
+CoreInternalOutcome NamespaceLimit::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -151,12 +150,12 @@ CoreInternalOutcome NamespaceLimit::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NamespaceLimit::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NamespaceLimit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_functionsCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FunctionsCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_functionsCount, allocator);
@@ -164,24 +163,24 @@ void NamespaceLimit::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_triggerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Trigger";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_trigger.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_namespaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_concurrentExecutionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConcurrentExecutions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_concurrentExecutions, allocator);
@@ -189,7 +188,7 @@ void NamespaceLimit::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_timeoutLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeoutLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeoutLimit, allocator);
@@ -197,7 +196,7 @@ void NamespaceLimit::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_testModelLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TestModelLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_testModelLimit, allocator);
@@ -205,7 +204,7 @@ void NamespaceLimit::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_initTimeoutLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InitTimeoutLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_initTimeoutLimit, allocator);
@@ -213,7 +212,7 @@ void NamespaceLimit::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_retryNumLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RetryNumLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_retryNumLimit, allocator);
@@ -221,7 +220,7 @@ void NamespaceLimit::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_minMsgTTLHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinMsgTTL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minMsgTTL, allocator);
@@ -229,7 +228,7 @@ void NamespaceLimit::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_maxMsgTTLHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxMsgTTL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxMsgTTL, allocator);

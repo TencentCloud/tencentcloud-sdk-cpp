@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 NewRealServer::NewRealServer() :
@@ -27,7 +26,7 @@ NewRealServer::NewRealServer() :
 {
 }
 
-CoreInternalOutcome NewRealServer::Deserialize(const Value &value)
+CoreInternalOutcome NewRealServer::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome NewRealServer::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NewRealServer::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NewRealServer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_realServerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realServerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realServerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_realServerIPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerIP";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realServerIP.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realServerIP.c_str(), allocator).Move(), allocator);
     }
 
 }

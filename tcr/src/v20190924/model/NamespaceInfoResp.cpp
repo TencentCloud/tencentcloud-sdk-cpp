@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 NamespaceInfoResp::NamespaceInfoResp() :
@@ -27,7 +26,7 @@ NamespaceInfoResp::NamespaceInfoResp() :
 {
 }
 
-CoreInternalOutcome NamespaceInfoResp::Deserialize(const Value &value)
+CoreInternalOutcome NamespaceInfoResp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome NamespaceInfoResp::Deserialize(const Value &value)
         if (!value["NamespaceInfo"].IsArray())
             return CoreInternalOutcome(Error("response `NamespaceInfoResp.NamespaceInfo` is not array type"));
 
-        const Value &tmpValue = value["NamespaceInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["NamespaceInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             NamespaceInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,12 +65,12 @@ CoreInternalOutcome NamespaceInfoResp::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NamespaceInfoResp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NamespaceInfoResp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_namespaceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NamespaceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_namespaceCount, allocator);
@@ -79,15 +78,15 @@ void NamespaceInfoResp::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_namespaceInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NamespaceInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_namespaceInfo.begin(); itr != m_namespaceInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

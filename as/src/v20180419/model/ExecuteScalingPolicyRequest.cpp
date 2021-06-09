@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::As::V20180419::Model;
-using namespace rapidjson;
 using namespace std;
 
 ExecuteScalingPolicyRequest::ExecuteScalingPolicyRequest() :
@@ -32,22 +31,22 @@ ExecuteScalingPolicyRequest::ExecuteScalingPolicyRequest() :
 
 string ExecuteScalingPolicyRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_autoScalingPolicyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoScalingPolicyId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_autoScalingPolicyId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoScalingPolicyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_honorCooldownHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HonorCooldown";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_honorCooldown, allocator);
@@ -55,15 +54,15 @@ string ExecuteScalingPolicyRequest::ToJsonString() const
 
     if (m_triggerSourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TriggerSource";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_triggerSource.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_triggerSource.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Fmu::V20191213::Model;
-using namespace rapidjson;
 using namespace std;
 
 RGBAInfo::RGBAInfo() :
@@ -29,7 +28,7 @@ RGBAInfo::RGBAInfo() :
 {
 }
 
-CoreInternalOutcome RGBAInfo::Deserialize(const Value &value)
+CoreInternalOutcome RGBAInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome RGBAInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RGBAInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RGBAInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_rHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "R";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_r, allocator);
@@ -91,7 +90,7 @@ void RGBAInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_gHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "G";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_g, allocator);
@@ -99,7 +98,7 @@ void RGBAInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_bHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "B";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_b, allocator);
@@ -107,7 +106,7 @@ void RGBAInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_aHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "A";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_a, allocator);

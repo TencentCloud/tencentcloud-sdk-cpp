@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Asw::V20200722::Model;
-using namespace rapidjson;
 using namespace std;
 
 ExecutionEvent::ExecutionEvent() :
@@ -33,7 +32,7 @@ ExecutionEvent::ExecutionEvent() :
 {
 }
 
-CoreInternalOutcome ExecutionEvent::Deserialize(const Value &value)
+CoreInternalOutcome ExecutionEvent::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,20 +121,20 @@ CoreInternalOutcome ExecutionEvent::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ExecutionEvent::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ExecutionEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_executionResourceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExecutionResourceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_executionResourceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executionResourceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eventIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eventId, allocator);
@@ -143,50 +142,50 @@ void ExecutionEvent::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_eventCategoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventCategory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eventCategory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventCategory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stepNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stepName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stepName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Timestamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timestamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timestamp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_content.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
     if (m_exceptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Exception";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_exception.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exception.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dnspod::V20210323::Model;
-using namespace rapidjson;
 using namespace std;
 
 DomainCreateInfo::DomainCreateInfo() :
@@ -29,7 +28,7 @@ DomainCreateInfo::DomainCreateInfo() :
 {
 }
 
-CoreInternalOutcome DomainCreateInfo::Deserialize(const Value &value)
+CoreInternalOutcome DomainCreateInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome DomainCreateInfo::Deserialize(const Value &value)
         if (!value["GradeNsList"].IsArray())
             return CoreInternalOutcome(Error("response `DomainCreateInfo.GradeNsList` is not array type"));
 
-        const Value &tmpValue = value["GradeNsList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["GradeNsList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_gradeNsList.push_back((*itr).GetString());
         }
@@ -81,12 +80,12 @@ CoreInternalOutcome DomainCreateInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DomainCreateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DomainCreateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -94,30 +93,30 @@ void DomainCreateInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_punycodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Punycode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_punycode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_punycode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gradeNsListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GradeNsList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_gradeNsList.begin(); itr != m_gradeNsList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

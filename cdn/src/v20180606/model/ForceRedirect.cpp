@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 ForceRedirect::ForceRedirect() :
@@ -29,7 +28,7 @@ ForceRedirect::ForceRedirect() :
 {
 }
 
-CoreInternalOutcome ForceRedirect::Deserialize(const Value &value)
+CoreInternalOutcome ForceRedirect::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,28 +77,28 @@ CoreInternalOutcome ForceRedirect::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ForceRedirect::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ForceRedirect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_redirectTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RedirectType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_redirectType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_redirectType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_redirectStatusCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RedirectStatusCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_redirectStatusCode, allocator);
@@ -107,10 +106,10 @@ void ForceRedirect::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_carryHeadersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CarryHeaders";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_carryHeaders.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_carryHeaders.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 HostedDeviceOutBandInfo::HostedDeviceOutBandInfo() :
@@ -29,7 +28,7 @@ HostedDeviceOutBandInfo::HostedDeviceOutBandInfo() :
 {
 }
 
-CoreInternalOutcome HostedDeviceOutBandInfo::Deserialize(const Value &value)
+CoreInternalOutcome HostedDeviceOutBandInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,36 +77,36 @@ CoreInternalOutcome HostedDeviceOutBandInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HostedDeviceOutBandInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HostedDeviceOutBandInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outBandIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutBandIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outBandIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outBandIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpnIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpnIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpnIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpnIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpnPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpnPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vpnPort, allocator);

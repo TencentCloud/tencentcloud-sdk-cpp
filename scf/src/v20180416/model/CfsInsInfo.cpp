@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 CfsInsInfo::CfsInsInfo() :
@@ -34,7 +33,7 @@ CfsInsInfo::CfsInsInfo() :
 {
 }
 
-CoreInternalOutcome CfsInsInfo::Deserialize(const Value &value)
+CoreInternalOutcome CfsInsInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,79 +132,79 @@ CoreInternalOutcome CfsInsInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CfsInsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CfsInsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_userIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cfsIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CfsId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cfsId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cfsId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mountInsIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MountInsId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mountInsId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountInsId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_localMountDirHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocalMountDir";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_localMountDir.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_localMountDir.c_str(), allocator).Move(), allocator);
     }
 
     if (m_remoteMountDirHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RemoteMountDir";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_remoteMountDir.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remoteMountDir.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ipAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ipAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mountVpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MountVpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mountVpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountVpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mountSubnetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MountSubnetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mountSubnetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountSubnetId.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 LiveStreamTaskNotifyConfig::LiveStreamTaskNotifyConfig() :
@@ -29,7 +28,7 @@ LiveStreamTaskNotifyConfig::LiveStreamTaskNotifyConfig() :
 {
 }
 
-CoreInternalOutcome LiveStreamTaskNotifyConfig::Deserialize(const Value &value)
+CoreInternalOutcome LiveStreamTaskNotifyConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome LiveStreamTaskNotifyConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LiveStreamTaskNotifyConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LiveStreamTaskNotifyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cmqModelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CmqModel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cmqModel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmqModel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cmqRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CmqRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cmqRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmqRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queueNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueueName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_queueName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topicNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topicName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
 }

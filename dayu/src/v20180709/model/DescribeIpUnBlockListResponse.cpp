@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeIpUnBlockListResponse::DescribeIpUnBlockListResponse() :
@@ -34,7 +33,7 @@ DescribeIpUnBlockListResponse::DescribeIpUnBlockListResponse() :
 
 CoreInternalOutcome DescribeIpUnBlockListResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -44,7 +43,7 @@ CoreInternalOutcome DescribeIpUnBlockListResponse::Deserialize(const string &pay
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -91,8 +90,8 @@ CoreInternalOutcome DescribeIpUnBlockListResponse::Deserialize(const string &pay
         if (!rsp["List"].IsArray())
             return CoreInternalOutcome(Error("response `List` is not array type"));
 
-        const Value &tmpValue = rsp["List"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["List"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             IpUnBlockData item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

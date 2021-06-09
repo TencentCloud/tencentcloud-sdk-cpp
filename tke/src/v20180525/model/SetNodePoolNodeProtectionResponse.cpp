@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 SetNodePoolNodeProtectionResponse::SetNodePoolNodeProtectionResponse() :
@@ -32,7 +31,7 @@ SetNodePoolNodeProtectionResponse::SetNodePoolNodeProtectionResponse() :
 
 CoreInternalOutcome SetNodePoolNodeProtectionResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome SetNodePoolNodeProtectionResponse::Deserialize(const string 
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome SetNodePoolNodeProtectionResponse::Deserialize(const string 
         if (!rsp["SucceedInstanceIds"].IsArray())
             return CoreInternalOutcome(Error("response `SucceedInstanceIds` is not array type"));
 
-        const Value &tmpValue = rsp["SucceedInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SucceedInstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_succeedInstanceIds.push_back((*itr).GetString());
         }
@@ -82,8 +81,8 @@ CoreInternalOutcome SetNodePoolNodeProtectionResponse::Deserialize(const string 
         if (!rsp["FailedInstanceIds"].IsArray())
             return CoreInternalOutcome(Error("response `FailedInstanceIds` is not array type"));
 
-        const Value &tmpValue = rsp["FailedInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["FailedInstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_failedInstanceIds.push_back((*itr).GetString());
         }

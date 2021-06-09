@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bda::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 BodyRect::BodyRect() :
@@ -29,7 +28,7 @@ BodyRect::BodyRect() :
 {
 }
 
-CoreInternalOutcome BodyRect::Deserialize(const Value &value)
+CoreInternalOutcome BodyRect::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome BodyRect::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BodyRect::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BodyRect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_xHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "X";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_x, allocator);
@@ -91,7 +90,7 @@ void BodyRect::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_yHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Y";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_y, allocator);
@@ -99,7 +98,7 @@ void BodyRect::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -107,7 +106,7 @@ void BodyRect::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);

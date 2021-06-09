@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProjectEntryEx::ProjectEntryEx() :
@@ -34,7 +33,7 @@ ProjectEntryEx::ProjectEntryEx() :
 {
 }
 
-CoreInternalOutcome ProjectEntryEx::Deserialize(const Value &value)
+CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,36 +132,36 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProjectEntryEx::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProjectEntryEx::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_projectId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_projectName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_projectDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -170,7 +169,7 @@ void ProjectEntryEx::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
@@ -178,7 +177,7 @@ void ProjectEntryEx::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_productCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_productCount, allocator);
@@ -186,7 +185,7 @@ void ProjectEntryEx::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_nativeAppCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NativeAppCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nativeAppCount, allocator);
@@ -194,7 +193,7 @@ void ProjectEntryEx::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_webAppCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WebAppCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_webAppCount, allocator);
@@ -202,10 +201,10 @@ void ProjectEntryEx::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Kms::V20190118::Model;
-using namespace rapidjson;
 using namespace std;
 
 VerifyByAsymmetricKeyRequest::VerifyByAsymmetricKeyRequest() :
@@ -34,54 +33,54 @@ VerifyByAsymmetricKeyRequest::VerifyByAsymmetricKeyRequest() :
 
 string VerifyByAsymmetricKeyRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_keyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_keyId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signatureValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignatureValue";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_signatureValue.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_signatureValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_messageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
     if (m_algorithmHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Algorithm";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_algorithm.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_algorithm.c_str(), allocator).Move(), allocator);
     }
 
     if (m_messageTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MessageType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_messageType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_messageType.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

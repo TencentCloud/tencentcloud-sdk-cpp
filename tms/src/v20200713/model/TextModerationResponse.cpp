@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tms::V20200713::Model;
-using namespace rapidjson;
 using namespace std;
 
 TextModerationResponse::TextModerationResponse() :
@@ -40,7 +39,7 @@ TextModerationResponse::TextModerationResponse() :
 
 CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -50,7 +49,7 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -117,8 +116,8 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
         if (!rsp["Keywords"].IsArray())
             return CoreInternalOutcome(Error("response `Keywords` is not array type"));
 
-        const Value &tmpValue = rsp["Keywords"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Keywords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_keywords.push_back((*itr).GetString());
         }
@@ -140,8 +139,8 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
         if (!rsp["DetailResults"].IsArray())
             return CoreInternalOutcome(Error("response `DetailResults` is not array type"));
 
-        const Value &tmpValue = rsp["DetailResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DetailResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DetailResults item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -160,8 +159,8 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
         if (!rsp["RiskDetails"].IsArray())
             return CoreInternalOutcome(Error("response `RiskDetails` is not array type"));
 
-        const Value &tmpValue = rsp["RiskDetails"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["RiskDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RiskDetails item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

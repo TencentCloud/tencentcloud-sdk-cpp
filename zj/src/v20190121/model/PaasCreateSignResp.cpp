@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 PaasCreateSignResp::PaasCreateSignResp() :
@@ -26,7 +25,7 @@ PaasCreateSignResp::PaasCreateSignResp() :
 {
 }
 
-CoreInternalOutcome PaasCreateSignResp::Deserialize(const Value &value)
+CoreInternalOutcome PaasCreateSignResp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome PaasCreateSignResp::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PaasCreateSignResp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PaasCreateSignResp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_signIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_signId, allocator);

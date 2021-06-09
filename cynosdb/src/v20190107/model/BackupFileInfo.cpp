@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cynosdb::V20190107::Model;
-using namespace rapidjson;
 using namespace std;
 
 BackupFileInfo::BackupFileInfo() :
@@ -34,7 +33,7 @@ BackupFileInfo::BackupFileInfo() :
 {
 }
 
-CoreInternalOutcome BackupFileInfo::Deserialize(const Value &value)
+CoreInternalOutcome BackupFileInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome BackupFileInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BackupFileInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BackupFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_snapshotIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SnapshotId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_snapshotId, allocator);
@@ -146,15 +145,15 @@ void BackupFileInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_fileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fileSize, allocator);
@@ -162,50 +161,50 @@ void BackupFileInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_finishTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FinishTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_finishTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_backupTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_backupType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_backupMethodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupMethod";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_backupMethod.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupMethod.c_str(), allocator).Move(), allocator);
     }
 
     if (m_backupStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_backupStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_snapshotTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SnapshotTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_snapshotTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshotTime.c_str(), allocator).Move(), allocator);
     }
 
 }

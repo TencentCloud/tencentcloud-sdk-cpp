@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProductEntry::ProductEntry() :
@@ -40,7 +39,7 @@ ProductEntry::ProductEntry() :
 {
 }
 
-CoreInternalOutcome ProductEntry::Deserialize(const Value &value)
+CoreInternalOutcome ProductEntry::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -199,28 +198,28 @@ CoreInternalOutcome ProductEntry::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProductEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProductEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_productIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_categoryIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CategoryId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_categoryId, allocator);
@@ -228,23 +227,23 @@ void ProductEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_encryptionTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EncryptionType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_encryptionType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptionType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_netTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_netType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataProtocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataProtocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataProtocol, allocator);
@@ -252,23 +251,23 @@ void ProductEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_productDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_devStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DevStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_devStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_devStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -276,7 +275,7 @@ void ProductEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
@@ -284,15 +283,15 @@ void ProductEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_productType, allocator);
@@ -300,15 +299,15 @@ void ProductEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_projectId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_moduleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_moduleId, allocator);
@@ -316,10 +315,10 @@ void ProductEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_enableProductScriptHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableProductScript";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_enableProductScript.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_enableProductScript.c_str(), allocator).Move(), allocator);
     }
 
 }

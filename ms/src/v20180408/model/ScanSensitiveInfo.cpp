@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScanSensitiveInfo::ScanSensitiveInfo() :
@@ -28,7 +27,7 @@ ScanSensitiveInfo::ScanSensitiveInfo() :
 {
 }
 
-CoreInternalOutcome ScanSensitiveInfo::Deserialize(const Value &value)
+CoreInternalOutcome ScanSensitiveInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome ScanSensitiveInfo::Deserialize(const Value &value)
         if (!value["WordList"].IsArray())
             return CoreInternalOutcome(Error("response `ScanSensitiveInfo.WordList` is not array type"));
 
-        const Value &tmpValue = value["WordList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["WordList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_wordList.push_back((*itr).GetString());
         }
@@ -70,36 +69,36 @@ CoreInternalOutcome ScanSensitiveInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScanSensitiveInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScanSensitiveInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_wordListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WordList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_wordList.begin(); itr != m_wordList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_filePathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FilePath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_filePath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_filePath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileShaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSha";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileSha.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSha.c_str(), allocator).Move(), allocator);
     }
 
 }

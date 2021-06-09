@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
-using namespace rapidjson;
 using namespace std;
 
 RuleInfo::RuleInfo() :
@@ -28,7 +27,7 @@ RuleInfo::RuleInfo() :
 {
 }
 
-CoreInternalOutcome RuleInfo::Deserialize(const Value &value)
+CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -88,33 +87,33 @@ CoreInternalOutcome RuleInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RuleInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fullTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FullText";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_fullText.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_keyValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_keyValue.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_tagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tag.ToJsonObject(value[key.c_str()], allocator);
     }
 

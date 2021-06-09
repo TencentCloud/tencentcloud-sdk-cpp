@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tdmq::V20200217::Model;
-using namespace rapidjson;
 using namespace std;
 
 Consumer::Consumer() :
@@ -29,7 +28,7 @@ Consumer::Consumer() :
 {
 }
 
-CoreInternalOutcome Consumer::Deserialize(const Value &value)
+CoreInternalOutcome Consumer::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome Consumer::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Consumer::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Consumer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_connectedSinceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConnectedSince";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_connectedSince.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connectedSince.c_str(), allocator).Move(), allocator);
     }
 
     if (m_consumerAddrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConsumerAddr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_consumerAddr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consumerAddr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_consumerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConsumerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_consumerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consumerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clientVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientVersion.c_str(), allocator).Move(), allocator);
     }
 
 }

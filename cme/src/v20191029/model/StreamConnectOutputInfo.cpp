@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 StreamConnectOutputInfo::StreamConnectOutputInfo() :
@@ -27,7 +26,7 @@ StreamConnectOutputInfo::StreamConnectOutputInfo() :
 {
 }
 
-CoreInternalOutcome StreamConnectOutputInfo::Deserialize(const Value &value)
+CoreInternalOutcome StreamConnectOutputInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,24 +62,24 @@ CoreInternalOutcome StreamConnectOutputInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StreamConnectOutputInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StreamConnectOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_streamConnectOutputHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamConnectOutput";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_streamConnectOutput.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_pushSwitchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PushSwitch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pushSwitch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pushSwitch.c_str(), allocator).Move(), allocator);
     }
 
 }

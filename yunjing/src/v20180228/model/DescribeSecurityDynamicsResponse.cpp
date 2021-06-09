@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Yunjing::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeSecurityDynamicsResponse::DescribeSecurityDynamicsResponse() :
@@ -32,7 +31,7 @@ DescribeSecurityDynamicsResponse::DescribeSecurityDynamicsResponse() :
 
 CoreInternalOutcome DescribeSecurityDynamicsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeSecurityDynamicsResponse::Deserialize(const string &
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeSecurityDynamicsResponse::Deserialize(const string &
         if (!rsp["SecurityDynamics"].IsArray())
             return CoreInternalOutcome(Error("response `SecurityDynamics` is not array type"));
 
-        const Value &tmpValue = rsp["SecurityDynamics"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SecurityDynamics"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SecurityDynamic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

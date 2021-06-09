@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfw::V20190904::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScanResultInfo::ScanResultInfo() :
@@ -31,7 +30,7 @@ ScanResultInfo::ScanResultInfo() :
 {
 }
 
-CoreInternalOutcome ScanResultInfo::Deserialize(const Value &value)
+CoreInternalOutcome ScanResultInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome ScanResultInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScanResultInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScanResultInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_leakNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeakNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_leakNum, allocator);
@@ -113,7 +112,7 @@ void ScanResultInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_iPNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IPNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iPNum, allocator);
@@ -121,7 +120,7 @@ void ScanResultInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_portNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PortNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_portNum, allocator);
@@ -129,7 +128,7 @@ void ScanResultInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_iPStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IPStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iPStatus, allocator);
@@ -137,7 +136,7 @@ void ScanResultInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_idpStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IdpStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_idpStatus, allocator);
@@ -145,7 +144,7 @@ void ScanResultInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_banStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BanStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_banStatus, allocator);

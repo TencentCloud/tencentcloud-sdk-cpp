@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbm::V20180129::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeIndustryNewsResponse::DescribeIndustryNewsResponse() :
@@ -35,7 +34,7 @@ DescribeIndustryNewsResponse::DescribeIndustryNewsResponse() :
 
 CoreInternalOutcome DescribeIndustryNewsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -45,7 +44,7 @@ CoreInternalOutcome DescribeIndustryNewsResponse::Deserialize(const string &payl
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -102,8 +101,8 @@ CoreInternalOutcome DescribeIndustryNewsResponse::Deserialize(const string &payl
         if (!rsp["NewsSet"].IsArray())
             return CoreInternalOutcome(Error("response `NewsSet` is not array type"));
 
-        const Value &tmpValue = rsp["NewsSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["NewsSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             IndustryNews item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -122,8 +121,8 @@ CoreInternalOutcome DescribeIndustryNewsResponse::Deserialize(const string &payl
         if (!rsp["DateCountSet"].IsArray())
             return CoreInternalOutcome(Error("response `DateCountSet` is not array type"));
 
-        const Value &tmpValue = rsp["DateCountSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DateCountSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DateCount item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

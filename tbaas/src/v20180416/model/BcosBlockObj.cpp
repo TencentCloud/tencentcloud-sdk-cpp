@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbaas::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 BcosBlockObj::BcosBlockObj() :
@@ -33,7 +32,7 @@ BcosBlockObj::BcosBlockObj() :
 {
 }
 
-CoreInternalOutcome BcosBlockObj::Deserialize(const Value &value)
+CoreInternalOutcome BcosBlockObj::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,20 +121,20 @@ CoreInternalOutcome BcosBlockObj::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BcosBlockObj::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BcosBlockObj::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_blockHashHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockHash";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_blockHash.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_blockHash.c_str(), allocator).Move(), allocator);
     }
 
     if (m_blockNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blockNumber, allocator);
@@ -143,23 +142,23 @@ void BcosBlockObj::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_blockTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockTimestamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_blockTimestamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_blockTimestamp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sealerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sealer";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sealer.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sealer.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sealerIndexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SealerIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sealerIndex, allocator);
@@ -167,15 +166,15 @@ void BcosBlockObj::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_transCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_transCount, allocator);
@@ -183,10 +182,10 @@ void BcosBlockObj::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_modifyTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
     }
 
 }

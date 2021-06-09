@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cloudaudit::V20190319::Model;
-using namespace rapidjson;
 using namespace std;
 
 CosRegionInfo::CosRegionInfo() :
@@ -27,7 +26,7 @@ CosRegionInfo::CosRegionInfo() :
 {
 }
 
-CoreInternalOutcome CosRegionInfo::Deserialize(const Value &value)
+CoreInternalOutcome CosRegionInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome CosRegionInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CosRegionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CosRegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cosRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cosRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosRegionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosRegionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cosRegionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosRegionName.c_str(), allocator).Move(), allocator);
     }
 
 }

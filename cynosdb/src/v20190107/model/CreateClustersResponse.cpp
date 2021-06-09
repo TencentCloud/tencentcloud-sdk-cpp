@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cynosdb::V20190107::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateClustersResponse::CreateClustersResponse() :
@@ -35,7 +34,7 @@ CreateClustersResponse::CreateClustersResponse() :
 
 CoreInternalOutcome CreateClustersResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -45,7 +44,7 @@ CoreInternalOutcome CreateClustersResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -82,8 +81,8 @@ CoreInternalOutcome CreateClustersResponse::Deserialize(const string &payload)
         if (!rsp["DealNames"].IsArray())
             return CoreInternalOutcome(Error("response `DealNames` is not array type"));
 
-        const Value &tmpValue = rsp["DealNames"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DealNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_dealNames.push_back((*itr).GetString());
         }
@@ -95,8 +94,8 @@ CoreInternalOutcome CreateClustersResponse::Deserialize(const string &payload)
         if (!rsp["ResourceIds"].IsArray())
             return CoreInternalOutcome(Error("response `ResourceIds` is not array type"));
 
-        const Value &tmpValue = rsp["ResourceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ResourceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_resourceIds.push_back((*itr).GetString());
         }
@@ -108,8 +107,8 @@ CoreInternalOutcome CreateClustersResponse::Deserialize(const string &payload)
         if (!rsp["ClusterIds"].IsArray())
             return CoreInternalOutcome(Error("response `ClusterIds` is not array type"));
 
-        const Value &tmpValue = rsp["ClusterIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ClusterIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_clusterIds.push_back((*itr).GetString());
         }
@@ -121,8 +120,8 @@ CoreInternalOutcome CreateClustersResponse::Deserialize(const string &payload)
         if (!rsp["BigDealIds"].IsArray())
             return CoreInternalOutcome(Error("response `BigDealIds` is not array type"));
 
-        const Value &tmpValue = rsp["BigDealIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["BigDealIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_bigDealIds.push_back((*itr).GetString());
         }

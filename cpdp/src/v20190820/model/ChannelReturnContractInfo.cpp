@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ChannelReturnContractInfo::ChannelReturnContractInfo() :
@@ -27,7 +26,7 @@ ChannelReturnContractInfo::ChannelReturnContractInfo() :
 {
 }
 
-CoreInternalOutcome ChannelReturnContractInfo::Deserialize(const Value &value)
+CoreInternalOutcome ChannelReturnContractInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome ChannelReturnContractInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ChannelReturnContractInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ChannelReturnContractInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_contractStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContractStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_contractStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contractStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelContractInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelContractInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_channelContractInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

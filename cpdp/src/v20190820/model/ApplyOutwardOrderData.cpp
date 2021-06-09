@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ApplyOutwardOrderData::ApplyOutwardOrderData() :
@@ -28,7 +27,7 @@ ApplyOutwardOrderData::ApplyOutwardOrderData() :
 {
 }
 
-CoreInternalOutcome ApplyOutwardOrderData::Deserialize(const Value &value)
+CoreInternalOutcome ApplyOutwardOrderData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome ApplyOutwardOrderData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ApplyOutwardOrderData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ApplyOutwardOrderData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_merchantIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MerchantId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_merchantId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_merchantId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_transactionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransactionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_transactionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transactionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }

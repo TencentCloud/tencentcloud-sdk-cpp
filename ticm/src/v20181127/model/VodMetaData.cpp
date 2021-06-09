@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ticm::V20181127::Model;
-using namespace rapidjson;
 using namespace std;
 
 VodMetaData::VodMetaData() :
@@ -36,7 +35,7 @@ VodMetaData::VodMetaData() :
 {
 }
 
-CoreInternalOutcome VodMetaData::Deserialize(const Value &value)
+CoreInternalOutcome VodMetaData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -116,8 +115,8 @@ CoreInternalOutcome VodMetaData::Deserialize(const Value &value)
         if (!value["VideoStreamSet"].IsArray())
             return CoreInternalOutcome(Error("response `VodMetaData.VideoStreamSet` is not array type"));
 
-        const Value &tmpValue = value["VideoStreamSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["VideoStreamSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             VodVideoStreamItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -136,8 +135,8 @@ CoreInternalOutcome VodMetaData::Deserialize(const Value &value)
         if (!value["AudioStreamSet"].IsArray())
             return CoreInternalOutcome(Error("response `VodMetaData.AudioStreamSet` is not array type"));
 
-        const Value &tmpValue = value["AudioStreamSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AudioStreamSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             VodAudioStreamItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -175,12 +174,12 @@ CoreInternalOutcome VodMetaData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VodMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VodMetaData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
@@ -188,15 +187,15 @@ void VodMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_containerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Container";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_container.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_container.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bitrate, allocator);
@@ -204,7 +203,7 @@ void VodMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -212,7 +211,7 @@ void VodMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -220,7 +219,7 @@ void VodMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -228,7 +227,7 @@ void VodMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_rotateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rotate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rotate, allocator);
@@ -236,37 +235,37 @@ void VodMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_videoStreamSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoStreamSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_videoStreamSet.begin(); itr != m_videoStreamSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_audioStreamSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioStreamSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_audioStreamSet.begin(); itr != m_audioStreamSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_videoDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoDuration, allocator);
@@ -274,7 +273,7 @@ void VodMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_audioDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioDuration, allocator);

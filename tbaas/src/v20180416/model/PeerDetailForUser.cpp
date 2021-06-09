@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbaas::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 PeerDetailForUser::PeerDetailForUser() :
@@ -26,7 +25,7 @@ PeerDetailForUser::PeerDetailForUser() :
 {
 }
 
-CoreInternalOutcome PeerDetailForUser::Deserialize(const Value &value)
+CoreInternalOutcome PeerDetailForUser::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome PeerDetailForUser::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PeerDetailForUser::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PeerDetailForUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_peerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_peerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_peerName.c_str(), allocator).Move(), allocator);
     }
 
 }

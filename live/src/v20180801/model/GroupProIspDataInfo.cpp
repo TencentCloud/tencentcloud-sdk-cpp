@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 GroupProIspDataInfo::GroupProIspDataInfo() :
@@ -28,7 +27,7 @@ GroupProIspDataInfo::GroupProIspDataInfo() :
 {
 }
 
-CoreInternalOutcome GroupProIspDataInfo::Deserialize(const Value &value)
+CoreInternalOutcome GroupProIspDataInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome GroupProIspDataInfo::Deserialize(const Value &value)
         if (!value["DetailInfoList"].IsArray())
             return CoreInternalOutcome(Error("response `GroupProIspDataInfo.DetailInfoList` is not array type"));
 
-        const Value &tmpValue = value["DetailInfoList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DetailInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CdnPlayStatData item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,36 +76,36 @@ CoreInternalOutcome GroupProIspDataInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GroupProIspDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GroupProIspDataInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_provinceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProvinceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_provinceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_provinceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ispNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IspName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ispName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ispName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_detailInfoListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DetailInfoList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_detailInfoList.begin(); itr != m_detailInfoList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

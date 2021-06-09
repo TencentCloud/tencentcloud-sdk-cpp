@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 MerchantManagementList::MerchantManagementList() :
@@ -29,7 +28,7 @@ MerchantManagementList::MerchantManagementList() :
 {
 }
 
-CoreInternalOutcome MerchantManagementList::Deserialize(const Value &value)
+CoreInternalOutcome MerchantManagementList::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,36 +77,36 @@ CoreInternalOutcome MerchantManagementList::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MerchantManagementList::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MerchantManagementList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taxpayerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaxpayerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taxpayerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxpayerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taxpayerNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaxpayerNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taxpayerNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxpayerNum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serialNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SerialNo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serialNo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serialNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_invoicePlatformIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InvoicePlatformId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_invoicePlatformId, allocator);

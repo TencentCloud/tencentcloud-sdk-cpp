@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 AutoDelStrategyInfo::AutoDelStrategyInfo() :
@@ -31,7 +30,7 @@ AutoDelStrategyInfo::AutoDelStrategyInfo() :
 {
 }
 
-CoreInternalOutcome AutoDelStrategyInfo::Deserialize(const Value &value)
+CoreInternalOutcome AutoDelStrategyInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,36 +99,36 @@ CoreInternalOutcome AutoDelStrategyInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AutoDelStrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AutoDelStrategyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_usernameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Username";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_username.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
     }
 
     if (m_repoNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepoName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_repoName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repoName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_value, allocator);
@@ -137,7 +136,7 @@ void AutoDelStrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_validHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Valid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_valid, allocator);
@@ -145,10 +144,10 @@ void AutoDelStrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_creationTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreationTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creationTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creationTime.c_str(), allocator).Move(), allocator);
     }
 
 }

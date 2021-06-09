@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 RegistryChargePrepaid::RegistryChargePrepaid() :
@@ -27,7 +26,7 @@ RegistryChargePrepaid::RegistryChargePrepaid() :
 {
 }
 
-CoreInternalOutcome RegistryChargePrepaid::Deserialize(const Value &value)
+CoreInternalOutcome RegistryChargePrepaid::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome RegistryChargePrepaid::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RegistryChargePrepaid::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RegistryChargePrepaid::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_periodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_period, allocator);
@@ -69,7 +68,7 @@ void RegistryChargePrepaid::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_renewFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_renewFlag, allocator);

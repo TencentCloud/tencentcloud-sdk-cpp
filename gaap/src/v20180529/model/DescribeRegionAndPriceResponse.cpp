@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeRegionAndPriceResponse::DescribeRegionAndPriceResponse() :
@@ -34,7 +33,7 @@ DescribeRegionAndPriceResponse::DescribeRegionAndPriceResponse() :
 
 CoreInternalOutcome DescribeRegionAndPriceResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -44,7 +43,7 @@ CoreInternalOutcome DescribeRegionAndPriceResponse::Deserialize(const string &pa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -81,8 +80,8 @@ CoreInternalOutcome DescribeRegionAndPriceResponse::Deserialize(const string &pa
         if (!rsp["DestRegionSet"].IsArray())
             return CoreInternalOutcome(Error("response `DestRegionSet` is not array type"));
 
-        const Value &tmpValue = rsp["DestRegionSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DestRegionSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RegionDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -101,8 +100,8 @@ CoreInternalOutcome DescribeRegionAndPriceResponse::Deserialize(const string &pa
         if (!rsp["BandwidthUnitPrice"].IsArray())
             return CoreInternalOutcome(Error("response `BandwidthUnitPrice` is not array type"));
 
-        const Value &tmpValue = rsp["BandwidthUnitPrice"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["BandwidthUnitPrice"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             BandwidthPriceGradient item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

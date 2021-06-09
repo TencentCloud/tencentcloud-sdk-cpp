@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 PaasSmsCampaignStatusResp::PaasSmsCampaignStatusResp() :
@@ -26,7 +25,7 @@ PaasSmsCampaignStatusResp::PaasSmsCampaignStatusResp() :
 {
 }
 
-CoreInternalOutcome PaasSmsCampaignStatusResp::Deserialize(const Value &value)
+CoreInternalOutcome PaasSmsCampaignStatusResp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome PaasSmsCampaignStatusResp::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PaasSmsCampaignStatusResp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PaasSmsCampaignStatusResp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);

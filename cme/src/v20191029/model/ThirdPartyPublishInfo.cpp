@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 ThirdPartyPublishInfo::ThirdPartyPublishInfo() :
@@ -30,7 +29,7 @@ ThirdPartyPublishInfo::ThirdPartyPublishInfo() :
 {
 }
 
-CoreInternalOutcome ThirdPartyPublishInfo::Deserialize(const Value &value)
+CoreInternalOutcome ThirdPartyPublishInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -117,50 +116,50 @@ CoreInternalOutcome ThirdPartyPublishInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ThirdPartyPublishInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ThirdPartyPublishInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_channelMaterialIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelMaterialId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelMaterialId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelMaterialId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_penguinMediaPlatformPublishInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PenguinMediaPlatformPublishInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_penguinMediaPlatformPublishInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_weiboPublishInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WeiboPublishInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_weiboPublishInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_kuaishouPublishInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KuaishouPublishInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_kuaishouPublishInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_cosPublishInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosPublishInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosPublishInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

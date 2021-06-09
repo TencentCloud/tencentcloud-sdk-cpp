@@ -55,7 +55,7 @@ reportData由两部分数据组成：
 不同的report_type对应的data数据结构不一样。
 
 详细说明请参考文档reportdata.docx：
-https://github.com/ame-demo/doc
+https://github.com/tencentyun/ame-documents
                      * @return ReportData 上报数据
 注:reportData为客户端压缩后的上报数据进行16进制转换的字符串数据
 压缩说明：
@@ -68,7 +68,7 @@ reportData由两部分数据组成：
 不同的report_type对应的data数据结构不一样。
 
 详细说明请参考文档reportdata.docx：
-https://github.com/ame-demo/doc
+https://github.com/tencentyun/ame-documents
                      */
                     std::string GetReportData() const;
 
@@ -85,7 +85,7 @@ reportData由两部分数据组成：
 不同的report_type对应的data数据结构不一样。
 
 详细说明请参考文档reportdata.docx：
-https://github.com/ame-demo/doc
+https://github.com/tencentyun/ame-documents
                      * @param ReportData 上报数据
 注:reportData为客户端压缩后的上报数据进行16进制转换的字符串数据
 压缩说明：
@@ -98,7 +98,7 @@ reportData由两部分数据组成：
 不同的report_type对应的data数据结构不一样。
 
 详细说明请参考文档reportdata.docx：
-https://github.com/ame-demo/doc
+https://github.com/tencentyun/ame-documents
                      */
                     void SetReportData(const std::string& _reportData);
 
@@ -123,7 +123,7 @@ reportData由两部分数据组成：
 不同的report_type对应的data数据结构不一样。
 
 详细说明请参考文档reportdata.docx：
-https://github.com/ame-demo/doc
+https://github.com/tencentyun/ame-documents
                      */
                     std::string m_reportData;
                     bool m_reportDataHasBeenSet;

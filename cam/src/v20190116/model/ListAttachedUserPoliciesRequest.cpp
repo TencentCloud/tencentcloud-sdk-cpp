@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cam::V20190116::Model;
-using namespace rapidjson;
 using namespace std;
 
 ListAttachedUserPoliciesRequest::ListAttachedUserPoliciesRequest() :
@@ -32,14 +31,14 @@ ListAttachedUserPoliciesRequest::ListAttachedUserPoliciesRequest() :
 
 string ListAttachedUserPoliciesRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_targetUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_targetUin, allocator);
@@ -47,7 +46,7 @@ string ListAttachedUserPoliciesRequest::ToJsonString() const
 
     if (m_pageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Page";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_page, allocator);
@@ -55,15 +54,15 @@ string ListAttachedUserPoliciesRequest::ToJsonString() const
 
     if (m_rpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rp, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tat::V20201028::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyCommandRequest::ModifyCommandRequest() :
@@ -37,62 +36,62 @@ ModifyCommandRequest::ModifyCommandRequest() :
 
 string ModifyCommandRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_commandIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CommandId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_commandId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_commandId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_commandNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CommandName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_commandName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_commandName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_content.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
     if (m_commandTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CommandType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_commandType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_commandType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_workingDirectoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WorkingDirectory";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_workingDirectory.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workingDirectory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Timeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeout, allocator);
@@ -100,15 +99,15 @@ string ModifyCommandRequest::ToJsonString() const
 
     if (m_defaultParametersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultParameters";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_defaultParameters.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_defaultParameters.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

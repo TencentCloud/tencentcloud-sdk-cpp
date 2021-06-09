@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 CommonMixInputParam::CommonMixInputParam() :
@@ -28,7 +27,7 @@ CommonMixInputParam::CommonMixInputParam() :
 {
 }
 
-CoreInternalOutcome CommonMixInputParam::Deserialize(const Value &value)
+CoreInternalOutcome CommonMixInputParam::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,32 +80,32 @@ CoreInternalOutcome CommonMixInputParam::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CommonMixInputParam::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CommonMixInputParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_inputStreamNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputStreamName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inputStreamName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputStreamName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_layoutParamsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LayoutParams";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_layoutParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_cropParamsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CropParams";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cropParams.ToJsonObject(value[key.c_str()], allocator);
     }
 

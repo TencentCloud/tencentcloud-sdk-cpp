@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 PushDataInfo::PushDataInfo() :
@@ -42,7 +41,7 @@ PushDataInfo::PushDataInfo() :
 {
 }
 
-CoreInternalOutcome PushDataInfo::Deserialize(const Value &value)
+CoreInternalOutcome PushDataInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -221,44 +220,44 @@ CoreInternalOutcome PushDataInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PushDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PushDataInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_streamNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_streamName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_streamName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_appName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clientIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serverIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serverIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_videoFpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoFps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoFps, allocator);
@@ -266,7 +265,7 @@ void PushDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_videoSpeedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoSpeed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoSpeed, allocator);
@@ -274,7 +273,7 @@ void PushDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_audioFpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioFps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioFps, allocator);
@@ -282,7 +281,7 @@ void PushDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_audioSpeedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioSpeed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioSpeed, allocator);
@@ -290,47 +289,47 @@ void PushDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_pushDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PushDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pushDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pushDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_beginPushTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BeginPushTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_beginPushTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_beginPushTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_acodecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Acodec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_acodec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_acodec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vcodecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vcodec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vcodec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vcodec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resolutionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Resolution";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resolution.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
     }
 
     if (m_asampleRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AsampleRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_asampleRate, allocator);
@@ -338,7 +337,7 @@ void PushDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_metaAudioSpeedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetaAudioSpeed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_metaAudioSpeed, allocator);
@@ -346,7 +345,7 @@ void PushDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_metaVideoSpeedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetaVideoSpeed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_metaVideoSpeed, allocator);
@@ -354,7 +353,7 @@ void PushDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_metaFpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetaFps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_metaFps, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 GroupApiUseStatistics::GroupApiUseStatistics() :
@@ -28,7 +27,7 @@ GroupApiUseStatistics::GroupApiUseStatistics() :
 {
 }
 
-CoreInternalOutcome GroupApiUseStatistics::Deserialize(const Value &value)
+CoreInternalOutcome GroupApiUseStatistics::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome GroupApiUseStatistics::Deserialize(const Value &value)
         if (!value["TopStatusCode"].IsArray())
             return CoreInternalOutcome(Error("response `GroupApiUseStatistics.TopStatusCode` is not array type"));
 
-        const Value &tmpValue = value["TopStatusCode"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TopStatusCode"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ApiUseStatisticsEntity item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -58,8 +57,8 @@ CoreInternalOutcome GroupApiUseStatistics::Deserialize(const Value &value)
         if (!value["TopTimeCost"].IsArray())
             return CoreInternalOutcome(Error("response `GroupApiUseStatistics.TopTimeCost` is not array type"));
 
-        const Value &tmpValue = value["TopTimeCost"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TopTimeCost"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ApiUseStatisticsEntity item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -94,45 +93,45 @@ CoreInternalOutcome GroupApiUseStatistics::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GroupApiUseStatistics::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GroupApiUseStatistics::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_topStatusCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopStatusCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_topStatusCode.begin(); itr != m_topStatusCode.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_topTimeCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopTimeCost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_topTimeCost.begin(); itr != m_topTimeCost.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_quantileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Quantile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_quantile.ToJsonObject(value[key.c_str()], allocator);
     }
 

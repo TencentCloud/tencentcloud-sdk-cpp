@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Chdfs::V20201112::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeAccessRulesResponse::DescribeAccessRulesResponse() :
@@ -31,7 +30,7 @@ DescribeAccessRulesResponse::DescribeAccessRulesResponse() :
 
 CoreInternalOutcome DescribeAccessRulesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeAccessRulesResponse::Deserialize(const string &paylo
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeAccessRulesResponse::Deserialize(const string &paylo
         if (!rsp["AccessRules"].IsArray())
             return CoreInternalOutcome(Error("response `AccessRules` is not array type"));
 
-        const Value &tmpValue = rsp["AccessRules"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["AccessRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AccessRule item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tdmq::V20200217::Model;
-using namespace rapidjson;
 using namespace std;
 
 Connection::Connection() :
@@ -32,7 +31,7 @@ Connection::Connection() :
 {
 }
 
-CoreInternalOutcome Connection::Deserialize(const Value &value)
+CoreInternalOutcome Connection::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,20 +110,20 @@ CoreInternalOutcome Connection::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Connection::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Connection::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_addressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Address";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_address.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
     }
 
     if (m_partitionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Partitions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_partitions, allocator);
@@ -132,42 +131,42 @@ void Connection::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_clientVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clientVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_producerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProducerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_producerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_producerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_producerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProducerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_producerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_producerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_averageMsgSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AverageMsgSize";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_averageMsgSize.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_averageMsgSize.c_str(), allocator).Move(), allocator);
     }
 
     if (m_msgThroughputInHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgThroughputIn";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_msgThroughputIn.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msgThroughputIn.c_str(), allocator).Move(), allocator);
     }
 
 }

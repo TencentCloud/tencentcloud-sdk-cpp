@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 MultiDevicesInfo::MultiDevicesInfo() :
@@ -31,7 +30,7 @@ MultiDevicesInfo::MultiDevicesInfo() :
 {
 }
 
-CoreInternalOutcome MultiDevicesInfo::Deserialize(const Value &value)
+CoreInternalOutcome MultiDevicesInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,44 +99,44 @@ CoreInternalOutcome MultiDevicesInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MultiDevicesInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MultiDevicesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deviceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_devicePskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DevicePsk";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_devicePsk.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_devicePsk.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceCertHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceCert";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceCert.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceCert.c_str(), allocator).Move(), allocator);
     }
 
     if (m_devicePrivateKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DevicePrivateKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_devicePrivateKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_devicePrivateKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_result, allocator);
@@ -145,10 +144,10 @@ void MultiDevicesInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_errMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
     }
 
 }

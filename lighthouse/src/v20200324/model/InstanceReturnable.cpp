@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceReturnable::InstanceReturnable() :
@@ -29,7 +28,7 @@ InstanceReturnable::InstanceReturnable() :
 {
 }
 
-CoreInternalOutcome InstanceReturnable::Deserialize(const Value &value)
+CoreInternalOutcome InstanceReturnable::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome InstanceReturnable::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceReturnable::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceReturnable::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isReturnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsReturnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isReturnable, allocator);
@@ -99,7 +98,7 @@ void InstanceReturnable::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_returnFailCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReturnFailCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_returnFailCode, allocator);
@@ -107,10 +106,10 @@ void InstanceReturnable::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_returnFailMessageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReturnFailMessage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_returnFailMessage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_returnFailMessage.c_str(), allocator).Move(), allocator);
     }
 
 }

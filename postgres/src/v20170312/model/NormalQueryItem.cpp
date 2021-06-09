@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Postgres::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 NormalQueryItem::NormalQueryItem() :
@@ -40,7 +39,7 @@ NormalQueryItem::NormalQueryItem() :
 {
 }
 
-CoreInternalOutcome NormalQueryItem::Deserialize(const Value &value)
+CoreInternalOutcome NormalQueryItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,8 +69,8 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const Value &value)
         if (!value["CallsGrids"].IsArray())
             return CoreInternalOutcome(Error("response `NormalQueryItem.CallsGrids` is not array type"));
 
-        const Value &tmpValue = value["CallsGrids"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CallsGrids"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_callsGrids.push_back((*itr).GetInt64());
         }
@@ -202,20 +201,20 @@ CoreInternalOutcome NormalQueryItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NormalQueryItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NormalQueryItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_userNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_callsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Calls";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_calls, allocator);
@@ -223,20 +222,20 @@ void NormalQueryItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_callsGridsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CallsGrids";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_callsGrids.begin(); itr != m_callsGrids.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_costTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CostTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_costTime, allocator);
@@ -244,7 +243,7 @@ void NormalQueryItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_rowsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rows";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rows, allocator);
@@ -252,7 +251,7 @@ void NormalQueryItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_minCostTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinCostTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minCostTime, allocator);
@@ -260,7 +259,7 @@ void NormalQueryItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_maxCostTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxCostTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxCostTime, allocator);
@@ -268,23 +267,23 @@ void NormalQueryItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_firstTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_firstTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sharedReadBlksHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SharedReadBlks";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sharedReadBlks, allocator);
@@ -292,7 +291,7 @@ void NormalQueryItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_sharedWriteBlksHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SharedWriteBlks";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sharedWriteBlks, allocator);
@@ -300,7 +299,7 @@ void NormalQueryItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_readCostTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadCostTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_readCostTime, allocator);
@@ -308,7 +307,7 @@ void NormalQueryItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_writeCostTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WriteCostTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_writeCostTime, allocator);
@@ -316,18 +315,18 @@ void NormalQueryItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_databaseNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DatabaseName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_databaseName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_normalQueryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NormalQuery";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_normalQuery.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_normalQuery.c_str(), allocator).Move(), allocator);
     }
 
 }

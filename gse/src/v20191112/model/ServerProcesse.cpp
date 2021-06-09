@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 ServerProcesse::ServerProcesse() :
@@ -28,7 +27,7 @@ ServerProcesse::ServerProcesse() :
 {
 }
 
-CoreInternalOutcome ServerProcesse::Deserialize(const Value &value)
+CoreInternalOutcome ServerProcesse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome ServerProcesse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ServerProcesse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ServerProcesse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_concurrentExecutionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConcurrentExecutions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_concurrentExecutions, allocator);
@@ -80,18 +79,18 @@ void ServerProcesse::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_launchPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LaunchPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_launchPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_launchPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parametersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Parameters";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_parameters.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parameters.c_str(), allocator).Move(), allocator);
     }
 
 }

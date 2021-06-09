@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiia::V20190529::Model;
-using namespace rapidjson;
 using namespace std;
 
 DetectLabelItem::DetectLabelItem() :
@@ -29,7 +28,7 @@ DetectLabelItem::DetectLabelItem() :
 {
 }
 
-CoreInternalOutcome DetectLabelItem::Deserialize(const Value &value)
+CoreInternalOutcome DetectLabelItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome DetectLabelItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DetectLabelItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DetectLabelItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -99,18 +98,18 @@ void DetectLabelItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_firstCategoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstCategory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_firstCategory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstCategory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_secondCategoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecondCategory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secondCategory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secondCategory.c_str(), allocator).Move(), allocator);
     }
 
 }

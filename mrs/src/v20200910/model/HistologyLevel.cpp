@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 HistologyLevel::HistologyLevel() :
@@ -28,7 +27,7 @@ HistologyLevel::HistologyLevel() :
 {
 }
 
-CoreInternalOutcome HistologyLevel::Deserialize(const Value &value)
+CoreInternalOutcome HistologyLevel::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome HistologyLevel::Deserialize(const Value &value)
         if (!value["Index"].IsArray())
             return CoreInternalOutcome(Error("response `HistologyLevel.Index` is not array type"));
 
-        const Value &tmpValue = value["Index"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Index"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_index.push_back((*itr).GetInt64());
         }
@@ -70,36 +69,36 @@ CoreInternalOutcome HistologyLevel::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HistologyLevel::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HistologyLevel::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_gradeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Grade";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_grade.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_grade.c_str(), allocator).Move(), allocator);
     }
 
     if (m_indexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Index";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_index.begin(); itr != m_index.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_srcHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Src";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_src.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_src.c_str(), allocator).Move(), allocator);
     }
 
 }

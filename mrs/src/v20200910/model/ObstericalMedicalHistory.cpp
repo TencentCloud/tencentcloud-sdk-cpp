@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 ObstericalMedicalHistory::ObstericalMedicalHistory() :
@@ -27,7 +26,7 @@ ObstericalMedicalHistory::ObstericalMedicalHistory() :
 {
 }
 
-CoreInternalOutcome ObstericalMedicalHistory::Deserialize(const Value &value)
+CoreInternalOutcome ObstericalMedicalHistory::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome ObstericalMedicalHistory::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ObstericalMedicalHistory::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ObstericalMedicalHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_marriageHistoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MarriageHistory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_marriageHistory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_marriageHistory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fertilityHistoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FertilityHistory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fertilityHistory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fertilityHistory.c_str(), allocator).Move(), allocator);
     }
 
 }

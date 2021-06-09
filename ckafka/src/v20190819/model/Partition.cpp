@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 Partition::Partition() :
@@ -26,7 +25,7 @@ Partition::Partition() :
 {
 }
 
-CoreInternalOutcome Partition::Deserialize(const Value &value)
+CoreInternalOutcome Partition::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome Partition::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Partition::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Partition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_partitionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PartitionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_partitionId, allocator);

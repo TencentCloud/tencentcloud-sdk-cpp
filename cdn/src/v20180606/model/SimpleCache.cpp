@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 SimpleCache::SimpleCache() :
@@ -31,7 +30,7 @@ SimpleCache::SimpleCache() :
 {
 }
 
-CoreInternalOutcome SimpleCache::Deserialize(const Value &value)
+CoreInternalOutcome SimpleCache::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -41,8 +40,8 @@ CoreInternalOutcome SimpleCache::Deserialize(const Value &value)
         if (!value["CacheRules"].IsArray())
             return CoreInternalOutcome(Error("response `SimpleCache.CacheRules` is not array type"));
 
-        const Value &tmpValue = value["CacheRules"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CacheRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SimpleCacheRule item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -117,62 +116,62 @@ CoreInternalOutcome SimpleCache::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SimpleCache::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SimpleCache::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cacheRulesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CacheRules";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_cacheRules.begin(); itr != m_cacheRules.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_followOriginHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FollowOrigin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_followOrigin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_followOrigin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ignoreCacheControlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IgnoreCacheControl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ignoreCacheControl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ignoreCacheControl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ignoreSetCookieHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IgnoreSetCookie";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ignoreSetCookie.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ignoreSetCookie.c_str(), allocator).Move(), allocator);
     }
 
     if (m_compareMaxAgeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompareMaxAge";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_compareMaxAge.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_compareMaxAge.c_str(), allocator).Move(), allocator);
     }
 
     if (m_revalidateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Revalidate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_revalidate.ToJsonObject(value[key.c_str()], allocator);
     }
 

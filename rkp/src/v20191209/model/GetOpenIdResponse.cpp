@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Rkp::V20191209::Model;
-using namespace rapidjson;
 using namespace std;
 
 GetOpenIdResponse::GetOpenIdResponse() :
@@ -32,7 +31,7 @@ GetOpenIdResponse::GetOpenIdResponse() :
 
 CoreInternalOutcome GetOpenIdResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome GetOpenIdResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome GetOpenIdResponse::Deserialize(const string &payload)
         if (!rsp["RiskInfo"].IsArray())
             return CoreInternalOutcome(Error("response `RiskInfo` is not array type"));
 
-        const Value &tmpValue = rsp["RiskInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["RiskInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RiskInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

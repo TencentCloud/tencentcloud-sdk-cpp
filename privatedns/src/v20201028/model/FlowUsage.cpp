@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Privatedns::V20201028::Model;
-using namespace rapidjson;
 using namespace std;
 
 FlowUsage::FlowUsage() :
@@ -28,7 +27,7 @@ FlowUsage::FlowUsage() :
 {
 }
 
-CoreInternalOutcome FlowUsage::Deserialize(const Value &value)
+CoreInternalOutcome FlowUsage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome FlowUsage::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FlowUsage::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FlowUsage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_flowTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_flowType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalQuantityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalQuantity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalQuantity, allocator);
@@ -88,7 +87,7 @@ void FlowUsage::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_availableQuantityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvailableQuantity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_availableQuantity, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaCuttingTaskResult::MediaCuttingTaskResult() :
@@ -29,7 +28,7 @@ MediaCuttingTaskResult::MediaCuttingTaskResult() :
 {
 }
 
-CoreInternalOutcome MediaCuttingTaskResult::Deserialize(const Value &value)
+CoreInternalOutcome MediaCuttingTaskResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -99,21 +98,21 @@ CoreInternalOutcome MediaCuttingTaskResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaCuttingTaskResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaCuttingTaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_listFileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListFile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_listFile.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_resultCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resultCount, allocator);
@@ -121,19 +120,19 @@ void MediaCuttingTaskResult::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_firstFileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstFile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_firstFile.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_lastFileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastFile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_lastFile.ToJsonObject(value[key.c_str()], allocator);
     }
 

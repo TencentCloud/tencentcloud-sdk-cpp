@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 TradeDealDetail::TradeDealDetail() :
@@ -37,7 +36,7 @@ TradeDealDetail::TradeDealDetail() :
 {
 }
 
-CoreInternalOutcome TradeDealDetail::Deserialize(const Value &value)
+CoreInternalOutcome TradeDealDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -157,8 +156,8 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const Value &value)
         if (!value["InstanceIds"].IsArray())
             return CoreInternalOutcome(Error("response `TradeDealDetail.InstanceIds` is not array type"));
 
-        const Value &tmpValue = value["InstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_instanceIds.push_back((*itr).GetString());
         }
@@ -169,28 +168,28 @@ CoreInternalOutcome TradeDealDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TradeDealDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TradeDealDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dealIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DealId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dealId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dealNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DealName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dealName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneId, allocator);
@@ -198,7 +197,7 @@ void TradeDealDetail::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_goodsNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GoodsNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_goodsNum, allocator);
@@ -206,39 +205,39 @@ void TradeDealDetail::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_createrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Creater";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creater.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creater.c_str(), allocator).Move(), allocator);
     }
 
     if (m_creatTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creatTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creatTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_overdueTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OverdueTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_overdueTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_overdueTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -246,15 +245,15 @@ void TradeDealDetail::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_priceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Price";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_price, allocator);
@@ -262,14 +261,14 @@ void TradeDealDetail::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_instanceIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

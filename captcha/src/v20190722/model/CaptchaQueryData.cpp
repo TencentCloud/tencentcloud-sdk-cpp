@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Captcha::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 CaptchaQueryData::CaptchaQueryData() :
@@ -27,7 +26,7 @@ CaptchaQueryData::CaptchaQueryData() :
 {
 }
 
-CoreInternalOutcome CaptchaQueryData::Deserialize(const Value &value)
+CoreInternalOutcome CaptchaQueryData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome CaptchaQueryData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CaptchaQueryData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CaptchaQueryData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cnt, allocator);
@@ -69,10 +68,10 @@ void CaptchaQueryData::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_dateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
 }

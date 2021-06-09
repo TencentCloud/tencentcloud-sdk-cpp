@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 StreamConnectProjectInfo::StreamConnectProjectInfo() :
@@ -33,7 +32,7 @@ StreamConnectProjectInfo::StreamConnectProjectInfo() :
 {
 }
 
-CoreInternalOutcome StreamConnectProjectInfo::Deserialize(const Value &value)
+CoreInternalOutcome StreamConnectProjectInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -127,8 +126,8 @@ CoreInternalOutcome StreamConnectProjectInfo::Deserialize(const Value &value)
         if (!value["OutputSet"].IsArray())
             return CoreInternalOutcome(Error("response `StreamConnectProjectInfo.OutputSet` is not array type"));
 
-        const Value &tmpValue = value["OutputSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["OutputSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StreamConnectOutputInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -146,78 +145,78 @@ CoreInternalOutcome StreamConnectProjectInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StreamConnectProjectInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StreamConnectProjectInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_currentInputEndpointHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CurrentInputEndpoint";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_currentInputEndpoint.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currentInputEndpoint.c_str(), allocator).Move(), allocator);
     }
 
     if (m_currentStartTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CurrentStartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_currentStartTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currentStartTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_currentStopTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CurrentStopTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_currentStopTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currentStopTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastStopTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastStopTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastStopTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastStopTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mainInputHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MainInput";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mainInput.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_backupInputHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupInput";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_backupInput.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_outputSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_outputSet.begin(); itr != m_outputSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 Placement::Placement() :
@@ -30,7 +29,7 @@ Placement::Placement() :
 {
 }
 
-CoreInternalOutcome Placement::Deserialize(const Value &value)
+CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -60,8 +59,8 @@ CoreInternalOutcome Placement::Deserialize(const Value &value)
         if (!value["HostIds"].IsArray())
             return CoreInternalOutcome(Error("response `Placement.HostIds` is not array type"));
 
-        const Value &tmpValue = value["HostIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["HostIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_hostIds.push_back((*itr).GetString());
         }
@@ -73,8 +72,8 @@ CoreInternalOutcome Placement::Deserialize(const Value &value)
         if (!value["HostIps"].IsArray())
             return CoreInternalOutcome(Error("response `Placement.HostIps` is not array type"));
 
-        const Value &tmpValue = value["HostIps"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["HostIps"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_hostIps.push_back((*itr).GetString());
         }
@@ -95,20 +94,20 @@ CoreInternalOutcome Placement::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Placement::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Placement::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
@@ -116,36 +115,36 @@ void Placement::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_hostIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HostIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_hostIds.begin(); itr != m_hostIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_hostIpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HostIps";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_hostIps.begin(); itr != m_hostIps.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_hostIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HostId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_hostId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostId.c_str(), allocator).Move(), allocator);
     }
 
 }

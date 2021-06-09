@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dts::V20180330::Model;
-using namespace rapidjson;
 using namespace std;
 
 SubscribeRegionConf::SubscribeRegionConf() :
@@ -30,7 +29,7 @@ SubscribeRegionConf::SubscribeRegionConf() :
 {
 }
 
-CoreInternalOutcome SubscribeRegionConf::Deserialize(const Value &value)
+CoreInternalOutcome SubscribeRegionConf::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,36 +88,36 @@ CoreInternalOutcome SubscribeRegionConf::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SubscribeRegionConf::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SubscribeRegionConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_regionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_areaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isDefaultRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsDefaultRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDefaultRegion, allocator);
@@ -126,7 +125,7 @@ void SubscribeRegionConf::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);

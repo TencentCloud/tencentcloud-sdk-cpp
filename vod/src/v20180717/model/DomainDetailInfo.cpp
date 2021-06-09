@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 DomainDetailInfo::DomainDetailInfo() :
@@ -32,7 +31,7 @@ DomainDetailInfo::DomainDetailInfo() :
 {
 }
 
-CoreInternalOutcome DomainDetailInfo::Deserialize(const Value &value)
+CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -52,8 +51,8 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const Value &value)
         if (!value["AccelerateAreaInfos"].IsArray())
             return CoreInternalOutcome(Error("response `DomainDetailInfo.AccelerateAreaInfos` is not array type"));
 
-        const Value &tmpValue = value["AccelerateAreaInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AccelerateAreaInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AccelerateAreaInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -142,73 +141,73 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DomainDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DomainDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_accelerateAreaInfosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccelerateAreaInfos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_accelerateAreaInfos.begin(); itr != m_accelerateAreaInfos.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_deployStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeployStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deployStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hTTPSConfigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HTTPSConfig";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hTTPSConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_urlSignatureAuthPolicyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UrlSignatureAuthPolicy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_urlSignatureAuthPolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_refererAuthPolicyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RefererAuthPolicy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_refererAuthPolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiia::V20190529::Model;
-using namespace rapidjson;
 using namespace std;
 
 Product::Product() :
@@ -32,7 +31,7 @@ Product::Product() :
 {
 }
 
-CoreInternalOutcome Product::Deserialize(const Value &value)
+CoreInternalOutcome Product::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,28 +110,28 @@ CoreInternalOutcome Product::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Product::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Product::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parentsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Parents";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_parents.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parents.c_str(), allocator).Move(), allocator);
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -140,7 +139,7 @@ void Product::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_xMinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "XMin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_xMin, allocator);
@@ -148,7 +147,7 @@ void Product::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_yMinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "YMin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_yMin, allocator);
@@ -156,7 +155,7 @@ void Product::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_xMaxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "XMax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_xMax, allocator);
@@ -164,7 +163,7 @@ void Product::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_yMaxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "YMax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_yMax, allocator);

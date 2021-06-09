@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Solar::V20181011::Model;
-using namespace rapidjson;
 using namespace std;
 
 SendWxTouchTaskRequest::SendWxTouchTaskRequest() :
@@ -41,22 +40,22 @@ SendWxTouchTaskRequest::SendWxTouchTaskRequest() :
 
 string SendWxTouchTaskRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_distinctFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DistinctFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_distinctFlag, allocator);
@@ -64,7 +63,7 @@ string SendWxTouchTaskRequest::ToJsonString() const
 
     if (m_isSendNowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsSendNow";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isSendNow, allocator);
@@ -72,7 +71,7 @@ string SendWxTouchTaskRequest::ToJsonString() const
 
     if (m_sendDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SendDate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sendDate, allocator);
@@ -80,71 +79,71 @@ string SendWxTouchTaskRequest::ToJsonString() const
 
     if (m_taskNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_taskName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_wxTouchTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WxTouchType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_wxTouchType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_wxTouchType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_titleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Title";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_title.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_content.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
     if (m_newsIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewsId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_newsId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_newsId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_smallProgramIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SmallProgramId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_smallProgramId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_smallProgramId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_templateId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_wxAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WxAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_wxAppId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_wxAppId.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

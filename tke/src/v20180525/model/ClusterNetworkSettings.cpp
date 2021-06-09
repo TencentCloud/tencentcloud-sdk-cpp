@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClusterNetworkSettings::ClusterNetworkSettings() :
@@ -35,7 +34,7 @@ ClusterNetworkSettings::ClusterNetworkSettings() :
 {
 }
 
-CoreInternalOutcome ClusterNetworkSettings::Deserialize(const Value &value)
+CoreInternalOutcome ClusterNetworkSettings::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -135,8 +134,8 @@ CoreInternalOutcome ClusterNetworkSettings::Deserialize(const Value &value)
         if (!value["Subnets"].IsArray())
             return CoreInternalOutcome(Error("response `ClusterNetworkSettings.Subnets` is not array type"));
 
-        const Value &tmpValue = value["Subnets"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Subnets"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_subnets.push_back((*itr).GetString());
         }
@@ -147,20 +146,20 @@ CoreInternalOutcome ClusterNetworkSettings::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClusterNetworkSettings::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClusterNetworkSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_clusterCIDRHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterCIDR";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterCIDR.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterCIDR.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ignoreClusterCIDRConflictHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IgnoreClusterCIDRConflict";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ignoreClusterCIDRConflict, allocator);
@@ -168,7 +167,7 @@ void ClusterNetworkSettings::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_maxNodePodNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxNodePodNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxNodePodNum, allocator);
@@ -176,7 +175,7 @@ void ClusterNetworkSettings::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_maxClusterServiceNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxClusterServiceNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxClusterServiceNum, allocator);
@@ -184,7 +183,7 @@ void ClusterNetworkSettings::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_ipvsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ipvs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ipvs, allocator);
@@ -192,15 +191,15 @@ void ClusterNetworkSettings::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cniHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cni";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cni, allocator);
@@ -208,30 +207,30 @@ void ClusterNetworkSettings::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_kubeProxyModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KubeProxyMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_kubeProxyMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kubeProxyMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceCIDRHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceCIDR";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serviceCIDR.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceCIDR.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subnetsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Subnets";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_subnets.begin(); itr != m_subnets.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

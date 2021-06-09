@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 GatewayFlowMonitorDetail::GatewayFlowMonitorDetail() :
@@ -30,7 +29,7 @@ GatewayFlowMonitorDetail::GatewayFlowMonitorDetail() :
 {
 }
 
-CoreInternalOutcome GatewayFlowMonitorDetail::Deserialize(const Value &value)
+CoreInternalOutcome GatewayFlowMonitorDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome GatewayFlowMonitorDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GatewayFlowMonitorDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GatewayFlowMonitorDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_privateIpAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrivateIpAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_privateIpAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privateIpAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_inPkgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InPkg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inPkg, allocator);
@@ -110,7 +109,7 @@ void GatewayFlowMonitorDetail::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_outPkgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutPkg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outPkg, allocator);
@@ -118,7 +117,7 @@ void GatewayFlowMonitorDetail::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_inTrafficHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InTraffic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inTraffic, allocator);
@@ -126,7 +125,7 @@ void GatewayFlowMonitorDetail::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_outTrafficHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutTraffic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outTraffic, allocator);

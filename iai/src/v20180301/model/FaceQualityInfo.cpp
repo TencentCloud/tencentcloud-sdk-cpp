@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceQualityInfo::FaceQualityInfo() :
@@ -29,7 +28,7 @@ FaceQualityInfo::FaceQualityInfo() :
 {
 }
 
-CoreInternalOutcome FaceQualityInfo::Deserialize(const Value &value)
+CoreInternalOutcome FaceQualityInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,12 +84,12 @@ CoreInternalOutcome FaceQualityInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FaceQualityInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FaceQualityInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
@@ -98,7 +97,7 @@ void FaceQualityInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_sharpnessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sharpness";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sharpness, allocator);
@@ -106,7 +105,7 @@ void FaceQualityInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_brightnessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Brightness";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_brightness, allocator);
@@ -114,10 +113,10 @@ void FaceQualityInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_completenessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Completeness";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_completeness.ToJsonObject(value[key.c_str()], allocator);
     }
 

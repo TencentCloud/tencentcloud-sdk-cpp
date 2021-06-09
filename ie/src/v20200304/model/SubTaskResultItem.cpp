@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 SubTaskResultItem::SubTaskResultItem() :
@@ -32,7 +31,7 @@ SubTaskResultItem::SubTaskResultItem() :
 {
 }
 
-CoreInternalOutcome SubTaskResultItem::Deserialize(const Value &value)
+CoreInternalOutcome SubTaskResultItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -118,20 +117,20 @@ CoreInternalOutcome SubTaskResultItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SubTaskResultItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SubTaskResultItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_statusCode, allocator);
@@ -139,15 +138,15 @@ void SubTaskResultItem::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_statusMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_statusMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_progressRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProgressRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progressRate, allocator);
@@ -155,26 +154,26 @@ void SubTaskResultItem::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_downloadUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DownloadUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_md5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Md5";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_md5.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_md5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_fileInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

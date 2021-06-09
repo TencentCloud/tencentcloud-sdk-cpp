@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 NamedCpmComputeEnv::NamedCpmComputeEnv() :
@@ -36,7 +35,7 @@ NamedCpmComputeEnv::NamedCpmComputeEnv() :
 {
 }
 
-CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const Value &value)
+CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -103,8 +102,8 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const Value &value)
         if (!value["Authentications"].IsArray())
             return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.Authentications` is not array type"));
 
-        const Value &tmpValue = value["Authentications"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Authentications"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Authentication item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -123,8 +122,8 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const Value &value)
         if (!value["InputMappings"].IsArray())
             return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.InputMappings` is not array type"));
 
-        const Value &tmpValue = value["InputMappings"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InputMappings"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InputMapping item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -180,8 +179,8 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const Value &value)
         if (!value["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `NamedCpmComputeEnv.Tags` is not array type"));
 
-        const Value &tmpValue = value["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Tag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -199,29 +198,29 @@ CoreInternalOutcome NamedCpmComputeEnv::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NamedCpmComputeEnv::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NamedCpmComputeEnv::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_envNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_envName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_envDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_envData.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_desiredComputeNodeCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DesiredComputeNodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_desiredComputeNodeCount, allocator);
@@ -229,70 +228,70 @@ void NamedCpmComputeEnv::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_envDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_envDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_envTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_envType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authenticationsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Authentications";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_authentications.begin(); itr != m_authentications.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_inputMappingsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputMappings";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_inputMappings.begin(); itr != m_inputMappings.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_notificationsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Notifications";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_notifications.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_actionIfComputeNodeInactiveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActionIfComputeNodeInactive";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_actionIfComputeNodeInactive.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_actionIfComputeNodeInactive.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceMaxRetryCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceMaxRetryCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceMaxRetryCount, allocator);
@@ -300,15 +299,15 @@ void NamedCpmComputeEnv::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_tagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

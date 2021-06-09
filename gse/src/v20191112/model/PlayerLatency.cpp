@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 PlayerLatency::PlayerLatency() :
@@ -28,7 +27,7 @@ PlayerLatency::PlayerLatency() :
 {
 }
 
-CoreInternalOutcome PlayerLatency::Deserialize(const Value &value)
+CoreInternalOutcome PlayerLatency::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome PlayerLatency::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PlayerLatency::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PlayerLatency::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_playerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlayerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_playerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_playerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionIdentifierHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionIdentifier";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionIdentifier.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionIdentifier.c_str(), allocator).Move(), allocator);
     }
 
     if (m_latencyInMillisecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LatencyInMilliseconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_latencyInMilliseconds, allocator);

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeNonlocalLoginPlacesResponse::DescribeNonlocalLoginPlacesResponse() :
@@ -32,7 +31,7 @@ DescribeNonlocalLoginPlacesResponse::DescribeNonlocalLoginPlacesResponse() :
 
 CoreInternalOutcome DescribeNonlocalLoginPlacesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeNonlocalLoginPlacesResponse::Deserialize(const strin
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeNonlocalLoginPlacesResponse::Deserialize(const strin
         if (!rsp["NonLocalLoginPlaces"].IsArray())
             return CoreInternalOutcome(Error("response `NonLocalLoginPlaces` is not array type"));
 
-        const Value &tmpValue = rsp["NonLocalLoginPlaces"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["NonLocalLoginPlaces"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             NonLocalLoginPlace item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResponseTerminateContract::ResponseTerminateContract() :
@@ -28,7 +27,7 @@ ResponseTerminateContract::ResponseTerminateContract() :
 {
 }
 
-CoreInternalOutcome ResponseTerminateContract::Deserialize(const Value &value)
+CoreInternalOutcome ResponseTerminateContract::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome ResponseTerminateContract::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResponseTerminateContract::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResponseTerminateContract::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_externalReturnCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnMessageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnMessage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnMessage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnMessage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnData.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnData.c_str(), allocator).Move(), allocator);
     }
 
 }

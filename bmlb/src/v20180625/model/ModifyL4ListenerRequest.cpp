@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyL4ListenerRequest::ModifyL4ListenerRequest() :
@@ -46,38 +45,38 @@ ModifyL4ListenerRequest::ModifyL4ListenerRequest() :
 
 string ModifyL4ListenerRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_loadBalancerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoadBalancerId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_listenerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_listenerId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_listenerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_listenerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_listenerName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_listenerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionExpireHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SessionExpire";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sessionExpire, allocator);
@@ -85,7 +84,7 @@ string ModifyL4ListenerRequest::ToJsonString() const
 
     if (m_healthSwitchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_healthSwitch, allocator);
@@ -93,7 +92,7 @@ string ModifyL4ListenerRequest::ToJsonString() const
 
     if (m_timeOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeOut";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeOut, allocator);
@@ -101,7 +100,7 @@ string ModifyL4ListenerRequest::ToJsonString() const
 
     if (m_intervalTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IntervalTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_intervalTime, allocator);
@@ -109,7 +108,7 @@ string ModifyL4ListenerRequest::ToJsonString() const
 
     if (m_healthNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_healthNum, allocator);
@@ -117,7 +116,7 @@ string ModifyL4ListenerRequest::ToJsonString() const
 
     if (m_unhealthNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnhealthNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_unhealthNum, allocator);
@@ -125,7 +124,7 @@ string ModifyL4ListenerRequest::ToJsonString() const
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bandwidth, allocator);
@@ -133,7 +132,7 @@ string ModifyL4ListenerRequest::ToJsonString() const
 
     if (m_customHealthSwitchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomHealthSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_customHealthSwitch, allocator);
@@ -141,15 +140,15 @@ string ModifyL4ListenerRequest::ToJsonString() const
 
     if (m_inputTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_inputType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inputType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lineSeparatorTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LineSeparatorType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_lineSeparatorType, allocator);
@@ -157,23 +156,23 @@ string ModifyL4ListenerRequest::ToJsonString() const
 
     if (m_healthRequestHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthRequest";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_healthRequest.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_healthRequest.c_str(), allocator).Move(), allocator);
     }
 
     if (m_healthResponseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthResponse";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_healthResponse.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_healthResponse.c_str(), allocator).Move(), allocator);
     }
 
     if (m_toaFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ToaFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_toaFlag, allocator);
@@ -181,15 +180,15 @@ string ModifyL4ListenerRequest::ToJsonString() const
 
     if (m_balanceModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BalanceMode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_balanceMode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_balanceMode.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 StatusReason::StatusReason() :
@@ -27,7 +26,7 @@ StatusReason::StatusReason() :
 {
 }
 
-CoreInternalOutcome StatusReason::Deserialize(const Value &value)
+CoreInternalOutcome StatusReason::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome StatusReason::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StatusReason::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StatusReason::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_errorCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errorCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_errorMessageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorMessage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errorMessage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
     }
 
 }

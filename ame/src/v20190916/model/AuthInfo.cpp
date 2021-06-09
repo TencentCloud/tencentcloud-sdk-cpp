@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ame::V20190916::Model;
-using namespace rapidjson;
 using namespace std;
 
 AuthInfo::AuthInfo() :
@@ -33,7 +32,7 @@ AuthInfo::AuthInfo() :
 {
 }
 
-CoreInternalOutcome AuthInfo::Deserialize(const Value &value)
+CoreInternalOutcome AuthInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,28 +121,28 @@ CoreInternalOutcome AuthInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AuthInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AuthInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_subjectNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubjectName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subjectName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subjectName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_projectName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appSceneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppScene";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appScene, allocator);
@@ -151,7 +150,7 @@ void AuthInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_appRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appRegion, allocator);
@@ -159,7 +158,7 @@ void AuthInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_authPeriodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuthPeriod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_authPeriod, allocator);
@@ -167,7 +166,7 @@ void AuthInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_commercializationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Commercialization";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_commercialization, allocator);
@@ -175,7 +174,7 @@ void AuthInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_platformHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Platform";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_platform, allocator);
@@ -183,10 +182,10 @@ void AuthInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 }

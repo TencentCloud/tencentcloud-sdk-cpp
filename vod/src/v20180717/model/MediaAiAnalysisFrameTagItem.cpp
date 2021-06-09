@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaAiAnalysisFrameTagItem::MediaAiAnalysisFrameTagItem() :
@@ -28,7 +27,7 @@ MediaAiAnalysisFrameTagItem::MediaAiAnalysisFrameTagItem() :
 {
 }
 
-CoreInternalOutcome MediaAiAnalysisFrameTagItem::Deserialize(const Value &value)
+CoreInternalOutcome MediaAiAnalysisFrameTagItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome MediaAiAnalysisFrameTagItem::Deserialize(const Value &value)
         if (!value["CategorySet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaAiAnalysisFrameTagItem.CategorySet` is not array type"));
 
-        const Value &tmpValue = value["CategorySet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CategorySet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_categorySet.push_back((*itr).GetString());
         }
@@ -70,33 +69,33 @@ CoreInternalOutcome MediaAiAnalysisFrameTagItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaAiAnalysisFrameTagItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaAiAnalysisFrameTagItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
     }
 
     if (m_categorySetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CategorySet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_categorySet.begin(); itr != m_categorySet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);

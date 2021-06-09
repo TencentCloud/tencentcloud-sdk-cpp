@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ape::V20200513::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageMarshal::ImageMarshal() :
@@ -36,7 +35,7 @@ ImageMarshal::ImageMarshal() :
 {
 }
 
-CoreInternalOutcome ImageMarshal::Deserialize(const Value &value)
+CoreInternalOutcome ImageMarshal::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -155,12 +154,12 @@ CoreInternalOutcome ImageMarshal::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageMarshal::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageMarshal::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_marshalIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MarshalId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_marshalId, allocator);
@@ -168,7 +167,7 @@ void ImageMarshal::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -176,7 +175,7 @@ void ImageMarshal::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -184,7 +183,7 @@ void ImageMarshal::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_sizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
@@ -192,15 +191,15 @@ void ImageMarshal::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_formatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Format";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_format.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
     }
 
     if (m_priceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Price";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_price, allocator);
@@ -208,15 +207,15 @@ void ImageMarshal::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_licenseScopeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LicenseScope";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_licenseScope.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_licenseScope.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isVipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsVip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isVip, allocator);
@@ -224,7 +223,7 @@ void ImageMarshal::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_licenseScopeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LicenseScopeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_licenseScopeId, allocator);
@@ -232,15 +231,15 @@ void ImageMarshal::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_dimensionsNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DimensionsName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dimensionsName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dimensionsName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dimensionsNameIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DimensionsNameId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dimensionsNameId, allocator);

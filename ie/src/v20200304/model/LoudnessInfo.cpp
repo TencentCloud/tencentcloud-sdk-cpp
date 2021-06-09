@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 LoudnessInfo::LoudnessInfo() :
@@ -27,7 +26,7 @@ LoudnessInfo::LoudnessInfo() :
 {
 }
 
-CoreInternalOutcome LoudnessInfo::Deserialize(const Value &value)
+CoreInternalOutcome LoudnessInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome LoudnessInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LoudnessInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LoudnessInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_loudnessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Loudness";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loudness, allocator);
@@ -69,7 +68,7 @@ void LoudnessInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_loudnessRangeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoudnessRange";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loudnessRange, allocator);

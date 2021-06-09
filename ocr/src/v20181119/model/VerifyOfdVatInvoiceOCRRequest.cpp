@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 VerifyOfdVatInvoiceOCRRequest::VerifyOfdVatInvoiceOCRRequest() :
@@ -31,30 +30,30 @@ VerifyOfdVatInvoiceOCRRequest::VerifyOfdVatInvoiceOCRRequest() :
 
 string VerifyOfdVatInvoiceOCRRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_ofdFileUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OfdFileUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ofdFileUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ofdFileUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ofdFileBase64HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OfdFileBase64";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ofdFileBase64.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ofdFileBase64.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

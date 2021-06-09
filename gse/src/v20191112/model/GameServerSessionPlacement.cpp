@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 GameServerSessionPlacement::GameServerSessionPlacement() :
@@ -42,7 +41,7 @@ GameServerSessionPlacement::GameServerSessionPlacement() :
 {
 }
 
-CoreInternalOutcome GameServerSessionPlacement::Deserialize(const Value &value)
+CoreInternalOutcome GameServerSessionPlacement::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -72,8 +71,8 @@ CoreInternalOutcome GameServerSessionPlacement::Deserialize(const Value &value)
         if (!value["PlayerLatencies"].IsArray())
             return CoreInternalOutcome(Error("response `GameServerSessionPlacement.PlayerLatencies` is not array type"));
 
-        const Value &tmpValue = value["PlayerLatencies"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PlayerLatencies"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PlayerLatency item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -142,8 +141,8 @@ CoreInternalOutcome GameServerSessionPlacement::Deserialize(const Value &value)
         if (!value["GameProperties"].IsArray())
             return CoreInternalOutcome(Error("response `GameServerSessionPlacement.GameProperties` is not array type"));
 
-        const Value &tmpValue = value["GameProperties"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["GameProperties"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             GameProperty item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -212,8 +211,8 @@ CoreInternalOutcome GameServerSessionPlacement::Deserialize(const Value &value)
         if (!value["PlacedPlayerSessions"].IsArray())
             return CoreInternalOutcome(Error("response `GameServerSessionPlacement.PlacedPlayerSessions` is not array type"));
 
-        const Value &tmpValue = value["PlacedPlayerSessions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PlacedPlayerSessions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PlacedPlayerSession item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -251,98 +250,98 @@ CoreInternalOutcome GameServerSessionPlacement::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GameServerSessionPlacement::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GameServerSessionPlacement::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_placementIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlacementId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_placementId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_placementId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gameServerSessionQueueNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameServerSessionQueueName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gameServerSessionQueueName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gameServerSessionQueueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_playerLatenciesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlayerLatencies";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_playerLatencies.begin(); itr != m_playerLatencies.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dnsNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DnsName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dnsName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dnsName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gameServerSessionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameServerSessionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gameServerSessionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gameServerSessionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gameServerSessionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameServerSessionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gameServerSessionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gameServerSessionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gameServerSessionRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameServerSessionRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gameServerSessionRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gameServerSessionRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gamePropertiesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameProperties";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_gameProperties.begin(); itr != m_gameProperties.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_maximumPlayerSessionCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaximumPlayerSessionCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maximumPlayerSessionCount, allocator);
@@ -350,23 +349,23 @@ void GameServerSessionPlacement::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_gameServerSessionDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameServerSessionData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gameServerSessionData.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gameServerSessionData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ipAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ipAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
@@ -374,41 +373,41 @@ void GameServerSessionPlacement::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_matchmakerDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchmakerData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_matchmakerData.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchmakerData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_placedPlayerSessionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlacedPlayerSessions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_placedPlayerSessions.begin(); itr != m_placedPlayerSessions.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
 }

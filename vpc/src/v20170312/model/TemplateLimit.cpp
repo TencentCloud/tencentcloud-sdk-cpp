@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 TemplateLimit::TemplateLimit() :
@@ -29,7 +28,7 @@ TemplateLimit::TemplateLimit() :
 {
 }
 
-CoreInternalOutcome TemplateLimit::Deserialize(const Value &value)
+CoreInternalOutcome TemplateLimit::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome TemplateLimit::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TemplateLimit::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TemplateLimit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_addressTemplateMemberLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddressTemplateMemberLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_addressTemplateMemberLimit, allocator);
@@ -91,7 +90,7 @@ void TemplateLimit::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_addressTemplateGroupMemberLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddressTemplateGroupMemberLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_addressTemplateGroupMemberLimit, allocator);
@@ -99,7 +98,7 @@ void TemplateLimit::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_serviceTemplateMemberLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceTemplateMemberLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serviceTemplateMemberLimit, allocator);
@@ -107,7 +106,7 @@ void TemplateLimit::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_serviceTemplateGroupMemberLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceTemplateGroupMemberLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serviceTemplateGroupMemberLimit, allocator);

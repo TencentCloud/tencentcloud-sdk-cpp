@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cws::V20180312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifySiteAttributeRequest::ModifySiteAttributeRequest() :
@@ -36,14 +35,14 @@ ModifySiteAttributeRequest::ModifySiteAttributeRequest() :
 
 string ModifySiteAttributeRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_siteIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SiteId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_siteId, allocator);
@@ -51,15 +50,15 @@ string ModifySiteAttributeRequest::ToJsonString() const
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_needLoginHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedLogin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needLogin, allocator);
@@ -67,39 +66,39 @@ string ModifySiteAttributeRequest::ToJsonString() const
 
     if (m_loginCookieHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoginCookie";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_loginCookie.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loginCookie.c_str(), allocator).Move(), allocator);
     }
 
     if (m_loginCheckUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoginCheckUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_loginCheckUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loginCheckUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_loginCheckKwHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoginCheckKw";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_loginCheckKw.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_loginCheckKw.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scanDisallowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScanDisallow";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_scanDisallow.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scanDisallow.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

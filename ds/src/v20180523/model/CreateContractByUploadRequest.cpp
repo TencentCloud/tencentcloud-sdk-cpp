@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Ds::V20180523::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateContractByUploadRequest::CreateContractByUploadRequest() :
@@ -37,85 +36,85 @@ CreateContractByUploadRequest::CreateContractByUploadRequest() :
 
 string CreateContractByUploadRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_moduleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Module";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_module.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_module.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Operation";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_operation.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operation.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signInfosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignInfos";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_signInfos.begin(); itr != m_signInfos.end(); ++itr, ++i)
         {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
     if (m_contractFileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContractFile";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_contractFile.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_contractFile.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contractNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContractName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_contractName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_contractName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_remarksHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remarks";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_remarks.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remarks.c_str(), allocator).Move(), allocator);
     }
 
     if (m_initiatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Initiator";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_initiator.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_initiator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_expireTime.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

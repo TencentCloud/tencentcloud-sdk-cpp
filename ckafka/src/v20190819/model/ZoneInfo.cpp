@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 ZoneInfo::ZoneInfo() :
@@ -33,7 +32,7 @@ ZoneInfo::ZoneInfo() :
 {
 }
 
-CoreInternalOutcome ZoneInfo::Deserialize(const Value &value)
+CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,20 +121,20 @@ CoreInternalOutcome ZoneInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ZoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ZoneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zoneId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isInternalAppHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsInternalApp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isInternalApp, allocator);
@@ -143,7 +142,7 @@ void ZoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_appIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appId, allocator);
@@ -151,7 +150,7 @@ void ZoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_flagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Flag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flag, allocator);
@@ -159,15 +158,15 @@ void ZoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_zoneNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zoneName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zoneStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneStatus, allocator);
@@ -175,18 +174,18 @@ void ZoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_exflagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Exflag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_exflag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exflag.c_str(), allocator).Move(), allocator);
     }
 
     if (m_soldOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SoldOut";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_soldOut.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_soldOut.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceConfigDO::InstanceConfigDO() :
@@ -28,7 +27,7 @@ InstanceConfigDO::InstanceConfigDO() :
 {
 }
 
-CoreInternalOutcome InstanceConfigDO::Deserialize(const Value &value)
+CoreInternalOutcome InstanceConfigDO::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome InstanceConfigDO::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceConfigDO::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceConfigDO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_autoCreateTopicsEnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoCreateTopicsEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoCreateTopicsEnable, allocator);
@@ -80,7 +79,7 @@ void InstanceConfigDO::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_defaultNumPartitionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultNumPartitions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defaultNumPartitions, allocator);
@@ -88,7 +87,7 @@ void InstanceConfigDO::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_defaultReplicationFactorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultReplicationFactor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defaultReplicationFactor, allocator);

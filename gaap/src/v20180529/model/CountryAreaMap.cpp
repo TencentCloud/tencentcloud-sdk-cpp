@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 CountryAreaMap::CountryAreaMap() :
@@ -31,7 +30,7 @@ CountryAreaMap::CountryAreaMap() :
 {
 }
 
-CoreInternalOutcome CountryAreaMap::Deserialize(const Value &value)
+CoreInternalOutcome CountryAreaMap::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,55 +99,55 @@ CoreInternalOutcome CountryAreaMap::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CountryAreaMap::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CountryAreaMap::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nationCountryNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NationCountryName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nationCountryName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nationCountryName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nationCountryInnerCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NationCountryInnerCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nationCountryInnerCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nationCountryInnerCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_geographicalZoneNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GeographicalZoneName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_geographicalZoneName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_geographicalZoneName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_geographicalZoneInnerCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GeographicalZoneInnerCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_geographicalZoneInnerCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_geographicalZoneInnerCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_continentNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContinentName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_continentName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_continentName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_continentInnerCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContinentInnerCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_continentInnerCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_continentInnerCode.c_str(), allocator).Move(), allocator);
     }
 
 }

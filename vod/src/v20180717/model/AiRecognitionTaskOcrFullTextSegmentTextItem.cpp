@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiRecognitionTaskOcrFullTextSegmentTextItem::AiRecognitionTaskOcrFullTextSegmentTextItem() :
@@ -28,7 +27,7 @@ AiRecognitionTaskOcrFullTextSegmentTextItem::AiRecognitionTaskOcrFullTextSegment
 {
 }
 
-CoreInternalOutcome AiRecognitionTaskOcrFullTextSegmentTextItem::Deserialize(const Value &value)
+CoreInternalOutcome AiRecognitionTaskOcrFullTextSegmentTextItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextSegmentTextItem::Deserialize(con
         if (!value["AreaCoordSet"].IsArray())
             return CoreInternalOutcome(Error("response `AiRecognitionTaskOcrFullTextSegmentTextItem.AreaCoordSet` is not array type"));
 
-        const Value &tmpValue = value["AreaCoordSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AreaCoordSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_areaCoordSet.push_back((*itr).GetInt64());
         }
@@ -70,12 +69,12 @@ CoreInternalOutcome AiRecognitionTaskOcrFullTextSegmentTextItem::Deserialize(con
     return CoreInternalOutcome(true);
 }
 
-void AiRecognitionTaskOcrFullTextSegmentTextItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiRecognitionTaskOcrFullTextSegmentTextItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -83,23 +82,23 @@ void AiRecognitionTaskOcrFullTextSegmentTextItem::ToJsonObject(Value &value, Doc
 
     if (m_areaCoordSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AreaCoordSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_areaCoordSet.begin(); itr != m_areaCoordSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_textHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
 }

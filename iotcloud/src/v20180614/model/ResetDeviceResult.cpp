@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResetDeviceResult::ResetDeviceResult() :
@@ -28,7 +27,7 @@ ResetDeviceResult::ResetDeviceResult() :
 {
 }
 
-CoreInternalOutcome ResetDeviceResult::Deserialize(const Value &value)
+CoreInternalOutcome ResetDeviceResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome ResetDeviceResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResetDeviceResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResetDeviceResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deviceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_successHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Success";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_success, allocator);
@@ -88,10 +87,10 @@ void ResetDeviceResult::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_reasonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Reason";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reason.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
 }

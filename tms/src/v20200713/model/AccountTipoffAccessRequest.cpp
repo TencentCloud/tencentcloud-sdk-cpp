@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tms::V20200713::Model;
-using namespace rapidjson;
 using namespace std;
 
 AccountTipoffAccessRequest::AccountTipoffAccessRequest() :
@@ -36,22 +35,22 @@ AccountTipoffAccessRequest::AccountTipoffAccessRequest() :
 
 string AccountTipoffAccessRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_reportedAccountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReportedAccount";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_reportedAccount.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_reportedAccount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reportedAccountTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReportedAccountType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_reportedAccountType, allocator);
@@ -59,7 +58,7 @@ string AccountTipoffAccessRequest::ToJsonString() const
 
     if (m_evilTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_evilType, allocator);
@@ -67,15 +66,15 @@ string AccountTipoffAccessRequest::ToJsonString() const
 
     if (m_senderAccountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SenderAccount";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_senderAccount.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_senderAccount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_senderAccountTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SenderAccountType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_senderAccountType, allocator);
@@ -83,23 +82,23 @@ string AccountTipoffAccessRequest::ToJsonString() const
 
     if (m_senderIPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SenderIP";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_senderIP.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_senderIP.c_str(), allocator).Move(), allocator);
     }
 
     if (m_evilContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilContent";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_evilContent.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_evilContent.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

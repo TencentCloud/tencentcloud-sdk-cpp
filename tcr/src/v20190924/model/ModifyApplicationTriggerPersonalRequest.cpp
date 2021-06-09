@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyApplicationTriggerPersonalRequest::ModifyApplicationTriggerPersonalRequest() :
@@ -40,86 +39,86 @@ ModifyApplicationTriggerPersonalRequest::ModifyApplicationTriggerPersonalRequest
 
 string ModifyApplicationTriggerPersonalRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_repoNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepoName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_repoName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_repoName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_triggerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TriggerName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_triggerName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_triggerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_invokeMethodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InvokeMethod";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_invokeMethod.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_invokeMethod.c_str(), allocator).Move(), allocator);
     }
 
     if (m_invokeExprHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InvokeExpr";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_invokeExpr.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_invokeExpr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_namespaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_workloadTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WorkloadType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_workloadType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workloadType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_workloadNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WorkloadName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_workloadName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workloadName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_containerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContainerName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_containerName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_containerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_clusterRegion, allocator);
@@ -127,15 +126,15 @@ string ModifyApplicationTriggerPersonalRequest::ToJsonString() const
 
     if (m_newTriggerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewTriggerName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_newTriggerName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_newTriggerName.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

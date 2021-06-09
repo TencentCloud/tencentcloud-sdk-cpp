@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloudBaseCapabilities::CloudBaseCapabilities() :
@@ -27,7 +26,7 @@ CloudBaseCapabilities::CloudBaseCapabilities() :
 {
 }
 
-CoreInternalOutcome CloudBaseCapabilities::Deserialize(const Value &value)
+CoreInternalOutcome CloudBaseCapabilities::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome CloudBaseCapabilities::Deserialize(const Value &value)
         if (!value["Add"].IsArray())
             return CoreInternalOutcome(Error("response `CloudBaseCapabilities.Add` is not array type"));
 
-        const Value &tmpValue = value["Add"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Add"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_add.push_back((*itr).GetString());
         }
@@ -50,8 +49,8 @@ CoreInternalOutcome CloudBaseCapabilities::Deserialize(const Value &value)
         if (!value["Drop"].IsArray())
             return CoreInternalOutcome(Error("response `CloudBaseCapabilities.Drop` is not array type"));
 
-        const Value &tmpValue = value["Drop"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Drop"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_drop.push_back((*itr).GetString());
         }
@@ -62,32 +61,32 @@ CoreInternalOutcome CloudBaseCapabilities::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CloudBaseCapabilities::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloudBaseCapabilities::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_addHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Add";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_add.begin(); itr != m_add.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_dropHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Drop";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_drop.begin(); itr != m_drop.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

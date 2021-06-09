@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Chdfs::V20201112::Model;
-using namespace rapidjson;
 using namespace std;
 
 MountPoint::MountPoint() :
@@ -31,7 +30,7 @@ MountPoint::MountPoint() :
 {
 }
 
-CoreInternalOutcome MountPoint::Deserialize(const Value &value)
+CoreInternalOutcome MountPoint::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -91,8 +90,8 @@ CoreInternalOutcome MountPoint::Deserialize(const Value &value)
         if (!value["AccessGroupIds"].IsArray())
             return CoreInternalOutcome(Error("response `MountPoint.AccessGroupIds` is not array type"));
 
-        const Value &tmpValue = value["AccessGroupIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AccessGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_accessGroupIds.push_back((*itr).GetString());
         }
@@ -103,36 +102,36 @@ CoreInternalOutcome MountPoint::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MountPoint::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MountPoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mountPointIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MountPointId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mountPointId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountPointId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mountPointNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MountPointName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mountPointName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountPointName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileSystemIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSystemId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileSystemId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSystemId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -140,22 +139,22 @@ void MountPoint::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_accessGroupIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccessGroupIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_accessGroupIds.begin(); itr != m_accessGroupIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

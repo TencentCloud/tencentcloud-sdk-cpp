@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 SearchImageResponse::SearchImageResponse() :
@@ -32,7 +31,7 @@ SearchImageResponse::SearchImageResponse() :
 
 CoreInternalOutcome SearchImageResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome SearchImageResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome SearchImageResponse::Deserialize(const string &payload)
         if (!rsp["Results"].IsArray())
             return CoreInternalOutcome(Error("response `Results` is not array type"));
 
-        const Value &tmpValue = rsp["Results"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Results"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SearchResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

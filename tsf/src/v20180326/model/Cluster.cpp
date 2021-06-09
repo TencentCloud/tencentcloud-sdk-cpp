@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 Cluster::Cluster() :
@@ -53,7 +52,7 @@ Cluster::Cluster() :
 {
 }
 
-CoreInternalOutcome Cluster::Deserialize(const Value &value)
+CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -349,68 +348,68 @@ CoreInternalOutcome Cluster::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_clusterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterCIDRHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterCIDR";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterCIDR.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterCIDR.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterTotalCpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterTotalCpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterTotalCpu, allocator);
@@ -418,7 +417,7 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_clusterTotalMemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterTotalMem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterTotalMem, allocator);
@@ -426,7 +425,7 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_clusterUsedCpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterUsedCpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterUsedCpu, allocator);
@@ -434,7 +433,7 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_clusterUsedMemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterUsedMem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterUsedMem, allocator);
@@ -442,7 +441,7 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_instanceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceCount, allocator);
@@ -450,7 +449,7 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_runInstanceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunInstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runInstanceCount, allocator);
@@ -458,7 +457,7 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_normalInstanceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NormalInstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_normalInstanceCount, allocator);
@@ -466,7 +465,7 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_deleteFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeleteFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deleteFlag, allocator);
@@ -474,63 +473,63 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tsfRegionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TsfRegionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tsfRegionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tsfRegionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tsfRegionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TsfRegionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tsfRegionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tsfRegionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tsfZoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TsfZoneId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tsfZoneId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tsfZoneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tsfZoneNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TsfZoneName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tsfZoneName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tsfZoneName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deleteFlagReasonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeleteFlagReason";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deleteFlagReason.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deleteFlagReason.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterLimitCpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterLimitCpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterLimitCpu, allocator);
@@ -538,7 +537,7 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_clusterLimitMemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterLimitMem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterLimitMem, allocator);
@@ -546,7 +545,7 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_runServiceInstanceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunServiceInstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runServiceInstanceCount, allocator);
@@ -554,27 +553,27 @@ void Cluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_subnetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operationInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OperationInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operationInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_clusterVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterVersion.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ims::V20200713::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImsDetail::ImsDetail() :
@@ -33,7 +32,7 @@ ImsDetail::ImsDetail() :
 {
 }
 
-CoreInternalOutcome ImsDetail::Deserialize(const Value &value)
+CoreInternalOutcome ImsDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,20 +121,20 @@ CoreInternalOutcome ImsDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImsDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_contentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_content.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataSourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataSource, allocator);
@@ -143,15 +142,15 @@ void ImsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_evilTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilType, allocator);
@@ -159,31 +158,31 @@ void ImsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_moderationTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModerationTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_moderationTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_moderationTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateUserHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateUser";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updateUser.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateUser.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contentIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContentId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_contentId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contentId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operEvilTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OperEvilType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_operEvilType, allocator);

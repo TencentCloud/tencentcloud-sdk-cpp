@@ -18,18 +18,18 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 RedisNode::RedisNode() :
     m_keysHasBeenSet(false),
     m_slotHasBeenSet(false),
     m_nodeIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_roleHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome RedisNode::Deserialize(const Value &value)
+CoreInternalOutcome RedisNode::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,16 +74,26 @@ CoreInternalOutcome RedisNode::Deserialize(const Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Role") && !value["Role"].IsNull())
+    {
+        if (!value["Role"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RedisNode.Role` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_role = string(value["Role"].GetString());
+        m_roleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-void RedisNode::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RedisNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_keysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Keys";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_keys, allocator);
@@ -91,26 +101,34 @@ void RedisNode::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_slotHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Slot";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_slot.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_slot.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -178,5 +196,21 @@ void RedisNode::SetStatus(const string& _status)
 bool RedisNode::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string RedisNode::GetRole() const
+{
+    return m_role;
+}
+
+void RedisNode::SetRole(const string& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool RedisNode::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
 }
 

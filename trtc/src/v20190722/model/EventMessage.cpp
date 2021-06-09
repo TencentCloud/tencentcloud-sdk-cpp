@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 EventMessage::EventMessage() :
@@ -30,7 +29,7 @@ EventMessage::EventMessage() :
 {
 }
 
-CoreInternalOutcome EventMessage::Deserialize(const Value &value)
+CoreInternalOutcome EventMessage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome EventMessage::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EventMessage::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EventMessage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -102,7 +101,7 @@ void EventMessage::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_timeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_time, allocator);
@@ -110,7 +109,7 @@ void EventMessage::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_eventIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eventId, allocator);
@@ -118,7 +117,7 @@ void EventMessage::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_paramOneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParamOne";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_paramOne, allocator);
@@ -126,7 +125,7 @@ void EventMessage::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_paramTwoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParamTwo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_paramTwo, allocator);

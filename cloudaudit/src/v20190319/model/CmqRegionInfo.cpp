@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cloudaudit::V20190319::Model;
-using namespace rapidjson;
 using namespace std;
 
 CmqRegionInfo::CmqRegionInfo() :
@@ -27,7 +26,7 @@ CmqRegionInfo::CmqRegionInfo() :
 {
 }
 
-CoreInternalOutcome CmqRegionInfo::Deserialize(const Value &value)
+CoreInternalOutcome CmqRegionInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome CmqRegionInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CmqRegionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CmqRegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cmqRegionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CmqRegionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cmqRegionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmqRegionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cmqRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CmqRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cmqRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmqRegion.c_str(), allocator).Move(), allocator);
     }
 
 }

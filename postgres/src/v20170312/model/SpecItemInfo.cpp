@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Postgres::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 SpecItemInfo::SpecItemInfo() :
@@ -35,7 +34,7 @@ SpecItemInfo::SpecItemInfo() :
 {
 }
 
-CoreInternalOutcome SpecItemInfo::Deserialize(const Value &value)
+CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,36 +143,36 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SpecItemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SpecItemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_specCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SpecCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_specCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_versionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     if (m_versionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VersionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_versionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_versionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);
@@ -181,7 +180,7 @@ void SpecItemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_memoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memory, allocator);
@@ -189,7 +188,7 @@ void SpecItemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_maxStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxStorage, allocator);
@@ -197,7 +196,7 @@ void SpecItemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_minStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minStorage, allocator);
@@ -205,7 +204,7 @@ void SpecItemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_qpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Qps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qps, allocator);
@@ -213,7 +212,7 @@ void SpecItemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_pidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pid, allocator);
@@ -221,10 +220,10 @@ void SpecItemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }

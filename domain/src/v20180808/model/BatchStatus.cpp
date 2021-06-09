@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Domain::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 BatchStatus::BatchStatus() :
@@ -28,7 +27,7 @@ BatchStatus::BatchStatus() :
 {
 }
 
-CoreInternalOutcome BatchStatus::Deserialize(const Value &value)
+CoreInternalOutcome BatchStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome BatchStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BatchStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BatchStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_logIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_logId, allocator);
@@ -80,18 +79,18 @@ void BatchStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_batchActionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BatchAction";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_batchAction.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_batchAction.c_str(), allocator).Move(), allocator);
     }
 
 }

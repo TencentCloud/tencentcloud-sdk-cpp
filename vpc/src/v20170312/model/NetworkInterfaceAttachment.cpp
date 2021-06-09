@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 NetworkInterfaceAttachment::NetworkInterfaceAttachment() :
@@ -29,7 +28,7 @@ NetworkInterfaceAttachment::NetworkInterfaceAttachment() :
 {
 }
 
-CoreInternalOutcome NetworkInterfaceAttachment::Deserialize(const Value &value)
+CoreInternalOutcome NetworkInterfaceAttachment::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome NetworkInterfaceAttachment::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NetworkInterfaceAttachment::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NetworkInterfaceAttachment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceIndexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deviceIndex, allocator);
@@ -99,18 +98,18 @@ void NetworkInterfaceAttachment::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_instanceAccountIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceAccountId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceAccountId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceAccountId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_attachTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AttachTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_attachTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_attachTime.c_str(), allocator).Move(), allocator);
     }
 
 }

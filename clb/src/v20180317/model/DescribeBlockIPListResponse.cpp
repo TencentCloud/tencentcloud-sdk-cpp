@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Clb::V20180317::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeBlockIPListResponse::DescribeBlockIPListResponse() :
@@ -33,7 +32,7 @@ DescribeBlockIPListResponse::DescribeBlockIPListResponse() :
 
 CoreInternalOutcome DescribeBlockIPListResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DescribeBlockIPListResponse::Deserialize(const string &paylo
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -90,8 +89,8 @@ CoreInternalOutcome DescribeBlockIPListResponse::Deserialize(const string &paylo
         if (!rsp["BlockedIPList"].IsArray())
             return CoreInternalOutcome(Error("response `BlockedIPList` is not array type"));
 
-        const Value &tmpValue = rsp["BlockedIPList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["BlockedIPList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             BlockedIP item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

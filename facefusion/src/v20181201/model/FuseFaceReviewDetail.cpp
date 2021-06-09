@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Facefusion::V20181201::Model;
-using namespace rapidjson;
 using namespace std;
 
 FuseFaceReviewDetail::FuseFaceReviewDetail() :
@@ -29,7 +28,7 @@ FuseFaceReviewDetail::FuseFaceReviewDetail() :
 {
 }
 
-CoreInternalOutcome FuseFaceReviewDetail::Deserialize(const Value &value)
+CoreInternalOutcome FuseFaceReviewDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,28 +77,28 @@ CoreInternalOutcome FuseFaceReviewDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FuseFaceReviewDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FuseFaceReviewDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fieldHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Field";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_field.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_field.c_str(), allocator).Move(), allocator);
     }
 
     if (m_labelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -107,10 +106,10 @@ void FuseFaceReviewDetail::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_suggestionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_suggestion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
 }

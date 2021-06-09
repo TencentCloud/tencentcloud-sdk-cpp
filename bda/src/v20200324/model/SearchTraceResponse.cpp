@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bda::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 SearchTraceResponse::SearchTraceResponse() :
@@ -34,7 +33,7 @@ SearchTraceResponse::SearchTraceResponse() :
 
 CoreInternalOutcome SearchTraceResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -44,7 +43,7 @@ CoreInternalOutcome SearchTraceResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -71,8 +70,8 @@ CoreInternalOutcome SearchTraceResponse::Deserialize(const string &payload)
         if (!rsp["Candidates"].IsArray())
             return CoreInternalOutcome(Error("response `Candidates` is not array type"));
 
-        const Value &tmpValue = rsp["Candidates"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Candidates"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Candidate item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -101,8 +100,8 @@ CoreInternalOutcome SearchTraceResponse::Deserialize(const string &payload)
         if (!rsp["InputRetCodeDetails"].IsArray())
             return CoreInternalOutcome(Error("response `InputRetCodeDetails` is not array type"));
 
-        const Value &tmpValue = rsp["InputRetCodeDetails"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["InputRetCodeDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_inputRetCodeDetails.push_back((*itr).GetInt64());
         }

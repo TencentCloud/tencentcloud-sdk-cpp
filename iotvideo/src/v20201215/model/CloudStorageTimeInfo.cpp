@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20201215::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloudStorageTimeInfo::CloudStorageTimeInfo() :
@@ -27,7 +26,7 @@ CloudStorageTimeInfo::CloudStorageTimeInfo() :
 {
 }
 
-CoreInternalOutcome CloudStorageTimeInfo::Deserialize(const Value &value)
+CoreInternalOutcome CloudStorageTimeInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome CloudStorageTimeInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CloudStorageTimeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloudStorageTimeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTime, allocator);
@@ -69,7 +68,7 @@ void CloudStorageTimeInfo::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTime, allocator);

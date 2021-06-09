@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaMiniProgramReviewInfoItem::MediaMiniProgramReviewInfoItem() :
@@ -30,7 +29,7 @@ MediaMiniProgramReviewInfoItem::MediaMiniProgramReviewInfoItem() :
 {
 }
 
-CoreInternalOutcome MediaMiniProgramReviewInfoItem::Deserialize(const Value &value)
+CoreInternalOutcome MediaMiniProgramReviewInfoItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -87,8 +86,8 @@ CoreInternalOutcome MediaMiniProgramReviewInfoItem::Deserialize(const Value &val
         if (!value["ReviewSummary"].IsArray())
             return CoreInternalOutcome(Error("response `MediaMiniProgramReviewInfoItem.ReviewSummary` is not array type"));
 
-        const Value &tmpValue = value["ReviewSummary"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ReviewSummary"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MediaMiniProgramReviewElem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -106,12 +105,12 @@ CoreInternalOutcome MediaMiniProgramReviewInfoItem::Deserialize(const Value &val
     return CoreInternalOutcome(true);
 }
 
-void MediaMiniProgramReviewInfoItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaMiniProgramReviewInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_definitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
@@ -119,40 +118,40 @@ void MediaMiniProgramReviewInfoItem::ToJsonObject(Value &value, Document::Alloca
 
     if (m_metaDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetaData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_metaData.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reviewResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReviewResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reviewResult.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reviewResult.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reviewSummaryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReviewSummary";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_reviewSummary.begin(); itr != m_reviewSummary.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

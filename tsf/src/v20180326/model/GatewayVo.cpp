@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 GatewayVo::GatewayVo() :
@@ -29,7 +28,7 @@ GatewayVo::GatewayVo() :
 {
 }
 
-CoreInternalOutcome GatewayVo::Deserialize(const Value &value)
+CoreInternalOutcome GatewayVo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome GatewayVo::Deserialize(const Value &value)
         if (!value["Groups"].IsArray())
             return CoreInternalOutcome(Error("response `GatewayVo.Groups` is not array type"));
 
-        const Value &tmpValue = value["Groups"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Groups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             GatewayApiGroupVo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,28 +87,28 @@ CoreInternalOutcome GatewayVo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GatewayVo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GatewayVo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_gatewayDeployGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GatewayDeployGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gatewayDeployGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayDeployGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gatewayDeployGroupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GatewayDeployGroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gatewayDeployGroupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayDeployGroupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupNum, allocator);
@@ -117,15 +116,15 @@ void GatewayVo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_groupsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Groups";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_groups.begin(); itr != m_groups.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

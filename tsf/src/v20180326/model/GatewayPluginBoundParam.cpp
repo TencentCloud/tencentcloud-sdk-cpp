@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 GatewayPluginBoundParam::GatewayPluginBoundParam() :
@@ -28,7 +27,7 @@ GatewayPluginBoundParam::GatewayPluginBoundParam() :
 {
 }
 
-CoreInternalOutcome GatewayPluginBoundParam::Deserialize(const Value &value)
+CoreInternalOutcome GatewayPluginBoundParam::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome GatewayPluginBoundParam::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GatewayPluginBoundParam::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GatewayPluginBoundParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_pluginIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PluginId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pluginId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pluginId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scopeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScopeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scopeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scopeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scopeValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScopeValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scopeValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scopeValue.c_str(), allocator).Move(), allocator);
     }
 
 }

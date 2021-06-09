@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Partners::V20180321::Model;
-using namespace rapidjson;
 using namespace std;
 
 AgentSalesmanElem::AgentSalesmanElem() :
@@ -29,7 +28,7 @@ AgentSalesmanElem::AgentSalesmanElem() :
 {
 }
 
-CoreInternalOutcome AgentSalesmanElem::Deserialize(const Value &value)
+CoreInternalOutcome AgentSalesmanElem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome AgentSalesmanElem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AgentSalesmanElem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AgentSalesmanElem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_uinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_salesUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SalesUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_salesUin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_salesUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_salesNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SalesName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_salesName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_salesName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 PresetLayoutConfig::PresetLayoutConfig() :
@@ -35,7 +34,7 @@ PresetLayoutConfig::PresetLayoutConfig() :
 {
 }
 
-CoreInternalOutcome PresetLayoutConfig::Deserialize(const Value &value)
+CoreInternalOutcome PresetLayoutConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,20 +143,20 @@ CoreInternalOutcome PresetLayoutConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PresetLayoutConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PresetLayoutConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_userIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_streamTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_streamType, allocator);
@@ -165,7 +164,7 @@ void PresetLayoutConfig::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_imageWidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageWidth, allocator);
@@ -173,7 +172,7 @@ void PresetLayoutConfig::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_imageHeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageHeight, allocator);
@@ -181,7 +180,7 @@ void PresetLayoutConfig::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_locationXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocationX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_locationX, allocator);
@@ -189,7 +188,7 @@ void PresetLayoutConfig::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_locationYHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocationY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_locationY, allocator);
@@ -197,7 +196,7 @@ void PresetLayoutConfig::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_zOrderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZOrder";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zOrder, allocator);
@@ -205,7 +204,7 @@ void PresetLayoutConfig::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_renderModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RenderMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_renderMode, allocator);
@@ -213,7 +212,7 @@ void PresetLayoutConfig::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_mixInputTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MixInputType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mixInputType, allocator);
@@ -221,7 +220,7 @@ void PresetLayoutConfig::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_placeImageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlaceImageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_placeImageId, allocator);

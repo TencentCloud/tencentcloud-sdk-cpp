@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 ConfigReleaseLog::ConfigReleaseLog() :
@@ -42,7 +41,7 @@ ConfigReleaseLog::ConfigReleaseLog() :
 {
 }
 
-CoreInternalOutcome ConfigReleaseLog::Deserialize(const Value &value)
+CoreInternalOutcome ConfigReleaseLog::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -221,140 +220,140 @@ CoreInternalOutcome ConfigReleaseLog::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ConfigReleaseLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ConfigReleaseLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_configReleaseLogIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConfigReleaseLogId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_configReleaseLogId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configReleaseLogId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_configIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConfigId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_configId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_configNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConfigName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_configName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_configVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConfigVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_configVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_namespaceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NamespaceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespaceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespaceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_namespaceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NamespaceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespaceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespaceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_releaseTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReleaseTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_releaseTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_releaseTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_releaseDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReleaseDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_releaseDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_releaseDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_releaseStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReleaseStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_releaseStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_releaseStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastConfigIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastConfigId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastConfigId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastConfigId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastConfigNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastConfigName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastConfigName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastConfigName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastConfigVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastConfigVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastConfigVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastConfigVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rollbackFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RollbackFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rollbackFlag, allocator);

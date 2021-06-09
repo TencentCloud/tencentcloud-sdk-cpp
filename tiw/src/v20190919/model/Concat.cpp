@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiw::V20190919::Model;
-using namespace rapidjson;
 using namespace std;
 
 Concat::Concat() :
@@ -27,7 +26,7 @@ Concat::Concat() :
 {
 }
 
-CoreInternalOutcome Concat::Deserialize(const Value &value)
+CoreInternalOutcome Concat::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome Concat::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Concat::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Concat::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enabled, allocator);
@@ -69,10 +68,10 @@ void Concat::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_imageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_image.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
 }

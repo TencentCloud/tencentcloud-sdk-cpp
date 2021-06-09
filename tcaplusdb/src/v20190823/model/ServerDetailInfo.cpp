@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcaplusdb::V20190823::Model;
-using namespace rapidjson;
 using namespace std;
 
 ServerDetailInfo::ServerDetailInfo() :
@@ -31,7 +30,7 @@ ServerDetailInfo::ServerDetailInfo() :
 {
 }
 
-CoreInternalOutcome ServerDetailInfo::Deserialize(const Value &value)
+CoreInternalOutcome ServerDetailInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,28 +99,28 @@ CoreInternalOutcome ServerDetailInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ServerDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ServerDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_serverUidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerUid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serverUid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverUid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_machineTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_machineType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_memoryRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemoryRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memoryRate, allocator);
@@ -129,7 +128,7 @@ void ServerDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_diskRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskRate, allocator);
@@ -137,7 +136,7 @@ void ServerDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_readNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_readNum, allocator);
@@ -145,7 +144,7 @@ void ServerDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_writeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WriteNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_writeNum, allocator);

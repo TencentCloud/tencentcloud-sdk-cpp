@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 Task::Task() :
@@ -27,7 +26,7 @@ Task::Task() :
 {
 }
 
-CoreInternalOutcome Task::Deserialize(const Value &value)
+CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,24 +69,24 @@ CoreInternalOutcome Task::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Task::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Task::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_updateShadowTaskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateShadowTask";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_updateShadowTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_publishMessageTaskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishMessageTask";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_publishMessageTask.ToJsonObject(value[key.c_str()], allocator);
     }
 

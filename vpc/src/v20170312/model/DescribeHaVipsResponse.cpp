@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeHaVipsResponse::DescribeHaVipsResponse() :
@@ -32,7 +31,7 @@ DescribeHaVipsResponse::DescribeHaVipsResponse() :
 
 CoreInternalOutcome DescribeHaVipsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeHaVipsResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeHaVipsResponse::Deserialize(const string &payload)
         if (!rsp["HaVipSet"].IsArray())
             return CoreInternalOutcome(Error("response `HaVipSet` is not array type"));
 
-        const Value &tmpValue = rsp["HaVipSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["HaVipSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             HaVip item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

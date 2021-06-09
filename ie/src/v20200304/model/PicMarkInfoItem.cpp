@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 PicMarkInfoItem::PicMarkInfoItem() :
@@ -33,7 +32,7 @@ PicMarkInfoItem::PicMarkInfoItem() :
 {
 }
 
-CoreInternalOutcome PicMarkInfoItem::Deserialize(const Value &value)
+CoreInternalOutcome PicMarkInfoItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -129,12 +128,12 @@ CoreInternalOutcome PicMarkInfoItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PicMarkInfoItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PicMarkInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_posXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PosX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_posX, allocator);
@@ -142,7 +141,7 @@ void PicMarkInfoItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_posYHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PosY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_posY, allocator);
@@ -150,24 +149,24 @@ void PicMarkInfoItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_pathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_path.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -175,7 +174,7 @@ void PicMarkInfoItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -183,7 +182,7 @@ void PicMarkInfoItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTime, allocator);
@@ -191,7 +190,7 @@ void PicMarkInfoItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTime, allocator);

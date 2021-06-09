@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 HealthCheckSetting::HealthCheckSetting() :
@@ -36,7 +35,7 @@ HealthCheckSetting::HealthCheckSetting() :
 {
 }
 
-CoreInternalOutcome HealthCheckSetting::Deserialize(const Value &value)
+CoreInternalOutcome HealthCheckSetting::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -136,8 +135,8 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const Value &value)
         if (!value["Command"].IsArray())
             return CoreInternalOutcome(Error("response `HealthCheckSetting.Command` is not array type"));
 
-        const Value &tmpValue = value["Command"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Command"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_command.push_back((*itr).GetString());
         }
@@ -158,20 +157,20 @@ CoreInternalOutcome HealthCheckSetting::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HealthCheckSetting::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HealthCheckSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_actionTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActionType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_actionType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_actionType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_initialDelaySecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InitialDelaySeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_initialDelaySeconds, allocator);
@@ -179,7 +178,7 @@ void HealthCheckSetting::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_timeoutSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeoutSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeoutSeconds, allocator);
@@ -187,7 +186,7 @@ void HealthCheckSetting::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_periodSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeriodSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_periodSeconds, allocator);
@@ -195,7 +194,7 @@ void HealthCheckSetting::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_successThresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuccessThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_successThreshold, allocator);
@@ -203,7 +202,7 @@ void HealthCheckSetting::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_failureThresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FailureThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failureThreshold, allocator);
@@ -211,15 +210,15 @@ void HealthCheckSetting::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_schemeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Scheme";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scheme.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheme.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
@@ -227,31 +226,31 @@ void HealthCheckSetting::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_pathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_path.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
     if (m_commandHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Command";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_command.begin(); itr != m_command.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }

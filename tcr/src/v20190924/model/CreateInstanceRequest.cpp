@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateInstanceRequest::CreateInstanceRequest() :
@@ -33,47 +32,47 @@ CreateInstanceRequest::CreateInstanceRequest() :
 
 string CreateInstanceRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_registryNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegistryName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_registryName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_registryName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_registryTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegistryType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_registryType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_registryType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagSpecificationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagSpecification";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tagSpecification.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_registryChargeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegistryChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_registryChargeType, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

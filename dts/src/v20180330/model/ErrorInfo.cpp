@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dts::V20180330::Model;
-using namespace rapidjson;
 using namespace std;
 
 ErrorInfo::ErrorInfo() :
@@ -27,7 +26,7 @@ ErrorInfo::ErrorInfo() :
 {
 }
 
-CoreInternalOutcome ErrorInfo::Deserialize(const Value &value)
+CoreInternalOutcome ErrorInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome ErrorInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ErrorInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ErrorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_errorLogHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorLog";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errorLog.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorLog.c_str(), allocator).Move(), allocator);
     }
 
     if (m_helpDocHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HelpDoc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_helpDoc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_helpDoc.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScanSetInfo::ScanSetInfo() :
@@ -36,7 +35,7 @@ ScanSetInfo::ScanSetInfo() :
 {
 }
 
-CoreInternalOutcome ScanSetInfo::Deserialize(const Value &value)
+CoreInternalOutcome ScanSetInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -197,12 +196,12 @@ CoreInternalOutcome ScanSetInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScanSetInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScanSetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskStatus, allocator);
@@ -210,43 +209,43 @@ void ScanSetInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_appDetailInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppDetailInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_appDetailInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_virusInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VirusInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_virusInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_vulInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_vulInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_adInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AdInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_adInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_taskTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskTime, allocator);
@@ -254,7 +253,7 @@ void ScanSetInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_statusCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_statusCode, allocator);
@@ -262,35 +261,35 @@ void ScanSetInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_statusDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_statusDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusRefHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusRef";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_statusRef.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusRef.c_str(), allocator).Move(), allocator);
     }
 
     if (m_permissionInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PermissionInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_permissionInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_sensitiveInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SensitiveInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sensitiveInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaImageSpriteInfo::MediaImageSpriteInfo() :
@@ -30,7 +29,7 @@ MediaImageSpriteInfo::MediaImageSpriteInfo() :
 {
 }
 
-CoreInternalOutcome MediaImageSpriteInfo::Deserialize(const Value &value)
+CoreInternalOutcome MediaImageSpriteInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,8 +69,8 @@ CoreInternalOutcome MediaImageSpriteInfo::Deserialize(const Value &value)
         if (!value["ImageUrlSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaImageSpriteInfo.ImageUrlSet` is not array type"));
 
-        const Value &tmpValue = value["ImageUrlSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ImageUrlSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_imageUrlSet.push_back((*itr).GetString());
         }
@@ -92,12 +91,12 @@ CoreInternalOutcome MediaImageSpriteInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaImageSpriteInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaImageSpriteInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -105,7 +104,7 @@ void MediaImageSpriteInfo::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -113,7 +112,7 @@ void MediaImageSpriteInfo::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -121,23 +120,23 @@ void MediaImageSpriteInfo::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_imageUrlSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageUrlSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_imageUrlSet.begin(); itr != m_imageUrlSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_webVttUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WebVttUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_webVttUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webVttUrl.c_str(), allocator).Move(), allocator);
     }
 
 }

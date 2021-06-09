@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Soe::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 Keyword::Keyword() :
@@ -30,7 +29,7 @@ Keyword::Keyword() :
 {
 }
 
-CoreInternalOutcome Keyword::Deserialize(const Value &value)
+CoreInternalOutcome Keyword::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome Keyword::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Keyword::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Keyword::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_refTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RefText";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_refText.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_refText.c_str(), allocator).Move(), allocator);
     }
 
     if (m_evalModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvalMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evalMode, allocator);
@@ -110,7 +109,7 @@ void Keyword::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_scoreCoeffHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScoreCoeff";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scoreCoeff, allocator);
@@ -118,7 +117,7 @@ void Keyword::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_serverTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serverType, allocator);
@@ -126,7 +125,7 @@ void Keyword::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_textModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TextMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_textMode, allocator);

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeLiveDomainsRequest::DescribeLiveDomainsRequest() :
@@ -35,14 +34,14 @@ DescribeLiveDomainsRequest::DescribeLiveDomainsRequest() :
 
 string DescribeLiveDomainsRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_domainStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_domainStatus, allocator);
@@ -50,7 +49,7 @@ string DescribeLiveDomainsRequest::ToJsonString() const
 
     if (m_domainTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_domainType, allocator);
@@ -58,7 +57,7 @@ string DescribeLiveDomainsRequest::ToJsonString() const
 
     if (m_pageSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
@@ -66,7 +65,7 @@ string DescribeLiveDomainsRequest::ToJsonString() const
 
     if (m_pageNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageNum, allocator);
@@ -74,7 +73,7 @@ string DescribeLiveDomainsRequest::ToJsonString() const
 
     if (m_isDelayLiveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsDelayLive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isDelayLive, allocator);
@@ -82,15 +81,15 @@ string DescribeLiveDomainsRequest::ToJsonString() const
 
     if (m_domainPrefixHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainPrefix";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_domainPrefix.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainPrefix.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

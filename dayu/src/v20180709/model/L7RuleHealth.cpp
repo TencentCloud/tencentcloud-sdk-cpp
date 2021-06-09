@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 L7RuleHealth::L7RuleHealth() :
@@ -34,7 +33,7 @@ L7RuleHealth::L7RuleHealth() :
 {
 }
 
-CoreInternalOutcome L7RuleHealth::Deserialize(const Value &value)
+CoreInternalOutcome L7RuleHealth::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,20 +132,20 @@ CoreInternalOutcome L7RuleHealth::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void L7RuleHealth::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void L7RuleHealth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ruleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ruleId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enable, allocator);
@@ -154,7 +153,7 @@ void L7RuleHealth::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_intervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Interval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_interval, allocator);
@@ -162,7 +161,7 @@ void L7RuleHealth::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_kickNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KickNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_kickNum, allocator);
@@ -170,7 +169,7 @@ void L7RuleHealth::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_aliveNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AliveNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aliveNum, allocator);
@@ -178,15 +177,15 @@ void L7RuleHealth::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_methodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Method";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_method.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_method.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_statusCode, allocator);
@@ -194,15 +193,15 @@ void L7RuleHealth::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);

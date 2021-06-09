@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 UpgradeAbleInstancesItem::UpgradeAbleInstancesItem() :
@@ -28,7 +27,7 @@ UpgradeAbleInstancesItem::UpgradeAbleInstancesItem() :
 {
 }
 
-CoreInternalOutcome UpgradeAbleInstancesItem::Deserialize(const Value &value)
+CoreInternalOutcome UpgradeAbleInstancesItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome UpgradeAbleInstancesItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UpgradeAbleInstancesItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UpgradeAbleInstancesItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_versionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     if (m_latestVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LatestVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_latestVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestVersion.c_str(), allocator).Move(), allocator);
     }
 
 }

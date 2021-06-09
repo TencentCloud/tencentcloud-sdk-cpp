@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 SmsFreeQuota::SmsFreeQuota() :
@@ -30,7 +29,7 @@ SmsFreeQuota::SmsFreeQuota() :
 {
 }
 
-CoreInternalOutcome SmsFreeQuota::Deserialize(const Value &value)
+CoreInternalOutcome SmsFreeQuota::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome SmsFreeQuota::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SmsFreeQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SmsFreeQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_freeQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FreeQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_freeQuota, allocator);
@@ -102,7 +101,7 @@ void SmsFreeQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_totalUsedQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalUsedQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalUsedQuota, allocator);
@@ -110,23 +109,23 @@ void SmsFreeQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_cycleStartHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CycleStart";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cycleStart.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cycleStart.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cycleEndHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CycleEnd";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cycleEnd.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cycleEnd.c_str(), allocator).Move(), allocator);
     }
 
     if (m_todayUsedQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TodayUsedQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_todayUsedQuota, allocator);

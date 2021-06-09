@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 QualityControlInfo::QualityControlInfo() :
@@ -38,7 +37,7 @@ QualityControlInfo::QualityControlInfo() :
 {
 }
 
-CoreInternalOutcome QualityControlInfo::Deserialize(const Value &value)
+CoreInternalOutcome QualityControlInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -177,12 +176,12 @@ CoreInternalOutcome QualityControlInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QualityControlInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_intervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Interval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_interval, allocator);
@@ -190,7 +189,7 @@ void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_videoShotHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoShot";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoShot, allocator);
@@ -198,7 +197,7 @@ void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_jitterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Jitter";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_jitter, allocator);
@@ -206,7 +205,7 @@ void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_blurHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Blur";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blur, allocator);
@@ -214,7 +213,7 @@ void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_abnormalLightingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AbnormalLighting";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_abnormalLighting, allocator);
@@ -222,7 +221,7 @@ void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_crashScreenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CrashScreen";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_crashScreen, allocator);
@@ -230,7 +229,7 @@ void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_blackWhiteEdgeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlackWhiteEdge";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blackWhiteEdge, allocator);
@@ -238,7 +237,7 @@ void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_noiseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Noise";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_noise, allocator);
@@ -246,7 +245,7 @@ void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_mosaicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mosaic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mosaic, allocator);
@@ -254,7 +253,7 @@ void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_qRCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QRCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qRCode, allocator);
@@ -262,7 +261,7 @@ void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_qualityEvaluationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QualityEvaluation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qualityEvaluation, allocator);
@@ -270,7 +269,7 @@ void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_qualityEvalScoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QualityEvalScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qualityEvalScore, allocator);
@@ -278,7 +277,7 @@ void QualityControlInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_voiceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Voice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_voice, allocator);

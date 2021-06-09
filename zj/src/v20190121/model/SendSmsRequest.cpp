@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 SendSmsRequest::SendSmsRequest() :
@@ -38,72 +37,72 @@ SendSmsRequest::SendSmsRequest() :
 
 string SendSmsRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_licenseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "License";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_license.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_license.c_str(), allocator).Move(), allocator);
     }
 
     if (m_phoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Phone";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_phone.begin(); itr != m_phone.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_templateId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_paramsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Params";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_params.begin(); itr != m_params.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_signHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sign";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sign.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sign.c_str(), allocator).Move(), allocator);
     }
 
     if (m_senderIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SenderId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_senderId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_senderId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_smsTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SmsType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_smsType, allocator);
@@ -111,7 +110,7 @@ string SendSmsRequest::ToJsonString() const
 
     if (m_internationalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "International";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_international, allocator);
@@ -119,15 +118,15 @@ string SendSmsRequest::ToJsonString() const
 
     if (m_contentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_content.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

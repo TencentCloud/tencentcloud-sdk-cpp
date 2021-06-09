@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20191016::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScoreItem::ScoreItem() :
@@ -30,7 +29,7 @@ ScoreItem::ScoreItem() :
 {
 }
 
-CoreInternalOutcome ScoreItem::Deserialize(const Value &value)
+CoreInternalOutcome ScoreItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,36 +88,36 @@ CoreInternalOutcome ScoreItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScoreItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScoreItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_diagItemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiagItem";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diagItem.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diagItem.c_str(), allocator).Move(), allocator);
     }
 
     if (m_issueTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IssueType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_issueType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_issueType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topSeverityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopSeverity";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topSeverity.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topSeverity.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
@@ -126,7 +125,7 @@ void ScoreItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_scoreLostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScoreLost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scoreLost, allocator);

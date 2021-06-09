@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceNetworkLimitConfig::InstanceNetworkLimitConfig() :
@@ -29,7 +28,7 @@ InstanceNetworkLimitConfig::InstanceNetworkLimitConfig() :
 {
 }
 
-CoreInternalOutcome InstanceNetworkLimitConfig::Deserialize(const Value &value)
+CoreInternalOutcome InstanceNetworkLimitConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome InstanceNetworkLimitConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceNetworkLimitConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceNetworkLimitConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cpuNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpuNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpuNum, allocator);
@@ -91,7 +90,7 @@ void InstanceNetworkLimitConfig::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_networkInterfaceLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetworkInterfaceLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_networkInterfaceLimit, allocator);
@@ -99,7 +98,7 @@ void InstanceNetworkLimitConfig::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_innerIpPerNetworkInterfaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InnerIpPerNetworkInterface";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_innerIpPerNetworkInterface, allocator);
@@ -107,7 +106,7 @@ void InstanceNetworkLimitConfig::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_publicIpPerInstanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicIpPerInstance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publicIpPerInstance, allocator);

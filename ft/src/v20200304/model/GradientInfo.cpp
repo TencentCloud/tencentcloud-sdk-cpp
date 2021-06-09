@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ft::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 GradientInfo::GradientInfo() :
@@ -27,7 +26,7 @@ GradientInfo::GradientInfo() :
 {
 }
 
-CoreInternalOutcome GradientInfo::Deserialize(const Value &value)
+CoreInternalOutcome GradientInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome GradientInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GradientInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GradientInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tempoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tempo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tempo, allocator);
@@ -69,7 +68,7 @@ void GradientInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_morphTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MorphTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_morphTime, allocator);

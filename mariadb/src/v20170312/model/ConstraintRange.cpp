@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mariadb::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ConstraintRange::ConstraintRange() :
@@ -27,7 +26,7 @@ ConstraintRange::ConstraintRange() :
 {
 }
 
-CoreInternalOutcome ConstraintRange::Deserialize(const Value &value)
+CoreInternalOutcome ConstraintRange::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome ConstraintRange::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ConstraintRange::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ConstraintRange::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_minHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Min";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_min.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_min.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Max";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_max.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_max.c_str(), allocator).Move(), allocator);
     }
 
 }

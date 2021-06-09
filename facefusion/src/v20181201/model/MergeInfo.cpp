@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Facefusion::V20181201::Model;
-using namespace rapidjson;
 using namespace std;
 
 MergeInfo::MergeInfo() :
@@ -29,7 +28,7 @@ MergeInfo::MergeInfo() :
 {
 }
 
-CoreInternalOutcome MergeInfo::Deserialize(const Value &value)
+CoreInternalOutcome MergeInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,40 +84,40 @@ CoreInternalOutcome MergeInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MergeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MergeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_imageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_image.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_inputImageFaceRectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputImageFaceRect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_inputImageFaceRect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_templateFaceIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateFaceID";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_templateFaceID.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateFaceID.c_str(), allocator).Move(), allocator);
     }
 
 }

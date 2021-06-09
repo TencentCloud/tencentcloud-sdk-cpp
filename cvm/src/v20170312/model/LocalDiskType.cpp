@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 LocalDiskType::LocalDiskType() :
@@ -30,7 +29,7 @@ LocalDiskType::LocalDiskType() :
 {
 }
 
-CoreInternalOutcome LocalDiskType::Deserialize(const Value &value)
+CoreInternalOutcome LocalDiskType::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome LocalDiskType::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LocalDiskType::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LocalDiskType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_partitionTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PartitionType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_partitionType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_partitionType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_minSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minSize, allocator);
@@ -118,7 +117,7 @@ void LocalDiskType::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_maxSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxSize, allocator);
@@ -126,10 +125,10 @@ void LocalDiskType::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_requiredHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Required";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_required.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_required.c_str(), allocator).Move(), allocator);
     }
 
 }

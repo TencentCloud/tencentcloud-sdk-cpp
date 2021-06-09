@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AdaptiveStreamTemplate::AdaptiveStreamTemplate() :
@@ -29,7 +28,7 @@ AdaptiveStreamTemplate::AdaptiveStreamTemplate() :
 {
 }
 
-CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const Value &value)
+CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -92,30 +91,30 @@ CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AdaptiveStreamTemplate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AdaptiveStreamTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_videoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Video";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_video.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_audioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Audio";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_audio.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_removeAudioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RemoveAudio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_removeAudio, allocator);
@@ -123,7 +122,7 @@ void AdaptiveStreamTemplate::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_removeVideoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RemoveVideo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_removeVideo, allocator);

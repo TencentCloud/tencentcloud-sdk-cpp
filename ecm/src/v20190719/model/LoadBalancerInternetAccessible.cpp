@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 LoadBalancerInternetAccessible::LoadBalancerInternetAccessible() :
@@ -26,7 +25,7 @@ LoadBalancerInternetAccessible::LoadBalancerInternetAccessible() :
 {
 }
 
-CoreInternalOutcome LoadBalancerInternetAccessible::Deserialize(const Value &value)
+CoreInternalOutcome LoadBalancerInternetAccessible::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome LoadBalancerInternetAccessible::Deserialize(const Value &val
     return CoreInternalOutcome(true);
 }
 
-void LoadBalancerInternetAccessible::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LoadBalancerInternetAccessible::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_internetMaxBandwidthOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InternetMaxBandwidthOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_internetMaxBandwidthOut, allocator);

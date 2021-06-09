@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Fmu::V20191213::Model;
-using namespace rapidjson;
 using namespace std;
 
 LipColorInfo::LipColorInfo() :
@@ -29,7 +28,7 @@ LipColorInfo::LipColorInfo() :
 {
 }
 
-CoreInternalOutcome LipColorInfo::Deserialize(const Value &value)
+CoreInternalOutcome LipColorInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -92,38 +91,38 @@ CoreInternalOutcome LipColorInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LipColorInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LipColorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_rGBAHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RGBA";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rGBA.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_modelIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modelId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_faceRectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceRect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_faceRect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_modelAlphaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelAlpha";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modelAlpha, allocator);

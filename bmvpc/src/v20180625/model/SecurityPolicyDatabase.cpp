@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmvpc::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 SecurityPolicyDatabase::SecurityPolicyDatabase() :
@@ -27,7 +26,7 @@ SecurityPolicyDatabase::SecurityPolicyDatabase() :
 {
 }
 
-CoreInternalOutcome SecurityPolicyDatabase::Deserialize(const Value &value)
+CoreInternalOutcome SecurityPolicyDatabase::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome SecurityPolicyDatabase::Deserialize(const Value &value)
         if (!value["RemoteCidrBlock"].IsArray())
             return CoreInternalOutcome(Error("response `SecurityPolicyDatabase.RemoteCidrBlock` is not array type"));
 
-        const Value &tmpValue = value["RemoteCidrBlock"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RemoteCidrBlock"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_remoteCidrBlock.push_back((*itr).GetString());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome SecurityPolicyDatabase::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SecurityPolicyDatabase::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SecurityPolicyDatabase::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_localCidrBlockHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocalCidrBlock";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_localCidrBlock.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_localCidrBlock.c_str(), allocator).Move(), allocator);
     }
 
     if (m_remoteCidrBlockHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RemoteCidrBlock";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_remoteCidrBlock.begin(); itr != m_remoteCidrBlock.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

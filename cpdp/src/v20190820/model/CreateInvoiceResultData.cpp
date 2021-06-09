@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateInvoiceResultData::CreateInvoiceResultData() :
@@ -28,7 +27,7 @@ CreateInvoiceResultData::CreateInvoiceResultData() :
 {
 }
 
-CoreInternalOutcome CreateInvoiceResultData::Deserialize(const Value &value)
+CoreInternalOutcome CreateInvoiceResultData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome CreateInvoiceResultData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CreateInvoiceResultData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CreateInvoiceResultData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
@@ -80,18 +79,18 @@ void CreateInvoiceResultData::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_invoiceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InvoiceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_invoiceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invoiceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_orderSnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderSn";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_orderSn.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderSn.c_str(), allocator).Move(), allocator);
     }
 
 }

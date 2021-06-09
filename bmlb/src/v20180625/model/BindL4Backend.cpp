@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 BindL4Backend::BindL4Backend() :
@@ -29,7 +28,7 @@ BindL4Backend::BindL4Backend() :
 {
 }
 
-CoreInternalOutcome BindL4Backend::Deserialize(const Value &value)
+CoreInternalOutcome BindL4Backend::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome BindL4Backend::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BindL4Backend::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BindL4Backend::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
@@ -91,15 +90,15 @@ void BindL4Backend::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_weightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Weight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_weight, allocator);
@@ -107,7 +106,7 @@ void BindL4Backend::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_probePortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProbePort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_probePort, allocator);

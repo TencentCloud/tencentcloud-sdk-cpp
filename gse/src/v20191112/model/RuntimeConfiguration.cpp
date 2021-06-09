@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 RuntimeConfiguration::RuntimeConfiguration() :
@@ -28,7 +27,7 @@ RuntimeConfiguration::RuntimeConfiguration() :
 {
 }
 
-CoreInternalOutcome RuntimeConfiguration::Deserialize(const Value &value)
+CoreInternalOutcome RuntimeConfiguration::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome RuntimeConfiguration::Deserialize(const Value &value)
         if (!value["ServerProcesses"].IsArray())
             return CoreInternalOutcome(Error("response `RuntimeConfiguration.ServerProcesses` is not array type"));
 
-        const Value &tmpValue = value["ServerProcesses"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ServerProcesses"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ServerProcesse item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,12 +76,12 @@ CoreInternalOutcome RuntimeConfiguration::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RuntimeConfiguration::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RuntimeConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_gameServerSessionActivationTimeoutSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameServerSessionActivationTimeoutSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gameServerSessionActivationTimeoutSeconds, allocator);
@@ -90,7 +89,7 @@ void RuntimeConfiguration::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_maxConcurrentGameServerSessionActivationsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxConcurrentGameServerSessionActivations";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxConcurrentGameServerSessionActivations, allocator);
@@ -98,15 +97,15 @@ void RuntimeConfiguration::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_serverProcessesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerProcesses";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_serverProcesses.begin(); itr != m_serverProcesses.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

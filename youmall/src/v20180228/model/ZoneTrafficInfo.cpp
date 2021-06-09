@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 ZoneTrafficInfo::ZoneTrafficInfo() :
@@ -27,7 +26,7 @@ ZoneTrafficInfo::ZoneTrafficInfo() :
 {
 }
 
-CoreInternalOutcome ZoneTrafficInfo::Deserialize(const Value &value)
+CoreInternalOutcome ZoneTrafficInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome ZoneTrafficInfo::Deserialize(const Value &value)
         if (!value["ZoneTrafficInfoDetailSet"].IsArray())
             return CoreInternalOutcome(Error("response `ZoneTrafficInfo.ZoneTrafficInfoDetailSet` is not array type"));
 
-        const Value &tmpValue = value["ZoneTrafficInfoDetailSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ZoneTrafficInfoDetailSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ZoneTrafficInfoDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome ZoneTrafficInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ZoneTrafficInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ZoneTrafficInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zoneTrafficInfoDetailSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneTrafficInfoDetailSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_zoneTrafficInfoDetailSet.begin(); itr != m_zoneTrafficInfoDetailSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

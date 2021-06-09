@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcaplusdb::V20190823::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProxyMachineInfo::ProxyMachineInfo() :
@@ -27,7 +26,7 @@ ProxyMachineInfo::ProxyMachineInfo() :
 {
 }
 
-CoreInternalOutcome ProxyMachineInfo::Deserialize(const Value &value)
+CoreInternalOutcome ProxyMachineInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome ProxyMachineInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProxyMachineInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProxyMachineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_proxyUidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProxyUid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_proxyUid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyUid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_machineTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_machineType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
 }

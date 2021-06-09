@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 DetailResult::DetailResult() :
@@ -29,7 +28,7 @@ DetailResult::DetailResult() :
 {
 }
 
-CoreInternalOutcome DetailResult::Deserialize(const Value &value)
+CoreInternalOutcome DetailResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -59,8 +58,8 @@ CoreInternalOutcome DetailResult::Deserialize(const Value &value)
         if (!value["Keywords"].IsArray())
             return CoreInternalOutcome(Error("response `DetailResult.Keywords` is not array type"));
 
-        const Value &tmpValue = value["Keywords"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Keywords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_keywords.push_back((*itr).GetString());
         }
@@ -81,20 +80,20 @@ CoreInternalOutcome DetailResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DetailResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DetailResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_evilLabelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilLabel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_evilLabel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_evilLabel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_evilTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilType, allocator);
@@ -102,20 +101,20 @@ void DetailResult::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_keywordsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Keywords";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 QuerySinglePayItem::QuerySinglePayItem() :
@@ -29,7 +28,7 @@ QuerySinglePayItem::QuerySinglePayItem() :
 {
 }
 
-CoreInternalOutcome QuerySinglePayItem::Deserialize(const Value &value)
+CoreInternalOutcome QuerySinglePayItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome QuerySinglePayItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void QuerySinglePayItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QuerySinglePayItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_payStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_payStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_platformMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlatformMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_platformMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_platformMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bankRetCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BankRetCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bankRetCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bankRetCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bankRetMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BankRetMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bankRetMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bankRetMsg.c_str(), allocator).Move(), allocator);
     }
 
 }

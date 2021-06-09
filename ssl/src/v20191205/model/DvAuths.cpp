@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ssl::V20191205::Model;
-using namespace rapidjson;
 using namespace std;
 
 DvAuths::DvAuths() :
@@ -31,7 +30,7 @@ DvAuths::DvAuths() :
 {
 }
 
-CoreInternalOutcome DvAuths::Deserialize(const Value &value)
+CoreInternalOutcome DvAuths::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,55 +99,55 @@ CoreInternalOutcome DvAuths::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DvAuths::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DvAuths::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dvAuthKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DvAuthKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dvAuthKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dvAuthKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dvAuthValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DvAuthValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dvAuthValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dvAuthValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dvAuthDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DvAuthDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dvAuthDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dvAuthDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dvAuthPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DvAuthPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dvAuthPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dvAuthPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dvAuthSubDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DvAuthSubDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dvAuthSubDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dvAuthSubDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dvAuthVerifyTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DvAuthVerifyType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dvAuthVerifyType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dvAuthVerifyType.c_str(), allocator).Move(), allocator);
     }
 
 }

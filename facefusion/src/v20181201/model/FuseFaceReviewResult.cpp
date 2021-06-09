@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Facefusion::V20181201::Model;
-using namespace rapidjson;
 using namespace std;
 
 FuseFaceReviewResult::FuseFaceReviewResult() :
@@ -31,7 +30,7 @@ FuseFaceReviewResult::FuseFaceReviewResult() :
 {
 }
 
-CoreInternalOutcome FuseFaceReviewResult::Deserialize(const Value &value)
+CoreInternalOutcome FuseFaceReviewResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -91,8 +90,8 @@ CoreInternalOutcome FuseFaceReviewResult::Deserialize(const Value &value)
         if (!value["DetailSet"].IsArray())
             return CoreInternalOutcome(Error("response `FuseFaceReviewResult.DetailSet` is not array type"));
 
-        const Value &tmpValue = value["DetailSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DetailSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             FuseFaceReviewDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,36 +109,36 @@ CoreInternalOutcome FuseFaceReviewResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FuseFaceReviewResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FuseFaceReviewResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_categoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Category";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_category.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_category.c_str(), allocator).Move(), allocator);
     }
 
     if (m_codeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_code.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
     }
 
     if (m_codeDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CodeDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_codeDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codeDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -147,23 +146,23 @@ void FuseFaceReviewResult::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_suggestionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_suggestion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_detailSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DetailSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_detailSet.begin(); itr != m_detailSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

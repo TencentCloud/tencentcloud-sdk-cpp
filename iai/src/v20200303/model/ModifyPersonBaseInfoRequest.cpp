@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyPersonBaseInfoRequest::ModifyPersonBaseInfoRequest() :
@@ -32,38 +31,38 @@ ModifyPersonBaseInfoRequest::ModifyPersonBaseInfoRequest() :
 
 string ModifyPersonBaseInfoRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_personIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_personId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_personNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_personName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_personName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_genderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_gender, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

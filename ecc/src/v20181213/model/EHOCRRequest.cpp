@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Ecc::V20181213::Model;
-using namespace rapidjson;
 using namespace std;
 
 EHOCRRequest::EHOCRRequest() :
@@ -40,22 +39,22 @@ EHOCRRequest::EHOCRRequest() :
 
 string EHOCRRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_imageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_image.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
     if (m_inputTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_inputType, allocator);
@@ -63,23 +62,23 @@ string EHOCRRequest::ToJsonString() const
 
     if (m_eccAppidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EccAppid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_eccAppid.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eccAppid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serverTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_serverType, allocator);
@@ -87,55 +86,55 @@ string EHOCRRequest::ToJsonString() const
 
     if (m_titleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Title";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_title.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gradeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Grade";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_grade.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_grade.c_str(), allocator).Move(), allocator);
     }
 
     if (m_requirementHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Requirement";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_requirement.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_requirement.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modelTitleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelTitle";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_modelTitle.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelTitle.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modelContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelContent";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_modelContent.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelContent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isAsyncHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsAsync";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isAsync, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

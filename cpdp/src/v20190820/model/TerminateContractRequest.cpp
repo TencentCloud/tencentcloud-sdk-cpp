@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 TerminateContractRequest::TerminateContractRequest() :
@@ -43,126 +42,126 @@ TerminateContractRequest::TerminateContractRequest() :
 
 string TerminateContractRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_midasAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MidasAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_midasAppId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_midasAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_channel.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_terminateModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TerminateMode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_terminateMode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_terminateMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_midasSecretIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MidasSecretId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_midasSecretId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_midasSecretId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_midasSignatureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MidasSignature";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_midasSignature.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_midasSignature.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_subAppId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outContractCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutContractCode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_outContractCode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outContractCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contractSceneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContractSceneId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_contractSceneId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_contractSceneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelContractCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelContractCode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_channelContractCode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_channelContractCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalContractDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalContractData";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_externalContractData.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalContractData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_terminationReasonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TerminationReason";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_terminationReason.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_terminationReason.c_str(), allocator).Move(), allocator);
     }
 
     if (m_midasEnvironmentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MidasEnvironment";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_userType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

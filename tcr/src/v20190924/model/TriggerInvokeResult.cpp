@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 TriggerInvokeResult::TriggerInvokeResult() :
@@ -27,7 +26,7 @@ TriggerInvokeResult::TriggerInvokeResult() :
 {
 }
 
-CoreInternalOutcome TriggerInvokeResult::Deserialize(const Value &value)
+CoreInternalOutcome TriggerInvokeResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome TriggerInvokeResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TriggerInvokeResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TriggerInvokeResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_returnCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReturnCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_returnCode, allocator);
@@ -69,10 +68,10 @@ void TriggerInvokeResult::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_returnMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReturnMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_returnMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_returnMsg.c_str(), allocator).Move(), allocator);
     }
 
 }

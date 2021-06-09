@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tdmq::V20200217::Model;
-using namespace rapidjson;
 using namespace std;
 
 FilterSubscription::FilterSubscription() :
@@ -29,7 +28,7 @@ FilterSubscription::FilterSubscription() :
 {
 }
 
-CoreInternalOutcome FilterSubscription::Deserialize(const Value &value)
+CoreInternalOutcome FilterSubscription::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome FilterSubscription::Deserialize(const Value &value)
         if (!value["SubscriptionNames"].IsArray())
             return CoreInternalOutcome(Error("response `FilterSubscription.SubscriptionNames` is not array type"));
 
-        const Value &tmpValue = value["SubscriptionNames"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SubscriptionNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_subscriptionNames.push_back((*itr).GetString());
         }
@@ -81,12 +80,12 @@ CoreInternalOutcome FilterSubscription::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FilterSubscription::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FilterSubscription::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_consumerHasCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConsumerHasCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_consumerHasCount, allocator);
@@ -94,7 +93,7 @@ void FilterSubscription::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_consumerHasBacklogHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConsumerHasBacklog";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_consumerHasBacklog, allocator);
@@ -102,7 +101,7 @@ void FilterSubscription::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_consumerHasExpiredHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConsumerHasExpired";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_consumerHasExpired, allocator);
@@ -110,14 +109,14 @@ void FilterSubscription::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_subscriptionNamesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubscriptionNames";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_subscriptionNames.begin(); itr != m_subscriptionNames.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

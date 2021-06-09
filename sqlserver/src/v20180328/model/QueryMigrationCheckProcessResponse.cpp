@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 QueryMigrationCheckProcessResponse::QueryMigrationCheckProcessResponse() :
@@ -33,7 +32,7 @@ QueryMigrationCheckProcessResponse::QueryMigrationCheckProcessResponse() :
 
 CoreInternalOutcome QueryMigrationCheckProcessResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome QueryMigrationCheckProcessResponse::Deserialize(const string
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -90,8 +89,8 @@ CoreInternalOutcome QueryMigrationCheckProcessResponse::Deserialize(const string
         if (!rsp["StepDetails"].IsArray())
             return CoreInternalOutcome(Error("response `StepDetails` is not array type"));
 
-        const Value &tmpValue = rsp["StepDetails"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["StepDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StepDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

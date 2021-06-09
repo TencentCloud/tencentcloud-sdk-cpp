@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dts::V20180330::Model;
-using namespace rapidjson;
 using namespace std;
 
 MigrateStepDetailInfo::MigrateStepDetailInfo() :
@@ -30,7 +29,7 @@ MigrateStepDetailInfo::MigrateStepDetailInfo() :
 {
 }
 
-CoreInternalOutcome MigrateStepDetailInfo::Deserialize(const Value &value)
+CoreInternalOutcome MigrateStepDetailInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome MigrateStepDetailInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MigrateStepDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MigrateStepDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_stepNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepNo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stepNo, allocator);
@@ -102,23 +101,23 @@ void MigrateStepDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_stepNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stepName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stepName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stepIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stepId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stepId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -126,10 +125,10 @@ void MigrateStepDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
 }

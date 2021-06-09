@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 OriginPullTimeout::OriginPullTimeout() :
@@ -27,7 +26,7 @@ OriginPullTimeout::OriginPullTimeout() :
 {
 }
 
-CoreInternalOutcome OriginPullTimeout::Deserialize(const Value &value)
+CoreInternalOutcome OriginPullTimeout::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome OriginPullTimeout::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OriginPullTimeout::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OriginPullTimeout::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_connectTimeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConnectTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_connectTimeout, allocator);
@@ -69,7 +68,7 @@ void OriginPullTimeout::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_receiveTimeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReceiveTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_receiveTimeout, allocator);

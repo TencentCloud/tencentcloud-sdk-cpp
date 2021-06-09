@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Facefusion::V20181201::Model;
-using namespace rapidjson;
 using namespace std;
 
 MaterialFaceList::MaterialFaceList() :
@@ -27,7 +26,7 @@ MaterialFaceList::MaterialFaceList() :
 {
 }
 
-CoreInternalOutcome MaterialFaceList::Deserialize(const Value &value)
+CoreInternalOutcome MaterialFaceList::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome MaterialFaceList::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MaterialFaceList::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MaterialFaceList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_faceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_faceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_faceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_faceInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_faceInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

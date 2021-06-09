@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 PkgInfo::PkgInfo() :
@@ -34,7 +33,7 @@ PkgInfo::PkgInfo() :
 {
 }
 
-CoreInternalOutcome PkgInfo::Deserialize(const Value &value)
+CoreInternalOutcome PkgInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -124,8 +123,8 @@ CoreInternalOutcome PkgInfo::Deserialize(const Value &value)
         if (!value["PkgBindInfo"].IsArray())
             return CoreInternalOutcome(Error("response `PkgInfo.PkgBindInfo` is not array type"));
 
-        const Value &tmpValue = value["PkgBindInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PkgBindInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PkgBind item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -143,68 +142,68 @@ CoreInternalOutcome PkgInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PkgInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PkgInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_pkgIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PkgId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pkgId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pkgId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pkgNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PkgName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pkgName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pkgName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pkgTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PkgType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pkgType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pkgType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pkgVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PkgVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pkgVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pkgVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pkgDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PkgDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pkgDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pkgDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_uploadTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UploadTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uploadTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uploadTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_md5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Md5";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_md5.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_md5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pkgPubStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PkgPubStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pkgPubStatus, allocator);
@@ -212,15 +211,15 @@ void PkgInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_pkgBindInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PkgBindInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_pkgBindInfo.begin(); itr != m_pkgBindInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

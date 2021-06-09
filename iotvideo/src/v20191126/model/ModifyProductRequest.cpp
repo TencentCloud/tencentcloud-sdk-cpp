@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyProductRequest::ModifyProductRequest() :
@@ -34,54 +33,54 @@ ModifyProductRequest::ModifyProductRequest() :
 
 string ModifyProductRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_productIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_productId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_productName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductDescription";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_productDescription.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_chipManufactureIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChipManufactureId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_chipManufactureId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_chipManufactureId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_chipIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChipId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_chipId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_chipId.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

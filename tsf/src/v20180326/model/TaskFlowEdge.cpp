@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskFlowEdge::TaskFlowEdge() :
@@ -37,7 +36,7 @@ TaskFlowEdge::TaskFlowEdge() :
 {
 }
 
-CoreInternalOutcome TaskFlowEdge::Deserialize(const Value &value)
+CoreInternalOutcome TaskFlowEdge::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -166,103 +165,103 @@ CoreInternalOutcome TaskFlowEdge::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskFlowEdge::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskFlowEdge::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nodeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_childNodeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChildNodeId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_childNodeId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_childNodeId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_coreNodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CoreNode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_coreNode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_coreNode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_edgeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EdgeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_edgeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_edgeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_positionXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PositionX";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_positionX.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_positionX.c_str(), allocator).Move(), allocator);
     }
 
     if (m_positionYHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PositionY";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_positionY.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_positionY.c_str(), allocator).Move(), allocator);
     }
 
     if (m_graphIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GraphId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_graphId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_graphId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flowIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_flowId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskLogIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskLogId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskLogId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskLogId.c_str(), allocator).Move(), allocator);
     }
 
 }

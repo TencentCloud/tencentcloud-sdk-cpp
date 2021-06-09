@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyCcnAttributeRequest::ModifyCcnAttributeRequest() :
@@ -32,38 +31,38 @@ ModifyCcnAttributeRequest::ModifyCcnAttributeRequest() :
 
 string ModifyCcnAttributeRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_ccnIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CcnId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ccnId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ccnId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ccnNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CcnName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ccnName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ccnName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ccnDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CcnDescription";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ccnDescription.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ccnDescription.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

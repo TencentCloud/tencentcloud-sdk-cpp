@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskFlowLastBatchState::TaskFlowLastBatchState() :
@@ -28,7 +27,7 @@ TaskFlowLastBatchState::TaskFlowLastBatchState() :
 {
 }
 
-CoreInternalOutcome TaskFlowLastBatchState::Deserialize(const Value &value)
+CoreInternalOutcome TaskFlowLastBatchState::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome TaskFlowLastBatchState::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskFlowLastBatchState::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskFlowLastBatchState::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_flowBatchIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowBatchId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_flowBatchId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowBatchId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flowBatchLogIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowBatchLogId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_flowBatchLogId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowBatchLogId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_state.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
 }

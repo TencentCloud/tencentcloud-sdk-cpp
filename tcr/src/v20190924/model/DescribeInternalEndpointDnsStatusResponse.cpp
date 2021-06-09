@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeInternalEndpointDnsStatusResponse::DescribeInternalEndpointDnsStatusResponse() :
@@ -31,7 +30,7 @@ DescribeInternalEndpointDnsStatusResponse::DescribeInternalEndpointDnsStatusResp
 
 CoreInternalOutcome DescribeInternalEndpointDnsStatusResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeInternalEndpointDnsStatusResponse::Deserialize(const
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeInternalEndpointDnsStatusResponse::Deserialize(const
         if (!rsp["VpcSet"].IsArray())
             return CoreInternalOutcome(Error("response `VpcSet` is not array type"));
 
-        const Value &tmpValue = rsp["VpcSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["VpcSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             VpcPrivateDomainStatus item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

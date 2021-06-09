@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 AppIdResponse::AppIdResponse() :
@@ -27,7 +26,7 @@ AppIdResponse::AppIdResponse() :
 {
 }
 
-CoreInternalOutcome AppIdResponse::Deserialize(const Value &value)
+CoreInternalOutcome AppIdResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome AppIdResponse::Deserialize(const Value &value)
         if (!value["AppIdList"].IsArray())
             return CoreInternalOutcome(Error("response `AppIdResponse.AppIdList` is not array type"));
 
-        const Value &tmpValue = value["AppIdList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AppIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_appIdList.push_back((*itr).GetInt64());
         }
@@ -59,12 +58,12 @@ CoreInternalOutcome AppIdResponse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AppIdResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AppIdResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -72,14 +71,14 @@ void AppIdResponse::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_appIdListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppIdList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_appIdList.begin(); itr != m_appIdList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

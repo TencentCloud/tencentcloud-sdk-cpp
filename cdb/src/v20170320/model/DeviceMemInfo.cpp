@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceMemInfo::DeviceMemInfo() :
@@ -27,7 +26,7 @@ DeviceMemInfo::DeviceMemInfo() :
 {
 }
 
-CoreInternalOutcome DeviceMemInfo::Deserialize(const Value &value)
+CoreInternalOutcome DeviceMemInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome DeviceMemInfo::Deserialize(const Value &value)
         if (!value["Total"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceMemInfo.Total` is not array type"));
 
-        const Value &tmpValue = value["Total"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Total"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_total.push_back((*itr).GetInt64());
         }
@@ -50,8 +49,8 @@ CoreInternalOutcome DeviceMemInfo::Deserialize(const Value &value)
         if (!value["Used"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceMemInfo.Used` is not array type"));
 
-        const Value &tmpValue = value["Used"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Used"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_used.push_back((*itr).GetInt64());
         }
@@ -62,32 +61,32 @@ CoreInternalOutcome DeviceMemInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceMemInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceMemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Total";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_total.begin(); itr != m_total.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_usedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Used";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_used.begin(); itr != m_used.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

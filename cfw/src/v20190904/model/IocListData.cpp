@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfw::V20190904::Model;
-using namespace rapidjson;
 using namespace std;
 
 IocListData::IocListData() :
@@ -28,7 +27,7 @@ IocListData::IocListData() :
 {
 }
 
-CoreInternalOutcome IocListData::Deserialize(const Value &value)
+CoreInternalOutcome IocListData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome IocListData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IocListData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IocListData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_iPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IP";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iP.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iP.c_str(), allocator).Move(), allocator);
     }
 
     if (m_directionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Direction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_direction, allocator);
@@ -88,10 +87,10 @@ void IocListData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmvpc::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 VpcViewInfo::VpcViewInfo() :
@@ -33,7 +32,7 @@ VpcViewInfo::VpcViewInfo() :
 {
 }
 
-CoreInternalOutcome VpcViewInfo::Deserialize(const Value &value)
+CoreInternalOutcome VpcViewInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -113,8 +112,8 @@ CoreInternalOutcome VpcViewInfo::Deserialize(const Value &value)
         if (!value["SubnetSet"].IsArray())
             return CoreInternalOutcome(Error("response `VpcViewInfo.SubnetSet` is not array type"));
 
-        const Value &tmpValue = value["SubnetSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SubnetSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             VpcSubnetViewInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -132,44 +131,44 @@ CoreInternalOutcome VpcViewInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VpcViewInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VpcViewInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cidrBlockHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CidrBlock";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lbNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LbNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lbNum, allocator);
@@ -177,7 +176,7 @@ void VpcViewInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_eipNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EipNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eipNum, allocator);
@@ -185,7 +184,7 @@ void VpcViewInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_natNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NatNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_natNum, allocator);
@@ -193,15 +192,15 @@ void VpcViewInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_subnetSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_subnetSet.begin(); itr != m_subnetSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tdmq::V20200217::Model;
-using namespace rapidjson;
 using namespace std;
 
 EnvironmentRole::EnvironmentRole() :
@@ -31,7 +30,7 @@ EnvironmentRole::EnvironmentRole() :
 {
 }
 
-CoreInternalOutcome EnvironmentRole::Deserialize(const Value &value)
+CoreInternalOutcome EnvironmentRole::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -61,8 +60,8 @@ CoreInternalOutcome EnvironmentRole::Deserialize(const Value &value)
         if (!value["Permissions"].IsArray())
             return CoreInternalOutcome(Error("response `EnvironmentRole.Permissions` is not array type"));
 
-        const Value &tmpValue = value["Permissions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Permissions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_permissions.push_back((*itr).GetString());
         }
@@ -103,60 +102,60 @@ CoreInternalOutcome EnvironmentRole::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EnvironmentRole::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EnvironmentRole::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_environmentIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvironmentId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_environmentId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roleNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoleName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_roleName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roleName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_permissionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Permissions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_permissions.begin(); itr != m_permissions.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_roleDescribeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoleDescribe";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_roleDescribe.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roleDescribe.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }

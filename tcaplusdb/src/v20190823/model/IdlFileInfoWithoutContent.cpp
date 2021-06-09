@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcaplusdb::V20190823::Model;
-using namespace rapidjson;
 using namespace std;
 
 IdlFileInfoWithoutContent::IdlFileInfoWithoutContent() :
@@ -31,7 +30,7 @@ IdlFileInfoWithoutContent::IdlFileInfoWithoutContent() :
 {
 }
 
-CoreInternalOutcome IdlFileInfoWithoutContent::Deserialize(const Value &value)
+CoreInternalOutcome IdlFileInfoWithoutContent::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -107,36 +106,36 @@ CoreInternalOutcome IdlFileInfoWithoutContent::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IdlFileInfoWithoutContent::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IdlFileInfoWithoutContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileExtTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileExtType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileExtType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileExtType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fileSize, allocator);
@@ -144,7 +143,7 @@ void IdlFileInfoWithoutContent::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_fileIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fileId, allocator);
@@ -152,10 +151,10 @@ void IdlFileInfoWithoutContent::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_errorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Error";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_error.ToJsonObject(value[key.c_str()], allocator);
     }
 

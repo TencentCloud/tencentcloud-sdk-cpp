@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Postgres::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ErrLogDetail::ErrLogDetail() :
@@ -29,7 +28,7 @@ ErrLogDetail::ErrLogDetail() :
 {
 }
 
-CoreInternalOutcome ErrLogDetail::Deserialize(const Value &value)
+CoreInternalOutcome ErrLogDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome ErrLogDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ErrLogDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ErrLogDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_userNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_databaseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Database";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_database.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_database.c_str(), allocator).Move(), allocator);
     }
 
     if (m_errTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_errMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
     }
 
 }

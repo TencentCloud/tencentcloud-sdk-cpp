@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ticm::V20181127::Model;
-using namespace rapidjson;
 using namespace std;
 
 VodOcrTextSegmentItem::VodOcrTextSegmentItem() :
@@ -31,7 +30,7 @@ VodOcrTextSegmentItem::VodOcrTextSegmentItem() :
 {
 }
 
-CoreInternalOutcome VodOcrTextSegmentItem::Deserialize(const Value &value)
+CoreInternalOutcome VodOcrTextSegmentItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,8 +80,8 @@ CoreInternalOutcome VodOcrTextSegmentItem::Deserialize(const Value &value)
         if (!value["KeywordSet"].IsArray())
             return CoreInternalOutcome(Error("response `VodOcrTextSegmentItem.KeywordSet` is not array type"));
 
-        const Value &tmpValue = value["KeywordSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["KeywordSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_keywordSet.push_back((*itr).GetString());
         }
@@ -94,8 +93,8 @@ CoreInternalOutcome VodOcrTextSegmentItem::Deserialize(const Value &value)
         if (!value["AreaCoordSet"].IsArray())
             return CoreInternalOutcome(Error("response `VodOcrTextSegmentItem.AreaCoordSet` is not array type"));
 
-        const Value &tmpValue = value["AreaCoordSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AreaCoordSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_areaCoordSet.push_back((*itr).GetInt64());
         }
@@ -106,12 +105,12 @@ CoreInternalOutcome VodOcrTextSegmentItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VodOcrTextSegmentItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VodOcrTextSegmentItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -119,7 +118,7 @@ void VodOcrTextSegmentItem::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
@@ -127,7 +126,7 @@ void VodOcrTextSegmentItem::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -135,35 +134,35 @@ void VodOcrTextSegmentItem::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_suggestionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_suggestion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keywordSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeywordSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_keywordSet.begin(); itr != m_keywordSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_areaCoordSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AreaCoordSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_areaCoordSet.begin(); itr != m_areaCoordSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

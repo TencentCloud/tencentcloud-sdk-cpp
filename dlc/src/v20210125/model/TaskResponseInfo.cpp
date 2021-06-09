@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskResponseInfo::TaskResponseInfo() :
@@ -40,7 +39,7 @@ TaskResponseInfo::TaskResponseInfo() :
 {
 }
 
-CoreInternalOutcome TaskResponseInfo::Deserialize(const Value &value)
+CoreInternalOutcome TaskResponseInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -199,20 +198,20 @@ CoreInternalOutcome TaskResponseInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskResponseInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_databaseNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DatabaseName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_databaseName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataAmount, allocator);
@@ -220,15 +219,15 @@ void TaskResponseInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usedTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedTime, allocator);
@@ -236,23 +235,23 @@ void TaskResponseInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_outputPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outputPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
@@ -260,23 +259,23 @@ void TaskResponseInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_sQLTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SQLType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sQLType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sQLType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sQLHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SQL";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sQL.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sQL.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultExpiredHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultExpired";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resultExpired, allocator);
@@ -284,31 +283,31 @@ void TaskResponseInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_rowAffectInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RowAffectInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rowAffectInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rowAffectInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dataSet.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataSet.c_str(), allocator).Move(), allocator);
     }
 
     if (m_errorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Error";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_error.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_error.c_str(), allocator).Move(), allocator);
     }
 
     if (m_percentageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Percentage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_percentage, allocator);
@@ -316,10 +315,10 @@ void TaskResponseInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_outputMessageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputMessage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outputMessage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputMessage.c_str(), allocator).Move(), allocator);
     }
 
 }

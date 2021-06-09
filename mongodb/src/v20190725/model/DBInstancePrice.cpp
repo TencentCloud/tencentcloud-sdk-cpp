@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20190725::Model;
-using namespace rapidjson;
 using namespace std;
 
 DBInstancePrice::DBInstancePrice() :
@@ -28,7 +27,7 @@ DBInstancePrice::DBInstancePrice() :
 {
 }
 
-CoreInternalOutcome DBInstancePrice::Deserialize(const Value &value)
+CoreInternalOutcome DBInstancePrice::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome DBInstancePrice::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DBInstancePrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DBInstancePrice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_unitPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unitPrice, allocator);
@@ -80,7 +79,7 @@ void DBInstancePrice::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_originalPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalPrice, allocator);
@@ -88,7 +87,7 @@ void DBInstancePrice::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_discountPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountPrice, allocator);

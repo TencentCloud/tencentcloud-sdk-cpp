@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiReviewProhibitedOcrTaskInput::AiReviewProhibitedOcrTaskInput() :
@@ -26,7 +25,7 @@ AiReviewProhibitedOcrTaskInput::AiReviewProhibitedOcrTaskInput() :
 {
 }
 
-CoreInternalOutcome AiReviewProhibitedOcrTaskInput::Deserialize(const Value &value)
+CoreInternalOutcome AiReviewProhibitedOcrTaskInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome AiReviewProhibitedOcrTaskInput::Deserialize(const Value &val
     return CoreInternalOutcome(true);
 }
 
-void AiReviewProhibitedOcrTaskInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiReviewProhibitedOcrTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_definitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);

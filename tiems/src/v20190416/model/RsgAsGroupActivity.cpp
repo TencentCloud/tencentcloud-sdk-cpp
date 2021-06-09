@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiems::V20190416::Model;
-using namespace rapidjson;
 using namespace std;
 
 RsgAsGroupActivity::RsgAsGroupActivity() :
@@ -37,7 +36,7 @@ RsgAsGroupActivity::RsgAsGroupActivity() :
 {
 }
 
-CoreInternalOutcome RsgAsGroupActivity::Deserialize(const Value &value)
+CoreInternalOutcome RsgAsGroupActivity::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -147,8 +146,8 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const Value &value)
         if (!value["RsgAsActivityRelatedInstance"].IsArray())
             return CoreInternalOutcome(Error("response `RsgAsGroupActivity.RsgAsActivityRelatedInstance` is not array type"));
 
-        const Value &tmpValue = value["RsgAsActivityRelatedInstance"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RsgAsActivityRelatedInstance"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RsgAsActivityRelatedInstance item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -176,110 +175,110 @@ CoreInternalOutcome RsgAsGroupActivity::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RsgAsGroupActivity::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RsgAsGroupActivity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rsgAsGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RsgAsGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rsgAsGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rsgAsGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_activityTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActivityType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_activityType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_activityType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_statusCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusMessageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusMessage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_statusMessage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusMessage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_causeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cause";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cause.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cause.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rsgAsActivityRelatedInstanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RsgAsActivityRelatedInstance";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_rsgAsActivityRelatedInstance.begin(); itr != m_rsgAsActivityRelatedInstance.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_statusMessageSimplifiedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusMessageSimplified";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_statusMessageSimplified.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusMessageSimplified.c_str(), allocator).Move(), allocator);
     }
 
 }

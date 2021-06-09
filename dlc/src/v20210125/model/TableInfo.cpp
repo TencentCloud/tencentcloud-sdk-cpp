@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
-using namespace rapidjson;
 using namespace std;
 
 TableInfo::TableInfo() :
@@ -30,7 +29,7 @@ TableInfo::TableInfo() :
 {
 }
 
-CoreInternalOutcome TableInfo::Deserialize(const Value &value)
+CoreInternalOutcome TableInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,8 +73,8 @@ CoreInternalOutcome TableInfo::Deserialize(const Value &value)
         if (!value["Columns"].IsArray())
             return CoreInternalOutcome(Error("response `TableInfo.Columns` is not array type"));
 
-        const Value &tmpValue = value["Columns"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Columns"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Column item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -94,8 +93,8 @@ CoreInternalOutcome TableInfo::Deserialize(const Value &value)
         if (!value["Partitions"].IsArray())
             return CoreInternalOutcome(Error("response `TableInfo.Partitions` is not array type"));
 
-        const Value &tmpValue = value["Partitions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Partitions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Partition item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -123,63 +122,63 @@ CoreInternalOutcome TableInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TableInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TableInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tableBaseInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableBaseInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tableBaseInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_dataFormatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataFormat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dataFormat.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_columnsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Columns";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_columns.begin(); itr != m_columns.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_partitionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Partitions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_partitions.begin(); itr != m_partitions.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_locationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Location";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_location.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
     }
 
 }

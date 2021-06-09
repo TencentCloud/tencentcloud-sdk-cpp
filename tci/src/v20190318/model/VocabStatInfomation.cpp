@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 VocabStatInfomation::VocabStatInfomation() :
@@ -27,7 +26,7 @@ VocabStatInfomation::VocabStatInfomation() :
 {
 }
 
-CoreInternalOutcome VocabStatInfomation::Deserialize(const Value &value)
+CoreInternalOutcome VocabStatInfomation::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome VocabStatInfomation::Deserialize(const Value &value)
         if (!value["VocabDetailInfo"].IsArray())
             return CoreInternalOutcome(Error("response `VocabStatInfomation.VocabDetailInfo` is not array type"));
 
-        const Value &tmpValue = value["VocabDetailInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["VocabDetailInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,30 +65,30 @@ CoreInternalOutcome VocabStatInfomation::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VocabStatInfomation::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VocabStatInfomation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_vocabDetailInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VocabDetailInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_vocabDetailInfo.begin(); itr != m_vocabDetailInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_vocabLibNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VocabLibName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vocabLibName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vocabLibName.c_str(), allocator).Move(), allocator);
     }
 
 }

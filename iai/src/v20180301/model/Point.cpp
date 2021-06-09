@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 Point::Point() :
@@ -27,7 +26,7 @@ Point::Point() :
 {
 }
 
-CoreInternalOutcome Point::Deserialize(const Value &value)
+CoreInternalOutcome Point::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome Point::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Point::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Point::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_xHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "X";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_x, allocator);
@@ -69,7 +68,7 @@ void Point::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_yHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Y";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_y, allocator);

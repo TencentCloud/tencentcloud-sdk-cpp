@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiia::V20190529::Model;
-using namespace rapidjson;
 using namespace std;
 
 Labels::Labels() :
@@ -27,7 +26,7 @@ Labels::Labels() :
 {
 }
 
-CoreInternalOutcome Labels::Deserialize(const Value &value)
+CoreInternalOutcome Labels::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome Labels::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Labels::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Labels::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_firstLabelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstLabel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_firstLabel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstLabel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_secondLabelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecondLabel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secondLabel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secondLabel.c_str(), allocator).Move(), allocator);
     }
 
 }

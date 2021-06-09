@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaContentReviewAsrTextSegmentItem::MediaContentReviewAsrTextSegmentItem() :
@@ -30,7 +29,7 @@ MediaContentReviewAsrTextSegmentItem::MediaContentReviewAsrTextSegmentItem() :
 {
 }
 
-CoreInternalOutcome MediaContentReviewAsrTextSegmentItem::Deserialize(const Value &value)
+CoreInternalOutcome MediaContentReviewAsrTextSegmentItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -80,8 +79,8 @@ CoreInternalOutcome MediaContentReviewAsrTextSegmentItem::Deserialize(const Valu
         if (!value["KeywordSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaContentReviewAsrTextSegmentItem.KeywordSet` is not array type"));
 
-        const Value &tmpValue = value["KeywordSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["KeywordSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_keywordSet.push_back((*itr).GetString());
         }
@@ -92,12 +91,12 @@ CoreInternalOutcome MediaContentReviewAsrTextSegmentItem::Deserialize(const Valu
     return CoreInternalOutcome(true);
 }
 
-void MediaContentReviewAsrTextSegmentItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaContentReviewAsrTextSegmentItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -105,7 +104,7 @@ void MediaContentReviewAsrTextSegmentItem::ToJsonObject(Value &value, Document::
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
@@ -113,7 +112,7 @@ void MediaContentReviewAsrTextSegmentItem::ToJsonObject(Value &value, Document::
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -121,22 +120,22 @@ void MediaContentReviewAsrTextSegmentItem::ToJsonObject(Value &value, Document::
 
     if (m_suggestionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_suggestion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keywordSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeywordSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_keywordSet.begin(); itr != m_keywordSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
-using namespace rapidjson;
 using namespace std;
 
 GetAlarmLogResponse::GetAlarmLogResponse() :
@@ -36,7 +35,7 @@ GetAlarmLogResponse::GetAlarmLogResponse() :
 
 CoreInternalOutcome GetAlarmLogResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -46,7 +45,7 @@ CoreInternalOutcome GetAlarmLogResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -103,8 +102,8 @@ CoreInternalOutcome GetAlarmLogResponse::Deserialize(const string &payload)
         if (!rsp["ColNames"].IsArray())
             return CoreInternalOutcome(Error("response `ColNames` is not array type"));
 
-        const Value &tmpValue = rsp["ColNames"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ColNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_colNames.push_back((*itr).GetString());
         }
@@ -116,8 +115,8 @@ CoreInternalOutcome GetAlarmLogResponse::Deserialize(const string &payload)
         if (!rsp["Results"].IsArray())
             return CoreInternalOutcome(Error("response `Results` is not array type"));
 
-        const Value &tmpValue = rsp["Results"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Results"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LogInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -136,8 +135,8 @@ CoreInternalOutcome GetAlarmLogResponse::Deserialize(const string &payload)
         if (!rsp["AnalysisResults"].IsArray())
             return CoreInternalOutcome(Error("response `AnalysisResults` is not array type"));
 
-        const Value &tmpValue = rsp["AnalysisResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["AnalysisResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LogItems item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

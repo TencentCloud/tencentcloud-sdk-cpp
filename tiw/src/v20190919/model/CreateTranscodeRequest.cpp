@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tiw::V20190919::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateTranscodeRequest::CreateTranscodeRequest() :
@@ -36,14 +35,14 @@ CreateTranscodeRequest::CreateTranscodeRequest() :
 
 string CreateTranscodeRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_sdkAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sdkAppId, allocator);
@@ -51,15 +50,15 @@ string CreateTranscodeRequest::ToJsonString() const
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isStaticPPTHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsStaticPPT";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isStaticPPT, allocator);
@@ -67,39 +66,39 @@ string CreateTranscodeRequest::ToJsonString() const
 
     if (m_minResolutionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinResolution";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_minResolution.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_minResolution.c_str(), allocator).Move(), allocator);
     }
 
     if (m_thumbnailResolutionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ThumbnailResolution";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_thumbnailResolution.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_thumbnailResolution.c_str(), allocator).Move(), allocator);
     }
 
     if (m_compressFileTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompressFileType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_compressFileType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_compressFileType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extraDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExtraData";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_extraData.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extraData.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

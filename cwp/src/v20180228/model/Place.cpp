@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 Place::Place() :
@@ -28,7 +27,7 @@ Place::Place() :
 {
 }
 
-CoreInternalOutcome Place::Deserialize(const Value &value)
+CoreInternalOutcome Place::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome Place::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Place::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Place::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cityIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CityId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cityId, allocator);
@@ -80,7 +79,7 @@ void Place::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_provinceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProvinceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_provinceId, allocator);
@@ -88,7 +87,7 @@ void Place::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_countryIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CountryId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_countryId, allocator);

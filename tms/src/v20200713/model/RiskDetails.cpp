@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tms::V20200713::Model;
-using namespace rapidjson;
 using namespace std;
 
 RiskDetails::RiskDetails() :
@@ -27,7 +26,7 @@ RiskDetails::RiskDetails() :
 {
 }
 
-CoreInternalOutcome RiskDetails::Deserialize(const Value &value)
+CoreInternalOutcome RiskDetails::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome RiskDetails::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RiskDetails::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RiskDetails::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_labelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
     if (m_levelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Level";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_level, allocator);

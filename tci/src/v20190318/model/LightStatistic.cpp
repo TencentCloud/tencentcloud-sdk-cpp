@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 LightStatistic::LightStatistic() :
@@ -27,7 +26,7 @@ LightStatistic::LightStatistic() :
 {
 }
 
-CoreInternalOutcome LightStatistic::Deserialize(const Value &value)
+CoreInternalOutcome LightStatistic::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome LightStatistic::Deserialize(const Value &value)
         if (!value["LightDistribution"].IsArray())
             return CoreInternalOutcome(Error("response `LightStatistic.LightDistribution` is not array type"));
 
-        const Value &tmpValue = value["LightDistribution"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LightDistribution"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LightDistributionStatistic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -57,8 +56,8 @@ CoreInternalOutcome LightStatistic::Deserialize(const Value &value)
         if (!value["LightLevelRatio"].IsArray())
             return CoreInternalOutcome(Error("response `LightStatistic.LightLevelRatio` is not array type"));
 
-        const Value &tmpValue = value["LightLevelRatio"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LightLevelRatio"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LightLevelRatioStatistic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -76,35 +75,35 @@ CoreInternalOutcome LightStatistic::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LightStatistic::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LightStatistic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_lightDistributionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LightDistribution";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_lightDistribution.begin(); itr != m_lightDistribution.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_lightLevelRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LightLevelRatio";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_lightLevelRatio.begin(); itr != m_lightLevelRatio.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

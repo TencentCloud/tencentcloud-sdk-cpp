@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 BillDataInfo::BillDataInfo() :
@@ -29,7 +28,7 @@ BillDataInfo::BillDataInfo() :
 {
 }
 
-CoreInternalOutcome BillDataInfo::Deserialize(const Value &value)
+CoreInternalOutcome BillDataInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome BillDataInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BillDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BillDataInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_time.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_time.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
@@ -99,7 +98,7 @@ void BillDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_fluxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Flux";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flux, allocator);
@@ -107,10 +106,10 @@ void BillDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_peakTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeakTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_peakTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_peakTime.c_str(), allocator).Move(), allocator);
     }
 
 }

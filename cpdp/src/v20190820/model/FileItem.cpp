@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 FileItem::FileItem() :
@@ -29,7 +28,7 @@ FileItem::FileItem() :
 {
 }
 
-CoreInternalOutcome FileItem::Deserialize(const Value &value)
+CoreInternalOutcome FileItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome FileItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FileItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FileItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_randomPasswordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RandomPassword";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_randomPassword.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_randomPassword.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filePathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FilePath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_filePath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_filePath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_drawCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DrawCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_drawCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_drawCode.c_str(), allocator).Move(), allocator);
     }
 
 }

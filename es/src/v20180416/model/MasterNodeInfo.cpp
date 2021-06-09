@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Es::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 MasterNodeInfo::MasterNodeInfo() :
@@ -32,7 +31,7 @@ MasterNodeInfo::MasterNodeInfo() :
 {
 }
 
-CoreInternalOutcome MasterNodeInfo::Deserialize(const Value &value)
+CoreInternalOutcome MasterNodeInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome MasterNodeInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MasterNodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MasterNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enableDedicatedMasterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableDedicatedMaster";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableDedicatedMaster, allocator);
@@ -124,15 +123,15 @@ void MasterNodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_masterNodeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterNodeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_masterNodeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_masterNodeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_masterNodeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterNodeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_masterNodeNum, allocator);
@@ -140,7 +139,7 @@ void MasterNodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_masterNodeCpuNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterNodeCpuNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_masterNodeCpuNum, allocator);
@@ -148,7 +147,7 @@ void MasterNodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_masterNodeMemSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterNodeMemSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_masterNodeMemSize, allocator);
@@ -156,7 +155,7 @@ void MasterNodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_masterNodeDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterNodeDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_masterNodeDiskSize, allocator);
@@ -164,10 +163,10 @@ void MasterNodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_masterNodeDiskTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterNodeDiskType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_masterNodeDiskType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_masterNodeDiskType.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,17 +18,17 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 RedisNodes::RedisNodes() :
     m_nodeIdHasBeenSet(false),
     m_nodeRoleHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_zoneIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome RedisNodes::Deserialize(const Value &value)
+CoreInternalOutcome RedisNodes::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,35 +63,53 @@ CoreInternalOutcome RedisNodes::Deserialize(const Value &value)
         m_clusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `RedisNodes.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = value["ZoneId"].GetInt64();
+        m_zoneIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-void RedisNodes::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RedisNodes::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nodeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeRoleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeRole";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeRole.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeRole.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterId, allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneId, allocator);
     }
 
 }
@@ -143,5 +161,21 @@ void RedisNodes::SetClusterId(const int64_t& _clusterId)
 bool RedisNodes::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+int64_t RedisNodes::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void RedisNodes::SetZoneId(const int64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool RedisNodes::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
 }
 

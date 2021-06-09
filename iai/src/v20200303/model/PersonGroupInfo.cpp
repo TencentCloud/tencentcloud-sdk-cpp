@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 PersonGroupInfo::PersonGroupInfo() :
@@ -27,7 +26,7 @@ PersonGroupInfo::PersonGroupInfo() :
 {
 }
 
-CoreInternalOutcome PersonGroupInfo::Deserialize(const Value &value)
+CoreInternalOutcome PersonGroupInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome PersonGroupInfo::Deserialize(const Value &value)
         if (!value["PersonExDescriptions"].IsArray())
             return CoreInternalOutcome(Error("response `PersonGroupInfo.PersonExDescriptions` is not array type"));
 
-        const Value &tmpValue = value["PersonExDescriptions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PersonExDescriptions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_personExDescriptions.push_back((*itr).GetString());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome PersonGroupInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PersonGroupInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PersonGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_personExDescriptionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonExDescriptions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_personExDescriptions.begin(); itr != m_personExDescriptions.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProtocolPort::ProtocolPort() :
@@ -29,7 +28,7 @@ ProtocolPort::ProtocolPort() :
 {
 }
 
-CoreInternalOutcome ProtocolPort::Deserialize(const Value &value)
+CoreInternalOutcome ProtocolPort::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome ProtocolPort::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProtocolPort::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProtocolPort::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
@@ -99,7 +98,7 @@ void ProtocolPort::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_targetPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_targetPort, allocator);
@@ -107,7 +106,7 @@ void ProtocolPort::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_nodePortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodePort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodePort, allocator);

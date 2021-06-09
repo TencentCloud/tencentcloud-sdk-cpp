@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tem::V20201221::Model;
-using namespace rapidjson;
 using namespace std;
 
 IngressRuleBackend::IngressRuleBackend() :
@@ -27,7 +26,7 @@ IngressRuleBackend::IngressRuleBackend() :
 {
 }
 
-CoreInternalOutcome IngressRuleBackend::Deserialize(const Value &value)
+CoreInternalOutcome IngressRuleBackend::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome IngressRuleBackend::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IngressRuleBackend::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IngressRuleBackend::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_serviceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serviceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_servicePortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServicePort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_servicePort, allocator);

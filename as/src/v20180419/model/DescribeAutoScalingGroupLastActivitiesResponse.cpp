@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::As::V20180419::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeAutoScalingGroupLastActivitiesResponse::DescribeAutoScalingGroupLastActivitiesResponse() :
@@ -31,7 +30,7 @@ DescribeAutoScalingGroupLastActivitiesResponse::DescribeAutoScalingGroupLastActi
 
 CoreInternalOutcome DescribeAutoScalingGroupLastActivitiesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeAutoScalingGroupLastActivitiesResponse::Deserialize(
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeAutoScalingGroupLastActivitiesResponse::Deserialize(
         if (!rsp["ActivitySet"].IsArray())
             return CoreInternalOutcome(Error("response `ActivitySet` is not array type"));
 
-        const Value &tmpValue = rsp["ActivitySet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ActivitySet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Activity item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

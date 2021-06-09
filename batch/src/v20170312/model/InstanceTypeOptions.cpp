@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceTypeOptions::InstanceTypeOptions() :
@@ -28,7 +27,7 @@ InstanceTypeOptions::InstanceTypeOptions() :
 {
 }
 
-CoreInternalOutcome InstanceTypeOptions::Deserialize(const Value &value)
+CoreInternalOutcome InstanceTypeOptions::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome InstanceTypeOptions::Deserialize(const Value &value)
         if (!value["InstanceCategories"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceTypeOptions.InstanceCategories` is not array type"));
 
-        const Value &tmpValue = value["InstanceCategories"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InstanceCategories"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_instanceCategories.push_back((*itr).GetString());
         }
@@ -70,12 +69,12 @@ CoreInternalOutcome InstanceTypeOptions::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceTypeOptions::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceTypeOptions::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cPUHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CPU";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cPU, allocator);
@@ -83,7 +82,7 @@ void InstanceTypeOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_memoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memory, allocator);
@@ -91,14 +90,14 @@ void InstanceTypeOptions::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_instanceCategoriesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceCategories";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_instanceCategories.begin(); itr != m_instanceCategories.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

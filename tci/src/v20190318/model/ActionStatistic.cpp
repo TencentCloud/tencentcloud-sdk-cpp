@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 ActionStatistic::ActionStatistic() :
@@ -28,7 +27,7 @@ ActionStatistic::ActionStatistic() :
 {
 }
 
-CoreInternalOutcome ActionStatistic::Deserialize(const Value &value)
+CoreInternalOutcome ActionStatistic::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome ActionStatistic::Deserialize(const Value &value)
         if (!value["ActionCount"].IsArray())
             return CoreInternalOutcome(Error("response `ActionStatistic.ActionCount` is not array type"));
 
-        const Value &tmpValue = value["ActionCount"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ActionCount"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ActionCountStatistic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -58,8 +57,8 @@ CoreInternalOutcome ActionStatistic::Deserialize(const Value &value)
         if (!value["ActionDuration"].IsArray())
             return CoreInternalOutcome(Error("response `ActionStatistic.ActionDuration` is not array type"));
 
-        const Value &tmpValue = value["ActionDuration"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ActionDuration"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ActionDurationStatistic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -78,8 +77,8 @@ CoreInternalOutcome ActionStatistic::Deserialize(const Value &value)
         if (!value["ActionDurationRatio"].IsArray())
             return CoreInternalOutcome(Error("response `ActionStatistic.ActionDurationRatio` is not array type"));
 
-        const Value &tmpValue = value["ActionDurationRatio"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ActionDurationRatio"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ActionDurationRatioStatistic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -97,50 +96,50 @@ CoreInternalOutcome ActionStatistic::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ActionStatistic::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ActionStatistic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_actionCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActionCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_actionCount.begin(); itr != m_actionCount.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_actionDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActionDuration";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_actionDuration.begin(); itr != m_actionDuration.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_actionDurationRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActionDurationRatio";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_actionDurationRatio.begin(); itr != m_actionDurationRatio.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

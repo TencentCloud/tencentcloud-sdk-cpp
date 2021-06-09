@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Gs::V20191118::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateSessionRequest::CreateSessionRequest() :
@@ -46,70 +45,70 @@ CreateSessionRequest::CreateSessionRequest() :
 
 string CreateSessionRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_clientSessionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientSession";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_clientSession.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientSession.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gameIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_gameId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gameId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gameRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameRegion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_gameRegion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gameRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gameParasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameParas";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_gameParas.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gameParas.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resolutionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Resolution";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_resolution.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_setNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SetNo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_setNo, allocator);
@@ -117,7 +116,7 @@ string CreateSessionRequest::ToJsonString() const
 
     if (m_bitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bitrate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bitrate, allocator);
@@ -125,7 +124,7 @@ string CreateSessionRequest::ToJsonString() const
 
     if (m_maxBitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxBitrate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxBitrate, allocator);
@@ -133,7 +132,7 @@ string CreateSessionRequest::ToJsonString() const
 
     if (m_minBitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinBitrate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_minBitrate, allocator);
@@ -141,7 +140,7 @@ string CreateSessionRequest::ToJsonString() const
 
     if (m_fpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Fps";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fps, allocator);
@@ -149,15 +148,15 @@ string CreateSessionRequest::ToJsonString() const
 
     if (m_userIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserIp";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_userIp.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_optimizationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Optimization";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_optimization, allocator);
@@ -165,31 +164,31 @@ string CreateSessionRequest::ToJsonString() const
 
     if (m_hostUserIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HostUserId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_hostUserId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hostUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_role.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gameContextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameContext";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_gameContext.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gameContext.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

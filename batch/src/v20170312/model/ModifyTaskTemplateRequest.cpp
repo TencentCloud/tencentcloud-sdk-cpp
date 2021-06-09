@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyTaskTemplateRequest::ModifyTaskTemplateRequest() :
@@ -33,47 +32,47 @@ ModifyTaskTemplateRequest::ModifyTaskTemplateRequest() :
 
 string ModifyTaskTemplateRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_taskTemplateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskTemplateId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_taskTemplateId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskTemplateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskTemplateNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskTemplateName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_taskTemplateName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskTemplateName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskTemplateDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskTemplateDescription";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_taskTemplateDescription.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskTemplateDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskTemplateInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskTemplateInfo";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskTemplateInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

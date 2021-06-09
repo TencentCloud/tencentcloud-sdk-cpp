@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ape::V20200513::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeAuthUsersResponse::DescribeAuthUsersResponse() :
@@ -33,7 +32,7 @@ DescribeAuthUsersResponse::DescribeAuthUsersResponse() :
 
 CoreInternalOutcome DescribeAuthUsersResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DescribeAuthUsersResponse::Deserialize(const string &payload
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -70,8 +69,8 @@ CoreInternalOutcome DescribeAuthUsersResponse::Deserialize(const string &payload
         if (!rsp["Users"].IsArray())
             return CoreInternalOutcome(Error("response `Users` is not array type"));
 
-        const Value &tmpValue = rsp["Users"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Users"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AuthInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

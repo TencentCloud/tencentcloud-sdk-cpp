@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Yunsou::V20191115::Model;
-using namespace rapidjson;
 using namespace std;
 
 SearchResultItem::SearchResultItem() :
@@ -30,7 +29,7 @@ SearchResultItem::SearchResultItem() :
 {
 }
 
-CoreInternalOutcome SearchResultItem::Deserialize(const Value &value)
+CoreInternalOutcome SearchResultItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,36 +88,36 @@ CoreInternalOutcome SearchResultItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SearchResultItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SearchResultItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_docAbsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DocAbs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_docAbs.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docAbs.c_str(), allocator).Move(), allocator);
     }
 
     if (m_docIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DocId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_docId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_docMetaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DocMeta";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_docMeta.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docMeta.c_str(), allocator).Move(), allocator);
     }
 
     if (m_l2ScoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "L2Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_l2Score, allocator);
@@ -126,10 +125,10 @@ void SearchResultItem::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_searchDebuginfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SearchDebuginfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_searchDebuginfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_searchDebuginfo.c_str(), allocator).Move(), allocator);
     }
 
 }

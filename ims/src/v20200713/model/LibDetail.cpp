@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ims::V20200713::Model;
-using namespace rapidjson;
 using namespace std;
 
 LibDetail::LibDetail() :
@@ -32,7 +31,7 @@ LibDetail::LibDetail() :
 {
 }
 
-CoreInternalOutcome LibDetail::Deserialize(const Value &value)
+CoreInternalOutcome LibDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome LibDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LibDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LibDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -124,47 +123,47 @@ void LibDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_libIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LibId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_libId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_libId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_libNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LibName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_libName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_libName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_labelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);

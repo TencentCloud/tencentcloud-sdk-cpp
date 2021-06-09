@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
-using namespace rapidjson;
 using namespace std;
 
 DevGroupInfo::DevGroupInfo() :
@@ -30,7 +29,7 @@ DevGroupInfo::DevGroupInfo() :
 {
 }
 
-CoreInternalOutcome DevGroupInfo::Deserialize(const Value &value)
+CoreInternalOutcome DevGroupInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,47 +88,47 @@ CoreInternalOutcome DevGroupInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DevGroupInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DevGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deviceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parentIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParentId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_parentId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_errorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Error";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_error.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_error.c_str(), allocator).Move(), allocator);
     }
 
 }

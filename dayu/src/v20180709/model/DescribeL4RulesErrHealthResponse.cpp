@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeL4RulesErrHealthResponse::DescribeL4RulesErrHealthResponse() :
@@ -33,7 +32,7 @@ DescribeL4RulesErrHealthResponse::DescribeL4RulesErrHealthResponse() :
 
 CoreInternalOutcome DescribeL4RulesErrHealthResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DescribeL4RulesErrHealthResponse::Deserialize(const string &
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -80,8 +79,8 @@ CoreInternalOutcome DescribeL4RulesErrHealthResponse::Deserialize(const string &
         if (!rsp["ErrHealths"].IsArray())
             return CoreInternalOutcome(Error("response `ErrHealths` is not array type"));
 
-        const Value &tmpValue = rsp["ErrHealths"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ErrHealths"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             KeyValue item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -100,8 +99,8 @@ CoreInternalOutcome DescribeL4RulesErrHealthResponse::Deserialize(const string &
         if (!rsp["ExtErrHealths"].IsArray())
             return CoreInternalOutcome(Error("response `ExtErrHealths` is not array type"));
 
-        const Value &tmpValue = rsp["ExtErrHealths"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ExtErrHealths"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             KeyValueRecord item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

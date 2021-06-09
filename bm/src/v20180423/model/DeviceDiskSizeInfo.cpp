@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceDiskSizeInfo::DeviceDiskSizeInfo() :
@@ -27,7 +26,7 @@ DeviceDiskSizeInfo::DeviceDiskSizeInfo() :
 {
 }
 
-CoreInternalOutcome DeviceDiskSizeInfo::Deserialize(const Value &value)
+CoreInternalOutcome DeviceDiskSizeInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome DeviceDiskSizeInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceDiskSizeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceDiskSizeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_diskNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diskName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_diskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskSize, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 EditingInfo::EditingInfo() :
@@ -31,7 +30,7 @@ EditingInfo::EditingInfo() :
 {
 }
 
-CoreInternalOutcome EditingInfo::Deserialize(const Value &value)
+CoreInternalOutcome EditingInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -142,60 +141,60 @@ CoreInternalOutcome EditingInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EditingInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EditingInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tagEditingInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagEditingInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tagEditingInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_classificationEditingInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClassificationEditingInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_classificationEditingInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_stripEditingInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StripEditingInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_stripEditingInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_highlightsEditingInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HighlightsEditingInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_highlightsEditingInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_coverEditingInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CoverEditingInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_coverEditingInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_openingEndingEditingInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpeningEndingEditingInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_openingEndingEditingInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

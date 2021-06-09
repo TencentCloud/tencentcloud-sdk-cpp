@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 EmrProductConfigOutter::EmrProductConfigOutter() :
@@ -41,7 +40,7 @@ EmrProductConfigOutter::EmrProductConfigOutter() :
 {
 }
 
-CoreInternalOutcome EmrProductConfigOutter::Deserialize(const Value &value)
+CoreInternalOutcome EmrProductConfigOutter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -51,8 +50,8 @@ CoreInternalOutcome EmrProductConfigOutter::Deserialize(const Value &value)
         if (!value["SoftInfo"].IsArray())
             return CoreInternalOutcome(Error("response `EmrProductConfigOutter.SoftInfo` is not array type"));
 
-        const Value &tmpValue = value["SoftInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SoftInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_softInfo.push_back((*itr).GetString());
         }
@@ -241,25 +240,25 @@ CoreInternalOutcome EmrProductConfigOutter::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EmrProductConfigOutter::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EmrProductConfigOutter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_softInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SoftInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_softInfo.begin(); itr != m_softInfo.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_masterNodeSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterNodeSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_masterNodeSize, allocator);
@@ -267,7 +266,7 @@ void EmrProductConfigOutter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_coreNodeSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CoreNodeSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_coreNodeSize, allocator);
@@ -275,7 +274,7 @@ void EmrProductConfigOutter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_taskNodeSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskNodeSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskNodeSize, allocator);
@@ -283,7 +282,7 @@ void EmrProductConfigOutter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_comNodeSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComNodeSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_comNodeSize, allocator);
@@ -291,43 +290,43 @@ void EmrProductConfigOutter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_masterResourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterResource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_masterResource.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_coreResourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CoreResource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_coreResource.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_taskResourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskResource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskResource.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_comResourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComResource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_comResource.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_onCosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OnCos";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_onCos, allocator);
@@ -335,7 +334,7 @@ void EmrProductConfigOutter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_chargeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChargeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_chargeType, allocator);
@@ -343,7 +342,7 @@ void EmrProductConfigOutter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_routerNodeSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouterNodeSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_routerNodeSize, allocator);
@@ -351,7 +350,7 @@ void EmrProductConfigOutter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_supportHAHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SupportHA";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportHA, allocator);
@@ -359,7 +358,7 @@ void EmrProductConfigOutter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_securityOnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityOn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_securityOn, allocator);
@@ -367,15 +366,15 @@ void EmrProductConfigOutter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_securityGroupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityGroup";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_securityGroup.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_securityGroup.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cbsEncryptHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CbsEncrypt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cbsEncrypt, allocator);

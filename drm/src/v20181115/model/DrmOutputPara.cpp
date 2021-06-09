@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Drm::V20181115::Model;
-using namespace rapidjson;
 using namespace std;
 
 DrmOutputPara::DrmOutputPara() :
@@ -27,7 +26,7 @@ DrmOutputPara::DrmOutputPara() :
 {
 }
 
-CoreInternalOutcome DrmOutputPara::Deserialize(const Value &value)
+CoreInternalOutcome DrmOutputPara::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome DrmOutputPara::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DrmOutputPara::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DrmOutputPara::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_languageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Language";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_language.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_language.c_str(), allocator).Move(), allocator);
     }
 
 }

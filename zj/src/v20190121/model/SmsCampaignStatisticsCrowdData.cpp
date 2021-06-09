@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 SmsCampaignStatisticsCrowdData::SmsCampaignStatisticsCrowdData() :
@@ -29,7 +28,7 @@ SmsCampaignStatisticsCrowdData::SmsCampaignStatisticsCrowdData() :
 {
 }
 
-CoreInternalOutcome SmsCampaignStatisticsCrowdData::Deserialize(const Value &value)
+CoreInternalOutcome SmsCampaignStatisticsCrowdData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome SmsCampaignStatisticsCrowdData::Deserialize(const Value &val
         if (!value["TemplateList"].IsArray())
             return CoreInternalOutcome(Error("response `SmsCampaignStatisticsCrowdData.TemplateList` is not array type"));
 
-        const Value &tmpValue = value["TemplateList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TemplateList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SmsCampaignStatisticsTemplateData item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,12 +87,12 @@ CoreInternalOutcome SmsCampaignStatisticsCrowdData::Deserialize(const Value &val
     return CoreInternalOutcome(true);
 }
 
-void SmsCampaignStatisticsCrowdData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SmsCampaignStatisticsCrowdData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_crowdIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CrowdId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_crowdId, allocator);
@@ -101,15 +100,15 @@ void SmsCampaignStatisticsCrowdData::ToJsonObject(Value &value, Document::Alloca
 
     if (m_crowdNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CrowdName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_crowdName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_crowdName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_crowdCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CrowdCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_crowdCount, allocator);
@@ -117,15 +116,15 @@ void SmsCampaignStatisticsCrowdData::ToJsonObject(Value &value, Document::Alloca
 
     if (m_templateListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_templateList.begin(); itr != m_templateList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

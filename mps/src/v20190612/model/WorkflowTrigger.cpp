@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 WorkflowTrigger::WorkflowTrigger() :
@@ -27,7 +26,7 @@ WorkflowTrigger::WorkflowTrigger() :
 {
 }
 
-CoreInternalOutcome WorkflowTrigger::Deserialize(const Value &value)
+CoreInternalOutcome WorkflowTrigger::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome WorkflowTrigger::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WorkflowTrigger::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WorkflowTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosFileUploadTriggerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosFileUploadTrigger";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosFileUploadTrigger.ToJsonObject(value[key.c_str()], allocator);
     }
 

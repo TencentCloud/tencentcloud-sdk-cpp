@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 VulList::VulList() :
@@ -33,7 +32,7 @@ VulList::VulList() :
 {
 }
 
-CoreInternalOutcome VulList::Deserialize(const Value &value)
+CoreInternalOutcome VulList::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,52 +121,52 @@ CoreInternalOutcome VulList::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VulList::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VulList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_vulIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vulId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vulId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vulNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vulName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vulName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vulCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vulCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vulCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vulDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vulDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vulDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vulSolutionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulSolution";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vulSolution.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vulSolution.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vulSrcTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulSrcType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulSrcType, allocator);
@@ -175,15 +174,15 @@ void VulList::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_vulFilepathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulFilepath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vulFilepath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vulFilepath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_riskLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RiskLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_riskLevel, allocator);

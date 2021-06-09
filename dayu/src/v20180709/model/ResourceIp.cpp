@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResourceIp::ResourceIp() :
@@ -27,7 +26,7 @@ ResourceIp::ResourceIp() :
 {
 }
 
-CoreInternalOutcome ResourceIp::Deserialize(const Value &value)
+CoreInternalOutcome ResourceIp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome ResourceIp::Deserialize(const Value &value)
         if (!value["IpList"].IsArray())
             return CoreInternalOutcome(Error("response `ResourceIp.IpList` is not array type"));
 
-        const Value &tmpValue = value["IpList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["IpList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_ipList.push_back((*itr).GetString());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome ResourceIp::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResourceIp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResourceIp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ipListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_ipList.begin(); itr != m_ipList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

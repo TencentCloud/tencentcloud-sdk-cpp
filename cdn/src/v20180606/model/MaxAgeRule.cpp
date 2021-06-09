@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 MaxAgeRule::MaxAgeRule() :
@@ -29,7 +28,7 @@ MaxAgeRule::MaxAgeRule() :
 {
 }
 
-CoreInternalOutcome MaxAgeRule::Deserialize(const Value &value)
+CoreInternalOutcome MaxAgeRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -49,8 +48,8 @@ CoreInternalOutcome MaxAgeRule::Deserialize(const Value &value)
         if (!value["MaxAgeContents"].IsArray())
             return CoreInternalOutcome(Error("response `MaxAgeRule.MaxAgeContents` is not array type"));
 
-        const Value &tmpValue = value["MaxAgeContents"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MaxAgeContents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_maxAgeContents.push_back((*itr).GetString());
         }
@@ -81,33 +80,33 @@ CoreInternalOutcome MaxAgeRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MaxAgeRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MaxAgeRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_maxAgeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxAgeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_maxAgeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maxAgeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxAgeContentsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxAgeContents";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_maxAgeContents.begin(); itr != m_maxAgeContents.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_maxAgeTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxAgeTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxAgeTime, allocator);
@@ -115,10 +114,10 @@ void MaxAgeRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_followOriginHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FollowOrigin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_followOrigin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_followOrigin.c_str(), allocator).Move(), allocator);
     }
 
 }

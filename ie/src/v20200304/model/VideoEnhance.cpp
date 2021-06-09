@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 VideoEnhance::VideoEnhance() :
@@ -30,11 +29,13 @@ VideoEnhance::VideoEnhance() :
     m_faceProtectHasBeenSet(false),
     m_wdFpsHasBeenSet(false),
     m_scratchRepairHasBeenSet(false),
-    m_lowLightEnhanceHasBeenSet(false)
+    m_lowLightEnhanceHasBeenSet(false),
+    m_videoSuperResolutionHasBeenSet(false),
+    m_videoRepairHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome VideoEnhance::Deserialize(const Value &value)
+CoreInternalOutcome VideoEnhance::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -178,52 +179,86 @@ CoreInternalOutcome VideoEnhance::Deserialize(const Value &value)
         m_lowLightEnhanceHasBeenSet = true;
     }
 
+    if (value.HasMember("VideoSuperResolution") && !value["VideoSuperResolution"].IsNull())
+    {
+        if (!value["VideoSuperResolution"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `VideoEnhance.VideoSuperResolution` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_videoSuperResolution.Deserialize(value["VideoSuperResolution"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoSuperResolutionHasBeenSet = true;
+    }
+
+    if (value.HasMember("VideoRepair") && !value["VideoRepair"].IsNull())
+    {
+        if (!value["VideoRepair"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `VideoEnhance.VideoRepair` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_videoRepair.Deserialize(value["VideoRepair"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoRepairHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-void VideoEnhance::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VideoEnhance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_artifactReductionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ArtifactReduction";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_artifactReduction.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_denoisingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Denoising";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_denoising.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_colorEnhanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ColorEnhance";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_colorEnhance.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_sharpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sharp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sharp.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_wdSuperResolutionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WdSuperResolution";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wdSuperResolution, allocator);
@@ -231,16 +266,16 @@ void VideoEnhance::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_faceProtectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceProtect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_faceProtect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_wdFpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WdFps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wdFps, allocator);
@@ -248,20 +283,38 @@ void VideoEnhance::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_scratchRepairHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScratchRepair";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_scratchRepair.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_lowLightEnhanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LowLightEnhance";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_lowLightEnhance.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_videoSuperResolutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoSuperResolution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoSuperResolution.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_videoRepairHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoRepair";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoRepair.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -409,5 +462,37 @@ void VideoEnhance::SetLowLightEnhance(const LowLightEnhance& _lowLightEnhance)
 bool VideoEnhance::LowLightEnhanceHasBeenSet() const
 {
     return m_lowLightEnhanceHasBeenSet;
+}
+
+VideoSuperResolution VideoEnhance::GetVideoSuperResolution() const
+{
+    return m_videoSuperResolution;
+}
+
+void VideoEnhance::SetVideoSuperResolution(const VideoSuperResolution& _videoSuperResolution)
+{
+    m_videoSuperResolution = _videoSuperResolution;
+    m_videoSuperResolutionHasBeenSet = true;
+}
+
+bool VideoEnhance::VideoSuperResolutionHasBeenSet() const
+{
+    return m_videoSuperResolutionHasBeenSet;
+}
+
+VideoRepair VideoEnhance::GetVideoRepair() const
+{
+    return m_videoRepair;
+}
+
+void VideoEnhance::SetVideoRepair(const VideoRepair& _videoRepair)
+{
+    m_videoRepair = _videoRepair;
+    m_videoRepairHasBeenSet = true;
+}
+
+bool VideoEnhance::VideoRepairHasBeenSet() const
+{
+    return m_videoRepairHasBeenSet;
 }
 

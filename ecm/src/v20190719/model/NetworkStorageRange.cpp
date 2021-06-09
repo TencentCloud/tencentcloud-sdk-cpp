@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 NetworkStorageRange::NetworkStorageRange() :
@@ -40,7 +39,7 @@ NetworkStorageRange::NetworkStorageRange() :
 {
 }
 
-CoreInternalOutcome NetworkStorageRange::Deserialize(const Value &value)
+CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -199,12 +198,12 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NetworkStorageRange::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_maxBandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxBandwidth, allocator);
@@ -212,7 +211,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_maxSystemDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxSystemDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxSystemDiskSize, allocator);
@@ -220,7 +219,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_minBandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minBandwidth, allocator);
@@ -228,7 +227,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_minSystemDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinSystemDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minSystemDiskSize, allocator);
@@ -236,7 +235,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_maxDataDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxDataDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxDataDiskSize, allocator);
@@ -244,7 +243,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_minDataDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinDataDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minDataDiskSize, allocator);
@@ -252,7 +251,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_suggestBandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuggestBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_suggestBandwidth, allocator);
@@ -260,7 +259,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_suggestDataDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuggestDataDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_suggestDataDiskSize, allocator);
@@ -268,7 +267,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_suggestSystemDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuggestSystemDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_suggestSystemDiskSize, allocator);
@@ -276,7 +275,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_maxVcpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxVcpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxVcpu, allocator);
@@ -284,7 +283,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_minVcpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinVcpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minVcpu, allocator);
@@ -292,7 +291,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_maxVcpuPerReqHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxVcpuPerReq";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxVcpuPerReq, allocator);
@@ -300,7 +299,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_perBandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PerBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_perBandwidth, allocator);
@@ -308,7 +307,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_perDataDiskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PerDataDisk";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_perDataDisk, allocator);
@@ -316,7 +315,7 @@ void NetworkStorageRange::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_maxModuleNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxModuleNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxModuleNum, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmvpc::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 VpcResource::VpcResource() :
@@ -49,7 +48,7 @@ VpcResource::VpcResource() :
 {
 }
 
-CoreInternalOutcome VpcResource::Deserialize(const Value &value)
+CoreInternalOutcome VpcResource::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -298,36 +297,36 @@ CoreInternalOutcome VpcResource::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VpcResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cidrBlockHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CidrBlock";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subnetNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subnetNum, allocator);
@@ -335,7 +334,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_natNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NatNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_natNum, allocator);
@@ -343,15 +342,15 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_state.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
     if (m_monitorFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MonitorFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_monitorFlag, allocator);
@@ -359,7 +358,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_cpmNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpmNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpmNum, allocator);
@@ -367,7 +366,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_leaveIpNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeaveIpNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_leaveIpNum, allocator);
@@ -375,7 +374,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_lbNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LbNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lbNum, allocator);
@@ -383,7 +382,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_trafficMirrorNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TrafficMirrorNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trafficMirrorNum, allocator);
@@ -391,7 +390,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_eipNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EipNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eipNum, allocator);
@@ -399,7 +398,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_plgwNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlgwNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_plgwNum, allocator);
@@ -407,7 +406,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_plvpNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlvpNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_plvpNum, allocator);
@@ -415,7 +414,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_sslVpnGwNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SslVpnGwNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sslVpnGwNum, allocator);
@@ -423,7 +422,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_vpcPeerNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcPeerNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vpcPeerNum, allocator);
@@ -431,7 +430,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_ipsecVpnGwNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpsecVpnGwNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ipsecVpnGwNum, allocator);
@@ -439,23 +438,23 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isOldHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsOld";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isOld, allocator);
@@ -463,7 +462,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_ccnServiceNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CcnServiceNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ccnServiceNum, allocator);
@@ -471,7 +470,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_vpcPeerLimitToAllRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcPeerLimitToAllRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vpcPeerLimitToAllRegion, allocator);
@@ -479,7 +478,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_vpcPeerLimitToSameRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcPeerLimitToSameRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vpcPeerLimitToSameRegion, allocator);
@@ -487,7 +486,7 @@ void VpcResource::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_intVpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IntVpcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_intVpcId, allocator);

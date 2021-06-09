@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dts::V20180330::Model;
-using namespace rapidjson;
 using namespace std;
 
 SyncOption::SyncOption() :
@@ -29,7 +28,7 @@ SyncOption::SyncOption() :
 {
 }
 
-CoreInternalOutcome SyncOption::Deserialize(const Value &value)
+CoreInternalOutcome SyncOption::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome SyncOption::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SyncOption::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SyncOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_syncObjectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SyncObject";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_syncObject, allocator);
@@ -91,7 +90,7 @@ void SyncOption::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_runModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runMode, allocator);
@@ -99,7 +98,7 @@ void SyncOption::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_syncTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SyncType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_syncType, allocator);
@@ -107,7 +106,7 @@ void SyncOption::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_consistencyTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConsistencyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_consistencyType, allocator);

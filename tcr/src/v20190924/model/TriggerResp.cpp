@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 TriggerResp::TriggerResp() :
@@ -32,7 +31,7 @@ TriggerResp::TriggerResp() :
 {
 }
 
-CoreInternalOutcome TriggerResp::Deserialize(const Value &value)
+CoreInternalOutcome TriggerResp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -125,64 +124,64 @@ CoreInternalOutcome TriggerResp::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TriggerResp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TriggerResp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_triggerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TriggerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_triggerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_invokeSourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InvokeSource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_invokeSource.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invokeSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_invokeActionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InvokeAction";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_invokeAction.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invokeAction.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_invokeConditionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InvokeCondition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_invokeCondition.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_invokeParaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InvokePara";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_invokePara.ToJsonObject(value[key.c_str()], allocator);
     }
 

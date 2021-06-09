@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbaas::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 TransactionItem::TransactionItem() :
@@ -33,7 +32,7 @@ TransactionItem::TransactionItem() :
 {
 }
 
-CoreInternalOutcome TransactionItem::Deserialize(const Value &value)
+CoreInternalOutcome TransactionItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,36 +121,36 @@ CoreInternalOutcome TransactionItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TransactionItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TransactionItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_transactionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransactionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_transactionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transactionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_transactionHashHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransactionHash";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_transactionHash.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transactionHash.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createOrgNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateOrgName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createOrgName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createOrgName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_blockIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blockId, allocator);
@@ -159,23 +158,23 @@ void TransactionItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_transactionTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransactionType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_transactionType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transactionType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_blockHeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blockHeight, allocator);
@@ -183,10 +182,10 @@ void TransactionItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_transactionStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransactionStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_transactionStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transactionStatus.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 BandwidthPriceGradient::BandwidthPriceGradient() :
@@ -28,7 +27,7 @@ BandwidthPriceGradient::BandwidthPriceGradient() :
 {
 }
 
-CoreInternalOutcome BandwidthPriceGradient::Deserialize(const Value &value)
+CoreInternalOutcome BandwidthPriceGradient::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome BandwidthPriceGradient::Deserialize(const Value &value)
         if (!value["BandwidthRange"].IsArray())
             return CoreInternalOutcome(Error("response `BandwidthPriceGradient.BandwidthRange` is not array type"));
 
-        const Value &tmpValue = value["BandwidthRange"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BandwidthRange"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_bandwidthRange.push_back((*itr).GetInt64());
         }
@@ -70,25 +69,25 @@ CoreInternalOutcome BandwidthPriceGradient::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BandwidthPriceGradient::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BandwidthPriceGradient::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bandwidthRangeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BandwidthRange";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_bandwidthRange.begin(); itr != m_bandwidthRange.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_bandwidthUnitPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BandwidthUnitPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidthUnitPrice, allocator);
@@ -96,7 +95,7 @@ void BandwidthPriceGradient::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_discountBandwidthUnitPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountBandwidthUnitPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountBandwidthUnitPrice, allocator);

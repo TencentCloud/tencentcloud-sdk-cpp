@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribePolicyConditionListEventMetric::DescribePolicyConditionListEventMetric() :
@@ -29,7 +28,7 @@ DescribePolicyConditionListEventMetric::DescribePolicyConditionListEventMetric()
 {
 }
 
-CoreInternalOutcome DescribePolicyConditionListEventMetric::Deserialize(const Value &value)
+CoreInternalOutcome DescribePolicyConditionListEventMetric::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome DescribePolicyConditionListEventMetric::Deserialize(const Va
     return CoreInternalOutcome(true);
 }
 
-void DescribePolicyConditionListEventMetric::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribePolicyConditionListEventMetric::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eventIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eventId, allocator);
@@ -91,15 +90,15 @@ void DescribePolicyConditionListEventMetric::ToJsonObject(Value &value, Document
 
     if (m_eventShowNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventShowName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eventShowName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventShowName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_needRecoveredHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedRecovered";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needRecovered, allocator);
@@ -107,7 +106,7 @@ void DescribePolicyConditionListEventMetric::ToJsonObject(Value &value, Document
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);

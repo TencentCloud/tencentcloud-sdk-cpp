@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ccc::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeSkillGroupInfoListResponse::DescribeSkillGroupInfoListResponse() :
@@ -32,7 +31,7 @@ DescribeSkillGroupInfoListResponse::DescribeSkillGroupInfoListResponse() :
 
 CoreInternalOutcome DescribeSkillGroupInfoListResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeSkillGroupInfoListResponse::Deserialize(const string
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeSkillGroupInfoListResponse::Deserialize(const string
         if (!rsp["SkillGroupList"].IsArray())
             return CoreInternalOutcome(Error("response `SkillGroupList` is not array type"));
 
-        const Value &tmpValue = rsp["SkillGroupList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SkillGroupList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SkillGroupInfoItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfs::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 PGroupInfo::PGroupInfo() :
@@ -30,7 +29,7 @@ PGroupInfo::PGroupInfo() :
 {
 }
 
-CoreInternalOutcome PGroupInfo::Deserialize(const Value &value)
+CoreInternalOutcome PGroupInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,44 +88,44 @@ CoreInternalOutcome PGroupInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PGroupInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_pGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DescInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_descInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_descInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bindCfsNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BindCfsNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bindCfsNum, allocator);

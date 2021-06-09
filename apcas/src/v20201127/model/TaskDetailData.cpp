@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apcas::V20201127::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskDetailData::TaskDetailData() :
@@ -28,7 +27,7 @@ TaskDetailData::TaskDetailData() :
 {
 }
 
-CoreInternalOutcome TaskDetailData::Deserialize(const Value &value)
+CoreInternalOutcome TaskDetailData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome TaskDetailData::Deserialize(const Value &value)
         if (!value["LabelDetailDataList"].IsArray())
             return CoreInternalOutcome(Error("response `TaskDetailData.LabelDetailDataList` is not array type"));
 
-        const Value &tmpValue = value["LabelDetailDataList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LabelDetailDataList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LabelDetailData item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,12 +76,12 @@ CoreInternalOutcome TaskDetailData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskDetailData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskDetailData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tagIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tagId, allocator);
@@ -90,23 +89,23 @@ void TaskDetailData::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_tagDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tagDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tagDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_labelDetailDataListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LabelDetailDataList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_labelDetailDataList.begin(); itr != m_labelDetailDataList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

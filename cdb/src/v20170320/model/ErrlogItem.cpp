@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 ErrlogItem::ErrlogItem() :
@@ -27,7 +26,7 @@ ErrlogItem::ErrlogItem() :
 {
 }
 
-CoreInternalOutcome ErrlogItem::Deserialize(const Value &value)
+CoreInternalOutcome ErrlogItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome ErrlogItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ErrlogItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ErrlogItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Timestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timestamp, allocator);
@@ -69,10 +68,10 @@ void ErrlogItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_contentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_content.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
 }

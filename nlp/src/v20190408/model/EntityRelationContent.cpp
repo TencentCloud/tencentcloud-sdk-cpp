@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Nlp::V20190408::Model;
-using namespace rapidjson;
 using namespace std;
 
 EntityRelationContent::EntityRelationContent() :
@@ -28,7 +27,7 @@ EntityRelationContent::EntityRelationContent() :
 {
 }
 
-CoreInternalOutcome EntityRelationContent::Deserialize(const Value &value)
+CoreInternalOutcome EntityRelationContent::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome EntityRelationContent::Deserialize(const Value &value)
         if (!value["Object"].IsArray())
             return CoreInternalOutcome(Error("response `EntityRelationContent.Object` is not array type"));
 
-        const Value &tmpValue = value["Object"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Object"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             EntityRelationObject item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -68,8 +67,8 @@ CoreInternalOutcome EntityRelationContent::Deserialize(const Value &value)
         if (!value["Subject"].IsArray())
             return CoreInternalOutcome(Error("response `EntityRelationContent.Subject` is not array type"));
 
-        const Value &tmpValue = value["Subject"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Subject"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             EntityRelationSubject item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -87,43 +86,43 @@ CoreInternalOutcome EntityRelationContent::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EntityRelationContent::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EntityRelationContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_objectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Object";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_object.begin(); itr != m_object.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_relationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Relation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_relation.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_relation.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subjectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Subject";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_subject.begin(); itr != m_subject.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

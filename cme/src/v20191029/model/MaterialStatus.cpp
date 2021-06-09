@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 MaterialStatus::MaterialStatus() :
@@ -26,7 +25,7 @@ MaterialStatus::MaterialStatus() :
 {
 }
 
-CoreInternalOutcome MaterialStatus::Deserialize(const Value &value)
+CoreInternalOutcome MaterialStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome MaterialStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MaterialStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MaterialStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_editorUsableStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EditorUsableStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_editorUsableStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_editorUsableStatus.c_str(), allocator).Move(), allocator);
     }
 
 }

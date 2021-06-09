@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeEnvFreeQuotaResponse::DescribeEnvFreeQuotaResponse() :
@@ -31,7 +30,7 @@ DescribeEnvFreeQuotaResponse::DescribeEnvFreeQuotaResponse() :
 
 CoreInternalOutcome DescribeEnvFreeQuotaResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeEnvFreeQuotaResponse::Deserialize(const string &payl
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeEnvFreeQuotaResponse::Deserialize(const string &payl
         if (!rsp["QuotaItems"].IsArray())
             return CoreInternalOutcome(Error("response `QuotaItems` is not array type"));
 
-        const Value &tmpValue = rsp["QuotaItems"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["QuotaItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PostpayEnvQuota item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tem::V20201221::Model;
-using namespace rapidjson;
 using namespace std;
 
 TemNamespaceInfo::TemNamespaceInfo() :
@@ -42,7 +41,7 @@ TemNamespaceInfo::TemNamespaceInfo() :
 {
 }
 
-CoreInternalOutcome TemNamespaceInfo::Deserialize(const Value &value)
+CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -221,52 +220,52 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TemNamespaceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TemNamespaceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_namespaceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NamespaceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespaceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespaceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_namespaceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NamespaceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespaceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespaceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -274,47 +273,47 @@ void TemNamespaceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_vpcHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vpc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modifyDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModifyDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modifyDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modifierHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Modifier";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modifier.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifier.c_str(), allocator).Move(), allocator);
     }
 
     if (m_creatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Creator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creator.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serviceNum, allocator);
@@ -322,7 +321,7 @@ void TemNamespaceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_runInstancesNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunInstancesNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runInstancesNum, allocator);
@@ -330,31 +329,31 @@ void TemNamespaceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_subnetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tcbEnvStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TcbEnvStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tcbEnvStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tcbEnvStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableTswTraceServiceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableTswTraceService";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableTswTraceService, allocator);

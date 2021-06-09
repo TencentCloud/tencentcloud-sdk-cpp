@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ssl::V20191205::Model;
-using namespace rapidjson;
 using namespace std;
 
 DvAuthDetail::DvAuthDetail() :
@@ -31,7 +30,7 @@ DvAuthDetail::DvAuthDetail() :
 {
 }
 
-CoreInternalOutcome DvAuthDetail::Deserialize(const Value &value)
+CoreInternalOutcome DvAuthDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -91,8 +90,8 @@ CoreInternalOutcome DvAuthDetail::Deserialize(const Value &value)
         if (!value["DvAuths"].IsArray())
             return CoreInternalOutcome(Error("response `DvAuthDetail.DvAuths` is not array type"));
 
-        const Value &tmpValue = value["DvAuths"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DvAuths"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DvAuths item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,60 +109,60 @@ CoreInternalOutcome DvAuthDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DvAuthDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DvAuthDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dvAuthKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DvAuthKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dvAuthKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dvAuthKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dvAuthValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DvAuthValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dvAuthValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dvAuthValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dvAuthDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DvAuthDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dvAuthDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dvAuthDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dvAuthPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DvAuthPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dvAuthPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dvAuthPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dvAuthKeySubDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DvAuthKeySubDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dvAuthKeySubDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dvAuthKeySubDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dvAuthsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DvAuths";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_dvAuths.begin(); itr != m_dvAuths.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

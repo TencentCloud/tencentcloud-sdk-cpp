@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 AddressChargePrepaid::AddressChargePrepaid() :
@@ -27,7 +26,7 @@ AddressChargePrepaid::AddressChargePrepaid() :
 {
 }
 
-CoreInternalOutcome AddressChargePrepaid::Deserialize(const Value &value)
+CoreInternalOutcome AddressChargePrepaid::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome AddressChargePrepaid::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AddressChargePrepaid::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AddressChargePrepaid::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_periodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_period, allocator);
@@ -69,7 +68,7 @@ void AddressChargePrepaid::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_autoRenewFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRenewFlag, allocator);

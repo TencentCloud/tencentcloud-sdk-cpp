@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Aa::V20200224::Model;
-using namespace rapidjson;
 using namespace std;
 
 OnlineScamInfo::OnlineScamInfo() :
@@ -30,7 +29,7 @@ OnlineScamInfo::OnlineScamInfo() :
 {
 }
 
-CoreInternalOutcome OnlineScamInfo::Deserialize(const Value &value)
+CoreInternalOutcome OnlineScamInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome OnlineScamInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OnlineScamInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OnlineScamInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_contentLabelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContentLabel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_contentLabel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contentLabel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contentRiskLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContentRiskLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_contentRiskLevel, allocator);
@@ -110,7 +109,7 @@ void OnlineScamInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_contentTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContentType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_contentType, allocator);
@@ -118,7 +117,7 @@ void OnlineScamInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_fraudTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FraudType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fraudType, allocator);
@@ -126,10 +125,10 @@ void OnlineScamInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_fraudAccountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FraudAccount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fraudAccount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fraudAccount.c_str(), allocator).Move(), allocator);
     }
 
 }

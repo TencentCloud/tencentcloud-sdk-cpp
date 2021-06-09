@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tia::V20180226::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateJobRequest::CreateJobRequest() :
@@ -43,109 +42,109 @@ CreateJobRequest::CreateJobRequest() :
 
 string CreateJobRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clusterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cluster";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cluster.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cluster.c_str(), allocator).Move(), allocator);
     }
 
     if (m_runtimeVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuntimeVersion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_runtimeVersion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_runtimeVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_packageDirHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PackageDir";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_packageDir.begin(); itr != m_packageDir.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_commandHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Command";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_command.begin(); itr != m_command.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_argsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Args";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_args.begin(); itr != m_args.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_scaleTierHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScaleTier";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_scaleTier.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scaleTier.c_str(), allocator).Move(), allocator);
     }
 
     if (m_masterTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_masterType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_masterType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_workerTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WorkerType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_workerType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workerType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parameterServerTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParameterServerType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_parameterServerType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_parameterServerType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_workerCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WorkerCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_workerCount, allocator);
@@ -153,7 +152,7 @@ string CreateJobRequest::ToJsonString() const
 
     if (m_parameterServerCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParameterServerCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_parameterServerCount, allocator);
@@ -161,7 +160,7 @@ string CreateJobRequest::ToJsonString() const
 
     if (m_debugHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Debug";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_debug, allocator);
@@ -169,20 +168,20 @@ string CreateJobRequest::ToJsonString() const
 
     if (m_runtimeConfHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuntimeConf";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_runtimeConf.begin(); itr != m_runtimeConf.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

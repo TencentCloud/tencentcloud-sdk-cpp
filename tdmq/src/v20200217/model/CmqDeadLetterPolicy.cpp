@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tdmq::V20200217::Model;
-using namespace rapidjson;
 using namespace std;
 
 CmqDeadLetterPolicy::CmqDeadLetterPolicy() :
@@ -29,7 +28,7 @@ CmqDeadLetterPolicy::CmqDeadLetterPolicy() :
 {
 }
 
-CoreInternalOutcome CmqDeadLetterPolicy::Deserialize(const Value &value)
+CoreInternalOutcome CmqDeadLetterPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome CmqDeadLetterPolicy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CmqDeadLetterPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CmqDeadLetterPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deadLetterQueueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeadLetterQueue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deadLetterQueue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deadLetterQueue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_policyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Policy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_policy, allocator);
@@ -99,7 +98,7 @@ void CmqDeadLetterPolicy::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_maxTimeToLiveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxTimeToLive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxTimeToLive, allocator);
@@ -107,7 +106,7 @@ void CmqDeadLetterPolicy::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_maxReceiveCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxReceiveCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxReceiveCount, allocator);

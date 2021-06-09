@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 CustomMetaInfo::CustomMetaInfo() :
@@ -28,7 +27,7 @@ CustomMetaInfo::CustomMetaInfo() :
 {
 }
 
-CoreInternalOutcome CustomMetaInfo::Deserialize(const Value &value)
+CoreInternalOutcome CustomMetaInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome CustomMetaInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CustomMetaInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CustomMetaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_metaDataJdbcUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetaDataJdbcUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metaDataJdbcUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metaDataJdbcUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_metaDataUserHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetaDataUser";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metaDataUser.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metaDataUser.c_str(), allocator).Move(), allocator);
     }
 
     if (m_metaDataPassHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetaDataPass";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metaDataPass.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metaDataPass.c_str(), allocator).Move(), allocator);
     }
 
 }

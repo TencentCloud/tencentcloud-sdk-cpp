@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceProtect::FaceProtect() :
@@ -26,7 +25,7 @@ FaceProtect::FaceProtect() :
 {
 }
 
-CoreInternalOutcome FaceProtect::Deserialize(const Value &value)
+CoreInternalOutcome FaceProtect::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome FaceProtect::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FaceProtect::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FaceProtect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_faceUsmRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceUsmRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_faceUsmRatio, allocator);

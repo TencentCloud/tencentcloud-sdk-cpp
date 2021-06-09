@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 VipEntity::VipEntity() :
@@ -27,7 +26,7 @@ VipEntity::VipEntity() :
 {
 }
 
-CoreInternalOutcome VipEntity::Deserialize(const Value &value)
+CoreInternalOutcome VipEntity::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome VipEntity::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VipEntity::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VipEntity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_vipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vportHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vport";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vport.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vport.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 SwitcherPgmOutputConfig::SwitcherPgmOutputConfig() :
@@ -30,7 +29,7 @@ SwitcherPgmOutputConfig::SwitcherPgmOutputConfig() :
 {
 }
 
-CoreInternalOutcome SwitcherPgmOutputConfig::Deserialize(const Value &value)
+CoreInternalOutcome SwitcherPgmOutputConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome SwitcherPgmOutputConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SwitcherPgmOutputConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SwitcherPgmOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templateId, allocator);
@@ -102,7 +101,7 @@ void SwitcherPgmOutputConfig::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -110,7 +109,7 @@ void SwitcherPgmOutputConfig::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -118,7 +117,7 @@ void SwitcherPgmOutputConfig::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_fpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Fps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fps, allocator);
@@ -126,7 +125,7 @@ void SwitcherPgmOutputConfig::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_bitRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BitRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bitRate, allocator);

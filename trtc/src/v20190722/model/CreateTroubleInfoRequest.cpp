@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateTroubleInfoRequest::CreateTroubleInfoRequest() :
@@ -37,54 +36,54 @@ CreateTroubleInfoRequest::CreateTroubleInfoRequest() :
 
 string CreateTroubleInfoRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_sdkAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sdkAppId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sdkAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roomIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoomId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_roomId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roomId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_teacherUserIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TeacherUserId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_teacherUserId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_teacherUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_studentUserIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StudentUserId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_studentUserId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_studentUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_troubleUserIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TroubleUserId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_troubleUserId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_troubleUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_troubleTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TroubleType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_troubleType, allocator);
@@ -92,7 +91,7 @@ string CreateTroubleInfoRequest::ToJsonString() const
 
     if (m_troubleTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TroubleTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_troubleTime, allocator);
@@ -100,15 +99,15 @@ string CreateTroubleInfoRequest::ToJsonString() const
 
     if (m_troubleMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TroubleMsg";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_troubleMsg.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_troubleMsg.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

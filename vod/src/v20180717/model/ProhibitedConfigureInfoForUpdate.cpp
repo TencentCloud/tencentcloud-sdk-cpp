@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProhibitedConfigureInfoForUpdate::ProhibitedConfigureInfoForUpdate() :
@@ -27,7 +26,7 @@ ProhibitedConfigureInfoForUpdate::ProhibitedConfigureInfoForUpdate() :
 {
 }
 
-CoreInternalOutcome ProhibitedConfigureInfoForUpdate::Deserialize(const Value &value)
+CoreInternalOutcome ProhibitedConfigureInfoForUpdate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,24 +69,24 @@ CoreInternalOutcome ProhibitedConfigureInfoForUpdate::Deserialize(const Value &v
     return CoreInternalOutcome(true);
 }
 
-void ProhibitedConfigureInfoForUpdate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProhibitedConfigureInfoForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_asrReviewInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AsrReviewInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_asrReviewInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_ocrReviewInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OcrReviewInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ocrReviewInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

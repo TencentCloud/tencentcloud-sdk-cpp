@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 WordCoordPoint::WordCoordPoint() :
@@ -26,7 +25,7 @@ WordCoordPoint::WordCoordPoint() :
 {
 }
 
-CoreInternalOutcome WordCoordPoint::Deserialize(const Value &value)
+CoreInternalOutcome WordCoordPoint::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome WordCoordPoint::Deserialize(const Value &value)
         if (!value["WordCoordinate"].IsArray())
             return CoreInternalOutcome(Error("response `WordCoordPoint.WordCoordinate` is not array type"));
 
-        const Value &tmpValue = value["WordCoordinate"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["WordCoordinate"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Coord item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -55,20 +54,20 @@ CoreInternalOutcome WordCoordPoint::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WordCoordPoint::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WordCoordPoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_wordCoordinateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WordCoordinate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_wordCoordinate.begin(); itr != m_wordCoordinate.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

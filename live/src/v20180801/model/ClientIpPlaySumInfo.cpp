@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClientIpPlaySumInfo::ClientIpPlaySumInfo() :
@@ -31,7 +30,7 @@ ClientIpPlaySumInfo::ClientIpPlaySumInfo() :
 {
 }
 
-CoreInternalOutcome ClientIpPlaySumInfo::Deserialize(const Value &value)
+CoreInternalOutcome ClientIpPlaySumInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,28 +99,28 @@ CoreInternalOutcome ClientIpPlaySumInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClientIpPlaySumInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClientIpPlaySumInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_clientIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clientIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_provinceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Province";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_province.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_province.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalFluxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalFlux";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalFlux, allocator);
@@ -129,7 +128,7 @@ void ClientIpPlaySumInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_totalRequestHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalRequest";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalRequest, allocator);
@@ -137,7 +136,7 @@ void ClientIpPlaySumInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_totalFailedRequestHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalFailedRequest";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalFailedRequest, allocator);
@@ -145,10 +144,10 @@ void ClientIpPlaySumInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_countryAreaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CountryArea";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_countryArea.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_countryArea.c_str(), allocator).Move(), allocator);
     }
 
 }

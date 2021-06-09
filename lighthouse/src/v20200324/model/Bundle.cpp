@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 Bundle::Bundle() :
@@ -39,7 +38,7 @@ Bundle::Bundle() :
 {
 }
 
-CoreInternalOutcome Bundle::Deserialize(const Value &value)
+CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -195,20 +194,20 @@ CoreInternalOutcome Bundle::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Bundle::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Bundle::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bundleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BundleId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bundleId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_memoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memory, allocator);
@@ -216,15 +215,15 @@ void Bundle::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_systemDiskTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SystemDiskType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_systemDiskType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_systemDiskType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_systemDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SystemDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_systemDiskSize, allocator);
@@ -232,7 +231,7 @@ void Bundle::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_monthlyTrafficHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MonthlyTraffic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_monthlyTraffic, allocator);
@@ -240,7 +239,7 @@ void Bundle::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_supportLinuxUnixPlatformHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SupportLinuxUnixPlatform";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportLinuxUnixPlatform, allocator);
@@ -248,7 +247,7 @@ void Bundle::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_supportWindowsPlatformHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SupportWindowsPlatform";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportWindowsPlatform, allocator);
@@ -256,16 +255,16 @@ void Bundle::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_priceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Price";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_price.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_cPUHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CPU";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cPU, allocator);
@@ -273,7 +272,7 @@ void Bundle::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_internetMaxBandwidthOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InternetMaxBandwidthOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_internetMaxBandwidthOut, allocator);
@@ -281,34 +280,34 @@ void Bundle::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_internetChargeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InternetChargeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_internetChargeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internetChargeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bundleSalesStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BundleSalesState";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bundleSalesState.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleSalesState.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bundleTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BundleType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bundleType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bundleDisplayLabelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BundleDisplayLabel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bundleDisplayLabel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleDisplayLabel.c_str(), allocator).Move(), allocator);
     }
 
 }

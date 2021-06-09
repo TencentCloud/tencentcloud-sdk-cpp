@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceData::DeviceData() :
@@ -29,7 +28,7 @@ DeviceData::DeviceData() :
 {
 }
 
-CoreInternalOutcome DeviceData::Deserialize(const Value &value)
+CoreInternalOutcome DeviceData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome DeviceData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deviceCertHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceCert";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceCert.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceCert.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_devicePrivateKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DevicePrivateKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_devicePrivateKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_devicePrivateKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_devicePskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DevicePsk";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_devicePsk.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_devicePsk.c_str(), allocator).Move(), allocator);
     }
 
 }

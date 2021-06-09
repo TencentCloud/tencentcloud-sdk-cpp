@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 RecordParam::RecordParam() :
@@ -30,7 +29,7 @@ RecordParam::RecordParam() :
 {
 }
 
-CoreInternalOutcome RecordParam::Deserialize(const Value &value)
+CoreInternalOutcome RecordParam::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome RecordParam::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RecordParam::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RecordParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_recordIntervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recordInterval, allocator);
@@ -102,7 +101,7 @@ void RecordParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_storageTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storageTime, allocator);
@@ -110,7 +109,7 @@ void RecordParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_enableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enable, allocator);
@@ -118,7 +117,7 @@ void RecordParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_vodSubAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VodSubAppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vodSubAppId, allocator);
@@ -126,10 +125,10 @@ void RecordParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_vodFileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VodFileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vodFileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vodFileName.c_str(), allocator).Move(), allocator);
     }
 
 }

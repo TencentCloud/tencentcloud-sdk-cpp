@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeGatewayFlowMonitorDetailRequest::DescribeGatewayFlowMonitorDetailRequest() :
@@ -38,54 +37,54 @@ DescribeGatewayFlowMonitorDetailRequest::DescribeGatewayFlowMonitorDetailRequest
 
 string DescribeGatewayFlowMonitorDetailRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_timePointHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimePoint";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_timePoint.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timePoint.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpnIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpnId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_vpnId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpnId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_directConnectGatewayIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectConnectGatewayId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_directConnectGatewayId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_directConnectGatewayId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_peeringConnectionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeeringConnectionId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_peeringConnectionId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_peeringConnectionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_natIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NatId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_natId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_natId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
@@ -93,7 +92,7 @@ string DescribeGatewayFlowMonitorDetailRequest::ToJsonString() const
 
     if (m_limitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
@@ -101,23 +100,23 @@ string DescribeGatewayFlowMonitorDetailRequest::ToJsonString() const
 
     if (m_orderFieldHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderField";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_orderField.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
     }
 
     if (m_orderDirectionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderDirection";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_orderDirection.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderDirection.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

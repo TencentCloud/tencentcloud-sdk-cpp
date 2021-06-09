@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 AuthenticationTypeC::AuthenticationTypeC() :
@@ -30,7 +29,7 @@ AuthenticationTypeC::AuthenticationTypeC() :
 {
 }
 
-CoreInternalOutcome AuthenticationTypeC::Deserialize(const Value &value)
+CoreInternalOutcome AuthenticationTypeC::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -60,8 +59,8 @@ CoreInternalOutcome AuthenticationTypeC::Deserialize(const Value &value)
         if (!value["FileExtensions"].IsArray())
             return CoreInternalOutcome(Error("response `AuthenticationTypeC.FileExtensions` is not array type"));
 
-        const Value &tmpValue = value["FileExtensions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FileExtensions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_fileExtensions.push_back((*itr).GetString());
         }
@@ -92,20 +91,20 @@ CoreInternalOutcome AuthenticationTypeC::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AuthenticationTypeC::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AuthenticationTypeC::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_secretKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecretKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secretKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expireTime, allocator);
@@ -113,31 +112,31 @@ void AuthenticationTypeC::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_fileExtensionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileExtensions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_fileExtensions.begin(); itr != m_fileExtensions.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_filterTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FilterType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_filterType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_filterType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeFormatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeFormat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timeFormat.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeFormat.c_str(), allocator).Move(), allocator);
     }
 
 }

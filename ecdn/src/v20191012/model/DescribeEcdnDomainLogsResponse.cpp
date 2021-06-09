@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecdn::V20191012::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeEcdnDomainLogsResponse::DescribeEcdnDomainLogsResponse() :
@@ -32,7 +31,7 @@ DescribeEcdnDomainLogsResponse::DescribeEcdnDomainLogsResponse() :
 
 CoreInternalOutcome DescribeEcdnDomainLogsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeEcdnDomainLogsResponse::Deserialize(const string &pa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeEcdnDomainLogsResponse::Deserialize(const string &pa
         if (!rsp["DomainLogs"].IsArray())
             return CoreInternalOutcome(Error("response `DomainLogs` is not array type"));
 
-        const Value &tmpValue = rsp["DomainLogs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DomainLogs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DomainLogs item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

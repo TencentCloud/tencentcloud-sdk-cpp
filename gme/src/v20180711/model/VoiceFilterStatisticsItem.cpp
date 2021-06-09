@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gme::V20180711::Model;
-using namespace rapidjson;
 using namespace std;
 
 VoiceFilterStatisticsItem::VoiceFilterStatisticsItem() :
@@ -26,7 +25,7 @@ VoiceFilterStatisticsItem::VoiceFilterStatisticsItem() :
 {
 }
 
-CoreInternalOutcome VoiceFilterStatisticsItem::Deserialize(const Value &value)
+CoreInternalOutcome VoiceFilterStatisticsItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome VoiceFilterStatisticsItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VoiceFilterStatisticsItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VoiceFilterStatisticsItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);

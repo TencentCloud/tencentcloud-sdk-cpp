@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Smpn::V20190822::Model;
-using namespace rapidjson;
 using namespace std;
 
 FNRResponse::FNRResponse() :
@@ -26,7 +25,7 @@ FNRResponse::FNRResponse() :
 {
 }
 
-CoreInternalOutcome FNRResponse::Deserialize(const Value &value)
+CoreInternalOutcome FNRResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome FNRResponse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FNRResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FNRResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);

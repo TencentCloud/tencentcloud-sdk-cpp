@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 RecordReplayProjectInput::RecordReplayProjectInput() :
@@ -29,7 +28,7 @@ RecordReplayProjectInput::RecordReplayProjectInput() :
 {
 }
 
-CoreInternalOutcome RecordReplayProjectInput::Deserialize(const Value &value)
+CoreInternalOutcome RecordReplayProjectInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,40 +84,40 @@ CoreInternalOutcome RecordReplayProjectInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RecordReplayProjectInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RecordReplayProjectInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_pullStreamUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PullStreamUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pullStreamUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pullStreamUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_materialOwnerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaterialOwner";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_materialOwner.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_materialClassPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaterialClassPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_materialClassPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_materialClassPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pushStreamUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PushStreamUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pushStreamUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pushStreamUrl.c_str(), allocator).Move(), allocator);
     }
 
 }

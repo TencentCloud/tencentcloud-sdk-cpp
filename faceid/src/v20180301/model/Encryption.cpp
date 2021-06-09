@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Faceid::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 Encryption::Encryption() :
@@ -28,7 +27,7 @@ Encryption::Encryption() :
 {
 }
 
-CoreInternalOutcome Encryption::Deserialize(const Value &value)
+CoreInternalOutcome Encryption::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome Encryption::Deserialize(const Value &value)
         if (!value["EncryptList"].IsArray())
             return CoreInternalOutcome(Error("response `Encryption.EncryptList` is not array type"));
 
-        const Value &tmpValue = value["EncryptList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["EncryptList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_encryptList.push_back((*itr).GetString());
         }
@@ -70,36 +69,36 @@ CoreInternalOutcome Encryption::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Encryption::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Encryption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ciphertextBlobHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CiphertextBlob";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ciphertextBlob.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ciphertextBlob.c_str(), allocator).Move(), allocator);
     }
 
     if (m_encryptListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EncryptList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_encryptList.begin(); itr != m_encryptList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_ivHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Iv";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iv.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iv.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbp::V20190627::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResponseMessage::ResponseMessage() :
@@ -26,7 +25,7 @@ ResponseMessage::ResponseMessage() :
 {
 }
 
-CoreInternalOutcome ResponseMessage::Deserialize(const Value &value)
+CoreInternalOutcome ResponseMessage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome ResponseMessage::Deserialize(const Value &value)
         if (!value["GroupList"].IsArray())
             return CoreInternalOutcome(Error("response `ResponseMessage.GroupList` is not array type"));
 
-        const Value &tmpValue = value["GroupList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["GroupList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Group item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -55,20 +54,20 @@ CoreInternalOutcome ResponseMessage::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResponseMessage::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResponseMessage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_groupListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_groupList.begin(); itr != m_groupList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

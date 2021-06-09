@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dc::V20180410::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateDirectConnectResponse::CreateDirectConnectResponse() :
@@ -31,7 +30,7 @@ CreateDirectConnectResponse::CreateDirectConnectResponse() :
 
 CoreInternalOutcome CreateDirectConnectResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome CreateDirectConnectResponse::Deserialize(const string &paylo
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome CreateDirectConnectResponse::Deserialize(const string &paylo
         if (!rsp["DirectConnectIdSet"].IsArray())
             return CoreInternalOutcome(Error("response `DirectConnectIdSet` is not array type"));
 
-        const Value &tmpValue = rsp["DirectConnectIdSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DirectConnectIdSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_directConnectIdSet.push_back((*itr).GetString());
         }

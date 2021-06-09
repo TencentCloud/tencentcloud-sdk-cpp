@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 ISP::ISP() :
@@ -27,7 +26,7 @@ ISP::ISP() :
 {
 }
 
-CoreInternalOutcome ISP::Deserialize(const Value &value)
+CoreInternalOutcome ISP::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome ISP::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ISP::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ISP::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_iSPIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ISPId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iSPId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iSPId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iSPNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ISPName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iSPName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iSPName.c_str(), allocator).Move(), allocator);
     }
 
 }

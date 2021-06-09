@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 SecurityGroupAssociationStatistics::SecurityGroupAssociationStatistics() :
@@ -33,7 +32,7 @@ SecurityGroupAssociationStatistics::SecurityGroupAssociationStatistics() :
 {
 }
 
-CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const Value &value)
+CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -103,8 +102,8 @@ CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const Value 
         if (!value["InstanceStatistics"].IsArray())
             return CoreInternalOutcome(Error("response `SecurityGroupAssociationStatistics.InstanceStatistics` is not array type"));
 
-        const Value &tmpValue = value["InstanceStatistics"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InstanceStatistics"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InstanceStatistic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -132,20 +131,20 @@ CoreInternalOutcome SecurityGroupAssociationStatistics::Deserialize(const Value 
     return CoreInternalOutcome(true);
 }
 
-void SecurityGroupAssociationStatistics::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SecurityGroupAssociationStatistics::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_securityGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_securityGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_securityGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cVMHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CVM";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cVM, allocator);
@@ -153,7 +152,7 @@ void SecurityGroupAssociationStatistics::ToJsonObject(Value &value, Document::Al
 
     if (m_cDBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CDB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cDB, allocator);
@@ -161,7 +160,7 @@ void SecurityGroupAssociationStatistics::ToJsonObject(Value &value, Document::Al
 
     if (m_eNIHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ENI";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eNI, allocator);
@@ -169,7 +168,7 @@ void SecurityGroupAssociationStatistics::ToJsonObject(Value &value, Document::Al
 
     if (m_sGHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SG";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sG, allocator);
@@ -177,7 +176,7 @@ void SecurityGroupAssociationStatistics::ToJsonObject(Value &value, Document::Al
 
     if (m_cLBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CLB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cLB, allocator);
@@ -185,22 +184,22 @@ void SecurityGroupAssociationStatistics::ToJsonObject(Value &value, Document::Al
 
     if (m_instanceStatisticsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceStatistics";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_instanceStatistics.begin(); itr != m_instanceStatistics.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);

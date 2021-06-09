@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProductDataRecord::ProductDataRecord() :
@@ -40,7 +39,7 @@ ProductDataRecord::ProductDataRecord() :
 {
 }
 
-CoreInternalOutcome ProductDataRecord::Deserialize(const Value &value)
+CoreInternalOutcome ProductDataRecord::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -140,8 +139,8 @@ CoreInternalOutcome ProductDataRecord::Deserialize(const Value &value)
         if (!value["ImageLink"].IsArray())
             return CoreInternalOutcome(Error("response `ProductDataRecord.ImageLink` is not array type"));
 
-        const Value &tmpValue = value["ImageLink"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ImageLink"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_imageLink.push_back((*itr).GetString());
         }
@@ -202,132 +201,132 @@ CoreInternalOutcome ProductDataRecord::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProductDataRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProductDataRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_productNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_enName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_enName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_brandNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BrandName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_brandName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_brandName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_width.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_width.c_str(), allocator).Move(), allocator);
     }
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_height.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_height.c_str(), allocator).Move(), allocator);
     }
 
     if (m_depthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Depth";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_depth.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_depth.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyWordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyWord";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyWord.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyWord.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageLinkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageLink";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_imageLink.begin(); itr != m_imageLink.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_manufacturerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ManufacturerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_manufacturerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_manufacturerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_manufacturerAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ManufacturerAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_manufacturerAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_manufacturerAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_firmCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirmCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_firmCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firmCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_checkResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CheckResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_checkResult.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkResult.c_str(), allocator).Move(), allocator);
     }
 
     if (m_categoryCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CategoryCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_categoryCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_categoryCode.c_str(), allocator).Move(), allocator);
     }
 
 }

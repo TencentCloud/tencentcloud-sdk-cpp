@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeAttendanceResultResponse::DescribeAttendanceResultResponse() :
@@ -35,7 +34,7 @@ DescribeAttendanceResultResponse::DescribeAttendanceResultResponse() :
 
 CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -45,7 +44,7 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -72,8 +71,8 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
         if (!rsp["AbsenceSetInLibs"].IsArray())
             return CoreInternalOutcome(Error("response `AbsenceSetInLibs` is not array type"));
 
-        const Value &tmpValue = rsp["AbsenceSetInLibs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["AbsenceSetInLibs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AbsenceInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -92,8 +91,8 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
         if (!rsp["AttendanceSet"].IsArray())
             return CoreInternalOutcome(Error("response `AttendanceSet` is not array type"));
 
-        const Value &tmpValue = rsp["AttendanceSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["AttendanceSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AttendanceInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -112,8 +111,8 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
         if (!rsp["SuspectedSet"].IsArray())
             return CoreInternalOutcome(Error("response `SuspectedSet` is not array type"));
 
-        const Value &tmpValue = rsp["SuspectedSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SuspectedSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SuspectedInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -132,8 +131,8 @@ CoreInternalOutcome DescribeAttendanceResultResponse::Deserialize(const string &
         if (!rsp["AbsenceSet"].IsArray())
             return CoreInternalOutcome(Error("response `AbsenceSet` is not array type"));
 
-        const Value &tmpValue = rsp["AbsenceSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["AbsenceSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_absenceSet.push_back((*itr).GetString());
         }

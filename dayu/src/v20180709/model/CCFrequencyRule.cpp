@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 CCFrequencyRule::CCFrequencyRule() :
@@ -34,7 +33,7 @@ CCFrequencyRule::CCFrequencyRule() :
 {
 }
 
-CoreInternalOutcome CCFrequencyRule::Deserialize(const Value &value)
+CoreInternalOutcome CCFrequencyRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,52 +132,52 @@ CoreInternalOutcome CCFrequencyRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CCFrequencyRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CCFrequencyRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cCFrequencyRuleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CCFrequencyRuleId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cCFrequencyRuleId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cCFrequencyRuleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_uriHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uri";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uri.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uri.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userAgentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserAgent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userAgent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userAgent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cookieHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cookie";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cookie.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cookie.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_periodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_period, allocator);
@@ -186,7 +185,7 @@ void CCFrequencyRule::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_reqNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReqNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reqNumber, allocator);
@@ -194,15 +193,15 @@ void CCFrequencyRule::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_actHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Act";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_act.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_act.c_str(), allocator).Move(), allocator);
     }
 
     if (m_exeDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExeDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exeDuration, allocator);

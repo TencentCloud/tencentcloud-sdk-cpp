@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dnspod::V20210323::Model;
-using namespace rapidjson;
 using namespace std;
 
 LineInfo::LineInfo() :
@@ -27,7 +26,7 @@ LineInfo::LineInfo() :
 {
 }
 
-CoreInternalOutcome LineInfo::Deserialize(const Value &value)
+CoreInternalOutcome LineInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome LineInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LineInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lineIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LineId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lineId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lineId.c_str(), allocator).Move(), allocator);
     }
 
 }

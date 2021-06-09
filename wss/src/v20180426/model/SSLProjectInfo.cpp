@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Wss::V20180426::Model;
-using namespace rapidjson;
 using namespace std;
 
 SSLProjectInfo::SSLProjectInfo() :
@@ -31,7 +30,7 @@ SSLProjectInfo::SSLProjectInfo() :
 {
 }
 
-CoreInternalOutcome SSLProjectInfo::Deserialize(const Value &value)
+CoreInternalOutcome SSLProjectInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,20 +99,20 @@ CoreInternalOutcome SSLProjectInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SSLProjectInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SSLProjectInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_projectId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ownerUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OwnerUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ownerUin, allocator);
@@ -121,15 +120,15 @@ void SSLProjectInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_creatorUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatorUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_creatorUin, allocator);
@@ -137,18 +136,18 @@ void SSLProjectInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_infoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Info";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_info.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_info.c_str(), allocator).Move(), allocator);
     }
 
 }

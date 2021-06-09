@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gpm::V20200820::Model;
-using namespace rapidjson;
 using namespace std;
 
 Player::Player() :
@@ -32,7 +31,7 @@ Player::Player() :
 {
 }
 
-CoreInternalOutcome Player::Deserialize(const Value &value)
+CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -62,8 +61,8 @@ CoreInternalOutcome Player::Deserialize(const Value &value)
         if (!value["MatchAttributes"].IsArray())
             return CoreInternalOutcome(Error("response `Player.MatchAttributes` is not array type"));
 
-        const Value &tmpValue = value["MatchAttributes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MatchAttributes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MatchAttribute item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -112,8 +111,8 @@ CoreInternalOutcome Player::Deserialize(const Value &value)
         if (!value["RegionLatencies"].IsArray())
             return CoreInternalOutcome(Error("response `Player.RegionLatencies` is not array type"));
 
-        const Value &tmpValue = value["RegionLatencies"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RegionLatencies"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RegionLatency item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -131,51 +130,51 @@ CoreInternalOutcome Player::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Player::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Player::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_matchAttributesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchAttributes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_matchAttributes.begin(); itr != m_matchAttributes.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_teamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Team";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_team.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_team.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customPlayerStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomPlayerStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_customPlayerStatus, allocator);
@@ -183,23 +182,23 @@ void Player::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_customProfileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomProfile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_customProfile.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customProfile.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionLatenciesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionLatencies";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_regionLatencies.begin(); itr != m_regionLatencies.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProIspPlaySumInfo::ProIspPlaySumInfo() :
@@ -29,7 +28,7 @@ ProIspPlaySumInfo::ProIspPlaySumInfo() :
 {
 }
 
-CoreInternalOutcome ProIspPlaySumInfo::Deserialize(const Value &value)
+CoreInternalOutcome ProIspPlaySumInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome ProIspPlaySumInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProIspPlaySumInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProIspPlaySumInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalFluxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalFlux";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalFlux, allocator);
@@ -99,7 +98,7 @@ void ProIspPlaySumInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_totalRequestHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalRequest";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalRequest, allocator);
@@ -107,7 +106,7 @@ void ProIspPlaySumInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_avgFluxPerSecondHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvgFluxPerSecond";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_avgFluxPerSecond, allocator);

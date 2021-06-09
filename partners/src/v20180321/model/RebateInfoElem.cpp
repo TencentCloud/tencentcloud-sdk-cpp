@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Partners::V20180321::Model;
-using namespace rapidjson;
 using namespace std;
 
 RebateInfoElem::RebateInfoElem() :
@@ -31,7 +30,7 @@ RebateInfoElem::RebateInfoElem() :
 {
 }
 
-CoreInternalOutcome RebateInfoElem::Deserialize(const Value &value)
+CoreInternalOutcome RebateInfoElem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,28 +99,28 @@ CoreInternalOutcome RebateInfoElem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RebateInfoElem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RebateInfoElem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_uinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rebateMonthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RebateMonth";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rebateMonth.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rebateMonth.c_str(), allocator).Move(), allocator);
     }
 
     if (m_amtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Amt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_amt, allocator);
@@ -129,7 +128,7 @@ void RebateInfoElem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_monthSalesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MonthSales";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_monthSales, allocator);
@@ -137,7 +136,7 @@ void RebateInfoElem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_quarterSalesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QuarterSales";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quarterSales, allocator);
@@ -145,10 +144,10 @@ void RebateInfoElem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_exceptionFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExceptionFlag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_exceptionFlag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exceptionFlag.c_str(), allocator).Move(), allocator);
     }
 
 }

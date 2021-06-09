@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 StripTaskResultItem::StripTaskResultItem() :
@@ -30,7 +29,7 @@ StripTaskResultItem::StripTaskResultItem() :
 {
 }
 
-CoreInternalOutcome StripTaskResultItem::Deserialize(const Value &value)
+CoreInternalOutcome StripTaskResultItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome StripTaskResultItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StripTaskResultItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StripTaskResultItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_segmentUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SegmentUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_segmentUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_segmentUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_covImgUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CovImgUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_covImgUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_covImgUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -118,7 +117,7 @@ void StripTaskResultItem::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -126,7 +125,7 @@ void StripTaskResultItem::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);

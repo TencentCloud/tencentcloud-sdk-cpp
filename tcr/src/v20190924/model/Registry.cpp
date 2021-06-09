@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 Registry::Registry() :
@@ -40,7 +39,7 @@ Registry::Registry() :
 {
 }
 
-CoreInternalOutcome Registry::Deserialize(const Value &value)
+CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -206,68 +205,68 @@ CoreInternalOutcome Registry::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Registry::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Registry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_registryIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegistryId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_registryId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_registryNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegistryName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_registryName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registryName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_registryTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegistryType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_registryType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registryType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publicDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_publicDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionId, allocator);
@@ -275,7 +274,7 @@ void Registry::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_enableAnonymousHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableAnonymous";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableAnonymous, allocator);
@@ -283,7 +282,7 @@ void Registry::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_tokenValidTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TokenValidTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tokenValidTime, allocator);
@@ -291,32 +290,32 @@ void Registry::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_internalEndpointHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InternalEndpoint";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_internalEndpoint.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internalEndpoint.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagSpecificationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagSpecification";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tagSpecification.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_expiredAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpiredAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_expiredAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expiredAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payModHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayMod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_payMod, allocator);
@@ -324,7 +323,7 @@ void Registry::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_renewFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_renewFlag, allocator);

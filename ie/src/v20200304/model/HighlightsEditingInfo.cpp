@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 HighlightsEditingInfo::HighlightsEditingInfo() :
@@ -27,7 +26,7 @@ HighlightsEditingInfo::HighlightsEditingInfo() :
 {
 }
 
-CoreInternalOutcome HighlightsEditingInfo::Deserialize(const Value &value)
+CoreInternalOutcome HighlightsEditingInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome HighlightsEditingInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HighlightsEditingInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HighlightsEditingInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_switch, allocator);
@@ -69,10 +68,10 @@ void HighlightsEditingInfo::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_customInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_customInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customInfo.c_str(), allocator).Move(), allocator);
     }
 
 }

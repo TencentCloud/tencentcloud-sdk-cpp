@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 TriggerCount::TriggerCount() :
@@ -36,7 +35,7 @@ TriggerCount::TriggerCount() :
 {
 }
 
-CoreInternalOutcome TriggerCount::Deserialize(const Value &value)
+CoreInternalOutcome TriggerCount::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -155,12 +154,12 @@ CoreInternalOutcome TriggerCount::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TriggerCount::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TriggerCount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cos";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cos, allocator);
@@ -168,7 +167,7 @@ void TriggerCount::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_timerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Timer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timer, allocator);
@@ -176,7 +175,7 @@ void TriggerCount::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_cmqHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cmq";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cmq, allocator);
@@ -184,7 +183,7 @@ void TriggerCount::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_totalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Total";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_total, allocator);
@@ -192,7 +191,7 @@ void TriggerCount::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_ckafkaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ckafka";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ckafka, allocator);
@@ -200,7 +199,7 @@ void TriggerCount::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_apigwHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Apigw";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_apigw, allocator);
@@ -208,7 +207,7 @@ void TriggerCount::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_clsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cls";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cls, allocator);
@@ -216,7 +215,7 @@ void TriggerCount::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_clbHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Clb";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clb, allocator);
@@ -224,7 +223,7 @@ void TriggerCount::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_mpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mps, allocator);
@@ -232,7 +231,7 @@ void TriggerCount::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_cmHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cm, allocator);
@@ -240,7 +239,7 @@ void TriggerCount::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_vodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vod, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 PhysicalPosition::PhysicalPosition() :
@@ -28,7 +27,7 @@ PhysicalPosition::PhysicalPosition() :
 {
 }
 
-CoreInternalOutcome PhysicalPosition::Deserialize(const Value &value)
+CoreInternalOutcome PhysicalPosition::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome PhysicalPosition::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PhysicalPosition::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PhysicalPosition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_posIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PosId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_posId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_posId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rackIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RackId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rackId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rackId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_switchIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SwitchId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switchId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switchId.c_str(), allocator).Move(), allocator);
     }
 
 }

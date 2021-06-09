@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 HttpCodeValue::HttpCodeValue() :
@@ -28,7 +27,7 @@ HttpCodeValue::HttpCodeValue() :
 {
 }
 
-CoreInternalOutcome HttpCodeValue::Deserialize(const Value &value)
+CoreInternalOutcome HttpCodeValue::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome HttpCodeValue::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HttpCodeValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HttpCodeValue::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_time.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_time.c_str(), allocator).Move(), allocator);
     }
 
     if (m_numbersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Numbers";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_numbers, allocator);
@@ -88,7 +87,7 @@ void HttpCodeValue::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_percentageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Percentage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_percentage, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20191016::Model;
-using namespace rapidjson;
 using namespace std;
 
 SlowLogHost::SlowLogHost() :
@@ -28,7 +27,7 @@ SlowLogHost::SlowLogHost() :
 {
 }
 
-CoreInternalOutcome SlowLogHost::Deserialize(const Value &value)
+CoreInternalOutcome SlowLogHost::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome SlowLogHost::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SlowLogHost::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SlowLogHost::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_userHostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserHost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userHost.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userHost.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ratioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ratio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ratio, allocator);
@@ -88,7 +87,7 @@ void SlowLogHost::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);

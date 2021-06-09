@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 DelayDistribution::DelayDistribution() :
@@ -28,7 +27,7 @@ DelayDistribution::DelayDistribution() :
 {
 }
 
-CoreInternalOutcome DelayDistribution::Deserialize(const Value &value)
+CoreInternalOutcome DelayDistribution::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome DelayDistribution::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DelayDistribution::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DelayDistribution::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ladderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ladder";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ladder, allocator);
@@ -80,7 +79,7 @@ void DelayDistribution::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_sizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
@@ -88,7 +87,7 @@ void DelayDistribution::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_updatetimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Updatetime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updatetime, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 SnapshotByTimeOffsetTaskInput::SnapshotByTimeOffsetTaskInput() :
@@ -32,7 +31,7 @@ SnapshotByTimeOffsetTaskInput::SnapshotByTimeOffsetTaskInput() :
 {
 }
 
-CoreInternalOutcome SnapshotByTimeOffsetTaskInput::Deserialize(const Value &value)
+CoreInternalOutcome SnapshotByTimeOffsetTaskInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -52,8 +51,8 @@ CoreInternalOutcome SnapshotByTimeOffsetTaskInput::Deserialize(const Value &valu
         if (!value["ExtTimeOffsetSet"].IsArray())
             return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTaskInput.ExtTimeOffsetSet` is not array type"));
 
-        const Value &tmpValue = value["ExtTimeOffsetSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ExtTimeOffsetSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_extTimeOffsetSet.push_back((*itr).GetString());
         }
@@ -65,8 +64,8 @@ CoreInternalOutcome SnapshotByTimeOffsetTaskInput::Deserialize(const Value &valu
         if (!value["TimeOffsetSet"].IsArray())
             return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTaskInput.TimeOffsetSet` is not array type"));
 
-        const Value &tmpValue = value["TimeOffsetSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TimeOffsetSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_timeOffsetSet.push_back((*itr).GetDouble());
         }
@@ -78,8 +77,8 @@ CoreInternalOutcome SnapshotByTimeOffsetTaskInput::Deserialize(const Value &valu
         if (!value["WatermarkSet"].IsArray())
             return CoreInternalOutcome(Error("response `SnapshotByTimeOffsetTaskInput.WatermarkSet` is not array type"));
 
-        const Value &tmpValue = value["WatermarkSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["WatermarkSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             WatermarkInput item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -141,12 +140,12 @@ CoreInternalOutcome SnapshotByTimeOffsetTaskInput::Deserialize(const Value &valu
     return CoreInternalOutcome(true);
 }
 
-void SnapshotByTimeOffsetTaskInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SnapshotByTimeOffsetTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_definitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
@@ -154,68 +153,68 @@ void SnapshotByTimeOffsetTaskInput::ToJsonObject(Value &value, Document::Allocat
 
     if (m_extTimeOffsetSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExtTimeOffsetSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_extTimeOffsetSet.begin(); itr != m_extTimeOffsetSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_timeOffsetSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeOffsetSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_timeOffsetSet.begin(); itr != m_timeOffsetSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_watermarkSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WatermarkSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_watermarkSet.begin(); itr != m_watermarkSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_outputStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputStorage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_outputStorage.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_outputObjectPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputObjectPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outputObjectPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputObjectPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_objectNumberFormatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ObjectNumberFormat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_objectNumberFormat.ToJsonObject(value[key.c_str()], allocator);
     }
 

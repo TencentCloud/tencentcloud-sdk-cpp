@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 NationCountryInnerInfo::NationCountryInnerInfo() :
@@ -27,7 +26,7 @@ NationCountryInnerInfo::NationCountryInnerInfo() :
 {
 }
 
-CoreInternalOutcome NationCountryInnerInfo::Deserialize(const Value &value)
+CoreInternalOutcome NationCountryInnerInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome NationCountryInnerInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NationCountryInnerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NationCountryInnerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nationCountryNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NationCountryName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nationCountryName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nationCountryName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nationCountryInnerCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NationCountryInnerCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nationCountryInnerCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nationCountryInnerCode.c_str(), allocator).Move(), allocator);
     }
 
 }

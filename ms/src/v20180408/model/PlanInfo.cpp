@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 PlanInfo::PlanInfo() :
@@ -41,7 +40,7 @@ PlanInfo::PlanInfo() :
 {
 }
 
-CoreInternalOutcome PlanInfo::Deserialize(const Value &value)
+CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -158,8 +157,8 @@ CoreInternalOutcome PlanInfo::Deserialize(const Value &value)
         if (!value["SoType"].IsArray())
             return CoreInternalOutcome(Error("response `PlanInfo.SoType` is not array type"));
 
-        const Value &tmpValue = value["SoType"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SoType"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_soType.push_back((*itr).GetString());
         }
@@ -220,12 +219,12 @@ CoreInternalOutcome PlanInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PlanInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_apkSizeOptHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApkSizeOpt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_apkSizeOpt, allocator);
@@ -233,7 +232,7 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_dexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Dex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dex, allocator);
@@ -241,7 +240,7 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_soHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "So";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_so, allocator);
@@ -249,7 +248,7 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_buglyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bugly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bugly, allocator);
@@ -257,7 +256,7 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_antiRepackHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AntiRepack";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_antiRepack, allocator);
@@ -265,7 +264,7 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_seperateDexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SeperateDex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_seperateDex, allocator);
@@ -273,7 +272,7 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_dbHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Db";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_db, allocator);
@@ -281,7 +280,7 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_dexSigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DexSig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dexSig, allocator);
@@ -289,16 +288,16 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_soInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SoInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_soInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_antiVMPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AntiVMP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_antiVMP, allocator);
@@ -306,20 +305,20 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_soTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SoType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_soType.begin(); itr != m_soType.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_antiLogLeakHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AntiLogLeak";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_antiLogLeak, allocator);
@@ -327,7 +326,7 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_antiQemuRootHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AntiQemuRoot";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_antiQemuRoot, allocator);
@@ -335,7 +334,7 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_antiAssetsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AntiAssets";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_antiAssets, allocator);
@@ -343,7 +342,7 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_antiScreenshotHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AntiScreenshot";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_antiScreenshot, allocator);
@@ -351,7 +350,7 @@ void PlanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_antiSSLHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AntiSSL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_antiSSL, allocator);

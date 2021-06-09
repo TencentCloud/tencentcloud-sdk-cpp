@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 ServiceRegisterInfo::ServiceRegisterInfo() :
@@ -27,7 +26,7 @@ ServiceRegisterInfo::ServiceRegisterInfo() :
 {
 }
 
-CoreInternalOutcome ServiceRegisterInfo::Deserialize(const Value &value)
+CoreInternalOutcome ServiceRegisterInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome ServiceRegisterInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ServiceRegisterInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ServiceRegisterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cgiUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CgiUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cgiUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cgiUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serviceType, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Taf::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 OutputKolValue::OutputKolValue() :
@@ -29,7 +28,7 @@ OutputKolValue::OutputKolValue() :
 {
 }
 
-CoreInternalOutcome OutputKolValue::Deserialize(const Value &value)
+CoreInternalOutcome OutputKolValue::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome OutputKolValue::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OutputKolValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OutputKolValue::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isCheckHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsCheck";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCheck, allocator);
@@ -99,7 +98,7 @@ void OutputKolValue::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_fraudPScoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FraudPScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fraudPScore, allocator);
@@ -107,7 +106,7 @@ void OutputKolValue::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_evilPScoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilPScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilPScore, allocator);

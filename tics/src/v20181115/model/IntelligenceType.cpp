@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tics::V20181115::Model;
-using namespace rapidjson;
 using namespace std;
 
 IntelligenceType::IntelligenceType() :
@@ -28,7 +27,7 @@ IntelligenceType::IntelligenceType() :
 {
 }
 
-CoreInternalOutcome IntelligenceType::Deserialize(const Value &value)
+CoreInternalOutcome IntelligenceType::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome IntelligenceType::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IntelligenceType::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IntelligenceType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Source";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_source.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Stamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stamp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_time, allocator);

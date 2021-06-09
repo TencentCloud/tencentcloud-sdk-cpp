@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiw::V20190919::Model;
-using namespace rapidjson;
 using namespace std;
 
 StreamControl::StreamControl() :
@@ -29,7 +28,7 @@ StreamControl::StreamControl() :
 {
 }
 
-CoreInternalOutcome StreamControl::Deserialize(const Value &value)
+CoreInternalOutcome StreamControl::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome StreamControl::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StreamControl::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StreamControl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_streamIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_streamId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_streamId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_disableRecordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisableRecord";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disableRecord, allocator);
@@ -99,7 +98,7 @@ void StreamControl::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_disableAudioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisableAudio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disableAudio, allocator);
@@ -107,7 +106,7 @@ void StreamControl::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_pullSmallVideoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PullSmallVideo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pullSmallVideo, allocator);

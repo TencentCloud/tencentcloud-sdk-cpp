@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCcnInstancesResponse::DescribeCcnInstancesResponse() :
@@ -32,7 +31,7 @@ DescribeCcnInstancesResponse::DescribeCcnInstancesResponse() :
 
 CoreInternalOutcome DescribeCcnInstancesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeCcnInstancesResponse::Deserialize(const string &payl
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeCcnInstancesResponse::Deserialize(const string &payl
         if (!rsp["CcnInstanceSets"].IsArray())
             return CoreInternalOutcome(Error("response `CcnInstanceSets` is not array type"));
 
-        const Value &tmpValue = rsp["CcnInstanceSets"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["CcnInstanceSets"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CcnInstanceSets item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 FrameTagItem::FrameTagItem() :
@@ -29,7 +28,7 @@ FrameTagItem::FrameTagItem() :
 {
 }
 
-CoreInternalOutcome FrameTagItem::Deserialize(const Value &value)
+CoreInternalOutcome FrameTagItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome FrameTagItem::Deserialize(const Value &value)
         if (!value["TagItems"].IsArray())
             return CoreInternalOutcome(Error("response `FrameTagItem.TagItems` is not array type"));
 
-        const Value &tmpValue = value["TagItems"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TagItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TagItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,12 +87,12 @@ CoreInternalOutcome FrameTagItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FrameTagItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FrameTagItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startPtsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartPts";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startPts, allocator);
@@ -101,7 +100,7 @@ void FrameTagItem::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_endPtsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndPts";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endPts, allocator);
@@ -109,23 +108,23 @@ void FrameTagItem::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_periodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_period.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_period.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagItemsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagItems";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tagItems.begin(); itr != m_tagItems.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

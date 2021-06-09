@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Chdfs::V20190718::Model;
-using namespace rapidjson;
 using namespace std;
 
 AccessRule::AccessRule() :
@@ -30,7 +29,7 @@ AccessRule::AccessRule() :
 {
 }
 
-CoreInternalOutcome AccessRule::Deserialize(const Value &value)
+CoreInternalOutcome AccessRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome AccessRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AccessRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AccessRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_accessRuleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccessRuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accessRuleId, allocator);
@@ -102,15 +101,15 @@ void AccessRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_addressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Address";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_address.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
     }
 
     if (m_accessModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccessMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accessMode, allocator);
@@ -118,7 +117,7 @@ void AccessRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_priorityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Priority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_priority, allocator);
@@ -126,10 +125,10 @@ void AccessRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }

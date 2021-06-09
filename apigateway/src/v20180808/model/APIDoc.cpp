@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 APIDoc::APIDoc() :
@@ -28,7 +27,7 @@ APIDoc::APIDoc() :
 {
 }
 
-CoreInternalOutcome APIDoc::Deserialize(const Value &value)
+CoreInternalOutcome APIDoc::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome APIDoc::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void APIDoc::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void APIDoc::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_apiDocIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiDocId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_apiDocId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiDocId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_apiDocNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiDocName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_apiDocName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiDocName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_apiDocStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiDocStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_apiDocStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiDocStatus.c_str(), allocator).Move(), allocator);
     }
 
 }

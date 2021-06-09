@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClusterCIDRSettings::ClusterCIDRSettings() :
@@ -32,7 +31,7 @@ ClusterCIDRSettings::ClusterCIDRSettings() :
 {
 }
 
-CoreInternalOutcome ClusterCIDRSettings::Deserialize(const Value &value)
+CoreInternalOutcome ClusterCIDRSettings::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -92,8 +91,8 @@ CoreInternalOutcome ClusterCIDRSettings::Deserialize(const Value &value)
         if (!value["EniSubnetIds"].IsArray())
             return CoreInternalOutcome(Error("response `ClusterCIDRSettings.EniSubnetIds` is not array type"));
 
-        const Value &tmpValue = value["EniSubnetIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["EniSubnetIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_eniSubnetIds.push_back((*itr).GetString());
         }
@@ -114,20 +113,20 @@ CoreInternalOutcome ClusterCIDRSettings::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClusterCIDRSettings::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClusterCIDRSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_clusterCIDRHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterCIDR";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterCIDR.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterCIDR.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ignoreClusterCIDRConflictHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IgnoreClusterCIDRConflict";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ignoreClusterCIDRConflict, allocator);
@@ -135,7 +134,7 @@ void ClusterCIDRSettings::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_maxNodePodNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxNodePodNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxNodePodNum, allocator);
@@ -143,7 +142,7 @@ void ClusterCIDRSettings::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_maxClusterServiceNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxClusterServiceNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxClusterServiceNum, allocator);
@@ -151,28 +150,28 @@ void ClusterCIDRSettings::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_serviceCIDRHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceCIDR";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serviceCIDR.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceCIDR.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eniSubnetIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EniSubnetIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_eniSubnetIds.begin(); itr != m_eniSubnetIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_claimExpiredSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClaimExpiredSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_claimExpiredSeconds, allocator);

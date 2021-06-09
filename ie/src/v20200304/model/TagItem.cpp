@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 TagItem::TagItem() :
@@ -29,7 +28,7 @@ TagItem::TagItem() :
 {
 }
 
-CoreInternalOutcome TagItem::Deserialize(const Value &value)
+CoreInternalOutcome TagItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -59,8 +58,8 @@ CoreInternalOutcome TagItem::Deserialize(const Value &value)
         if (!value["Categorys"].IsArray())
             return CoreInternalOutcome(Error("response `TagItem.Categorys` is not array type"));
 
-        const Value &tmpValue = value["Categorys"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Categorys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_categorys.push_back((*itr).GetString());
         }
@@ -81,20 +80,20 @@ CoreInternalOutcome TagItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TagItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TagItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -102,23 +101,23 @@ void TagItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_categorysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Categorys";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_categorys.begin(); itr != m_categorys.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_extHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ext";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ext.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ext.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
-using namespace rapidjson;
 using namespace std;
 
 CSV::CSV() :
@@ -29,7 +28,7 @@ CSV::CSV() :
 {
 }
 
-CoreInternalOutcome CSV::Deserialize(const Value &value)
+CoreInternalOutcome CSV::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,29 +84,29 @@ CoreInternalOutcome CSV::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CSV::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CSV::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_codeCompressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CodeCompress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_codeCompress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codeCompress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cSVSerdeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CSVSerde";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cSVSerde.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_headLinesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeadLines";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_headLines, allocator);
@@ -115,10 +114,10 @@ void CSV::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_formatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Format";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_format.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ims::V20200713::Model;
-using namespace rapidjson;
 using namespace std;
 
 EvilCount::EvilCount() :
@@ -27,7 +26,7 @@ EvilCount::EvilCount() :
 {
 }
 
-CoreInternalOutcome EvilCount::Deserialize(const Value &value)
+CoreInternalOutcome EvilCount::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome EvilCount::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EvilCount::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EvilCount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_evilTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_evilType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_evilType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apcas::V20201127::Model;
-using namespace rapidjson;
 using namespace std;
 
 GeneralStat::GeneralStat() :
@@ -29,7 +28,7 @@ GeneralStat::GeneralStat() :
 {
 }
 
-CoreInternalOutcome GeneralStat::Deserialize(const Value &value)
+CoreInternalOutcome GeneralStat::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome GeneralStat::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GeneralStat::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GeneralStat::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_todayAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TodayAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_todayAmount, allocator);
@@ -91,7 +90,7 @@ void GeneralStat::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_weekAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WeekAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_weekAmount, allocator);
@@ -99,7 +98,7 @@ void GeneralStat::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_monthAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MonthAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_monthAmount, allocator);
@@ -107,7 +106,7 @@ void GeneralStat::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_totalAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalAmount, allocator);

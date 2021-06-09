@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ssl::V20191205::Model;
-using namespace rapidjson;
 using namespace std;
 
 RevokeDomainValidateAuths::RevokeDomainValidateAuths() :
@@ -29,7 +28,7 @@ RevokeDomainValidateAuths::RevokeDomainValidateAuths() :
 {
 }
 
-CoreInternalOutcome RevokeDomainValidateAuths::Deserialize(const Value &value)
+CoreInternalOutcome RevokeDomainValidateAuths::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome RevokeDomainValidateAuths::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RevokeDomainValidateAuths::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RevokeDomainValidateAuths::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_domainValidateAuthPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainValidateAuthPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domainValidateAuthPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainValidateAuthPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainValidateAuthKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainValidateAuthKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domainValidateAuthKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainValidateAuthKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainValidateAuthValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainValidateAuthValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domainValidateAuthValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainValidateAuthValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainValidateAuthDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainValidateAuthDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domainValidateAuthDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainValidateAuthDomain.c_str(), allocator).Move(), allocator);
     }
 
 }

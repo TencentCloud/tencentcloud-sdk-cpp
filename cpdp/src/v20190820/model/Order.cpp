@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 Order::Order() :
@@ -35,7 +34,7 @@ Order::Order() :
 {
 }
 
-CoreInternalOutcome Order::Deserialize(const Value &value)
+CoreInternalOutcome Order::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -135,8 +134,8 @@ CoreInternalOutcome Order::Deserialize(const Value &value)
         if (!value["Items"].IsArray())
             return CoreInternalOutcome(Error("response `Order.Items` is not array type"));
 
-        const Value &tmpValue = value["Items"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Items"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             OrderItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -154,12 +153,12 @@ CoreInternalOutcome Order::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Order::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Order::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_amountHasTaxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AmountHasTax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_amountHasTax, allocator);
@@ -167,7 +166,7 @@ void Order::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_discountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Discount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discount, allocator);
@@ -175,15 +174,15 @@ void Order::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_sellerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SellerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sellerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sellerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_invoiceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InvoiceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_invoiceType, allocator);
@@ -191,15 +190,15 @@ void Order::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_amountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Amount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_amount, allocator);
@@ -207,39 +206,39 @@ void Order::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_orderDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_orderDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_orderIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_orderId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storeNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StoreNo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_storeNo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storeNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_itemsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Items";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

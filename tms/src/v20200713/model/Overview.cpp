@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tms::V20200713::Model;
-using namespace rapidjson;
 using namespace std;
 
 Overview::Overview() :
@@ -33,7 +32,7 @@ Overview::Overview() :
 {
 }
 
-CoreInternalOutcome Overview::Deserialize(const Value &value)
+CoreInternalOutcome Overview::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome Overview::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Overview::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Overview::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -135,7 +134,7 @@ void Overview::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_totalHourHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalHour";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalHour, allocator);
@@ -143,7 +142,7 @@ void Overview::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_passCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PassCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_passCount, allocator);
@@ -151,7 +150,7 @@ void Overview::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_passHourHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PassHour";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_passHour, allocator);
@@ -159,7 +158,7 @@ void Overview::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_evilCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilCount, allocator);
@@ -167,7 +166,7 @@ void Overview::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_evilHourHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilHour";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilHour, allocator);
@@ -175,7 +174,7 @@ void Overview::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_suspectCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuspectCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_suspectCount, allocator);
@@ -183,7 +182,7 @@ void Overview::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_suspectHourHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuspectHour";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_suspectHour, allocator);

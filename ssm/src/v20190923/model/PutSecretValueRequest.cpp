@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Ssm::V20190923::Model;
-using namespace rapidjson;
 using namespace std;
 
 PutSecretValueRequest::PutSecretValueRequest() :
@@ -33,46 +32,46 @@ PutSecretValueRequest::PutSecretValueRequest() :
 
 string PutSecretValueRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_secretNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecretName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_secretName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_versionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VersionId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_versionId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_secretBinaryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecretBinary";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_secretBinary.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretBinary.c_str(), allocator).Move(), allocator);
     }
 
     if (m_secretStringHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecretString";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_secretString.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretString.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

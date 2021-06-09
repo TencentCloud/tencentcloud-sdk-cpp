@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 QualityControlInfoTaskResult::QualityControlInfoTaskResult() :
@@ -45,7 +44,7 @@ QualityControlInfoTaskResult::QualityControlInfoTaskResult() :
 {
 }
 
-CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const Value &value)
+CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -135,8 +134,8 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const Value &value
         if (!value["QualityEvaluationResults"].IsArray())
             return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.QualityEvaluationResults` is not array type"));
 
-        const Value &tmpValue = value["QualityEvaluationResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["QualityEvaluationResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             QualityControlResultItems item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -155,8 +154,8 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const Value &value
         if (!value["JitterResults"].IsArray())
             return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.JitterResults` is not array type"));
 
-        const Value &tmpValue = value["JitterResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["JitterResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             QualityControlResultItems item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -175,8 +174,8 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const Value &value
         if (!value["BlurResults"].IsArray())
             return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.BlurResults` is not array type"));
 
-        const Value &tmpValue = value["BlurResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BlurResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             QualityControlResultItems item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -195,8 +194,8 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const Value &value
         if (!value["AbnormalLightingResults"].IsArray())
             return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.AbnormalLightingResults` is not array type"));
 
-        const Value &tmpValue = value["AbnormalLightingResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AbnormalLightingResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             QualityControlResultItems item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -215,8 +214,8 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const Value &value
         if (!value["CrashScreenResults"].IsArray())
             return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.CrashScreenResults` is not array type"));
 
-        const Value &tmpValue = value["CrashScreenResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CrashScreenResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             QualityControlResultItems item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -235,8 +234,8 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const Value &value
         if (!value["BlackWhiteEdgeResults"].IsArray())
             return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.BlackWhiteEdgeResults` is not array type"));
 
-        const Value &tmpValue = value["BlackWhiteEdgeResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BlackWhiteEdgeResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             QualityControlResultItems item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -255,8 +254,8 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const Value &value
         if (!value["NoiseResults"].IsArray())
             return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.NoiseResults` is not array type"));
 
-        const Value &tmpValue = value["NoiseResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["NoiseResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             QualityControlResultItems item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -275,8 +274,8 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const Value &value
         if (!value["MosaicResults"].IsArray())
             return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.MosaicResults` is not array type"));
 
-        const Value &tmpValue = value["MosaicResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MosaicResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             QualityControlResultItems item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -295,8 +294,8 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const Value &value
         if (!value["QRCodeResults"].IsArray())
             return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.QRCodeResults` is not array type"));
 
-        const Value &tmpValue = value["QRCodeResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["QRCodeResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             QualityControlResultItems item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -315,8 +314,8 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const Value &value
         if (!value["VoiceResults"].IsArray())
             return CoreInternalOutcome(Error("response `QualityControlInfoTaskResult.VoiceResults` is not array type"));
 
-        const Value &tmpValue = value["VoiceResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["VoiceResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             QualityControlResultItems item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -354,20 +353,20 @@ CoreInternalOutcome QualityControlInfoTaskResult::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void QualityControlInfoTaskResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QualityControlInfoTaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -375,7 +374,7 @@ void QualityControlInfoTaskResult::ToJsonObject(Value &value, Document::Allocato
 
     if (m_progressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
@@ -383,7 +382,7 @@ void QualityControlInfoTaskResult::ToJsonObject(Value &value, Document::Allocato
 
     if (m_usedTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedTime, allocator);
@@ -391,7 +390,7 @@ void QualityControlInfoTaskResult::ToJsonObject(Value &value, Document::Allocato
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -399,7 +398,7 @@ void QualityControlInfoTaskResult::ToJsonObject(Value &value, Document::Allocato
 
     if (m_noAudioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NoAudio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_noAudio, allocator);
@@ -407,7 +406,7 @@ void QualityControlInfoTaskResult::ToJsonObject(Value &value, Document::Allocato
 
     if (m_noVideoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NoVideo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_noVideo, allocator);
@@ -415,7 +414,7 @@ void QualityControlInfoTaskResult::ToJsonObject(Value &value, Document::Allocato
 
     if (m_qualityEvaluationScoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QualityEvaluationScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qualityEvaluationScore, allocator);
@@ -423,157 +422,157 @@ void QualityControlInfoTaskResult::ToJsonObject(Value &value, Document::Allocato
 
     if (m_qualityEvaluationResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QualityEvaluationResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_qualityEvaluationResults.begin(); itr != m_qualityEvaluationResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_jitterResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JitterResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_jitterResults.begin(); itr != m_jitterResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_blurResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlurResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_blurResults.begin(); itr != m_blurResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_abnormalLightingResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AbnormalLightingResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_abnormalLightingResults.begin(); itr != m_abnormalLightingResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_crashScreenResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CrashScreenResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_crashScreenResults.begin(); itr != m_crashScreenResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_blackWhiteEdgeResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlackWhiteEdgeResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_blackWhiteEdgeResults.begin(); itr != m_blackWhiteEdgeResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_noiseResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NoiseResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_noiseResults.begin(); itr != m_noiseResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_mosaicResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MosaicResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_mosaicResults.begin(); itr != m_mosaicResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_qRCodeResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QRCodeResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_qRCodeResults.begin(); itr != m_qRCodeResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_voiceResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VoiceResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_voiceResults.begin(); itr != m_voiceResults.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_errCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_errCode, allocator);
@@ -581,10 +580,10 @@ void QualityControlInfoTaskResult::ToJsonObject(Value &value, Document::Allocato
 
     if (m_errMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageData::ImageData() :
@@ -37,7 +36,7 @@ ImageData::ImageData() :
 {
 }
 
-CoreInternalOutcome ImageData::Deserialize(const Value &value)
+CoreInternalOutcome ImageData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -236,12 +235,12 @@ CoreInternalOutcome ImageData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_evilFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilFlag, allocator);
@@ -249,7 +248,7 @@ void ImageData::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_evilTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilType, allocator);
@@ -257,91 +256,91 @@ void ImageData::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_codeDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CodeDetect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_codeDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_hotDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HotDetect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hotDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_illegalDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IllegalDetect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_illegalDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_logoDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogoDetect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logoDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_oCRDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OCRDetect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_oCRDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_phoneDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PhoneDetect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_phoneDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_polityDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolityDetect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_polityDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_pornDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PornDetect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_pornDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_similarHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Similar";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_similar.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_terrorDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TerrorDetect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_terrorDetect.ToJsonObject(value[key.c_str()], allocator);
     }
 

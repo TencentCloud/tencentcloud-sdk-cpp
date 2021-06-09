@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResourceInfo::ResourceInfo() :
@@ -32,7 +31,7 @@ ResourceInfo::ResourceInfo() :
 {
 }
 
-CoreInternalOutcome ResourceInfo::Deserialize(const Value &value)
+CoreInternalOutcome ResourceInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -118,20 +117,20 @@ CoreInternalOutcome ResourceInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResourceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pid, allocator);
@@ -139,7 +138,7 @@ void ResourceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -147,7 +146,7 @@ void ResourceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expireTime, allocator);
@@ -155,7 +154,7 @@ void ResourceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_isBindHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsBind";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isBind, allocator);
@@ -163,19 +162,19 @@ void ResourceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_bindInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BindInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bindInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_resourceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
     }
 
 }

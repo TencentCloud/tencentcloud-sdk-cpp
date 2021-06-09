@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiw::V20190919::Model;
-using namespace rapidjson;
 using namespace std;
 
 LayoutParams::LayoutParams() :
@@ -30,7 +29,7 @@ LayoutParams::LayoutParams() :
 {
 }
 
-CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
+CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome LayoutParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LayoutParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -102,7 +101,7 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -110,7 +109,7 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_xHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "X";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_x, allocator);
@@ -118,7 +117,7 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_yHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Y";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_y, allocator);
@@ -126,7 +125,7 @@ void LayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_zOrderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZOrder";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zOrder, allocator);

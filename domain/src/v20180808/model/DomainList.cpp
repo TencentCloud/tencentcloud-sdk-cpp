@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Domain::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 DomainList::DomainList() :
@@ -34,7 +33,7 @@ DomainList::DomainList() :
 {
 }
 
-CoreInternalOutcome DomainList::Deserialize(const Value &value)
+CoreInternalOutcome DomainList::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome DomainList::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DomainList::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DomainList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_isPremiumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsPremium";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isPremium, allocator);
@@ -146,23 +145,23 @@ void DomainList::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_domainIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domainId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domainName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoRenewHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoRenew";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRenew, allocator);
@@ -170,42 +169,42 @@ void DomainList::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_creationDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreationDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creationDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creationDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expirationDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpirationDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_expirationDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expirationDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tldHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tld";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tld.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tld.c_str(), allocator).Move(), allocator);
     }
 
     if (m_codeTldHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CodeTld";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_codeTld.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codeTld.c_str(), allocator).Move(), allocator);
     }
 
     if (m_buyStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BuyStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_buyStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buyStatus.c_str(), allocator).Move(), allocator);
     }
 
 }

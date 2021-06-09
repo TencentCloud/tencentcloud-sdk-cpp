@@ -119,6 +119,8 @@
 #include <tencentcloud/cdn/v20180606/model/ListTopDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsRequest.h>
 #include <tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsResponse.h>
+#include <tencentcloud/cdn/v20180606/model/ModifyPurgeFetchTaskStatusRequest.h>
+#include <tencentcloud/cdn/v20180606/model/ModifyPurgeFetchTaskStatusResponse.h>
 #include <tencentcloud/cdn/v20180606/model/PurgePathCacheRequest.h>
 #include <tencentcloud/cdn/v20180606/model/PurgePathCacheResponse.h>
 #include <tencentcloud/cdn/v20180606/model/PurgeUrlsCacheRequest.h>
@@ -303,6 +305,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ManageClsTopicDomainsResponse> ManageClsTopicDomainsOutcome;
                 typedef std::future<ManageClsTopicDomainsOutcome> ManageClsTopicDomainsOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::ManageClsTopicDomainsRequest&, ManageClsTopicDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageClsTopicDomainsAsyncHandler;
+                typedef Outcome<Error, Model::ModifyPurgeFetchTaskStatusResponse> ModifyPurgeFetchTaskStatusOutcome;
+                typedef std::future<ModifyPurgeFetchTaskStatusOutcome> ModifyPurgeFetchTaskStatusOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::ModifyPurgeFetchTaskStatusRequest&, ModifyPurgeFetchTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPurgeFetchTaskStatusAsyncHandler;
                 typedef Outcome<Error, Model::PurgePathCacheResponse> PurgePathCacheOutcome;
                 typedef std::future<PurgePathCacheOutcome> PurgePathCacheOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::PurgePathCacheRequest&, PurgePathCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurgePathCacheAsyncHandler;
@@ -814,6 +819,15 @@ namespace TencentCloud
                 ManageClsTopicDomainsOutcome ManageClsTopicDomains(const Model::ManageClsTopicDomainsRequest &request);
                 void ManageClsTopicDomainsAsync(const Model::ManageClsTopicDomainsRequest& request, const ManageClsTopicDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ManageClsTopicDomainsOutcomeCallable ManageClsTopicDomainsCallable(const Model::ManageClsTopicDomainsRequest& request);
+
+                /**
+                 *ModifyPurgeFetchTaskStatus 用于上报定时刷新预热任务执行状态
+                 * @param req ModifyPurgeFetchTaskStatusRequest
+                 * @return ModifyPurgeFetchTaskStatusOutcome
+                 */
+                ModifyPurgeFetchTaskStatusOutcome ModifyPurgeFetchTaskStatus(const Model::ModifyPurgeFetchTaskStatusRequest &request);
+                void ModifyPurgeFetchTaskStatusAsync(const Model::ModifyPurgeFetchTaskStatusRequest& request, const ModifyPurgeFetchTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPurgeFetchTaskStatusOutcomeCallable ModifyPurgeFetchTaskStatusCallable(const Model::ModifyPurgeFetchTaskStatusRequest& request);
 
                 /**
                  *PurgePathCache 用于批量提交目录刷新，根据域名的加速区域进行对应区域的刷新。

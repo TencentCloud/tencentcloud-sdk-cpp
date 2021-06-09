@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 Blueprint::Blueprint() :
@@ -40,7 +39,7 @@ Blueprint::Blueprint() :
 {
 }
 
-CoreInternalOutcome Blueprint::Deserialize(const Value &value)
+CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -199,84 +198,84 @@ CoreInternalOutcome Blueprint::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Blueprint::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Blueprint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_blueprintIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlueprintId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_blueprintId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_blueprintId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_displayTitleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisplayTitle";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_displayTitle.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_displayTitle.c_str(), allocator).Move(), allocator);
     }
 
     if (m_displayVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisplayVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_displayVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_displayVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_osNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OsName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_osName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_platformHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Platform";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_platform.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_platform.c_str(), allocator).Move(), allocator);
     }
 
     if (m_platformTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlatformType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_platformType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_platformType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_blueprintTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlueprintType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_blueprintType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_blueprintType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_requiredSystemDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RequiredSystemDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_requiredSystemDiskSize, allocator);
@@ -284,31 +283,31 @@ void Blueprint::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_blueprintStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlueprintState";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_blueprintState.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_blueprintState.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_blueprintNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlueprintName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_blueprintName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_blueprintName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_supportAutomationToolsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SupportAutomationTools";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportAutomationTools, allocator);
@@ -316,7 +315,7 @@ void Blueprint::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_requiredMemorySizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RequiredMemorySize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_requiredMemorySize, allocator);

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ape::V20200513::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeImageResponse::DescribeImageResponse() :
@@ -44,7 +43,7 @@ DescribeImageResponse::DescribeImageResponse() :
 
 CoreInternalOutcome DescribeImageResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -54,7 +53,7 @@ CoreInternalOutcome DescribeImageResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -141,8 +140,8 @@ CoreInternalOutcome DescribeImageResponse::Deserialize(const string &payload)
         if (!rsp["Marshals"].IsArray())
             return CoreInternalOutcome(Error("response `Marshals` is not array type"));
 
-        const Value &tmpValue = rsp["Marshals"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Marshals"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ImageMarshal item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

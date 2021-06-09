@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 InternetAccessible::InternetAccessible() :
@@ -28,7 +27,7 @@ InternetAccessible::InternetAccessible() :
 {
 }
 
-CoreInternalOutcome InternetAccessible::Deserialize(const Value &value)
+CoreInternalOutcome InternetAccessible::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome InternetAccessible::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InternetAccessible::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InternetAccessible::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_internetChargeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InternetChargeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_internetChargeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internetChargeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_internetMaxBandwidthOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InternetMaxBandwidthOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_internetMaxBandwidthOut, allocator);
@@ -88,7 +87,7 @@ void InternetAccessible::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_publicIpAssignedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicIpAssigned";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publicIpAssigned, allocator);

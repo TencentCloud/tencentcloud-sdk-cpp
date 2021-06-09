@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateL7Listener::CreateL7Listener() :
@@ -38,7 +37,7 @@ CreateL7Listener::CreateL7Listener() :
 {
 }
 
-CoreInternalOutcome CreateL7Listener::Deserialize(const Value &value)
+CoreInternalOutcome CreateL7Listener::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -177,12 +176,12 @@ CoreInternalOutcome CreateL7Listener::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CreateL7Listener::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CreateL7Listener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_loadBalancerPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoadBalancerPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loadBalancerPort, allocator);
@@ -190,23 +189,23 @@ void CreateL7Listener::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_listenerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_listenerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listenerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sslModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SslMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sslMode, allocator);
@@ -214,63 +213,63 @@ void CreateL7Listener::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_certIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certContent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certCaIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertCaId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certCaId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certCaId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certCaNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertCaName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certCaName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certCaName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certCaContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertCaContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certCaContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certCaContent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
@@ -278,7 +277,7 @@ void CreateL7Listener::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_forwardProtocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ForwardProtocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forwardProtocol, allocator);

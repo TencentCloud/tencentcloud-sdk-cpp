@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 AudioInfo::AudioInfo() :
@@ -34,7 +33,7 @@ AudioInfo::AudioInfo() :
 {
 }
 
-CoreInternalOutcome AudioInfo::Deserialize(const Value &value)
+CoreInternalOutcome AudioInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -161,12 +160,12 @@ CoreInternalOutcome AudioInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AudioInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AudioInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bitrate, allocator);
@@ -174,15 +173,15 @@ void AudioInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_codecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Codec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_codec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_channel, allocator);
@@ -190,7 +189,7 @@ void AudioInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_sampleRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SampleRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sampleRate, allocator);
@@ -198,16 +197,16 @@ void AudioInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_denoiseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Denoise";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_denoise.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_enableMuteAudioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableMuteAudio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableMuteAudio, allocator);
@@ -215,28 +214,28 @@ void AudioInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_loudnessInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoudnessInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_loudnessInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_audioEnhanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioEnhance";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_audioEnhance.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_removeReverbHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RemoveReverb";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_removeReverb.ToJsonObject(value[key.c_str()], allocator);
     }
 

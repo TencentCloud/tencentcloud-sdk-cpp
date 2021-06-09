@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sslpod::V20190605::Model;
-using namespace rapidjson;
 using namespace std;
 
 DashboardResult::DashboardResult() :
@@ -31,7 +30,7 @@ DashboardResult::DashboardResult() :
 {
 }
 
-CoreInternalOutcome DashboardResult::Deserialize(const Value &value)
+CoreInternalOutcome DashboardResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -41,8 +40,8 @@ CoreInternalOutcome DashboardResult::Deserialize(const Value &value)
         if (!value["SecurityLevelPie"].IsArray())
             return CoreInternalOutcome(Error("response `DashboardResult.SecurityLevelPie` is not array type"));
 
-        const Value &tmpValue = value["SecurityLevelPie"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SecurityLevelPie"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ChartNameValue item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -61,8 +60,8 @@ CoreInternalOutcome DashboardResult::Deserialize(const Value &value)
         if (!value["CertBrandsPie"].IsArray())
             return CoreInternalOutcome(Error("response `DashboardResult.CertBrandsPie` is not array type"));
 
-        const Value &tmpValue = value["CertBrandsPie"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CertBrandsPie"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ChartNameValue item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -81,8 +80,8 @@ CoreInternalOutcome DashboardResult::Deserialize(const Value &value)
         if (!value["CertValidTimePie"].IsArray())
             return CoreInternalOutcome(Error("response `DashboardResult.CertValidTimePie` is not array type"));
 
-        const Value &tmpValue = value["CertValidTimePie"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CertValidTimePie"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ChartNameValue item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -101,8 +100,8 @@ CoreInternalOutcome DashboardResult::Deserialize(const Value &value)
         if (!value["CertTypePie"].IsArray())
             return CoreInternalOutcome(Error("response `DashboardResult.CertTypePie` is not array type"));
 
-        const Value &tmpValue = value["CertTypePie"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CertTypePie"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ChartNameValue item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -121,8 +120,8 @@ CoreInternalOutcome DashboardResult::Deserialize(const Value &value)
         if (!value["SSLBugsLoopholeHistogram"].IsArray())
             return CoreInternalOutcome(Error("response `DashboardResult.SSLBugsLoopholeHistogram` is not array type"));
 
-        const Value &tmpValue = value["SSLBugsLoopholeHistogram"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SSLBugsLoopholeHistogram"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ChartHistogram item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -141,8 +140,8 @@ CoreInternalOutcome DashboardResult::Deserialize(const Value &value)
         if (!value["ComplianceHistogram"].IsArray())
             return CoreInternalOutcome(Error("response `DashboardResult.ComplianceHistogram` is not array type"));
 
-        const Value &tmpValue = value["ComplianceHistogram"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ComplianceHistogram"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ChartHistogram item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -160,95 +159,95 @@ CoreInternalOutcome DashboardResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DashboardResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DashboardResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_securityLevelPieHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityLevelPie";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_securityLevelPie.begin(); itr != m_securityLevelPie.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_certBrandsPieHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertBrandsPie";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_certBrandsPie.begin(); itr != m_certBrandsPie.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_certValidTimePieHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertValidTimePie";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_certValidTimePie.begin(); itr != m_certValidTimePie.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_certTypePieHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertTypePie";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_certTypePie.begin(); itr != m_certTypePie.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_sSLBugsLoopholeHistogramHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SSLBugsLoopholeHistogram";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_sSLBugsLoopholeHistogram.begin(); itr != m_sSLBugsLoopholeHistogram.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_complianceHistogramHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComplianceHistogram";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_complianceHistogram.begin(); itr != m_complianceHistogram.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

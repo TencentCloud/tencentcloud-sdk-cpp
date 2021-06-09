@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tem::V20201221::Model;
-using namespace rapidjson;
 using namespace std;
 
 LogOutputConf::LogOutputConf() :
@@ -30,7 +29,7 @@ LogOutputConf::LogOutputConf() :
 {
 }
 
-CoreInternalOutcome LogOutputConf::Deserialize(const Value &value)
+CoreInternalOutcome LogOutputConf::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,47 +88,47 @@ CoreInternalOutcome LogOutputConf::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LogOutputConf::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LogOutputConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_outputTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outputType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clsLogsetNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClsLogsetName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clsLogsetName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clsLogsetName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clsLogTopicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClsLogTopicId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clsLogTopicId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clsLogTopicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clsLogsetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClsLogsetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clsLogsetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clsLogsetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clsLogTopicNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClsLogTopicName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clsLogTopicName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clsLogTopicName.c_str(), allocator).Move(), allocator);
     }
 
 }

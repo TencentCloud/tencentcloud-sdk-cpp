@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceAttrResult::FaceAttrResult() :
@@ -27,7 +26,7 @@ FaceAttrResult::FaceAttrResult() :
 {
 }
 
-CoreInternalOutcome FaceAttrResult::Deserialize(const Value &value)
+CoreInternalOutcome FaceAttrResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome FaceAttrResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FaceAttrResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FaceAttrResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Age";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_age, allocator);
@@ -69,10 +68,10 @@ void FaceAttrResult::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_sexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sex";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sex.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sex.c_str(), allocator).Move(), allocator);
     }
 
 }

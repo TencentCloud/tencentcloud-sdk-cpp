@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::As::V20180419::Model;
-using namespace rapidjson;
 using namespace std;
 
 UpgradeLifecycleHookRequest::UpgradeLifecycleHookRequest() :
@@ -37,46 +36,46 @@ UpgradeLifecycleHookRequest::UpgradeLifecycleHookRequest() :
 
 string UpgradeLifecycleHookRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_lifecycleHookIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifecycleHookId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_lifecycleHookId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lifecycleHookId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lifecycleHookNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifecycleHookName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_lifecycleHookName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lifecycleHookName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lifecycleTransitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifecycleTransition";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_lifecycleTransition.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lifecycleTransition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_defaultResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultResult";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_defaultResult.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_defaultResult.c_str(), allocator).Move(), allocator);
     }
 
     if (m_heartbeatTimeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeartbeatTimeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_heartbeatTimeout, allocator);
@@ -84,32 +83,32 @@ string UpgradeLifecycleHookRequest::ToJsonString() const
 
     if (m_notificationMetadataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotificationMetadata";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_notificationMetadata.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_notificationMetadata.c_str(), allocator).Move(), allocator);
     }
 
     if (m_notificationTargetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotificationTarget";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_notificationTarget.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_lifecycleTransitionTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifecycleTransitionType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_lifecycleTransitionType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lifecycleTransitionType.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

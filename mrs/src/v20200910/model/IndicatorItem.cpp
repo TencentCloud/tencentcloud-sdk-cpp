@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 IndicatorItem::IndicatorItem() :
@@ -34,7 +33,7 @@ IndicatorItem::IndicatorItem() :
 {
 }
 
-CoreInternalOutcome IndicatorItem::Deserialize(const Value &value)
+CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,76 +132,76 @@ CoreInternalOutcome IndicatorItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IndicatorItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IndicatorItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_codeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_code.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Scode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_snameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sname";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sname.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sname.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_result.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
     }
 
     if (m_unitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Unit";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_unit.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rangeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Range";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_range.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_range.c_str(), allocator).Move(), allocator);
     }
 
     if (m_arrowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Arrow";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_arrow.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arrow.c_str(), allocator).Move(), allocator);
     }
 
     if (m_normalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Normal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_normal, allocator);

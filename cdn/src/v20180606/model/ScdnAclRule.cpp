@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScdnAclRule::ScdnAclRule() :
@@ -28,7 +27,7 @@ ScdnAclRule::ScdnAclRule() :
 {
 }
 
-CoreInternalOutcome ScdnAclRule::Deserialize(const Value &value)
+CoreInternalOutcome ScdnAclRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome ScdnAclRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScdnAclRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScdnAclRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_matchKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_matchKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_logiOperatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogiOperator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_logiOperator.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logiOperator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_matchValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_matchValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchValue.c_str(), allocator).Move(), allocator);
     }
 
 }

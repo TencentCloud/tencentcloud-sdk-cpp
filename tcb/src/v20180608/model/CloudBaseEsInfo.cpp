@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloudBaseEsInfo::CloudBaseEsInfo() :
@@ -32,7 +31,7 @@ CloudBaseEsInfo::CloudBaseEsInfo() :
 {
 }
 
-CoreInternalOutcome CloudBaseEsInfo::Deserialize(const Value &value)
+CoreInternalOutcome CloudBaseEsInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome CloudBaseEsInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CloudBaseEsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloudBaseEsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -124,23 +123,23 @@ void CloudBaseEsInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_secretNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecretName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secretName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
@@ -148,26 +147,26 @@ void CloudBaseEsInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_indexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Index";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_index.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_index.c_str(), allocator).Move(), allocator);
     }
 
     if (m_accountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Account";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_account.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_account.c_str(), allocator).Move(), allocator);
     }
 
     if (m_passwordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
     }
 
 }

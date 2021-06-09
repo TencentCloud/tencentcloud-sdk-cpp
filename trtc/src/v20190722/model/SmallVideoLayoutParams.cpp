@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 SmallVideoLayoutParams::SmallVideoLayoutParams() :
@@ -31,7 +30,7 @@ SmallVideoLayoutParams::SmallVideoLayoutParams() :
 {
 }
 
-CoreInternalOutcome SmallVideoLayoutParams::Deserialize(const Value &value)
+CoreInternalOutcome SmallVideoLayoutParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,20 +99,20 @@ CoreInternalOutcome SmallVideoLayoutParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SmallVideoLayoutParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SmallVideoLayoutParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_userIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_streamTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_streamType, allocator);
@@ -121,7 +120,7 @@ void SmallVideoLayoutParams::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_imageWidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageWidth, allocator);
@@ -129,7 +128,7 @@ void SmallVideoLayoutParams::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_imageHeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageHeight, allocator);
@@ -137,7 +136,7 @@ void SmallVideoLayoutParams::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_locationXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocationX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_locationX, allocator);
@@ -145,7 +144,7 @@ void SmallVideoLayoutParams::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_locationYHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocationY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_locationY, allocator);

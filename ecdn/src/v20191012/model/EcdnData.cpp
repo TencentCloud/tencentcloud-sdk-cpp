@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecdn::V20191012::Model;
-using namespace rapidjson;
 using namespace std;
 
 EcdnData::EcdnData() :
@@ -27,7 +26,7 @@ EcdnData::EcdnData() :
 {
 }
 
-CoreInternalOutcome EcdnData::Deserialize(const Value &value)
+CoreInternalOutcome EcdnData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome EcdnData::Deserialize(const Value &value)
         if (!value["Metrics"].IsArray())
             return CoreInternalOutcome(Error("response `EcdnData.Metrics` is not array type"));
 
-        const Value &tmpValue = value["Metrics"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Metrics"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_metrics.push_back((*itr).GetString());
         }
@@ -50,8 +49,8 @@ CoreInternalOutcome EcdnData::Deserialize(const Value &value)
         if (!value["DetailData"].IsArray())
             return CoreInternalOutcome(Error("response `EcdnData.DetailData` is not array type"));
 
-        const Value &tmpValue = value["DetailData"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DetailData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TimestampData item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -69,33 +68,33 @@ CoreInternalOutcome EcdnData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EcdnData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EcdnData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_metricsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Metrics";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_metrics.begin(); itr != m_metrics.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_detailDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DetailData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_detailData.begin(); itr != m_detailData.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

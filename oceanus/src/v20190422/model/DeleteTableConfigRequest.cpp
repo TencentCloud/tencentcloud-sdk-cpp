@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Oceanus::V20190422::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeleteTableConfigRequest::DeleteTableConfigRequest() :
@@ -32,22 +31,22 @@ DeleteTableConfigRequest::DeleteTableConfigRequest() :
 
 string DeleteTableConfigRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_jobIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_jobId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_debugIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DebugId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_debugId, allocator);
@@ -55,15 +54,15 @@ string DeleteTableConfigRequest::ToJsonString() const
 
     if (m_tableNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_tableName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

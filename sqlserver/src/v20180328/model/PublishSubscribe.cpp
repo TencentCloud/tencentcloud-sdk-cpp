@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 PublishSubscribe::PublishSubscribe() :
@@ -34,7 +33,7 @@ PublishSubscribe::PublishSubscribe() :
 {
 }
 
-CoreInternalOutcome PublishSubscribe::Deserialize(const Value &value)
+CoreInternalOutcome PublishSubscribe::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -124,8 +123,8 @@ CoreInternalOutcome PublishSubscribe::Deserialize(const Value &value)
         if (!value["DatabaseTupleSet"].IsArray())
             return CoreInternalOutcome(Error("response `PublishSubscribe.DatabaseTupleSet` is not array type"));
 
-        const Value &tmpValue = value["DatabaseTupleSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DatabaseTupleSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DatabaseTupleStatus item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -143,12 +142,12 @@ CoreInternalOutcome PublishSubscribe::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PublishSubscribe::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PublishSubscribe::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -156,71 +155,71 @@ void PublishSubscribe::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publishInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_publishInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publishInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publishInstanceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishInstanceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_publishInstanceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publishInstanceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publishInstanceIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishInstanceIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_publishInstanceIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publishInstanceIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subscribeInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubscribeInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subscribeInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subscribeInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subscribeInstanceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubscribeInstanceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subscribeInstanceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subscribeInstanceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subscribeInstanceIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubscribeInstanceIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subscribeInstanceIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subscribeInstanceIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_databaseTupleSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DatabaseTupleSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_databaseTupleSet.begin(); itr != m_databaseTupleSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

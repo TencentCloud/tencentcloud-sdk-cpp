@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20190725::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeBackupDownloadTaskResponse::DescribeBackupDownloadTaskResponse() :
@@ -32,7 +31,7 @@ DescribeBackupDownloadTaskResponse::DescribeBackupDownloadTaskResponse() :
 
 CoreInternalOutcome DescribeBackupDownloadTaskResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeBackupDownloadTaskResponse::Deserialize(const string
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeBackupDownloadTaskResponse::Deserialize(const string
         if (!rsp["Tasks"].IsArray())
             return CoreInternalOutcome(Error("response `Tasks` is not array type"));
 
-        const Value &tmpValue = rsp["Tasks"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Tasks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             BackupDownloadTask item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecdn::V20191012::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResourceData::ResourceData() :
@@ -27,7 +26,7 @@ ResourceData::ResourceData() :
 {
 }
 
-CoreInternalOutcome ResourceData::Deserialize(const Value &value)
+CoreInternalOutcome ResourceData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome ResourceData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResourceData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResourceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Resource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resource.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ecdnDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EcdnData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ecdnData.ToJsonObject(value[key.c_str()], allocator);
     }
 

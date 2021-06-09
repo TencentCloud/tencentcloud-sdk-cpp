@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProIspPlayCodeDataInfo::ProIspPlayCodeDataInfo() :
@@ -32,7 +31,7 @@ ProIspPlayCodeDataInfo::ProIspPlayCodeDataInfo() :
 {
 }
 
-CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const Value &value)
+CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,36 +110,36 @@ CoreInternalOutcome ProIspPlayCodeDataInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProIspPlayCodeDataInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProIspPlayCodeDataInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_countryAreaNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CountryAreaName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_countryAreaName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_countryAreaName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_provinceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProvinceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_provinceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_provinceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ispNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IspName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ispName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ispName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_code2xxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code2xx";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_code2xx, allocator);
@@ -148,7 +147,7 @@ void ProIspPlayCodeDataInfo::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_code3xxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code3xx";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_code3xx, allocator);
@@ -156,7 +155,7 @@ void ProIspPlayCodeDataInfo::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_code4xxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code4xx";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_code4xx, allocator);
@@ -164,7 +163,7 @@ void ProIspPlayCodeDataInfo::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_code5xxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code5xx";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_code5xx, allocator);

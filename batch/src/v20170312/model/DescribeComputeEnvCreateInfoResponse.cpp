@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeComputeEnvCreateInfoResponse::DescribeComputeEnvCreateInfoResponse() :
@@ -41,7 +40,7 @@ DescribeComputeEnvCreateInfoResponse::DescribeComputeEnvCreateInfoResponse() :
 
 CoreInternalOutcome DescribeComputeEnvCreateInfoResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -51,7 +50,7 @@ CoreInternalOutcome DescribeComputeEnvCreateInfoResponse::Deserialize(const stri
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -135,8 +134,8 @@ CoreInternalOutcome DescribeComputeEnvCreateInfoResponse::Deserialize(const stri
         if (!rsp["MountDataDisks"].IsArray())
             return CoreInternalOutcome(Error("response `MountDataDisks` is not array type"));
 
-        const Value &tmpValue = rsp["MountDataDisks"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["MountDataDisks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MountDataDisk item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -155,8 +154,8 @@ CoreInternalOutcome DescribeComputeEnvCreateInfoResponse::Deserialize(const stri
         if (!rsp["InputMappings"].IsArray())
             return CoreInternalOutcome(Error("response `InputMappings` is not array type"));
 
-        const Value &tmpValue = rsp["InputMappings"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["InputMappings"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InputMapping item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -175,8 +174,8 @@ CoreInternalOutcome DescribeComputeEnvCreateInfoResponse::Deserialize(const stri
         if (!rsp["Authentications"].IsArray())
             return CoreInternalOutcome(Error("response `Authentications` is not array type"));
 
-        const Value &tmpValue = rsp["Authentications"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Authentications"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Authentication item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -195,8 +194,8 @@ CoreInternalOutcome DescribeComputeEnvCreateInfoResponse::Deserialize(const stri
         if (!rsp["Notifications"].IsArray())
             return CoreInternalOutcome(Error("response `Notifications` is not array type"));
 
-        const Value &tmpValue = rsp["Notifications"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Notifications"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Notification item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -225,8 +224,8 @@ CoreInternalOutcome DescribeComputeEnvCreateInfoResponse::Deserialize(const stri
         if (!rsp["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `Tags` is not array type"));
 
-        const Value &tmpValue = rsp["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Tag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

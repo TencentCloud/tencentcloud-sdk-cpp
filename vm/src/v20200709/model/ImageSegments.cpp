@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vm::V20200709::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageSegments::ImageSegments() :
@@ -27,7 +26,7 @@ ImageSegments::ImageSegments() :
 {
 }
 
-CoreInternalOutcome ImageSegments::Deserialize(const Value &value)
+CoreInternalOutcome ImageSegments::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome ImageSegments::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageSegments::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageSegments::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_offsetTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OffsetTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_offsetTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_offsetTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_result.ToJsonObject(value[key.c_str()], allocator);
     }
 

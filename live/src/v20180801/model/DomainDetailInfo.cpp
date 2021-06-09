@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 DomainDetailInfo::DomainDetailInfo() :
@@ -30,7 +29,7 @@ DomainDetailInfo::DomainDetailInfo() :
 {
 }
 
-CoreInternalOutcome DomainDetailInfo::Deserialize(const Value &value)
+CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DomainDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DomainDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mainlandOrOverseaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MainlandOrOversea";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mainlandOrOversea.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mainlandOrOversea.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
@@ -110,7 +109,7 @@ void DomainDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_fluxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Flux";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flux, allocator);
@@ -118,7 +117,7 @@ void DomainDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_onlineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Online";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_online, allocator);
@@ -126,7 +125,7 @@ void DomainDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_requestHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Request";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_request, allocator);

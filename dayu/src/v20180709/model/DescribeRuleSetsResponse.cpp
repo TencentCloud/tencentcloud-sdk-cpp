@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeRuleSetsResponse::DescribeRuleSetsResponse() :
@@ -32,7 +31,7 @@ DescribeRuleSetsResponse::DescribeRuleSetsResponse() :
 
 CoreInternalOutcome DescribeRuleSetsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeRuleSetsResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeRuleSetsResponse::Deserialize(const string &payload)
         if (!rsp["L4RuleSets"].IsArray())
             return CoreInternalOutcome(Error("response `L4RuleSets` is not array type"));
 
-        const Value &tmpValue = rsp["L4RuleSets"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["L4RuleSets"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             KeyValueRecord item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -89,8 +88,8 @@ CoreInternalOutcome DescribeRuleSetsResponse::Deserialize(const string &payload)
         if (!rsp["L7RuleSets"].IsArray())
             return CoreInternalOutcome(Error("response `L7RuleSets` is not array type"));
 
-        const Value &tmpValue = rsp["L7RuleSets"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["L7RuleSets"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             KeyValueRecord item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

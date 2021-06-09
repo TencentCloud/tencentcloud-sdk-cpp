@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 ConsumerGroupResponse::ConsumerGroupResponse() :
@@ -33,7 +32,7 @@ ConsumerGroupResponse::ConsumerGroupResponse() :
 {
 }
 
-CoreInternalOutcome ConsumerGroupResponse::Deserialize(const Value &value)
+CoreInternalOutcome ConsumerGroupResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -53,8 +52,8 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const Value &value)
         if (!value["TopicList"].IsArray())
             return CoreInternalOutcome(Error("response `ConsumerGroupResponse.TopicList` is not array type"));
 
-        const Value &tmpValue = value["TopicList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TopicList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ConsumerGroupTopic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -73,8 +72,8 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const Value &value)
         if (!value["GroupList"].IsArray())
             return CoreInternalOutcome(Error("response `ConsumerGroupResponse.GroupList` is not array type"));
 
-        const Value &tmpValue = value["GroupList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["GroupList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ConsumerGroup item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -103,8 +102,8 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const Value &value)
         if (!value["PartitionListForMonitor"].IsArray())
             return CoreInternalOutcome(Error("response `ConsumerGroupResponse.PartitionListForMonitor` is not array type"));
 
-        const Value &tmpValue = value["PartitionListForMonitor"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PartitionListForMonitor"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Partition item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -133,8 +132,8 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const Value &value)
         if (!value["TopicListForMonitor"].IsArray())
             return CoreInternalOutcome(Error("response `ConsumerGroupResponse.TopicListForMonitor` is not array type"));
 
-        const Value &tmpValue = value["TopicListForMonitor"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TopicListForMonitor"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ConsumerGroupTopic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -153,8 +152,8 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const Value &value)
         if (!value["GroupListForMonitor"].IsArray())
             return CoreInternalOutcome(Error("response `ConsumerGroupResponse.GroupListForMonitor` is not array type"));
 
-        const Value &tmpValue = value["GroupListForMonitor"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["GroupListForMonitor"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Group item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -172,12 +171,12 @@ CoreInternalOutcome ConsumerGroupResponse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ConsumerGroupResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ConsumerGroupResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -185,37 +184,37 @@ void ConsumerGroupResponse::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_topicListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_topicList.begin(); itr != m_topicList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_groupListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_groupList.begin(); itr != m_groupList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_totalPartitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalPartition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalPartition, allocator);
@@ -223,22 +222,22 @@ void ConsumerGroupResponse::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_partitionListForMonitorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PartitionListForMonitor";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_partitionListForMonitor.begin(); itr != m_partitionListForMonitor.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_totalTopicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalTopic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalTopic, allocator);
@@ -246,30 +245,30 @@ void ConsumerGroupResponse::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_topicListForMonitorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicListForMonitor";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_topicListForMonitor.begin(); itr != m_topicListForMonitor.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_groupListForMonitorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupListForMonitor";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_groupListForMonitor.begin(); itr != m_groupListForMonitor.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

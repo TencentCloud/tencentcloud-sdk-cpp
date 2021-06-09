@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
-using namespace rapidjson;
 using namespace std;
 
 AlarmTarget::AlarmTarget() :
@@ -31,7 +30,7 @@ AlarmTarget::AlarmTarget() :
 {
 }
 
-CoreInternalOutcome AlarmTarget::Deserialize(const Value &value)
+CoreInternalOutcome AlarmTarget::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,28 +99,28 @@ CoreInternalOutcome AlarmTarget::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AlarmTarget::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AlarmTarget::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_topicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topicId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Query";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_query.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
     }
 
     if (m_numberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Number";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_number, allocator);
@@ -129,7 +128,7 @@ void AlarmTarget::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -137,7 +136,7 @@ void AlarmTarget::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
@@ -145,10 +144,10 @@ void AlarmTarget::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_logsetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogsetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_logsetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logsetId.c_str(), allocator).Move(), allocator);
     }
 
 }

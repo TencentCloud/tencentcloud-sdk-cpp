@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 EstablishWxGatewayRouteRequest::EstablishWxGatewayRouteRequest() :
@@ -34,54 +33,54 @@ EstablishWxGatewayRouteRequest::EstablishWxGatewayRouteRequest() :
 
 string EstablishWxGatewayRouteRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_gatewayIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GatewayId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_gatewayId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gatewayId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gatewayRouteNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GatewayRouteName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_gatewayRouteName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gatewayRouteName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gatewayRouteAddrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GatewayRouteAddr";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_gatewayRouteAddr.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gatewayRouteAddr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gatewayRouteProtocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GatewayRouteProtocol";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_gatewayRouteProtocol.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gatewayRouteProtocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gatewayRouteDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GatewayRouteDesc";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_gatewayRouteDesc.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gatewayRouteDesc.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

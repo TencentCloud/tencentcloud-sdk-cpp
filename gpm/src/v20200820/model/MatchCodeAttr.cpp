@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gpm::V20200820::Model;
-using namespace rapidjson;
 using namespace std;
 
 MatchCodeAttr::MatchCodeAttr() :
@@ -26,7 +25,7 @@ MatchCodeAttr::MatchCodeAttr() :
 {
 }
 
-CoreInternalOutcome MatchCodeAttr::Deserialize(const Value &value)
+CoreInternalOutcome MatchCodeAttr::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome MatchCodeAttr::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MatchCodeAttr::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MatchCodeAttr::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_matchCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_matchCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchCode.c_str(), allocator).Move(), allocator);
     }
 
 }

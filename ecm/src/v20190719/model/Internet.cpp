@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 Internet::Internet() :
@@ -28,7 +27,7 @@ Internet::Internet() :
 {
 }
 
-CoreInternalOutcome Internet::Deserialize(const Value &value)
+CoreInternalOutcome Internet::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome Internet::Deserialize(const Value &value)
         if (!value["PrivateIPAddressSet"].IsArray())
             return CoreInternalOutcome(Error("response `Internet.PrivateIPAddressSet` is not array type"));
 
-        const Value &tmpValue = value["PrivateIPAddressSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PrivateIPAddressSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PrivateIPAddressInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -58,8 +57,8 @@ CoreInternalOutcome Internet::Deserialize(const Value &value)
         if (!value["PublicIPAddressSet"].IsArray())
             return CoreInternalOutcome(Error("response `Internet.PublicIPAddressSet` is not array type"));
 
-        const Value &tmpValue = value["PublicIPAddressSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PublicIPAddressSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PublicIPAddressInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -78,8 +77,8 @@ CoreInternalOutcome Internet::Deserialize(const Value &value)
         if (!value["InstanceNetworkInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `Internet.InstanceNetworkInfoSet` is not array type"));
 
-        const Value &tmpValue = value["InstanceNetworkInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InstanceNetworkInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InstanceNetworkInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -97,50 +96,50 @@ CoreInternalOutcome Internet::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Internet::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Internet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_privateIPAddressSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrivateIPAddressSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_privateIPAddressSet.begin(); itr != m_privateIPAddressSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_publicIPAddressSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicIPAddressSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_publicIPAddressSet.begin(); itr != m_publicIPAddressSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_instanceNetworkInfoSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceNetworkInfoSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_instanceNetworkInfoSet.begin(); itr != m_instanceNetworkInfoSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

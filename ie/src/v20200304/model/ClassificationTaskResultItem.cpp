@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClassificationTaskResultItem::ClassificationTaskResultItem() :
@@ -27,7 +26,7 @@ ClassificationTaskResultItem::ClassificationTaskResultItem() :
 {
 }
 
-CoreInternalOutcome ClassificationTaskResultItem::Deserialize(const Value &value)
+CoreInternalOutcome ClassificationTaskResultItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome ClassificationTaskResultItem::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void ClassificationTaskResultItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClassificationTaskResultItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_classificationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Classification";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_classification.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_classification.c_str(), allocator).Move(), allocator);
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);

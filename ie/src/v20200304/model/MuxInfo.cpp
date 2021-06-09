@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 MuxInfo::MuxInfo() :
@@ -27,7 +26,7 @@ MuxInfo::MuxInfo() :
 {
 }
 
-CoreInternalOutcome MuxInfo::Deserialize(const Value &value)
+CoreInternalOutcome MuxInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome MuxInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MuxInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MuxInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deleteStreamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeleteStream";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deleteStream.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deleteStream.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flvFlagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlvFlags";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_flvFlags.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flvFlags.c_str(), allocator).Move(), allocator);
     }
 
 }

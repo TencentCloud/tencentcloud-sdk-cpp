@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 BindAcctRequest::BindAcctRequest() :
@@ -46,30 +45,30 @@ BindAcctRequest::BindAcctRequest() :
 
 string BindAcctRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_midasAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MidasAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_midasAppId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_midasAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_subAppId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bindTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BindType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bindType, allocator);
@@ -77,23 +76,23 @@ string BindAcctRequest::ToJsonString() const
 
     if (m_settleAcctNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SettleAcctNo";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_settleAcctNo.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_settleAcctNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_settleAcctNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SettleAcctName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_settleAcctName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_settleAcctName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_settleAcctTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SettleAcctType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_settleAcctType, allocator);
@@ -101,96 +100,96 @@ string BindAcctRequest::ToJsonString() const
 
     if (m_idTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IdType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_idType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_idType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IdCode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_idCode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_idCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_acctBranchNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AcctBranchName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_acctBranchName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_acctBranchName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_midasSecretIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MidasSecretId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_midasSecretId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_midasSecretId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_midasSignatureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MidasSignature";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_midasSignature.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_midasSignature.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mobileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mobile";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_mobile.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cnapsBranchIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CnapsBranchId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cnapsBranchId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cnapsBranchId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eiconBankBranchIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EiconBankBranchId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_eiconBankBranchId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eiconBankBranchId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_encryptTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EncryptType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_encryptType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_midasEnvironmentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MidasEnvironment";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_midasEnvironment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_agencyClientInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AgencyClientInfo";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agencyClientInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

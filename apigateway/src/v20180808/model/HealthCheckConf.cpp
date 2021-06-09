@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 HealthCheckConf::HealthCheckConf() :
@@ -29,7 +28,7 @@ HealthCheckConf::HealthCheckConf() :
 {
 }
 
-CoreInternalOutcome HealthCheckConf::Deserialize(const Value &value)
+CoreInternalOutcome HealthCheckConf::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome HealthCheckConf::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HealthCheckConf::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HealthCheckConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_isHealthCheckHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsHealthCheck";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isHealthCheck, allocator);
@@ -91,7 +90,7 @@ void HealthCheckConf::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_requestVolumeThresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RequestVolumeThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_requestVolumeThreshold, allocator);
@@ -99,7 +98,7 @@ void HealthCheckConf::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_sleepWindowInMillisecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SleepWindowInMilliseconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sleepWindowInMilliseconds, allocator);
@@ -107,7 +106,7 @@ void HealthCheckConf::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_errorThresholdPercentageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorThresholdPercentage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_errorThresholdPercentage, allocator);

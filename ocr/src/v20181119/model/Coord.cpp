@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 Coord::Coord() :
@@ -27,7 +26,7 @@ Coord::Coord() :
 {
 }
 
-CoreInternalOutcome Coord::Deserialize(const Value &value)
+CoreInternalOutcome Coord::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome Coord::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Coord::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Coord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_xHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "X";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_x, allocator);
@@ -69,7 +68,7 @@ void Coord::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_yHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Y";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_y, allocator);

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tdmq::V20200217::Model;
-using namespace rapidjson;
 using namespace std;
 
 SendMessagesRequest::SendMessagesRequest() :
@@ -35,46 +34,46 @@ SendMessagesRequest::SendMessagesRequest() :
 
 string SendMessagesRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_stringTokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StringToken";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_stringToken.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stringToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Topic";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_topic.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payloadHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Payload";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_payload.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payload.c_str(), allocator).Move(), allocator);
     }
 
     if (m_producerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProducerName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_producerName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_producerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sendTimeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SendTimeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sendTimeout, allocator);
@@ -82,15 +81,15 @@ string SendMessagesRequest::ToJsonString() const
 
     if (m_maxPendingMessagesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxPendingMessages";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxPendingMessages, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

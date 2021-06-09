@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 VideoEditProjectInput::VideoEditProjectInput() :
@@ -28,7 +27,7 @@ VideoEditProjectInput::VideoEditProjectInput() :
 {
 }
 
-CoreInternalOutcome VideoEditProjectInput::Deserialize(const Value &value)
+CoreInternalOutcome VideoEditProjectInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome VideoEditProjectInput::Deserialize(const Value &value)
         if (!value["InitTracks"].IsArray())
             return CoreInternalOutcome(Error("response `VideoEditProjectInput.InitTracks` is not array type"));
 
-        const Value &tmpValue = value["InitTracks"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InitTracks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MediaTrack item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,36 +76,36 @@ CoreInternalOutcome VideoEditProjectInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VideoEditProjectInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VideoEditProjectInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_aspectRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AspectRatio";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
     }
 
     if (m_videoEditTemplateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoEditTemplateId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_videoEditTemplateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_videoEditTemplateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_initTracksHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InitTracks";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_initTracks.begin(); itr != m_initTracks.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

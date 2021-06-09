@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 MetricDataPointMap::MetricDataPointMap() :
@@ -28,7 +27,7 @@ MetricDataPointMap::MetricDataPointMap() :
 {
 }
 
-CoreInternalOutcome MetricDataPointMap::Deserialize(const Value &value)
+CoreInternalOutcome MetricDataPointMap::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome MetricDataPointMap::Deserialize(const Value &value)
         if (!value["SumReqAmount"].IsArray())
             return CoreInternalOutcome(Error("response `MetricDataPointMap.SumReqAmount` is not array type"));
 
-        const Value &tmpValue = value["SumReqAmount"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SumReqAmount"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MetricDataPoint item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -58,8 +57,8 @@ CoreInternalOutcome MetricDataPointMap::Deserialize(const Value &value)
         if (!value["AvgFailureRate"].IsArray())
             return CoreInternalOutcome(Error("response `MetricDataPointMap.AvgFailureRate` is not array type"));
 
-        const Value &tmpValue = value["AvgFailureRate"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AvgFailureRate"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MetricDataPoint item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -78,8 +77,8 @@ CoreInternalOutcome MetricDataPointMap::Deserialize(const Value &value)
         if (!value["AvgTimeCost"].IsArray())
             return CoreInternalOutcome(Error("response `MetricDataPointMap.AvgTimeCost` is not array type"));
 
-        const Value &tmpValue = value["AvgTimeCost"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AvgTimeCost"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MetricDataPoint item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -97,50 +96,50 @@ CoreInternalOutcome MetricDataPointMap::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MetricDataPointMap::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MetricDataPointMap::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sumReqAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SumReqAmount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_sumReqAmount.begin(); itr != m_sumReqAmount.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_avgFailureRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvgFailureRate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_avgFailureRate.begin(); itr != m_avgFailureRate.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_avgTimeCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvgTimeCost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_avgTimeCost.begin(); itr != m_avgTimeCost.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

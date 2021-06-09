@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 UserDefineOcrTextReviewTemplateInfoForUpdate::UserDefineOcrTextReviewTemplateInfoForUpdate() :
@@ -29,7 +28,7 @@ UserDefineOcrTextReviewTemplateInfoForUpdate::UserDefineOcrTextReviewTemplateInf
 {
 }
 
-CoreInternalOutcome UserDefineOcrTextReviewTemplateInfoForUpdate::Deserialize(const Value &value)
+CoreInternalOutcome UserDefineOcrTextReviewTemplateInfoForUpdate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,28 +77,28 @@ CoreInternalOutcome UserDefineOcrTextReviewTemplateInfoForUpdate::Deserialize(co
     return CoreInternalOutcome(true);
 }
 
-void UserDefineOcrTextReviewTemplateInfoForUpdate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UserDefineOcrTextReviewTemplateInfoForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_labelSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LabelSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_labelSet.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_labelSet.c_str(), allocator).Move(), allocator);
     }
 
     if (m_blockConfidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blockConfidence, allocator);
@@ -107,7 +106,7 @@ void UserDefineOcrTextReviewTemplateInfoForUpdate::ToJsonObject(Value &value, Do
 
     if (m_reviewConfidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReviewConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reviewConfidence, allocator);

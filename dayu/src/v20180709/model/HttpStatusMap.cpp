@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 HttpStatusMap::HttpStatusMap() :
@@ -35,7 +34,7 @@ HttpStatusMap::HttpStatusMap() :
 {
 }
 
-CoreInternalOutcome HttpStatusMap::Deserialize(const Value &value)
+CoreInternalOutcome HttpStatusMap::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,8 +44,8 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const Value &value)
         if (!value["Http2xx"].IsArray())
             return CoreInternalOutcome(Error("response `HttpStatusMap.Http2xx` is not array type"));
 
-        const Value &tmpValue = value["Http2xx"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Http2xx"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_http2xx.push_back((*itr).GetDouble());
         }
@@ -58,8 +57,8 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const Value &value)
         if (!value["Http3xx"].IsArray())
             return CoreInternalOutcome(Error("response `HttpStatusMap.Http3xx` is not array type"));
 
-        const Value &tmpValue = value["Http3xx"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Http3xx"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_http3xx.push_back((*itr).GetDouble());
         }
@@ -71,8 +70,8 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const Value &value)
         if (!value["Http404"].IsArray())
             return CoreInternalOutcome(Error("response `HttpStatusMap.Http404` is not array type"));
 
-        const Value &tmpValue = value["Http404"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Http404"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_http404.push_back((*itr).GetDouble());
         }
@@ -84,8 +83,8 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const Value &value)
         if (!value["Http4xx"].IsArray())
             return CoreInternalOutcome(Error("response `HttpStatusMap.Http4xx` is not array type"));
 
-        const Value &tmpValue = value["Http4xx"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Http4xx"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_http4xx.push_back((*itr).GetDouble());
         }
@@ -97,8 +96,8 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const Value &value)
         if (!value["Http5xx"].IsArray())
             return CoreInternalOutcome(Error("response `HttpStatusMap.Http5xx` is not array type"));
 
-        const Value &tmpValue = value["Http5xx"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Http5xx"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_http5xx.push_back((*itr).GetDouble());
         }
@@ -110,8 +109,8 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const Value &value)
         if (!value["SourceHttp2xx"].IsArray())
             return CoreInternalOutcome(Error("response `HttpStatusMap.SourceHttp2xx` is not array type"));
 
-        const Value &tmpValue = value["SourceHttp2xx"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SourceHttp2xx"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_sourceHttp2xx.push_back((*itr).GetDouble());
         }
@@ -123,8 +122,8 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const Value &value)
         if (!value["SourceHttp3xx"].IsArray())
             return CoreInternalOutcome(Error("response `HttpStatusMap.SourceHttp3xx` is not array type"));
 
-        const Value &tmpValue = value["SourceHttp3xx"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SourceHttp3xx"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_sourceHttp3xx.push_back((*itr).GetDouble());
         }
@@ -136,8 +135,8 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const Value &value)
         if (!value["SourceHttp404"].IsArray())
             return CoreInternalOutcome(Error("response `HttpStatusMap.SourceHttp404` is not array type"));
 
-        const Value &tmpValue = value["SourceHttp404"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SourceHttp404"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_sourceHttp404.push_back((*itr).GetDouble());
         }
@@ -149,8 +148,8 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const Value &value)
         if (!value["SourceHttp4xx"].IsArray())
             return CoreInternalOutcome(Error("response `HttpStatusMap.SourceHttp4xx` is not array type"));
 
-        const Value &tmpValue = value["SourceHttp4xx"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SourceHttp4xx"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_sourceHttp4xx.push_back((*itr).GetDouble());
         }
@@ -162,8 +161,8 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const Value &value)
         if (!value["SourceHttp5xx"].IsArray())
             return CoreInternalOutcome(Error("response `HttpStatusMap.SourceHttp5xx` is not array type"));
 
-        const Value &tmpValue = value["SourceHttp5xx"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SourceHttp5xx"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_sourceHttp5xx.push_back((*itr).GetDouble());
         }
@@ -174,136 +173,136 @@ CoreInternalOutcome HttpStatusMap::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HttpStatusMap::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HttpStatusMap::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_http2xxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Http2xx";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_http2xx.begin(); itr != m_http2xx.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_http3xxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Http3xx";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_http3xx.begin(); itr != m_http3xx.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_http404HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Http404";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_http404.begin(); itr != m_http404.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_http4xxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Http4xx";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_http4xx.begin(); itr != m_http4xx.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_http5xxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Http5xx";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_http5xx.begin(); itr != m_http5xx.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_sourceHttp2xxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceHttp2xx";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_sourceHttp2xx.begin(); itr != m_sourceHttp2xx.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_sourceHttp3xxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceHttp3xx";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_sourceHttp3xx.begin(); itr != m_sourceHttp3xx.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_sourceHttp404HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceHttp404";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_sourceHttp404.begin(); itr != m_sourceHttp404.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_sourceHttp4xxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceHttp4xx";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_sourceHttp4xx.begin(); itr != m_sourceHttp4xx.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_sourceHttp5xxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceHttp5xx";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_sourceHttp5xx.begin(); itr != m_sourceHttp5xx.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 

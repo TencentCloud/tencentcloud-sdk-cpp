@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 OCRItem::OCRItem() :
@@ -31,7 +30,7 @@ OCRItem::OCRItem() :
 {
 }
 
-CoreInternalOutcome OCRItem::Deserialize(const Value &value)
+CoreInternalOutcome OCRItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,8 +77,8 @@ CoreInternalOutcome OCRItem::Deserialize(const Value &value)
         if (!value["Keywords"].IsArray())
             return CoreInternalOutcome(Error("response `OCRItem.Keywords` is not array type"));
 
-        const Value &tmpValue = value["Keywords"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Keywords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_keywords.push_back((*itr).GetString());
         }
@@ -110,29 +109,29 @@ CoreInternalOutcome OCRItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OCRItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OCRItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_textPositionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TextPosition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_textPosition.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_evilLabelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilLabel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_evilLabel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_evilLabel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_evilTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilType, allocator);
@@ -140,20 +139,20 @@ void OCRItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_keywordsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Keywords";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_rateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rate, allocator);
@@ -161,10 +160,10 @@ void OCRItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_textContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TextContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_textContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_textContent.c_str(), allocator).Move(), allocator);
     }
 
 }

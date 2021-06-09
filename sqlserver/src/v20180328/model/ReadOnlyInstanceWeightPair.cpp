@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReadOnlyInstanceWeightPair::ReadOnlyInstanceWeightPair() :
@@ -27,7 +26,7 @@ ReadOnlyInstanceWeightPair::ReadOnlyInstanceWeightPair() :
 {
 }
 
-CoreInternalOutcome ReadOnlyInstanceWeightPair::Deserialize(const Value &value)
+CoreInternalOutcome ReadOnlyInstanceWeightPair::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome ReadOnlyInstanceWeightPair::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReadOnlyInstanceWeightPair::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReadOnlyInstanceWeightPair::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_readOnlyInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_readOnlyInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_readOnlyInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyWeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyWeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_readOnlyWeight, allocator);

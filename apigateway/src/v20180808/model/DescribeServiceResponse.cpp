@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeServiceResponse::DescribeServiceResponse() :
@@ -54,7 +53,7 @@ DescribeServiceResponse::DescribeServiceResponse() :
 
 CoreInternalOutcome DescribeServiceResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -64,7 +63,7 @@ CoreInternalOutcome DescribeServiceResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -101,8 +100,8 @@ CoreInternalOutcome DescribeServiceResponse::Deserialize(const string &payload)
         if (!rsp["AvailableEnvironments"].IsArray())
             return CoreInternalOutcome(Error("response `AvailableEnvironments` is not array type"));
 
-        const Value &tmpValue = rsp["AvailableEnvironments"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["AvailableEnvironments"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_availableEnvironments.push_back((*itr).GetString());
         }
@@ -174,8 +173,8 @@ CoreInternalOutcome DescribeServiceResponse::Deserialize(const string &payload)
         if (!rsp["NetTypes"].IsArray())
             return CoreInternalOutcome(Error("response `NetTypes` is not array type"));
 
-        const Value &tmpValue = rsp["NetTypes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["NetTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_netTypes.push_back((*itr).GetString());
         }
@@ -237,8 +236,8 @@ CoreInternalOutcome DescribeServiceResponse::Deserialize(const string &payload)
         if (!rsp["ApiIdStatusSet"].IsArray())
             return CoreInternalOutcome(Error("response `ApiIdStatusSet` is not array type"));
 
-        const Value &tmpValue = rsp["ApiIdStatusSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ApiIdStatusSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ApiIdStatus item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -267,8 +266,8 @@ CoreInternalOutcome DescribeServiceResponse::Deserialize(const string &payload)
         if (!rsp["UsagePlanList"].IsArray())
             return CoreInternalOutcome(Error("response `UsagePlanList` is not array type"));
 
-        const Value &tmpValue = rsp["UsagePlanList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["UsagePlanList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             UsagePlan item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -317,8 +316,8 @@ CoreInternalOutcome DescribeServiceResponse::Deserialize(const string &payload)
         if (!rsp["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `Tags` is not array type"));
 
-        const Value &tmpValue = rsp["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Tag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

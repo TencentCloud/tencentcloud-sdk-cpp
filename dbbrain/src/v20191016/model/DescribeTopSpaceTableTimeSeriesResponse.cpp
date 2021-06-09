@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20191016::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeTopSpaceTableTimeSeriesResponse::DescribeTopSpaceTableTimeSeriesResponse() :
@@ -31,7 +30,7 @@ DescribeTopSpaceTableTimeSeriesResponse::DescribeTopSpaceTableTimeSeriesResponse
 
 CoreInternalOutcome DescribeTopSpaceTableTimeSeriesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeTopSpaceTableTimeSeriesResponse::Deserialize(const s
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeTopSpaceTableTimeSeriesResponse::Deserialize(const s
         if (!rsp["TopSpaceTableTimeSeries"].IsArray())
             return CoreInternalOutcome(Error("response `TopSpaceTableTimeSeries` is not array type"));
 
-        const Value &tmpValue = rsp["TopSpaceTableTimeSeries"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["TopSpaceTableTimeSeries"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TableSpaceTimeSeries item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

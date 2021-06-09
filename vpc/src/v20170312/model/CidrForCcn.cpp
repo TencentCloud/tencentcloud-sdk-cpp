@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 CidrForCcn::CidrForCcn() :
@@ -27,7 +26,7 @@ CidrForCcn::CidrForCcn() :
 {
 }
 
-CoreInternalOutcome CidrForCcn::Deserialize(const Value &value)
+CoreInternalOutcome CidrForCcn::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome CidrForCcn::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CidrForCcn::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CidrForCcn::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cidrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cidr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cidr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cidr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publishedToVbcHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishedToVbc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publishedToVbc, allocator);

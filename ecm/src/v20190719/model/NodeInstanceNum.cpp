@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 NodeInstanceNum::NodeInstanceNum() :
@@ -27,7 +26,7 @@ NodeInstanceNum::NodeInstanceNum() :
 {
 }
 
-CoreInternalOutcome NodeInstanceNum::Deserialize(const Value &value)
+CoreInternalOutcome NodeInstanceNum::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome NodeInstanceNum::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NodeInstanceNum::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NodeInstanceNum::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nodeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodeNum, allocator);
@@ -69,7 +68,7 @@ void NodeInstanceNum::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_instanceNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceNum, allocator);

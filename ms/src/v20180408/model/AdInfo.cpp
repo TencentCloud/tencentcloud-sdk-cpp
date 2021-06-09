@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 AdInfo::AdInfo() :
@@ -31,7 +30,7 @@ AdInfo::AdInfo() :
 {
 }
 
-CoreInternalOutcome AdInfo::Deserialize(const Value &value)
+CoreInternalOutcome AdInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -41,8 +40,8 @@ CoreInternalOutcome AdInfo::Deserialize(const Value &value)
         if (!value["Spots"].IsArray())
             return CoreInternalOutcome(Error("response `AdInfo.Spots` is not array type"));
 
-        const Value &tmpValue = value["Spots"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Spots"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PluginInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -61,8 +60,8 @@ CoreInternalOutcome AdInfo::Deserialize(const Value &value)
         if (!value["BoutiqueRecommands"].IsArray())
             return CoreInternalOutcome(Error("response `AdInfo.BoutiqueRecommands` is not array type"));
 
-        const Value &tmpValue = value["BoutiqueRecommands"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BoutiqueRecommands"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PluginInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -81,8 +80,8 @@ CoreInternalOutcome AdInfo::Deserialize(const Value &value)
         if (!value["FloatWindowses"].IsArray())
             return CoreInternalOutcome(Error("response `AdInfo.FloatWindowses` is not array type"));
 
-        const Value &tmpValue = value["FloatWindowses"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FloatWindowses"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PluginInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -101,8 +100,8 @@ CoreInternalOutcome AdInfo::Deserialize(const Value &value)
         if (!value["Banners"].IsArray())
             return CoreInternalOutcome(Error("response `AdInfo.Banners` is not array type"));
 
-        const Value &tmpValue = value["Banners"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Banners"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PluginInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -121,8 +120,8 @@ CoreInternalOutcome AdInfo::Deserialize(const Value &value)
         if (!value["IntegralWalls"].IsArray())
             return CoreInternalOutcome(Error("response `AdInfo.IntegralWalls` is not array type"));
 
-        const Value &tmpValue = value["IntegralWalls"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["IntegralWalls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PluginInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -141,8 +140,8 @@ CoreInternalOutcome AdInfo::Deserialize(const Value &value)
         if (!value["NotifyBars"].IsArray())
             return CoreInternalOutcome(Error("response `AdInfo.NotifyBars` is not array type"));
 
-        const Value &tmpValue = value["NotifyBars"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["NotifyBars"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PluginInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -160,95 +159,95 @@ CoreInternalOutcome AdInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AdInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AdInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_spotsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Spots";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_spots.begin(); itr != m_spots.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_boutiqueRecommandsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BoutiqueRecommands";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_boutiqueRecommands.begin(); itr != m_boutiqueRecommands.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_floatWindowsesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FloatWindowses";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_floatWindowses.begin(); itr != m_floatWindowses.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_bannersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Banners";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_banners.begin(); itr != m_banners.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_integralWallsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IntegralWalls";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_integralWalls.begin(); itr != m_integralWalls.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_notifyBarsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotifyBars";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_notifyBars.begin(); itr != m_notifyBars.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Taf::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 InputSendTrafficSecuritySmsMsg::InputSendTrafficSecuritySmsMsg() :
@@ -27,7 +26,7 @@ InputSendTrafficSecuritySmsMsg::InputSendTrafficSecuritySmsMsg() :
 {
 }
 
-CoreInternalOutcome InputSendTrafficSecuritySmsMsg::Deserialize(const Value &value)
+CoreInternalOutcome InputSendTrafficSecuritySmsMsg::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome InputSendTrafficSecuritySmsMsg::Deserialize(const Value &val
         if (!value["Mobiles"].IsArray())
             return CoreInternalOutcome(Error("response `InputSendTrafficSecuritySmsMsg.Mobiles` is not array type"));
 
-        const Value &tmpValue = value["Mobiles"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Mobiles"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_mobiles.push_back((*itr).GetString());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome InputSendTrafficSecuritySmsMsg::Deserialize(const Value &val
     return CoreInternalOutcome(true);
 }
 
-void InputSendTrafficSecuritySmsMsg::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InputSendTrafficSecuritySmsMsg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mobilesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mobiles";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_mobiles.begin(); itr != m_mobiles.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

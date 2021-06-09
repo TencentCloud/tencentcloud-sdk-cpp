@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gpm::V20200820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReportTrendData::ReportTrendData() :
@@ -31,7 +30,7 @@ ReportTrendData::ReportTrendData() :
 {
 }
 
-CoreInternalOutcome ReportTrendData::Deserialize(const Value &value)
+CoreInternalOutcome ReportTrendData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -41,8 +40,8 @@ CoreInternalOutcome ReportTrendData::Deserialize(const Value &value)
         if (!value["TotalList"].IsArray())
             return CoreInternalOutcome(Error("response `ReportTrendData.TotalList` is not array type"));
 
-        const Value &tmpValue = value["TotalList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TotalList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_totalList.push_back((*itr).GetString());
         }
@@ -54,8 +53,8 @@ CoreInternalOutcome ReportTrendData::Deserialize(const Value &value)
         if (!value["CancelList"].IsArray())
             return CoreInternalOutcome(Error("response `ReportTrendData.CancelList` is not array type"));
 
-        const Value &tmpValue = value["CancelList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CancelList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_cancelList.push_back((*itr).GetString());
         }
@@ -67,8 +66,8 @@ CoreInternalOutcome ReportTrendData::Deserialize(const Value &value)
         if (!value["SuccessList"].IsArray())
             return CoreInternalOutcome(Error("response `ReportTrendData.SuccessList` is not array type"));
 
-        const Value &tmpValue = value["SuccessList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SuccessList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_successList.push_back((*itr).GetString());
         }
@@ -80,8 +79,8 @@ CoreInternalOutcome ReportTrendData::Deserialize(const Value &value)
         if (!value["FailList"].IsArray())
             return CoreInternalOutcome(Error("response `ReportTrendData.FailList` is not array type"));
 
-        const Value &tmpValue = value["FailList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FailList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_failList.push_back((*itr).GetString());
         }
@@ -93,8 +92,8 @@ CoreInternalOutcome ReportTrendData::Deserialize(const Value &value)
         if (!value["TimeoutList"].IsArray())
             return CoreInternalOutcome(Error("response `ReportTrendData.TimeoutList` is not array type"));
 
-        const Value &tmpValue = value["TimeoutList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TimeoutList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_timeoutList.push_back((*itr).GetString());
         }
@@ -106,8 +105,8 @@ CoreInternalOutcome ReportTrendData::Deserialize(const Value &value)
         if (!value["TimeList"].IsArray())
             return CoreInternalOutcome(Error("response `ReportTrendData.TimeList` is not array type"));
 
-        const Value &tmpValue = value["TimeList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TimeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_timeList.push_back((*itr).GetString());
         }
@@ -118,84 +117,84 @@ CoreInternalOutcome ReportTrendData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReportTrendData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReportTrendData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_totalList.begin(); itr != m_totalList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_cancelListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CancelList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_cancelList.begin(); itr != m_cancelList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_successListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuccessList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_successList.begin(); itr != m_successList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_failListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FailList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_failList.begin(); itr != m_failList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_timeoutListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeoutList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_timeoutList.begin(); itr != m_timeoutList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_timeListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_timeList.begin(); itr != m_timeList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

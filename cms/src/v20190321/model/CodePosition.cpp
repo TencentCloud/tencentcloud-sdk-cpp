@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 CodePosition::CodePosition() :
@@ -27,7 +26,7 @@ CodePosition::CodePosition() :
 {
 }
 
-CoreInternalOutcome CodePosition::Deserialize(const Value &value)
+CoreInternalOutcome CodePosition::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome CodePosition::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CodePosition::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CodePosition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_floatXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FloatX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_floatX, allocator);
@@ -69,7 +68,7 @@ void CodePosition::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_floatYHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FloatY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_floatY, allocator);

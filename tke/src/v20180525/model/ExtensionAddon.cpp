@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 ExtensionAddon::ExtensionAddon() :
@@ -27,7 +26,7 @@ ExtensionAddon::ExtensionAddon() :
 {
 }
 
-CoreInternalOutcome ExtensionAddon::Deserialize(const Value &value)
+CoreInternalOutcome ExtensionAddon::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome ExtensionAddon::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ExtensionAddon::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ExtensionAddon::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_addonNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddonName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_addonName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addonName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_addonParamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddonParam";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_addonParam.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addonParam.c_str(), allocator).Move(), allocator);
     }
 
 }

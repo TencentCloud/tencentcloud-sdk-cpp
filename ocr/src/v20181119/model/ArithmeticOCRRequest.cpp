@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 ArithmeticOCRRequest::ArithmeticOCRRequest() :
@@ -37,30 +36,30 @@ ArithmeticOCRRequest::ArithmeticOCRRequest() :
 
 string ArithmeticOCRRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_imageBase64HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageBase64";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_imageBase64.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageBase64.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_supportHorizontalImageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SupportHorizontalImage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_supportHorizontalImage, allocator);
@@ -68,7 +67,7 @@ string ArithmeticOCRRequest::ToJsonString() const
 
     if (m_rejectNonArithmeticPicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RejectNonArithmeticPic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rejectNonArithmeticPic, allocator);
@@ -76,7 +75,7 @@ string ArithmeticOCRRequest::ToJsonString() const
 
     if (m_enableDispRelatedVerticalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableDispRelatedVertical";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDispRelatedVertical, allocator);
@@ -84,7 +83,7 @@ string ArithmeticOCRRequest::ToJsonString() const
 
     if (m_enableDispMidResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableDispMidResult";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDispMidResult, allocator);
@@ -92,7 +91,7 @@ string ArithmeticOCRRequest::ToJsonString() const
 
     if (m_enablePdfRecognizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnablePdfRecognize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enablePdfRecognize, allocator);
@@ -100,15 +99,15 @@ string ArithmeticOCRRequest::ToJsonString() const
 
     if (m_pdfPageIndexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PdfPageIndex";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pdfPageIndex, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

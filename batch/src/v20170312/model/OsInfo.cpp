@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 OsInfo::OsInfo() :
@@ -32,7 +31,7 @@ OsInfo::OsInfo() :
 {
 }
 
-CoreInternalOutcome OsInfo::Deserialize(const Value &value)
+CoreInternalOutcome OsInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome OsInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_osTypeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OsTypeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_osTypeId, allocator);
@@ -124,47 +123,47 @@ void OsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_osNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OsName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_osName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_osDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OsDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_osDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_osEnglishDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OsEnglishDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_osEnglishDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osEnglishDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_osClassHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OsClass";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_osClass.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osClass.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageTagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageTag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageTag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageTag.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxPartitionSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxPartitionSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxPartitionSize, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AudioVolumeParam::AudioVolumeParam() :
@@ -27,7 +26,7 @@ AudioVolumeParam::AudioVolumeParam() :
 {
 }
 
-CoreInternalOutcome AudioVolumeParam::Deserialize(const Value &value)
+CoreInternalOutcome AudioVolumeParam::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome AudioVolumeParam::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AudioVolumeParam::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AudioVolumeParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_muteHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mute";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mute, allocator);
@@ -69,7 +68,7 @@ void AudioVolumeParam::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_gainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gain, allocator);

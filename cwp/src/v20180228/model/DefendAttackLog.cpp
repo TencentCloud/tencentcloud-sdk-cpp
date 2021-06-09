@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DefendAttackLog::DefendAttackLog() :
@@ -39,7 +38,7 @@ DefendAttackLog::DefendAttackLog() :
 {
 }
 
-CoreInternalOutcome DefendAttackLog::Deserialize(const Value &value)
+CoreInternalOutcome DefendAttackLog::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -188,12 +187,12 @@ CoreInternalOutcome DefendAttackLog::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DefendAttackLog::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DefendAttackLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -201,23 +200,23 @@ void DefendAttackLog::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_uuidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_srcIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_srcPort, allocator);
@@ -225,71 +224,71 @@ void DefendAttackLog::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_httpMethodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpMethod";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_httpMethod.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpMethod.c_str(), allocator).Move(), allocator);
     }
 
     if (m_httpCgiHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpCgi";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_httpCgi.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpCgi.c_str(), allocator).Move(), allocator);
     }
 
     if (m_httpParamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpParam";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_httpParam.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpParam.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vulTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vulType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vulType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_machineIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_machineIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_machineNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_machineName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dstIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dstPort, allocator);
@@ -297,10 +296,10 @@ void DefendAttackLog::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_httpContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_httpContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpContent.c_str(), allocator).Move(), allocator);
     }
 
 }

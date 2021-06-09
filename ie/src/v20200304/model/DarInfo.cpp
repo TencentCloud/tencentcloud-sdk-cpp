@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 DarInfo::DarInfo() :
@@ -26,7 +25,7 @@ DarInfo::DarInfo() :
 {
 }
 
-CoreInternalOutcome DarInfo::Deserialize(const Value &value)
+CoreInternalOutcome DarInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome DarInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DarInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DarInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fillModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FillMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fillMode, allocator);

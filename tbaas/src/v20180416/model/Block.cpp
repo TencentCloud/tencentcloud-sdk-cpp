@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbaas::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 Block::Block() :
@@ -30,7 +29,7 @@ Block::Block() :
 {
 }
 
-CoreInternalOutcome Block::Deserialize(const Value &value)
+CoreInternalOutcome Block::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome Block::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Block::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Block::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_blockNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blockNum, allocator);
@@ -102,15 +101,15 @@ void Block::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_dataHashHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataHash";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dataHash.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataHash.c_str(), allocator).Move(), allocator);
     }
 
     if (m_blockIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blockId, allocator);
@@ -118,15 +117,15 @@ void Block::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_preHashHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PreHash";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_preHash.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preHash.c_str(), allocator).Move(), allocator);
     }
 
     if (m_txCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TxCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_txCount, allocator);

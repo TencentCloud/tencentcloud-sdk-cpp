@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeMapInfoResponse::DescribeMapInfoResponse() :
@@ -33,7 +32,7 @@ DescribeMapInfoResponse::DescribeMapInfoResponse() :
 
 CoreInternalOutcome DescribeMapInfoResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DescribeMapInfoResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -70,8 +69,8 @@ CoreInternalOutcome DescribeMapInfoResponse::Deserialize(const string &payload)
         if (!rsp["MapInfoList"].IsArray())
             return CoreInternalOutcome(Error("response `MapInfoList` is not array type"));
 
-        const Value &tmpValue = rsp["MapInfoList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["MapInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MapInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -90,8 +89,8 @@ CoreInternalOutcome DescribeMapInfoResponse::Deserialize(const string &payload)
         if (!rsp["ServerRegionRelation"].IsArray())
             return CoreInternalOutcome(Error("response `ServerRegionRelation` is not array type"));
 
-        const Value &tmpValue = rsp["ServerRegionRelation"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ServerRegionRelation"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RegionMapRelation item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,8 +109,8 @@ CoreInternalOutcome DescribeMapInfoResponse::Deserialize(const string &payload)
         if (!rsp["ClientRegionRelation"].IsArray())
             return CoreInternalOutcome(Error("response `ClientRegionRelation` is not array type"));
 
-        const Value &tmpValue = rsp["ClientRegionRelation"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ClientRegionRelation"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RegionMapRelation item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

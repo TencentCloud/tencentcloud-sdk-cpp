@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReplicationRule::ReplicationRule() :
@@ -29,7 +28,7 @@ ReplicationRule::ReplicationRule() :
 {
 }
 
-CoreInternalOutcome ReplicationRule::Deserialize(const Value &value)
+CoreInternalOutcome ReplicationRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome ReplicationRule::Deserialize(const Value &value)
         if (!value["Filters"].IsArray())
             return CoreInternalOutcome(Error("response `ReplicationRule.Filters` is not array type"));
 
-        const Value &tmpValue = value["Filters"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Filters"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ReplicationFilter item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,28 +87,28 @@ CoreInternalOutcome ReplicationRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReplicationRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReplicationRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_destNamespaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DestNamespace";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_destNamespace.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destNamespace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_overrideHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Override";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_override, allocator);
@@ -117,15 +116,15 @@ void ReplicationRule::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_filtersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Filters";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 Function::Function() :
@@ -30,7 +29,7 @@ Function::Function() :
 {
 }
 
-CoreInternalOutcome Function::Deserialize(const Value &value)
+CoreInternalOutcome Function::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome Function::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Function::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Function::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enableAllTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableAllText";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableAllText, allocator);
@@ -102,7 +101,7 @@ void Function::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_enableKeywordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableKeyword";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableKeyword, allocator);
@@ -110,7 +109,7 @@ void Function::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_enableMuteDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableMuteDetect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableMuteDetect, allocator);
@@ -118,7 +117,7 @@ void Function::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_enableVadInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableVadInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableVadInfo, allocator);
@@ -126,7 +125,7 @@ void Function::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_enableVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableVolume, allocator);

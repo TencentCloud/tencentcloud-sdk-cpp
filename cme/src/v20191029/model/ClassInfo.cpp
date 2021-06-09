@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClassInfo::ClassInfo() :
@@ -27,7 +26,7 @@ ClassInfo::ClassInfo() :
 {
 }
 
-CoreInternalOutcome ClassInfo::Deserialize(const Value &value)
+CoreInternalOutcome ClassInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,24 +62,24 @@ CoreInternalOutcome ClassInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClassInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClassInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ownerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Owner";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_owner.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_classPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClassPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_classPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_classPath.c_str(), allocator).Move(), allocator);
     }
 
 }

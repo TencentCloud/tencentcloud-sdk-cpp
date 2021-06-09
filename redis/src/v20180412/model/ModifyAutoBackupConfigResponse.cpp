@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyAutoBackupConfigResponse::ModifyAutoBackupConfigResponse() :
@@ -33,7 +32,7 @@ ModifyAutoBackupConfigResponse::ModifyAutoBackupConfigResponse() :
 
 CoreInternalOutcome ModifyAutoBackupConfigResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome ModifyAutoBackupConfigResponse::Deserialize(const string &pa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -80,8 +79,8 @@ CoreInternalOutcome ModifyAutoBackupConfigResponse::Deserialize(const string &pa
         if (!rsp["WeekDays"].IsArray())
             return CoreInternalOutcome(Error("response `WeekDays` is not array type"));
 
-        const Value &tmpValue = rsp["WeekDays"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["WeekDays"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_weekDays.push_back((*itr).GetString());
         }

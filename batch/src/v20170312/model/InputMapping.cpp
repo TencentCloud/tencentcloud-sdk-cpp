@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 InputMapping::InputMapping() :
@@ -28,7 +27,7 @@ InputMapping::InputMapping() :
 {
 }
 
-CoreInternalOutcome InputMapping::Deserialize(const Value &value)
+CoreInternalOutcome InputMapping::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome InputMapping::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InputMapping::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InputMapping::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sourcePathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourcePath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sourcePath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourcePath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_destinationPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DestinationPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_destinationPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destinationPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mountOptionParameterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MountOptionParameter";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mountOptionParameter.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountOptionParameter.c_str(), allocator).Move(), allocator);
     }
 
 }

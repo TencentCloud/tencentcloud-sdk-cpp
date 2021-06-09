@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 SearchItem::SearchItem() :
@@ -27,7 +26,7 @@ SearchItem::SearchItem() :
 {
 }
 
-CoreInternalOutcome SearchItem::Deserialize(const Value &value)
+CoreInternalOutcome SearchItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome SearchItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SearchItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SearchItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_searchTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SearchType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_searchType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_searchType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_searchValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SearchValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_searchValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_searchValue.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bda::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 BodyJointsResult::BodyJointsResult() :
@@ -28,7 +27,7 @@ BodyJointsResult::BodyJointsResult() :
 {
 }
 
-CoreInternalOutcome BodyJointsResult::Deserialize(const Value &value)
+CoreInternalOutcome BodyJointsResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -55,8 +54,8 @@ CoreInternalOutcome BodyJointsResult::Deserialize(const Value &value)
         if (!value["BodyJoints"].IsArray())
             return CoreInternalOutcome(Error("response `BodyJointsResult.BodyJoints` is not array type"));
 
-        const Value &tmpValue = value["BodyJoints"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BodyJoints"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             KeyPointInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -84,36 +83,36 @@ CoreInternalOutcome BodyJointsResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BodyJointsResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BodyJointsResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_boundBoxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BoundBox";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_boundBox.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_bodyJointsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BodyJoints";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_bodyJoints.begin(); itr != m_bodyJoints.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);

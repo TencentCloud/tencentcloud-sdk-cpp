@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Billing::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCostDetailResponse::DescribeCostDetailResponse() :
@@ -32,7 +31,7 @@ DescribeCostDetailResponse::DescribeCostDetailResponse() :
 
 CoreInternalOutcome DescribeCostDetailResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeCostDetailResponse::Deserialize(const string &payloa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeCostDetailResponse::Deserialize(const string &payloa
         if (!rsp["DetailSet"].IsArray())
             return CoreInternalOutcome(Error("response `DetailSet` is not array type"));
 
-        const Value &tmpValue = rsp["DetailSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DetailSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CostDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

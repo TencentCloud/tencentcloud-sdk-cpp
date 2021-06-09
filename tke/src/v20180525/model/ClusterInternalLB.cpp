@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClusterInternalLB::ClusterInternalLB() :
@@ -27,7 +26,7 @@ ClusterInternalLB::ClusterInternalLB() :
 {
 }
 
-CoreInternalOutcome ClusterInternalLB::Deserialize(const Value &value)
+CoreInternalOutcome ClusterInternalLB::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome ClusterInternalLB::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClusterInternalLB::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClusterInternalLB::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enabled, allocator);
@@ -69,10 +68,10 @@ void ClusterInternalLB::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_subnetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 }

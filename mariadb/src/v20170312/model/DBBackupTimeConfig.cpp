@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mariadb::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 DBBackupTimeConfig::DBBackupTimeConfig() :
@@ -28,7 +27,7 @@ DBBackupTimeConfig::DBBackupTimeConfig() :
 {
 }
 
-CoreInternalOutcome DBBackupTimeConfig::Deserialize(const Value &value)
+CoreInternalOutcome DBBackupTimeConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome DBBackupTimeConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DBBackupTimeConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DBBackupTimeConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startBackupTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartBackupTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startBackupTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startBackupTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endBackupTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndBackupTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endBackupTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endBackupTime.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20190725::Model;
-using namespace rapidjson;
 using namespace std;
 
 Operation::Operation() :
@@ -28,7 +27,7 @@ Operation::Operation() :
 {
 }
 
-CoreInternalOutcome Operation::Deserialize(const Value &value)
+CoreInternalOutcome Operation::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome Operation::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Operation::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Operation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_replicaSetNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicaSetName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replicaSetName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replicaSetName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_opIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_opId, allocator);

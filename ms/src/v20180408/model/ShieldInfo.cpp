@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 ShieldInfo::ShieldInfo() :
@@ -32,7 +31,7 @@ ShieldInfo::ShieldInfo() :
 {
 }
 
-CoreInternalOutcome ShieldInfo::Deserialize(const Value &value)
+CoreInternalOutcome ShieldInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome ShieldInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ShieldInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ShieldInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_shieldCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShieldCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shieldCode, allocator);
@@ -124,7 +123,7 @@ void ShieldInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_shieldSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShieldSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shieldSize, allocator);
@@ -132,23 +131,23 @@ void ShieldInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_shieldMd5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShieldMd5";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shieldMd5.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shieldMd5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_appUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskTime, allocator);
@@ -156,18 +155,18 @@ void ShieldInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_itemIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ItemId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_itemId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_itemId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceEditionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceEdition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serviceEdition.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceEdition.c_str(), allocator).Move(), allocator);
     }
 
 }

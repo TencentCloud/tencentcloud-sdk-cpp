@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cam::V20190116::Model;
-using namespace rapidjson;
 using namespace std;
 
 GroupIdOfUidInfo::GroupIdOfUidInfo() :
@@ -27,7 +26,7 @@ GroupIdOfUidInfo::GroupIdOfUidInfo() :
 {
 }
 
-CoreInternalOutcome GroupIdOfUidInfo::Deserialize(const Value &value)
+CoreInternalOutcome GroupIdOfUidInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome GroupIdOfUidInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GroupIdOfUidInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GroupIdOfUidInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_uidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_uid, allocator);
@@ -69,7 +68,7 @@ void GroupIdOfUidInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupId, allocator);

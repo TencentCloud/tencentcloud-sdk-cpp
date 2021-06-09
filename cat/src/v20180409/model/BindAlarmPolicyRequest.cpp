@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cat::V20180409::Model;
-using namespace rapidjson;
 using namespace std;
 
 BindAlarmPolicyRequest::BindAlarmPolicyRequest() :
@@ -33,14 +32,14 @@ BindAlarmPolicyRequest::BindAlarmPolicyRequest() :
 
 string BindAlarmPolicyRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskId, allocator);
@@ -48,7 +47,7 @@ string BindAlarmPolicyRequest::ToJsonString() const
 
     if (m_policyGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_policyGroupId, allocator);
@@ -56,7 +55,7 @@ string BindAlarmPolicyRequest::ToJsonString() const
 
     if (m_ifBindHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IfBind";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ifBind, allocator);
@@ -64,15 +63,15 @@ string BindAlarmPolicyRequest::ToJsonString() const
 
     if (m_topicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_topicId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 SubtitleRec::SubtitleRec() :
@@ -27,7 +26,7 @@ SubtitleRec::SubtitleRec() :
 {
 }
 
-CoreInternalOutcome SubtitleRec::Deserialize(const Value &value)
+CoreInternalOutcome SubtitleRec::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome SubtitleRec::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SubtitleRec::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SubtitleRec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_asrDstHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AsrDst";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_asrDst.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_asrDst.c_str(), allocator).Move(), allocator);
     }
 
     if (m_transDstHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransDst";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_transDst.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transDst.c_str(), allocator).Move(), allocator);
     }
 
 }

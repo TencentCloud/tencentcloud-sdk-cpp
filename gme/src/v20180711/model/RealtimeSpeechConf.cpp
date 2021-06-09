@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gme::V20180711::Model;
-using namespace rapidjson;
 using namespace std;
 
 RealtimeSpeechConf::RealtimeSpeechConf() :
@@ -27,7 +26,7 @@ RealtimeSpeechConf::RealtimeSpeechConf() :
 {
 }
 
-CoreInternalOutcome RealtimeSpeechConf::Deserialize(const Value &value)
+CoreInternalOutcome RealtimeSpeechConf::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome RealtimeSpeechConf::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RealtimeSpeechConf::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RealtimeSpeechConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_qualityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Quality";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_quality.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quality.c_str(), allocator).Move(), allocator);
     }
 
 }

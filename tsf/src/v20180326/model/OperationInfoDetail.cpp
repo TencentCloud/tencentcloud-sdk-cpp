@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 OperationInfoDetail::OperationInfoDetail() :
@@ -28,7 +27,7 @@ OperationInfoDetail::OperationInfoDetail() :
 {
 }
 
-CoreInternalOutcome OperationInfoDetail::Deserialize(const Value &value)
+CoreInternalOutcome OperationInfoDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome OperationInfoDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OperationInfoDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OperationInfoDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_disabledReasonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisabledReason";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_disabledReason.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_disabledReason.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enabled, allocator);
@@ -88,7 +87,7 @@ void OperationInfoDetail::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_supportedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Supported";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supported, allocator);

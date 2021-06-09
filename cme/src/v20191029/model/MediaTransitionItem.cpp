@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaTransitionItem::MediaTransitionItem() :
@@ -27,7 +26,7 @@ MediaTransitionItem::MediaTransitionItem() :
 {
 }
 
-CoreInternalOutcome MediaTransitionItem::Deserialize(const Value &value)
+CoreInternalOutcome MediaTransitionItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome MediaTransitionItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaTransitionItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaTransitionItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_transitionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransitionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_transitionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transitionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);

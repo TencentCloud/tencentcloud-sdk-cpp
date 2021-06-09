@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 SimpleModule::SimpleModule() :
@@ -27,7 +26,7 @@ SimpleModule::SimpleModule() :
 {
 }
 
-CoreInternalOutcome SimpleModule::Deserialize(const Value &value)
+CoreInternalOutcome SimpleModule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome SimpleModule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SimpleModule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SimpleModule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_moduleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModuleId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_moduleId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_moduleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_moduleNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModuleName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_moduleName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_moduleName.c_str(), allocator).Move(), allocator);
     }
 
 }

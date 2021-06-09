@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 VpnGatewayQuota::VpnGatewayQuota() :
@@ -28,7 +27,7 @@ VpnGatewayQuota::VpnGatewayQuota() :
 {
 }
 
-CoreInternalOutcome VpnGatewayQuota::Deserialize(const Value &value)
+CoreInternalOutcome VpnGatewayQuota::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome VpnGatewayQuota::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VpnGatewayQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VpnGatewayQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
@@ -80,18 +79,18 @@ void VpnGatewayQuota::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_cnameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cname";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cname.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cname.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }

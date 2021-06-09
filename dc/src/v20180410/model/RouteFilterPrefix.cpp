@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dc::V20180410::Model;
-using namespace rapidjson;
 using namespace std;
 
 RouteFilterPrefix::RouteFilterPrefix() :
@@ -26,7 +25,7 @@ RouteFilterPrefix::RouteFilterPrefix() :
 {
 }
 
-CoreInternalOutcome RouteFilterPrefix::Deserialize(const Value &value)
+CoreInternalOutcome RouteFilterPrefix::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome RouteFilterPrefix::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RouteFilterPrefix::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RouteFilterPrefix::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cidrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cidr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cidr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cidr.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ssa::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 CheckAssetItem::CheckAssetItem() :
@@ -38,7 +37,7 @@ CheckAssetItem::CheckAssetItem() :
 {
 }
 
-CoreInternalOutcome CheckAssetItem::Deserialize(const Value &value)
+CoreInternalOutcome CheckAssetItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -177,12 +176,12 @@ CoreInternalOutcome CheckAssetItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CheckAssetItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CheckAssetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -190,31 +189,31 @@ void CheckAssetItem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_instidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Instid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Taskid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_result, allocator);
@@ -222,23 +221,23 @@ void CheckAssetItem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_updatetimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Updatetime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updatetime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatetime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isIgnoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsIgnore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isIgnore, allocator);
@@ -246,7 +245,7 @@ void CheckAssetItem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_isCheckedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsChecked";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isChecked, allocator);
@@ -254,34 +253,34 @@ void CheckAssetItem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_assetInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AssetInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_assetInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_assetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AssetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_assetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_detailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Detail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_detail.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_detail.c_str(), allocator).Move(), allocator);
     }
 
     if (m_remarksHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remarks";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_remarks.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remarks.c_str(), allocator).Move(), allocator);
     }
 
 }

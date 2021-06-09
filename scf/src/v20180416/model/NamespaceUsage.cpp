@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 NamespaceUsage::NamespaceUsage() :
@@ -28,7 +27,7 @@ NamespaceUsage::NamespaceUsage() :
 {
 }
 
-CoreInternalOutcome NamespaceUsage::Deserialize(const Value &value)
+CoreInternalOutcome NamespaceUsage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome NamespaceUsage::Deserialize(const Value &value)
         if (!value["Functions"].IsArray())
             return CoreInternalOutcome(Error("response `NamespaceUsage.Functions` is not array type"));
 
-        const Value &tmpValue = value["Functions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Functions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_functions.push_back((*itr).GetString());
         }
@@ -70,33 +69,33 @@ CoreInternalOutcome NamespaceUsage::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NamespaceUsage::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NamespaceUsage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_functionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Functions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_functions.begin(); itr != m_functions.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_namespaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_functionsCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FunctionsCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_functionsCount, allocator);

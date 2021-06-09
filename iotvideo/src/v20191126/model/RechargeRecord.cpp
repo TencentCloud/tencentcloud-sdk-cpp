@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 RechargeRecord::RechargeRecord() :
@@ -29,7 +28,7 @@ RechargeRecord::RechargeRecord() :
 {
 }
 
-CoreInternalOutcome RechargeRecord::Deserialize(const Value &value)
+CoreInternalOutcome RechargeRecord::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome RechargeRecord::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RechargeRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RechargeRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_waterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WaterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_waterId, allocator);
@@ -91,7 +90,7 @@ void RechargeRecord::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_balanceBeforeRechargeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BalanceBeforeRecharge";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_balanceBeforeRecharge, allocator);
@@ -99,7 +98,7 @@ void RechargeRecord::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_moneyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Money";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_money, allocator);
@@ -107,7 +106,7 @@ void RechargeRecord::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_operateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OperateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_operateTime, allocator);

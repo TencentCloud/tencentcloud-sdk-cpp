@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 PsaRegulation::PsaRegulation() :
@@ -35,7 +34,7 @@ PsaRegulation::PsaRegulation() :
 {
 }
 
-CoreInternalOutcome PsaRegulation::Deserialize(const Value &value)
+CoreInternalOutcome PsaRegulation::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -125,8 +124,8 @@ CoreInternalOutcome PsaRegulation::Deserialize(const Value &value)
         if (!value["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `PsaRegulation.Tags` is not array type"));
 
-        const Value &tmpValue = value["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Tag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -145,8 +144,8 @@ CoreInternalOutcome PsaRegulation::Deserialize(const Value &value)
         if (!value["TaskTypeIds"].IsArray())
             return CoreInternalOutcome(Error("response `PsaRegulation.TaskTypeIds` is not array type"));
 
-        const Value &tmpValue = value["TaskTypeIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TaskTypeIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_taskTypeIds.push_back((*itr).GetUint64());
         }
@@ -157,28 +156,28 @@ CoreInternalOutcome PsaRegulation::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PsaRegulation::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PsaRegulation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_psaIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PsaId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_psaId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_psaId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_psaNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PsaName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_psaName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_psaName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tagCount, allocator);
@@ -186,7 +185,7 @@ void PsaRegulation::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_instanceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceCount, allocator);
@@ -194,7 +193,7 @@ void PsaRegulation::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_repairCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepairCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_repairCount, allocator);
@@ -202,7 +201,7 @@ void PsaRegulation::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_repairLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepairLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_repairLimit, allocator);
@@ -210,45 +209,45 @@ void PsaRegulation::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_psaDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PsaDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_psaDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_psaDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_taskTypeIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskTypeIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_taskTypeIds.begin(); itr != m_taskTypeIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 

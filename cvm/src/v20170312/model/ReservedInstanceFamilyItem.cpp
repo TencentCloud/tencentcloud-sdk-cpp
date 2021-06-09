@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReservedInstanceFamilyItem::ReservedInstanceFamilyItem() :
@@ -28,7 +27,7 @@ ReservedInstanceFamilyItem::ReservedInstanceFamilyItem() :
 {
 }
 
-CoreInternalOutcome ReservedInstanceFamilyItem::Deserialize(const Value &value)
+CoreInternalOutcome ReservedInstanceFamilyItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome ReservedInstanceFamilyItem::Deserialize(const Value &value)
         if (!value["InstanceTypes"].IsArray())
             return CoreInternalOutcome(Error("response `ReservedInstanceFamilyItem.InstanceTypes` is not array type"));
 
-        const Value &tmpValue = value["InstanceTypes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InstanceTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ReservedInstanceTypeItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,20 +76,20 @@ CoreInternalOutcome ReservedInstanceFamilyItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReservedInstanceFamilyItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReservedInstanceFamilyItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceFamilyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceFamily";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceFamily.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceFamily.c_str(), allocator).Move(), allocator);
     }
 
     if (m_orderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Order";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_order, allocator);
@@ -98,15 +97,15 @@ void ReservedInstanceFamilyItem::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_instanceTypesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceTypes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_instanceTypes.begin(); itr != m_instanceTypes.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cmq::V20190304::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeSubscriptionDetailResponse::DescribeSubscriptionDetailResponse() :
@@ -32,7 +31,7 @@ DescribeSubscriptionDetailResponse::DescribeSubscriptionDetailResponse() :
 
 CoreInternalOutcome DescribeSubscriptionDetailResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeSubscriptionDetailResponse::Deserialize(const string
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeSubscriptionDetailResponse::Deserialize(const string
         if (!rsp["SubscriptionSet"].IsArray())
             return CoreInternalOutcome(Error("response `SubscriptionSet` is not array type"));
 
-        const Value &tmpValue = rsp["SubscriptionSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SubscriptionSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Subscription item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

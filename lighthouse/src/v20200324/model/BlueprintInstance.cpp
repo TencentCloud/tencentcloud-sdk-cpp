@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 BlueprintInstance::BlueprintInstance() :
@@ -28,7 +27,7 @@ BlueprintInstance::BlueprintInstance() :
 {
 }
 
-CoreInternalOutcome BlueprintInstance::Deserialize(const Value &value)
+CoreInternalOutcome BlueprintInstance::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -55,8 +54,8 @@ CoreInternalOutcome BlueprintInstance::Deserialize(const Value &value)
         if (!value["SoftwareSet"].IsArray())
             return CoreInternalOutcome(Error("response `BlueprintInstance.SoftwareSet` is not array type"));
 
-        const Value &tmpValue = value["SoftwareSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SoftwareSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Software item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -84,39 +83,39 @@ CoreInternalOutcome BlueprintInstance::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BlueprintInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BlueprintInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_blueprintHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Blueprint";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_blueprint.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_softwareSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SoftwareSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_softwareSet.begin(); itr != m_softwareSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }

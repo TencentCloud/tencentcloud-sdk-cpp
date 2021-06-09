@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DailyTracePoint::DailyTracePoint() :
@@ -27,7 +26,7 @@ DailyTracePoint::DailyTracePoint() :
 {
 }
 
-CoreInternalOutcome DailyTracePoint::Deserialize(const Value &value)
+CoreInternalOutcome DailyTracePoint::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome DailyTracePoint::Deserialize(const Value &value)
         if (!value["TracePointSet"].IsArray())
             return CoreInternalOutcome(Error("response `DailyTracePoint.TracePointSet` is not array type"));
 
-        const Value &tmpValue = value["TracePointSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TracePointSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PersonTracePoint item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome DailyTracePoint::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DailyTracePoint::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DailyTracePoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_traceDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TraceDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_traceDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_traceDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tracePointSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TracePointSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tracePointSet.begin(); itr != m_tracePointSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

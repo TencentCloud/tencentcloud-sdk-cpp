@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Clb::V20180317::Model;
-using namespace rapidjson;
 using namespace std;
 
 CertIdRelatedWithLoadBalancers::CertIdRelatedWithLoadBalancers() :
@@ -27,7 +26,7 @@ CertIdRelatedWithLoadBalancers::CertIdRelatedWithLoadBalancers() :
 {
 }
 
-CoreInternalOutcome CertIdRelatedWithLoadBalancers::Deserialize(const Value &value)
+CoreInternalOutcome CertIdRelatedWithLoadBalancers::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome CertIdRelatedWithLoadBalancers::Deserialize(const Value &val
         if (!value["LoadBalancers"].IsArray())
             return CoreInternalOutcome(Error("response `CertIdRelatedWithLoadBalancers.LoadBalancers` is not array type"));
 
-        const Value &tmpValue = value["LoadBalancers"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LoadBalancers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LoadBalancer item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome CertIdRelatedWithLoadBalancers::Deserialize(const Value &val
     return CoreInternalOutcome(true);
 }
 
-void CertIdRelatedWithLoadBalancers::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CertIdRelatedWithLoadBalancers::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_certIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_loadBalancersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoadBalancers";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_loadBalancers.begin(); itr != m_loadBalancers.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

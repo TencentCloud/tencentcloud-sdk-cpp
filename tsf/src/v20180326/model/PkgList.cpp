@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 PkgList::PkgList() :
@@ -30,7 +29,7 @@ PkgList::PkgList() :
 {
 }
 
-CoreInternalOutcome PkgList::Deserialize(const Value &value)
+CoreInternalOutcome PkgList::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -50,8 +49,8 @@ CoreInternalOutcome PkgList::Deserialize(const Value &value)
         if (!value["Content"].IsArray())
             return CoreInternalOutcome(Error("response `PkgList.Content` is not array type"));
 
-        const Value &tmpValue = value["Content"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Content"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PkgInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -99,12 +98,12 @@ CoreInternalOutcome PkgList::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PkgList::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PkgList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -112,41 +111,41 @@ void PkgList::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_contentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_content.begin(); itr != m_content.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_repositoryIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepositoryId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_repositoryId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repositoryId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_repositoryTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepositoryType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_repositoryType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repositoryType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_repositoryNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepositoryName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_repositoryName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repositoryName.c_str(), allocator).Move(), allocator);
     }
 
 }

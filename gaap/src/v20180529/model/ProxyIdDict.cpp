@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProxyIdDict::ProxyIdDict() :
@@ -26,7 +25,7 @@ ProxyIdDict::ProxyIdDict() :
 {
 }
 
-CoreInternalOutcome ProxyIdDict::Deserialize(const Value &value)
+CoreInternalOutcome ProxyIdDict::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome ProxyIdDict::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProxyIdDict::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProxyIdDict::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_proxyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProxyId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_proxyId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyId.c_str(), allocator).Move(), allocator);
     }
 
 }

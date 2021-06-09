@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateTopicRequest::CreateTopicRequest() :
@@ -41,30 +40,30 @@ CreateTopicRequest::CreateTopicRequest() :
 
 string CreateTopicRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topicNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_topicName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_partitionNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PartitionNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_partitionNum, allocator);
@@ -72,7 +71,7 @@ string CreateTopicRequest::ToJsonString() const
 
     if (m_replicaNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicaNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_replicaNum, allocator);
@@ -80,7 +79,7 @@ string CreateTopicRequest::ToJsonString() const
 
     if (m_enableWhiteListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableWhiteList";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableWhiteList, allocator);
@@ -88,36 +87,36 @@ string CreateTopicRequest::ToJsonString() const
 
     if (m_ipWhiteListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpWhiteList";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_ipWhiteList.begin(); itr != m_ipWhiteList.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_cleanUpPolicyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CleanUpPolicy";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cleanUpPolicy.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cleanUpPolicy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_noteHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Note";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_note.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
     }
 
     if (m_minInsyncReplicasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinInsyncReplicas";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_minInsyncReplicas, allocator);
@@ -125,7 +124,7 @@ string CreateTopicRequest::ToJsonString() const
 
     if (m_uncleanLeaderElectionEnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UncleanLeaderElectionEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_uncleanLeaderElectionEnable, allocator);
@@ -133,7 +132,7 @@ string CreateTopicRequest::ToJsonString() const
 
     if (m_retentionMsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RetentionMs";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_retentionMs, allocator);
@@ -141,15 +140,15 @@ string CreateTopicRequest::ToJsonString() const
 
     if (m_segmentMsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SegmentMs";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_segmentMs, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

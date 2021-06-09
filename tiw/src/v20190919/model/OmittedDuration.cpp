@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiw::V20190919::Model;
-using namespace rapidjson;
 using namespace std;
 
 OmittedDuration::OmittedDuration() :
@@ -28,7 +27,7 @@ OmittedDuration::OmittedDuration() :
 {
 }
 
-CoreInternalOutcome OmittedDuration::Deserialize(const Value &value)
+CoreInternalOutcome OmittedDuration::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome OmittedDuration::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OmittedDuration::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OmittedDuration::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_videoTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoTime, allocator);
@@ -80,7 +79,7 @@ void OmittedDuration::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_pauseTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PauseTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pauseTime, allocator);
@@ -88,7 +87,7 @@ void OmittedDuration::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_resumeTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResumeTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resumeTime, allocator);

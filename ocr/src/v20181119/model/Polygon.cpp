@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 Polygon::Polygon() :
@@ -29,7 +28,7 @@ Polygon::Polygon() :
 {
 }
 
-CoreInternalOutcome Polygon::Deserialize(const Value &value)
+CoreInternalOutcome Polygon::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -106,42 +105,42 @@ CoreInternalOutcome Polygon::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Polygon::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Polygon::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_leftTopHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeftTop";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_leftTop.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_rightTopHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RightTop";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rightTop.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_rightBottomHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RightBottom";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rightBottom.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_leftBottomHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeftBottom";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_leftBottom.ToJsonObject(value[key.c_str()], allocator);
     }
 

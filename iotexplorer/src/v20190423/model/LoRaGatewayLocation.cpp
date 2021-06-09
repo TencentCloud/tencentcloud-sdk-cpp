@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
-using namespace rapidjson;
 using namespace std;
 
 LoRaGatewayLocation::LoRaGatewayLocation() :
@@ -29,7 +28,7 @@ LoRaGatewayLocation::LoRaGatewayLocation() :
 {
 }
 
-CoreInternalOutcome LoRaGatewayLocation::Deserialize(const Value &value)
+CoreInternalOutcome LoRaGatewayLocation::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome LoRaGatewayLocation::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LoRaGatewayLocation::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LoRaGatewayLocation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_accuracyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Accuracy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accuracy, allocator);
@@ -91,7 +90,7 @@ void LoRaGatewayLocation::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_altitudeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Altitude";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_altitude, allocator);
@@ -99,7 +98,7 @@ void LoRaGatewayLocation::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_latitudeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Latitude";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_latitude, allocator);
@@ -107,7 +106,7 @@ void LoRaGatewayLocation::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_longitudeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Longitude";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_longitude, allocator);

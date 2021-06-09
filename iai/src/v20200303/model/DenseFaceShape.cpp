@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 DenseFaceShape::DenseFaceShape() :
@@ -43,7 +42,7 @@ DenseFaceShape::DenseFaceShape() :
 {
 }
 
-CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
+CoreInternalOutcome DenseFaceShape::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -93,8 +92,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["LeftEye"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.LeftEye` is not array type"));
 
-        const Value &tmpValue = value["LeftEye"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LeftEye"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -113,8 +112,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["RightEye"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.RightEye` is not array type"));
 
-        const Value &tmpValue = value["RightEye"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RightEye"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -133,8 +132,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["LeftEyeBrow"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.LeftEyeBrow` is not array type"));
 
-        const Value &tmpValue = value["LeftEyeBrow"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LeftEyeBrow"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -153,8 +152,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["RightEyeBrow"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.RightEyeBrow` is not array type"));
 
-        const Value &tmpValue = value["RightEyeBrow"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RightEyeBrow"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -173,8 +172,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["MouthOutside"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.MouthOutside` is not array type"));
 
-        const Value &tmpValue = value["MouthOutside"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MouthOutside"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -193,8 +192,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["MouthInside"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.MouthInside` is not array type"));
 
-        const Value &tmpValue = value["MouthInside"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MouthInside"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -213,8 +212,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["Nose"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.Nose` is not array type"));
 
-        const Value &tmpValue = value["Nose"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Nose"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -233,8 +232,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["LeftPupil"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.LeftPupil` is not array type"));
 
-        const Value &tmpValue = value["LeftPupil"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LeftPupil"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -253,8 +252,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["RightPupil"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.RightPupil` is not array type"));
 
-        const Value &tmpValue = value["RightPupil"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RightPupil"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -273,8 +272,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["CentralAxis"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.CentralAxis` is not array type"));
 
-        const Value &tmpValue = value["CentralAxis"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CentralAxis"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -293,8 +292,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["Chin"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.Chin` is not array type"));
 
-        const Value &tmpValue = value["Chin"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Chin"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -313,8 +312,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["LeftEyeBags"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.LeftEyeBags` is not array type"));
 
-        const Value &tmpValue = value["LeftEyeBags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LeftEyeBags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -333,8 +332,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["RightEyeBags"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.RightEyeBags` is not array type"));
 
-        const Value &tmpValue = value["RightEyeBags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RightEyeBags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -353,8 +352,8 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
         if (!value["Forehead"].IsArray())
             return CoreInternalOutcome(Error("response `DenseFaceShape.Forehead` is not array type"));
 
-        const Value &tmpValue = value["Forehead"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Forehead"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -372,12 +371,12 @@ CoreInternalOutcome DenseFaceShape::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DenseFaceShape::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DenseFaceShape::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_xHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "X";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_x, allocator);
@@ -385,7 +384,7 @@ void DenseFaceShape::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_yHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Y";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_y, allocator);
@@ -393,7 +392,7 @@ void DenseFaceShape::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -401,7 +400,7 @@ void DenseFaceShape::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -409,210 +408,210 @@ void DenseFaceShape::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_leftEyeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeftEye";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_leftEye.begin(); itr != m_leftEye.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_rightEyeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RightEye";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_rightEye.begin(); itr != m_rightEye.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_leftEyeBrowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeftEyeBrow";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_leftEyeBrow.begin(); itr != m_leftEyeBrow.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_rightEyeBrowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RightEyeBrow";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_rightEyeBrow.begin(); itr != m_rightEyeBrow.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_mouthOutsideHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MouthOutside";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_mouthOutside.begin(); itr != m_mouthOutside.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_mouthInsideHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MouthInside";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_mouthInside.begin(); itr != m_mouthInside.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_noseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Nose";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_nose.begin(); itr != m_nose.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_leftPupilHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeftPupil";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_leftPupil.begin(); itr != m_leftPupil.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_rightPupilHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RightPupil";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_rightPupil.begin(); itr != m_rightPupil.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_centralAxisHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CentralAxis";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_centralAxis.begin(); itr != m_centralAxis.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_chinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Chin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_chin.begin(); itr != m_chin.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_leftEyeBagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeftEyeBags";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_leftEyeBags.begin(); itr != m_leftEyeBags.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_rightEyeBagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RightEyeBags";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_rightEyeBags.begin(); itr != m_rightEyeBags.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_foreheadHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Forehead";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_forehead.begin(); itr != m_forehead.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

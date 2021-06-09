@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 AdvertiseTextDetection::AdvertiseTextDetection() :
@@ -29,7 +28,7 @@ AdvertiseTextDetection::AdvertiseTextDetection() :
 {
 }
 
-CoreInternalOutcome AdvertiseTextDetection::Deserialize(const Value &value)
+CoreInternalOutcome AdvertiseTextDetection::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -59,8 +58,8 @@ CoreInternalOutcome AdvertiseTextDetection::Deserialize(const Value &value)
         if (!value["Polygon"].IsArray())
             return CoreInternalOutcome(Error("response `AdvertiseTextDetection.Polygon` is not array type"));
 
-        const Value &tmpValue = value["Polygon"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Polygon"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Coord item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,20 +87,20 @@ CoreInternalOutcome AdvertiseTextDetection::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AdvertiseTextDetection::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AdvertiseTextDetection::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_detectedTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DetectedText";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_detectedText.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_detectedText.c_str(), allocator).Move(), allocator);
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -109,25 +108,25 @@ void AdvertiseTextDetection::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_polygonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Polygon";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_polygon.begin(); itr != m_polygon.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_advancedInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AdvancedInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
     }
 
 }

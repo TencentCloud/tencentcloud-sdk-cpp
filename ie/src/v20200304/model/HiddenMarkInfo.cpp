@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 HiddenMarkInfo::HiddenMarkInfo() :
@@ -29,7 +28,7 @@ HiddenMarkInfo::HiddenMarkInfo() :
 {
 }
 
-CoreInternalOutcome HiddenMarkInfo::Deserialize(const Value &value)
+CoreInternalOutcome HiddenMarkInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,20 +84,20 @@ CoreInternalOutcome HiddenMarkInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HiddenMarkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HiddenMarkInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_pathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_path.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
     if (m_frequencyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Frequency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frequency, allocator);
@@ -106,7 +105,7 @@ void HiddenMarkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_strengthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Strength";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_strength, allocator);
@@ -114,10 +113,10 @@ void HiddenMarkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_cosInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

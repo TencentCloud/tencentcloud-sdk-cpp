@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 PutScalingPolicyRequest::PutScalingPolicyRequest() :
@@ -39,30 +38,30 @@ PutScalingPolicyRequest::PutScalingPolicyRequest() :
 
 string PutScalingPolicyRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_fleetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FleetId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_fleetId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fleetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scalingAdjustmentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScalingAdjustment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_scalingAdjustment, allocator);
@@ -70,15 +69,15 @@ string PutScalingPolicyRequest::ToJsonString() const
 
     if (m_scalingAdjustmentTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScalingAdjustmentType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_scalingAdjustmentType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scalingAdjustmentType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_thresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Threshold";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_threshold, allocator);
@@ -86,15 +85,15 @@ string PutScalingPolicyRequest::ToJsonString() const
 
     if (m_comparisonOperatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComparisonOperator";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_comparisonOperator.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_comparisonOperator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_evaluationPeriodsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvaluationPeriods";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_evaluationPeriods, allocator);
@@ -102,32 +101,32 @@ string PutScalingPolicyRequest::ToJsonString() const
 
     if (m_metricNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetricName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_metricName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_policyTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_policyType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_policyType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetConfigurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetConfiguration";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_targetConfiguration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

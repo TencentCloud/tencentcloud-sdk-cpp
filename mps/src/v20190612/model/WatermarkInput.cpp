@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 WatermarkInput::WatermarkInput() :
@@ -31,7 +30,7 @@ WatermarkInput::WatermarkInput() :
 {
 }
 
-CoreInternalOutcome WatermarkInput::Deserialize(const Value &value)
+CoreInternalOutcome WatermarkInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -107,12 +106,12 @@ CoreInternalOutcome WatermarkInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WatermarkInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WatermarkInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_definitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
@@ -120,32 +119,32 @@ void WatermarkInput::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_rawParameterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RawParameter";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rawParameter.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_textContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TextContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_textContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_textContent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_svgContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SvgContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_svgContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_svgContent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -153,7 +152,7 @@ void WatermarkInput::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);

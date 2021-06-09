@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Fmu::V20191213::Model;
-using namespace rapidjson;
 using namespace std;
 
 BeautyParam::BeautyParam() :
@@ -29,7 +28,7 @@ BeautyParam::BeautyParam() :
 {
 }
 
-CoreInternalOutcome BeautyParam::Deserialize(const Value &value)
+CoreInternalOutcome BeautyParam::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome BeautyParam::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BeautyParam::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BeautyParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_whitenLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WhitenLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_whitenLevel, allocator);
@@ -91,7 +90,7 @@ void BeautyParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_smoothingLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SmoothingLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_smoothingLevel, allocator);
@@ -99,7 +98,7 @@ void BeautyParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_eyeEnlargeLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EyeEnlargeLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eyeEnlargeLevel, allocator);
@@ -107,7 +106,7 @@ void BeautyParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_faceShrinkLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceShrinkLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_faceShrinkLevel, allocator);

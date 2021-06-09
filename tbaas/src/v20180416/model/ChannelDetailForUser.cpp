@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbaas::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 ChannelDetailForUser::ChannelDetailForUser() :
@@ -27,7 +26,7 @@ ChannelDetailForUser::ChannelDetailForUser() :
 {
 }
 
-CoreInternalOutcome ChannelDetailForUser::Deserialize(const Value &value)
+CoreInternalOutcome ChannelDetailForUser::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome ChannelDetailForUser::Deserialize(const Value &value)
         if (!value["PeerList"].IsArray())
             return CoreInternalOutcome(Error("response `ChannelDetailForUser.PeerList` is not array type"));
 
-        const Value &tmpValue = value["PeerList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PeerList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PeerDetailForUser item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome ChannelDetailForUser::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ChannelDetailForUser::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ChannelDetailForUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_channelNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_peerListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeerList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_peerList.begin(); itr != m_peerList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

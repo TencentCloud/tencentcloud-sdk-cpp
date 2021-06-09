@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tms::V20200713::Model;
-using namespace rapidjson;
 using namespace std;
 
 TextLib::TextLib() :
@@ -27,7 +26,7 @@ TextLib::TextLib() :
 {
 }
 
-CoreInternalOutcome TextLib::Deserialize(const Value &value)
+CoreInternalOutcome TextLib::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome TextLib::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TextLib::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TextLib::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_libIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LibId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_libId, allocator);
@@ -69,10 +68,10 @@ void TextLib::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_libNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LibName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_libName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_libName.c_str(), allocator).Move(), allocator);
     }
 
 }

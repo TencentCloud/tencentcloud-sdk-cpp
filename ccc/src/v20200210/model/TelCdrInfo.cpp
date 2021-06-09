@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ccc::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 TelCdrInfo::TelCdrInfo() :
@@ -49,7 +48,7 @@ TelCdrInfo::TelCdrInfo() :
 {
 }
 
-CoreInternalOutcome TelCdrInfo::Deserialize(const Value &value)
+CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -206,8 +205,8 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const Value &value)
         if (!value["IVRKeyPressed"].IsArray())
             return CoreInternalOutcome(Error("response `TelCdrInfo.IVRKeyPressed` is not array type"));
 
-        const Value &tmpValue = value["IVRKeyPressed"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["IVRKeyPressed"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_iVRKeyPressed.push_back((*itr).GetString());
         }
@@ -229,8 +228,8 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const Value &value)
         if (!value["ServeParticipants"].IsArray())
             return CoreInternalOutcome(Error("response `TelCdrInfo.ServeParticipants` is not array type"));
 
-        const Value &tmpValue = value["ServeParticipants"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ServeParticipants"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ServeParticipant item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -289,8 +288,8 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const Value &value)
         if (!value["PostIVRKeyPressed"].IsArray())
             return CoreInternalOutcome(Error("response `TelCdrInfo.PostIVRKeyPressed` is not array type"));
 
-        const Value &tmpValue = value["PostIVRKeyPressed"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PostIVRKeyPressed"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             IVRKeyPressedElement item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -328,28 +327,28 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_callerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Caller";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_caller.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_caller.c_str(), allocator).Move(), allocator);
     }
 
     if (m_calleeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Callee";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_callee.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callee.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_time, allocator);
@@ -357,7 +356,7 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_directionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Direction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_direction, allocator);
@@ -365,7 +364,7 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -373,24 +372,24 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_recordURLHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordURL";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_recordURL.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordURL.c_str(), allocator).Move(), allocator);
     }
 
     if (m_seatUserHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SeatUser";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_seatUser.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_endStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endStatus, allocator);
@@ -398,23 +397,23 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_skillGroupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SkillGroup";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_skillGroup.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_skillGroup.c_str(), allocator).Move(), allocator);
     }
 
     if (m_callerLocationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CallerLocation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_callerLocation.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callerLocation.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iVRDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IVRDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iVRDuration, allocator);
@@ -422,7 +421,7 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_ringTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RingTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ringTimestamp, allocator);
@@ -430,7 +429,7 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_acceptTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AcceptTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_acceptTimestamp, allocator);
@@ -438,7 +437,7 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_endedTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndedTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endedTimestamp, allocator);
@@ -446,43 +445,43 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_iVRKeyPressedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IVRKeyPressed";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_iVRKeyPressed.begin(); itr != m_iVRKeyPressed.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_hungUpSideHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HungUpSide";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_hungUpSide.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hungUpSide.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serveParticipantsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServeParticipants";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_serveParticipants.begin(); itr != m_serveParticipants.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_skillGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SkillGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_skillGroupId, allocator);
@@ -490,15 +489,15 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_endStatusStringHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndStatusString";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endStatusString.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endStatusString.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimestamp, allocator);
@@ -506,7 +505,7 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_queuedTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueuedTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_queuedTimestamp, allocator);
@@ -514,22 +513,22 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_postIVRKeyPressedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PostIVRKeyPressed";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_postIVRKeyPressed.begin(); itr != m_postIVRKeyPressed.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_queuedSkillGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueuedSkillGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_queuedSkillGroupId, allocator);
@@ -537,10 +536,10 @@ void TelCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_sessionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
 }

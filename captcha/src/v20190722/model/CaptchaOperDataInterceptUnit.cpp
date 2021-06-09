@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Captcha::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 CaptchaOperDataInterceptUnit::CaptchaOperDataInterceptUnit() :
@@ -29,7 +28,7 @@ CaptchaOperDataInterceptUnit::CaptchaOperDataInterceptUnit() :
 {
 }
 
-CoreInternalOutcome CaptchaOperDataInterceptUnit::Deserialize(const Value &value)
+CoreInternalOutcome CaptchaOperDataInterceptUnit::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome CaptchaOperDataInterceptUnit::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void CaptchaOperDataInterceptUnit::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CaptchaOperDataInterceptUnit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dateKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DateKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dateKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dateKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_allStopCntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AllStopCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allStopCnt, allocator);
@@ -99,7 +98,7 @@ void CaptchaOperDataInterceptUnit::ToJsonObject(Value &value, Document::Allocato
 
     if (m_picStopCntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PicStopCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_picStopCnt, allocator);
@@ -107,7 +106,7 @@ void CaptchaOperDataInterceptUnit::ToJsonObject(Value &value, Document::Allocato
 
     if (m_strategyStopCntHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StrategyStopCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_strategyStopCnt, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClusterAdvancedSettings::ClusterAdvancedSettings() :
@@ -41,7 +40,7 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
 {
 }
 
-CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const Value &value)
+CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -217,12 +216,12 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClusterAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_iPVSHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IPVS";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iPVS, allocator);
@@ -230,7 +229,7 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_asEnabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AsEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_asEnabled, allocator);
@@ -238,40 +237,40 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_containerRuntimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContainerRuntime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_containerRuntime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerRuntime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeNameTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeNameType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeNameType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeNameType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extraArgsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExtraArgs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extraArgs.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_networkTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetworkType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_networkType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isNonStaticIpModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsNonStaticIpMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isNonStaticIpMode, allocator);
@@ -279,7 +278,7 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_deletionProtectionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deletionProtection, allocator);
@@ -287,15 +286,15 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_kubeProxyModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KubeProxyMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_kubeProxyMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kubeProxyMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_auditEnabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuditEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_auditEnabled, allocator);
@@ -303,39 +302,39 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_auditLogsetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuditLogsetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_auditLogsetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_auditLogsetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_auditLogTopicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuditLogTopicId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_auditLogTopicId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_auditLogTopicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcCniTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcCniType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcCniType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcCniType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_runtimeVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuntimeVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_runtimeVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runtimeVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableCustomizedPodCIDRHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableCustomizedPodCIDR";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableCustomizedPodCIDR, allocator);
@@ -343,7 +342,7 @@ void ClusterAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_basePodNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BasePodNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_basePodNumber, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 CpuInfo::CpuInfo() :
@@ -29,7 +28,7 @@ CpuInfo::CpuInfo() :
 {
 }
 
-CoreInternalOutcome CpuInfo::Deserialize(const Value &value)
+CoreInternalOutcome CpuInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome CpuInfo::Deserialize(const Value &value)
         if (!value["ContainRaidCard"].IsArray())
             return CoreInternalOutcome(Error("response `CpuInfo.ContainRaidCard` is not array type"));
 
-        const Value &tmpValue = value["ContainRaidCard"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ContainRaidCard"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_containRaidCard.push_back((*itr).GetUint64());
         }
@@ -81,12 +80,12 @@ CoreInternalOutcome CpuInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CpuInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CpuInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cpuIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpuId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpuId, allocator);
@@ -94,15 +93,15 @@ void CpuInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_cpuDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpuDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cpuDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cpuDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_seriesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Series";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_series, allocator);
@@ -110,14 +109,14 @@ void CpuInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_containRaidCardHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContainRaidCard";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_containRaidCard.begin(); itr != m_containRaidCard.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 

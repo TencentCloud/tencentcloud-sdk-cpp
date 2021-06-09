@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceClassPartitionInfo::DeviceClassPartitionInfo() :
@@ -36,7 +35,7 @@ DeviceClassPartitionInfo::DeviceClassPartitionInfo() :
 {
 }
 
-CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const Value &value)
+CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -146,8 +145,8 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const Value &value)
         if (!value["DeviceDiskSizeInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceClassPartitionInfo.DeviceDiskSizeInfoSet` is not array type"));
 
-        const Value &tmpValue = value["DeviceDiskSizeInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DeviceDiskSizeInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DeviceDiskSizeInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -165,12 +164,12 @@ CoreInternalOutcome DeviceClassPartitionInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceClassPartitionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceClassPartitionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_raidIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RaidId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_raidId, allocator);
@@ -178,23 +177,23 @@ void DeviceClassPartitionInfo::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_raidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Raid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_raid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_raid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_raidDisplayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RaidDisplay";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_raidDisplay.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_raidDisplay.c_str(), allocator).Move(), allocator);
     }
 
     if (m_systemDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SystemDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_systemDiskSize, allocator);
@@ -202,7 +201,7 @@ void DeviceClassPartitionInfo::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_sysRootSpaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SysRootSpace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sysRootSpace, allocator);
@@ -210,7 +209,7 @@ void DeviceClassPartitionInfo::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_sysSwaporuefiSpaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SysSwaporuefiSpace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sysSwaporuefiSpace, allocator);
@@ -218,7 +217,7 @@ void DeviceClassPartitionInfo::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_sysUsrlocalSpaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SysUsrlocalSpace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sysUsrlocalSpace, allocator);
@@ -226,7 +225,7 @@ void DeviceClassPartitionInfo::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_sysDataSpaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SysDataSpace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sysDataSpace, allocator);
@@ -234,7 +233,7 @@ void DeviceClassPartitionInfo::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_sysIsUefiTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SysIsUefiType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sysIsUefiType, allocator);
@@ -242,7 +241,7 @@ void DeviceClassPartitionInfo::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_dataDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataDiskSize, allocator);
@@ -250,15 +249,15 @@ void DeviceClassPartitionInfo::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_deviceDiskSizeInfoSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceDiskSizeInfoSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_deviceDiskSizeInfoSet.begin(); itr != m_deviceDiskSizeInfoSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

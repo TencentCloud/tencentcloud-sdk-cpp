@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiw::V20190919::Model;
-using namespace rapidjson;
 using namespace std;
 
 MixStream::MixStream() :
@@ -30,7 +29,7 @@ MixStream::MixStream() :
 {
 }
 
-CoreInternalOutcome MixStream::Deserialize(const Value &value)
+CoreInternalOutcome MixStream::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -96,12 +95,12 @@ CoreInternalOutcome MixStream::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MixStream::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MixStream::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enabled, allocator);
@@ -109,7 +108,7 @@ void MixStream::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_disableAudioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisableAudio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disableAudio, allocator);
@@ -117,7 +116,7 @@ void MixStream::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_modelIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modelId, allocator);
@@ -125,18 +124,18 @@ void MixStream::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_teacherIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TeacherId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_teacherId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_teacherId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Custom";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_custom.ToJsonObject(value[key.c_str()], allocator);
     }
 

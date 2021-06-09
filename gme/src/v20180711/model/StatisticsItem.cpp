@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gme::V20180711::Model;
-using namespace rapidjson;
 using namespace std;
 
 StatisticsItem::StatisticsItem() :
@@ -27,7 +26,7 @@ StatisticsItem::StatisticsItem() :
 {
 }
 
-CoreInternalOutcome StatisticsItem::Deserialize(const Value &value)
+CoreInternalOutcome StatisticsItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome StatisticsItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StatisticsItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StatisticsItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_statDateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatDate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_statDate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statDate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_data, allocator);

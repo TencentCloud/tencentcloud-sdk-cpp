@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Npp::V20190823::Model;
-using namespace rapidjson;
 using namespace std;
 
 CallBackPhoneCode::CallBackPhoneCode() :
@@ -27,7 +26,7 @@ CallBackPhoneCode::CallBackPhoneCode() :
 {
 }
 
-CoreInternalOutcome CallBackPhoneCode::Deserialize(const Value &value)
+CoreInternalOutcome CallBackPhoneCode::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome CallBackPhoneCode::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CallBackPhoneCode::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CallBackPhoneCode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Nation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nation.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nation.c_str(), allocator).Move(), allocator);
     }
 
     if (m_phoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Phone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_phone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phone.c_str(), allocator).Move(), allocator);
     }
 
 }

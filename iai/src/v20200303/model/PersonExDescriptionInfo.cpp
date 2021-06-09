@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 PersonExDescriptionInfo::PersonExDescriptionInfo() :
@@ -27,7 +26,7 @@ PersonExDescriptionInfo::PersonExDescriptionInfo() :
 {
 }
 
-CoreInternalOutcome PersonExDescriptionInfo::Deserialize(const Value &value)
+CoreInternalOutcome PersonExDescriptionInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome PersonExDescriptionInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PersonExDescriptionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PersonExDescriptionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_personExDescriptionIndexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonExDescriptionIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_personExDescriptionIndex, allocator);
@@ -69,10 +68,10 @@ void PersonExDescriptionInfo::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_personExDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonExDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_personExDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personExDescription.c_str(), allocator).Move(), allocator);
     }
 
 }

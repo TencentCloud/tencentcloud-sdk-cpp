@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 City::City() :
@@ -27,7 +26,7 @@ City::City() :
 {
 }
 
-CoreInternalOutcome City::Deserialize(const Value &value)
+CoreInternalOutcome City::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome City::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void City::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void City::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cityIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CityId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cityId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cityId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cityNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CityName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cityName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cityName.c_str(), allocator).Move(), allocator);
     }
 
 }

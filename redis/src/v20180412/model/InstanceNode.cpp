@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceNode::InstanceNode() :
@@ -27,7 +26,7 @@ InstanceNode::InstanceNode() :
 {
 }
 
-CoreInternalOutcome InstanceNode::Deserialize(const Value &value)
+CoreInternalOutcome InstanceNode::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome InstanceNode::Deserialize(const Value &value)
         if (!value["InstanceClusterNode"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceNode.InstanceClusterNode` is not array type"));
 
-        const Value &tmpValue = value["InstanceClusterNode"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InstanceClusterNode"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InstanceClusterNode item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,12 +65,12 @@ CoreInternalOutcome InstanceNode::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceNode::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -79,15 +78,15 @@ void InstanceNode::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_instanceClusterNodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceClusterNode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_instanceClusterNode.begin(); itr != m_instanceClusterNode.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

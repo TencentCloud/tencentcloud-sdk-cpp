@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 PersonInfo::PersonInfo() :
@@ -34,7 +33,7 @@ PersonInfo::PersonInfo() :
 {
 }
 
-CoreInternalOutcome PersonInfo::Deserialize(const Value &value)
+CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome PersonInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PersonInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PersonInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_personIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_personId, allocator);
@@ -146,15 +145,15 @@ void PersonInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_personPictureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonPicture";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_personPicture.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personPicture.c_str(), allocator).Move(), allocator);
     }
 
     if (m_genderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gender, allocator);
@@ -162,7 +161,7 @@ void PersonInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_ageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Age";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_age, allocator);
@@ -170,7 +169,7 @@ void PersonInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_personTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_personType, allocator);
@@ -178,15 +177,15 @@ void PersonInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_personPictureUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonPictureUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_personPictureUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personPictureUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_personSubTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonSubType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_personSubType, allocator);
@@ -194,7 +193,7 @@ void PersonInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_visitTimesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VisitTimes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_visitTimes, allocator);
@@ -202,7 +201,7 @@ void PersonInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_visitDaysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VisitDays";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_visitDays, allocator);

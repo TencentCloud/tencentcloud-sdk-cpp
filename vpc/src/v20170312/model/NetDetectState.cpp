@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 NetDetectState::NetDetectState() :
@@ -27,7 +26,7 @@ NetDetectState::NetDetectState() :
 {
 }
 
-CoreInternalOutcome NetDetectState::Deserialize(const Value &value)
+CoreInternalOutcome NetDetectState::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome NetDetectState::Deserialize(const Value &value)
         if (!value["NetDetectIpStateSet"].IsArray())
             return CoreInternalOutcome(Error("response `NetDetectState.NetDetectIpStateSet` is not array type"));
 
-        const Value &tmpValue = value["NetDetectIpStateSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["NetDetectIpStateSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             NetDetectIpState item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome NetDetectState::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NetDetectState::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NetDetectState::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_netDetectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetDetectId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_netDetectId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netDetectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_netDetectIpStateSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetDetectIpStateSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_netDetectIpStateSet.begin(); itr != m_netDetectIpStateSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 UnitRuleItem::UnitRuleItem() :
@@ -34,7 +33,7 @@ UnitRuleItem::UnitRuleItem() :
 {
 }
 
-CoreInternalOutcome UnitRuleItem::Deserialize(const Value &value)
+CoreInternalOutcome UnitRuleItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -124,8 +123,8 @@ CoreInternalOutcome UnitRuleItem::Deserialize(const Value &value)
         if (!value["UnitRuleTagList"].IsArray())
             return CoreInternalOutcome(Error("response `UnitRuleItem.UnitRuleTagList` is not array type"));
 
-        const Value &tmpValue = value["UnitRuleTagList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["UnitRuleTagList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             UnitRuleTag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -143,60 +142,60 @@ CoreInternalOutcome UnitRuleItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UnitRuleItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UnitRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_relationshipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Relationship";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_relationship.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_relationship.c_str(), allocator).Move(), allocator);
     }
 
     if (m_destNamespaceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DestNamespaceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_destNamespaceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destNamespaceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_destNamespaceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DestNamespaceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_destNamespaceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destNamespaceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_unitRuleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitRuleId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_unitRuleId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unitRuleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_priorityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Priority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_priority, allocator);
@@ -204,23 +203,23 @@ void UnitRuleItem::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_unitRuleTagListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitRuleTagList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_unitRuleTagList.begin(); itr != m_unitRuleTagList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

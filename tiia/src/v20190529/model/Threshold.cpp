@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiia::V20190529::Model;
-using namespace rapidjson;
 using namespace std;
 
 Threshold::Threshold() :
@@ -28,7 +27,7 @@ Threshold::Threshold() :
 {
 }
 
-CoreInternalOutcome Threshold::Deserialize(const Value &value)
+CoreInternalOutcome Threshold::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome Threshold::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Threshold::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Threshold::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_falseRate1PercentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FalseRate1Percent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_falseRate1Percent, allocator);
@@ -80,7 +79,7 @@ void Threshold::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_falseRate5PermilHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FalseRate5Permil";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_falseRate5Permil, allocator);
@@ -88,7 +87,7 @@ void Threshold::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_falseRate1PermilHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FalseRate1Permil";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_falseRate1Permil, allocator);

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeReportDataResponse::DescribeReportDataResponse() :
@@ -32,7 +31,7 @@ DescribeReportDataResponse::DescribeReportDataResponse() :
 
 CoreInternalOutcome DescribeReportDataResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeReportDataResponse::Deserialize(const string &payloa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeReportDataResponse::Deserialize(const string &payloa
         if (!rsp["DomainReport"].IsArray())
             return CoreInternalOutcome(Error("response `DomainReport` is not array type"));
 
-        const Value &tmpValue = rsp["DomainReport"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DomainReport"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ReportData item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -89,8 +88,8 @@ CoreInternalOutcome DescribeReportDataResponse::Deserialize(const string &payloa
         if (!rsp["ProjectReport"].IsArray())
             return CoreInternalOutcome(Error("response `ProjectReport` is not array type"));
 
-        const Value &tmpValue = rsp["ProjectReport"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ProjectReport"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ReportData item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

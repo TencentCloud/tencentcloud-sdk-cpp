@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceInfoResult::FaceInfoResult() :
@@ -32,7 +31,7 @@ FaceInfoResult::FaceInfoResult() :
 {
 }
 
-CoreInternalOutcome FaceInfoResult::Deserialize(const Value &value)
+CoreInternalOutcome FaceInfoResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome FaceInfoResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FaceInfoResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FaceInfoResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_faceRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_faceRatio, allocator);
@@ -124,7 +123,7 @@ void FaceInfoResult::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_frameHeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FrameHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frameHeight, allocator);
@@ -132,7 +131,7 @@ void FaceInfoResult::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_frameWidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FrameWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frameWidth, allocator);
@@ -140,7 +139,7 @@ void FaceInfoResult::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -148,7 +147,7 @@ void FaceInfoResult::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_leftHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Left";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_left, allocator);
@@ -156,7 +155,7 @@ void FaceInfoResult::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_topHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Top";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_top, allocator);
@@ -164,7 +163,7 @@ void FaceInfoResult::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);

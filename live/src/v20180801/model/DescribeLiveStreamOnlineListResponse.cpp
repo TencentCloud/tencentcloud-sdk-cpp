@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeLiveStreamOnlineListResponse::DescribeLiveStreamOnlineListResponse() :
@@ -35,7 +34,7 @@ DescribeLiveStreamOnlineListResponse::DescribeLiveStreamOnlineListResponse() :
 
 CoreInternalOutcome DescribeLiveStreamOnlineListResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -45,7 +44,7 @@ CoreInternalOutcome DescribeLiveStreamOnlineListResponse::Deserialize(const stri
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -112,8 +111,8 @@ CoreInternalOutcome DescribeLiveStreamOnlineListResponse::Deserialize(const stri
         if (!rsp["OnlineInfo"].IsArray())
             return CoreInternalOutcome(Error("response `OnlineInfo` is not array type"));
 
-        const Value &tmpValue = rsp["OnlineInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["OnlineInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StreamOnlineInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

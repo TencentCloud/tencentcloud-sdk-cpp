@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 RuleCacheConfig::RuleCacheConfig() :
@@ -28,7 +27,7 @@ RuleCacheConfig::RuleCacheConfig() :
 {
 }
 
-CoreInternalOutcome RuleCacheConfig::Deserialize(const Value &value)
+CoreInternalOutcome RuleCacheConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -88,33 +87,33 @@ CoreInternalOutcome RuleCacheConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RuleCacheConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RuleCacheConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cacheHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cache";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cache.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_noCacheHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NoCache";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_noCache.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_followOriginHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FollowOrigin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_followOrigin.ToJsonObject(value[key.c_str()], allocator);
     }
 

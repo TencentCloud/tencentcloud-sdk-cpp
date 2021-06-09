@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 L7ListenerInfoRule::L7ListenerInfoRule() :
@@ -30,7 +29,7 @@ L7ListenerInfoRule::L7ListenerInfoRule() :
 {
 }
 
-CoreInternalOutcome L7ListenerInfoRule::Deserialize(const Value &value)
+CoreInternalOutcome L7ListenerInfoRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -80,8 +79,8 @@ CoreInternalOutcome L7ListenerInfoRule::Deserialize(const Value &value)
         if (!value["LocationSet"].IsArray())
             return CoreInternalOutcome(Error("response `L7ListenerInfoRule.LocationSet` is not array type"));
 
-        const Value &tmpValue = value["LocationSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LocationSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             L7ListenerInfoLocation item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -99,28 +98,28 @@ CoreInternalOutcome L7ListenerInfoRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void L7ListenerInfoRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void L7ListenerInfoRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domainId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -128,23 +127,23 @@ void L7ListenerInfoRule::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_addTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddTimestamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_addTimestamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addTimestamp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_locationSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocationSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_locationSet.begin(); itr != m_locationSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

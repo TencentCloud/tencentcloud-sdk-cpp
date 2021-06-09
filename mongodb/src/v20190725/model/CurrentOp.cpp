@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20190725::Model;
-using namespace rapidjson;
 using namespace std;
 
 CurrentOp::CurrentOp() :
@@ -34,7 +33,7 @@ CurrentOp::CurrentOp() :
 {
 }
 
-CoreInternalOutcome CurrentOp::Deserialize(const Value &value)
+CoreInternalOutcome CurrentOp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome CurrentOp::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CurrentOp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CurrentOp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_opIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_opId, allocator);
@@ -146,63 +145,63 @@ void CurrentOp::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_nsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ns";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ns.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ns.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Query";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_query.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
     }
 
     if (m_opHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Op";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_op.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_op.c_str(), allocator).Move(), allocator);
     }
 
     if (m_replicaSetNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicaSetName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replicaSetName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replicaSetName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_state.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Operation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_operation.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operation.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_microsecsRunningHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MicrosecsRunning";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_microsecsRunning, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cynosdb::V20190107::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceSpec::InstanceSpec() :
@@ -29,7 +28,7 @@ InstanceSpec::InstanceSpec() :
 {
 }
 
-CoreInternalOutcome InstanceSpec::Deserialize(const Value &value)
+CoreInternalOutcome InstanceSpec::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome InstanceSpec::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);
@@ -91,7 +90,7 @@ void InstanceSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_memoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memory, allocator);
@@ -99,7 +98,7 @@ void InstanceSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_maxStorageSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxStorageSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxStorageSize, allocator);
@@ -107,7 +106,7 @@ void InstanceSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_minStorageSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinStorageSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minStorageSize, allocator);

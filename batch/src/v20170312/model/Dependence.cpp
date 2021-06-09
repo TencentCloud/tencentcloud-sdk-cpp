@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 Dependence::Dependence() :
@@ -27,7 +26,7 @@ Dependence::Dependence() :
 {
 }
 
-CoreInternalOutcome Dependence::Deserialize(const Value &value)
+CoreInternalOutcome Dependence::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome Dependence::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Dependence::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Dependence::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startTaskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTask";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTask.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTask.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTaskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTask";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTask.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTask.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cam::V20190116::Model;
-using namespace rapidjson;
 using namespace std;
 
 AttachRolePolicyRequest::AttachRolePolicyRequest() :
@@ -33,14 +32,14 @@ AttachRolePolicyRequest::AttachRolePolicyRequest() :
 
 string AttachRolePolicyRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_policyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_policyId, allocator);
@@ -48,31 +47,31 @@ string AttachRolePolicyRequest::ToJsonString() const
 
     if (m_attachRoleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AttachRoleId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_attachRoleId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_attachRoleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_attachRoleNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AttachRoleName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_attachRoleName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_attachRoleName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_policyNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_policyName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_policyName.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

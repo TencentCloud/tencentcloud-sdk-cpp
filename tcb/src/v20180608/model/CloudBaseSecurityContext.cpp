@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloudBaseSecurityContext::CloudBaseSecurityContext() :
@@ -26,7 +25,7 @@ CloudBaseSecurityContext::CloudBaseSecurityContext() :
 {
 }
 
-CoreInternalOutcome CloudBaseSecurityContext::Deserialize(const Value &value)
+CoreInternalOutcome CloudBaseSecurityContext::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -52,15 +51,15 @@ CoreInternalOutcome CloudBaseSecurityContext::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CloudBaseSecurityContext::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloudBaseSecurityContext::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_capabilitiesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Capabilities";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_capabilities.ToJsonObject(value[key.c_str()], allocator);
     }
 

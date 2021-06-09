@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tem::V20201221::Model;
-using namespace rapidjson;
 using namespace std;
 
 StorageConf::StorageConf() :
@@ -28,7 +27,7 @@ StorageConf::StorageConf() :
 {
 }
 
-CoreInternalOutcome StorageConf::Deserialize(const Value &value)
+CoreInternalOutcome StorageConf::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome StorageConf::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StorageConf::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StorageConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_storageVolNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageVolName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_storageVolName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageVolName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageVolPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageVolPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_storageVolPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageVolPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageVolIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageVolIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_storageVolIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageVolIp.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 LiveStreamAiReviewResultItem::LiveStreamAiReviewResultItem() :
@@ -30,7 +29,7 @@ LiveStreamAiReviewResultItem::LiveStreamAiReviewResultItem() :
 {
 }
 
-CoreInternalOutcome LiveStreamAiReviewResultItem::Deserialize(const Value &value)
+CoreInternalOutcome LiveStreamAiReviewResultItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -50,8 +49,8 @@ CoreInternalOutcome LiveStreamAiReviewResultItem::Deserialize(const Value &value
         if (!value["ImagePornResultSet"].IsArray())
             return CoreInternalOutcome(Error("response `LiveStreamAiReviewResultItem.ImagePornResultSet` is not array type"));
 
-        const Value &tmpValue = value["ImagePornResultSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ImagePornResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LiveStreamAiReviewImagePornResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -70,8 +69,8 @@ CoreInternalOutcome LiveStreamAiReviewResultItem::Deserialize(const Value &value
         if (!value["ImageTerrorismResultSet"].IsArray())
             return CoreInternalOutcome(Error("response `LiveStreamAiReviewResultItem.ImageTerrorismResultSet` is not array type"));
 
-        const Value &tmpValue = value["ImageTerrorismResultSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ImageTerrorismResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LiveStreamAiReviewImageTerrorismResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -90,8 +89,8 @@ CoreInternalOutcome LiveStreamAiReviewResultItem::Deserialize(const Value &value
         if (!value["ImagePoliticalResultSet"].IsArray())
             return CoreInternalOutcome(Error("response `LiveStreamAiReviewResultItem.ImagePoliticalResultSet` is not array type"));
 
-        const Value &tmpValue = value["ImagePoliticalResultSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ImagePoliticalResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LiveStreamAiReviewImagePoliticalResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,8 +109,8 @@ CoreInternalOutcome LiveStreamAiReviewResultItem::Deserialize(const Value &value
         if (!value["VoicePornResultSet"].IsArray())
             return CoreInternalOutcome(Error("response `LiveStreamAiReviewResultItem.VoicePornResultSet` is not array type"));
 
-        const Value &tmpValue = value["VoicePornResultSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["VoicePornResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LiveStreamAiReviewVoicePornResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -129,73 +128,73 @@ CoreInternalOutcome LiveStreamAiReviewResultItem::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void LiveStreamAiReviewResultItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LiveStreamAiReviewResultItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imagePornResultSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImagePornResultSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_imagePornResultSet.begin(); itr != m_imagePornResultSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_imageTerrorismResultSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageTerrorismResultSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_imageTerrorismResultSet.begin(); itr != m_imageTerrorismResultSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_imagePoliticalResultSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImagePoliticalResultSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_imagePoliticalResultSet.begin(); itr != m_imagePoliticalResultSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_voicePornResultSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VoicePornResultSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_voicePornResultSet.begin(); itr != m_voicePornResultSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

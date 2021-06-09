@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskType::TaskType() :
@@ -28,7 +27,7 @@ TaskType::TaskType() :
 {
 }
 
-CoreInternalOutcome TaskType::Deserialize(const Value &value)
+CoreInternalOutcome TaskType::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome TaskType::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskType::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TypeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_typeId, allocator);
@@ -80,18 +79,18 @@ void TaskType::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_typeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TypeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_typeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_typeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskSubTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskSubType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskSubType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskSubType.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReferredSecurityGroup::ReferredSecurityGroup() :
@@ -27,7 +26,7 @@ ReferredSecurityGroup::ReferredSecurityGroup() :
 {
 }
 
-CoreInternalOutcome ReferredSecurityGroup::Deserialize(const Value &value)
+CoreInternalOutcome ReferredSecurityGroup::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome ReferredSecurityGroup::Deserialize(const Value &value)
         if (!value["ReferredSecurityGroupIds"].IsArray())
             return CoreInternalOutcome(Error("response `ReferredSecurityGroup.ReferredSecurityGroupIds` is not array type"));
 
-        const Value &tmpValue = value["ReferredSecurityGroupIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ReferredSecurityGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_referredSecurityGroupIds.push_back((*itr).GetString());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome ReferredSecurityGroup::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReferredSecurityGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReferredSecurityGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_securityGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_securityGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_securityGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_referredSecurityGroupIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReferredSecurityGroupIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_referredSecurityGroupIds.begin(); itr != m_referredSecurityGroupIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceHairAttributesInfo::FaceHairAttributesInfo() :
@@ -28,7 +27,7 @@ FaceHairAttributesInfo::FaceHairAttributesInfo() :
 {
 }
 
-CoreInternalOutcome FaceHairAttributesInfo::Deserialize(const Value &value)
+CoreInternalOutcome FaceHairAttributesInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome FaceHairAttributesInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FaceHairAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FaceHairAttributesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_lengthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Length";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_length, allocator);
@@ -80,7 +79,7 @@ void FaceHairAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_bangHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bang";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bang, allocator);
@@ -88,7 +87,7 @@ void FaceHairAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_colorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Color";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_color, allocator);

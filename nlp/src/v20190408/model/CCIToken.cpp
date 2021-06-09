@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Nlp::V20190408::Model;
-using namespace rapidjson;
 using namespace std;
 
 CCIToken::CCIToken() :
@@ -28,7 +27,7 @@ CCIToken::CCIToken() :
 {
 }
 
-CoreInternalOutcome CCIToken::Deserialize(const Value &value)
+CoreInternalOutcome CCIToken::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome CCIToken::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CCIToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CCIToken::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_wordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Word";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_word.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_word.c_str(), allocator).Move(), allocator);
     }
 
     if (m_beginOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BeginOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_beginOffset, allocator);
@@ -88,10 +87,10 @@ void CCIToken::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_correctWordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CorrectWord";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_correctWord.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_correctWord.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Dcdb::V20180411::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeDCDBPriceRequest::DescribeDCDBPriceRequest() :
@@ -37,22 +36,22 @@ DescribeDCDBPriceRequest::DescribeDCDBPriceRequest() :
 
 string DescribeDCDBPriceRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_count, allocator);
@@ -60,7 +59,7 @@ string DescribeDCDBPriceRequest::ToJsonString() const
 
     if (m_periodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_period, allocator);
@@ -68,7 +67,7 @@ string DescribeDCDBPriceRequest::ToJsonString() const
 
     if (m_shardNodeCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardNodeCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shardNodeCount, allocator);
@@ -76,7 +75,7 @@ string DescribeDCDBPriceRequest::ToJsonString() const
 
     if (m_shardMemoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardMemory";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shardMemory, allocator);
@@ -84,7 +83,7 @@ string DescribeDCDBPriceRequest::ToJsonString() const
 
     if (m_shardStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardStorage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shardStorage, allocator);
@@ -92,7 +91,7 @@ string DescribeDCDBPriceRequest::ToJsonString() const
 
     if (m_shardCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shardCount, allocator);
@@ -100,15 +99,15 @@ string DescribeDCDBPriceRequest::ToJsonString() const
 
     if (m_paymodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Paymode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_paymode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_paymode.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

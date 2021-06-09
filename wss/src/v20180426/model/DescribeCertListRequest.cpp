@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Wss::V20180426::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCertListRequest::DescribeCertListRequest() :
@@ -37,22 +36,22 @@ DescribeCertListRequest::DescribeCertListRequest() :
 
 string DescribeCertListRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_moduleTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModuleType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_moduleType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_moduleType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
@@ -60,7 +59,7 @@ string DescribeCertListRequest::ToJsonString() const
 
     if (m_limitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
@@ -68,47 +67,47 @@ string DescribeCertListRequest::ToJsonString() const
 
     if (m_searchKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SearchKey";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_searchKey.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_searchKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_certType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_withCertHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WithCert";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_withCert.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_withCert.c_str(), allocator).Move(), allocator);
     }
 
     if (m_altDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AltDomain";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_altDomain.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_altDomain.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 L4ListenerInfo::L4ListenerInfo() :
@@ -46,7 +45,7 @@ L4ListenerInfo::L4ListenerInfo() :
 {
 }
 
-CoreInternalOutcome L4ListenerInfo::Deserialize(const Value &value)
+CoreInternalOutcome L4ListenerInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -265,36 +264,36 @@ CoreInternalOutcome L4ListenerInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void L4ListenerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_listenerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_listenerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listenerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_listenerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_listenerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listenerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_loadBalancerPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoadBalancerPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loadBalancerPort, allocator);
@@ -302,7 +301,7 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
@@ -310,15 +309,15 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_listenerTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_listenerType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listenerType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionExpireHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SessionExpire";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sessionExpire, allocator);
@@ -326,7 +325,7 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_healthSwitchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_healthSwitch, allocator);
@@ -334,7 +333,7 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_timeOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeOut, allocator);
@@ -342,7 +341,7 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_intervalTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IntervalTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_intervalTime, allocator);
@@ -350,7 +349,7 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_healthNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_healthNum, allocator);
@@ -358,7 +357,7 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_unhealthNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnhealthNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unhealthNum, allocator);
@@ -366,7 +365,7 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -374,15 +373,15 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_addTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddTimestamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_addTimestamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addTimestamp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customHealthSwitchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomHealthSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_customHealthSwitch, allocator);
@@ -390,15 +389,15 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_inputTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inputType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lineSeparatorTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LineSeparatorType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lineSeparatorType, allocator);
@@ -406,23 +405,23 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_healthRequestHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthRequest";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_healthRequest.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthRequest.c_str(), allocator).Move(), allocator);
     }
 
     if (m_healthResponseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthResponse";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_healthResponse.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthResponse.c_str(), allocator).Move(), allocator);
     }
 
     if (m_toaFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ToaFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_toaFlag, allocator);
@@ -430,10 +429,10 @@ void L4ListenerInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_balanceModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BalanceMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_balanceMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_balanceMode.c_str(), allocator).Move(), allocator);
     }
 
 }

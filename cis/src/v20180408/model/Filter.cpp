@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cis::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 Filter::Filter() :
@@ -27,7 +26,7 @@ Filter::Filter() :
 {
 }
 
-CoreInternalOutcome Filter::Deserialize(const Value &value)
+CoreInternalOutcome Filter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome Filter::Deserialize(const Value &value)
         if (!value["ValueList"].IsArray())
             return CoreInternalOutcome(Error("response `Filter.ValueList` is not array type"));
 
-        const Value &tmpValue = value["ValueList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ValueList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_valueList.push_back((*itr).GetString());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome Filter::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Filter::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Filter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ValueList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_valueList.begin(); itr != m_valueList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

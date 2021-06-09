@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 PeakNetwork::PeakNetwork() :
@@ -29,7 +28,7 @@ PeakNetwork::PeakNetwork() :
 {
 }
 
-CoreInternalOutcome PeakNetwork::Deserialize(const Value &value)
+CoreInternalOutcome PeakNetwork::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome PeakNetwork::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PeakNetwork::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PeakNetwork::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_recordTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_recordTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_peakInNetworkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeakInNetwork";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_peakInNetwork.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_peakInNetwork.c_str(), allocator).Move(), allocator);
     }
 
     if (m_peakOutNetworkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeakOutNetwork";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_peakOutNetwork.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_peakOutNetwork.c_str(), allocator).Move(), allocator);
     }
 
     if (m_chargeNetworkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChargeNetwork";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_chargeNetwork.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chargeNetwork.c_str(), allocator).Move(), allocator);
     }
 
 }

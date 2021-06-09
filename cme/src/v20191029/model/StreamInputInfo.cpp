@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 StreamInputInfo::StreamInputInfo() :
@@ -29,7 +28,7 @@ StreamInputInfo::StreamInputInfo() :
 {
 }
 
-CoreInternalOutcome StreamInputInfo::Deserialize(const Value &value)
+CoreInternalOutcome StreamInputInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -99,41 +98,41 @@ CoreInternalOutcome StreamInputInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StreamInputInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StreamInputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_inputTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inputType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vodPullInputInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VodPullInputInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_vodPullInputInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_livePullInputInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LivePullInputInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_livePullInputInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_rtmpPushInputInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RtmpPushInputInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rtmpPushInputInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

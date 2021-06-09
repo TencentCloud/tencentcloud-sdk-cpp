@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeInstanceNodeInfoResponse::DescribeInstanceNodeInfoResponse() :
@@ -36,7 +35,7 @@ DescribeInstanceNodeInfoResponse::DescribeInstanceNodeInfoResponse() :
 
 CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -46,7 +45,7 @@ CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -83,8 +82,8 @@ CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &
         if (!rsp["Proxy"].IsArray())
             return CoreInternalOutcome(Error("response `Proxy` is not array type"));
 
-        const Value &tmpValue = rsp["Proxy"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Proxy"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ProxyNodes item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -113,8 +112,8 @@ CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &
         if (!rsp["Redis"].IsArray())
             return CoreInternalOutcome(Error("response `Redis` is not array type"));
 
-        const Value &tmpValue = rsp["Redis"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Redis"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RedisNodes item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -143,8 +142,8 @@ CoreInternalOutcome DescribeInstanceNodeInfoResponse::Deserialize(const string &
         if (!rsp["Tendis"].IsArray())
             return CoreInternalOutcome(Error("response `Tendis` is not array type"));
 
-        const Value &tmpValue = rsp["Tendis"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Tendis"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TendisNodes item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

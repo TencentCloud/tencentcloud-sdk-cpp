@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResourceServiceInfo::ResourceServiceInfo() :
@@ -28,7 +27,7 @@ ResourceServiceInfo::ResourceServiceInfo() :
 {
 }
 
-CoreInternalOutcome ResourceServiceInfo::Deserialize(const Value &value)
+CoreInternalOutcome ResourceServiceInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome ResourceServiceInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResourceServiceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResourceServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -80,7 +79,7 @@ void ResourceServiceInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expireTime, allocator);
@@ -88,10 +87,10 @@ void ResourceServiceInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_resourceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
     }
 
 }

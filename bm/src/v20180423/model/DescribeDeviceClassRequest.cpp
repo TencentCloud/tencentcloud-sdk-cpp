@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeDeviceClassRequest::DescribeDeviceClassRequest() :
@@ -31,14 +30,14 @@ DescribeDeviceClassRequest::DescribeDeviceClassRequest() :
 
 string DescribeDeviceClassRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_onSaleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OnSale";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_onSale, allocator);
@@ -46,15 +45,15 @@ string DescribeDeviceClassRequest::ToJsonString() const
 
     if (m_needPriceInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedPriceInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needPriceInfo, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

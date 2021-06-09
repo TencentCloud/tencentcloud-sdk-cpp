@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 SmsCreateCampaignResponse::SmsCreateCampaignResponse() :
@@ -26,7 +25,7 @@ SmsCreateCampaignResponse::SmsCreateCampaignResponse() :
 {
 }
 
-CoreInternalOutcome SmsCreateCampaignResponse::Deserialize(const Value &value)
+CoreInternalOutcome SmsCreateCampaignResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome SmsCreateCampaignResponse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SmsCreateCampaignResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SmsCreateCampaignResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_campaignIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CampaignId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_campaignId, allocator);

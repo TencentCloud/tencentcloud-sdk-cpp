@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 Eye::Eye() :
@@ -29,7 +28,7 @@ Eye::Eye() :
 {
 }
 
-CoreInternalOutcome Eye::Deserialize(const Value &value)
+CoreInternalOutcome Eye::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -106,42 +105,42 @@ CoreInternalOutcome Eye::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Eye::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Eye::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_glassHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Glass";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_glass.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_eyeOpenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EyeOpen";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eyeOpen.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_eyelidTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EyelidType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eyelidType.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_eyeSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EyeSize";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eyeSize.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 AddressInfo::AddressInfo() :
@@ -28,7 +27,7 @@ AddressInfo::AddressInfo() :
 {
 }
 
-CoreInternalOutcome AddressInfo::Deserialize(const Value &value)
+CoreInternalOutcome AddressInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -88,33 +87,33 @@ CoreInternalOutcome AddressInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AddressInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AddressInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_publicIPAddressInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicIPAddressInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_publicIPAddressInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_privateIPAddressInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrivateIPAddressInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_privateIPAddressInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_publicIPv6AddressInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicIPv6AddressInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_publicIPv6AddressInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

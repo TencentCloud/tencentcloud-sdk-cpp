@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cmq::V20190304::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeadLetterPolicy::DeadLetterPolicy() :
@@ -30,7 +29,7 @@ DeadLetterPolicy::DeadLetterPolicy() :
 {
 }
 
-CoreInternalOutcome DeadLetterPolicy::Deserialize(const Value &value)
+CoreInternalOutcome DeadLetterPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome DeadLetterPolicy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeadLetterPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeadLetterPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deadLetterQueueNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeadLetterQueueName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deadLetterQueueName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deadLetterQueueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deadLetterQueueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeadLetterQueue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deadLetterQueue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deadLetterQueue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_policyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Policy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_policy, allocator);
@@ -118,7 +117,7 @@ void DeadLetterPolicy::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_maxTimeToLiveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxTimeToLive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxTimeToLive, allocator);
@@ -126,7 +125,7 @@ void DeadLetterPolicy::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_maxReceiveCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxReceiveCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxReceiveCount, allocator);

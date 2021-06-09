@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20210527::Model;
-using namespace rapidjson;
 using namespace std;
 
 SchemaSpaceTimeSeries::SchemaSpaceTimeSeries() :
@@ -27,7 +26,7 @@ SchemaSpaceTimeSeries::SchemaSpaceTimeSeries() :
 {
 }
 
-CoreInternalOutcome SchemaSpaceTimeSeries::Deserialize(const Value &value)
+CoreInternalOutcome SchemaSpaceTimeSeries::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome SchemaSpaceTimeSeries::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SchemaSpaceTimeSeries::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SchemaSpaceTimeSeries::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tableSchemaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableSchema";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tableSchema.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableSchema.c_str(), allocator).Move(), allocator);
     }
 
     if (m_seriesDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SeriesData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_seriesData.ToJsonObject(value[key.c_str()], allocator);
     }
 

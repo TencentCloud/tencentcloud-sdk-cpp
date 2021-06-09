@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 LinkMaterial::LinkMaterial() :
@@ -29,7 +28,7 @@ LinkMaterial::LinkMaterial() :
 {
 }
 
-CoreInternalOutcome LinkMaterial::Deserialize(const Value &value)
+CoreInternalOutcome LinkMaterial::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -92,40 +91,40 @@ CoreInternalOutcome LinkMaterial::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LinkMaterial::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LinkMaterial::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_linkTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LinkType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_linkType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_linkType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_linkStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LinkStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_linkStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_linkStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_linkMaterialInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LinkMaterialInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_linkMaterialInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_linkClassInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LinkClassInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_linkClassInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

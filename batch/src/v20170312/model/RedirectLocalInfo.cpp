@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 RedirectLocalInfo::RedirectLocalInfo() :
@@ -29,7 +28,7 @@ RedirectLocalInfo::RedirectLocalInfo() :
 {
 }
 
-CoreInternalOutcome RedirectLocalInfo::Deserialize(const Value &value)
+CoreInternalOutcome RedirectLocalInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome RedirectLocalInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RedirectLocalInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RedirectLocalInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_stdoutLocalPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StdoutLocalPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stdoutLocalPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stdoutLocalPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stderrLocalPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StderrLocalPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stderrLocalPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stderrLocalPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stdoutLocalFileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StdoutLocalFileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stdoutLocalFileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stdoutLocalFileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stderrLocalFileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StderrLocalFileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stderrLocalFileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stderrLocalFileName.c_str(), allocator).Move(), allocator);
     }
 
 }

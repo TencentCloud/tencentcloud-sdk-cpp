@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Msp::V20180319::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskStatus::TaskStatus() :
@@ -28,7 +27,7 @@ TaskStatus::TaskStatus() :
 {
 }
 
-CoreInternalOutcome TaskStatus::Deserialize(const Value &value)
+CoreInternalOutcome TaskStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome TaskStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_progressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_progress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_progress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }

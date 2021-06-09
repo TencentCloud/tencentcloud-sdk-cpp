@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mna::V20210119::Model;
-using namespace rapidjson;
 using namespace std;
 
 SrcAddressInfo::SrcAddressInfo() :
@@ -28,7 +27,7 @@ SrcAddressInfo::SrcAddressInfo() :
 {
 }
 
-CoreInternalOutcome SrcAddressInfo::Deserialize(const Value &value)
+CoreInternalOutcome SrcAddressInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome SrcAddressInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SrcAddressInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SrcAddressInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_srcIpv4HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcIpv4";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_srcIpv4.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcIpv4.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcPublicIpv4HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcPublicIpv4";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_srcPublicIpv4.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcPublicIpv4.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcIpv6HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcIpv6";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_srcIpv6.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcIpv6.c_str(), allocator).Move(), allocator);
     }
 
 }

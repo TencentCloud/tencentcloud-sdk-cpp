@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cat::V20180409::Model;
-using namespace rapidjson;
 using namespace std;
 
 CatReturnDetail::CatReturnDetail() :
@@ -33,7 +32,7 @@ CatReturnDetail::CatReturnDetail() :
 {
 }
 
-CoreInternalOutcome CatReturnDetail::Deserialize(const Value &value)
+CoreInternalOutcome CatReturnDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,52 +121,52 @@ CoreInternalOutcome CatReturnDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CatReturnDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CatReturnDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ispNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IspName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ispName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ispName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_provinceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Province";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_province.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_province.c_str(), allocator).Move(), allocator);
     }
 
     if (m_provinceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProvinceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_provinceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_provinceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mapKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MapKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mapKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mapKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serverIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serverIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resultCount, allocator);
@@ -175,7 +174,7 @@ void CatReturnDetail::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_resultCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resultCode, allocator);
@@ -183,10 +182,10 @@ void CatReturnDetail::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_errorReasonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorReason";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errorReason.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorReason.c_str(), allocator).Move(), allocator);
     }
 
 }

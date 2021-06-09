@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 RetentionPolicy::RetentionPolicy() :
@@ -31,7 +30,7 @@ RetentionPolicy::RetentionPolicy() :
 {
 }
 
-CoreInternalOutcome RetentionPolicy::Deserialize(const Value &value)
+CoreInternalOutcome RetentionPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -61,8 +60,8 @@ CoreInternalOutcome RetentionPolicy::Deserialize(const Value &value)
         if (!value["RetentionRuleList"].IsArray())
             return CoreInternalOutcome(Error("response `RetentionPolicy.RetentionRuleList` is not array type"));
 
-        const Value &tmpValue = value["RetentionRuleList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RetentionRuleList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RetentionRule item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,12 +109,12 @@ CoreInternalOutcome RetentionPolicy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RetentionPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RetentionPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_retentionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RetentionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_retentionId, allocator);
@@ -123,38 +122,38 @@ void RetentionPolicy::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_namespaceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NamespaceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespaceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespaceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_retentionRuleListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RetentionRuleList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_retentionRuleList.begin(); itr != m_retentionRuleList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_cronSettingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CronSetting";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cronSetting.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cronSetting.c_str(), allocator).Move(), allocator);
     }
 
     if (m_disabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Disabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disabled, allocator);
@@ -162,10 +161,10 @@ void RetentionPolicy::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_nextExecutionTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NextExecutionTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nextExecutionTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nextExecutionTime.c_str(), allocator).Move(), allocator);
     }
 
 }

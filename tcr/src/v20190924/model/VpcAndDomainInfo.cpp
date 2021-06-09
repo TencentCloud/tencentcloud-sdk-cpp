@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 VpcAndDomainInfo::VpcAndDomainInfo() :
@@ -29,7 +28,7 @@ VpcAndDomainInfo::VpcAndDomainInfo() :
 {
 }
 
-CoreInternalOutcome VpcAndDomainInfo::Deserialize(const Value &value)
+CoreInternalOutcome VpcAndDomainInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,36 +77,36 @@ CoreInternalOutcome VpcAndDomainInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VpcAndDomainInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VpcAndDomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eniLBIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EniLBIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eniLBIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eniLBIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usePublicDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsePublicDomain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usePublicDomain, allocator);

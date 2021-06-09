@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloudBaseRunSideSpec::CloudBaseRunSideSpec() :
@@ -34,7 +33,7 @@ CloudBaseRunSideSpec::CloudBaseRunSideSpec() :
 {
 }
 
-CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const Value &value)
+CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -131,8 +130,8 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const Value &value)
         if (!value["VolumeMountInfos"].IsArray())
             return CoreInternalOutcome(Error("response `CloudBaseRunSideSpec.VolumeMountInfos` is not array type"));
 
-        const Value &tmpValue = value["VolumeMountInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["VolumeMountInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CloudBaseRunVolumeMount item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -150,20 +149,20 @@ CoreInternalOutcome CloudBaseRunSideSpec::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CloudBaseRunSideSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloudBaseRunSideSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_containerImageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContainerImage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_containerImage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerImage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_containerPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContainerPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_containerPort, allocator);
@@ -171,23 +170,23 @@ void CloudBaseRunSideSpec::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_containerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContainerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_containerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_envVarHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvVar";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_envVar.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envVar.c_str(), allocator).Move(), allocator);
     }
 
     if (m_initialDelaySecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InitialDelaySeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_initialDelaySeconds, allocator);
@@ -195,7 +194,7 @@ void CloudBaseRunSideSpec::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_cpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);
@@ -203,7 +202,7 @@ void CloudBaseRunSideSpec::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_memHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mem, allocator);
@@ -211,24 +210,24 @@ void CloudBaseRunSideSpec::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_securityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Security";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_security.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_volumeMountInfosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VolumeMountInfos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_volumeMountInfos.begin(); itr != m_volumeMountInfos.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

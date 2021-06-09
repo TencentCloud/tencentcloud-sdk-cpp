@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 FrameInfo::FrameInfo() :
@@ -28,7 +27,7 @@ FrameInfo::FrameInfo() :
 {
 }
 
-CoreInternalOutcome FrameInfo::Deserialize(const Value &value)
+CoreInternalOutcome FrameInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome FrameInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FrameInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FrameInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_similarityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Similarity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_similarity, allocator);
@@ -80,15 +79,15 @@ void FrameInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_snapshotUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SnapshotUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_snapshotUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshotUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ts";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ts, allocator);

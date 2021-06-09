@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 UserDefineConfigureInfo::UserDefineConfigureInfo() :
@@ -28,7 +27,7 @@ UserDefineConfigureInfo::UserDefineConfigureInfo() :
 {
 }
 
-CoreInternalOutcome UserDefineConfigureInfo::Deserialize(const Value &value)
+CoreInternalOutcome UserDefineConfigureInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -88,33 +87,33 @@ CoreInternalOutcome UserDefineConfigureInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UserDefineConfigureInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UserDefineConfigureInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_faceReviewInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceReviewInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_faceReviewInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_asrReviewInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AsrReviewInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_asrReviewInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_ocrReviewInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OcrReviewInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ocrReviewInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

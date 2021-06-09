@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateCameraAlertsCoverAlert::CreateCameraAlertsCoverAlert() :
@@ -27,7 +26,7 @@ CreateCameraAlertsCoverAlert::CreateCameraAlertsCoverAlert() :
 {
 }
 
-CoreInternalOutcome CreateCameraAlertsCoverAlert::Deserialize(const Value &value)
+CoreInternalOutcome CreateCameraAlertsCoverAlert::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome CreateCameraAlertsCoverAlert::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void CreateCameraAlertsCoverAlert::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CreateCameraAlertsCoverAlert::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_coverHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cover";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cover, allocator);
@@ -69,7 +68,7 @@ void CreateCameraAlertsCoverAlert::ToJsonObject(Value &value, Document::Allocato
 
     if (m_coverConfidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CoverConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_coverConfidence, allocator);

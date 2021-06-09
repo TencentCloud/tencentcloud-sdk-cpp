@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 VpcLimit::VpcLimit() :
@@ -27,7 +26,7 @@ VpcLimit::VpcLimit() :
 {
 }
 
-CoreInternalOutcome VpcLimit::Deserialize(const Value &value)
+CoreInternalOutcome VpcLimit::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome VpcLimit::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VpcLimit::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VpcLimit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_limitTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LimitType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_limitType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_limitType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LimitValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_limitValue, allocator);

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyPsaRegulationRequest::ModifyPsaRegulationRequest() :
@@ -34,30 +33,30 @@ ModifyPsaRegulationRequest::ModifyPsaRegulationRequest() :
 
 string ModifyPsaRegulationRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_psaIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PsaId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_psaId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_psaId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_psaNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PsaName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_psaName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_psaName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_repairLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepairLimit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_repairLimit, allocator);
@@ -65,28 +64,28 @@ string ModifyPsaRegulationRequest::ToJsonString() const
 
     if (m_psaDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PsaDescription";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_psaDescription.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_psaDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskTypeIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskTypeIds";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_taskTypeIds.begin(); itr != m_taskTypeIds.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

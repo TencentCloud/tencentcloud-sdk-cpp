@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiw::V20190919::Model;
-using namespace rapidjson;
 using namespace std;
 
 CustomLayout::CustomLayout() :
@@ -27,7 +26,7 @@ CustomLayout::CustomLayout() :
 {
 }
 
-CoreInternalOutcome CustomLayout::Deserialize(const Value &value)
+CoreInternalOutcome CustomLayout::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -54,8 +53,8 @@ CoreInternalOutcome CustomLayout::Deserialize(const Value &value)
         if (!value["InputStreamList"].IsArray())
             return CoreInternalOutcome(Error("response `CustomLayout.InputStreamList` is not array type"));
 
-        const Value &tmpValue = value["InputStreamList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InputStreamList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StreamLayout item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -73,29 +72,29 @@ CoreInternalOutcome CustomLayout::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CustomLayout::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CustomLayout::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_canvasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Canvas";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_canvas.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_inputStreamListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputStreamList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_inputStreamList.begin(); itr != m_inputStreamList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

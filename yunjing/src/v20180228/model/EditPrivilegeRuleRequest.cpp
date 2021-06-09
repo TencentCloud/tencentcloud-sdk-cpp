@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Yunjing::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 EditPrivilegeRuleRequest::EditPrivilegeRuleRequest() :
@@ -35,14 +34,14 @@ EditPrivilegeRuleRequest::EditPrivilegeRuleRequest() :
 
 string EditPrivilegeRuleRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_id, allocator);
@@ -50,31 +49,31 @@ string EditPrivilegeRuleRequest::ToJsonString() const
 
     if (m_uuidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hostipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hostip";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_hostip.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hostip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_processNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProcessName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_processName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_processName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sMode, allocator);
@@ -82,15 +81,15 @@ string EditPrivilegeRuleRequest::ToJsonString() const
 
     if (m_isGlobalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsGlobal";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isGlobal, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

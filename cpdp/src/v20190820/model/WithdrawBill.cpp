@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 WithdrawBill::WithdrawBill() :
@@ -33,7 +32,7 @@ WithdrawBill::WithdrawBill() :
 {
 }
 
-CoreInternalOutcome WithdrawBill::Deserialize(const Value &value)
+CoreInternalOutcome WithdrawBill::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,71 +121,71 @@ CoreInternalOutcome WithdrawBill::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WithdrawBill::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WithdrawBill::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_withdrawOrderIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WithdrawOrderId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_withdrawOrderId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_withdrawOrderId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payAmtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayAmt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_payAmt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payAmt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_inSubAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InSubAppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inSubAppId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inSubAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outSubAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutSubAppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outSubAppId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outSubAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_currencyTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CurrencyType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_currencyType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currencyType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_metaDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetaData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metaData.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metaData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extendFieldDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExtendFieldData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_extendFieldData.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extendFieldData.c_str(), allocator).Move(), allocator);
     }
 
 }

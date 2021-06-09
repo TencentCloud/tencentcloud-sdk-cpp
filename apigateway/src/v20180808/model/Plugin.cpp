@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 Plugin::Plugin() :
@@ -34,7 +33,7 @@ Plugin::Plugin() :
 {
 }
 
-CoreInternalOutcome Plugin::Deserialize(const Value &value)
+CoreInternalOutcome Plugin::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -124,8 +123,8 @@ CoreInternalOutcome Plugin::Deserialize(const Value &value)
         if (!value["AttachedApis"].IsArray())
             return CoreInternalOutcome(Error("response `Plugin.AttachedApis` is not array type"));
 
-        const Value &tmpValue = value["AttachedApis"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AttachedApis"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AttachedApiInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -143,68 +142,68 @@ CoreInternalOutcome Plugin::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Plugin::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Plugin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_pluginIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PluginId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pluginId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pluginId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pluginNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PluginName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pluginName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pluginName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pluginTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PluginType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pluginType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pluginType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pluginDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PluginData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pluginData.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pluginData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modifiedTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModifiedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modifiedTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifiedTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_attachedApiTotalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AttachedApiTotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_attachedApiTotalCount, allocator);
@@ -212,15 +211,15 @@ void Plugin::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_attachedApisHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AttachedApis";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_attachedApis.begin(); itr != m_attachedApis.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

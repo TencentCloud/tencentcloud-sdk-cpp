@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cloudhsm::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceInfo::DeviceInfo() :
@@ -27,7 +26,7 @@ DeviceInfo::DeviceInfo() :
 {
 }
 
-CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
+CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
         if (!value["HsmTypes"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceInfo.HsmTypes` is not array type"));
 
-        const Value &tmpValue = value["HsmTypes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["HsmTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             HsmInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_manufacturerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Manufacturer";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_manufacturer.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_manufacturer.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hsmTypesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HsmTypes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_hsmTypes.begin(); itr != m_hsmTypes.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

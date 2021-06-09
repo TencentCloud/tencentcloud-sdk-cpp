@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 NumberFormat::NumberFormat() :
@@ -29,7 +28,7 @@ NumberFormat::NumberFormat() :
 {
 }
 
-CoreInternalOutcome NumberFormat::Deserialize(const Value &value)
+CoreInternalOutcome NumberFormat::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome NumberFormat::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NumberFormat::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NumberFormat::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_initialValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InitialValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_initialValue, allocator);
@@ -91,7 +90,7 @@ void NumberFormat::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_incrementHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Increment";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_increment, allocator);
@@ -99,7 +98,7 @@ void NumberFormat::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_minLengthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinLength";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minLength, allocator);
@@ -107,10 +106,10 @@ void NumberFormat::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_placeHolderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlaceHolder";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_placeHolder.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_placeHolder.c_str(), allocator).Move(), allocator);
     }
 
 }

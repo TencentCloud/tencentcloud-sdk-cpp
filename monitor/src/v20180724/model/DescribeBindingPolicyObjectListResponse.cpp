@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeBindingPolicyObjectListResponse::DescribeBindingPolicyObjectListResponse() :
@@ -34,7 +33,7 @@ DescribeBindingPolicyObjectListResponse::DescribeBindingPolicyObjectListResponse
 
 CoreInternalOutcome DescribeBindingPolicyObjectListResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -44,7 +43,7 @@ CoreInternalOutcome DescribeBindingPolicyObjectListResponse::Deserialize(const s
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -71,8 +70,8 @@ CoreInternalOutcome DescribeBindingPolicyObjectListResponse::Deserialize(const s
         if (!rsp["List"].IsArray())
             return CoreInternalOutcome(Error("response `List` is not array type"));
 
-        const Value &tmpValue = rsp["List"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["List"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DescribeBindingPolicyObjectListInstance item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

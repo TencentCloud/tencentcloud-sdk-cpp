@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 PushMmsContentResp::PushMmsContentResp() :
@@ -28,7 +27,7 @@ PushMmsContentResp::PushMmsContentResp() :
 {
 }
 
-CoreInternalOutcome PushMmsContentResp::Deserialize(const Value &value)
+CoreInternalOutcome PushMmsContentResp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome PushMmsContentResp::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PushMmsContentResp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PushMmsContentResp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_returnCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReturnCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_returnCode, allocator);
@@ -80,15 +79,15 @@ void PushMmsContentResp::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_returnMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReturnMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_returnMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_returnMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_messageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MessageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_messageId, allocator);

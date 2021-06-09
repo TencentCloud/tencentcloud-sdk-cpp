@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 Coordinate::Coordinate() :
@@ -29,7 +28,7 @@ Coordinate::Coordinate() :
 {
 }
 
-CoreInternalOutcome Coordinate::Deserialize(const Value &value)
+CoreInternalOutcome Coordinate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome Coordinate::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Coordinate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Coordinate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cx";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cx, allocator);
@@ -91,7 +90,7 @@ void Coordinate::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_cyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cy, allocator);
@@ -99,7 +98,7 @@ void Coordinate::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -107,7 +106,7 @@ void Coordinate::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);

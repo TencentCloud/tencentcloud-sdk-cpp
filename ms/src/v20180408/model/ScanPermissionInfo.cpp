@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScanPermissionInfo::ScanPermissionInfo() :
@@ -26,7 +25,7 @@ ScanPermissionInfo::ScanPermissionInfo() :
 {
 }
 
-CoreInternalOutcome ScanPermissionInfo::Deserialize(const Value &value)
+CoreInternalOutcome ScanPermissionInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome ScanPermissionInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScanPermissionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScanPermissionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_permissionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Permission";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_permission.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_permission.c_str(), allocator).Move(), allocator);
     }
 
 }

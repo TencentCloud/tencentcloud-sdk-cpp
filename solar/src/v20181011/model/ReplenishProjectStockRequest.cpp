@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Solar::V20181011::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReplenishProjectStockRequest::ReplenishProjectStockRequest() :
@@ -34,30 +33,30 @@ ReplenishProjectStockRequest::ReplenishProjectStockRequest() :
 
 string ReplenishProjectStockRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_subProjectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubProjectId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_subProjectId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_prizeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrizeId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_prizeId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_prizeId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_prizeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrizeNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_prizeNum, allocator);
@@ -65,7 +64,7 @@ string ReplenishProjectStockRequest::ToJsonString() const
 
     if (m_poolIndexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PoolIndex";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_poolIndex, allocator);
@@ -73,15 +72,15 @@ string ReplenishProjectStockRequest::ToJsonString() const
 
     if (m_poolNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PoolName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_poolName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_poolName.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

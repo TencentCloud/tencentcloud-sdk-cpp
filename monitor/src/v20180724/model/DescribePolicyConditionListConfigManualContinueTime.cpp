@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribePolicyConditionListConfigManualContinueTime::DescribePolicyConditionListConfigManualContinueTime() :
@@ -28,7 +27,7 @@ DescribePolicyConditionListConfigManualContinueTime::DescribePolicyConditionList
 {
 }
 
-CoreInternalOutcome DescribePolicyConditionListConfigManualContinueTime::Deserialize(const Value &value)
+CoreInternalOutcome DescribePolicyConditionListConfigManualContinueTime::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualContinueTime::Deseria
         if (!value["Keys"].IsArray())
             return CoreInternalOutcome(Error("response `DescribePolicyConditionListConfigManualContinueTime.Keys` is not array type"));
 
-        const Value &tmpValue = value["Keys"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Keys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_keys.push_back((*itr).GetInt64());
         }
@@ -70,12 +69,12 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualContinueTime::Deseria
     return CoreInternalOutcome(true);
 }
 
-void DescribePolicyConditionListConfigManualContinueTime::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribePolicyConditionListConfigManualContinueTime::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_defaultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Default";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_default, allocator);
@@ -83,20 +82,20 @@ void DescribePolicyConditionListConfigManualContinueTime::ToJsonObject(Value &va
 
     if (m_keysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Keys";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_keys.begin(); itr != m_keys.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_needHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Need";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_need, allocator);

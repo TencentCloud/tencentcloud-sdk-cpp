@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gpm::V20200820::Model;
-using namespace rapidjson;
 using namespace std;
 
 MTicket::MTicket() :
@@ -27,7 +26,7 @@ MTicket::MTicket() :
 {
 }
 
-CoreInternalOutcome MTicket::Deserialize(const Value &value)
+CoreInternalOutcome MTicket::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome MTicket::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MTicket::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MTicket::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_matchCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_matchCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_matchTicketIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchTicketId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_matchTicketId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchTicketId.c_str(), allocator).Move(), allocator);
     }
 
 }

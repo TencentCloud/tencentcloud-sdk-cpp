@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 PaasStrategyItem::PaasStrategyItem() :
@@ -27,7 +26,7 @@ PaasStrategyItem::PaasStrategyItem() :
 {
 }
 
-CoreInternalOutcome PaasStrategyItem::Deserialize(const Value &value)
+CoreInternalOutcome PaasStrategyItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome PaasStrategyItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PaasStrategyItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PaasStrategyItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -69,7 +68,7 @@ void PaasStrategyItem::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_contentTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContentType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_contentType, allocator);

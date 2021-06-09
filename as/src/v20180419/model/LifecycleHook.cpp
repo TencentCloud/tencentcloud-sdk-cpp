@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::As::V20180419::Model;
-using namespace rapidjson;
 using namespace std;
 
 LifecycleHook::LifecycleHook() :
@@ -35,7 +34,7 @@ LifecycleHook::LifecycleHook() :
 {
 }
 
-CoreInternalOutcome LifecycleHook::Deserialize(const Value &value)
+CoreInternalOutcome LifecycleHook::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -151,44 +150,44 @@ CoreInternalOutcome LifecycleHook::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LifecycleHook::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LifecycleHook::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_lifecycleHookIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifecycleHookId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lifecycleHookId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lifecycleHookId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lifecycleHookNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifecycleHookName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lifecycleHookName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lifecycleHookName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoScalingGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoScalingGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_autoScalingGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoScalingGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_defaultResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_defaultResult.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultResult.c_str(), allocator).Move(), allocator);
     }
 
     if (m_heartbeatTimeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeartbeatTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_heartbeatTimeout, allocator);
@@ -196,43 +195,43 @@ void LifecycleHook::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_lifecycleTransitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifecycleTransition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lifecycleTransition.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lifecycleTransition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_notificationMetadataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotificationMetadata";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_notificationMetadata.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notificationMetadata.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_notificationTargetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotificationTarget";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_notificationTarget.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_lifecycleTransitionTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifecycleTransitionType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lifecycleTransitionType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lifecycleTransitionType.c_str(), allocator).Move(), allocator);
     }
 
 }

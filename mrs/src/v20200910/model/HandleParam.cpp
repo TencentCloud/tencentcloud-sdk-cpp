@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 HandleParam::HandleParam() :
@@ -33,7 +32,7 @@ HandleParam::HandleParam() :
 {
 }
 
-CoreInternalOutcome HandleParam::Deserialize(const Value &value)
+CoreInternalOutcome HandleParam::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome HandleParam::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HandleParam::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HandleParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ocrEngineTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OcrEngineType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ocrEngineType, allocator);
@@ -135,7 +134,7 @@ void HandleParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_isReturnTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsReturnText";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isReturnText, allocator);
@@ -143,7 +142,7 @@ void HandleParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_rotateTheAngleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RotateTheAngle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rotateTheAngle, allocator);
@@ -151,7 +150,7 @@ void HandleParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_autoFitDirectionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoFitDirection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoFitDirection, allocator);
@@ -159,7 +158,7 @@ void HandleParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_autoOptimizeCoordinateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoOptimizeCoordinate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoOptimizeCoordinate, allocator);
@@ -167,7 +166,7 @@ void HandleParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_isScaleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsScale";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isScale, allocator);
@@ -175,7 +174,7 @@ void HandleParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_imageOriginalSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageOriginalSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageOriginalSize, allocator);
@@ -183,7 +182,7 @@ void HandleParam::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_scaleTargetSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScaleTargetSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scaleTargetSize, allocator);

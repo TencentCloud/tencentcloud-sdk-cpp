@@ -2104,6 +2104,49 @@ CdnClient::ManageClsTopicDomainsOutcomeCallable CdnClient::ManageClsTopicDomains
     return task->get_future();
 }
 
+CdnClient::ModifyPurgeFetchTaskStatusOutcome CdnClient::ModifyPurgeFetchTaskStatus(const ModifyPurgeFetchTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPurgeFetchTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPurgeFetchTaskStatusResponse rsp = ModifyPurgeFetchTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPurgeFetchTaskStatusOutcome(rsp);
+        else
+            return ModifyPurgeFetchTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPurgeFetchTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::ModifyPurgeFetchTaskStatusAsync(const ModifyPurgeFetchTaskStatusRequest& request, const ModifyPurgeFetchTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPurgeFetchTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::ModifyPurgeFetchTaskStatusOutcomeCallable CdnClient::ModifyPurgeFetchTaskStatusCallable(const ModifyPurgeFetchTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPurgeFetchTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPurgeFetchTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::PurgePathCacheOutcome CdnClient::PurgePathCache(const PurgePathCacheRequest &request)
 {
     auto outcome = MakeRequest(request, "PurgePathCache");

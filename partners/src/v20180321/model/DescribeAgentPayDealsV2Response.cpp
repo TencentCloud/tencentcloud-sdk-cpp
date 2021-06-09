@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Partners::V20180321::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeAgentPayDealsV2Response::DescribeAgentPayDealsV2Response() :
@@ -32,7 +31,7 @@ DescribeAgentPayDealsV2Response::DescribeAgentPayDealsV2Response() :
 
 CoreInternalOutcome DescribeAgentPayDealsV2Response::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeAgentPayDealsV2Response::Deserialize(const string &p
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeAgentPayDealsV2Response::Deserialize(const string &p
         if (!rsp["AgentPayDealSet"].IsArray())
             return CoreInternalOutcome(Error("response `AgentPayDealSet` is not array type"));
 
-        const Value &tmpValue = rsp["AgentPayDealSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["AgentPayDealSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AgentDealNewElem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

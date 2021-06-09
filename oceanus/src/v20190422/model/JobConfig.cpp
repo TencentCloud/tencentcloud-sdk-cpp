@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Oceanus::V20190422::Model;
-using namespace rapidjson;
 using namespace std;
 
 JobConfig::JobConfig() :
@@ -39,7 +38,7 @@ JobConfig::JobConfig() :
 {
 }
 
-CoreInternalOutcome JobConfig::Deserialize(const Value &value)
+CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -119,8 +118,8 @@ CoreInternalOutcome JobConfig::Deserialize(const Value &value)
         if (!value["Properties"].IsArray())
             return CoreInternalOutcome(Error("response `JobConfig.Properties` is not array type"));
 
-        const Value &tmpValue = value["Properties"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Properties"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Property item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -139,8 +138,8 @@ CoreInternalOutcome JobConfig::Deserialize(const Value &value)
         if (!value["ResourceRefDetails"].IsArray())
             return CoreInternalOutcome(Error("response `JobConfig.ResourceRefDetails` is not array type"));
 
-        const Value &tmpValue = value["ResourceRefDetails"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ResourceRefDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ResourceRefDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -208,52 +207,52 @@ CoreInternalOutcome JobConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void JobConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_jobIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_jobId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_entrypointClassHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EntrypointClass";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_entrypointClass.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_entrypointClass.c_str(), allocator).Move(), allocator);
     }
 
     if (m_programArgsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProgramArgs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_programArgs.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_programArgs.c_str(), allocator).Move(), allocator);
     }
 
     if (m_remarkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_versionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_version, allocator);
@@ -261,7 +260,7 @@ void JobConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_defaultParallelismHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultParallelism";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defaultParallelism, allocator);
@@ -269,61 +268,61 @@ void JobConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_propertiesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Properties";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_properties.begin(); itr != m_properties.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_resourceRefDetailsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceRefDetails";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_resourceRefDetails.begin(); itr != m_resourceRefDetails.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_creatorUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatorUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creatorUin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creatorUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cOSBucketHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "COSBucket";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cOSBucket.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cOSBucket.c_str(), allocator).Move(), allocator);
     }
 
     if (m_logCollectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogCollect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_logCollect, allocator);
@@ -331,7 +330,7 @@ void JobConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_maxParallelismHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxParallelism";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxParallelism, allocator);

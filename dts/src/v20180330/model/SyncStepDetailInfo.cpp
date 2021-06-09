@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dts::V20180330::Model;
-using namespace rapidjson;
 using namespace std;
 
 SyncStepDetailInfo::SyncStepDetailInfo() :
@@ -29,7 +28,7 @@ SyncStepDetailInfo::SyncStepDetailInfo() :
 {
 }
 
-CoreInternalOutcome SyncStepDetailInfo::Deserialize(const Value &value)
+CoreInternalOutcome SyncStepDetailInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome SyncStepDetailInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SyncStepDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SyncStepDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_stepNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepNo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stepNo, allocator);
@@ -91,15 +90,15 @@ void SyncStepDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_stepNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stepName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stepName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_canStopHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CanStop";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_canStop, allocator);
@@ -107,7 +106,7 @@ void SyncStepDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_stepIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stepId, allocator);

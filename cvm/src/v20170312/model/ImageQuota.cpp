@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageQuota::ImageQuota() :
@@ -27,7 +26,7 @@ ImageQuota::ImageQuota() :
 {
 }
 
-CoreInternalOutcome ImageQuota::Deserialize(const Value &value)
+CoreInternalOutcome ImageQuota::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome ImageQuota::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_usedQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsedQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedQuota, allocator);
@@ -69,7 +68,7 @@ void ImageQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_totalQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalQuota, allocator);

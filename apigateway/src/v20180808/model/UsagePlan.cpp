@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 UsagePlan::UsagePlan() :
@@ -32,7 +31,7 @@ UsagePlan::UsagePlan() :
 {
 }
 
-CoreInternalOutcome UsagePlan::Deserialize(const Value &value)
+CoreInternalOutcome UsagePlan::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,44 +110,44 @@ CoreInternalOutcome UsagePlan::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UsagePlan::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UsagePlan::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_environmentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Environment";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_environment.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usagePlanIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsagePlanId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_usagePlanId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_usagePlanId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usagePlanNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsagePlanName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_usagePlanName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_usagePlanName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usagePlanDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsagePlanDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_usagePlanDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_usagePlanDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxRequestNumPreSecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxRequestNumPreSec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxRequestNumPreSec, allocator);
@@ -156,18 +155,18 @@ void UsagePlan::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_createdTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modifiedTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModifiedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modifiedTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifiedTime.c_str(), allocator).Move(), allocator);
     }
 
 }

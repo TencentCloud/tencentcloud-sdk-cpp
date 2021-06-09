@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 PersonalMedicalHistory::PersonalMedicalHistory() :
@@ -30,7 +29,7 @@ PersonalMedicalHistory::PersonalMedicalHistory() :
 {
 }
 
-CoreInternalOutcome PersonalMedicalHistory::Deserialize(const Value &value)
+CoreInternalOutcome PersonalMedicalHistory::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,47 +88,47 @@ CoreInternalOutcome PersonalMedicalHistory::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PersonalMedicalHistory::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PersonalMedicalHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_birthPlaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BirthPlace";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_birthPlace.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_birthPlace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_livePlaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LivePlace";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_livePlace.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_livePlace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_jobHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Job";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_job.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_job.c_str(), allocator).Move(), allocator);
     }
 
     if (m_smokeHistoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SmokeHistory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_smokeHistory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_smokeHistory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_alcoholicHistoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlcoholicHistory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_alcoholicHistory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alcoholicHistory.c_str(), allocator).Move(), allocator);
     }
 
 }

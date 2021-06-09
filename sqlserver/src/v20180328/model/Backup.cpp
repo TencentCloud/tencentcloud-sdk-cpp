@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 Backup::Backup() :
@@ -37,7 +36,7 @@ Backup::Backup() :
 {
 }
 
-CoreInternalOutcome Backup::Deserialize(const Value &value)
+CoreInternalOutcome Backup::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -127,8 +126,8 @@ CoreInternalOutcome Backup::Deserialize(const Value &value)
         if (!value["DBs"].IsArray())
             return CoreInternalOutcome(Error("response `Backup.DBs` is not array type"));
 
-        const Value &tmpValue = value["DBs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DBs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_dBs.push_back((*itr).GetString());
         }
@@ -169,20 +168,20 @@ CoreInternalOutcome Backup::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Backup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Backup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
@@ -190,39 +189,39 @@ void Backup::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_internalAddrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InternalAddr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_internalAddr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internalAddr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalAddrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalAddr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalAddr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalAddr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -230,7 +229,7 @@ void Backup::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -238,20 +237,20 @@ void Backup::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_dBsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DBs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_dBs.begin(); itr != m_dBs.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_strategyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Strategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_strategy, allocator);
@@ -259,7 +258,7 @@ void Backup::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_backupWayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupWay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backupWay, allocator);
@@ -267,10 +266,10 @@ void Backup::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_backupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_backupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupName.c_str(), allocator).Move(), allocator);
     }
 
 }

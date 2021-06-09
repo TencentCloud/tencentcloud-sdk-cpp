@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiia::V20190529::Model;
-using namespace rapidjson;
 using namespace std;
 
 CarTagItem::CarTagItem() :
@@ -32,7 +31,7 @@ CarTagItem::CarTagItem() :
 {
 }
 
-CoreInternalOutcome CarTagItem::Deserialize(const Value &value)
+CoreInternalOutcome CarTagItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -102,8 +101,8 @@ CoreInternalOutcome CarTagItem::Deserialize(const Value &value)
         if (!value["CarLocation"].IsArray())
             return CoreInternalOutcome(Error("response `CarTagItem.CarLocation` is not array type"));
 
-        const Value &tmpValue = value["CarLocation"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CarLocation"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Coord item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -121,44 +120,44 @@ CoreInternalOutcome CarTagItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CarTagItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CarTagItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_serialHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Serial";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serial.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serial.c_str(), allocator).Move(), allocator);
     }
 
     if (m_brandHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Brand";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_brand.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_brand.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_colorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Color";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_color.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_color.c_str(), allocator).Move(), allocator);
     }
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -166,7 +165,7 @@ void CarTagItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_yearHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Year";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_year, allocator);
@@ -174,15 +173,15 @@ void CarTagItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_carLocationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CarLocation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_carLocation.begin(); itr != m_carLocation.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

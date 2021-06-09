@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeRecordStreamData::DescribeRecordStreamData() :
@@ -30,7 +29,7 @@ DescribeRecordStreamData::DescribeRecordStreamData() :
 {
 }
 
-CoreInternalOutcome DescribeRecordStreamData::Deserialize(const Value &value)
+CoreInternalOutcome DescribeRecordStreamData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,47 +88,47 @@ CoreInternalOutcome DescribeRecordStreamData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DescribeRecordStreamData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribeRecordStreamData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_rtspAddrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RtspAddr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rtspAddr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rtspAddr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rtmpAddrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RtmpAddr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rtmpAddr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rtmpAddr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hlsAddrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HlsAddr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_hlsAddr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hlsAddr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flvAddrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlvAddr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_flvAddr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flvAddr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_streamIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_streamId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_streamId.c_str(), allocator).Move(), allocator);
     }
 
 }

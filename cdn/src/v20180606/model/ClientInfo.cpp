@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClientInfo::ClientInfo() :
@@ -29,7 +28,7 @@ ClientInfo::ClientInfo() :
 {
 }
 
-CoreInternalOutcome ClientInfo::Deserialize(const Value &value)
+CoreInternalOutcome ClientInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome ClientInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClientInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClientInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_provNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProvName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_provName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_provName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Country";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_country.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_country.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ispNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IspName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ispName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ispName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
 }

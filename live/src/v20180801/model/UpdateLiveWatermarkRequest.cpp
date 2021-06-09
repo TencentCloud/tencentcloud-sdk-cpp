@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 UpdateLiveWatermarkRequest::UpdateLiveWatermarkRequest() :
@@ -36,14 +35,14 @@ UpdateLiveWatermarkRequest::UpdateLiveWatermarkRequest() :
 
 string UpdateLiveWatermarkRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_watermarkIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WatermarkId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_watermarkId, allocator);
@@ -51,15 +50,15 @@ string UpdateLiveWatermarkRequest::ToJsonString() const
 
     if (m_pictureUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PictureUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_pictureUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pictureUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_xPositionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "XPosition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_xPosition, allocator);
@@ -67,7 +66,7 @@ string UpdateLiveWatermarkRequest::ToJsonString() const
 
     if (m_yPositionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "YPosition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_yPosition, allocator);
@@ -75,15 +74,15 @@ string UpdateLiveWatermarkRequest::ToJsonString() const
 
     if (m_watermarkNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WatermarkName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_watermarkName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_watermarkName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_width, allocator);
@@ -91,15 +90,15 @@ string UpdateLiveWatermarkRequest::ToJsonString() const
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_height, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

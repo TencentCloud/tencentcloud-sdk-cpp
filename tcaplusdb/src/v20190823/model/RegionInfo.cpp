@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcaplusdb::V20190823::Model;
-using namespace rapidjson;
 using namespace std;
 
 RegionInfo::RegionInfo() :
@@ -29,7 +28,7 @@ RegionInfo::RegionInfo() :
 {
 }
 
-CoreInternalOutcome RegionInfo::Deserialize(const Value &value)
+CoreInternalOutcome RegionInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,28 +77,28 @@ CoreInternalOutcome RegionInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RegionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_regionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionAbbrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionAbbr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionAbbr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionAbbr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionId, allocator);
@@ -107,7 +106,7 @@ void RegionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_ipv6EnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ipv6Enable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ipv6Enable, allocator);

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeNamespacesResponse::DescribeNamespacesResponse() :
@@ -32,7 +31,7 @@ DescribeNamespacesResponse::DescribeNamespacesResponse() :
 
 CoreInternalOutcome DescribeNamespacesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeNamespacesResponse::Deserialize(const string &payloa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeNamespacesResponse::Deserialize(const string &payloa
         if (!rsp["NamespaceList"].IsArray())
             return CoreInternalOutcome(Error("response `NamespaceList` is not array type"));
 
-        const Value &tmpValue = rsp["NamespaceList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["NamespaceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TcrNamespaceInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

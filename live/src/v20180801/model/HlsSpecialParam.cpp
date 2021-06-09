@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 HlsSpecialParam::HlsSpecialParam() :
@@ -26,7 +25,7 @@ HlsSpecialParam::HlsSpecialParam() :
 {
 }
 
-CoreInternalOutcome HlsSpecialParam::Deserialize(const Value &value)
+CoreInternalOutcome HlsSpecialParam::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome HlsSpecialParam::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HlsSpecialParam::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HlsSpecialParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_flowContinueDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowContinueDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowContinueDuration, allocator);

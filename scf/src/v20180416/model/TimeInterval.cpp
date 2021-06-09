@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 TimeInterval::TimeInterval() :
@@ -27,7 +26,7 @@ TimeInterval::TimeInterval() :
 {
 }
 
-CoreInternalOutcome TimeInterval::Deserialize(const Value &value)
+CoreInternalOutcome TimeInterval::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome TimeInterval::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TimeInterval::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TimeInterval::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Start";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_start.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_start.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "End";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_end.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_end.c_str(), allocator).Move(), allocator);
     }
 
 }

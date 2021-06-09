@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Captcha::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 CaptchaOperDataLoadTimeUnit::CaptchaOperDataLoadTimeUnit() :
@@ -28,7 +27,7 @@ CaptchaOperDataLoadTimeUnit::CaptchaOperDataLoadTimeUnit() :
 {
 }
 
-CoreInternalOutcome CaptchaOperDataLoadTimeUnit::Deserialize(const Value &value)
+CoreInternalOutcome CaptchaOperDataLoadTimeUnit::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome CaptchaOperDataLoadTimeUnit::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CaptchaOperDataLoadTimeUnit::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CaptchaOperDataLoadTimeUnit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dateKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DateKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dateKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dateKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_marketLoadTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MarketLoadTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_marketLoadTime, allocator);
@@ -88,7 +87,7 @@ void CaptchaOperDataLoadTimeUnit::ToJsonObject(Value &value, Document::Allocator
 
     if (m_appIdLoadTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppIdLoadTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appIdLoadTime, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 MmsInstanceStateInfo::MmsInstanceStateInfo() :
@@ -27,7 +26,7 @@ MmsInstanceStateInfo::MmsInstanceStateInfo() :
 {
 }
 
-CoreInternalOutcome MmsInstanceStateInfo::Deserialize(const Value &value)
+CoreInternalOutcome MmsInstanceStateInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome MmsInstanceStateInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MmsInstanceStateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MmsInstanceStateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_operatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_operator.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 AnonymousComputeEnv::AnonymousComputeEnv() :
@@ -29,7 +28,7 @@ AnonymousComputeEnv::AnonymousComputeEnv() :
 {
 }
 
-CoreInternalOutcome AnonymousComputeEnv::Deserialize(const Value &value)
+CoreInternalOutcome AnonymousComputeEnv::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -66,8 +65,8 @@ CoreInternalOutcome AnonymousComputeEnv::Deserialize(const Value &value)
         if (!value["MountDataDisks"].IsArray())
             return CoreInternalOutcome(Error("response `AnonymousComputeEnv.MountDataDisks` is not array type"));
 
-        const Value &tmpValue = value["MountDataDisks"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MountDataDisks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MountDataDisk item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -102,47 +101,47 @@ CoreInternalOutcome AnonymousComputeEnv::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AnonymousComputeEnv::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AnonymousComputeEnv::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_envTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_envType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_envDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_envData.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_mountDataDisksHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MountDataDisks";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_mountDataDisks.begin(); itr != m_mountDataDisks.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_agentRunningModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AgentRunningMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agentRunningMode.ToJsonObject(value[key.c_str()], allocator);
     }
 

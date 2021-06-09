@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Eis::V20200715::Model;
-using namespace rapidjson;
 using namespace std;
 
 EisConnectionOperation::EisConnectionOperation() :
@@ -28,7 +27,7 @@ EisConnectionOperation::EisConnectionOperation() :
 {
 }
 
-CoreInternalOutcome EisConnectionOperation::Deserialize(const Value &value)
+CoreInternalOutcome EisConnectionOperation::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome EisConnectionOperation::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EisConnectionOperation::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EisConnectionOperation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_operationNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OperationName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_operationName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_displayNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisplayName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_displayName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_displayName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isTriggerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsTrigger";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isTrigger, allocator);

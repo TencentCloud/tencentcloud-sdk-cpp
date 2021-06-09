@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceCpuInfo::DeviceCpuInfo() :
@@ -27,7 +26,7 @@ DeviceCpuInfo::DeviceCpuInfo() :
 {
 }
 
-CoreInternalOutcome DeviceCpuInfo::Deserialize(const Value &value)
+CoreInternalOutcome DeviceCpuInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome DeviceCpuInfo::Deserialize(const Value &value)
         if (!value["Rate"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceCpuInfo.Rate` is not array type"));
 
-        const Value &tmpValue = value["Rate"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Rate"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DeviceCpuRateInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -57,8 +56,8 @@ CoreInternalOutcome DeviceCpuInfo::Deserialize(const Value &value)
         if (!value["Load"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceCpuInfo.Load` is not array type"));
 
-        const Value &tmpValue = value["Load"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Load"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_load.push_back((*itr).GetInt64());
         }
@@ -69,34 +68,34 @@ CoreInternalOutcome DeviceCpuInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceCpuInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceCpuInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_rateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_rate.begin(); itr != m_rate.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_loadHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Load";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_load.begin(); itr != m_load.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

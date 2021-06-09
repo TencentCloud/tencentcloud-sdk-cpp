@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 DynamicPodSpec::DynamicPodSpec() :
@@ -29,7 +28,7 @@ DynamicPodSpec::DynamicPodSpec() :
 {
 }
 
-CoreInternalOutcome DynamicPodSpec::Deserialize(const Value &value)
+CoreInternalOutcome DynamicPodSpec::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome DynamicPodSpec::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DynamicPodSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DynamicPodSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_requestCpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RequestCpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_requestCpu, allocator);
@@ -91,7 +90,7 @@ void DynamicPodSpec::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_limitCpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LimitCpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_limitCpu, allocator);
@@ -99,7 +98,7 @@ void DynamicPodSpec::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_requestMemoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RequestMemory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_requestMemory, allocator);
@@ -107,7 +106,7 @@ void DynamicPodSpec::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_limitMemoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LimitMemory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_limitMemory, allocator);

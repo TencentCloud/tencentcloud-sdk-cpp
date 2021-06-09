@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaProcessTaskInput::MediaProcessTaskInput() :
@@ -32,7 +31,7 @@ MediaProcessTaskInput::MediaProcessTaskInput() :
 {
 }
 
-CoreInternalOutcome MediaProcessTaskInput::Deserialize(const Value &value)
+CoreInternalOutcome MediaProcessTaskInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -42,8 +41,8 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const Value &value)
         if (!value["TranscodeTaskSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaProcessTaskInput.TranscodeTaskSet` is not array type"));
 
-        const Value &tmpValue = value["TranscodeTaskSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TranscodeTaskSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TranscodeTaskInput item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -62,8 +61,8 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const Value &value)
         if (!value["AnimatedGraphicTaskSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaProcessTaskInput.AnimatedGraphicTaskSet` is not array type"));
 
-        const Value &tmpValue = value["AnimatedGraphicTaskSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AnimatedGraphicTaskSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AnimatedGraphicTaskInput item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -82,8 +81,8 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const Value &value)
         if (!value["SnapshotByTimeOffsetTaskSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaProcessTaskInput.SnapshotByTimeOffsetTaskSet` is not array type"));
 
-        const Value &tmpValue = value["SnapshotByTimeOffsetTaskSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SnapshotByTimeOffsetTaskSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SnapshotByTimeOffsetTaskInput item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -102,8 +101,8 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const Value &value)
         if (!value["SampleSnapshotTaskSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaProcessTaskInput.SampleSnapshotTaskSet` is not array type"));
 
-        const Value &tmpValue = value["SampleSnapshotTaskSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SampleSnapshotTaskSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SampleSnapshotTaskInput item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -122,8 +121,8 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const Value &value)
         if (!value["ImageSpriteTaskSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaProcessTaskInput.ImageSpriteTaskSet` is not array type"));
 
-        const Value &tmpValue = value["ImageSpriteTaskSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ImageSpriteTaskSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ImageSpriteTaskInput item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -142,8 +141,8 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const Value &value)
         if (!value["CoverBySnapshotTaskSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaProcessTaskInput.CoverBySnapshotTaskSet` is not array type"));
 
-        const Value &tmpValue = value["CoverBySnapshotTaskSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CoverBySnapshotTaskSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CoverBySnapshotTaskInput item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -162,8 +161,8 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const Value &value)
         if (!value["AdaptiveDynamicStreamingTaskSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaProcessTaskInput.AdaptiveDynamicStreamingTaskSet` is not array type"));
 
-        const Value &tmpValue = value["AdaptiveDynamicStreamingTaskSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AdaptiveDynamicStreamingTaskSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AdaptiveDynamicStreamingTaskInput item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -181,110 +180,110 @@ CoreInternalOutcome MediaProcessTaskInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaProcessTaskInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaProcessTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_transcodeTaskSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TranscodeTaskSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_transcodeTaskSet.begin(); itr != m_transcodeTaskSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_animatedGraphicTaskSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AnimatedGraphicTaskSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_animatedGraphicTaskSet.begin(); itr != m_animatedGraphicTaskSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_snapshotByTimeOffsetTaskSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SnapshotByTimeOffsetTaskSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_snapshotByTimeOffsetTaskSet.begin(); itr != m_snapshotByTimeOffsetTaskSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_sampleSnapshotTaskSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SampleSnapshotTaskSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_sampleSnapshotTaskSet.begin(); itr != m_sampleSnapshotTaskSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_imageSpriteTaskSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageSpriteTaskSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_imageSpriteTaskSet.begin(); itr != m_imageSpriteTaskSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_coverBySnapshotTaskSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CoverBySnapshotTaskSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_coverBySnapshotTaskSet.begin(); itr != m_coverBySnapshotTaskSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_adaptiveDynamicStreamingTaskSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AdaptiveDynamicStreamingTaskSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_adaptiveDynamicStreamingTaskSet.begin(); itr != m_adaptiveDynamicStreamingTaskSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

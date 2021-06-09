@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmvpc::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 VpcQuota::VpcQuota() :
@@ -27,7 +26,7 @@ VpcQuota::VpcQuota() :
 {
 }
 
-CoreInternalOutcome VpcQuota::Deserialize(const Value &value)
+CoreInternalOutcome VpcQuota::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome VpcQuota::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VpcQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VpcQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TypeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_typeId, allocator);
@@ -69,7 +68,7 @@ void VpcQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_quotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Quota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quota, allocator);

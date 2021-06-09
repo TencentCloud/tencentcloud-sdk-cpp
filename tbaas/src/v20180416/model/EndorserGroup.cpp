@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbaas::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 EndorserGroup::EndorserGroup() :
@@ -27,7 +26,7 @@ EndorserGroup::EndorserGroup() :
 {
 }
 
-CoreInternalOutcome EndorserGroup::Deserialize(const Value &value)
+CoreInternalOutcome EndorserGroup::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome EndorserGroup::Deserialize(const Value &value)
         if (!value["EndorserPeerList"].IsArray())
             return CoreInternalOutcome(Error("response `EndorserGroup.EndorserPeerList` is not array type"));
 
-        const Value &tmpValue = value["EndorserPeerList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["EndorserPeerList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_endorserPeerList.push_back((*itr).GetString());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome EndorserGroup::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EndorserGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EndorserGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_endorserGroupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndorserGroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endorserGroupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endorserGroupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endorserPeerListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndorserPeerList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_endorserPeerList.begin(); itr != m_endorserPeerList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

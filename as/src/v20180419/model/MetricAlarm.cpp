@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::As::V20180419::Model;
-using namespace rapidjson;
 using namespace std;
 
 MetricAlarm::MetricAlarm() :
@@ -31,7 +30,7 @@ MetricAlarm::MetricAlarm() :
 {
 }
 
-CoreInternalOutcome MetricAlarm::Deserialize(const Value &value)
+CoreInternalOutcome MetricAlarm::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,28 +99,28 @@ CoreInternalOutcome MetricAlarm::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MetricAlarm::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MetricAlarm::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_comparisonOperatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComparisonOperator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_comparisonOperator.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_comparisonOperator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_metricNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MetricName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metricName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_thresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Threshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_threshold, allocator);
@@ -129,7 +128,7 @@ void MetricAlarm::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_periodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_period, allocator);
@@ -137,7 +136,7 @@ void MetricAlarm::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_continuousTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContinuousTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_continuousTime, allocator);
@@ -145,10 +144,10 @@ void MetricAlarm::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_statisticHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Statistic";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_statistic.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statistic.c_str(), allocator).Move(), allocator);
     }
 
 }

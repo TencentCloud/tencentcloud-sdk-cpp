@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Asr::V20190614::Model;
-using namespace rapidjson;
 using namespace std;
 
 SentenceDetail::SentenceDetail() :
@@ -32,7 +31,7 @@ SentenceDetail::SentenceDetail() :
 {
 }
 
-CoreInternalOutcome SentenceDetail::Deserialize(const Value &value)
+CoreInternalOutcome SentenceDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -92,8 +91,8 @@ CoreInternalOutcome SentenceDetail::Deserialize(const Value &value)
         if (!value["Words"].IsArray())
             return CoreInternalOutcome(Error("response `SentenceDetail.Words` is not array type"));
 
-        const Value &tmpValue = value["Words"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Words"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SentenceWords item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -121,28 +120,28 @@ CoreInternalOutcome SentenceDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SentenceDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SentenceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_finalSentenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FinalSentence";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_finalSentence.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finalSentence.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sliceSentenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SliceSentence";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sliceSentence.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sliceSentence.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startMsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartMs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startMs, allocator);
@@ -150,7 +149,7 @@ void SentenceDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_endMsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndMs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endMs, allocator);
@@ -158,7 +157,7 @@ void SentenceDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_wordsNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WordsNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wordsNum, allocator);
@@ -166,22 +165,22 @@ void SentenceDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_wordsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Words";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_words.begin(); itr != m_words.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_speechSpeedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SpeechSpeed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_speechSpeed, allocator);

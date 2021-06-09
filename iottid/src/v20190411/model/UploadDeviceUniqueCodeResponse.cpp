@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iottid::V20190411::Model;
-using namespace rapidjson;
 using namespace std;
 
 UploadDeviceUniqueCodeResponse::UploadDeviceUniqueCodeResponse() :
@@ -34,7 +33,7 @@ UploadDeviceUniqueCodeResponse::UploadDeviceUniqueCodeResponse() :
 
 CoreInternalOutcome UploadDeviceUniqueCodeResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -44,7 +43,7 @@ CoreInternalOutcome UploadDeviceUniqueCodeResponse::Deserialize(const string &pa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -81,8 +80,8 @@ CoreInternalOutcome UploadDeviceUniqueCodeResponse::Deserialize(const string &pa
         if (!rsp["ExistedCodeSet"].IsArray())
             return CoreInternalOutcome(Error("response `ExistedCodeSet` is not array type"));
 
-        const Value &tmpValue = rsp["ExistedCodeSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ExistedCodeSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_existedCodeSet.push_back((*itr).GetString());
         }
@@ -104,8 +103,8 @@ CoreInternalOutcome UploadDeviceUniqueCodeResponse::Deserialize(const string &pa
         if (!rsp["IllegalCodeSet"].IsArray())
             return CoreInternalOutcome(Error("response `IllegalCodeSet` is not array type"));
 
-        const Value &tmpValue = rsp["IllegalCodeSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["IllegalCodeSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_illegalCodeSet.push_back((*itr).GetString());
         }

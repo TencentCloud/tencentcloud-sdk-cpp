@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfw::V20190904::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScanInfo::ScanInfo() :
@@ -29,7 +28,7 @@ ScanInfo::ScanInfo() :
 {
 }
 
-CoreInternalOutcome ScanInfo::Deserialize(const Value &value)
+CoreInternalOutcome ScanInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,21 +84,21 @@ CoreInternalOutcome ScanInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScanInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_scanResultInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScanResultInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_scanResultInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_scanStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScanStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scanStatus, allocator);
@@ -107,7 +106,7 @@ void ScanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_scanPercentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScanPercent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scanPercent, allocator);
@@ -115,10 +114,10 @@ void ScanInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_scanTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScanTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scanTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanTime.c_str(), allocator).Move(), allocator);
     }
 
 }

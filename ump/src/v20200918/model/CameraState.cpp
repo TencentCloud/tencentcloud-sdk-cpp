@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 CameraState::CameraState() :
@@ -27,7 +26,7 @@ CameraState::CameraState() :
 {
 }
 
-CoreInternalOutcome CameraState::Deserialize(const Value &value)
+CoreInternalOutcome CameraState::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome CameraState::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CameraState::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CameraState::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cameraIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cameraId, allocator);
@@ -69,7 +68,7 @@ void CameraState::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);

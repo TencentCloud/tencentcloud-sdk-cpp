@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20190725::Model;
-using namespace rapidjson;
 using namespace std;
 
 SlowLogPattern::SlowLogPattern() :
@@ -29,7 +28,7 @@ SlowLogPattern::SlowLogPattern() :
 {
 }
 
-CoreInternalOutcome SlowLogPattern::Deserialize(const Value &value)
+CoreInternalOutcome SlowLogPattern::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome SlowLogPattern::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SlowLogPattern::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SlowLogPattern::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_patternHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pattern";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pattern.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pattern.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxTime, allocator);
@@ -99,7 +98,7 @@ void SlowLogPattern::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_averageTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AverageTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_averageTime, allocator);
@@ -107,7 +106,7 @@ void SlowLogPattern::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_totalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Total";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_total, allocator);

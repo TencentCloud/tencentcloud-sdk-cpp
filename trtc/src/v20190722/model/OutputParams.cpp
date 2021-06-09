@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 OutputParams::OutputParams() :
@@ -29,7 +28,7 @@ OutputParams::OutputParams() :
 {
 }
 
-CoreInternalOutcome OutputParams::Deserialize(const Value &value)
+CoreInternalOutcome OutputParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome OutputParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OutputParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OutputParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_streamIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_streamId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_streamId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pureAudioStreamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PureAudioStream";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pureAudioStream, allocator);
@@ -99,15 +98,15 @@ void OutputParams::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_recordIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_recordId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recordAudioOnlyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordAudioOnly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recordAudioOnly, allocator);

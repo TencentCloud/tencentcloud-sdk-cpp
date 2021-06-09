@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 TransferSinglePayData::TransferSinglePayData() :
@@ -26,7 +25,7 @@ TransferSinglePayData::TransferSinglePayData() :
 {
 }
 
-CoreInternalOutcome TransferSinglePayData::Deserialize(const Value &value)
+CoreInternalOutcome TransferSinglePayData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome TransferSinglePayData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TransferSinglePayData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TransferSinglePayData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tradeSerialNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TradeSerialNo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tradeSerialNo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tradeSerialNo.c_str(), allocator).Move(), allocator);
     }
 
 }

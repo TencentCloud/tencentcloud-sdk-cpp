@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 PluginInfo::PluginInfo() :
@@ -28,7 +27,7 @@ PluginInfo::PluginInfo() :
 {
 }
 
-CoreInternalOutcome PluginInfo::Deserialize(const Value &value)
+CoreInternalOutcome PluginInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome PluginInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PluginInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PluginInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_pluginTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PluginType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pluginType, allocator);
@@ -80,18 +79,18 @@ void PluginInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_pluginNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PluginName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pluginName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pluginName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pluginDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PluginDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pluginDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pluginDesc.c_str(), allocator).Move(), allocator);
     }
 
 }

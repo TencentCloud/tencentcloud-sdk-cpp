@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceAdvancedSettings::InstanceAdvancedSettings() :
@@ -27,7 +26,7 @@ InstanceAdvancedSettings::InstanceAdvancedSettings() :
 {
 }
 
-CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const Value &value)
+CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mountTargetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MountTarget";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mountTarget.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountTarget.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dockerGraphPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DockerGraphPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dockerGraphPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dockerGraphPath.c_str(), allocator).Move(), allocator);
     }
 
 }

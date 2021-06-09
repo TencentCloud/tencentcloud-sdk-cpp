@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcaplusdb::V20190823::Model;
-using namespace rapidjson;
 using namespace std;
 
 CompareTablesInfo::CompareTablesInfo() :
@@ -33,7 +32,7 @@ CompareTablesInfo::CompareTablesInfo() :
 {
 }
 
-CoreInternalOutcome CompareTablesInfo::Deserialize(const Value &value)
+CoreInternalOutcome CompareTablesInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,71 +121,71 @@ CoreInternalOutcome CompareTablesInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CompareTablesInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CompareTablesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_srcTableClusterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcTableClusterId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_srcTableClusterId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcTableClusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcTableGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcTableGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_srcTableGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcTableGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcTableNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcTableName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_srcTableName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcTableName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstTableClusterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstTableClusterId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dstTableClusterId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstTableClusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstTableGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstTableGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dstTableGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstTableGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstTableNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstTableName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dstTableName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstTableName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcTableInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcTableInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_srcTableInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcTableInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstTableInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstTableInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dstTableInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstTableInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }

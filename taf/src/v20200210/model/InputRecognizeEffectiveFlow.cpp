@@ -18,14 +18,13 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Taf::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 InputRecognizeEffectiveFlow::InputRecognizeEffectiveFlow()
 {
 }
 
-CoreInternalOutcome InputRecognizeEffectiveFlow::Deserialize(const Value &value)
+CoreInternalOutcome InputRecognizeEffectiveFlow::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -34,7 +33,7 @@ CoreInternalOutcome InputRecognizeEffectiveFlow::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InputRecognizeEffectiveFlow::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InputRecognizeEffectiveFlow::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
 }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 RunUserCmdResponse::RunUserCmdResponse() :
@@ -32,7 +31,7 @@ RunUserCmdResponse::RunUserCmdResponse() :
 
 CoreInternalOutcome RunUserCmdResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome RunUserCmdResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome RunUserCmdResponse::Deserialize(const string &payload)
         if (!rsp["SuccessTaskInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `SuccessTaskInfoSet` is not array type"));
 
-        const Value &tmpValue = rsp["SuccessTaskInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SuccessTaskInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SuccessTaskInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -89,8 +88,8 @@ CoreInternalOutcome RunUserCmdResponse::Deserialize(const string &payload)
         if (!rsp["FailedTaskInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `FailedTaskInfoSet` is not array type"));
 
-        const Value &tmpValue = rsp["FailedTaskInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["FailedTaskInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             FailedTaskInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

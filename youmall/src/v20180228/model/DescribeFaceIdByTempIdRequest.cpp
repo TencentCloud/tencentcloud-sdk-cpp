@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeFaceIdByTempIdRequest::DescribeFaceIdByTempIdRequest() :
@@ -35,22 +34,22 @@ DescribeFaceIdByTempIdRequest::DescribeFaceIdByTempIdRequest() :
 
 string DescribeFaceIdByTempIdRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_companyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompanyId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_companyId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_companyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shopIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShopId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shopId, allocator);
@@ -58,15 +57,15 @@ string DescribeFaceIdByTempIdRequest::ToJsonString() const
 
     if (m_tempIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TempId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_tempId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tempId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cameraIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cameraId, allocator);
@@ -74,23 +73,23 @@ string DescribeFaceIdByTempIdRequest::ToJsonString() const
 
     if (m_posIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PosId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_posId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_posId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pictureExpiresHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PictureExpires";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pictureExpires, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

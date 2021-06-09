@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeAllNamespacesResponse::DescribeAllNamespacesResponse() :
@@ -34,7 +33,7 @@ DescribeAllNamespacesResponse::DescribeAllNamespacesResponse() :
 
 CoreInternalOutcome DescribeAllNamespacesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -44,7 +43,7 @@ CoreInternalOutcome DescribeAllNamespacesResponse::Deserialize(const string &pay
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -105,8 +104,8 @@ CoreInternalOutcome DescribeAllNamespacesResponse::Deserialize(const string &pay
         if (!rsp["QceNamespacesNew"].IsArray())
             return CoreInternalOutcome(Error("response `QceNamespacesNew` is not array type"));
 
-        const Value &tmpValue = rsp["QceNamespacesNew"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["QceNamespacesNew"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CommonNamespace item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -125,8 +124,8 @@ CoreInternalOutcome DescribeAllNamespacesResponse::Deserialize(const string &pay
         if (!rsp["CustomNamespacesNew"].IsArray())
             return CoreInternalOutcome(Error("response `CustomNamespacesNew` is not array type"));
 
-        const Value &tmpValue = rsp["CustomNamespacesNew"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["CustomNamespacesNew"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CommonNamespace item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

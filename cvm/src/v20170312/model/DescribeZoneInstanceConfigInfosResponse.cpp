@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeZoneInstanceConfigInfosResponse::DescribeZoneInstanceConfigInfosResponse() :
@@ -31,7 +30,7 @@ DescribeZoneInstanceConfigInfosResponse::DescribeZoneInstanceConfigInfosResponse
 
 CoreInternalOutcome DescribeZoneInstanceConfigInfosResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeZoneInstanceConfigInfosResponse::Deserialize(const s
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeZoneInstanceConfigInfosResponse::Deserialize(const s
         if (!rsp["InstanceTypeQuotaSet"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceTypeQuotaSet` is not array type"));
 
-        const Value &tmpValue = rsp["InstanceTypeQuotaSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["InstanceTypeQuotaSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InstanceTypeQuotaItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

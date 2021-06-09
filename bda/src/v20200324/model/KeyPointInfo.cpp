@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bda::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 KeyPointInfo::KeyPointInfo() :
@@ -28,7 +27,7 @@ KeyPointInfo::KeyPointInfo() :
 {
 }
 
-CoreInternalOutcome KeyPointInfo::Deserialize(const Value &value)
+CoreInternalOutcome KeyPointInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome KeyPointInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void KeyPointInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void KeyPointInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_keyPointTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyPointType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyPointType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyPointType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_xHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "X";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_x, allocator);
@@ -88,7 +87,7 @@ void KeyPointInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_yHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Y";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_y, allocator);

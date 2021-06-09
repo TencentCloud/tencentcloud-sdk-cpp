@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 MetricConfig::MetricConfig() :
@@ -28,7 +27,7 @@ MetricConfig::MetricConfig() :
 {
 }
 
-CoreInternalOutcome MetricConfig::Deserialize(const Value &value)
+CoreInternalOutcome MetricConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome MetricConfig::Deserialize(const Value &value)
         if (!value["Operator"].IsArray())
             return CoreInternalOutcome(Error("response `MetricConfig.Operator` is not array type"));
 
-        const Value &tmpValue = value["Operator"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Operator"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_operator.push_back((*itr).GetString());
         }
@@ -51,8 +50,8 @@ CoreInternalOutcome MetricConfig::Deserialize(const Value &value)
         if (!value["Period"].IsArray())
             return CoreInternalOutcome(Error("response `MetricConfig.Period` is not array type"));
 
-        const Value &tmpValue = value["Period"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Period"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_period.push_back((*itr).GetInt64());
         }
@@ -64,8 +63,8 @@ CoreInternalOutcome MetricConfig::Deserialize(const Value &value)
         if (!value["ContinuePeriod"].IsArray())
             return CoreInternalOutcome(Error("response `MetricConfig.ContinuePeriod` is not array type"));
 
-        const Value &tmpValue = value["ContinuePeriod"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ContinuePeriod"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_continuePeriod.push_back((*itr).GetInt64());
         }
@@ -76,45 +75,45 @@ CoreInternalOutcome MetricConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MetricConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MetricConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_operatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_operator.begin(); itr != m_operator.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_periodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_period.begin(); itr != m_period.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_continuePeriodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContinuePeriod";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_continuePeriod.begin(); itr != m_continuePeriod.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

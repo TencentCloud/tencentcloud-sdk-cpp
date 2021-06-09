@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiems::V20190416::Model;
-using namespace rapidjson;
 using namespace std;
 
 ServiceStatus::ServiceStatus() :
@@ -32,7 +31,7 @@ ServiceStatus::ServiceStatus() :
 {
 }
 
-CoreInternalOutcome ServiceStatus::Deserialize(const Value &value)
+CoreInternalOutcome ServiceStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -72,8 +71,8 @@ CoreInternalOutcome ServiceStatus::Deserialize(const Value &value)
         if (!value["Conditions"].IsArray())
             return CoreInternalOutcome(Error("response `ServiceStatus.Conditions` is not array type"));
 
-        const Value &tmpValue = value["Conditions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Conditions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Conditions item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -92,8 +91,8 @@ CoreInternalOutcome ServiceStatus::Deserialize(const Value &value)
         if (!value["Replicas"].IsArray())
             return CoreInternalOutcome(Error("response `ServiceStatus.Replicas` is not array type"));
 
-        const Value &tmpValue = value["Replicas"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Replicas"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_replicas.push_back((*itr).GetString());
         }
@@ -115,8 +114,8 @@ CoreInternalOutcome ServiceStatus::Deserialize(const Value &value)
         if (!value["ReplicaInfos"].IsArray())
             return CoreInternalOutcome(Error("response `ServiceStatus.ReplicaInfos` is not array type"));
 
-        const Value &tmpValue = value["ReplicaInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ReplicaInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ReplicaInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -134,12 +133,12 @@ CoreInternalOutcome ServiceStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ServiceStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ServiceStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_desiredReplicasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DesiredReplicas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_desiredReplicas, allocator);
@@ -147,7 +146,7 @@ void ServiceStatus::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_currentReplicasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CurrentReplicas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_currentReplicas, allocator);
@@ -155,59 +154,59 @@ void ServiceStatus::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_conditionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Conditions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_conditions.begin(); itr != m_conditions.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_replicasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Replicas";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_replicas.begin(); itr != m_replicas.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_messageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
     if (m_replicaInfosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicaInfos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_replicaInfos.begin(); itr != m_replicaInfos.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

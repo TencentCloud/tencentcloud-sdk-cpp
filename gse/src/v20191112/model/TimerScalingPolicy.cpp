@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 TimerScalingPolicy::TimerScalingPolicy() :
@@ -30,7 +29,7 @@ TimerScalingPolicy::TimerScalingPolicy() :
 {
 }
 
-CoreInternalOutcome TimerScalingPolicy::Deserialize(const Value &value)
+CoreInternalOutcome TimerScalingPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -103,28 +102,28 @@ CoreInternalOutcome TimerScalingPolicy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TimerScalingPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TimerScalingPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timerStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimerStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timerStatus, allocator);
@@ -132,19 +131,19 @@ void TimerScalingPolicy::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_timerFleetCapacityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimerFleetCapacity";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_timerFleetCapacity.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_timerConfigurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimerConfiguration";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_timerConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 

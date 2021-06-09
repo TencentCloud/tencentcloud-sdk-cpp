@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cat::V20180409::Model;
-using namespace rapidjson;
 using namespace std;
 
 IspDetail::IspDetail() :
@@ -28,7 +27,7 @@ IspDetail::IspDetail() :
 {
 }
 
-CoreInternalOutcome IspDetail::Deserialize(const Value &value)
+CoreInternalOutcome IspDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome IspDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IspDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IspDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ispNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IspName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ispName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ispName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_availRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvailRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_availRatio, allocator);
@@ -88,7 +87,7 @@ void IspDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_avgTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvgTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_avgTime, allocator);

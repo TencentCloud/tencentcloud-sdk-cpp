@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Clb::V20180317::Model;
-using namespace rapidjson;
 using namespace std;
 
 RewriteTarget::RewriteTarget() :
@@ -30,7 +29,7 @@ RewriteTarget::RewriteTarget() :
 {
 }
 
-CoreInternalOutcome RewriteTarget::Deserialize(const Value &value)
+CoreInternalOutcome RewriteTarget::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome RewriteTarget::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RewriteTarget::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RewriteTarget::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_targetListenerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetListenerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_targetListenerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetListenerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetLocationIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetLocationId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_targetLocationId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetLocationId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rewriteCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RewriteCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rewriteCode, allocator);
@@ -118,7 +117,7 @@ void RewriteTarget::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_takeUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TakeUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_takeUrl, allocator);
@@ -126,10 +125,10 @@ void RewriteTarget::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_rewriteTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RewriteType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rewriteType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rewriteType.c_str(), allocator).Move(), allocator);
     }
 
 }

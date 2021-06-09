@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClusterInfo::ClusterInfo() :
@@ -33,7 +32,7 @@ ClusterInfo::ClusterInfo() :
 {
 }
 
-CoreInternalOutcome ClusterInfo::Deserialize(const Value &value)
+CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -113,8 +112,8 @@ CoreInternalOutcome ClusterInfo::Deserialize(const Value &value)
         if (!value["ZoneIds"].IsArray())
             return CoreInternalOutcome(Error("response `ClusterInfo.ZoneIds` is not array type"));
 
-        const Value &tmpValue = value["ZoneIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ZoneIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_zoneIds.push_back((*itr).GetInt64());
         }
@@ -125,12 +124,12 @@ CoreInternalOutcome ClusterInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClusterInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_clusterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterId, allocator);
@@ -138,15 +137,15 @@ void ClusterInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_clusterNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxDiskSize, allocator);
@@ -154,7 +153,7 @@ void ClusterInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_maxBandWidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxBandWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxBandWidth, allocator);
@@ -162,7 +161,7 @@ void ClusterInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_availableDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvailableDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_availableDiskSize, allocator);
@@ -170,7 +169,7 @@ void ClusterInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_availableBandWidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvailableBandWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_availableBandWidth, allocator);
@@ -178,7 +177,7 @@ void ClusterInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneId, allocator);
@@ -186,14 +185,14 @@ void ClusterInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_zoneIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

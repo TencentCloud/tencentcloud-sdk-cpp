@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceSlowlogDetail::InstanceSlowlogDetail() :
@@ -31,7 +30,7 @@ InstanceSlowlogDetail::InstanceSlowlogDetail() :
 {
 }
 
-CoreInternalOutcome InstanceSlowlogDetail::Deserialize(const Value &value)
+CoreInternalOutcome InstanceSlowlogDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome InstanceSlowlogDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceSlowlogDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceSlowlogDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -113,42 +112,42 @@ void InstanceSlowlogDetail::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_clientHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Client";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_client.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_client.c_str(), allocator).Move(), allocator);
     }
 
     if (m_commandHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Command";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_command.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
     }
 
     if (m_commandLineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CommandLine";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_commandLine.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_commandLine.c_str(), allocator).Move(), allocator);
     }
 
     if (m_executeTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExecuteTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_executeTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executeTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Node";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_node.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_node.c_str(), allocator).Move(), allocator);
     }
 
 }

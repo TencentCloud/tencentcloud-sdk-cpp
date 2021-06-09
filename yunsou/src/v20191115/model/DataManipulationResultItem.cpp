@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Yunsou::V20191115::Model;
-using namespace rapidjson;
 using namespace std;
 
 DataManipulationResultItem::DataManipulationResultItem() :
@@ -28,7 +27,7 @@ DataManipulationResultItem::DataManipulationResultItem() :
 {
 }
 
-CoreInternalOutcome DataManipulationResultItem::Deserialize(const Value &value)
+CoreInternalOutcome DataManipulationResultItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome DataManipulationResultItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DataManipulationResultItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DataManipulationResultItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_result.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
     }
 
     if (m_docIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DocId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_docId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_errnoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Errno";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_errno, allocator);

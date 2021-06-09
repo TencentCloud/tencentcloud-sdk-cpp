@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ses::V20201002::Model;
-using namespace rapidjson;
 using namespace std;
 
 EmailSender::EmailSender() :
@@ -28,7 +27,7 @@ EmailSender::EmailSender() :
 {
 }
 
-CoreInternalOutcome EmailSender::Deserialize(const Value &value)
+CoreInternalOutcome EmailSender::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome EmailSender::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EmailSender::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EmailSender::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_emailAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EmailAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_emailAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_emailAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_emailSenderNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EmailSenderName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_emailSenderName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_emailSenderName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createdTimestamp, allocator);

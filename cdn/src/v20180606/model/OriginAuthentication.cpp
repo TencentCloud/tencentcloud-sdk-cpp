@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 OriginAuthentication::OriginAuthentication() :
@@ -27,7 +26,7 @@ OriginAuthentication::OriginAuthentication() :
 {
 }
 
-CoreInternalOutcome OriginAuthentication::Deserialize(const Value &value)
+CoreInternalOutcome OriginAuthentication::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome OriginAuthentication::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OriginAuthentication::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OriginAuthentication::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeAHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TypeA";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_typeA.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Gpm::V20200820::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateMatchRequest::CreateMatchRequest() :
@@ -42,30 +41,30 @@ CreateMatchRequest::CreateMatchRequest() :
 
 string CreateMatchRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_matchNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_matchName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_matchName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleCode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ruleCode.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ruleCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Timeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeout, allocator);
@@ -73,7 +72,7 @@ string CreateMatchRequest::ToJsonString() const
 
     if (m_serverTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_serverType, allocator);
@@ -81,70 +80,70 @@ string CreateMatchRequest::ToJsonString() const
 
     if (m_matchDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchDesc";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_matchDesc.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_matchDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_notifyUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotifyUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_notifyUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_notifyUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serverRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerRegion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_serverRegion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serverQueueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerQueue";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_serverQueue.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverQueue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customPushDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomPushData";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_customPushData.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customPushData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serverSessionDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerSessionData";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_serverSessionData.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverSessionData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gamePropertiesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameProperties";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_gameProperties.begin(); itr != m_gameProperties.end(); ++itr, ++i)
         {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
     if (m_logSwitchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_logSwitch, allocator);
@@ -152,22 +151,22 @@ string CreateMatchRequest::ToJsonString() const
 
     if (m_tagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
         {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

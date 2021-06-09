@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Drm::V20181115::Model;
-using namespace rapidjson;
 using namespace std;
 
 PlaybackPolicy::PlaybackPolicy() :
@@ -27,7 +26,7 @@ PlaybackPolicy::PlaybackPolicy() :
 {
 }
 
-CoreInternalOutcome PlaybackPolicy::Deserialize(const Value &value)
+CoreInternalOutcome PlaybackPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome PlaybackPolicy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PlaybackPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PlaybackPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_licenseDurationSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LicenseDurationSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_licenseDurationSeconds, allocator);
@@ -69,7 +68,7 @@ void PlaybackPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_playbackDurationSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlaybackDurationSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_playbackDurationSeconds, allocator);

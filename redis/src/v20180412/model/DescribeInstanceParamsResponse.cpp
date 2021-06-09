@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeInstanceParamsResponse::DescribeInstanceParamsResponse() :
@@ -35,7 +34,7 @@ DescribeInstanceParamsResponse::DescribeInstanceParamsResponse() :
 
 CoreInternalOutcome DescribeInstanceParamsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -45,7 +44,7 @@ CoreInternalOutcome DescribeInstanceParamsResponse::Deserialize(const string &pa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -82,8 +81,8 @@ CoreInternalOutcome DescribeInstanceParamsResponse::Deserialize(const string &pa
         if (!rsp["InstanceEnumParam"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceEnumParam` is not array type"));
 
-        const Value &tmpValue = rsp["InstanceEnumParam"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["InstanceEnumParam"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InstanceEnumParam item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -102,8 +101,8 @@ CoreInternalOutcome DescribeInstanceParamsResponse::Deserialize(const string &pa
         if (!rsp["InstanceIntegerParam"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceIntegerParam` is not array type"));
 
-        const Value &tmpValue = rsp["InstanceIntegerParam"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["InstanceIntegerParam"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InstanceIntegerParam item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -122,8 +121,8 @@ CoreInternalOutcome DescribeInstanceParamsResponse::Deserialize(const string &pa
         if (!rsp["InstanceTextParam"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceTextParam` is not array type"));
 
-        const Value &tmpValue = rsp["InstanceTextParam"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["InstanceTextParam"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InstanceTextParam item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -142,8 +141,8 @@ CoreInternalOutcome DescribeInstanceParamsResponse::Deserialize(const string &pa
         if (!rsp["InstanceMultiParam"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceMultiParam` is not array type"));
 
-        const Value &tmpValue = rsp["InstanceMultiParam"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["InstanceMultiParam"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InstanceMultiParam item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

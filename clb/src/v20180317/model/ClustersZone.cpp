@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Clb::V20180317::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClustersZone::ClustersZone() :
@@ -27,7 +26,7 @@ ClustersZone::ClustersZone() :
 {
 }
 
-CoreInternalOutcome ClustersZone::Deserialize(const Value &value)
+CoreInternalOutcome ClustersZone::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome ClustersZone::Deserialize(const Value &value)
         if (!value["MasterZone"].IsArray())
             return CoreInternalOutcome(Error("response `ClustersZone.MasterZone` is not array type"));
 
-        const Value &tmpValue = value["MasterZone"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MasterZone"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_masterZone.push_back((*itr).GetString());
         }
@@ -50,8 +49,8 @@ CoreInternalOutcome ClustersZone::Deserialize(const Value &value)
         if (!value["SlaveZone"].IsArray())
             return CoreInternalOutcome(Error("response `ClustersZone.SlaveZone` is not array type"));
 
-        const Value &tmpValue = value["SlaveZone"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SlaveZone"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_slaveZone.push_back((*itr).GetString());
         }
@@ -62,32 +61,32 @@ CoreInternalOutcome ClustersZone::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClustersZone::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClustersZone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_masterZoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterZone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_masterZone.begin(); itr != m_masterZone.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_slaveZoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SlaveZone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_slaveZone.begin(); itr != m_slaveZone.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

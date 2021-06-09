@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 CommonTimeWindow::CommonTimeWindow() :
@@ -32,7 +31,7 @@ CommonTimeWindow::CommonTimeWindow() :
 {
 }
 
-CoreInternalOutcome CommonTimeWindow::Deserialize(const Value &value)
+CoreInternalOutcome CommonTimeWindow::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,63 +110,63 @@ CoreInternalOutcome CommonTimeWindow::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CommonTimeWindow::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CommonTimeWindow::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mondayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Monday";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_monday.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_monday.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tuesdayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tuesday";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tuesday.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tuesday.c_str(), allocator).Move(), allocator);
     }
 
     if (m_wednesdayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Wednesday";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_wednesday.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wednesday.c_str(), allocator).Move(), allocator);
     }
 
     if (m_thursdayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Thursday";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_thursday.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_thursday.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fridayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Friday";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_friday.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_friday.c_str(), allocator).Move(), allocator);
     }
 
     if (m_saturdayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Saturday";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_saturday.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_saturday.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sundayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sunday";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sunday.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sunday.c_str(), allocator).Move(), allocator);
     }
 
 }

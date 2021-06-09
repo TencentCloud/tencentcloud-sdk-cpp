@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 MultiBizWarningInfo::MultiBizWarningInfo() :
@@ -29,7 +28,7 @@ MultiBizWarningInfo::MultiBizWarningInfo() :
 {
 }
 
-CoreInternalOutcome MultiBizWarningInfo::Deserialize(const Value &value)
+CoreInternalOutcome MultiBizWarningInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -76,8 +75,8 @@ CoreInternalOutcome MultiBizWarningInfo::Deserialize(const Value &value)
         if (!value["WarningAreaContour"].IsArray())
             return CoreInternalOutcome(Error("response `MultiBizWarningInfo.WarningAreaContour` is not array type"));
 
-        const Value &tmpValue = value["WarningAreaContour"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["WarningAreaContour"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Point item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -95,12 +94,12 @@ CoreInternalOutcome MultiBizWarningInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MultiBizWarningInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MultiBizWarningInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_warningTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WarningType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_warningType, allocator);
@@ -108,7 +107,7 @@ void MultiBizWarningInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_warningAreaSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WarningAreaSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_warningAreaSize, allocator);
@@ -116,24 +115,24 @@ void MultiBizWarningInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_warningLocationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WarningLocation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_warningLocation.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_warningAreaContourHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WarningAreaContour";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_warningAreaContour.begin(); itr != m_warningAreaContour.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

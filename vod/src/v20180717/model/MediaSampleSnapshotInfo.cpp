@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaSampleSnapshotInfo::MediaSampleSnapshotInfo() :
@@ -26,7 +25,7 @@ MediaSampleSnapshotInfo::MediaSampleSnapshotInfo() :
 {
 }
 
-CoreInternalOutcome MediaSampleSnapshotInfo::Deserialize(const Value &value)
+CoreInternalOutcome MediaSampleSnapshotInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome MediaSampleSnapshotInfo::Deserialize(const Value &value)
         if (!value["SampleSnapshotSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaSampleSnapshotInfo.SampleSnapshotSet` is not array type"));
 
-        const Value &tmpValue = value["SampleSnapshotSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SampleSnapshotSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MediaSampleSnapshotItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -55,20 +54,20 @@ CoreInternalOutcome MediaSampleSnapshotInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaSampleSnapshotInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaSampleSnapshotInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sampleSnapshotSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SampleSnapshotSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_sampleSnapshotSet.begin(); itr != m_sampleSnapshotSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

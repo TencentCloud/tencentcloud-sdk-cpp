@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Chdfs::V20190718::Model;
-using namespace rapidjson;
 using namespace std;
 
 LifeCycleRule::LifeCycleRule() :
@@ -31,7 +30,7 @@ LifeCycleRule::LifeCycleRule() :
 {
 }
 
-CoreInternalOutcome LifeCycleRule::Deserialize(const Value &value)
+CoreInternalOutcome LifeCycleRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -71,8 +70,8 @@ CoreInternalOutcome LifeCycleRule::Deserialize(const Value &value)
         if (!value["Transitions"].IsArray())
             return CoreInternalOutcome(Error("response `LifeCycleRule.Transitions` is not array type"));
 
-        const Value &tmpValue = value["Transitions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Transitions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Transition item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,12 +109,12 @@ CoreInternalOutcome LifeCycleRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LifeCycleRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LifeCycleRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_lifeCycleRuleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifeCycleRuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lifeCycleRuleId, allocator);
@@ -123,38 +122,38 @@ void LifeCycleRule::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_lifeCycleRuleNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifeCycleRuleName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lifeCycleRuleName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lifeCycleRuleName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_path.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
     if (m_transitionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Transitions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_transitions.begin(); itr != m_transitions.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -162,10 +161,10 @@ void LifeCycleRule::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }

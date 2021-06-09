@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Taf::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 OutputSendTrafficSecuritySmsMsg::OutputSendTrafficSecuritySmsMsg() :
@@ -28,7 +27,7 @@ OutputSendTrafficSecuritySmsMsg::OutputSendTrafficSecuritySmsMsg() :
 {
 }
 
-CoreInternalOutcome OutputSendTrafficSecuritySmsMsg::Deserialize(const Value &value)
+CoreInternalOutcome OutputSendTrafficSecuritySmsMsg::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome OutputSendTrafficSecuritySmsMsg::Deserialize(const Value &va
         if (!value["Value"].IsArray())
             return CoreInternalOutcome(Error("response `OutputSendTrafficSecuritySmsMsg.Value` is not array type"));
 
-        const Value &tmpValue = value["Value"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Value"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_value.push_back((*itr).GetString());
         }
@@ -70,12 +69,12 @@ CoreInternalOutcome OutputSendTrafficSecuritySmsMsg::Deserialize(const Value &va
     return CoreInternalOutcome(true);
 }
 
-void OutputSendTrafficSecuritySmsMsg::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OutputSendTrafficSecuritySmsMsg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_codeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_code, allocator);
@@ -83,22 +82,22 @@ void OutputSendTrafficSecuritySmsMsg::ToJsonObject(Value &value, Document::Alloc
 
     if (m_messageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_value.begin(); itr != m_value.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

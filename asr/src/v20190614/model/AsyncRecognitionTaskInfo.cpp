@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Asr::V20190614::Model;
-using namespace rapidjson;
 using namespace std;
 
 AsyncRecognitionTaskInfo::AsyncRecognitionTaskInfo() :
@@ -27,7 +26,7 @@ AsyncRecognitionTaskInfo::AsyncRecognitionTaskInfo() :
 {
 }
 
-CoreInternalOutcome AsyncRecognitionTaskInfo::Deserialize(const Value &value)
+CoreInternalOutcome AsyncRecognitionTaskInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome AsyncRecognitionTaskInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AsyncRecognitionTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AsyncRecognitionTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
@@ -69,10 +68,10 @@ void AsyncRecognitionTaskInfo::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 }

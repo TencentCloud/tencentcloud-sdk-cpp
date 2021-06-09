@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::As::V20180419::Model;
-using namespace rapidjson;
 using namespace std;
 
 ServiceSettings::ServiceSettings() :
@@ -27,7 +26,7 @@ ServiceSettings::ServiceSettings() :
 {
 }
 
-CoreInternalOutcome ServiceSettings::Deserialize(const Value &value)
+CoreInternalOutcome ServiceSettings::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome ServiceSettings::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ServiceSettings::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ServiceSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_replaceMonitorUnhealthyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplaceMonitorUnhealthy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replaceMonitorUnhealthy, allocator);
@@ -69,10 +68,10 @@ void ServiceSettings::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_scalingModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScalingMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scalingMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scalingMode.c_str(), allocator).Move(), allocator);
     }
 
 }

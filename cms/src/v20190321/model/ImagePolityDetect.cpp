@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImagePolityDetect::ImagePolityDetect() :
@@ -32,7 +31,7 @@ ImagePolityDetect::ImagePolityDetect() :
 {
 }
 
-CoreInternalOutcome ImagePolityDetect::Deserialize(const Value &value)
+CoreInternalOutcome ImagePolityDetect::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -62,8 +61,8 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const Value &value)
         if (!value["PolityLogoDetail"].IsArray())
             return CoreInternalOutcome(Error("response `ImagePolityDetect.PolityLogoDetail` is not array type"));
 
-        const Value &tmpValue = value["PolityLogoDetail"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PolityLogoDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Logo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -82,8 +81,8 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const Value &value)
         if (!value["FaceNames"].IsArray())
             return CoreInternalOutcome(Error("response `ImagePolityDetect.FaceNames` is not array type"));
 
-        const Value &tmpValue = value["FaceNames"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FaceNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_faceNames.push_back((*itr).GetString());
         }
@@ -95,8 +94,8 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const Value &value)
         if (!value["Keywords"].IsArray())
             return CoreInternalOutcome(Error("response `ImagePolityDetect.Keywords` is not array type"));
 
-        const Value &tmpValue = value["Keywords"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Keywords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_keywords.push_back((*itr).GetString());
         }
@@ -108,8 +107,8 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const Value &value)
         if (!value["PolityItems"].IsArray())
             return CoreInternalOutcome(Error("response `ImagePolityDetect.PolityItems` is not array type"));
 
-        const Value &tmpValue = value["PolityItems"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PolityItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_polityItems.push_back((*itr).GetString());
         }
@@ -130,12 +129,12 @@ CoreInternalOutcome ImagePolityDetect::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImagePolityDetect::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImagePolityDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_evilTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EvilType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_evilType, allocator);
@@ -143,7 +142,7 @@ void ImagePolityDetect::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_hitFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HitFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hitFlag, allocator);
@@ -151,61 +150,61 @@ void ImagePolityDetect::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_polityLogoDetailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolityLogoDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_polityLogoDetail.begin(); itr != m_polityLogoDetail.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_faceNamesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceNames";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_faceNames.begin(); itr != m_faceNames.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_keywordsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Keywords";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_polityItemsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolityItems";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_polityItems.begin(); itr != m_polityItems.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);

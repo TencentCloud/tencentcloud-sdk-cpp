@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 MonthNetwork::MonthNetwork() :
@@ -38,7 +37,7 @@ MonthNetwork::MonthNetwork() :
 {
 }
 
-CoreInternalOutcome MonthNetwork::Deserialize(const Value &value)
+CoreInternalOutcome MonthNetwork::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -184,45 +183,45 @@ CoreInternalOutcome MonthNetwork::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MonthNetwork::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MonthNetwork::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_zoneInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_zoneInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_monthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Month";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_month.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_month.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthPkgIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BandwidthPkgId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bandwidthPkgId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bandwidthPkgId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ispHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Isp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_isp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_trafficMaxInHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TrafficMaxIn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trafficMaxIn, allocator);
@@ -230,7 +229,7 @@ void MonthNetwork::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_trafficMaxOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TrafficMaxOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trafficMaxOut, allocator);
@@ -238,7 +237,7 @@ void MonthNetwork::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_feeTrafficHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FeeTraffic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_feeTraffic, allocator);
@@ -246,23 +245,23 @@ void MonthNetwork::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_effectiveDaysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EffectiveDays";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_effectiveDays, allocator);
@@ -270,7 +269,7 @@ void MonthNetwork::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_monthDaysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MonthDays";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_monthDays, allocator);
@@ -278,7 +277,7 @@ void MonthNetwork::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_effectiveDaysRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EffectiveDaysRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_effectiveDaysRate, allocator);
@@ -286,10 +285,10 @@ void MonthNetwork::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_bandwidthPkgTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BandwidthPkgType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bandwidthPkgType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bandwidthPkgType.c_str(), allocator).Move(), allocator);
     }
 
 }

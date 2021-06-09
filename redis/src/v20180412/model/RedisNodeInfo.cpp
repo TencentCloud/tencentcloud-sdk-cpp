@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 RedisNodeInfo::RedisNodeInfo() :
@@ -28,7 +27,7 @@ RedisNodeInfo::RedisNodeInfo() :
 {
 }
 
-CoreInternalOutcome RedisNodeInfo::Deserialize(const Value &value)
+CoreInternalOutcome RedisNodeInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome RedisNodeInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RedisNodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RedisNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nodeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodeType, allocator);
@@ -80,7 +79,7 @@ void RedisNodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneId, allocator);
@@ -88,7 +87,7 @@ void RedisNodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_nodeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodeId, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 Application::Application() :
@@ -29,7 +28,7 @@ Application::Application() :
 {
 }
 
-CoreInternalOutcome Application::Deserialize(const Value &value)
+CoreInternalOutcome Application::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,39 +84,39 @@ CoreInternalOutcome Application::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Application::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Application::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_commandHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Command";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_command.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deliveryFormHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeliveryForm";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deliveryForm.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deliveryForm.c_str(), allocator).Move(), allocator);
     }
 
     if (m_packagePathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PackagePath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_packagePath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_packagePath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dockerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Docker";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_docker.ToJsonObject(value[key.c_str()], allocator);
     }
 

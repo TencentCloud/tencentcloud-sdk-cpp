@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskMetrics::TaskMetrics() :
@@ -33,7 +32,7 @@ TaskMetrics::TaskMetrics() :
 {
 }
 
-CoreInternalOutcome TaskMetrics::Deserialize(const Value &value)
+CoreInternalOutcome TaskMetrics::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome TaskMetrics::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskMetrics::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskMetrics::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_submittedCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubmittedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_submittedCount, allocator);
@@ -135,7 +134,7 @@ void TaskMetrics::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_pendingCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PendingCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pendingCount, allocator);
@@ -143,7 +142,7 @@ void TaskMetrics::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_runnableCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunnableCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runnableCount, allocator);
@@ -151,7 +150,7 @@ void TaskMetrics::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_startingCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartingCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startingCount, allocator);
@@ -159,7 +158,7 @@ void TaskMetrics::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_runningCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunningCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runningCount, allocator);
@@ -167,7 +166,7 @@ void TaskMetrics::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_succeedCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SucceedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_succeedCount, allocator);
@@ -175,7 +174,7 @@ void TaskMetrics::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_failedInterruptedCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FailedInterruptedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failedInterruptedCount, allocator);
@@ -183,7 +182,7 @@ void TaskMetrics::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_failedCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FailedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failedCount, allocator);

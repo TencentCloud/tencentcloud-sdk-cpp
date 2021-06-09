@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiw::V20190919::Model;
-using namespace rapidjson;
 using namespace std;
 
 WhiteboardPushBackupParam::WhiteboardPushBackupParam() :
@@ -27,7 +26,7 @@ WhiteboardPushBackupParam::WhiteboardPushBackupParam() :
 {
 }
 
-CoreInternalOutcome WhiteboardPushBackupParam::Deserialize(const Value &value)
+CoreInternalOutcome WhiteboardPushBackupParam::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome WhiteboardPushBackupParam::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WhiteboardPushBackupParam::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WhiteboardPushBackupParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_pushUserIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PushUserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pushUserId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pushUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pushUserSigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PushUserSig";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pushUserSig.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pushUserSig.c_str(), allocator).Move(), allocator);
     }
 
 }

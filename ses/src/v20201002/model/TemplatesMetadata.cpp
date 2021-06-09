@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ses::V20201002::Model;
-using namespace rapidjson;
 using namespace std;
 
 TemplatesMetadata::TemplatesMetadata() :
@@ -30,7 +29,7 @@ TemplatesMetadata::TemplatesMetadata() :
 {
 }
 
-CoreInternalOutcome TemplatesMetadata::Deserialize(const Value &value)
+CoreInternalOutcome TemplatesMetadata::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome TemplatesMetadata::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TemplatesMetadata::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TemplatesMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_createdTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createdTimestamp, allocator);
@@ -102,15 +101,15 @@ void TemplatesMetadata::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_templateNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_templateName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_templateStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templateStatus, allocator);
@@ -118,7 +117,7 @@ void TemplatesMetadata::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_templateIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templateID, allocator);
@@ -126,10 +125,10 @@ void TemplatesMetadata::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_reviewReasonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReviewReason";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reviewReason.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reviewReason.c_str(), allocator).Move(), allocator);
     }
 
 }

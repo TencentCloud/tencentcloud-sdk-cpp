@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cat::V20180409::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProvinceDetail::ProvinceDetail() :
@@ -32,7 +31,7 @@ ProvinceDetail::ProvinceDetail() :
 {
 }
 
-CoreInternalOutcome ProvinceDetail::Deserialize(const Value &value)
+CoreInternalOutcome ProvinceDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -82,8 +81,8 @@ CoreInternalOutcome ProvinceDetail::Deserialize(const Value &value)
         if (!value["IspDetail"].IsArray())
             return CoreInternalOutcome(Error("response `ProvinceDetail.IspDetail` is not array type"));
 
-        const Value &tmpValue = value["IspDetail"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["IspDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             IspDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -121,12 +120,12 @@ CoreInternalOutcome ProvinceDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProvinceDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProvinceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_avgAvailRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvgAvailRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_avgAvailRatio, allocator);
@@ -134,46 +133,46 @@ void ProvinceDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_provinceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProvinceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_provinceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_provinceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mapkeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mapkey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mapkey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mapkey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeStampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeStamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timeStamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeStamp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ispDetailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IspDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_ispDetail.begin(); itr != m_ispDetail.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_avgTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvgTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_avgTime, allocator);
@@ -181,10 +180,10 @@ void ProvinceDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_provinceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Province";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_province.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_province.c_str(), allocator).Move(), allocator);
     }
 
 }

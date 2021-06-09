@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 SetTrafficMirrorHealthSwitchRequest::SetTrafficMirrorHealthSwitchRequest() :
@@ -37,22 +36,22 @@ SetTrafficMirrorHealthSwitchRequest::SetTrafficMirrorHealthSwitchRequest() :
 
 string SetTrafficMirrorHealthSwitchRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_trafficMirrorIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TrafficMirrorId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_trafficMirrorId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_trafficMirrorId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_healthSwitchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_healthSwitch, allocator);
@@ -60,7 +59,7 @@ string SetTrafficMirrorHealthSwitchRequest::ToJsonString() const
 
     if (m_healthNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_healthNum, allocator);
@@ -68,7 +67,7 @@ string SetTrafficMirrorHealthSwitchRequest::ToJsonString() const
 
     if (m_unhealthNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnhealthNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_unhealthNum, allocator);
@@ -76,7 +75,7 @@ string SetTrafficMirrorHealthSwitchRequest::ToJsonString() const
 
     if (m_intervalTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IntervalTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_intervalTime, allocator);
@@ -84,36 +83,36 @@ string SetTrafficMirrorHealthSwitchRequest::ToJsonString() const
 
     if (m_httpCheckDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpCheckDomain";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_httpCheckDomain.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_httpCheckDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_httpCheckPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpCheckPath";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_httpCheckPath.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_httpCheckPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_httpCodesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpCodes";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_httpCodes.begin(); itr != m_httpCodes.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

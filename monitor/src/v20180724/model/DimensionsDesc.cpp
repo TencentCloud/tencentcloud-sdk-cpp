@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DimensionsDesc::DimensionsDesc() :
@@ -26,7 +25,7 @@ DimensionsDesc::DimensionsDesc() :
 {
 }
 
-CoreInternalOutcome DimensionsDesc::Deserialize(const Value &value)
+CoreInternalOutcome DimensionsDesc::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome DimensionsDesc::Deserialize(const Value &value)
         if (!value["Dimensions"].IsArray())
             return CoreInternalOutcome(Error("response `DimensionsDesc.Dimensions` is not array type"));
 
-        const Value &tmpValue = value["Dimensions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Dimensions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_dimensions.push_back((*itr).GetString());
         }
@@ -48,19 +47,19 @@ CoreInternalOutcome DimensionsDesc::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DimensionsDesc::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DimensionsDesc::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dimensionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Dimensions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_dimensions.begin(); itr != m_dimensions.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

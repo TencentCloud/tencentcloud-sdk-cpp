@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20201215::Model;
-using namespace rapidjson;
 using namespace std;
 
 FirmwareTaskInfo::FirmwareTaskInfo() :
@@ -29,7 +28,7 @@ FirmwareTaskInfo::FirmwareTaskInfo() :
 {
 }
 
-CoreInternalOutcome FirmwareTaskInfo::Deserialize(const Value &value)
+CoreInternalOutcome FirmwareTaskInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome FirmwareTaskInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FirmwareTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FirmwareTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
@@ -91,7 +90,7 @@ void FirmwareTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -99,7 +98,7 @@ void FirmwareTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -107,7 +106,7 @@ void FirmwareTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);

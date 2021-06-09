@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 AuditLogFilter::AuditLogFilter() :
@@ -34,7 +33,7 @@ AuditLogFilter::AuditLogFilter() :
 {
 }
 
-CoreInternalOutcome AuditLogFilter::Deserialize(const Value &value)
+CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -44,8 +43,8 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const Value &value)
         if (!value["Host"].IsArray())
             return CoreInternalOutcome(Error("response `AuditLogFilter.Host` is not array type"));
 
-        const Value &tmpValue = value["Host"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Host"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_host.push_back((*itr).GetString());
         }
@@ -57,8 +56,8 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const Value &value)
         if (!value["User"].IsArray())
             return CoreInternalOutcome(Error("response `AuditLogFilter.User` is not array type"));
 
-        const Value &tmpValue = value["User"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["User"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_user.push_back((*itr).GetString());
         }
@@ -70,8 +69,8 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const Value &value)
         if (!value["DBName"].IsArray())
             return CoreInternalOutcome(Error("response `AuditLogFilter.DBName` is not array type"));
 
-        const Value &tmpValue = value["DBName"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DBName"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_dBName.push_back((*itr).GetString());
         }
@@ -83,8 +82,8 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const Value &value)
         if (!value["TableName"].IsArray())
             return CoreInternalOutcome(Error("response `AuditLogFilter.TableName` is not array type"));
 
-        const Value &tmpValue = value["TableName"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TableName"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_tableName.push_back((*itr).GetString());
         }
@@ -96,8 +95,8 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const Value &value)
         if (!value["PolicyName"].IsArray())
             return CoreInternalOutcome(Error("response `AuditLogFilter.PolicyName` is not array type"));
 
-        const Value &tmpValue = value["PolicyName"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PolicyName"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_policyName.push_back((*itr).GetString());
         }
@@ -148,93 +147,93 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AuditLogFilter::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AuditLogFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_hostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Host";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_host.begin(); itr != m_host.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_userHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "User";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_user.begin(); itr != m_user.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_dBNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DBName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_dBName.begin(); itr != m_dBName.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_tableNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_tableName.begin(); itr != m_tableName.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_policyNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_policyName.begin(); itr != m_policyName.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_sqlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sql";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sql.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sql.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sqlTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SqlType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sqlType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sqlType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_execTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExecTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_execTime, allocator);
@@ -242,7 +241,7 @@ void AuditLogFilter::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_affectRowsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AffectRows";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_affectRows, allocator);

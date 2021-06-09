@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 Quota::Quota() :
@@ -29,7 +28,7 @@ Quota::Quota() :
 {
 }
 
-CoreInternalOutcome Quota::Deserialize(const Value &value)
+CoreInternalOutcome Quota::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome Quota::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Quota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Quota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_batchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Batch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_batch, allocator);
@@ -91,7 +90,7 @@ void Quota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_totalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Total";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_total, allocator);
@@ -99,7 +98,7 @@ void Quota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_availableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Available";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_available, allocator);
@@ -107,10 +106,10 @@ void Quota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_areaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }

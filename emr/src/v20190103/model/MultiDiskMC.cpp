@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 MultiDiskMC::MultiDiskMC() :
@@ -28,7 +27,7 @@ MultiDiskMC::MultiDiskMC() :
 {
 }
 
-CoreInternalOutcome MultiDiskMC::Deserialize(const Value &value)
+CoreInternalOutcome MultiDiskMC::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome MultiDiskMC::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MultiDiskMC::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MultiDiskMC::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
@@ -80,7 +79,7 @@ void MultiDiskMC::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -88,7 +87,7 @@ void MultiDiskMC::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_volumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Volume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_volume, allocator);

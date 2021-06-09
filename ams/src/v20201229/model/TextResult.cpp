@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ams::V20201229::Model;
-using namespace rapidjson;
 using namespace std;
 
 TextResult::TextResult() :
@@ -32,7 +31,7 @@ TextResult::TextResult() :
 {
 }
 
-CoreInternalOutcome TextResult::Deserialize(const Value &value)
+CoreInternalOutcome TextResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -52,8 +51,8 @@ CoreInternalOutcome TextResult::Deserialize(const Value &value)
         if (!value["Keywords"].IsArray())
             return CoreInternalOutcome(Error("response `TextResult.Keywords` is not array type"));
 
-        const Value &tmpValue = value["Keywords"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Keywords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_keywords.push_back((*itr).GetString());
         }
@@ -114,49 +113,49 @@ CoreInternalOutcome TextResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TextResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TextResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_labelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keywordsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Keywords";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_libIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LibId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_libId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_libId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_libNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LibName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_libName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_libName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
@@ -164,15 +163,15 @@ void TextResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_suggestionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_suggestion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_libTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LibType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_libType, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 AssetCredentials::AssetCredentials() :
@@ -28,7 +27,7 @@ AssetCredentials::AssetCredentials() :
 {
 }
 
-CoreInternalOutcome AssetCredentials::Deserialize(const Value &value)
+CoreInternalOutcome AssetCredentials::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome AssetCredentials::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AssetCredentials::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AssetCredentials::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tmpSecretIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TmpSecretId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tmpSecretId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tmpSecretId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tmpSecretKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TmpSecretKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tmpSecretKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tmpSecretKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Token";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_token.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
     }
 
 }

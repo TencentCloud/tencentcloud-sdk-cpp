@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 HighlightsTaskResultItemSegment::HighlightsTaskResultItemSegment() :
@@ -28,7 +27,7 @@ HighlightsTaskResultItemSegment::HighlightsTaskResultItemSegment() :
 {
 }
 
-CoreInternalOutcome HighlightsTaskResultItemSegment::Deserialize(const Value &value)
+CoreInternalOutcome HighlightsTaskResultItemSegment::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome HighlightsTaskResultItemSegment::Deserialize(const Value &va
     return CoreInternalOutcome(true);
 }
 
-void HighlightsTaskResultItemSegment::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HighlightsTaskResultItemSegment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -80,7 +79,7 @@ void HighlightsTaskResultItemSegment::ToJsonObject(Value &value, Document::Alloc
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -88,7 +87,7 @@ void HighlightsTaskResultItemSegment::ToJsonObject(Value &value, Document::Alloc
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);

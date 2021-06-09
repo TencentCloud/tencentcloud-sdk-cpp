@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 AgentTaxPaymentBatch::AgentTaxPaymentBatch() :
@@ -34,7 +33,7 @@ AgentTaxPaymentBatch::AgentTaxPaymentBatch() :
 {
 }
 
-CoreInternalOutcome AgentTaxPaymentBatch::Deserialize(const Value &value)
+CoreInternalOutcome AgentTaxPaymentBatch::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,20 +132,20 @@ CoreInternalOutcome AgentTaxPaymentBatch::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AgentTaxPaymentBatch::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AgentTaxPaymentBatch::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_statusMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_statusMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_batchNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BatchNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_batchNum, allocator);
@@ -154,7 +153,7 @@ void AgentTaxPaymentBatch::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_infoNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InfoNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_infoNum, allocator);
@@ -162,31 +161,31 @@ void AgentTaxPaymentBatch::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_rawElectronicCertUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RawElectronicCertUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rawElectronicCertUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rawElectronicCertUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_agentIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AgentId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_agentId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StatusCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_statusCode, allocator);
@@ -194,7 +193,7 @@ void AgentTaxPaymentBatch::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_channelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_channel, allocator);
@@ -202,7 +201,7 @@ void AgentTaxPaymentBatch::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);

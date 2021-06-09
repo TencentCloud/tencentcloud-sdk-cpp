@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 HostResource::HostResource() :
@@ -32,7 +31,7 @@ HostResource::HostResource() :
 {
 }
 
-CoreInternalOutcome HostResource::Deserialize(const Value &value)
+CoreInternalOutcome HostResource::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome HostResource::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HostResource::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HostResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cpuTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpuTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpuTotal, allocator);
@@ -124,7 +123,7 @@ void HostResource::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_cpuAvailableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpuAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpuAvailable, allocator);
@@ -132,7 +131,7 @@ void HostResource::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_memTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memTotal, allocator);
@@ -140,7 +139,7 @@ void HostResource::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_memAvailableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memAvailable, allocator);
@@ -148,7 +147,7 @@ void HostResource::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_diskTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskTotal, allocator);
@@ -156,7 +155,7 @@ void HostResource::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_diskAvailableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskAvailable, allocator);
@@ -164,10 +163,10 @@ void HostResource::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_diskTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diskType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReservedInstancePrice::ReservedInstancePrice() :
@@ -29,7 +28,7 @@ ReservedInstancePrice::ReservedInstancePrice() :
 {
 }
 
-CoreInternalOutcome ReservedInstancePrice::Deserialize(const Value &value)
+CoreInternalOutcome ReservedInstancePrice::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome ReservedInstancePrice::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReservedInstancePrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReservedInstancePrice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_originalFixedPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalFixedPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalFixedPrice, allocator);
@@ -91,7 +90,7 @@ void ReservedInstancePrice::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_discountFixedPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountFixedPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountFixedPrice, allocator);
@@ -99,7 +98,7 @@ void ReservedInstancePrice::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_originalUsagePriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalUsagePrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalUsagePrice, allocator);
@@ -107,7 +106,7 @@ void ReservedInstancePrice::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_discountUsagePriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountUsagePrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountUsagePrice, allocator);

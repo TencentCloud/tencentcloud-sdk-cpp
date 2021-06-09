@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 NotebookInstanceSummary::NotebookInstanceSummary() :
@@ -38,7 +37,7 @@ NotebookInstanceSummary::NotebookInstanceSummary() :
 {
 }
 
-CoreInternalOutcome NotebookInstanceSummary::Deserialize(const Value &value)
+CoreInternalOutcome NotebookInstanceSummary::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -191,85 +190,85 @@ CoreInternalOutcome NotebookInstanceSummary::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NotebookInstanceSummary::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NotebookInstanceSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_creationTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreationTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_creationTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creationTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastModifiedTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastModifiedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastModifiedTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastModifiedTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_notebookInstanceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotebookInstanceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_notebookInstanceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notebookInstanceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_notebookInstanceStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotebookInstanceStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_notebookInstanceStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notebookInstanceStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startupTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartupTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startupTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startupTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deadlineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Deadline";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deadline.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deadline.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stoppingConditionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StoppingCondition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_stoppingCondition.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_prepayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Prepay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_prepay, allocator);
@@ -277,16 +276,16 @@ void NotebookInstanceSummary::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_billingLabelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BillingLabel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_billingLabel.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_runtimeInSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuntimeInSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runtimeInSeconds, allocator);
@@ -294,7 +293,7 @@ void NotebookInstanceSummary::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_remainTimeInSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RemainTimeInSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_remainTimeInSeconds, allocator);

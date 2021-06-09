@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mariadb::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 SpecConfigInfo::SpecConfigInfo() :
@@ -34,7 +33,7 @@ SpecConfigInfo::SpecConfigInfo() :
 {
 }
 
-CoreInternalOutcome SpecConfigInfo::Deserialize(const Value &value)
+CoreInternalOutcome SpecConfigInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,20 +132,20 @@ CoreInternalOutcome SpecConfigInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SpecConfigInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SpecConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_machineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Machine";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_machine.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machine.c_str(), allocator).Move(), allocator);
     }
 
     if (m_memoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memory, allocator);
@@ -154,7 +153,7 @@ void SpecConfigInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_minStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minStorage, allocator);
@@ -162,7 +161,7 @@ void SpecConfigInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_maxStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxStorage, allocator);
@@ -170,15 +169,15 @@ void SpecConfigInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_suitInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuitInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_suitInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suitInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_qpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Qps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qps, allocator);
@@ -186,7 +185,7 @@ void SpecConfigInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_pidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pid, allocator);
@@ -194,7 +193,7 @@ void SpecConfigInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_nodeCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodeCount, allocator);
@@ -202,7 +201,7 @@ void SpecConfigInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_cpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);

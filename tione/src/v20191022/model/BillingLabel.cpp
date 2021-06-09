@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 BillingLabel::BillingLabel() :
@@ -28,7 +27,7 @@ BillingLabel::BillingLabel() :
 {
 }
 
-CoreInternalOutcome BillingLabel::Deserialize(const Value &value)
+CoreInternalOutcome BillingLabel::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome BillingLabel::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BillingLabel::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BillingLabel::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_labelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
     if (m_volumeSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VolumeSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_volumeSize, allocator);
@@ -88,10 +87,10 @@ void BillingLabel::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }

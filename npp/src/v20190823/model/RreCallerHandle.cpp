@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Npp::V20190823::Model;
-using namespace rapidjson;
 using namespace std;
 
 RreCallerHandle::RreCallerHandle() :
@@ -31,7 +30,7 @@ RreCallerHandle::RreCallerHandle() :
 {
 }
 
-CoreInternalOutcome RreCallerHandle::Deserialize(const Value &value)
+CoreInternalOutcome RreCallerHandle::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -61,8 +60,8 @@ CoreInternalOutcome RreCallerHandle::Deserialize(const Value &value)
         if (!value["KeyList"].IsArray())
             return CoreInternalOutcome(Error("response `RreCallerHandle.KeyList` is not array type"));
 
-        const Value &tmpValue = value["KeyList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["KeyList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             KeyList item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,62 +109,62 @@ CoreInternalOutcome RreCallerHandle::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RreCallerHandle::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RreCallerHandle::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_readPromptHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadPrompt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_readPrompt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_readPrompt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_interruptPromptHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InterruptPrompt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_interruptPrompt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_interruptPrompt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_keyList.begin(); itr != m_keyList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_repeatTimesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepeatTimes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_repeatTimes.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repeatTimes.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyPressUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyPressUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyPressUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyPressUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_promptGenderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PromptGender";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_promptGender.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_promptGender.c_str(), allocator).Move(), allocator);
     }
 
 }

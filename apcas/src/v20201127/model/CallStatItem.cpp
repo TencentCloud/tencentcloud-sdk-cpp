@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apcas::V20201127::Model;
-using namespace rapidjson;
 using namespace std;
 
 CallStatItem::CallStatItem() :
@@ -27,7 +26,7 @@ CallStatItem::CallStatItem() :
 {
 }
 
-CoreInternalOutcome CallStatItem::Deserialize(const Value &value)
+CoreInternalOutcome CallStatItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome CallStatItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CallStatItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CallStatItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
     if (m_amountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Amount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_amount, allocator);

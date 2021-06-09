@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeSlowLogResponse::DescribeSlowLogResponse() :
@@ -32,7 +31,7 @@ DescribeSlowLogResponse::DescribeSlowLogResponse() :
 
 CoreInternalOutcome DescribeSlowLogResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeSlowLogResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeSlowLogResponse::Deserialize(const string &payload)
         if (!rsp["SlowLogList"].IsArray())
             return CoreInternalOutcome(Error("response `SlowLogList` is not array type"));
 
-        const Value &tmpValue = rsp["SlowLogList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SlowLogList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_slowLogList.push_back((*itr).GetString());
         }

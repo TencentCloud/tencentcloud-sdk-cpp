@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 CommonMixOutputParams::CommonMixOutputParams() :
@@ -34,7 +33,7 @@ CommonMixOutputParams::CommonMixOutputParams() :
 {
 }
 
-CoreInternalOutcome CommonMixOutputParams::Deserialize(const Value &value)
+CoreInternalOutcome CommonMixOutputParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,20 +132,20 @@ CoreInternalOutcome CommonMixOutputParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CommonMixOutputParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CommonMixOutputParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_outputStreamNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputStreamName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outputStreamName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputStreamName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outputStreamTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputStreamType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputStreamType, allocator);
@@ -154,7 +153,7 @@ void CommonMixOutputParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_outputStreamBitRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputStreamBitRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputStreamBitRate, allocator);
@@ -162,7 +161,7 @@ void CommonMixOutputParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_outputStreamGopHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputStreamGop";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputStreamGop, allocator);
@@ -170,7 +169,7 @@ void CommonMixOutputParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_outputStreamFrameRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputStreamFrameRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputStreamFrameRate, allocator);
@@ -178,7 +177,7 @@ void CommonMixOutputParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_outputAudioBitRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputAudioBitRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputAudioBitRate, allocator);
@@ -186,7 +185,7 @@ void CommonMixOutputParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_outputAudioSampleRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputAudioSampleRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputAudioSampleRate, allocator);
@@ -194,7 +193,7 @@ void CommonMixOutputParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_outputAudioChannelsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputAudioChannels";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputAudioChannels, allocator);
@@ -202,10 +201,10 @@ void CommonMixOutputParams::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_mixSeiHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MixSei";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mixSei.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mixSei.c_str(), allocator).Move(), allocator);
     }
 
 }

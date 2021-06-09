@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaAnimatedGraphicsInfo::MediaAnimatedGraphicsInfo() :
@@ -26,7 +25,7 @@ MediaAnimatedGraphicsInfo::MediaAnimatedGraphicsInfo() :
 {
 }
 
-CoreInternalOutcome MediaAnimatedGraphicsInfo::Deserialize(const Value &value)
+CoreInternalOutcome MediaAnimatedGraphicsInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome MediaAnimatedGraphicsInfo::Deserialize(const Value &value)
         if (!value["AnimatedGraphicsSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaAnimatedGraphicsInfo.AnimatedGraphicsSet` is not array type"));
 
-        const Value &tmpValue = value["AnimatedGraphicsSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AnimatedGraphicsSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MediaAnimatedGraphicsItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -55,20 +54,20 @@ CoreInternalOutcome MediaAnimatedGraphicsInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaAnimatedGraphicsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaAnimatedGraphicsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_animatedGraphicsSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AnimatedGraphicsSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_animatedGraphicsSet.begin(); itr != m_animatedGraphicsSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Aa::V20200224::Model;
-using namespace rapidjson;
 using namespace std;
 
 OtherAccountInfo::OtherAccountInfo() :
@@ -28,7 +27,7 @@ OtherAccountInfo::OtherAccountInfo() :
 {
 }
 
-CoreInternalOutcome OtherAccountInfo::Deserialize(const Value &value)
+CoreInternalOutcome OtherAccountInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome OtherAccountInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OtherAccountInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OtherAccountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_accountIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccountId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_accountId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accountId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mobilePhoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MobilePhone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mobilePhone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mobilePhone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
     }
 
 }

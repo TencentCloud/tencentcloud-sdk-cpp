@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 ConditionsTemp::ConditionsTemp() :
@@ -28,7 +27,7 @@ ConditionsTemp::ConditionsTemp() :
 {
 }
 
-CoreInternalOutcome ConditionsTemp::Deserialize(const Value &value)
+CoreInternalOutcome ConditionsTemp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,32 +80,32 @@ CoreInternalOutcome ConditionsTemp::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ConditionsTemp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ConditionsTemp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_templateNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_templateName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_conditionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Condition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_condition.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_eventConditionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventCondition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eventCondition.ToJsonObject(value[key.c_str()], allocator);
     }
 

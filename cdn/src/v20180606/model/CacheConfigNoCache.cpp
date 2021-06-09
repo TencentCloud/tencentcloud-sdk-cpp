@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 CacheConfigNoCache::CacheConfigNoCache() :
@@ -27,7 +26,7 @@ CacheConfigNoCache::CacheConfigNoCache() :
 {
 }
 
-CoreInternalOutcome CacheConfigNoCache::Deserialize(const Value &value)
+CoreInternalOutcome CacheConfigNoCache::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome CacheConfigNoCache::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CacheConfigNoCache::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CacheConfigNoCache::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_revalidateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Revalidate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_revalidate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_revalidate.c_str(), allocator).Move(), allocator);
     }
 
 }

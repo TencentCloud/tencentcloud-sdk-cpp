@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 RepoIsExistResp::RepoIsExistResp() :
@@ -26,7 +25,7 @@ RepoIsExistResp::RepoIsExistResp() :
 {
 }
 
-CoreInternalOutcome RepoIsExistResp::Deserialize(const Value &value)
+CoreInternalOutcome RepoIsExistResp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome RepoIsExistResp::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RepoIsExistResp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RepoIsExistResp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_isExistHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsExist";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isExist, allocator);

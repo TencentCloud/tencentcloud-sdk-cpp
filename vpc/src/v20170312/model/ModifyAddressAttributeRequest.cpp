@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyAddressAttributeRequest::ModifyAddressAttributeRequest() :
@@ -32,38 +31,38 @@ ModifyAddressAttributeRequest::ModifyAddressAttributeRequest() :
 
 string ModifyAddressAttributeRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_addressIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddressId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_addressId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_addressId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_addressNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddressName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_addressName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_addressName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eipDirectConnectionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EipDirectConnection";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_eipDirectConnection.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eipDirectConnection.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

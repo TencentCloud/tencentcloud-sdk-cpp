@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Faceid::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 GetEidTokenConfig::GetEidTokenConfig() :
@@ -26,7 +25,7 @@ GetEidTokenConfig::GetEidTokenConfig() :
 {
 }
 
-CoreInternalOutcome GetEidTokenConfig::Deserialize(const Value &value)
+CoreInternalOutcome GetEidTokenConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome GetEidTokenConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GetEidTokenConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GetEidTokenConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_inputTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inputType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputType.c_str(), allocator).Move(), allocator);
     }
 
 }

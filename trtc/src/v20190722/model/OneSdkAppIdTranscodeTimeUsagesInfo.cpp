@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 OneSdkAppIdTranscodeTimeUsagesInfo::OneSdkAppIdTranscodeTimeUsagesInfo() :
@@ -28,7 +27,7 @@ OneSdkAppIdTranscodeTimeUsagesInfo::OneSdkAppIdTranscodeTimeUsagesInfo() :
 {
 }
 
-CoreInternalOutcome OneSdkAppIdTranscodeTimeUsagesInfo::Deserialize(const Value &value)
+CoreInternalOutcome OneSdkAppIdTranscodeTimeUsagesInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome OneSdkAppIdTranscodeTimeUsagesInfo::Deserialize(const Value 
         if (!value["SdkAppIdTranscodeTimeUsages"].IsArray())
             return CoreInternalOutcome(Error("response `OneSdkAppIdTranscodeTimeUsagesInfo.SdkAppIdTranscodeTimeUsages` is not array type"));
 
-        const Value &tmpValue = value["SdkAppIdTranscodeTimeUsages"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SdkAppIdTranscodeTimeUsages"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SdkAppIdTrtcMcuTranscodeTimeUsage item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,27 +76,27 @@ CoreInternalOutcome OneSdkAppIdTranscodeTimeUsagesInfo::Deserialize(const Value 
     return CoreInternalOutcome(true);
 }
 
-void OneSdkAppIdTranscodeTimeUsagesInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OneSdkAppIdTranscodeTimeUsagesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sdkAppIdTranscodeTimeUsagesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdkAppIdTranscodeTimeUsages";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_sdkAppIdTranscodeTimeUsages.begin(); itr != m_sdkAppIdTranscodeTimeUsages.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_totalNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalNum, allocator);
@@ -105,10 +104,10 @@ void OneSdkAppIdTranscodeTimeUsagesInfo::ToJsonObject(Value &value, Document::Al
 
     if (m_sdkAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sdkAppId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sdkAppId.c_str(), allocator).Move(), allocator);
     }
 
 }

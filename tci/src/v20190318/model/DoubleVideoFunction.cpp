@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 DoubleVideoFunction::DoubleVideoFunction() :
@@ -26,7 +25,7 @@ DoubleVideoFunction::DoubleVideoFunction() :
 {
 }
 
-CoreInternalOutcome DoubleVideoFunction::Deserialize(const Value &value)
+CoreInternalOutcome DoubleVideoFunction::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome DoubleVideoFunction::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DoubleVideoFunction::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DoubleVideoFunction::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enableCoverPicturesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableCoverPictures";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableCoverPictures, allocator);

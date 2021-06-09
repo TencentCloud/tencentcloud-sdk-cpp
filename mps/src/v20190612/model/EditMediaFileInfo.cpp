@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 EditMediaFileInfo::EditMediaFileInfo() :
@@ -28,7 +27,7 @@ EditMediaFileInfo::EditMediaFileInfo() :
 {
 }
 
-CoreInternalOutcome EditMediaFileInfo::Deserialize(const Value &value)
+CoreInternalOutcome EditMediaFileInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,21 +73,21 @@ CoreInternalOutcome EditMediaFileInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EditMediaFileInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EditMediaFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_inputInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_inputInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -96,7 +95,7 @@ void EditMediaFileInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);

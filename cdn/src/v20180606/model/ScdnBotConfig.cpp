@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScdnBotConfig::ScdnBotConfig() :
@@ -28,7 +27,7 @@ ScdnBotConfig::ScdnBotConfig() :
 {
 }
 
-CoreInternalOutcome ScdnBotConfig::Deserialize(const Value &value)
+CoreInternalOutcome ScdnBotConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome ScdnBotConfig::Deserialize(const Value &value)
         if (!value["BotCookie"].IsArray())
             return CoreInternalOutcome(Error("response `ScdnBotConfig.BotCookie` is not array type"));
 
-        const Value &tmpValue = value["BotCookie"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BotCookie"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             BotCookie item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -68,8 +67,8 @@ CoreInternalOutcome ScdnBotConfig::Deserialize(const Value &value)
         if (!value["BotJavaScript"].IsArray())
             return CoreInternalOutcome(Error("response `ScdnBotConfig.BotJavaScript` is not array type"));
 
-        const Value &tmpValue = value["BotJavaScript"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BotJavaScript"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             BotJavaScript item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -87,43 +86,43 @@ CoreInternalOutcome ScdnBotConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScdnBotConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScdnBotConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_botCookieHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BotCookie";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_botCookie.begin(); itr != m_botCookie.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_botJavaScriptHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BotJavaScript";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_botJavaScript.begin(); itr != m_botJavaScript.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

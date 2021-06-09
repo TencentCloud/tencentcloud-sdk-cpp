@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 MixedInvoiceItem::MixedInvoiceItem() :
@@ -30,7 +29,7 @@ MixedInvoiceItem::MixedInvoiceItem() :
 {
 }
 
-CoreInternalOutcome MixedInvoiceItem::Deserialize(const Value &value)
+CoreInternalOutcome MixedInvoiceItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -87,8 +86,8 @@ CoreInternalOutcome MixedInvoiceItem::Deserialize(const Value &value)
         if (!value["SingleInvoiceInfos"].IsArray())
             return CoreInternalOutcome(Error("response `MixedInvoiceItem.SingleInvoiceInfos` is not array type"));
 
-        const Value &tmpValue = value["SingleInvoiceInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SingleInvoiceInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SingleInvoiceInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -106,20 +105,20 @@ CoreInternalOutcome MixedInvoiceItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MixedInvoiceItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MixedInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_codeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_code.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -127,16 +126,16 @@ void MixedInvoiceItem::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_rectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_angleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Angle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_angle, allocator);
@@ -144,15 +143,15 @@ void MixedInvoiceItem::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_singleInvoiceInfosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SingleInvoiceInfos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_singleInvoiceInfos.begin(); itr != m_singleInvoiceInfos.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

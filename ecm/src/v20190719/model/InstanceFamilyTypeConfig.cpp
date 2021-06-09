@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceFamilyTypeConfig::InstanceFamilyTypeConfig() :
@@ -27,7 +26,7 @@ InstanceFamilyTypeConfig::InstanceFamilyTypeConfig() :
 {
 }
 
-CoreInternalOutcome InstanceFamilyTypeConfig::Deserialize(const Value &value)
+CoreInternalOutcome InstanceFamilyTypeConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome InstanceFamilyTypeConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceFamilyTypeConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceFamilyTypeConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceFamilyTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceFamilyType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceFamilyType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceFamilyType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceFamilyTypeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceFamilyTypeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceFamilyTypeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceFamilyTypeName.c_str(), allocator).Move(), allocator);
     }
 
 }

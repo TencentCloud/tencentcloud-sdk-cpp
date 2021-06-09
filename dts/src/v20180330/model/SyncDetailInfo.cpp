@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dts::V20180330::Model;
-using namespace rapidjson;
 using namespace std;
 
 SyncDetailInfo::SyncDetailInfo() :
@@ -32,7 +31,7 @@ SyncDetailInfo::SyncDetailInfo() :
 {
 }
 
-CoreInternalOutcome SyncDetailInfo::Deserialize(const Value &value)
+CoreInternalOutcome SyncDetailInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -102,8 +101,8 @@ CoreInternalOutcome SyncDetailInfo::Deserialize(const Value &value)
         if (!value["StepInfo"].IsArray())
             return CoreInternalOutcome(Error("response `SyncDetailInfo.StepInfo` is not array type"));
 
-        const Value &tmpValue = value["StepInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["StepInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SyncStepDetailInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -121,12 +120,12 @@ CoreInternalOutcome SyncDetailInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SyncDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SyncDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_stepAllHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepAll";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stepAll, allocator);
@@ -134,7 +133,7 @@ void SyncDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_stepNowHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepNow";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stepNow, allocator);
@@ -142,23 +141,23 @@ void SyncDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_progressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_progress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_progress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_currentStepProgressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CurrentStepProgress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_currentStepProgress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currentStepProgress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_masterSlaveDistanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterSlaveDistance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_masterSlaveDistance, allocator);
@@ -166,7 +165,7 @@ void SyncDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_secondsBehindMasterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecondsBehindMaster";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_secondsBehindMaster, allocator);
@@ -174,15 +173,15 @@ void SyncDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_stepInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StepInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_stepInfo.begin(); itr != m_stepInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 Region::Region() :
@@ -33,7 +32,7 @@ Region::Region() :
 {
 }
 
-CoreInternalOutcome Region::Deserialize(const Value &value)
+CoreInternalOutcome Region::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome Region::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Region::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Region::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionId, allocator);
@@ -135,47 +134,47 @@ void Region::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_regionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_areaNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AreaName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_areaName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_areaName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionCodeV3HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionCodeV3";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionCodeV3.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionCodeV3.c_str(), allocator).Move(), allocator);
     }
 
     if (m_supportHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Support";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_support.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_support.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ipv6HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ipv6";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ipv6, allocator);
@@ -183,7 +182,7 @@ void Region::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_multiZoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MultiZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_multiZone, allocator);

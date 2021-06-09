@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
-using namespace rapidjson;
 using namespace std;
 
 ValueInfo::ValueInfo() :
@@ -28,7 +27,7 @@ ValueInfo::ValueInfo() :
 {
 }
 
-CoreInternalOutcome ValueInfo::Deserialize(const Value &value)
+CoreInternalOutcome ValueInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome ValueInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ValueInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ValueInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tokenizerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tokenizer";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tokenizer.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tokenizer.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sqlFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SqlFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sqlFlag, allocator);

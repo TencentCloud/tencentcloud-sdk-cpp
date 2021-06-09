@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 CallbackEventInfo::CallbackEventInfo() :
@@ -32,7 +31,7 @@ CallbackEventInfo::CallbackEventInfo() :
 {
 }
 
-CoreInternalOutcome CallbackEventInfo::Deserialize(const Value &value)
+CoreInternalOutcome CallbackEventInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,20 +110,20 @@ CoreInternalOutcome CallbackEventInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CallbackEventInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CallbackEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eventTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eventTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eventTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eventType, allocator);
@@ -132,31 +131,31 @@ void CallbackEventInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_requestHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Request";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_request.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_request.c_str(), allocator).Move(), allocator);
     }
 
     if (m_responseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Response";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_response.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_response.c_str(), allocator).Move(), allocator);
     }
 
     if (m_responseTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResponseTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_responseTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_responseTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resultCode, allocator);
@@ -164,10 +163,10 @@ void CallbackEventInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_streamIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_streamId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_streamId.c_str(), allocator).Move(), allocator);
     }
 
 }

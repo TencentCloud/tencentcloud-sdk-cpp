@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 PersonCoordinate::PersonCoordinate() :
@@ -33,7 +32,7 @@ PersonCoordinate::PersonCoordinate() :
 {
 }
 
-CoreInternalOutcome PersonCoordinate::Deserialize(const Value &value)
+CoreInternalOutcome PersonCoordinate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome PersonCoordinate::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PersonCoordinate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PersonCoordinate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cADXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CADX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cADX, allocator);
@@ -135,7 +134,7 @@ void PersonCoordinate::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_cADYHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CADY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cADY, allocator);
@@ -143,23 +142,23 @@ void PersonCoordinate::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_capTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CapTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_capTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_capTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_capPicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CapPic";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_capPic.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_capPic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mallAreaTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MallAreaType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mallAreaType, allocator);
@@ -167,7 +166,7 @@ void PersonCoordinate::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_posIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PosId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_posId, allocator);
@@ -175,7 +174,7 @@ void PersonCoordinate::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_shopIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShopId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shopId, allocator);
@@ -183,10 +182,10 @@ void PersonCoordinate::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_eventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Event";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_event.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_event.c_str(), allocator).Move(), allocator);
     }
 
 }

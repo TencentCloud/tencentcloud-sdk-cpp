@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 OutterResource::OutterResource() :
@@ -34,7 +33,7 @@ OutterResource::OutterResource() :
 {
 }
 
-CoreInternalOutcome OutterResource::Deserialize(const Value &value)
+CoreInternalOutcome OutterResource::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,28 +132,28 @@ CoreInternalOutcome OutterResource::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OutterResource::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OutterResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_specHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Spec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_spec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_spec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_specNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SpecName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_specName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storageType, allocator);
@@ -162,15 +161,15 @@ void OutterResource::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_diskTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diskType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rootSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RootSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rootSize, allocator);
@@ -178,7 +177,7 @@ void OutterResource::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_memSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memSize, allocator);
@@ -186,7 +185,7 @@ void OutterResource::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_cpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);
@@ -194,7 +193,7 @@ void OutterResource::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_diskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskSize, allocator);
@@ -202,10 +201,10 @@ void OutterResource::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_instanceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcaplusdb::V20190823::Model;
-using namespace rapidjson;
 using namespace std;
 
 ParsedTableInfoNew::ParsedTableInfoNew() :
@@ -43,7 +42,7 @@ ParsedTableInfoNew::ParsedTableInfoNew() :
 {
 }
 
-CoreInternalOutcome ParsedTableInfoNew::Deserialize(const Value &value)
+CoreInternalOutcome ParsedTableInfoNew::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -239,84 +238,84 @@ CoreInternalOutcome ParsedTableInfoNew::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ParsedTableInfoNew::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ParsedTableInfoNew::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tableIdlTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableIdlType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tableIdlType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableIdlType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tableInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tableName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tableType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyFieldsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyFields";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyFields.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyFields.c_str(), allocator).Move(), allocator);
     }
 
     if (m_oldKeyFieldsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OldKeyFields";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_oldKeyFields.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldKeyFields.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueFieldsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ValueFields";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_valueFields.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_valueFields.c_str(), allocator).Move(), allocator);
     }
 
     if (m_oldValueFieldsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OldValueFields";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_oldValueFields.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldValueFields.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tableGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sumKeyFieldSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SumKeyFieldSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sumKeyFieldSize, allocator);
@@ -324,7 +323,7 @@ void ParsedTableInfoNew::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_sumValueFieldSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SumValueFieldSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sumValueFieldSize, allocator);
@@ -332,23 +331,23 @@ void ParsedTableInfoNew::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_indexKeySetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IndexKeySet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_indexKeySet.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexKeySet.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shardingKeySetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardingKeySet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shardingKeySet.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shardingKeySet.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tdrVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TdrVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tdrVersion, allocator);
@@ -356,16 +355,16 @@ void ParsedTableInfoNew::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_errorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Error";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_error.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_listElementNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListElementNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_listElementNum, allocator);
@@ -373,7 +372,7 @@ void ParsedTableInfoNew::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_sortFieldNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SortFieldNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sortFieldNum, allocator);
@@ -381,7 +380,7 @@ void ParsedTableInfoNew::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_sortRuleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SortRule";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sortRule, allocator);

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScaleOutInstanceResponse::ScaleOutInstanceResponse() :
@@ -35,7 +34,7 @@ ScaleOutInstanceResponse::ScaleOutInstanceResponse() :
 
 CoreInternalOutcome ScaleOutInstanceResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -45,7 +44,7 @@ CoreInternalOutcome ScaleOutInstanceResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -82,8 +81,8 @@ CoreInternalOutcome ScaleOutInstanceResponse::Deserialize(const string &payload)
         if (!rsp["DealNames"].IsArray())
             return CoreInternalOutcome(Error("response `DealNames` is not array type"));
 
-        const Value &tmpValue = rsp["DealNames"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DealNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_dealNames.push_back((*itr).GetString());
         }

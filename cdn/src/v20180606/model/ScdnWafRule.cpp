@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScdnWafRule::ScdnWafRule() :
@@ -27,7 +26,7 @@ ScdnWafRule::ScdnWafRule() :
 {
 }
 
-CoreInternalOutcome ScdnWafRule::Deserialize(const Value &value)
+CoreInternalOutcome ScdnWafRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome ScdnWafRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScdnWafRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScdnWafRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_attackTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AttackType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_attackType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_attackType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Operate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_operate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operate.c_str(), allocator).Move(), allocator);
     }
 
 }

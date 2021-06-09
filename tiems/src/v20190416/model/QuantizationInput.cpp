@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiems::V20190416::Model;
-using namespace rapidjson;
 using namespace std;
 
 QuantizationInput::QuantizationInput() :
@@ -30,7 +29,7 @@ QuantizationInput::QuantizationInput() :
 {
 }
 
-CoreInternalOutcome QuantizationInput::Deserialize(const Value &value)
+CoreInternalOutcome QuantizationInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome QuantizationInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void QuantizationInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QuantizationInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_inputPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inputPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outputPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outputPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_batchSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BatchSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_batchSize, allocator);
@@ -118,18 +117,18 @@ void QuantizationInput::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_precisionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Precision";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_precision.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_precision.c_str(), allocator).Move(), allocator);
     }
 
     if (m_convertTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConvertType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_convertType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_convertType.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 PlanDetailInfo::PlanDetailInfo() :
@@ -29,7 +28,7 @@ PlanDetailInfo::PlanDetailInfo() :
 {
 }
 
-CoreInternalOutcome PlanDetailInfo::Deserialize(const Value &value)
+CoreInternalOutcome PlanDetailInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,12 +84,12 @@ CoreInternalOutcome PlanDetailInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PlanDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PlanDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_isDefaultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsDefault";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDefault, allocator);
@@ -98,7 +97,7 @@ void PlanDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_planIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlanId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_planId, allocator);
@@ -106,18 +105,18 @@ void PlanDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_planNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlanName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_planName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_planName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_planInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlanInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_planInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

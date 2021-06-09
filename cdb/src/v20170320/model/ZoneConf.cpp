@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 ZoneConf::ZoneConf() :
@@ -29,7 +28,7 @@ ZoneConf::ZoneConf() :
 {
 }
 
-CoreInternalOutcome ZoneConf::Deserialize(const Value &value)
+CoreInternalOutcome ZoneConf::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -39,8 +38,8 @@ CoreInternalOutcome ZoneConf::Deserialize(const Value &value)
         if (!value["DeployMode"].IsArray())
             return CoreInternalOutcome(Error("response `ZoneConf.DeployMode` is not array type"));
 
-        const Value &tmpValue = value["DeployMode"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DeployMode"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_deployMode.push_back((*itr).GetInt64());
         }
@@ -52,8 +51,8 @@ CoreInternalOutcome ZoneConf::Deserialize(const Value &value)
         if (!value["MasterZone"].IsArray())
             return CoreInternalOutcome(Error("response `ZoneConf.MasterZone` is not array type"));
 
-        const Value &tmpValue = value["MasterZone"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MasterZone"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_masterZone.push_back((*itr).GetString());
         }
@@ -65,8 +64,8 @@ CoreInternalOutcome ZoneConf::Deserialize(const Value &value)
         if (!value["SlaveZone"].IsArray())
             return CoreInternalOutcome(Error("response `ZoneConf.SlaveZone` is not array type"));
 
-        const Value &tmpValue = value["SlaveZone"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SlaveZone"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_slaveZone.push_back((*itr).GetString());
         }
@@ -78,8 +77,8 @@ CoreInternalOutcome ZoneConf::Deserialize(const Value &value)
         if (!value["BackupZone"].IsArray())
             return CoreInternalOutcome(Error("response `ZoneConf.BackupZone` is not array type"));
 
-        const Value &tmpValue = value["BackupZone"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BackupZone"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_backupZone.push_back((*itr).GetString());
         }
@@ -90,58 +89,58 @@ CoreInternalOutcome ZoneConf::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ZoneConf::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ZoneConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deployModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeployMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_deployMode.begin(); itr != m_deployMode.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_masterZoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterZone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_masterZone.begin(); itr != m_masterZone.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_slaveZoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SlaveZone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_slaveZone.begin(); itr != m_slaveZone.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_backupZoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupZone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_backupZone.begin(); itr != m_backupZone.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

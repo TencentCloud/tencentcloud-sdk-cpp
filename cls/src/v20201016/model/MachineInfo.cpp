@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cls::V20201016::Model;
-using namespace rapidjson;
 using namespace std;
 
 MachineInfo::MachineInfo() :
@@ -33,7 +32,7 @@ MachineInfo::MachineInfo() :
 {
 }
 
-CoreInternalOutcome MachineInfo::Deserialize(const Value &value)
+CoreInternalOutcome MachineInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,20 +121,20 @@ CoreInternalOutcome MachineInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MachineInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MachineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -143,15 +142,15 @@ void MachineInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_offlineTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OfflineTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_offlineTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_offlineTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoUpdateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoUpdate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoUpdate, allocator);
@@ -159,15 +158,15 @@ void MachineInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_versionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateStatus, allocator);
@@ -175,7 +174,7 @@ void MachineInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_errCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_errCode, allocator);
@@ -183,10 +182,10 @@ void MachineInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_errMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
     }
 
 }

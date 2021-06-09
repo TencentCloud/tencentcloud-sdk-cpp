@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 TopicAttributesResponse::TopicAttributesResponse() :
@@ -33,7 +32,7 @@ TopicAttributesResponse::TopicAttributesResponse() :
 {
 }
 
-CoreInternalOutcome TopicAttributesResponse::Deserialize(const Value &value)
+CoreInternalOutcome TopicAttributesResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -93,8 +92,8 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const Value &value)
         if (!value["IpWhiteList"].IsArray())
             return CoreInternalOutcome(Error("response `TopicAttributesResponse.IpWhiteList` is not array type"));
 
-        const Value &tmpValue = value["IpWhiteList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["IpWhiteList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_ipWhiteList.push_back((*itr).GetString());
         }
@@ -123,8 +122,8 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const Value &value)
         if (!value["Partitions"].IsArray())
             return CoreInternalOutcome(Error("response `TopicAttributesResponse.Partitions` is not array type"));
 
-        const Value &tmpValue = value["Partitions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Partitions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TopicPartitionDO item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -142,20 +141,20 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TopicAttributesResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TopicAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_topicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topicId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -163,15 +162,15 @@ void TopicAttributesResponse::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_noteHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Note";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_note.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
     }
 
     if (m_partitionNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PartitionNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_partitionNum, allocator);
@@ -179,7 +178,7 @@ void TopicAttributesResponse::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_enableWhiteListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableWhiteList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableWhiteList, allocator);
@@ -187,37 +186,37 @@ void TopicAttributesResponse::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_ipWhiteListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpWhiteList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_ipWhiteList.begin(); itr != m_ipWhiteList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_configHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Config";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_config.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_partitionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Partitions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_partitions.begin(); itr != m_partitions.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

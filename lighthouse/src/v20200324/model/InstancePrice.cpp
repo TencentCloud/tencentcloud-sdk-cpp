@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstancePrice::InstancePrice() :
@@ -29,7 +28,7 @@ InstancePrice::InstancePrice() :
 {
 }
 
-CoreInternalOutcome InstancePrice::Deserialize(const Value &value)
+CoreInternalOutcome InstancePrice::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome InstancePrice::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstancePrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstancePrice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_originalBundlePriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalBundlePrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalBundlePrice, allocator);
@@ -91,7 +90,7 @@ void InstancePrice::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_originalPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalPrice, allocator);
@@ -99,7 +98,7 @@ void InstancePrice::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_discountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Discount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discount, allocator);
@@ -107,7 +106,7 @@ void InstancePrice::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_discountPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountPrice, allocator);

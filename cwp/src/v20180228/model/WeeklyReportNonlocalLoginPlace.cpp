@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 WeeklyReportNonlocalLoginPlace::WeeklyReportNonlocalLoginPlace() :
@@ -32,7 +31,7 @@ WeeklyReportNonlocalLoginPlace::WeeklyReportNonlocalLoginPlace() :
 {
 }
 
-CoreInternalOutcome WeeklyReportNonlocalLoginPlace::Deserialize(const Value &value)
+CoreInternalOutcome WeeklyReportNonlocalLoginPlace::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,36 +110,36 @@ CoreInternalOutcome WeeklyReportNonlocalLoginPlace::Deserialize(const Value &val
     return CoreInternalOutcome(true);
 }
 
-void WeeklyReportNonlocalLoginPlace::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WeeklyReportNonlocalLoginPlace::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_machineIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_machineIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usernameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Username";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_username.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SrcIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_srcIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Country";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_country, allocator);
@@ -148,7 +147,7 @@ void WeeklyReportNonlocalLoginPlace::ToJsonObject(Value &value, Document::Alloca
 
     if (m_provinceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Province";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_province, allocator);
@@ -156,7 +155,7 @@ void WeeklyReportNonlocalLoginPlace::ToJsonObject(Value &value, Document::Alloca
 
     if (m_cityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "City";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_city, allocator);
@@ -164,10 +163,10 @@ void WeeklyReportNonlocalLoginPlace::ToJsonObject(Value &value, Document::Alloca
 
     if (m_loginTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoginTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_loginTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loginTime.c_str(), allocator).Move(), allocator);
     }
 
 }

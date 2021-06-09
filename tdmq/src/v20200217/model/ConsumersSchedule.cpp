@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tdmq::V20200217::Model;
-using namespace rapidjson;
 using namespace std;
 
 ConsumersSchedule::ConsumersSchedule() :
@@ -31,7 +30,7 @@ ConsumersSchedule::ConsumersSchedule() :
 {
 }
 
-CoreInternalOutcome ConsumersSchedule::Deserialize(const Value &value)
+CoreInternalOutcome ConsumersSchedule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome ConsumersSchedule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ConsumersSchedule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ConsumersSchedule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_partitionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Partitions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_partitions, allocator);
@@ -113,7 +112,7 @@ void ConsumersSchedule::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_numberOfEntriesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NumberOfEntries";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_numberOfEntries, allocator);
@@ -121,7 +120,7 @@ void ConsumersSchedule::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_msgBacklogHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgBacklog";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_msgBacklog, allocator);
@@ -129,26 +128,26 @@ void ConsumersSchedule::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_msgRateOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgRateOut";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_msgRateOut.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msgRateOut.c_str(), allocator).Move(), allocator);
     }
 
     if (m_msgThroughputOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgThroughputOut";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_msgThroughputOut.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msgThroughputOut.c_str(), allocator).Move(), allocator);
     }
 
     if (m_msgRateExpiredHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgRateExpired";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_msgRateExpired.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msgRateExpired.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 VodPullInputInfo::VodPullInputInfo() :
@@ -27,7 +26,7 @@ VodPullInputInfo::VodPullInputInfo() :
 {
 }
 
-CoreInternalOutcome VodPullInputInfo::Deserialize(const Value &value)
+CoreInternalOutcome VodPullInputInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome VodPullInputInfo::Deserialize(const Value &value)
         if (!value["InputUrls"].IsArray())
             return CoreInternalOutcome(Error("response `VodPullInputInfo.InputUrls` is not array type"));
 
-        const Value &tmpValue = value["InputUrls"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InputUrls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_inputUrls.push_back((*itr).GetString());
         }
@@ -59,25 +58,25 @@ CoreInternalOutcome VodPullInputInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VodPullInputInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VodPullInputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_inputUrlsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputUrls";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_inputUrls.begin(); itr != m_inputUrls.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_loopTimesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoopTimes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loopTimes, allocator);

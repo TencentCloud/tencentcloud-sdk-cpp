@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 PublishCdnParams::PublishCdnParams() :
@@ -27,7 +26,7 @@ PublishCdnParams::PublishCdnParams() :
 {
 }
 
-CoreInternalOutcome PublishCdnParams::Deserialize(const Value &value)
+CoreInternalOutcome PublishCdnParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome PublishCdnParams::Deserialize(const Value &value)
         if (!value["PublishCdnUrls"].IsArray())
             return CoreInternalOutcome(Error("response `PublishCdnParams.PublishCdnUrls` is not array type"));
 
-        const Value &tmpValue = value["PublishCdnUrls"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PublishCdnUrls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_publishCdnUrls.push_back((*itr).GetString());
         }
@@ -59,12 +58,12 @@ CoreInternalOutcome PublishCdnParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PublishCdnParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PublishCdnParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bizIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BizId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bizId, allocator);
@@ -72,14 +71,14 @@ void PublishCdnParams::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_publishCdnUrlsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishCdnUrls";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_publishCdnUrls.begin(); itr != m_publishCdnUrls.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

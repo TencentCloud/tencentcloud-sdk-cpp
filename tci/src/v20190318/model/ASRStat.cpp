@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 ASRStat::ASRStat() :
@@ -34,7 +33,7 @@ ASRStat::ASRStat() :
 {
 }
 
-CoreInternalOutcome ASRStat::Deserialize(const Value &value)
+CoreInternalOutcome ASRStat::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome ASRStat::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ASRStat::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ASRStat::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_avgSpeedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvgSpeed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_avgSpeed, allocator);
@@ -146,7 +145,7 @@ void ASRStat::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_avgVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvgVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_avgVolume, allocator);
@@ -154,7 +153,7 @@ void ASRStat::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_maxVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxVolume, allocator);
@@ -162,7 +161,7 @@ void ASRStat::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_minVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minVolume, allocator);
@@ -170,7 +169,7 @@ void ASRStat::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_muteDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MuteDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_muteDuration, allocator);
@@ -178,7 +177,7 @@ void ASRStat::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_soundDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SoundDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_soundDuration, allocator);
@@ -186,7 +185,7 @@ void ASRStat::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_totalDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalDuration, allocator);
@@ -194,7 +193,7 @@ void ASRStat::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_vadNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VadNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vadNum, allocator);
@@ -202,7 +201,7 @@ void ASRStat::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_wordNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WordNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wordNum, allocator);

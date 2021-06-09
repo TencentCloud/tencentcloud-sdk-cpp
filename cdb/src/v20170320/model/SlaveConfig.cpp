@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 SlaveConfig::SlaveConfig() :
@@ -27,7 +26,7 @@ SlaveConfig::SlaveConfig() :
 {
 }
 
-CoreInternalOutcome SlaveConfig::Deserialize(const Value &value)
+CoreInternalOutcome SlaveConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome SlaveConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SlaveConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SlaveConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_replicationModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicationMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replicationMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replicationMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }

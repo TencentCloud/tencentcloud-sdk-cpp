@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dc::V20180410::Model;
-using namespace rapidjson;
 using namespace std;
 
 BgpPeer::BgpPeer() :
@@ -27,7 +26,7 @@ BgpPeer::BgpPeer() :
 {
 }
 
-CoreInternalOutcome BgpPeer::Deserialize(const Value &value)
+CoreInternalOutcome BgpPeer::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome BgpPeer::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BgpPeer::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BgpPeer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_asnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Asn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_asn, allocator);
@@ -69,10 +68,10 @@ void BgpPeer::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_authKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuthKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_authKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authKey.c_str(), allocator).Move(), allocator);
     }
 
 }

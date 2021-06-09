@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 UsageInfo::UsageInfo() :
@@ -30,7 +29,7 @@ UsageInfo::UsageInfo() :
 {
 }
 
-CoreInternalOutcome UsageInfo::Deserialize(const Value &value)
+CoreInternalOutcome UsageInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -50,8 +49,8 @@ CoreInternalOutcome UsageInfo::Deserialize(const Value &value)
         if (!value["Namespace"].IsArray())
             return CoreInternalOutcome(Error("response `UsageInfo.Namespace` is not array type"));
 
-        const Value &tmpValue = value["Namespace"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Namespace"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             NamespaceUsage item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -99,12 +98,12 @@ CoreInternalOutcome UsageInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UsageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UsageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_namespacesCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NamespacesCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_namespacesCount, allocator);
@@ -112,22 +111,22 @@ void UsageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_namespaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_namespace.begin(); itr != m_namespace.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_totalConcurrencyMemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalConcurrencyMem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalConcurrencyMem, allocator);
@@ -135,7 +134,7 @@ void UsageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_totalAllocatedConcurrencyMemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalAllocatedConcurrencyMem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalAllocatedConcurrencyMem, allocator);
@@ -143,7 +142,7 @@ void UsageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_userConcurrencyMemLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserConcurrencyMemLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_userConcurrencyMemLimit, allocator);

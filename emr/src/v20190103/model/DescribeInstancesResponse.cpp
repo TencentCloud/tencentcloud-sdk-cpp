@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeInstancesResponse::DescribeInstancesResponse() :
@@ -33,7 +32,7 @@ DescribeInstancesResponse::DescribeInstancesResponse() :
 
 CoreInternalOutcome DescribeInstancesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DescribeInstancesResponse::Deserialize(const string &payload
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -80,8 +79,8 @@ CoreInternalOutcome DescribeInstancesResponse::Deserialize(const string &payload
         if (!rsp["ClusterList"].IsArray())
             return CoreInternalOutcome(Error("response `ClusterList` is not array type"));
 
-        const Value &tmpValue = rsp["ClusterList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ClusterList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ClusterInstancesInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -100,8 +99,8 @@ CoreInternalOutcome DescribeInstancesResponse::Deserialize(const string &payload
         if (!rsp["TagKeys"].IsArray())
             return CoreInternalOutcome(Error("response `TagKeys` is not array type"));
 
-        const Value &tmpValue = rsp["TagKeys"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["TagKeys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_tagKeys.push_back((*itr).GetString());
         }

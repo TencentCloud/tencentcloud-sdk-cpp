@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Billing::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 BillTransactionInfo::BillTransactionInfo() :
@@ -36,7 +35,7 @@ BillTransactionInfo::BillTransactionInfo() :
 {
 }
 
-CoreInternalOutcome BillTransactionInfo::Deserialize(const Value &value)
+CoreInternalOutcome BillTransactionInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -155,20 +154,20 @@ CoreInternalOutcome BillTransactionInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BillTransactionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BillTransactionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_actionTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActionType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_actionType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_actionType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_amountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Amount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_amount, allocator);
@@ -176,7 +175,7 @@ void BillTransactionInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_balanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Balance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_balance, allocator);
@@ -184,31 +183,31 @@ void BillTransactionInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_billIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BillId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_billId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operationInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OperationInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_operationInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operationTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OperationTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_operationTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cashHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cash";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cash, allocator);
@@ -216,7 +215,7 @@ void BillTransactionInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_incentiveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Incentive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_incentive, allocator);
@@ -224,7 +223,7 @@ void BillTransactionInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_freezingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Freezing";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_freezing, allocator);
@@ -232,18 +231,18 @@ void BillTransactionInfo::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_payChannelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayChannel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_payChannel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payChannel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deductModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeductMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deductMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deductMode.c_str(), allocator).Move(), allocator);
     }
 
 }

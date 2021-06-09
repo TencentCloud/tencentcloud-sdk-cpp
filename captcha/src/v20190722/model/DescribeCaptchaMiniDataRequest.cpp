@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Captcha::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCaptchaMiniDataRequest::DescribeCaptchaMiniDataRequest() :
@@ -33,14 +32,14 @@ DescribeCaptchaMiniDataRequest::DescribeCaptchaMiniDataRequest() :
 
 string DescribeCaptchaMiniDataRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_captchaAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CaptchaAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_captchaAppId, allocator);
@@ -48,7 +47,7 @@ string DescribeCaptchaMiniDataRequest::ToJsonString() const
 
     if (m_startHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Start";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_start, allocator);
@@ -56,7 +55,7 @@ string DescribeCaptchaMiniDataRequest::ToJsonString() const
 
     if (m_endHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "End";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_end, allocator);
@@ -64,15 +63,15 @@ string DescribeCaptchaMiniDataRequest::ToJsonString() const
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_type, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

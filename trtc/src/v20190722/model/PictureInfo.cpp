@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 PictureInfo::PictureInfo() :
@@ -31,7 +30,7 @@ PictureInfo::PictureInfo() :
 {
 }
 
-CoreInternalOutcome PictureInfo::Deserialize(const Value &value)
+CoreInternalOutcome PictureInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome PictureInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PictureInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PictureInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -113,7 +112,7 @@ void PictureInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -121,7 +120,7 @@ void PictureInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_xPositionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "XPosition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_xPosition, allocator);
@@ -129,7 +128,7 @@ void PictureInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_yPositionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "YPosition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_yPosition, allocator);
@@ -137,7 +136,7 @@ void PictureInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_sdkAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sdkAppId, allocator);
@@ -145,7 +144,7 @@ void PictureInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_pictureIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PictureId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pictureId, allocator);

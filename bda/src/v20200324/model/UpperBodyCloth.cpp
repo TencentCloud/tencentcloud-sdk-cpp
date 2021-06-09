@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bda::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 UpperBodyCloth::UpperBodyCloth() :
@@ -28,7 +27,7 @@ UpperBodyCloth::UpperBodyCloth() :
 {
 }
 
-CoreInternalOutcome UpperBodyCloth::Deserialize(const Value &value)
+CoreInternalOutcome UpperBodyCloth::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -88,33 +87,33 @@ CoreInternalOutcome UpperBodyCloth::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UpperBodyCloth::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UpperBodyCloth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_textureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Texture";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_texture.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_colorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Color";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_color.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_sleeveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sleeve";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sleeve.ToJsonObject(value[key.c_str()], allocator);
     }
 

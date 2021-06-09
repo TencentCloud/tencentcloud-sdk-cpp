@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 AccountQuota::AccountQuota() :
@@ -30,7 +29,7 @@ AccountQuota::AccountQuota() :
 {
 }
 
-CoreInternalOutcome AccountQuota::Deserialize(const Value &value)
+CoreInternalOutcome AccountQuota::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -40,8 +39,8 @@ CoreInternalOutcome AccountQuota::Deserialize(const Value &value)
         if (!value["PostPaidQuotaSet"].IsArray())
             return CoreInternalOutcome(Error("response `AccountQuota.PostPaidQuotaSet` is not array type"));
 
-        const Value &tmpValue = value["PostPaidQuotaSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PostPaidQuotaSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PostPaidQuota item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -60,8 +59,8 @@ CoreInternalOutcome AccountQuota::Deserialize(const Value &value)
         if (!value["PrePaidQuotaSet"].IsArray())
             return CoreInternalOutcome(Error("response `AccountQuota.PrePaidQuotaSet` is not array type"));
 
-        const Value &tmpValue = value["PrePaidQuotaSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PrePaidQuotaSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PrePaidQuota item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -80,8 +79,8 @@ CoreInternalOutcome AccountQuota::Deserialize(const Value &value)
         if (!value["SpotPaidQuotaSet"].IsArray())
             return CoreInternalOutcome(Error("response `AccountQuota.SpotPaidQuotaSet` is not array type"));
 
-        const Value &tmpValue = value["SpotPaidQuotaSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SpotPaidQuotaSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SpotPaidQuota item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -100,8 +99,8 @@ CoreInternalOutcome AccountQuota::Deserialize(const Value &value)
         if (!value["ImageQuotaSet"].IsArray())
             return CoreInternalOutcome(Error("response `AccountQuota.ImageQuotaSet` is not array type"));
 
-        const Value &tmpValue = value["ImageQuotaSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ImageQuotaSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ImageQuota item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -120,8 +119,8 @@ CoreInternalOutcome AccountQuota::Deserialize(const Value &value)
         if (!value["DisasterRecoverGroupQuotaSet"].IsArray())
             return CoreInternalOutcome(Error("response `AccountQuota.DisasterRecoverGroupQuotaSet` is not array type"));
 
-        const Value &tmpValue = value["DisasterRecoverGroupQuotaSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DisasterRecoverGroupQuotaSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DisasterRecoverGroupQuota item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -139,80 +138,80 @@ CoreInternalOutcome AccountQuota::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AccountQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AccountQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_postPaidQuotaSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PostPaidQuotaSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_postPaidQuotaSet.begin(); itr != m_postPaidQuotaSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_prePaidQuotaSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrePaidQuotaSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_prePaidQuotaSet.begin(); itr != m_prePaidQuotaSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_spotPaidQuotaSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SpotPaidQuotaSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_spotPaidQuotaSet.begin(); itr != m_spotPaidQuotaSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_imageQuotaSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageQuotaSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_imageQuotaSet.begin(); itr != m_imageQuotaSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_disasterRecoverGroupQuotaSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisasterRecoverGroupQuotaSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_disasterRecoverGroupQuotaSet.begin(); itr != m_disasterRecoverGroupQuotaSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

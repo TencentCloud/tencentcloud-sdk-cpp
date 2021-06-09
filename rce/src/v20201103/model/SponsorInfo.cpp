@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Rce::V20201103::Model;
-using namespace rapidjson;
 using namespace std;
 
 SponsorInfo::SponsorInfo() :
@@ -30,7 +29,7 @@ SponsorInfo::SponsorInfo() :
 {
 }
 
-CoreInternalOutcome SponsorInfo::Deserialize(const Value &value)
+CoreInternalOutcome SponsorInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,47 +88,47 @@ CoreInternalOutcome SponsorInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SponsorInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SponsorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sponsorOpenIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SponsorOpenId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sponsorOpenId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sponsorOpenId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sponsorDeviceNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SponsorDeviceNumber";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sponsorDeviceNumber.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sponsorDeviceNumber.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sponsorPhoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SponsorPhone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sponsorPhone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sponsorPhone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sponsorIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SponsorIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sponsorIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sponsorIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_campaignUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CampaignUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_campaignUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_campaignUrl.c_str(), allocator).Move(), allocator);
     }
 
 }

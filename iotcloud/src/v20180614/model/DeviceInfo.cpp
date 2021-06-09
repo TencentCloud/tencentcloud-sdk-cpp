@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceInfo::DeviceInfo() :
@@ -49,7 +48,7 @@ DeviceInfo::DeviceInfo() :
 {
 }
 
-CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
+CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -119,8 +118,8 @@ CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
         if (!value["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceInfo.Tags` is not array type"));
 
-        const Value &tmpValue = value["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DeviceTag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -279,8 +278,8 @@ CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
         if (!value["Labels"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceInfo.Labels` is not array type"));
 
-        const Value &tmpValue = value["Labels"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Labels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DeviceLabel item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -318,20 +317,20 @@ CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deviceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_onlineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Online";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_online, allocator);
@@ -339,7 +338,7 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_loginTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoginTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loginTime, allocator);
@@ -347,46 +346,46 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_versionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceCertHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceCert";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceCert.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceCert.c_str(), allocator).Move(), allocator);
     }
 
     if (m_devicePskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DevicePsk";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_devicePsk.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_devicePsk.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_deviceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deviceType, allocator);
@@ -394,15 +393,15 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_imeiHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Imei";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imei.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imei.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ispHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Isp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isp, allocator);
@@ -410,15 +409,15 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_nbiotDeviceIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NbiotDeviceID";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nbiotDeviceID.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nbiotDeviceID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_connIPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConnIP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_connIP, allocator);
@@ -426,7 +425,7 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_lastUpdateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastUpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastUpdateTime, allocator);
@@ -434,15 +433,15 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_loraDevEuiHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoraDevEui";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_loraDevEui.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loraDevEui.c_str(), allocator).Move(), allocator);
     }
 
     if (m_loraMoteTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoraMoteType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loraMoteType, allocator);
@@ -450,7 +449,7 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_firstOnlineTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstOnlineTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_firstOnlineTime, allocator);
@@ -458,7 +457,7 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_lastOfflineTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastOfflineTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastOfflineTime, allocator);
@@ -466,7 +465,7 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -474,7 +473,7 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_logLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_logLevel, allocator);
@@ -482,7 +481,7 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_certStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_certState, allocator);
@@ -490,7 +489,7 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_enableStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableState, allocator);
@@ -498,30 +497,30 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_labelsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Labels";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_clientIPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientIP";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clientIP.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientIP.c_str(), allocator).Move(), allocator);
     }
 
     if (m_firmwareUpdateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirmwareUpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_firmwareUpdateTime, allocator);

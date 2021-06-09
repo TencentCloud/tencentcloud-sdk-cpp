@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Domain::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeBatchOperationLogDetailsResponse::DescribeBatchOperationLogDetailsResponse() :
@@ -32,7 +31,7 @@ DescribeBatchOperationLogDetailsResponse::DescribeBatchOperationLogDetailsRespon
 
 CoreInternalOutcome DescribeBatchOperationLogDetailsResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeBatchOperationLogDetailsResponse::Deserialize(const 
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeBatchOperationLogDetailsResponse::Deserialize(const 
         if (!rsp["DomainBatchDetailSet"].IsArray())
             return CoreInternalOutcome(Error("response `DomainBatchDetailSet` is not array type"));
 
-        const Value &tmpValue = rsp["DomainBatchDetailSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DomainBatchDetailSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DomainBatchDetailSet item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

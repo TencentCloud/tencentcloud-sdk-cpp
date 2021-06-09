@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 PeakNetworkRegionInfo::PeakNetworkRegionInfo() :
@@ -27,7 +26,7 @@ PeakNetworkRegionInfo::PeakNetworkRegionInfo() :
 {
 }
 
-CoreInternalOutcome PeakNetworkRegionInfo::Deserialize(const Value &value)
+CoreInternalOutcome PeakNetworkRegionInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome PeakNetworkRegionInfo::Deserialize(const Value &value)
         if (!value["PeakNetworkSet"].IsArray())
             return CoreInternalOutcome(Error("response `PeakNetworkRegionInfo.PeakNetworkSet` is not array type"));
 
-        const Value &tmpValue = value["PeakNetworkSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PeakNetworkSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PeakNetwork item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,28 +65,28 @@ CoreInternalOutcome PeakNetworkRegionInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PeakNetworkRegionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PeakNetworkRegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_peakNetworkSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeakNetworkSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_peakNetworkSet.begin(); itr != m_peakNetworkSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

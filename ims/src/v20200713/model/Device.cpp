@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ims::V20200713::Model;
-using namespace rapidjson;
 using namespace std;
 
 Device::Device() :
@@ -33,7 +32,7 @@ Device::Device() :
 {
 }
 
-CoreInternalOutcome Device::Deserialize(const Value &value)
+CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,68 +121,68 @@ CoreInternalOutcome Device::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Device::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_macHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mac";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mac.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mac.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tokenIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TokenId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tokenId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tokenId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iMEIHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IMEI";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iMEI.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iMEI.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iDFAHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IDFA";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iDFA.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iDFA.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iDFVHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IDFV";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iDFV.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iDFV.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ipTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ipType, allocator);

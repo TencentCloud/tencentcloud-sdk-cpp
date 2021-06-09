@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 RrectF::RrectF() :
@@ -30,7 +29,7 @@ RrectF::RrectF() :
 {
 }
 
-CoreInternalOutcome RrectF::Deserialize(const Value &value)
+CoreInternalOutcome RrectF::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome RrectF::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RrectF::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RrectF::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cx";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cx, allocator);
@@ -102,7 +101,7 @@ void RrectF::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_cyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cy, allocator);
@@ -110,7 +109,7 @@ void RrectF::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -118,7 +117,7 @@ void RrectF::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_rotateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rotate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rotate, allocator);
@@ -126,7 +125,7 @@ void RrectF::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);

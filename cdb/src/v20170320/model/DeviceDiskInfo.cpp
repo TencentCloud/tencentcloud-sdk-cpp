@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceDiskInfo::DeviceDiskInfo() :
@@ -30,7 +29,7 @@ DeviceDiskInfo::DeviceDiskInfo() :
 {
 }
 
-CoreInternalOutcome DeviceDiskInfo::Deserialize(const Value &value)
+CoreInternalOutcome DeviceDiskInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -40,8 +39,8 @@ CoreInternalOutcome DeviceDiskInfo::Deserialize(const Value &value)
         if (!value["IoRatioPerSec"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceDiskInfo.IoRatioPerSec` is not array type"));
 
-        const Value &tmpValue = value["IoRatioPerSec"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["IoRatioPerSec"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_ioRatioPerSec.push_back((*itr).GetInt64());
         }
@@ -53,8 +52,8 @@ CoreInternalOutcome DeviceDiskInfo::Deserialize(const Value &value)
         if (!value["IoWaitTime"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceDiskInfo.IoWaitTime` is not array type"));
 
-        const Value &tmpValue = value["IoWaitTime"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["IoWaitTime"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_ioWaitTime.push_back((*itr).GetInt64());
         }
@@ -66,8 +65,8 @@ CoreInternalOutcome DeviceDiskInfo::Deserialize(const Value &value)
         if (!value["Read"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceDiskInfo.Read` is not array type"));
 
-        const Value &tmpValue = value["Read"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Read"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_read.push_back((*itr).GetInt64());
         }
@@ -79,8 +78,8 @@ CoreInternalOutcome DeviceDiskInfo::Deserialize(const Value &value)
         if (!value["Write"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceDiskInfo.Write` is not array type"));
 
-        const Value &tmpValue = value["Write"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Write"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_write.push_back((*itr).GetInt64());
         }
@@ -92,8 +91,8 @@ CoreInternalOutcome DeviceDiskInfo::Deserialize(const Value &value)
         if (!value["CapacityRatio"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceDiskInfo.CapacityRatio` is not array type"));
 
-        const Value &tmpValue = value["CapacityRatio"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["CapacityRatio"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_capacityRatio.push_back((*itr).GetInt64());
         }
@@ -104,71 +103,71 @@ CoreInternalOutcome DeviceDiskInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceDiskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceDiskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ioRatioPerSecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IoRatioPerSec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_ioRatioPerSec.begin(); itr != m_ioRatioPerSec.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_ioWaitTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IoWaitTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_ioWaitTime.begin(); itr != m_ioWaitTime.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_readHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Read";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_read.begin(); itr != m_read.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_writeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Write";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_write.begin(); itr != m_write.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_capacityRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CapacityRatio";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_capacityRatio.begin(); itr != m_capacityRatio.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

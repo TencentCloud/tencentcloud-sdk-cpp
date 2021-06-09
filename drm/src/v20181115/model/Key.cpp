@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Drm::V20181115::Model;
-using namespace rapidjson;
 using namespace std;
 
 Key::Key() :
@@ -30,7 +29,7 @@ Key::Key() :
 {
 }
 
-CoreInternalOutcome Key::Deserialize(const Value &value)
+CoreInternalOutcome Key::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,44 +88,44 @@ CoreInternalOutcome Key::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Key::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Key::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_trackHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Track";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_track.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_track.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Key";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_key.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ivHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Iv";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iv.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iv.c_str(), allocator).Move(), allocator);
     }
 
     if (m_insertTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InsertTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_insertTimestamp, allocator);

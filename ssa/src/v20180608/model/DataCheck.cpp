@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ssa::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 DataCheck::DataCheck() :
@@ -35,7 +34,7 @@ DataCheck::DataCheck() :
 {
 }
 
-CoreInternalOutcome DataCheck::Deserialize(const Value &value)
+CoreInternalOutcome DataCheck::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,44 +143,44 @@ CoreInternalOutcome DataCheck::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DataCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DataCheck::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastCheckTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastCheckTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastCheckTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastCheckTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -189,7 +188,7 @@ void DataCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_isIgnoredHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsIgnored";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isIgnored, allocator);
@@ -197,7 +196,7 @@ void DataCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_riskCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RiskCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_riskCount, allocator);
@@ -205,7 +204,7 @@ void DataCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_isCheckedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsChecked";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isChecked, allocator);
@@ -213,7 +212,7 @@ void DataCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_assetTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AssetTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_assetTotal, allocator);
@@ -221,10 +220,10 @@ void DataCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_remarksHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remarks";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_remarks.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remarks.c_str(), allocator).Move(), allocator);
     }
 
 }

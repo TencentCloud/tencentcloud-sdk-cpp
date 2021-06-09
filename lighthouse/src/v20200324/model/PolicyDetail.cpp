@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 PolicyDetail::PolicyDetail() :
@@ -28,7 +27,7 @@ PolicyDetail::PolicyDetail() :
 {
 }
 
-CoreInternalOutcome PolicyDetail::Deserialize(const Value &value)
+CoreInternalOutcome PolicyDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome PolicyDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PolicyDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PolicyDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_userDiscountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserDiscount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_userDiscount, allocator);
@@ -80,7 +79,7 @@ void PolicyDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_commonDiscountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CommonDiscount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_commonDiscount, allocator);
@@ -88,7 +87,7 @@ void PolicyDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_finalDiscountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FinalDiscount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_finalDiscount, allocator);

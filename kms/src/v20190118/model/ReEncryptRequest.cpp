@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Kms::V20190118::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReEncryptRequest::ReEncryptRequest() :
@@ -33,46 +32,46 @@ ReEncryptRequest::ReEncryptRequest() :
 
 string ReEncryptRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_ciphertextBlobHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CiphertextBlob";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ciphertextBlob.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ciphertextBlob.c_str(), allocator).Move(), allocator);
     }
 
     if (m_destinationKeyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DestinationKeyId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_destinationKeyId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_destinationKeyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sourceEncryptionContextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceEncryptionContext";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sourceEncryptionContext.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceEncryptionContext.c_str(), allocator).Move(), allocator);
     }
 
     if (m_destinationEncryptionContextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DestinationEncryptionContext";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_destinationEncryptionContext.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_destinationEncryptionContext.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

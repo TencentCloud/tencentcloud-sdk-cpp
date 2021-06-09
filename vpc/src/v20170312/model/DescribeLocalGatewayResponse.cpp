@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeLocalGatewayResponse::DescribeLocalGatewayResponse() :
@@ -32,7 +31,7 @@ DescribeLocalGatewayResponse::DescribeLocalGatewayResponse() :
 
 CoreInternalOutcome DescribeLocalGatewayResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeLocalGatewayResponse::Deserialize(const string &payl
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeLocalGatewayResponse::Deserialize(const string &payl
         if (!rsp["LocalGatewaySet"].IsArray())
             return CoreInternalOutcome(Error("response `LocalGatewaySet` is not array type"));
 
-        const Value &tmpValue = rsp["LocalGatewaySet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["LocalGatewaySet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LocalGateway item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

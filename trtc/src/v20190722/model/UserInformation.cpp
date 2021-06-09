@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 UserInformation::UserInformation() :
@@ -33,7 +32,7 @@ UserInformation::UserInformation() :
 {
 }
 
-CoreInternalOutcome UserInformation::Deserialize(const Value &value)
+CoreInternalOutcome UserInformation::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,28 +121,28 @@ CoreInternalOutcome UserInformation::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UserInformation::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UserInformation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_roomStrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoomStr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_roomStr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roomStr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_joinTsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JoinTs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_joinTs, allocator);
@@ -151,7 +150,7 @@ void UserInformation::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_leaveTsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LeaveTs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_leaveTs, allocator);
@@ -159,31 +158,31 @@ void UserInformation::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_deviceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sdkVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdkVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sdkVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sdkVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clientIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_finishedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Finished";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_finished, allocator);

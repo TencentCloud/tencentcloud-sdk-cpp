@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tem::V20201221::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeRunPodPage::DescribeRunPodPage() :
@@ -30,7 +29,7 @@ DescribeRunPodPage::DescribeRunPodPage() :
 {
 }
 
-CoreInternalOutcome DescribeRunPodPage::Deserialize(const Value &value)
+CoreInternalOutcome DescribeRunPodPage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -80,8 +79,8 @@ CoreInternalOutcome DescribeRunPodPage::Deserialize(const Value &value)
         if (!value["PodList"].IsArray())
             return CoreInternalOutcome(Error("response `DescribeRunPodPage.PodList` is not array type"));
 
-        const Value &tmpValue = value["PodList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PodList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RunVersionPod item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -99,12 +98,12 @@ CoreInternalOutcome DescribeRunPodPage::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DescribeRunPodPage::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribeRunPodPage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_offsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offset, allocator);
@@ -112,7 +111,7 @@ void DescribeRunPodPage::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_limitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_limit, allocator);
@@ -120,7 +119,7 @@ void DescribeRunPodPage::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -128,23 +127,23 @@ void DescribeRunPodPage::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_requestIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RequestId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_requestId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_podListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PodList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_podList.begin(); itr != m_podList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeSampleSnapshotTemplatesResponse::DescribeSampleSnapshotTemplatesResponse() :
@@ -32,7 +31,7 @@ DescribeSampleSnapshotTemplatesResponse::DescribeSampleSnapshotTemplatesResponse
 
 CoreInternalOutcome DescribeSampleSnapshotTemplatesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeSampleSnapshotTemplatesResponse::Deserialize(const s
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeSampleSnapshotTemplatesResponse::Deserialize(const s
         if (!rsp["SampleSnapshotTemplateSet"].IsArray())
             return CoreInternalOutcome(Error("response `SampleSnapshotTemplateSet` is not array type"));
 
-        const Value &tmpValue = rsp["SampleSnapshotTemplateSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SampleSnapshotTemplateSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SampleSnapshotTemplate item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

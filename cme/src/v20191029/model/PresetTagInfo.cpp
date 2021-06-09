@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 PresetTagInfo::PresetTagInfo() :
@@ -28,7 +27,7 @@ PresetTagInfo::PresetTagInfo() :
 {
 }
 
-CoreInternalOutcome PresetTagInfo::Deserialize(const Value &value)
+CoreInternalOutcome PresetTagInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome PresetTagInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PresetTagInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PresetTagInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parentTagIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParentTagId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_parentTagId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentTagId.c_str(), allocator).Move(), allocator);
     }
 
 }

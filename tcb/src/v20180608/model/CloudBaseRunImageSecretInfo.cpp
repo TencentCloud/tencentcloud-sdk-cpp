@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloudBaseRunImageSecretInfo::CloudBaseRunImageSecretInfo() :
@@ -29,7 +28,7 @@ CloudBaseRunImageSecretInfo::CloudBaseRunImageSecretInfo() :
 {
 }
 
-CoreInternalOutcome CloudBaseRunImageSecretInfo::Deserialize(const Value &value)
+CoreInternalOutcome CloudBaseRunImageSecretInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome CloudBaseRunImageSecretInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CloudBaseRunImageSecretInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloudBaseRunImageSecretInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_registryServerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegistryServer";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_registryServer.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registryServer.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_passwordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_password.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
     }
 
     if (m_emailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Email";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_email.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_email.c_str(), allocator).Move(), allocator);
     }
 
 }

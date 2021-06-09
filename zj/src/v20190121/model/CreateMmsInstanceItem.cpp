@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateMmsInstanceItem::CreateMmsInstanceItem() :
@@ -27,7 +26,7 @@ CreateMmsInstanceItem::CreateMmsInstanceItem() :
 {
 }
 
-CoreInternalOutcome CreateMmsInstanceItem::Deserialize(const Value &value)
+CoreInternalOutcome CreateMmsInstanceItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome CreateMmsInstanceItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CreateMmsInstanceItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CreateMmsInstanceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_contentTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContentType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_contentType, allocator);
@@ -69,10 +68,10 @@ void CreateMmsInstanceItem::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_contentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_content.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
     }
 
 }

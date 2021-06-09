@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmlb::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeTrafficMirrorReceiverHealthStatusResponse::DescribeTrafficMirrorReceiverHealthStatusResponse() :
@@ -31,7 +30,7 @@ DescribeTrafficMirrorReceiverHealthStatusResponse::DescribeTrafficMirrorReceiver
 
 CoreInternalOutcome DescribeTrafficMirrorReceiverHealthStatusResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeTrafficMirrorReceiverHealthStatusResponse::Deseriali
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeTrafficMirrorReceiverHealthStatusResponse::Deseriali
         if (!rsp["ReceiversStatusSet"].IsArray())
             return CoreInternalOutcome(Error("response `ReceiversStatusSet` is not array type"));
 
-        const Value &tmpValue = rsp["ReceiversStatusSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ReceiversStatusSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TrafficMirrorReciversStatus item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

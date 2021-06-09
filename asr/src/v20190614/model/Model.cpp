@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Asr::V20190614::Model;
-using namespace rapidjson;
 using namespace std;
 
 Model::Model() :
@@ -33,7 +32,7 @@ Model::Model() :
 {
 }
 
-CoreInternalOutcome Model::Deserialize(const Value &value)
+CoreInternalOutcome Model::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -113,8 +112,8 @@ CoreInternalOutcome Model::Deserialize(const Value &value)
         if (!value["TagInfos"].IsArray())
             return CoreInternalOutcome(Error("response `Model.TagInfos` is not array type"));
 
-        const Value &tmpValue = value["TagInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TagInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_tagInfos.push_back((*itr).GetString());
         }
@@ -125,52 +124,52 @@ CoreInternalOutcome Model::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Model::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Model::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_modelNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modelName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dictNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DictName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dictName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dictName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modelIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modelId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modelTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modelType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serviceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modelStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modelState, allocator);
@@ -178,22 +177,22 @@ void Model::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_atUpdatedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AtUpdated";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_atUpdated.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_atUpdated.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagInfosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagInfos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_tagInfos.begin(); itr != m_tagInfos.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

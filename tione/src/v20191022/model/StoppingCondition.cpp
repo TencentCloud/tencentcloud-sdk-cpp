@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 StoppingCondition::StoppingCondition() :
@@ -27,7 +26,7 @@ StoppingCondition::StoppingCondition() :
 {
 }
 
-CoreInternalOutcome StoppingCondition::Deserialize(const Value &value)
+CoreInternalOutcome StoppingCondition::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome StoppingCondition::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StoppingCondition::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StoppingCondition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_maxRuntimeInSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxRuntimeInSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxRuntimeInSeconds, allocator);
@@ -69,7 +68,7 @@ void StoppingCondition::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_maxWaitTimeInSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxWaitTimeInSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxWaitTimeInSeconds, allocator);

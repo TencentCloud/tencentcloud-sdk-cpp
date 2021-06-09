@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcaplusdb::V20190823::Model;
-using namespace rapidjson;
 using namespace std;
 
 PoolInfo::PoolInfo() :
@@ -30,7 +29,7 @@ PoolInfo::PoolInfo() :
 {
 }
 
-CoreInternalOutcome PoolInfo::Deserialize(const Value &value)
+CoreInternalOutcome PoolInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,8 +69,8 @@ CoreInternalOutcome PoolInfo::Deserialize(const Value &value)
         if (!value["ServerList"].IsArray())
             return CoreInternalOutcome(Error("response `PoolInfo.ServerList` is not array type"));
 
-        const Value &tmpValue = value["ServerList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ServerList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ServerMachineInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -90,8 +89,8 @@ CoreInternalOutcome PoolInfo::Deserialize(const Value &value)
         if (!value["ProxyList"].IsArray())
             return CoreInternalOutcome(Error("response `PoolInfo.ProxyList` is not array type"));
 
-        const Value &tmpValue = value["ProxyList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ProxyList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ProxyMachineInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -109,12 +108,12 @@ CoreInternalOutcome PoolInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PoolInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PoolInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_poolUidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PoolUid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_poolUid, allocator);
@@ -122,7 +121,7 @@ void PoolInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_ipv6EnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ipv6Enable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ipv6Enable, allocator);
@@ -130,7 +129,7 @@ void PoolInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_availableAppCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvailableAppCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_availableAppCount, allocator);
@@ -138,30 +137,30 @@ void PoolInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_serverListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_serverList.begin(); itr != m_serverList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_proxyListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProxyList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_proxyList.begin(); itr != m_proxyList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

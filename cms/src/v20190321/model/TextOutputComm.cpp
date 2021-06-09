@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 TextOutputComm::TextOutputComm() :
@@ -29,7 +28,7 @@ TextOutputComm::TextOutputComm() :
 {
 }
 
-CoreInternalOutcome TextOutputComm::Deserialize(const Value &value)
+CoreInternalOutcome TextOutputComm::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome TextOutputComm::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TextOutputComm::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TextOutputComm::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_appIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appID, allocator);
@@ -91,7 +90,7 @@ void TextOutputComm::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_bUCtrlIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BUCtrlID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bUCtrlID, allocator);
@@ -99,7 +98,7 @@ void TextOutputComm::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_sendTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SendTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sendTime, allocator);
@@ -107,7 +106,7 @@ void TextOutputComm::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_uinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_uin, allocator);

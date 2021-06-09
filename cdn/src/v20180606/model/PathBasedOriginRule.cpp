@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 PathBasedOriginRule::PathBasedOriginRule() :
@@ -28,7 +27,7 @@ PathBasedOriginRule::PathBasedOriginRule() :
 {
 }
 
-CoreInternalOutcome PathBasedOriginRule::Deserialize(const Value &value)
+CoreInternalOutcome PathBasedOriginRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome PathBasedOriginRule::Deserialize(const Value &value)
         if (!value["RulePaths"].IsArray())
             return CoreInternalOutcome(Error("response `PathBasedOriginRule.RulePaths` is not array type"));
 
-        const Value &tmpValue = value["RulePaths"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RulePaths"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_rulePaths.push_back((*itr).GetString());
         }
@@ -61,8 +60,8 @@ CoreInternalOutcome PathBasedOriginRule::Deserialize(const Value &value)
         if (!value["Origin"].IsArray())
             return CoreInternalOutcome(Error("response `PathBasedOriginRule.Origin` is not array type"));
 
-        const Value &tmpValue = value["Origin"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Origin"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_origin.push_back((*itr).GetString());
         }
@@ -73,40 +72,40 @@ CoreInternalOutcome PathBasedOriginRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PathBasedOriginRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PathBasedOriginRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ruleTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ruleType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rulePathsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RulePaths";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_rulePaths.begin(); itr != m_rulePaths.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_originHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Origin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_origin.begin(); itr != m_origin.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

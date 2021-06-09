@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
-using namespace rapidjson;
 using namespace std;
 
 ServerConfiguration::ServerConfiguration() :
@@ -29,7 +28,7 @@ ServerConfiguration::ServerConfiguration() :
 {
 }
 
-CoreInternalOutcome ServerConfiguration::Deserialize(const Value &value)
+CoreInternalOutcome ServerConfiguration::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome ServerConfiguration::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ServerConfiguration::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ServerConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_hostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Host";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_host.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_host.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
@@ -99,18 +98,18 @@ void ServerConfiguration::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_serialHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Serial";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serial.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serial.c_str(), allocator).Move(), allocator);
     }
 
     if (m_realmHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Realm";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realm.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realm.c_str(), allocator).Move(), allocator);
     }
 
 }

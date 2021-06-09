@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 WatermarkInfo::WatermarkInfo() :
@@ -34,7 +33,7 @@ WatermarkInfo::WatermarkInfo() :
 {
 }
 
-CoreInternalOutcome WatermarkInfo::Deserialize(const Value &value)
+CoreInternalOutcome WatermarkInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome WatermarkInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WatermarkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WatermarkInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_watermarkIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WatermarkId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_watermarkId, allocator);
@@ -146,15 +145,15 @@ void WatermarkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_pictureUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PictureUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pictureUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pictureUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_xPositionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "XPosition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_xPosition, allocator);
@@ -162,7 +161,7 @@ void WatermarkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_yPositionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "YPosition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_yPosition, allocator);
@@ -170,15 +169,15 @@ void WatermarkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_watermarkNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WatermarkName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_watermarkName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_watermarkName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -186,15 +185,15 @@ void WatermarkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -202,7 +201,7 @@ void WatermarkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);

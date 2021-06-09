@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 SwitcherProjectInput::SwitcherProjectInput() :
@@ -27,7 +26,7 @@ SwitcherProjectInput::SwitcherProjectInput() :
 {
 }
 
-CoreInternalOutcome SwitcherProjectInput::Deserialize(const Value &value)
+CoreInternalOutcome SwitcherProjectInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome SwitcherProjectInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SwitcherProjectInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SwitcherProjectInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_stopTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StopTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stopTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stopTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pgmOutputConfigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PgmOutputConfig";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_pgmOutputConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 

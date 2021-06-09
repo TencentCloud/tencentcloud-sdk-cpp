@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 EffectiveMachineInfo::EffectiveMachineInfo() :
@@ -31,7 +30,7 @@ EffectiveMachineInfo::EffectiveMachineInfo() :
 {
 }
 
-CoreInternalOutcome EffectiveMachineInfo::Deserialize(const Value &value)
+CoreInternalOutcome EffectiveMachineInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -71,8 +70,8 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const Value &value)
         if (!value["MachineTag"].IsArray())
             return CoreInternalOutcome(Error("response `EffectiveMachineInfo.MachineTag` is not array type"));
 
-        const Value &tmpValue = value["MachineTag"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MachineTag"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MachineTag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,62 +109,62 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EffectiveMachineInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EffectiveMachineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_machineNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_machineName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_machinePublicIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachinePublicIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_machinePublicIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machinePublicIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_machinePrivateIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachinePrivateIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_machinePrivateIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machinePrivateIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_machineTagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineTag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_machineTag.begin(); itr != m_machineTag.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_quuidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_quuid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_uuidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
 }

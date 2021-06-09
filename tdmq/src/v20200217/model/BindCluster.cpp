@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tdmq::V20200217::Model;
-using namespace rapidjson;
 using namespace std;
 
 BindCluster::BindCluster() :
@@ -26,7 +25,7 @@ BindCluster::BindCluster() :
 {
 }
 
-CoreInternalOutcome BindCluster::Deserialize(const Value &value)
+CoreInternalOutcome BindCluster::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome BindCluster::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BindCluster::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BindCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_clusterNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
     }
 
 }

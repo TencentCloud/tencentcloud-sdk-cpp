@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecdn::V20191012::Model;
-using namespace rapidjson;
 using namespace std;
 
 WebSocket::WebSocket() :
@@ -27,7 +26,7 @@ WebSocket::WebSocket() :
 {
 }
 
-CoreInternalOutcome WebSocket::Deserialize(const Value &value)
+CoreInternalOutcome WebSocket::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome WebSocket::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WebSocket::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WebSocket::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Timeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeout, allocator);

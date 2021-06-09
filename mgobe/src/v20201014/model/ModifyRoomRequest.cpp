@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Mgobe::V20201014::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyRoomRequest::ModifyRoomRequest() :
@@ -40,67 +39,67 @@ ModifyRoomRequest::ModifyRoomRequest() :
 
 string ModifyRoomRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_gameIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_gameId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gameId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roomIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoomId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_roomId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roomId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_playerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlayerId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_playerId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_playerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_changeRoomOptionListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChangeRoomOptionList";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_changeRoomOptionList.begin(); itr != m_changeRoomOptionList.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_roomNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoomName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_roomName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roomName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ownerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Owner";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_owner.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isViewedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsViewed";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isViewed, allocator);
@@ -108,7 +107,7 @@ string ModifyRoomRequest::ToJsonString() const
 
     if (m_isInvitedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsInvited";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isInvited, allocator);
@@ -116,7 +115,7 @@ string ModifyRoomRequest::ToJsonString() const
 
     if (m_isPrivateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsPrivate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isPrivate, allocator);
@@ -124,23 +123,23 @@ string ModifyRoomRequest::ToJsonString() const
 
     if (m_customPropertiesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomProperties";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_customProperties.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customProperties.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isForbidJoinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsForbidJoin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isForbidJoin, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

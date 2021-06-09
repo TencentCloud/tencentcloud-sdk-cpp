@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 UpdateNotebookInstanceRequest::UpdateNotebookInstanceRequest() :
@@ -44,38 +43,38 @@ UpdateNotebookInstanceRequest::UpdateNotebookInstanceRequest() :
 
 string UpdateNotebookInstanceRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_notebookInstanceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NotebookInstanceName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_notebookInstanceName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_notebookInstanceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roleArnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoleArn";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_roleArn.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roleArn.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rootAccessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RootAccess";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_rootAccess.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rootAccess.c_str(), allocator).Move(), allocator);
     }
 
     if (m_volumeSizeInGBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VolumeSizeInGB";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_volumeSizeInGB, allocator);
@@ -83,23 +82,23 @@ string UpdateNotebookInstanceRequest::ToJsonString() const
 
     if (m_instanceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lifecycleScriptsNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifecycleScriptsName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_lifecycleScriptsName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lifecycleScriptsName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_disassociateLifecycleScriptHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisassociateLifecycleScript";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disassociateLifecycleScript, allocator);
@@ -107,28 +106,28 @@ string UpdateNotebookInstanceRequest::ToJsonString() const
 
     if (m_defaultCodeRepositoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultCodeRepository";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_defaultCodeRepository.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_defaultCodeRepository.c_str(), allocator).Move(), allocator);
     }
 
     if (m_additionalCodeRepositoriesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AdditionalCodeRepositories";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_additionalCodeRepositories.begin(); itr != m_additionalCodeRepositories.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_disassociateDefaultCodeRepositoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisassociateDefaultCodeRepository";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disassociateDefaultCodeRepository, allocator);
@@ -136,7 +135,7 @@ string UpdateNotebookInstanceRequest::ToJsonString() const
 
     if (m_disassociateAdditionalCodeRepositoriesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisassociateAdditionalCodeRepositories";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disassociateAdditionalCodeRepositories, allocator);
@@ -144,41 +143,41 @@ string UpdateNotebookInstanceRequest::ToJsonString() const
 
     if (m_clsAccessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClsAccess";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_clsAccess.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clsAccess.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoStoppingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoStopping";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_autoStopping.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoStopping.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stoppingConditionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StoppingCondition";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_stoppingCondition.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_clsConfigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClsConfig";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clsConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

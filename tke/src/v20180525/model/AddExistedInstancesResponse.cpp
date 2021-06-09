@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 AddExistedInstancesResponse::AddExistedInstancesResponse() :
@@ -34,7 +33,7 @@ AddExistedInstancesResponse::AddExistedInstancesResponse() :
 
 CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -44,7 +43,7 @@ CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &paylo
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -71,8 +70,8 @@ CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &paylo
         if (!rsp["FailedInstanceIds"].IsArray())
             return CoreInternalOutcome(Error("response `FailedInstanceIds` is not array type"));
 
-        const Value &tmpValue = rsp["FailedInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["FailedInstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_failedInstanceIds.push_back((*itr).GetString());
         }
@@ -84,8 +83,8 @@ CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &paylo
         if (!rsp["SuccInstanceIds"].IsArray())
             return CoreInternalOutcome(Error("response `SuccInstanceIds` is not array type"));
 
-        const Value &tmpValue = rsp["SuccInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SuccInstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_succInstanceIds.push_back((*itr).GetString());
         }
@@ -97,8 +96,8 @@ CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &paylo
         if (!rsp["TimeoutInstanceIds"].IsArray())
             return CoreInternalOutcome(Error("response `TimeoutInstanceIds` is not array type"));
 
-        const Value &tmpValue = rsp["TimeoutInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["TimeoutInstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_timeoutInstanceIds.push_back((*itr).GetString());
         }
@@ -110,8 +109,8 @@ CoreInternalOutcome AddExistedInstancesResponse::Deserialize(const string &paylo
         if (!rsp["FailedReasons"].IsArray())
             return CoreInternalOutcome(Error("response `FailedReasons` is not array type"));
 
-        const Value &tmpValue = rsp["FailedReasons"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["FailedReasons"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_failedReasons.push_back((*itr).GetString());
         }

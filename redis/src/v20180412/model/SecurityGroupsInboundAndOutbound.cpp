@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 SecurityGroupsInboundAndOutbound::SecurityGroupsInboundAndOutbound() :
@@ -29,7 +28,7 @@ SecurityGroupsInboundAndOutbound::SecurityGroupsInboundAndOutbound() :
 {
 }
 
-CoreInternalOutcome SecurityGroupsInboundAndOutbound::Deserialize(const Value &value)
+CoreInternalOutcome SecurityGroupsInboundAndOutbound::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome SecurityGroupsInboundAndOutbound::Deserialize(const Value &v
     return CoreInternalOutcome(true);
 }
 
-void SecurityGroupsInboundAndOutbound::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SecurityGroupsInboundAndOutbound::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_actionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Action";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_action.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_port.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_port.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Proto";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_proto.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proto.c_str(), allocator).Move(), allocator);
     }
 
 }

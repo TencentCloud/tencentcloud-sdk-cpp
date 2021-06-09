@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 MonitorTypeNamespace::MonitorTypeNamespace() :
@@ -27,7 +26,7 @@ MonitorTypeNamespace::MonitorTypeNamespace() :
 {
 }
 
-CoreInternalOutcome MonitorTypeNamespace::Deserialize(const Value &value)
+CoreInternalOutcome MonitorTypeNamespace::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome MonitorTypeNamespace::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MonitorTypeNamespace::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MonitorTypeNamespace::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_monitorTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MonitorType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_monitorType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_monitorType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_namespaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
 }

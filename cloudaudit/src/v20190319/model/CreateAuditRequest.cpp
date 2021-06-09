@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cloudaudit::V20190319::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateAuditRequest::CreateAuditRequest() :
@@ -42,14 +41,14 @@ CreateAuditRequest::CreateAuditRequest() :
 
 string CreateAuditRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_isEnableCmqNotifyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsEnableCmqNotify";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isEnableCmqNotify, allocator);
@@ -57,7 +56,7 @@ string CreateAuditRequest::ToJsonString() const
 
     if (m_readWriteAttributeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadWriteAttribute";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_readWriteAttribute, allocator);
@@ -65,23 +64,23 @@ string CreateAuditRequest::ToJsonString() const
 
     if (m_auditNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuditName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_auditName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_auditName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosRegion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cosRegion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cosRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isCreateNewBucketHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsCreateNewBucket";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isCreateNewBucket, allocator);
@@ -89,39 +88,39 @@ string CreateAuditRequest::ToJsonString() const
 
     if (m_cosBucketNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosBucketName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cosBucketName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cosBucketName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_keyId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cmqQueueNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CmqQueueName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cmqQueueName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cmqQueueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_kmsRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KmsRegion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_kmsRegion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kmsRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isEnableKmsEncryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsEnableKmsEncry";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isEnableKmsEncry, allocator);
@@ -129,31 +128,31 @@ string CreateAuditRequest::ToJsonString() const
 
     if (m_cmqRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CmqRegion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_cmqRegion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cmqRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_logFilePrefixHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogFilePrefix";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_logFilePrefix.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logFilePrefix.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isCreateNewQueueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsCreateNewQueue";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isCreateNewQueue, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

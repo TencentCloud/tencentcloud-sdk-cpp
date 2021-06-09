@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 BandwidthPackageBillBandwidth::BandwidthPackageBillBandwidth() :
@@ -26,7 +25,7 @@ BandwidthPackageBillBandwidth::BandwidthPackageBillBandwidth() :
 {
 }
 
-CoreInternalOutcome BandwidthPackageBillBandwidth::Deserialize(const Value &value)
+CoreInternalOutcome BandwidthPackageBillBandwidth::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome BandwidthPackageBillBandwidth::Deserialize(const Value &valu
     return CoreInternalOutcome(true);
 }
 
-void BandwidthPackageBillBandwidth::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BandwidthPackageBillBandwidth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bandwidthUsageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BandwidthUsage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidthUsage, allocator);

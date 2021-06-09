@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ape::V20200513::Model;
-using namespace rapidjson;
 using namespace std;
 
 BatchDescribeOrderImageResponse::BatchDescribeOrderImageResponse() :
@@ -31,7 +30,7 @@ BatchDescribeOrderImageResponse::BatchDescribeOrderImageResponse() :
 
 CoreInternalOutcome BatchDescribeOrderImageResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome BatchDescribeOrderImageResponse::Deserialize(const string &p
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome BatchDescribeOrderImageResponse::Deserialize(const string &p
         if (!rsp["ImageUrls"].IsArray())
             return CoreInternalOutcome(Error("response `ImageUrls` is not array type"));
 
-        const Value &tmpValue = rsp["ImageUrls"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ImageUrls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_imageUrls.push_back((*itr).GetString());
         }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Rce::V20201103::Model;
-using namespace rapidjson;
 using namespace std;
 
 WeChatAccountInfo::WeChatAccountInfo() :
@@ -32,7 +31,7 @@ WeChatAccountInfo::WeChatAccountInfo() :
 {
 }
 
-CoreInternalOutcome WeChatAccountInfo::Deserialize(const Value &value)
+CoreInternalOutcome WeChatAccountInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,20 +110,20 @@ CoreInternalOutcome WeChatAccountInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WeChatAccountInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WeChatAccountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_weChatOpenIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WeChatOpenId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_weChatOpenId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_weChatOpenId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_weChatSubTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WeChatSubType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_weChatSubType, allocator);
@@ -132,42 +131,42 @@ void WeChatAccountInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_randStrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RandStr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_randStr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_randStr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_weChatAccessTokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WeChatAccessToken";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_weChatAccessToken.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_weChatAccessToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_associateAccountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AssociateAccount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_associateAccount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_associateAccount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mobilePhoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MobilePhone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mobilePhone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mobilePhone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
     }
 
 }

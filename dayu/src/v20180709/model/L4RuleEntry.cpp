@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 L4RuleEntry::L4RuleEntry() :
@@ -36,7 +35,7 @@ L4RuleEntry::L4RuleEntry() :
 {
 }
 
-CoreInternalOutcome L4RuleEntry::Deserialize(const Value &value)
+CoreInternalOutcome L4RuleEntry::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -96,8 +95,8 @@ CoreInternalOutcome L4RuleEntry::Deserialize(const Value &value)
         if (!value["SourceList"].IsArray())
             return CoreInternalOutcome(Error("response `L4RuleEntry.SourceList` is not array type"));
 
-        const Value &tmpValue = value["SourceList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SourceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             L4RuleSource item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -165,20 +164,20 @@ CoreInternalOutcome L4RuleEntry::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void L4RuleEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void L4RuleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_virtualPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VirtualPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_virtualPort, allocator);
@@ -186,7 +185,7 @@ void L4RuleEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_sourcePortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourcePort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sourcePort, allocator);
@@ -194,7 +193,7 @@ void L4RuleEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_sourceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sourceType, allocator);
@@ -202,7 +201,7 @@ void L4RuleEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_keepTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeepTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_keepTime, allocator);
@@ -210,22 +209,22 @@ void L4RuleEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_sourceListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_sourceList.begin(); itr != m_sourceList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_lbTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LbType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lbType, allocator);
@@ -233,7 +232,7 @@ void L4RuleEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_keepEnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeepEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_keepEnable, allocator);
@@ -241,23 +240,23 @@ void L4RuleEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_ruleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ruleId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ruleName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_removeSwitchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RemoveSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_removeSwitch, allocator);

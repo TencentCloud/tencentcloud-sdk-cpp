@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sslpod::V20190605::Model;
-using namespace rapidjson;
 using namespace std;
 
 LimitInfo::LimitInfo() :
@@ -28,7 +27,7 @@ LimitInfo::LimitInfo() :
 {
 }
 
-CoreInternalOutcome LimitInfo::Deserialize(const Value &value)
+CoreInternalOutcome LimitInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome LimitInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LimitInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LimitInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Total";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_total, allocator);
@@ -88,7 +87,7 @@ void LimitInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_sentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sent, allocator);

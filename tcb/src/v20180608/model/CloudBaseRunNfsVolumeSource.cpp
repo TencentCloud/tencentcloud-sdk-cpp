@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloudBaseRunNfsVolumeSource::CloudBaseRunNfsVolumeSource() :
@@ -30,7 +29,7 @@ CloudBaseRunNfsVolumeSource::CloudBaseRunNfsVolumeSource() :
 {
 }
 
-CoreInternalOutcome CloudBaseRunNfsVolumeSource::Deserialize(const Value &value)
+CoreInternalOutcome CloudBaseRunNfsVolumeSource::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome CloudBaseRunNfsVolumeSource::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CloudBaseRunNfsVolumeSource::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloudBaseRunNfsVolumeSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_serverHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Server";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_server.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_server.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_path.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_readOnly, allocator);
@@ -118,15 +117,15 @@ void CloudBaseRunNfsVolumeSource::ToJsonObject(Value &value, Document::Allocator
 
     if (m_secretNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecretName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secretName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableEmptyDirVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableEmptyDirVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableEmptyDirVolume, allocator);

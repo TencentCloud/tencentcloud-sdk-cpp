@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ccc::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 IMCdrInfo::IMCdrInfo() :
@@ -32,7 +31,7 @@ IMCdrInfo::IMCdrInfo() :
 {
 }
 
-CoreInternalOutcome IMCdrInfo::Deserialize(const Value &value)
+CoreInternalOutcome IMCdrInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,20 +110,20 @@ CoreInternalOutcome IMCdrInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IMCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IMCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -132,7 +131,7 @@ void IMCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_endStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endStatus, allocator);
@@ -140,15 +139,15 @@ void IMCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_nicknameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Nickname";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nickname.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nickname.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -156,15 +155,15 @@ void IMCdrInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_staffIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StaffId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_staffId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_staffId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Timestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timestamp, allocator);

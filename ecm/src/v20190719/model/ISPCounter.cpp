@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 ISPCounter::ISPCounter() :
@@ -29,7 +28,7 @@ ISPCounter::ISPCounter() :
 {
 }
 
-CoreInternalOutcome ISPCounter::Deserialize(const Value &value)
+CoreInternalOutcome ISPCounter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome ISPCounter::Deserialize(const Value &value)
         if (!value["ZoneInstanceInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `ISPCounter.ZoneInstanceInfoSet` is not array type"));
 
-        const Value &tmpValue = value["ZoneInstanceInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ZoneInstanceInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ZoneInstanceInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,20 +87,20 @@ CoreInternalOutcome ISPCounter::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ISPCounter::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ISPCounter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_providerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProviderName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_providerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_providerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_providerNodeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProviderNodeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_providerNodeNum, allocator);
@@ -109,7 +108,7 @@ void ISPCounter::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_provederInstanceNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProvederInstanceNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_provederInstanceNum, allocator);
@@ -117,15 +116,15 @@ void ISPCounter::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_zoneInstanceInfoSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneInstanceInfoSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_zoneInstanceInfoSet.begin(); itr != m_zoneInstanceInfoSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

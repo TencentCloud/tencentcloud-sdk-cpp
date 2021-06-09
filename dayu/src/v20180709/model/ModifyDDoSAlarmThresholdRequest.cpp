@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyDDoSAlarmThresholdRequest::ModifyDDoSAlarmThresholdRequest() :
@@ -34,30 +33,30 @@ ModifyDDoSAlarmThresholdRequest::ModifyDDoSAlarmThresholdRequest() :
 
 string ModifyDDoSAlarmThresholdRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_businessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Business";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_business.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rsIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RsId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_rsId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rsId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_alarmTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlarmType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_alarmType, allocator);
@@ -65,7 +64,7 @@ string ModifyDDoSAlarmThresholdRequest::ToJsonString() const
 
     if (m_alarmThresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlarmThreshold";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_alarmThreshold, allocator);
@@ -73,20 +72,20 @@ string ModifyDDoSAlarmThresholdRequest::ToJsonString() const
 
     if (m_ipListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpList";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_ipList.begin(); itr != m_ipList.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

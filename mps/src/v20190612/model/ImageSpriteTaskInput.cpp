@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageSpriteTaskInput::ImageSpriteTaskInput() :
@@ -30,7 +29,7 @@ ImageSpriteTaskInput::ImageSpriteTaskInput() :
 {
 }
 
-CoreInternalOutcome ImageSpriteTaskInput::Deserialize(const Value &value)
+CoreInternalOutcome ImageSpriteTaskInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -103,12 +102,12 @@ CoreInternalOutcome ImageSpriteTaskInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageSpriteTaskInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageSpriteTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_definitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
@@ -116,35 +115,35 @@ void ImageSpriteTaskInput::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_outputStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputStorage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_outputStorage.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_outputObjectPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputObjectPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outputObjectPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputObjectPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_webVttObjectNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WebVttObjectName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_webVttObjectName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webVttObjectName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_objectNumberFormatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ObjectNumberFormat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_objectNumberFormat.ToJsonObject(value[key.c_str()], allocator);
     }
 

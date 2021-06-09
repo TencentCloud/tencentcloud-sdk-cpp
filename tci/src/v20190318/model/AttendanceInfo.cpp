@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 AttendanceInfo::AttendanceInfo() :
@@ -27,7 +26,7 @@ AttendanceInfo::AttendanceInfo() :
 {
 }
 
-CoreInternalOutcome AttendanceInfo::Deserialize(const Value &value)
+CoreInternalOutcome AttendanceInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,24 +62,24 @@ CoreInternalOutcome AttendanceInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AttendanceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AttendanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_faceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Face";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_face.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_personIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personId.c_str(), allocator).Move(), allocator);
     }
 
 }

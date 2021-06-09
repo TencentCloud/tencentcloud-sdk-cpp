@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Asr::V20190614::Model;
-using namespace rapidjson;
 using namespace std;
 
 SentenceWords::SentenceWords() :
@@ -28,7 +27,7 @@ SentenceWords::SentenceWords() :
 {
 }
 
-CoreInternalOutcome SentenceWords::Deserialize(const Value &value)
+CoreInternalOutcome SentenceWords::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome SentenceWords::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SentenceWords::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SentenceWords::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_wordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Word";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_word.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_word.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetStartMsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OffsetStartMs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offsetStartMs, allocator);
@@ -88,7 +87,7 @@ void SentenceWords::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_offsetEndMsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OffsetEndMs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offsetEndMs, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 CameraZones::CameraZones() :
@@ -33,7 +32,7 @@ CameraZones::CameraZones() :
 {
 }
 
-CoreInternalOutcome CameraZones::Deserialize(const Value &value)
+CoreInternalOutcome CameraZones::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -93,8 +92,8 @@ CoreInternalOutcome CameraZones::Deserialize(const Value &value)
         if (!value["Zones"].IsArray())
             return CoreInternalOutcome(Error("response `CameraZones.Zones` is not array type"));
 
-        const Value &tmpValue = value["Zones"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Zones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             BunkZone item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -132,12 +131,12 @@ CoreInternalOutcome CameraZones::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CameraZones::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CameraZones::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cameraIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cameraId, allocator);
@@ -145,15 +144,15 @@ void CameraZones::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_cameraNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cameraName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cameraName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cameraFeatureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraFeature";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cameraFeature, allocator);
@@ -161,15 +160,15 @@ void CameraZones::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_cameraIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cameraIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cameraIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cameraStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cameraState, allocator);
@@ -177,33 +176,33 @@ void CameraZones::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_zonesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zones";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_pixelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pixel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pixel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pixel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rTSPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RTSP";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rTSP.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rTSP.c_str(), allocator).Move(), allocator);
     }
 
 }

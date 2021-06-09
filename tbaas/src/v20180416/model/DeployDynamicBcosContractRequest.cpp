@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tbaas::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeployDynamicBcosContractRequest::DeployDynamicBcosContractRequest() :
@@ -35,22 +34,22 @@ DeployDynamicBcosContractRequest::DeployDynamicBcosContractRequest() :
 
 string DeployDynamicBcosContractRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_clusterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_groupId, allocator);
@@ -58,39 +57,39 @@ string DeployDynamicBcosContractRequest::ToJsonString() const
 
     if (m_abiInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AbiInfo";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_abiInfo.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_abiInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_byteCodeBinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ByteCodeBin";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_byteCodeBin.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_byteCodeBin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signUserIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignUserId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_signUserId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_signUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_constructorParamsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConstructorParams";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_constructorParams.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_constructorParams.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

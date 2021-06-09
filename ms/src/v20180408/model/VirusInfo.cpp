@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 VirusInfo::VirusInfo() :
@@ -28,7 +27,7 @@ VirusInfo::VirusInfo() :
 {
 }
 
-CoreInternalOutcome VirusInfo::Deserialize(const Value &value)
+CoreInternalOutcome VirusInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome VirusInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VirusInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VirusInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_safeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SafeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_safeType, allocator);
@@ -80,18 +79,18 @@ void VirusInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_virusNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VirusName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_virusName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_virusName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_virusDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VirusDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_virusDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_virusDesc.c_str(), allocator).Move(), allocator);
     }
 
 }

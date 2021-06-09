@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gpm::V20200820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReportOverviewData::ReportOverviewData() :
@@ -30,7 +29,7 @@ ReportOverviewData::ReportOverviewData() :
 {
 }
 
-CoreInternalOutcome ReportOverviewData::Deserialize(const Value &value)
+CoreInternalOutcome ReportOverviewData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome ReportOverviewData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReportOverviewData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReportOverviewData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalTimesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalTimes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_totalTimes.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_totalTimes.c_str(), allocator).Move(), allocator);
     }
 
     if (m_successPercentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuccessPercent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_successPercent, allocator);
@@ -110,7 +109,7 @@ void ReportOverviewData::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_timeoutPercentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeoutPercent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeoutPercent, allocator);
@@ -118,7 +117,7 @@ void ReportOverviewData::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_failPercentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FailPercent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failPercent, allocator);
@@ -126,7 +125,7 @@ void ReportOverviewData::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_averageSecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AverageSec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_averageSec, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 LaneInfo::LaneInfo() :
@@ -33,7 +32,7 @@ LaneInfo::LaneInfo() :
 {
 }
 
-CoreInternalOutcome LaneInfo::Deserialize(const Value &value)
+CoreInternalOutcome LaneInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -93,8 +92,8 @@ CoreInternalOutcome LaneInfo::Deserialize(const Value &value)
         if (!value["LaneGroupList"].IsArray())
             return CoreInternalOutcome(Error("response `LaneInfo.LaneGroupList` is not array type"));
 
-        const Value &tmpValue = value["LaneGroupList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["LaneGroupList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LaneGroup item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -123,8 +122,8 @@ CoreInternalOutcome LaneInfo::Deserialize(const Value &value)
         if (!value["NamespaceIdList"].IsArray())
             return CoreInternalOutcome(Error("response `LaneInfo.NamespaceIdList` is not array type"));
 
-        const Value &tmpValue = value["NamespaceIdList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["NamespaceIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_namespaceIdList.push_back((*itr).GetString());
         }
@@ -135,36 +134,36 @@ CoreInternalOutcome LaneInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LaneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LaneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_laneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LaneId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_laneId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_laneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_laneNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LaneName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_laneName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_laneName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_remarkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -172,7 +171,7 @@ void LaneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
@@ -180,22 +179,22 @@ void LaneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_laneGroupListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LaneGroupList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_laneGroupList.begin(); itr != m_laneGroupList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_entranceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Entrance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_entrance, allocator);
@@ -203,14 +202,14 @@ void LaneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_namespaceIdListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NamespaceIdList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_namespaceIdList.begin(); itr != m_namespaceIdList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

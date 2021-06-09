@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
-using namespace rapidjson;
 using namespace std;
 
 TimeTemplateItem::TimeTemplateItem() :
@@ -30,7 +29,7 @@ TimeTemplateItem::TimeTemplateItem() :
 {
 }
 
-CoreInternalOutcome TimeTemplateItem::Deserialize(const Value &value)
+CoreInternalOutcome TimeTemplateItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -80,8 +79,8 @@ CoreInternalOutcome TimeTemplateItem::Deserialize(const Value &value)
         if (!value["TimeTemplateSpecs"].IsArray())
             return CoreInternalOutcome(Error("response `TimeTemplateItem.TimeTemplateSpecs` is not array type"));
 
-        const Value &tmpValue = value["TimeTemplateSpecs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TimeTemplateSpecs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TimeTemplateSpec item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -99,28 +98,28 @@ CoreInternalOutcome TimeTemplateItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TimeTemplateItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TimeTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_templateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isAllWeekHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsAllWeek";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAllWeek, allocator);
@@ -128,7 +127,7 @@ void TimeTemplateItem::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -136,15 +135,15 @@ void TimeTemplateItem::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_timeTemplateSpecsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeTemplateSpecs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_timeTemplateSpecs.begin(); itr != m_timeTemplateSpecs.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

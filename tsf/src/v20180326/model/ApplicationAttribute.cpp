@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 ApplicationAttribute::ApplicationAttribute() :
@@ -28,7 +27,7 @@ ApplicationAttribute::ApplicationAttribute() :
 {
 }
 
-CoreInternalOutcome ApplicationAttribute::Deserialize(const Value &value)
+CoreInternalOutcome ApplicationAttribute::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome ApplicationAttribute::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ApplicationAttribute::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ApplicationAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceCount, allocator);
@@ -80,7 +79,7 @@ void ApplicationAttribute::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_runInstanceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunInstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runInstanceCount, allocator);
@@ -88,7 +87,7 @@ void ApplicationAttribute::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_groupCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupCount, allocator);

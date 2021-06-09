@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 SendOnlineMsgRequest::SendOnlineMsgRequest() :
@@ -34,22 +33,22 @@ SendOnlineMsgRequest::SendOnlineMsgRequest() :
 
 string SendOnlineMsgRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_tidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_tid.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_wakeupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Wakeup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_wakeup, allocator);
@@ -57,7 +56,7 @@ string SendOnlineMsgRequest::ToJsonString() const
 
     if (m_waitRespHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WaitResp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_waitResp, allocator);
@@ -65,23 +64,23 @@ string SendOnlineMsgRequest::ToJsonString() const
 
     if (m_msgTopicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgTopic";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_msgTopic.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_msgTopic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_msgContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgContent";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_msgContent.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_msgContent.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

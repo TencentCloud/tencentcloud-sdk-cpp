@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Soe::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 PhoneInfo::PhoneInfo() :
@@ -33,7 +32,7 @@ PhoneInfo::PhoneInfo() :
 {
 }
 
-CoreInternalOutcome PhoneInfo::Deserialize(const Value &value)
+CoreInternalOutcome PhoneInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome PhoneInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PhoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PhoneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_memBeginTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemBeginTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memBeginTime, allocator);
@@ -135,7 +134,7 @@ void PhoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_memEndTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemEndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memEndTime, allocator);
@@ -143,7 +142,7 @@ void PhoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_pronAccuracyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PronAccuracy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pronAccuracy, allocator);
@@ -151,7 +150,7 @@ void PhoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_detectedStressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DetectedStress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_detectedStress, allocator);
@@ -159,15 +158,15 @@ void PhoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_phoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Phone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_phone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Stress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stress, allocator);
@@ -175,15 +174,15 @@ void PhoneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_referencePhoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReferencePhone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_referencePhone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_referencePhone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_matchTagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_matchTag, allocator);

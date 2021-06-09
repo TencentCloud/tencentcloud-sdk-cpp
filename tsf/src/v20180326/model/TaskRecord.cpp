@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskRecord::TaskRecord() :
@@ -45,7 +44,7 @@ TaskRecord::TaskRecord() :
 {
 }
 
-CoreInternalOutcome TaskRecord::Deserialize(const Value &value)
+CoreInternalOutcome TaskRecord::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -219,8 +218,8 @@ CoreInternalOutcome TaskRecord::Deserialize(const Value &value)
         if (!value["ShardArguments"].IsArray())
             return CoreInternalOutcome(Error("response `TaskRecord.ShardArguments` is not array type"));
 
-        const Value &tmpValue = value["ShardArguments"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ShardArguments"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ShardArgument item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -239,8 +238,8 @@ CoreInternalOutcome TaskRecord::Deserialize(const Value &value)
         if (!value["BelongFlowIds"].IsArray())
             return CoreInternalOutcome(Error("response `TaskRecord.BelongFlowIds` is not array type"));
 
-        const Value &tmpValue = value["BelongFlowIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["BelongFlowIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_belongFlowIds.push_back((*itr).GetString());
         }
@@ -281,52 +280,52 @@ CoreInternalOutcome TaskRecord::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_executeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExecuteType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_executeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskContent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeOut, allocator);
@@ -334,7 +333,7 @@ void TaskRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_retryCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RetryCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_retryCount, allocator);
@@ -342,7 +341,7 @@ void TaskRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_retryIntervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RetryInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_retryInterval, allocator);
@@ -350,40 +349,40 @@ void TaskRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_taskRuleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskRule";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskRule.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_taskStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskState";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskState.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskState.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_successOperatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuccessOperator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_successOperator.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_successOperator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_successRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuccessRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_successRatio, allocator);
@@ -391,7 +390,7 @@ void TaskRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_shardCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shardCount, allocator);
@@ -399,63 +398,63 @@ void TaskRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_advanceSettingsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AdvanceSettings";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_advanceSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_shardArgumentsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardArguments";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_shardArguments.begin(); itr != m_shardArguments.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_belongFlowIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BelongFlowIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_belongFlowIds.begin(); itr != m_belongFlowIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_taskLogIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskLogId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskLogId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskLogId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_triggerTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TriggerType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_triggerType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskArgumentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskArgument";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskArgument.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskArgument.c_str(), allocator).Move(), allocator);
     }
 
 }

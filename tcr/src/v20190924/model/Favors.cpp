@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 Favors::Favors() :
@@ -35,7 +34,7 @@ Favors::Favors() :
 {
 }
 
-CoreInternalOutcome Favors::Deserialize(const Value &value)
+CoreInternalOutcome Favors::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,28 +143,28 @@ CoreInternalOutcome Favors::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Favors::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Favors::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_repoNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepoName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_repoName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repoName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_repoTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepoType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_repoType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repoType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pullCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PullCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pullCount, allocator);
@@ -173,7 +172,7 @@ void Favors::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_favorCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FavorCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_favorCount, allocator);
@@ -181,7 +180,7 @@ void Favors::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_publicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Public";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_public, allocator);
@@ -189,7 +188,7 @@ void Favors::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_isQcloudOfficialHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsQcloudOfficial";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isQcloudOfficial, allocator);
@@ -197,7 +196,7 @@ void Favors::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_tagCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tagCount, allocator);
@@ -205,23 +204,23 @@ void Favors::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_logoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Logo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_logo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionId, allocator);

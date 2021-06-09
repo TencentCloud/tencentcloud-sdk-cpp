@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 AlarmPolicyTriggerTask::AlarmPolicyTriggerTask() :
@@ -27,7 +26,7 @@ AlarmPolicyTriggerTask::AlarmPolicyTriggerTask() :
 {
 }
 
-CoreInternalOutcome AlarmPolicyTriggerTask::Deserialize(const Value &value)
+CoreInternalOutcome AlarmPolicyTriggerTask::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome AlarmPolicyTriggerTask::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AlarmPolicyTriggerTask::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AlarmPolicyTriggerTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskConfigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskConfig";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskConfig.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskConfig.c_str(), allocator).Move(), allocator);
     }
 
 }

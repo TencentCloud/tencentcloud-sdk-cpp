@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeShopInfoResponse::DescribeShopInfoResponse() :
@@ -32,7 +31,7 @@ DescribeShopInfoResponse::DescribeShopInfoResponse() :
 
 CoreInternalOutcome DescribeShopInfoResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeShopInfoResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeShopInfoResponse::Deserialize(const string &payload)
         if (!rsp["ShopInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `ShopInfoSet` is not array type"));
 
-        const Value &tmpValue = rsp["ShopInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ShopInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ShopInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

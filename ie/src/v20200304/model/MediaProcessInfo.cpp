@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaProcessInfo::MediaProcessInfo() :
@@ -29,7 +28,7 @@ MediaProcessInfo::MediaProcessInfo() :
 {
 }
 
-CoreInternalOutcome MediaProcessInfo::Deserialize(const Value &value)
+CoreInternalOutcome MediaProcessInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -99,41 +98,41 @@ CoreInternalOutcome MediaProcessInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaProcessInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaProcessInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mediaCuttingInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MediaCuttingInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mediaCuttingInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_mediaJoiningInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MediaJoiningInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mediaJoiningInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_mediaRecognitionInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MediaRecognitionInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mediaRecognitionInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyComputeEnvRequest::ModifyComputeEnvRequest() :
@@ -34,22 +33,22 @@ ModifyComputeEnvRequest::ModifyComputeEnvRequest() :
 
 string ModifyComputeEnvRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_envIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_envId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_desiredComputeNodeCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DesiredComputeNodeCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_desiredComputeNodeCount, allocator);
@@ -57,32 +56,32 @@ string ModifyComputeEnvRequest::ToJsonString() const
 
     if (m_envNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_envName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_envDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvDescription";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_envDescription.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_envDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvData";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_envData.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

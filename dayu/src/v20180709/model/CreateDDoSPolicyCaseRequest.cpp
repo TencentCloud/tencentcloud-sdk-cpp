@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateDDoSPolicyCaseRequest::CreateDDoSPolicyCaseRequest() :
@@ -53,221 +52,221 @@ CreateDDoSPolicyCaseRequest::CreateDDoSPolicyCaseRequest() :
 
 string CreateDDoSPolicyCaseRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_businessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Business";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_business.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
     }
 
     if (m_caseNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CaseName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_caseName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_caseName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_platformTypesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlatformTypes";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_platformTypes.begin(); itr != m_platformTypes.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_appTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_appType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appProtocolsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppProtocols";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_appProtocols.begin(); itr != m_appProtocols.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_tcpSportStartHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TcpSportStart";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_tcpSportStart.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tcpSportStart.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tcpSportEndHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TcpSportEnd";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_tcpSportEnd.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tcpSportEnd.c_str(), allocator).Move(), allocator);
     }
 
     if (m_udpSportStartHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UdpSportStart";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_udpSportStart.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_udpSportStart.c_str(), allocator).Move(), allocator);
     }
 
     if (m_udpSportEndHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UdpSportEnd";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_udpSportEnd.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_udpSportEnd.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hasAbroadHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HasAbroad";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_hasAbroad.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hasAbroad.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hasInitiateTcpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HasInitiateTcp";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_hasInitiateTcp.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hasInitiateTcp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hasInitiateUdpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HasInitiateUdp";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_hasInitiateUdp.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hasInitiateUdp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_peerTcpPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeerTcpPort";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_peerTcpPort.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_peerTcpPort.c_str(), allocator).Move(), allocator);
     }
 
     if (m_peerUdpPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeerUdpPort";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_peerUdpPort.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_peerUdpPort.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tcpFootprintHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TcpFootprint";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_tcpFootprint.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tcpFootprint.c_str(), allocator).Move(), allocator);
     }
 
     if (m_udpFootprintHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UdpFootprint";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_udpFootprint.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_udpFootprint.c_str(), allocator).Move(), allocator);
     }
 
     if (m_webApiUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WebApiUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_webApiUrl.begin(); itr != m_webApiUrl.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_minTcpPackageLenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinTcpPackageLen";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_minTcpPackageLen.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_minTcpPackageLen.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxTcpPackageLenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxTcpPackageLen";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_maxTcpPackageLen.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_maxTcpPackageLen.c_str(), allocator).Move(), allocator);
     }
 
     if (m_minUdpPackageLenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinUdpPackageLen";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_minUdpPackageLen.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_minUdpPackageLen.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxUdpPackageLenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxUdpPackageLen";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_maxUdpPackageLen.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_maxUdpPackageLen.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hasVPNHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HasVPN";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_hasVPN.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hasVPN.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tcpPortListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TcpPortList";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_tcpPortList.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tcpPortList.c_str(), allocator).Move(), allocator);
     }
 
     if (m_udpPortListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UdpPortList";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_udpPortList.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_udpPortList.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

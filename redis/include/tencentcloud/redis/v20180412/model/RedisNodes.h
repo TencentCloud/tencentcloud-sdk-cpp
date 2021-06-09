@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取可用区ID
+                     * @return ZoneId 可用区ID
+                     */
+                    int64_t GetZoneId() const;
+
+                    /**
+                     * 设置可用区ID
+                     * @param ZoneId 可用区ID
+                     */
+                    void SetZoneId(const int64_t& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     int64_t m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 可用区ID
+                     */
+                    int64_t m_zoneId;
+                    bool m_zoneIdHasBeenSet;
 
                 };
             }

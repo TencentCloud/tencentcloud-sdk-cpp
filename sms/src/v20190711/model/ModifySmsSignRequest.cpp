@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Sms::V20190711::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifySmsSignRequest::ModifySmsSignRequest() :
@@ -38,14 +37,14 @@ ModifySmsSignRequest::ModifySmsSignRequest() :
 
 string ModifySmsSignRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_signIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_signId, allocator);
@@ -53,15 +52,15 @@ string ModifySmsSignRequest::ToJsonString() const
 
     if (m_signNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_signName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_signName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_signType, allocator);
@@ -69,7 +68,7 @@ string ModifySmsSignRequest::ToJsonString() const
 
     if (m_documentTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DocumentType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_documentType, allocator);
@@ -77,7 +76,7 @@ string ModifySmsSignRequest::ToJsonString() const
 
     if (m_internationalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "International";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_international, allocator);
@@ -85,7 +84,7 @@ string ModifySmsSignRequest::ToJsonString() const
 
     if (m_usedMethodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsedMethod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_usedMethod, allocator);
@@ -93,31 +92,31 @@ string ModifySmsSignRequest::ToJsonString() const
 
     if (m_proofImageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProofImage";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_proofImage.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proofImage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_commissionImageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CommissionImage";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_commissionImage.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_commissionImage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_remarkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_remark.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

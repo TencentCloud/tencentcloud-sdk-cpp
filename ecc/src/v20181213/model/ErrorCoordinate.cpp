@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecc::V20181213::Model;
-using namespace rapidjson;
 using namespace std;
 
 ErrorCoordinate::ErrorCoordinate() :
@@ -26,7 +25,7 @@ ErrorCoordinate::ErrorCoordinate() :
 {
 }
 
-CoreInternalOutcome ErrorCoordinate::Deserialize(const Value &value)
+CoreInternalOutcome ErrorCoordinate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome ErrorCoordinate::Deserialize(const Value &value)
         if (!value["Coordinate"].IsArray())
             return CoreInternalOutcome(Error("response `ErrorCoordinate.Coordinate` is not array type"));
 
-        const Value &tmpValue = value["Coordinate"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Coordinate"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_coordinate.push_back((*itr).GetInt64());
         }
@@ -48,19 +47,19 @@ CoreInternalOutcome ErrorCoordinate::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ErrorCoordinate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ErrorCoordinate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_coordinateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Coordinate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_coordinate.begin(); itr != m_coordinate.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

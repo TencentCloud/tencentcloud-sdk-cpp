@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mna::V20210119::Model;
-using namespace rapidjson;
 using namespace std;
 
 DestAddressInfo::DestAddressInfo() :
@@ -26,7 +25,7 @@ DestAddressInfo::DestAddressInfo() :
 {
 }
 
-CoreInternalOutcome DestAddressInfo::Deserialize(const Value &value)
+CoreInternalOutcome DestAddressInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome DestAddressInfo::Deserialize(const Value &value)
         if (!value["DestIp"].IsArray())
             return CoreInternalOutcome(Error("response `DestAddressInfo.DestIp` is not array type"));
 
-        const Value &tmpValue = value["DestIp"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DestIp"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_destIp.push_back((*itr).GetString());
         }
@@ -48,19 +47,19 @@ CoreInternalOutcome DestAddressInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DestAddressInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DestAddressInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_destIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DestIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_destIp.begin(); itr != m_destIp.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

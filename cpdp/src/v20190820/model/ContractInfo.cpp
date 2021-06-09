@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ContractInfo::ContractInfo() :
@@ -35,7 +34,7 @@ ContractInfo::ContractInfo() :
 {
 }
 
-CoreInternalOutcome ContractInfo::Deserialize(const Value &value)
+CoreInternalOutcome ContractInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -95,8 +94,8 @@ CoreInternalOutcome ContractInfo::Deserialize(const Value &value)
         if (!value["ExternalContractUserInfoList"].IsArray())
             return CoreInternalOutcome(Error("response `ContractInfo.ExternalContractUserInfoList` is not array type"));
 
-        const Value &tmpValue = value["ExternalContractUserInfoList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ExternalContractUserInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ExternalContractUserInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -161,95 +160,95 @@ CoreInternalOutcome ContractInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ContractInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ContractInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_channelContractMerchantIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelContractMerchantId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelContractMerchantId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelContractMerchantId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelContractSubMerchantIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelContractSubMerchantId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelContractSubMerchantId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelContractSubMerchantId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelContractAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelContractAppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelContractAppId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelContractAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelContractSubAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelContractSubAppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelContractSubAppId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelContractSubAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outContractCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutContractCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outContractCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outContractCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalContractUserInfoListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalContractUserInfoList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_externalContractUserInfoList.begin(); itr != m_externalContractUserInfoList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_contractMethodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContractMethod";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_contractMethod.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contractMethod.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contractSceneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContractSceneId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_contractSceneId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contractSceneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_userInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_externalContractDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalContractData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalContractData.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalContractData.c_str(), allocator).Move(), allocator);
     }
 
 }

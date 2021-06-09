@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 CommonMixCropParams::CommonMixCropParams() :
@@ -29,7 +28,7 @@ CommonMixCropParams::CommonMixCropParams() :
 {
 }
 
-CoreInternalOutcome CommonMixCropParams::Deserialize(const Value &value)
+CoreInternalOutcome CommonMixCropParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome CommonMixCropParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CommonMixCropParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CommonMixCropParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cropWidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CropWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cropWidth, allocator);
@@ -91,7 +90,7 @@ void CommonMixCropParams::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_cropHeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CropHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cropHeight, allocator);
@@ -99,7 +98,7 @@ void CommonMixCropParams::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_cropStartLocationXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CropStartLocationX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cropStartLocationX, allocator);
@@ -107,7 +106,7 @@ void CommonMixCropParams::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_cropStartLocationYHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CropStartLocationY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cropStartLocationY, allocator);

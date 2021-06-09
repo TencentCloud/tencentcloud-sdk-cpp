@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskLastExecuteStatus::TaskLastExecuteStatus() :
@@ -28,7 +27,7 @@ TaskLastExecuteStatus::TaskLastExecuteStatus() :
 {
 }
 
-CoreInternalOutcome TaskLastExecuteStatus::Deserialize(const Value &value)
+CoreInternalOutcome TaskLastExecuteStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome TaskLastExecuteStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskLastExecuteStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskLastExecuteStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_batchIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BatchId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_batchId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_state.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
     if (m_batchLogIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BatchLogId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_batchLogId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_batchLogId.c_str(), allocator).Move(), allocator);
     }
 
 }

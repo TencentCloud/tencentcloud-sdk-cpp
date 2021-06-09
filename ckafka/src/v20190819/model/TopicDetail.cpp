@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 TopicDetail::TopicDetail() :
@@ -38,7 +37,7 @@ TopicDetail::TopicDetail() :
 {
 }
 
-CoreInternalOutcome TopicDetail::Deserialize(const Value &value)
+CoreInternalOutcome TopicDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -191,28 +190,28 @@ CoreInternalOutcome TopicDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TopicDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TopicDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_topicNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topicName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_topicId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_partitionNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PartitionNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_partitionNum, allocator);
@@ -220,7 +219,7 @@ void TopicDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_replicaNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicaNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replicaNum, allocator);
@@ -228,15 +227,15 @@ void TopicDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_noteHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Note";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_note.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -244,7 +243,7 @@ void TopicDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_enableWhiteListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableWhiteList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableWhiteList, allocator);
@@ -252,7 +251,7 @@ void TopicDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_ipWhiteListCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpWhiteListCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ipWhiteListCount, allocator);
@@ -260,15 +259,15 @@ void TopicDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_forwardCosBucketHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ForwardCosBucket";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_forwardCosBucket.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forwardCosBucket.c_str(), allocator).Move(), allocator);
     }
 
     if (m_forwardStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ForwardStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forwardStatus, allocator);
@@ -276,7 +275,7 @@ void TopicDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_forwardIntervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ForwardInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forwardInterval, allocator);
@@ -284,19 +283,19 @@ void TopicDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_configHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Config";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_config.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_retentionTimeConfigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RetentionTimeConfig";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_retentionTimeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 

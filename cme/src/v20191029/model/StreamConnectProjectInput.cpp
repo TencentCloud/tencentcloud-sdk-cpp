@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 StreamConnectProjectInput::StreamConnectProjectInput() :
@@ -28,7 +27,7 @@ StreamConnectProjectInput::StreamConnectProjectInput() :
 {
 }
 
-CoreInternalOutcome StreamConnectProjectInput::Deserialize(const Value &value)
+CoreInternalOutcome StreamConnectProjectInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -72,8 +71,8 @@ CoreInternalOutcome StreamConnectProjectInput::Deserialize(const Value &value)
         if (!value["Outputs"].IsArray())
             return CoreInternalOutcome(Error("response `StreamConnectProjectInput.Outputs` is not array type"));
 
-        const Value &tmpValue = value["Outputs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Outputs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StreamConnectOutput item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -91,38 +90,38 @@ CoreInternalOutcome StreamConnectProjectInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StreamConnectProjectInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StreamConnectProjectInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mainInputHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MainInput";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mainInput.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_backupInputHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupInput";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_backupInput.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_outputsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Outputs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_outputs.begin(); itr != m_outputs.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

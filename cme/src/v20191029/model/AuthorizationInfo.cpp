@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 AuthorizationInfo::AuthorizationInfo() :
@@ -27,7 +26,7 @@ AuthorizationInfo::AuthorizationInfo() :
 {
 }
 
-CoreInternalOutcome AuthorizationInfo::Deserialize(const Value &value)
+CoreInternalOutcome AuthorizationInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -54,8 +53,8 @@ CoreInternalOutcome AuthorizationInfo::Deserialize(const Value &value)
         if (!value["PermissionSet"].IsArray())
             return CoreInternalOutcome(Error("response `AuthorizationInfo.PermissionSet` is not array type"));
 
-        const Value &tmpValue = value["PermissionSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PermissionSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_permissionSet.push_back((*itr).GetString());
         }
@@ -66,28 +65,28 @@ CoreInternalOutcome AuthorizationInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AuthorizationInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AuthorizationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_authorizeeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Authorizee";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_authorizee.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_permissionSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PermissionSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_permissionSet.begin(); itr != m_permissionSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

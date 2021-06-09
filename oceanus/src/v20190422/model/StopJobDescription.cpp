@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Oceanus::V20190422::Model;
-using namespace rapidjson;
 using namespace std;
 
 StopJobDescription::StopJobDescription() :
@@ -27,7 +26,7 @@ StopJobDescription::StopJobDescription() :
 {
 }
 
-CoreInternalOutcome StopJobDescription::Deserialize(const Value &value)
+CoreInternalOutcome StopJobDescription::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome StopJobDescription::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StopJobDescription::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StopJobDescription::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_jobIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_jobId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stopTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StopType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stopType, allocator);

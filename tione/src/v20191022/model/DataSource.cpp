@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 DataSource::DataSource() :
@@ -27,7 +26,7 @@ DataSource::DataSource() :
 {
 }
 
-CoreInternalOutcome DataSource::Deserialize(const Value &value)
+CoreInternalOutcome DataSource::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,24 +69,24 @@ CoreInternalOutcome DataSource::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DataSource::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DataSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cosDataSourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosDataSource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosDataSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_fileSystemDataSourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSystemDataSource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_fileSystemDataSource.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 OsData::OsData() :
@@ -27,7 +26,7 @@ OsData::OsData() :
 {
 }
 
-CoreInternalOutcome OsData::Deserialize(const Value &value)
+CoreInternalOutcome OsData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome OsData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OsData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OsData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_chipIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChipId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_chipId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chipId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_chipManufactureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChipManufacture";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_chipManufacture.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chipManufacture.c_str(), allocator).Move(), allocator);
     }
 
 }

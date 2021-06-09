@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProductTaskInfo::ProductTaskInfo() :
@@ -37,7 +36,7 @@ ProductTaskInfo::ProductTaskInfo() :
 {
 }
 
-CoreInternalOutcome ProductTaskInfo::Deserialize(const Value &value)
+CoreInternalOutcome ProductTaskInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -166,12 +165,12 @@ CoreInternalOutcome ProductTaskInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProductTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProductTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -179,7 +178,7 @@ void ProductTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -187,7 +186,7 @@ void ProductTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
@@ -195,39 +194,39 @@ void ProductTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_parametersTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParametersType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_parametersType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parametersType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parametersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Parameters";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_parameters.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parameters.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resultType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_result.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
     }
 
     if (m_batchCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BatchCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_batchCount, allocator);
@@ -235,7 +234,7 @@ void ProductTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_batchOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BatchOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_batchOffset, allocator);
@@ -243,7 +242,7 @@ void ProductTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -251,7 +250,7 @@ void ProductTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
@@ -259,7 +258,7 @@ void ProductTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_completeTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompleteTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_completeTime, allocator);

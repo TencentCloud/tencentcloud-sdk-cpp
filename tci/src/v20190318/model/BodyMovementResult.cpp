@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 BodyMovementResult::BodyMovementResult() :
@@ -31,7 +30,7 @@ BodyMovementResult::BodyMovementResult() :
 {
 }
 
-CoreInternalOutcome BodyMovementResult::Deserialize(const Value &value)
+CoreInternalOutcome BodyMovementResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome BodyMovementResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BodyMovementResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BodyMovementResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -113,7 +112,7 @@ void BodyMovementResult::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -121,7 +120,7 @@ void BodyMovementResult::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_leftHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Left";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_left, allocator);
@@ -129,15 +128,15 @@ void BodyMovementResult::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_movementsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Movements";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_movements.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_movements.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Top";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_top, allocator);
@@ -145,7 +144,7 @@ void BodyMovementResult::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);

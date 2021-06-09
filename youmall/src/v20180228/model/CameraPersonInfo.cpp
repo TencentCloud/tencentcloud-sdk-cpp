@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 CameraPersonInfo::CameraPersonInfo() :
@@ -31,7 +30,7 @@ CameraPersonInfo::CameraPersonInfo() :
 {
 }
 
-CoreInternalOutcome CameraPersonInfo::Deserialize(const Value &value)
+CoreInternalOutcome CameraPersonInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -107,20 +106,20 @@ CoreInternalOutcome CameraPersonInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CameraPersonInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CameraPersonInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tempIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TempId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tempId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tempId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_faceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_faceId, allocator);
@@ -128,7 +127,7 @@ void CameraPersonInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_idTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IdType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_idType, allocator);
@@ -136,15 +135,15 @@ void CameraPersonInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_facePicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FacePic";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_facePic.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_facePic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Time";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_time, allocator);
@@ -152,10 +151,10 @@ void CameraPersonInfo::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_personInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_personInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

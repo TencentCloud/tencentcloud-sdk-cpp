@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloudBaseCodeRepoDetail::CloudBaseCodeRepoDetail() :
@@ -27,7 +26,7 @@ CloudBaseCodeRepoDetail::CloudBaseCodeRepoDetail() :
 {
 }
 
-CoreInternalOutcome CloudBaseCodeRepoDetail::Deserialize(const Value &value)
+CoreInternalOutcome CloudBaseCodeRepoDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,24 +62,24 @@ CoreInternalOutcome CloudBaseCodeRepoDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CloudBaseCodeRepoDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloudBaseCodeRepoDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_name.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 }

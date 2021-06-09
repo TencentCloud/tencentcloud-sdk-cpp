@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
-using namespace rapidjson;
 using namespace std;
 
 CSVSerde::CSVSerde() :
@@ -28,7 +27,7 @@ CSVSerde::CSVSerde() :
 {
 }
 
-CoreInternalOutcome CSVSerde::Deserialize(const Value &value)
+CoreInternalOutcome CSVSerde::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome CSVSerde::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CSVSerde::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CSVSerde::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_escapeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Escape";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_escape.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_escape.c_str(), allocator).Move(), allocator);
     }
 
     if (m_quoteHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Quote";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_quote.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quote.c_str(), allocator).Move(), allocator);
     }
 
     if (m_separatorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Separator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_separator.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_separator.c_str(), allocator).Move(), allocator);
     }
 
 }

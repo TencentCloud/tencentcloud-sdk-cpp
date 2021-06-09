@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cam::V20190116::Model;
-using namespace rapidjson;
 using namespace std;
 
 StrategyInfo::StrategyInfo() :
@@ -37,7 +36,7 @@ StrategyInfo::StrategyInfo() :
 {
 }
 
-CoreInternalOutcome StrategyInfo::Deserialize(const Value &value)
+CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -147,8 +146,8 @@ CoreInternalOutcome StrategyInfo::Deserialize(const Value &value)
         if (!value["DeactivedDetail"].IsArray())
             return CoreInternalOutcome(Error("response `StrategyInfo.DeactivedDetail` is not array type"));
 
-        const Value &tmpValue = value["DeactivedDetail"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DeactivedDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_deactivedDetail.push_back((*itr).GetString());
         }
@@ -169,12 +168,12 @@ CoreInternalOutcome StrategyInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void StrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void StrategyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_policyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_policyId, allocator);
@@ -182,23 +181,23 @@ void StrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_policyNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_policyName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_addTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_addTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -206,15 +205,15 @@ void StrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createMode, allocator);
@@ -222,7 +221,7 @@ void StrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_attachmentsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Attachments";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_attachments, allocator);
@@ -230,15 +229,15 @@ void StrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_serviceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serviceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isAttachedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsAttached";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAttached, allocator);
@@ -246,7 +245,7 @@ void StrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_deactivedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Deactived";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deactived, allocator);
@@ -254,20 +253,20 @@ void StrategyInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_deactivedDetailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeactivedDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_deactivedDetail.begin(); itr != m_deactivedDetail.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_isServiceLinkedPolicyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsServiceLinkedPolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isServiceLinkedPolicy, allocator);

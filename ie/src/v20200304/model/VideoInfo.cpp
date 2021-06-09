@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 VideoInfo::VideoInfo() :
@@ -38,7 +37,7 @@ VideoInfo::VideoInfo() :
 {
 }
 
-CoreInternalOutcome VideoInfo::Deserialize(const Value &value)
+CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -128,8 +127,8 @@ CoreInternalOutcome VideoInfo::Deserialize(const Value &value)
         if (!value["PicMarkInfo"].IsArray())
             return CoreInternalOutcome(Error("response `VideoInfo.PicMarkInfo` is not array type"));
 
-        const Value &tmpValue = value["PicMarkInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PicMarkInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PicMarkInfoItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -208,12 +207,12 @@ CoreInternalOutcome VideoInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VideoInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VideoInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Fps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fps, allocator);
@@ -221,7 +220,7 @@ void VideoInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -229,7 +228,7 @@ void VideoInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -237,7 +236,7 @@ void VideoInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_longSideHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LongSide";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_longSide, allocator);
@@ -245,7 +244,7 @@ void VideoInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_shortSideHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShortSide";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shortSide, allocator);
@@ -253,7 +252,7 @@ void VideoInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_bitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bitrate, allocator);
@@ -261,7 +260,7 @@ void VideoInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_gopHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gop";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gop, allocator);
@@ -269,59 +268,59 @@ void VideoInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_videoCodecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoCodec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_videoCodec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_videoCodec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_picMarkInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PicMarkInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_picMarkInfo.begin(); itr != m_picMarkInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_darInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DarInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_darInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_hdrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hdr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_hdr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hdr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_videoEnhanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoEnhance";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_videoEnhance.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_hiddenMarkInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HiddenMarkInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hiddenMarkInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceCpuRateInfo::DeviceCpuRateInfo() :
@@ -27,7 +26,7 @@ DeviceCpuRateInfo::DeviceCpuRateInfo() :
 {
 }
 
-CoreInternalOutcome DeviceCpuRateInfo::Deserialize(const Value &value)
+CoreInternalOutcome DeviceCpuRateInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome DeviceCpuRateInfo::Deserialize(const Value &value)
         if (!value["Rate"].IsArray())
             return CoreInternalOutcome(Error("response `DeviceCpuRateInfo.Rate` is not array type"));
 
-        const Value &tmpValue = value["Rate"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Rate"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_rate.push_back((*itr).GetInt64());
         }
@@ -59,12 +58,12 @@ CoreInternalOutcome DeviceCpuRateInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceCpuRateInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceCpuRateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cpuCoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpuCore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpuCore, allocator);
@@ -72,14 +71,14 @@ void DeviceCpuRateInfo::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_rateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_rate.begin(); itr != m_rate.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

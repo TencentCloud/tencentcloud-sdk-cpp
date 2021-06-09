@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 GetLayerVersionResponse::GetLayerVersionResponse() :
@@ -39,7 +38,7 @@ GetLayerVersionResponse::GetLayerVersionResponse() :
 
 CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -49,7 +48,7 @@ CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -76,8 +75,8 @@ CoreInternalOutcome GetLayerVersionResponse::Deserialize(const string &payload)
         if (!rsp["CompatibleRuntimes"].IsArray())
             return CoreInternalOutcome(Error("response `CompatibleRuntimes` is not array type"));
 
-        const Value &tmpValue = rsp["CompatibleRuntimes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["CompatibleRuntimes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_compatibleRuntimes.push_back((*itr).GetString());
         }

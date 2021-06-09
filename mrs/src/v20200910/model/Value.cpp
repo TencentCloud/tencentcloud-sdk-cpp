@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 Value::Value() :
@@ -28,7 +27,7 @@ Value::Value() :
 {
 }
 
-CoreInternalOutcome Value::Deserialize(const Value &value)
+CoreInternalOutcome Value::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome Value::Deserialize(const Value &value)
         if (!value["Percent"].IsArray())
             return CoreInternalOutcome(Error("response `Value.Percent` is not array type"));
 
-        const Value &tmpValue = value["Percent"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Percent"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_percent.push_back((*itr).GetDouble());
         }
@@ -70,36 +69,36 @@ CoreInternalOutcome Value::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Value::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Value::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_gradeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Grade";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_grade.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_grade.c_str(), allocator).Move(), allocator);
     }
 
     if (m_percentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Percent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_percent.begin(); itr != m_percent.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetDouble(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
     }
 
     if (m_positiveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Positive";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_positive.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_positive.c_str(), allocator).Move(), allocator);
     }
 
 }

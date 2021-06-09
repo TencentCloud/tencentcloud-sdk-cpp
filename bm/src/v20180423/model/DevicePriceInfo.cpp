@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 DevicePriceInfo::DevicePriceInfo() :
@@ -42,7 +41,7 @@ DevicePriceInfo::DevicePriceInfo() :
 {
 }
 
-CoreInternalOutcome DevicePriceInfo::Deserialize(const Value &value)
+CoreInternalOutcome DevicePriceInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -221,28 +220,28 @@ CoreInternalOutcome DevicePriceInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DevicePriceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DevicePriceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceClassCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceClassCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceClassCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceClassCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isElasticHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsElastic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isElastic, allocator);
@@ -250,7 +249,7 @@ void DevicePriceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_cpmPayModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpmPayMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpmPayMode, allocator);
@@ -258,55 +257,55 @@ void DevicePriceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_cpuDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpuDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cpuDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cpuDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_memDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_memDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_memDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_diskDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diskDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nicDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NicDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nicDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nicDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gpuDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GpuDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gpuDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gpuDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_raidDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RaidDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_raidDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_raidDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_priceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Price";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_price, allocator);
@@ -314,7 +313,7 @@ void DevicePriceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_normalPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NormalPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_normalPrice, allocator);
@@ -322,7 +321,7 @@ void DevicePriceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_totalCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCost, allocator);
@@ -330,7 +329,7 @@ void DevicePriceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_realTotalCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realTotalCost, allocator);
@@ -338,7 +337,7 @@ void DevicePriceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_timeSpanHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeSpan, allocator);
@@ -346,15 +345,15 @@ void DevicePriceInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_timeUnitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeUnit";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timeUnit.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeUnit.c_str(), allocator).Move(), allocator);
     }
 
     if (m_goodsCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GoodsCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_goodsCount, allocator);

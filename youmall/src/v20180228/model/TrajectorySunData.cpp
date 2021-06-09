@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 TrajectorySunData::TrajectorySunData() :
@@ -28,7 +27,7 @@ TrajectorySunData::TrajectorySunData() :
 {
 }
 
-CoreInternalOutcome TrajectorySunData::Deserialize(const Value &value)
+CoreInternalOutcome TrajectorySunData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome TrajectorySunData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TrajectorySunData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TrajectorySunData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_zonesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zones";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zones.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zones.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
@@ -88,7 +87,7 @@ void TrajectorySunData::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_avgStayTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvgStayTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_avgStayTime, allocator);

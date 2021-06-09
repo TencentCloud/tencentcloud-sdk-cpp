@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dcdb::V20180411::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeOrdersResponse::DescribeOrdersResponse() :
@@ -32,7 +31,7 @@ DescribeOrdersResponse::DescribeOrdersResponse() :
 
 CoreInternalOutcome DescribeOrdersResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeOrdersResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeOrdersResponse::Deserialize(const string &payload)
         if (!rsp["TotalCount"].IsArray())
             return CoreInternalOutcome(Error("response `TotalCount` is not array type"));
 
-        const Value &tmpValue = rsp["TotalCount"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["TotalCount"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_totalCount.push_back((*itr).GetInt64());
         }
@@ -82,8 +81,8 @@ CoreInternalOutcome DescribeOrdersResponse::Deserialize(const string &payload)
         if (!rsp["Deals"].IsArray())
             return CoreInternalOutcome(Error("response `Deals` is not array type"));
 
-        const Value &tmpValue = rsp["Deals"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Deals"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Deal item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

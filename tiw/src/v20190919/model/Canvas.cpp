@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiw::V20190919::Model;
-using namespace rapidjson;
 using namespace std;
 
 Canvas::Canvas() :
@@ -27,7 +26,7 @@ Canvas::Canvas() :
 {
 }
 
-CoreInternalOutcome Canvas::Deserialize(const Value &value)
+CoreInternalOutcome Canvas::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,24 +62,24 @@ CoreInternalOutcome Canvas::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Canvas::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Canvas::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_layoutParamsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LayoutParams";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_layoutParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_backgroundColorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackgroundColor";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_backgroundColor.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backgroundColor.c_str(), allocator).Move(), allocator);
     }
 
 }

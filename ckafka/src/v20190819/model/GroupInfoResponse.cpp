@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 GroupInfoResponse::GroupInfoResponse() :
@@ -31,7 +30,7 @@ GroupInfoResponse::GroupInfoResponse() :
 {
 }
 
-CoreInternalOutcome GroupInfoResponse::Deserialize(const Value &value)
+CoreInternalOutcome GroupInfoResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,8 +80,8 @@ CoreInternalOutcome GroupInfoResponse::Deserialize(const Value &value)
         if (!value["Members"].IsArray())
             return CoreInternalOutcome(Error("response `GroupInfoResponse.Members` is not array type"));
 
-        const Value &tmpValue = value["Members"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Members"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             GroupInfoMember item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,62 +109,62 @@ CoreInternalOutcome GroupInfoResponse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GroupInfoResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GroupInfoResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_errorCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errorCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_state.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProtocolType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocolType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocolType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_membersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Members";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_members.begin(); itr != m_members.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_groupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Group";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_group.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_group.c_str(), allocator).Move(), allocator);
     }
 
 }

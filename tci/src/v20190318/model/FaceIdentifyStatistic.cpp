@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceIdentifyStatistic::FaceIdentifyStatistic() :
@@ -30,7 +29,7 @@ FaceIdentifyStatistic::FaceIdentifyStatistic() :
 {
 }
 
-CoreInternalOutcome FaceIdentifyStatistic::Deserialize(const Value &value)
+CoreInternalOutcome FaceIdentifyStatistic::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome FaceIdentifyStatistic::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FaceIdentifyStatistic::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FaceIdentifyStatistic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -102,7 +101,7 @@ void FaceIdentifyStatistic::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_endTsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTs, allocator);
@@ -110,15 +109,15 @@ void FaceIdentifyStatistic::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_personIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_similarityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Similarity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_similarity, allocator);
@@ -126,7 +125,7 @@ void FaceIdentifyStatistic::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_startTsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTs, allocator);

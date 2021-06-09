@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 ApiUsagePlanSet::ApiUsagePlanSet() :
@@ -27,7 +26,7 @@ ApiUsagePlanSet::ApiUsagePlanSet() :
 {
 }
 
-CoreInternalOutcome ApiUsagePlanSet::Deserialize(const Value &value)
+CoreInternalOutcome ApiUsagePlanSet::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome ApiUsagePlanSet::Deserialize(const Value &value)
         if (!value["ApiUsagePlanList"].IsArray())
             return CoreInternalOutcome(Error("response `ApiUsagePlanSet.ApiUsagePlanList` is not array type"));
 
-        const Value &tmpValue = value["ApiUsagePlanList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ApiUsagePlanList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ApiUsagePlan item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,12 +65,12 @@ CoreInternalOutcome ApiUsagePlanSet::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ApiUsagePlanSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ApiUsagePlanSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -79,15 +78,15 @@ void ApiUsagePlanSet::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_apiUsagePlanListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiUsagePlanList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_apiUsagePlanList.begin(); itr != m_apiUsagePlanList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

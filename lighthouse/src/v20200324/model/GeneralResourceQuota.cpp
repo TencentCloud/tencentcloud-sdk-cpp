@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 GeneralResourceQuota::GeneralResourceQuota() :
@@ -28,7 +27,7 @@ GeneralResourceQuota::GeneralResourceQuota() :
 {
 }
 
-CoreInternalOutcome GeneralResourceQuota::Deserialize(const Value &value)
+CoreInternalOutcome GeneralResourceQuota::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome GeneralResourceQuota::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GeneralResourceQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GeneralResourceQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceQuotaAvailableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceQuotaAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceQuotaAvailable, allocator);
@@ -88,7 +87,7 @@ void GeneralResourceQuota::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_resourceQuotaTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceQuotaTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceQuotaTotal, allocator);

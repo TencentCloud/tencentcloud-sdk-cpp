@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 TaskRule::TaskRule() :
@@ -28,7 +27,7 @@ TaskRule::TaskRule() :
 {
 }
 
-CoreInternalOutcome TaskRule::Deserialize(const Value &value)
+CoreInternalOutcome TaskRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome TaskRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TaskRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TaskRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ruleTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ruleType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expressionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Expression";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_expression.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expression.c_str(), allocator).Move(), allocator);
     }
 
     if (m_repeatIntervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepeatInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_repeatInterval, allocator);

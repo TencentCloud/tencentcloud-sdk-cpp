@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 GetFunctionResponse::GetFunctionResponse() :
@@ -70,7 +69,7 @@ GetFunctionResponse::GetFunctionResponse() :
 
 CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -80,7 +79,7 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -137,8 +136,8 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         if (!rsp["Triggers"].IsArray())
             return CoreInternalOutcome(Error("response `Triggers` is not array type"));
 
-        const Value &tmpValue = rsp["Triggers"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Triggers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Trigger item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -381,8 +380,8 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         if (!rsp["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `Tags` is not array type"));
 
-        const Value &tmpValue = rsp["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Tag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -455,8 +454,8 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         if (!rsp["Layers"].IsArray())
             return CoreInternalOutcome(Error("response `Layers` is not array type"));
 
-        const Value &tmpValue = rsp["Layers"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Layers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LayerVersionInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -576,8 +575,8 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         if (!rsp["StatusReasons"].IsArray())
             return CoreInternalOutcome(Error("response `StatusReasons` is not array type"));
 
-        const Value &tmpValue = rsp["StatusReasons"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["StatusReasons"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatusReason item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

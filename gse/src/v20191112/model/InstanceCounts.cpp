@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceCounts::InstanceCounts() :
@@ -32,7 +31,7 @@ InstanceCounts::InstanceCounts() :
 {
 }
 
-CoreInternalOutcome InstanceCounts::Deserialize(const Value &value)
+CoreInternalOutcome InstanceCounts::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome InstanceCounts::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceCounts::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceCounts::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_activeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Active";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_active, allocator);
@@ -124,7 +123,7 @@ void InstanceCounts::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_desiredHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Desired";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_desired, allocator);
@@ -132,7 +131,7 @@ void InstanceCounts::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_idleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Idle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_idle, allocator);
@@ -140,7 +139,7 @@ void InstanceCounts::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_maxiNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxiNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxiNum, allocator);
@@ -148,7 +147,7 @@ void InstanceCounts::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_miniNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MiniNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_miniNum, allocator);
@@ -156,7 +155,7 @@ void InstanceCounts::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_pendingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pending";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pending, allocator);
@@ -164,7 +163,7 @@ void InstanceCounts::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_terminatingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Terminating";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_terminating, allocator);

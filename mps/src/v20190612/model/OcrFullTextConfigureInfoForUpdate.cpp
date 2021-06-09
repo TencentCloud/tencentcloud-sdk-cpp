@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 OcrFullTextConfigureInfoForUpdate::OcrFullTextConfigureInfoForUpdate() :
@@ -26,7 +25,7 @@ OcrFullTextConfigureInfoForUpdate::OcrFullTextConfigureInfoForUpdate() :
 {
 }
 
-CoreInternalOutcome OcrFullTextConfigureInfoForUpdate::Deserialize(const Value &value)
+CoreInternalOutcome OcrFullTextConfigureInfoForUpdate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome OcrFullTextConfigureInfoForUpdate::Deserialize(const Value &
     return CoreInternalOutcome(true);
 }
 
-void OcrFullTextConfigureInfoForUpdate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OcrFullTextConfigureInfoForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
 }

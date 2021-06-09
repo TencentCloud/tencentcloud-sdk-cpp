@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 DnsServerConf::DnsServerConf() :
@@ -27,7 +26,7 @@ DnsServerConf::DnsServerConf() :
 {
 }
 
-CoreInternalOutcome DnsServerConf::Deserialize(const Value &value)
+CoreInternalOutcome DnsServerConf::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome DnsServerConf::Deserialize(const Value &value)
         if (!value["DnsServers"].IsArray())
             return CoreInternalOutcome(Error("response `DnsServerConf.DnsServers` is not array type"));
 
-        const Value &tmpValue = value["DnsServers"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DnsServers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_dnsServers.push_back((*itr).GetString());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome DnsServerConf::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DnsServerConf::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DnsServerConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dnsServersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DnsServers";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_dnsServers.begin(); itr != m_dnsServers.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

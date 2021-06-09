@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cii::V20210408::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateStructureTaskInfo::CreateStructureTaskInfo() :
@@ -31,7 +30,7 @@ CreateStructureTaskInfo::CreateStructureTaskInfo() :
 {
 }
 
-CoreInternalOutcome CreateStructureTaskInfo::Deserialize(const Value &value)
+CoreInternalOutcome CreateStructureTaskInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -51,8 +50,8 @@ CoreInternalOutcome CreateStructureTaskInfo::Deserialize(const Value &value)
         if (!value["FileList"].IsArray())
             return CoreInternalOutcome(Error("response `CreateStructureTaskInfo.FileList` is not array type"));
 
-        const Value &tmpValue = value["FileList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FileList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_fileList.push_back((*itr).GetString());
         }
@@ -84,8 +83,8 @@ CoreInternalOutcome CreateStructureTaskInfo::Deserialize(const Value &value)
         if (!value["ImageList"].IsArray())
             return CoreInternalOutcome(Error("response `CreateStructureTaskInfo.ImageList` is not array type"));
 
-        const Value &tmpValue = value["ImageList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ImageList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_imageList.push_back((*itr).GetString());
         }
@@ -106,65 +105,65 @@ CoreInternalOutcome CreateStructureTaskInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CreateStructureTaskInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CreateStructureTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_fileList.begin(); itr != m_fileList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_customerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_customerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_customerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_imageList.begin(); itr != m_imageList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_yearHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Year";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_year.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_year.c_str(), allocator).Move(), allocator);
     }
 
 }

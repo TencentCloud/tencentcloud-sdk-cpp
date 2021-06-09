@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 ComponentStatistics::ComponentStatistics() :
@@ -30,7 +29,7 @@ ComponentStatistics::ComponentStatistics() :
 {
 }
 
-CoreInternalOutcome ComponentStatistics::Deserialize(const Value &value)
+CoreInternalOutcome ComponentStatistics::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome ComponentStatistics::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ComponentStatistics::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ComponentStatistics::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -102,7 +101,7 @@ void ComponentStatistics::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_machineNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_machineNum, allocator);
@@ -110,26 +109,26 @@ void ComponentStatistics::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_componentNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComponentName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_componentName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_componentName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_componentTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ComponentType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_componentType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_componentType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Privatedns::V20201028::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreatePrivateZoneRecordRequest::CreatePrivateZoneRecordRequest() :
@@ -36,46 +35,46 @@ CreatePrivateZoneRecordRequest::CreatePrivateZoneRecordRequest() :
 
 string CreatePrivateZoneRecordRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_zoneId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recordTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_recordType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubDomain";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_subDomain.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recordValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecordValue";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_recordValue.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_weightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Weight";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_weight, allocator);
@@ -83,7 +82,7 @@ string CreatePrivateZoneRecordRequest::ToJsonString() const
 
     if (m_mXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MX";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_mX, allocator);
@@ -91,15 +90,15 @@ string CreatePrivateZoneRecordRequest::ToJsonString() const
 
     if (m_tTLHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TTL";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tTL, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

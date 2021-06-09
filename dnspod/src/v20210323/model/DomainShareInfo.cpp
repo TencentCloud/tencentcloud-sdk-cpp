@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dnspod::V20210323::Model;
-using namespace rapidjson;
 using namespace std;
 
 DomainShareInfo::DomainShareInfo() :
@@ -28,7 +27,7 @@ DomainShareInfo::DomainShareInfo() :
 {
 }
 
-CoreInternalOutcome DomainShareInfo::Deserialize(const Value &value)
+CoreInternalOutcome DomainShareInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome DomainShareInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DomainShareInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DomainShareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_shareToHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShareTo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shareTo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shareTo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyPolicyGroupEventCondition::ModifyPolicyGroupEventCondition() :
@@ -29,7 +28,7 @@ ModifyPolicyGroupEventCondition::ModifyPolicyGroupEventCondition() :
 {
 }
 
-CoreInternalOutcome ModifyPolicyGroupEventCondition::Deserialize(const Value &value)
+CoreInternalOutcome ModifyPolicyGroupEventCondition::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome ModifyPolicyGroupEventCondition::Deserialize(const Value &va
     return CoreInternalOutcome(true);
 }
 
-void ModifyPolicyGroupEventCondition::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ModifyPolicyGroupEventCondition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eventIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eventId, allocator);
@@ -91,7 +90,7 @@ void ModifyPolicyGroupEventCondition::ToJsonObject(Value &value, Document::Alloc
 
     if (m_alarmNotifyTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlarmNotifyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_alarmNotifyType, allocator);
@@ -99,7 +98,7 @@ void ModifyPolicyGroupEventCondition::ToJsonObject(Value &value, Document::Alloc
 
     if (m_alarmNotifyPeriodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlarmNotifyPeriod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_alarmNotifyPeriod, allocator);
@@ -107,7 +106,7 @@ void ModifyPolicyGroupEventCondition::ToJsonObject(Value &value, Document::Alloc
 
     if (m_ruleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ruleId, allocator);

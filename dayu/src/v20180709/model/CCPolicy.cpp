@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 CCPolicy::CCPolicy() :
@@ -37,7 +36,7 @@ CCPolicy::CCPolicy() :
 {
 }
 
-CoreInternalOutcome CCPolicy::Deserialize(const Value &value)
+CoreInternalOutcome CCPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -117,8 +116,8 @@ CoreInternalOutcome CCPolicy::Deserialize(const Value &value)
         if (!value["RuleList"].IsArray())
             return CoreInternalOutcome(Error("response `CCPolicy.RuleList` is not array type"));
 
-        const Value &tmpValue = value["RuleList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RuleList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CCRule item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -137,8 +136,8 @@ CoreInternalOutcome CCPolicy::Deserialize(const Value &value)
         if (!value["IpList"].IsArray())
             return CoreInternalOutcome(Error("response `CCPolicy.IpList` is not array type"));
 
-        const Value &tmpValue = value["IpList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["IpList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_ipList.push_back((*itr).GetString());
         }
@@ -179,36 +178,36 @@ CoreInternalOutcome CCPolicy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CCPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CCPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_smodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Smode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_smode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_smode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_setIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_setId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_setId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_frequencyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Frequency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frequency, allocator);
@@ -216,15 +215,15 @@ void CCPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_exeModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExeMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_exeMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exeMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_switch, allocator);
@@ -232,62 +231,62 @@ void CCPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_ruleList.begin(); itr != m_ruleList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_ipListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_ipList.begin(); itr != m_ipList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ruleId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 }

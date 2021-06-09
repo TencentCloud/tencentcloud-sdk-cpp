@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 RefundOutSubOrderRefundList::RefundOutSubOrderRefundList() :
@@ -30,7 +29,7 @@ RefundOutSubOrderRefundList::RefundOutSubOrderRefundList() :
 {
 }
 
-CoreInternalOutcome RefundOutSubOrderRefundList::Deserialize(const Value &value)
+CoreInternalOutcome RefundOutSubOrderRefundList::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome RefundOutSubOrderRefundList::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RefundOutSubOrderRefundList::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RefundOutSubOrderRefundList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_platformRefundAmtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlatformRefundAmt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_platformRefundAmt, allocator);
@@ -102,7 +101,7 @@ void RefundOutSubOrderRefundList::ToJsonObject(Value &value, Document::Allocator
 
     if (m_refundAmtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RefundAmt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_refundAmt, allocator);
@@ -110,7 +109,7 @@ void RefundOutSubOrderRefundList::ToJsonObject(Value &value, Document::Allocator
 
     if (m_subMchRefundAmtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubMchRefundAmt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subMchRefundAmt, allocator);
@@ -118,18 +117,18 @@ void RefundOutSubOrderRefundList::ToJsonObject(Value &value, Document::Allocator
 
     if (m_subOutTradeNoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubOutTradeNo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subOutTradeNo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subOutTradeNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subRefundIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubRefundId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subRefundId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subRefundId.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 LiveRealTimeClipMediaSegmentInfo::LiveRealTimeClipMediaSegmentInfo() :
@@ -27,7 +26,7 @@ LiveRealTimeClipMediaSegmentInfo::LiveRealTimeClipMediaSegmentInfo() :
 {
 }
 
-CoreInternalOutcome LiveRealTimeClipMediaSegmentInfo::Deserialize(const Value &value)
+CoreInternalOutcome LiveRealTimeClipMediaSegmentInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome LiveRealTimeClipMediaSegmentInfo::Deserialize(const Value &v
     return CoreInternalOutcome(true);
 }
 
-void LiveRealTimeClipMediaSegmentInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LiveRealTimeClipMediaSegmentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
 }

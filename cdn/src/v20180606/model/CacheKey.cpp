@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 CacheKey::CacheKey() :
@@ -33,7 +32,7 @@ CacheKey::CacheKey() :
 {
 }
 
-CoreInternalOutcome CacheKey::Deserialize(const Value &value)
+CoreInternalOutcome CacheKey::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -148,8 +147,8 @@ CoreInternalOutcome CacheKey::Deserialize(const Value &value)
         if (!value["KeyRules"].IsArray())
             return CoreInternalOutcome(Error("response `CacheKey.KeyRules` is not array type"));
 
-        const Value &tmpValue = value["KeyRules"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["KeyRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             KeyRule item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -167,81 +166,81 @@ CoreInternalOutcome CacheKey::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CacheKey::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CacheKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_fullUrlCacheHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FullUrlCache";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fullUrlCache.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullUrlCache.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ignoreCaseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IgnoreCase";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ignoreCase.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ignoreCase.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queryStringHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueryString";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_queryString.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_cookieHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cookie";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cookie.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_headerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Header";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_header.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_cacheTagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CacheTag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cacheTag.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_schemeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Scheme";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_scheme.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_keyRulesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyRules";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_keyRules.begin(); itr != m_keyRules.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Clb::V20180317::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeTargetGroupInstancesResponse::DescribeTargetGroupInstancesResponse() :
@@ -33,7 +32,7 @@ DescribeTargetGroupInstancesResponse::DescribeTargetGroupInstancesResponse() :
 
 CoreInternalOutcome DescribeTargetGroupInstancesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DescribeTargetGroupInstancesResponse::Deserialize(const stri
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -80,8 +79,8 @@ CoreInternalOutcome DescribeTargetGroupInstancesResponse::Deserialize(const stri
         if (!rsp["TargetGroupInstanceSet"].IsArray())
             return CoreInternalOutcome(Error("response `TargetGroupInstanceSet` is not array type"));
 
-        const Value &tmpValue = rsp["TargetGroupInstanceSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["TargetGroupInstanceSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TargetGroupBackend item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

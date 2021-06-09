@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiRecognitionTaskHeadTailResultOutput::AiRecognitionTaskHeadTailResultOutput() :
@@ -29,7 +28,7 @@ AiRecognitionTaskHeadTailResultOutput::AiRecognitionTaskHeadTailResultOutput() :
 {
 }
 
-CoreInternalOutcome AiRecognitionTaskHeadTailResultOutput::Deserialize(const Value &value)
+CoreInternalOutcome AiRecognitionTaskHeadTailResultOutput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome AiRecognitionTaskHeadTailResultOutput::Deserialize(const Val
     return CoreInternalOutcome(true);
 }
 
-void AiRecognitionTaskHeadTailResultOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiRecognitionTaskHeadTailResultOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_headConfidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeadConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_headConfidence, allocator);
@@ -91,7 +90,7 @@ void AiRecognitionTaskHeadTailResultOutput::ToJsonObject(Value &value, Document:
 
     if (m_headTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeadTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_headTimeOffset, allocator);
@@ -99,7 +98,7 @@ void AiRecognitionTaskHeadTailResultOutput::ToJsonObject(Value &value, Document:
 
     if (m_tailConfidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TailConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tailConfidence, allocator);
@@ -107,7 +106,7 @@ void AiRecognitionTaskHeadTailResultOutput::ToJsonObject(Value &value, Document:
 
     if (m_tailTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TailTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tailTimeOffset, allocator);

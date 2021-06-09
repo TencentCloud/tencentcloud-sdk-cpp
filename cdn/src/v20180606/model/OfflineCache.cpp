@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 OfflineCache::OfflineCache() :
@@ -26,7 +25,7 @@ OfflineCache::OfflineCache() :
 {
 }
 
-CoreInternalOutcome OfflineCache::Deserialize(const Value &value)
+CoreInternalOutcome OfflineCache::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome OfflineCache::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OfflineCache::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OfflineCache::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
 }

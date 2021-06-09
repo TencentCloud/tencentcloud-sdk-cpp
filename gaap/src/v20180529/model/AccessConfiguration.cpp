@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 AccessConfiguration::AccessConfiguration() :
@@ -28,7 +27,7 @@ AccessConfiguration::AccessConfiguration() :
 {
 }
 
-CoreInternalOutcome AccessConfiguration::Deserialize(const Value &value)
+CoreInternalOutcome AccessConfiguration::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome AccessConfiguration::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AccessConfiguration::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AccessConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_accessRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccessRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_accessRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
@@ -88,7 +87,7 @@ void AccessConfiguration::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_concurrentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Concurrent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_concurrent, allocator);

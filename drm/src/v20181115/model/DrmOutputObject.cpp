@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Drm::V20181115::Model;
-using namespace rapidjson;
 using namespace std;
 
 DrmOutputObject::DrmOutputObject() :
@@ -28,7 +27,7 @@ DrmOutputObject::DrmOutputObject() :
 {
 }
 
-CoreInternalOutcome DrmOutputObject::Deserialize(const Value &value)
+CoreInternalOutcome DrmOutputObject::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,31 +73,31 @@ CoreInternalOutcome DrmOutputObject::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DrmOutputObject::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DrmOutputObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bucketNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BucketName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bucketName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bucketName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_objectNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ObjectName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_objectName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_objectName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_paraHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Para";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_para.ToJsonObject(value[key.c_str()], allocator);
     }
 

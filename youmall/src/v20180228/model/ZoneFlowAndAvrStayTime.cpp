@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 ZoneFlowAndAvrStayTime::ZoneFlowAndAvrStayTime() :
@@ -29,7 +28,7 @@ ZoneFlowAndAvrStayTime::ZoneFlowAndAvrStayTime() :
 {
 }
 
-CoreInternalOutcome ZoneFlowAndAvrStayTime::Deserialize(const Value &value)
+CoreInternalOutcome ZoneFlowAndAvrStayTime::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome ZoneFlowAndAvrStayTime::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ZoneFlowAndAvrStayTime::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ZoneFlowAndAvrStayTime::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneId, allocator);
@@ -91,15 +90,15 @@ void ZoneFlowAndAvrStayTime::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_zoneNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zoneName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flowCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowCount, allocator);
@@ -107,7 +106,7 @@ void ZoneFlowAndAvrStayTime::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_avrStayTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvrStayTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_avrStayTime, allocator);

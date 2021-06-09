@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 SlowLogItem::SlowLogItem() :
@@ -36,7 +35,7 @@ SlowLogItem::SlowLogItem() :
 {
 }
 
-CoreInternalOutcome SlowLogItem::Deserialize(const Value &value)
+CoreInternalOutcome SlowLogItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -155,12 +154,12 @@ CoreInternalOutcome SlowLogItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SlowLogItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SlowLogItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Timestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timestamp, allocator);
@@ -168,7 +167,7 @@ void SlowLogItem::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_queryTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueryTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_queryTime, allocator);
@@ -176,39 +175,39 @@ void SlowLogItem::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_sqlTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SqlText";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sqlText.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sqlText.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userHostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserHost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userHost.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userHost.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_databaseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Database";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_database.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_database.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lockTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LockTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lockTime, allocator);
@@ -216,7 +215,7 @@ void SlowLogItem::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_rowsExaminedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RowsExamined";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rowsExamined, allocator);
@@ -224,7 +223,7 @@ void SlowLogItem::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_rowsSentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RowsSent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rowsSent, allocator);
@@ -232,18 +231,18 @@ void SlowLogItem::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_sqlTemplateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SqlTemplate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sqlTemplate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sqlTemplate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_md5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Md5";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_md5.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_md5.c_str(), allocator).Move(), allocator);
     }
 
 }

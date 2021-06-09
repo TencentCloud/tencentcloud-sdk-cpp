@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::As::V20180419::Model;
-using namespace rapidjson;
 using namespace std;
 
 RunMonitorServiceEnabled::RunMonitorServiceEnabled() :
@@ -26,7 +25,7 @@ RunMonitorServiceEnabled::RunMonitorServiceEnabled() :
 {
 }
 
-CoreInternalOutcome RunMonitorServiceEnabled::Deserialize(const Value &value)
+CoreInternalOutcome RunMonitorServiceEnabled::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome RunMonitorServiceEnabled::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RunMonitorServiceEnabled::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RunMonitorServiceEnabled::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enabled, allocator);

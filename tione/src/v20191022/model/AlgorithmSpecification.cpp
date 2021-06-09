@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 AlgorithmSpecification::AlgorithmSpecification() :
@@ -28,7 +27,7 @@ AlgorithmSpecification::AlgorithmSpecification() :
 {
 }
 
-CoreInternalOutcome AlgorithmSpecification::Deserialize(const Value &value)
+CoreInternalOutcome AlgorithmSpecification::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome AlgorithmSpecification::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AlgorithmSpecification::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AlgorithmSpecification::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_trainingImageNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TrainingImageName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_trainingImageName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trainingImageName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_trainingInputModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TrainingInputMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_trainingInputMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trainingInputMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_algorithmNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AlgorithmName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_algorithmName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_algorithmName.c_str(), allocator).Move(), allocator);
     }
 
 }

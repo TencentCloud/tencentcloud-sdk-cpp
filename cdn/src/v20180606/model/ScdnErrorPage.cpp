@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScdnErrorPage::ScdnErrorPage() :
@@ -27,7 +26,7 @@ ScdnErrorPage::ScdnErrorPage() :
 {
 }
 
-CoreInternalOutcome ScdnErrorPage::Deserialize(const Value &value)
+CoreInternalOutcome ScdnErrorPage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome ScdnErrorPage::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScdnErrorPage::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScdnErrorPage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_redirectCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RedirectCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_redirectCode, allocator);
@@ -69,10 +68,10 @@ void ScdnErrorPage::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_redirectUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RedirectUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_redirectUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_redirectUrl.c_str(), allocator).Move(), allocator);
     }
 
 }

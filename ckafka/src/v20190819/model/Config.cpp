@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 Config::Config() :
@@ -32,7 +31,7 @@ Config::Config() :
 {
 }
 
-CoreInternalOutcome Config::Deserialize(const Value &value)
+CoreInternalOutcome Config::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome Config::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Config::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_retentionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Retention";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_retention, allocator);
@@ -124,7 +123,7 @@ void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_minInsyncReplicasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinInsyncReplicas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minInsyncReplicas, allocator);
@@ -132,15 +131,15 @@ void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_cleanUpPolicyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CleanUpPolicy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cleanUpPolicy.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cleanUpPolicy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_segmentMsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SegmentMs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_segmentMs, allocator);
@@ -148,7 +147,7 @@ void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_uncleanLeaderElectionEnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UncleanLeaderElectionEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_uncleanLeaderElectionEnable, allocator);
@@ -156,7 +155,7 @@ void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_segmentBytesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SegmentBytes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_segmentBytes, allocator);
@@ -164,7 +163,7 @@ void Config::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_maxMessageBytesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxMessageBytes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxMessageBytes, allocator);

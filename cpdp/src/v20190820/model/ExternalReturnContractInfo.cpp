@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ExternalReturnContractInfo::ExternalReturnContractInfo() :
@@ -35,7 +34,7 @@ ExternalReturnContractInfo::ExternalReturnContractInfo() :
 {
 }
 
-CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const Value &value)
+CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,87 +143,87 @@ CoreInternalOutcome ExternalReturnContractInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ExternalReturnContractInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ExternalReturnContractInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_externalReturnAgreementIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnAgreementId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnAgreementId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnAgreementId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnContractEffectiveTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnContractEffectiveTimestamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnContractEffectiveTimestamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnContractEffectiveTimestamp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnContractTerminationTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnContractTerminationTimestamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnContractTerminationTimestamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnContractTerminationTimestamp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnContractStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnContractStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnContractStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnContractStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnRequestIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnRequestId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnRequestId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnRequestId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnContractSignedTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnContractSignedTimestamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnContractSignedTimestamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnContractSignedTimestamp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnContractExpiredTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnContractExpiredTimestamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnContractExpiredTimestamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnContractExpiredTimestamp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnContractDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnContractData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnContractData.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnContractData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnContractTerminationRemarkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnContractTerminationRemark";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnContractTerminationRemark.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnContractTerminationRemark.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnContractTerminationModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnContractTerminationMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnContractTerminationMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnContractTerminationMode.c_str(), allocator).Move(), allocator);
     }
 
 }

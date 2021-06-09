@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iir::V20200417::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProductInfo::ProductInfo() :
@@ -33,7 +32,7 @@ ProductInfo::ProductInfo() :
 {
 }
 
-CoreInternalOutcome ProductInfo::Deserialize(const Value &value)
+CoreInternalOutcome ProductInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -129,12 +128,12 @@ CoreInternalOutcome ProductInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProductInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProductInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_findSKUHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FindSKU";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_findSKU, allocator);
@@ -142,48 +141,48 @@ void ProductInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_locationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Location";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_location.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_brandHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Brand";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_brand.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_brand.c_str(), allocator).Move(), allocator);
     }
 
     if (m_priceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Price";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_price.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_price.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productCategoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductCategory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_productCategory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productCategory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
@@ -191,10 +190,10 @@ void ProductInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_imageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_image.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
 }

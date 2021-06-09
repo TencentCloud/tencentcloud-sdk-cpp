@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 TEHDConfigForUpdate::TEHDConfigForUpdate() :
@@ -27,7 +26,7 @@ TEHDConfigForUpdate::TEHDConfigForUpdate() :
 {
 }
 
-CoreInternalOutcome TEHDConfigForUpdate::Deserialize(const Value &value)
+CoreInternalOutcome TEHDConfigForUpdate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome TEHDConfigForUpdate::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TEHDConfigForUpdate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TEHDConfigForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxVideoBitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxVideoBitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxVideoBitrate, allocator);

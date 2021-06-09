@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dc::V20180410::Model;
-using namespace rapidjson;
 using namespace std;
 
 InternetAddressDetail::InternetAddressDetail() :
@@ -37,7 +36,7 @@ InternetAddressDetail::InternetAddressDetail() :
 {
 }
 
-CoreInternalOutcome InternetAddressDetail::Deserialize(const Value &value)
+CoreInternalOutcome InternetAddressDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -166,28 +165,28 @@ CoreInternalOutcome InternetAddressDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InternetAddressDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InternetAddressDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subnetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Subnet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subnet.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnet.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maskLenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaskLen";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maskLen, allocator);
@@ -195,7 +194,7 @@ void InternetAddressDetail::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_addrTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddrType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_addrType, allocator);
@@ -203,7 +202,7 @@ void InternetAddressDetail::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -211,39 +210,39 @@ void InternetAddressDetail::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_applyTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplyTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_applyTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applyTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stopTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StopTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stopTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stopTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_releaseTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReleaseTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_releaseTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_releaseTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appId, allocator);
@@ -251,7 +250,7 @@ void InternetAddressDetail::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_addrProtoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddrProto";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_addrProto, allocator);
@@ -259,7 +258,7 @@ void InternetAddressDetail::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_reserveTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReserveTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reserveTime, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cbs::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 SharePermission::SharePermission() :
@@ -27,7 +26,7 @@ SharePermission::SharePermission() :
 {
 }
 
-CoreInternalOutcome SharePermission::Deserialize(const Value &value)
+CoreInternalOutcome SharePermission::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome SharePermission::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SharePermission::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SharePermission::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_createdTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_accountIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccountId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_accountId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accountId.c_str(), allocator).Move(), allocator);
     }
 
 }

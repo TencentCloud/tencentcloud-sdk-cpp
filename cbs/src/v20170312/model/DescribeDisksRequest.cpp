@@ -20,118 +20,101 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cbs::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeDisksRequest::DescribeDisksRequest() :
-    m_diskIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_orderHasBeenSet(false),
     m_orderFieldHasBeenSet(false),
-    m_returnBindAutoSnapshotPolicyHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_returnBindAutoSnapshotPolicyHasBeenSet(false),
+    m_diskIdsHasBeenSet(false),
+    m_orderHasBeenSet(false)
 {
 }
 
 string DescribeDisksRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_diskIdsHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "DiskIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
-
-        for (auto itr = m_diskIds.begin(); itr != m_diskIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
 
     if (m_filtersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Filters";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
         {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
-    if (m_offsetHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
     if (m_limitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
     }
 
-    if (m_orderHasBeenSet)
-    {
-        Value iKey(kStringType);
-        string key = "Order";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_order.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_orderFieldHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderField";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_orderField.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_returnBindAutoSnapshotPolicyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReturnBindAutoSnapshotPolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_returnBindAutoSnapshotPolicy, allocator);
     }
 
+    if (m_diskIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+        for (auto itr = m_diskIds.begin(); itr != m_diskIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }
 
-
-vector<string> DescribeDisksRequest::GetDiskIds() const
-{
-    return m_diskIds;
-}
-
-void DescribeDisksRequest::SetDiskIds(const vector<string>& _diskIds)
-{
-    m_diskIds = _diskIds;
-    m_diskIdsHasBeenSet = true;
-}
-
-bool DescribeDisksRequest::DiskIdsHasBeenSet() const
-{
-    return m_diskIdsHasBeenSet;
-}
 
 vector<Filter> DescribeDisksRequest::GetFilters() const
 {
@@ -147,22 +130,6 @@ void DescribeDisksRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeDisksRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
-}
-
-uint64_t DescribeDisksRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeDisksRequest::SetOffset(const uint64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeDisksRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
 }
 
 uint64_t DescribeDisksRequest::GetLimit() const
@@ -181,22 +148,6 @@ bool DescribeDisksRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
-string DescribeDisksRequest::GetOrder() const
-{
-    return m_order;
-}
-
-void DescribeDisksRequest::SetOrder(const string& _order)
-{
-    m_order = _order;
-    m_orderHasBeenSet = true;
-}
-
-bool DescribeDisksRequest::OrderHasBeenSet() const
-{
-    return m_orderHasBeenSet;
-}
-
 string DescribeDisksRequest::GetOrderField() const
 {
     return m_orderField;
@@ -213,6 +164,22 @@ bool DescribeDisksRequest::OrderFieldHasBeenSet() const
     return m_orderFieldHasBeenSet;
 }
 
+uint64_t DescribeDisksRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeDisksRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeDisksRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
 bool DescribeDisksRequest::GetReturnBindAutoSnapshotPolicy() const
 {
     return m_returnBindAutoSnapshotPolicy;
@@ -227,6 +194,38 @@ void DescribeDisksRequest::SetReturnBindAutoSnapshotPolicy(const bool& _returnBi
 bool DescribeDisksRequest::ReturnBindAutoSnapshotPolicyHasBeenSet() const
 {
     return m_returnBindAutoSnapshotPolicyHasBeenSet;
+}
+
+vector<string> DescribeDisksRequest::GetDiskIds() const
+{
+    return m_diskIds;
+}
+
+void DescribeDisksRequest::SetDiskIds(const vector<string>& _diskIds)
+{
+    m_diskIds = _diskIds;
+    m_diskIdsHasBeenSet = true;
+}
+
+bool DescribeDisksRequest::DiskIdsHasBeenSet() const
+{
+    return m_diskIdsHasBeenSet;
+}
+
+string DescribeDisksRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeDisksRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeDisksRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
 }
 
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 CancelActivityData::CancelActivityData() :
@@ -26,7 +25,7 @@ CancelActivityData::CancelActivityData() :
 {
 }
 
-CoreInternalOutcome CancelActivityData::Deserialize(const Value &value)
+CoreInternalOutcome CancelActivityData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome CancelActivityData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CancelActivityData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CancelActivityData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_messageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_message.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
 }

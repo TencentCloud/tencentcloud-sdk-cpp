@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 BackupSummaryItem::BackupSummaryItem() :
@@ -35,7 +34,7 @@ BackupSummaryItem::BackupSummaryItem() :
 {
 }
 
-CoreInternalOutcome BackupSummaryItem::Deserialize(const Value &value)
+CoreInternalOutcome BackupSummaryItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,20 +143,20 @@ CoreInternalOutcome BackupSummaryItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BackupSummaryItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BackupSummaryItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoBackupCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoBackupCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoBackupCount, allocator);
@@ -165,7 +164,7 @@ void BackupSummaryItem::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_autoBackupVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoBackupVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoBackupVolume, allocator);
@@ -173,7 +172,7 @@ void BackupSummaryItem::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_manualBackupCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ManualBackupCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_manualBackupCount, allocator);
@@ -181,7 +180,7 @@ void BackupSummaryItem::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_manualBackupVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ManualBackupVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_manualBackupVolume, allocator);
@@ -189,7 +188,7 @@ void BackupSummaryItem::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_dataBackupCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataBackupCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataBackupCount, allocator);
@@ -197,7 +196,7 @@ void BackupSummaryItem::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_dataBackupVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataBackupVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataBackupVolume, allocator);
@@ -205,7 +204,7 @@ void BackupSummaryItem::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_binlogBackupCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BinlogBackupCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_binlogBackupCount, allocator);
@@ -213,7 +212,7 @@ void BackupSummaryItem::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_binlogBackupVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BinlogBackupVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_binlogBackupVolume, allocator);
@@ -221,7 +220,7 @@ void BackupSummaryItem::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_backupVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backupVolume, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 CommonMixControlParams::CommonMixControlParams() :
@@ -28,7 +27,7 @@ CommonMixControlParams::CommonMixControlParams() :
 {
 }
 
-CoreInternalOutcome CommonMixControlParams::Deserialize(const Value &value)
+CoreInternalOutcome CommonMixControlParams::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome CommonMixControlParams::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CommonMixControlParams::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CommonMixControlParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_useMixCropCenterHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UseMixCropCenter";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useMixCropCenter, allocator);
@@ -80,7 +79,7 @@ void CommonMixControlParams::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_allowCopyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AllowCopy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allowCopy, allocator);
@@ -88,7 +87,7 @@ void CommonMixControlParams::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_passInputSeiHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PassInputSei";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_passInputSei, allocator);

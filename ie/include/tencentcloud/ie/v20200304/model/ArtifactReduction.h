@@ -69,14 +69,12 @@ namespace TencentCloud
 edaf,
 wdaf，
 默认edaf。
-注意：edaf：速度快，去毛刺效果强，保护边缘效果较弱；
-wdaf：速度慢，保护边缘效果好
+注意：此参数已经弃用
                      * @return Algorithm 去毛刺算法，可选项：
 edaf,
 wdaf，
 默认edaf。
-注意：edaf：速度快，去毛刺效果强，保护边缘效果较弱；
-wdaf：速度慢，保护边缘效果好
+注意：此参数已经弃用
                      */
                     std::string GetAlgorithm() const;
 
@@ -85,14 +83,12 @@ wdaf：速度慢，保护边缘效果好
 edaf,
 wdaf，
 默认edaf。
-注意：edaf：速度快，去毛刺效果强，保护边缘效果较弱；
-wdaf：速度慢，保护边缘效果好
+注意：此参数已经弃用
                      * @param Algorithm 去毛刺算法，可选项：
 edaf,
 wdaf，
 默认edaf。
-注意：edaf：速度快，去毛刺效果强，保护边缘效果较弱；
-wdaf：速度慢，保护边缘效果好
+注意：此参数已经弃用
                      */
                     void SetAlgorithm(const std::string& _algorithm);
 
@@ -115,8 +111,7 @@ wdaf：速度慢，保护边缘效果好
 edaf,
 wdaf，
 默认edaf。
-注意：edaf：速度快，去毛刺效果强，保护边缘效果较弱；
-wdaf：速度慢，保护边缘效果好
+注意：此参数已经弃用
                      */
                     std::string m_algorithm;
                     bool m_algorithmHasBeenSet;

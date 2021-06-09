@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 PodSpec::PodSpec() :
@@ -35,7 +34,7 @@ PodSpec::PodSpec() :
 {
 }
 
-CoreInternalOutcome PodSpec::Deserialize(const Value &value)
+CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -95,8 +94,8 @@ CoreInternalOutcome PodSpec::Deserialize(const Value &value)
         if (!value["DataVolumes"].IsArray())
             return CoreInternalOutcome(Error("response `PodSpec.DataVolumes` is not array type"));
 
-        const Value &tmpValue = value["DataVolumes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DataVolumes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_dataVolumes.push_back((*itr).GetString());
         }
@@ -118,8 +117,8 @@ CoreInternalOutcome PodSpec::Deserialize(const Value &value)
         if (!value["PodVolumes"].IsArray())
             return CoreInternalOutcome(Error("response `PodSpec.PodVolumes` is not array type"));
 
-        const Value &tmpValue = value["PodVolumes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PodVolumes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PodVolume item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -164,36 +163,36 @@ CoreInternalOutcome PodSpec::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PodSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PodSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceProviderIdentifierHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceProviderIdentifier";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceProviderIdentifier.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceProviderIdentifier.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceProviderTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceProviderType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceProviderType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceProviderType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cpuHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);
@@ -201,7 +200,7 @@ void PodSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_memoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memory, allocator);
@@ -209,43 +208,43 @@ void PodSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_dataVolumesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataVolumes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_dataVolumes.begin(); itr != m_dataVolumes.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_cpuTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpuType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cpuType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cpuType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_podVolumesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PodVolumes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_podVolumes.begin(); itr != m_podVolumes.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_isDynamicSpecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsDynamicSpec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDynamicSpec, allocator);
@@ -253,10 +252,10 @@ void PodSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_dynamicPodSpecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DynamicPodSpec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dynamicPodSpec.ToJsonObject(value[key.c_str()], allocator);
     }
 

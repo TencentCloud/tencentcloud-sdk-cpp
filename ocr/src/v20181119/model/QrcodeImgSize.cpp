@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 QrcodeImgSize::QrcodeImgSize() :
@@ -27,7 +26,7 @@ QrcodeImgSize::QrcodeImgSize() :
 {
 }
 
-CoreInternalOutcome QrcodeImgSize::Deserialize(const Value &value)
+CoreInternalOutcome QrcodeImgSize::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome QrcodeImgSize::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void QrcodeImgSize::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QrcodeImgSize::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_wideHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Wide";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wide, allocator);
@@ -69,7 +68,7 @@ void QrcodeImgSize::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_highHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "High";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_high, allocator);

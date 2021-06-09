@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 EnvironmentStrategy::EnvironmentStrategy() :
@@ -28,7 +27,7 @@ EnvironmentStrategy::EnvironmentStrategy() :
 {
 }
 
-CoreInternalOutcome EnvironmentStrategy::Deserialize(const Value &value)
+CoreInternalOutcome EnvironmentStrategy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome EnvironmentStrategy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EnvironmentStrategy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EnvironmentStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_environmentNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnvironmentName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_environmentName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_environmentName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_quotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Quota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quota, allocator);
@@ -88,7 +87,7 @@ void EnvironmentStrategy::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_maxQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxQuota, allocator);

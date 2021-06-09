@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Soe::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 KeywordScore::KeywordScore() :
@@ -31,7 +30,7 @@ KeywordScore::KeywordScore() :
 {
 }
 
-CoreInternalOutcome KeywordScore::Deserialize(const Value &value)
+CoreInternalOutcome KeywordScore::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,8 +80,8 @@ CoreInternalOutcome KeywordScore::Deserialize(const Value &value)
         if (!value["Words"].IsArray())
             return CoreInternalOutcome(Error("response `KeywordScore.Words` is not array type"));
 
-        const Value &tmpValue = value["Words"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Words"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             WordRsp item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,20 +109,20 @@ CoreInternalOutcome KeywordScore::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void KeywordScore::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void KeywordScore::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_keywordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Keyword";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyword.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pronAccuracyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PronAccuracy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pronAccuracy, allocator);
@@ -131,7 +130,7 @@ void KeywordScore::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_pronFluencyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PronFluency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pronFluency, allocator);
@@ -139,7 +138,7 @@ void KeywordScore::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_pronCompletionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PronCompletion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pronCompletion, allocator);
@@ -147,22 +146,22 @@ void KeywordScore::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_wordsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Words";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_words.begin(); itr != m_words.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_suggestedScoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuggestedScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_suggestedScore, allocator);

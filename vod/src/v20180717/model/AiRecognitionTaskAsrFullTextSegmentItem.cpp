@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiRecognitionTaskAsrFullTextSegmentItem::AiRecognitionTaskAsrFullTextSegmentItem() :
@@ -29,7 +28,7 @@ AiRecognitionTaskAsrFullTextSegmentItem::AiRecognitionTaskAsrFullTextSegmentItem
 {
 }
 
-CoreInternalOutcome AiRecognitionTaskAsrFullTextSegmentItem::Deserialize(const Value &value)
+CoreInternalOutcome AiRecognitionTaskAsrFullTextSegmentItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextSegmentItem::Deserialize(const V
     return CoreInternalOutcome(true);
 }
 
-void AiRecognitionTaskAsrFullTextSegmentItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiRecognitionTaskAsrFullTextSegmentItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -91,7 +90,7 @@ void AiRecognitionTaskAsrFullTextSegmentItem::ToJsonObject(Value &value, Documen
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -99,7 +98,7 @@ void AiRecognitionTaskAsrFullTextSegmentItem::ToJsonObject(Value &value, Documen
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
@@ -107,10 +106,10 @@ void AiRecognitionTaskAsrFullTextSegmentItem::ToJsonObject(Value &value, Documen
 
     if (m_textHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Wav::V20210129::Model;
-using namespace rapidjson;
 using namespace std;
 
 LiveCodeDetail::LiveCodeDetail() :
@@ -35,7 +34,7 @@ LiveCodeDetail::LiveCodeDetail() :
 {
 }
 
-CoreInternalOutcome LiveCodeDetail::Deserialize(const Value &value)
+CoreInternalOutcome LiveCodeDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,12 +143,12 @@ CoreInternalOutcome LiveCodeDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LiveCodeDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LiveCodeDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_liveCodeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LiveCodeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_liveCodeId, allocator);
@@ -157,31 +156,31 @@ void LiveCodeDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_liveCodeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LiveCodeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_liveCodeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_liveCodeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shortChainAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShortChainAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shortChainAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shortChainAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_liveCodePreviewHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LiveCodePreview";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_liveCodePreview.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_liveCodePreview.c_str(), allocator).Move(), allocator);
     }
 
     if (m_activityIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActivityId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_activityId, allocator);
@@ -189,15 +188,15 @@ void LiveCodeDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_activityNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActivityName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_activityName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_activityName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_liveCodeStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LiveCodeState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_liveCodeState, allocator);
@@ -205,15 +204,15 @@ void LiveCodeDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_liveCodeDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LiveCodeData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_liveCodeData.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_liveCodeData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -221,7 +220,7 @@ void LiveCodeDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);

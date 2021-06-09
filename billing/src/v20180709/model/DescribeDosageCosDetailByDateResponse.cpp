@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Billing::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeDosageCosDetailByDateResponse::DescribeDosageCosDetailByDateResponse() :
@@ -31,7 +30,7 @@ DescribeDosageCosDetailByDateResponse::DescribeDosageCosDetailByDateResponse() :
 
 CoreInternalOutcome DescribeDosageCosDetailByDateResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeDosageCosDetailByDateResponse::Deserialize(const str
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeDosageCosDetailByDateResponse::Deserialize(const str
         if (!rsp["DetailSets"].IsArray())
             return CoreInternalOutcome(Error("response `DetailSets` is not array type"));
 
-        const Value &tmpValue = rsp["DetailSets"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DetailSets"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CosDetailSets item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

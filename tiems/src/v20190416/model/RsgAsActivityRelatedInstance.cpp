@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiems::V20190416::Model;
-using namespace rapidjson;
 using namespace std;
 
 RsgAsActivityRelatedInstance::RsgAsActivityRelatedInstance() :
@@ -27,7 +26,7 @@ RsgAsActivityRelatedInstance::RsgAsActivityRelatedInstance() :
 {
 }
 
-CoreInternalOutcome RsgAsActivityRelatedInstance::Deserialize(const Value &value)
+CoreInternalOutcome RsgAsActivityRelatedInstance::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome RsgAsActivityRelatedInstance::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void RsgAsActivityRelatedInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RsgAsActivityRelatedInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
     }
 
 }

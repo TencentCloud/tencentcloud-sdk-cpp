@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiems::V20190416::Model;
-using namespace rapidjson;
 using namespace std;
 
 PredictInput::PredictInput() :
@@ -31,7 +30,7 @@ PredictInput::PredictInput() :
 {
 }
 
-CoreInternalOutcome PredictInput::Deserialize(const Value &value)
+CoreInternalOutcome PredictInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,44 +99,44 @@ CoreInternalOutcome PredictInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PredictInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PredictInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_inputPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inputPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outputPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outputPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_inputDataFormatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InputDataFormat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_inputDataFormat.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputDataFormat.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outputDataFormatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputDataFormat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outputDataFormat.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputDataFormat.c_str(), allocator).Move(), allocator);
     }
 
     if (m_batchSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BatchSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_batchSize, allocator);
@@ -145,10 +144,10 @@ void PredictInput::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_signatureNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignatureName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_signatureName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signatureName.c_str(), allocator).Move(), allocator);
     }
 
 }

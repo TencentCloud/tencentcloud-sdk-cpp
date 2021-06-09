@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dcdb::V20180411::Model;
-using namespace rapidjson;
 using namespace std;
 
 Database::Database() :
@@ -26,7 +25,7 @@ Database::Database() :
 {
 }
 
-CoreInternalOutcome Database::Deserialize(const Value &value)
+CoreInternalOutcome Database::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome Database::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Database::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Database::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dbNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DbName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dbName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbName.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateBindingRequest::CreateBindingRequest() :
@@ -28,44 +27,45 @@ CreateBindingRequest::CreateBindingRequest() :
     m_tidHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_forceBindHasBeenSet(false),
-    m_nickHasBeenSet(false)
+    m_nickHasBeenSet(false),
+    m_bindTokenHasBeenSet(false)
 {
 }
 
 string CreateBindingRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_accessIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccessId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_accessId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_tid.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Role";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_role.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
     }
 
     if (m_forceBindHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ForceBind";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceBind, allocator);
@@ -73,15 +73,23 @@ string CreateBindingRequest::ToJsonString() const
 
     if (m_nickHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Nick";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_nick.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nick.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bindTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bindToken.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }
@@ -165,6 +173,22 @@ void CreateBindingRequest::SetNick(const string& _nick)
 bool CreateBindingRequest::NickHasBeenSet() const
 {
     return m_nickHasBeenSet;
+}
+
+string CreateBindingRequest::GetBindToken() const
+{
+    return m_bindToken;
+}
+
+void CreateBindingRequest::SetBindToken(const string& _bindToken)
+{
+    m_bindToken = _bindToken;
+    m_bindTokenHasBeenSet = true;
+}
+
+bool CreateBindingRequest::BindTokenHasBeenSet() const
+{
+    return m_bindTokenHasBeenSet;
 }
 
 

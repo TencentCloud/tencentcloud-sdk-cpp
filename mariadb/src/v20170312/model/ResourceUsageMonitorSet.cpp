@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mariadb::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResourceUsageMonitorSet::ResourceUsageMonitorSet() :
@@ -29,7 +28,7 @@ ResourceUsageMonitorSet::ResourceUsageMonitorSet() :
 {
 }
 
-CoreInternalOutcome ResourceUsageMonitorSet::Deserialize(const Value &value)
+CoreInternalOutcome ResourceUsageMonitorSet::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -106,42 +105,42 @@ CoreInternalOutcome ResourceUsageMonitorSet::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResourceUsageMonitorSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResourceUsageMonitorSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_binlogDiskAvailableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BinlogDiskAvailable";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_binlogDiskAvailable.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_cpuUsageRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CpuUsageRate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cpuUsageRate.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_memAvailableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemAvailable";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_memAvailable.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_dataDiskAvailableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataDiskAvailable";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dataDiskAvailable.ToJsonObject(value[key.c_str()], allocator);
     }
 

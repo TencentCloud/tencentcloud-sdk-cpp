@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfw::V20190904::Model;
-using namespace rapidjson;
 using namespace std;
 
 SequenceData::SequenceData() :
@@ -28,7 +27,7 @@ SequenceData::SequenceData() :
 {
 }
 
-CoreInternalOutcome SequenceData::Deserialize(const Value &value)
+CoreInternalOutcome SequenceData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome SequenceData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SequenceData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SequenceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -80,7 +79,7 @@ void SequenceData::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_orderIndexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_orderIndex, allocator);
@@ -88,7 +87,7 @@ void SequenceData::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_newOrderIndexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewOrderIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_newOrderIndex, allocator);

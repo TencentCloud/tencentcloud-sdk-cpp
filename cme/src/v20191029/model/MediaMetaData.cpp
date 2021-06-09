@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaMetaData::MediaMetaData() :
@@ -34,7 +33,7 @@ MediaMetaData::MediaMetaData() :
 {
 }
 
-CoreInternalOutcome MediaMetaData::Deserialize(const Value &value)
+CoreInternalOutcome MediaMetaData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -114,8 +113,8 @@ CoreInternalOutcome MediaMetaData::Deserialize(const Value &value)
         if (!value["VideoStreamInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaMetaData.VideoStreamInfoSet` is not array type"));
 
-        const Value &tmpValue = value["VideoStreamInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["VideoStreamInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             VideoStreamInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -134,8 +133,8 @@ CoreInternalOutcome MediaMetaData::Deserialize(const Value &value)
         if (!value["AudioStreamInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `MediaMetaData.AudioStreamInfoSet` is not array type"));
 
-        const Value &tmpValue = value["AudioStreamInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AudioStreamInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AudioStreamInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -153,12 +152,12 @@ CoreInternalOutcome MediaMetaData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaMetaData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
@@ -166,15 +165,15 @@ void MediaMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_containerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Container";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_container.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_container.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bitrate, allocator);
@@ -182,7 +181,7 @@ void MediaMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -190,7 +189,7 @@ void MediaMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -198,7 +197,7 @@ void MediaMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -206,7 +205,7 @@ void MediaMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_rotateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rotate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rotate, allocator);
@@ -214,30 +213,30 @@ void MediaMetaData::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_videoStreamInfoSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoStreamInfoSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_videoStreamInfoSet.begin(); itr != m_videoStreamInfoSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_audioStreamInfoSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioStreamInfoSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_audioStreamInfoSet.begin(); itr != m_audioStreamInfoSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

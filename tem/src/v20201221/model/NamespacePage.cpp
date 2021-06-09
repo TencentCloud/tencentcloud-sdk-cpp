@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tem::V20201221::Model;
-using namespace rapidjson;
 using namespace std;
 
 NamespacePage::NamespacePage() :
@@ -29,7 +28,7 @@ NamespacePage::NamespacePage() :
 {
 }
 
-CoreInternalOutcome NamespacePage::Deserialize(const Value &value)
+CoreInternalOutcome NamespacePage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -39,8 +38,8 @@ CoreInternalOutcome NamespacePage::Deserialize(const Value &value)
         if (!value["Records"].IsArray())
             return CoreInternalOutcome(Error("response `NamespacePage.Records` is not array type"));
 
-        const Value &tmpValue = value["Records"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Records"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TemNamespaceInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,27 +87,27 @@ CoreInternalOutcome NamespacePage::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NamespacePage::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NamespacePage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_recordsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Records";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_records.begin(); itr != m_records.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_totalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Total";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_total, allocator);
@@ -116,7 +115,7 @@ void NamespacePage::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_sizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
@@ -124,7 +123,7 @@ void NamespacePage::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_pagesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pages";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pages, allocator);

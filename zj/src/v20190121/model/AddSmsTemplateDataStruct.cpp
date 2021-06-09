@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 AddSmsTemplateDataStruct::AddSmsTemplateDataStruct() :
@@ -26,7 +25,7 @@ AddSmsTemplateDataStruct::AddSmsTemplateDataStruct() :
 {
 }
 
-CoreInternalOutcome AddSmsTemplateDataStruct::Deserialize(const Value &value)
+CoreInternalOutcome AddSmsTemplateDataStruct::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome AddSmsTemplateDataStruct::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AddSmsTemplateDataStruct::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AddSmsTemplateDataStruct::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templateId, allocator);

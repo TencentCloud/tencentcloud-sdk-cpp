@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 LiveStreamClipProjectInput::LiveStreamClipProjectInput() :
@@ -27,7 +26,7 @@ LiveStreamClipProjectInput::LiveStreamClipProjectInput() :
 {
 }
 
-CoreInternalOutcome LiveStreamClipProjectInput::Deserialize(const Value &value)
+CoreInternalOutcome LiveStreamClipProjectInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome LiveStreamClipProjectInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LiveStreamClipProjectInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LiveStreamClipProjectInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_streamRecordDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamRecordDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_streamRecordDuration, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 IPSECOptionsSpecification::IPSECOptionsSpecification() :
@@ -30,7 +29,7 @@ IPSECOptionsSpecification::IPSECOptionsSpecification() :
 {
 }
 
-CoreInternalOutcome IPSECOptionsSpecification::Deserialize(const Value &value)
+CoreInternalOutcome IPSECOptionsSpecification::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome IPSECOptionsSpecification::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IPSECOptionsSpecification::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IPSECOptionsSpecification::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_encryptAlgorithmHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EncryptAlgorithm";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_encryptAlgorithm.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptAlgorithm.c_str(), allocator).Move(), allocator);
     }
 
     if (m_integrityAlgorithHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IntegrityAlgorith";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_integrityAlgorith.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_integrityAlgorith.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iPSECSaLifetimeSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IPSECSaLifetimeSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iPSECSaLifetimeSeconds, allocator);
@@ -118,15 +117,15 @@ void IPSECOptionsSpecification::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_pfsDhGroupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PfsDhGroup";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pfsDhGroup.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pfsDhGroup.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iPSECSaLifetimeTrafficHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IPSECSaLifetimeTraffic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iPSECSaLifetimeTraffic, allocator);

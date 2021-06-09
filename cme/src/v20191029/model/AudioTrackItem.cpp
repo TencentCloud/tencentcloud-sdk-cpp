@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 AudioTrackItem::AudioTrackItem() :
@@ -29,7 +28,7 @@ AudioTrackItem::AudioTrackItem() :
 {
 }
 
-CoreInternalOutcome AudioTrackItem::Deserialize(const Value &value)
+CoreInternalOutcome AudioTrackItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,28 +77,28 @@ CoreInternalOutcome AudioTrackItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AudioTrackItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AudioTrackItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sourceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sourceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sourceMediaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceMedia";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sourceMedia.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceMedia.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sourceMediaStartTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceMediaStartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sourceMediaStartTime, allocator);
@@ -107,7 +106,7 @@ void AudioTrackItem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);

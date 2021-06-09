@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bri::V20190328::Model;
-using namespace rapidjson;
 using namespace std;
 
 BRIRequest::BRIRequest() :
@@ -39,7 +38,7 @@ BRIRequest::BRIRequest() :
 {
 }
 
-CoreInternalOutcome BRIRequest::Deserialize(const Value &value)
+CoreInternalOutcome BRIRequest::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -188,84 +187,84 @@ CoreInternalOutcome BRIRequest::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BRIRequest::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BRIRequest::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_serviceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Service";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_service.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_service.c_str(), allocator).Move(), allocator);
     }
 
     if (m_qQHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QQ";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_qQ.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_qQ.c_str(), allocator).Move(), allocator);
     }
 
     if (m_qQTagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QQTag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_qQTag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_qQTag.c_str(), allocator).Move(), allocator);
     }
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certMd5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertMd5";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_certMd5.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certMd5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_packageNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PackageName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_packageName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_packageName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileMd5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileMd5";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fileMd5.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileMd5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sceneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Scene";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scene.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scene.c_str(), allocator).Move(), allocator);
     }
 
     if (m_phoneNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PhoneNumber";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_phoneNumber.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phoneNumber.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fileSize, allocator);
@@ -273,34 +272,34 @@ void BRIRequest::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_ipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imeiHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Imei";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imei.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imei.c_str(), allocator).Move(), allocator);
     }
 
     if (m_wechatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Wechat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_wechat.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wechat.c_str(), allocator).Move(), allocator);
     }
 
     if (m_wechatTagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WechatTag";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_wechatTag.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wechatTag.c_str(), allocator).Move(), allocator);
     }
 
 }

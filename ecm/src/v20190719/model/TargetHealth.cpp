@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 TargetHealth::TargetHealth() :
@@ -30,7 +29,7 @@ TargetHealth::TargetHealth() :
 {
 }
 
-CoreInternalOutcome TargetHealth::Deserialize(const Value &value)
+CoreInternalOutcome TargetHealth::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome TargetHealth::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TargetHealth::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TargetHealth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_iPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IP";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iP.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iP.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
@@ -110,7 +109,7 @@ void TargetHealth::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_healthStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_healthStatus, allocator);
@@ -118,18 +117,18 @@ void TargetHealth::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_targetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_targetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_healthStatusDetailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthStatusDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_healthStatusDetail.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthStatusDetail.c_str(), allocator).Move(), allocator);
     }
 
 }

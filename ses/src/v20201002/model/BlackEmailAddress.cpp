@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ses::V20201002::Model;
-using namespace rapidjson;
 using namespace std;
 
 BlackEmailAddress::BlackEmailAddress() :
@@ -27,7 +26,7 @@ BlackEmailAddress::BlackEmailAddress() :
 {
 }
 
-CoreInternalOutcome BlackEmailAddress::Deserialize(const Value &value)
+CoreInternalOutcome BlackEmailAddress::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome BlackEmailAddress::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BlackEmailAddress::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BlackEmailAddress::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bounceTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BounceTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bounceTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bounceTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_emailAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EmailAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_emailAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_emailAddress.c_str(), allocator).Move(), allocator);
     }
 
 }

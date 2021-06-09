@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ds::V20180523::Model;
-using namespace rapidjson;
 using namespace std;
 
 SignLocation::SignLocation() :
@@ -30,7 +29,7 @@ SignLocation::SignLocation() :
 {
 }
 
-CoreInternalOutcome SignLocation::Deserialize(const Value &value)
+CoreInternalOutcome SignLocation::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,47 +88,47 @@ CoreInternalOutcome SignLocation::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SignLocation::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SignLocation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_signOnPageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignOnPage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_signOnPage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signOnPage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signLocationLBXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignLocationLBX";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_signLocationLBX.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signLocationLBX.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signLocationLBYHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignLocationLBY";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_signLocationLBY.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signLocationLBY.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signLocationRUXHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignLocationRUX";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_signLocationRUX.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signLocationRUX.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signLocationRUYHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignLocationRUY";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_signLocationRUY.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signLocationRUY.c_str(), allocator).Move(), allocator);
     }
 
 }

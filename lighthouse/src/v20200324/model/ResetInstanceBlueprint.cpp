@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResetInstanceBlueprint::ResetInstanceBlueprint() :
@@ -28,7 +27,7 @@ ResetInstanceBlueprint::ResetInstanceBlueprint() :
 {
 }
 
-CoreInternalOutcome ResetInstanceBlueprint::Deserialize(const Value &value)
+CoreInternalOutcome ResetInstanceBlueprint::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,21 +73,21 @@ CoreInternalOutcome ResetInstanceBlueprint::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResetInstanceBlueprint::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResetInstanceBlueprint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_blueprintInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlueprintInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_blueprintInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_isResettableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsResettable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isResettable, allocator);
@@ -96,10 +95,10 @@ void ResetInstanceBlueprint::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_nonResettableMessageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NonResettableMessage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nonResettableMessage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nonResettableMessage.c_str(), allocator).Move(), allocator);
     }
 
 }

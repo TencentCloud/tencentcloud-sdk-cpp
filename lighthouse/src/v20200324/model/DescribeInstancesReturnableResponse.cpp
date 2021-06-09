@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeInstancesReturnableResponse::DescribeInstancesReturnableResponse() :
@@ -32,7 +31,7 @@ DescribeInstancesReturnableResponse::DescribeInstancesReturnableResponse() :
 
 CoreInternalOutcome DescribeInstancesReturnableResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeInstancesReturnableResponse::Deserialize(const strin
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeInstancesReturnableResponse::Deserialize(const strin
         if (!rsp["InstanceReturnableSet"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceReturnableSet` is not array type"));
 
-        const Value &tmpValue = rsp["InstanceReturnableSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["InstanceReturnableSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InstanceReturnable item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

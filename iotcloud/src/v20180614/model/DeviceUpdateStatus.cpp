@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceUpdateStatus::DeviceUpdateStatus() :
@@ -34,7 +33,7 @@ DeviceUpdateStatus::DeviceUpdateStatus() :
 {
 }
 
-CoreInternalOutcome DeviceUpdateStatus::Deserialize(const Value &value)
+CoreInternalOutcome DeviceUpdateStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,20 +132,20 @@ CoreInternalOutcome DeviceUpdateStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceUpdateStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceUpdateStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deviceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastProcessTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastProcessTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastProcessTime, allocator);
@@ -154,7 +153,7 @@ void DeviceUpdateStatus::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -162,15 +161,15 @@ void DeviceUpdateStatus::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_errMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_retcodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Retcode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_retcode, allocator);
@@ -178,15 +177,15 @@ void DeviceUpdateStatus::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_dstVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dstVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_percentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Percent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_percent, allocator);
@@ -194,15 +193,15 @@ void DeviceUpdateStatus::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_oriVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_oriVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oriVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mgobe::V20201014::Model;
-using namespace rapidjson;
 using namespace std;
 
 Player::Player() :
@@ -32,7 +31,7 @@ Player::Player() :
 {
 }
 
-CoreInternalOutcome Player::Deserialize(const Value &value)
+CoreInternalOutcome Player::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,36 +110,36 @@ CoreInternalOutcome Player::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Player::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Player::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_openIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpenId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_openId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_teamIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TeamId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_teamId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_teamId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isRobotHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsRobot";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isRobot, allocator);
@@ -148,15 +147,15 @@ void Player::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_playerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlayerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_playerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_playerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customPlayerStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomPlayerStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_customPlayerStatus, allocator);
@@ -164,10 +163,10 @@ void Player::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_customProfileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomProfile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_customProfile.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customProfile.c_str(), allocator).Move(), allocator);
     }
 
 }

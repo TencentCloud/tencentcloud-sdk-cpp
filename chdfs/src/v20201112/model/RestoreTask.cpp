@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Chdfs::V20201112::Model;
-using namespace rapidjson;
 using namespace std;
 
 RestoreTask::RestoreTask() :
@@ -31,7 +30,7 @@ RestoreTask::RestoreTask() :
 {
 }
 
-CoreInternalOutcome RestoreTask::Deserialize(const Value &value)
+CoreInternalOutcome RestoreTask::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome RestoreTask::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RestoreTask::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RestoreTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_restoreTaskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RestoreTaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_restoreTaskId, allocator);
@@ -113,15 +112,15 @@ void RestoreTask::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_filePathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FilePath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_filePath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_filePath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -129,7 +128,7 @@ void RestoreTask::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_daysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Days";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_days, allocator);
@@ -137,7 +136,7 @@ void RestoreTask::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -145,10 +144,10 @@ void RestoreTask::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }

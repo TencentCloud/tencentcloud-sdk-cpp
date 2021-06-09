@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ame::V20190916::Model;
-using namespace rapidjson;
 using namespace std;
 
 MusicDetailInfo::MusicDetailInfo() :
@@ -37,7 +36,7 @@ MusicDetailInfo::MusicDetailInfo() :
 {
 }
 
-CoreInternalOutcome MusicDetailInfo::Deserialize(const Value &value)
+CoreInternalOutcome MusicDetailInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,8 +66,8 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const Value &value)
         if (!value["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `MusicDetailInfo.Tags` is not array type"));
 
-        const Value &tmpValue = value["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_tags.push_back((*itr).GetString());
         }
@@ -80,8 +79,8 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const Value &value)
         if (!value["HitWords"].IsArray())
             return CoreInternalOutcome(Error("response `MusicDetailInfo.HitWords` is not array type"));
 
-        const Value &tmpValue = value["HitWords"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["HitWords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_hitWords.push_back((*itr).GetString());
         }
@@ -113,8 +112,8 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const Value &value)
         if (!value["Scene"].IsArray())
             return CoreInternalOutcome(Error("response `MusicDetailInfo.Scene` is not array type"));
 
-        const Value &tmpValue = value["Scene"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Scene"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_scene.push_back((*itr).GetString());
         }
@@ -126,8 +125,8 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const Value &value)
         if (!value["Region"].IsArray())
             return CoreInternalOutcome(Error("response `MusicDetailInfo.Region` is not array type"));
 
-        const Value &tmpValue = value["Region"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Region"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_region.push_back((*itr).GetString());
         }
@@ -178,54 +177,54 @@ CoreInternalOutcome MusicDetailInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MusicDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MusicDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_musicIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MusicId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_musicId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_musicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ameIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AmeId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ameId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ameId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_hitWordsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HitWords";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_hitWords.begin(); itr != m_hitWords.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_bpmHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bpm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bpm, allocator);
@@ -233,7 +232,7 @@ void MusicDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
@@ -241,60 +240,60 @@ void MusicDetailInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_sceneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Scene";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_scene.begin(); itr != m_scene.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_region.begin(); itr != m_region.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_authPeriodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuthPeriod";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_authPeriod.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authPeriod.c_str(), allocator).Move(), allocator);
     }
 
     if (m_commercializationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Commercialization";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_commercialization.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_commercialization.c_str(), allocator).Move(), allocator);
     }
 
     if (m_platformHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Platform";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_platform.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_platform.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
     }
 
 }

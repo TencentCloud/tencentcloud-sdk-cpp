@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 SmsCampaignStatisticsTemplateData::SmsCampaignStatisticsTemplateData() :
@@ -29,7 +28,7 @@ SmsCampaignStatisticsTemplateData::SmsCampaignStatisticsTemplateData() :
 {
 }
 
-CoreInternalOutcome SmsCampaignStatisticsTemplateData::Deserialize(const Value &value)
+CoreInternalOutcome SmsCampaignStatisticsTemplateData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,28 +77,28 @@ CoreInternalOutcome SmsCampaignStatisticsTemplateData::Deserialize(const Value &
     return CoreInternalOutcome(true);
 }
 
-void SmsCampaignStatisticsTemplateData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SmsCampaignStatisticsTemplateData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_templateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_templateContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_templateContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateContent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sendCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SendCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sendCount, allocator);
@@ -107,7 +106,7 @@ void SmsCampaignStatisticsTemplateData::ToJsonObject(Value &value, Document::All
 
     if (m_clickCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClickCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clickCount, allocator);

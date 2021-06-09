@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceMarketOptionsRequest::InstanceMarketOptionsRequest() :
@@ -27,7 +26,7 @@ InstanceMarketOptionsRequest::InstanceMarketOptionsRequest() :
 {
 }
 
-CoreInternalOutcome InstanceMarketOptionsRequest::Deserialize(const Value &value)
+CoreInternalOutcome InstanceMarketOptionsRequest::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,24 +62,24 @@ CoreInternalOutcome InstanceMarketOptionsRequest::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void InstanceMarketOptionsRequest::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceMarketOptionsRequest::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_spotOptionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SpotOptions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_spotOptions.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_marketTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MarketType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_marketType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_marketType.c_str(), allocator).Move(), allocator);
     }
 
 }

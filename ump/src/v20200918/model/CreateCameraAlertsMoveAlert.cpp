@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateCameraAlertsMoveAlert::CreateCameraAlertsMoveAlert() :
@@ -27,7 +26,7 @@ CreateCameraAlertsMoveAlert::CreateCameraAlertsMoveAlert() :
 {
 }
 
-CoreInternalOutcome CreateCameraAlertsMoveAlert::Deserialize(const Value &value)
+CoreInternalOutcome CreateCameraAlertsMoveAlert::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome CreateCameraAlertsMoveAlert::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CreateCameraAlertsMoveAlert::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CreateCameraAlertsMoveAlert::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_moveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Move";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_move, allocator);
@@ -69,7 +68,7 @@ void CreateCameraAlertsMoveAlert::ToJsonObject(Value &value, Document::Allocator
 
     if (m_moveConfidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MoveConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_moveConfidence, allocator);

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyPersonFeatureInfoRequest::ModifyPersonFeatureInfoRequest() :
@@ -35,22 +34,22 @@ ModifyPersonFeatureInfoRequest::ModifyPersonFeatureInfoRequest() :
 
 string ModifyPersonFeatureInfoRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_companyIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CompanyId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_companyId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_companyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_personIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_personId, allocator);
@@ -58,23 +57,23 @@ string ModifyPersonFeatureInfoRequest::ToJsonString() const
 
     if (m_pictureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Picture";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_picture.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_picture.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pictureNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PictureName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_pictureName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pictureName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_personTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_personType, allocator);
@@ -82,15 +81,15 @@ string ModifyPersonFeatureInfoRequest::ToJsonString() const
 
     if (m_shopIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShopId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shopId, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

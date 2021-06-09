@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 VpngwCcnRoutes::VpngwCcnRoutes() :
@@ -27,7 +26,7 @@ VpngwCcnRoutes::VpngwCcnRoutes() :
 {
 }
 
-CoreInternalOutcome VpngwCcnRoutes::Deserialize(const Value &value)
+CoreInternalOutcome VpngwCcnRoutes::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome VpngwCcnRoutes::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VpngwCcnRoutes::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VpngwCcnRoutes::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_routeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_routeId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }

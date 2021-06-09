@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 SecurityGroupPolicy::SecurityGroupPolicy() :
@@ -30,7 +29,7 @@ SecurityGroupPolicy::SecurityGroupPolicy() :
 {
 }
 
-CoreInternalOutcome SecurityGroupPolicy::Deserialize(const Value &value)
+CoreInternalOutcome SecurityGroupPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,47 +88,47 @@ CoreInternalOutcome SecurityGroupPolicy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SecurityGroupPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SecurityGroupPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_actionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Action";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_action.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cidrIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CidrIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cidrIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cidrIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portRangeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PortRange";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_portRange.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_portRange.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ipProtocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IpProtocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ipProtocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipProtocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dirHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Dir";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dir.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dir.c_str(), allocator).Move(), allocator);
     }
 
 }

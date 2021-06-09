@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ic::V20190307::Model;
-using namespace rapidjson;
 using namespace std;
 
 SmsRet::SmsRet() :
@@ -29,7 +28,7 @@ SmsRet::SmsRet() :
 {
 }
 
-CoreInternalOutcome SmsRet::Deserialize(const Value &value)
+CoreInternalOutcome SmsRet::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome SmsRet::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SmsRet::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SmsRet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_codeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_code.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
     }
 
     if (m_msgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Msg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_msg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iccidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Iccid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iccid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iccid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sid.c_str(), allocator).Move(), allocator);
     }
 
 }

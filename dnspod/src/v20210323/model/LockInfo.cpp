@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dnspod::V20210323::Model;
-using namespace rapidjson;
 using namespace std;
 
 LockInfo::LockInfo() :
@@ -28,7 +27,7 @@ LockInfo::LockInfo() :
 {
 }
 
-CoreInternalOutcome LockInfo::Deserialize(const Value &value)
+CoreInternalOutcome LockInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome LockInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LockInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LockInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_domainIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_domainId, allocator);
@@ -80,18 +79,18 @@ void LockInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_lockCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LockCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lockCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lockCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lockEndHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LockEnd";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lockEnd.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lockEnd.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 ZoneTrafficInfoDetail::ZoneTrafficInfoDetail() :
@@ -29,7 +28,7 @@ ZoneTrafficInfoDetail::ZoneTrafficInfoDetail() :
 {
 }
 
-CoreInternalOutcome ZoneTrafficInfoDetail::Deserialize(const Value &value)
+CoreInternalOutcome ZoneTrafficInfoDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome ZoneTrafficInfoDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ZoneTrafficInfoDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ZoneTrafficInfoDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneId, allocator);
@@ -91,15 +90,15 @@ void ZoneTrafficInfoDetail::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_zoneNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zoneName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_trafficTotalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TrafficTotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trafficTotalCount, allocator);
@@ -107,7 +106,7 @@ void ZoneTrafficInfoDetail::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_avgStayTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvgStayTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_avgStayTime, allocator);

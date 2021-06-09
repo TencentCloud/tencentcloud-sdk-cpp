@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Soe::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 KeywordEvaluateRequest::KeywordEvaluateRequest() :
@@ -38,14 +37,14 @@ KeywordEvaluateRequest::KeywordEvaluateRequest() :
 
 string KeywordEvaluateRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_seqIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SeqId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_seqId, allocator);
@@ -53,7 +52,7 @@ string KeywordEvaluateRequest::ToJsonString() const
 
     if (m_isEndHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsEnd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isEnd, allocator);
@@ -61,7 +60,7 @@ string KeywordEvaluateRequest::ToJsonString() const
 
     if (m_voiceFileTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VoiceFileType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_voiceFileType, allocator);
@@ -69,7 +68,7 @@ string KeywordEvaluateRequest::ToJsonString() const
 
     if (m_voiceEncodeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VoiceEncodeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_voiceEncodeType, allocator);
@@ -77,54 +76,54 @@ string KeywordEvaluateRequest::ToJsonString() const
 
     if (m_userVoiceDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserVoiceData";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_userVoiceData.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userVoiceData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_sessionId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keywordsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Keywords";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr, ++i)
         {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
     if (m_soeAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SoeAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_soeAppId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_soeAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isQueryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsQuery";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isQuery, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Taf::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 InputRecognizeTargetAudience::InputRecognizeTargetAudience() :
@@ -63,7 +62,7 @@ InputRecognizeTargetAudience::InputRecognizeTargetAudience() :
 {
 }
 
-CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const Value &value)
+CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -93,8 +92,8 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const Value &value
         if (!value["ModelIdList"].IsArray())
             return CoreInternalOutcome(Error("response `InputRecognizeTargetAudience.ModelIdList` is not array type"));
 
-        const Value &tmpValue = value["ModelIdList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ModelIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_modelIdList.push_back((*itr).GetInt64());
         }
@@ -455,20 +454,20 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InputRecognizeTargetAudience::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_uidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_accountTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccountType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accountType, allocator);
@@ -476,68 +475,68 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_modelIdListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelIdList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_modelIdList.begin(); itr != m_modelIdList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_ipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_osHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Os";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_os.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_os.c_str(), allocator).Move(), allocator);
     }
 
     if (m_osvHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Osv";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_osv.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osv.c_str(), allocator).Move(), allocator);
     }
 
     if (m_latHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Lat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lat.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lat.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Lon";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lon.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lon.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceModelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceModel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceModel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceModel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bidFloorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BidFloor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bidFloor, allocator);
@@ -545,7 +544,7 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_ageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Age";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_age, allocator);
@@ -553,7 +552,7 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_genderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gender, allocator);
@@ -561,15 +560,15 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_locationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Location";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_location.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deliveryModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeliveryMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deliveryMode, allocator);
@@ -577,7 +576,7 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_advertisingTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AdvertisingType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_advertisingType, allocator);
@@ -585,71 +584,71 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_macHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mac";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mac.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mac.c_str(), allocator).Move(), allocator);
     }
 
     if (m_phoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Phone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_phone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_uaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ua";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ua.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ua.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "App";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_app.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_app.c_str(), allocator).Move(), allocator);
     }
 
     if (m_packageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Package";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_package.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_package.c_str(), allocator).Move(), allocator);
     }
 
     if (m_makerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Maker";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_maker.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maker.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_accessModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccessMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_accessMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_spHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sp, allocator);
@@ -657,7 +656,7 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_deviceWHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceW";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deviceW, allocator);
@@ -665,7 +664,7 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_deviceHHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceH";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deviceH, allocator);
@@ -673,7 +672,7 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_fullScreenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FullScreen";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fullScreen, allocator);
@@ -681,7 +680,7 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_impBannerWHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImpBannerW";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_impBannerW, allocator);
@@ -689,7 +688,7 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_impBannerHHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImpBannerH";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_impBannerH, allocator);
@@ -697,47 +696,47 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Context";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_context.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reqIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReqId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reqId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reqId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reqMd5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReqMd5";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reqMd5.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reqMd5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_adTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AdType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_adType, allocator);
@@ -745,23 +744,23 @@ void InputRecognizeTargetAudience::ToJsonObject(Value &value, Document::Allocato
 
     if (m_appNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_appName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appVerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppVer";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_appVer.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appVer.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reqTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReqType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reqType, allocator);

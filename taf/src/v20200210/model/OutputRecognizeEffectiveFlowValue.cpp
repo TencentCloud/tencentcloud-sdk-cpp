@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Taf::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 OutputRecognizeEffectiveFlowValue::OutputRecognizeEffectiveFlowValue() :
@@ -27,7 +26,7 @@ OutputRecognizeEffectiveFlowValue::OutputRecognizeEffectiveFlowValue() :
 {
 }
 
-CoreInternalOutcome OutputRecognizeEffectiveFlowValue::Deserialize(const Value &value)
+CoreInternalOutcome OutputRecognizeEffectiveFlowValue::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome OutputRecognizeEffectiveFlowValue::Deserialize(const Value &
     return CoreInternalOutcome(true);
 }
 
-void OutputRecognizeEffectiveFlowValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OutputRecognizeEffectiveFlowValue::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_lableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Lable";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lable.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lable.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);

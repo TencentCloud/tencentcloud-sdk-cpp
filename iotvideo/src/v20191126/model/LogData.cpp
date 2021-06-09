@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 LogData::LogData() :
@@ -30,7 +29,7 @@ LogData::LogData() :
 {
 }
 
-CoreInternalOutcome LogData::Deserialize(const Value &value)
+CoreInternalOutcome LogData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome LogData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LogData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LogData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_occurtimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Occurtime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_occurtime, allocator);
@@ -102,7 +101,7 @@ void LogData::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_logTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_logType, allocator);
@@ -110,26 +109,26 @@ void LogData::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_dataObjectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataObject";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dataObject.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataObject.c_str(), allocator).Move(), allocator);
     }
 
     if (m_oldValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OldValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_oldValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_newValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_newValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newValue.c_str(), allocator).Move(), allocator);
     }
 
 }

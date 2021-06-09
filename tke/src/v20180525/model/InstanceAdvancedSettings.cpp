@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceAdvancedSettings::InstanceAdvancedSettings() :
@@ -33,7 +32,7 @@ InstanceAdvancedSettings::InstanceAdvancedSettings() :
 {
 }
 
-CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const Value &value)
+CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -83,8 +82,8 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const Value &value)
         if (!value["Labels"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.Labels` is not array type"));
 
-        const Value &tmpValue = value["Labels"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Labels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Label item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -103,8 +102,8 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const Value &value)
         if (!value["DataDisks"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceAdvancedSettings.DataDisks` is not array type"));
 
-        const Value &tmpValue = value["DataDisks"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DataDisks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DataDisk item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -149,36 +148,36 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mountTargetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MountTarget";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mountTarget.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountTarget.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dockerGraphPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DockerGraphPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dockerGraphPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dockerGraphPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userScriptHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserScript";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userScript.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userScript.c_str(), allocator).Move(), allocator);
     }
 
     if (m_unschedulableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Unschedulable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unschedulable, allocator);
@@ -186,46 +185,46 @@ void InstanceAdvancedSettings::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_labelsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Labels";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_dataDisksHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataDisks";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_dataDisks.begin(); itr != m_dataDisks.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_extraArgsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExtraArgs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extraArgs.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_desiredPodNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DesiredPodNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_desiredPodNumber, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ses::V20201002::Model;
-using namespace rapidjson;
 using namespace std;
 
 SendEmailStatus::SendEmailStatus() :
@@ -37,7 +36,7 @@ SendEmailStatus::SendEmailStatus() :
 {
 }
 
-CoreInternalOutcome SendEmailStatus::Deserialize(const Value &value)
+CoreInternalOutcome SendEmailStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -166,36 +165,36 @@ CoreInternalOutcome SendEmailStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SendEmailStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SendEmailStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_messageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MessageId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_messageId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_messageId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_toEmailAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ToEmailAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_toEmailAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_toEmailAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fromEmailAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FromEmailAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fromEmailAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fromEmailAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sendStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SendStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sendStatus, allocator);
@@ -203,7 +202,7 @@ void SendEmailStatus::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_deliverStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeliverStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deliverStatus, allocator);
@@ -211,15 +210,15 @@ void SendEmailStatus::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_deliverMessageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeliverMessage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deliverMessage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deliverMessage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_requestTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RequestTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_requestTime, allocator);
@@ -227,7 +226,7 @@ void SendEmailStatus::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_deliverTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeliverTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deliverTime, allocator);
@@ -235,7 +234,7 @@ void SendEmailStatus::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_userOpenedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserOpened";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_userOpened, allocator);
@@ -243,7 +242,7 @@ void SendEmailStatus::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_userClickedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserClicked";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_userClicked, allocator);
@@ -251,7 +250,7 @@ void SendEmailStatus::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_userUnsubscribedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserUnsubscribed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_userUnsubscribed, allocator);
@@ -259,7 +258,7 @@ void SendEmailStatus::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_userComplaintedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserComplainted";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_userComplainted, allocator);

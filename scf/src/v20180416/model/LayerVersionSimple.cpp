@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 LayerVersionSimple::LayerVersionSimple() :
@@ -27,7 +26,7 @@ LayerVersionSimple::LayerVersionSimple() :
 {
 }
 
-CoreInternalOutcome LayerVersionSimple::Deserialize(const Value &value)
+CoreInternalOutcome LayerVersionSimple::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome LayerVersionSimple::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LayerVersionSimple::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LayerVersionSimple::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_layerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LayerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_layerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_layerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_layerVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LayerVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_layerVersion, allocator);

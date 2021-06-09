@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tics::V20181115::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeDomainInfoResponse::DescribeDomainInfoResponse() :
@@ -37,7 +36,7 @@ DescribeDomainInfoResponse::DescribeDomainInfoResponse() :
 
 CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -47,7 +46,7 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -104,8 +103,8 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
         if (!rsp["ThreatTypes"].IsArray())
             return CoreInternalOutcome(Error("response `ThreatTypes` is not array type"));
 
-        const Value &tmpValue = rsp["ThreatTypes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ThreatTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_threatTypes.push_back((*itr).GetString());
         }
@@ -117,8 +116,8 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
         if (!rsp["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `Tags` is not array type"));
 
-        const Value &tmpValue = rsp["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TagType item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -137,8 +136,8 @@ CoreInternalOutcome DescribeDomainInfoResponse::Deserialize(const string &payloa
         if (!rsp["Intelligences"].IsArray())
             return CoreInternalOutcome(Error("response `Intelligences` is not array type"));
 
-        const Value &tmpValue = rsp["Intelligences"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Intelligences"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             IntelligenceType item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

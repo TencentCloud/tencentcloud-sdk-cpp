@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyInstanceTokenRequest::ModifyInstanceTokenRequest() :
@@ -34,30 +33,30 @@ ModifyInstanceTokenRequest::ModifyInstanceTokenRequest() :
 
 string ModifyInstanceTokenRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_tokenIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TokenId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_tokenId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tokenId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_registryIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegistryId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_registryId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enable, allocator);
@@ -65,23 +64,23 @@ string ModifyInstanceTokenRequest::ToJsonString() const
 
     if (m_descHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Desc";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_desc.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modifyFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModifyFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_modifyFlag, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

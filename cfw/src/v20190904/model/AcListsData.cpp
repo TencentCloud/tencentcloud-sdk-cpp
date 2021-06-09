@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfw::V20190904::Model;
-using namespace rapidjson;
 using namespace std;
 
 AcListsData::AcListsData() :
@@ -35,7 +34,7 @@ AcListsData::AcListsData() :
 {
 }
 
-CoreInternalOutcome AcListsData::Deserialize(const Value &value)
+CoreInternalOutcome AcListsData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,12 +143,12 @@ CoreInternalOutcome AcListsData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AcListsData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AcListsData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -157,39 +156,39 @@ void AcListsData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_sourceIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sourceIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_targetIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_port.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_port.c_str(), allocator).Move(), allocator);
     }
 
     if (m_strategyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Strategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_strategy, allocator);
@@ -197,15 +196,15 @@ void AcListsData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_detailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Detail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_detail.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_detail.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);
@@ -213,7 +212,7 @@ void AcListsData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_orderIndexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_orderIndex, allocator);
@@ -221,10 +220,10 @@ void AcListsData::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_logIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_logId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logId.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Clb::V20180317::Model;
-using namespace rapidjson;
 using namespace std;
 
 RewriteLocationMap::RewriteLocationMap() :
@@ -30,7 +29,7 @@ RewriteLocationMap::RewriteLocationMap() :
 {
 }
 
-CoreInternalOutcome RewriteLocationMap::Deserialize(const Value &value)
+CoreInternalOutcome RewriteLocationMap::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome RewriteLocationMap::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RewriteLocationMap::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RewriteLocationMap::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sourceLocationIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceLocationId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sourceLocationId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceLocationId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetLocationIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetLocationId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_targetLocationId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetLocationId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rewriteCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RewriteCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rewriteCode, allocator);
@@ -118,7 +117,7 @@ void RewriteLocationMap::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_takeUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TakeUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_takeUrl, allocator);
@@ -126,10 +125,10 @@ void RewriteLocationMap::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_sourceDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SourceDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sourceDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceDomain.c_str(), allocator).Move(), allocator);
     }
 
 }

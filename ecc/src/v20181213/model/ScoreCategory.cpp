@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecc::V20181213::Model;
-using namespace rapidjson;
 using namespace std;
 
 ScoreCategory::ScoreCategory() :
@@ -31,7 +30,7 @@ ScoreCategory::ScoreCategory() :
 {
 }
 
-CoreInternalOutcome ScoreCategory::Deserialize(const Value &value)
+CoreInternalOutcome ScoreCategory::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -128,48 +127,48 @@ CoreInternalOutcome ScoreCategory::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ScoreCategory::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ScoreCategory::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_wordsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Words";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_words.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_sentencesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sentences";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sentences.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_structureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Structure";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_structure.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_contentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_content.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
@@ -177,7 +176,7 @@ void ScoreCategory::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_percentageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Percentage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_percentage, allocator);

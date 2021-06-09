@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateCameraAlertAlert::CreateCameraAlertAlert() :
@@ -32,7 +31,7 @@ CreateCameraAlertAlert::CreateCameraAlertAlert() :
 {
 }
 
-CoreInternalOutcome CreateCameraAlertAlert::Deserialize(const Value &value)
+CoreInternalOutcome CreateCameraAlertAlert::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -125,20 +124,20 @@ CoreInternalOutcome CreateCameraAlertAlert::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CreateCameraAlertAlert::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CreateCameraAlertAlert::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_groupCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mallIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MallId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mallId, allocator);
@@ -146,7 +145,7 @@ void CreateCameraAlertAlert::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_cameraIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CameraId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cameraId, allocator);
@@ -154,7 +153,7 @@ void CreateCameraAlertAlert::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_captureTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CaptureTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_captureTime, allocator);
@@ -162,27 +161,27 @@ void CreateCameraAlertAlert::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_imageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_image.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
     if (m_moveAlertHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MoveAlert";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_moveAlert.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_coverAlertHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CoverAlert";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_coverAlert.ToJsonObject(value[key.c_str()], allocator);
     }
 

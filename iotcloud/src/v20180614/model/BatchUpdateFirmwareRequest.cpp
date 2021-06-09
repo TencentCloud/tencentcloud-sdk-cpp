@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 BatchUpdateFirmwareRequest::BatchUpdateFirmwareRequest() :
@@ -38,38 +37,38 @@ BatchUpdateFirmwareRequest::BatchUpdateFirmwareRequest() :
 
 string BatchUpdateFirmwareRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_productIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProductID";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_productID.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_firmwareVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirmwareVersion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_firmwareVersion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_firmwareVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_firmwareOriVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirmwareOriVersion";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_firmwareOriVersion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_firmwareOriVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_upgradeMethodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpgradeMethod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_upgradeMethod, allocator);
@@ -77,23 +76,23 @@ string BatchUpdateFirmwareRequest::ToJsonString() const
 
     if (m_fileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_fileName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileMd5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileMd5";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_fileMd5.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileMd5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fileSize, allocator);
@@ -101,28 +100,28 @@ string BatchUpdateFirmwareRequest::ToJsonString() const
 
     if (m_deviceNamesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceNames";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_deviceNames.begin(); itr != m_deviceNames.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_timeoutIntervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeoutInterval";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeoutInterval, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

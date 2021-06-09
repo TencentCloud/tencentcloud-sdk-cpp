@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cds::V20180420::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeDbauditInstanceTypeResponse::DescribeDbauditInstanceTypeResponse() :
@@ -31,7 +30,7 @@ DescribeDbauditInstanceTypeResponse::DescribeDbauditInstanceTypeResponse() :
 
 CoreInternalOutcome DescribeDbauditInstanceTypeResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeDbauditInstanceTypeResponse::Deserialize(const strin
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeDbauditInstanceTypeResponse::Deserialize(const strin
         if (!rsp["DbauditTypesSet"].IsArray())
             return CoreInternalOutcome(Error("response `DbauditTypesSet` is not array type"));
 
-        const Value &tmpValue = rsp["DbauditTypesSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DbauditTypesSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DbauditTypesInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 RenameRestoreDatabase::RenameRestoreDatabase() :
@@ -27,7 +26,7 @@ RenameRestoreDatabase::RenameRestoreDatabase() :
 {
 }
 
-CoreInternalOutcome RenameRestoreDatabase::Deserialize(const Value &value)
+CoreInternalOutcome RenameRestoreDatabase::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome RenameRestoreDatabase::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RenameRestoreDatabase::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RenameRestoreDatabase::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_oldNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OldName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_oldName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_newNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_newName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newName.c_str(), allocator).Move(), allocator);
     }
 
 }

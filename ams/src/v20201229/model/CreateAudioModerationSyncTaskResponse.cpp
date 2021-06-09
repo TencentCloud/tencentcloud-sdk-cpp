@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ams::V20201229::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateAudioModerationSyncTaskResponse::CreateAudioModerationSyncTaskResponse() :
@@ -38,7 +37,7 @@ CreateAudioModerationSyncTaskResponse::CreateAudioModerationSyncTaskResponse() :
 
 CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -48,7 +47,7 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -135,8 +134,8 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
         if (!rsp["TextResults"].IsArray())
             return CoreInternalOutcome(Error("response `TextResults` is not array type"));
 
-        const Value &tmpValue = rsp["TextResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["TextResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             TextResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -155,8 +154,8 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
         if (!rsp["MoanResults"].IsArray())
             return CoreInternalOutcome(Error("response `MoanResults` is not array type"));
 
-        const Value &tmpValue = rsp["MoanResults"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["MoanResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MoanResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

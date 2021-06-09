@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Captcha::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 CaptchaUserAllAppId::CaptchaUserAllAppId() :
@@ -29,7 +28,7 @@ CaptchaUserAllAppId::CaptchaUserAllAppId() :
 {
 }
 
-CoreInternalOutcome CaptchaUserAllAppId::Deserialize(const Value &value)
+CoreInternalOutcome CaptchaUserAllAppId::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome CaptchaUserAllAppId::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CaptchaUserAllAppId::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CaptchaUserAllAppId::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_captchaAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CaptchaAppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_captchaAppId, allocator);
@@ -91,15 +90,15 @@ void CaptchaUserAllAppId::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_appNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_appName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tcAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TcAppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tcAppId, allocator);
@@ -107,10 +106,10 @@ void CaptchaUserAllAppId::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_channelInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_channelInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelInfo.c_str(), allocator).Move(), allocator);
     }
 
 }

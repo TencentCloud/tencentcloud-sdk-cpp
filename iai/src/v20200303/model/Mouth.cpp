@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 Mouth::Mouth() :
@@ -26,7 +25,7 @@ Mouth::Mouth() :
 {
 }
 
-CoreInternalOutcome Mouth::Deserialize(const Value &value)
+CoreInternalOutcome Mouth::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -52,15 +51,15 @@ CoreInternalOutcome Mouth::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Mouth::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Mouth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mouthOpenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MouthOpen";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mouthOpen.ToJsonObject(value[key.c_str()], allocator);
     }
 

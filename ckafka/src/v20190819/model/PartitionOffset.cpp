@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 PartitionOffset::PartitionOffset() :
@@ -27,7 +26,7 @@ PartitionOffset::PartitionOffset() :
 {
 }
 
-CoreInternalOutcome PartitionOffset::Deserialize(const Value &value)
+CoreInternalOutcome PartitionOffset::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome PartitionOffset::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PartitionOffset::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PartitionOffset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_partitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Partition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_partition.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_partition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offset, allocator);

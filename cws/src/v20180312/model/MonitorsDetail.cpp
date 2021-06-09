@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cws::V20180312::Model;
-using namespace rapidjson;
 using namespace std;
 
 MonitorsDetail::MonitorsDetail() :
@@ -37,7 +36,7 @@ MonitorsDetail::MonitorsDetail() :
 {
 }
 
-CoreInternalOutcome MonitorsDetail::Deserialize(const Value &value)
+CoreInternalOutcome MonitorsDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -64,8 +63,8 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const Value &value)
         if (!value["Sites"].IsArray())
             return CoreInternalOutcome(Error("response `MonitorsDetail.Sites` is not array type"));
 
-        const Value &tmpValue = value["Sites"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Sites"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MonitorMiniSite item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -94,8 +93,8 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const Value &value)
         if (!value["ImpactSites"].IsArray())
             return CoreInternalOutcome(Error("response `MonitorsDetail.ImpactSites` is not array type"));
 
-        const Value &tmpValue = value["ImpactSites"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ImpactSites"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MonitorMiniSite item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -193,36 +192,36 @@ CoreInternalOutcome MonitorsDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MonitorsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MonitorsDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_basicHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Basic";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_basic.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_sitesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Sites";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_sites.begin(); itr != m_sites.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_siteNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SiteNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_siteNumber, allocator);
@@ -230,22 +229,22 @@ void MonitorsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_impactSitesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImpactSites";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_impactSites.begin(); itr != m_impactSites.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_impactSiteNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImpactSiteNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_impactSiteNumber, allocator);
@@ -253,7 +252,7 @@ void MonitorsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_vulsHighNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulsHighNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulsHighNumber, allocator);
@@ -261,7 +260,7 @@ void MonitorsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_vulsMiddleNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulsMiddleNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulsMiddleNumber, allocator);
@@ -269,7 +268,7 @@ void MonitorsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_vulsLowNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulsLowNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulsLowNumber, allocator);
@@ -277,7 +276,7 @@ void MonitorsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_vulsNoticeNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VulsNoticeNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulsNoticeNumber, allocator);
@@ -285,7 +284,7 @@ void MonitorsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_progressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
@@ -293,7 +292,7 @@ void MonitorsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_pageCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pageCount, allocator);
@@ -301,7 +300,7 @@ void MonitorsDetail::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_contentNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContentNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_contentNumber, allocator);

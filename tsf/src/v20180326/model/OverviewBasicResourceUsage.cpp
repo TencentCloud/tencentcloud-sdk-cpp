@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 OverviewBasicResourceUsage::OverviewBasicResourceUsage() :
@@ -30,7 +29,7 @@ OverviewBasicResourceUsage::OverviewBasicResourceUsage() :
 {
 }
 
-CoreInternalOutcome OverviewBasicResourceUsage::Deserialize(const Value &value)
+CoreInternalOutcome OverviewBasicResourceUsage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome OverviewBasicResourceUsage::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OverviewBasicResourceUsage::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OverviewBasicResourceUsage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_applicationCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_applicationCount, allocator);
@@ -102,7 +101,7 @@ void OverviewBasicResourceUsage::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_namespaceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NamespaceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_namespaceCount, allocator);
@@ -110,7 +109,7 @@ void OverviewBasicResourceUsage::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_groupCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupCount, allocator);
@@ -118,7 +117,7 @@ void OverviewBasicResourceUsage::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_packageSpaceUsedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PackageSpaceUsed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_packageSpaceUsed, allocator);
@@ -126,7 +125,7 @@ void OverviewBasicResourceUsage::ToJsonObject(Value &value, Document::AllocatorT
 
     if (m_consulInstanceCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConsulInstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_consulInstanceCount, allocator);

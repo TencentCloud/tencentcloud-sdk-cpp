@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 DiseaseMedicalHistory::DiseaseMedicalHistory() :
@@ -30,7 +29,7 @@ DiseaseMedicalHistory::DiseaseMedicalHistory() :
 {
 }
 
-CoreInternalOutcome DiseaseMedicalHistory::Deserialize(const Value &value)
+CoreInternalOutcome DiseaseMedicalHistory::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,47 +88,47 @@ CoreInternalOutcome DiseaseMedicalHistory::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DiseaseMedicalHistory::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DiseaseMedicalHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mainDiseaseHistoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MainDiseaseHistory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mainDiseaseHistory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mainDiseaseHistory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_allergyHistoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AllergyHistory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_allergyHistory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_allergyHistory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_infectHistoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InfectHistory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_infectHistory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_infectHistory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operationHistoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OperationHistory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_operationHistory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationHistory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_transfusionHistoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransfusionHistory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_transfusionHistory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transfusionHistory.c_str(), allocator).Move(), allocator);
     }
 
 }

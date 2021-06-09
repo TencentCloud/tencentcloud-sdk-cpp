@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 JgwOperateResponse::JgwOperateResponse() :
@@ -28,7 +27,7 @@ JgwOperateResponse::JgwOperateResponse() :
 {
 }
 
-CoreInternalOutcome JgwOperateResponse::Deserialize(const Value &value)
+CoreInternalOutcome JgwOperateResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,31 +73,31 @@ CoreInternalOutcome JgwOperateResponse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void JgwOperateResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void JgwOperateResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_returnCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReturnCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_returnCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_returnCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_returnMessageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReturnMessage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_returnMessage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_returnMessage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 

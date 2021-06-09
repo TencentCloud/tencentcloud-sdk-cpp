@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 TargetConfiguration::TargetConfiguration() :
@@ -26,7 +25,7 @@ TargetConfiguration::TargetConfiguration() :
 {
 }
 
-CoreInternalOutcome TargetConfiguration::Deserialize(const Value &value)
+CoreInternalOutcome TargetConfiguration::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome TargetConfiguration::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TargetConfiguration::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TargetConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_targetValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TargetValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_targetValue, allocator);

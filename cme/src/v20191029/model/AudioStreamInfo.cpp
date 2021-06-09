@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 AudioStreamInfo::AudioStreamInfo() :
@@ -28,7 +27,7 @@ AudioStreamInfo::AudioStreamInfo() :
 {
 }
 
-CoreInternalOutcome AudioStreamInfo::Deserialize(const Value &value)
+CoreInternalOutcome AudioStreamInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome AudioStreamInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AudioStreamInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AudioStreamInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bitrate, allocator);
@@ -80,7 +79,7 @@ void AudioStreamInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_samplingRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SamplingRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_samplingRate, allocator);
@@ -88,10 +87,10 @@ void AudioStreamInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_codecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Codec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_codec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codec.c_str(), allocator).Move(), allocator);
     }
 
 }

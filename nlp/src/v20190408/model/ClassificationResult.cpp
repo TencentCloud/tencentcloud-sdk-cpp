@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Nlp::V20190408::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClassificationResult::ClassificationResult() :
@@ -35,7 +34,7 @@ ClassificationResult::ClassificationResult() :
 {
 }
 
-CoreInternalOutcome ClassificationResult::Deserialize(const Value &value)
+CoreInternalOutcome ClassificationResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,28 +143,28 @@ CoreInternalOutcome ClassificationResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClassificationResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClassificationResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_firstClassNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstClassName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_firstClassName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstClassName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_secondClassNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecondClassName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secondClassName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secondClassName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_firstClassProbabilityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstClassProbability";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_firstClassProbability, allocator);
@@ -173,7 +172,7 @@ void ClassificationResult::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_secondClassProbabilityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecondClassProbability";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_secondClassProbability, allocator);
@@ -181,15 +180,15 @@ void ClassificationResult::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_thirdClassNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ThirdClassName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_thirdClassName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_thirdClassName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_thirdClassProbabilityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ThirdClassProbability";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_thirdClassProbability, allocator);
@@ -197,15 +196,15 @@ void ClassificationResult::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_fourthClassNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FourthClassName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fourthClassName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fourthClassName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fourthClassProbabilityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FourthClassProbability";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fourthClassProbability, allocator);
@@ -213,15 +212,15 @@ void ClassificationResult::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_fifthClassNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FifthClassName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fifthClassName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fifthClassName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fifthClassProbabilityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FifthClassProbability";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fifthClassProbability, allocator);

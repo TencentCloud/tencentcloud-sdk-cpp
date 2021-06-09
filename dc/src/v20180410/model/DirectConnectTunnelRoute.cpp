@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dc::V20180410::Model;
-using namespace rapidjson;
 using namespace std;
 
 DirectConnectTunnelRoute::DirectConnectTunnelRoute() :
@@ -31,7 +30,7 @@ DirectConnectTunnelRoute::DirectConnectTunnelRoute() :
 {
 }
 
-CoreInternalOutcome DirectConnectTunnelRoute::Deserialize(const Value &value)
+CoreInternalOutcome DirectConnectTunnelRoute::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,8 +80,8 @@ CoreInternalOutcome DirectConnectTunnelRoute::Deserialize(const Value &value)
         if (!value["ASPath"].IsArray())
             return CoreInternalOutcome(Error("response `DirectConnectTunnelRoute.ASPath` is not array type"));
 
-        const Value &tmpValue = value["ASPath"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ASPath"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_aSPath.push_back((*itr).GetString());
         }
@@ -103,60 +102,60 @@ CoreInternalOutcome DirectConnectTunnelRoute::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DirectConnectTunnelRoute::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DirectConnectTunnelRoute::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_routeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_routeId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_destinationCidrBlockHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DestinationCidrBlock";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_destinationCidrBlock.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destinationCidrBlock.c_str(), allocator).Move(), allocator);
     }
 
     if (m_routeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_routeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aSPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ASPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_aSPath.begin(); itr != m_aSPath.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_nextHopHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NextHop";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nextHop.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nextHop.c_str(), allocator).Move(), allocator);
     }
 
 }

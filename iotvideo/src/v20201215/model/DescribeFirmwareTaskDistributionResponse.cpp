@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20201215::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeFirmwareTaskDistributionResponse::DescribeFirmwareTaskDistributionResponse() :
@@ -31,7 +30,7 @@ DescribeFirmwareTaskDistributionResponse::DescribeFirmwareTaskDistributionRespon
 
 CoreInternalOutcome DescribeFirmwareTaskDistributionResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeFirmwareTaskDistributionResponse::Deserialize(const 
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeFirmwareTaskDistributionResponse::Deserialize(const 
         if (!rsp["StatusInfos"].IsArray())
             return CoreInternalOutcome(Error("response `StatusInfos` is not array type"));
 
-        const Value &tmpValue = rsp["StatusInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["StatusInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatusStatistic item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageUrl::ImageUrl() :
@@ -26,7 +25,7 @@ ImageUrl::ImageUrl() :
 {
 }
 
-CoreInternalOutcome ImageUrl::Deserialize(const Value &value)
+CoreInternalOutcome ImageUrl::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome ImageUrl::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageUrl::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageUrl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_imageFileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageFile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageFile.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageFile.c_str(), allocator).Move(), allocator);
     }
 
 }

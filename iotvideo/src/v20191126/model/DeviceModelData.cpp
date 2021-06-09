@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceModelData::DeviceModelData() :
@@ -28,7 +27,7 @@ DeviceModelData::DeviceModelData() :
 {
 }
 
-CoreInternalOutcome DeviceModelData::Deserialize(const Value &value)
+CoreInternalOutcome DeviceModelData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome DeviceModelData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceModelData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceModelData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_branchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Branch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_branch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_branch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iotModelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IotModel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iotModel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iotModel.c_str(), allocator).Move(), allocator);
     }
 
 }

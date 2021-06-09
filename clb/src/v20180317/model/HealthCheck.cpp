@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Clb::V20180317::Model;
-using namespace rapidjson;
 using namespace std;
 
 HealthCheck::HealthCheck() :
@@ -40,7 +39,7 @@ HealthCheck::HealthCheck() :
 {
 }
 
-CoreInternalOutcome HealthCheck::Deserialize(const Value &value)
+CoreInternalOutcome HealthCheck::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -199,12 +198,12 @@ CoreInternalOutcome HealthCheck::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HealthCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HealthCheck::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_healthSwitchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_healthSwitch, allocator);
@@ -212,7 +211,7 @@ void HealthCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_timeOutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeOut, allocator);
@@ -220,7 +219,7 @@ void HealthCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_intervalTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IntervalTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_intervalTime, allocator);
@@ -228,7 +227,7 @@ void HealthCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_healthNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_healthNum, allocator);
@@ -236,7 +235,7 @@ void HealthCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_unHealthNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnHealthNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unHealthNum, allocator);
@@ -244,7 +243,7 @@ void HealthCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_httpCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_httpCode, allocator);
@@ -252,31 +251,31 @@ void HealthCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_httpCheckPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpCheckPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_httpCheckPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpCheckPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_httpCheckDomainHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpCheckDomain";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_httpCheckDomain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpCheckDomain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_httpCheckMethodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpCheckMethod";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_httpCheckMethod.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpCheckMethod.c_str(), allocator).Move(), allocator);
     }
 
     if (m_checkPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CheckPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_checkPort, allocator);
@@ -284,42 +283,42 @@ void HealthCheck::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_contextTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContextType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_contextType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contextType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sendContextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SendContext";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sendContext.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sendContext.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recvContextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RecvContext";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_recvContext.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recvContext.c_str(), allocator).Move(), allocator);
     }
 
     if (m_checkTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CheckType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_checkType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_httpVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HttpVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_httpVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpVersion.c_str(), allocator).Move(), allocator);
     }
 
 }

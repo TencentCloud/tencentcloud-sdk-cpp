@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 ApiDetailResponse::ApiDetailResponse() :
@@ -32,7 +31,7 @@ ApiDetailResponse::ApiDetailResponse() :
 {
 }
 
-CoreInternalOutcome ApiDetailResponse::Deserialize(const Value &value)
+CoreInternalOutcome ApiDetailResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -42,8 +41,8 @@ CoreInternalOutcome ApiDetailResponse::Deserialize(const Value &value)
         if (!value["Request"].IsArray())
             return CoreInternalOutcome(Error("response `ApiDetailResponse.Request` is not array type"));
 
-        const Value &tmpValue = value["Request"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Request"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ApiRequestDescr item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -62,8 +61,8 @@ CoreInternalOutcome ApiDetailResponse::Deserialize(const Value &value)
         if (!value["Response"].IsArray())
             return CoreInternalOutcome(Error("response `ApiDetailResponse.Response` is not array type"));
 
-        const Value &tmpValue = value["Response"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Response"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ApiResponseDescr item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -82,8 +81,8 @@ CoreInternalOutcome ApiDetailResponse::Deserialize(const Value &value)
         if (!value["Definitions"].IsArray())
             return CoreInternalOutcome(Error("response `ApiDetailResponse.Definitions` is not array type"));
 
-        const Value &tmpValue = value["Definitions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Definitions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ApiDefinitionDescr item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -141,65 +140,65 @@ CoreInternalOutcome ApiDetailResponse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ApiDetailResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ApiDetailResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_requestHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Request";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_request.begin(); itr != m_request.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_responseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Response";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_response.begin(); itr != m_response.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_definitionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Definitions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_definitions.begin(); itr != m_definitions.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_requestContentTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RequestContentType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_requestContentType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestContentType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_canRunHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CanRun";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_canRun, allocator);
@@ -207,7 +206,7 @@ void ApiDetailResponse::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -215,10 +214,10 @@ void ApiDetailResponse::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiAnalysisTaskClassificationOutput::AiAnalysisTaskClassificationOutput() :
@@ -26,7 +25,7 @@ AiAnalysisTaskClassificationOutput::AiAnalysisTaskClassificationOutput() :
 {
 }
 
-CoreInternalOutcome AiAnalysisTaskClassificationOutput::Deserialize(const Value &value)
+CoreInternalOutcome AiAnalysisTaskClassificationOutput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -36,8 +35,8 @@ CoreInternalOutcome AiAnalysisTaskClassificationOutput::Deserialize(const Value 
         if (!value["ClassificationSet"].IsArray())
             return CoreInternalOutcome(Error("response `AiAnalysisTaskClassificationOutput.ClassificationSet` is not array type"));
 
-        const Value &tmpValue = value["ClassificationSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ClassificationSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MediaAiAnalysisClassificationItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -55,20 +54,20 @@ CoreInternalOutcome AiAnalysisTaskClassificationOutput::Deserialize(const Value 
     return CoreInternalOutcome(true);
 }
 
-void AiAnalysisTaskClassificationOutput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiAnalysisTaskClassificationOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_classificationSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClassificationSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_classificationSet.begin(); itr != m_classificationSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

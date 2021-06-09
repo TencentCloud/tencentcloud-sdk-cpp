@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeAccidentEventListAlarms::DescribeAccidentEventListAlarms() :
@@ -33,7 +32,7 @@ DescribeAccidentEventListAlarms::DescribeAccidentEventListAlarms() :
 {
 }
 
-CoreInternalOutcome DescribeAccidentEventListAlarms::Deserialize(const Value &value)
+CoreInternalOutcome DescribeAccidentEventListAlarms::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,28 +121,28 @@ CoreInternalOutcome DescribeAccidentEventListAlarms::Deserialize(const Value &va
     return CoreInternalOutcome(true);
 }
 
-void DescribeAccidentEventListAlarms::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribeAccidentEventListAlarms::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_businessTypeDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BusinessTypeDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_businessTypeDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessTypeDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_accidentTypeDescHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccidentTypeDesc";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_accidentTypeDesc.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accidentTypeDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_businessIDHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BusinessID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_businessID, allocator);
@@ -151,7 +150,7 @@ void DescribeAccidentEventListAlarms::ToJsonObject(Value &value, Document::Alloc
 
     if (m_eventStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eventStatus, allocator);
@@ -159,34 +158,34 @@ void DescribeAccidentEventListAlarms::ToJsonObject(Value &value, Document::Alloc
 
     if (m_affectResourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AffectResource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_affectResource.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_affectResource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_occurTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OccurTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_occurTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_occurTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_updateTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }

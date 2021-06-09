@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20210527::Model;
-using namespace rapidjson;
 using namespace std;
 
 TableSpaceTimeSeries::TableSpaceTimeSeries() :
@@ -29,7 +28,7 @@ TableSpaceTimeSeries::TableSpaceTimeSeries() :
 {
 }
 
-CoreInternalOutcome TableSpaceTimeSeries::Deserialize(const Value &value)
+CoreInternalOutcome TableSpaceTimeSeries::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,39 +84,39 @@ CoreInternalOutcome TableSpaceTimeSeries::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TableSpaceTimeSeries::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TableSpaceTimeSeries::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tableNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tableName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableSchemaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableSchema";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tableSchema.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableSchema.c_str(), allocator).Move(), allocator);
     }
 
     if (m_engineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Engine";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_engine.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engine.c_str(), allocator).Move(), allocator);
     }
 
     if (m_seriesDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SeriesData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_seriesData.ToJsonObject(value[key.c_str()], allocator);
     }
 

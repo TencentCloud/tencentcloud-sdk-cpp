@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dc::V20180410::Model;
-using namespace rapidjson;
 using namespace std;
 
 DirectConnectTunnelExtra::DirectConnectTunnelExtra() :
@@ -64,7 +63,7 @@ DirectConnectTunnelExtra::DirectConnectTunnelExtra() :
 {
 }
 
-CoreInternalOutcome DirectConnectTunnelExtra::Deserialize(const Value &value)
+CoreInternalOutcome DirectConnectTunnelExtra::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -191,8 +190,8 @@ CoreInternalOutcome DirectConnectTunnelExtra::Deserialize(const Value &value)
         if (!value["RouteFilterPrefixes"].IsArray())
             return CoreInternalOutcome(Error("response `DirectConnectTunnelExtra.RouteFilterPrefixes` is not array type"));
 
-        const Value &tmpValue = value["RouteFilterPrefixes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RouteFilterPrefixes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RouteFilterPrefix item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -211,8 +210,8 @@ CoreInternalOutcome DirectConnectTunnelExtra::Deserialize(const Value &value)
         if (!value["PublicAddresses"].IsArray())
             return CoreInternalOutcome(Error("response `DirectConnectTunnelExtra.PublicAddresses` is not array type"));
 
-        const Value &tmpValue = value["PublicAddresses"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PublicAddresses"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RouteFilterPrefix item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -518,131 +517,131 @@ CoreInternalOutcome DirectConnectTunnelExtra::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DirectConnectTunnelExtra::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DirectConnectTunnelExtra::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_directConnectTunnelIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectConnectTunnelId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_directConnectTunnelId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_directConnectTunnelId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_directConnectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectConnectId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_directConnectId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_directConnectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_state.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
     if (m_directConnectOwnerAccountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectConnectOwnerAccount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_directConnectOwnerAccount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_directConnectOwnerAccount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ownerAccountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OwnerAccount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ownerAccount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerAccount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_networkTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetworkType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_networkType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_networkRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetworkRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_networkRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_directConnectGatewayIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectConnectGatewayId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_directConnectGatewayId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_directConnectGatewayId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_routeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_routeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bgpPeerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BgpPeer";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bgpPeer.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_routeFilterPrefixesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteFilterPrefixes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_routeFilterPrefixes.begin(); itr != m_routeFilterPrefixes.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_publicAddressesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicAddresses";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_publicAddresses.begin(); itr != m_publicAddresses.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_vlanHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vlan";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vlan, allocator);
@@ -650,47 +649,47 @@ void DirectConnectTunnelExtra::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_tencentAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TencentAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tencentAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tencentAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tencentBackupAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TencentBackupAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tencentBackupAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tencentBackupAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customerAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomerAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_customerAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customerAddress.c_str(), allocator).Move(), allocator);
     }
 
     if (m_directConnectTunnelNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectConnectTunnelName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_directConnectTunnelName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_directConnectTunnelName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
@@ -698,15 +697,15 @@ void DirectConnectTunnelExtra::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_netDetectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetDetectId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_netDetectId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netDetectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableBGPCommunityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableBGPCommunity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableBGPCommunity, allocator);
@@ -714,7 +713,7 @@ void DirectConnectTunnelExtra::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_natTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NatType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_natType, allocator);
@@ -722,15 +721,15 @@ void DirectConnectTunnelExtra::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_vpcRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bfdEnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BfdEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bfdEnable, allocator);
@@ -738,7 +737,7 @@ void DirectConnectTunnelExtra::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_nqaEnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NqaEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nqaEnable, allocator);
@@ -746,31 +745,31 @@ void DirectConnectTunnelExtra::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_accessPointTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccessPointType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_accessPointType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessPointType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_directConnectGatewayNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DirectConnectGatewayName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_directConnectGatewayName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_directConnectGatewayName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signLawHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignLaw";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_signLaw, allocator);
@@ -778,34 +777,34 @@ void DirectConnectTunnelExtra::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_bfdInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BfdInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bfdInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_nqaInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NqaInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_nqaInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_bgpStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BgpStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bgpStatus.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_iPv6EnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IPv6Enable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iPv6Enable, allocator);
@@ -813,40 +812,40 @@ void DirectConnectTunnelExtra::ToJsonObject(Value &value, Document::AllocatorTyp
 
     if (m_tencentIPv6AddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TencentIPv6Address";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tencentIPv6Address.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tencentIPv6Address.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tencentBackupIPv6AddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TencentBackupIPv6Address";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tencentBackupIPv6Address.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tencentBackupIPv6Address.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bgpIPv6StatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BgpIPv6Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bgpIPv6Status.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_customerIPv6AddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomerIPv6Address";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_customerIPv6Address.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customerIPv6Address.c_str(), allocator).Move(), allocator);
     }
 
     if (m_jumboEnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JumboEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_jumboEnable, allocator);

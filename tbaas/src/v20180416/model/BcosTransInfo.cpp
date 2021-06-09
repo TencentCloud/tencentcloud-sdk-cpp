@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbaas::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 BcosTransInfo::BcosTransInfo() :
@@ -32,7 +31,7 @@ BcosTransInfo::BcosTransInfo() :
 {
 }
 
-CoreInternalOutcome BcosTransInfo::Deserialize(const Value &value)
+CoreInternalOutcome BcosTransInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome BcosTransInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BcosTransInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BcosTransInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_blockNumberHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blockNumber, allocator);
@@ -124,50 +123,50 @@ void BcosTransInfo::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_blockTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockTimestamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_blockTimestamp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_blockTimestamp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_transHashHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransHash";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_transHash.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transHash.c_str(), allocator).Move(), allocator);
     }
 
     if (m_transFromHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransFrom";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_transFrom.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transFrom.c_str(), allocator).Move(), allocator);
     }
 
     if (m_transToHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransTo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_transTo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transTo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modifyTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
     }
 
 }

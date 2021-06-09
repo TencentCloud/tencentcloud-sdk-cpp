@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 SecurityPolicy::SecurityPolicy() :
@@ -29,7 +28,7 @@ SecurityPolicy::SecurityPolicy() :
 {
 }
 
-CoreInternalOutcome SecurityPolicy::Deserialize(const Value &value)
+CoreInternalOutcome SecurityPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome SecurityPolicy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SecurityPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SecurityPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_policyIndexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_policyIndex, allocator);
@@ -91,26 +90,26 @@ void SecurityPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cidrBlockHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CidrBlock";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
     }
 
     if (m_policyVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_policyVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyVersion.c_str(), allocator).Move(), allocator);
     }
 
 }

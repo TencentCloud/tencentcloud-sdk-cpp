@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::As::V20180419::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeScalingPoliciesResponse::DescribeScalingPoliciesResponse() :
@@ -32,7 +31,7 @@ DescribeScalingPoliciesResponse::DescribeScalingPoliciesResponse() :
 
 CoreInternalOutcome DescribeScalingPoliciesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeScalingPoliciesResponse::Deserialize(const string &p
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeScalingPoliciesResponse::Deserialize(const string &p
         if (!rsp["ScalingPolicySet"].IsArray())
             return CoreInternalOutcome(Error("response `ScalingPolicySet` is not array type"));
 
-        const Value &tmpValue = rsp["ScalingPolicySet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ScalingPolicySet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ScalingPolicy item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

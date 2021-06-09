@@ -45,6 +45,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/FollowRedirect.h
   include/tencentcloud/cdn/v20180606/model/RequestHeader.h
   include/tencentcloud/cdn/v20180606/model/DescribePurgeQuotaRequest.h
+  include/tencentcloud/cdn/v20180606/model/ModifyPurgeFetchTaskStatusRequest.h
   include/tencentcloud/cdn/v20180606/model/Referer.h
   include/tencentcloud/cdn/v20180606/model/StartScdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/PostSize.h
@@ -145,6 +146,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/CreateScdnLogTaskRequest.h
   include/tencentcloud/cdn/v20180606/model/DistrictIspInfo.h
   include/tencentcloud/cdn/v20180606/model/SimpleCacheRule.h
+  include/tencentcloud/cdn/v20180606/model/ModifyPurgeFetchTaskStatusResponse.h
   include/tencentcloud/cdn/v20180606/model/DisableClsLogTopicResponse.h
   include/tencentcloud/cdn/v20180606/model/Hsts.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpStatusRequest.h
@@ -320,6 +322,7 @@ set(cdn_src
   src/v20180606/model/FollowRedirect.cpp
   src/v20180606/model/RequestHeader.cpp
   src/v20180606/model/DescribePurgeQuotaRequest.cpp
+  src/v20180606/model/ModifyPurgeFetchTaskStatusRequest.cpp
   src/v20180606/model/Referer.cpp
   src/v20180606/model/StartScdnDomainRequest.cpp
   src/v20180606/model/PostSize.cpp
@@ -420,6 +423,7 @@ set(cdn_src
   src/v20180606/model/CreateScdnLogTaskRequest.cpp
   src/v20180606/model/DistrictIspInfo.cpp
   src/v20180606/model/SimpleCacheRule.cpp
+  src/v20180606/model/ModifyPurgeFetchTaskStatusResponse.cpp
   src/v20180606/model/DisableClsLogTopicResponse.cpp
   src/v20180606/model/Hsts.cpp
   src/v20180606/model/DescribeIpStatusRequest.cpp

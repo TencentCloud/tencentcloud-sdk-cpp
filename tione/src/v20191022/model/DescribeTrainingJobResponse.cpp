@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeTrainingJobResponse::DescribeTrainingJobResponse() :
@@ -49,7 +48,7 @@ DescribeTrainingJobResponse::DescribeTrainingJobResponse() :
 
 CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -59,7 +58,7 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -123,8 +122,8 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
         if (!rsp["InputDataConfig"].IsArray())
             return CoreInternalOutcome(Error("response `InputDataConfig` is not array type"));
 
-        const Value &tmpValue = rsp["InputDataConfig"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["InputDataConfig"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             InputDataConfig item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -278,8 +277,8 @@ CoreInternalOutcome DescribeTrainingJobResponse::Deserialize(const string &paylo
         if (!rsp["SecondaryStatusTransitions"].IsArray())
             return CoreInternalOutcome(Error("response `SecondaryStatusTransitions` is not array type"));
 
-        const Value &tmpValue = rsp["SecondaryStatusTransitions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["SecondaryStatusTransitions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             SecondaryStatusTransition item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

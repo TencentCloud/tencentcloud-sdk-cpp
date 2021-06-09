@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 AddressTemplateSpecification::AddressTemplateSpecification() :
@@ -27,7 +26,7 @@ AddressTemplateSpecification::AddressTemplateSpecification() :
 {
 }
 
-CoreInternalOutcome AddressTemplateSpecification::Deserialize(const Value &value)
+CoreInternalOutcome AddressTemplateSpecification::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome AddressTemplateSpecification::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void AddressTemplateSpecification::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AddressTemplateSpecification::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_addressIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddressId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_addressId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_addressGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddressGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_addressGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }

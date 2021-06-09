@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 AdvancedAuthenticationTypeA::AdvancedAuthenticationTypeA() :
@@ -36,7 +35,7 @@ AdvancedAuthenticationTypeA::AdvancedAuthenticationTypeA() :
 {
 }
 
-CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const Value &value)
+CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -136,8 +135,8 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const Value &value)
         if (!value["RulePaths"].IsArray())
             return CoreInternalOutcome(Error("response `AdvancedAuthenticationTypeA.RulePaths` is not array type"));
 
-        const Value &tmpValue = value["RulePaths"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RulePaths"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_rulePaths.push_back((*itr).GetString());
         }
@@ -158,36 +157,36 @@ CoreInternalOutcome AdvancedAuthenticationTypeA::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AdvancedAuthenticationTypeA::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AdvancedAuthenticationTypeA::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_secretKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecretKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secretKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signParamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignParam";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_signParam.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signParam.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeParamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeParam";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timeParam.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeParam.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expireTime, allocator);
@@ -195,7 +194,7 @@ void AdvancedAuthenticationTypeA::ToJsonObject(Value &value, Document::Allocator
 
     if (m_expireTimeRequiredHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTimeRequired";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expireTimeRequired, allocator);
@@ -203,23 +202,23 @@ void AdvancedAuthenticationTypeA::ToJsonObject(Value &value, Document::Allocator
 
     if (m_formatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Format";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_format.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeFormatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeFormat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timeFormat.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeFormat.c_str(), allocator).Move(), allocator);
     }
 
     if (m_failCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FailCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failCode, allocator);
@@ -227,7 +226,7 @@ void AdvancedAuthenticationTypeA::ToJsonObject(Value &value, Document::Allocator
 
     if (m_expireCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expireCode, allocator);
@@ -235,20 +234,20 @@ void AdvancedAuthenticationTypeA::ToJsonObject(Value &value, Document::Allocator
 
     if (m_rulePathsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RulePaths";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_rulePaths.begin(); itr != m_rulePaths.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_transformationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Transformation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_transformation, allocator);

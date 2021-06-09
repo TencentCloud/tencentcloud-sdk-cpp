@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcaplusdb::V20190823::Model;
-using namespace rapidjson;
 using namespace std;
 
 ApplyStatus::ApplyStatus() :
@@ -29,7 +28,7 @@ ApplyStatus::ApplyStatus() :
 {
 }
 
-CoreInternalOutcome ApplyStatus::Deserialize(const Value &value)
+CoreInternalOutcome ApplyStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome ApplyStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ApplyStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ApplyStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_applicationIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_applicationId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_applicationStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_applicationStatus, allocator);
@@ -99,7 +98,7 @@ void ApplyStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_applicationTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_applicationType, allocator);
@@ -107,10 +106,10 @@ void ApplyStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_clusterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 }

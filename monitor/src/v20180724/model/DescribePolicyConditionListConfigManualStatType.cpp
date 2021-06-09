@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribePolicyConditionListConfigManualStatType::DescribePolicyConditionListConfigManualStatType() :
@@ -33,7 +32,7 @@ DescribePolicyConditionListConfigManualStatType::DescribePolicyConditionListConf
 {
 }
 
-CoreInternalOutcome DescribePolicyConditionListConfigManualStatType::Deserialize(const Value &value)
+CoreInternalOutcome DescribePolicyConditionListConfigManualStatType::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,71 +121,71 @@ CoreInternalOutcome DescribePolicyConditionListConfigManualStatType::Deserialize
     return CoreInternalOutcome(true);
 }
 
-void DescribePolicyConditionListConfigManualStatType::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribePolicyConditionListConfigManualStatType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_p5HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "P5";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_p5.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_p5.c_str(), allocator).Move(), allocator);
     }
 
     if (m_p10HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "P10";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_p10.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_p10.c_str(), allocator).Move(), allocator);
     }
 
     if (m_p60HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "P60";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_p60.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_p60.c_str(), allocator).Move(), allocator);
     }
 
     if (m_p300HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "P300";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_p300.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_p300.c_str(), allocator).Move(), allocator);
     }
 
     if (m_p600HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "P600";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_p600.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_p600.c_str(), allocator).Move(), allocator);
     }
 
     if (m_p1800HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "P1800";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_p1800.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_p1800.c_str(), allocator).Move(), allocator);
     }
 
     if (m_p3600HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "P3600";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_p3600.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_p3600.c_str(), allocator).Move(), allocator);
     }
 
     if (m_p86400HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "P86400";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_p86400.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_p86400.c_str(), allocator).Move(), allocator);
     }
 
 }

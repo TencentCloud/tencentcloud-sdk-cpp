@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecdn::V20191012::Model;
-using namespace rapidjson;
 using namespace std;
 
 Https::Https() :
@@ -34,7 +33,7 @@ Https::Https() :
 {
 }
 
-CoreInternalOutcome Https::Deserialize(const Value &value)
+CoreInternalOutcome Https::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -154,81 +153,81 @@ CoreInternalOutcome Https::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Https::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Https::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_http2HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Http2";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_http2.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_http2.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ocspStaplingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OcspStapling";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ocspStapling.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ocspStapling.c_str(), allocator).Move(), allocator);
     }
 
     if (m_verifyClientHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VerifyClient";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_verifyClient.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_verifyClient.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CertInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_certInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_clientCertInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientCertInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clientCertInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_spdyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Spdy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_spdy.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_spdy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sslStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SslStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sslStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sslStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hstsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hsts";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hsts.ToJsonObject(value[key.c_str()], allocator);
     }
 

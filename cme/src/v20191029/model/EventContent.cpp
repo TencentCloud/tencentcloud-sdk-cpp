@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 EventContent::EventContent() :
@@ -27,7 +26,7 @@ EventContent::EventContent() :
 {
 }
 
-CoreInternalOutcome EventContent::Deserialize(const Value &value)
+CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome EventContent::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EventContent::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eventTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eventType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageNewFileCreatedEventHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageNewFileCreatedEvent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_storageNewFileCreatedEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 

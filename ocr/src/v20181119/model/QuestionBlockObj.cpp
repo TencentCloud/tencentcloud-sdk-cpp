@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 QuestionBlockObj::QuestionBlockObj() :
@@ -27,7 +26,7 @@ QuestionBlockObj::QuestionBlockObj() :
 {
 }
 
-CoreInternalOutcome QuestionBlockObj::Deserialize(const Value &value)
+CoreInternalOutcome QuestionBlockObj::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome QuestionBlockObj::Deserialize(const Value &value)
         if (!value["QuestionArr"].IsArray())
             return CoreInternalOutcome(Error("response `QuestionBlockObj.QuestionArr` is not array type"));
 
-        const Value &tmpValue = value["QuestionArr"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["QuestionArr"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             QuestionObj item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -73,30 +72,30 @@ CoreInternalOutcome QuestionBlockObj::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void QuestionBlockObj::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QuestionBlockObj::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_questionArrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QuestionArr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_questionArr.begin(); itr != m_questionArr.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_questionBboxCoordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QuestionBboxCoord";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_questionBboxCoord.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClearItem::ClearItem() :
@@ -32,7 +31,7 @@ ClearItem::ClearItem() :
 {
 }
 
-CoreInternalOutcome ClearItem::Deserialize(const Value &value)
+CoreInternalOutcome ClearItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,63 +110,63 @@ CoreInternalOutcome ClearItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClearItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClearItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_date.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAcctTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubAcctType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subAcctType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAcctType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reconcileStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReconcileStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reconcileStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reconcileStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_reconcileReturnMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReconcileReturnMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_reconcileReturnMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reconcileReturnMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clearingStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClearingStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clearingStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clearingStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clearingReturnMsgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClearingReturnMsg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clearingReturnMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clearingReturnMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalAmtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalAmt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_totalAmt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_totalAmt.c_str(), allocator).Move(), allocator);
     }
 
 }

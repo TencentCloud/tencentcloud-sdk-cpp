@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Nlp::V20190408::Model;
-using namespace rapidjson;
 using namespace std;
 
 SearchResult::SearchResult() :
@@ -29,7 +28,7 @@ SearchResult::SearchResult() :
 {
 }
 
-CoreInternalOutcome SearchResult::Deserialize(const Value &value)
+CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome SearchResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SearchResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SearchResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_textHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isExistHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsExist";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isExist, allocator);
@@ -99,18 +98,18 @@ void SearchResult::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_matchTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchText";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_matchText.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchText.c_str(), allocator).Move(), allocator);
     }
 
     if (m_posHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pos.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pos.c_str(), allocator).Move(), allocator);
     }
 
 }

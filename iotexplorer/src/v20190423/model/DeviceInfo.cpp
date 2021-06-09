@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceInfo::DeviceInfo() :
@@ -39,7 +38,7 @@ DeviceInfo::DeviceInfo() :
 {
 }
 
-CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
+CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -188,20 +187,20 @@ CoreInternalOutcome DeviceInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deviceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -209,15 +208,15 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_devicePskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DevicePsk";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_devicePsk.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_devicePsk.c_str(), allocator).Move(), allocator);
     }
 
     if (m_firstOnlineTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstOnlineTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_firstOnlineTime, allocator);
@@ -225,7 +224,7 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_loginTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LoginTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loginTime, allocator);
@@ -233,7 +232,7 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -241,23 +240,23 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_versionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceCertHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceCert";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceCert.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceCert.c_str(), allocator).Move(), allocator);
     }
 
     if (m_logLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_logLevel, allocator);
@@ -265,42 +264,42 @@ void DeviceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_devAddrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DevAddr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_devAddr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_devAddr.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_appKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_devEUIHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DevEUI";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_devEUI.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_devEUI.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appSKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppSKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_appSKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appSKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nwkSKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NwkSKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nwkSKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nwkSKey.c_str(), allocator).Move(), allocator);
     }
 
 }

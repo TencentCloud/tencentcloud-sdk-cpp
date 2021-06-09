@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 CallbackInfo::CallbackInfo() :
@@ -26,7 +25,7 @@ CallbackInfo::CallbackInfo() :
 {
 }
 
-CoreInternalOutcome CallbackInfo::Deserialize(const Value &value)
+CoreInternalOutcome CallbackInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome CallbackInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CallbackInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CallbackInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 }

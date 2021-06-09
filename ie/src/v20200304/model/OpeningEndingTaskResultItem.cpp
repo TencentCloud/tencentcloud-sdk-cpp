@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 OpeningEndingTaskResultItem::OpeningEndingTaskResultItem() :
@@ -29,7 +28,7 @@ OpeningEndingTaskResultItem::OpeningEndingTaskResultItem() :
 {
 }
 
-CoreInternalOutcome OpeningEndingTaskResultItem::Deserialize(const Value &value)
+CoreInternalOutcome OpeningEndingTaskResultItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome OpeningEndingTaskResultItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OpeningEndingTaskResultItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OpeningEndingTaskResultItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_openingTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpeningTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_openingTimeOffset, allocator);
@@ -91,7 +90,7 @@ void OpeningEndingTaskResultItem::ToJsonObject(Value &value, Document::Allocator
 
     if (m_openingConfidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpeningConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_openingConfidence, allocator);
@@ -99,7 +98,7 @@ void OpeningEndingTaskResultItem::ToJsonObject(Value &value, Document::Allocator
 
     if (m_endingTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndingTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endingTimeOffset, allocator);
@@ -107,7 +106,7 @@ void OpeningEndingTaskResultItem::ToJsonObject(Value &value, Document::Allocator
 
     if (m_endingConfidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndingConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endingConfidence, allocator);

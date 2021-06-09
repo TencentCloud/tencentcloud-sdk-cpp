@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Kms::V20190118::Model;
-using namespace rapidjson;
 using namespace std;
 
 AlgorithmInfo::AlgorithmInfo() :
@@ -27,7 +26,7 @@ AlgorithmInfo::AlgorithmInfo() :
 {
 }
 
-CoreInternalOutcome AlgorithmInfo::Deserialize(const Value &value)
+CoreInternalOutcome AlgorithmInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome AlgorithmInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AlgorithmInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AlgorithmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_keyUsageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyUsage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_keyUsage.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyUsage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_algorithmHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Algorithm";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_algorithm.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_algorithm.c_str(), allocator).Move(), allocator);
     }
 
 }

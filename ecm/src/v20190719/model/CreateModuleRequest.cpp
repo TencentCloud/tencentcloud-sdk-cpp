@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateModuleRequest::CreateModuleRequest() :
@@ -40,22 +39,22 @@ CreateModuleRequest::CreateModuleRequest() :
 
 string CreateModuleRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_moduleNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModuleName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_moduleName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_moduleName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_defaultBandWidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultBandWidth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_defaultBandWidth, allocator);
@@ -63,23 +62,23 @@ string CreateModuleRequest::ToJsonString() const
 
     if (m_defaultImageIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultImageId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_defaultImageId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_defaultImageId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_defaultSystemDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultSystemDiskSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_defaultSystemDiskSize, allocator);
@@ -87,7 +86,7 @@ string CreateModuleRequest::ToJsonString() const
 
     if (m_defaultDataDiskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultDataDiskSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_defaultDataDiskSize, allocator);
@@ -95,7 +94,7 @@ string CreateModuleRequest::ToJsonString() const
 
     if (m_closeIpDirectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CloseIpDirect";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_closeIpDirect, allocator);
@@ -103,35 +102,35 @@ string CreateModuleRequest::ToJsonString() const
 
     if (m_tagSpecificationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagSpecification";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tagSpecification.begin(); itr != m_tagSpecification.end(); ++itr, ++i)
         {
-            d[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
     if (m_securityGroupsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecurityGroups";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_securityGroups.begin(); itr != m_securityGroups.end(); ++itr)
         {
-            d[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_defaultBandWidthInHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DefaultBandWidthIn";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_defaultBandWidthIn, allocator);
@@ -139,15 +138,15 @@ string CreateModuleRequest::ToJsonString() const
 
     if (m_disableWanIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisableWanIp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableWanIp, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 DiskGroup::DiskGroup() :
@@ -27,7 +26,7 @@ DiskGroup::DiskGroup() :
 {
 }
 
-CoreInternalOutcome DiskGroup::Deserialize(const Value &value)
+CoreInternalOutcome DiskGroup::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,21 +62,21 @@ CoreInternalOutcome DiskGroup::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DiskGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DiskGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_specHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Spec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_spec.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeAlarmNoticeCallbacksResponse::DescribeAlarmNoticeCallbacksResponse() :
@@ -31,7 +30,7 @@ DescribeAlarmNoticeCallbacksResponse::DescribeAlarmNoticeCallbacksResponse() :
 
 CoreInternalOutcome DescribeAlarmNoticeCallbacksResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -41,7 +40,7 @@ CoreInternalOutcome DescribeAlarmNoticeCallbacksResponse::Deserialize(const stri
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -68,8 +67,8 @@ CoreInternalOutcome DescribeAlarmNoticeCallbacksResponse::Deserialize(const stri
         if (!rsp["URLNotices"].IsArray())
             return CoreInternalOutcome(Error("response `URLNotices` is not array type"));
 
-        const Value &tmpValue = rsp["URLNotices"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["URLNotices"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             URLNotice item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

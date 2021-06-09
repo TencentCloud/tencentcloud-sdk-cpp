@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 LivePackageInfo::LivePackageInfo() :
@@ -33,7 +32,7 @@ LivePackageInfo::LivePackageInfo() :
 {
 }
 
-CoreInternalOutcome LivePackageInfo::Deserialize(const Value &value)
+CoreInternalOutcome LivePackageInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,20 +121,20 @@ CoreInternalOutcome LivePackageInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LivePackageInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LivePackageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Total";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_total, allocator);
@@ -143,7 +142,7 @@ void LivePackageInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_usedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Used";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_used, allocator);
@@ -151,7 +150,7 @@ void LivePackageInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_leftHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Left";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_left, allocator);
@@ -159,23 +158,23 @@ void LivePackageInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_buyTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BuyTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_buyTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buyTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_expireTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -183,7 +182,7 @@ void LivePackageInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);

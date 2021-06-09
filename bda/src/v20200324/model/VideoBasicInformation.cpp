@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bda::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 VideoBasicInformation::VideoBasicInformation() :
@@ -30,7 +29,7 @@ VideoBasicInformation::VideoBasicInformation() :
 {
 }
 
-CoreInternalOutcome VideoBasicInformation::Deserialize(const Value &value)
+CoreInternalOutcome VideoBasicInformation::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome VideoBasicInformation::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VideoBasicInformation::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VideoBasicInformation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_frameWidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FrameWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frameWidth, allocator);
@@ -102,7 +101,7 @@ void VideoBasicInformation::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_frameHeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FrameHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frameHeight, allocator);
@@ -110,7 +109,7 @@ void VideoBasicInformation::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_framesPerSecondHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FramesPerSecond";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_framesPerSecond, allocator);
@@ -118,7 +117,7 @@ void VideoBasicInformation::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -126,7 +125,7 @@ void VideoBasicInformation::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_totalFramesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalFrames";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalFrames, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 ZoneConfig::ZoneConfig() :
@@ -34,7 +33,7 @@ ZoneConfig::ZoneConfig() :
 {
 }
 
-CoreInternalOutcome ZoneConfig::Deserialize(const Value &value)
+CoreInternalOutcome ZoneConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome ZoneConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ZoneConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ZoneConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneId, allocator);
@@ -146,15 +145,15 @@ void ZoneConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_zoneNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zoneName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zoneTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zoneType, allocator);
@@ -162,23 +161,23 @@ void ZoneConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_bunkCodesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BunkCodes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_bunkCodes.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bunkCodes.c_str(), allocator).Move(), allocator);
     }
 
     if (m_floorNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FloorName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_floorName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_floorName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_floorIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FloorId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_floorId, allocator);
@@ -186,7 +185,7 @@ void ZoneConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_bindNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BindNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bindNum, allocator);
@@ -194,7 +193,7 @@ void ZoneConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_debugNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DebugNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_debugNum, allocator);
@@ -202,7 +201,7 @@ void ZoneConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);

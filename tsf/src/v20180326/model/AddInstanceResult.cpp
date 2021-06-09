@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 AddInstanceResult::AddInstanceResult() :
@@ -29,7 +28,7 @@ AddInstanceResult::AddInstanceResult() :
 {
 }
 
-CoreInternalOutcome AddInstanceResult::Deserialize(const Value &value)
+CoreInternalOutcome AddInstanceResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -39,8 +38,8 @@ CoreInternalOutcome AddInstanceResult::Deserialize(const Value &value)
         if (!value["FailedInstanceIds"].IsArray())
             return CoreInternalOutcome(Error("response `AddInstanceResult.FailedInstanceIds` is not array type"));
 
-        const Value &tmpValue = value["FailedInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FailedInstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_failedInstanceIds.push_back((*itr).GetString());
         }
@@ -52,8 +51,8 @@ CoreInternalOutcome AddInstanceResult::Deserialize(const Value &value)
         if (!value["SuccInstanceIds"].IsArray())
             return CoreInternalOutcome(Error("response `AddInstanceResult.SuccInstanceIds` is not array type"));
 
-        const Value &tmpValue = value["SuccInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SuccInstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_succInstanceIds.push_back((*itr).GetString());
         }
@@ -65,8 +64,8 @@ CoreInternalOutcome AddInstanceResult::Deserialize(const Value &value)
         if (!value["TimeoutInstanceIds"].IsArray())
             return CoreInternalOutcome(Error("response `AddInstanceResult.TimeoutInstanceIds` is not array type"));
 
-        const Value &tmpValue = value["TimeoutInstanceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TimeoutInstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_timeoutInstanceIds.push_back((*itr).GetString());
         }
@@ -78,8 +77,8 @@ CoreInternalOutcome AddInstanceResult::Deserialize(const Value &value)
         if (!value["FailedReasons"].IsArray())
             return CoreInternalOutcome(Error("response `AddInstanceResult.FailedReasons` is not array type"));
 
-        const Value &tmpValue = value["FailedReasons"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FailedReasons"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_failedReasons.push_back((*itr).GetString());
         }
@@ -90,58 +89,58 @@ CoreInternalOutcome AddInstanceResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AddInstanceResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AddInstanceResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_failedInstanceIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FailedInstanceIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_failedInstanceIds.begin(); itr != m_failedInstanceIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_succInstanceIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuccInstanceIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_succInstanceIds.begin(); itr != m_succInstanceIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_timeoutInstanceIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeoutInstanceIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_timeoutInstanceIds.begin(); itr != m_timeoutInstanceIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_failedReasonsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FailedReasons";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_failedReasons.begin(); itr != m_failedReasons.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

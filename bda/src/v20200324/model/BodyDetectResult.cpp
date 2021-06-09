@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bda::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 BodyDetectResult::BodyDetectResult() :
@@ -28,7 +27,7 @@ BodyDetectResult::BodyDetectResult() :
 {
 }
 
-CoreInternalOutcome BodyDetectResult::Deserialize(const Value &value)
+CoreInternalOutcome BodyDetectResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,12 +80,12 @@ CoreInternalOutcome BodyDetectResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BodyDetectResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BodyDetectResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -94,19 +93,19 @@ void BodyDetectResult::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_bodyRectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BodyRect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bodyRect.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_bodyAttributeInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BodyAttributeInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bodyAttributeInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

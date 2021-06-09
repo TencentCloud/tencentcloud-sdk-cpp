@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 SdkAppIdTrtcMcuTranscodeTimeUsage::SdkAppIdTrtcMcuTranscodeTimeUsage() :
@@ -30,7 +29,7 @@ SdkAppIdTrtcMcuTranscodeTimeUsage::SdkAppIdTrtcMcuTranscodeTimeUsage() :
 {
 }
 
-CoreInternalOutcome SdkAppIdTrtcMcuTranscodeTimeUsage::Deserialize(const Value &value)
+CoreInternalOutcome SdkAppIdTrtcMcuTranscodeTimeUsage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome SdkAppIdTrtcMcuTranscodeTimeUsage::Deserialize(const Value &
     return CoreInternalOutcome(true);
 }
 
-void SdkAppIdTrtcMcuTranscodeTimeUsage::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SdkAppIdTrtcMcuTranscodeTimeUsage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timeKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_audioTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioTime, allocator);
@@ -110,7 +109,7 @@ void SdkAppIdTrtcMcuTranscodeTimeUsage::ToJsonObject(Value &value, Document::All
 
     if (m_videoTimeSdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoTimeSd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoTimeSd, allocator);
@@ -118,7 +117,7 @@ void SdkAppIdTrtcMcuTranscodeTimeUsage::ToJsonObject(Value &value, Document::All
 
     if (m_videoTimeHdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoTimeHd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoTimeHd, allocator);
@@ -126,7 +125,7 @@ void SdkAppIdTrtcMcuTranscodeTimeUsage::ToJsonObject(Value &value, Document::All
 
     if (m_videoTimeFhdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoTimeFhd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoTimeFhd, allocator);

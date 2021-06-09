@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 AgencyClientInfo::AgencyClientInfo() :
@@ -29,7 +28,7 @@ AgencyClientInfo::AgencyClientInfo() :
 {
 }
 
-CoreInternalOutcome AgencyClientInfo::Deserialize(const Value &value)
+CoreInternalOutcome AgencyClientInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome AgencyClientInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AgencyClientInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AgencyClientInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_agencyClientNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AgencyClientName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_agencyClientName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agencyClientName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_agencyClientGlobalTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AgencyClientGlobalType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_agencyClientGlobalType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agencyClientGlobalType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_agencyClientGlobalIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AgencyClientGlobalId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_agencyClientGlobalId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agencyClientGlobalId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_agencyClientMobileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AgencyClientMobile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_agencyClientMobile.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agencyClientMobile.c_str(), allocator).Move(), allocator);
     }
 
 }

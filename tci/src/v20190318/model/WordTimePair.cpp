@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 WordTimePair::WordTimePair() :
@@ -27,7 +26,7 @@ WordTimePair::WordTimePair() :
 {
 }
 
-CoreInternalOutcome WordTimePair::Deserialize(const Value &value)
+CoreInternalOutcome WordTimePair::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome WordTimePair::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WordTimePair::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WordTimePair::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mbtmHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mbtm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mbtm, allocator);
@@ -69,7 +68,7 @@ void WordTimePair::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_metmHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Metm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_metm, allocator);

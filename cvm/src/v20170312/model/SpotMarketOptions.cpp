@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 SpotMarketOptions::SpotMarketOptions() :
@@ -27,7 +26,7 @@ SpotMarketOptions::SpotMarketOptions() :
 {
 }
 
-CoreInternalOutcome SpotMarketOptions::Deserialize(const Value &value)
+CoreInternalOutcome SpotMarketOptions::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome SpotMarketOptions::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SpotMarketOptions::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SpotMarketOptions::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_maxPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxPrice";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_maxPrice.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maxPrice.c_str(), allocator).Move(), allocator);
     }
 
     if (m_spotInstanceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SpotInstanceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_spotInstanceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_spotInstanceType.c_str(), allocator).Move(), allocator);
     }
 
 }

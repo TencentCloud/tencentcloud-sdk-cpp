@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 LogInfo::LogInfo() :
@@ -29,7 +28,7 @@ LogInfo::LogInfo() :
 {
 }
 
-CoreInternalOutcome LogInfo::Deserialize(const Value &value)
+CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,36 +77,36 @@ CoreInternalOutcome LogInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LogInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LogInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_logNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_logName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_logUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_logUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_logTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_logTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fileSize, allocator);

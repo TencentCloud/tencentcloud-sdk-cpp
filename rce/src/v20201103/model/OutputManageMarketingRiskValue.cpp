@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Rce::V20201103::Model;
-using namespace rapidjson;
 using namespace std;
 
 OutputManageMarketingRiskValue::OutputManageMarketingRiskValue() :
@@ -31,7 +30,7 @@ OutputManageMarketingRiskValue::OutputManageMarketingRiskValue() :
 {
 }
 
-CoreInternalOutcome OutputManageMarketingRiskValue::Deserialize(const Value &value)
+CoreInternalOutcome OutputManageMarketingRiskValue::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -91,8 +90,8 @@ CoreInternalOutcome OutputManageMarketingRiskValue::Deserialize(const Value &val
         if (!value["RiskType"].IsArray())
             return CoreInternalOutcome(Error("response `OutputManageMarketingRiskValue.RiskType` is not array type"));
 
-        const Value &tmpValue = value["RiskType"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RiskType"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_riskType.push_back((*itr).GetInt64());
         }
@@ -103,20 +102,20 @@ CoreInternalOutcome OutputManageMarketingRiskValue::Deserialize(const Value &val
     return CoreInternalOutcome(true);
 }
 
-void OutputManageMarketingRiskValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OutputManageMarketingRiskValue::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_userIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_postTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PostTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_postTime, allocator);
@@ -124,38 +123,38 @@ void OutputManageMarketingRiskValue::ToJsonObject(Value &value, Document::Alloca
 
     if (m_associateAccountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AssociateAccount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_associateAccount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_associateAccount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_riskLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RiskLevel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_riskLevel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskLevel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_riskTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RiskType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_riskType.begin(); itr != m_riskType.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

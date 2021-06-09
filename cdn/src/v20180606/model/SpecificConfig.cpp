@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 SpecificConfig::SpecificConfig() :
@@ -27,7 +26,7 @@ SpecificConfig::SpecificConfig() :
 {
 }
 
-CoreInternalOutcome SpecificConfig::Deserialize(const Value &value)
+CoreInternalOutcome SpecificConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,24 +69,24 @@ CoreInternalOutcome SpecificConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SpecificConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SpecificConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_mainlandHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mainland";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mainland.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_overseasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Overseas";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_overseas.ToJsonObject(value[key.c_str()], allocator);
     }
 

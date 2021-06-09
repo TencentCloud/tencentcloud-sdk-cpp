@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 TranscodeTaskInput::TranscodeTaskInput() :
@@ -31,7 +30,7 @@ TranscodeTaskInput::TranscodeTaskInput() :
 {
 }
 
-CoreInternalOutcome TranscodeTaskInput::Deserialize(const Value &value)
+CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -51,8 +50,8 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const Value &value)
         if (!value["WatermarkSet"].IsArray())
             return CoreInternalOutcome(Error("response `TranscodeTaskInput.WatermarkSet` is not array type"));
 
-        const Value &tmpValue = value["WatermarkSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["WatermarkSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             WatermarkInput item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -71,8 +70,8 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const Value &value)
         if (!value["MosaicSet"].IsArray())
             return CoreInternalOutcome(Error("response `TranscodeTaskInput.MosaicSet` is not array type"));
 
-        const Value &tmpValue = value["MosaicSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MosaicSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MosaicInput item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -91,8 +90,8 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const Value &value)
         if (!value["HeadTailSet"].IsArray())
             return CoreInternalOutcome(Error("response `TranscodeTaskInput.HeadTailSet` is not array type"));
 
-        const Value &tmpValue = value["HeadTailSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["HeadTailSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             HeadTailTaskInput item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -130,12 +129,12 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TranscodeTaskInput::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TranscodeTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_definitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
@@ -143,52 +142,52 @@ void TranscodeTaskInput::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_watermarkSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WatermarkSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_watermarkSet.begin(); itr != m_watermarkSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_mosaicSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MosaicSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_mosaicSet.begin(); itr != m_mosaicSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_headTailSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeadTailSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_headTailSet.begin(); itr != m_headTailSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -196,7 +195,7 @@ void TranscodeTaskInput::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);

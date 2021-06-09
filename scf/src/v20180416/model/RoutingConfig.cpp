@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 RoutingConfig::RoutingConfig() :
@@ -27,7 +26,7 @@ RoutingConfig::RoutingConfig() :
 {
 }
 
-CoreInternalOutcome RoutingConfig::Deserialize(const Value &value)
+CoreInternalOutcome RoutingConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome RoutingConfig::Deserialize(const Value &value)
         if (!value["AdditionalVersionWeights"].IsArray())
             return CoreInternalOutcome(Error("response `RoutingConfig.AdditionalVersionWeights` is not array type"));
 
-        const Value &tmpValue = value["AdditionalVersionWeights"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AdditionalVersionWeights"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             VersionWeight item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -57,8 +56,8 @@ CoreInternalOutcome RoutingConfig::Deserialize(const Value &value)
         if (!value["AddtionVersionMatchs"].IsArray())
             return CoreInternalOutcome(Error("response `RoutingConfig.AddtionVersionMatchs` is not array type"));
 
-        const Value &tmpValue = value["AddtionVersionMatchs"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AddtionVersionMatchs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             VersionMatch item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -76,35 +75,35 @@ CoreInternalOutcome RoutingConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RoutingConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RoutingConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_additionalVersionWeightsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AdditionalVersionWeights";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_additionalVersionWeights.begin(); itr != m_additionalVersionWeights.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_addtionVersionMatchsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddtionVersionMatchs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_addtionVersionMatchs.begin(); itr != m_addtionVersionMatchs.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

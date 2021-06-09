@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 WafSubRuleStatus::WafSubRuleStatus() :
@@ -27,7 +26,7 @@ WafSubRuleStatus::WafSubRuleStatus() :
 {
 }
 
-CoreInternalOutcome WafSubRuleStatus::Deserialize(const Value &value)
+CoreInternalOutcome WafSubRuleStatus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome WafSubRuleStatus::Deserialize(const Value &value)
         if (!value["SubIds"].IsArray())
             return CoreInternalOutcome(Error("response `WafSubRuleStatus.SubIds` is not array type"));
 
-        const Value &tmpValue = value["SubIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SubIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_subIds.push_back((*itr).GetInt64());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome WafSubRuleStatus::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WafSubRuleStatus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WafSubRuleStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_switch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_subIds.begin(); itr != m_subIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

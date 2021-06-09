@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 IotModelData::IotModelData() :
@@ -27,7 +26,7 @@ IotModelData::IotModelData() :
 {
 }
 
-CoreInternalOutcome IotModelData::Deserialize(const Value &value)
+CoreInternalOutcome IotModelData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome IotModelData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IotModelData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IotModelData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_revisionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Revision";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_revision, allocator);
@@ -69,7 +68,7 @@ void IotModelData::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_releaseTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReleaseTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_releaseTime, allocator);

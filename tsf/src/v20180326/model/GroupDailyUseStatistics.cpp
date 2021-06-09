@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 GroupDailyUseStatistics::GroupDailyUseStatistics() :
@@ -28,7 +27,7 @@ GroupDailyUseStatistics::GroupDailyUseStatistics() :
 {
 }
 
-CoreInternalOutcome GroupDailyUseStatistics::Deserialize(const Value &value)
+CoreInternalOutcome GroupDailyUseStatistics::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome GroupDailyUseStatistics::Deserialize(const Value &value)
         if (!value["TopReqAmount"].IsArray())
             return CoreInternalOutcome(Error("response `GroupDailyUseStatistics.TopReqAmount` is not array type"));
 
-        const Value &tmpValue = value["TopReqAmount"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TopReqAmount"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             GroupUseStatisticsEntity item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -58,8 +57,8 @@ CoreInternalOutcome GroupDailyUseStatistics::Deserialize(const Value &value)
         if (!value["TopFailureRate"].IsArray())
             return CoreInternalOutcome(Error("response `GroupDailyUseStatistics.TopFailureRate` is not array type"));
 
-        const Value &tmpValue = value["TopFailureRate"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TopFailureRate"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             GroupUseStatisticsEntity item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -78,8 +77,8 @@ CoreInternalOutcome GroupDailyUseStatistics::Deserialize(const Value &value)
         if (!value["TopAvgTimeCost"].IsArray())
             return CoreInternalOutcome(Error("response `GroupDailyUseStatistics.TopAvgTimeCost` is not array type"));
 
-        const Value &tmpValue = value["TopAvgTimeCost"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TopAvgTimeCost"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             GroupUseStatisticsEntity item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -97,50 +96,50 @@ CoreInternalOutcome GroupDailyUseStatistics::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GroupDailyUseStatistics::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GroupDailyUseStatistics::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_topReqAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopReqAmount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_topReqAmount.begin(); itr != m_topReqAmount.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_topFailureRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopFailureRate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_topFailureRate.begin(); itr != m_topFailureRate.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_topAvgTimeCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopAvgTimeCost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_topAvgTimeCost.begin(); itr != m_topAvgTimeCost.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

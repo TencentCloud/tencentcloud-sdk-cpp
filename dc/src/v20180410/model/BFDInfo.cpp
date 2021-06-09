@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dc::V20180410::Model;
-using namespace rapidjson;
 using namespace std;
 
 BFDInfo::BFDInfo() :
@@ -27,7 +26,7 @@ BFDInfo::BFDInfo() :
 {
 }
 
-CoreInternalOutcome BFDInfo::Deserialize(const Value &value)
+CoreInternalOutcome BFDInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome BFDInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BFDInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BFDInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_probeFailedTimesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProbeFailedTimes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_probeFailedTimes, allocator);
@@ -69,7 +68,7 @@ void BFDInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_intervalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Interval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_interval, allocator);

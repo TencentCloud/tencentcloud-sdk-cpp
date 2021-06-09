@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateScanInstancesResponse::CreateScanInstancesResponse() :
@@ -35,7 +34,7 @@ CreateScanInstancesResponse::CreateScanInstancesResponse() :
 
 CoreInternalOutcome CreateScanInstancesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -45,7 +44,7 @@ CoreInternalOutcome CreateScanInstancesResponse::Deserialize(const string &paylo
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -92,8 +91,8 @@ CoreInternalOutcome CreateScanInstancesResponse::Deserialize(const string &paylo
         if (!rsp["AppMd5s"].IsArray())
             return CoreInternalOutcome(Error("response `AppMd5s` is not array type"));
 
-        const Value &tmpValue = rsp["AppMd5s"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["AppMd5s"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_appMd5s.push_back((*itr).GetString());
         }

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Cws::V20180312::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateVulsReportRequest::CreateVulsReportRequest() :
@@ -31,14 +30,14 @@ CreateVulsReportRequest::CreateVulsReportRequest() :
 
 string CreateVulsReportRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_siteIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SiteId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_siteId, allocator);
@@ -46,15 +45,15 @@ string CreateVulsReportRequest::ToJsonString() const
 
     if (m_monitorIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MonitorId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_monitorId, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

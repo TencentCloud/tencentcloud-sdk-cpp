@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeJobSubmitInfoResponse::DescribeJobSubmitInfoResponse() :
@@ -37,7 +36,7 @@ DescribeJobSubmitInfoResponse::DescribeJobSubmitInfoResponse() :
 
 CoreInternalOutcome DescribeJobSubmitInfoResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -47,7 +46,7 @@ CoreInternalOutcome DescribeJobSubmitInfoResponse::Deserialize(const string &pay
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -114,8 +113,8 @@ CoreInternalOutcome DescribeJobSubmitInfoResponse::Deserialize(const string &pay
         if (!rsp["Tasks"].IsArray())
             return CoreInternalOutcome(Error("response `Tasks` is not array type"));
 
-        const Value &tmpValue = rsp["Tasks"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Tasks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Task item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -134,8 +133,8 @@ CoreInternalOutcome DescribeJobSubmitInfoResponse::Deserialize(const string &pay
         if (!rsp["Dependences"].IsArray())
             return CoreInternalOutcome(Error("response `Dependences` is not array type"));
 
-        const Value &tmpValue = rsp["Dependences"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Dependences"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Dependence item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -154,8 +153,8 @@ CoreInternalOutcome DescribeJobSubmitInfoResponse::Deserialize(const string &pay
         if (!rsp["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `Tags` is not array type"));
 
-        const Value &tmpValue = rsp["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Tag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

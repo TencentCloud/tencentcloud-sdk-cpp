@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 Eyebrow::Eyebrow() :
@@ -28,7 +27,7 @@ Eyebrow::Eyebrow() :
 {
 }
 
-CoreInternalOutcome Eyebrow::Deserialize(const Value &value)
+CoreInternalOutcome Eyebrow::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -88,33 +87,33 @@ CoreInternalOutcome Eyebrow::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Eyebrow::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Eyebrow::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eyebrowDensityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EyebrowDensity";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eyebrowDensity.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_eyebrowCurveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EyebrowCurve";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eyebrowCurve.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_eyebrowLengthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EyebrowLength";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eyebrowLength.ToJsonObject(value[key.c_str()], allocator);
     }
 

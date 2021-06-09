@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
-using namespace rapidjson;
 using namespace std;
 
 LoRaFrequencyEntry::LoRaFrequencyEntry() :
@@ -35,7 +34,7 @@ LoRaFrequencyEntry::LoRaFrequencyEntry() :
 {
 }
 
-CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const Value &value)
+CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -75,8 +74,8 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const Value &value)
         if (!value["ChannelsDataUp"].IsArray())
             return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.ChannelsDataUp` is not array type"));
 
-        const Value &tmpValue = value["ChannelsDataUp"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ChannelsDataUp"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_channelsDataUp.push_back((*itr).GetUint64());
         }
@@ -88,8 +87,8 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const Value &value)
         if (!value["ChannelsDataRX1"].IsArray())
             return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.ChannelsDataRX1` is not array type"));
 
-        const Value &tmpValue = value["ChannelsDataRX1"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ChannelsDataRX1"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_channelsDataRX1.push_back((*itr).GetUint64());
         }
@@ -101,8 +100,8 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const Value &value)
         if (!value["ChannelsDataRX2"].IsArray())
             return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.ChannelsDataRX2` is not array type"));
 
-        const Value &tmpValue = value["ChannelsDataRX2"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ChannelsDataRX2"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_channelsDataRX2.push_back((*itr).GetUint64());
         }
@@ -114,8 +113,8 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const Value &value)
         if (!value["ChannelsJoinUp"].IsArray())
             return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.ChannelsJoinUp` is not array type"));
 
-        const Value &tmpValue = value["ChannelsJoinUp"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ChannelsJoinUp"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_channelsJoinUp.push_back((*itr).GetUint64());
         }
@@ -127,8 +126,8 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const Value &value)
         if (!value["ChannelsJoinRX1"].IsArray())
             return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.ChannelsJoinRX1` is not array type"));
 
-        const Value &tmpValue = value["ChannelsJoinRX1"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ChannelsJoinRX1"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_channelsJoinRX1.push_back((*itr).GetUint64());
         }
@@ -140,8 +139,8 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const Value &value)
         if (!value["ChannelsJoinRX2"].IsArray())
             return CoreInternalOutcome(Error("response `LoRaFrequencyEntry.ChannelsJoinRX2` is not array type"));
 
-        const Value &tmpValue = value["ChannelsJoinRX2"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ChannelsJoinRX2"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_channelsJoinRX2.push_back((*itr).GetUint64());
         }
@@ -162,114 +161,114 @@ CoreInternalOutcome LoRaFrequencyEntry::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LoRaFrequencyEntry::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LoRaFrequencyEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_freqIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FreqId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_freqId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_freqId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_freqNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FreqName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_freqName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_freqName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelsDataUpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelsDataUp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_channelsDataUp.begin(); itr != m_channelsDataUp.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
     if (m_channelsDataRX1HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelsDataRX1";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_channelsDataRX1.begin(); itr != m_channelsDataRX1.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
     if (m_channelsDataRX2HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelsDataRX2";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_channelsDataRX2.begin(); itr != m_channelsDataRX2.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
     if (m_channelsJoinUpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelsJoinUp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_channelsJoinUp.begin(); itr != m_channelsJoinUp.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
     if (m_channelsJoinRX1HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelsJoinRX1";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_channelsJoinRX1.begin(); itr != m_channelsJoinRX1.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
     if (m_channelsJoinRX2HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChannelsJoinRX2";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_channelsJoinRX2.begin(); itr != m_channelsJoinRX2.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 LiveStreamAiRecognitionResultItem::LiveStreamAiRecognitionResultItem() :
@@ -31,7 +30,7 @@ LiveStreamAiRecognitionResultItem::LiveStreamAiRecognitionResultItem() :
 {
 }
 
-CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const Value &value)
+CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -51,8 +50,8 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const Value &
         if (!value["FaceRecognitionResultSet"].IsArray())
             return CoreInternalOutcome(Error("response `LiveStreamAiRecognitionResultItem.FaceRecognitionResultSet` is not array type"));
 
-        const Value &tmpValue = value["FaceRecognitionResultSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FaceRecognitionResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LiveStreamFaceRecognitionResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -71,8 +70,8 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const Value &
         if (!value["AsrWordsRecognitionResultSet"].IsArray())
             return CoreInternalOutcome(Error("response `LiveStreamAiRecognitionResultItem.AsrWordsRecognitionResultSet` is not array type"));
 
-        const Value &tmpValue = value["AsrWordsRecognitionResultSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AsrWordsRecognitionResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LiveStreamAsrWordsRecognitionResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -91,8 +90,8 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const Value &
         if (!value["OcrWordsRecognitionResultSet"].IsArray())
             return CoreInternalOutcome(Error("response `LiveStreamAiRecognitionResultItem.OcrWordsRecognitionResultSet` is not array type"));
 
-        const Value &tmpValue = value["OcrWordsRecognitionResultSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["OcrWordsRecognitionResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LiveStreamOcrWordsRecognitionResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -111,8 +110,8 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const Value &
         if (!value["AsrFullTextRecognitionResultSet"].IsArray())
             return CoreInternalOutcome(Error("response `LiveStreamAiRecognitionResultItem.AsrFullTextRecognitionResultSet` is not array type"));
 
-        const Value &tmpValue = value["AsrFullTextRecognitionResultSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AsrFullTextRecognitionResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LiveStreamAsrFullTextRecognitionResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -131,8 +130,8 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const Value &
         if (!value["OcrFullTextRecognitionResultSet"].IsArray())
             return CoreInternalOutcome(Error("response `LiveStreamAiRecognitionResultItem.OcrFullTextRecognitionResultSet` is not array type"));
 
-        const Value &tmpValue = value["OcrFullTextRecognitionResultSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["OcrFullTextRecognitionResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LiveStreamOcrFullTextRecognitionResult item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -150,88 +149,88 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const Value &
     return CoreInternalOutcome(true);
 }
 
-void LiveStreamAiRecognitionResultItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LiveStreamAiRecognitionResultItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_faceRecognitionResultSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceRecognitionResultSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_faceRecognitionResultSet.begin(); itr != m_faceRecognitionResultSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_asrWordsRecognitionResultSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AsrWordsRecognitionResultSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_asrWordsRecognitionResultSet.begin(); itr != m_asrWordsRecognitionResultSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_ocrWordsRecognitionResultSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OcrWordsRecognitionResultSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_ocrWordsRecognitionResultSet.begin(); itr != m_ocrWordsRecognitionResultSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_asrFullTextRecognitionResultSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AsrFullTextRecognitionResultSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_asrFullTextRecognitionResultSet.begin(); itr != m_asrFullTextRecognitionResultSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_ocrFullTextRecognitionResultSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OcrFullTextRecognitionResultSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_ocrFullTextRecognitionResultSet.begin(); itr != m_ocrFullTextRecognitionResultSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

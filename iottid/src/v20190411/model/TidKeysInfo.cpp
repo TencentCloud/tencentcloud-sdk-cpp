@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iottid::V20190411::Model;
-using namespace rapidjson;
 using namespace std;
 
 TidKeysInfo::TidKeysInfo() :
@@ -31,7 +30,7 @@ TidKeysInfo::TidKeysInfo() :
 {
 }
 
-CoreInternalOutcome TidKeysInfo::Deserialize(const Value &value)
+CoreInternalOutcome TidKeysInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,55 +99,55 @@ CoreInternalOutcome TidKeysInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TidKeysInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TidKeysInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publicKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_publicKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_privateKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrivateKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_privateKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privateKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Psk";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_psk.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_psk.c_str(), allocator).Move(), allocator);
     }
 
     if (m_downloadUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DownloadUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceCode.c_str(), allocator).Move(), allocator);
     }
 
 }

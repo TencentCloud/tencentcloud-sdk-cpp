@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceResponse::InstanceResponse() :
@@ -27,7 +26,7 @@ InstanceResponse::InstanceResponse() :
 {
 }
 
-CoreInternalOutcome InstanceResponse::Deserialize(const Value &value)
+CoreInternalOutcome InstanceResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome InstanceResponse::Deserialize(const Value &value)
         if (!value["InstanceList"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceResponse.InstanceList` is not array type"));
 
-        const Value &tmpValue = value["InstanceList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["InstanceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Instance item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,27 +65,27 @@ CoreInternalOutcome InstanceResponse::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_instanceList.begin(); itr != m_instanceList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);

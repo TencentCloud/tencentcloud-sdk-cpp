@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 ShardArgument::ShardArgument() :
@@ -27,7 +26,7 @@ ShardArgument::ShardArgument() :
 {
 }
 
-CoreInternalOutcome ShardArgument::Deserialize(const Value &value)
+CoreInternalOutcome ShardArgument::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome ShardArgument::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ShardArgument::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ShardArgument::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_shardKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shardKey, allocator);
@@ -69,10 +68,10 @@ void ShardArgument::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_shardValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_shardValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shardValue.c_str(), allocator).Move(), allocator);
     }
 
 }

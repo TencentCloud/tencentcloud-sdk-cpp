@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 DatabaseTuple::DatabaseTuple() :
@@ -27,7 +26,7 @@ DatabaseTuple::DatabaseTuple() :
 {
 }
 
-CoreInternalOutcome DatabaseTuple::Deserialize(const Value &value)
+CoreInternalOutcome DatabaseTuple::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome DatabaseTuple::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DatabaseTuple::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DatabaseTuple::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_publishDatabaseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishDatabase";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_publishDatabase.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publishDatabase.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subscribeDatabaseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubscribeDatabase";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subscribeDatabase.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subscribeDatabase.c_str(), allocator).Move(), allocator);
     }
 
 }

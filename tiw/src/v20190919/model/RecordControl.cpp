@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiw::V20190919::Model;
-using namespace rapidjson;
 using namespace std;
 
 RecordControl::RecordControl() :
@@ -30,7 +29,7 @@ RecordControl::RecordControl() :
 {
 }
 
-CoreInternalOutcome RecordControl::Deserialize(const Value &value)
+CoreInternalOutcome RecordControl::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -80,8 +79,8 @@ CoreInternalOutcome RecordControl::Deserialize(const Value &value)
         if (!value["StreamControls"].IsArray())
             return CoreInternalOutcome(Error("response `RecordControl.StreamControls` is not array type"));
 
-        const Value &tmpValue = value["StreamControls"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["StreamControls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StreamControl item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -99,12 +98,12 @@ CoreInternalOutcome RecordControl::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RecordControl::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RecordControl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enabled, allocator);
@@ -112,7 +111,7 @@ void RecordControl::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_disableRecordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisableRecord";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disableRecord, allocator);
@@ -120,7 +119,7 @@ void RecordControl::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_disableAudioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisableAudio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disableAudio, allocator);
@@ -128,7 +127,7 @@ void RecordControl::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_pullSmallVideoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PullSmallVideo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pullSmallVideo, allocator);
@@ -136,15 +135,15 @@ void RecordControl::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_streamControlsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamControls";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_streamControls.begin(); itr != m_streamControls.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

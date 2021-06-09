@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageOsList::ImageOsList() :
@@ -27,7 +26,7 @@ ImageOsList::ImageOsList() :
 {
 }
 
-CoreInternalOutcome ImageOsList::Deserialize(const Value &value)
+CoreInternalOutcome ImageOsList::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome ImageOsList::Deserialize(const Value &value)
         if (!value["Windows"].IsArray())
             return CoreInternalOutcome(Error("response `ImageOsList.Windows` is not array type"));
 
-        const Value &tmpValue = value["Windows"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Windows"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_windows.push_back((*itr).GetString());
         }
@@ -50,8 +49,8 @@ CoreInternalOutcome ImageOsList::Deserialize(const Value &value)
         if (!value["Linux"].IsArray())
             return CoreInternalOutcome(Error("response `ImageOsList.Linux` is not array type"));
 
-        const Value &tmpValue = value["Linux"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Linux"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_linux.push_back((*itr).GetString());
         }
@@ -62,32 +61,32 @@ CoreInternalOutcome ImageOsList::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageOsList::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageOsList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_windowsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Windows";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_windows.begin(); itr != m_windows.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_linuxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Linux";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_linux.begin(); itr != m_linux.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

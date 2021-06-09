@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 OperationInfo::OperationInfo() :
@@ -28,7 +27,7 @@ OperationInfo::OperationInfo() :
 {
 }
 
-CoreInternalOutcome OperationInfo::Deserialize(const Value &value)
+CoreInternalOutcome OperationInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -88,33 +87,33 @@ CoreInternalOutcome OperationInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OperationInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OperationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_initHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Init";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_init.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_addInstanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddInstance";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_addInstance.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_destroyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Destroy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_destroy.ToJsonObject(value[key.c_str()], allocator);
     }
 

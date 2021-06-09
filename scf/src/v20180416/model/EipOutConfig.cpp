@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 EipOutConfig::EipOutConfig() :
@@ -27,7 +26,7 @@ EipOutConfig::EipOutConfig() :
 {
 }
 
-CoreInternalOutcome EipOutConfig::Deserialize(const Value &value)
+CoreInternalOutcome EipOutConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome EipOutConfig::Deserialize(const Value &value)
         if (!value["Eips"].IsArray())
             return CoreInternalOutcome(Error("response `EipOutConfig.Eips` is not array type"));
 
-        const Value &tmpValue = value["Eips"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Eips"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_eips.push_back((*itr).GetString());
         }
@@ -59,27 +58,27 @@ CoreInternalOutcome EipOutConfig::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EipOutConfig::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EipOutConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eipFixedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EipFixed";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eipFixed.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eipFixed.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eipsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Eips";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_eips.begin(); itr != m_eips.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

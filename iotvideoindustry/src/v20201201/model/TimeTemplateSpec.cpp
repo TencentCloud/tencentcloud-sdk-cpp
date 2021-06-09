@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
-using namespace rapidjson;
 using namespace std;
 
 TimeTemplateSpec::TimeTemplateSpec() :
@@ -28,7 +27,7 @@ TimeTemplateSpec::TimeTemplateSpec() :
 {
 }
 
-CoreInternalOutcome TimeTemplateSpec::Deserialize(const Value &value)
+CoreInternalOutcome TimeTemplateSpec::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome TimeTemplateSpec::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TimeTemplateSpec::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TimeTemplateSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dayofWeekHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DayofWeek";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dayofWeek, allocator);
@@ -80,18 +79,18 @@ void TimeTemplateSpec::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_beginTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BeginTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_beginTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_beginTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
 }

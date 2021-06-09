@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 SectionTime::SectionTime() :
@@ -27,7 +26,7 @@ SectionTime::SectionTime() :
 {
 }
 
-CoreInternalOutcome SectionTime::Deserialize(const Value &value)
+CoreInternalOutcome SectionTime::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome SectionTime::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SectionTime::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SectionTime::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTime, allocator);
@@ -69,7 +68,7 @@ void SectionTime::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);

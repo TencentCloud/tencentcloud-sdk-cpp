@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 DDoSPolicyPacketFilter::DDoSPolicyPacketFilter() :
@@ -39,7 +38,7 @@ DDoSPolicyPacketFilter::DDoSPolicyPacketFilter() :
 {
 }
 
-CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const Value &value)
+CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -188,20 +187,20 @@ CoreInternalOutcome DDoSPolicyPacketFilter::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DDoSPolicyPacketFilter::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DDoSPolicyPacketFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sportStartHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SportStart";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sportStart, allocator);
@@ -209,7 +208,7 @@ void DDoSPolicyPacketFilter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_sportEndHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SportEnd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sportEnd, allocator);
@@ -217,7 +216,7 @@ void DDoSPolicyPacketFilter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_dportStartHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DportStart";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dportStart, allocator);
@@ -225,7 +224,7 @@ void DDoSPolicyPacketFilter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_dportEndHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DportEnd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dportEnd, allocator);
@@ -233,7 +232,7 @@ void DDoSPolicyPacketFilter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_pktlenMinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PktlenMin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pktlenMin, allocator);
@@ -241,7 +240,7 @@ void DDoSPolicyPacketFilter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_pktlenMaxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PktlenMax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pktlenMax, allocator);
@@ -249,31 +248,31 @@ void DDoSPolicyPacketFilter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_matchBeginHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchBegin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_matchBegin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchBegin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_matchTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_matchType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_strHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Str";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_str.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_str.c_str(), allocator).Move(), allocator);
     }
 
     if (m_depthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Depth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_depth, allocator);
@@ -281,7 +280,7 @@ void DDoSPolicyPacketFilter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_offsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offset, allocator);
@@ -289,7 +288,7 @@ void DDoSPolicyPacketFilter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_isNotHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsNot";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isNot, allocator);
@@ -297,10 +296,10 @@ void DDoSPolicyPacketFilter::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_actionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Action";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_action.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
     }
 
 }

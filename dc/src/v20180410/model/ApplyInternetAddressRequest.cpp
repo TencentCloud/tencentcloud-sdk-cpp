@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Dc::V20180410::Model;
-using namespace rapidjson;
 using namespace std;
 
 ApplyInternetAddressRequest::ApplyInternetAddressRequest() :
@@ -32,14 +31,14 @@ ApplyInternetAddressRequest::ApplyInternetAddressRequest() :
 
 string ApplyInternetAddressRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_maskLenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaskLen";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maskLen, allocator);
@@ -47,7 +46,7 @@ string ApplyInternetAddressRequest::ToJsonString() const
 
     if (m_addrTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddrType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_addrType, allocator);
@@ -55,15 +54,15 @@ string ApplyInternetAddressRequest::ToJsonString() const
 
     if (m_addrProtoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddrProto";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_addrProto, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

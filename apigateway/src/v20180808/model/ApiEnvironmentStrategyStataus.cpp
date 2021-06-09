@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 ApiEnvironmentStrategyStataus::ApiEnvironmentStrategyStataus() :
@@ -27,7 +26,7 @@ ApiEnvironmentStrategyStataus::ApiEnvironmentStrategyStataus() :
 {
 }
 
-CoreInternalOutcome ApiEnvironmentStrategyStataus::Deserialize(const Value &value)
+CoreInternalOutcome ApiEnvironmentStrategyStataus::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome ApiEnvironmentStrategyStataus::Deserialize(const Value &valu
         if (!value["ApiEnvironmentStrategySet"].IsArray())
             return CoreInternalOutcome(Error("response `ApiEnvironmentStrategyStataus.ApiEnvironmentStrategySet` is not array type"));
 
-        const Value &tmpValue = value["ApiEnvironmentStrategySet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ApiEnvironmentStrategySet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ApiEnvironmentStrategy item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,12 +65,12 @@ CoreInternalOutcome ApiEnvironmentStrategyStataus::Deserialize(const Value &valu
     return CoreInternalOutcome(true);
 }
 
-void ApiEnvironmentStrategyStataus::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ApiEnvironmentStrategyStataus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
@@ -79,15 +78,15 @@ void ApiEnvironmentStrategyStataus::ToJsonObject(Value &value, Document::Allocat
 
     if (m_apiEnvironmentStrategySetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApiEnvironmentStrategySet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_apiEnvironmentStrategySet.begin(); itr != m_apiEnvironmentStrategySet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

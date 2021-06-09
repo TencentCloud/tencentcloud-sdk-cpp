@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 GroupOffsetPartition::GroupOffsetPartition() :
@@ -31,7 +30,7 @@ GroupOffsetPartition::GroupOffsetPartition() :
 {
 }
 
-CoreInternalOutcome GroupOffsetPartition::Deserialize(const Value &value)
+CoreInternalOutcome GroupOffsetPartition::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,12 +99,12 @@ CoreInternalOutcome GroupOffsetPartition::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GroupOffsetPartition::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GroupOffsetPartition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_partitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Partition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_partition, allocator);
@@ -113,7 +112,7 @@ void GroupOffsetPartition::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_offsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offset, allocator);
@@ -121,15 +120,15 @@ void GroupOffsetPartition::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_metadataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Metadata";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metadata.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metadata.c_str(), allocator).Move(), allocator);
     }
 
     if (m_errorCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_errorCode, allocator);
@@ -137,7 +136,7 @@ void GroupOffsetPartition::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_logEndOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogEndOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_logEndOffset, allocator);
@@ -145,7 +144,7 @@ void GroupOffsetPartition::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_lagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Lag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lag, allocator);

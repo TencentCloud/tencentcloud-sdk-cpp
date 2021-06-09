@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 TCPListener::TCPListener() :
@@ -40,7 +39,7 @@ TCPListener::TCPListener() :
 {
 }
 
-CoreInternalOutcome TCPListener::Deserialize(const Value &value)
+CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -170,8 +169,8 @@ CoreInternalOutcome TCPListener::Deserialize(const Value &value)
         if (!value["RealServerSet"].IsArray())
             return CoreInternalOutcome(Error("response `TCPListener.RealServerSet` is not array type"));
 
-        const Value &tmpValue = value["RealServerSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RealServerSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             BindRealServer item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -209,28 +208,28 @@ CoreInternalOutcome TCPListener::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TCPListener::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TCPListener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_listenerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_listenerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listenerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_listenerNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_listenerName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listenerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
@@ -238,7 +237,7 @@ void TCPListener::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_realServerPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realServerPort, allocator);
@@ -246,23 +245,23 @@ void TCPListener::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_realServerTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realServerType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realServerType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_listenerStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListenerStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_listenerStatus, allocator);
@@ -270,15 +269,15 @@ void TCPListener::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_schedulerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Scheduler";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scheduler.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduler.c_str(), allocator).Move(), allocator);
     }
 
     if (m_connectTimeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConnectTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_connectTimeout, allocator);
@@ -286,7 +285,7 @@ void TCPListener::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_delayLoopHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DelayLoop";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_delayLoop, allocator);
@@ -294,7 +293,7 @@ void TCPListener::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_healthCheckHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthCheck";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_healthCheck, allocator);
@@ -302,7 +301,7 @@ void TCPListener::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_bindStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BindStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bindStatus, allocator);
@@ -310,22 +309,22 @@ void TCPListener::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_realServerSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_realServerSet.begin(); itr != m_realServerSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -333,7 +332,7 @@ void TCPListener::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_clientIPMethodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientIPMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clientIPMethod, allocator);

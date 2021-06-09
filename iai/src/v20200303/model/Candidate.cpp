@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 Candidate::Candidate() :
@@ -31,7 +30,7 @@ Candidate::Candidate() :
 {
 }
 
-CoreInternalOutcome Candidate::Deserialize(const Value &value)
+CoreInternalOutcome Candidate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -91,8 +90,8 @@ CoreInternalOutcome Candidate::Deserialize(const Value &value)
         if (!value["PersonGroupInfos"].IsArray())
             return CoreInternalOutcome(Error("response `Candidate.PersonGroupInfos` is not array type"));
 
-        const Value &tmpValue = value["PersonGroupInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PersonGroupInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PersonGroupInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -110,28 +109,28 @@ CoreInternalOutcome Candidate::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Candidate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Candidate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_personIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_faceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_faceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_faceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
@@ -139,15 +138,15 @@ void Candidate::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_personNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_personName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_genderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gender, allocator);
@@ -155,15 +154,15 @@ void Candidate::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_personGroupInfosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonGroupInfos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_personGroupInfos.begin(); itr != m_personGroupInfos.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

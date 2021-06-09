@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20200303::Model;
-using namespace rapidjson;
 using namespace std;
 
 GroupExDescriptionInfo::GroupExDescriptionInfo() :
@@ -27,7 +26,7 @@ GroupExDescriptionInfo::GroupExDescriptionInfo() :
 {
 }
 
-CoreInternalOutcome GroupExDescriptionInfo::Deserialize(const Value &value)
+CoreInternalOutcome GroupExDescriptionInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome GroupExDescriptionInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GroupExDescriptionInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GroupExDescriptionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_groupExDescriptionIndexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupExDescriptionIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupExDescriptionIndex, allocator);
@@ -69,10 +68,10 @@ void GroupExDescriptionInfo::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_groupExDescriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupExDescription";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupExDescription.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupExDescription.c_str(), allocator).Move(), allocator);
     }
 
 }

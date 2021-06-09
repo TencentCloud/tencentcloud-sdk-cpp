@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ft::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 AgeInfo::AgeInfo() :
@@ -27,7 +26,7 @@ AgeInfo::AgeInfo() :
 {
 }
 
-CoreInternalOutcome AgeInfo::Deserialize(const Value &value)
+CoreInternalOutcome AgeInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,12 +62,12 @@ CoreInternalOutcome AgeInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AgeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AgeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Age";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_age, allocator);
@@ -76,10 +75,10 @@ void AgeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_faceRectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceRect";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_faceRect.ToJsonObject(value[key.c_str()], allocator);
     }
 

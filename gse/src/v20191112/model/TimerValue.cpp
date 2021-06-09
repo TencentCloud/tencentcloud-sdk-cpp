@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 TimerValue::TimerValue() :
@@ -29,7 +28,7 @@ TimerValue::TimerValue() :
 {
 }
 
-CoreInternalOutcome TimerValue::Deserialize(const Value &value)
+CoreInternalOutcome TimerValue::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome TimerValue::Deserialize(const Value &value)
         if (!value["WeekDays"].IsArray())
             return CoreInternalOutcome(Error("response `TimerValue.WeekDays` is not array type"));
 
-        const Value &tmpValue = value["WeekDays"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["WeekDays"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_weekDays.push_back((*itr).GetInt64());
         }
@@ -81,12 +80,12 @@ CoreInternalOutcome TimerValue::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TimerValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TimerValue::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Day";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_day, allocator);
@@ -94,7 +93,7 @@ void TimerValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_fromDayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FromDay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fromDay, allocator);
@@ -102,7 +101,7 @@ void TimerValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_toDayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ToDay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_toDay, allocator);
@@ -110,14 +109,14 @@ void TimerValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_weekDaysHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WeekDays";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_weekDays.begin(); itr != m_weekDays.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cat::V20180409::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResultSummary::ResultSummary() :
@@ -29,7 +28,7 @@ ResultSummary::ResultSummary() :
 {
 }
 
-CoreInternalOutcome ResultSummary::Deserialize(const Value &value)
+CoreInternalOutcome ResultSummary::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome ResultSummary::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResultSummary::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResultSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_logTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_logTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
@@ -99,7 +98,7 @@ void ResultSummary::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_availRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AvailRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_availRatio, allocator);
@@ -107,7 +106,7 @@ void ResultSummary::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_reponseTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReponseTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reponseTime, allocator);

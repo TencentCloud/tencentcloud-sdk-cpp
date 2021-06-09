@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tiw::V20190919::Model;
-using namespace rapidjson;
 using namespace std;
 
 StartWhiteboardPushRequest::StartWhiteboardPushRequest() :
@@ -45,14 +44,14 @@ StartWhiteboardPushRequest::StartWhiteboardPushRequest() :
 
 string StartWhiteboardPushRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_sdkAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sdkAppId, allocator);
@@ -60,7 +59,7 @@ string StartWhiteboardPushRequest::ToJsonString() const
 
     if (m_roomIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoomId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_roomId, allocator);
@@ -68,32 +67,32 @@ string StartWhiteboardPushRequest::ToJsonString() const
 
     if (m_pushUserIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PushUserId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_pushUserId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pushUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pushUserSigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PushUserSig";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_pushUserSig.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pushUserSig.c_str(), allocator).Move(), allocator);
     }
 
     if (m_whiteboardHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Whiteboard";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_whiteboard.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_autoStopTimeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoStopTimeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoStopTimeout, allocator);
@@ -101,7 +100,7 @@ string StartWhiteboardPushRequest::ToJsonString() const
 
     if (m_autoManageBackupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoManageBackup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoManageBackup, allocator);
@@ -109,24 +108,24 @@ string StartWhiteboardPushRequest::ToJsonString() const
 
     if (m_backupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Backup";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_backup.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_privateMapKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrivateMapKey";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_privateMapKey.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_privateMapKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_videoFPSHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoFPS";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_videoFPS, allocator);
@@ -134,7 +133,7 @@ string StartWhiteboardPushRequest::ToJsonString() const
 
     if (m_videoBitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoBitrate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_videoBitrate, allocator);
@@ -142,7 +141,7 @@ string StartWhiteboardPushRequest::ToJsonString() const
 
     if (m_autoRecordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoRecord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRecord, allocator);
@@ -150,15 +149,15 @@ string StartWhiteboardPushRequest::ToJsonString() const
 
     if (m_userDefinedRecordIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserDefinedRecordId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_userDefinedRecordId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userDefinedRecordId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoPublishHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoPublish";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoPublish, allocator);
@@ -166,23 +165,23 @@ string StartWhiteboardPushRequest::ToJsonString() const
 
     if (m_userDefinedStreamIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserDefinedStreamId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_userDefinedStreamId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userDefinedStreamId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_extraDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExtraData";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_extraData.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extraData.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

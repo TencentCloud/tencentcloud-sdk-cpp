@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 GenderAgeTrafficDetail::GenderAgeTrafficDetail() :
@@ -28,7 +27,7 @@ GenderAgeTrafficDetail::GenderAgeTrafficDetail() :
 {
 }
 
-CoreInternalOutcome GenderAgeTrafficDetail::Deserialize(const Value &value)
+CoreInternalOutcome GenderAgeTrafficDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome GenderAgeTrafficDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GenderAgeTrafficDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GenderAgeTrafficDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_genderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gender, allocator);
@@ -80,15 +79,15 @@ void GenderAgeTrafficDetail::ToJsonObject(Value &value, Document::AllocatorType&
 
     if (m_ageGapHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AgeGap";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ageGap.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ageGap.c_str(), allocator).Move(), allocator);
     }
 
     if (m_trafficCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TrafficCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trafficCount, allocator);

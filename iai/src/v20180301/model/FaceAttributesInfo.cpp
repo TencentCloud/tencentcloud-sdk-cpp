@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 FaceAttributesInfo::FaceAttributesInfo() :
@@ -37,7 +36,7 @@ FaceAttributesInfo::FaceAttributesInfo() :
 {
 }
 
-CoreInternalOutcome FaceAttributesInfo::Deserialize(const Value &value)
+CoreInternalOutcome FaceAttributesInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -173,12 +172,12 @@ CoreInternalOutcome FaceAttributesInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void FaceAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void FaceAttributesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_genderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gender, allocator);
@@ -186,7 +185,7 @@ void FaceAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_ageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Age";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_age, allocator);
@@ -194,7 +193,7 @@ void FaceAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_expressionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Expression";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expression, allocator);
@@ -202,7 +201,7 @@ void FaceAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_glassHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Glass";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_glass, allocator);
@@ -210,7 +209,7 @@ void FaceAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_pitchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pitch, allocator);
@@ -218,7 +217,7 @@ void FaceAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_yawHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Yaw";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_yaw, allocator);
@@ -226,7 +225,7 @@ void FaceAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_rollHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Roll";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_roll, allocator);
@@ -234,7 +233,7 @@ void FaceAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_beautyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Beauty";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_beauty, allocator);
@@ -242,7 +241,7 @@ void FaceAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_hatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hat, allocator);
@@ -250,7 +249,7 @@ void FaceAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_maskHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mask";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mask, allocator);
@@ -258,16 +257,16 @@ void FaceAttributesInfo::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_hairHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hair";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hair.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_eyeOpenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EyeOpen";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eyeOpen, allocator);

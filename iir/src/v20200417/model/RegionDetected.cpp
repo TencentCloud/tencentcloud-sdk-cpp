@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iir::V20200417::Model;
-using namespace rapidjson;
 using namespace std;
 
 RegionDetected::RegionDetected() :
@@ -28,7 +27,7 @@ RegionDetected::RegionDetected() :
 {
 }
 
-CoreInternalOutcome RegionDetected::Deserialize(const Value &value)
+CoreInternalOutcome RegionDetected::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,20 +73,20 @@ CoreInternalOutcome RegionDetected::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RegionDetected::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RegionDetected::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_categoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Category";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_category.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_category.c_str(), allocator).Move(), allocator);
     }
 
     if (m_categoryScoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CategoryScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_categoryScore, allocator);
@@ -95,10 +94,10 @@ void RegionDetected::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_locationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Location";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_location.ToJsonObject(value[key.c_str()], allocator);
     }
 

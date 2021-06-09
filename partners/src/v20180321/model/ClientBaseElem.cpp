@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Partners::V20180321::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClientBaseElem::ClientBaseElem() :
@@ -30,7 +29,7 @@ ClientBaseElem::ClientBaseElem() :
 {
 }
 
-CoreInternalOutcome ClientBaseElem::Deserialize(const Value &value)
+CoreInternalOutcome ClientBaseElem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome ClientBaseElem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClientBaseElem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClientBaseElem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_agentUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AgentUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_agentUin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_clientUin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientRelateTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClientRelateType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clientRelateType, allocator);
@@ -118,7 +117,7 @@ void ClientBaseElem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_agentCooperationModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AgentCooperationMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_agentCooperationMode, allocator);
@@ -126,10 +125,10 @@ void ClientBaseElem::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_agentCountryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AgentCountry";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_agentCountry.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentCountry.c_str(), allocator).Move(), allocator);
     }
 
 }

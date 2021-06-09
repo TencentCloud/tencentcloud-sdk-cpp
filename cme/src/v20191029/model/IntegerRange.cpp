@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 IntegerRange::IntegerRange() :
@@ -27,7 +26,7 @@ IntegerRange::IntegerRange() :
 {
 }
 
-CoreInternalOutcome IntegerRange::Deserialize(const Value &value)
+CoreInternalOutcome IntegerRange::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome IntegerRange::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void IntegerRange::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void IntegerRange::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_lowerBoundHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LowerBound";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lowerBound, allocator);
@@ -69,7 +68,7 @@ void IntegerRange::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_upperBoundHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpperBound";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_upperBound, allocator);

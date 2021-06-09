@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 InquiryPriceCreateInstanceRequest::InquiryPriceCreateInstanceRequest() :
@@ -38,14 +37,14 @@ InquiryPriceCreateInstanceRequest::InquiryPriceCreateInstanceRequest() :
 
 string InquiryPriceCreateInstanceRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_zoneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_zoneId, allocator);
@@ -53,7 +52,7 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
 
     if (m_typeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TypeId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_typeId, allocator);
@@ -61,7 +60,7 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
 
     if (m_memSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_memSize, allocator);
@@ -69,7 +68,7 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
 
     if (m_goodsNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GoodsNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_goodsNum, allocator);
@@ -77,7 +76,7 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
 
     if (m_periodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_period, allocator);
@@ -85,7 +84,7 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
 
     if (m_billingModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BillingMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_billingMode, allocator);
@@ -93,7 +92,7 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
 
     if (m_redisShardNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RedisShardNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_redisShardNum, allocator);
@@ -101,7 +100,7 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
 
     if (m_redisReplicasNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RedisReplicasNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_redisReplicasNum, allocator);
@@ -109,15 +108,15 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
 
     if (m_replicasReadonlyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicasReadonly";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_replicasReadonly, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

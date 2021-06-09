@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ContractSyncInfo::ContractSyncInfo() :
@@ -30,7 +29,7 @@ ContractSyncInfo::ContractSyncInfo() :
 {
 }
 
-CoreInternalOutcome ContractSyncInfo::Deserialize(const Value &value)
+CoreInternalOutcome ContractSyncInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -57,8 +56,8 @@ CoreInternalOutcome ContractSyncInfo::Deserialize(const Value &value)
         if (!value["ExternalContractUserInfo"].IsArray())
             return CoreInternalOutcome(Error("response `ContractSyncInfo.ExternalContractUserInfo` is not array type"));
 
-        const Value &tmpValue = value["ExternalContractUserInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ExternalContractUserInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ExternalContractUserInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -106,55 +105,55 @@ CoreInternalOutcome ContractSyncInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ContractSyncInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ContractSyncInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_externalReturnContractInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnContractInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_externalReturnContractInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_externalContractUserInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalContractUserInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_externalContractUserInfo.begin(); itr != m_externalContractUserInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_contractMethodHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContractMethod";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_contractMethod.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contractMethod.c_str(), allocator).Move(), allocator);
     }
 
     if (m_contractSceneIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContractSceneId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_contractSceneId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contractSceneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalReturnContractDataHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExternalReturnContractData";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_externalReturnContractData.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalReturnContractData.c_str(), allocator).Move(), allocator);
     }
 
 }

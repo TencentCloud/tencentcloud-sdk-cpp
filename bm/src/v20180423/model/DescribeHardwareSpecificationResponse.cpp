@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bm::V20180423::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeHardwareSpecificationResponse::DescribeHardwareSpecificationResponse() :
@@ -33,7 +32,7 @@ DescribeHardwareSpecificationResponse::DescribeHardwareSpecificationResponse() :
 
 CoreInternalOutcome DescribeHardwareSpecificationResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DescribeHardwareSpecificationResponse::Deserialize(const str
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -70,8 +69,8 @@ CoreInternalOutcome DescribeHardwareSpecificationResponse::Deserialize(const str
         if (!rsp["CpuInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `CpuInfoSet` is not array type"));
 
-        const Value &tmpValue = rsp["CpuInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["CpuInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CpuInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -90,8 +89,8 @@ CoreInternalOutcome DescribeHardwareSpecificationResponse::Deserialize(const str
         if (!rsp["MemSet"].IsArray())
             return CoreInternalOutcome(Error("response `MemSet` is not array type"));
 
-        const Value &tmpValue = rsp["MemSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["MemSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_memSet.push_back((*itr).GetUint64());
         }
@@ -103,8 +102,8 @@ CoreInternalOutcome DescribeHardwareSpecificationResponse::Deserialize(const str
         if (!rsp["DiskInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `DiskInfoSet` is not array type"));
 
-        const Value &tmpValue = rsp["DiskInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DiskInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DiskInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

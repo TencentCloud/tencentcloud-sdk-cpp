@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 PlayCodeTotalInfo::PlayCodeTotalInfo() :
@@ -27,7 +26,7 @@ PlayCodeTotalInfo::PlayCodeTotalInfo() :
 {
 }
 
-CoreInternalOutcome PlayCodeTotalInfo::Deserialize(const Value &value)
+CoreInternalOutcome PlayCodeTotalInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome PlayCodeTotalInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PlayCodeTotalInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PlayCodeTotalInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_codeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_code.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
     }
 
     if (m_numHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Num";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_num, allocator);

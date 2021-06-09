@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20191022::Model;
-using namespace rapidjson;
 using namespace std;
 
 GitSecret::GitSecret() :
@@ -27,7 +26,7 @@ GitSecret::GitSecret() :
 {
 }
 
-CoreInternalOutcome GitSecret::Deserialize(const Value &value)
+CoreInternalOutcome GitSecret::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome GitSecret::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GitSecret::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GitSecret::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_noSecretHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NoSecret";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_noSecret, allocator);
@@ -69,10 +68,10 @@ void GitSecret::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_secretHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Secret";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secret.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secret.c_str(), allocator).Move(), allocator);
     }
 
 }

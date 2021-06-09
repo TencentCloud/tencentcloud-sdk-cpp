@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mariadb::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 SlowLogData::SlowLogData() :
@@ -43,7 +42,7 @@ SlowLogData::SlowLogData() :
 {
 }
 
-CoreInternalOutcome SlowLogData::Deserialize(const Value &value)
+CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -232,151 +231,151 @@ CoreInternalOutcome SlowLogData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SlowLogData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SlowLogData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_checkSumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CheckSum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_checkSum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkSum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dbHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Db";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_db.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_db.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fingerPrintHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FingerPrint";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fingerPrint.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fingerPrint.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lockTimeAvgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LockTimeAvg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lockTimeAvg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lockTimeAvg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lockTimeMaxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LockTimeMax";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lockTimeMax.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lockTimeMax.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lockTimeMinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LockTimeMin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lockTimeMin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lockTimeMin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lockTimeSumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LockTimeSum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lockTimeSum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lockTimeSum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queryCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueryCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_queryCount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queryCount.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queryTimeAvgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueryTimeAvg";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_queryTimeAvg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queryTimeAvg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queryTimeMaxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueryTimeMax";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_queryTimeMax.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queryTimeMax.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queryTimeMinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueryTimeMin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_queryTimeMin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queryTimeMin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queryTimeSumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueryTimeSum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_queryTimeSum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queryTimeSum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rowsExaminedSumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RowsExaminedSum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rowsExaminedSum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rowsExaminedSum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rowsSentSumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RowsSentSum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_rowsSentSum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rowsSentSum.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tsMaxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TsMax";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tsMax.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tsMax.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tsMinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TsMin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tsMin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tsMin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "User";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_user.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_user.c_str(), allocator).Move(), allocator);
     }
 
     if (m_exampleSqlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExampleSql";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_exampleSql.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exampleSql.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lighthouse::V20200324::Model;
-using namespace rapidjson;
 using namespace std;
 
 Price::Price() :
@@ -26,7 +25,7 @@ Price::Price() :
 {
 }
 
-CoreInternalOutcome Price::Deserialize(const Value &value)
+CoreInternalOutcome Price::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -52,15 +51,15 @@ CoreInternalOutcome Price::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Price::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Price::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instancePriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstancePrice";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instancePrice.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeBackupCommandRequest::DescribeBackupCommandRequest() :
@@ -33,46 +32,46 @@ DescribeBackupCommandRequest::DescribeBackupCommandRequest() :
 
 string DescribeBackupCommandRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_backupFileTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BackupFileType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_backupFileType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupFileType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataBaseNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DataBaseName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_dataBaseName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataBaseName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isRecoveryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsRecovery";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_isRecovery.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isRecovery.c_str(), allocator).Move(), allocator);
     }
 
     if (m_localPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocalPath";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_localPath.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_localPath.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

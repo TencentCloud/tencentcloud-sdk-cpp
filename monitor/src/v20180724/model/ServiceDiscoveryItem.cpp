@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 ServiceDiscoveryItem::ServiceDiscoveryItem() :
@@ -32,7 +31,7 @@ ServiceDiscoveryItem::ServiceDiscoveryItem() :
 {
 }
 
-CoreInternalOutcome ServiceDiscoveryItem::Deserialize(const Value &value)
+CoreInternalOutcome ServiceDiscoveryItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,63 +110,63 @@ CoreInternalOutcome ServiceDiscoveryItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ServiceDiscoveryItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ServiceDiscoveryItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_namespaceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespace.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_kindHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Kind";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_kind.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kind.c_str(), allocator).Move(), allocator);
     }
 
     if (m_namespaceSelectorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NamespaceSelector";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_namespaceSelector.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespaceSelector.c_str(), allocator).Move(), allocator);
     }
 
     if (m_selectorHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Selector";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_selector.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_selector.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endpointsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Endpoints";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endpoints.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endpoints.c_str(), allocator).Move(), allocator);
     }
 
     if (m_yamlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Yaml";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_yaml.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_yaml.c_str(), allocator).Move(), allocator);
     }
 
 }

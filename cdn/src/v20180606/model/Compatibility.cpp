@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 Compatibility::Compatibility() :
@@ -26,7 +25,7 @@ Compatibility::Compatibility() :
 {
 }
 
-CoreInternalOutcome Compatibility::Deserialize(const Value &value)
+CoreInternalOutcome Compatibility::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome Compatibility::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Compatibility::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Compatibility::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_codeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_code, allocator);

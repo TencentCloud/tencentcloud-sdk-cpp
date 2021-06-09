@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Soe::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 WordRsp::WordRsp() :
@@ -33,7 +32,7 @@ WordRsp::WordRsp() :
 {
 }
 
-CoreInternalOutcome WordRsp::Deserialize(const Value &value)
+CoreInternalOutcome WordRsp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -103,8 +102,8 @@ CoreInternalOutcome WordRsp::Deserialize(const Value &value)
         if (!value["PhoneInfos"].IsArray())
             return CoreInternalOutcome(Error("response `WordRsp.PhoneInfos` is not array type"));
 
-        const Value &tmpValue = value["PhoneInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PhoneInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             PhoneInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -132,12 +131,12 @@ CoreInternalOutcome WordRsp::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WordRsp::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WordRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_memBeginTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemBeginTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memBeginTime, allocator);
@@ -145,7 +144,7 @@ void WordRsp::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_memEndTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MemEndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memEndTime, allocator);
@@ -153,7 +152,7 @@ void WordRsp::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_pronAccuracyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PronAccuracy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pronAccuracy, allocator);
@@ -161,7 +160,7 @@ void WordRsp::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_pronFluencyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PronFluency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pronFluency, allocator);
@@ -169,15 +168,15 @@ void WordRsp::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_wordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Word";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_word.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_word.c_str(), allocator).Move(), allocator);
     }
 
     if (m_matchTagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_matchTag, allocator);
@@ -185,25 +184,25 @@ void WordRsp::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_phoneInfosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PhoneInfos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_phoneInfos.begin(); itr != m_phoneInfos.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_referenceWordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReferenceWord";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_referenceWord.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_referenceWord.c_str(), allocator).Move(), allocator);
     }
 
 }

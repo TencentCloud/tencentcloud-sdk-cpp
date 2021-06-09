@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ump::V20200918::Model;
-using namespace rapidjson;
 using namespace std;
 
 ServerStateItem::ServerStateItem() :
@@ -28,7 +27,7 @@ ServerStateItem::ServerStateItem() :
 {
 }
 
-CoreInternalOutcome ServerStateItem::Deserialize(const Value &value)
+CoreInternalOutcome ServerStateItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome ServerStateItem::Deserialize(const Value &value)
         if (!value["DiskInfos"].IsArray())
             return CoreInternalOutcome(Error("response `ServerStateItem.DiskInfos` is not array type"));
 
-        const Value &tmpValue = value["DiskInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DiskInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DiskInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,12 +76,12 @@ CoreInternalOutcome ServerStateItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ServerStateItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ServerStateItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_serverStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serverState, allocator);
@@ -90,23 +89,23 @@ void ServerStateItem::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_serverIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serverIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_diskInfosHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskInfos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_diskInfos.begin(); itr != m_diskInfos.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

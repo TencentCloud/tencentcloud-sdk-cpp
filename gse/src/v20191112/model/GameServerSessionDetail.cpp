@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gse::V20191112::Model;
-using namespace rapidjson;
 using namespace std;
 
 GameServerSessionDetail::GameServerSessionDetail() :
@@ -27,7 +26,7 @@ GameServerSessionDetail::GameServerSessionDetail() :
 {
 }
 
-CoreInternalOutcome GameServerSessionDetail::Deserialize(const Value &value)
+CoreInternalOutcome GameServerSessionDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,24 +62,24 @@ CoreInternalOutcome GameServerSessionDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GameServerSessionDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GameServerSessionDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_gameServerSessionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GameServerSession";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_gameServerSession.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_protectionPolicyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProtectionPolicy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_protectionPolicy.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protectionPolicy.c_str(), allocator).Move(), allocator);
     }
 
 }

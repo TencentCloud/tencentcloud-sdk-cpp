@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 RetentionTask::RetentionTask() :
@@ -33,7 +32,7 @@ RetentionTask::RetentionTask() :
 {
 }
 
-CoreInternalOutcome RetentionTask::Deserialize(const Value &value)
+CoreInternalOutcome RetentionTask::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome RetentionTask::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RetentionTask::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RetentionTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
@@ -135,7 +134,7 @@ void RetentionTask::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_executionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExecutionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_executionId, allocator);
@@ -143,31 +142,31 @@ void RetentionTask::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Total";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_total, allocator);
@@ -175,7 +174,7 @@ void RetentionTask::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_retainedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Retained";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_retained, allocator);
@@ -183,10 +182,10 @@ void RetentionTask::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_repositoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Repository";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_repository.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repository.c_str(), allocator).Move(), allocator);
     }
 
 }

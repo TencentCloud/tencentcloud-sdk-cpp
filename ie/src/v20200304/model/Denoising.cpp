@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 Denoising::Denoising() :
@@ -28,7 +27,7 @@ Denoising::Denoising() :
 {
 }
 
-CoreInternalOutcome Denoising::Deserialize(const Value &value)
+CoreInternalOutcome Denoising::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome Denoising::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Denoising::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Denoising::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_templStrengthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplStrength";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templStrength, allocator);
@@ -88,7 +87,7 @@ void Denoising::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_spatialStrengthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SpatialStrength";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_spatialStrength, allocator);

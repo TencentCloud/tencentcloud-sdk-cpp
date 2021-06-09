@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Oceanus::V20190422::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResourceLoc::ResourceLoc() :
@@ -27,7 +26,7 @@ ResourceLoc::ResourceLoc() :
 {
 }
 
-CoreInternalOutcome ResourceLoc::Deserialize(const Value &value)
+CoreInternalOutcome ResourceLoc::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,12 +62,12 @@ CoreInternalOutcome ResourceLoc::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResourceLoc::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResourceLoc::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_storageTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storageType, allocator);
@@ -76,10 +75,10 @@ void ResourceLoc::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_paramHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Param";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_param.ToJsonObject(value[key.c_str()], allocator);
     }
 

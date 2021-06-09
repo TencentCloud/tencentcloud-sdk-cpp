@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ComputeNodeMetrics::ComputeNodeMetrics() :
@@ -32,7 +31,7 @@ ComputeNodeMetrics::ComputeNodeMetrics() :
 {
 }
 
-CoreInternalOutcome ComputeNodeMetrics::Deserialize(const Value &value)
+CoreInternalOutcome ComputeNodeMetrics::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome ComputeNodeMetrics::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ComputeNodeMetrics::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ComputeNodeMetrics::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_submittedCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubmittedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_submittedCount, allocator);
@@ -124,7 +123,7 @@ void ComputeNodeMetrics::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_creatingCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatingCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_creatingCount, allocator);
@@ -132,7 +131,7 @@ void ComputeNodeMetrics::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_creationFailedCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreationFailedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_creationFailedCount, allocator);
@@ -140,7 +139,7 @@ void ComputeNodeMetrics::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_createdCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createdCount, allocator);
@@ -148,7 +147,7 @@ void ComputeNodeMetrics::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_runningCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RunningCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runningCount, allocator);
@@ -156,7 +155,7 @@ void ComputeNodeMetrics::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_deletingCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeletingCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deletingCount, allocator);
@@ -164,7 +163,7 @@ void ComputeNodeMetrics::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_abnormalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AbnormalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_abnormalCount, allocator);

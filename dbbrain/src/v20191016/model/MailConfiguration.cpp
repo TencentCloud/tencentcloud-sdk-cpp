@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20191016::Model;
-using namespace rapidjson;
 using namespace std;
 
 MailConfiguration::MailConfiguration() :
@@ -30,7 +29,7 @@ MailConfiguration::MailConfiguration() :
 {
 }
 
-CoreInternalOutcome MailConfiguration::Deserialize(const Value &value)
+CoreInternalOutcome MailConfiguration::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -50,8 +49,8 @@ CoreInternalOutcome MailConfiguration::Deserialize(const Value &value)
         if (!value["Region"].IsArray())
             return CoreInternalOutcome(Error("response `MailConfiguration.Region` is not array type"));
 
-        const Value &tmpValue = value["Region"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Region"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_region.push_back((*itr).GetString());
         }
@@ -63,8 +62,8 @@ CoreInternalOutcome MailConfiguration::Deserialize(const Value &value)
         if (!value["HealthStatus"].IsArray())
             return CoreInternalOutcome(Error("response `MailConfiguration.HealthStatus` is not array type"));
 
-        const Value &tmpValue = value["HealthStatus"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["HealthStatus"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_healthStatus.push_back((*itr).GetString());
         }
@@ -76,8 +75,8 @@ CoreInternalOutcome MailConfiguration::Deserialize(const Value &value)
         if (!value["ContactPerson"].IsArray())
             return CoreInternalOutcome(Error("response `MailConfiguration.ContactPerson` is not array type"));
 
-        const Value &tmpValue = value["ContactPerson"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ContactPerson"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_contactPerson.push_back((*itr).GetInt64());
         }
@@ -89,8 +88,8 @@ CoreInternalOutcome MailConfiguration::Deserialize(const Value &value)
         if (!value["ContactGroup"].IsArray())
             return CoreInternalOutcome(Error("response `MailConfiguration.ContactGroup` is not array type"));
 
-        const Value &tmpValue = value["ContactGroup"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ContactGroup"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_contactGroup.push_back((*itr).GetInt64());
         }
@@ -101,12 +100,12 @@ CoreInternalOutcome MailConfiguration::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MailConfiguration::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MailConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_sendMailHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SendMail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sendMail, allocator);
@@ -114,53 +113,53 @@ void MailConfiguration::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_region.begin(); itr != m_region.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_healthStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HealthStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_healthStatus.begin(); itr != m_healthStatus.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_contactPersonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContactPerson";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_contactPerson.begin(); itr != m_contactPerson.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
     if (m_contactGroupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContactGroup";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_contactGroup.begin(); itr != m_contactGroup.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

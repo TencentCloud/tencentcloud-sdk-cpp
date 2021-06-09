@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ResourceDashboard::ResourceDashboard() :
@@ -67,7 +66,7 @@ ResourceDashboard::ResourceDashboard() :
 {
 }
 
-CoreInternalOutcome ResourceDashboard::Deserialize(const Value &value)
+CoreInternalOutcome ResourceDashboard::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -496,28 +495,28 @@ CoreInternalOutcome ResourceDashboard::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ResourceDashboard::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subnetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_classiclinkHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Classiclink";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_classiclink, allocator);
@@ -525,7 +524,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_dcgHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Dcg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dcg, allocator);
@@ -533,7 +532,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_pcxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pcx";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pcx, allocator);
@@ -541,7 +540,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_ipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ip, allocator);
@@ -549,7 +548,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_natHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Nat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nat, allocator);
@@ -557,7 +556,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_vpngwHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vpngw";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vpngw, allocator);
@@ -565,7 +564,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_flowLogHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowLog";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowLog, allocator);
@@ -573,7 +572,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_networkDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetworkDetect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_networkDetect, allocator);
@@ -581,7 +580,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_networkACLHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetworkACL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_networkACL, allocator);
@@ -589,7 +588,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_cVMHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CVM";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cVM, allocator);
@@ -597,7 +596,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_lBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lB, allocator);
@@ -605,7 +604,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_cDBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CDB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cDB, allocator);
@@ -613,7 +612,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_cmemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cmem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cmem, allocator);
@@ -621,7 +620,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_cTSDBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CTSDB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cTSDB, allocator);
@@ -629,7 +628,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_mariaDBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MariaDB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mariaDB, allocator);
@@ -637,7 +636,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_sQLServerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SQLServer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sQLServer, allocator);
@@ -645,7 +644,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_postgresHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Postgres";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_postgres, allocator);
@@ -653,7 +652,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_nASHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NAS";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nAS, allocator);
@@ -661,7 +660,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_greenplumnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Greenplumn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_greenplumn, allocator);
@@ -669,7 +668,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_ckafkaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ckafka";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ckafka, allocator);
@@ -677,7 +676,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_groceryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Grocery";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_grocery, allocator);
@@ -685,7 +684,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_hSMHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HSM";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hSM, allocator);
@@ -693,7 +692,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_tcaplusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tcaplus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tcaplus, allocator);
@@ -701,7 +700,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_cnasHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cnas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cnas, allocator);
@@ -709,7 +708,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_tiDBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TiDB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tiDB, allocator);
@@ -717,7 +716,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_emrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Emr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_emr, allocator);
@@ -725,7 +724,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_sEALHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SEAL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sEAL, allocator);
@@ -733,7 +732,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_cFSHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CFS";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cFS, allocator);
@@ -741,7 +740,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_oracleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Oracle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_oracle, allocator);
@@ -749,7 +748,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_elasticSearchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ElasticSearch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_elasticSearch, allocator);
@@ -757,7 +756,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_tBaaSHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TBaaS";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tBaaS, allocator);
@@ -765,7 +764,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_itopHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Itop";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_itop, allocator);
@@ -773,7 +772,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_dBAuditHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DBAudit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dBAudit, allocator);
@@ -781,7 +780,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_cynosDBPostgresHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CynosDBPostgres";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cynosDBPostgres, allocator);
@@ -789,7 +788,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_redisHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Redis";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_redis, allocator);
@@ -797,7 +796,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_mongoDBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MongoDB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mongoDB, allocator);
@@ -805,7 +804,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_dCDBHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DCDB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dCDB, allocator);
@@ -813,7 +812,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_cynosDBMySQLHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CynosDBMySQL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cynosDBMySQL, allocator);
@@ -821,7 +820,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_subnetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Subnet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subnet, allocator);
@@ -829,7 +828,7 @@ void ResourceDashboard::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_routeTableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteTable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_routeTable, allocator);

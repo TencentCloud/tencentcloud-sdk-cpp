@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 RefererAuthPolicy::RefererAuthPolicy() :
@@ -29,7 +28,7 @@ RefererAuthPolicy::RefererAuthPolicy() :
 {
 }
 
-CoreInternalOutcome RefererAuthPolicy::Deserialize(const Value &value)
+CoreInternalOutcome RefererAuthPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -59,8 +58,8 @@ CoreInternalOutcome RefererAuthPolicy::Deserialize(const Value &value)
         if (!value["Referers"].IsArray())
             return CoreInternalOutcome(Error("response `RefererAuthPolicy.Referers` is not array type"));
 
-        const Value &tmpValue = value["Referers"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Referers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_referers.push_back((*itr).GetString());
         }
@@ -81,44 +80,44 @@ CoreInternalOutcome RefererAuthPolicy::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RefererAuthPolicy::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RefererAuthPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AuthType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_authType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_referersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Referers";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_referers.begin(); itr != m_referers.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_blankRefererAllowedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlankRefererAllowed";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_blankRefererAllowed.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_blankRefererAllowed.c_str(), allocator).Move(), allocator);
     }
 
 }

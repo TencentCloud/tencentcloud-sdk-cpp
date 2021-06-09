@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Asr::V20190614::Model;
-using namespace rapidjson;
 using namespace std;
 
 CreateAsyncRecognitionTaskRequest::CreateAsyncRecognitionTaskRequest() :
@@ -39,46 +38,46 @@ CreateAsyncRecognitionTaskRequest::CreateAsyncRecognitionTaskRequest() :
 
 string CreateAsyncRecognitionTaskRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_engineTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EngineType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_engineType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_urlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_url.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_callbackUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_signTokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SignToken";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_signToken.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_signToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filterDirtyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FilterDirty";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterDirty, allocator);
@@ -86,7 +85,7 @@ string CreateAsyncRecognitionTaskRequest::ToJsonString() const
 
     if (m_filterModalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FilterModal";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterModal, allocator);
@@ -94,7 +93,7 @@ string CreateAsyncRecognitionTaskRequest::ToJsonString() const
 
     if (m_filterPuncHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FilterPunc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterPunc, allocator);
@@ -102,7 +101,7 @@ string CreateAsyncRecognitionTaskRequest::ToJsonString() const
 
     if (m_convertNumModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConvertNumMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_convertNumMode, allocator);
@@ -110,7 +109,7 @@ string CreateAsyncRecognitionTaskRequest::ToJsonString() const
 
     if (m_wordInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WordInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_wordInfo, allocator);
@@ -118,15 +117,15 @@ string CreateAsyncRecognitionTaskRequest::ToJsonString() const
 
     if (m_hotwordIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HotwordId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_hotwordId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hotwordId.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

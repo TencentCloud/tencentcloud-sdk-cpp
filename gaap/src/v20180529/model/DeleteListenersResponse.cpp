@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeleteListenersResponse::DeleteListenersResponse() :
@@ -33,7 +32,7 @@ DeleteListenersResponse::DeleteListenersResponse() :
 
 CoreInternalOutcome DeleteListenersResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DeleteListenersResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -70,8 +69,8 @@ CoreInternalOutcome DeleteListenersResponse::Deserialize(const string &payload)
         if (!rsp["OperationFailedListenerSet"].IsArray())
             return CoreInternalOutcome(Error("response `OperationFailedListenerSet` is not array type"));
 
-        const Value &tmpValue = rsp["OperationFailedListenerSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["OperationFailedListenerSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_operationFailedListenerSet.push_back((*itr).GetString());
         }
@@ -83,8 +82,8 @@ CoreInternalOutcome DeleteListenersResponse::Deserialize(const string &payload)
         if (!rsp["OperationSucceedListenerSet"].IsArray())
             return CoreInternalOutcome(Error("response `OperationSucceedListenerSet` is not array type"));
 
-        const Value &tmpValue = rsp["OperationSucceedListenerSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["OperationSucceedListenerSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_operationSucceedListenerSet.push_back((*itr).GetString());
         }
@@ -96,8 +95,8 @@ CoreInternalOutcome DeleteListenersResponse::Deserialize(const string &payload)
         if (!rsp["InvalidStatusListenerSet"].IsArray())
             return CoreInternalOutcome(Error("response `InvalidStatusListenerSet` is not array type"));
 
-        const Value &tmpValue = rsp["InvalidStatusListenerSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["InvalidStatusListenerSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_invalidStatusListenerSet.push_back((*itr).GetString());
         }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vm::V20201229::Model;
-using namespace rapidjson;
 using namespace std;
 
 AudioResultDetailLanguageResult::AudioResultDetailLanguageResult() :
@@ -30,7 +29,7 @@ AudioResultDetailLanguageResult::AudioResultDetailLanguageResult() :
 {
 }
 
-CoreInternalOutcome AudioResultDetailLanguageResult::Deserialize(const Value &value)
+CoreInternalOutcome AudioResultDetailLanguageResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome AudioResultDetailLanguageResult::Deserialize(const Value &va
     return CoreInternalOutcome(true);
 }
 
-void AudioResultDetailLanguageResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AudioResultDetailLanguageResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_labelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_label.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
@@ -110,7 +109,7 @@ void AudioResultDetailLanguageResult::ToJsonObject(Value &value, Document::Alloc
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTime, allocator);
@@ -118,7 +117,7 @@ void AudioResultDetailLanguageResult::ToJsonObject(Value &value, Document::Alloc
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTime, allocator);
@@ -126,10 +125,10 @@ void AudioResultDetailLanguageResult::ToJsonObject(Value &value, Document::Alloc
 
     if (m_subLabelCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubLabelCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subLabelCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subLabelCode.c_str(), allocator).Move(), allocator);
     }
 
 }

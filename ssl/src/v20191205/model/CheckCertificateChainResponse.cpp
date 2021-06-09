@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ssl::V20191205::Model;
-using namespace rapidjson;
 using namespace std;
 
 CheckCertificateChainResponse::CheckCertificateChainResponse() :
@@ -33,7 +32,7 @@ CheckCertificateChainResponse::CheckCertificateChainResponse() :
 
 CoreInternalOutcome CheckCertificateChainResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome CheckCertificateChainResponse::Deserialize(const string &pay
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -90,8 +89,8 @@ CoreInternalOutcome CheckCertificateChainResponse::Deserialize(const string &pay
         if (!rsp["Chains"].IsArray())
             return CoreInternalOutcome(Error("response `Chains` is not array type"));
 
-        const Value &tmpValue = rsp["Chains"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Chains"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_chains.push_back((*itr).GetString());
         }

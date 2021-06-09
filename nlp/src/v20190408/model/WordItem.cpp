@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Nlp::V20190408::Model;
-using namespace rapidjson;
 using namespace std;
 
 WordItem::WordItem() :
@@ -28,7 +27,7 @@ WordItem::WordItem() :
 {
 }
 
-CoreInternalOutcome WordItem::Deserialize(const Value &value)
+CoreInternalOutcome WordItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome WordItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void WordItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void WordItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_textHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_posHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pos";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pos.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pos.c_str(), allocator).Move(), allocator);
     }
 
 }

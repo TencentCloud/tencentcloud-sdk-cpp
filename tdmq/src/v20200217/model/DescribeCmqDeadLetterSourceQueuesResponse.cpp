@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tdmq::V20200217::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeCmqDeadLetterSourceQueuesResponse::DescribeCmqDeadLetterSourceQueuesResponse() :
@@ -32,7 +31,7 @@ DescribeCmqDeadLetterSourceQueuesResponse::DescribeCmqDeadLetterSourceQueuesResp
 
 CoreInternalOutcome DescribeCmqDeadLetterSourceQueuesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeCmqDeadLetterSourceQueuesResponse::Deserialize(const
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeCmqDeadLetterSourceQueuesResponse::Deserialize(const
         if (!rsp["QueueSet"].IsArray())
             return CoreInternalOutcome(Error("response `QueueSet` is not array type"));
 
-        const Value &tmpValue = rsp["QueueSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["QueueSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CmqDeadLetterSource item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

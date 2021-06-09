@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ape::V20200513::Model;
-using namespace rapidjson;
 using namespace std;
 
 DownloadInfo::DownloadInfo() :
@@ -34,7 +33,7 @@ DownloadInfo::DownloadInfo() :
 {
 }
 
-CoreInternalOutcome DownloadInfo::Deserialize(const Value &value)
+CoreInternalOutcome DownloadInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -140,69 +139,69 @@ CoreInternalOutcome DownloadInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DownloadInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DownloadInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_imageInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_imageUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageThumbUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageThumbUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageThumbUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageThumbUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_orderIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_orderId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_orderCreateTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderCreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_orderCreateTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderCreateTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_downloadIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DownloadId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_downloadId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_downloadId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_downloadTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DownloadTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_downloadTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_downloadTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_consumeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConsumeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_consumeType, allocator);
@@ -210,7 +209,7 @@ void DownloadInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_firstDownloadHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstDownload";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_firstDownload, allocator);

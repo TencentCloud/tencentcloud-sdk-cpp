@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 ClusterAsGroupOption::ClusterAsGroupOption() :
@@ -38,7 +37,7 @@ ClusterAsGroupOption::ClusterAsGroupOption() :
 {
 }
 
-CoreInternalOutcome ClusterAsGroupOption::Deserialize(const Value &value)
+CoreInternalOutcome ClusterAsGroupOption::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -177,12 +176,12 @@ CoreInternalOutcome ClusterAsGroupOption::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ClusterAsGroupOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_isScaleDownEnabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsScaleDownEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isScaleDownEnabled, allocator);
@@ -190,15 +189,15 @@ void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_expanderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Expander";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_expander.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expander.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxEmptyBulkDeleteHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxEmptyBulkDelete";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxEmptyBulkDelete, allocator);
@@ -206,7 +205,7 @@ void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_scaleDownDelayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScaleDownDelay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scaleDownDelay, allocator);
@@ -214,7 +213,7 @@ void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_scaleDownUnneededTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScaleDownUnneededTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scaleDownUnneededTime, allocator);
@@ -222,7 +221,7 @@ void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_scaleDownUtilizationThresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScaleDownUtilizationThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scaleDownUtilizationThreshold, allocator);
@@ -230,7 +229,7 @@ void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_skipNodesWithLocalStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SkipNodesWithLocalStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_skipNodesWithLocalStorage, allocator);
@@ -238,7 +237,7 @@ void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_skipNodesWithSystemPodsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SkipNodesWithSystemPods";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_skipNodesWithSystemPods, allocator);
@@ -246,7 +245,7 @@ void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_ignoreDaemonSetsUtilizationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IgnoreDaemonSetsUtilization";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ignoreDaemonSetsUtilization, allocator);
@@ -254,7 +253,7 @@ void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_okTotalUnreadyCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OkTotalUnreadyCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_okTotalUnreadyCount, allocator);
@@ -262,7 +261,7 @@ void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_maxTotalUnreadyPercentageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxTotalUnreadyPercentage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxTotalUnreadyPercentage, allocator);
@@ -270,7 +269,7 @@ void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_scaleDownUnreadyTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScaleDownUnreadyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scaleDownUnreadyTime, allocator);
@@ -278,7 +277,7 @@ void ClusterAsGroupOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_unregisteredNodeRemovalTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnregisteredNodeRemovalTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unregisteredNodeRemovalTime, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 InstanceNetworkInfo::InstanceNetworkInfo() :
@@ -29,7 +28,7 @@ InstanceNetworkInfo::InstanceNetworkInfo() :
 {
 }
 
-CoreInternalOutcome InstanceNetworkInfo::Deserialize(const Value &value)
+CoreInternalOutcome InstanceNetworkInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -39,8 +38,8 @@ CoreInternalOutcome InstanceNetworkInfo::Deserialize(const Value &value)
         if (!value["AddressInfoSet"].IsArray())
             return CoreInternalOutcome(Error("response `InstanceNetworkInfo.AddressInfoSet` is not array type"));
 
-        const Value &tmpValue = value["AddressInfoSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AddressInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AddressInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,43 +87,43 @@ CoreInternalOutcome InstanceNetworkInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void InstanceNetworkInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void InstanceNetworkInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_addressInfoSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AddressInfoSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_addressInfoSet.begin(); itr != m_addressInfoSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_networkInterfaceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetworkInterfaceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_networkInterfaceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkInterfaceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_networkInterfaceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NetworkInterfaceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_networkInterfaceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkInterfaceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_primaryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Primary";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_primary, allocator);

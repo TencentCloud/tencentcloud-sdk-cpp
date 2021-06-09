@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bizlive::V20190313::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeWorkersResponse::DescribeWorkersResponse() :
@@ -33,7 +32,7 @@ DescribeWorkersResponse::DescribeWorkersResponse() :
 
 CoreInternalOutcome DescribeWorkersResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DescribeWorkersResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -70,8 +69,8 @@ CoreInternalOutcome DescribeWorkersResponse::Deserialize(const string &payload)
         if (!rsp["RegionDetail"].IsArray())
             return CoreInternalOutcome(Error("response `RegionDetail` is not array type"));
 
-        const Value &tmpValue = rsp["RegionDetail"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["RegionDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             WorkerRegionInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

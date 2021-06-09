@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Batch::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ItemPrice::ItemPrice() :
@@ -44,7 +43,7 @@ ItemPrice::ItemPrice() :
 {
 }
 
-CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
+CoreInternalOutcome ItemPrice::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -243,12 +242,12 @@ CoreInternalOutcome ItemPrice::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ItemPrice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_unitPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unitPrice, allocator);
@@ -256,15 +255,15 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_chargeUnitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChargeUnit";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_chargeUnit.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chargeUnit.c_str(), allocator).Move(), allocator);
     }
 
     if (m_originalPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalPrice, allocator);
@@ -272,7 +271,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_discountPriceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountPrice, allocator);
@@ -280,7 +279,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_discountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Discount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discount, allocator);
@@ -288,7 +287,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_unitPriceDiscountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitPriceDiscount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unitPriceDiscount, allocator);
@@ -296,7 +295,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_unitPriceSecondStepHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitPriceSecondStep";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unitPriceSecondStep, allocator);
@@ -304,7 +303,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_unitPriceDiscountSecondStepHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitPriceDiscountSecondStep";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unitPriceDiscountSecondStep, allocator);
@@ -312,7 +311,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_unitPriceThirdStepHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitPriceThirdStep";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unitPriceThirdStep, allocator);
@@ -320,7 +319,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_unitPriceDiscountThirdStepHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UnitPriceDiscountThirdStep";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unitPriceDiscountThirdStep, allocator);
@@ -328,7 +327,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_originalPriceThreeYearHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalPriceThreeYear";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalPriceThreeYear, allocator);
@@ -336,7 +335,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_discountPriceThreeYearHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountPriceThreeYear";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountPriceThreeYear, allocator);
@@ -344,7 +343,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_discountThreeYearHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountThreeYear";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountThreeYear, allocator);
@@ -352,7 +351,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_originalPriceFiveYearHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalPriceFiveYear";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalPriceFiveYear, allocator);
@@ -360,7 +359,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_discountPriceFiveYearHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountPriceFiveYear";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountPriceFiveYear, allocator);
@@ -368,7 +367,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_discountFiveYearHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountFiveYear";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountFiveYear, allocator);
@@ -376,7 +375,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_originalPriceOneYearHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginalPriceOneYear";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_originalPriceOneYear, allocator);
@@ -384,7 +383,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_discountPriceOneYearHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountPriceOneYear";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountPriceOneYear, allocator);
@@ -392,7 +391,7 @@ void ItemPrice::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_discountOneYearHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiscountOneYear";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountOneYear, allocator);

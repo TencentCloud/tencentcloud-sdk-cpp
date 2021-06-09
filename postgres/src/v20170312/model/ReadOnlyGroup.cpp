@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Postgres::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReadOnlyGroup::ReadOnlyGroup() :
@@ -42,7 +41,7 @@ ReadOnlyGroup::ReadOnlyGroup() :
 {
 }
 
-CoreInternalOutcome ReadOnlyGroup::Deserialize(const Value &value)
+CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -192,8 +191,8 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const Value &value)
         if (!value["ReadOnlyDBInstanceList"].IsArray())
             return CoreInternalOutcome(Error("response `ReadOnlyGroup.ReadOnlyDBInstanceList` is not array type"));
 
-        const Value &tmpValue = value["ReadOnlyDBInstanceList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ReadOnlyDBInstanceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DBInstance item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -222,8 +221,8 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const Value &value)
         if (!value["DBInstanceNetInfo"].IsArray())
             return CoreInternalOutcome(Error("response `ReadOnlyGroup.DBInstanceNetInfo` is not array type"));
 
-        const Value &tmpValue = value["DBInstanceNetInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DBInstanceNetInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DBInstanceNetInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -241,28 +240,28 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReadOnlyGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_readOnlyGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_readOnlyGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_readOnlyGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyGroupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyGroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_readOnlyGroupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_readOnlyGroupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
@@ -270,15 +269,15 @@ void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_masterDBInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MasterDBInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_masterDBInstanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_masterDBInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_minDelayEliminateReserveHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinDelayEliminateReserve";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minDelayEliminateReserve, allocator);
@@ -286,7 +285,7 @@ void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_maxReplayLatencyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxReplayLatency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxReplayLatency, allocator);
@@ -294,7 +293,7 @@ void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_replayLatencyEliminateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplayLatencyEliminate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replayLatencyEliminate, allocator);
@@ -302,7 +301,7 @@ void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_maxReplayLagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxReplayLag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxReplayLag, allocator);
@@ -310,7 +309,7 @@ void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_replayLagEliminateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplayLagEliminate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replayLagEliminate, allocator);
@@ -318,62 +317,62 @@ void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subnetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subnetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyDBInstanceListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnlyDBInstanceList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_readOnlyDBInstanceList.begin(); itr != m_readOnlyDBInstanceList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_rebalanceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rebalance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rebalance, allocator);
@@ -381,15 +380,15 @@ void ReadOnlyGroup::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_dBInstanceNetInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DBInstanceNetInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_dBInstanceNetInfo.begin(); itr != m_dBInstanceNetInfo.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

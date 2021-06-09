@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Faceid::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 GetFaceIdResultRequest::GetFaceIdResultRequest() :
@@ -32,22 +31,22 @@ GetFaceIdResultRequest::GetFaceIdResultRequest() :
 
 string GetFaceIdResultRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_faceIdTokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceIdToken";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_faceIdToken.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_faceIdToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isNeedVideoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsNeedVideo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isNeedVideo, allocator);
@@ -55,15 +54,15 @@ string GetFaceIdResultRequest::ToJsonString() const
 
     if (m_isNeedBestFrameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsNeedBestFrame";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isNeedBestFrame, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

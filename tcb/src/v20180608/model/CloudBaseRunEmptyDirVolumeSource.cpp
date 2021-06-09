@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloudBaseRunEmptyDirVolumeSource::CloudBaseRunEmptyDirVolumeSource() :
@@ -28,7 +27,7 @@ CloudBaseRunEmptyDirVolumeSource::CloudBaseRunEmptyDirVolumeSource() :
 {
 }
 
-CoreInternalOutcome CloudBaseRunEmptyDirVolumeSource::Deserialize(const Value &value)
+CoreInternalOutcome CloudBaseRunEmptyDirVolumeSource::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome CloudBaseRunEmptyDirVolumeSource::Deserialize(const Value &v
     return CoreInternalOutcome(true);
 }
 
-void CloudBaseRunEmptyDirVolumeSource::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloudBaseRunEmptyDirVolumeSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enableEmptyDirVolumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableEmptyDirVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableEmptyDirVolume, allocator);
@@ -80,18 +79,18 @@ void CloudBaseRunEmptyDirVolumeSource::ToJsonObject(Value &value, Document::Allo
 
     if (m_mediumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Medium";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_medium.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_medium.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sizeLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SizeLimit";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sizeLimit.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sizeLimit.c_str(), allocator).Move(), allocator);
     }
 
 }

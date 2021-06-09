@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 PostPaidQuota::PostPaidQuota() :
@@ -29,7 +28,7 @@ PostPaidQuota::PostPaidQuota() :
 {
 }
 
-CoreInternalOutcome PostPaidQuota::Deserialize(const Value &value)
+CoreInternalOutcome PostPaidQuota::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome PostPaidQuota::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PostPaidQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PostPaidQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_usedQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsedQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedQuota, allocator);
@@ -91,7 +90,7 @@ void PostPaidQuota::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_remainingQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RemainingQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_remainingQuota, allocator);
@@ -99,7 +98,7 @@ void PostPaidQuota::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_totalQuotaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalQuota, allocator);
@@ -107,10 +106,10 @@ void PostPaidQuota::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_zoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }

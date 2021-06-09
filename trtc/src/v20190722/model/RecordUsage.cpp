@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Trtc::V20190722::Model;
-using namespace rapidjson;
 using namespace std;
 
 RecordUsage::RecordUsage() :
@@ -30,7 +29,7 @@ RecordUsage::RecordUsage() :
 {
 }
 
-CoreInternalOutcome RecordUsage::Deserialize(const Value &value)
+CoreInternalOutcome RecordUsage::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome RecordUsage::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RecordUsage::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RecordUsage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_timeKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TimeKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_timeKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_class1VideoTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Class1VideoTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_class1VideoTime, allocator);
@@ -110,7 +109,7 @@ void RecordUsage::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_class2VideoTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Class2VideoTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_class2VideoTime, allocator);
@@ -118,7 +117,7 @@ void RecordUsage::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_class3VideoTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Class3VideoTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_class3VideoTime, allocator);
@@ -126,7 +125,7 @@ void RecordUsage::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_audioTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioTime, allocator);

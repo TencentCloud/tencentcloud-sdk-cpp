@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gpm::V20200820::Model;
-using namespace rapidjson;
 using namespace std;
 
 MatchAttribute::MatchAttribute() :
@@ -31,7 +30,7 @@ MatchAttribute::MatchAttribute() :
 {
 }
 
-CoreInternalOutcome MatchAttribute::Deserialize(const Value &value)
+CoreInternalOutcome MatchAttribute::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -81,8 +80,8 @@ CoreInternalOutcome MatchAttribute::Deserialize(const Value &value)
         if (!value["ListValue"].IsArray())
             return CoreInternalOutcome(Error("response `MatchAttribute.ListValue` is not array type"));
 
-        const Value &tmpValue = value["ListValue"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ListValue"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_listValue.push_back((*itr).GetString());
         }
@@ -94,8 +93,8 @@ CoreInternalOutcome MatchAttribute::Deserialize(const Value &value)
         if (!value["MapValue"].IsArray())
             return CoreInternalOutcome(Error("response `MatchAttribute.MapValue` is not array type"));
 
-        const Value &tmpValue = value["MapValue"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MapValue"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AttributeMap item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -113,20 +112,20 @@ CoreInternalOutcome MatchAttribute::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MatchAttribute::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MatchAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -134,7 +133,7 @@ void MatchAttribute::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_numberValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NumberValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_numberValue, allocator);
@@ -142,36 +141,36 @@ void MatchAttribute::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_stringValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StringValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_stringValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stringValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_listValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_listValue.begin(); itr != m_listValue.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_mapValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MapValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_mapValue.begin(); itr != m_mapValue.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Tcaplusdb::V20190823::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImportSnapshotsRequest::ImportSnapshotsRequest() :
@@ -36,72 +35,72 @@ ImportSnapshotsRequest::ImportSnapshotsRequest() :
 
 string ImportSnapshotsRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_clusterIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_clusterId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_snapshotsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Snapshots";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_snapshots.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_importSpecialKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImportSpecialKey";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_importSpecialKey.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_importSpecialKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_importOriginTableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImportOriginTable";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_importOriginTable.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_importOriginTable.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyFileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "KeyFile";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_keyFile.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_newTableGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewTableGroupId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_newTableGroupId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_newTableGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_newTableNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NewTableName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_newTableName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_newTableName.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

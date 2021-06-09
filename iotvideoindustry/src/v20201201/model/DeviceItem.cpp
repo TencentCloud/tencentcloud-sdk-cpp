@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
-using namespace rapidjson;
 using namespace std;
 
 DeviceItem::DeviceItem() :
@@ -26,7 +25,7 @@ DeviceItem::DeviceItem() :
 {
 }
 
-CoreInternalOutcome DeviceItem::Deserialize(const Value &value)
+CoreInternalOutcome DeviceItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome DeviceItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DeviceItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DeviceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_deviceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_deviceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
     }
 
 }

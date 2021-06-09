@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Live::V20180801::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyLiveTranscodeTemplateRequest::ModifyLiveTranscodeTemplateRequest() :
@@ -48,14 +47,14 @@ ModifyLiveTranscodeTemplateRequest::ModifyLiveTranscodeTemplateRequest() :
 
 string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_templateIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_templateId, allocator);
@@ -63,23 +62,23 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_vcodecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vcodec";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_vcodec.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vcodec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_acodecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Acodec";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_acodec.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_acodec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_audioBitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioBitrate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_audioBitrate, allocator);
@@ -87,15 +86,15 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_descriptionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_description.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_videoBitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoBitrate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_videoBitrate, allocator);
@@ -103,7 +102,7 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_width, allocator);
@@ -111,7 +110,7 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_needVideoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedVideo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needVideo, allocator);
@@ -119,7 +118,7 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_needAudioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NeedAudio";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needAudio, allocator);
@@ -127,7 +126,7 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_height, allocator);
@@ -135,7 +134,7 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_fpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Fps";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fps, allocator);
@@ -143,7 +142,7 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_gopHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gop";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_gop, allocator);
@@ -151,7 +150,7 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_rotateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rotate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rotate, allocator);
@@ -159,15 +158,15 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_profileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Profile";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_profile.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bitrateToOrigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BitrateToOrig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bitrateToOrig, allocator);
@@ -175,7 +174,7 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_heightToOrigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HeightToOrig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_heightToOrig, allocator);
@@ -183,7 +182,7 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_fpsToOrigHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FpsToOrig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fpsToOrig, allocator);
@@ -191,7 +190,7 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_adaptBitratePercentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AdaptBitratePercent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_adaptBitratePercent, allocator);
@@ -199,15 +198,15 @@ string ModifyLiveTranscodeTemplateRequest::ToJsonString() const
 
     if (m_shortEdgeAsHeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShortEdgeAsHeight";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_shortEdgeAsHeight, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

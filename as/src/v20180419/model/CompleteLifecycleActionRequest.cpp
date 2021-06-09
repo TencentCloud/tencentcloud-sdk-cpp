@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::As::V20180419::Model;
-using namespace rapidjson;
 using namespace std;
 
 CompleteLifecycleActionRequest::CompleteLifecycleActionRequest() :
@@ -33,46 +32,46 @@ CompleteLifecycleActionRequest::CompleteLifecycleActionRequest() :
 
 string CompleteLifecycleActionRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_lifecycleHookIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifecycleHookId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_lifecycleHookId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lifecycleHookId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lifecycleActionResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifecycleActionResult";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_lifecycleActionResult.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lifecycleActionResult.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lifecycleActionTokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LifecycleActionToken";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_lifecycleActionToken.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lifecycleActionToken.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

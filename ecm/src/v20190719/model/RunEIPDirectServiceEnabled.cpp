@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 RunEIPDirectServiceEnabled::RunEIPDirectServiceEnabled() :
@@ -26,7 +25,7 @@ RunEIPDirectServiceEnabled::RunEIPDirectServiceEnabled() :
 {
 }
 
-CoreInternalOutcome RunEIPDirectServiceEnabled::Deserialize(const Value &value)
+CoreInternalOutcome RunEIPDirectServiceEnabled::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome RunEIPDirectServiceEnabled::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RunEIPDirectServiceEnabled::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RunEIPDirectServiceEnabled::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enabledHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enabled, allocator);

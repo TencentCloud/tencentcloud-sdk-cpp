@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 MigrateDB::MigrateDB() :
@@ -26,7 +25,7 @@ MigrateDB::MigrateDB() :
 {
 }
 
-CoreInternalOutcome MigrateDB::Deserialize(const Value &value)
+CoreInternalOutcome MigrateDB::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome MigrateDB::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MigrateDB::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MigrateDB::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dBNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DBName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dBName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBName.c_str(), allocator).Move(), allocator);
     }
 
 }

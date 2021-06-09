@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiSampleFaceOperation::AiSampleFaceOperation() :
@@ -28,7 +27,7 @@ AiSampleFaceOperation::AiSampleFaceOperation() :
 {
 }
 
-CoreInternalOutcome AiSampleFaceOperation::Deserialize(const Value &value)
+CoreInternalOutcome AiSampleFaceOperation::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -48,8 +47,8 @@ CoreInternalOutcome AiSampleFaceOperation::Deserialize(const Value &value)
         if (!value["FaceIds"].IsArray())
             return CoreInternalOutcome(Error("response `AiSampleFaceOperation.FaceIds` is not array type"));
 
-        const Value &tmpValue = value["FaceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FaceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_faceIds.push_back((*itr).GetString());
         }
@@ -61,8 +60,8 @@ CoreInternalOutcome AiSampleFaceOperation::Deserialize(const Value &value)
         if (!value["FaceContents"].IsArray())
             return CoreInternalOutcome(Error("response `AiSampleFaceOperation.FaceContents` is not array type"));
 
-        const Value &tmpValue = value["FaceContents"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FaceContents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_faceContents.push_back((*itr).GetString());
         }
@@ -73,40 +72,40 @@ CoreInternalOutcome AiSampleFaceOperation::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AiSampleFaceOperation::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiSampleFaceOperation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_faceIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_faceIds.begin(); itr != m_faceIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_faceContentsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceContents";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_faceContents.begin(); itr != m_faceContents.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

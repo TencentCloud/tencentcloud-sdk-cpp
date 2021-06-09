@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmvpc::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 VpcPeerConnection::VpcPeerConnection() :
@@ -42,7 +41,7 @@ VpcPeerConnection::VpcPeerConnection() :
 {
 }
 
-CoreInternalOutcome VpcPeerConnection::Deserialize(const Value &value)
+CoreInternalOutcome VpcPeerConnection::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -221,84 +220,84 @@ CoreInternalOutcome VpcPeerConnection::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VpcPeerConnection::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VpcPeerConnection::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_peerVpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeerVpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_peerVpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_peerVpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_appId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_peerAppIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeerAppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_peerAppId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_peerAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcPeerConnectionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcPeerConnectionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcPeerConnectionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcPeerConnectionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcPeerConnectionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcPeerConnectionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcPeerConnectionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcPeerConnectionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_state.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcZoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcZone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcZone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcZone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_peerVpcZoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeerVpcZone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_peerVpcZone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_peerVpcZone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_uinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_uin, allocator);
@@ -306,7 +305,7 @@ void VpcPeerConnection::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_peerUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeerUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_peerUin, allocator);
@@ -314,7 +313,7 @@ void VpcPeerConnection::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_peerTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeerType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_peerType, allocator);
@@ -322,7 +321,7 @@ void VpcPeerConnection::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_bandwidthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bandwidth, allocator);
@@ -330,23 +329,23 @@ void VpcPeerConnection::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_peerRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PeerRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_peerRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_peerRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deleteFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeleteFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deleteFlag, allocator);
@@ -354,10 +353,10 @@ void VpcPeerConnection::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }

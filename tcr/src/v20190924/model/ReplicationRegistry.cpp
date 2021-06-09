@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcr::V20190924::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReplicationRegistry::ReplicationRegistry() :
@@ -31,7 +30,7 @@ ReplicationRegistry::ReplicationRegistry() :
 {
 }
 
-CoreInternalOutcome ReplicationRegistry::Deserialize(const Value &value)
+CoreInternalOutcome ReplicationRegistry::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,28 +99,28 @@ CoreInternalOutcome ReplicationRegistry::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReplicationRegistry::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReplicationRegistry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_registryIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegistryId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_registryId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_replicationRegistryIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicationRegistryId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replicationRegistryId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replicationRegistryId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_replicationRegionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicationRegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replicationRegionId, allocator);
@@ -129,26 +128,26 @@ void ReplicationRegistry::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_replicationRegionNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicationRegionName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replicationRegionName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replicationRegionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdAtHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedAt";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdAt.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
 }

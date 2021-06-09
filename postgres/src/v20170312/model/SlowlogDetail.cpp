@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Postgres::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 SlowlogDetail::SlowlogDetail() :
@@ -28,7 +27,7 @@ SlowlogDetail::SlowlogDetail() :
 {
 }
 
-CoreInternalOutcome SlowlogDetail::Deserialize(const Value &value)
+CoreInternalOutcome SlowlogDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -58,8 +57,8 @@ CoreInternalOutcome SlowlogDetail::Deserialize(const Value &value)
         if (!value["NormalQueries"].IsArray())
             return CoreInternalOutcome(Error("response `SlowlogDetail.NormalQueries` is not array type"));
 
-        const Value &tmpValue = value["NormalQueries"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["NormalQueries"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             NormalQueryItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,12 +76,12 @@ CoreInternalOutcome SlowlogDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SlowlogDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SlowlogDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_totalTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalTime, allocator);
@@ -90,7 +89,7 @@ void SlowlogDetail::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_totalCallsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCalls";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCalls, allocator);
@@ -98,15 +97,15 @@ void SlowlogDetail::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_normalQueriesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NormalQueries";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_normalQueries.begin(); itr != m_normalQueries.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

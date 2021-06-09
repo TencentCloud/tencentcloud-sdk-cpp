@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 NodeCountSummary::NodeCountSummary() :
@@ -27,7 +26,7 @@ NodeCountSummary::NodeCountSummary() :
 {
 }
 
-CoreInternalOutcome NodeCountSummary::Deserialize(const Value &value)
+CoreInternalOutcome NodeCountSummary::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,24 +69,24 @@ CoreInternalOutcome NodeCountSummary::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NodeCountSummary::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NodeCountSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_manuallyAddedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ManuallyAdded";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_manuallyAdded.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_autoscalingAddedHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoscalingAdded";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_autoscalingAdded.ToJsonObject(value[key.c_str()], allocator);
     }
 

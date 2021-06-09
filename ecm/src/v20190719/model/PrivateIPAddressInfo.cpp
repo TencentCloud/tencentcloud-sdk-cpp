@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ecm::V20190719::Model;
-using namespace rapidjson;
 using namespace std;
 
 PrivateIPAddressInfo::PrivateIPAddressInfo() :
@@ -26,7 +25,7 @@ PrivateIPAddressInfo::PrivateIPAddressInfo() :
 {
 }
 
-CoreInternalOutcome PrivateIPAddressInfo::Deserialize(const Value &value)
+CoreInternalOutcome PrivateIPAddressInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome PrivateIPAddressInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PrivateIPAddressInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PrivateIPAddressInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_privateIPAddressHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PrivateIPAddress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_privateIPAddress.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privateIPAddress.c_str(), allocator).Move(), allocator);
     }
 
 }

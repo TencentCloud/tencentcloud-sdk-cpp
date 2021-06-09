@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 SmsGetCrowdUploadInfoResponse::SmsGetCrowdUploadInfoResponse() :
@@ -30,7 +29,7 @@ SmsGetCrowdUploadInfoResponse::SmsGetCrowdUploadInfoResponse() :
 {
 }
 
-CoreInternalOutcome SmsGetCrowdUploadInfoResponse::Deserialize(const Value &value)
+CoreInternalOutcome SmsGetCrowdUploadInfoResponse::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -96,12 +95,12 @@ CoreInternalOutcome SmsGetCrowdUploadInfoResponse::Deserialize(const Value &valu
     return CoreInternalOutcome(true);
 }
 
-void SmsGetCrowdUploadInfoResponse::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SmsGetCrowdUploadInfoResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_expiredTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpiredTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expiredTime, allocator);
@@ -109,34 +108,34 @@ void SmsGetCrowdUploadInfoResponse::ToJsonObject(Value &value, Document::Allocat
 
     if (m_sessionTokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SessionToken";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_sessionToken.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tmpSecretIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TmpSecretId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tmpSecretId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tmpSecretId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tmpSecretKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TmpSecretKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tmpSecretKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tmpSecretKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

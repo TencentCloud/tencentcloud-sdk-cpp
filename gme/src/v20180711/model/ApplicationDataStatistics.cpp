@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gme::V20180711::Model;
-using namespace rapidjson;
 using namespace std;
 
 ApplicationDataStatistics::ApplicationDataStatistics() :
@@ -38,7 +37,7 @@ ApplicationDataStatistics::ApplicationDataStatistics() :
 {
 }
 
-CoreInternalOutcome ApplicationDataStatistics::Deserialize(const Value &value)
+CoreInternalOutcome ApplicationDataStatistics::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -68,8 +67,8 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const Value &value)
         if (!value["DauDataMainland"].IsArray())
             return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DauDataMainland` is not array type"));
 
-        const Value &tmpValue = value["DauDataMainland"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DauDataMainland"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatisticsItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,8 +87,8 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const Value &value)
         if (!value["DauDataOversea"].IsArray())
             return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DauDataOversea` is not array type"));
 
-        const Value &tmpValue = value["DauDataOversea"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DauDataOversea"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatisticsItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -108,8 +107,8 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const Value &value)
         if (!value["DauDataSum"].IsArray())
             return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DauDataSum` is not array type"));
 
-        const Value &tmpValue = value["DauDataSum"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DauDataSum"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatisticsItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -138,8 +137,8 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const Value &value)
         if (!value["DurationDataMainland"].IsArray())
             return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DurationDataMainland` is not array type"));
 
-        const Value &tmpValue = value["DurationDataMainland"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DurationDataMainland"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatisticsItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -158,8 +157,8 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const Value &value)
         if (!value["DurationDataOversea"].IsArray())
             return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DurationDataOversea` is not array type"));
 
-        const Value &tmpValue = value["DurationDataOversea"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DurationDataOversea"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatisticsItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -178,8 +177,8 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const Value &value)
         if (!value["DurationDataSum"].IsArray())
             return CoreInternalOutcome(Error("response `ApplicationDataStatistics.DurationDataSum` is not array type"));
 
-        const Value &tmpValue = value["DurationDataSum"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DurationDataSum"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatisticsItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -208,8 +207,8 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const Value &value)
         if (!value["PcuDataMainland"].IsArray())
             return CoreInternalOutcome(Error("response `ApplicationDataStatistics.PcuDataMainland` is not array type"));
 
-        const Value &tmpValue = value["PcuDataMainland"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PcuDataMainland"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatisticsItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -228,8 +227,8 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const Value &value)
         if (!value["PcuDataOversea"].IsArray())
             return CoreInternalOutcome(Error("response `ApplicationDataStatistics.PcuDataOversea` is not array type"));
 
-        const Value &tmpValue = value["PcuDataOversea"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PcuDataOversea"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatisticsItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -248,8 +247,8 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const Value &value)
         if (!value["PcuDataSum"].IsArray())
             return CoreInternalOutcome(Error("response `ApplicationDataStatistics.PcuDataSum` is not array type"));
 
-        const Value &tmpValue = value["PcuDataSum"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PcuDataSum"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             StatisticsItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -267,12 +266,12 @@ CoreInternalOutcome ApplicationDataStatistics::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ApplicationDataStatistics::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ApplicationDataStatistics::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_bizIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BizId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bizId, allocator);
@@ -280,7 +279,7 @@ void ApplicationDataStatistics::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_dauDataNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DauDataNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dauDataNum, allocator);
@@ -288,52 +287,52 @@ void ApplicationDataStatistics::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_dauDataMainlandHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DauDataMainland";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_dauDataMainland.begin(); itr != m_dauDataMainland.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_dauDataOverseaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DauDataOversea";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_dauDataOversea.begin(); itr != m_dauDataOversea.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_dauDataSumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DauDataSum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_dauDataSum.begin(); itr != m_dauDataSum.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_durationDataNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DurationDataNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_durationDataNum, allocator);
@@ -341,52 +340,52 @@ void ApplicationDataStatistics::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_durationDataMainlandHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DurationDataMainland";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_durationDataMainland.begin(); itr != m_durationDataMainland.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_durationDataOverseaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DurationDataOversea";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_durationDataOversea.begin(); itr != m_durationDataOversea.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_durationDataSumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DurationDataSum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_durationDataSum.begin(); itr != m_durationDataSum.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_pcuDataNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PcuDataNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pcuDataNum, allocator);
@@ -394,45 +393,45 @@ void ApplicationDataStatistics::ToJsonObject(Value &value, Document::AllocatorTy
 
     if (m_pcuDataMainlandHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PcuDataMainland";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_pcuDataMainland.begin(); itr != m_pcuDataMainland.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_pcuDataOverseaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PcuDataOversea";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_pcuDataOversea.begin(); itr != m_pcuDataOversea.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_pcuDataSumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PcuDataSum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_pcuDataSum.begin(); itr != m_pcuDataSum.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

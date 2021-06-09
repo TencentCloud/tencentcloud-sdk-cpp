@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mgobe::V20201014::Model;
-using namespace rapidjson;
 using namespace std;
 
 Team::Team() :
@@ -29,7 +28,7 @@ Team::Team() :
 {
 }
 
-CoreInternalOutcome Team::Deserialize(const Value &value)
+CoreInternalOutcome Team::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,28 +77,28 @@ CoreInternalOutcome Team::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Team::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Team::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_minPlayersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinPlayers";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minPlayers, allocator);
@@ -107,7 +106,7 @@ void Team::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_maxPlayersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxPlayers";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxPlayers, allocator);

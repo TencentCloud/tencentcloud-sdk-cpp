@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 ExtensionFileInfo::ExtensionFileInfo() :
@@ -29,7 +28,7 @@ ExtensionFileInfo::ExtensionFileInfo() :
 {
 }
 
-CoreInternalOutcome ExtensionFileInfo::Deserialize(const Value &value)
+CoreInternalOutcome ExtensionFileInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,36 +77,36 @@ CoreInternalOutcome ExtensionFileInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ExtensionFileInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ExtensionFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_codeUriHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CodeUri";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_codeUri.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codeUri.c_str(), allocator).Move(), allocator);
     }
 
     if (m_uploadUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UploadUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uploadUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uploadUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_customKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxSize, allocator);

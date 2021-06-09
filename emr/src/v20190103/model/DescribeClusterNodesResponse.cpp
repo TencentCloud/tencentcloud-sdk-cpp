@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeClusterNodesResponse::DescribeClusterNodesResponse() :
@@ -34,7 +33,7 @@ DescribeClusterNodesResponse::DescribeClusterNodesResponse() :
 
 CoreInternalOutcome DescribeClusterNodesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -44,7 +43,7 @@ CoreInternalOutcome DescribeClusterNodesResponse::Deserialize(const string &payl
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -81,8 +80,8 @@ CoreInternalOutcome DescribeClusterNodesResponse::Deserialize(const string &payl
         if (!rsp["NodeList"].IsArray())
             return CoreInternalOutcome(Error("response `NodeList` is not array type"));
 
-        const Value &tmpValue = rsp["NodeList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["NodeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             NodeHardwareInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -101,8 +100,8 @@ CoreInternalOutcome DescribeClusterNodesResponse::Deserialize(const string &payl
         if (!rsp["TagKeys"].IsArray())
             return CoreInternalOutcome(Error("response `TagKeys` is not array type"));
 
-        const Value &tmpValue = rsp["TagKeys"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["TagKeys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_tagKeys.push_back((*itr).GetString());
         }
@@ -114,8 +113,8 @@ CoreInternalOutcome DescribeClusterNodesResponse::Deserialize(const string &payl
         if (!rsp["HardwareResourceTypeList"].IsArray())
             return CoreInternalOutcome(Error("response `HardwareResourceTypeList` is not array type"));
 
-        const Value &tmpValue = rsp["HardwareResourceTypeList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["HardwareResourceTypeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_hardwareResourceTypeList.push_back((*itr).GetString());
         }

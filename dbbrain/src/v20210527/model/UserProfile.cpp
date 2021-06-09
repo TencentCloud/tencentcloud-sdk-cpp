@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20210527::Model;
-using namespace rapidjson;
 using namespace std;
 
 UserProfile::UserProfile() :
@@ -30,7 +29,7 @@ UserProfile::UserProfile() :
 {
 }
 
-CoreInternalOutcome UserProfile::Deserialize(const Value &value)
+CoreInternalOutcome UserProfile::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -96,47 +95,47 @@ CoreInternalOutcome UserProfile::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void UserProfile::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void UserProfile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_profileIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProfileId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_profileId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_profileId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_profileTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProfileType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_profileType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_profileType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_profileLevelHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProfileLevel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_profileLevel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_profileLevel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_profileNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProfileName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_profileName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_profileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_profileInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProfileInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_profileInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 

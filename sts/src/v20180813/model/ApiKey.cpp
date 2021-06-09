@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Sts::V20180813::Model;
-using namespace rapidjson;
 using namespace std;
 
 ApiKey::ApiKey() :
@@ -28,7 +27,7 @@ ApiKey::ApiKey() :
 {
 }
 
-CoreInternalOutcome ApiKey::Deserialize(const Value &value)
+CoreInternalOutcome ApiKey::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome ApiKey::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ApiKey::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ApiKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_secretIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SecretId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_secretId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -88,7 +87,7 @@ void ApiKey::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);

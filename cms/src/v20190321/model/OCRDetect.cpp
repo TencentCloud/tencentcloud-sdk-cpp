@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cms::V20190321::Model;
-using namespace rapidjson;
 using namespace std;
 
 OCRDetect::OCRDetect() :
@@ -27,7 +26,7 @@ OCRDetect::OCRDetect() :
 {
 }
 
-CoreInternalOutcome OCRDetect::Deserialize(const Value &value)
+CoreInternalOutcome OCRDetect::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome OCRDetect::Deserialize(const Value &value)
         if (!value["Item"].IsArray())
             return CoreInternalOutcome(Error("response `OCRDetect.Item` is not array type"));
 
-        const Value &tmpValue = value["Item"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Item"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             OCRItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -66,30 +65,30 @@ CoreInternalOutcome OCRDetect::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OCRDetect::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OCRDetect::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_itemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Item";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_item.begin(); itr != m_item.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_textInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TextInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_textInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_textInfo.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20191126::Model;
-using namespace rapidjson;
 using namespace std;
 
 OtaPubHistory::OtaPubHistory() :
@@ -27,7 +26,7 @@ OtaPubHistory::OtaPubHistory() :
 {
 }
 
-CoreInternalOutcome OtaPubHistory::Deserialize(const Value &value)
+CoreInternalOutcome OtaPubHistory::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome OtaPubHistory::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void OtaPubHistory::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void OtaPubHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_otaVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OtaVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_otaVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_otaVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publishTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publishTime, allocator);

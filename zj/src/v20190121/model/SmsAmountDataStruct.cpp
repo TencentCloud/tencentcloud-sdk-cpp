@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Zj::V20190121::Model;
-using namespace rapidjson;
 using namespace std;
 
 SmsAmountDataStruct::SmsAmountDataStruct() :
@@ -33,7 +32,7 @@ SmsAmountDataStruct::SmsAmountDataStruct() :
 {
 }
 
-CoreInternalOutcome SmsAmountDataStruct::Deserialize(const Value &value)
+CoreInternalOutcome SmsAmountDataStruct::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome SmsAmountDataStruct::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SmsAmountDataStruct::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SmsAmountDataStruct::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_smsCampaignAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SmsCampaignAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_smsCampaignAmount, allocator);
@@ -135,7 +134,7 @@ void SmsAmountDataStruct::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_smsCampaignConsumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SmsCampaignConsume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_smsCampaignConsume, allocator);
@@ -143,7 +142,7 @@ void SmsAmountDataStruct::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_smsSendAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SmsSendAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_smsSendAmount, allocator);
@@ -151,7 +150,7 @@ void SmsAmountDataStruct::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_smsSendConsumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SmsSendConsume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_smsSendConsume, allocator);
@@ -159,7 +158,7 @@ void SmsAmountDataStruct::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_mmsCampaignAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MmsCampaignAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mmsCampaignAmount, allocator);
@@ -167,7 +166,7 @@ void SmsAmountDataStruct::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_mmsCampaignConsumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MmsCampaignConsume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mmsCampaignConsume, allocator);
@@ -175,7 +174,7 @@ void SmsAmountDataStruct::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_mmsSendAmountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MmsSendAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mmsSendAmount, allocator);
@@ -183,7 +182,7 @@ void SmsAmountDataStruct::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_mmsSendConsumeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MmsSendConsume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mmsSendConsume, allocator);

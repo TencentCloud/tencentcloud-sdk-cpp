@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cme::V20191029::Model;
-using namespace rapidjson;
 using namespace std;
 
 MaterialInfo::MaterialInfo() :
@@ -32,7 +31,7 @@ MaterialInfo::MaterialInfo() :
 {
 }
 
-CoreInternalOutcome MaterialInfo::Deserialize(const Value &value)
+CoreInternalOutcome MaterialInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -160,69 +159,69 @@ CoreInternalOutcome MaterialInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MaterialInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MaterialInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_basicInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BasicInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_basicInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_videoMaterialHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoMaterial";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_videoMaterial.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_audioMaterialHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AudioMaterial";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_audioMaterial.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_imageMaterialHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageMaterial";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageMaterial.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_linkMaterialHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LinkMaterial";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_linkMaterial.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_videoEditTemplateMaterialHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VideoEditTemplateMaterial";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_videoEditTemplateMaterial.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_otherMaterialHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OtherMaterial";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_otherMaterial.ToJsonObject(value[key.c_str()], allocator);
     }
 

@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Rkp::V20191209::Model;
-using namespace rapidjson;
 using namespace std;
 
 GetTokenRequest::GetTokenRequest() :
@@ -35,14 +34,14 @@ GetTokenRequest::GetTokenRequest() :
 
 string GetTokenRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_businessIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BusinessId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_businessId, allocator);
@@ -50,7 +49,7 @@ string GetTokenRequest::ToJsonString() const
 
     if (m_sceneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Scene";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_scene, allocator);
@@ -58,23 +57,23 @@ string GetTokenRequest::ToJsonString() const
 
     if (m_businessUserIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BusinessUserId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_businessUserId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_businessUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_appClientIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AppClientIp";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_appClientIp.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appClientIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_expireTime, allocator);
@@ -82,15 +81,15 @@ string GetTokenRequest::ToJsonString() const
 
     if (m_oldTokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OldToken";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_oldToken.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_oldToken.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

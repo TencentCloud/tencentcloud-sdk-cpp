@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 LiveStreamAsrFullTextRecognitionResult::LiveStreamAsrFullTextRecognitionResult() :
@@ -29,7 +28,7 @@ LiveStreamAsrFullTextRecognitionResult::LiveStreamAsrFullTextRecognitionResult()
 {
 }
 
-CoreInternalOutcome LiveStreamAsrFullTextRecognitionResult::Deserialize(const Value &value)
+CoreInternalOutcome LiveStreamAsrFullTextRecognitionResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,20 +77,20 @@ CoreInternalOutcome LiveStreamAsrFullTextRecognitionResult::Deserialize(const Va
     return CoreInternalOutcome(true);
 }
 
-void LiveStreamAsrFullTextRecognitionResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LiveStreamAsrFullTextRecognitionResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_textHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_text.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startPtsTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartPtsTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startPtsTime, allocator);
@@ -99,7 +98,7 @@ void LiveStreamAsrFullTextRecognitionResult::ToJsonObject(Value &value, Document
 
     if (m_endPtsTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndPtsTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endPtsTime, allocator);
@@ -107,7 +106,7 @@ void LiveStreamAsrFullTextRecognitionResult::ToJsonObject(Value &value, Document
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);

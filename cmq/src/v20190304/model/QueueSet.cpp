@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cmq::V20190304::Model;
-using namespace rapidjson;
 using namespace std;
 
 QueueSet::QueueSet() :
@@ -50,7 +49,7 @@ QueueSet::QueueSet() :
 {
 }
 
-CoreInternalOutcome QueueSet::Deserialize(const Value &value)
+CoreInternalOutcome QueueSet::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -250,8 +249,8 @@ CoreInternalOutcome QueueSet::Deserialize(const Value &value)
         if (!value["DeadLetterSource"].IsArray())
             return CoreInternalOutcome(Error("response `QueueSet.DeadLetterSource` is not array type"));
 
-        const Value &tmpValue = value["DeadLetterSource"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["DeadLetterSource"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DeadLetterSource item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -314,8 +313,8 @@ CoreInternalOutcome QueueSet::Deserialize(const Value &value)
         if (!value["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `QueueSet.Tags` is not array type"));
 
-        const Value &tmpValue = value["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Tag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -343,28 +342,28 @@ CoreInternalOutcome QueueSet::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void QueueSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_queueIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueueId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_queueId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_queueNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QueueName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_queueName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_qpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Qps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qps, allocator);
@@ -372,7 +371,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_bpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bps, allocator);
@@ -380,7 +379,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_maxDelaySecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxDelaySeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxDelaySeconds, allocator);
@@ -388,7 +387,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_maxMsgHeapNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxMsgHeapNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxMsgHeapNum, allocator);
@@ -396,7 +395,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_pollingWaitSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PollingWaitSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pollingWaitSeconds, allocator);
@@ -404,7 +403,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_msgRetentionSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgRetentionSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_msgRetentionSeconds, allocator);
@@ -412,7 +411,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_visibilityTimeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VisibilityTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_visibilityTimeout, allocator);
@@ -420,7 +419,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_maxMsgSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxMsgSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxMsgSize, allocator);
@@ -428,7 +427,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_rewindSecondsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RewindSeconds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rewindSeconds, allocator);
@@ -436,7 +435,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -444,7 +443,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_lastModifyTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastModifyTime, allocator);
@@ -452,7 +451,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_activeMsgNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActiveMsgNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_activeMsgNum, allocator);
@@ -460,7 +459,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_inactiveMsgNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InactiveMsgNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inactiveMsgNum, allocator);
@@ -468,7 +467,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_delayMsgNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DelayMsgNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_delayMsgNum, allocator);
@@ -476,7 +475,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_rewindMsgNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RewindMsgNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rewindMsgNum, allocator);
@@ -484,7 +483,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_minMsgTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinMsgTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minMsgTime, allocator);
@@ -492,7 +491,7 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_transactionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Transaction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_transaction, allocator);
@@ -500,40 +499,40 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_deadLetterSourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeadLetterSource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_deadLetterSource.begin(); itr != m_deadLetterSource.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_deadLetterPolicyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeadLetterPolicy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_deadLetterPolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_transactionPolicyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TransactionPolicy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_transactionPolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createUin, allocator);
@@ -541,22 +540,22 @@ void QueueSet::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_tagsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_traceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Trace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trace, allocator);

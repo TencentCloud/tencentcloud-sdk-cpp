@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Billing::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 ConsumptionSummaryTotal::ConsumptionSummaryTotal() :
@@ -26,7 +25,7 @@ ConsumptionSummaryTotal::ConsumptionSummaryTotal() :
 {
 }
 
-CoreInternalOutcome ConsumptionSummaryTotal::Deserialize(const Value &value)
+CoreInternalOutcome ConsumptionSummaryTotal::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome ConsumptionSummaryTotal::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ConsumptionSummaryTotal::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ConsumptionSummaryTotal::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_realTotalCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
     }
 
 }

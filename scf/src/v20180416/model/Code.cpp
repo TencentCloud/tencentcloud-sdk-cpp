@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Scf::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 Code::Code() :
@@ -39,7 +38,7 @@ Code::Code() :
 {
 }
 
-CoreInternalOutcome Code::Deserialize(const Value &value)
+CoreInternalOutcome Code::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -188,119 +187,119 @@ CoreInternalOutcome Code::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Code::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Code::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cosBucketNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosBucketName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cosBucketName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosBucketName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosObjectNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosObjectName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cosObjectName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosObjectName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_zipFileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ZipFile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_zipFile.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zipFile.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cosBucketRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CosBucketRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cosBucketRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosBucketRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_demoIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DemoId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_demoId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_demoId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tempCosObjectNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TempCosObjectName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tempCosObjectName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tempCosObjectName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gitUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GitUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gitUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gitUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gitUserNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GitUserName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gitUserName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gitUserName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gitPasswordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GitPassword";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gitPassword.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gitPassword.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gitPasswordSecretHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GitPasswordSecret";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gitPasswordSecret.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gitPasswordSecret.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gitBranchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GitBranch";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gitBranch.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gitBranch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gitDirectoryHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GitDirectory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gitDirectory.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gitDirectory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gitCommitIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GitCommitId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gitCommitId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gitCommitId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gitUserNameSecretHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GitUserNameSecret";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_gitUserNameSecret.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gitUserNameSecret.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tiia::V20190529::Model;
-using namespace rapidjson;
 using namespace std;
 
 DetectLabelResponse::DetectLabelResponse() :
@@ -34,7 +33,7 @@ DetectLabelResponse::DetectLabelResponse() :
 
 CoreInternalOutcome DetectLabelResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -44,7 +43,7 @@ CoreInternalOutcome DetectLabelResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -71,8 +70,8 @@ CoreInternalOutcome DetectLabelResponse::Deserialize(const string &payload)
         if (!rsp["Labels"].IsArray())
             return CoreInternalOutcome(Error("response `Labels` is not array type"));
 
-        const Value &tmpValue = rsp["Labels"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Labels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DetectLabelItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -91,8 +90,8 @@ CoreInternalOutcome DetectLabelResponse::Deserialize(const string &payload)
         if (!rsp["CameraLabels"].IsArray())
             return CoreInternalOutcome(Error("response `CameraLabels` is not array type"));
 
-        const Value &tmpValue = rsp["CameraLabels"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["CameraLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DetectLabelItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -111,8 +110,8 @@ CoreInternalOutcome DetectLabelResponse::Deserialize(const string &payload)
         if (!rsp["AlbumLabels"].IsArray())
             return CoreInternalOutcome(Error("response `AlbumLabels` is not array type"));
 
-        const Value &tmpValue = rsp["AlbumLabels"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["AlbumLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DetectLabelItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -131,8 +130,8 @@ CoreInternalOutcome DetectLabelResponse::Deserialize(const string &payload)
         if (!rsp["NewsLabels"].IsArray())
             return CoreInternalOutcome(Error("response `NewsLabels` is not array type"));
 
-        const Value &tmpValue = rsp["NewsLabels"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["NewsLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DetectLabelItem item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

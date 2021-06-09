@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 MediaRecognitionTaskResult::MediaRecognitionTaskResult() :
@@ -27,7 +26,7 @@ MediaRecognitionTaskResult::MediaRecognitionTaskResult() :
 {
 }
 
-CoreInternalOutcome MediaRecognitionTaskResult::Deserialize(const Value &value)
+CoreInternalOutcome MediaRecognitionTaskResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,24 +69,24 @@ CoreInternalOutcome MediaRecognitionTaskResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void MediaRecognitionTaskResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MediaRecognitionTaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_frameTagResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FrameTagResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_frameTagResults.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_subtitleResultsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubtitleResults";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_subtitleResults.ToJsonObject(value[key.c_str()], allocator);
     }
 

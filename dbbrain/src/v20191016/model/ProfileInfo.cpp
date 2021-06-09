@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20191016::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProfileInfo::ProfileInfo() :
@@ -27,7 +26,7 @@ ProfileInfo::ProfileInfo() :
 {
 }
 
-CoreInternalOutcome ProfileInfo::Deserialize(const Value &value)
+CoreInternalOutcome ProfileInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -63,23 +62,23 @@ CoreInternalOutcome ProfileInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProfileInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProfileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_languageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Language";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_language.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_language.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mailConfigurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MailConfiguration";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mailConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 

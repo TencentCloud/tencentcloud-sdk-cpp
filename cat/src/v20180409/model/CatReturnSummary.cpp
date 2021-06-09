@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cat::V20180409::Model;
-using namespace rapidjson;
 using namespace std;
 
 CatReturnSummary::CatReturnSummary() :
@@ -28,7 +27,7 @@ CatReturnSummary::CatReturnSummary() :
 {
 }
 
-CoreInternalOutcome CatReturnSummary::Deserialize(const Value &value)
+CoreInternalOutcome CatReturnSummary::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome CatReturnSummary::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CatReturnSummary::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CatReturnSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resultCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resultCount, allocator);
@@ -80,7 +79,7 @@ void CatReturnSummary::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_resultCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResultCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resultCode, allocator);
@@ -88,10 +87,10 @@ void CatReturnSummary::ToJsonObject(Value &value, Document::AllocatorType& alloc
 
     if (m_errorReasonHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorReason";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_errorReason.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorReason.c_str(), allocator).Move(), allocator);
     }
 
 }

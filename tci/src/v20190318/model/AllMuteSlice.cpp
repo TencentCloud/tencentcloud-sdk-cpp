@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 AllMuteSlice::AllMuteSlice() :
@@ -28,7 +27,7 @@ AllMuteSlice::AllMuteSlice() :
 {
 }
 
-CoreInternalOutcome AllMuteSlice::Deserialize(const Value &value)
+CoreInternalOutcome AllMuteSlice::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -38,8 +37,8 @@ CoreInternalOutcome AllMuteSlice::Deserialize(const Value &value)
         if (!value["MuteSlice"].IsArray())
             return CoreInternalOutcome(Error("response `AllMuteSlice.MuteSlice` is not array type"));
 
-        const Value &tmpValue = value["MuteSlice"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["MuteSlice"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MuteSlice item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -77,27 +76,27 @@ CoreInternalOutcome AllMuteSlice::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AllMuteSlice::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AllMuteSlice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_muteSliceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MuteSlice";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_muteSlice.begin(); itr != m_muteSlice.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_muteRatioHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MuteRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_muteRatio, allocator);
@@ -105,7 +104,7 @@ void AllMuteSlice::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_totalMuteDurationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalMuteDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalMuteDuration, allocator);

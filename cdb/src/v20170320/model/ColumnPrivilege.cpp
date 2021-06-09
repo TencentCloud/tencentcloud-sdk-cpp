@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 ColumnPrivilege::ColumnPrivilege() :
@@ -29,7 +28,7 @@ ColumnPrivilege::ColumnPrivilege() :
 {
 }
 
-CoreInternalOutcome ColumnPrivilege::Deserialize(const Value &value)
+CoreInternalOutcome ColumnPrivilege::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome ColumnPrivilege::Deserialize(const Value &value)
         if (!value["Privileges"].IsArray())
             return CoreInternalOutcome(Error("response `ColumnPrivilege.Privileges` is not array type"));
 
-        const Value &tmpValue = value["Privileges"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Privileges"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_privileges.push_back((*itr).GetString());
         }
@@ -81,43 +80,43 @@ CoreInternalOutcome ColumnPrivilege::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ColumnPrivilege::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ColumnPrivilege::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_databaseHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Database";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_database.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_database.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Table";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_table.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_table.c_str(), allocator).Move(), allocator);
     }
 
     if (m_columnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Column";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_column.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_column.c_str(), allocator).Move(), allocator);
     }
 
     if (m_privilegesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Privileges";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_privileges.begin(); itr != m_privileges.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

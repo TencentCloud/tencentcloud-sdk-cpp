@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Sqlserver::V20180328::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribePublishSubscribeRequest::DescribePublishSubscribeRequest() :
@@ -38,38 +37,38 @@ DescribePublishSubscribeRequest::DescribePublishSubscribeRequest() :
 
 string DescribePublishSubscribeRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pubOrSubInstanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PubOrSubInstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_pubOrSubInstanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pubOrSubInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pubOrSubInstanceIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PubOrSubInstanceIp";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_pubOrSubInstanceIp.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pubOrSubInstanceIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publishSubscribeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishSubscribeId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_publishSubscribeId, allocator);
@@ -77,31 +76,31 @@ string DescribePublishSubscribeRequest::ToJsonString() const
 
     if (m_publishSubscribeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishSubscribeName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_publishSubscribeName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_publishSubscribeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publishDBNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublishDBName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_publishDBName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_publishDBName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subscribeDBNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubscribeDBName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_subscribeDBName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subscribeDBName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
@@ -109,15 +108,15 @@ string DescribePublishSubscribeRequest::ToJsonString() const
 
     if (m_limitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

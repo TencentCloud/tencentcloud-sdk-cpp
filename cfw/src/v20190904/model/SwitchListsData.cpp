@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cfw::V20190904::Model;
-using namespace rapidjson;
 using namespace std;
 
 SwitchListsData::SwitchListsData() :
@@ -38,7 +37,7 @@ SwitchListsData::SwitchListsData() :
 {
 }
 
-CoreInternalOutcome SwitchListsData::Deserialize(const Value &value)
+CoreInternalOutcome SwitchListsData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -177,60 +176,60 @@ CoreInternalOutcome SwitchListsData::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SwitchListsData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SwitchListsData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_publicIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_publicIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_intranetIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IntranetIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_intranetIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_intranetIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_assetTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AssetType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_assetType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_areaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_area.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
     if (m_switchHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_switch, allocator);
@@ -238,7 +237,7 @@ void SwitchListsData::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -246,7 +245,7 @@ void SwitchListsData::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_publicIpTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PublicIpType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publicIpType, allocator);
@@ -254,7 +253,7 @@ void SwitchListsData::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_portTimesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PortTimes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_portTimes, allocator);
@@ -262,23 +261,23 @@ void SwitchListsData::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_lastTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_lastTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scanModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScanMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_scanMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scanStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScanStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scanStatus, allocator);

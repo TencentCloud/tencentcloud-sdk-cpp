@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gme::V20180711::Model;
-using namespace rapidjson;
 using namespace std;
 
 RoomUser::RoomUser() :
@@ -27,7 +26,7 @@ RoomUser::RoomUser() :
 {
 }
 
-CoreInternalOutcome RoomUser::Deserialize(const Value &value)
+CoreInternalOutcome RoomUser::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome RoomUser::Deserialize(const Value &value)
         if (!value["Uins"].IsArray())
             return CoreInternalOutcome(Error("response `RoomUser.Uins` is not array type"));
 
-        const Value &tmpValue = value["Uins"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Uins"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_uins.push_back((*itr).GetUint64());
         }
@@ -59,12 +58,12 @@ CoreInternalOutcome RoomUser::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RoomUser::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RoomUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_roomIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoomId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_roomId, allocator);
@@ -72,14 +71,14 @@ void RoomUser::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_uinsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uins";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_uins.begin(); itr != m_uins.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetUint64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 

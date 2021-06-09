@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Drm::V20181115::Model;
-using namespace rapidjson;
 using namespace std;
 
 ModifyFairPlayPemRequest::ModifyFairPlayPemRequest() :
@@ -35,30 +34,30 @@ ModifyFairPlayPemRequest::ModifyFairPlayPemRequest() :
 
 string ModifyFairPlayPemRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_pemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pem";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_pem.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pem.c_str(), allocator).Move(), allocator);
     }
 
     if (m_askHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ask";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_ask.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ask.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fairPlayPemIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FairPlayPemId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fairPlayPemId, allocator);
@@ -66,15 +65,15 @@ string ModifyFairPlayPemRequest::ToJsonString() const
 
     if (m_pemDecryptKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PemDecryptKey";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_pemDecryptKey.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pemDecryptKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bailorIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BailorId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bailorId, allocator);
@@ -82,15 +81,15 @@ string ModifyFairPlayPemRequest::ToJsonString() const
 
     if (m_priorityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Priority";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_priority, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeProxyAndStatisticsListenersResponse::DescribeProxyAndStatisticsListenersResponse() :
@@ -32,7 +31,7 @@ DescribeProxyAndStatisticsListenersResponse::DescribeProxyAndStatisticsListeners
 
 CoreInternalOutcome DescribeProxyAndStatisticsListenersResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeProxyAndStatisticsListenersResponse::Deserialize(con
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeProxyAndStatisticsListenersResponse::Deserialize(con
         if (!rsp["ProxySet"].IsArray())
             return CoreInternalOutcome(Error("response `ProxySet` is not array type"));
 
-        const Value &tmpValue = rsp["ProxySet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ProxySet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ProxySimpleInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

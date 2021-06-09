@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 PersonProfile::PersonProfile() :
@@ -32,7 +31,7 @@ PersonProfile::PersonProfile() :
 {
 }
 
-CoreInternalOutcome PersonProfile::Deserialize(const Value &value)
+CoreInternalOutcome PersonProfile::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,20 +110,20 @@ CoreInternalOutcome PersonProfile::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PersonProfile::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PersonProfile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_personIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_genderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gender, allocator);
@@ -132,7 +131,7 @@ void PersonProfile::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_ageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Age";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_age, allocator);
@@ -140,15 +139,15 @@ void PersonProfile::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_firstArrivedTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FirstArrivedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_firstArrivedTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstArrivedTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_arrivedCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ArrivedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_arrivedCount, allocator);
@@ -156,15 +155,15 @@ void PersonProfile::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_picUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PicUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_picUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_picUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_similarityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Similarity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_similarity, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20210527::Model;
-using namespace rapidjson;
 using namespace std;
 
 MonitorFloatMetricSeriesData::MonitorFloatMetricSeriesData() :
@@ -27,7 +26,7 @@ MonitorFloatMetricSeriesData::MonitorFloatMetricSeriesData() :
 {
 }
 
-CoreInternalOutcome MonitorFloatMetricSeriesData::Deserialize(const Value &value)
+CoreInternalOutcome MonitorFloatMetricSeriesData::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome MonitorFloatMetricSeriesData::Deserialize(const Value &value
         if (!value["Series"].IsArray())
             return CoreInternalOutcome(Error("response `MonitorFloatMetricSeriesData.Series` is not array type"));
 
-        const Value &tmpValue = value["Series"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Series"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MonitorFloatMetric item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -57,8 +56,8 @@ CoreInternalOutcome MonitorFloatMetricSeriesData::Deserialize(const Value &value
         if (!value["Timestamp"].IsArray())
             return CoreInternalOutcome(Error("response `MonitorFloatMetricSeriesData.Timestamp` is not array type"));
 
-        const Value &tmpValue = value["Timestamp"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Timestamp"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_timestamp.push_back((*itr).GetInt64());
         }
@@ -69,34 +68,34 @@ CoreInternalOutcome MonitorFloatMetricSeriesData::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void MonitorFloatMetricSeriesData::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void MonitorFloatMetricSeriesData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_seriesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Series";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_series.begin(); itr != m_series.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_timestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Timestamp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_timestamp.begin(); itr != m_timestamp.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

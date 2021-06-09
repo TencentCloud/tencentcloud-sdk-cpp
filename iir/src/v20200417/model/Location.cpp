@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iir::V20200417::Model;
-using namespace rapidjson;
 using namespace std;
 
 Location::Location() :
@@ -29,7 +28,7 @@ Location::Location() :
 {
 }
 
-CoreInternalOutcome Location::Deserialize(const Value &value)
+CoreInternalOutcome Location::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome Location::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Location::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Location::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_xMinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "XMin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_xMin, allocator);
@@ -91,7 +90,7 @@ void Location::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_yMinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "YMin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_yMin, allocator);
@@ -99,7 +98,7 @@ void Location::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_xMaxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "XMax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_xMax, allocator);
@@ -107,7 +106,7 @@ void Location::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_yMaxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "YMax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_yMax, allocator);

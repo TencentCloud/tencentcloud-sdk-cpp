@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 DischargeDiagnosis::DischargeDiagnosis() :
@@ -30,7 +29,7 @@ DischargeDiagnosis::DischargeDiagnosis() :
 {
 }
 
-CoreInternalOutcome DischargeDiagnosis::Deserialize(const Value &value)
+CoreInternalOutcome DischargeDiagnosis::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -117,12 +116,12 @@ CoreInternalOutcome DischargeDiagnosis::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DischargeDiagnosis::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DischargeDiagnosis::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_tableIndexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TableIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tableIndex, allocator);
@@ -130,37 +129,37 @@ void DischargeDiagnosis::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_outDiagnosisHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutDiagnosis";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_outDiagnosis.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_diseaseCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiseaseCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_diseaseCode.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_inStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_inStatus.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_outStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_outStatus.ToJsonObject(value[key.c_str()], allocator);
     }
 

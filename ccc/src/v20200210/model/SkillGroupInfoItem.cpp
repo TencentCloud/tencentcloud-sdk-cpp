@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ccc::V20200210::Model;
-using namespace rapidjson;
 using namespace std;
 
 SkillGroupInfoItem::SkillGroupInfoItem() :
@@ -32,7 +31,7 @@ SkillGroupInfoItem::SkillGroupInfoItem() :
 {
 }
 
-CoreInternalOutcome SkillGroupInfoItem::Deserialize(const Value &value)
+CoreInternalOutcome SkillGroupInfoItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,12 +110,12 @@ CoreInternalOutcome SkillGroupInfoItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SkillGroupInfoItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SkillGroupInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_skillGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SkillGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_skillGroupId, allocator);
@@ -124,31 +123,31 @@ void SkillGroupInfoItem::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_skillGroupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SkillGroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_skillGroupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_skillGroupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_routePolicyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoutePolicy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_routePolicy.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routePolicy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_usingLastSeatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UsingLastSeat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usingLastSeat, allocator);
@@ -156,7 +155,7 @@ void SkillGroupInfoItem::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_maxConcurrencyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxConcurrency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxConcurrency, allocator);
@@ -164,7 +163,7 @@ void SkillGroupInfoItem::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_lastModifyTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LastModifyTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastModifyTimestamp, allocator);

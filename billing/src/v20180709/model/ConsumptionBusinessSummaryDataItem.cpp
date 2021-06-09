@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Billing::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 ConsumptionBusinessSummaryDataItem::ConsumptionBusinessSummaryDataItem() :
@@ -29,7 +28,7 @@ ConsumptionBusinessSummaryDataItem::ConsumptionBusinessSummaryDataItem() :
 {
 }
 
-CoreInternalOutcome ConsumptionBusinessSummaryDataItem::Deserialize(const Value &value)
+CoreInternalOutcome ConsumptionBusinessSummaryDataItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -85,39 +84,39 @@ CoreInternalOutcome ConsumptionBusinessSummaryDataItem::Deserialize(const Value 
     return CoreInternalOutcome(true);
 }
 
-void ConsumptionBusinessSummaryDataItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ConsumptionBusinessSummaryDataItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_businessCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BusinessCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_businessCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_businessCodeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BusinessCodeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_businessCodeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessCodeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_realTotalCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realTotalCost.c_str(), allocator).Move(), allocator);
     }
 
     if (m_trendHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Trend";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_trend.ToJsonObject(value[key.c_str()], allocator);
     }
 

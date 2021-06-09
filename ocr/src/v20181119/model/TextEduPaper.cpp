@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
-using namespace rapidjson;
 using namespace std;
 
 TextEduPaper::TextEduPaper() :
@@ -28,7 +27,7 @@ TextEduPaper::TextEduPaper() :
 {
 }
 
-CoreInternalOutcome TextEduPaper::Deserialize(const Value &value)
+CoreInternalOutcome TextEduPaper::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -74,31 +73,31 @@ CoreInternalOutcome TextEduPaper::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TextEduPaper::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TextEduPaper::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_itemHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Item";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_item.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_item.c_str(), allocator).Move(), allocator);
     }
 
     if (m_detectedTextHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DetectedText";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_detectedText.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_detectedText.c_str(), allocator).Move(), allocator);
     }
 
     if (m_itemcoordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Itemcoord";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_itemcoord.ToJsonObject(value[key.c_str()], allocator);
     }
 

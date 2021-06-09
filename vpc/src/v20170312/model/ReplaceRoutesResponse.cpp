@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReplaceRoutesResponse::ReplaceRoutesResponse() :
@@ -32,7 +31,7 @@ ReplaceRoutesResponse::ReplaceRoutesResponse() :
 
 CoreInternalOutcome ReplaceRoutesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome ReplaceRoutesResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome ReplaceRoutesResponse::Deserialize(const string &payload)
         if (!rsp["OldRouteSet"].IsArray())
             return CoreInternalOutcome(Error("response `OldRouteSet` is not array type"));
 
-        const Value &tmpValue = rsp["OldRouteSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["OldRouteSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Route item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -89,8 +88,8 @@ CoreInternalOutcome ReplaceRoutesResponse::Deserialize(const string &payload)
         if (!rsp["NewRouteSet"].IsArray())
             return CoreInternalOutcome(Error("response `NewRouteSet` is not array type"));
 
-        const Value &tmpValue = rsp["NewRouteSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["NewRouteSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Route item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

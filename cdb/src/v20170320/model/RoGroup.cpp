@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 RoGroup::RoGroup() :
@@ -40,7 +39,7 @@ RoGroup::RoGroup() :
 {
 }
 
-CoreInternalOutcome RoGroup::Deserialize(const Value &value)
+CoreInternalOutcome RoGroup::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -130,8 +129,8 @@ CoreInternalOutcome RoGroup::Deserialize(const Value &value)
         if (!value["RoInstances"].IsArray())
             return CoreInternalOutcome(Error("response `RoGroup.RoInstances` is not array type"));
 
-        const Value &tmpValue = value["RoInstances"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RoInstances"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             RoInstanceInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -209,36 +208,36 @@ CoreInternalOutcome RoGroup::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RoGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RoGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_roGroupModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoGroupMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_roGroupMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roGroupMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roGroupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoGroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_roGroupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roGroupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoGroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_roGroupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roGroupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roOfflineDelayHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoOfflineDelay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_roOfflineDelay, allocator);
@@ -246,7 +245,7 @@ void RoGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_roMaxDelayTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoMaxDelayTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_roMaxDelayTime, allocator);
@@ -254,7 +253,7 @@ void RoGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_minRoInGroupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinRoInGroup";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minRoInGroup, allocator);
@@ -262,15 +261,15 @@ void RoGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_weightModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WeightMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_weightMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_weightMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_weightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Weight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_weight, allocator);
@@ -278,30 +277,30 @@ void RoGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_roInstancesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoInstances";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_roInstances.begin(); itr != m_roInstances.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_vipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vportHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vport";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vport, allocator);
@@ -309,34 +308,34 @@ void RoGroup::ToJsonObject(Value &value, Document::AllocatorType& allocator) con
 
     if (m_uniqVpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UniqVpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_uniqSubnetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UniqSubnetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roGroupRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoGroupRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_roGroupRegion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roGroupRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roGroupZoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RoGroupZone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_roGroupZone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roGroupZone.c_str(), allocator).Move(), allocator);
     }
 
 }

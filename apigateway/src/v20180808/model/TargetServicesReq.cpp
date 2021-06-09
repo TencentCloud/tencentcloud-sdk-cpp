@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apigateway::V20180808::Model;
-using namespace rapidjson;
 using namespace std;
 
 TargetServicesReq::TargetServicesReq() :
@@ -30,7 +29,7 @@ TargetServicesReq::TargetServicesReq() :
 {
 }
 
-CoreInternalOutcome TargetServicesReq::Deserialize(const Value &value)
+CoreInternalOutcome TargetServicesReq::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome TargetServicesReq::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TargetServicesReq::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TargetServicesReq::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_vmIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VmIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vmIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vmIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vmPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VmPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vmPort, allocator);
@@ -118,18 +117,18 @@ void TargetServicesReq::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_hostIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HostIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_hostIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dockerIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DockerIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dockerIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dockerIp.c_str(), allocator).Move(), allocator);
     }
 
 }

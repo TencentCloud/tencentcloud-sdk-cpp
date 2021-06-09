@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeDeviceResponse::DescribeDeviceResponse() :
@@ -54,7 +53,7 @@ DescribeDeviceResponse::DescribeDeviceResponse() :
 
 CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -64,7 +63,7 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -161,8 +160,8 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
         if (!rsp["Tags"].IsArray())
             return CoreInternalOutcome(Error("response `Tags` is not array type"));
 
-        const Value &tmpValue = rsp["Tags"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DeviceTag item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -311,8 +310,8 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
         if (!rsp["Labels"].IsArray())
             return CoreInternalOutcome(Error("response `Labels` is not array type"));
 
-        const Value &tmpValue = rsp["Labels"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Labels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DeviceLabel item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

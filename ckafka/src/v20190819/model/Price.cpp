@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ckafka::V20190819::Model;
-using namespace rapidjson;
 using namespace std;
 
 Price::Price() :
@@ -27,7 +26,7 @@ Price::Price() :
 {
 }
 
-CoreInternalOutcome Price::Deserialize(const Value &value)
+CoreInternalOutcome Price::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome Price::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Price::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Price::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_realTotalCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realTotalCost, allocator);
@@ -69,7 +68,7 @@ void Price::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_totalCostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCost, allocator);

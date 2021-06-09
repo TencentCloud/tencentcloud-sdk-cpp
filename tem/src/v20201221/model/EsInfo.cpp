@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tem::V20201221::Model;
-using namespace rapidjson;
 using namespace std;
 
 EsInfo::EsInfo() :
@@ -30,7 +29,7 @@ EsInfo::EsInfo() :
 {
 }
 
-CoreInternalOutcome EsInfo::Deserialize(const Value &value)
+CoreInternalOutcome EsInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,12 +88,12 @@ CoreInternalOutcome EsInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_minAliveInstancesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinAliveInstances";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minAliveInstances, allocator);
@@ -102,7 +101,7 @@ void EsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_maxAliveInstancesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxAliveInstances";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxAliveInstances, allocator);
@@ -110,7 +109,7 @@ void EsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_esStrategyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EsStrategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_esStrategy, allocator);
@@ -118,7 +117,7 @@ void EsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_thresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Threshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_threshold, allocator);
@@ -126,10 +125,10 @@ void EsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) cons
 
     if (m_versionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VersionId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_versionId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
     }
 
 }

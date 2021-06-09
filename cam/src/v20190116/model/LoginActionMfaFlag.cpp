@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cam::V20190116::Model;
-using namespace rapidjson;
 using namespace std;
 
 LoginActionMfaFlag::LoginActionMfaFlag() :
@@ -28,7 +27,7 @@ LoginActionMfaFlag::LoginActionMfaFlag() :
 {
 }
 
-CoreInternalOutcome LoginActionMfaFlag::Deserialize(const Value &value)
+CoreInternalOutcome LoginActionMfaFlag::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,12 +66,12 @@ CoreInternalOutcome LoginActionMfaFlag::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void LoginActionMfaFlag::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void LoginActionMfaFlag::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_phoneHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Phone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_phone, allocator);
@@ -80,7 +79,7 @@ void LoginActionMfaFlag::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_stokenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Stoken";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stoken, allocator);
@@ -88,7 +87,7 @@ void LoginActionMfaFlag::ToJsonObject(Value &value, Document::AllocatorType& all
 
     if (m_wechatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Wechat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wechat, allocator);

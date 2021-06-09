@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mgobe::V20201014::Model;
-using namespace rapidjson;
 using namespace std;
 
 Room::Room() :
@@ -42,7 +41,7 @@ Room::Room() :
 {
 }
 
-CoreInternalOutcome Room::Deserialize(const Value &value)
+CoreInternalOutcome Room::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -92,8 +91,8 @@ CoreInternalOutcome Room::Deserialize(const Value &value)
         if (!value["Players"].IsArray())
             return CoreInternalOutcome(Error("response `Room.Players` is not array type"));
 
-        const Value &tmpValue = value["Players"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Players"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Player item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -112,8 +111,8 @@ CoreInternalOutcome Room::Deserialize(const Value &value)
         if (!value["Teams"].IsArray())
             return CoreInternalOutcome(Error("response `Room.Teams` is not array type"));
 
-        const Value &tmpValue = value["Teams"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Teams"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Team item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -241,20 +240,20 @@ CoreInternalOutcome Room::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Room::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Room::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxPlayersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxPlayers";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxPlayers, allocator);
@@ -262,15 +261,15 @@ void Room::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_ownerOpenIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OwnerOpenId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ownerOpenId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerOpenId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isPrivateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsPrivate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isPrivate, allocator);
@@ -278,53 +277,53 @@ void Room::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_playersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Players";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_players.begin(); itr != m_players.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_teamsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Teams";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_teams.begin(); itr != m_teams.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createType, allocator);
@@ -332,15 +331,15 @@ void Room::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_customPropertiesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomProperties";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_customProperties.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customProperties.c_str(), allocator).Move(), allocator);
     }
 
     if (m_frameSyncStateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FrameSyncState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frameSyncState, allocator);
@@ -348,7 +347,7 @@ void Room::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_frameRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FrameRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_frameRate, allocator);
@@ -356,15 +355,15 @@ void Room::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_routeIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RouteId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_routeId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -372,7 +371,7 @@ void Room::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_startGameTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartGameTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startGameTime, allocator);
@@ -380,7 +379,7 @@ void Room::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_isForbidJoinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsForbidJoin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isForbidJoin, allocator);
@@ -388,10 +387,10 @@ void Room::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_ownerHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Owner";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_owner.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
     }
 
 }

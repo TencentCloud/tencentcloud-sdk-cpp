@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageTransform::ImageTransform() :
@@ -28,7 +27,7 @@ ImageTransform::ImageTransform() :
 {
 }
 
-CoreInternalOutcome ImageTransform::Deserialize(const Value &value)
+CoreInternalOutcome ImageTransform::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome ImageTransform::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageTransform::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageTransform::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rotateAngleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RotateAngle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rotateAngle, allocator);
@@ -88,10 +87,10 @@ void ImageTransform::ToJsonObject(Value &value, Document::AllocatorType& allocat
 
     if (m_flipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Flip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_flip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flip.c_str(), allocator).Move(), allocator);
     }
 
 }

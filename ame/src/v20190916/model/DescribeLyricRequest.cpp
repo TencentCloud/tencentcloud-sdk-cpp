@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Ame::V20190916::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeLyricRequest::DescribeLyricRequest() :
@@ -31,30 +30,30 @@ DescribeLyricRequest::DescribeLyricRequest() :
 
 string DescribeLyricRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_itemIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ItemId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_itemId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_itemId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subItemTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubItemType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, Value(m_subItemType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subItemType.c_str(), allocator).Move(), allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

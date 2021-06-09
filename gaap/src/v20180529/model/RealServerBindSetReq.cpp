@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
-using namespace rapidjson;
 using namespace std;
 
 RealServerBindSetReq::RealServerBindSetReq() :
@@ -30,7 +29,7 @@ RealServerBindSetReq::RealServerBindSetReq() :
 {
 }
 
-CoreInternalOutcome RealServerBindSetReq::Deserialize(const Value &value)
+CoreInternalOutcome RealServerBindSetReq::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,20 +88,20 @@ CoreInternalOutcome RealServerBindSetReq::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RealServerBindSetReq::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RealServerBindSetReq::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_realServerIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realServerId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realServerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_realServerPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realServerPort, allocator);
@@ -110,15 +109,15 @@ void RealServerBindSetReq::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_realServerIPHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerIP";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realServerIP.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realServerIP.c_str(), allocator).Move(), allocator);
     }
 
     if (m_realServerWeightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerWeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realServerWeight, allocator);
@@ -126,10 +125,10 @@ void RealServerBindSetReq::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_realServerFailoverRoleHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RealServerFailoverRole";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_realServerFailoverRole.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realServerFailoverRole.c_str(), allocator).Move(), allocator);
     }
 
 }

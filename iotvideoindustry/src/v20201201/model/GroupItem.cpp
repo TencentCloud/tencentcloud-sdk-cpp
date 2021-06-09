@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideoindustry::V20201201::Model;
-using namespace rapidjson;
 using namespace std;
 
 GroupItem::GroupItem() :
@@ -36,7 +35,7 @@ GroupItem::GroupItem() :
 {
 }
 
-CoreInternalOutcome GroupItem::Deserialize(const Value &value)
+CoreInternalOutcome GroupItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -155,52 +154,52 @@ CoreInternalOutcome GroupItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void GroupItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void GroupItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_groupNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parentIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParentId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_parentId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupDescribeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupDescribe";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupDescribe.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupDescribe.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deviceNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DeviceNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deviceNum, allocator);
@@ -208,7 +207,7 @@ void GroupItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_subGroupNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubGroupNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subGroupNum, allocator);
@@ -216,23 +215,23 @@ void GroupItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_extraInformationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ExtraInformation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_extraInformation.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extraInformation.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_groupType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
@@ -240,7 +239,7 @@ void GroupItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_groupStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupStatus, allocator);

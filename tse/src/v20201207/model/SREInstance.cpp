@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tse::V20201207::Model;
-using namespace rapidjson;
 using namespace std;
 
 SREInstance::SREInstance() :
@@ -38,7 +37,7 @@ SREInstance::SREInstance() :
 {
 }
 
-CoreInternalOutcome SREInstance::Deserialize(const Value &value)
+CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -128,8 +127,8 @@ CoreInternalOutcome SREInstance::Deserialize(const Value &value)
         if (!value["SubnetIds"].IsArray())
             return CoreInternalOutcome(Error("response `SREInstance.SubnetIds` is not array type"));
 
-        const Value &tmpValue = value["SubnetIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SubnetIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_subnetIds.push_back((*itr).GetString());
         }
@@ -180,52 +179,52 @@ CoreInternalOutcome SREInstance::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SREInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_editionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Edition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_edition.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     if (m_specIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SpecId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_specId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_replicaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Replica";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replica, allocator);
@@ -233,36 +232,36 @@ void SREInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vpcId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subnetIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubnetIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_subnetIds.begin(); itr != m_subnetIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_enableStorageHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableStorage, allocator);
@@ -270,15 +269,15 @@ void SREInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_storageTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_storageType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageCapacityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StorageCapacity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storageCapacity, allocator);
@@ -286,10 +285,10 @@ void SREInstance::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_paymodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Paymode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_paymode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paymode.c_str(), allocator).Move(), allocator);
     }
 
 }

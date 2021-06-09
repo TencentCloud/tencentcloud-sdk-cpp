@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 SceneInfo::SceneInfo() :
@@ -28,7 +27,7 @@ SceneInfo::SceneInfo() :
 {
 }
 
-CoreInternalOutcome SceneInfo::Deserialize(const Value &value)
+CoreInternalOutcome SceneInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome SceneInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SceneInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SceneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_localeCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocaleCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_localeCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_localeCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regionCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regionCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userClientIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserClientIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userClientIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userClientIp.c_str(), allocator).Move(), allocator);
     }
 
 }

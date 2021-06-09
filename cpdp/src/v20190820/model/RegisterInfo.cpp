@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 RegisterInfo::RegisterInfo() :
@@ -31,7 +30,7 @@ RegisterInfo::RegisterInfo() :
 {
 }
 
-CoreInternalOutcome RegisterInfo::Deserialize(const Value &value)
+CoreInternalOutcome RegisterInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,55 +99,55 @@ CoreInternalOutcome RegisterInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RegisterInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RegisterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_legalPersonIdCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LegalPersonIdCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_legalPersonIdCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_legalPersonIdCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_legalPersonIdTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LegalPersonIdType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_legalPersonIdType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_legalPersonIdType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_legalPersonNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LegalPersonName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_legalPersonName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_legalPersonName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_organizationCodeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrganizationCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_organizationCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_organizationNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrganizationName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_organizationName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_organizationTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrganizationType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_organizationType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationType.c_str(), allocator).Move(), allocator);
     }
 
 }

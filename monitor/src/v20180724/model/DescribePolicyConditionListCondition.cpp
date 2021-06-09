@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribePolicyConditionListCondition::DescribePolicyConditionListCondition() :
@@ -33,7 +32,7 @@ DescribePolicyConditionListCondition::DescribePolicyConditionListCondition() :
 {
 }
 
-CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const Value &value)
+CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -53,8 +52,8 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const Valu
         if (!value["EventMetrics"].IsArray())
             return CoreInternalOutcome(Error("response `DescribePolicyConditionListCondition.EventMetrics` is not array type"));
 
-        const Value &tmpValue = value["EventMetrics"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["EventMetrics"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DescribePolicyConditionListEventMetric item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -83,8 +82,8 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const Valu
         if (!value["Metrics"].IsArray())
             return CoreInternalOutcome(Error("response `DescribePolicyConditionListCondition.Metrics` is not array type"));
 
-        const Value &tmpValue = value["Metrics"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Metrics"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DescribePolicyConditionListMetric item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -133,8 +132,8 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const Valu
         if (!value["SupportRegions"].IsArray())
             return CoreInternalOutcome(Error("response `DescribePolicyConditionListCondition.SupportRegions` is not array type"));
 
-        const Value &tmpValue = value["SupportRegions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SupportRegions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_supportRegions.push_back((*itr).GetString());
         }
@@ -145,35 +144,35 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const Valu
     return CoreInternalOutcome(true);
 }
 
-void DescribePolicyConditionListCondition::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribePolicyConditionListCondition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_policyViewNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PolicyViewName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_policyViewName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyViewName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eventMetricsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventMetrics";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_eventMetrics.begin(); itr != m_eventMetrics.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_isSupportMultiRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsSupportMultiRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSupportMultiRegion, allocator);
@@ -181,30 +180,30 @@ void DescribePolicyConditionListCondition::ToJsonObject(Value &value, Document::
 
     if (m_metricsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Metrics";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_metrics.begin(); itr != m_metrics.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sortIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SortId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sortId, allocator);
@@ -212,7 +211,7 @@ void DescribePolicyConditionListCondition::ToJsonObject(Value &value, Document::
 
     if (m_supportDefaultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SupportDefault";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportDefault, allocator);
@@ -220,14 +219,14 @@ void DescribePolicyConditionListCondition::ToJsonObject(Value &value, Document::
 
     if (m_supportRegionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SupportRegions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_supportRegions.begin(); itr != m_supportRegions.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

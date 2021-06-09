@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
-using namespace rapidjson;
 using namespace std;
 
 CloudBaseRunVolumeMount::CloudBaseRunVolumeMount() :
@@ -29,7 +28,7 @@ CloudBaseRunVolumeMount::CloudBaseRunVolumeMount() :
 {
 }
 
-CoreInternalOutcome CloudBaseRunVolumeMount::Deserialize(const Value &value)
+CoreInternalOutcome CloudBaseRunVolumeMount::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome CloudBaseRunVolumeMount::Deserialize(const Value &value)
         if (!value["NfsVolumes"].IsArray())
             return CoreInternalOutcome(Error("response `CloudBaseRunVolumeMount.NfsVolumes` is not array type"));
 
-        const Value &tmpValue = value["NfsVolumes"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["NfsVolumes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             CloudBaseRunNfsVolumeSource item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -88,28 +87,28 @@ CoreInternalOutcome CloudBaseRunVolumeMount::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CloudBaseRunVolumeMount::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CloudBaseRunVolumeMount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mountPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MountPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_mountPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadOnly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_readOnly, allocator);
@@ -117,15 +116,15 @@ void CloudBaseRunVolumeMount::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_nfsVolumesHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NfsVolumes";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_nfsVolumes.begin(); itr != m_nfsVolumes.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

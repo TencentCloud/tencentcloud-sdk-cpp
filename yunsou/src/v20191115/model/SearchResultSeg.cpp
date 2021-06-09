@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Yunsou::V20191115::Model;
-using namespace rapidjson;
 using namespace std;
 
 SearchResultSeg::SearchResultSeg() :
@@ -26,7 +25,7 @@ SearchResultSeg::SearchResultSeg() :
 {
 }
 
-CoreInternalOutcome SearchResultSeg::Deserialize(const Value &value)
+CoreInternalOutcome SearchResultSeg::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome SearchResultSeg::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SearchResultSeg::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SearchResultSeg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_segStrHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SegStr";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_segStr.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_segStr.c_str(), allocator).Move(), allocator);
     }
 
 }

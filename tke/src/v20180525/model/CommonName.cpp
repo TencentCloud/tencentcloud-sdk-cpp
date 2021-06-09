@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
-using namespace rapidjson;
 using namespace std;
 
 CommonName::CommonName() :
@@ -27,7 +26,7 @@ CommonName::CommonName() :
 {
 }
 
-CoreInternalOutcome CommonName::Deserialize(const Value &value)
+CoreInternalOutcome CommonName::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome CommonName::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CommonName::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CommonName::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_subaccountUinHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubaccountUin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subaccountUin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subaccountUin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cNHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CN";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cN.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cN.c_str(), allocator).Move(), allocator);
     }
 
 }

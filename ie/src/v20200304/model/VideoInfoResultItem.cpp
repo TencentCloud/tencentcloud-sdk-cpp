@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 VideoInfoResultItem::VideoInfoResultItem() :
@@ -34,7 +33,7 @@ VideoInfoResultItem::VideoInfoResultItem() :
 {
 }
 
-CoreInternalOutcome VideoInfoResultItem::Deserialize(const Value &value)
+CoreInternalOutcome VideoInfoResultItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome VideoInfoResultItem::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void VideoInfoResultItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void VideoInfoResultItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_streamHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Stream";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stream, allocator);
@@ -146,7 +145,7 @@ void VideoInfoResultItem::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_width, allocator);
@@ -154,7 +153,7 @@ void VideoInfoResultItem::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
@@ -162,7 +161,7 @@ void VideoInfoResultItem::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_bitrateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Bitrate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bitrate, allocator);
@@ -170,23 +169,23 @@ void VideoInfoResultItem::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_fpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Fps";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fps.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fps.c_str(), allocator).Move(), allocator);
     }
 
     if (m_codecHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Codec";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_codec.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_rotateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Rotate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rotate, allocator);
@@ -194,7 +193,7 @@ void VideoInfoResultItem::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_durationHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
@@ -202,10 +201,10 @@ void VideoInfoResultItem::ToJsonObject(Value &value, Document::AllocatorType& al
 
     if (m_pixFormatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PixFormat";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_pixFormat.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pixFormat.c_str(), allocator).Move(), allocator);
     }
 
 }

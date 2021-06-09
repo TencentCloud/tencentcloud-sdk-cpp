@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bmeip::V20180625::Model;
-using namespace rapidjson;
 using namespace std;
 
 EipRsMap::EipRsMap() :
@@ -27,7 +26,7 @@ EipRsMap::EipRsMap() :
 {
 }
 
-CoreInternalOutcome EipRsMap::Deserialize(const Value &value)
+CoreInternalOutcome EipRsMap::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome EipRsMap::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EipRsMap::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EipRsMap::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eipIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EipId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eipId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eipId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }

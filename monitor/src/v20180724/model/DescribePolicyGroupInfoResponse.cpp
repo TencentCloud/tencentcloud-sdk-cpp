@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribePolicyGroupInfoResponse::DescribePolicyGroupInfoResponse() :
@@ -47,7 +46,7 @@ DescribePolicyGroupInfoResponse::DescribePolicyGroupInfoResponse() :
 
 CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -57,7 +56,7 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -164,8 +163,8 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
         if (!rsp["Region"].IsArray())
             return CoreInternalOutcome(Error("response `Region` is not array type"));
 
-        const Value &tmpValue = rsp["Region"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["Region"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_region.push_back((*itr).GetString());
         }
@@ -177,8 +176,8 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
         if (!rsp["DimensionGroup"].IsArray())
             return CoreInternalOutcome(Error("response `DimensionGroup` is not array type"));
 
-        const Value &tmpValue = rsp["DimensionGroup"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DimensionGroup"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_dimensionGroup.push_back((*itr).GetString());
         }
@@ -190,8 +189,8 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
         if (!rsp["ConditionsConfig"].IsArray())
             return CoreInternalOutcome(Error("response `ConditionsConfig` is not array type"));
 
-        const Value &tmpValue = rsp["ConditionsConfig"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ConditionsConfig"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DescribePolicyGroupInfoCondition item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -210,8 +209,8 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
         if (!rsp["EventConfig"].IsArray())
             return CoreInternalOutcome(Error("response `EventConfig` is not array type"));
 
-        const Value &tmpValue = rsp["EventConfig"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["EventConfig"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DescribePolicyGroupInfoEventCondition item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -230,8 +229,8 @@ CoreInternalOutcome DescribePolicyGroupInfoResponse::Deserialize(const string &p
         if (!rsp["ReceiverInfos"].IsArray())
             return CoreInternalOutcome(Error("response `ReceiverInfos` is not array type"));
 
-        const Value &tmpValue = rsp["ReceiverInfos"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ReceiverInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             DescribePolicyGroupInfoReceiverInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

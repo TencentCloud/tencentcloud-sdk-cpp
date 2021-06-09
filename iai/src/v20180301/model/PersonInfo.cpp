@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iai::V20180301::Model;
-using namespace rapidjson;
 using namespace std;
 
 PersonInfo::PersonInfo() :
@@ -31,7 +30,7 @@ PersonInfo::PersonInfo() :
 {
 }
 
-CoreInternalOutcome PersonInfo::Deserialize(const Value &value)
+CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -71,8 +70,8 @@ CoreInternalOutcome PersonInfo::Deserialize(const Value &value)
         if (!value["PersonExDescriptions"].IsArray())
             return CoreInternalOutcome(Error("response `PersonInfo.PersonExDescriptions` is not array type"));
 
-        const Value &tmpValue = value["PersonExDescriptions"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PersonExDescriptions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_personExDescriptions.push_back((*itr).GetString());
         }
@@ -84,8 +83,8 @@ CoreInternalOutcome PersonInfo::Deserialize(const Value &value)
         if (!value["FaceIds"].IsArray())
             return CoreInternalOutcome(Error("response `PersonInfo.FaceIds` is not array type"));
 
-        const Value &tmpValue = value["FaceIds"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FaceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_faceIds.push_back((*itr).GetString());
         }
@@ -106,28 +105,28 @@ CoreInternalOutcome PersonInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PersonInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PersonInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_personNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_personName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_personIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_personId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_genderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Gender";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gender, allocator);
@@ -135,33 +134,33 @@ void PersonInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) 
 
     if (m_personExDescriptionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PersonExDescriptions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_personExDescriptions.begin(); itr != m_personExDescriptions.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_faceIdsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FaceIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_faceIds.begin(); itr != m_faceIds.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_creationTimestampHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreationTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_creationTimestamp, allocator);

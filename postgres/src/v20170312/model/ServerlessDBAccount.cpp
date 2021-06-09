@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Postgres::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ServerlessDBAccount::ServerlessDBAccount() :
@@ -28,7 +27,7 @@ ServerlessDBAccount::ServerlessDBAccount() :
 {
 }
 
-CoreInternalOutcome ServerlessDBAccount::Deserialize(const Value &value)
+CoreInternalOutcome ServerlessDBAccount::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,28 +66,28 @@ CoreInternalOutcome ServerlessDBAccount::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ServerlessDBAccount::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ServerlessDBAccount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dBUserHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DBUser";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dBUser.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBUser.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dBPasswordHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DBPassword";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dBPassword.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBPassword.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dBConnLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DBConnLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dBConnLimit, allocator);

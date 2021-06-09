@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdb::V20170320::Model;
-using namespace rapidjson;
 using namespace std;
 
 DatabasesWithCharacterLists::DatabasesWithCharacterLists() :
@@ -27,7 +26,7 @@ DatabasesWithCharacterLists::DatabasesWithCharacterLists() :
 {
 }
 
-CoreInternalOutcome DatabasesWithCharacterLists::Deserialize(const Value &value)
+CoreInternalOutcome DatabasesWithCharacterLists::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome DatabasesWithCharacterLists::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DatabasesWithCharacterLists::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DatabasesWithCharacterLists::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_databaseNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DatabaseName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_databaseName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_characterSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CharacterSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_characterSet.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_characterSet.c_str(), allocator).Move(), allocator);
     }
 
 }

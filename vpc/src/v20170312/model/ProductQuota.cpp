@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProductQuota::ProductQuota() :
@@ -30,7 +29,7 @@ ProductQuota::ProductQuota() :
 {
 }
 
-CoreInternalOutcome ProductQuota::Deserialize(const Value &value)
+CoreInternalOutcome ProductQuota::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,28 +88,28 @@ CoreInternalOutcome ProductQuota::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProductQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProductQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_quotaIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QuotaId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_quotaId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quotaId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_quotaNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QuotaName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_quotaName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quotaName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_quotaCurrentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QuotaCurrent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quotaCurrent, allocator);
@@ -118,7 +117,7 @@ void ProductQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_quotaLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QuotaLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quotaLimit, allocator);
@@ -126,7 +125,7 @@ void ProductQuota::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_quotaRegionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "QuotaRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quotaRegion, allocator);

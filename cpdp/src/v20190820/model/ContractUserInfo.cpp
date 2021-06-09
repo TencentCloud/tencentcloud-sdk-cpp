@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 ContractUserInfo::ContractUserInfo() :
@@ -27,7 +26,7 @@ ContractUserInfo::ContractUserInfo() :
 {
 }
 
-CoreInternalOutcome ContractUserInfo::Deserialize(const Value &value)
+CoreInternalOutcome ContractUserInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome ContractUserInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ContractUserInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ContractUserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_userTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 }

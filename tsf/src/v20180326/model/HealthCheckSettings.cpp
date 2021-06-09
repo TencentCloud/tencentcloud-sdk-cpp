@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tsf::V20180326::Model;
-using namespace rapidjson;
 using namespace std;
 
 HealthCheckSettings::HealthCheckSettings() :
@@ -27,7 +26,7 @@ HealthCheckSettings::HealthCheckSettings() :
 {
 }
 
-CoreInternalOutcome HealthCheckSettings::Deserialize(const Value &value)
+CoreInternalOutcome HealthCheckSettings::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -70,24 +69,24 @@ CoreInternalOutcome HealthCheckSettings::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HealthCheckSettings::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HealthCheckSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_livenessProbeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LivenessProbe";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_livenessProbe.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_readinessProbeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReadinessProbe";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_readinessProbe.ToJsonObject(value[key.c_str()], allocator);
     }
 

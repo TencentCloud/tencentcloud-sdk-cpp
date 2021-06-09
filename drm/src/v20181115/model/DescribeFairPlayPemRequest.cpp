@@ -20,7 +20,6 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using namespace TencentCloud::Drm::V20181115::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeFairPlayPemRequest::DescribeFairPlayPemRequest() :
@@ -31,14 +30,14 @@ DescribeFairPlayPemRequest::DescribeFairPlayPemRequest() :
 
 string DescribeFairPlayPemRequest::ToJsonString() const
 {
-    Document d;
+    rapidjson::Document d;
     d.SetObject();
-    Document::AllocatorType& allocator = d.GetAllocator();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
     if (m_bailorIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BailorId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bailorId, allocator);
@@ -46,15 +45,15 @@ string DescribeFairPlayPemRequest::ToJsonString() const
 
     if (m_fairPlayPemIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FairPlayPemId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fairPlayPemId, allocator);
     }
 
 
-    StringBuffer buffer;
-    Writer<StringBuffer> writer(buffer);
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     d.Accept(writer);
     return buffer.GetString();
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProductInstanceRecource::ProductInstanceRecource() :
@@ -28,7 +27,7 @@ ProductInstanceRecource::ProductInstanceRecource() :
 {
 }
 
-CoreInternalOutcome ProductInstanceRecource::Deserialize(const Value &value)
+CoreInternalOutcome ProductInstanceRecource::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,20 +66,20 @@ CoreInternalOutcome ProductInstanceRecource::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProductInstanceRecource::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProductInstanceRecource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_resourceTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_amountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Amount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_amount, allocator);
@@ -88,7 +87,7 @@ void ProductInstanceRecource::ToJsonObject(Value &value, Document::AllocatorType
 
     if (m_leftHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Left";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_left, allocator);

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 AiRecognitionTaskObjectSeqmentItem::AiRecognitionTaskObjectSeqmentItem() :
@@ -29,7 +28,7 @@ AiRecognitionTaskObjectSeqmentItem::AiRecognitionTaskObjectSeqmentItem() :
 {
 }
 
-CoreInternalOutcome AiRecognitionTaskObjectSeqmentItem::Deserialize(const Value &value)
+CoreInternalOutcome AiRecognitionTaskObjectSeqmentItem::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -69,8 +68,8 @@ CoreInternalOutcome AiRecognitionTaskObjectSeqmentItem::Deserialize(const Value 
         if (!value["AreaCoordSet"].IsArray())
             return CoreInternalOutcome(Error("response `AiRecognitionTaskObjectSeqmentItem.AreaCoordSet` is not array type"));
 
-        const Value &tmpValue = value["AreaCoordSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["AreaCoordSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_areaCoordSet.push_back((*itr).GetInt64());
         }
@@ -81,12 +80,12 @@ CoreInternalOutcome AiRecognitionTaskObjectSeqmentItem::Deserialize(const Value 
     return CoreInternalOutcome(true);
 }
 
-void AiRecognitionTaskObjectSeqmentItem::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AiRecognitionTaskObjectSeqmentItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_startTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTimeOffset, allocator);
@@ -94,7 +93,7 @@ void AiRecognitionTaskObjectSeqmentItem::ToJsonObject(Value &value, Document::Al
 
     if (m_endTimeOffsetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
@@ -102,7 +101,7 @@ void AiRecognitionTaskObjectSeqmentItem::ToJsonObject(Value &value, Document::Al
 
     if (m_confidenceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
@@ -110,14 +109,14 @@ void AiRecognitionTaskObjectSeqmentItem::ToJsonObject(Value &value, Document::Al
 
     if (m_areaCoordSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AreaCoordSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_areaCoordSet.begin(); itr != m_areaCoordSet.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

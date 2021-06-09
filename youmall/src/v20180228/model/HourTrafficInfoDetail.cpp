@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Youmall::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 HourTrafficInfoDetail::HourTrafficInfoDetail() :
@@ -27,7 +26,7 @@ HourTrafficInfoDetail::HourTrafficInfoDetail() :
 {
 }
 
-CoreInternalOutcome HourTrafficInfoDetail::Deserialize(const Value &value)
+CoreInternalOutcome HourTrafficInfoDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,12 +55,12 @@ CoreInternalOutcome HourTrafficInfoDetail::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HourTrafficInfoDetail::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HourTrafficInfoDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_hourHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hour";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hour, allocator);
@@ -69,7 +68,7 @@ void HourTrafficInfoDetail::ToJsonObject(Value &value, Document::AllocatorType& 
 
     if (m_hourTrafficTotalCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HourTrafficTotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hourTrafficTotalCount, allocator);

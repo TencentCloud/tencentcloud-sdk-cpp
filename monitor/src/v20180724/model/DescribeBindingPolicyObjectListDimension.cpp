@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeBindingPolicyObjectListDimension::DescribeBindingPolicyObjectListDimension() :
@@ -29,7 +28,7 @@ DescribeBindingPolicyObjectListDimension::DescribeBindingPolicyObjectListDimensi
 {
 }
 
-CoreInternalOutcome DescribeBindingPolicyObjectListDimension::Deserialize(const Value &value)
+CoreInternalOutcome DescribeBindingPolicyObjectListDimension::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome DescribeBindingPolicyObjectListDimension::Deserialize(const 
     return CoreInternalOutcome(true);
 }
 
-void DescribeBindingPolicyObjectListDimension::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DescribeBindingPolicyObjectListDimension::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionId, allocator);
@@ -91,26 +90,26 @@ void DescribeBindingPolicyObjectListDimension::ToJsonObject(Value &value, Docume
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_region.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dimensionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Dimensions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dimensions.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dimensions.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eventDimensionsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventDimensions";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eventDimensions.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventDimensions.c_str(), allocator).Move(), allocator);
     }
 
 }

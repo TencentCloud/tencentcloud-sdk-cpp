@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mvj::V20190926::Model;
-using namespace rapidjson;
 using namespace std;
 
 Data::Data() :
@@ -29,7 +28,7 @@ Data::Data() :
 {
 }
 
-CoreInternalOutcome Data::Deserialize(const Value &value)
+CoreInternalOutcome Data::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,12 +77,12 @@ CoreInternalOutcome Data::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Data::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Data::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_postTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PostTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_postTime, allocator);
@@ -91,23 +90,23 @@ void Data::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
 
     if (m_uidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valueScoreHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ValueScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_valueScore, allocator);

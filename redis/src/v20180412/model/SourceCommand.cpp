@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 SourceCommand::SourceCommand() :
@@ -27,7 +26,7 @@ SourceCommand::SourceCommand() :
 {
 }
 
-CoreInternalOutcome SourceCommand::Deserialize(const Value &value)
+CoreInternalOutcome SourceCommand::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,20 +55,20 @@ CoreInternalOutcome SourceCommand::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SourceCommand::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SourceCommand::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_cmdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cmd";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cmd.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmd.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);

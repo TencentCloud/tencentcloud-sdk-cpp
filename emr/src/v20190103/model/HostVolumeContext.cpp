@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
-using namespace rapidjson;
 using namespace std;
 
 HostVolumeContext::HostVolumeContext() :
@@ -26,7 +25,7 @@ HostVolumeContext::HostVolumeContext() :
 {
 }
 
-CoreInternalOutcome HostVolumeContext::Deserialize(const Value &value)
+CoreInternalOutcome HostVolumeContext::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome HostVolumeContext::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void HostVolumeContext::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void HostVolumeContext::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_volumePathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VolumePath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_volumePath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_volumePath.c_str(), allocator).Move(), allocator);
     }
 
 }

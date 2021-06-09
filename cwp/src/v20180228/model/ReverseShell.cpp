@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
-using namespace rapidjson;
 using namespace std;
 
 ReverseShell::ReverseShell() :
@@ -44,7 +43,7 @@ ReverseShell::ReverseShell() :
 {
 }
 
-CoreInternalOutcome ReverseShell::Deserialize(const Value &value)
+CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -243,12 +242,12 @@ CoreInternalOutcome ReverseShell::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ReverseShell::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ReverseShell::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -256,39 +255,39 @@ void ReverseShell::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_uuidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_uuid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_quuidHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_quuid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hostipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Hostip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_hostip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstIpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_dstIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dstIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dstPortHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dstPort, allocator);
@@ -296,79 +295,79 @@ void ReverseShell::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_processNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProcessName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_processName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fullPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FullPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_fullPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cmdLineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CmdLine";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_cmdLine.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmdLine.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userGroupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserGroup";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_userGroup.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userGroup.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parentProcNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParentProcName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_parentProcName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentProcName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parentProcUserHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParentProcUser";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_parentProcUser.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentProcUser.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parentProcGroupHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParentProcGroup";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_parentProcGroup.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentProcGroup.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parentProcPathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParentProcPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_parentProcPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentProcPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -376,26 +375,26 @@ void ReverseShell::ToJsonObject(Value &value, Document::AllocatorType& allocator
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_machineNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_machineName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_procTreeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProcTree";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_procTree.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_procTree.c_str(), allocator).Move(), allocator);
     }
 
 }

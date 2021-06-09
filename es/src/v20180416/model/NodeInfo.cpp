@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Es::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 NodeInfo::NodeInfo() :
@@ -33,7 +32,7 @@ NodeInfo::NodeInfo() :
 {
 }
 
-CoreInternalOutcome NodeInfo::Deserialize(const Value &value)
+CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -129,12 +128,12 @@ CoreInternalOutcome NodeInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_nodeNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nodeNum, allocator);
@@ -142,31 +141,31 @@ void NodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_nodeTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NodeType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_nodeType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_type.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_diskTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diskType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_diskSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskSize, allocator);
@@ -174,16 +173,16 @@ void NodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_localDiskInfoHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LocalDiskInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_localDiskInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_diskCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskCount, allocator);
@@ -191,7 +190,7 @@ void NodeInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_diskEncryptHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskEncrypt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskEncrypt, allocator);

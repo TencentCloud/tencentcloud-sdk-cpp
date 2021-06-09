@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 DDoSEventRecord::DDoSEventRecord() :
@@ -38,7 +37,7 @@ DDoSEventRecord::DDoSEventRecord() :
 {
 }
 
-CoreInternalOutcome DDoSEventRecord::Deserialize(const Value &value)
+CoreInternalOutcome DDoSEventRecord::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -177,52 +176,52 @@ CoreInternalOutcome DDoSEventRecord::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DDoSEventRecord::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DDoSEventRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_businessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Business";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_business.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vipHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vip.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_mbpsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Mbps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mbps, allocator);
@@ -230,7 +229,7 @@ void DDoSEventRecord::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_ppsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Pps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pps, allocator);
@@ -238,15 +237,15 @@ void DDoSEventRecord::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_attackTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AttackType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_attackType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_attackType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_blockFlagHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BlockFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_blockFlag, allocator);
@@ -254,15 +253,15 @@ void DDoSEventRecord::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_overLoadHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OverLoad";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_overLoad.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_overLoad.c_str(), allocator).Move(), allocator);
     }
 
     if (m_attackStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AttackStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_attackStatus, allocator);
@@ -270,18 +269,18 @@ void DDoSEventRecord::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_resourceNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_resourceName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_eventIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_eventId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
     }
 
 }

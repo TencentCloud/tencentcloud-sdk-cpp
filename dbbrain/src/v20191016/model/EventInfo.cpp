@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dbbrain::V20191016::Model;
-using namespace rapidjson;
 using namespace std;
 
 EventInfo::EventInfo() :
@@ -34,7 +33,7 @@ EventInfo::EventInfo() :
 {
 }
 
-CoreInternalOutcome EventInfo::Deserialize(const Value &value)
+CoreInternalOutcome EventInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -133,12 +132,12 @@ CoreInternalOutcome EventInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EventInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_eventIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_eventId, allocator);
@@ -146,39 +145,39 @@ void EventInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_diagTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiagType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_diagType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diagType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outlineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Outline";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_outline.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outline.c_str(), allocator).Move(), allocator);
     }
 
     if (m_severityHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Severity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_severity, allocator);
@@ -186,7 +185,7 @@ void EventInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_scoreLostHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScoreLost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scoreLost, allocator);
@@ -194,15 +193,15 @@ void EventInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) c
 
     if (m_metricHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Metric";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_metric.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metric.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_count, allocator);

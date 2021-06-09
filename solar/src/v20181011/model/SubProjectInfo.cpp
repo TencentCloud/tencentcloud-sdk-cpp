@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Solar::V20181011::Model;
-using namespace rapidjson;
 using namespace std;
 
 SubProjectInfo::SubProjectInfo() :
@@ -28,7 +27,7 @@ SubProjectInfo::SubProjectInfo() :
 {
 }
 
-CoreInternalOutcome SubProjectInfo::Deserialize(const Value &value)
+CoreInternalOutcome SubProjectInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -67,31 +66,31 @@ CoreInternalOutcome SubProjectInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SubProjectInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SubProjectInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_subProjectIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubProjectId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subProjectId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subProjectNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubProjectName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subProjectName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subProjectName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subProjectStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubProjectStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_subProjectStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subProjectStatus.c_str(), allocator).Move(), allocator);
     }
 
 }

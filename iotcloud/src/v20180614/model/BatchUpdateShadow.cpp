@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 BatchUpdateShadow::BatchUpdateShadow() :
@@ -26,7 +25,7 @@ BatchUpdateShadow::BatchUpdateShadow() :
 {
 }
 
-CoreInternalOutcome BatchUpdateShadow::Deserialize(const Value &value)
+CoreInternalOutcome BatchUpdateShadow::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,15 +44,15 @@ CoreInternalOutcome BatchUpdateShadow::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BatchUpdateShadow::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BatchUpdateShadow::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_desiredHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Desired";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_desired.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_desired.c_str(), allocator).Move(), allocator);
     }
 
 }

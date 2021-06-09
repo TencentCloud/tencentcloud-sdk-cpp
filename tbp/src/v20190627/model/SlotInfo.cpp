@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbp::V20190627::Model;
-using namespace rapidjson;
 using namespace std;
 
 SlotInfo::SlotInfo() :
@@ -27,7 +26,7 @@ SlotInfo::SlotInfo() :
 {
 }
 
-CoreInternalOutcome SlotInfo::Deserialize(const Value &value)
+CoreInternalOutcome SlotInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome SlotInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void SlotInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void SlotInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_slotNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SlotName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_slotName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_slotName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_slotValueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SlotValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_slotValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_slotValue.c_str(), allocator).Move(), allocator);
     }
 
 }

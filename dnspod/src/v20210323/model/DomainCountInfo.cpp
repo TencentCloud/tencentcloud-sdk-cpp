@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dnspod::V20210323::Model;
-using namespace rapidjson;
 using namespace std;
 
 DomainCountInfo::DomainCountInfo() :
@@ -37,7 +36,7 @@ DomainCountInfo::DomainCountInfo() :
 {
 }
 
-CoreInternalOutcome DomainCountInfo::Deserialize(const Value &value)
+CoreInternalOutcome DomainCountInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -166,12 +165,12 @@ CoreInternalOutcome DomainCountInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DomainCountInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DomainCountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_domainTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DomainTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_domainTotal, allocator);
@@ -179,7 +178,7 @@ void DomainCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_allTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AllTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allTotal, allocator);
@@ -187,7 +186,7 @@ void DomainCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_mineTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MineTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mineTotal, allocator);
@@ -195,7 +194,7 @@ void DomainCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_shareTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShareTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shareTotal, allocator);
@@ -203,7 +202,7 @@ void DomainCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_vipTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VipTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vipTotal, allocator);
@@ -211,7 +210,7 @@ void DomainCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_pauseTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PauseTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pauseTotal, allocator);
@@ -219,7 +218,7 @@ void DomainCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_errorTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ErrorTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_errorTotal, allocator);
@@ -227,7 +226,7 @@ void DomainCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_lockTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LockTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lockTotal, allocator);
@@ -235,7 +234,7 @@ void DomainCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_spamTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SpamTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_spamTotal, allocator);
@@ -243,7 +242,7 @@ void DomainCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_vipExpireHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VipExpire";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vipExpire, allocator);
@@ -251,7 +250,7 @@ void DomainCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_shareOutTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShareOutTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shareOutTotal, allocator);
@@ -259,7 +258,7 @@ void DomainCountInfo::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_groupTotalHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "GroupTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_groupTotal, allocator);

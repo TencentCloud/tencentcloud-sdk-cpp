@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vod::V20180717::Model;
-using namespace rapidjson;
 using namespace std;
 
 DrmStreamingsInfo::DrmStreamingsInfo() :
@@ -26,7 +25,7 @@ DrmStreamingsInfo::DrmStreamingsInfo() :
 {
 }
 
-CoreInternalOutcome DrmStreamingsInfo::Deserialize(const Value &value)
+CoreInternalOutcome DrmStreamingsInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -45,12 +44,12 @@ CoreInternalOutcome DrmStreamingsInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DrmStreamingsInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DrmStreamingsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_simpleAesDefinitionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SimpleAesDefinition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_simpleAesDefinition, allocator);

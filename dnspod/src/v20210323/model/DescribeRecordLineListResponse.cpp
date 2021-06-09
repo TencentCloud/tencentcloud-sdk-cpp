@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dnspod::V20210323::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeRecordLineListResponse::DescribeRecordLineListResponse() :
@@ -32,7 +31,7 @@ DescribeRecordLineListResponse::DescribeRecordLineListResponse() :
 
 CoreInternalOutcome DescribeRecordLineListResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeRecordLineListResponse::Deserialize(const string &pa
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -69,8 +68,8 @@ CoreInternalOutcome DescribeRecordLineListResponse::Deserialize(const string &pa
         if (!rsp["LineList"].IsArray())
             return CoreInternalOutcome(Error("response `LineList` is not array type"));
 
-        const Value &tmpValue = rsp["LineList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["LineList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LineInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -89,8 +88,8 @@ CoreInternalOutcome DescribeRecordLineListResponse::Deserialize(const string &pa
         if (!rsp["LineGroupList"].IsArray())
             return CoreInternalOutcome(Error("response `LineGroupList` is not array type"));
 
-        const Value &tmpValue = rsp["LineGroupList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["LineGroupList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             LineGroupInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

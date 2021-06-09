@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Billing::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 ConsumptionResourceSummaryConditionValue::ConsumptionResourceSummaryConditionValue() :
@@ -29,7 +28,7 @@ ConsumptionResourceSummaryConditionValue::ConsumptionResourceSummaryConditionVal
 {
 }
 
-CoreInternalOutcome ConsumptionResourceSummaryConditionValue::Deserialize(const Value &value)
+CoreInternalOutcome ConsumptionResourceSummaryConditionValue::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -39,8 +38,8 @@ CoreInternalOutcome ConsumptionResourceSummaryConditionValue::Deserialize(const 
         if (!value["Business"].IsArray())
             return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryConditionValue.Business` is not array type"));
 
-        const Value &tmpValue = value["Business"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Business"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ConditionBusiness item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -59,8 +58,8 @@ CoreInternalOutcome ConsumptionResourceSummaryConditionValue::Deserialize(const 
         if (!value["Project"].IsArray())
             return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryConditionValue.Project` is not array type"));
 
-        const Value &tmpValue = value["Project"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Project"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ConditionProject item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -79,8 +78,8 @@ CoreInternalOutcome ConsumptionResourceSummaryConditionValue::Deserialize(const 
         if (!value["Region"].IsArray())
             return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryConditionValue.Region` is not array type"));
 
-        const Value &tmpValue = value["Region"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["Region"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ConditionRegion item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -99,8 +98,8 @@ CoreInternalOutcome ConsumptionResourceSummaryConditionValue::Deserialize(const 
         if (!value["PayMode"].IsArray())
             return CoreInternalOutcome(Error("response `ConsumptionResourceSummaryConditionValue.PayMode` is not array type"));
 
-        const Value &tmpValue = value["PayMode"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["PayMode"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ConditionPayMode item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -118,65 +117,65 @@ CoreInternalOutcome ConsumptionResourceSummaryConditionValue::Deserialize(const 
     return CoreInternalOutcome(true);
 }
 
-void ConsumptionResourceSummaryConditionValue::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ConsumptionResourceSummaryConditionValue::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_businessHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Business";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_business.begin(); itr != m_business.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_projectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Project";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_project.begin(); itr != m_project.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_regionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_region.begin(); itr != m_region.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
     if (m_payModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_payMode.begin(); itr != m_payMode.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

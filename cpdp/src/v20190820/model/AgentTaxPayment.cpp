@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cpdp::V20190820::Model;
-using namespace rapidjson;
 using namespace std;
 
 AgentTaxPayment::AgentTaxPayment() :
@@ -32,7 +31,7 @@ AgentTaxPayment::AgentTaxPayment() :
 {
 }
 
-CoreInternalOutcome AgentTaxPayment::Deserialize(const Value &value)
+CoreInternalOutcome AgentTaxPayment::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -111,52 +110,52 @@ CoreInternalOutcome AgentTaxPayment::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void AgentTaxPayment::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void AgentTaxPayment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_anchorIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AnchorId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_anchorId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_anchorId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_anchorNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AnchorName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_anchorName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_anchorName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_anchorIDCardHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AnchorIDCard";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_anchorIDCard.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_anchorIDCard.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_startTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_endTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_amountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Amount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_amount, allocator);
@@ -164,7 +163,7 @@ void AgentTaxPayment::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_taxHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tax, allocator);

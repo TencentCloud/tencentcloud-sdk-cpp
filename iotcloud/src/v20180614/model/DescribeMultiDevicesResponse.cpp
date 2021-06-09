@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotcloud::V20180614::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeMultiDevicesResponse::DescribeMultiDevicesResponse() :
@@ -33,7 +32,7 @@ DescribeMultiDevicesResponse::DescribeMultiDevicesResponse() :
 
 CoreInternalOutcome DescribeMultiDevicesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -43,7 +42,7 @@ CoreInternalOutcome DescribeMultiDevicesResponse::Deserialize(const string &payl
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -80,8 +79,8 @@ CoreInternalOutcome DescribeMultiDevicesResponse::Deserialize(const string &payl
         if (!rsp["DevicesInfo"].IsArray())
             return CoreInternalOutcome(Error("response `DevicesInfo` is not array type"));
 
-        const Value &tmpValue = rsp["DevicesInfo"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["DevicesInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             MultiDevicesInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

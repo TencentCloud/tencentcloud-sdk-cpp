@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tci::V20190318::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageTaskFunction::ImageTaskFunction() :
@@ -35,7 +34,7 @@ ImageTaskFunction::ImageTaskFunction() :
 {
 }
 
-CoreInternalOutcome ImageTaskFunction::Deserialize(const Value &value)
+CoreInternalOutcome ImageTaskFunction::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -144,12 +143,12 @@ CoreInternalOutcome ImageTaskFunction::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ImageTaskFunction::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageTaskFunction::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_enableActionClassHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableActionClass";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableActionClass, allocator);
@@ -157,7 +156,7 @@ void ImageTaskFunction::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_enableFaceDetectHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableFaceDetect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableFaceDetect, allocator);
@@ -165,7 +164,7 @@ void ImageTaskFunction::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_enableFaceExpressionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableFaceExpression";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableFaceExpression, allocator);
@@ -173,7 +172,7 @@ void ImageTaskFunction::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_enableFaceIdentifyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableFaceIdentify";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableFaceIdentify, allocator);
@@ -181,7 +180,7 @@ void ImageTaskFunction::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_enableGestureHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableGesture";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableGesture, allocator);
@@ -189,7 +188,7 @@ void ImageTaskFunction::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_enableHandTrackingHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableHandTracking";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableHandTracking, allocator);
@@ -197,7 +196,7 @@ void ImageTaskFunction::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_enableLightJudgeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableLightJudge";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableLightJudge, allocator);
@@ -205,7 +204,7 @@ void ImageTaskFunction::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_enableStudentBodyMovementsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableStudentBodyMovements";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableStudentBodyMovements, allocator);
@@ -213,7 +212,7 @@ void ImageTaskFunction::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_enableTeacherBodyMovementsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableTeacherBodyMovements";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableTeacherBodyMovements, allocator);
@@ -221,7 +220,7 @@ void ImageTaskFunction::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_enableTeacherOutScreenHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableTeacherOutScreen";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableTeacherOutScreen, allocator);

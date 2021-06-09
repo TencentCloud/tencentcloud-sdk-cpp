@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
-using namespace rapidjson;
 using namespace std;
 
 TextFile::TextFile() :
@@ -27,7 +26,7 @@ TextFile::TextFile() :
 {
 }
 
-CoreInternalOutcome TextFile::Deserialize(const Value &value)
+CoreInternalOutcome TextFile::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome TextFile::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void TextFile::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void TextFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_formatHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Format";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_format.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
     }
 
     if (m_regexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Regex";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_regex.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regex.c_str(), allocator).Move(), allocator);
     }
 
 }

@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotvideo::V20201215::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProductTemplate::ProductTemplate() :
@@ -33,7 +32,7 @@ ProductTemplate::ProductTemplate() :
 {
 }
 
-CoreInternalOutcome ProductTemplate::Deserialize(const Value &value)
+CoreInternalOutcome ProductTemplate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -122,12 +121,12 @@ CoreInternalOutcome ProductTemplate::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProductTemplate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProductTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_idHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
@@ -135,23 +134,23 @@ void ProductTemplate::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_categoryKeyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CategoryKey";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_categoryKey.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_categoryKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_categoryNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CategoryName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_categoryName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_categoryName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parentIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParentId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_parentId, allocator);
@@ -159,15 +158,15 @@ void ProductTemplate::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_modelTemplateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ModelTemplate";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_modelTemplate.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelTemplate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_listOrderHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ListOrder";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_listOrder, allocator);
@@ -175,18 +174,18 @@ void ProductTemplate::ToJsonObject(Value &value, Document::AllocatorType& alloca
 
     if (m_iconUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IconUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iconUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iconUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iconUrlGridHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IconUrlGrid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_iconUrlGrid.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iconUrlGrid.c_str(), allocator).Move(), allocator);
     }
 
 }

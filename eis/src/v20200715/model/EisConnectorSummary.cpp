@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Eis::V20200715::Model;
-using namespace rapidjson;
 using namespace std;
 
 EisConnectorSummary::EisConnectorSummary() :
@@ -31,7 +30,7 @@ EisConnectorSummary::EisConnectorSummary() :
 {
 }
 
-CoreInternalOutcome EisConnectorSummary::Deserialize(const Value &value)
+CoreInternalOutcome EisConnectorSummary::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -100,52 +99,52 @@ CoreInternalOutcome EisConnectorSummary::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EisConnectorSummary::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EisConnectorSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_connectorNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConnectorName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_connectorName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connectorName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_displayNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DisplayName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_displayName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_displayName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_companyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Company";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_company.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_company.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Product";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_product.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
     if (m_connectorVersionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConnectorVersion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_connectorVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connectorVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);

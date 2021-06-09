@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 CacheOptResult::CacheOptResult() :
@@ -27,7 +26,7 @@ CacheOptResult::CacheOptResult() :
 {
 }
 
-CoreInternalOutcome CacheOptResult::Deserialize(const Value &value)
+CoreInternalOutcome CacheOptResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -37,8 +36,8 @@ CoreInternalOutcome CacheOptResult::Deserialize(const Value &value)
         if (!value["SuccessUrls"].IsArray())
             return CoreInternalOutcome(Error("response `CacheOptResult.SuccessUrls` is not array type"));
 
-        const Value &tmpValue = value["SuccessUrls"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SuccessUrls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_successUrls.push_back((*itr).GetString());
         }
@@ -50,8 +49,8 @@ CoreInternalOutcome CacheOptResult::Deserialize(const Value &value)
         if (!value["FailUrls"].IsArray())
             return CoreInternalOutcome(Error("response `CacheOptResult.FailUrls` is not array type"));
 
-        const Value &tmpValue = value["FailUrls"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["FailUrls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_failUrls.push_back((*itr).GetString());
         }
@@ -62,32 +61,32 @@ CoreInternalOutcome CacheOptResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void CacheOptResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void CacheOptResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_successUrlsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SuccessUrls";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_successUrls.begin(); itr != m_successUrls.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_failUrlsHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FailUrls";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_failUrls.begin(); itr != m_failUrls.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 

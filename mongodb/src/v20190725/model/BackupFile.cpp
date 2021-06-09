@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20190725::Model;
-using namespace rapidjson;
 using namespace std;
 
 BackupFile::BackupFile() :
@@ -27,7 +26,7 @@ BackupFile::BackupFile() :
 {
 }
 
-CoreInternalOutcome BackupFile::Deserialize(const Value &value)
+CoreInternalOutcome BackupFile::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -56,23 +55,23 @@ CoreInternalOutcome BackupFile::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void BackupFile::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void BackupFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_replicateSetIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicateSetId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_replicateSetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_replicateSetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "File";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_file.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_file.c_str(), allocator).Move(), allocator);
     }
 
 }

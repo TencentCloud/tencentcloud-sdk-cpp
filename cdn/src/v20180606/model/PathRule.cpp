@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 PathRule::PathRule() :
@@ -32,7 +31,7 @@ PathRule::PathRule() :
 {
 }
 
-CoreInternalOutcome PathRule::Deserialize(const Value &value)
+CoreInternalOutcome PathRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -102,8 +101,8 @@ CoreInternalOutcome PathRule::Deserialize(const Value &value)
         if (!value["RequestHeaders"].IsArray())
             return CoreInternalOutcome(Error("response `PathRule.RequestHeaders` is not array type"));
 
-        const Value &tmpValue = value["RequestHeaders"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["RequestHeaders"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             HttpHeaderRule item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -121,12 +120,12 @@ CoreInternalOutcome PathRule::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void PathRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void PathRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_regexHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Regex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regex, allocator);
@@ -134,55 +133,55 @@ void PathRule::ToJsonObject(Value &value, Document::AllocatorType& allocator) co
 
     if (m_pathHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_path.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
     if (m_originHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Origin";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_origin.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_origin.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serverNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServerName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serverName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_originAreaHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OriginArea";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_originArea.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originArea.c_str(), allocator).Move(), allocator);
     }
 
     if (m_forwardUriHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ForwardUri";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_forwardUri.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forwardUri.c_str(), allocator).Move(), allocator);
     }
 
     if (m_requestHeadersHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RequestHeaders";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_requestHeaders.begin(); itr != m_requestHeaders.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }

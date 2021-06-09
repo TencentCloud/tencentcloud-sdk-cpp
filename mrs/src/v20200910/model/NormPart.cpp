@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mrs::V20200910::Model;
-using namespace rapidjson;
 using namespace std;
 
 NormPart::NormPart() :
@@ -30,7 +29,7 @@ NormPart::NormPart() :
 {
 }
 
-CoreInternalOutcome NormPart::Deserialize(const Value &value)
+CoreInternalOutcome NormPart::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -89,47 +88,47 @@ CoreInternalOutcome NormPart::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void NormPart::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void NormPart::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_partHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Part";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_part.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_part.c_str(), allocator).Move(), allocator);
     }
 
     if (m_partDirectionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PartDirection";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_partDirection.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_partDirection.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tissueHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tissue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tissue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tissue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tissueDirectionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TissueDirection";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_tissueDirection.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tissueDirection.c_str(), allocator).Move(), allocator);
     }
 
     if (m_upperHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Upper";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_upper.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_upper.c_str(), allocator).Move(), allocator);
     }
 
 }

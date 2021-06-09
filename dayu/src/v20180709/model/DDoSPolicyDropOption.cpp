@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dayu::V20180709::Model;
-using namespace rapidjson;
 using namespace std;
 
 DDoSPolicyDropOption::DDoSPolicyDropOption() :
@@ -44,7 +43,7 @@ DDoSPolicyDropOption::DDoSPolicyDropOption() :
 {
 }
 
-CoreInternalOutcome DDoSPolicyDropOption::Deserialize(const Value &value)
+CoreInternalOutcome DDoSPolicyDropOption::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -243,12 +242,12 @@ CoreInternalOutcome DDoSPolicyDropOption::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void DDoSPolicyDropOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_dropTcpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DropTcp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dropTcp, allocator);
@@ -256,7 +255,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_dropUdpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DropUdp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dropUdp, allocator);
@@ -264,7 +263,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_dropIcmpHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DropIcmp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dropIcmp, allocator);
@@ -272,7 +271,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_dropOtherHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DropOther";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dropOther, allocator);
@@ -280,7 +279,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_dropAbroadHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DropAbroad";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dropAbroad, allocator);
@@ -288,7 +287,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_checkSyncConnHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CheckSyncConn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_checkSyncConn, allocator);
@@ -296,7 +295,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_sdNewLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdNewLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sdNewLimit, allocator);
@@ -304,7 +303,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_dstNewLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstNewLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dstNewLimit, allocator);
@@ -312,7 +311,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_sdConnLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SdConnLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sdConnLimit, allocator);
@@ -320,7 +319,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_dstConnLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstConnLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dstConnLimit, allocator);
@@ -328,7 +327,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_badConnThresholdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BadConnThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_badConnThreshold, allocator);
@@ -336,7 +335,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_nullConnEnableHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "NullConnEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nullConnEnable, allocator);
@@ -344,7 +343,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_connTimeoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConnTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_connTimeout, allocator);
@@ -352,7 +351,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_synRateHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SynRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_synRate, allocator);
@@ -360,7 +359,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_synLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SynLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_synLimit, allocator);
@@ -368,7 +367,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_dTcpMbpsLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DTcpMbpsLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dTcpMbpsLimit, allocator);
@@ -376,7 +375,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_dUdpMbpsLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DUdpMbpsLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dUdpMbpsLimit, allocator);
@@ -384,7 +383,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_dIcmpMbpsLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DIcmpMbpsLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dIcmpMbpsLimit, allocator);
@@ -392,7 +391,7 @@ void DDoSPolicyDropOption::ToJsonObject(Value &value, Document::AllocatorType& a
 
     if (m_dOtherMbpsLimitHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DOtherMbpsLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dOtherMbpsLimit, allocator);

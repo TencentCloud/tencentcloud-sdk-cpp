@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
-using namespace rapidjson;
 using namespace std;
 
 ProductConf::ProductConf() :
@@ -38,7 +37,7 @@ ProductConf::ProductConf() :
 {
 }
 
-CoreInternalOutcome ProductConf::Deserialize(const Value &value)
+CoreInternalOutcome ProductConf::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -118,8 +117,8 @@ CoreInternalOutcome ProductConf::Deserialize(const Value &value)
         if (!value["TotalSize"].IsArray())
             return CoreInternalOutcome(Error("response `ProductConf.TotalSize` is not array type"));
 
-        const Value &tmpValue = value["TotalSize"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["TotalSize"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_totalSize.push_back((*itr).GetString());
         }
@@ -131,8 +130,8 @@ CoreInternalOutcome ProductConf::Deserialize(const Value &value)
         if (!value["ShardSize"].IsArray())
             return CoreInternalOutcome(Error("response `ProductConf.ShardSize` is not array type"));
 
-        const Value &tmpValue = value["ShardSize"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ShardSize"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_shardSize.push_back((*itr).GetString());
         }
@@ -144,8 +143,8 @@ CoreInternalOutcome ProductConf::Deserialize(const Value &value)
         if (!value["ReplicaNum"].IsArray())
             return CoreInternalOutcome(Error("response `ProductConf.ReplicaNum` is not array type"));
 
-        const Value &tmpValue = value["ReplicaNum"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ReplicaNum"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_replicaNum.push_back((*itr).GetString());
         }
@@ -157,8 +156,8 @@ CoreInternalOutcome ProductConf::Deserialize(const Value &value)
         if (!value["ShardNum"].IsArray())
             return CoreInternalOutcome(Error("response `ProductConf.ShardNum` is not array type"));
 
-        const Value &tmpValue = value["ShardNum"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["ShardNum"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_shardNum.push_back((*itr).GetString());
         }
@@ -189,12 +188,12 @@ CoreInternalOutcome ProductConf::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ProductConf::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ProductConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_typeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
@@ -202,15 +201,15 @@ void ProductConf::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_typeNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TypeName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_typeName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_typeName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_minBuyNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinBuyNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minBuyNum, allocator);
@@ -218,7 +217,7 @@ void ProductConf::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_maxBuyNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxBuyNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxBuyNum, allocator);
@@ -226,7 +225,7 @@ void ProductConf::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_saleoutHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Saleout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_saleout, allocator);
@@ -234,83 +233,83 @@ void ProductConf::ToJsonObject(Value &value, Document::AllocatorType& allocator)
 
     if (m_engineHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Engine";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_engine.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engine.c_str(), allocator).Move(), allocator);
     }
 
     if (m_versionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_version.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
     if (m_totalSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalSize";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_totalSize.begin(); itr != m_totalSize.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_shardSizeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardSize";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_shardSize.begin(); itr != m_shardSize.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_replicaNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReplicaNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_replicaNum.begin(); itr != m_replicaNum.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_shardNumHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ShardNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_shardNum.begin(); itr != m_shardNum.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
     if (m_payModeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_payMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableRepicaReadOnlyHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EnableRepicaReadOnly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableRepicaReadOnly, allocator);

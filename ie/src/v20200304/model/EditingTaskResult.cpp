@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ie::V20200304::Model;
-using namespace rapidjson;
 using namespace std;
 
 EditingTaskResult::EditingTaskResult() :
@@ -33,7 +32,7 @@ EditingTaskResult::EditingTaskResult() :
 {
 }
 
-CoreInternalOutcome EditingTaskResult::Deserialize(const Value &value)
+CoreInternalOutcome EditingTaskResult::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -164,20 +163,20 @@ CoreInternalOutcome EditingTaskResult::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void EditingTaskResult::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void EditingTaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_taskIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_taskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
@@ -185,55 +184,55 @@ void EditingTaskResult::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_tagTaskResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagTaskResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tagTaskResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_classificationTaskResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ClassificationTaskResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_classificationTaskResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_stripTaskResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StripTaskResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_stripTaskResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_highlightsTaskResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HighlightsTaskResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_highlightsTaskResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_coverTaskResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CoverTaskResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_coverTaskResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_openingEndingTaskResultHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OpeningEndingTaskResult";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kObjectType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_openingEndingTaskResult.ToJsonObject(value[key.c_str()], allocator);
     }
 

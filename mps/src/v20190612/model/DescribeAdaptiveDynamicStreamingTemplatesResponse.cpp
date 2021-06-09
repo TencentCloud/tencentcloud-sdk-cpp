@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 DescribeAdaptiveDynamicStreamingTemplatesResponse::DescribeAdaptiveDynamicStreamingTemplatesResponse() :
@@ -32,7 +31,7 @@ DescribeAdaptiveDynamicStreamingTemplatesResponse::DescribeAdaptiveDynamicStream
 
 CoreInternalOutcome DescribeAdaptiveDynamicStreamingTemplatesResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome DescribeAdaptiveDynamicStreamingTemplatesResponse::Deseriali
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome DescribeAdaptiveDynamicStreamingTemplatesResponse::Deseriali
         if (!rsp["AdaptiveDynamicStreamingTemplateSet"].IsArray())
             return CoreInternalOutcome(Error("response `AdaptiveDynamicStreamingTemplateSet` is not array type"));
 
-        const Value &tmpValue = rsp["AdaptiveDynamicStreamingTemplateSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["AdaptiveDynamicStreamingTemplateSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             AdaptiveDynamicStreamingTemplate item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

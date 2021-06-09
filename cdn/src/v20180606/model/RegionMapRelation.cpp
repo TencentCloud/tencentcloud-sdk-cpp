@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdn::V20180606::Model;
-using namespace rapidjson;
 using namespace std;
 
 RegionMapRelation::RegionMapRelation() :
@@ -27,7 +26,7 @@ RegionMapRelation::RegionMapRelation() :
 {
 }
 
-CoreInternalOutcome RegionMapRelation::Deserialize(const Value &value)
+CoreInternalOutcome RegionMapRelation::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -47,8 +46,8 @@ CoreInternalOutcome RegionMapRelation::Deserialize(const Value &value)
         if (!value["SubRegionIdList"].IsArray())
             return CoreInternalOutcome(Error("response `RegionMapRelation.SubRegionIdList` is not array type"));
 
-        const Value &tmpValue = value["SubRegionIdList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["SubRegionIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             m_subRegionIdList.push_back((*itr).GetInt64());
         }
@@ -59,12 +58,12 @@ CoreInternalOutcome RegionMapRelation::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void RegionMapRelation::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void RegionMapRelation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_regionIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionId, allocator);
@@ -72,14 +71,14 @@ void RegionMapRelation::ToJsonObject(Value &value, Document::AllocatorType& allo
 
     if (m_subRegionIdListHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubRegionIdList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_subRegionIdList.begin(); itr != m_subRegionIdList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(Value().SetInt64(*itr), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 

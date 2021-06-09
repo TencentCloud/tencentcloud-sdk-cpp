@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mps::V20190612::Model;
-using namespace rapidjson;
 using namespace std;
 
 ImageWatermarkInputForUpdate::ImageWatermarkInputForUpdate() :
@@ -29,7 +28,7 @@ ImageWatermarkInputForUpdate::ImageWatermarkInputForUpdate() :
 {
 }
 
-CoreInternalOutcome ImageWatermarkInputForUpdate::Deserialize(const Value &value)
+CoreInternalOutcome ImageWatermarkInputForUpdate::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,39 +77,39 @@ CoreInternalOutcome ImageWatermarkInputForUpdate::Deserialize(const Value &value
     return CoreInternalOutcome(true);
 }
 
-void ImageWatermarkInputForUpdate::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ImageWatermarkInputForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_imageContentHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ImageContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_imageContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageContent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_widthHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Width";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_width.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_width.c_str(), allocator).Move(), allocator);
     }
 
     if (m_heightHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_height.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_height.c_str(), allocator).Move(), allocator);
     }
 
     if (m_repeatTypeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RepeatType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_repeatType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repeatType.c_str(), allocator).Move(), allocator);
     }
 
 }

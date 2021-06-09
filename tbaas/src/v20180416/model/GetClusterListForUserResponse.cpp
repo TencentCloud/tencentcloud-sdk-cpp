@@ -21,7 +21,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tbaas::V20180416::Model;
-using namespace rapidjson;
 using namespace std;
 
 GetClusterListForUserResponse::GetClusterListForUserResponse() :
@@ -32,7 +31,7 @@ GetClusterListForUserResponse::GetClusterListForUserResponse() :
 
 CoreInternalOutcome GetClusterListForUserResponse::Deserialize(const string &payload)
 {
-    Document d;
+    rapidjson::Document d;
     d.Parse(payload.c_str());
     if (d.HasParseError() || !d.IsObject())
     {
@@ -42,7 +41,7 @@ CoreInternalOutcome GetClusterListForUserResponse::Deserialize(const string &pay
     {
         return CoreInternalOutcome(Error("response `Response` is null or not object"));
     }
-    Value &rsp = d["Response"];
+    rapidjson::Value &rsp = d["Response"];
     if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
     {
         return CoreInternalOutcome(Error("response `Response.RequestId` is null or not string"));
@@ -79,8 +78,8 @@ CoreInternalOutcome GetClusterListForUserResponse::Deserialize(const string &pay
         if (!rsp["ClusterList"].IsArray())
             return CoreInternalOutcome(Error("response `ClusterList` is not array type"));
 
-        const Value &tmpValue = rsp["ClusterList"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = rsp["ClusterList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             ClusterDetailForUser item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);

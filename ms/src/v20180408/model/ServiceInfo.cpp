@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ms::V20180408::Model;
-using namespace rapidjson;
 using namespace std;
 
 ServiceInfo::ServiceInfo() :
@@ -29,7 +28,7 @@ ServiceInfo::ServiceInfo() :
 {
 }
 
-CoreInternalOutcome ServiceInfo::Deserialize(const Value &value)
+CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -78,36 +77,36 @@ CoreInternalOutcome ServiceInfo::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void ServiceInfo::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_serviceEditionHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceEdition";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_serviceEdition.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceEdition.c_str(), allocator).Move(), allocator);
     }
 
     if (m_callbackUrlHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_submitSourceHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubmitSource";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_submitSource.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_submitSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_planIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PlanId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_planId, allocator);

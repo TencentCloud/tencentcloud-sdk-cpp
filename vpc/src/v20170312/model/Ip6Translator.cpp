@@ -18,7 +18,6 @@
 
 using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
-using namespace rapidjson;
 using namespace std;
 
 Ip6Translator::Ip6Translator() :
@@ -33,7 +32,7 @@ Ip6Translator::Ip6Translator() :
 {
 }
 
-CoreInternalOutcome Ip6Translator::Deserialize(const Value &value)
+CoreInternalOutcome Ip6Translator::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
@@ -113,8 +112,8 @@ CoreInternalOutcome Ip6Translator::Deserialize(const Value &value)
         if (!value["IP6RuleSet"].IsArray())
             return CoreInternalOutcome(Error("response `Ip6Translator.IP6RuleSet` is not array type"));
 
-        const Value &tmpValue = value["IP6RuleSet"];
-        for (Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        const rapidjson::Value &tmpValue = value["IP6RuleSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
             Ip6Rule item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
@@ -132,60 +131,60 @@ CoreInternalOutcome Ip6Translator::Deserialize(const Value &value)
     return CoreInternalOutcome(true);
 }
 
-void Ip6Translator::ToJsonObject(Value &value, Document::AllocatorType& allocator) const
+void Ip6Translator::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
     if (m_ip6TranslatorIdHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip6TranslatorId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ip6TranslatorId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip6TranslatorId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ip6TranslatorNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip6TranslatorName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ip6TranslatorName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip6TranslatorName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vip6HasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Vip6";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_vip6.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vip6.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ispNameHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IspName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_ispName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ispName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_translatorStatusHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TranslatorStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_translatorStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_translatorStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createdTimeHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(m_createdTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ip6RuleCountHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Ip6RuleCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ip6RuleCount, allocator);
@@ -193,15 +192,15 @@ void Ip6Translator::ToJsonObject(Value &value, Document::AllocatorType& allocato
 
     if (m_iP6RuleSetHasBeenSet)
     {
-        Value iKey(kStringType);
+        rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IP6RuleSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, Value(kArrayType).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
         for (auto itr = m_iP6RuleSet.begin(); itr != m_iP6RuleSet.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(Value(kObjectType).Move(), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
