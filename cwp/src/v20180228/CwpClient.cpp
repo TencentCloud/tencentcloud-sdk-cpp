@@ -1330,6 +1330,92 @@ CwpClient::DescribeAlarmAttributeOutcomeCallable CwpClient::DescribeAlarmAttribu
     return task->get_future();
 }
 
+CwpClient::DescribeAssetInfoOutcome CwpClient::DescribeAssetInfo(const DescribeAssetInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetInfoResponse rsp = DescribeAssetInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetInfoOutcome(rsp);
+        else
+            return DescribeAssetInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetInfoAsync(const DescribeAssetInfoRequest& request, const DescribeAssetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetInfoOutcomeCallable CwpClient::DescribeAssetInfoCallable(const DescribeAssetInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAssetRecentMachineInfoOutcome CwpClient::DescribeAssetRecentMachineInfo(const DescribeAssetRecentMachineInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetRecentMachineInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetRecentMachineInfoResponse rsp = DescribeAssetRecentMachineInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetRecentMachineInfoOutcome(rsp);
+        else
+            return DescribeAssetRecentMachineInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetRecentMachineInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetRecentMachineInfoAsync(const DescribeAssetRecentMachineInfoRequest& request, const DescribeAssetRecentMachineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetRecentMachineInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetRecentMachineInfoOutcomeCallable CwpClient::DescribeAssetRecentMachineInfoCallable(const DescribeAssetRecentMachineInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetRecentMachineInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetRecentMachineInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeAttackLogInfoOutcome CwpClient::DescribeAttackLogInfo(const DescribeAttackLogInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAttackLogInfo");
@@ -5365,6 +5451,49 @@ CwpClient::SwitchBashRulesOutcomeCallable CwpClient::SwitchBashRulesCallable(con
         [this, request]()
         {
             return this->SwitchBashRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::SyncAssetScanOutcome CwpClient::SyncAssetScan(const SyncAssetScanRequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncAssetScan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncAssetScanResponse rsp = SyncAssetScanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncAssetScanOutcome(rsp);
+        else
+            return SyncAssetScanOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncAssetScanOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::SyncAssetScanAsync(const SyncAssetScanRequest& request, const SyncAssetScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SyncAssetScan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::SyncAssetScanOutcomeCallable CwpClient::SyncAssetScanCallable(const SyncAssetScanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SyncAssetScanOutcome()>>(
+        [this, request]()
+        {
+            return this->SyncAssetScan(request);
         }
     );
 

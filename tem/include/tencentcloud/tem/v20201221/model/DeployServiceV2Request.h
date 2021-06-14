@@ -27,6 +27,8 @@
 #include <tencentcloud/tem/v20201221/model/StorageMountConf.h>
 #include <tencentcloud/tem/v20201221/model/LogOutputConf.h>
 #include <tencentcloud/tem/v20201221/model/PortMapping.h>
+#include <tencentcloud/tem/v20201221/model/MountedSettingConf.h>
+#include <tencentcloud/tem/v20201221/model/EksService.h>
 
 
 namespace TencentCloud
@@ -540,6 +542,42 @@ namespace TencentCloud
                      */
                     bool UseRegistryDefaultConfigHasBeenSet() const;
 
+                    /**
+                     * 获取挂载配置信息
+                     * @return SettingConfs 挂载配置信息
+                     */
+                    std::vector<MountedSettingConf> GetSettingConfs() const;
+
+                    /**
+                     * 设置挂载配置信息
+                     * @param SettingConfs 挂载配置信息
+                     */
+                    void SetSettingConfs(const std::vector<MountedSettingConf>& _settingConfs);
+
+                    /**
+                     * 判断参数 SettingConfs 是否已赋值
+                     * @return SettingConfs 是否已赋值
+                     */
+                    bool SettingConfsHasBeenSet() const;
+
+                    /**
+                     * 获取eks 访问设置
+                     * @return EksService eks 访问设置
+                     */
+                    EksService GetEksService() const;
+
+                    /**
+                     * 设置eks 访问设置
+                     * @param EksService eks 访问设置
+                     */
+                    void SetEksService(const EksService& _eksService);
+
+                    /**
+                     * 判断参数 EksService 是否已赋值
+                     * @return EksService 是否已赋值
+                     */
+                    bool EksServiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -703,6 +741,18 @@ namespace TencentCloud
                      */
                     bool m_useRegistryDefaultConfig;
                     bool m_useRegistryDefaultConfigHasBeenSet;
+
+                    /**
+                     * 挂载配置信息
+                     */
+                    std::vector<MountedSettingConf> m_settingConfs;
+                    bool m_settingConfsHasBeenSet;
+
+                    /**
+                     * eks 访问设置
+                     */
+                    EksService m_eksService;
+                    bool m_eksServiceHasBeenSet;
 
                 };
             }

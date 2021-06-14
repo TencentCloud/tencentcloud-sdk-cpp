@@ -83,6 +83,10 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeAgentVulsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAlarmAttributeRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAlarmAttributeResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetRecentMachineInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetRecentMachineInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogsRequest.h>
@@ -271,6 +275,8 @@
 #include <tencentcloud/cwp/v20180228/model/SetBashEventsStatusResponse.h>
 #include <tencentcloud/cwp/v20180228/model/SwitchBashRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/SwitchBashRulesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/SyncAssetScanRequest.h>
+#include <tencentcloud/cwp/v20180228/model/SyncAssetScanResponse.h>
 #include <tencentcloud/cwp/v20180228/model/TrustMaliciousRequestRequest.h>
 #include <tencentcloud/cwp/v20180228/model/TrustMaliciousRequestResponse.h>
 #include <tencentcloud/cwp/v20180228/model/TrustMalwaresRequest.h>
@@ -385,6 +391,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAlarmAttributeResponse> DescribeAlarmAttributeOutcome;
                 typedef std::future<DescribeAlarmAttributeOutcome> DescribeAlarmAttributeOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAlarmAttributeRequest&, DescribeAlarmAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmAttributeAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAssetInfoResponse> DescribeAssetInfoOutcome;
+                typedef std::future<DescribeAssetInfoOutcome> DescribeAssetInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetInfoRequest&, DescribeAssetInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAssetRecentMachineInfoResponse> DescribeAssetRecentMachineInfoOutcome;
+                typedef std::future<DescribeAssetRecentMachineInfoOutcome> DescribeAssetRecentMachineInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetRecentMachineInfoRequest&, DescribeAssetRecentMachineInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetRecentMachineInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAttackLogInfoResponse> DescribeAttackLogInfoOutcome;
                 typedef std::future<DescribeAttackLogInfoOutcome> DescribeAttackLogInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackLogInfoRequest&, DescribeAttackLogInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackLogInfoAsyncHandler;
@@ -667,6 +679,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::SwitchBashRulesResponse> SwitchBashRulesOutcome;
                 typedef std::future<SwitchBashRulesOutcome> SwitchBashRulesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::SwitchBashRulesRequest&, SwitchBashRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchBashRulesAsyncHandler;
+                typedef Outcome<Error, Model::SyncAssetScanResponse> SyncAssetScanOutcome;
+                typedef std::future<SyncAssetScanOutcome> SyncAssetScanOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::SyncAssetScanRequest&, SyncAssetScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncAssetScanAsyncHandler;
                 typedef Outcome<Error, Model::TrustMaliciousRequestResponse> TrustMaliciousRequestOutcome;
                 typedef std::future<TrustMaliciousRequestOutcome> TrustMaliciousRequestOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::TrustMaliciousRequestRequest&, TrustMaliciousRequestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TrustMaliciousRequestAsyncHandler;
@@ -954,6 +969,24 @@ namespace TencentCloud
                 DescribeAlarmAttributeOutcome DescribeAlarmAttribute(const Model::DescribeAlarmAttributeRequest &request);
                 void DescribeAlarmAttributeAsync(const Model::DescribeAlarmAttributeRequest& request, const DescribeAlarmAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAlarmAttributeOutcomeCallable DescribeAlarmAttributeCallable(const Model::DescribeAlarmAttributeRequest& request);
+
+                /**
+                 *获取资产数量： 主机数、账号数、端口数、进程数、软件数、数据库数、Web应用数、Web框架数、Web服务数、Web站点数
+                 * @param req DescribeAssetInfoRequest
+                 * @return DescribeAssetInfoOutcome
+                 */
+                DescribeAssetInfoOutcome DescribeAssetInfo(const Model::DescribeAssetInfoRequest &request);
+                void DescribeAssetInfoAsync(const Model::DescribeAssetInfoRequest& request, const DescribeAssetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetInfoOutcomeCallable DescribeAssetInfoCallable(const Model::DescribeAssetInfoRequest& request);
+
+                /**
+                 *获取主机最近趋势情况
+                 * @param req DescribeAssetRecentMachineInfoRequest
+                 * @return DescribeAssetRecentMachineInfoOutcome
+                 */
+                DescribeAssetRecentMachineInfoOutcome DescribeAssetRecentMachineInfo(const Model::DescribeAssetRecentMachineInfoRequest &request);
+                void DescribeAssetRecentMachineInfoAsync(const Model::DescribeAssetRecentMachineInfoRequest& request, const DescribeAssetRecentMachineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetRecentMachineInfoOutcomeCallable DescribeAssetRecentMachineInfoCallable(const Model::DescribeAssetRecentMachineInfoRequest& request);
 
                 /**
                  *网络攻击日志详情
@@ -1803,6 +1836,15 @@ namespace TencentCloud
                 SwitchBashRulesOutcome SwitchBashRules(const Model::SwitchBashRulesRequest &request);
                 void SwitchBashRulesAsync(const Model::SwitchBashRulesRequest& request, const SwitchBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchBashRulesOutcomeCallable SwitchBashRulesCallable(const Model::SwitchBashRulesRequest& request);
+
+                /**
+                 *同步资产扫描信息
+                 * @param req SyncAssetScanRequest
+                 * @return SyncAssetScanOutcome
+                 */
+                SyncAssetScanOutcome SyncAssetScan(const Model::SyncAssetScanRequest &request);
+                void SyncAssetScanAsync(const Model::SyncAssetScanRequest& request, const SyncAssetScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncAssetScanOutcomeCallable SyncAssetScanCallable(const Model::SyncAssetScanRequest& request);
 
                 /**
                  *本接口 (TrustMaliciousRequest) 用于恶意请求添加信任。

@@ -48,7 +48,9 @@ DeployServiceV2Request::DeployServiceV2Request() :
     m_imageCommandHasBeenSet(false),
     m_imageArgsHasBeenSet(false),
     m_portMappingsHasBeenSet(false),
-    m_useRegistryDefaultConfigHasBeenSet(false)
+    m_useRegistryDefaultConfigHasBeenSet(false),
+    m_settingConfsHasBeenSet(false),
+    m_eksServiceHasBeenSet(false)
 {
 }
 
@@ -310,6 +312,30 @@ string DeployServiceV2Request::ToJsonString() const
         string key = "UseRegistryDefaultConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_useRegistryDefaultConfig, allocator);
+    }
+
+    if (m_settingConfsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SettingConfs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_settingConfs.begin(); itr != m_settingConfs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_eksServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EksService";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eksService.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -734,6 +760,38 @@ void DeployServiceV2Request::SetUseRegistryDefaultConfig(const bool& _useRegistr
 bool DeployServiceV2Request::UseRegistryDefaultConfigHasBeenSet() const
 {
     return m_useRegistryDefaultConfigHasBeenSet;
+}
+
+vector<MountedSettingConf> DeployServiceV2Request::GetSettingConfs() const
+{
+    return m_settingConfs;
+}
+
+void DeployServiceV2Request::SetSettingConfs(const vector<MountedSettingConf>& _settingConfs)
+{
+    m_settingConfs = _settingConfs;
+    m_settingConfsHasBeenSet = true;
+}
+
+bool DeployServiceV2Request::SettingConfsHasBeenSet() const
+{
+    return m_settingConfsHasBeenSet;
+}
+
+EksService DeployServiceV2Request::GetEksService() const
+{
+    return m_eksService;
+}
+
+void DeployServiceV2Request::SetEksService(const EksService& _eksService)
+{
+    m_eksService = _eksService;
+    m_eksServiceHasBeenSet = true;
+}
+
+bool DeployServiceV2Request::EksServiceHasBeenSet() const
+{
+    return m_eksServiceHasBeenSet;
 }
 
 

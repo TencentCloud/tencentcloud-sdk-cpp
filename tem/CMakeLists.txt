@@ -19,6 +19,7 @@ set(tem_public_header
   )
 
 set(tem_public_header_model
+  include/tencentcloud/tem/v20201221/model/MountedSettingConf.h
   include/tencentcloud/tem/v20201221/model/ModifyServiceInfoResponse.h
   include/tencentcloud/tem/v20201221/model/StorageMountConf.h
   include/tencentcloud/tem/v20201221/model/CreateResourceRequest.h
@@ -67,11 +68,13 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20201221/model/EsInfo.h
   include/tencentcloud/tem/v20201221/model/DescribeIngressRequest.h
   include/tencentcloud/tem/v20201221/model/CreateServiceV2Request.h
+  include/tencentcloud/tem/v20201221/model/EksService.h
   include/tencentcloud/tem/v20201221/model/Pair.h
   )
 
 set(tem_src
   src/v20201221/TemClient.cpp
+  src/v20201221/model/MountedSettingConf.cpp
   src/v20201221/model/ModifyServiceInfoResponse.cpp
   src/v20201221/model/StorageMountConf.cpp
   src/v20201221/model/CreateResourceRequest.cpp
@@ -120,6 +123,7 @@ set(tem_src
   src/v20201221/model/EsInfo.cpp
   src/v20201221/model/DescribeIngressRequest.cpp
   src/v20201221/model/CreateServiceV2Request.cpp
+  src/v20201221/model/EksService.cpp
   src/v20201221/model/Pair.cpp
   )
 
