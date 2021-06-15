@@ -19,16 +19,80 @@ set(wav_public_header
   )
 
 set(wav_public_header_model
-  include/tencentcloud/wav/v20210129/model/QueryActivityLiveCodeListRequest.h
-  include/tencentcloud/wav/v20210129/model/QueryActivityLiveCodeListResponse.h
+  include/tencentcloud/wav/v20210129/model/ActivityJoinDetail.h
+  include/tencentcloud/wav/v20210129/model/CreateCorpTagResponse.h
+  include/tencentcloud/wav/v20210129/model/QueryChatArchivingListResponse.h
+  include/tencentcloud/wav/v20210129/model/QueryExternalContactDetailRequest.h
+  include/tencentcloud/wav/v20210129/model/ChannelCodeInnerDetail.h
+  include/tencentcloud/wav/v20210129/model/ExternalContact.h
+  include/tencentcloud/wav/v20210129/model/ExternalContactSimpleInfo.h
+  include/tencentcloud/wav/v20210129/model/TagInfo.h
+  include/tencentcloud/wav/v20210129/model/TagDetailInfo.h
+  include/tencentcloud/wav/v20210129/model/ChatArchivingMsgTypeVideo.h
+  include/tencentcloud/wav/v20210129/model/QueryExternalContactListRequest.h
+  include/tencentcloud/wav/v20210129/model/MiniAppCodeInfo.h
+  include/tencentcloud/wav/v20210129/model/CreateChannelCodeRequest.h
+  include/tencentcloud/wav/v20210129/model/QueryExternalContactDetailResponse.h
   include/tencentcloud/wav/v20210129/model/LiveCodeDetail.h
+  include/tencentcloud/wav/v20210129/model/QueryExternalContactListResponse.h
+  include/tencentcloud/wav/v20210129/model/FollowUser.h
+  include/tencentcloud/wav/v20210129/model/QueryActivityLiveCodeListResponse.h
+  include/tencentcloud/wav/v20210129/model/QueryActivityJoinListResponse.h
+  include/tencentcloud/wav/v20210129/model/QueryMiniAppCodeListResponse.h
+  include/tencentcloud/wav/v20210129/model/ActivityDetail.h
+  include/tencentcloud/wav/v20210129/model/ExternalContactTag.h
+  include/tencentcloud/wav/v20210129/model/ChatArchivingDetail.h
+  include/tencentcloud/wav/v20210129/model/QueryActivityListResponse.h
+  include/tencentcloud/wav/v20210129/model/QueryActivityJoinListRequest.h
+  include/tencentcloud/wav/v20210129/model/TagGroup.h
+  include/tencentcloud/wav/v20210129/model/QueryChannelCodeListRequest.h
+  include/tencentcloud/wav/v20210129/model/WeComTagDetail.h
+  include/tencentcloud/wav/v20210129/model/QueryActivityLiveCodeListRequest.h
+  include/tencentcloud/wav/v20210129/model/CreateCorpTagRequest.h
+  include/tencentcloud/wav/v20210129/model/CreateChannelCodeResponse.h
+  include/tencentcloud/wav/v20210129/model/QueryActivityListRequest.h
+  include/tencentcloud/wav/v20210129/model/QueryMiniAppCodeListRequest.h
+  include/tencentcloud/wav/v20210129/model/QueryChatArchivingListRequest.h
+  include/tencentcloud/wav/v20210129/model/QueryChannelCodeListResponse.h
   )
 
 set(wav_src
   src/v20210129/WavClient.cpp
-  src/v20210129/model/QueryActivityLiveCodeListRequest.cpp
-  src/v20210129/model/QueryActivityLiveCodeListResponse.cpp
+  src/v20210129/model/ActivityJoinDetail.cpp
+  src/v20210129/model/CreateCorpTagResponse.cpp
+  src/v20210129/model/QueryChatArchivingListResponse.cpp
+  src/v20210129/model/QueryExternalContactDetailRequest.cpp
+  src/v20210129/model/ChannelCodeInnerDetail.cpp
+  src/v20210129/model/ExternalContact.cpp
+  src/v20210129/model/ExternalContactSimpleInfo.cpp
+  src/v20210129/model/TagInfo.cpp
+  src/v20210129/model/TagDetailInfo.cpp
+  src/v20210129/model/ChatArchivingMsgTypeVideo.cpp
+  src/v20210129/model/QueryExternalContactListRequest.cpp
+  src/v20210129/model/MiniAppCodeInfo.cpp
+  src/v20210129/model/CreateChannelCodeRequest.cpp
+  src/v20210129/model/QueryExternalContactDetailResponse.cpp
   src/v20210129/model/LiveCodeDetail.cpp
+  src/v20210129/model/QueryExternalContactListResponse.cpp
+  src/v20210129/model/FollowUser.cpp
+  src/v20210129/model/QueryActivityLiveCodeListResponse.cpp
+  src/v20210129/model/QueryActivityJoinListResponse.cpp
+  src/v20210129/model/QueryMiniAppCodeListResponse.cpp
+  src/v20210129/model/ActivityDetail.cpp
+  src/v20210129/model/ExternalContactTag.cpp
+  src/v20210129/model/ChatArchivingDetail.cpp
+  src/v20210129/model/QueryActivityListResponse.cpp
+  src/v20210129/model/QueryActivityJoinListRequest.cpp
+  src/v20210129/model/TagGroup.cpp
+  src/v20210129/model/QueryChannelCodeListRequest.cpp
+  src/v20210129/model/WeComTagDetail.cpp
+  src/v20210129/model/QueryActivityLiveCodeListRequest.cpp
+  src/v20210129/model/CreateCorpTagRequest.cpp
+  src/v20210129/model/CreateChannelCodeResponse.cpp
+  src/v20210129/model/QueryActivityListRequest.cpp
+  src/v20210129/model/QueryMiniAppCodeListRequest.cpp
+  src/v20210129/model/QueryChatArchivingListRequest.cpp
+  src/v20210129/model/QueryChannelCodeListResponse.cpp
   )
 
 set(wav_include
