@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 类型
+                * 组织学类型
                 */
                 class HistologyType : public AbstractModel
                 {

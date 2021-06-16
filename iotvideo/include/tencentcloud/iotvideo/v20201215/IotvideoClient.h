@@ -29,6 +29,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/CancelDeviceFirmwareTaskResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CheckForwardAuthRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/CheckForwardAuthResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/ControlDeviceDataRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/ControlDeviceDataResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateBatchRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateBatchResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateCloudStorageRequest.h>
@@ -121,6 +123,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/ModifyModelDefinitionResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/ModifyProductRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/ModifyProductResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/PublishMessageRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/PublishMessageResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/ResetCloudStorageRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/ResetCloudStorageResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/RetryDeviceFirmwareTaskRequest.h>
@@ -154,6 +158,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CheckForwardAuthResponse> CheckForwardAuthOutcome;
                 typedef std::future<CheckForwardAuthOutcome> CheckForwardAuthOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CheckForwardAuthRequest&, CheckForwardAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckForwardAuthAsyncHandler;
+                typedef Outcome<Error, Model::ControlDeviceDataResponse> ControlDeviceDataOutcome;
+                typedef std::future<ControlDeviceDataOutcome> ControlDeviceDataOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ControlDeviceDataRequest&, ControlDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDeviceDataAsyncHandler;
                 typedef Outcome<Error, Model::CreateBatchResponse> CreateBatchOutcome;
                 typedef std::future<CreateBatchOutcome> CreateBatchOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateBatchRequest&, CreateBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchAsyncHandler;
@@ -292,6 +299,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyProductResponse> ModifyProductOutcome;
                 typedef std::future<ModifyProductOutcome> ModifyProductOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ModifyProductRequest&, ModifyProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProductAsyncHandler;
+                typedef Outcome<Error, Model::PublishMessageResponse> PublishMessageOutcome;
+                typedef std::future<PublishMessageOutcome> PublishMessageOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::PublishMessageRequest&, PublishMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishMessageAsyncHandler;
                 typedef Outcome<Error, Model::ResetCloudStorageResponse> ResetCloudStorageOutcome;
                 typedef std::future<ResetCloudStorageOutcome> ResetCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ResetCloudStorageRequest&, ResetCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageAsyncHandler;
@@ -336,6 +346,15 @@ namespace TencentCloud
                 CheckForwardAuthOutcome CheckForwardAuth(const Model::CheckForwardAuthRequest &request);
                 void CheckForwardAuthAsync(const Model::CheckForwardAuthRequest& request, const CheckForwardAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckForwardAuthOutcomeCallable CheckForwardAuthCallable(const Model::CheckForwardAuthRequest& request);
+
+                /**
+                 *根据设备产品ID、设备名称，设置控制设备的属性数据。
+                 * @param req ControlDeviceDataRequest
+                 * @return ControlDeviceDataOutcome
+                 */
+                ControlDeviceDataOutcome ControlDeviceData(const Model::ControlDeviceDataRequest &request);
+                void ControlDeviceDataAsync(const Model::ControlDeviceDataRequest& request, const ControlDeviceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ControlDeviceDataOutcomeCallable ControlDeviceDataCallable(const Model::ControlDeviceDataRequest& request);
 
                 /**
                  *创建批次
@@ -750,6 +769,15 @@ namespace TencentCloud
                 ModifyProductOutcome ModifyProduct(const Model::ModifyProductRequest &request);
                 void ModifyProductAsync(const Model::ModifyProductRequest& request, const ModifyProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyProductOutcomeCallable ModifyProductCallable(const Model::ModifyProductRequest& request);
+
+                /**
+                 *本接口（PublishMessage）用于使用自定义透传协议进行设备远控
+                 * @param req PublishMessageRequest
+                 * @return PublishMessageOutcome
+                 */
+                PublishMessageOutcome PublishMessage(const Model::PublishMessageRequest &request);
+                void PublishMessageAsync(const Model::PublishMessageRequest& request, const PublishMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PublishMessageOutcomeCallable PublishMessageCallable(const Model::PublishMessageRequest& request);
 
                 /**
                  *重置云存服务

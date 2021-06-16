@@ -25,7 +25,8 @@ using namespace std;
 DescribeDatabasesRequest::DescribeDatabasesRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_keyWordHasBeenSet(false)
+    m_keyWordHasBeenSet(false),
+    m_datasourceConnectionNameHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeDatabasesRequest::ToJsonString() const
         string key = "KeyWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keyWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceConnectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeDatabasesRequest::SetKeyWord(const string& _keyWord)
 bool DescribeDatabasesRequest::KeyWordHasBeenSet() const
 {
     return m_keyWordHasBeenSet;
+}
+
+string DescribeDatabasesRequest::GetDatasourceConnectionName() const
+{
+    return m_datasourceConnectionName;
+}
+
+void DescribeDatabasesRequest::SetDatasourceConnectionName(const string& _datasourceConnectionName)
+{
+    m_datasourceConnectionName = _datasourceConnectionName;
+    m_datasourceConnectionNameHasBeenSet = true;
+}
+
+bool DescribeDatabasesRequest::DatasourceConnectionNameHasBeenSet() const
+{
+    return m_datasourceConnectionNameHasBeenSet;
 }
 
 

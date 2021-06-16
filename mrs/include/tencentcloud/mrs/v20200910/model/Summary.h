@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 总结
+                * 结论
                 */
                 class Summary : public AbstractModel
                 {

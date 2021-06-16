@@ -320,6 +320,24 @@ namespace TencentCloud
                      */
                     bool OutputMessageHasBeenSet() const;
 
+                    /**
+                     * 获取执行SQL的引擎类型
+                     * @return TaskType 执行SQL的引擎类型
+                     */
+                    std::string GetTaskType() const;
+
+                    /**
+                     * 设置执行SQL的引擎类型
+                     * @param TaskType 执行SQL的引擎类型
+                     */
+                    void SetTaskType(const std::string& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -412,6 +430,12 @@ namespace TencentCloud
                      */
                     std::string m_outputMessage;
                     bool m_outputMessageHasBeenSet;
+
+                    /**
+                     * 执行SQL的引擎类型
+                     */
+                    std::string m_taskType;
+                    bool m_taskTypeHasBeenSet;
 
                 };
             }

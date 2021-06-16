@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeTableRequest::DescribeTableRequest() :
     m_tableNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
+    m_databaseNameHasBeenSet(false),
+    m_datasourceConnectionNameHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeTableRequest::ToJsonString() const
         string key = "DatabaseName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceConnectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeTableRequest::SetDatabaseName(const string& _databaseName)
 bool DescribeTableRequest::DatabaseNameHasBeenSet() const
 {
     return m_databaseNameHasBeenSet;
+}
+
+string DescribeTableRequest::GetDatasourceConnectionName() const
+{
+    return m_datasourceConnectionName;
+}
+
+void DescribeTableRequest::SetDatasourceConnectionName(const string& _datasourceConnectionName)
+{
+    m_datasourceConnectionName = _datasourceConnectionName;
+    m_datasourceConnectionNameHasBeenSet = true;
+}
+
+bool DescribeTableRequest::DatasourceConnectionNameHasBeenSet() const
+{
+    return m_datasourceConnectionNameHasBeenSet;
 }
 
 

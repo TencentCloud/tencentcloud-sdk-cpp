@@ -178,6 +178,226 @@ namespace TencentCloud
                      */
                     bool IdCardHasBeenSet() const;
 
+                    /**
+                     * 获取健康卡号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HealthCardNo 健康卡号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHealthCardNo() const;
+
+                    /**
+                     * 设置健康卡号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HealthCardNo 健康卡号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHealthCardNo(const std::string& _healthCardNo);
+
+                    /**
+                     * 判断参数 HealthCardNo 是否已赋值
+                     * @return HealthCardNo 是否已赋值
+                     */
+                    bool HealthCardNoHasBeenSet() const;
+
+                    /**
+                     * 获取社保卡号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SocialSecurityCardNo 社保卡号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSocialSecurityCardNo() const;
+
+                    /**
+                     * 设置社保卡号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SocialSecurityCardNo 社保卡号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSocialSecurityCardNo(const std::string& _socialSecurityCardNo);
+
+                    /**
+                     * 判断参数 SocialSecurityCardNo 是否已赋值
+                     * @return SocialSecurityCardNo 是否已赋值
+                     */
+                    bool SocialSecurityCardNoHasBeenSet() const;
+
+                    /**
+                     * 获取出生日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Birthday 出生日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBirthday() const;
+
+                    /**
+                     * 设置出生日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Birthday 出生日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBirthday(const std::string& _birthday);
+
+                    /**
+                     * 判断参数 Birthday 是否已赋值
+                     * @return Birthday 是否已赋值
+                     */
+                    bool BirthdayHasBeenSet() const;
+
+                    /**
+                     * 获取民族
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ethnicity 民族
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEthnicity() const;
+
+                    /**
+                     * 设置民族
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Ethnicity 民族
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEthnicity(const std::string& _ethnicity);
+
+                    /**
+                     * 判断参数 Ethnicity 是否已赋值
+                     * @return Ethnicity 是否已赋值
+                     */
+                    bool EthnicityHasBeenSet() const;
+
+                    /**
+                     * 获取婚姻状况
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Married 婚姻状况
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMarried() const;
+
+                    /**
+                     * 设置婚姻状况
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Married 婚姻状况
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMarried(const std::string& _married);
+
+                    /**
+                     * 判断参数 Married 是否已赋值
+                     * @return Married 是否已赋值
+                     */
+                    bool MarriedHasBeenSet() const;
+
+                    /**
+                     * 获取职业
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Profession 职业
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProfession() const;
+
+                    /**
+                     * 设置职业
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Profession 职业
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProfession(const std::string& _profession);
+
+                    /**
+                     * 判断参数 Profession 是否已赋值
+                     * @return Profession 是否已赋值
+                     */
+                    bool ProfessionHasBeenSet() const;
+
+                    /**
+                     * 获取教育程度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EducationBackground 教育程度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEducationBackground() const;
+
+                    /**
+                     * 设置教育程度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EducationBackground 教育程度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEducationBackground(const std::string& _educationBackground);
+
+                    /**
+                     * 判断参数 EducationBackground 是否已赋值
+                     * @return EducationBackground 是否已赋值
+                     */
+                    bool EducationBackgroundHasBeenSet() const;
+
+                    /**
+                     * 获取国籍
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Nationality 国籍
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNationality() const;
+
+                    /**
+                     * 设置国籍
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Nationality 国籍
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNationality(const std::string& _nationality);
+
+                    /**
+                     * 判断参数 Nationality 是否已赋值
+                     * @return Nationality 是否已赋值
+                     */
+                    bool NationalityHasBeenSet() const;
+
+                    /**
+                     * 获取籍贯
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BirthPlace 籍贯
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBirthPlace() const;
+
+                    /**
+                     * 设置籍贯
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BirthPlace 籍贯
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBirthPlace(const std::string& _birthPlace);
+
+                    /**
+                     * 判断参数 BirthPlace 是否已赋值
+                     * @return BirthPlace 是否已赋值
+                     */
+                    bool BirthPlaceHasBeenSet() const;
+
+                    /**
+                     * 获取医保类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MedicalInsuranceType 医保类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMedicalInsuranceType() const;
+
+                    /**
+                     * 设置医保类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MedicalInsuranceType 医保类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMedicalInsuranceType(const std::string& _medicalInsuranceType);
+
+                    /**
+                     * 判断参数 MedicalInsuranceType 是否已赋值
+                     * @return MedicalInsuranceType 是否已赋值
+                     */
+                    bool MedicalInsuranceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +441,76 @@ namespace TencentCloud
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
+
+                    /**
+                     * 健康卡号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_healthCardNo;
+                    bool m_healthCardNoHasBeenSet;
+
+                    /**
+                     * 社保卡号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_socialSecurityCardNo;
+                    bool m_socialSecurityCardNoHasBeenSet;
+
+                    /**
+                     * 出生日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_birthday;
+                    bool m_birthdayHasBeenSet;
+
+                    /**
+                     * 民族
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ethnicity;
+                    bool m_ethnicityHasBeenSet;
+
+                    /**
+                     * 婚姻状况
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_married;
+                    bool m_marriedHasBeenSet;
+
+                    /**
+                     * 职业
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_profession;
+                    bool m_professionHasBeenSet;
+
+                    /**
+                     * 教育程度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_educationBackground;
+                    bool m_educationBackgroundHasBeenSet;
+
+                    /**
+                     * 国籍
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nationality;
+                    bool m_nationalityHasBeenSet;
+
+                    /**
+                     * 籍贯
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_birthPlace;
+                    bool m_birthPlaceHasBeenSet;
+
+                    /**
+                     * 医保类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_medicalInsuranceType;
+                    bool m_medicalInsuranceTypeHasBeenSet;
 
                 };
             }

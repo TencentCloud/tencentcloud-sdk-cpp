@@ -23,7 +23,8 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 CreateDatabaseRequest::CreateDatabaseRequest() :
-    m_databaseInfoHasBeenSet(false)
+    m_databaseInfoHasBeenSet(false),
+    m_datasourceConnectionNameHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string CreateDatabaseRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_databaseInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_datasourceConnectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void CreateDatabaseRequest::SetDatabaseInfo(const DatabaseInfo& _databaseInfo)
 bool CreateDatabaseRequest::DatabaseInfoHasBeenSet() const
 {
     return m_databaseInfoHasBeenSet;
+}
+
+string CreateDatabaseRequest::GetDatasourceConnectionName() const
+{
+    return m_datasourceConnectionName;
+}
+
+void CreateDatabaseRequest::SetDatasourceConnectionName(const string& _datasourceConnectionName)
+{
+    m_datasourceConnectionName = _datasourceConnectionName;
+    m_datasourceConnectionNameHasBeenSet = true;
+}
+
+bool CreateDatabaseRequest::DatasourceConnectionNameHasBeenSet() const
+{
+    return m_datasourceConnectionNameHasBeenSet;
 }
 
 

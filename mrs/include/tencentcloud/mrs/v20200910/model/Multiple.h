@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 数量
+                * 多发
                 */
                 class Multiple : public AbstractModel
                 {

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 横纵比
+                * 纵横比
                 */
                 class AspectRatio : public AbstractModel
                 {

@@ -123,6 +123,24 @@ table-id - String - （过滤条件）table id形如：12342。
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取指定查询的数据源名称，默认为CosDataCatalog
+                     * @return DatasourceConnectionName 指定查询的数据源名称，默认为CosDataCatalog
+                     */
+                    std::string GetDatasourceConnectionName() const;
+
+                    /**
+                     * 设置指定查询的数据源名称，默认为CosDataCatalog
+                     * @param DatasourceConnectionName 指定查询的数据源名称，默认为CosDataCatalog
+                     */
+                    void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
+
+                    /**
+                     * 判断参数 DatasourceConnectionName 是否已赋值
+                     * @return DatasourceConnectionName 是否已赋值
+                     */
+                    bool DatasourceConnectionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -150,6 +168,12 @@ table-id - String - （过滤条件）table id形如：12342。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 指定查询的数据源名称，默认为CosDataCatalog
+                     */
+                    std::string m_datasourceConnectionName;
+                    bool m_datasourceConnectionNameHasBeenSet;
 
                 };
             }

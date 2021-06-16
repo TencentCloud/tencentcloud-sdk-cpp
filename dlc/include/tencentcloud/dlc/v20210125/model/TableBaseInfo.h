@@ -82,6 +82,28 @@ namespace TencentCloud
                      */
                     bool TableNameHasBeenSet() const;
 
+                    /**
+                     * 获取该数据表所属数据源名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceConnectionName 该数据表所属数据源名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDatasourceConnectionName() const;
+
+                    /**
+                     * 设置该数据表所属数据源名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DatasourceConnectionName 该数据表所属数据源名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
+
+                    /**
+                     * 判断参数 DatasourceConnectionName 是否已赋值
+                     * @return DatasourceConnectionName 是否已赋值
+                     */
+                    bool DatasourceConnectionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +117,13 @@ namespace TencentCloud
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 该数据表所属数据源名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceConnectionName;
+                    bool m_datasourceConnectionNameHasBeenSet;
 
                 };
             }

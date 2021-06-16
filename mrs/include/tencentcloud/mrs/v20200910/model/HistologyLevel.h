@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 等级
+                * 组织学等级
                 */
                 class HistologyLevel : public AbstractModel
                 {

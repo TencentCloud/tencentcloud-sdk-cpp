@@ -229,17 +229,17 @@ namespace TencentCloud
                     bool RearEchoHasBeenSet() const;
 
                     /**
-                     * 获取质地弹性
+                     * 获取弹性质地
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Elastic 质地弹性
+                     * @return Elastic 弹性质地
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Elastic GetElastic() const;
 
                     /**
-                     * 设置质地弹性
+                     * 设置弹性质地
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Elastic 质地弹性
+                     * @param Elastic 弹性质地
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetElastic(const Elastic& _elastic);
@@ -837,7 +837,7 @@ namespace TencentCloud
                     bool m_rearEchoHasBeenSet;
 
                     /**
-                     * 质地弹性
+                     * 弹性质地
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Elastic m_elastic;

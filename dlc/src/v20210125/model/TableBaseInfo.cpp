@@ -22,7 +22,8 @@ using namespace std;
 
 TableBaseInfo::TableBaseInfo() :
     m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+    m_tableNameHasBeenSet(false),
+    m_datasourceConnectionNameHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome TableBaseInfo::Deserialize(const rapidjson::Value &value)
         m_tableNameHasBeenSet = true;
     }
 
+    if (value.HasMember("DatasourceConnectionName") && !value["DatasourceConnectionName"].IsNull())
+    {
+        if (!value["DatasourceConnectionName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TableBaseInfo.DatasourceConnectionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceConnectionName = string(value["DatasourceConnectionName"].GetString());
+        m_datasourceConnectionNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void TableBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceConnectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void TableBaseInfo::SetTableName(const string& _tableName)
 bool TableBaseInfo::TableNameHasBeenSet() const
 {
     return m_tableNameHasBeenSet;
+}
+
+string TableBaseInfo::GetDatasourceConnectionName() const
+{
+    return m_datasourceConnectionName;
+}
+
+void TableBaseInfo::SetDatasourceConnectionName(const string& _datasourceConnectionName)
+{
+    m_datasourceConnectionName = _datasourceConnectionName;
+    m_datasourceConnectionNameHasBeenSet = true;
+}
+
+bool TableBaseInfo::DatasourceConnectionNameHasBeenSet() const
+{
+    return m_datasourceConnectionNameHasBeenSet;
 }
 

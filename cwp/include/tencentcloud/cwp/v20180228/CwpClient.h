@@ -35,6 +35,8 @@
 #include <tencentcloud/cwp/v20180228/model/CreateOpenPortTaskResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateProcessTaskRequest.h>
 #include <tencentcloud/cwp/v20180228/model/CreateProcessTaskResponse.h>
+#include <tencentcloud/cwp/v20180228/model/CreateProtectServerRequest.h>
+#include <tencentcloud/cwp/v20180228/model/CreateProtectServerResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateSearchLogRequest.h>
 #include <tencentcloud/cwp/v20180228/model/CreateSearchLogResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateSearchTemplateRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/cwp/v20180228/model/DeleteTagsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteUsualLoginPlacesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteUsualLoginPlacesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DeleteWebPageEventLogRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DeleteWebPageEventLogResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAccountStatisticsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAccountStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAccountsRequest.h>
@@ -199,6 +203,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeVulScanResultResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeWebPageGeneralizeRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeWebPageGeneralizeResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeWeeklyReportBruteAttacksRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeWeeklyReportBruteAttacksResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeWeeklyReportInfoRequest.h>
@@ -259,6 +265,8 @@
 #include <tencentcloud/cwp/v20180228/model/ModifyMalwareTimingScanSettingsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyProVersionRenewFlagRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyProVersionRenewFlagResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyWebPageProtectSettingRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyWebPageProtectSettingResponse.h>
 #include <tencentcloud/cwp/v20180228/model/OpenProVersionRequest.h>
 #include <tencentcloud/cwp/v20180228/model/OpenProVersionResponse.h>
 #include <tencentcloud/cwp/v20180228/model/OpenProVersionPrepaidRequest.h>
@@ -269,6 +277,8 @@
 #include <tencentcloud/cwp/v20180228/model/RenewProVersionResponse.h>
 #include <tencentcloud/cwp/v20180228/model/RescanImpactedHostRequest.h>
 #include <tencentcloud/cwp/v20180228/model/RescanImpactedHostResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ScanVulRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ScanVulResponse.h>
 #include <tencentcloud/cwp/v20180228/model/SeparateMalwaresRequest.h>
 #include <tencentcloud/cwp/v20180228/model/SeparateMalwaresResponse.h>
 #include <tencentcloud/cwp/v20180228/model/SetBashEventsStatusRequest.h>
@@ -319,6 +329,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateProcessTaskResponse> CreateProcessTaskOutcome;
                 typedef std::future<CreateProcessTaskOutcome> CreateProcessTaskOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::CreateProcessTaskRequest&, CreateProcessTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProcessTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateProtectServerResponse> CreateProtectServerOutcome;
+                typedef std::future<CreateProtectServerOutcome> CreateProtectServerOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::CreateProtectServerRequest&, CreateProtectServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProtectServerAsyncHandler;
                 typedef Outcome<Error, Model::CreateSearchLogResponse> CreateSearchLogOutcome;
                 typedef std::future<CreateSearchLogOutcome> CreateSearchLogOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::CreateSearchLogRequest&, CreateSearchLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSearchLogAsyncHandler;
@@ -379,6 +392,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteUsualLoginPlacesResponse> DeleteUsualLoginPlacesOutcome;
                 typedef std::future<DeleteUsualLoginPlacesOutcome> DeleteUsualLoginPlacesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DeleteUsualLoginPlacesRequest&, DeleteUsualLoginPlacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsualLoginPlacesAsyncHandler;
+                typedef Outcome<Error, Model::DeleteWebPageEventLogResponse> DeleteWebPageEventLogOutcome;
+                typedef std::future<DeleteWebPageEventLogOutcome> DeleteWebPageEventLogOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DeleteWebPageEventLogRequest&, DeleteWebPageEventLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWebPageEventLogAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAccountStatisticsResponse> DescribeAccountStatisticsOutcome;
                 typedef std::future<DescribeAccountStatisticsOutcome> DescribeAccountStatisticsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAccountStatisticsRequest&, DescribeAccountStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountStatisticsAsyncHandler;
@@ -565,6 +581,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeVulsResponse> DescribeVulsOutcome;
                 typedef std::future<DescribeVulsOutcome> DescribeVulsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulsRequest&, DescribeVulsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeWebPageGeneralizeResponse> DescribeWebPageGeneralizeOutcome;
+                typedef std::future<DescribeWebPageGeneralizeOutcome> DescribeWebPageGeneralizeOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeWebPageGeneralizeRequest&, DescribeWebPageGeneralizeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebPageGeneralizeAsyncHandler;
                 typedef Outcome<Error, Model::DescribeWeeklyReportBruteAttacksResponse> DescribeWeeklyReportBruteAttacksOutcome;
                 typedef std::future<DescribeWeeklyReportBruteAttacksOutcome> DescribeWeeklyReportBruteAttacksOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeWeeklyReportBruteAttacksRequest&, DescribeWeeklyReportBruteAttacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWeeklyReportBruteAttacksAsyncHandler;
@@ -655,6 +674,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyProVersionRenewFlagResponse> ModifyProVersionRenewFlagOutcome;
                 typedef std::future<ModifyProVersionRenewFlagOutcome> ModifyProVersionRenewFlagOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyProVersionRenewFlagRequest&, ModifyProVersionRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProVersionRenewFlagAsyncHandler;
+                typedef Outcome<Error, Model::ModifyWebPageProtectSettingResponse> ModifyWebPageProtectSettingOutcome;
+                typedef std::future<ModifyWebPageProtectSettingOutcome> ModifyWebPageProtectSettingOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ModifyWebPageProtectSettingRequest&, ModifyWebPageProtectSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebPageProtectSettingAsyncHandler;
                 typedef Outcome<Error, Model::OpenProVersionResponse> OpenProVersionOutcome;
                 typedef std::future<OpenProVersionOutcome> OpenProVersionOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::OpenProVersionRequest&, OpenProVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenProVersionAsyncHandler;
@@ -670,6 +692,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RescanImpactedHostResponse> RescanImpactedHostOutcome;
                 typedef std::future<RescanImpactedHostOutcome> RescanImpactedHostOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::RescanImpactedHostRequest&, RescanImpactedHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RescanImpactedHostAsyncHandler;
+                typedef Outcome<Error, Model::ScanVulResponse> ScanVulOutcome;
+                typedef std::future<ScanVulOutcome> ScanVulOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ScanVulRequest&, ScanVulOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanVulAsyncHandler;
                 typedef Outcome<Error, Model::SeparateMalwaresResponse> SeparateMalwaresOutcome;
                 typedef std::future<SeparateMalwaresOutcome> SeparateMalwaresOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::SeparateMalwaresRequest&, SeparateMalwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SeparateMalwaresAsyncHandler;
@@ -753,6 +778,15 @@ namespace TencentCloud
                 CreateProcessTaskOutcome CreateProcessTask(const Model::CreateProcessTaskRequest &request);
                 void CreateProcessTaskAsync(const Model::CreateProcessTaskRequest& request, const CreateProcessTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateProcessTaskOutcomeCallable CreateProcessTaskCallable(const Model::CreateProcessTaskRequest& request);
+
+                /**
+                 *添加房展防护服务器
+                 * @param req CreateProtectServerRequest
+                 * @return CreateProtectServerOutcome
+                 */
+                CreateProtectServerOutcome CreateProtectServer(const Model::CreateProtectServerRequest &request);
+                void CreateProtectServerAsync(const Model::CreateProtectServerRequest& request, const CreateProtectServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProtectServerOutcomeCallable CreateProtectServerCallable(const Model::CreateProtectServerRequest& request);
 
                 /**
                  *添加历史搜索记录
@@ -933,6 +967,15 @@ namespace TencentCloud
                 DeleteUsualLoginPlacesOutcome DeleteUsualLoginPlaces(const Model::DeleteUsualLoginPlacesRequest &request);
                 void DeleteUsualLoginPlacesAsync(const Model::DeleteUsualLoginPlacesRequest& request, const DeleteUsualLoginPlacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUsualLoginPlacesOutcomeCallable DeleteUsualLoginPlacesCallable(const Model::DeleteUsualLoginPlacesRequest& request);
+
+                /**
+                 *网站防篡改-删除事件记录
+                 * @param req DeleteWebPageEventLogRequest
+                 * @return DeleteWebPageEventLogOutcome
+                 */
+                DeleteWebPageEventLogOutcome DeleteWebPageEventLog(const Model::DeleteWebPageEventLogRequest &request);
+                void DeleteWebPageEventLogAsync(const Model::DeleteWebPageEventLogRequest& request, const DeleteWebPageEventLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWebPageEventLogOutcomeCallable DeleteWebPageEventLogCallable(const Model::DeleteWebPageEventLogRequest& request);
 
                 /**
                  *本接口 (DescribeAccountStatistics) 用于获取帐号统计列表数据。
@@ -1495,6 +1538,15 @@ namespace TencentCloud
                 DescribeVulsOutcomeCallable DescribeVulsCallable(const Model::DescribeVulsRequest& request);
 
                 /**
+                 *查询网站防篡改 概览信息
+                 * @param req DescribeWebPageGeneralizeRequest
+                 * @return DescribeWebPageGeneralizeOutcome
+                 */
+                DescribeWebPageGeneralizeOutcome DescribeWebPageGeneralize(const Model::DescribeWebPageGeneralizeRequest &request);
+                void DescribeWebPageGeneralizeAsync(const Model::DescribeWebPageGeneralizeRequest& request, const DescribeWebPageGeneralizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWebPageGeneralizeOutcomeCallable DescribeWebPageGeneralizeCallable(const Model::DescribeWebPageGeneralizeRequest& request);
+
+                /**
                  *本接口 (DescribeWeeklyReportBruteAttacks) 用于获取专业周报密码破解数据。
                  * @param req DescribeWeeklyReportBruteAttacksRequest
                  * @return DescribeWeeklyReportBruteAttacksOutcome
@@ -1766,6 +1818,15 @@ namespace TencentCloud
                 ModifyProVersionRenewFlagOutcomeCallable ModifyProVersionRenewFlagCallable(const Model::ModifyProVersionRenewFlagRequest& request);
 
                 /**
+                 *网站防篡改-修改网站防护设置
+                 * @param req ModifyWebPageProtectSettingRequest
+                 * @return ModifyWebPageProtectSettingOutcome
+                 */
+                ModifyWebPageProtectSettingOutcome ModifyWebPageProtectSetting(const Model::ModifyWebPageProtectSettingRequest &request);
+                void ModifyWebPageProtectSettingAsync(const Model::ModifyWebPageProtectSettingRequest& request, const ModifyWebPageProtectSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWebPageProtectSettingOutcomeCallable ModifyWebPageProtectSettingCallable(const Model::ModifyWebPageProtectSettingRequest& request);
+
+                /**
                  *本接口 (OpenProVersion) 用于开通专业版。
                  * @param req OpenProVersionRequest
                  * @return OpenProVersionOutcome
@@ -1809,6 +1870,15 @@ namespace TencentCloud
                 RescanImpactedHostOutcome RescanImpactedHost(const Model::RescanImpactedHostRequest &request);
                 void RescanImpactedHostAsync(const Model::RescanImpactedHostRequest& request, const RescanImpactedHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RescanImpactedHostOutcomeCallable RescanImpactedHostCallable(const Model::RescanImpactedHostRequest& request);
+
+                /**
+                 *漏洞管理 - 一键检测
+                 * @param req ScanVulRequest
+                 * @return ScanVulOutcome
+                 */
+                ScanVulOutcome ScanVul(const Model::ScanVulRequest &request);
+                void ScanVulAsync(const Model::ScanVulRequest& request, const ScanVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScanVulOutcomeCallable ScanVulCallable(const Model::ScanVulRequest& request);
 
                 /**
                  *本接口（SeparateMalwares）用于隔离木马。

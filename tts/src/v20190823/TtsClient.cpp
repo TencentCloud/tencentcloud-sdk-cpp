@@ -40,6 +40,92 @@ TtsClient::TtsClient(const Credential &credential, const string &region, const C
 }
 
 
+TtsClient::CreateTtsTaskOutcome TtsClient::CreateTtsTask(const CreateTtsTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTtsTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTtsTaskResponse rsp = CreateTtsTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTtsTaskOutcome(rsp);
+        else
+            return CreateTtsTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTtsTaskOutcome(outcome.GetError());
+    }
+}
+
+void TtsClient::CreateTtsTaskAsync(const CreateTtsTaskRequest& request, const CreateTtsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTtsTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TtsClient::CreateTtsTaskOutcomeCallable TtsClient::CreateTtsTaskCallable(const CreateTtsTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTtsTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTtsTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TtsClient::DescribeTtsTaskStatusOutcome TtsClient::DescribeTtsTaskStatus(const DescribeTtsTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTtsTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTtsTaskStatusResponse rsp = DescribeTtsTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTtsTaskStatusOutcome(rsp);
+        else
+            return DescribeTtsTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTtsTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void TtsClient::DescribeTtsTaskStatusAsync(const DescribeTtsTaskStatusRequest& request, const DescribeTtsTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTtsTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TtsClient::DescribeTtsTaskStatusOutcomeCallable TtsClient::DescribeTtsTaskStatusCallable(const DescribeTtsTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTtsTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTtsTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TtsClient::TextToVoiceOutcome TtsClient::TextToVoice(const TextToVoiceRequest &request)
 {
     auto outcome = MakeRequest(request, "TextToVoice");

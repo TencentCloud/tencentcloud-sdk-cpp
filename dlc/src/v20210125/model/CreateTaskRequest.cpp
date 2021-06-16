@@ -24,7 +24,8 @@ using namespace std;
 
 CreateTaskRequest::CreateTaskRequest() :
     m_taskHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
+    m_databaseNameHasBeenSet(false),
+    m_datasourceConnectionNameHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string CreateTaskRequest::ToJsonString() const
         string key = "DatabaseName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceConnectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void CreateTaskRequest::SetDatabaseName(const string& _databaseName)
 bool CreateTaskRequest::DatabaseNameHasBeenSet() const
 {
     return m_databaseNameHasBeenSet;
+}
+
+string CreateTaskRequest::GetDatasourceConnectionName() const
+{
+    return m_datasourceConnectionName;
+}
+
+void CreateTaskRequest::SetDatasourceConnectionName(const string& _datasourceConnectionName)
+{
+    m_datasourceConnectionName = _datasourceConnectionName;
+    m_datasourceConnectionNameHasBeenSet = true;
+}
+
+bool CreateTaskRequest::DatasourceConnectionNameHasBeenSet() const
+{
+    return m_datasourceConnectionNameHasBeenSet;
 }
 
 

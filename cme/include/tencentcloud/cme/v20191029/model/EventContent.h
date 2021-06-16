@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/StorageNewFileCreatedEvent.h>
+#include <tencentcloud/cme/v20191029/model/ProjectStreamConnectStatusChangedEvent.h>
 
 
 namespace TencentCloud
@@ -49,17 +50,21 @@ namespace TencentCloud
 
                     /**
                      * 获取事件类型，可取值为：
-<li>Storage.NewFileCreated：新文件产生。</li>
+<li>Storage.NewFileCreated：新文件产生；</li>
+<li>Project.StreamConnect.StatusChanged：云转推项目状态变更。</li>
                      * @return EventType 事件类型，可取值为：
-<li>Storage.NewFileCreated：新文件产生。</li>
+<li>Storage.NewFileCreated：新文件产生；</li>
+<li>Project.StreamConnect.StatusChanged：云转推项目状态变更。</li>
                      */
                     std::string GetEventType() const;
 
                     /**
                      * 设置事件类型，可取值为：
-<li>Storage.NewFileCreated：新文件产生。</li>
+<li>Storage.NewFileCreated：新文件产生；</li>
+<li>Project.StreamConnect.StatusChanged：云转推项目状态变更。</li>
                      * @param EventType 事件类型，可取值为：
-<li>Storage.NewFileCreated：新文件产生。</li>
+<li>Storage.NewFileCreated：新文件产生；</li>
+<li>Project.StreamConnect.StatusChanged：云转推项目状态变更。</li>
                      */
                     void SetEventType(const std::string& _eventType);
 
@@ -87,11 +92,30 @@ namespace TencentCloud
                      */
                     bool StorageNewFileCreatedEventHasBeenSet() const;
 
+                    /**
+                     * 获取云转推项目状态变更事件信息。仅当 EventType 为 Project.StreamConnect.StatusChanged 时有效。
+                     * @return ProjectStreamConnectStatusChangedEvent 云转推项目状态变更事件信息。仅当 EventType 为 Project.StreamConnect.StatusChanged 时有效。
+                     */
+                    ProjectStreamConnectStatusChangedEvent GetProjectStreamConnectStatusChangedEvent() const;
+
+                    /**
+                     * 设置云转推项目状态变更事件信息。仅当 EventType 为 Project.StreamConnect.StatusChanged 时有效。
+                     * @param ProjectStreamConnectStatusChangedEvent 云转推项目状态变更事件信息。仅当 EventType 为 Project.StreamConnect.StatusChanged 时有效。
+                     */
+                    void SetProjectStreamConnectStatusChangedEvent(const ProjectStreamConnectStatusChangedEvent& _projectStreamConnectStatusChangedEvent);
+
+                    /**
+                     * 判断参数 ProjectStreamConnectStatusChangedEvent 是否已赋值
+                     * @return ProjectStreamConnectStatusChangedEvent 是否已赋值
+                     */
+                    bool ProjectStreamConnectStatusChangedEventHasBeenSet() const;
+
                 private:
 
                     /**
                      * 事件类型，可取值为：
-<li>Storage.NewFileCreated：新文件产生。</li>
+<li>Storage.NewFileCreated：新文件产生；</li>
+<li>Project.StreamConnect.StatusChanged：云转推项目状态变更。</li>
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;
@@ -101,6 +125,12 @@ namespace TencentCloud
                      */
                     StorageNewFileCreatedEvent m_storageNewFileCreatedEvent;
                     bool m_storageNewFileCreatedEventHasBeenSet;
+
+                    /**
+                     * 云转推项目状态变更事件信息。仅当 EventType 为 Project.StreamConnect.StatusChanged 时有效。
+                     */
+                    ProjectStreamConnectStatusChangedEvent m_projectStreamConnectStatusChangedEvent;
+                    bool m_projectStreamConnectStatusChangedEventHasBeenSet;
 
                 };
             }

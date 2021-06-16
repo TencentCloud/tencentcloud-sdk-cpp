@@ -6232,6 +6232,92 @@ TsfClient::RollbackConfigOutcomeCallable TsfClient::RollbackConfigCallable(const
     return task->get_future();
 }
 
+TsfClient::SearchBusinessLogOutcome TsfClient::SearchBusinessLog(const SearchBusinessLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchBusinessLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchBusinessLogResponse rsp = SearchBusinessLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchBusinessLogOutcome(rsp);
+        else
+            return SearchBusinessLogOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchBusinessLogOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::SearchBusinessLogAsync(const SearchBusinessLogRequest& request, const SearchBusinessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchBusinessLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::SearchBusinessLogOutcomeCallable TsfClient::SearchBusinessLogCallable(const SearchBusinessLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchBusinessLogOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchBusinessLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::SearchStdoutLogOutcome TsfClient::SearchStdoutLog(const SearchStdoutLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchStdoutLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchStdoutLogResponse rsp = SearchStdoutLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchStdoutLogOutcome(rsp);
+        else
+            return SearchStdoutLogOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchStdoutLogOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::SearchStdoutLogAsync(const SearchStdoutLogRequest& request, const SearchStdoutLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchStdoutLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::SearchStdoutLogOutcomeCallable TsfClient::SearchStdoutLogCallable(const SearchStdoutLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchStdoutLogOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchStdoutLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::ShrinkGroupOutcome TsfClient::ShrinkGroup(const ShrinkGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ShrinkGroup");

@@ -420,6 +420,28 @@ namespace TencentCloud
                      */
                     bool UltraNumHasBeenSet() const;
 
+                    /**
+                     * 获取临床诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Diagnose 临床诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDiagnose() const;
+
+                    /**
+                     * 设置临床诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Diagnose 临床诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiagnose(const std::string& _diagnose);
+
+                    /**
+                     * 判断参数 Diagnose 是否已赋值
+                     * @return Diagnose 是否已赋值
+                     */
+                    bool DiagnoseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -540,6 +562,13 @@ namespace TencentCloud
                      */
                     std::string m_ultraNum;
                     bool m_ultraNumHasBeenSet;
+
+                    /**
+                     * 临床诊断
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_diagnose;
+                    bool m_diagnoseHasBeenSet;
 
                 };
             }

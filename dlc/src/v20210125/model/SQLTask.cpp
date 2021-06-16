@@ -21,7 +21,8 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 SQLTask::SQLTask() :
-    m_sQLHasBeenSet(false)
+    m_sQLHasBeenSet(false),
+    m_configHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,26 @@ CoreInternalOutcome SQLTask::Deserialize(const rapidjson::Value &value)
         m_sQLHasBeenSet = true;
     }
 
+    if (value.HasMember("Config") && !value["Config"].IsNull())
+    {
+        if (!value["Config"].IsArray())
+            return CoreInternalOutcome(Error("response `SQLTask.Config` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Config"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KVPair item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_config.push_back(item);
+        }
+        m_configHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +74,21 @@ void SQLTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "SQL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sQL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Config";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_config.begin(); itr != m_config.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -72,5 +108,21 @@ void SQLTask::SetSQL(const string& _sQL)
 bool SQLTask::SQLHasBeenSet() const
 {
     return m_sQLHasBeenSet;
+}
+
+vector<KVPair> SQLTask::GetConfig() const
+{
+    return m_config;
+}
+
+void SQLTask::SetConfig(const vector<KVPair>& _config)
+{
+    m_config = _config;
+    m_configHasBeenSet = true;
+}
+
+bool SQLTask::ConfigHasBeenSet() const
+{
+    return m_configHasBeenSet;
 }
 

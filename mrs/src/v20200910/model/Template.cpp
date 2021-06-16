@@ -29,7 +29,10 @@ Template::Template() :
     m_diagCertHasBeenSet(false),
     m_firstPageHasBeenSet(false),
     m_indicatorHasBeenSet(false),
-    m_reportTypeHasBeenSet(false)
+    m_reportTypeHasBeenSet(false),
+    m_medicalRecordInfoHasBeenSet(false),
+    m_hospitalizationHasBeenSet(false),
+    m_surgeryHasBeenSet(false)
 {
 }
 
@@ -184,6 +187,57 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
         m_reportTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("MedicalRecordInfo") && !value["MedicalRecordInfo"].IsNull())
+    {
+        if (!value["MedicalRecordInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Template.MedicalRecordInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_medicalRecordInfo.Deserialize(value["MedicalRecordInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_medicalRecordInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("Hospitalization") && !value["Hospitalization"].IsNull())
+    {
+        if (!value["Hospitalization"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Template.Hospitalization` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hospitalization.Deserialize(value["Hospitalization"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hospitalizationHasBeenSet = true;
+    }
+
+    if (value.HasMember("Surgery") && !value["Surgery"].IsNull())
+    {
+        if (!value["Surgery"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Template.Surgery` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_surgery.Deserialize(value["Surgery"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_surgeryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -269,6 +323,33 @@ void Template::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ReportType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reportType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_medicalRecordInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MedicalRecordInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_medicalRecordInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hospitalizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Hospitalization";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hospitalization.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_surgeryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Surgery";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_surgery.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -416,5 +497,53 @@ void Template::SetReportType(const string& _reportType)
 bool Template::ReportTypeHasBeenSet() const
 {
     return m_reportTypeHasBeenSet;
+}
+
+MedicalRecordInfo Template::GetMedicalRecordInfo() const
+{
+    return m_medicalRecordInfo;
+}
+
+void Template::SetMedicalRecordInfo(const MedicalRecordInfo& _medicalRecordInfo)
+{
+    m_medicalRecordInfo = _medicalRecordInfo;
+    m_medicalRecordInfoHasBeenSet = true;
+}
+
+bool Template::MedicalRecordInfoHasBeenSet() const
+{
+    return m_medicalRecordInfoHasBeenSet;
+}
+
+Hospitalization Template::GetHospitalization() const
+{
+    return m_hospitalization;
+}
+
+void Template::SetHospitalization(const Hospitalization& _hospitalization)
+{
+    m_hospitalization = _hospitalization;
+    m_hospitalizationHasBeenSet = true;
+}
+
+bool Template::HospitalizationHasBeenSet() const
+{
+    return m_hospitalizationHasBeenSet;
+}
+
+Surgery Template::GetSurgery() const
+{
+    return m_surgery;
+}
+
+void Template::SetSurgery(const Surgery& _surgery)
+{
+    m_surgery = _surgery;
+    m_surgeryHasBeenSet = true;
+}
+
+bool Template::SurgeryHasBeenSet() const
+{
+    return m_surgeryHasBeenSet;
 }
 

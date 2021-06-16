@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/KVPair.h>
 
 
 namespace TencentCloud
@@ -64,6 +65,24 @@ namespace TencentCloud
                      */
                     bool SQLHasBeenSet() const;
 
+                    /**
+                     * 获取任务的配置信息
+                     * @return Config 任务的配置信息
+                     */
+                    std::vector<KVPair> GetConfig() const;
+
+                    /**
+                     * 设置任务的配置信息
+                     * @param Config 任务的配置信息
+                     */
+                    void SetConfig(const std::vector<KVPair>& _config);
+
+                    /**
+                     * 判断参数 Config 是否已赋值
+                     * @return Config 是否已赋值
+                     */
+                    bool ConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +90,12 @@ namespace TencentCloud
                      */
                     std::string m_sQL;
                     bool m_sQLHasBeenSet;
+
+                    /**
+                     * 任务的配置信息
+                     */
+                    std::vector<KVPair> m_config;
+                    bool m_configHasBeenSet;
 
                 };
             }

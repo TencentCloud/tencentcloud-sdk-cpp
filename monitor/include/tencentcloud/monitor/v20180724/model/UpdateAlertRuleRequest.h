@@ -204,14 +204,22 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取报警规则注释列表
-                     * @return Annotations 报警规则注释列表
+                     * 获取报警规则注释列表。
+
+告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
+                     * @return Annotations 报警规则注释列表。
+
+告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
                      */
                     std::vector<PrometheusRuleKV> GetAnnotations() const;
 
                     /**
-                     * 设置报警规则注释列表
-                     * @param Annotations 报警规则注释列表
+                     * 设置报警规则注释列表。
+
+告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
+                     * @param Annotations 报警规则注释列表。
+
+告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
                      */
                     void SetAnnotations(const std::vector<PrometheusRuleKV>& _annotations);
 
@@ -294,7 +302,9 @@ namespace TencentCloud
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 报警规则注释列表
+                     * 报警规则注释列表。
+
+告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。
                      */
                     std::vector<PrometheusRuleKV> m_annotations;
                     bool m_annotationsHasBeenSet;

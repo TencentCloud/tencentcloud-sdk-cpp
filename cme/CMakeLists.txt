@@ -144,7 +144,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/AccountInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeProjectsRequest.h
   include/tencentcloud/cme/v20191029/model/DescribeLoginStatusResponse.h
-  include/tencentcloud/cme/v20191029/model/TeamMemberInfo.h
+  include/tencentcloud/cme/v20191029/model/ProjectStreamConnectStatusChangedEvent.h
   include/tencentcloud/cme/v20191029/model/DescribeJoinTeamsResponse.h
   include/tencentcloud/cme/v20191029/model/DescribeTeamMembersRequest.h
   include/tencentcloud/cme/v20191029/model/MaterialStatus.h
@@ -156,6 +156,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DeleteMaterialResponse.h
   include/tencentcloud/cme/v20191029/model/RevokeResourceAuthorizationRequest.h
   include/tencentcloud/cme/v20191029/model/DescribeTaskDetailRequest.h
+  include/tencentcloud/cme/v20191029/model/TeamMemberInfo.h
   include/tencentcloud/cme/v20191029/model/CosPublishInputInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeTasksResponse.h
   include/tencentcloud/cme/v20191029/model/ModifyProjectRequest.h
@@ -305,7 +306,7 @@ set(cme_src
   src/v20191029/model/AccountInfo.cpp
   src/v20191029/model/DescribeProjectsRequest.cpp
   src/v20191029/model/DescribeLoginStatusResponse.cpp
-  src/v20191029/model/TeamMemberInfo.cpp
+  src/v20191029/model/ProjectStreamConnectStatusChangedEvent.cpp
   src/v20191029/model/DescribeJoinTeamsResponse.cpp
   src/v20191029/model/DescribeTeamMembersRequest.cpp
   src/v20191029/model/MaterialStatus.cpp
@@ -317,6 +318,7 @@ set(cme_src
   src/v20191029/model/DeleteMaterialResponse.cpp
   src/v20191029/model/RevokeResourceAuthorizationRequest.cpp
   src/v20191029/model/DescribeTaskDetailRequest.cpp
+  src/v20191029/model/TeamMemberInfo.cpp
   src/v20191029/model/CosPublishInputInfo.cpp
   src/v20191029/model/DescribeTasksResponse.cpp
   src/v20191029/model/ModifyProjectRequest.cpp

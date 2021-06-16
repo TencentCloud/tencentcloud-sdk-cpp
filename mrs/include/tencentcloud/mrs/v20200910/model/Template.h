@@ -32,6 +32,9 @@
 #include <tencentcloud/mrs/v20200910/model/DiagCert.h>
 #include <tencentcloud/mrs/v20200910/model/FirstPage.h>
 #include <tencentcloud/mrs/v20200910/model/Indicator.h>
+#include <tencentcloud/mrs/v20200910/model/MedicalRecordInfo.h>
+#include <tencentcloud/mrs/v20200910/model/Hospitalization.h>
+#include <tencentcloud/mrs/v20200910/model/Surgery.h>
 
 
 namespace TencentCloud
@@ -252,6 +255,72 @@ namespace TencentCloud
                      */
                     bool ReportTypeHasBeenSet() const;
 
+                    /**
+                     * 获取门诊病历信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MedicalRecordInfo 门诊病历信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MedicalRecordInfo GetMedicalRecordInfo() const;
+
+                    /**
+                     * 设置门诊病历信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MedicalRecordInfo 门诊病历信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMedicalRecordInfo(const MedicalRecordInfo& _medicalRecordInfo);
+
+                    /**
+                     * 判断参数 MedicalRecordInfo 是否已赋值
+                     * @return MedicalRecordInfo 是否已赋值
+                     */
+                    bool MedicalRecordInfoHasBeenSet() const;
+
+                    /**
+                     * 获取出入院信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Hospitalization 出入院信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Hospitalization GetHospitalization() const;
+
+                    /**
+                     * 设置出入院信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Hospitalization 出入院信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHospitalization(const Hospitalization& _hospitalization);
+
+                    /**
+                     * 判断参数 Hospitalization 是否已赋值
+                     * @return Hospitalization 是否已赋值
+                     */
+                    bool HospitalizationHasBeenSet() const;
+
+                    /**
+                     * 获取手术记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Surgery 手术记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Surgery GetSurgery() const;
+
+                    /**
+                     * 设置手术记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Surgery 手术记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSurgery(const Surgery& _surgery);
+
+                    /**
+                     * 判断参数 Surgery 是否已赋值
+                     * @return Surgery 是否已赋值
+                     */
+                    bool SurgeryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -316,6 +385,27 @@ namespace TencentCloud
                      */
                     std::string m_reportType;
                     bool m_reportTypeHasBeenSet;
+
+                    /**
+                     * 门诊病历信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MedicalRecordInfo m_medicalRecordInfo;
+                    bool m_medicalRecordInfoHasBeenSet;
+
+                    /**
+                     * 出入院信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Hospitalization m_hospitalization;
+                    bool m_hospitalizationHasBeenSet;
+
+                    /**
+                     * 手术记录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Surgery m_surgery;
+                    bool m_surgeryHasBeenSet;
 
                 };
             }

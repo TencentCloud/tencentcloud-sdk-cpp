@@ -311,6 +311,10 @@
 #include <tencentcloud/tsf/v20180326/model/RevocationPublicConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/RollbackConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/RollbackConfigResponse.h>
+#include <tencentcloud/tsf/v20180326/model/SearchBusinessLogRequest.h>
+#include <tencentcloud/tsf/v20180326/model/SearchBusinessLogResponse.h>
+#include <tencentcloud/tsf/v20180326/model/SearchStdoutLogRequest.h>
+#include <tencentcloud/tsf/v20180326/model/SearchStdoutLogResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ShrinkGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ShrinkGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ShrinkInstancesRequest.h>
@@ -793,6 +797,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RollbackConfigResponse> RollbackConfigOutcome;
                 typedef std::future<RollbackConfigOutcome> RollbackConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::RollbackConfigRequest&, RollbackConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackConfigAsyncHandler;
+                typedef Outcome<Error, Model::SearchBusinessLogResponse> SearchBusinessLogOutcome;
+                typedef std::future<SearchBusinessLogOutcome> SearchBusinessLogOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::SearchBusinessLogRequest&, SearchBusinessLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchBusinessLogAsyncHandler;
+                typedef Outcome<Error, Model::SearchStdoutLogResponse> SearchStdoutLogOutcome;
+                typedef std::future<SearchStdoutLogOutcome> SearchStdoutLogOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::SearchStdoutLogRequest&, SearchStdoutLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchStdoutLogAsyncHandler;
                 typedef Outcome<Error, Model::ShrinkGroupResponse> ShrinkGroupOutcome;
                 typedef std::future<ShrinkGroupOutcome> ShrinkGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ShrinkGroupRequest&, ShrinkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ShrinkGroupAsyncHandler;
@@ -2149,6 +2159,24 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 RollbackConfigOutcome RollbackConfig(const Model::RollbackConfigRequest &request);
                 void RollbackConfigAsync(const Model::RollbackConfigRequest& request, const RollbackConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RollbackConfigOutcomeCallable RollbackConfigCallable(const Model::RollbackConfigRequest& request);
+
+                /**
+                 *业务日志搜索
+                 * @param req SearchBusinessLogRequest
+                 * @return SearchBusinessLogOutcome
+                 */
+                SearchBusinessLogOutcome SearchBusinessLog(const Model::SearchBusinessLogRequest &request);
+                void SearchBusinessLogAsync(const Model::SearchBusinessLogRequest& request, const SearchBusinessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchBusinessLogOutcomeCallable SearchBusinessLogCallable(const Model::SearchBusinessLogRequest& request);
+
+                /**
+                 *标准输出日志搜索
+                 * @param req SearchStdoutLogRequest
+                 * @return SearchStdoutLogOutcome
+                 */
+                SearchStdoutLogOutcome SearchStdoutLog(const Model::SearchStdoutLogRequest &request);
+                void SearchStdoutLogAsync(const Model::SearchStdoutLogRequest& request, const SearchStdoutLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchStdoutLogOutcomeCallable SearchStdoutLogCallable(const Model::SearchStdoutLogRequest& request);
 
                 /**
                  *下线部署组所有机器实例

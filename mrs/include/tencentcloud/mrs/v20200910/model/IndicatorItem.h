@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 指标项
+                * 检验指标项
                 */
                 class IndicatorItem : public AbstractModel
                 {

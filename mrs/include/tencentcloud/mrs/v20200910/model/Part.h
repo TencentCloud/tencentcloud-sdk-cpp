@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 部位
+                * 部位信息
                 */
                 class Part : public AbstractModel
                 {

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 部位
+                * 标准部位
                 */
                 class NormPart : public AbstractModel
                 {

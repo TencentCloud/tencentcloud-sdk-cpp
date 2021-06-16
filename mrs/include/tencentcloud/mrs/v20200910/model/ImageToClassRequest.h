@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool HandleParamHasBeenSet() const;
 
                     /**
-                     * 获取图片类型
-                     * @return Type 图片类型
+                     * 获取图片类型，目前支持11（检验报告），12（检查报告），15（病理报告），218（诊断证明）。
+                     * @return Type 图片类型，目前支持11（检验报告），12（检查报告），15（病理报告），218（诊断证明）。
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置图片类型
-                     * @param Type 图片类型
+                     * 设置图片类型，目前支持11（检验报告），12（检查报告），15（病理报告），218（诊断证明）。
+                     * @param Type 图片类型，目前支持11（检验报告），12（检查报告），15（病理报告），218（诊断证明）。
                      */
                     void SetType(const uint64_t& _type);
 
@@ -113,7 +113,7 @@ namespace TencentCloud
                     bool m_handleParamHasBeenSet;
 
                     /**
-                     * 图片类型
+                     * 图片类型，目前支持11（检验报告），12（检查报告），15（病理报告），218（诊断证明）。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

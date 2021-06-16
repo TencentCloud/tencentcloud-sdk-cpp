@@ -213,6 +213,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20201215/model/BatchUpdateFirmwareResponse.h
   include/tencentcloud/iotvideo/v20201215/model/DeleteProductRequest.h
   include/tencentcloud/iotvideo/v20201215/model/StatusStatistic.h
+  include/tencentcloud/iotvideo/v20201215/model/PublishMessageResponse.h
   include/tencentcloud/iotvideo/v20201215/model/SetForwardAuthResponse.h
   include/tencentcloud/iotvideo/v20201215/model/EditFirmwareRequest.h
   include/tencentcloud/iotvideo/v20201215/model/DeviceDataHistoryItem.h
@@ -223,6 +224,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceCommLogResponse.h
   include/tencentcloud/iotvideo/v20201215/model/DeleteDeviceRequest.h
   include/tencentcloud/iotvideo/v20201215/model/GenerateSignedVideoURLResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/ControlDeviceDataRequest.h
   include/tencentcloud/iotvideo/v20201215/model/ListFirmwaresResponse.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeFirmwareTaskDevicesRequest.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeFirmwareResponse.h
@@ -243,6 +245,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceResponse.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageEventsRequest.h
   include/tencentcloud/iotvideo/v20201215/model/ListFirmwaresRequest.h
+  include/tencentcloud/iotvideo/v20201215/model/PublishMessageRequest.h
   include/tencentcloud/iotvideo/v20201215/model/RetryDeviceFirmwareTaskRequest.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeBalanceResponse.h
   include/tencentcloud/iotvideo/v20201215/model/UploadFirmwareRequest.h
@@ -268,10 +271,11 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20201215/model/CancelDeviceFirmwareTaskRequest.h
   include/tencentcloud/iotvideo/v20201215/model/CancelDeviceFirmwareTaskResponse.h
   include/tencentcloud/iotvideo/v20201215/model/DeleteDeviceResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/ControlDeviceDataResponse.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeDeviceDataHistoryRequest.h
   include/tencentcloud/iotvideo/v20201215/model/EventHistoryItem.h
   include/tencentcloud/iotvideo/v20201215/model/CreateForwardRuleRequest.h
-  include/tencentcloud/iotvideo/v20201215/model/CreateTaskFileUrlResponse.h
+  include/tencentcloud/iotvideo/v20201215/model/DeviceInfo.h
   include/tencentcloud/iotvideo/v20201215/model/SetForwardAuthRequest.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeBalanceTransactionsResponse.h
   include/tencentcloud/iotvideo/v20201215/model/ModifyDeviceResponse.h
@@ -295,7 +299,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20201215/model/TransferCloudStorageRequest.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeFirmwareTaskStatisticsRequest.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeBatchsRequest.h
-  include/tencentcloud/iotvideo/v20201215/model/DeviceInfo.h
+  include/tencentcloud/iotvideo/v20201215/model/CreateTaskFileUrlResponse.h
   include/tencentcloud/iotvideo/v20201215/model/ModifyModelDefinitionResponse.h
   include/tencentcloud/iotvideo/v20201215/model/ResetCloudStorageRequest.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeFirmwareTaskRequest.h
@@ -498,6 +502,7 @@ set(iotvideo_src
   src/v20201215/model/BatchUpdateFirmwareResponse.cpp
   src/v20201215/model/DeleteProductRequest.cpp
   src/v20201215/model/StatusStatistic.cpp
+  src/v20201215/model/PublishMessageResponse.cpp
   src/v20201215/model/SetForwardAuthResponse.cpp
   src/v20201215/model/EditFirmwareRequest.cpp
   src/v20201215/model/DeviceDataHistoryItem.cpp
@@ -508,6 +513,7 @@ set(iotvideo_src
   src/v20201215/model/DescribeDeviceCommLogResponse.cpp
   src/v20201215/model/DeleteDeviceRequest.cpp
   src/v20201215/model/GenerateSignedVideoURLResponse.cpp
+  src/v20201215/model/ControlDeviceDataRequest.cpp
   src/v20201215/model/ListFirmwaresResponse.cpp
   src/v20201215/model/DescribeFirmwareTaskDevicesRequest.cpp
   src/v20201215/model/DescribeFirmwareResponse.cpp
@@ -528,6 +534,7 @@ set(iotvideo_src
   src/v20201215/model/DescribeDeviceResponse.cpp
   src/v20201215/model/DescribeCloudStorageEventsRequest.cpp
   src/v20201215/model/ListFirmwaresRequest.cpp
+  src/v20201215/model/PublishMessageRequest.cpp
   src/v20201215/model/RetryDeviceFirmwareTaskRequest.cpp
   src/v20201215/model/DescribeBalanceResponse.cpp
   src/v20201215/model/UploadFirmwareRequest.cpp
@@ -553,10 +560,11 @@ set(iotvideo_src
   src/v20201215/model/CancelDeviceFirmwareTaskRequest.cpp
   src/v20201215/model/CancelDeviceFirmwareTaskResponse.cpp
   src/v20201215/model/DeleteDeviceResponse.cpp
+  src/v20201215/model/ControlDeviceDataResponse.cpp
   src/v20201215/model/DescribeDeviceDataHistoryRequest.cpp
   src/v20201215/model/EventHistoryItem.cpp
   src/v20201215/model/CreateForwardRuleRequest.cpp
-  src/v20201215/model/CreateTaskFileUrlResponse.cpp
+  src/v20201215/model/DeviceInfo.cpp
   src/v20201215/model/SetForwardAuthRequest.cpp
   src/v20201215/model/DescribeBalanceTransactionsResponse.cpp
   src/v20201215/model/ModifyDeviceResponse.cpp
@@ -580,7 +588,7 @@ set(iotvideo_src
   src/v20201215/model/TransferCloudStorageRequest.cpp
   src/v20201215/model/DescribeFirmwareTaskStatisticsRequest.cpp
   src/v20201215/model/DescribeBatchsRequest.cpp
-  src/v20201215/model/DeviceInfo.cpp
+  src/v20201215/model/CreateTaskFileUrlResponse.cpp
   src/v20201215/model/ModifyModelDefinitionResponse.cpp
   src/v20201215/model/ResetCloudStorageRequest.cpp
   src/v20201215/model/DescribeFirmwareTaskRequest.cpp

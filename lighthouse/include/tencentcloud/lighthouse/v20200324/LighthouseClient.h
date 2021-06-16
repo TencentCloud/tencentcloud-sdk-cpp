@@ -549,7 +549,7 @@ namespace TencentCloud
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
 
                 /**
-                 *查询重置实例的镜像信息
+                 *本接口（DescribeResetInstanceBlueprints）查询重置实例的镜像信息。
                  * @param req DescribeResetInstanceBlueprintsRequest
                  * @return DescribeResetInstanceBlueprintsOutcome
                  */

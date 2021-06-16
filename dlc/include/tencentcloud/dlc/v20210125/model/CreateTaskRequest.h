@@ -79,6 +79,24 @@ namespace TencentCloud
                      */
                     bool DatabaseNameHasBeenSet() const;
 
+                    /**
+                     * 获取默认数据源名称。
+                     * @return DatasourceConnectionName 默认数据源名称。
+                     */
+                    std::string GetDatasourceConnectionName() const;
+
+                    /**
+                     * 设置默认数据源名称。
+                     * @param DatasourceConnectionName 默认数据源名称。
+                     */
+                    void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
+
+                    /**
+                     * 判断参数 DatasourceConnectionName 是否已赋值
+                     * @return DatasourceConnectionName 是否已赋值
+                     */
+                    bool DatasourceConnectionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,6 +110,12 @@ namespace TencentCloud
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
+
+                    /**
+                     * 默认数据源名称。
+                     */
+                    std::string m_datasourceConnectionName;
+                    bool m_datasourceConnectionNameHasBeenSet;
 
                 };
             }

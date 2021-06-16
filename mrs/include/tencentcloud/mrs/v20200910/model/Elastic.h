@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 质地
+                * 弹性质地
                 */
                 class Elastic : public AbstractModel
                 {

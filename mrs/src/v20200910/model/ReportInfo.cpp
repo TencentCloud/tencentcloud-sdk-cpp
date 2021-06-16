@@ -37,7 +37,8 @@ ReportInfo::ReportInfo() :
     m_sampleTypeHasBeenSet(false),
     m_medicalRecordNumHasBeenSet(false),
     m_reportNameHasBeenSet(false),
-    m_ultraNumHasBeenSet(false)
+    m_ultraNumHasBeenSet(false),
+    m_diagnoseHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome ReportInfo::Deserialize(const rapidjson::Value &value)
         m_ultraNumHasBeenSet = true;
     }
 
+    if (value.HasMember("Diagnose") && !value["Diagnose"].IsNull())
+    {
+        if (!value["Diagnose"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ReportInfo.Diagnose` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diagnose = string(value["Diagnose"].GetString());
+        m_diagnoseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void ReportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "UltraNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ultraNum.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diagnoseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Diagnose";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diagnose.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void ReportInfo::SetUltraNum(const string& _ultraNum)
 bool ReportInfo::UltraNumHasBeenSet() const
 {
     return m_ultraNumHasBeenSet;
+}
+
+string ReportInfo::GetDiagnose() const
+{
+    return m_diagnose;
+}
+
+void ReportInfo::SetDiagnose(const string& _diagnose)
+{
+    m_diagnose = _diagnose;
+    m_diagnoseHasBeenSet = true;
+}
+
+bool ReportInfo::DiagnoseHasBeenSet() const
+{
+    return m_diagnoseHasBeenSet;
 }
 

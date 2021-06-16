@@ -123,6 +123,24 @@ view-id - String - （过滤条件）view id形如：12342。
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取数据库所属的数据源名称
+                     * @return DatasourceConnectionName 数据库所属的数据源名称
+                     */
+                    std::string GetDatasourceConnectionName() const;
+
+                    /**
+                     * 设置数据库所属的数据源名称
+                     * @param DatasourceConnectionName 数据库所属的数据源名称
+                     */
+                    void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
+
+                    /**
+                     * 判断参数 DatasourceConnectionName 是否已赋值
+                     * @return DatasourceConnectionName 是否已赋值
+                     */
+                    bool DatasourceConnectionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -150,6 +168,12 @@ view-id - String - （过滤条件）view id形如：12342。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 数据库所属的数据源名称
+                     */
+                    std::string m_datasourceConnectionName;
+                    bool m_datasourceConnectionNameHasBeenSet;
 
                 };
             }

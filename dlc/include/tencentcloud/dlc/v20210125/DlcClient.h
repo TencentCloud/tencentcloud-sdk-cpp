@@ -27,6 +27,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateDatabaseResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateScriptRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateScriptResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateStoreLocationRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTableRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTaskRequest.h>
@@ -65,6 +67,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateScriptResponse> CreateScriptOutcome;
                 typedef std::future<CreateScriptOutcome> CreateScriptOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateScriptRequest&, CreateScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScriptAsyncHandler;
+                typedef Outcome<Error, Model::CreateStoreLocationResponse> CreateStoreLocationOutcome;
+                typedef std::future<CreateStoreLocationOutcome> CreateStoreLocationOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateStoreLocationRequest&, CreateStoreLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStoreLocationAsyncHandler;
                 typedef Outcome<Error, Model::CreateTableResponse> CreateTableOutcome;
                 typedef std::future<CreateTableOutcome> CreateTableOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateTableRequest&, CreateTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTableAsyncHandler;
@@ -112,6 +117,15 @@ namespace TencentCloud
                 CreateScriptOutcome CreateScript(const Model::CreateScriptRequest &request);
                 void CreateScriptAsync(const Model::CreateScriptRequest& request, const CreateScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateScriptOutcomeCallable CreateScriptCallable(const Model::CreateScriptRequest& request);
+
+                /**
+                 *该接口（CreateStoreLocation）新增或覆盖计算结果存储位置。
+                 * @param req CreateStoreLocationRequest
+                 * @return CreateStoreLocationOutcome
+                 */
+                CreateStoreLocationOutcome CreateStoreLocation(const Model::CreateStoreLocationRequest &request);
+                void CreateStoreLocationAsync(const Model::CreateStoreLocationRequest& request, const CreateStoreLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStoreLocationOutcomeCallable CreateStoreLocationCallable(const Model::CreateStoreLocationRequest& request);
 
                 /**
                  *本接口（CreateTable）用于生成建表SQL。

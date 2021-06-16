@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tts/v20190823/model/CreateTtsTaskRequest.h>
+#include <tencentcloud/tts/v20190823/model/CreateTtsTaskResponse.h>
+#include <tencentcloud/tts/v20190823/model/DescribeTtsTaskStatusRequest.h>
+#include <tencentcloud/tts/v20190823/model/DescribeTtsTaskStatusResponse.h>
 #include <tencentcloud/tts/v20190823/model/TextToVoiceRequest.h>
 #include <tencentcloud/tts/v20190823/model/TextToVoiceResponse.h>
 
@@ -39,11 +43,45 @@ namespace TencentCloud
                 TtsClient(const Credential &credential, const std::string &region);
                 TtsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateTtsTaskResponse> CreateTtsTaskOutcome;
+                typedef std::future<CreateTtsTaskOutcome> CreateTtsTaskOutcomeCallable;
+                typedef std::function<void(const TtsClient*, const Model::CreateTtsTaskRequest&, CreateTtsTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTtsTaskAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTtsTaskStatusResponse> DescribeTtsTaskStatusOutcome;
+                typedef std::future<DescribeTtsTaskStatusOutcome> DescribeTtsTaskStatusOutcomeCallable;
+                typedef std::function<void(const TtsClient*, const Model::DescribeTtsTaskStatusRequest&, DescribeTtsTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTtsTaskStatusAsyncHandler;
                 typedef Outcome<Error, Model::TextToVoiceResponse> TextToVoiceOutcome;
                 typedef std::future<TextToVoiceOutcome> TextToVoiceOutcomeCallable;
                 typedef std::function<void(const TtsClient*, const Model::TextToVoiceRequest&, TextToVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToVoiceAsyncHandler;
 
 
+
+                /**
+                 *本接口服务对10万字符以内的文本进行语音合成，异步返回音频结果。满足一次性合成较长文本的客户需求，如阅读播报、新闻媒体等场景。
+
+<li>支持音频格式：mp3,wav,pcm</li>
+<li>支持音频采样率：16000 Hz</li>
+<li>支持中文普通话、英文、中英文混读、粤语合成</li>
+<li>支持语速、音量设置</li>
+<li>支持回调或轮询的方式获取结果，结果获取请参考 长文本语音合成结果查询。</li>
+<li>长文本语音合成任务完成后，合成音频结果在服务端可保存24小时</li>
+                 * @param req CreateTtsTaskRequest
+                 * @return CreateTtsTaskOutcome
+                 */
+                CreateTtsTaskOutcome CreateTtsTask(const Model::CreateTtsTaskRequest &request);
+                void CreateTtsTaskAsync(const Model::CreateTtsTaskRequest& request, const CreateTtsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTtsTaskOutcomeCallable CreateTtsTaskCallable(const Model::CreateTtsTaskRequest& request);
+
+                /**
+                 *在调用长文本语音合成请求接口后，有回调和轮询两种方式获取识别结果。
+
+<li>当采用回调方式时，合成完毕后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见 长文本语音合成结果查询 。</li>
+<li>当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见下文说明。</li>
+                 * @param req DescribeTtsTaskStatusRequest
+                 * @return DescribeTtsTaskStatusOutcome
+                 */
+                DescribeTtsTaskStatusOutcome DescribeTtsTaskStatus(const Model::DescribeTtsTaskStatusRequest &request);
+                void DescribeTtsTaskStatusAsync(const Model::DescribeTtsTaskStatusRequest& request, const DescribeTtsTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTtsTaskStatusOutcomeCallable DescribeTtsTaskStatusCallable(const Model::DescribeTtsTaskStatusRequest& request);
 
                 /**
                  *腾讯云语音合成技术（TTS）可以将任意文本转化为语音，实现让机器和应用张口说话。

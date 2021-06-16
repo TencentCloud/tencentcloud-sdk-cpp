@@ -126,6 +126,49 @@ DlcClient::CreateScriptOutcomeCallable DlcClient::CreateScriptCallable(const Cre
     return task->get_future();
 }
 
+DlcClient::CreateStoreLocationOutcome DlcClient::CreateStoreLocation(const CreateStoreLocationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateStoreLocation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateStoreLocationResponse rsp = CreateStoreLocationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateStoreLocationOutcome(rsp);
+        else
+            return CreateStoreLocationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateStoreLocationOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateStoreLocationAsync(const CreateStoreLocationRequest& request, const CreateStoreLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateStoreLocation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateStoreLocationOutcomeCallable DlcClient::CreateStoreLocationCallable(const CreateStoreLocationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateStoreLocationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateStoreLocation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::CreateTableOutcome DlcClient::CreateTable(const CreateTableRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTable");

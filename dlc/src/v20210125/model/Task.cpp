@@ -21,7 +21,8 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 Task::Task() :
-    m_sQLTaskHasBeenSet(false)
+    m_sQLTaskHasBeenSet(false),
+    m_sparkSQLTaskHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,23 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
         m_sQLTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("SparkSQLTask") && !value["SparkSQLTask"].IsNull())
+    {
+        if (!value["SparkSQLTask"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Task.SparkSQLTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sparkSQLTask.Deserialize(value["SparkSQLTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sparkSQLTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +79,15 @@ void Task::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sQLTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sparkSQLTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SparkSQLTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sparkSQLTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -80,5 +107,21 @@ void Task::SetSQLTask(const SQLTask& _sQLTask)
 bool Task::SQLTaskHasBeenSet() const
 {
     return m_sQLTaskHasBeenSet;
+}
+
+SQLTask Task::GetSparkSQLTask() const
+{
+    return m_sparkSQLTask;
+}
+
+void Task::SetSparkSQLTask(const SQLTask& _sparkSQLTask)
+{
+    m_sparkSQLTask = _sparkSQLTask;
+    m_sparkSQLTaskHasBeenSet = true;
+}
+
+bool Task::SparkSQLTaskHasBeenSet() const
+{
+    return m_sparkSQLTaskHasBeenSet;
 }
 

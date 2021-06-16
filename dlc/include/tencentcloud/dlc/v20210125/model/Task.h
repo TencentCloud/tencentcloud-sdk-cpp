@@ -65,6 +65,24 @@ namespace TencentCloud
                      */
                     bool SQLTaskHasBeenSet() const;
 
+                    /**
+                     * 获取Spark SQL查询任务
+                     * @return SparkSQLTask Spark SQL查询任务
+                     */
+                    SQLTask GetSparkSQLTask() const;
+
+                    /**
+                     * 设置Spark SQL查询任务
+                     * @param SparkSQLTask Spark SQL查询任务
+                     */
+                    void SetSparkSQLTask(const SQLTask& _sparkSQLTask);
+
+                    /**
+                     * 判断参数 SparkSQLTask 是否已赋值
+                     * @return SparkSQLTask 是否已赋值
+                     */
+                    bool SparkSQLTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -72,6 +90,12 @@ namespace TencentCloud
                      */
                     SQLTask m_sQLTask;
                     bool m_sQLTaskHasBeenSet;
+
+                    /**
+                     * Spark SQL查询任务
+                     */
+                    SQLTask m_sparkSQLTask;
+                    bool m_sparkSQLTaskHasBeenSet;
 
                 };
             }

@@ -61,6 +61,24 @@ namespace TencentCloud
                      */
                     bool DatabaseInfoHasBeenSet() const;
 
+                    /**
+                     * 获取数据源名称，默认为CosDataCatalog
+                     * @return DatasourceConnectionName 数据源名称，默认为CosDataCatalog
+                     */
+                    std::string GetDatasourceConnectionName() const;
+
+                    /**
+                     * 设置数据源名称，默认为CosDataCatalog
+                     * @param DatasourceConnectionName 数据源名称，默认为CosDataCatalog
+                     */
+                    void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
+
+                    /**
+                     * 判断参数 DatasourceConnectionName 是否已赋值
+                     * @return DatasourceConnectionName 是否已赋值
+                     */
+                    bool DatasourceConnectionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +86,12 @@ namespace TencentCloud
                      */
                     DatabaseInfo m_databaseInfo;
                     bool m_databaseInfoHasBeenSet;
+
+                    /**
+                     * 数据源名称，默认为CosDataCatalog
+                     */
+                    std::string m_datasourceConnectionName;
+                    bool m_datasourceConnectionNameHasBeenSet;
 
                 };
             }

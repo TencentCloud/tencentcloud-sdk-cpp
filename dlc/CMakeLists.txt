@@ -22,6 +22,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DatabaseInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksRequest.h
   include/tencentcloud/dlc/v20210125/model/Script.h
+  include/tencentcloud/dlc/v20210125/model/KVPair.h
   include/tencentcloud/dlc/v20210125/model/DescribeDatabasesRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeTableRequest.h
   include/tencentcloud/dlc/v20210125/model/Other.h
@@ -31,22 +32,24 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/Property.h
   include/tencentcloud/dlc/v20210125/model/DeleteScriptRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeTableResponse.h
-  include/tencentcloud/dlc/v20210125/model/CreateTaskRequest.h
+  include/tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h
   include/tencentcloud/dlc/v20210125/model/TableResponseInfo.h
   include/tencentcloud/dlc/v20210125/model/CreateScriptResponse.h
   include/tencentcloud/dlc/v20210125/model/Task.h
-  include/tencentcloud/dlc/v20210125/model/DescribeTablesResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h
   include/tencentcloud/dlc/v20210125/model/Execution.h
   include/tencentcloud/dlc/v20210125/model/DeleteScriptResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateTableResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateDatabaseResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTablesResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateScriptRequest.h
   include/tencentcloud/dlc/v20210125/model/Partition.h
   include/tencentcloud/dlc/v20210125/model/TableInfo.h
   include/tencentcloud/dlc/v20210125/model/Column.h
-  include/tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h
+  include/tencentcloud/dlc/v20210125/model/CreateStoreLocationRequest.h
   include/tencentcloud/dlc/v20210125/model/Filter.h
-  include/tencentcloud/dlc/v20210125/model/DescribeScriptsResponse.h
+  include/tencentcloud/dlc/v20210125/model/CreateTaskRequest.h
   include/tencentcloud/dlc/v20210125/model/TableBaseInfo.h
   include/tencentcloud/dlc/v20210125/model/ViewResponseInfo.h
   include/tencentcloud/dlc/v20210125/model/TextFile.h
@@ -59,7 +62,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeTablesRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateDatabaseRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeViewsRequest.h
-  include/tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeScriptsResponse.h
   include/tencentcloud/dlc/v20210125/model/DatabaseResponseInfo.h
   include/tencentcloud/dlc/v20210125/model/ViewBaseInfo.h
   )
@@ -69,6 +72,7 @@ set(dlc_src
   src/v20210125/model/DatabaseInfo.cpp
   src/v20210125/model/DescribeTasksRequest.cpp
   src/v20210125/model/Script.cpp
+  src/v20210125/model/KVPair.cpp
   src/v20210125/model/DescribeDatabasesRequest.cpp
   src/v20210125/model/DescribeTableRequest.cpp
   src/v20210125/model/Other.cpp
@@ -78,22 +82,24 @@ set(dlc_src
   src/v20210125/model/Property.cpp
   src/v20210125/model/DeleteScriptRequest.cpp
   src/v20210125/model/DescribeTableResponse.cpp
-  src/v20210125/model/CreateTaskRequest.cpp
+  src/v20210125/model/CreateStoreLocationResponse.cpp
   src/v20210125/model/TableResponseInfo.cpp
   src/v20210125/model/CreateScriptResponse.cpp
   src/v20210125/model/Task.cpp
-  src/v20210125/model/DescribeTablesResponse.cpp
+  src/v20210125/model/DescribeDatabasesResponse.cpp
   src/v20210125/model/Execution.cpp
   src/v20210125/model/DeleteScriptResponse.cpp
   src/v20210125/model/CreateTableResponse.cpp
   src/v20210125/model/CreateDatabaseResponse.cpp
+  src/v20210125/model/DescribeTablesResponse.cpp
+  src/v20210125/model/DescribeTasksResponse.cpp
   src/v20210125/model/CreateScriptRequest.cpp
   src/v20210125/model/Partition.cpp
   src/v20210125/model/TableInfo.cpp
   src/v20210125/model/Column.cpp
-  src/v20210125/model/DescribeTasksResponse.cpp
+  src/v20210125/model/CreateStoreLocationRequest.cpp
   src/v20210125/model/Filter.cpp
-  src/v20210125/model/DescribeScriptsResponse.cpp
+  src/v20210125/model/CreateTaskRequest.cpp
   src/v20210125/model/TableBaseInfo.cpp
   src/v20210125/model/ViewResponseInfo.cpp
   src/v20210125/model/TextFile.cpp
@@ -106,7 +112,7 @@ set(dlc_src
   src/v20210125/model/DescribeTablesRequest.cpp
   src/v20210125/model/CreateDatabaseRequest.cpp
   src/v20210125/model/DescribeViewsRequest.cpp
-  src/v20210125/model/DescribeDatabasesResponse.cpp
+  src/v20210125/model/DescribeScriptsResponse.cpp
   src/v20210125/model/DatabaseResponseInfo.cpp
   src/v20210125/model/ViewBaseInfo.cpp
   )

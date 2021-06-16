@@ -23,7 +23,8 @@ using namespace TencentCloud::Dts::V20180330::Model;
 using namespace std;
 
 CompleteMigrateJobRequest::CompleteMigrateJobRequest() :
-    m_jobIdHasBeenSet(false)
+    m_jobIdHasBeenSet(false),
+    m_completeModeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CompleteMigrateJobRequest::ToJsonString() const
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_completeModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompleteMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_completeMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CompleteMigrateJobRequest::SetJobId(const string& _jobId)
 bool CompleteMigrateJobRequest::JobIdHasBeenSet() const
 {
     return m_jobIdHasBeenSet;
+}
+
+string CompleteMigrateJobRequest::GetCompleteMode() const
+{
+    return m_completeMode;
+}
+
+void CompleteMigrateJobRequest::SetCompleteMode(const string& _completeMode)
+{
+    m_completeMode = _completeMode;
+    m_completeModeHasBeenSet = true;
+}
+
+bool CompleteMigrateJobRequest::CompleteModeHasBeenSet() const
+{
+    return m_completeModeHasBeenSet;
 }
 
 

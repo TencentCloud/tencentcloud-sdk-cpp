@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool SetNoHasBeenSet() const;
 
                     /**
-                     * 获取单位Mbps，固定码率，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
-                     * @return Bitrate 单位Mbps，固定码率，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * 获取单位Mbps，固定码率建议值，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * @return Bitrate 单位Mbps，固定码率建议值，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
                      */
                     uint64_t GetBitrate() const;
 
                     /**
-                     * 设置单位Mbps，固定码率，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
-                     * @param Bitrate 单位Mbps，固定码率，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * 设置单位Mbps，固定码率建议值，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * @param Bitrate 单位Mbps，固定码率建议值，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
                      */
                     void SetBitrate(const uint64_t& _bitrate);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool BitrateHasBeenSet() const;
 
                     /**
-                     * 获取单位Mbps，动态调整最大码率，有一定浮动范围
-                     * @return MaxBitrate 单位Mbps，动态调整最大码率，有一定浮动范围
+                     * 获取单位Mbps，动态调整最大码率建议值，会按实际情况调整
+                     * @return MaxBitrate 单位Mbps，动态调整最大码率建议值，会按实际情况调整
                      */
                     uint64_t GetMaxBitrate() const;
 
                     /**
-                     * 设置单位Mbps，动态调整最大码率，有一定浮动范围
-                     * @param MaxBitrate 单位Mbps，动态调整最大码率，有一定浮动范围
+                     * 设置单位Mbps，动态调整最大码率建议值，会按实际情况调整
+                     * @param MaxBitrate 单位Mbps，动态调整最大码率建议值，会按实际情况调整
                      */
                     void SetMaxBitrate(const uint64_t& _maxBitrate);
 
@@ -223,14 +223,14 @@ namespace TencentCloud
                     bool MaxBitrateHasBeenSet() const;
 
                     /**
-                     * 获取单位Mbps，动态调整最小码率，有一定浮动范围
-                     * @return MinBitrate 单位Mbps，动态调整最小码率，有一定浮动范围
+                     * 获取单位Mbps，动态调整最小码率建议值，会按实际情况调整
+                     * @return MinBitrate 单位Mbps，动态调整最小码率建议值，会按实际情况调整
                      */
                     uint64_t GetMinBitrate() const;
 
                     /**
-                     * 设置单位Mbps，动态调整最小码率，有一定浮动范围
-                     * @param MinBitrate 单位Mbps，动态调整最小码率，有一定浮动范围
+                     * 设置单位Mbps，动态调整最小码率建议值，会按实际情况调整
+                     * @param MinBitrate 单位Mbps，动态调整最小码率建议值，会按实际情况调整
                      */
                     void SetMinBitrate(const uint64_t& _minBitrate);
 
@@ -399,19 +399,19 @@ namespace TencentCloud
                     bool m_setNoHasBeenSet;
 
                     /**
-                     * 单位Mbps，固定码率，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
+                     * 单位Mbps，固定码率建议值，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)
                      */
                     uint64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
-                     * 单位Mbps，动态调整最大码率，有一定浮动范围
+                     * 单位Mbps，动态调整最大码率建议值，会按实际情况调整
                      */
                     uint64_t m_maxBitrate;
                     bool m_maxBitrateHasBeenSet;
 
                     /**
-                     * 单位Mbps，动态调整最小码率，有一定浮动范围
+                     * 单位Mbps，动态调整最小码率建议值，会按实际情况调整
                      */
                     uint64_t m_minBitrate;
                     bool m_minBitrateHasBeenSet;

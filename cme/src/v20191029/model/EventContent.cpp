@@ -22,7 +22,8 @@ using namespace std;
 
 EventContent::EventContent() :
     m_eventTypeHasBeenSet(false),
-    m_storageNewFileCreatedEventHasBeenSet(false)
+    m_storageNewFileCreatedEventHasBeenSet(false),
+    m_projectStreamConnectStatusChangedEventHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_storageNewFileCreatedEventHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectStreamConnectStatusChangedEvent") && !value["ProjectStreamConnectStatusChangedEvent"].IsNull())
+    {
+        if (!value["ProjectStreamConnectStatusChangedEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `EventContent.ProjectStreamConnectStatusChangedEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_projectStreamConnectStatusChangedEvent.Deserialize(value["ProjectStreamConnectStatusChangedEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_projectStreamConnectStatusChangedEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +98,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_storageNewFileCreatedEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_projectStreamConnectStatusChangedEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectStreamConnectStatusChangedEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_projectStreamConnectStatusChangedEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -115,5 +142,21 @@ void EventContent::SetStorageNewFileCreatedEvent(const StorageNewFileCreatedEven
 bool EventContent::StorageNewFileCreatedEventHasBeenSet() const
 {
     return m_storageNewFileCreatedEventHasBeenSet;
+}
+
+ProjectStreamConnectStatusChangedEvent EventContent::GetProjectStreamConnectStatusChangedEvent() const
+{
+    return m_projectStreamConnectStatusChangedEvent;
+}
+
+void EventContent::SetProjectStreamConnectStatusChangedEvent(const ProjectStreamConnectStatusChangedEvent& _projectStreamConnectStatusChangedEvent)
+{
+    m_projectStreamConnectStatusChangedEvent = _projectStreamConnectStatusChangedEvent;
+    m_projectStreamConnectStatusChangedEventHasBeenSet = true;
+}
+
+bool EventContent::ProjectStreamConnectStatusChangedEventHasBeenSet() const
+{
+    return m_projectStreamConnectStatusChangedEventHasBeenSet;
 }
 

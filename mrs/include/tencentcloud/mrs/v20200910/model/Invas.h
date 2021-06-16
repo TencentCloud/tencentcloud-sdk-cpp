@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Invasive
+                * 侵犯扩散
                 */
                 class Invas : public AbstractModel
                 {

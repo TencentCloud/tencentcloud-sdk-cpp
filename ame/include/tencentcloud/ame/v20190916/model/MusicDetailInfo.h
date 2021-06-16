@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取场景信息
-                     * @return Scene 场景信息
+                     * 获取应用歌曲信息,1.图文/短视频,2.网络直播,3.网络电台FM,4.免费游戏,5.商业游戏,6.网店网站设计,7.广告营销,8.网络长视频
+                     * @return Scene 应用歌曲信息,1.图文/短视频,2.网络直播,3.网络电台FM,4.免费游戏,5.商业游戏,6.网店网站设计,7.广告营销,8.网络长视频
                      */
                     std::vector<std::string> GetScene() const;
 
                     /**
-                     * 设置场景信息
-                     * @param Scene 场景信息
+                     * 设置应用歌曲信息,1.图文/短视频,2.网络直播,3.网络电台FM,4.免费游戏,5.商业游戏,6.网店网站设计,7.广告营销,8.网络长视频
+                     * @param Scene 应用歌曲信息,1.图文/短视频,2.网络直播,3.网络电台FM,4.免费游戏,5.商业游戏,6.网店网站设计,7.广告营销,8.网络长视频
                      */
                     void SetScene(const std::vector<std::string>& _scene);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool SceneHasBeenSet() const;
 
                     /**
-                     * 获取应用地域
-                     * @return Region 应用地域
+                     * 获取应用地域,1. 中国大陆,2. 中国含港澳台,3. 全球
+                     * @return Region 应用地域,1. 中国大陆,2. 中国含港澳台,3. 全球
                      */
                     std::vector<std::string> GetRegion() const;
 
                     /**
-                     * 设置应用地域
-                     * @param Region 应用地域
+                     * 设置应用地域,1. 中国大陆,2. 中国含港澳台,3. 全球
+                     * @param Region 应用地域,1. 中国大陆,2. 中国含港澳台,3. 全球
                      */
                     void SetRegion(const std::vector<std::string>& _region);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取授权期限
-                     * @return AuthPeriod 授权期限
+                     * 获取授权时间,1. 1年, 5. 随片永久
+                     * @return AuthPeriod 授权时间,1. 1年, 5. 随片永久
                      */
                     std::string GetAuthPeriod() const;
 
                     /**
-                     * 设置授权期限
-                     * @param AuthPeriod 授权期限
+                     * 设置授权时间,1. 1年, 5. 随片永久
+                     * @param AuthPeriod 授权时间,1. 1年, 5. 随片永久
                      */
                     void SetAuthPeriod(const std::string& _authPeriod);
 
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool AuthPeriodHasBeenSet() const;
 
                     /**
-                     * 获取商业化权益
-                     * @return Commercialization 商业化权益
+                     * 获取商业化授权，1. 支持商业化 ,2. 不支持商业化
+                     * @return Commercialization 商业化授权，1. 支持商业化 ,2. 不支持商业化
                      */
                     std::string GetCommercialization() const;
 
                     /**
-                     * 设置商业化权益
-                     * @param Commercialization 商业化权益
+                     * 设置商业化授权，1. 支持商业化 ,2. 不支持商业化
+                     * @param Commercialization 商业化授权，1. 支持商业化 ,2. 不支持商业化
                      */
                     void SetCommercialization(const std::string& _commercialization);
 
@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool CommercializationHasBeenSet() const;
 
                     /**
-                     * 获取跨平台传播权益
-                     * @return Platform 跨平台传播权益
+                     * 获取跨平台传播，1. 支持跨平台传播 ,2. 不支持跨平台传播
+                     * @return Platform 跨平台传播，1. 支持跨平台传播 ,2. 不支持跨平台传播
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置跨平台传播权益
-                     * @param Platform 跨平台传播权益
+                     * 设置跨平台传播，1. 支持跨平台传播 ,2. 不支持跨平台传播
+                     * @param Platform 跨平台传播，1. 支持跨平台传播 ,2. 不支持跨平台传播
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -301,31 +301,31 @@ namespace TencentCloud
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 场景信息
+                     * 应用歌曲信息,1.图文/短视频,2.网络直播,3.网络电台FM,4.免费游戏,5.商业游戏,6.网店网站设计,7.广告营销,8.网络长视频
                      */
                     std::vector<std::string> m_scene;
                     bool m_sceneHasBeenSet;
 
                     /**
-                     * 应用地域
+                     * 应用地域,1. 中国大陆,2. 中国含港澳台,3. 全球
                      */
                     std::vector<std::string> m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 授权期限
+                     * 授权时间,1. 1年, 5. 随片永久
                      */
                     std::string m_authPeriod;
                     bool m_authPeriodHasBeenSet;
 
                     /**
-                     * 商业化权益
+                     * 商业化授权，1. 支持商业化 ,2. 不支持商业化
                      */
                     std::string m_commercialization;
                     bool m_commercializationHasBeenSet;
 
                     /**
-                     * 跨平台传播权益
+                     * 跨平台传播，1. 支持跨平台传播 ,2. 不支持跨平台传播
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;

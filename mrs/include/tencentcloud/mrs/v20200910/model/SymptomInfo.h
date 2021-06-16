@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 病症描述
+                * 病症描述信息
                 */
                 class SymptomInfo : public AbstractModel
                 {
