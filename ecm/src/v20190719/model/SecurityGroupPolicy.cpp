@@ -30,7 +30,8 @@ SecurityGroupPolicy::SecurityGroupPolicy() :
     m_addressTemplateHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_policyDescriptionHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_ipv6CidrBlockHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome SecurityGroupPolicy::Deserialize(const rapidjson::Value &val
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6CidrBlock") && !value["Ipv6CidrBlock"].IsNull())
+    {
+        if (!value["Ipv6CidrBlock"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecurityGroupPolicy.Ipv6CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6CidrBlock = string(value["Ipv6CidrBlock"].GetString());
+        m_ipv6CidrBlockHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +251,14 @@ void SecurityGroupPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipv6CidrBlockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipv6CidrBlock.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -403,5 +422,21 @@ void SecurityGroupPolicy::SetModifyTime(const string& _modifyTime)
 bool SecurityGroupPolicy::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+string SecurityGroupPolicy::GetIpv6CidrBlock() const
+{
+    return m_ipv6CidrBlock;
+}
+
+void SecurityGroupPolicy::SetIpv6CidrBlock(const string& _ipv6CidrBlock)
+{
+    m_ipv6CidrBlock = _ipv6CidrBlock;
+    m_ipv6CidrBlockHasBeenSet = true;
+}
+
+bool SecurityGroupPolicy::Ipv6CidrBlockHasBeenSet() const
+{
+    return m_ipv6CidrBlockHasBeenSet;
 }
 

@@ -400,6 +400,28 @@ namespace TencentCloud
                      */
                     bool DeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取集群是否开启第三方节点支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableExternalNode 集群是否开启第三方节点支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableExternalNode() const;
+
+                    /**
+                     * 设置集群是否开启第三方节点支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableExternalNode 集群是否开启第三方节点支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableExternalNode(const bool& _enableExternalNode);
+
+                    /**
+                     * 判断参数 EnableExternalNode 是否已赋值
+                     * @return EnableExternalNode 是否已赋值
+                     */
+                    bool EnableExternalNodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -516,6 +538,13 @@ namespace TencentCloud
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
+
+                    /**
+                     * 集群是否开启第三方节点支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableExternalNode;
+                    bool m_enableExternalNodeHasBeenSet;
 
                 };
             }

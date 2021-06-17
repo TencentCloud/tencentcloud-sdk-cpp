@@ -43,32 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Token 是用来做鉴权使用的
-                     * @return StringToken Token 是用来做鉴权使用的
-                     */
-                    std::string GetStringToken() const;
-
-                    /**
-                     * 设置Token 是用来做鉴权使用的
-                     * @param StringToken Token 是用来做鉴权使用的
-                     */
-                    void SetStringToken(const std::string& _stringToken);
-
-                    /**
-                     * 判断参数 StringToken 是否已赋值
-                     * @return StringToken 是否已赋值
-                     */
-                    bool StringTokenHasBeenSet() const;
-
-                    /**
-                     * 获取消息要发送的topic的名字
-                     * @return Topic 消息要发送的topic的名字
+                     * 获取消息要发送的topic的名字, 这里尽量需要使用topic的全路径，如果不指定，默认使用的是：public/default
+                     * @return Topic 消息要发送的topic的名字, 这里尽量需要使用topic的全路径，如果不指定，默认使用的是：public/default
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置消息要发送的topic的名字
-                     * @param Topic 消息要发送的topic的名字
+                     * 设置消息要发送的topic的名字, 这里尽量需要使用topic的全路径，如果不指定，默认使用的是：public/default
+                     * @param Topic 消息要发送的topic的名字, 这里尽量需要使用topic的全路径，如果不指定，默认使用的是：public/default
                      */
                     void SetTopic(const std::string& _topic);
 
@@ -95,6 +77,24 @@ namespace TencentCloud
                      * @return Payload 是否已赋值
                      */
                     bool PayloadHasBeenSet() const;
+
+                    /**
+                     * 获取Token 是用来做鉴权使用的，可以不填，系统会自动获取
+                     * @return StringToken Token 是用来做鉴权使用的，可以不填，系统会自动获取
+                     */
+                    std::string GetStringToken() const;
+
+                    /**
+                     * 设置Token 是用来做鉴权使用的，可以不填，系统会自动获取
+                     * @param StringToken Token 是用来做鉴权使用的，可以不填，系统会自动获取
+                     */
+                    void SetStringToken(const std::string& _stringToken);
+
+                    /**
+                     * 判断参数 StringToken 是否已赋值
+                     * @return StringToken 是否已赋值
+                     */
+                    bool StringTokenHasBeenSet() const;
 
                     /**
                      * 获取设置 producer 的名字，要求全局唯一，用户不配置，系统会随机生成
@@ -153,13 +153,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Token 是用来做鉴权使用的
-                     */
-                    std::string m_stringToken;
-                    bool m_stringTokenHasBeenSet;
-
-                    /**
-                     * 消息要发送的topic的名字
+                     * 消息要发送的topic的名字, 这里尽量需要使用topic的全路径，如果不指定，默认使用的是：public/default
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
@@ -169,6 +163,12 @@ namespace TencentCloud
                      */
                     std::string m_payload;
                     bool m_payloadHasBeenSet;
+
+                    /**
+                     * Token 是用来做鉴权使用的，可以不填，系统会自动获取
+                     */
+                    std::string m_stringToken;
+                    bool m_stringTokenHasBeenSet;
 
                     /**
                      * 设置 producer 的名字，要求全局唯一，用户不配置，系统会随机生成

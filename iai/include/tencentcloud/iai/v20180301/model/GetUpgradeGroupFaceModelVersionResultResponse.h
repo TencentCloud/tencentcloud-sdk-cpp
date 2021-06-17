@@ -137,8 +137,8 @@ Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取无法升级的人脸Id信息，文件格式
-                     * @return FailedFacesUrl 无法升级的人脸Id信息，文件格式
+                     * 获取无法升级的人脸Id信息，文件格式为json。半小时有效
+                     * @return FailedFacesUrl 无法升级的人脸Id信息，文件格式为json。半小时有效
                      */
                     std::string GetFailedFacesUrl() const;
 
@@ -198,7 +198,7 @@ Unix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 无法升级的人脸Id信息，文件格式
+                     * 无法升级的人脸Id信息，文件格式为json。半小时有效
                      */
                     std::string m_failedFacesUrl;
                     bool m_failedFacesUrlHasBeenSet;

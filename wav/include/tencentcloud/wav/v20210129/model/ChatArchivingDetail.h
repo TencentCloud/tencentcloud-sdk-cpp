@@ -198,17 +198,17 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
                     bool MsgTimeHasBeenSet() const;
 
                     /**
-                     * 获取MsgType=video时的消息体
+                     * 获取MsgType=video时的消息体，忽略此字段，见BodyJson字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Video MsgType=video时的消息体
+                     * @return Video MsgType=video时的消息体，忽略此字段，见BodyJson字段
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChatArchivingMsgTypeVideo GetVideo() const;
 
                     /**
-                     * 设置MsgType=video时的消息体
+                     * 设置MsgType=video时的消息体，忽略此字段，见BodyJson字段
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Video MsgType=video时的消息体
+                     * @param Video MsgType=video时的消息体，忽略此字段，见BodyJson字段
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVideo(const ChatArchivingMsgTypeVideo& _video);
@@ -218,6 +218,28 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
                      * @return Video 是否已赋值
                      */
                     bool VideoHasBeenSet() const;
+
+                    /**
+                     * 获取根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BodyJson 根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBodyJson() const;
+
+                    /**
+                     * 设置根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BodyJson 根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBodyJson(const std::string& _bodyJson);
+
+                    /**
+                     * 判断参数 BodyJson 是否已赋值
+                     * @return BodyJson 是否已赋值
+                     */
+                    bool BodyJsonHasBeenSet() const;
 
                 private:
 
@@ -270,11 +292,18 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
                     bool m_msgTimeHasBeenSet;
 
                     /**
-                     * MsgType=video时的消息体
+                     * MsgType=video时的消息体，忽略此字段，见BodyJson字段
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChatArchivingMsgTypeVideo m_video;
                     bool m_videoHasBeenSet;
+
+                    /**
+                     * 根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bodyJson;
+                    bool m_bodyJsonHasBeenSet;
 
                 };
             }

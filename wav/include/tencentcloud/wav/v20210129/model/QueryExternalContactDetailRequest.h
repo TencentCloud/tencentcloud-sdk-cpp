@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ExternalUserIdHasBeenSet() const;
 
                     /**
-                     * 获取用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填
-                     * @return Cursor 用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填
+                     * 获取用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填。当客户在企业内的跟进人超过500人时需要使用cursor参数进行分页获取
+                     * @return Cursor 用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填。当客户在企业内的跟进人超过500人时需要使用cursor参数进行分页获取
                      */
                     std::string GetCursor() const;
 
                     /**
-                     * 设置用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填
-                     * @param Cursor 用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填
+                     * 设置用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填。当客户在企业内的跟进人超过500人时需要使用cursor参数进行分页获取
+                     * @param Cursor 用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填。当客户在企业内的跟进人超过500人时需要使用cursor参数进行分页获取
                      */
                     void SetCursor(const std::string& _cursor);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool CursorHasBeenSet() const;
 
                     /**
-                     * 获取返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值
-                     * @return Limit 返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值
+                     * 获取当前接口Limit不需要传参， 保留Limit只是为了保持向后兼容性， Limit默认值为500，当返回结果超过500时， NextCursor才有返回值
+                     * @return Limit 当前接口Limit不需要传参， 保留Limit只是为了保持向后兼容性， Limit默认值为500，当返回结果超过500时， NextCursor才有返回值
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值
-                     * @param Limit 返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值
+                     * 设置当前接口Limit不需要传参， 保留Limit只是为了保持向后兼容性， Limit默认值为500，当返回结果超过500时， NextCursor才有返回值
+                     * @param Limit 当前接口Limit不需要传参， 保留Limit只是为了保持向后兼容性， Limit默认值为500，当返回结果超过500时， NextCursor才有返回值
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_externalUserIdHasBeenSet;
 
                     /**
-                     * 用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填
+                     * 用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填。当客户在企业内的跟进人超过500人时需要使用cursor参数进行分页获取
                      */
                     std::string m_cursor;
                     bool m_cursorHasBeenSet;
 
                     /**
-                     * 返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值
+                     * 当前接口Limit不需要传参， 保留Limit只是为了保持向后兼容性， Limit默认值为500，当返回结果超过500时， NextCursor才有返回值
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -38,7 +38,9 @@ DescribeCrossBorderComplianceRequest::DescribeCrossBorderComplianceRequest() :
     m_emailHasBeenSet(false),
     m_serviceStartDateHasBeenSet(false),
     m_serviceEndDateHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -175,6 +177,22 @@ string DescribeCrossBorderComplianceRequest::ToJsonString() const
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -439,6 +457,38 @@ void DescribeCrossBorderComplianceRequest::SetState(const string& _state)
 bool DescribeCrossBorderComplianceRequest::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+uint64_t DescribeCrossBorderComplianceRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeCrossBorderComplianceRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeCrossBorderComplianceRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeCrossBorderComplianceRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeCrossBorderComplianceRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeCrossBorderComplianceRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

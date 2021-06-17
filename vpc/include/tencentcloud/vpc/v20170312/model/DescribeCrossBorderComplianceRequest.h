@@ -330,6 +330,42 @@ namespace TencentCloud
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取偏移量
+                     * @return Offset 偏移量
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量
+                     * @param Offset 偏移量
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取返回数量
+                     * @return Limit 返回数量
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置返回数量
+                     * @param Limit 返回数量
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +463,18 @@ namespace TencentCloud
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * 偏移量
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 返回数量
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

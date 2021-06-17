@@ -94,6 +94,24 @@ WAKE_UP_STOPPED_SCALING：扩容优先开机。扩容时优先对已关机的实
                      */
                     bool ScalingModeHasBeenSet() const;
 
+                    /**
+                     * 获取开启负载均衡不健康替换服务。若开启则对于负载均衡健康检查判断不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
+                     * @return ReplaceLoadBalancerUnhealthy 开启负载均衡不健康替换服务。若开启则对于负载均衡健康检查判断不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
+                     */
+                    bool GetReplaceLoadBalancerUnhealthy() const;
+
+                    /**
+                     * 设置开启负载均衡不健康替换服务。若开启则对于负载均衡健康检查判断不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
+                     * @param ReplaceLoadBalancerUnhealthy 开启负载均衡不健康替换服务。若开启则对于负载均衡健康检查判断不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
+                     */
+                    void SetReplaceLoadBalancerUnhealthy(const bool& _replaceLoadBalancerUnhealthy);
+
+                    /**
+                     * 判断参数 ReplaceLoadBalancerUnhealthy 是否已赋值
+                     * @return ReplaceLoadBalancerUnhealthy 是否已赋值
+                     */
+                    bool ReplaceLoadBalancerUnhealthyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -110,6 +128,12 @@ WAKE_UP_STOPPED_SCALING：扩容优先开机。扩容时优先对已关机的实
                      */
                     std::string m_scalingMode;
                     bool m_scalingModeHasBeenSet;
+
+                    /**
+                     * 开启负载均衡不健康替换服务。若开启则对于负载均衡健康检查判断不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。
+                     */
+                    bool m_replaceLoadBalancerUnhealthy;
+                    bool m_replaceLoadBalancerUnhealthyHasBeenSet;
 
                 };
             }

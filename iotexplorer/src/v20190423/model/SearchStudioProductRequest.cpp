@@ -27,7 +27,8 @@ SearchStudioProductRequest::SearchStudioProductRequest() :
     m_productNameHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_devStatusHasBeenSet(false)
+    m_devStatusHasBeenSet(false),
+    m_productIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string SearchStudioProductRequest::ToJsonString() const
         string key = "DevStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_devStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void SearchStudioProductRequest::SetDevStatus(const string& _devStatus)
 bool SearchStudioProductRequest::DevStatusHasBeenSet() const
 {
     return m_devStatusHasBeenSet;
+}
+
+string SearchStudioProductRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void SearchStudioProductRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool SearchStudioProductRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
 }
 
 

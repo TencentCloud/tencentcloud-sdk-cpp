@@ -232,6 +232,28 @@ namespace TencentCloud
                      */
                     bool ModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取网段或IPv6(互斥)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ipv6CidrBlock 网段或IPv6(互斥)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIpv6CidrBlock() const;
+
+                    /**
+                     * 设置网段或IPv6(互斥)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Ipv6CidrBlock 网段或IPv6(互斥)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
+
+                    /**
+                     * 判断参数 Ipv6CidrBlock 是否已赋值
+                     * @return Ipv6CidrBlock 是否已赋值
+                     */
+                    bool Ipv6CidrBlockHasBeenSet() const;
+
                 private:
 
                     /**
@@ -294,6 +316,13 @@ namespace TencentCloud
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 网段或IPv6(互斥)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ipv6CidrBlock;
+                    bool m_ipv6CidrBlockHasBeenSet;
 
                 };
             }

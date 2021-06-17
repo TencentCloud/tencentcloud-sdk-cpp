@@ -29,7 +29,9 @@ ProjectEntryEx::ProjectEntryEx() :
     m_productCountHasBeenSet(false),
     m_nativeAppCountHasBeenSet(false),
     m_webAppCountHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_applicationCountHasBeenSet(false),
+    m_deviceCountHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome ProjectEntryEx::Deserialize(const rapidjson::Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationCount") && !value["ApplicationCount"].IsNull())
+    {
+        if (!value["ApplicationCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ProjectEntryEx.ApplicationCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationCount = value["ApplicationCount"].GetUint64();
+        m_applicationCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceCount") && !value["DeviceCount"].IsNull())
+    {
+        if (!value["DeviceCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `ProjectEntryEx.DeviceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceCount = value["DeviceCount"].GetUint64();
+        m_deviceCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void ProjectEntryEx::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_applicationCount, allocator);
+    }
+
+    if (m_deviceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deviceCount, allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void ProjectEntryEx::SetInstanceId(const string& _instanceId)
 bool ProjectEntryEx::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+uint64_t ProjectEntryEx::GetApplicationCount() const
+{
+    return m_applicationCount;
+}
+
+void ProjectEntryEx::SetApplicationCount(const uint64_t& _applicationCount)
+{
+    m_applicationCount = _applicationCount;
+    m_applicationCountHasBeenSet = true;
+}
+
+bool ProjectEntryEx::ApplicationCountHasBeenSet() const
+{
+    return m_applicationCountHasBeenSet;
+}
+
+uint64_t ProjectEntryEx::GetDeviceCount() const
+{
+    return m_deviceCount;
+}
+
+void ProjectEntryEx::SetDeviceCount(const uint64_t& _deviceCount)
+{
+    m_deviceCount = _deviceCount;
+    m_deviceCountHasBeenSet = true;
+}
+
+bool ProjectEntryEx::DeviceCountHasBeenSet() const
+{
+    return m_deviceCountHasBeenSet;
 }
 

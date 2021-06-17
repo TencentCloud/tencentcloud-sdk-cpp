@@ -38,7 +38,8 @@ Cluster::Cluster() :
     m_osCustomizeTypeHasBeenSet(false),
     m_containerRuntimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_enableExternalNodeHasBeenSet(false)
 {
 }
 
@@ -244,6 +245,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_deletionProtectionHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableExternalNode") && !value["EnableExternalNode"].IsNull())
+    {
+        if (!value["EnableExternalNode"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.EnableExternalNode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableExternalNode = value["EnableExternalNode"].GetBool();
+        m_enableExternalNodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -401,6 +412,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_enableExternalNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableExternalNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableExternalNode, allocator);
     }
 
 }
@@ -692,5 +711,21 @@ void Cluster::SetDeletionProtection(const bool& _deletionProtection)
 bool Cluster::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+bool Cluster::GetEnableExternalNode() const
+{
+    return m_enableExternalNode;
+}
+
+void Cluster::SetEnableExternalNode(const bool& _enableExternalNode)
+{
+    m_enableExternalNode = _enableExternalNode;
+    m_enableExternalNodeHasBeenSet = true;
+}
+
+bool Cluster::EnableExternalNodeHasBeenSet() const
+{
+    return m_enableExternalNodeHasBeenSet;
 }
 

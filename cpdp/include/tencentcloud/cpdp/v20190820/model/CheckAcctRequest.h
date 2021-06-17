@@ -163,18 +163,18 @@ namespace TencentCloud
                     bool MidasSignatureHasBeenSet() const;
 
                     /**
-                     * 获取短信验证码
-BindType==2必填
-                     * @return CheckCode 短信验证码
-BindType==2必填
+                     * 获取短信验证码或指令号
+BindType==2必填，平安渠道必填
+                     * @return CheckCode 短信验证码或指令号
+BindType==2必填，平安渠道必填
                      */
                     std::string GetCheckCode() const;
 
                     /**
-                     * 设置短信验证码
-BindType==2必填
-                     * @param CheckCode 短信验证码
-BindType==2必填
+                     * 设置短信验证码或指令号
+BindType==2必填，平安渠道必填
+                     * @param CheckCode 短信验证码或指令号
+BindType==2必填，平安渠道必填
                      */
                     void SetCheckCode(const std::string& _checkCode);
 
@@ -360,8 +360,8 @@ development: 开发环境
                     bool m_midasSignatureHasBeenSet;
 
                     /**
-                     * 短信验证码
-BindType==2必填
+                     * 短信验证码或指令号
+BindType==2必填，平安渠道必填
                      */
                     std::string m_checkCode;
                     bool m_checkCodeHasBeenSet;

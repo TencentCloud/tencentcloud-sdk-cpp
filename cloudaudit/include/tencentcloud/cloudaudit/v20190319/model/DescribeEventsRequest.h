@@ -133,6 +133,24 @@ namespace TencentCloud
                      */
                     bool LookupAttributesHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回 IP 归属地（1 返回，0 不返回）
+                     * @return IsReturnLocation 是否返回 IP 归属地（1 返回，0 不返回）
+                     */
+                    uint64_t GetIsReturnLocation() const;
+
+                    /**
+                     * 设置是否返回 IP 归属地（1 返回，0 不返回）
+                     * @param IsReturnLocation 是否返回 IP 归属地（1 返回，0 不返回）
+                     */
+                    void SetIsReturnLocation(const uint64_t& _isReturnLocation);
+
+                    /**
+                     * 判断参数 IsReturnLocation 是否已赋值
+                     * @return IsReturnLocation 是否已赋值
+                     */
+                    bool IsReturnLocationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +182,12 @@ namespace TencentCloud
                      */
                     std::vector<LookupAttribute> m_lookupAttributes;
                     bool m_lookupAttributesHasBeenSet;
+
+                    /**
+                     * 是否返回 IP 归属地（1 返回，0 不返回）
+                     */
+                    uint64_t m_isReturnLocation;
+                    bool m_isReturnLocationHasBeenSet;
 
                 };
             }

@@ -25,7 +25,11 @@ using namespace std;
 GetProjectListRequest::GetProjectListRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_productIdHasBeenSet(false),
+    m_includesHasBeenSet(false),
+    m_projectNameHasBeenSet(false)
 {
 }
 
@@ -58,6 +62,43 @@ string GetProjectListRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_includesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Includes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_includes.begin(); itr != m_includes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_projectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +155,70 @@ void GetProjectListRequest::SetInstanceId(const string& _instanceId)
 bool GetProjectListRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string GetProjectListRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void GetProjectListRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool GetProjectListRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string GetProjectListRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void GetProjectListRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool GetProjectListRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+vector<string> GetProjectListRequest::GetIncludes() const
+{
+    return m_includes;
+}
+
+void GetProjectListRequest::SetIncludes(const vector<string>& _includes)
+{
+    m_includes = _includes;
+    m_includesHasBeenSet = true;
+}
+
+bool GetProjectListRequest::IncludesHasBeenSet() const
+{
+    return m_includesHasBeenSet;
+}
+
+string GetProjectListRequest::GetProjectName() const
+{
+    return m_projectName;
+}
+
+void GetProjectListRequest::SetProjectName(const string& _projectName)
+{
+    m_projectName = _projectName;
+    m_projectNameHasBeenSet = true;
+}
+
+bool GetProjectListRequest::ProjectNameHasBeenSet() const
+{
+    return m_projectNameHasBeenSet;
 }
 
 

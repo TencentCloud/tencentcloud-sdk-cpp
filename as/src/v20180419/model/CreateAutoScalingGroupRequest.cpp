@@ -41,7 +41,9 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_tagsHasBeenSet(false),
     m_serviceSettingsHasBeenSet(false),
     m_ipv6AddressCountHasBeenSet(false),
-    m_multiZoneSubnetPolicyHasBeenSet(false)
+    m_multiZoneSubnetPolicyHasBeenSet(false),
+    m_healthCheckTypeHasBeenSet(false),
+    m_loadBalancerHealthCheckGracePeriodHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,22 @@ string CreateAutoScalingGroupRequest::ToJsonString() const
         string key = "MultiZoneSubnetPolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_multiZoneSubnetPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_healthCheckType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalancerHealthCheckGracePeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancerHealthCheckGracePeriod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_loadBalancerHealthCheckGracePeriod, allocator);
     }
 
 
@@ -549,6 +567,38 @@ void CreateAutoScalingGroupRequest::SetMultiZoneSubnetPolicy(const string& _mult
 bool CreateAutoScalingGroupRequest::MultiZoneSubnetPolicyHasBeenSet() const
 {
     return m_multiZoneSubnetPolicyHasBeenSet;
+}
+
+string CreateAutoScalingGroupRequest::GetHealthCheckType() const
+{
+    return m_healthCheckType;
+}
+
+void CreateAutoScalingGroupRequest::SetHealthCheckType(const string& _healthCheckType)
+{
+    m_healthCheckType = _healthCheckType;
+    m_healthCheckTypeHasBeenSet = true;
+}
+
+bool CreateAutoScalingGroupRequest::HealthCheckTypeHasBeenSet() const
+{
+    return m_healthCheckTypeHasBeenSet;
+}
+
+uint64_t CreateAutoScalingGroupRequest::GetLoadBalancerHealthCheckGracePeriod() const
+{
+    return m_loadBalancerHealthCheckGracePeriod;
+}
+
+void CreateAutoScalingGroupRequest::SetLoadBalancerHealthCheckGracePeriod(const uint64_t& _loadBalancerHealthCheckGracePeriod)
+{
+    m_loadBalancerHealthCheckGracePeriod = _loadBalancerHealthCheckGracePeriod;
+    m_loadBalancerHealthCheckGracePeriodHasBeenSet = true;
+}
+
+bool CreateAutoScalingGroupRequest::LoadBalancerHealthCheckGracePeriodHasBeenSet() const
+{
+    return m_loadBalancerHealthCheckGracePeriodHasBeenSet;
 }
 
 

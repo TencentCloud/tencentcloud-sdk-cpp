@@ -40,6 +40,49 @@ TdmqClient::TdmqClient(const Credential &credential, const string &region, const
 }
 
 
+TdmqClient::AcknowledgeMessageOutcome TdmqClient::AcknowledgeMessage(const AcknowledgeMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "AcknowledgeMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AcknowledgeMessageResponse rsp = AcknowledgeMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AcknowledgeMessageOutcome(rsp);
+        else
+            return AcknowledgeMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return AcknowledgeMessageOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::AcknowledgeMessageAsync(const AcknowledgeMessageRequest& request, const AcknowledgeMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AcknowledgeMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::AcknowledgeMessageOutcomeCallable TdmqClient::AcknowledgeMessageCallable(const AcknowledgeMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AcknowledgeMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->AcknowledgeMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::ClearCmqQueueOutcome TdmqClient::ClearCmqQueue(const ClearCmqQueueRequest &request)
 {
     auto outcome = MakeRequest(request, "ClearCmqQueue");
@@ -1710,6 +1753,49 @@ TdmqClient::PublishCmqMsgOutcomeCallable TdmqClient::PublishCmqMsgCallable(const
         [this, request]()
         {
             return this->PublishCmqMsg(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::ReceiveMessageOutcome TdmqClient::ReceiveMessage(const ReceiveMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReceiveMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReceiveMessageResponse rsp = ReceiveMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReceiveMessageOutcome(rsp);
+        else
+            return ReceiveMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return ReceiveMessageOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ReceiveMessageAsync(const ReceiveMessageRequest& request, const ReceiveMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReceiveMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ReceiveMessageOutcomeCallable TdmqClient::ReceiveMessageCallable(const ReceiveMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReceiveMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->ReceiveMessage(request);
         }
     );
 

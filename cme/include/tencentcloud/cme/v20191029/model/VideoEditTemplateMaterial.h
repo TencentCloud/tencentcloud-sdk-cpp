@@ -83,6 +83,24 @@ namespace TencentCloud
                      */
                     bool SlotSetHasBeenSet() const;
 
+                    /**
+                     * 获取模板预览视频 URL 地址 。
+                     * @return PreviewVideoUrl 模板预览视频 URL 地址 。
+                     */
+                    std::string GetPreviewVideoUrl() const;
+
+                    /**
+                     * 设置模板预览视频 URL 地址 。
+                     * @param PreviewVideoUrl 模板预览视频 URL 地址 。
+                     */
+                    void SetPreviewVideoUrl(const std::string& _previewVideoUrl);
+
+                    /**
+                     * 判断参数 PreviewVideoUrl 是否已赋值
+                     * @return PreviewVideoUrl 是否已赋值
+                     */
+                    bool PreviewVideoUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -96,6 +114,12 @@ namespace TencentCloud
                      */
                     std::vector<SlotInfo> m_slotSet;
                     bool m_slotSetHasBeenSet;
+
+                    /**
+                     * 模板预览视频 URL 地址 。
+                     */
+                    std::string m_previewVideoUrl;
+                    bool m_previewVideoUrlHasBeenSet;
 
                 };
             }

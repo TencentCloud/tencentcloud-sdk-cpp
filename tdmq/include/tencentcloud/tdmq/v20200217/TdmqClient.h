@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tdmq/v20200217/model/AcknowledgeMessageRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/AcknowledgeMessageResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ClearCmqQueueRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ClearCmqQueueResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ClearCmqSubscriptionFilterTagsRequest.h>
@@ -101,6 +103,8 @@
 #include <tencentcloud/tdmq/v20200217/model/ModifyTopicResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/PublishCmqMsgRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/PublishCmqMsgResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ReceiveMessageRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ReceiveMessageResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/RewindCmqQueueRequest.h>
@@ -129,6 +133,9 @@ namespace TencentCloud
                 TdmqClient(const Credential &credential, const std::string &region);
                 TdmqClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AcknowledgeMessageResponse> AcknowledgeMessageOutcome;
+                typedef std::future<AcknowledgeMessageOutcome> AcknowledgeMessageOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::AcknowledgeMessageRequest&, AcknowledgeMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AcknowledgeMessageAsyncHandler;
                 typedef Outcome<Error, Model::ClearCmqQueueResponse> ClearCmqQueueOutcome;
                 typedef std::future<ClearCmqQueueOutcome> ClearCmqQueueOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ClearCmqQueueRequest&, ClearCmqQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearCmqQueueAsyncHandler;
@@ -246,6 +253,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::PublishCmqMsgResponse> PublishCmqMsgOutcome;
                 typedef std::future<PublishCmqMsgOutcome> PublishCmqMsgOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::PublishCmqMsgRequest&, PublishCmqMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishCmqMsgAsyncHandler;
+                typedef Outcome<Error, Model::ReceiveMessageResponse> ReceiveMessageOutcome;
+                typedef std::future<ReceiveMessageOutcome> ReceiveMessageOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ReceiveMessageRequest&, ReceiveMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReceiveMessageAsyncHandler;
                 typedef Outcome<Error, Model::ResetMsgSubOffsetByTimestampResponse> ResetMsgSubOffsetByTimestampOutcome;
                 typedef std::future<ResetMsgSubOffsetByTimestampOutcome> ResetMsgSubOffsetByTimestampOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ResetMsgSubOffsetByTimestampRequest&, ResetMsgSubOffsetByTimestampOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetMsgSubOffsetByTimestampAsyncHandler;
@@ -269,6 +279,15 @@ namespace TencentCloud
                 typedef std::function<void(const TdmqClient*, const Model::UnbindCmqDeadLetterRequest&, UnbindCmqDeadLetterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindCmqDeadLetterAsyncHandler;
 
 
+
+                /**
+                 *根据提供的 MessageID 确认指定 topic 中的消息
+                 * @param req AcknowledgeMessageRequest
+                 * @return AcknowledgeMessageOutcome
+                 */
+                AcknowledgeMessageOutcome AcknowledgeMessage(const Model::AcknowledgeMessageRequest &request);
+                void AcknowledgeMessageAsync(const Model::AcknowledgeMessageRequest& request, const AcknowledgeMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AcknowledgeMessageOutcomeCallable AcknowledgeMessageCallable(const Model::AcknowledgeMessageRequest& request);
 
                 /**
                  *清空cmq消息队列中的消息
@@ -620,6 +639,15 @@ namespace TencentCloud
                 PublishCmqMsgOutcome PublishCmqMsg(const Model::PublishCmqMsgRequest &request);
                 void PublishCmqMsgAsync(const Model::PublishCmqMsgRequest& request, const PublishCmqMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PublishCmqMsgOutcomeCallable PublishCmqMsgCallable(const Model::PublishCmqMsgRequest& request);
+
+                /**
+                 *接收发送到指定 topic 中的消息
+                 * @param req ReceiveMessageRequest
+                 * @return ReceiveMessageOutcome
+                 */
+                ReceiveMessageOutcome ReceiveMessage(const Model::ReceiveMessageRequest &request);
+                void ReceiveMessageAsync(const Model::ReceiveMessageRequest& request, const ReceiveMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReceiveMessageOutcomeCallable ReceiveMessageCallable(const Model::ReceiveMessageRequest& request);
 
                 /**
                  *根据时间戳进行消息回溯，精确到毫秒

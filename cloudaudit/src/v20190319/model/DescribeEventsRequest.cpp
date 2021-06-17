@@ -27,7 +27,8 @@ DescribeEventsRequest::DescribeEventsRequest() :
     m_endTimeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResultsHasBeenSet(false),
-    m_lookupAttributesHasBeenSet(false)
+    m_lookupAttributesHasBeenSet(false),
+    m_isReturnLocationHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string DescribeEventsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isReturnLocationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsReturnLocation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isReturnLocation, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void DescribeEventsRequest::SetLookupAttributes(const vector<LookupAttribute>& _
 bool DescribeEventsRequest::LookupAttributesHasBeenSet() const
 {
     return m_lookupAttributesHasBeenSet;
+}
+
+uint64_t DescribeEventsRequest::GetIsReturnLocation() const
+{
+    return m_isReturnLocation;
+}
+
+void DescribeEventsRequest::SetIsReturnLocation(const uint64_t& _isReturnLocation)
+{
+    m_isReturnLocation = _isReturnLocation;
+    m_isReturnLocationHasBeenSet = true;
+}
+
+bool DescribeEventsRequest::IsReturnLocationHasBeenSet() const
+{
+    return m_isReturnLocationHasBeenSet;
 }
 
 

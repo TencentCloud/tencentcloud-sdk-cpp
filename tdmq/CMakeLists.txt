@@ -24,8 +24,9 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/SendBatchMessagesResponse.h
-  include/tencentcloud/tdmq/v20200217/model/DescribeClusterDetailRequest.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyCmqSubscriptionAttributeResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateCmqTopicRequest.h
+  include/tencentcloud/tdmq/v20200217/model/ReceiveMessageRequest.h
   include/tencentcloud/tdmq/v20200217/model/BindCluster.h
   include/tencentcloud/tdmq/v20200217/model/ModifyClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqQueuesResponse.h
@@ -56,10 +57,12 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/RewindCmqQueueRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyClusterRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentAttributesRequest.h
+  include/tencentcloud/tdmq/v20200217/model/AcknowledgeMessageRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h
   include/tencentcloud/tdmq/v20200217/model/PublishCmqMsgResponse.h
   include/tencentcloud/tdmq/v20200217/model/SendCmqMsgRequest.h
-  include/tencentcloud/tdmq/v20200217/model/ModifyCmqSubscriptionAttributeResponse.h
+  include/tencentcloud/tdmq/v20200217/model/AcknowledgeMessageResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeClusterDetailRequest.h
   include/tencentcloud/tdmq/v20200217/model/Tag.h
   include/tencentcloud/tdmq/v20200217/model/DeleteCmqQueueResponse.h
   include/tencentcloud/tdmq/v20200217/model/SendMessagesRequest.h
@@ -97,6 +100,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsResponse.h
   include/tencentcloud/tdmq/v20200217/model/ModifyCmqSubscriptionAttributeRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyTopicResponse.h
+  include/tencentcloud/tdmq/v20200217/model/ReceiveMessageResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateCmqTopicResponse.h
   include/tencentcloud/tdmq/v20200217/model/CmqDeadLetterSource.h
   include/tencentcloud/tdmq/v20200217/model/ClearCmqSubscriptionFilterTagsResponse.h
@@ -143,8 +147,9 @@ set(tdmq_src
   src/v20200217/model/DescribeSubscriptionsRequest.cpp
   src/v20200217/model/DeleteClusterResponse.cpp
   src/v20200217/model/SendBatchMessagesResponse.cpp
-  src/v20200217/model/DescribeClusterDetailRequest.cpp
+  src/v20200217/model/ModifyCmqSubscriptionAttributeResponse.cpp
   src/v20200217/model/CreateCmqTopicRequest.cpp
+  src/v20200217/model/ReceiveMessageRequest.cpp
   src/v20200217/model/BindCluster.cpp
   src/v20200217/model/ModifyClusterResponse.cpp
   src/v20200217/model/DescribeCmqQueuesResponse.cpp
@@ -175,10 +180,12 @@ set(tdmq_src
   src/v20200217/model/RewindCmqQueueRequest.cpp
   src/v20200217/model/ModifyClusterRequest.cpp
   src/v20200217/model/DescribeEnvironmentAttributesRequest.cpp
+  src/v20200217/model/AcknowledgeMessageRequest.cpp
   src/v20200217/model/DescribeTopicsResponse.cpp
   src/v20200217/model/PublishCmqMsgResponse.cpp
   src/v20200217/model/SendCmqMsgRequest.cpp
-  src/v20200217/model/ModifyCmqSubscriptionAttributeResponse.cpp
+  src/v20200217/model/AcknowledgeMessageResponse.cpp
+  src/v20200217/model/DescribeClusterDetailRequest.cpp
   src/v20200217/model/Tag.cpp
   src/v20200217/model/DeleteCmqQueueResponse.cpp
   src/v20200217/model/SendMessagesRequest.cpp
@@ -216,6 +223,7 @@ set(tdmq_src
   src/v20200217/model/DescribeEnvironmentsResponse.cpp
   src/v20200217/model/ModifyCmqSubscriptionAttributeRequest.cpp
   src/v20200217/model/ModifyTopicResponse.cpp
+  src/v20200217/model/ReceiveMessageResponse.cpp
   src/v20200217/model/CreateCmqTopicResponse.cpp
   src/v20200217/model/CmqDeadLetterSource.cpp
   src/v20200217/model/ClearCmqSubscriptionFilterTagsResponse.cpp

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取需要升级至的算法模型版本。默认为最新版本。
-                     * @return FaceModelVersion 需要升级至的算法模型版本。默认为最新版本。
+                     * 获取需要升级至的算法模型版本。默认为最新版本。不可逆向升级
+                     * @return FaceModelVersion 需要升级至的算法模型版本。默认为最新版本。不可逆向升级
                      */
                     std::string GetFaceModelVersion() const;
 
                     /**
-                     * 设置需要升级至的算法模型版本。默认为最新版本。
-                     * @param FaceModelVersion 需要升级至的算法模型版本。默认为最新版本。
+                     * 设置需要升级至的算法模型版本。默认为最新版本。不可逆向升级
+                     * @param FaceModelVersion 需要升级至的算法模型版本。默认为最新版本。不可逆向升级
                      */
                     void SetFaceModelVersion(const std::string& _faceModelVersion);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 需要升级至的算法模型版本。默认为最新版本。
+                     * 需要升级至的算法模型版本。默认为最新版本。不可逆向升级
                      */
                     std::string m_faceModelVersion;
                     bool m_faceModelVersionHasBeenSet;

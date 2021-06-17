@@ -421,6 +421,42 @@ namespace TencentCloud
                      */
                     bool MultiZoneSubnetPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取伸缩组实例健康检查类型，取值如下：<br><li>CVM：根据实例网络状态判断实例是否处于不健康状态，不健康的网络状态即发生实例 PING 不可达事件，详细判断标准可参考[实例健康检查](https://cloud.tencent.com/document/product/377/8553)<br><li>CLB：根据 CLB 的健康检查状态判断实例是否处于不健康状态，CLB健康检查原理可参考[健康检查](https://cloud.tencent.com/document/product/214/6097)
+                     * @return HealthCheckType 伸缩组实例健康检查类型，取值如下：<br><li>CVM：根据实例网络状态判断实例是否处于不健康状态，不健康的网络状态即发生实例 PING 不可达事件，详细判断标准可参考[实例健康检查](https://cloud.tencent.com/document/product/377/8553)<br><li>CLB：根据 CLB 的健康检查状态判断实例是否处于不健康状态，CLB健康检查原理可参考[健康检查](https://cloud.tencent.com/document/product/214/6097)
+                     */
+                    std::string GetHealthCheckType() const;
+
+                    /**
+                     * 设置伸缩组实例健康检查类型，取值如下：<br><li>CVM：根据实例网络状态判断实例是否处于不健康状态，不健康的网络状态即发生实例 PING 不可达事件，详细判断标准可参考[实例健康检查](https://cloud.tencent.com/document/product/377/8553)<br><li>CLB：根据 CLB 的健康检查状态判断实例是否处于不健康状态，CLB健康检查原理可参考[健康检查](https://cloud.tencent.com/document/product/214/6097)
+                     * @param HealthCheckType 伸缩组实例健康检查类型，取值如下：<br><li>CVM：根据实例网络状态判断实例是否处于不健康状态，不健康的网络状态即发生实例 PING 不可达事件，详细判断标准可参考[实例健康检查](https://cloud.tencent.com/document/product/377/8553)<br><li>CLB：根据 CLB 的健康检查状态判断实例是否处于不健康状态，CLB健康检查原理可参考[健康检查](https://cloud.tencent.com/document/product/214/6097)
+                     */
+                    void SetHealthCheckType(const std::string& _healthCheckType);
+
+                    /**
+                     * 判断参数 HealthCheckType 是否已赋值
+                     * @return HealthCheckType 是否已赋值
+                     */
+                    bool HealthCheckTypeHasBeenSet() const;
+
+                    /**
+                     * 获取CLB健康检查宽限期。
+                     * @return LoadBalancerHealthCheckGracePeriod CLB健康检查宽限期。
+                     */
+                    uint64_t GetLoadBalancerHealthCheckGracePeriod() const;
+
+                    /**
+                     * 设置CLB健康检查宽限期。
+                     * @param LoadBalancerHealthCheckGracePeriod CLB健康检查宽限期。
+                     */
+                    void SetLoadBalancerHealthCheckGracePeriod(const uint64_t& _loadBalancerHealthCheckGracePeriod);
+
+                    /**
+                     * 判断参数 LoadBalancerHealthCheckGracePeriod 是否已赋值
+                     * @return LoadBalancerHealthCheckGracePeriod 是否已赋值
+                     */
+                    bool LoadBalancerHealthCheckGracePeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -542,6 +578,18 @@ namespace TencentCloud
                      */
                     std::string m_multiZoneSubnetPolicy;
                     bool m_multiZoneSubnetPolicyHasBeenSet;
+
+                    /**
+                     * 伸缩组实例健康检查类型，取值如下：<br><li>CVM：根据实例网络状态判断实例是否处于不健康状态，不健康的网络状态即发生实例 PING 不可达事件，详细判断标准可参考[实例健康检查](https://cloud.tencent.com/document/product/377/8553)<br><li>CLB：根据 CLB 的健康检查状态判断实例是否处于不健康状态，CLB健康检查原理可参考[健康检查](https://cloud.tencent.com/document/product/214/6097)
+                     */
+                    std::string m_healthCheckType;
+                    bool m_healthCheckTypeHasBeenSet;
+
+                    /**
+                     * CLB健康检查宽限期。
+                     */
+                    uint64_t m_loadBalancerHealthCheckGracePeriod;
+                    bool m_loadBalancerHealthCheckGracePeriodHasBeenSet;
 
                 };
             }

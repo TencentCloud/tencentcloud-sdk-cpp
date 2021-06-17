@@ -28,7 +28,8 @@ ChatArchivingDetail::ChatArchivingDetail() :
     m_toListHasBeenSet(false),
     m_roomIdHasBeenSet(false),
     m_msgTimeHasBeenSet(false),
-    m_videoHasBeenSet(false)
+    m_videoHasBeenSet(false),
+    m_bodyJsonHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome ChatArchivingDetail::Deserialize(const rapidjson::Value &val
         m_videoHasBeenSet = true;
     }
 
+    if (value.HasMember("BodyJson") && !value["BodyJson"].IsNull())
+    {
+        if (!value["BodyJson"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ChatArchivingDetail.BodyJson` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bodyJson = string(value["BodyJson"].GetString());
+        m_bodyJsonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ void ChatArchivingDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_video.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_bodyJsonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BodyJson";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bodyJson.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -333,5 +352,21 @@ void ChatArchivingDetail::SetVideo(const ChatArchivingMsgTypeVideo& _video)
 bool ChatArchivingDetail::VideoHasBeenSet() const
 {
     return m_videoHasBeenSet;
+}
+
+string ChatArchivingDetail::GetBodyJson() const
+{
+    return m_bodyJson;
+}
+
+void ChatArchivingDetail::SetBodyJson(const string& _bodyJson)
+{
+    m_bodyJson = _bodyJson;
+    m_bodyJsonHasBeenSet = true;
+}
+
+bool ChatArchivingDetail::BodyJsonHasBeenSet() const
+{
+    return m_bodyJsonHasBeenSet;
 }
 

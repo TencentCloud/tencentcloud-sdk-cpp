@@ -212,6 +212,50 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationCount 应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetApplicationCount() const;
+
+                    /**
+                     * 设置应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationCount 应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationCount(const uint64_t& _applicationCount);
+
+                    /**
+                     * 判断参数 ApplicationCount 是否已赋值
+                     * @return ApplicationCount 是否已赋值
+                     */
+                    bool ApplicationCountHasBeenSet() const;
+
+                    /**
+                     * 获取设备注册总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceCount 设备注册总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDeviceCount() const;
+
+                    /**
+                     * 设置设备注册总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeviceCount 设备注册总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeviceCount(const uint64_t& _deviceCount);
+
+                    /**
+                     * 判断参数 DeviceCount 是否已赋值
+                     * @return DeviceCount 是否已赋值
+                     */
+                    bool DeviceCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -268,6 +312,20 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_applicationCount;
+                    bool m_applicationCountHasBeenSet;
+
+                    /**
+                     * 设备注册总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_deviceCount;
+                    bool m_deviceCountHasBeenSet;
 
                 };
             }

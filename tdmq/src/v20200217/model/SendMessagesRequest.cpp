@@ -23,9 +23,9 @@ using namespace TencentCloud::Tdmq::V20200217::Model;
 using namespace std;
 
 SendMessagesRequest::SendMessagesRequest() :
-    m_stringTokenHasBeenSet(false),
     m_topicHasBeenSet(false),
     m_payloadHasBeenSet(false),
+    m_stringTokenHasBeenSet(false),
     m_producerNameHasBeenSet(false),
     m_sendTimeoutHasBeenSet(false),
     m_maxPendingMessagesHasBeenSet(false)
@@ -38,14 +38,6 @@ string SendMessagesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_stringTokenHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StringToken";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_stringToken.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_topicHasBeenSet)
     {
@@ -61,6 +53,14 @@ string SendMessagesRequest::ToJsonString() const
         string key = "Payload";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_payload.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stringTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StringToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stringToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_producerNameHasBeenSet)
@@ -95,22 +95,6 @@ string SendMessagesRequest::ToJsonString() const
 }
 
 
-string SendMessagesRequest::GetStringToken() const
-{
-    return m_stringToken;
-}
-
-void SendMessagesRequest::SetStringToken(const string& _stringToken)
-{
-    m_stringToken = _stringToken;
-    m_stringTokenHasBeenSet = true;
-}
-
-bool SendMessagesRequest::StringTokenHasBeenSet() const
-{
-    return m_stringTokenHasBeenSet;
-}
-
 string SendMessagesRequest::GetTopic() const
 {
     return m_topic;
@@ -141,6 +125,22 @@ void SendMessagesRequest::SetPayload(const string& _payload)
 bool SendMessagesRequest::PayloadHasBeenSet() const
 {
     return m_payloadHasBeenSet;
+}
+
+string SendMessagesRequest::GetStringToken() const
+{
+    return m_stringToken;
+}
+
+void SendMessagesRequest::SetStringToken(const string& _stringToken)
+{
+    m_stringToken = _stringToken;
+    m_stringTokenHasBeenSet = true;
+}
+
+bool SendMessagesRequest::StringTokenHasBeenSet() const
+{
+    return m_stringTokenHasBeenSet;
 }
 
 string SendMessagesRequest::GetProducerName() const

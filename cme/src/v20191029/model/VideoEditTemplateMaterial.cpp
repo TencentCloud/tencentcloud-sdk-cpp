@@ -22,7 +22,8 @@ using namespace std;
 
 VideoEditTemplateMaterial::VideoEditTemplateMaterial() :
     m_aspectRatioHasBeenSet(false),
-    m_slotSetHasBeenSet(false)
+    m_slotSetHasBeenSet(false),
+    m_previewVideoUrlHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome VideoEditTemplateMaterial::Deserialize(const rapidjson::Valu
         m_slotSetHasBeenSet = true;
     }
 
+    if (value.HasMember("PreviewVideoUrl") && !value["PreviewVideoUrl"].IsNull())
+    {
+        if (!value["PreviewVideoUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `VideoEditTemplateMaterial.PreviewVideoUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewVideoUrl = string(value["PreviewVideoUrl"].GetString());
+        m_previewVideoUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +100,14 @@ void VideoEditTemplateMaterial::ToJsonObject(rapidjson::Value &value, rapidjson:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_previewVideoUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewVideoUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewVideoUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -124,5 +143,21 @@ void VideoEditTemplateMaterial::SetSlotSet(const vector<SlotInfo>& _slotSet)
 bool VideoEditTemplateMaterial::SlotSetHasBeenSet() const
 {
     return m_slotSetHasBeenSet;
+}
+
+string VideoEditTemplateMaterial::GetPreviewVideoUrl() const
+{
+    return m_previewVideoUrl;
+}
+
+void VideoEditTemplateMaterial::SetPreviewVideoUrl(const string& _previewVideoUrl)
+{
+    m_previewVideoUrl = _previewVideoUrl;
+    m_previewVideoUrlHasBeenSet = true;
+}
+
+bool VideoEditTemplateMaterial::PreviewVideoUrlHasBeenSet() const
+{
+    return m_previewVideoUrlHasBeenSet;
 }
 
