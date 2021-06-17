@@ -104,6 +104,10 @@ HttpClient::HttpResponseOutcome AbstractClient::MakeRequest(const AbstractModel&
 
     Url url;
     url.SetHost(endpoint);
+    HttpProfile::Scheme scheme = httpProfile.GetProtocol();
+    if (scheme == HttpProfile::Scheme::HTTP)
+        url.SetScheme("http");
+        
     HttpRequest httpRequest(url);
     httpRequest.SetMethod(HttpRequest::Method::POST);
     httpRequest.SetBody(body);

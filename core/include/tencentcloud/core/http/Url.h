@@ -33,6 +33,8 @@ namespace TencentCloud
         std::string GetPath() const;
         bool HasQuery() const;
         std::string ToString() const;
+        void SetScheme(const std::string &scheme);
+        std::string GetScheme() const;
 
     public:
         int m_iURLType;

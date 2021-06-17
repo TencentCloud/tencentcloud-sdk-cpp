@@ -48,6 +48,10 @@ void HttpProfile::SetProtocol(const HttpProfile::Scheme &protocol)
 {
     m_protocol = protocol;
 }
+HttpProfile::Scheme HttpProfile::GetProtocol() const
+{
+    return m_protocol;
+}
 
 void HttpProfile::SetReqTimeout(int64_t timeoutOfSecond)
 {
