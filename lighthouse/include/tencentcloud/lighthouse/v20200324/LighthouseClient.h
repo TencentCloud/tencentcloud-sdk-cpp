@@ -81,6 +81,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeZonesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeZonesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ImportKeyPairRequest.h>
@@ -218,6 +220,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSnapshotsDeniedActionsResponse> DescribeSnapshotsDeniedActionsOutcome;
                 typedef std::future<DescribeSnapshotsDeniedActionsOutcome> DescribeSnapshotsDeniedActionsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeSnapshotsDeniedActionsRequest&, DescribeSnapshotsDeniedActionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotsDeniedActionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
+                typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
                 typedef Outcome<Error, Model::DisassociateInstancesKeyPairsResponse> DisassociateInstancesKeyPairsOutcome;
                 typedef std::future<DisassociateInstancesKeyPairsOutcome> DisassociateInstancesKeyPairsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DisassociateInstancesKeyPairsRequest&, DisassociateInstancesKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateInstancesKeyPairsAsyncHandler;
@@ -574,6 +579,15 @@ namespace TencentCloud
                 DescribeSnapshotsDeniedActionsOutcome DescribeSnapshotsDeniedActions(const Model::DescribeSnapshotsDeniedActionsRequest &request);
                 void DescribeSnapshotsDeniedActionsAsync(const Model::DescribeSnapshotsDeniedActionsRequest& request, const DescribeSnapshotsDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSnapshotsDeniedActionsOutcomeCallable DescribeSnapshotsDeniedActionsCallable(const Model::DescribeSnapshotsDeniedActionsRequest& request);
+
+                /**
+                 *查询地域下可用区
+                 * @param req DescribeZonesRequest
+                 * @return DescribeZonesOutcome
+                 */
+                DescribeZonesOutcome DescribeZones(const Model::DescribeZonesRequest &request);
+                void DescribeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeZonesOutcomeCallable DescribeZonesCallable(const Model::DescribeZonesRequest& request);
 
                 /**
                  *本接口（DisassociateInstancesKeyPairs）用于解除实例与指定密钥对的绑定关系。

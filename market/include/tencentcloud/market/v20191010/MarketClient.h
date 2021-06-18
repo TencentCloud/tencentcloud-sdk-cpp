@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/market/v20191010/model/FlowProductRemindRequest.h>
+#include <tencentcloud/market/v20191010/model/FlowProductRemindResponse.h>
 #include <tencentcloud/market/v20191010/model/GetCateTreeRequest.h>
 #include <tencentcloud/market/v20191010/model/GetCateTreeResponse.h>
 #include <tencentcloud/market/v20191010/model/GetUsagePlanUsageAmountRequest.h>
@@ -41,6 +43,9 @@ namespace TencentCloud
                 MarketClient(const Credential &credential, const std::string &region);
                 MarketClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::FlowProductRemindResponse> FlowProductRemindOutcome;
+                typedef std::future<FlowProductRemindOutcome> FlowProductRemindOutcomeCallable;
+                typedef std::function<void(const MarketClient*, const Model::FlowProductRemindRequest&, FlowProductRemindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlowProductRemindAsyncHandler;
                 typedef Outcome<Error, Model::GetCateTreeResponse> GetCateTreeOutcome;
                 typedef std::future<GetCateTreeOutcome> GetCateTreeOutcomeCallable;
                 typedef std::function<void(const MarketClient*, const Model::GetCateTreeRequest&, GetCateTreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCateTreeAsyncHandler;
@@ -49,6 +54,15 @@ namespace TencentCloud
                 typedef std::function<void(const MarketClient*, const Model::GetUsagePlanUsageAmountRequest&, GetUsagePlanUsageAmountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUsagePlanUsageAmountAsyncHandler;
 
 
+
+                /**
+                 *计量商品用量提醒，用于服务商调用云服务，云服务向客户发送提醒信息
+                 * @param req FlowProductRemindRequest
+                 * @return FlowProductRemindOutcome
+                 */
+                FlowProductRemindOutcome FlowProductRemind(const Model::FlowProductRemindRequest &request);
+                void FlowProductRemindAsync(const Model::FlowProductRemindRequest& request, const FlowProductRemindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FlowProductRemindOutcomeCallable FlowProductRemindCallable(const Model::FlowProductRemindRequest& request);
 
                 /**
                  *获取分类名称
@@ -62,7 +76,6 @@ namespace TencentCloud
                 /**
                  *该接口可以根据InstanceId查询实例的api的使用情况。
 
-默认接口请求频率限制：20次/秒。
                  * @param req GetUsagePlanUsageAmountRequest
                  * @return GetUsagePlanUsageAmountOutcome
                  */

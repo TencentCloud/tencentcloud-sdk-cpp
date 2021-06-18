@@ -26,6 +26,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteKeyPairsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/TerminateInstancesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/RegionInfo.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceDeniedActions.h
@@ -45,6 +46,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ImportKeyPairResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/ZoneInfo.h
   include/tencentcloud/lighthouse/v20200324/model/KeyPair.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesTemplateRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeKeyPairsResponse.h
@@ -64,7 +66,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/InstanceReturnable.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeRequest.h
-  include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeZonesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/StartInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/SnapshotDeniedActions.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsRequest.h
@@ -114,6 +116,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/FirewallRuleInfo.h
   include/tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeZonesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/CreateBlueprintResponse.h
   include/tencentcloud/lighthouse/v20200324/model/PolicyDetail.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeResetInstanceBlueprintsRequest.h
@@ -154,6 +157,7 @@ set(lighthouse_src
   src/v20200324/model/DescribeInstancesDeniedActionsRequest.cpp
   src/v20200324/model/DeleteKeyPairsResponse.cpp
   src/v20200324/model/TerminateInstancesResponse.cpp
+  src/v20200324/model/DescribeSnapshotsDeniedActionsResponse.cpp
   src/v20200324/model/RegionInfo.cpp
   src/v20200324/model/DescribeBlueprintInstancesResponse.cpp
   src/v20200324/model/InstanceDeniedActions.cpp
@@ -173,6 +177,7 @@ set(lighthouse_src
   src/v20200324/model/AssociateInstancesKeyPairsRequest.cpp
   src/v20200324/model/ImportKeyPairResponse.cpp
   src/v20200324/model/DescribeSnapshotsRequest.cpp
+  src/v20200324/model/ZoneInfo.cpp
   src/v20200324/model/KeyPair.cpp
   src/v20200324/model/DescribeFirewallRulesTemplateRequest.cpp
   src/v20200324/model/DescribeKeyPairsResponse.cpp
@@ -192,7 +197,7 @@ set(lighthouse_src
   src/v20200324/model/InstanceReturnable.cpp
   src/v20200324/model/DescribeInstancesDeniedActionsResponse.cpp
   src/v20200324/model/ModifyInstancesAttributeRequest.cpp
-  src/v20200324/model/DescribeSnapshotsDeniedActionsResponse.cpp
+  src/v20200324/model/DescribeZonesRequest.cpp
   src/v20200324/model/StartInstancesRequest.cpp
   src/v20200324/model/SnapshotDeniedActions.cpp
   src/v20200324/model/DeleteSnapshotsRequest.cpp
@@ -242,6 +247,7 @@ set(lighthouse_src
   src/v20200324/model/FirewallRuleInfo.cpp
   src/v20200324/model/CreateFirewallRulesResponse.cpp
   src/v20200324/model/DescribeInstancesResponse.cpp
+  src/v20200324/model/DescribeZonesResponse.cpp
   src/v20200324/model/CreateBlueprintResponse.cpp
   src/v20200324/model/PolicyDetail.cpp
   src/v20200324/model/DescribeResetInstanceBlueprintsRequest.cpp

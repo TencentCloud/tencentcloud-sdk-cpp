@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool DetectedStressHasBeenSet() const;
 
                     /**
-                     * 获取当前音节
-                     * @return Phone 当前音节
+                     * 获取当前音节，当前评测识别的音素
+                     * @return Phone 当前音节，当前评测识别的音素
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置当前音节
-                     * @param Phone 当前音节
+                     * 设置当前音节，当前评测识别的音素
+                     * @param Phone 当前音节，当前评测识别的音素
                      */
                     void SetPhone(const std::string& _phone);
 
@@ -190,6 +190,24 @@ namespace TencentCloud
                      */
                     bool MatchTagHasBeenSet() const;
 
+                    /**
+                     * 获取参考字符，在单词诊断模式下，代表音素对应的原始文本
+                     * @return ReferenceLetter 参考字符，在单词诊断模式下，代表音素对应的原始文本
+                     */
+                    std::string GetReferenceLetter() const;
+
+                    /**
+                     * 设置参考字符，在单词诊断模式下，代表音素对应的原始文本
+                     * @param ReferenceLetter 参考字符，在单词诊断模式下，代表音素对应的原始文本
+                     */
+                    void SetReferenceLetter(const std::string& _referenceLetter);
+
+                    /**
+                     * 判断参数 ReferenceLetter 是否已赋值
+                     * @return ReferenceLetter 是否已赋值
+                     */
+                    bool ReferenceLetterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,7 +235,7 @@ namespace TencentCloud
                     bool m_detectedStressHasBeenSet;
 
                     /**
-                     * 当前音节
+                     * 当前音节，当前评测识别的音素
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
@@ -239,6 +257,12 @@ namespace TencentCloud
                      */
                     int64_t m_matchTag;
                     bool m_matchTagHasBeenSet;
+
+                    /**
+                     * 参考字符，在单词诊断模式下，代表音素对应的原始文本
+                     */
+                    std::string m_referenceLetter;
+                    bool m_referenceLetterHasBeenSet;
 
                 };
             }

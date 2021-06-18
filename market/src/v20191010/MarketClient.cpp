@@ -40,6 +40,49 @@ MarketClient::MarketClient(const Credential &credential, const string &region, c
 }
 
 
+MarketClient::FlowProductRemindOutcome MarketClient::FlowProductRemind(const FlowProductRemindRequest &request)
+{
+    auto outcome = MakeRequest(request, "FlowProductRemind");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FlowProductRemindResponse rsp = FlowProductRemindResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FlowProductRemindOutcome(rsp);
+        else
+            return FlowProductRemindOutcome(o.GetError());
+    }
+    else
+    {
+        return FlowProductRemindOutcome(outcome.GetError());
+    }
+}
+
+void MarketClient::FlowProductRemindAsync(const FlowProductRemindRequest& request, const FlowProductRemindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FlowProductRemind(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MarketClient::FlowProductRemindOutcomeCallable MarketClient::FlowProductRemindCallable(const FlowProductRemindRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FlowProductRemindOutcome()>>(
+        [this, request]()
+        {
+            return this->FlowProductRemind(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MarketClient::GetCateTreeOutcome MarketClient::GetCateTree(const GetCateTreeRequest &request)
 {
     auto outcome = MakeRequest(request, "GetCateTree");

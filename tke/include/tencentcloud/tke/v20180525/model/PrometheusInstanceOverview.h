@@ -166,6 +166,72 @@ running = 运行中
                      */
                     bool COSBucketHasBeenSet() const;
 
+                    /**
+                     * 获取grafana默认地址，如果开启外网访问得为域名，否则为内网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GrafanaURL grafana默认地址，如果开启外网访问得为域名，否则为内网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGrafanaURL() const;
+
+                    /**
+                     * 设置grafana默认地址，如果开启外网访问得为域名，否则为内网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GrafanaURL grafana默认地址，如果开启外网访问得为域名，否则为内网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGrafanaURL(const std::string& _grafanaURL);
+
+                    /**
+                     * 判断参数 GrafanaURL 是否已赋值
+                     * @return GrafanaURL 是否已赋值
+                     */
+                    bool GrafanaURLHasBeenSet() const;
+
+                    /**
+                     * 获取关联集群总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BoundTotal 关联集群总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetBoundTotal() const;
+
+                    /**
+                     * 设置关联集群总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BoundTotal 关联集群总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBoundTotal(const uint64_t& _boundTotal);
+
+                    /**
+                     * 判断参数 BoundTotal 是否已赋值
+                     * @return BoundTotal 是否已赋值
+                     */
+                    bool BoundTotalHasBeenSet() const;
+
+                    /**
+                     * 获取运行正常的集群数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BoundNormal 运行正常的集群数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetBoundNormal() const;
+
+                    /**
+                     * 设置运行正常的集群数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BoundNormal 运行正常的集群数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBoundNormal(const uint64_t& _boundNormal);
+
+                    /**
+                     * 判断参数 BoundNormal 是否已赋值
+                     * @return BoundNormal 是否已赋值
+                     */
+                    bool BoundNormalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +272,27 @@ running = 运行中
                      */
                     std::string m_cOSBucket;
                     bool m_cOSBucketHasBeenSet;
+
+                    /**
+                     * grafana默认地址，如果开启外网访问得为域名，否则为内网地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_grafanaURL;
+                    bool m_grafanaURLHasBeenSet;
+
+                    /**
+                     * 关联集群总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_boundTotal;
+                    bool m_boundTotalHasBeenSet;
+
+                    /**
+                     * 运行正常的集群数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_boundNormal;
+                    bool m_boundNormalHasBeenSet;
 
                 };
             }

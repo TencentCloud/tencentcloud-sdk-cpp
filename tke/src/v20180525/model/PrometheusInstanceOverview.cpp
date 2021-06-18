@@ -26,7 +26,10 @@ PrometheusInstanceOverview::PrometheusInstanceOverview() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_cOSBucketHasBeenSet(false)
+    m_cOSBucketHasBeenSet(false),
+    m_grafanaURLHasBeenSet(false),
+    m_boundTotalHasBeenSet(false),
+    m_boundNormalHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,36 @@ CoreInternalOutcome PrometheusInstanceOverview::Deserialize(const rapidjson::Val
         m_cOSBucketHasBeenSet = true;
     }
 
+    if (value.HasMember("GrafanaURL") && !value["GrafanaURL"].IsNull())
+    {
+        if (!value["GrafanaURL"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PrometheusInstanceOverview.GrafanaURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_grafanaURL = string(value["GrafanaURL"].GetString());
+        m_grafanaURLHasBeenSet = true;
+    }
+
+    if (value.HasMember("BoundTotal") && !value["BoundTotal"].IsNull())
+    {
+        if (!value["BoundTotal"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PrometheusInstanceOverview.BoundTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_boundTotal = value["BoundTotal"].GetUint64();
+        m_boundTotalHasBeenSet = true;
+    }
+
+    if (value.HasMember("BoundNormal") && !value["BoundNormal"].IsNull())
+    {
+        if (!value["BoundNormal"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `PrometheusInstanceOverview.BoundNormal` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_boundNormal = value["BoundNormal"].GetUint64();
+        m_boundNormalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +181,30 @@ void PrometheusInstanceOverview::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "COSBucket";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cOSBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_grafanaURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GrafanaURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_grafanaURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_boundTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BoundTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_boundTotal, allocator);
+    }
+
+    if (m_boundNormalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BoundNormal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_boundNormal, allocator);
     }
 
 }
@@ -247,5 +304,53 @@ void PrometheusInstanceOverview::SetCOSBucket(const string& _cOSBucket)
 bool PrometheusInstanceOverview::COSBucketHasBeenSet() const
 {
     return m_cOSBucketHasBeenSet;
+}
+
+string PrometheusInstanceOverview::GetGrafanaURL() const
+{
+    return m_grafanaURL;
+}
+
+void PrometheusInstanceOverview::SetGrafanaURL(const string& _grafanaURL)
+{
+    m_grafanaURL = _grafanaURL;
+    m_grafanaURLHasBeenSet = true;
+}
+
+bool PrometheusInstanceOverview::GrafanaURLHasBeenSet() const
+{
+    return m_grafanaURLHasBeenSet;
+}
+
+uint64_t PrometheusInstanceOverview::GetBoundTotal() const
+{
+    return m_boundTotal;
+}
+
+void PrometheusInstanceOverview::SetBoundTotal(const uint64_t& _boundTotal)
+{
+    m_boundTotal = _boundTotal;
+    m_boundTotalHasBeenSet = true;
+}
+
+bool PrometheusInstanceOverview::BoundTotalHasBeenSet() const
+{
+    return m_boundTotalHasBeenSet;
+}
+
+uint64_t PrometheusInstanceOverview::GetBoundNormal() const
+{
+    return m_boundNormal;
+}
+
+void PrometheusInstanceOverview::SetBoundNormal(const uint64_t& _boundNormal)
+{
+    m_boundNormal = _boundNormal;
+    m_boundNormalHasBeenSet = true;
+}
+
+bool PrometheusInstanceOverview::BoundNormalHasBeenSet() const
+{
+    return m_boundNormalHasBeenSet;
 }
 

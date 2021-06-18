@@ -36,7 +36,8 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_vpcCniTypeHasBeenSet(false),
     m_runtimeVersionHasBeenSet(false),
     m_enableCustomizedPodCIDRHasBeenSet(false),
-    m_basePodNumberHasBeenSet(false)
+    m_basePodNumberHasBeenSet(false),
+    m_ciliumModeHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,16 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
         m_basePodNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("CiliumMode") && !value["CiliumMode"].IsNull())
+    {
+        if (!value["CiliumMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterAdvancedSettings.CiliumMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ciliumMode = string(value["CiliumMode"].GetString());
+        m_ciliumModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +357,14 @@ void ClusterAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "BasePodNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_basePodNumber, allocator);
+    }
+
+    if (m_ciliumModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CiliumMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ciliumMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -605,5 +624,21 @@ void ClusterAdvancedSettings::SetBasePodNumber(const int64_t& _basePodNumber)
 bool ClusterAdvancedSettings::BasePodNumberHasBeenSet() const
 {
     return m_basePodNumberHasBeenSet;
+}
+
+string ClusterAdvancedSettings::GetCiliumMode() const
+{
+    return m_ciliumMode;
+}
+
+void ClusterAdvancedSettings::SetCiliumMode(const string& _ciliumMode)
+{
+    m_ciliumMode = _ciliumMode;
+    m_ciliumModeHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::CiliumModeHasBeenSet() const
+{
+    return m_ciliumModeHasBeenSet;
 }
 

@@ -28,7 +28,8 @@ PhoneInfo::PhoneInfo() :
     m_phoneHasBeenSet(false),
     m_stressHasBeenSet(false),
     m_referencePhoneHasBeenSet(false),
-    m_matchTagHasBeenSet(false)
+    m_matchTagHasBeenSet(false),
+    m_referenceLetterHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome PhoneInfo::Deserialize(const rapidjson::Value &value)
         m_matchTagHasBeenSet = true;
     }
 
+    if (value.HasMember("ReferenceLetter") && !value["ReferenceLetter"].IsNull())
+    {
+        if (!value["ReferenceLetter"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PhoneInfo.ReferenceLetter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_referenceLetter = string(value["ReferenceLetter"].GetString());
+        m_referenceLetterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void PhoneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "MatchTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_matchTag, allocator);
+    }
+
+    if (m_referenceLetterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReferenceLetter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_referenceLetter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void PhoneInfo::SetMatchTag(const int64_t& _matchTag)
 bool PhoneInfo::MatchTagHasBeenSet() const
 {
     return m_matchTagHasBeenSet;
+}
+
+string PhoneInfo::GetReferenceLetter() const
+{
+    return m_referenceLetter;
+}
+
+void PhoneInfo::SetReferenceLetter(const string& _referenceLetter)
+{
+    m_referenceLetter = _referenceLetter;
+    m_referenceLetterHasBeenSet = true;
+}
+
+bool PhoneInfo::ReferenceLetterHasBeenSet() const
+{
+    return m_referenceLetterHasBeenSet;
 }
 

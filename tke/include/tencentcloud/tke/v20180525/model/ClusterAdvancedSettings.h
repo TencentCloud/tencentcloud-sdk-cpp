@@ -359,6 +359,24 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                      */
                     bool BasePodNumberHasBeenSet() const;
 
+                    /**
+                     * 获取启用 CiliumMode 的模式，空值表示不启用，“clusterIP” 表示启用 Cilium 支持 ClusterIP
+                     * @return CiliumMode 启用 CiliumMode 的模式，空值表示不启用，“clusterIP” 表示启用 Cilium 支持 ClusterIP
+                     */
+                    std::string GetCiliumMode() const;
+
+                    /**
+                     * 设置启用 CiliumMode 的模式，空值表示不启用，“clusterIP” 表示启用 Cilium 支持 ClusterIP
+                     * @param CiliumMode 启用 CiliumMode 的模式，空值表示不启用，“clusterIP” 表示启用 Cilium 支持 ClusterIP
+                     */
+                    void SetCiliumMode(const std::string& _ciliumMode);
+
+                    /**
+                     * 判断参数 CiliumMode 是否已赋值
+                     * @return CiliumMode 是否已赋值
+                     */
+                    bool CiliumModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -462,6 +480,12 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                      */
                     int64_t m_basePodNumber;
                     bool m_basePodNumberHasBeenSet;
+
+                    /**
+                     * 启用 CiliumMode 的模式，空值表示不启用，“clusterIP” 表示启用 Cilium 支持 ClusterIP
+                     */
+                    std::string m_ciliumMode;
+                    bool m_ciliumModeHasBeenSet;
 
                 };
             }
