@@ -73,3 +73,13 @@ string Url::ToString() const
         out << "?" << m_query;
     return out.str();
 }
+
+void Url::SetScheme(const std::string & scheme)
+{
+    m_scheme = scheme;
+}
+
+string Url::GetScheme() const
+{
+    return m_scheme;
+}
