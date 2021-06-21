@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool SourceChannelHasBeenSet() const;
 
+                    /**
+                     * 获取充当deployVersion入参
+                     * @return TimeVersion 充当deployVersion入参
+                     */
+                    std::string GetTimeVersion() const;
+
+                    /**
+                     * 设置充当deployVersion入参
+                     * @param TimeVersion 充当deployVersion入参
+                     */
+                    void SetTimeVersion(const std::string& _timeVersion);
+
+                    /**
+                     * 判断参数 TimeVersion 是否已赋值
+                     * @return TimeVersion 是否已赋值
+                     */
+                    bool TimeVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     int64_t m_sourceChannel;
                     bool m_sourceChannelHasBeenSet;
+
+                    /**
+                     * 充当deployVersion入参
+                     */
+                    std::string m_timeVersion;
+                    bool m_timeVersionHasBeenSet;
 
                 };
             }

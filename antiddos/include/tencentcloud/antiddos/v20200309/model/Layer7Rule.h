@@ -1,0 +1,156 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_ANTIDDOS_V20200309_MODEL_LAYER7RULE_H_
+#define TENCENTCLOUD_ANTIDDOS_V20200309_MODEL_LAYER7RULE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/antiddos/v20200309/model/ProxyTypeInfo.h>
+#include <tencentcloud/antiddos/v20200309/model/SourceServer.h>
+#include <tencentcloud/antiddos/v20200309/model/InstanceRelation.h>
+
+
+namespace TencentCloud
+{
+    namespace Antiddos
+    {
+        namespace V20200309
+        {
+            namespace Model
+            {
+                /**
+                * 7层转发规则
+                */
+                class Layer7Rule : public AbstractModel
+                {
+                public:
+                    Layer7Rule();
+                    ~Layer7Rule() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取域名
+                     * @return Domain 域名
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置域名
+                     * @param Domain 域名
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取转发类型列表
+                     * @return ProxyTypeList 转发类型列表
+                     */
+                    std::vector<ProxyTypeInfo> GetProxyTypeList() const;
+
+                    /**
+                     * 设置转发类型列表
+                     * @param ProxyTypeList 转发类型列表
+                     */
+                    void SetProxyTypeList(const std::vector<ProxyTypeInfo>& _proxyTypeList);
+
+                    /**
+                     * 判断参数 ProxyTypeList 是否已赋值
+                     * @return ProxyTypeList 是否已赋值
+                     */
+                    bool ProxyTypeListHasBeenSet() const;
+
+                    /**
+                     * 获取源站列表
+                     * @return RealServers 源站列表
+                     */
+                    std::vector<SourceServer> GetRealServers() const;
+
+                    /**
+                     * 设置源站列表
+                     * @param RealServers 源站列表
+                     */
+                    void SetRealServers(const std::vector<SourceServer>& _realServers);
+
+                    /**
+                     * 判断参数 RealServers 是否已赋值
+                     * @return RealServers 是否已赋值
+                     */
+                    bool RealServersHasBeenSet() const;
+
+                    /**
+                     * 获取规则所属的资源实例
+                     * @return InstanceDetails 规则所属的资源实例
+                     */
+                    std::vector<InstanceRelation> GetInstanceDetails() const;
+
+                    /**
+                     * 设置规则所属的资源实例
+                     * @param InstanceDetails 规则所属的资源实例
+                     */
+                    void SetInstanceDetails(const std::vector<InstanceRelation>& _instanceDetails);
+
+                    /**
+                     * 判断参数 InstanceDetails 是否已赋值
+                     * @return InstanceDetails 是否已赋值
+                     */
+                    bool InstanceDetailsHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * 转发类型列表
+                     */
+                    std::vector<ProxyTypeInfo> m_proxyTypeList;
+                    bool m_proxyTypeListHasBeenSet;
+
+                    /**
+                     * 源站列表
+                     */
+                    std::vector<SourceServer> m_realServers;
+                    bool m_realServersHasBeenSet;
+
+                    /**
+                     * 规则所属的资源实例
+                     */
+                    std::vector<InstanceRelation> m_instanceDetails;
+                    bool m_instanceDetailsHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_ANTIDDOS_V20200309_MODEL_LAYER7RULE_H_

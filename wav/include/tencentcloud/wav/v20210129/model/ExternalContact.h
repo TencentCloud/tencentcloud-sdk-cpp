@@ -140,6 +140,28 @@ namespace TencentCloud
                      */
                     bool UnionIdHasBeenSet() const;
 
+                    /**
+                     * 获取外部联系人联系电话
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Phone 外部联系人联系电话
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPhone() const;
+
+                    /**
+                     * 设置外部联系人联系电话
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Phone 外部联系人联系电话
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPhone(const std::string& _phone);
+
+                    /**
+                     * 判断参数 Phone 是否已赋值
+                     * @return Phone 是否已赋值
+                     */
+                    bool PhoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -172,6 +194,13 @@ namespace TencentCloud
                      */
                     std::string m_unionId;
                     bool m_unionIdHasBeenSet;
+
+                    /**
+                     * 外部联系人联系电话
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_phone;
+                    bool m_phoneHasBeenSet;
 
                 };
             }

@@ -556,6 +556,49 @@ TemClient::DescribeServiceRunPodListV2OutcomeCallable TemClient::DescribeService
     return task->get_future();
 }
 
+TemClient::GenerateDownloadUrlOutcome TemClient::GenerateDownloadUrl(const GenerateDownloadUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateDownloadUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateDownloadUrlResponse rsp = GenerateDownloadUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateDownloadUrlOutcome(rsp);
+        else
+            return GenerateDownloadUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateDownloadUrlOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::GenerateDownloadUrlAsync(const GenerateDownloadUrlRequest& request, const GenerateDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenerateDownloadUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::GenerateDownloadUrlOutcomeCallable TemClient::GenerateDownloadUrlCallable(const GenerateDownloadUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenerateDownloadUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->GenerateDownloadUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::ModifyIngressOutcome TemClient::ModifyIngress(const ModifyIngressRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyIngress");

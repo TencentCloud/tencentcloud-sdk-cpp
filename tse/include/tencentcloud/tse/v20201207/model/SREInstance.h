@@ -300,6 +300,50 @@ namespace TencentCloud
                      */
                     bool PaymodeHasBeenSet() const;
 
+                    /**
+                     * 获取EKS集群的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EKSClusterID EKS集群的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEKSClusterID() const;
+
+                    /**
+                     * 设置EKS集群的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EKSClusterID EKS集群的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEKSClusterID(const std::string& _eKSClusterID);
+
+                    /**
+                     * 判断参数 EKSClusterID 是否已赋值
+                     * @return EKSClusterID 是否已赋值
+                     */
+                    bool EKSClusterIDHasBeenSet() const;
+
+                    /**
+                     * 获取集群创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 集群创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置集群创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateTime 集群创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +428,20 @@ namespace TencentCloud
                      */
                     std::string m_paymode;
                     bool m_paymodeHasBeenSet;
+
+                    /**
+                     * EKS集群的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eKSClusterID;
+                    bool m_eKSClusterIDHasBeenSet;
+
+                    /**
+                     * 集群创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

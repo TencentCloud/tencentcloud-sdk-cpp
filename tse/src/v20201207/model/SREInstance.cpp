@@ -33,7 +33,9 @@ SREInstance::SREInstance() :
     m_enableStorageHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_storageCapacityHasBeenSet(false),
-    m_paymodeHasBeenSet(false)
+    m_paymodeHasBeenSet(false),
+    m_eKSClusterIDHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -175,6 +177,26 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_paymodeHasBeenSet = true;
     }
 
+    if (value.HasMember("EKSClusterID") && !value["EKSClusterID"].IsNull())
+    {
+        if (!value["EKSClusterID"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SREInstance.EKSClusterID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eKSClusterID = string(value["EKSClusterID"].GetString());
+        m_eKSClusterIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SREInstance.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +311,22 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Paymode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_paymode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eKSClusterIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EKSClusterID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eKSClusterID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -500,5 +538,37 @@ void SREInstance::SetPaymode(const string& _paymode)
 bool SREInstance::PaymodeHasBeenSet() const
 {
     return m_paymodeHasBeenSet;
+}
+
+string SREInstance::GetEKSClusterID() const
+{
+    return m_eKSClusterID;
+}
+
+void SREInstance::SetEKSClusterID(const string& _eKSClusterID)
+{
+    m_eKSClusterID = _eKSClusterID;
+    m_eKSClusterIDHasBeenSet = true;
+}
+
+bool SREInstance::EKSClusterIDHasBeenSet() const
+{
+    return m_eKSClusterIDHasBeenSet;
+}
+
+string SREInstance::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void SREInstance::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool SREInstance::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

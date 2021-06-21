@@ -22,7 +22,8 @@ using namespace std;
 
 ExternalContactSimpleInfo::ExternalContactSimpleInfo() :
     m_externalUserIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_salesNameHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ExternalContactSimpleInfo::Deserialize(const rapidjson::Valu
         m_userIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SalesName") && !value["SalesName"].IsNull())
+    {
+        if (!value["SalesName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ExternalContactSimpleInfo.SalesName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_salesName = string(value["SalesName"].GetString());
+        m_salesNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ExternalContactSimpleInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_salesNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SalesName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_salesName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ExternalContactSimpleInfo::SetUserId(const string& _userId)
 bool ExternalContactSimpleInfo::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string ExternalContactSimpleInfo::GetSalesName() const
+{
+    return m_salesName;
+}
+
+void ExternalContactSimpleInfo::SetSalesName(const string& _salesName)
+{
+    m_salesName = _salesName;
+    m_salesNameHasBeenSet = true;
+}
+
+bool ExternalContactSimpleInfo::SalesNameHasBeenSet() const
+{
+    return m_salesNameHasBeenSet;
 }
 

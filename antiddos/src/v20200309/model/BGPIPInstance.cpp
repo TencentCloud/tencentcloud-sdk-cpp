@@ -1,0 +1,665 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/antiddos/v20200309/model/BGPIPInstance.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Antiddos::V20200309::Model;
+using namespace std;
+
+BGPIPInstance::BGPIPInstance() :
+    m_instanceDetailHasBeenSet(false),
+    m_specificationLimitHasBeenSet(false),
+    m_usageHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_expiredTimeHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_packInfoHasBeenSet(false),
+    m_staticPackRelationHasBeenSet(false),
+    m_zoneIdHasBeenSet(false),
+    m_tgwHasBeenSet(false),
+    m_eipAddressStatusHasBeenSet(false),
+    m_eipFlagHasBeenSet(false),
+    m_eipAddressPackRelationHasBeenSet(false),
+    m_eipAddressInfoHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("InstanceDetail") && !value["InstanceDetail"].IsNull())
+    {
+        if (!value["InstanceDetail"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.InstanceDetail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_instanceDetail.Deserialize(value["InstanceDetail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_instanceDetailHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpecificationLimit") && !value["SpecificationLimit"].IsNull())
+    {
+        if (!value["SpecificationLimit"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.SpecificationLimit` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_specificationLimit.Deserialize(value["SpecificationLimit"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_specificationLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("Usage") && !value["Usage"].IsNull())
+    {
+        if (!value["Usage"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.Usage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_usage.Deserialize(value["Usage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_usageHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.Region` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_region.Deserialize(value["Region"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpiredTime") && !value["ExpiredTime"].IsNull())
+    {
+        if (!value["ExpiredTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.ExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiredTime = string(value["ExpiredTime"].GetString());
+        m_expiredTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
+    {
+        if (!value["CreatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdTime = string(value["CreatedTime"].GetString());
+        m_createdTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PackInfo") && !value["PackInfo"].IsNull())
+    {
+        if (!value["PackInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.PackInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_packInfo.Deserialize(value["PackInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_packInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("StaticPackRelation") && !value["StaticPackRelation"].IsNull())
+    {
+        if (!value["StaticPackRelation"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.StaticPackRelation` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_staticPackRelation.Deserialize(value["StaticPackRelation"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_staticPackRelationHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.ZoneId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = value["ZoneId"].GetUint64();
+        m_zoneIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tgw") && !value["Tgw"].IsNull())
+    {
+        if (!value["Tgw"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.Tgw` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tgw = value["Tgw"].GetUint64();
+        m_tgwHasBeenSet = true;
+    }
+
+    if (value.HasMember("EipAddressStatus") && !value["EipAddressStatus"].IsNull())
+    {
+        if (!value["EipAddressStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.EipAddressStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eipAddressStatus = string(value["EipAddressStatus"].GetString());
+        m_eipAddressStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("EipFlag") && !value["EipFlag"].IsNull())
+    {
+        if (!value["EipFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.EipFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_eipFlag = value["EipFlag"].GetInt64();
+        m_eipFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("EipAddressPackRelation") && !value["EipAddressPackRelation"].IsNull())
+    {
+        if (!value["EipAddressPackRelation"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.EipAddressPackRelation` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_eipAddressPackRelation.Deserialize(value["EipAddressPackRelation"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_eipAddressPackRelationHasBeenSet = true;
+    }
+
+    if (value.HasMember("EipAddressInfo") && !value["EipAddressInfo"].IsNull())
+    {
+        if (!value["EipAddressInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `BGPIPInstance.EipAddressInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_eipAddressInfo.Deserialize(value["EipAddressInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_eipAddressInfoHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void BGPIPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_instanceDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceDetail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_specificationLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecificationLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_specificationLimit.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_usageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Usage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_usage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_region.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expiredTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_packInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_staticPackRelationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StaticPackRelation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_staticPackRelation.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneId, allocator);
+    }
+
+    if (m_tgwHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tgw";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tgw, allocator);
+    }
+
+    if (m_eipAddressStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipAddressStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eipAddressStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eipFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_eipFlag, allocator);
+    }
+
+    if (m_eipAddressPackRelationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipAddressPackRelation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eipAddressPackRelation.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_eipAddressInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipAddressInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eipAddressInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+}
+
+
+InstanceRelation BGPIPInstance::GetInstanceDetail() const
+{
+    return m_instanceDetail;
+}
+
+void BGPIPInstance::SetInstanceDetail(const InstanceRelation& _instanceDetail)
+{
+    m_instanceDetail = _instanceDetail;
+    m_instanceDetailHasBeenSet = true;
+}
+
+bool BGPIPInstance::InstanceDetailHasBeenSet() const
+{
+    return m_instanceDetailHasBeenSet;
+}
+
+BGPIPInstanceSpecification BGPIPInstance::GetSpecificationLimit() const
+{
+    return m_specificationLimit;
+}
+
+void BGPIPInstance::SetSpecificationLimit(const BGPIPInstanceSpecification& _specificationLimit)
+{
+    m_specificationLimit = _specificationLimit;
+    m_specificationLimitHasBeenSet = true;
+}
+
+bool BGPIPInstance::SpecificationLimitHasBeenSet() const
+{
+    return m_specificationLimitHasBeenSet;
+}
+
+BGPIPInstanceUsages BGPIPInstance::GetUsage() const
+{
+    return m_usage;
+}
+
+void BGPIPInstance::SetUsage(const BGPIPInstanceUsages& _usage)
+{
+    m_usage = _usage;
+    m_usageHasBeenSet = true;
+}
+
+bool BGPIPInstance::UsageHasBeenSet() const
+{
+    return m_usageHasBeenSet;
+}
+
+RegionInfo BGPIPInstance::GetRegion() const
+{
+    return m_region;
+}
+
+void BGPIPInstance::SetRegion(const RegionInfo& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool BGPIPInstance::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+string BGPIPInstance::GetStatus() const
+{
+    return m_status;
+}
+
+void BGPIPInstance::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool BGPIPInstance::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string BGPIPInstance::GetExpiredTime() const
+{
+    return m_expiredTime;
+}
+
+void BGPIPInstance::SetExpiredTime(const string& _expiredTime)
+{
+    m_expiredTime = _expiredTime;
+    m_expiredTimeHasBeenSet = true;
+}
+
+bool BGPIPInstance::ExpiredTimeHasBeenSet() const
+{
+    return m_expiredTimeHasBeenSet;
+}
+
+string BGPIPInstance::GetCreatedTime() const
+{
+    return m_createdTime;
+}
+
+void BGPIPInstance::SetCreatedTime(const string& _createdTime)
+{
+    m_createdTime = _createdTime;
+    m_createdTimeHasBeenSet = true;
+}
+
+bool BGPIPInstance::CreatedTimeHasBeenSet() const
+{
+    return m_createdTimeHasBeenSet;
+}
+
+string BGPIPInstance::GetName() const
+{
+    return m_name;
+}
+
+void BGPIPInstance::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool BGPIPInstance::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+PackInfo BGPIPInstance::GetPackInfo() const
+{
+    return m_packInfo;
+}
+
+void BGPIPInstance::SetPackInfo(const PackInfo& _packInfo)
+{
+    m_packInfo = _packInfo;
+    m_packInfoHasBeenSet = true;
+}
+
+bool BGPIPInstance::PackInfoHasBeenSet() const
+{
+    return m_packInfoHasBeenSet;
+}
+
+StaticPackRelation BGPIPInstance::GetStaticPackRelation() const
+{
+    return m_staticPackRelation;
+}
+
+void BGPIPInstance::SetStaticPackRelation(const StaticPackRelation& _staticPackRelation)
+{
+    m_staticPackRelation = _staticPackRelation;
+    m_staticPackRelationHasBeenSet = true;
+}
+
+bool BGPIPInstance::StaticPackRelationHasBeenSet() const
+{
+    return m_staticPackRelationHasBeenSet;
+}
+
+uint64_t BGPIPInstance::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void BGPIPInstance::SetZoneId(const uint64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool BGPIPInstance::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
+uint64_t BGPIPInstance::GetTgw() const
+{
+    return m_tgw;
+}
+
+void BGPIPInstance::SetTgw(const uint64_t& _tgw)
+{
+    m_tgw = _tgw;
+    m_tgwHasBeenSet = true;
+}
+
+bool BGPIPInstance::TgwHasBeenSet() const
+{
+    return m_tgwHasBeenSet;
+}
+
+string BGPIPInstance::GetEipAddressStatus() const
+{
+    return m_eipAddressStatus;
+}
+
+void BGPIPInstance::SetEipAddressStatus(const string& _eipAddressStatus)
+{
+    m_eipAddressStatus = _eipAddressStatus;
+    m_eipAddressStatusHasBeenSet = true;
+}
+
+bool BGPIPInstance::EipAddressStatusHasBeenSet() const
+{
+    return m_eipAddressStatusHasBeenSet;
+}
+
+int64_t BGPIPInstance::GetEipFlag() const
+{
+    return m_eipFlag;
+}
+
+void BGPIPInstance::SetEipFlag(const int64_t& _eipFlag)
+{
+    m_eipFlag = _eipFlag;
+    m_eipFlagHasBeenSet = true;
+}
+
+bool BGPIPInstance::EipFlagHasBeenSet() const
+{
+    return m_eipFlagHasBeenSet;
+}
+
+EipAddressPackRelation BGPIPInstance::GetEipAddressPackRelation() const
+{
+    return m_eipAddressPackRelation;
+}
+
+void BGPIPInstance::SetEipAddressPackRelation(const EipAddressPackRelation& _eipAddressPackRelation)
+{
+    m_eipAddressPackRelation = _eipAddressPackRelation;
+    m_eipAddressPackRelationHasBeenSet = true;
+}
+
+bool BGPIPInstance::EipAddressPackRelationHasBeenSet() const
+{
+    return m_eipAddressPackRelationHasBeenSet;
+}
+
+EipAddressRelation BGPIPInstance::GetEipAddressInfo() const
+{
+    return m_eipAddressInfo;
+}
+
+void BGPIPInstance::SetEipAddressInfo(const EipAddressRelation& _eipAddressInfo)
+{
+    m_eipAddressInfo = _eipAddressInfo;
+    m_eipAddressInfoHasBeenSet = true;
+}
+
+bool BGPIPInstance::EipAddressInfoHasBeenSet() const
+{
+    return m_eipAddressInfoHasBeenSet;
+}
+

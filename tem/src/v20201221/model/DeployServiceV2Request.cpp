@@ -50,7 +50,8 @@ DeployServiceV2Request::DeployServiceV2Request() :
     m_portMappingsHasBeenSet(false),
     m_useRegistryDefaultConfigHasBeenSet(false),
     m_settingConfsHasBeenSet(false),
-    m_eksServiceHasBeenSet(false)
+    m_eksServiceHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
 }
 
@@ -336,6 +337,14 @@ string DeployServiceV2Request::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eksService.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_versionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -792,6 +801,22 @@ void DeployServiceV2Request::SetEksService(const EksService& _eksService)
 bool DeployServiceV2Request::EksServiceHasBeenSet() const
 {
     return m_eksServiceHasBeenSet;
+}
+
+string DeployServiceV2Request::GetVersionId() const
+{
+    return m_versionId;
+}
+
+void DeployServiceV2Request::SetVersionId(const string& _versionId)
+{
+    m_versionId = _versionId;
+    m_versionIdHasBeenSet = true;
+}
+
+bool DeployServiceV2Request::VersionIdHasBeenSet() const
+{
+    return m_versionIdHasBeenSet;
 }
 
 

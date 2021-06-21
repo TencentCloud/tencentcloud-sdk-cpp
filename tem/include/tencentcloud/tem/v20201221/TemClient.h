@@ -47,6 +47,8 @@
 #include <tencentcloud/tem/v20201221/model/DescribeRelatedIngressesResponse.h>
 #include <tencentcloud/tem/v20201221/model/DescribeServiceRunPodListV2Request.h>
 #include <tencentcloud/tem/v20201221/model/DescribeServiceRunPodListV2Response.h>
+#include <tencentcloud/tem/v20201221/model/GenerateDownloadUrlRequest.h>
+#include <tencentcloud/tem/v20201221/model/GenerateDownloadUrlResponse.h>
 #include <tencentcloud/tem/v20201221/model/ModifyIngressRequest.h>
 #include <tencentcloud/tem/v20201221/model/ModifyIngressResponse.h>
 #include <tencentcloud/tem/v20201221/model/ModifyNamespaceRequest.h>
@@ -105,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeServiceRunPodListV2Response> DescribeServiceRunPodListV2Outcome;
                 typedef std::future<DescribeServiceRunPodListV2Outcome> DescribeServiceRunPodListV2OutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeServiceRunPodListV2Request&, DescribeServiceRunPodListV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceRunPodListV2AsyncHandler;
+                typedef Outcome<Error, Model::GenerateDownloadUrlResponse> GenerateDownloadUrlOutcome;
+                typedef std::future<GenerateDownloadUrlOutcome> GenerateDownloadUrlOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::GenerateDownloadUrlRequest&, GenerateDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateDownloadUrlAsyncHandler;
                 typedef Outcome<Error, Model::ModifyIngressResponse> ModifyIngressOutcome;
                 typedef std::future<ModifyIngressOutcome> ModifyIngressOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyIngressRequest&, ModifyIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIngressAsyncHandler;
@@ -227,6 +232,15 @@ namespace TencentCloud
                 DescribeServiceRunPodListV2Outcome DescribeServiceRunPodListV2(const Model::DescribeServiceRunPodListV2Request &request);
                 void DescribeServiceRunPodListV2Async(const Model::DescribeServiceRunPodListV2Request& request, const DescribeServiceRunPodListV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServiceRunPodListV2OutcomeCallable DescribeServiceRunPodListV2Callable(const Model::DescribeServiceRunPodListV2Request& request);
+
+                /**
+                 *生成包预签名下载链接
+                 * @param req GenerateDownloadUrlRequest
+                 * @return GenerateDownloadUrlOutcome
+                 */
+                GenerateDownloadUrlOutcome GenerateDownloadUrl(const Model::GenerateDownloadUrlRequest &request);
+                void GenerateDownloadUrlAsync(const Model::GenerateDownloadUrlRequest& request, const GenerateDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateDownloadUrlOutcomeCallable GenerateDownloadUrlCallable(const Model::GenerateDownloadUrlRequest& request);
 
                 /**
                  *创建或者更新 Ingress 规则

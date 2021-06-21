@@ -578,6 +578,24 @@ namespace TencentCloud
                      */
                     bool EksServiceHasBeenSet() const;
 
+                    /**
+                     * 获取要回滚到的历史版本id
+                     * @return VersionId 要回滚到的历史版本id
+                     */
+                    std::string GetVersionId() const;
+
+                    /**
+                     * 设置要回滚到的历史版本id
+                     * @param VersionId 要回滚到的历史版本id
+                     */
+                    void SetVersionId(const std::string& _versionId);
+
+                    /**
+                     * 判断参数 VersionId 是否已赋值
+                     * @return VersionId 是否已赋值
+                     */
+                    bool VersionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -753,6 +771,12 @@ namespace TencentCloud
                      */
                     EksService m_eksService;
                     bool m_eksServiceHasBeenSet;
+
+                    /**
+                     * 要回滚到的历史版本id
+                     */
+                    std::string m_versionId;
+                    bool m_versionIdHasBeenSet;
 
                 };
             }

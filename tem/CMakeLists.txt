@@ -40,6 +40,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20201221/model/CreateCosTokenRequest.h
   include/tencentcloud/tem/v20201221/model/DeployServiceV2Request.h
   include/tencentcloud/tem/v20201221/model/ModifyIngressRequest.h
+  include/tencentcloud/tem/v20201221/model/GenerateDownloadUrlResponse.h
   include/tencentcloud/tem/v20201221/model/DescribeRelatedIngressesResponse.h
   include/tencentcloud/tem/v20201221/model/CreateNamespaceRequest.h
   include/tencentcloud/tem/v20201221/model/DescribeIngressesRequest.h
@@ -65,6 +66,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20201221/model/TemNamespaceInfo.h
   include/tencentcloud/tem/v20201221/model/NamespacePage.h
   include/tencentcloud/tem/v20201221/model/CreateCosTokenV2Response.h
+  include/tencentcloud/tem/v20201221/model/GenerateDownloadUrlRequest.h
   include/tencentcloud/tem/v20201221/model/EsInfo.h
   include/tencentcloud/tem/v20201221/model/DescribeIngressRequest.h
   include/tencentcloud/tem/v20201221/model/CreateServiceV2Request.h
@@ -95,6 +97,7 @@ set(tem_src
   src/v20201221/model/CreateCosTokenRequest.cpp
   src/v20201221/model/DeployServiceV2Request.cpp
   src/v20201221/model/ModifyIngressRequest.cpp
+  src/v20201221/model/GenerateDownloadUrlResponse.cpp
   src/v20201221/model/DescribeRelatedIngressesResponse.cpp
   src/v20201221/model/CreateNamespaceRequest.cpp
   src/v20201221/model/DescribeIngressesRequest.cpp
@@ -120,6 +123,7 @@ set(tem_src
   src/v20201221/model/TemNamespaceInfo.cpp
   src/v20201221/model/NamespacePage.cpp
   src/v20201221/model/CreateCosTokenV2Response.cpp
+  src/v20201221/model/GenerateDownloadUrlRequest.cpp
   src/v20201221/model/EsInfo.cpp
   src/v20201221/model/DescribeIngressRequest.cpp
   src/v20201221/model/CreateServiceV2Request.cpp

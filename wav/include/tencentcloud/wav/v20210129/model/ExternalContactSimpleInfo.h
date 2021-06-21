@@ -82,6 +82,28 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取添加了此外部联系人的企业成员的姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SalesName 添加了此外部联系人的企业成员的姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSalesName() const;
+
+                    /**
+                     * 设置添加了此外部联系人的企业成员的姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SalesName 添加了此外部联系人的企业成员的姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSalesName(const std::string& _salesName);
+
+                    /**
+                     * 判断参数 SalesName 是否已赋值
+                     * @return SalesName 是否已赋值
+                     */
+                    bool SalesNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +117,13 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 添加了此外部联系人的企业成员的姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_salesName;
+                    bool m_salesNameHasBeenSet;
 
                 };
             }

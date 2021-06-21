@@ -26,7 +26,8 @@ CreateCosTokenV2Request::CreateCosTokenV2Request() :
     m_serviceIdHasBeenSet(false),
     m_pkgNameHasBeenSet(false),
     m_optTypeHasBeenSet(false),
-    m_sourceChannelHasBeenSet(false)
+    m_sourceChannelHasBeenSet(false),
+    m_timeVersionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateCosTokenV2Request::ToJsonString() const
         string key = "SourceChannel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sourceChannel, allocator);
+    }
+
+    if (m_timeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateCosTokenV2Request::SetSourceChannel(const int64_t& _sourceChannel)
 bool CreateCosTokenV2Request::SourceChannelHasBeenSet() const
 {
     return m_sourceChannelHasBeenSet;
+}
+
+string CreateCosTokenV2Request::GetTimeVersion() const
+{
+    return m_timeVersion;
+}
+
+void CreateCosTokenV2Request::SetTimeVersion(const string& _timeVersion)
+{
+    m_timeVersion = _timeVersion;
+    m_timeVersionHasBeenSet = true;
+}
+
+bool CreateCosTokenV2Request::TimeVersionHasBeenSet() const
+{
+    return m_timeVersionHasBeenSet;
 }
 
 

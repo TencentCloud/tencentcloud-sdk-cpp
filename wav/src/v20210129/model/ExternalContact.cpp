@@ -25,7 +25,8 @@ ExternalContact::ExternalContact() :
     m_genderHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_unionIdHasBeenSet(false)
+    m_unionIdHasBeenSet(false),
+    m_phoneHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ExternalContact::Deserialize(const rapidjson::Value &value)
         m_unionIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Phone") && !value["Phone"].IsNull())
+    {
+        if (!value["Phone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ExternalContact.Phone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_phone = string(value["Phone"].GetString());
+        m_phoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ExternalContact::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "UnionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_unionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_phoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Phone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ExternalContact::SetUnionId(const string& _unionId)
 bool ExternalContact::UnionIdHasBeenSet() const
 {
     return m_unionIdHasBeenSet;
+}
+
+string ExternalContact::GetPhone() const
+{
+    return m_phone;
+}
+
+void ExternalContact::SetPhone(const string& _phone)
+{
+    m_phone = _phone;
+    m_phoneHasBeenSet = true;
+}
+
+bool ExternalContact::PhoneHasBeenSet() const
+{
+    return m_phoneHasBeenSet;
 }
 
