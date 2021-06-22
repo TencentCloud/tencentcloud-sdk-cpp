@@ -25,7 +25,9 @@ TextDetection::TextDetection() :
     m_confidenceHasBeenSet(false),
     m_polygonHasBeenSet(false),
     m_advancedInfoHasBeenSet(false),
-    m_itemPolygonHasBeenSet(false)
+    m_itemPolygonHasBeenSet(false),
+    m_wordsHasBeenSet(false),
+    m_wordCoordPointHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,46 @@ CoreInternalOutcome TextDetection::Deserialize(const rapidjson::Value &value)
         m_itemPolygonHasBeenSet = true;
     }
 
+    if (value.HasMember("Words") && !value["Words"].IsNull())
+    {
+        if (!value["Words"].IsArray())
+            return CoreInternalOutcome(Error("response `TextDetection.Words` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Words"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DetectedWords item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_words.push_back(item);
+        }
+        m_wordsHasBeenSet = true;
+    }
+
+    if (value.HasMember("WordCoordPoint") && !value["WordCoordPoint"].IsNull())
+    {
+        if (!value["WordCoordPoint"].IsArray())
+            return CoreInternalOutcome(Error("response `TextDetection.WordCoordPoint` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WordCoordPoint"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DetectedWordCoordPoint item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_wordCoordPoint.push_back(item);
+        }
+        m_wordCoordPointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +196,36 @@ void TextDetection::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_itemPolygon.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_wordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Words";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_words.begin(); itr != m_words.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_wordCoordPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WordCoordPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_wordCoordPoint.begin(); itr != m_wordCoordPoint.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -237,5 +309,37 @@ void TextDetection::SetItemPolygon(const ItemCoord& _itemPolygon)
 bool TextDetection::ItemPolygonHasBeenSet() const
 {
     return m_itemPolygonHasBeenSet;
+}
+
+vector<DetectedWords> TextDetection::GetWords() const
+{
+    return m_words;
+}
+
+void TextDetection::SetWords(const vector<DetectedWords>& _words)
+{
+    m_words = _words;
+    m_wordsHasBeenSet = true;
+}
+
+bool TextDetection::WordsHasBeenSet() const
+{
+    return m_wordsHasBeenSet;
+}
+
+vector<DetectedWordCoordPoint> TextDetection::GetWordCoordPoint() const
+{
+    return m_wordCoordPoint;
+}
+
+void TextDetection::SetWordCoordPoint(const vector<DetectedWordCoordPoint>& _wordCoordPoint)
+{
+    m_wordCoordPoint = _wordCoordPoint;
+    m_wordCoordPointHasBeenSet = true;
+}
+
+bool TextDetection::WordCoordPointHasBeenSet() const
+{
+    return m_wordCoordPointHasBeenSet;
 }
 

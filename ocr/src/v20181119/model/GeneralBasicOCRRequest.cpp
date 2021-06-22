@@ -28,7 +28,8 @@ GeneralBasicOCRRequest::GeneralBasicOCRRequest() :
     m_sceneHasBeenSet(false),
     m_languageTypeHasBeenSet(false),
     m_isPdfHasBeenSet(false),
-    m_pdfPageNumberHasBeenSet(false)
+    m_pdfPageNumberHasBeenSet(false),
+    m_isWordsHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string GeneralBasicOCRRequest::ToJsonString() const
         string key = "PdfPageNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pdfPageNumber, allocator);
+    }
+
+    if (m_isWordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsWords";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isWords, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void GeneralBasicOCRRequest::SetPdfPageNumber(const uint64_t& _pdfPageNumber)
 bool GeneralBasicOCRRequest::PdfPageNumberHasBeenSet() const
 {
     return m_pdfPageNumberHasBeenSet;
+}
+
+bool GeneralBasicOCRRequest::GetIsWords() const
+{
+    return m_isWords;
+}
+
+void GeneralBasicOCRRequest::SetIsWords(const bool& _isWords)
+{
+    m_isWords = _isWords;
+    m_isWordsHasBeenSet = true;
+}
+
+bool GeneralBasicOCRRequest::IsWordsHasBeenSet() const
+{
+    return m_isWordsHasBeenSet;
 }
 
 

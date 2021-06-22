@@ -24,6 +24,7 @@
 #include <tencentcloud/es/v20180416/model/ZoneDetail.h>
 #include <tencentcloud/es/v20180416/model/NodeInfo.h>
 #include <tencentcloud/es/v20180416/model/TagInfo.h>
+#include <tencentcloud/es/v20180416/model/WebNodeTypeInfo.h>
 
 
 namespace TencentCloud
@@ -64,14 +65,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"）
-                     * @return EsVersion 实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"）
+                     * 获取实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"、"7.10.1"）
+                     * @return EsVersion 实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"、"7.10.1"）
                      */
                     std::string GetEsVersion() const;
 
                     /**
-                     * 设置实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"）
-                     * @param EsVersion 实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"）
+                     * 设置实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"、"7.10.1"）
+                     * @param EsVersion 实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"、"7.10.1"）
                      */
                     void SetEsVersion(const std::string& _esVersion);
 
@@ -581,6 +582,24 @@ namespace TencentCloud
                      */
                     bool SceneTypeHasBeenSet() const;
 
+                    /**
+                     * 获取可视化节点配置
+                     * @return WebNodeTypeInfo 可视化节点配置
+                     */
+                    WebNodeTypeInfo GetWebNodeTypeInfo() const;
+
+                    /**
+                     * 设置可视化节点配置
+                     * @param WebNodeTypeInfo 可视化节点配置
+                     */
+                    void SetWebNodeTypeInfo(const WebNodeTypeInfo& _webNodeTypeInfo);
+
+                    /**
+                     * 判断参数 WebNodeTypeInfo 是否已赋值
+                     * @return WebNodeTypeInfo 是否已赋值
+                     */
+                    bool WebNodeTypeInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -590,7 +609,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"）
+                     * 实例版本（支持"5.6.4"、"6.4.3"、"6.8.2"、"7.5.1"、"7.10.1"）
                      */
                     std::string m_esVersion;
                     bool m_esVersionHasBeenSet;
@@ -758,6 +777,12 @@ namespace TencentCloud
                      */
                     int64_t m_sceneType;
                     bool m_sceneTypeHasBeenSet;
+
+                    /**
+                     * 可视化节点配置
+                     */
+                    WebNodeTypeInfo m_webNodeTypeInfo;
+                    bool m_webNodeTypeInfoHasBeenSet;
 
                 };
             }

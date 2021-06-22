@@ -74,6 +74,20 @@ namespace TencentCloud
                      */
                     bool ProductInfoHasBeenSet() const;
 
+                    /**
+                     * 获取相似商品信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductInfoList 相似商品信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ProductInfo> GetProductInfoList() const;
+
+                    /**
+                     * 判断参数 ProductInfoList 是否已赋值
+                     * @return ProductInfoList 是否已赋值
+                     */
+                    bool ProductInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -90,6 +104,13 @@ namespace TencentCloud
                      */
                     ProductInfo m_productInfo;
                     bool m_productInfoHasBeenSet;
+
+                    /**
+                     * 相似商品信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ProductInfo> m_productInfoList;
+                    bool m_productInfoListHasBeenSet;
 
                 };
             }

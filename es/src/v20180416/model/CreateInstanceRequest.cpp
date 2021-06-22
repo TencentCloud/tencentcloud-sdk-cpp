@@ -50,7 +50,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_nodeInfoListHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_basicSecurityTypeHasBeenSet(false),
-    m_sceneTypeHasBeenSet(false)
+    m_sceneTypeHasBeenSet(false),
+    m_webNodeTypeInfoHasBeenSet(false)
 {
 }
 
@@ -309,6 +310,15 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "SceneType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sceneType, allocator);
+    }
+
+    if (m_webNodeTypeInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebNodeTypeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_webNodeTypeInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -765,6 +775,22 @@ void CreateInstanceRequest::SetSceneType(const int64_t& _sceneType)
 bool CreateInstanceRequest::SceneTypeHasBeenSet() const
 {
     return m_sceneTypeHasBeenSet;
+}
+
+WebNodeTypeInfo CreateInstanceRequest::GetWebNodeTypeInfo() const
+{
+    return m_webNodeTypeInfo;
+}
+
+void CreateInstanceRequest::SetWebNodeTypeInfo(const WebNodeTypeInfo& _webNodeTypeInfo)
+{
+    m_webNodeTypeInfo = _webNodeTypeInfo;
+    m_webNodeTypeInfoHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::WebNodeTypeInfoHasBeenSet() const
+{
+    return m_webNodeTypeInfoHasBeenSet;
 }
 
 

@@ -26,6 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/Coord.h>
 #include <tencentcloud/ocr/v20181119/model/ItemCoord.h>
+#include <tencentcloud/ocr/v20181119/model/DetectedWords.h>
+#include <tencentcloud/ocr/v20181119/model/DetectedWordCoordPoint.h>
 
 
 namespace TencentCloud
@@ -146,6 +148,42 @@ GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。
                      */
                     bool ItemPolygonHasBeenSet() const;
 
+                    /**
+                     * 获取识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR
+                     * @return Words 识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR
+                     */
+                    std::vector<DetectedWords> GetWords() const;
+
+                    /**
+                     * 设置识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR
+                     * @param Words 识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR
+                     */
+                    void SetWords(const std::vector<DetectedWords>& _words);
+
+                    /**
+                     * 判断参数 Words 是否已赋值
+                     * @return Words 是否已赋值
+                     */
+                    bool WordsHasBeenSet() const;
+
+                    /**
+                     * 获取单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR
+                     * @return WordCoordPoint 单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR
+                     */
+                    std::vector<DetectedWordCoordPoint> GetWordCoordPoint() const;
+
+                    /**
+                     * 设置单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR
+                     * @param WordCoordPoint 单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR
+                     */
+                    void SetWordCoordPoint(const std::vector<DetectedWordCoordPoint>& _wordCoordPoint);
+
+                    /**
+                     * 判断参数 WordCoordPoint 是否已赋值
+                     * @return WordCoordPoint 是否已赋值
+                     */
+                    bool WordCoordPointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +217,18 @@ GeneralBasicOcr接口返回段落信息Parag，包含ParagNo。
                      */
                     ItemCoord m_itemPolygon;
                     bool m_itemPolygonHasBeenSet;
+
+                    /**
+                     * 识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR
+                     */
+                    std::vector<DetectedWords> m_words;
+                    bool m_wordsHasBeenSet;
+
+                    /**
+                     * 单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR
+                     */
+                    std::vector<DetectedWordCoordPoint> m_wordCoordPoint;
+                    bool m_wordCoordPointHasBeenSet;
 
                 };
             }

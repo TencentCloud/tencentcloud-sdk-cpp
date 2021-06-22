@@ -23,7 +23,8 @@ using namespace std;
 SlotReplacementInfo::SlotReplacementInfo() :
     m_idHasBeenSet(false),
     m_replacementTypeHasBeenSet(false),
-    m_mediaReplacementInfoHasBeenSet(false)
+    m_mediaReplacementInfoHasBeenSet(false),
+    m_textReplacementInfoHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,23 @@ CoreInternalOutcome SlotReplacementInfo::Deserialize(const rapidjson::Value &val
         m_mediaReplacementInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("TextReplacementInfo") && !value["TextReplacementInfo"].IsNull())
+    {
+        if (!value["TextReplacementInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `SlotReplacementInfo.TextReplacementInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_textReplacementInfo.Deserialize(value["TextReplacementInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_textReplacementInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +117,15 @@ void SlotReplacementInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mediaReplacementInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_textReplacementInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextReplacementInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_textReplacementInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -150,5 +177,21 @@ void SlotReplacementInfo::SetMediaReplacementInfo(const MediaReplacementInfo& _m
 bool SlotReplacementInfo::MediaReplacementInfoHasBeenSet() const
 {
     return m_mediaReplacementInfoHasBeenSet;
+}
+
+TextReplacementInfo SlotReplacementInfo::GetTextReplacementInfo() const
+{
+    return m_textReplacementInfo;
+}
+
+void SlotReplacementInfo::SetTextReplacementInfo(const TextReplacementInfo& _textReplacementInfo)
+{
+    m_textReplacementInfo = _textReplacementInfo;
+    m_textReplacementInfoHasBeenSet = true;
+}
+
+bool SlotReplacementInfo::TextReplacementInfoHasBeenSet() const
+{
+    return m_textReplacementInfoHasBeenSet;
 }
 

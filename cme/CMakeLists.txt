@@ -176,6 +176,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/ExportVideoByEditorTrackDataResponse.h
   include/tencentcloud/cme/v20191029/model/MediaImageSpriteInfo.h
   include/tencentcloud/cme/v20191029/model/ImportMaterialRequest.h
+  include/tencentcloud/cme/v20191029/model/TextReplacementInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeMaterialsRequest.h
   )
 
@@ -338,6 +339,7 @@ set(cme_src
   src/v20191029/model/ExportVideoByEditorTrackDataResponse.cpp
   src/v20191029/model/MediaImageSpriteInfo.cpp
   src/v20191029/model/ImportMaterialRequest.cpp
+  src/v20191029/model/TextReplacementInfo.cpp
   src/v20191029/model/DescribeMaterialsRequest.cpp
   )
 

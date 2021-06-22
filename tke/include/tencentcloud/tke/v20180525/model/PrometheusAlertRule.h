@@ -159,6 +159,28 @@ namespace TencentCloud
                      */
                     bool DescribeHasBeenSet() const;
 
+                    /**
+                     * 获取参考prometheus rule中的annotations
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Annotations 参考prometheus rule中的annotations
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Label> GetAnnotations() const;
+
+                    /**
+                     * 设置参考prometheus rule中的annotations
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Annotations 参考prometheus rule中的annotations
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAnnotations(const std::vector<Label>& _annotations);
+
+                    /**
+                     * 判断参数 Annotations 是否已赋值
+                     * @return Annotations 是否已赋值
+                     */
+                    bool AnnotationsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +219,13 @@ namespace TencentCloud
                      */
                     std::string m_describe;
                     bool m_describeHasBeenSet;
+
+                    /**
+                     * 参考prometheus rule中的annotations
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Label> m_annotations;
+                    bool m_annotationsHasBeenSet;
 
                 };
             }

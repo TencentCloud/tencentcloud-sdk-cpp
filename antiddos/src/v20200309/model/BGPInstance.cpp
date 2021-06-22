@@ -31,7 +31,9 @@ BGPInstance::BGPInstance() :
     m_nameHasBeenSet(false),
     m_packInfoHasBeenSet(false),
     m_eipProductInfosHasBeenSet(false),
-    m_boundStatusHasBeenSet(false)
+    m_boundStatusHasBeenSet(false),
+    m_dDoSLevelHasBeenSet(false),
+    m_cCEnableHasBeenSet(false)
 {
 }
 
@@ -195,6 +197,26 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
         m_boundStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("DDoSLevel") && !value["DDoSLevel"].IsNull())
+    {
+        if (!value["DDoSLevel"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BGPInstance.DDoSLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dDoSLevel = string(value["DDoSLevel"].GetString());
+        m_dDoSLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("CCEnable") && !value["CCEnable"].IsNull())
+    {
+        if (!value["CCEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `BGPInstance.CCEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cCEnable = value["CCEnable"].GetInt64();
+        m_cCEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +322,22 @@ void BGPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "BoundStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_boundStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dDoSLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DDoSLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dDoSLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cCEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CCEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cCEnable, allocator);
     }
 
 }
@@ -479,5 +517,37 @@ void BGPInstance::SetBoundStatus(const string& _boundStatus)
 bool BGPInstance::BoundStatusHasBeenSet() const
 {
     return m_boundStatusHasBeenSet;
+}
+
+string BGPInstance::GetDDoSLevel() const
+{
+    return m_dDoSLevel;
+}
+
+void BGPInstance::SetDDoSLevel(const string& _dDoSLevel)
+{
+    m_dDoSLevel = _dDoSLevel;
+    m_dDoSLevelHasBeenSet = true;
+}
+
+bool BGPInstance::DDoSLevelHasBeenSet() const
+{
+    return m_dDoSLevelHasBeenSet;
+}
+
+int64_t BGPInstance::GetCCEnable() const
+{
+    return m_cCEnable;
+}
+
+void BGPInstance::SetCCEnable(const int64_t& _cCEnable)
+{
+    m_cCEnable = _cCEnable;
+    m_cCEnableHasBeenSet = true;
+}
+
+bool BGPInstance::CCEnableHasBeenSet() const
+{
+    return m_cCEnableHasBeenSet;
 }
 

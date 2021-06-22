@@ -25,7 +25,8 @@ using namespace std;
 
 DetectProductBetaResponse::DetectProductBetaResponse() :
     m_regionDetectedHasBeenSet(false),
-    m_productInfoHasBeenSet(false)
+    m_productInfoHasBeenSet(false),
+    m_productInfoListHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,26 @@ CoreInternalOutcome DetectProductBetaResponse::Deserialize(const string &payload
         m_productInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ProductInfoList") && !rsp["ProductInfoList"].IsNull())
+    {
+        if (!rsp["ProductInfoList"].IsArray())
+            return CoreInternalOutcome(Error("response `ProductInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ProductInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ProductInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_productInfoList.push_back(item);
+        }
+        m_productInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -123,6 +144,16 @@ ProductInfo DetectProductBetaResponse::GetProductInfo() const
 bool DetectProductBetaResponse::ProductInfoHasBeenSet() const
 {
     return m_productInfoHasBeenSet;
+}
+
+vector<ProductInfo> DetectProductBetaResponse::GetProductInfoList() const
+{
+    return m_productInfoList;
+}
+
+bool DetectProductBetaResponse::ProductInfoListHasBeenSet() const
+{
+    return m_productInfoListHasBeenSet;
 }
 
 

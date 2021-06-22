@@ -31,6 +31,7 @@
 #include <tencentcloud/es/v20180416/model/TagInfo.h>
 #include <tencentcloud/es/v20180416/model/NodeInfo.h>
 #include <tencentcloud/es/v20180416/model/ZoneDetail.h>
+#include <tencentcloud/es/v20180416/model/KibanaNodeInfo.h>
 
 
 namespace TencentCloud
@@ -1097,6 +1098,28 @@ namespace TencentCloud
                      */
                     bool KibanaConfigHasBeenSet() const;
 
+                    /**
+                     * 获取Kibana节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KibanaNodeInfo Kibana节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KibanaNodeInfo GetKibanaNodeInfo() const;
+
+                    /**
+                     * 设置Kibana节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KibanaNodeInfo Kibana节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKibanaNodeInfo(const KibanaNodeInfo& _kibanaNodeInfo);
+
+                    /**
+                     * 判断参数 KibanaNodeInfo 是否已赋值
+                     * @return KibanaNodeInfo 是否已赋值
+                     */
+                    bool KibanaNodeInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1440,6 +1463,13 @@ namespace TencentCloud
                      */
                     std::string m_kibanaConfig;
                     bool m_kibanaConfigHasBeenSet;
+
+                    /**
+                     * Kibana节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KibanaNodeInfo m_kibanaNodeInfo;
+                    bool m_kibanaNodeInfoHasBeenSet;
 
                 };
             }

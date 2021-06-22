@@ -44,13 +44,17 @@ namespace TencentCloud
 
                     /**
                      * 获取签名名称。
+注：不能重复申请已通过或待审核的签名。
                      * @return SignName 签名名称。
+注：不能重复申请已通过或待审核的签名。
                      */
                     std::string GetSignName() const;
 
                     /**
                      * 设置签名名称。
+注：不能重复申请已通过或待审核的签名。
                      * @param SignName 签名名称。
+注：不能重复申请已通过或待审核的签名。
                      */
                     void SetSignName(const std::string& _signName);
 
@@ -274,6 +278,7 @@ namespace TencentCloud
 
                     /**
                      * 签名名称。
+注：不能重复申请已通过或待审核的签名。
                      */
                     std::string m_signName;
                     bool m_signNameHasBeenSet;

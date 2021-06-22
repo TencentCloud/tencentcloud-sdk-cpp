@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/MediaReplacementInfo.h>
+#include <tencentcloud/cme/v20191029/model/TextReplacementInfo.h>
 
 
 namespace TencentCloud
@@ -67,29 +68,33 @@ namespace TencentCloud
 
                     /**
                      * 获取替换类型，可取值有：
-<li> AUDIO :音频;</li>
-<li> VIDEO :视频;</li>
-<li> IMAGE :图片。</li>
-注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。
+<li> AUDIO ：音频；</li>
+<li> VIDEO ：视频；</li>
+<li> IMAGE ：图片；</li>
+<li> TEXT ：文本。</li>
+注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。如果替换的类型为Text,，则必须保证模板轨道数据中相应卡槽的位置标记的是文本。
                      * @return ReplacementType 替换类型，可取值有：
-<li> AUDIO :音频;</li>
-<li> VIDEO :视频;</li>
-<li> IMAGE :图片。</li>
-注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。
+<li> AUDIO ：音频；</li>
+<li> VIDEO ：视频；</li>
+<li> IMAGE ：图片；</li>
+<li> TEXT ：文本。</li>
+注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。如果替换的类型为Text,，则必须保证模板轨道数据中相应卡槽的位置标记的是文本。
                      */
                     std::string GetReplacementType() const;
 
                     /**
                      * 设置替换类型，可取值有：
-<li> AUDIO :音频;</li>
-<li> VIDEO :视频;</li>
-<li> IMAGE :图片。</li>
-注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。
+<li> AUDIO ：音频；</li>
+<li> VIDEO ：视频；</li>
+<li> IMAGE ：图片；</li>
+<li> TEXT ：文本。</li>
+注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。如果替换的类型为Text,，则必须保证模板轨道数据中相应卡槽的位置标记的是文本。
                      * @param ReplacementType 替换类型，可取值有：
-<li> AUDIO :音频;</li>
-<li> VIDEO :视频;</li>
-<li> IMAGE :图片。</li>
-注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。
+<li> AUDIO ：音频；</li>
+<li> VIDEO ：视频；</li>
+<li> IMAGE ：图片；</li>
+<li> TEXT ：文本。</li>
+注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。如果替换的类型为Text,，则必须保证模板轨道数据中相应卡槽的位置标记的是文本。
                      */
                     void SetReplacementType(const std::string& _replacementType);
 
@@ -117,6 +122,24 @@ namespace TencentCloud
                      */
                     bool MediaReplacementInfoHasBeenSet() const;
 
+                    /**
+                     * 获取文本替换信息，仅当要替换的卡槽类型为文本时有效。
+                     * @return TextReplacementInfo 文本替换信息，仅当要替换的卡槽类型为文本时有效。
+                     */
+                    TextReplacementInfo GetTextReplacementInfo() const;
+
+                    /**
+                     * 设置文本替换信息，仅当要替换的卡槽类型为文本时有效。
+                     * @param TextReplacementInfo 文本替换信息，仅当要替换的卡槽类型为文本时有效。
+                     */
+                    void SetTextReplacementInfo(const TextReplacementInfo& _textReplacementInfo);
+
+                    /**
+                     * 判断参数 TextReplacementInfo 是否已赋值
+                     * @return TextReplacementInfo 是否已赋值
+                     */
+                    bool TextReplacementInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -127,10 +150,11 @@ namespace TencentCloud
 
                     /**
                      * 替换类型，可取值有：
-<li> AUDIO :音频;</li>
-<li> VIDEO :视频;</li>
-<li> IMAGE :图片。</li>
-注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。
+<li> AUDIO ：音频；</li>
+<li> VIDEO ：视频；</li>
+<li> IMAGE ：图片；</li>
+<li> TEXT ：文本。</li>
+注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。如果替换的类型为Text,，则必须保证模板轨道数据中相应卡槽的位置标记的是文本。
                      */
                     std::string m_replacementType;
                     bool m_replacementTypeHasBeenSet;
@@ -140,6 +164,12 @@ namespace TencentCloud
                      */
                     MediaReplacementInfo m_mediaReplacementInfo;
                     bool m_mediaReplacementInfoHasBeenSet;
+
+                    /**
+                     * 文本替换信息，仅当要替换的卡槽类型为文本时有效。
+                     */
+                    TextReplacementInfo m_textReplacementInfo;
+                    bool m_textReplacementInfoHasBeenSet;
 
                 };
             }

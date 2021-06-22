@@ -24,7 +24,8 @@ using namespace std;
 
 GeneralAccurateOCRRequest::GeneralAccurateOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_isWordsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string GeneralAccurateOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isWordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsWords";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isWords, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void GeneralAccurateOCRRequest::SetImageUrl(const string& _imageUrl)
 bool GeneralAccurateOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+bool GeneralAccurateOCRRequest::GetIsWords() const
+{
+    return m_isWords;
+}
+
+void GeneralAccurateOCRRequest::SetIsWords(const bool& _isWords)
+{
+    m_isWords = _isWords;
+    m_isWordsHasBeenSet = true;
+}
+
+bool GeneralAccurateOCRRequest::IsWordsHasBeenSet() const
+{
+    return m_isWordsHasBeenSet;
 }
 
 

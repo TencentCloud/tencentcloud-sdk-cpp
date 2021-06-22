@@ -94,6 +94,24 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回单字信息，默认关
+                     * @return IsWords 是否返回单字信息，默认关
+                     */
+                    bool GetIsWords() const;
+
+                    /**
+                     * 设置是否返回单字信息，默认关
+                     * @param IsWords 是否返回单字信息，默认关
+                     */
+                    void SetIsWords(const bool& _isWords);
+
+                    /**
+                     * 判断参数 IsWords 是否已赋值
+                     * @return IsWords 是否已赋值
+                     */
+                    bool IsWordsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +129,12 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 是否返回单字信息，默认关
+                     */
+                    bool m_isWords;
+                    bool m_isWordsHasBeenSet;
 
                 };
             }

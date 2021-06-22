@@ -298,6 +298,42 @@ namespace TencentCloud
                      */
                     bool BoundStatusHasBeenSet() const;
 
+                    /**
+                     * 获取四层防护严格级别
+                     * @return DDoSLevel 四层防护严格级别
+                     */
+                    std::string GetDDoSLevel() const;
+
+                    /**
+                     * 设置四层防护严格级别
+                     * @param DDoSLevel 四层防护严格级别
+                     */
+                    void SetDDoSLevel(const std::string& _dDoSLevel);
+
+                    /**
+                     * 判断参数 DDoSLevel 是否已赋值
+                     * @return DDoSLevel 是否已赋值
+                     */
+                    bool DDoSLevelHasBeenSet() const;
+
+                    /**
+                     * 获取CC防护开关
+                     * @return CCEnable CC防护开关
+                     */
+                    int64_t GetCCEnable() const;
+
+                    /**
+                     * 设置CC防护开关
+                     * @param CCEnable CC防护开关
+                     */
+                    void SetCCEnable(const int64_t& _cCEnable);
+
+                    /**
+                     * 判断参数 CCEnable 是否已赋值
+                     * @return CCEnable 是否已赋值
+                     */
+                    bool CCEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -377,6 +413,18 @@ namespace TencentCloud
                      */
                     std::string m_boundStatus;
                     bool m_boundStatusHasBeenSet;
+
+                    /**
+                     * 四层防护严格级别
+                     */
+                    std::string m_dDoSLevel;
+                    bool m_dDoSLevelHasBeenSet;
+
+                    /**
+                     * CC防护开关
+                     */
+                    int64_t m_cCEnable;
+                    bool m_cCEnableHasBeenSet;
 
                 };
             }

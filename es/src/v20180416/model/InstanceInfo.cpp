@@ -74,7 +74,8 @@ InstanceInfo::InstanceInfo() :
     m_kibanaPrivateAccessHasBeenSet(false),
     m_securityTypeHasBeenSet(false),
     m_sceneTypeHasBeenSet(false),
-    m_kibanaConfigHasBeenSet(false)
+    m_kibanaConfigHasBeenSet(false),
+    m_kibanaNodeInfoHasBeenSet(false)
 {
 }
 
@@ -688,6 +689,23 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_kibanaConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("KibanaNodeInfo") && !value["KibanaNodeInfo"].IsNull())
+    {
+        if (!value["KibanaNodeInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `InstanceInfo.KibanaNodeInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_kibanaNodeInfo.Deserialize(value["KibanaNodeInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_kibanaNodeInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1151,6 +1169,15 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "KibanaConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_kibanaConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kibanaNodeInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KibanaNodeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_kibanaNodeInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2018,5 +2045,21 @@ void InstanceInfo::SetKibanaConfig(const string& _kibanaConfig)
 bool InstanceInfo::KibanaConfigHasBeenSet() const
 {
     return m_kibanaConfigHasBeenSet;
+}
+
+KibanaNodeInfo InstanceInfo::GetKibanaNodeInfo() const
+{
+    return m_kibanaNodeInfo;
+}
+
+void InstanceInfo::SetKibanaNodeInfo(const KibanaNodeInfo& _kibanaNodeInfo)
+{
+    m_kibanaNodeInfo = _kibanaNodeInfo;
+    m_kibanaNodeInfoHasBeenSet = true;
+}
+
+bool InstanceInfo::KibanaNodeInfoHasBeenSet() const
+{
+    return m_kibanaNodeInfoHasBeenSet;
 }
 

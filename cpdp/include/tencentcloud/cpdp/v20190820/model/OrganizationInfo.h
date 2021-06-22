@@ -102,13 +102,17 @@ namespace TencentCloud
 
                     /**
                      * 获取法人名称，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return LegalPersonName 法人名称，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string GetLegalPersonName() const;
 
                     /**
                      * 设置法人名称，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @param LegalPersonName 法人名称，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     void SetLegalPersonName(const std::string& _legalPersonName);
 
@@ -138,13 +142,17 @@ namespace TencentCloud
 
                     /**
                      * 获取法人证件号码，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @return LegalPersonIdCode 法人证件号码，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string GetLegalPersonIdCode() const;
 
                     /**
                      * 设置法人证件号码，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      * @param LegalPersonIdCode 法人证件号码，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     void SetLegalPersonIdCode(const std::string& _legalPersonIdCode);
 
@@ -176,6 +184,7 @@ namespace TencentCloud
 
                     /**
                      * 法人名称，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string m_legalPersonName;
                     bool m_legalPersonNameHasBeenSet;
@@ -188,6 +197,7 @@ namespace TencentCloud
 
                     /**
                      * 法人证件号码，如果SubMchName不是法人，需要另外送入法人信息（企业必输）
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
                      */
                     std::string m_legalPersonIdCode;
                     bool m_legalPersonIdCodeHasBeenSet;

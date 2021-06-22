@@ -67,6 +67,18 @@ namespace TencentCloud
                      */
                     bool PlayTokenHasBeenSet() const;
 
+                    /**
+                     * 获取歌词下载地址
+                     * @return LyricsUrl 歌词下载地址
+                     */
+                    std::string GetLyricsUrl() const;
+
+                    /**
+                     * 判断参数 LyricsUrl 是否已赋值
+                     * @return LyricsUrl 是否已赋值
+                     */
+                    bool LyricsUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +92,12 @@ namespace TencentCloud
                      */
                     std::string m_playToken;
                     bool m_playTokenHasBeenSet;
+
+                    /**
+                     * 歌词下载地址
+                     */
+                    std::string m_lyricsUrl;
+                    bool m_lyricsUrlHasBeenSet;
 
                 };
             }

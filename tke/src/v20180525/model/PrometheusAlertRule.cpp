@@ -26,7 +26,8 @@ PrometheusAlertRule::PrometheusAlertRule() :
     m_labelsHasBeenSet(false),
     m_templateHasBeenSet(false),
     m_forHasBeenSet(false),
-    m_describeHasBeenSet(false)
+    m_describeHasBeenSet(false),
+    m_annotationsHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,26 @@ CoreInternalOutcome PrometheusAlertRule::Deserialize(const rapidjson::Value &val
         m_describeHasBeenSet = true;
     }
 
+    if (value.HasMember("Annotations") && !value["Annotations"].IsNull())
+    {
+        if (!value["Annotations"].IsArray())
+            return CoreInternalOutcome(Error("response `PrometheusAlertRule.Annotations` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Annotations"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Label item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_annotations.push_back(item);
+        }
+        m_annotationsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +186,21 @@ void PrometheusAlertRule::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Describe";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_describe.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_annotationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Annotations";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_annotations.begin(); itr != m_annotations.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -264,5 +300,21 @@ void PrometheusAlertRule::SetDescribe(const string& _describe)
 bool PrometheusAlertRule::DescribeHasBeenSet() const
 {
     return m_describeHasBeenSet;
+}
+
+vector<Label> PrometheusAlertRule::GetAnnotations() const
+{
+    return m_annotations;
+}
+
+void PrometheusAlertRule::SetAnnotations(const vector<Label>& _annotations)
+{
+    m_annotations = _annotations;
+    m_annotationsHasBeenSet = true;
+}
+
+bool PrometheusAlertRule::AnnotationsHasBeenSet() const
+{
+    return m_annotationsHasBeenSet;
 }
 

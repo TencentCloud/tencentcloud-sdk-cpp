@@ -169,6 +169,49 @@ OcrClient::BankCardOCROutcomeCallable OcrClient::BankCardOCRCallable(const BankC
     return task->get_future();
 }
 
+OcrClient::BankSlipOCROutcome OcrClient::BankSlipOCR(const BankSlipOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "BankSlipOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BankSlipOCRResponse rsp = BankSlipOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BankSlipOCROutcome(rsp);
+        else
+            return BankSlipOCROutcome(o.GetError());
+    }
+    else
+    {
+        return BankSlipOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::BankSlipOCRAsync(const BankSlipOCRRequest& request, const BankSlipOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BankSlipOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::BankSlipOCROutcomeCallable OcrClient::BankSlipOCRCallable(const BankSlipOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BankSlipOCROutcome()>>(
+        [this, request]()
+        {
+            return this->BankSlipOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::BizLicenseOCROutcome OcrClient::BizLicenseOCR(const BizLicenseOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "BizLicenseOCR");

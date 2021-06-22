@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeKTVMusicDetailResponse::DescribeKTVMusicDetailResponse() :
     m_kTVMusicBaseInfoHasBeenSet(false),
-    m_playTokenHasBeenSet(false)
+    m_playTokenHasBeenSet(false),
+    m_lyricsUrlHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,16 @@ CoreInternalOutcome DescribeKTVMusicDetailResponse::Deserialize(const string &pa
         m_playTokenHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LyricsUrl") && !rsp["LyricsUrl"].IsNull())
+    {
+        if (!rsp["LyricsUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LyricsUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lyricsUrl = string(rsp["LyricsUrl"].GetString());
+        m_lyricsUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -113,6 +124,16 @@ string DescribeKTVMusicDetailResponse::GetPlayToken() const
 bool DescribeKTVMusicDetailResponse::PlayTokenHasBeenSet() const
 {
     return m_playTokenHasBeenSet;
+}
+
+string DescribeKTVMusicDetailResponse::GetLyricsUrl() const
+{
+    return m_lyricsUrl;
+}
+
+bool DescribeKTVMusicDetailResponse::LyricsUrlHasBeenSet() const
+{
+    return m_lyricsUrlHasBeenSet;
 }
 
 

@@ -19,6 +19,7 @@ set(es_public_header
   )
 
 set(es_public_header_model
+  include/tencentcloud/es/v20180416/model/WebNodeTypeInfo.h
   include/tencentcloud/es/v20180416/model/InstanceLog.h
   include/tencentcloud/es/v20180416/model/LocalDiskInfo.h
   include/tencentcloud/es/v20180416/model/TaskDetail.h
@@ -55,6 +56,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/RestartNodesRequest.h
   include/tencentcloud/es/v20180416/model/UpdatePluginsRequest.h
   include/tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesResponse.h
+  include/tencentcloud/es/v20180416/model/KibanaNodeInfo.h
   include/tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsResponse.h
   include/tencentcloud/es/v20180416/model/UpgradeLicenseResponse.h
   include/tencentcloud/es/v20180416/model/EsAcl.h
@@ -72,6 +74,7 @@ set(es_public_header_model
 
 set(es_src
   src/v20180416/EsClient.cpp
+  src/v20180416/model/WebNodeTypeInfo.cpp
   src/v20180416/model/InstanceLog.cpp
   src/v20180416/model/LocalDiskInfo.cpp
   src/v20180416/model/TaskDetail.cpp
@@ -108,6 +111,7 @@ set(es_src
   src/v20180416/model/RestartNodesRequest.cpp
   src/v20180416/model/UpdatePluginsRequest.cpp
   src/v20180416/model/UpdateRequestTargetNodeTypesResponse.cpp
+  src/v20180416/model/KibanaNodeInfo.cpp
   src/v20180416/model/UpdateDiagnoseSettingsResponse.cpp
   src/v20180416/model/UpgradeLicenseResponse.cpp
   src/v20180416/model/EsAcl.cpp
