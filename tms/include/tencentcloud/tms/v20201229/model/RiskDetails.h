@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取风险类别，RiskAccount，RiskIP, RiskIMEI
-                     * @return Label 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * 获取该字段用于返回账号信息检测对应的风险类别，取值为：**RiskAccount**（账号存在风险）、**RiskIP**（IP地址存在风险）、**RiskIMEI**（移动设备识别码存在风险）。
+                     * @return Label 该字段用于返回账号信息检测对应的风险类别，取值为：**RiskAccount**（账号存在风险）、**RiskIP**（IP地址存在风险）、**RiskIMEI**（移动设备识别码存在风险）。
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置风险类别，RiskAccount，RiskIP, RiskIMEI
-                     * @param Label 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * 设置该字段用于返回账号信息检测对应的风险类别，取值为：**RiskAccount**（账号存在风险）、**RiskIP**（IP地址存在风险）、**RiskIMEI**（移动设备识别码存在风险）。
+                     * @param Label 该字段用于返回账号信息检测对应的风险类别，取值为：**RiskAccount**（账号存在风险）、**RiskIP**（IP地址存在风险）、**RiskIMEI**（移动设备识别码存在风险）。
                      */
                     void SetLabel(const std::string& _label);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取风险等级，1:疑似，2：恶意
-                     * @return Level 风险等级，1:疑似，2：恶意
+                     * 获取该字段用于返回账号信息检测对应的风险等级，取值为：**1**（疑似存在风险）和**2**（存在恶意风险）。
+                     * @return Level 该字段用于返回账号信息检测对应的风险等级，取值为：**1**（疑似存在风险）和**2**（存在恶意风险）。
                      */
                     int64_t GetLevel() const;
 
                     /**
-                     * 设置风险等级，1:疑似，2：恶意
-                     * @param Level 风险等级，1:疑似，2：恶意
+                     * 设置该字段用于返回账号信息检测对应的风险等级，取值为：**1**（疑似存在风险）和**2**（存在恶意风险）。
+                     * @param Level 该字段用于返回账号信息检测对应的风险等级，取值为：**1**（疑似存在风险）和**2**（存在恶意风险）。
                      */
                     void SetLevel(const int64_t& _level);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 风险类别，RiskAccount，RiskIP, RiskIMEI
+                     * 该字段用于返回账号信息检测对应的风险类别，取值为：**RiskAccount**（账号存在风险）、**RiskIP**（IP地址存在风险）、**RiskIMEI**（移动设备识别码存在风险）。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 风险等级，1:疑似，2：恶意
+                     * 该字段用于返回账号信息检测对应的风险等级，取值为：**1**（疑似存在风险）和**2**（存在恶意风险）。
                      */
                     int64_t m_level;
                     bool m_levelHasBeenSet;

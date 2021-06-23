@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * User结果
+                * 用于表示业务用户的账号相关信息
                 */
                 class User : public AbstractModel
                 {
@@ -47,14 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务用户ID 如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
-                     * @return UserId 业务用户ID 如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
+                     * 获取该字段表示业务用户ID,填写后，系统可根据账号过往违规历史优化审核结果判定，有利于存在可疑违规风险时的辅助判断。<br>
+备注：该字段可传入微信openid、QQopenid、字符串等账号信息，与账号类别参数（AccountType）配合使用可确定唯一账号。
+                     * @return UserId 该字段表示业务用户ID,填写后，系统可根据账号过往违规历史优化审核结果判定，有利于存在可疑违规风险时的辅助判断。<br>
+备注：该字段可传入微信openid、QQopenid、字符串等账号信息，与账号类别参数（AccountType）配合使用可确定唯一账号。
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置业务用户ID 如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
-                     * @param UserId 业务用户ID 如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
+                     * 设置该字段表示业务用户ID,填写后，系统可根据账号过往违规历史优化审核结果判定，有利于存在可疑违规风险时的辅助判断。<br>
+备注：该字段可传入微信openid、QQopenid、字符串等账号信息，与账号类别参数（AccountType）配合使用可确定唯一账号。
+                     * @param UserId 该字段表示业务用户ID,填写后，系统可根据账号过往违规历史优化审核结果判定，有利于存在可疑违规风险时的辅助判断。<br>
+备注：该字段可传入微信openid、QQopenid、字符串等账号信息，与账号类别参数（AccountType）配合使用可确定唯一账号。
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -65,32 +69,14 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取业务用户ID类型 "1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
-                     * @return AccountType 业务用户ID类型 "1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
-                     */
-                    std::string GetAccountType() const;
-
-                    /**
-                     * 设置业务用户ID类型 "1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
-                     * @param AccountType 业务用户ID类型 "1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
-                     */
-                    void SetAccountType(const std::string& _accountType);
-
-                    /**
-                     * 判断参数 AccountType 是否已赋值
-                     * @return AccountType 是否已赋值
-                     */
-                    bool AccountTypeHasBeenSet() const;
-
-                    /**
-                     * 获取用户昵称
-                     * @return Nickname 用户昵称
+                     * 获取该字段表示业务用户对应的账号昵称信息。
+                     * @return Nickname 该字段表示业务用户对应的账号昵称信息。
                      */
                     std::string GetNickname() const;
 
                     /**
-                     * 设置用户昵称
-                     * @param Nickname 用户昵称
+                     * 设置该字段表示业务用户对应的账号昵称信息。
+                     * @param Nickname 该字段表示业务用户对应的账号昵称信息。
                      */
                     void SetNickname(const std::string& _nickname);
 
@@ -101,14 +87,40 @@ namespace TencentCloud
                     bool NicknameHasBeenSet() const;
 
                     /**
-                     * 获取性别 默认0 未知 1 男性 2 女性
-                     * @return Gender 性别 默认0 未知 1 男性 2 女性
+                     * 获取该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>
+该字段与账号ID参数（UserId）配合使用可确定唯一账号。
+                     * @return AccountType 该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>
+该字段与账号ID参数（UserId）配合使用可确定唯一账号。
+                     */
+                    std::string GetAccountType() const;
+
+                    /**
+                     * 设置该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>
+该字段与账号ID参数（UserId）配合使用可确定唯一账号。
+                     * @param AccountType 该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>
+该字段与账号ID参数（UserId）配合使用可确定唯一账号。
+                     */
+                    void SetAccountType(const std::string& _accountType);
+
+                    /**
+                     * 判断参数 AccountType 是否已赋值
+                     * @return AccountType 是否已赋值
+                     */
+                    bool AccountTypeHasBeenSet() const;
+
+                    /**
+                     * 获取该字段表示业务用户对应账号的性别信息。<br>
+取值：**0**（默认值，代表性别未知）、**1**（男性）、**2**（女性）。
+                     * @return Gender 该字段表示业务用户对应账号的性别信息。<br>
+取值：**0**（默认值，代表性别未知）、**1**（男性）、**2**（女性）。
                      */
                     uint64_t GetGender() const;
 
                     /**
-                     * 设置性别 默认0 未知 1 男性 2 女性
-                     * @param Gender 性别 默认0 未知 1 男性 2 女性
+                     * 设置该字段表示业务用户对应账号的性别信息。<br>
+取值：**0**（默认值，代表性别未知）、**1**（男性）、**2**（女性）。
+                     * @param Gender 该字段表示业务用户对应账号的性别信息。<br>
+取值：**0**（默认值，代表性别未知）、**1**（男性）、**2**（女性）。
                      */
                     void SetGender(const uint64_t& _gender);
 
@@ -119,14 +131,18 @@ namespace TencentCloud
                     bool GenderHasBeenSet() const;
 
                     /**
-                     * 获取年龄 默认0 未知
-                     * @return Age 年龄 默认0 未知
+                     * 获取该字段表示业务用户对应账号的年龄信息。<br>
+取值：**0**（默认值，代表年龄未知）-（**自定义年龄上限**）之间的整数。
+                     * @return Age 该字段表示业务用户对应账号的年龄信息。<br>
+取值：**0**（默认值，代表年龄未知）-（**自定义年龄上限**）之间的整数。
                      */
                     uint64_t GetAge() const;
 
                     /**
-                     * 设置年龄 默认0 未知
-                     * @param Age 年龄 默认0 未知
+                     * 设置该字段表示业务用户对应账号的年龄信息。<br>
+取值：**0**（默认值，代表年龄未知）-（**自定义年龄上限**）之间的整数。
+                     * @param Age 该字段表示业务用户对应账号的年龄信息。<br>
+取值：**0**（默认值，代表年龄未知）-（**自定义年龄上限**）之间的整数。
                      */
                     void SetAge(const uint64_t& _age);
 
@@ -137,14 +153,18 @@ namespace TencentCloud
                     bool AgeHasBeenSet() const;
 
                     /**
-                     * 获取用户等级，默认0 未知 1 低 2 中 3 高
-                     * @return Level 用户等级，默认0 未知 1 低 2 中 3 高
+                     * 获取该字段表示业务用户对应账号的等级信息。<br>
+取值：**0**（默认值，代表等级未知）、**1**（等级较低）、**2**（等级中等）、**3**（等级较高），目前**暂不支持自定义等级**。
+                     * @return Level 该字段表示业务用户对应账号的等级信息。<br>
+取值：**0**（默认值，代表等级未知）、**1**（等级较低）、**2**（等级中等）、**3**（等级较高），目前**暂不支持自定义等级**。
                      */
                     uint64_t GetLevel() const;
 
                     /**
-                     * 设置用户等级，默认0 未知 1 低 2 中 3 高
-                     * @param Level 用户等级，默认0 未知 1 低 2 中 3 高
+                     * 设置该字段表示业务用户对应账号的等级信息。<br>
+取值：**0**（默认值，代表等级未知）、**1**（等级较低）、**2**（等级中等）、**3**（等级较高），目前**暂不支持自定义等级**。
+                     * @param Level 该字段表示业务用户对应账号的等级信息。<br>
+取值：**0**（默认值，代表等级未知）、**1**（等级较低）、**2**（等级中等）、**3**（等级较高），目前**暂不支持自定义等级**。
                      */
                     void SetLevel(const uint64_t& _level);
 
@@ -155,14 +175,18 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取手机号
-                     * @return Phone 手机号
+                     * 获取该字段表示业务用户对应账号的手机号信息，支持全球各地区手机号的记录。<br>
+备注：请保持手机号格式的统一，如区号格式（086/+86）等。
+                     * @return Phone 该字段表示业务用户对应账号的手机号信息，支持全球各地区手机号的记录。<br>
+备注：请保持手机号格式的统一，如区号格式（086/+86）等。
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置手机号
-                     * @param Phone 手机号
+                     * 设置该字段表示业务用户对应账号的手机号信息，支持全球各地区手机号的记录。<br>
+备注：请保持手机号格式的统一，如区号格式（086/+86）等。
+                     * @param Phone 该字段表示业务用户对应账号的手机号信息，支持全球各地区手机号的记录。<br>
+备注：请保持手机号格式的统一，如区号格式（086/+86）等。
                      */
                     void SetPhone(const std::string& _phone);
 
@@ -173,14 +197,14 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取用户简介，长度不超过5000字
-                     * @return Desc 用户简介，长度不超过5000字
+                     * 获取该字段表示业务用户的简介信息，支持汉字、英文及特殊符号，**长度不超过5000个汉字字符**。
+                     * @return Desc 该字段表示业务用户的简介信息，支持汉字、英文及特殊符号，**长度不超过5000个汉字字符**。
                      */
                     std::string GetDesc() const;
 
                     /**
-                     * 设置用户简介，长度不超过5000字
-                     * @param Desc 用户简介，长度不超过5000字
+                     * 设置该字段表示业务用户的简介信息，支持汉字、英文及特殊符号，**长度不超过5000个汉字字符**。
+                     * @param Desc 该字段表示业务用户的简介信息，支持汉字、英文及特殊符号，**长度不超过5000个汉字字符**。
                      */
                     void SetDesc(const std::string& _desc);
 
@@ -191,14 +215,14 @@ namespace TencentCloud
                     bool DescHasBeenSet() const;
 
                     /**
-                     * 获取用户头像图片链接
-                     * @return HeadUrl 用户头像图片链接
+                     * 获取该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。<br>备注：头像图片**大小不超过5MB**，建议**分辨率不低于256x256**；图片下载时间限制为3秒，超过则会返回下载超时。
+                     * @return HeadUrl 该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。<br>备注：头像图片**大小不超过5MB**，建议**分辨率不低于256x256**；图片下载时间限制为3秒，超过则会返回下载超时。
                      */
                     std::string GetHeadUrl() const;
 
                     /**
-                     * 设置用户头像图片链接
-                     * @param HeadUrl 用户头像图片链接
+                     * 设置该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。<br>备注：头像图片**大小不超过5MB**，建议**分辨率不低于256x256**；图片下载时间限制为3秒，超过则会返回下载超时。
+                     * @param HeadUrl 该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。<br>备注：头像图片**大小不超过5MB**，建议**分辨率不低于256x256**；图片下载时间限制为3秒，超过则会返回下载超时。
                      */
                     void SetHeadUrl(const std::string& _headUrl);
 
@@ -211,55 +235,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 业务用户ID 如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
+                     * 该字段表示业务用户ID,填写后，系统可根据账号过往违规历史优化审核结果判定，有利于存在可疑违规风险时的辅助判断。<br>
+备注：该字段可传入微信openid、QQopenid、字符串等账号信息，与账号类别参数（AccountType）配合使用可确定唯一账号。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 业务用户ID类型 "1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
-                     */
-                    std::string m_accountType;
-                    bool m_accountTypeHasBeenSet;
-
-                    /**
-                     * 用户昵称
+                     * 该字段表示业务用户对应的账号昵称信息。
                      */
                     std::string m_nickname;
                     bool m_nicknameHasBeenSet;
 
                     /**
-                     * 性别 默认0 未知 1 男性 2 女性
+                     * 该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>
+该字段与账号ID参数（UserId）配合使用可确定唯一账号。
+                     */
+                    std::string m_accountType;
+                    bool m_accountTypeHasBeenSet;
+
+                    /**
+                     * 该字段表示业务用户对应账号的性别信息。<br>
+取值：**0**（默认值，代表性别未知）、**1**（男性）、**2**（女性）。
                      */
                     uint64_t m_gender;
                     bool m_genderHasBeenSet;
 
                     /**
-                     * 年龄 默认0 未知
+                     * 该字段表示业务用户对应账号的年龄信息。<br>
+取值：**0**（默认值，代表年龄未知）-（**自定义年龄上限**）之间的整数。
                      */
                     uint64_t m_age;
                     bool m_ageHasBeenSet;
 
                     /**
-                     * 用户等级，默认0 未知 1 低 2 中 3 高
+                     * 该字段表示业务用户对应账号的等级信息。<br>
+取值：**0**（默认值，代表等级未知）、**1**（等级较低）、**2**（等级中等）、**3**（等级较高），目前**暂不支持自定义等级**。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 手机号
+                     * 该字段表示业务用户对应账号的手机号信息，支持全球各地区手机号的记录。<br>
+备注：请保持手机号格式的统一，如区号格式（086/+86）等。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 用户简介，长度不超过5000字
+                     * 该字段表示业务用户的简介信息，支持汉字、英文及特殊符号，**长度不超过5000个汉字字符**。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
 
                     /**
-                     * 用户头像图片链接
+                     * 该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。<br>备注：头像图片**大小不超过5MB**，建议**分辨率不低于256x256**；图片下载时间限制为3秒，超过则会返回下载超时。
                      */
                     std::string m_headUrl;
                     bool m_headUrlHasBeenSet;

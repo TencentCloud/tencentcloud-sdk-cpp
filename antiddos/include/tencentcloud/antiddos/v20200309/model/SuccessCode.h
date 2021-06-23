@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ECM_V20190719_MODEL_FILTER_H_
-#define TENCENTCLOUD_ECM_V20190719_MODEL_FILTER_H_
+#ifndef TENCENTCLOUD_ANTIDDOS_V20200309_MODEL_SUCCESSCODE_H_
+#define TENCENTCLOUD_ANTIDDOS_V20200309_MODEL_SUCCESSCODE_H_
 
 #include <string>
 #include <vector>
@@ -28,73 +28,73 @@
 
 namespace TencentCloud
 {
-    namespace Ecm
+    namespace Antiddos
     {
-        namespace V20190719
+        namespace V20200309
         {
             namespace Model
             {
                 /**
-                * 描述键值对过滤器，用于条件过滤查询。
+                * 操作返回码，只用于返回成功的情况
                 */
-                class Filter : public AbstractModel
+                class SuccessCode : public AbstractModel
                 {
                 public:
-                    Filter();
-                    ~Filter() = default;
+                    SuccessCode();
+                    ~SuccessCode() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取一个或者多个过滤值。
-                     * @return Values 一个或者多个过滤值。
+                     * 获取描述
+                     * @return Message 描述
                      */
-                    std::vector<std::string> GetValues() const;
+                    std::string GetMessage() const;
 
                     /**
-                     * 设置一个或者多个过滤值。
-                     * @param Values 一个或者多个过滤值。
+                     * 设置描述
+                     * @param Message 描述
                      */
-                    void SetValues(const std::vector<std::string>& _values);
+                    void SetMessage(const std::string& _message);
 
                     /**
-                     * 判断参数 Values 是否已赋值
-                     * @return Values 是否已赋值
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
                      */
-                    bool ValuesHasBeenSet() const;
+                    bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取过滤键的名称。
-                     * @return Name 过滤键的名称。
+                     * 获取成功/错误码
+                     * @return Code 成功/错误码
                      */
-                    std::string GetName() const;
+                    std::string GetCode() const;
 
                     /**
-                     * 设置过滤键的名称。
-                     * @param Name 过滤键的名称。
+                     * 设置成功/错误码
+                     * @param Code 成功/错误码
                      */
-                    void SetName(const std::string& _name);
+                    void SetCode(const std::string& _code);
 
                     /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
+                     * 判断参数 Code 是否已赋值
+                     * @return Code 是否已赋值
                      */
-                    bool NameHasBeenSet() const;
+                    bool CodeHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 一个或者多个过滤值。
+                     * 描述
                      */
-                    std::vector<std::string> m_values;
-                    bool m_valuesHasBeenSet;
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                     /**
-                     * 过滤键的名称。
+                     * 成功/错误码
                      */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
+                    std::string m_code;
+                    bool m_codeHasBeenSet;
 
                 };
             }
@@ -102,4 +102,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ECM_V20190719_MODEL_FILTER_H_
+#endif // !TENCENTCLOUD_ANTIDDOS_V20200309_MODEL_SUCCESSCODE_H_

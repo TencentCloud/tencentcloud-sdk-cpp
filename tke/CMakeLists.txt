@@ -53,6 +53,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/PrometheusTarget.h
   include/tencentcloud/tke/v20180525/model/CreateEKSClusterRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterAsGroupsRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterControllersResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeExistedInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/Tag.h
   include/tencentcloud/tke/v20180525/model/DescribeRegionsResponse.h
@@ -157,6 +158,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAgentsRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusAgentOverview.h
+  include/tencentcloud/tke/v20180525/model/ControllerStatus.h
   include/tencentcloud/tke/v20180525/model/Filter.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/ImageInstance.h
@@ -230,6 +232,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsResponse.h
   include/tencentcloud/tke/v20180525/model/InstanceUpgradePreCheckResult.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterNodePoolDetailResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterControllersRequest.h
   )
 
 set(tke_src
@@ -268,6 +271,7 @@ set(tke_src
   src/v20180525/model/PrometheusTarget.cpp
   src/v20180525/model/CreateEKSClusterRequest.cpp
   src/v20180525/model/DeleteClusterAsGroupsRequest.cpp
+  src/v20180525/model/DescribeClusterControllersResponse.cpp
   src/v20180525/model/DescribeExistedInstancesRequest.cpp
   src/v20180525/model/Tag.cpp
   src/v20180525/model/DescribeRegionsResponse.cpp
@@ -372,6 +376,7 @@ set(tke_src
   src/v20180525/model/DescribePrometheusAgentsRequest.cpp
   src/v20180525/model/DescribeEnableVpcCniProgressResponse.cpp
   src/v20180525/model/PrometheusAgentOverview.cpp
+  src/v20180525/model/ControllerStatus.cpp
   src/v20180525/model/Filter.cpp
   src/v20180525/model/ModifyClusterNodePoolRequest.cpp
   src/v20180525/model/ImageInstance.cpp
@@ -445,6 +450,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterAsGroupsResponse.cpp
   src/v20180525/model/InstanceUpgradePreCheckResult.cpp
   src/v20180525/model/DescribeClusterNodePoolDetailResponse.cpp
+  src/v20180525/model/DescribeClusterControllersRequest.cpp
   )
 
 set(tke_include

@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取序号
-                     * @return Id 序号
+                     * 获取该参数用于返回识别对象的ID以方便识别和区分。
+                     * @return Id 该参数用于返回识别对象的ID以方便识别和区分。
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置序号
-                     * @param Id 序号
+                     * 设置该参数用于返回识别对象的ID以方便识别和区分。
+                     * @param Id 该参数用于返回识别对象的ID以方便识别和区分。
                      */
                     void SetId(const uint64_t& _id);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取标签名称
-                     * @return Name 标签名称
+                     * 获取该参数用于返回命中的实体标签。
+                     * @return Name 该参数用于返回命中的实体标签。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置标签名称
-                     * @param Name 标签名称
+                     * 设置该参数用于返回命中的实体标签。
+                     * @param Name 该参数用于返回命中的实体标签。
                      */
                     void SetName(const std::string& _name);
 
@@ -84,18 +84,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取标签值，
-当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
-                     * @return Value 标签值，
-当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
+                     * 获取该参数用于返回对应实体标签所对应的值或内容。如：当标签为*二维码(QrCode)*时，该字段为识别出的二维码对应的URL地址。
+                     * @return Value 该参数用于返回对应实体标签所对应的值或内容。如：当标签为*二维码(QrCode)*时，该字段为识别出的二维码对应的URL地址。
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置标签值，
-当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
-                     * @param Value 标签值，
-当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
+                     * 设置该参数用于返回对应实体标签所对应的值或内容。如：当标签为*二维码(QrCode)*时，该字段为识别出的二维码对应的URL地址。
+                     * @param Value 该参数用于返回对应实体标签所对应的值或内容。如：当标签为*二维码(QrCode)*时，该字段为识别出的二维码对应的URL地址。
                      */
                     void SetValue(const std::string& _value);
 
@@ -106,14 +102,14 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取分数
-                     * @return Score 分数
+                     * 获取该参数用于返回对应实体标签命中的分值，取值为**0-100**，如：*QrCode 99* 则代表相应识别内容命中二维码场景标签的概率非常高。
+                     * @return Score 该参数用于返回对应实体标签命中的分值，取值为**0-100**，如：*QrCode 99* 则代表相应识别内容命中二维码场景标签的概率非常高。
                      */
                     uint64_t GetScore() const;
 
                     /**
-                     * 设置分数
-                     * @param Score 分数
+                     * 设置该参数用于返回对应实体标签命中的分值，取值为**0-100**，如：*QrCode 99* 则代表相应识别内容命中二维码场景标签的概率非常高。
+                     * @param Score 该参数用于返回对应实体标签命中的分值，取值为**0-100**，如：*QrCode 99* 则代表相应识别内容命中二维码场景标签的概率非常高。
                      */
                     void SetScore(const uint64_t& _score);
 
@@ -124,14 +120,14 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取检测框坐标
-                     * @return Location 检测框坐标
+                     * 获取该字段用于返回实体检测框的坐标位置（左上角xy坐标、长宽、旋转角度）以方便快速定位实体的相关信息。
+                     * @return Location 该字段用于返回实体检测框的坐标位置（左上角xy坐标、长宽、旋转角度）以方便快速定位实体的相关信息。
                      */
                     Location GetLocation() const;
 
                     /**
-                     * 设置检测框坐标
-                     * @param Location 检测框坐标
+                     * 设置该字段用于返回实体检测框的坐标位置（左上角xy坐标、长宽、旋转角度）以方便快速定位实体的相关信息。
+                     * @param Location 该字段用于返回实体检测框的坐标位置（左上角xy坐标、长宽、旋转角度）以方便快速定位实体的相关信息。
                      */
                     void SetLocation(const Location& _location);
 
@@ -144,32 +140,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 序号
+                     * 该参数用于返回识别对象的ID以方便识别和区分。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 标签名称
+                     * 该参数用于返回命中的实体标签。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 标签值，
-当标签为二维码时，表示URL地址，如Name为QrCode时，Value为"http//abc.com/aaa"
+                     * 该参数用于返回对应实体标签所对应的值或内容。如：当标签为*二维码(QrCode)*时，该字段为识别出的二维码对应的URL地址。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 分数
+                     * 该参数用于返回对应实体标签命中的分值，取值为**0-100**，如：*QrCode 99* 则代表相应识别内容命中二维码场景标签的概率非常高。
                      */
                     uint64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 检测框坐标
+                     * 该字段用于返回实体检测框的坐标位置（左上角xy坐标、长宽、旋转角度）以方便快速定位实体的相关信息。
                      */
                     Location m_location;
                     bool m_locationHasBeenSet;

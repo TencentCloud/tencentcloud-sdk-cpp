@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool UrlsHasBeenSet() const;
 
+                    /**
+                     * 获取URL封禁日期
+                     * @return Date URL封禁日期
+                     */
+                    std::string GetDate() const;
+
+                    /**
+                     * 设置URL封禁日期
+                     * @param Date URL封禁日期
+                     */
+                    void SetDate(const std::string& _date);
+
+                    /**
+                     * 判断参数 Date 是否已赋值
+                     * @return Date 是否已赋值
+                     */
+                    bool DateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_urls;
                     bool m_urlsHasBeenSet;
+
+                    /**
+                     * URL封禁日期
+                     */
+                    std::string m_date;
+                    bool m_dateHasBeenSet;
 
                 };
             }

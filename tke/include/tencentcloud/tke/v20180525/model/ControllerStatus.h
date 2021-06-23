@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ECM_V20190719_MODEL_FILTER_H_
-#define TENCENTCLOUD_ECM_V20190719_MODEL_FILTER_H_
+#ifndef TENCENTCLOUD_TKE_V20180525_MODEL_CONTROLLERSTATUS_H_
+#define TENCENTCLOUD_TKE_V20180525_MODEL_CONTROLLERSTATUS_H_
 
 #include <string>
 #include <vector>
@@ -28,51 +28,33 @@
 
 namespace TencentCloud
 {
-    namespace Ecm
+    namespace Tke
     {
-        namespace V20190719
+        namespace V20180525
         {
             namespace Model
             {
                 /**
-                * 描述键值对过滤器，用于条件过滤查询。
+                * 集群中控制器的状态描述
                 */
-                class Filter : public AbstractModel
+                class ControllerStatus : public AbstractModel
                 {
                 public:
-                    Filter();
-                    ~Filter() = default;
+                    ControllerStatus();
+                    ~ControllerStatus() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取一个或者多个过滤值。
-                     * @return Values 一个或者多个过滤值。
-                     */
-                    std::vector<std::string> GetValues() const;
-
-                    /**
-                     * 设置一个或者多个过滤值。
-                     * @param Values 一个或者多个过滤值。
-                     */
-                    void SetValues(const std::vector<std::string>& _values);
-
-                    /**
-                     * 判断参数 Values 是否已赋值
-                     * @return Values 是否已赋值
-                     */
-                    bool ValuesHasBeenSet() const;
-
-                    /**
-                     * 获取过滤键的名称。
-                     * @return Name 过滤键的名称。
+                     * 获取控制器的名字
+                     * @return Name 控制器的名字
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置过滤键的名称。
-                     * @param Name 过滤键的名称。
+                     * 设置控制器的名字
+                     * @param Name 控制器的名字
                      */
                     void SetName(const std::string& _name);
 
@@ -82,19 +64,37 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取控制器是否开启
+                     * @return Enabled 控制器是否开启
+                     */
+                    bool GetEnabled() const;
+
+                    /**
+                     * 设置控制器是否开启
+                     * @param Enabled 控制器是否开启
+                     */
+                    void SetEnabled(const bool& _enabled);
+
+                    /**
+                     * 判断参数 Enabled 是否已赋值
+                     * @return Enabled 是否已赋值
+                     */
+                    bool EnabledHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 一个或者多个过滤值。
-                     */
-                    std::vector<std::string> m_values;
-                    bool m_valuesHasBeenSet;
-
-                    /**
-                     * 过滤键的名称。
+                     * 控制器的名字
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 控制器是否开启
+                     */
+                    bool m_enabled;
+                    bool m_enabledHasBeenSet;
 
                 };
             }
@@ -102,4 +102,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ECM_V20190719_MODEL_FILTER_H_
+#endif // !TENCENTCLOUD_TKE_V20180525_MODEL_CONTROLLERSTATUS_H_

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 分类模型命中子标签结果
+                * 用于返回分类模型命中子标签的详细结果
                 */
                 class LabelDetailItem : public AbstractModel
                 {
@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取序号
+                     * 获取该字段用于返回识别对象的ID以方便识别和区分。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 序号
+                     * @return Id 该字段用于返回识别对象的ID以方便识别和区分。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置序号
+                     * 设置该字段用于返回识别对象的ID以方便识别和区分。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Id 序号
+                     * @param Id 该字段用于返回识别对象的ID以方便识别和区分。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetId(const int64_t& _id);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取子标签名称
+                     * 获取该字段用于返回识命中的子标签名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 子标签名称
+                     * @return Name 该字段用于返回识命中的子标签名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置子标签名称
+                     * 设置该字段用于返回识命中的子标签名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 子标签名称
+                     * @param Name 该字段用于返回识命中的子标签名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取子标签分数
+                     * 获取该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Score 子标签分数
+                     * @return Score 该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetScore() const;
 
                     /**
-                     * 设置子标签分数
+                     * 设置该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 子标签分数
+                     * @param Score 该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetScore(const uint64_t& _score);
@@ -115,21 +115,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 序号
+                     * 该字段用于返回识别对象的ID以方便识别和区分。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 子标签名称
+                     * 该字段用于返回识命中的子标签名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 子标签分数
+                     * 该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_score;

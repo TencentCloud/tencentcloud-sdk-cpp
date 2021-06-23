@@ -87,6 +87,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterCommonNamesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterCommonNamesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterControllersRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterControllersResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusRequest.h>
@@ -277,6 +279,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClusterCommonNamesResponse> DescribeClusterCommonNamesOutcome;
                 typedef std::future<DescribeClusterCommonNamesOutcome> DescribeClusterCommonNamesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterCommonNamesRequest&, DescribeClusterCommonNamesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterCommonNamesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClusterControllersResponse> DescribeClusterControllersOutcome;
+                typedef std::future<DescribeClusterControllersOutcome> DescribeClusterControllersOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterControllersRequest&, DescribeClusterControllersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterControllersAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClusterEndpointStatusResponse> DescribeClusterEndpointStatusOutcome;
                 typedef std::future<DescribeClusterEndpointStatusOutcome> DescribeClusterEndpointStatusOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterEndpointStatusRequest&, DescribeClusterEndpointStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterEndpointStatusAsyncHandler;
@@ -687,6 +692,15 @@ namespace TencentCloud
                 DescribeClusterCommonNamesOutcome DescribeClusterCommonNames(const Model::DescribeClusterCommonNamesRequest &request);
                 void DescribeClusterCommonNamesAsync(const Model::DescribeClusterCommonNamesRequest& request, const DescribeClusterCommonNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterCommonNamesOutcomeCallable DescribeClusterCommonNamesCallable(const Model::DescribeClusterCommonNamesRequest& request);
+
+                /**
+                 *用于查询Kubernetes的各个原生控制器是否开启
+                 * @param req DescribeClusterControllersRequest
+                 * @return DescribeClusterControllersOutcome
+                 */
+                DescribeClusterControllersOutcome DescribeClusterControllers(const Model::DescribeClusterControllersRequest &request);
+                void DescribeClusterControllersAsync(const Model::DescribeClusterControllersRequest& request, const DescribeClusterControllersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterControllersOutcomeCallable DescribeClusterControllersCallable(const Model::DescribeClusterControllersRequest& request);
 
                 /**
                  *查询集群访问端口状态(独立集群开启内网/外网访问，托管集群支持开启内网访问)

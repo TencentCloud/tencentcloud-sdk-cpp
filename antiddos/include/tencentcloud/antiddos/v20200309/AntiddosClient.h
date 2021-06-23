@@ -37,6 +37,8 @@
 #include <tencentcloud/antiddos/v20200309/model/CreateDefaultAlarmThresholdResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateIPAlarmThresholdConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateIPAlarmThresholdConfigResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateL7RuleCertsRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateL7RuleCertsResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreatePacketFilterConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreatePacketFilterConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateProtocolBlockConfigRequest.h>
@@ -63,6 +65,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeBlackWhiteIpListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDefaultAlarmThresholdRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDefaultAlarmThresholdResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeL7RulesBySSLCertIdRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeL7RulesBySSLCertIdResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListBGPIPInstancesRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListBGPIPInstancesResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListBGPInstancesRequest.h>
@@ -134,6 +138,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateIPAlarmThresholdConfigResponse> CreateIPAlarmThresholdConfigOutcome;
                 typedef std::future<CreateIPAlarmThresholdConfigOutcome> CreateIPAlarmThresholdConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateIPAlarmThresholdConfigRequest&, CreateIPAlarmThresholdConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIPAlarmThresholdConfigAsyncHandler;
+                typedef Outcome<Error, Model::CreateL7RuleCertsResponse> CreateL7RuleCertsOutcome;
+                typedef std::future<CreateL7RuleCertsOutcome> CreateL7RuleCertsOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::CreateL7RuleCertsRequest&, CreateL7RuleCertsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL7RuleCertsAsyncHandler;
                 typedef Outcome<Error, Model::CreatePacketFilterConfigResponse> CreatePacketFilterConfigOutcome;
                 typedef std::future<CreatePacketFilterConfigOutcome> CreatePacketFilterConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreatePacketFilterConfigRequest&, CreatePacketFilterConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePacketFilterConfigAsyncHandler;
@@ -173,6 +180,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDefaultAlarmThresholdResponse> DescribeDefaultAlarmThresholdOutcome;
                 typedef std::future<DescribeDefaultAlarmThresholdOutcome> DescribeDefaultAlarmThresholdOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeDefaultAlarmThresholdRequest&, DescribeDefaultAlarmThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultAlarmThresholdAsyncHandler;
+                typedef Outcome<Error, Model::DescribeL7RulesBySSLCertIdResponse> DescribeL7RulesBySSLCertIdOutcome;
+                typedef std::future<DescribeL7RulesBySSLCertIdOutcome> DescribeL7RulesBySSLCertIdOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeL7RulesBySSLCertIdRequest&, DescribeL7RulesBySSLCertIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL7RulesBySSLCertIdAsyncHandler;
                 typedef Outcome<Error, Model::DescribeListBGPIPInstancesResponse> DescribeListBGPIPInstancesOutcome;
                 typedef std::future<DescribeListBGPIPInstancesOutcome> DescribeListBGPIPInstancesOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeListBGPIPInstancesRequest&, DescribeListBGPIPInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListBGPIPInstancesAsyncHandler;
@@ -294,6 +304,15 @@ namespace TencentCloud
                 CreateIPAlarmThresholdConfigOutcomeCallable CreateIPAlarmThresholdConfigCallable(const Model::CreateIPAlarmThresholdConfigRequest& request);
 
                 /**
+                 *批量配置L7转发规则的证书供SSL测调用
+                 * @param req CreateL7RuleCertsRequest
+                 * @return CreateL7RuleCertsOutcome
+                 */
+                CreateL7RuleCertsOutcome CreateL7RuleCerts(const Model::CreateL7RuleCertsRequest &request);
+                void CreateL7RuleCertsAsync(const Model::CreateL7RuleCertsRequest& request, const CreateL7RuleCertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateL7RuleCertsOutcomeCallable CreateL7RuleCertsCallable(const Model::CreateL7RuleCertsRequest& request);
+
+                /**
                  *添加DDoS防护的特征过滤规则
                  * @param req CreatePacketFilterConfigRequest
                  * @return CreatePacketFilterConfigOutcome
@@ -409,6 +428,15 @@ namespace TencentCloud
                 DescribeDefaultAlarmThresholdOutcome DescribeDefaultAlarmThreshold(const Model::DescribeDefaultAlarmThresholdRequest &request);
                 void DescribeDefaultAlarmThresholdAsync(const Model::DescribeDefaultAlarmThresholdRequest& request, const DescribeDefaultAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDefaultAlarmThresholdOutcomeCallable DescribeDefaultAlarmThresholdCallable(const Model::DescribeDefaultAlarmThresholdRequest& request);
+
+                /**
+                 *查询与证书ID对于域名匹配的七层规则
+                 * @param req DescribeL7RulesBySSLCertIdRequest
+                 * @return DescribeL7RulesBySSLCertIdOutcome
+                 */
+                DescribeL7RulesBySSLCertIdOutcome DescribeL7RulesBySSLCertId(const Model::DescribeL7RulesBySSLCertIdRequest &request);
+                void DescribeL7RulesBySSLCertIdAsync(const Model::DescribeL7RulesBySSLCertIdRequest& request, const DescribeL7RulesBySSLCertIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeL7RulesBySSLCertIdOutcomeCallable DescribeL7RulesBySSLCertIdCallable(const Model::DescribeL7RulesBySSLCertIdRequest& request);
 
                 /**
                  *获取高防IP资产实例列表

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 用户相关信息
+                * 用于表示业务用户的账号相关信息
                 */
                 class User : public AbstractModel
                 {
@@ -47,14 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
-                     * @return UserId 用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
+                     * 获取该字段表示业务用户ID,填写后，系统可根据账号过往违规历史优化审核结果判定，有利于存在可疑违规风险时的辅助判断。<br>
+备注：该字段可传入微信openid、QQopenid、字符串等账号信息，与账号类别参数（AccountType）配合使用可确定唯一账号。
+                     * @return UserId 该字段表示业务用户ID,填写后，系统可根据账号过往违规历史优化审核结果判定，有利于存在可疑违规风险时的辅助判断。<br>
+备注：该字段可传入微信openid、QQopenid、字符串等账号信息，与账号类别参数（AccountType）配合使用可确定唯一账号。
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
-                     * @param UserId 用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
+                     * 设置该字段表示业务用户ID,填写后，系统可根据账号过往违规历史优化审核结果判定，有利于存在可疑违规风险时的辅助判断。<br>
+备注：该字段可传入微信openid、QQopenid、字符串等账号信息，与账号类别参数（AccountType）配合使用可确定唯一账号。
+                     * @param UserId 该字段表示业务用户ID,填写后，系统可根据账号过往违规历史优化审核结果判定，有利于存在可疑违规风险时的辅助判断。<br>
+备注：该字段可传入微信openid、QQopenid、字符串等账号信息，与账号类别参数（AccountType）配合使用可确定唯一账号。
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -65,14 +69,14 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户昵称
-                     * @return Nickname 用户昵称
+                     * 获取该字段表示业务用户对应的账号昵称信息。
+                     * @return Nickname 该字段表示业务用户对应的账号昵称信息。
                      */
                     std::string GetNickname() const;
 
                     /**
-                     * 设置用户昵称
-                     * @param Nickname 用户昵称
+                     * 设置该字段表示业务用户对应的账号昵称信息。
+                     * @param Nickname 该字段表示业务用户对应的账号昵称信息。
                      */
                     void SetNickname(const std::string& _nickname);
 
@@ -83,14 +87,18 @@ namespace TencentCloud
                     bool NicknameHasBeenSet() const;
 
                     /**
-                     * 获取账号类别，"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
-                     * @return AccountType 账号类别，"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
+                     * 获取该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>
+该字段与账号ID参数（UserId）配合使用可确定唯一账号。
+                     * @return AccountType 该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>
+该字段与账号ID参数（UserId）配合使用可确定唯一账号。
                      */
                     int64_t GetAccountType() const;
 
                     /**
-                     * 设置账号类别，"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
-                     * @param AccountType 账号类别，"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
+                     * 设置该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>
+该字段与账号ID参数（UserId）配合使用可确定唯一账号。
+                     * @param AccountType 该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>
+该字段与账号ID参数（UserId）配合使用可确定唯一账号。
                      */
                     void SetAccountType(const int64_t& _accountType);
 
@@ -101,14 +109,18 @@ namespace TencentCloud
                     bool AccountTypeHasBeenSet() const;
 
                     /**
-                     * 获取性别 默认0 未知 1 男性 2 女性
-                     * @return Gender 性别 默认0 未知 1 男性 2 女性
+                     * 获取该字段表示业务用户对应账号的性别信息。<br>
+取值：**0**（默认值，代表性别未知）、**1**（男性）、**2**（女性）。
+                     * @return Gender 该字段表示业务用户对应账号的性别信息。<br>
+取值：**0**（默认值，代表性别未知）、**1**（男性）、**2**（女性）。
                      */
                     int64_t GetGender() const;
 
                     /**
-                     * 设置性别 默认0 未知 1 男性 2 女性
-                     * @param Gender 性别 默认0 未知 1 男性 2 女性
+                     * 设置该字段表示业务用户对应账号的性别信息。<br>
+取值：**0**（默认值，代表性别未知）、**1**（男性）、**2**（女性）。
+                     * @param Gender 该字段表示业务用户对应账号的性别信息。<br>
+取值：**0**（默认值，代表性别未知）、**1**（男性）、**2**（女性）。
                      */
                     void SetGender(const int64_t& _gender);
 
@@ -119,14 +131,18 @@ namespace TencentCloud
                     bool GenderHasBeenSet() const;
 
                     /**
-                     * 获取年龄 默认0 未知
-                     * @return Age 年龄 默认0 未知
+                     * 获取该字段表示业务用户对应账号的年龄信息。<br>
+取值：**0**（默认值，代表年龄未知）-（**自定义年龄上限**）之间的整数。
+                     * @return Age 该字段表示业务用户对应账号的年龄信息。<br>
+取值：**0**（默认值，代表年龄未知）-（**自定义年龄上限**）之间的整数。
                      */
                     int64_t GetAge() const;
 
                     /**
-                     * 设置年龄 默认0 未知
-                     * @param Age 年龄 默认0 未知
+                     * 设置该字段表示业务用户对应账号的年龄信息。<br>
+取值：**0**（默认值，代表年龄未知）-（**自定义年龄上限**）之间的整数。
+                     * @param Age 该字段表示业务用户对应账号的年龄信息。<br>
+取值：**0**（默认值，代表年龄未知）-（**自定义年龄上限**）之间的整数。
                      */
                     void SetAge(const int64_t& _age);
 
@@ -137,14 +153,18 @@ namespace TencentCloud
                     bool AgeHasBeenSet() const;
 
                     /**
-                     * 获取用户等级，默认0 未知 1 低 2 中 3 高
-                     * @return Level 用户等级，默认0 未知 1 低 2 中 3 高
+                     * 获取该字段表示业务用户对应账号的等级信息。<br>
+取值：**0**（默认值，代表等级未知）、**1**（等级较低）、**2**（等级中等）、**3**（等级较高），目前**暂不支持自定义等级**。
+                     * @return Level 该字段表示业务用户对应账号的等级信息。<br>
+取值：**0**（默认值，代表等级未知）、**1**（等级较低）、**2**（等级中等）、**3**（等级较高），目前**暂不支持自定义等级**。
                      */
                     int64_t GetLevel() const;
 
                     /**
-                     * 设置用户等级，默认0 未知 1 低 2 中 3 高
-                     * @param Level 用户等级，默认0 未知 1 低 2 中 3 高
+                     * 设置该字段表示业务用户对应账号的等级信息。<br>
+取值：**0**（默认值，代表等级未知）、**1**（等级较低）、**2**（等级中等）、**3**（等级较高），目前**暂不支持自定义等级**。
+                     * @param Level 该字段表示业务用户对应账号的等级信息。<br>
+取值：**0**（默认值，代表等级未知）、**1**（等级较低）、**2**（等级中等）、**3**（等级较高），目前**暂不支持自定义等级**。
                      */
                     void SetLevel(const int64_t& _level);
 
@@ -155,14 +175,18 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取手机号
-                     * @return Phone 手机号
+                     * 获取该字段表示业务用户对应账号的手机号信息，支持全球各地区手机号的记录。<br>
+备注：请保持手机号格式的统一，如区号格式（086/+86）等。
+                     * @return Phone 该字段表示业务用户对应账号的手机号信息，支持全球各地区手机号的记录。<br>
+备注：请保持手机号格式的统一，如区号格式（086/+86）等。
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置手机号
-                     * @param Phone 手机号
+                     * 设置该字段表示业务用户对应账号的手机号信息，支持全球各地区手机号的记录。<br>
+备注：请保持手机号格式的统一，如区号格式（086/+86）等。
+                     * @param Phone 该字段表示业务用户对应账号的手机号信息，支持全球各地区手机号的记录。<br>
+备注：请保持手机号格式的统一，如区号格式（086/+86）等。
                      */
                     void SetPhone(const std::string& _phone);
 
@@ -175,43 +199,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。
+                     * 该字段表示业务用户ID,填写后，系统可根据账号过往违规历史优化审核结果判定，有利于存在可疑违规风险时的辅助判断。<br>
+备注：该字段可传入微信openid、QQopenid、字符串等账号信息，与账号类别参数（AccountType）配合使用可确定唯一账号。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户昵称
+                     * 该字段表示业务用户对应的账号昵称信息。
                      */
                     std::string m_nickname;
                     bool m_nicknameHasBeenSet;
 
                     /**
-                     * 账号类别，"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string"
+                     * 该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>
+该字段与账号ID参数（UserId）配合使用可确定唯一账号。
                      */
                     int64_t m_accountType;
                     bool m_accountTypeHasBeenSet;
 
                     /**
-                     * 性别 默认0 未知 1 男性 2 女性
+                     * 该字段表示业务用户对应账号的性别信息。<br>
+取值：**0**（默认值，代表性别未知）、**1**（男性）、**2**（女性）。
                      */
                     int64_t m_gender;
                     bool m_genderHasBeenSet;
 
                     /**
-                     * 年龄 默认0 未知
+                     * 该字段表示业务用户对应账号的年龄信息。<br>
+取值：**0**（默认值，代表年龄未知）-（**自定义年龄上限**）之间的整数。
                      */
                     int64_t m_age;
                     bool m_ageHasBeenSet;
 
                     /**
-                     * 用户等级，默认0 未知 1 低 2 中 3 高
+                     * 该字段表示业务用户对应账号的等级信息。<br>
+取值：**0**（默认值，代表等级未知）、**1**（等级较低）、**2**（等级中等）、**3**（等级较高），目前**暂不支持自定义等级**。
                      */
                     int64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 手机号
+                     * 该字段表示业务用户对应账号的手机号信息，支持全球各地区手机号的记录。<br>
+备注：请保持手机号格式的统一，如区号格式（086/+86）等。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;

@@ -120,6 +120,24 @@ global: 全球节点
                      */
                     bool AreaHasBeenSet() const;
 
+                    /**
+                     * 获取是否以IP段的格式返回。
+                     * @return Segment 是否以IP段的格式返回。
+                     */
+                    bool GetSegment() const;
+
+                    /**
+                     * 设置是否以IP段的格式返回。
+                     * @param Segment 是否以IP段的格式返回。
+                     */
+                    void SetSegment(const bool& _segment);
+
+                    /**
+                     * 判断参数 Segment 是否已赋值
+                     * @return Segment 是否已赋值
+                     */
+                    bool SegmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +163,12 @@ global: 全球节点
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * 是否以IP段的格式返回。
+                     */
+                    bool m_segment;
+                    bool m_segmentHasBeenSet;
 
                 };
             }

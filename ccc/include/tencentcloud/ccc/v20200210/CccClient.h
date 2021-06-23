@@ -141,7 +141,9 @@ namespace TencentCloud
                 DescribePSTNActiveSessionListOutcomeCallable DescribePSTNActiveSessionListCallable(const Model::DescribePSTNActiveSessionListRequest& request);
 
                 /**
-                 *获取坐席用户列表（废弃）
+                 *废弃接口下架
+
+获取坐席用户列表（废弃）
                  * @param req DescribeSeatUserListRequest
                  * @return DescribeSeatUserListOutcome
                  */

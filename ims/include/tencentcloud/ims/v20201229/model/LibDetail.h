@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 自定义库/黑白库明细
+                * 用于返回自定义库/黑白库的明细信息
                 */
                 class LibDetail : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取序号
-                     * @return Id 序号
+                     * 获取该字段用于返回识别对象的ID以方便识别和区分。
+                     * @return Id 该字段用于返回识别对象的ID以方便识别和区分。
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置序号
-                     * @param Id 序号
+                     * 设置该字段用于返回识别对象的ID以方便识别和区分。
+                     * @param Id 该字段用于返回识别对象的ID以方便识别和区分。
                      */
                     void SetId(const int64_t& _id);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取仅当Label为Custom自定义关键词时有效，表示自定义库id
-                     * @return LibId 仅当Label为Custom自定义关键词时有效，表示自定义库id
+                     * 获取该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的ID，以方便自定义库管理和配置。
+                     * @return LibId 该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的ID，以方便自定义库管理和配置。
                      */
                     std::string GetLibId() const;
 
                     /**
-                     * 设置仅当Label为Custom自定义关键词时有效，表示自定义库id
-                     * @param LibId 仅当Label为Custom自定义关键词时有效，表示自定义库id
+                     * 设置该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的ID，以方便自定义库管理和配置。
+                     * @param LibId 该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的ID，以方便自定义库管理和配置。
                      */
                     void SetLibId(const std::string& _libId);
 
@@ -83,17 +83,17 @@ namespace TencentCloud
                     bool LibIdHasBeenSet() const;
 
                     /**
-                     * 获取仅当Label为Custom自定义关键词时有效，表示自定义库名称
+                     * 获取该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的名称,以方便自定义库管理和配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LibName 仅当Label为Custom自定义关键词时有效，表示自定义库名称
+                     * @return LibName 该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的名称,以方便自定义库管理和配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLibName() const;
 
                     /**
-                     * 设置仅当Label为Custom自定义关键词时有效，表示自定义库名称
+                     * 设置该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的名称,以方便自定义库管理和配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LibName 仅当Label为Custom自定义关键词时有效，表示自定义库名称
+                     * @param LibName 该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的名称,以方便自定义库管理和配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLibName(const std::string& _libName);
@@ -105,14 +105,14 @@ namespace TencentCloud
                     bool LibNameHasBeenSet() const;
 
                     /**
-                     * 获取图片ID
-                     * @return ImageId 图片ID
+                     * 获取该字段用于返回识别图像对象的ID以方便文件管理。
+                     * @return ImageId 该字段用于返回识别图像对象的ID以方便文件管理。
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置图片ID
-                     * @param ImageId 图片ID
+                     * 设置该字段用于返回识别图像对象的ID以方便文件管理。
+                     * @param ImageId 该字段用于返回识别图像对象的ID以方便文件管理。
                      */
                     void SetImageId(const std::string& _imageId);
 
@@ -123,18 +123,14 @@ namespace TencentCloud
                     bool ImageIdHasBeenSet() const;
 
                     /**
-                     * 获取恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
-以及其他其他令人反感、不安全或不适宜的内容类型。
-                     * @return Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
-以及其他其他令人反感、不安全或不适宜的内容类型。
+                     * 获取该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
+                     * @return Label 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
-以及其他其他令人反感、不安全或不适宜的内容类型。
-                     * @param Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
-以及其他其他令人反感、不安全或不适宜的内容类型。
+                     * 设置该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
+                     * @param Label 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
                      */
                     void SetLabel(const std::string& _label);
 
@@ -145,17 +141,17 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取自定义标签
+                     * 获取该字段用于返回其他自定义标签以满足您的定制化场景需求，若无需求则可略过。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tag 自定义标签
+                     * @return Tag 该字段用于返回其他自定义标签以满足您的定制化场景需求，若无需求则可略过。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTag() const;
 
                     /**
-                     * 设置自定义标签
+                     * 设置该字段用于返回其他自定义标签以满足您的定制化场景需求，若无需求则可略过。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tag 自定义标签
+                     * @param Tag 该字段用于返回其他自定义标签以满足您的定制化场景需求，若无需求则可略过。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTag(const std::string& _tag);
@@ -167,14 +163,14 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取命中的模型分值
-                     * @return Score 命中的模型分值
+                     * 获取该字段用于返回对应模型命中的分值，取值为**0-100**，如：*Porn 99* 则代表相应识别内容命中色情标签的分值为99。
+                     * @return Score 该字段用于返回对应模型命中的分值，取值为**0-100**，如：*Porn 99* 则代表相应识别内容命中色情标签的分值为99。
                      */
                     int64_t GetScore() const;
 
                     /**
-                     * 设置命中的模型分值
-                     * @param Score 命中的模型分值
+                     * 设置该字段用于返回对应模型命中的分值，取值为**0-100**，如：*Porn 99* 则代表相应识别内容命中色情标签的分值为99。
+                     * @param Score 该字段用于返回对应模型命中的分值，取值为**0-100**，如：*Porn 99* 则代表相应识别内容命中色情标签的分值为99。
                      */
                     void SetScore(const int64_t& _score);
 
@@ -187,46 +183,45 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 序号
+                     * 该字段用于返回识别对象的ID以方便识别和区分。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 仅当Label为Custom自定义关键词时有效，表示自定义库id
+                     * 该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的ID，以方便自定义库管理和配置。
                      */
                     std::string m_libId;
                     bool m_libIdHasBeenSet;
 
                     /**
-                     * 仅当Label为Custom自定义关键词时有效，表示自定义库名称
+                     * 该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的名称,以方便自定义库管理和配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_libName;
                     bool m_libNameHasBeenSet;
 
                     /**
-                     * 图片ID
+                     * 该字段用于返回识别图像对象的ID以方便文件管理。
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
 
                     /**
-                     * 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。
-以及其他其他令人反感、不安全或不适宜的内容类型。
+                     * 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 自定义标签
+                     * 该字段用于返回其他自定义标签以满足您的定制化场景需求，若无需求则可略过。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 命中的模型分值
+                     * 该字段用于返回对应模型命中的分值，取值为**0-100**，如：*Porn 99* 则代表相应识别内容命中色情标签的分值为99。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;

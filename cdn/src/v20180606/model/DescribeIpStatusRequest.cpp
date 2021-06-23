@@ -25,7 +25,8 @@ using namespace std;
 DescribeIpStatusRequest::DescribeIpStatusRequest() :
     m_domainHasBeenSet(false),
     m_layerHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_segmentHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeIpStatusRequest::ToJsonString() const
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_segmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Segment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_segment, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeIpStatusRequest::SetArea(const string& _area)
 bool DescribeIpStatusRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+bool DescribeIpStatusRequest::GetSegment() const
+{
+    return m_segment;
+}
+
+void DescribeIpStatusRequest::SetSegment(const bool& _segment)
+{
+    m_segment = _segment;
+    m_segmentHasBeenSet = true;
+}
+
+bool DescribeIpStatusRequest::SegmentHasBeenSet() const
+{
+    return m_segmentHasBeenSet;
 }
 
 

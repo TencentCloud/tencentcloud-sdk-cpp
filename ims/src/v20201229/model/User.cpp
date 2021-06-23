@@ -22,8 +22,8 @@ using namespace std;
 
 User::User() :
     m_userIdHasBeenSet(false),
-    m_accountTypeHasBeenSet(false),
     m_nicknameHasBeenSet(false),
+    m_accountTypeHasBeenSet(false),
     m_genderHasBeenSet(false),
     m_ageHasBeenSet(false),
     m_levelHasBeenSet(false),
@@ -48,16 +48,6 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_userIdHasBeenSet = true;
     }
 
-    if (value.HasMember("AccountType") && !value["AccountType"].IsNull())
-    {
-        if (!value["AccountType"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `User.AccountType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_accountType = string(value["AccountType"].GetString());
-        m_accountTypeHasBeenSet = true;
-    }
-
     if (value.HasMember("Nickname") && !value["Nickname"].IsNull())
     {
         if (!value["Nickname"].IsString())
@@ -66,6 +56,16 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         }
         m_nickname = string(value["Nickname"].GetString());
         m_nicknameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccountType") && !value["AccountType"].IsNull())
+    {
+        if (!value["AccountType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `User.AccountType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountType = string(value["AccountType"].GetString());
+        m_accountTypeHasBeenSet = true;
     }
 
     if (value.HasMember("Gender") && !value["Gender"].IsNull())
@@ -143,20 +143,20 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_accountTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AccountType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_nicknameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Nickname";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nickname.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_genderHasBeenSet)
@@ -226,22 +226,6 @@ bool User::UserIdHasBeenSet() const
     return m_userIdHasBeenSet;
 }
 
-string User::GetAccountType() const
-{
-    return m_accountType;
-}
-
-void User::SetAccountType(const string& _accountType)
-{
-    m_accountType = _accountType;
-    m_accountTypeHasBeenSet = true;
-}
-
-bool User::AccountTypeHasBeenSet() const
-{
-    return m_accountTypeHasBeenSet;
-}
-
 string User::GetNickname() const
 {
     return m_nickname;
@@ -256,6 +240,22 @@ void User::SetNickname(const string& _nickname)
 bool User::NicknameHasBeenSet() const
 {
     return m_nicknameHasBeenSet;
+}
+
+string User::GetAccountType() const
+{
+    return m_accountType;
+}
+
+void User::SetAccountType(const string& _accountType)
+{
+    m_accountType = _accountType;
+    m_accountTypeHasBeenSet = true;
+}
+
+bool User::AccountTypeHasBeenSet() const
+{
+    return m_accountTypeHasBeenSet;
 }
 
 uint64_t User::GetGender() const

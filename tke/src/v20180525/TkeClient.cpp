@@ -1416,6 +1416,49 @@ TkeClient::DescribeClusterCommonNamesOutcomeCallable TkeClient::DescribeClusterC
     return task->get_future();
 }
 
+TkeClient::DescribeClusterControllersOutcome TkeClient::DescribeClusterControllers(const DescribeClusterControllersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterControllers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterControllersResponse rsp = DescribeClusterControllersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterControllersOutcome(rsp);
+        else
+            return DescribeClusterControllersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterControllersOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterControllersAsync(const DescribeClusterControllersRequest& request, const DescribeClusterControllersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterControllers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterControllersOutcomeCallable TkeClient::DescribeClusterControllersCallable(const DescribeClusterControllersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterControllersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterControllers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeClusterEndpointStatusOutcome TkeClient::DescribeClusterEndpointStatus(const DescribeClusterEndpointStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterEndpointStatus");

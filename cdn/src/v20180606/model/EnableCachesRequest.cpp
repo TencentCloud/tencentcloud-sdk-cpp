@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace std;
 
 EnableCachesRequest::EnableCachesRequest() :
-    m_urlsHasBeenSet(false)
+    m_urlsHasBeenSet(false),
+    m_dateHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string EnableCachesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_dateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Date";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -69,6 +78,22 @@ void EnableCachesRequest::SetUrls(const vector<string>& _urls)
 bool EnableCachesRequest::UrlsHasBeenSet() const
 {
     return m_urlsHasBeenSet;
+}
+
+string EnableCachesRequest::GetDate() const
+{
+    return m_date;
+}
+
+void EnableCachesRequest::SetDate(const string& _date)
+{
+    m_date = _date;
+    m_dateHasBeenSet = true;
+}
+
+bool EnableCachesRequest::DateHasBeenSet() const
+{
+    return m_dateHasBeenSet;
 }
 
 

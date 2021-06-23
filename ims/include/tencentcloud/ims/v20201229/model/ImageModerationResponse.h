@@ -47,10 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取建议您拿到判断结果后的执行操作。
-建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
-                     * @return Suggestion 建议您拿到判断结果后的执行操作。
-建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
+                     * 获取该字段用于返回Label标签下的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
+                     * @return Suggestion 该字段用于返回Label标签下的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
                      */
                     std::string GetSuggestion() const;
 
@@ -61,10 +59,8 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
-以及其他令人反感、不安全或不适宜的内容类型。
-                     * @return Label 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
-以及其他令人反感、不安全或不适宜的内容类型。
+                     * 获取该字段用于返回检测结果（LabelResults）中所对应的**优先级最高的恶意标签**，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
+                     * @return Label 该字段用于返回检测结果（LabelResults）中所对应的**优先级最高的恶意标签**，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
                      */
                     std::string GetLabel() const;
 
@@ -75,8 +71,8 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取子标签名称，如色情--性行为；当未命中子标签时，返回空字符串；
-                     * @return SubLabel 子标签名称，如色情--性行为；当未命中子标签时，返回空字符串；
+                     * 获取该字段用于返回检测结果所命中优先级最高的恶意标签下的子标签名称，如：*色情--性行为*；若未命中任何子标签则返回空字符串。
+                     * @return SubLabel 该字段用于返回检测结果所命中优先级最高的恶意标签下的子标签名称，如：*色情--性行为*；若未命中任何子标签则返回空字符串。
                      */
                     std::string GetSubLabel() const;
 
@@ -87,10 +83,8 @@ namespace TencentCloud
                     bool SubLabelHasBeenSet() const;
 
                     /**
-                     * 获取机器判断当前分类的置信度，取值范围：0.00~100.00。分数越高，表示越有可能属于当前分类。
-（如：色情 99.99，则该样本属于色情的置信度非常高。）
-                     * @return Score 机器判断当前分类的置信度，取值范围：0.00~100.00。分数越高，表示越有可能属于当前分类。
-（如：色情 99.99，则该样本属于色情的置信度非常高。）
+                     * 获取该字段用于返回当前标签（Label）下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容；*色情 0*，则表明该文本不属于色情内容。
+                     * @return Score 该字段用于返回当前标签（Label）下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容；*色情 0*，则表明该文本不属于色情内容。
                      */
                     int64_t GetScore() const;
 
@@ -101,9 +95,9 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取智能模型的识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果。
+                     * 获取该字段用于返回分类模型命中的恶意标签的详细识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LabelResults 智能模型的识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果。
+                     * @return LabelResults 该字段用于返回分类模型命中的恶意标签的详细识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LabelResult> GetLabelResults() const;
@@ -115,9 +109,9 @@ namespace TencentCloud
                     bool LabelResultsHasBeenSet() const;
 
                     /**
-                     * 获取物体检测模型的审核结果，包括实体、广告台标/二维码等物体坐标信息与内容审核信息。
+                     * 获取该字段用于返回物体检测模型的详细检测结果；包括：实体、广告台标、二维码等内容命中的标签名称、标签分数、坐标信息、场景识别结果、建议操作等内容审核信息；详细返回值信息可参阅对应的数据结构（ObjectResults）描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ObjectResults 物体检测模型的审核结果，包括实体、广告台标/二维码等物体坐标信息与内容审核信息。
+                     * @return ObjectResults 该字段用于返回物体检测模型的详细检测结果；包括：实体、广告台标、二维码等内容命中的标签名称、标签分数、坐标信息、场景识别结果、建议操作等内容审核信息；详细返回值信息可参阅对应的数据结构（ObjectResults）描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ObjectResult> GetObjectResults() const;
@@ -129,9 +123,9 @@ namespace TencentCloud
                     bool ObjectResultsHasBeenSet() const;
 
                     /**
-                     * 获取OCR识别后的文本识别结果，包括文本所处图片的OCR坐标信息以及图片文本的识别结果。
+                     * 获取该字段用于返回OCR文本识别的详细检测结果；包括：文本坐标信息、文本识别结果、建议操作等内容审核信息；详细返回值信息可参阅对应的数据结构（OcrResults）描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrResults OCR识别后的文本识别结果，包括文本所处图片的OCR坐标信息以及图片文本的识别结果。
+                     * @return OcrResults 该字段用于返回OCR文本识别的详细检测结果；包括：文本坐标信息、文本识别结果、建议操作等内容审核信息；详细返回值信息可参阅对应的数据结构（OcrResults）描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OcrResult> GetOcrResults() const;
@@ -143,11 +137,9 @@ namespace TencentCloud
                     bool OcrResultsHasBeenSet() const;
 
                     /**
-                     * 获取基于图片风险库识别的结果。
-风险库包括不安全黑库与正常白库的结果。
+                     * 获取该字段用于返回基于图片风险库（风险黑库与正常白库）识别的结果,详细返回值信息可参阅对应的数据结构（LibResults）描述。<br>备注：图片风险库目前**暂不支持自定义库**。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LibResults 基于图片风险库识别的结果。
-风险库包括不安全黑库与正常白库的结果。
+                     * @return LibResults 该字段用于返回基于图片风险库（风险黑库与正常白库）识别的结果,详细返回值信息可参阅对应的数据结构（LibResults）描述。<br>备注：图片风险库目前**暂不支持自定义库**。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LibResult> GetLibResults() const;
@@ -159,8 +151,8 @@ namespace TencentCloud
                     bool LibResultsHasBeenSet() const;
 
                     /**
-                     * 获取请求参数中的DataId。
-                     * @return DataId 请求参数中的DataId。
+                     * 获取该字段用于返回检测对象对应请求参数中的DataId。
+                     * @return DataId 该字段用于返回检测对象对应请求参数中的DataId。
                      */
                     std::string GetDataId() const;
 
@@ -171,8 +163,8 @@ namespace TencentCloud
                     bool DataIdHasBeenSet() const;
 
                     /**
-                     * 获取您在入参时所填入的Biztype参数。 -- 该字段暂未开放。
-                     * @return BizType 您在入参时所填入的Biztype参数。 -- 该字段暂未开放。
+                     * 获取该字段用于返回检测对象对应请求参数中的BizType。
+                     * @return BizType 该字段用于返回检测对象对应请求参数中的BizType。
                      */
                     std::string GetBizType() const;
 
@@ -183,11 +175,9 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取扩展字段，用于特定信息返回，不同客户/Biztype下返回信息不同。
+                     * 获取该字段用于返回根据您的需求配置的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Extra 扩展字段，用于特定信息返回，不同客户/Biztype下返回信息不同。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Extra 该字段用于返回根据您的需求配置的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetExtra() const;
@@ -199,8 +189,8 @@ namespace TencentCloud
                     bool ExtraHasBeenSet() const;
 
                     /**
-                     * 获取图片MD5值
-                     * @return FileMD5 图片MD5值
+                     * 获取该字段用于返回检测对象对应的MD5校验值，以方便校验文件完整性。
+                     * @return FileMD5 该字段用于返回检测对象对应的MD5校验值，以方便校验文件完整性。
                      */
                     std::string GetFileMD5() const;
 
@@ -213,83 +203,78 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 建议您拿到判断结果后的执行操作。
-建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过
+                     * 该字段用于返回Label标签下的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义图片。
-以及其他令人反感、不安全或不适宜的内容类型。
+                     * 该字段用于返回检测结果（LabelResults）中所对应的**优先级最高的恶意标签**，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 子标签名称，如色情--性行为；当未命中子标签时，返回空字符串；
+                     * 该字段用于返回检测结果所命中优先级最高的恶意标签下的子标签名称，如：*色情--性行为*；若未命中任何子标签则返回空字符串。
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
 
                     /**
-                     * 机器判断当前分类的置信度，取值范围：0.00~100.00。分数越高，表示越有可能属于当前分类。
-（如：色情 99.99，则该样本属于色情的置信度非常高。）
+                     * 该字段用于返回当前标签（Label）下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容；*色情 0*，则表明该文本不属于色情内容。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 智能模型的识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果。
+                     * 该字段用于返回分类模型命中的恶意标签的详细识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LabelResult> m_labelResults;
                     bool m_labelResultsHasBeenSet;
 
                     /**
-                     * 物体检测模型的审核结果，包括实体、广告台标/二维码等物体坐标信息与内容审核信息。
+                     * 该字段用于返回物体检测模型的详细检测结果；包括：实体、广告台标、二维码等内容命中的标签名称、标签分数、坐标信息、场景识别结果、建议操作等内容审核信息；详细返回值信息可参阅对应的数据结构（ObjectResults）描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ObjectResult> m_objectResults;
                     bool m_objectResultsHasBeenSet;
 
                     /**
-                     * OCR识别后的文本识别结果，包括文本所处图片的OCR坐标信息以及图片文本的识别结果。
+                     * 该字段用于返回OCR文本识别的详细检测结果；包括：文本坐标信息、文本识别结果、建议操作等内容审核信息；详细返回值信息可参阅对应的数据结构（OcrResults）描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OcrResult> m_ocrResults;
                     bool m_ocrResultsHasBeenSet;
 
                     /**
-                     * 基于图片风险库识别的结果。
-风险库包括不安全黑库与正常白库的结果。
+                     * 该字段用于返回基于图片风险库（风险黑库与正常白库）识别的结果,详细返回值信息可参阅对应的数据结构（LibResults）描述。<br>备注：图片风险库目前**暂不支持自定义库**。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LibResult> m_libResults;
                     bool m_libResultsHasBeenSet;
 
                     /**
-                     * 请求参数中的DataId。
+                     * 该字段用于返回检测对象对应请求参数中的DataId。
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
 
                     /**
-                     * 您在入参时所填入的Biztype参数。 -- 该字段暂未开放。
+                     * 该字段用于返回检测对象对应请求参数中的BizType。
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 扩展字段，用于特定信息返回，不同客户/Biztype下返回信息不同。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 该字段用于返回根据您的需求配置的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
 
                     /**
-                     * 图片MD5值
+                     * 该字段用于返回检测对象对应的MD5校验值，以方便校验文件完整性。
                      */
                     std::string m_fileMD5;
                     bool m_fileMD5HasBeenSet;
