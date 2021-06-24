@@ -47,7 +47,8 @@ JobV1::JobV1() :
     m_clusterIdHasBeenSet(false),
     m_webUIUrlHasBeenSet(false),
     m_schedulerTypeHasBeenSet(false),
-    m_clusterStatusHasBeenSet(false)
+    m_clusterStatusHasBeenSet(false),
+    m_runningCuHasBeenSet(false)
 {
 }
 
@@ -326,6 +327,16 @@ CoreInternalOutcome JobV1::Deserialize(const rapidjson::Value &value)
         m_clusterStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("RunningCu") && !value["RunningCu"].IsNull())
+    {
+        if (!value["RunningCu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `JobV1.RunningCu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningCu = value["RunningCu"].GetDouble();
+        m_runningCuHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -547,6 +558,14 @@ void JobV1::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "ClusterStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterStatus, allocator);
+    }
+
+    if (m_runningCuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningCu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningCu, allocator);
     }
 
 }
@@ -982,5 +1001,21 @@ void JobV1::SetClusterStatus(const int64_t& _clusterStatus)
 bool JobV1::ClusterStatusHasBeenSet() const
 {
     return m_clusterStatusHasBeenSet;
+}
+
+double JobV1::GetRunningCu() const
+{
+    return m_runningCu;
+}
+
+void JobV1::SetRunningCu(const double& _runningCu)
+{
+    m_runningCu = _runningCu;
+    m_runningCuHasBeenSet = true;
+}
+
+bool JobV1::RunningCuHasBeenSet() const
+{
+    return m_runningCuHasBeenSet;
 }
 

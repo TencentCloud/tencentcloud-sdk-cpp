@@ -83,11 +83,13 @@ namespace TencentCloud
                      * 获取导入媒资类型，取值：
 <li>VOD：云点播文件；</li>
 <li>EXTERNAL：媒资绑定。</li>
-注意：如果不填默认为云点播文件。
+
+注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。
                      * @return SourceType 导入媒资类型，取值：
 <li>VOD：云点播文件；</li>
 <li>EXTERNAL：媒资绑定。</li>
-注意：如果不填默认为云点播文件。
+
+注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。
                      */
                     std::string GetSourceType() const;
 
@@ -95,11 +97,13 @@ namespace TencentCloud
                      * 设置导入媒资类型，取值：
 <li>VOD：云点播文件；</li>
 <li>EXTERNAL：媒资绑定。</li>
-注意：如果不填默认为云点播文件。
+
+注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。
                      * @param SourceType 导入媒资类型，取值：
 <li>VOD：云点播文件；</li>
 <li>EXTERNAL：媒资绑定。</li>
-注意：如果不填默认为云点播文件。
+
+注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。
                      */
                     void SetSourceType(const std::string& _sourceType);
 
@@ -225,7 +229,8 @@ namespace TencentCloud
                      * 导入媒资类型，取值：
 <li>VOD：云点播文件；</li>
 <li>EXTERNAL：媒资绑定。</li>
-注意：如果不填默认为云点播文件。
+
+注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;

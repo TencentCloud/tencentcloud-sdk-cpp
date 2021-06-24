@@ -344,6 +344,50 @@ namespace TencentCloud
                      */
                     bool MaxParallelismHasBeenSet() const;
 
+                    /**
+                     * 获取JobManager规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobManagerSpec JobManager规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetJobManagerSpec() const;
+
+                    /**
+                     * 设置JobManager规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param JobManagerSpec JobManager规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJobManagerSpec(const double& _jobManagerSpec);
+
+                    /**
+                     * 判断参数 JobManagerSpec 是否已赋值
+                     * @return JobManagerSpec 是否已赋值
+                     */
+                    bool JobManagerSpecHasBeenSet() const;
+
+                    /**
+                     * 获取TaskManager规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskManagerSpec TaskManager规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetTaskManagerSpec() const;
+
+                    /**
+                     * 设置TaskManager规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskManagerSpec TaskManager规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskManagerSpec(const double& _taskManagerSpec);
+
+                    /**
+                     * 判断参数 TaskManagerSpec 是否已赋值
+                     * @return TaskManagerSpec 是否已赋值
+                     */
+                    bool TaskManagerSpecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -440,6 +484,20 @@ namespace TencentCloud
                      */
                     uint64_t m_maxParallelism;
                     bool m_maxParallelismHasBeenSet;
+
+                    /**
+                     * JobManager规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_jobManagerSpec;
+                    bool m_jobManagerSpecHasBeenSet;
+
+                    /**
+                     * TaskManager规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_taskManagerSpec;
+                    bool m_taskManagerSpecHasBeenSet;
 
                 };
             }

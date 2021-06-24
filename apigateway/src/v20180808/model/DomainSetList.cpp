@@ -26,7 +26,9 @@ DomainSetList::DomainSetList() :
     m_certificateIdHasBeenSet(false),
     m_isDefaultMappingHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_netTypeHasBeenSet(false)
+    m_netTypeHasBeenSet(false),
+    m_isForcedHttpsHasBeenSet(false),
+    m_registrationStatusHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome DomainSetList::Deserialize(const rapidjson::Value &value)
         m_netTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsForcedHttps") && !value["IsForcedHttps"].IsNull())
+    {
+        if (!value["IsForcedHttps"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `DomainSetList.IsForcedHttps` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isForcedHttps = value["IsForcedHttps"].GetBool();
+        m_isForcedHttpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegistrationStatus") && !value["RegistrationStatus"].IsNull())
+    {
+        if (!value["RegistrationStatus"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `DomainSetList.RegistrationStatus` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_registrationStatus = value["RegistrationStatus"].GetBool();
+        m_registrationStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void DomainSetList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "NetType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_netType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isForcedHttpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsForcedHttps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isForcedHttps, allocator);
+    }
+
+    if (m_registrationStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistrationStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_registrationStatus, allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void DomainSetList::SetNetType(const string& _netType)
 bool DomainSetList::NetTypeHasBeenSet() const
 {
     return m_netTypeHasBeenSet;
+}
+
+bool DomainSetList::GetIsForcedHttps() const
+{
+    return m_isForcedHttps;
+}
+
+void DomainSetList::SetIsForcedHttps(const bool& _isForcedHttps)
+{
+    m_isForcedHttps = _isForcedHttps;
+    m_isForcedHttpsHasBeenSet = true;
+}
+
+bool DomainSetList::IsForcedHttpsHasBeenSet() const
+{
+    return m_isForcedHttpsHasBeenSet;
+}
+
+bool DomainSetList::GetRegistrationStatus() const
+{
+    return m_registrationStatus;
+}
+
+void DomainSetList::SetRegistrationStatus(const bool& _registrationStatus)
+{
+    m_registrationStatus = _registrationStatus;
+    m_registrationStatusHasBeenSet = true;
+}
+
+bool DomainSetList::RegistrationStatusHasBeenSet() const
+{
+    return m_registrationStatusHasBeenSet;
 }
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/antiddos/v20200309/model/InsL7Rules.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,55 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取SSL证书ID
+                     * @return CertId SSL证书ID
+                     */
+                    std::string GetCertId() const;
+
+                    /**
+                     * 设置SSL证书ID
+                     * @param CertId SSL证书ID
+                     */
+                    void SetCertId(const std::string& _certId);
+
+                    /**
+                     * 判断参数 CertId 是否已赋值
+                     * @return CertId 是否已赋值
+                     */
+                    bool CertIdHasBeenSet() const;
+
+                    /**
+                     * 获取L7域名转发规则列表
+                     * @return L7Rules L7域名转发规则列表
+                     */
+                    std::vector<InsL7Rules> GetL7Rules() const;
+
+                    /**
+                     * 设置L7域名转发规则列表
+                     * @param L7Rules L7域名转发规则列表
+                     */
+                    void SetL7Rules(const std::vector<InsL7Rules>& _l7Rules);
+
+                    /**
+                     * 判断参数 L7Rules 是否已赋值
+                     * @return L7Rules 是否已赋值
+                     */
+                    bool L7RulesHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * SSL证书ID
+                     */
+                    std::string m_certId;
+                    bool m_certIdHasBeenSet;
+
+                    /**
+                     * L7域名转发规则列表
+                     */
+                    std::vector<InsL7Rules> m_l7Rules;
+                    bool m_l7RulesHasBeenSet;
 
                 };
             }

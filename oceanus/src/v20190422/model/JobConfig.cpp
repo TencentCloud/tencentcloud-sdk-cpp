@@ -34,7 +34,9 @@ JobConfig::JobConfig() :
     m_updateTimeHasBeenSet(false),
     m_cOSBucketHasBeenSet(false),
     m_logCollectHasBeenSet(false),
-    m_maxParallelismHasBeenSet(false)
+    m_maxParallelismHasBeenSet(false),
+    m_jobManagerSpecHasBeenSet(false),
+    m_taskManagerSpecHasBeenSet(false)
 {
 }
 
@@ -203,6 +205,26 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_maxParallelismHasBeenSet = true;
     }
 
+    if (value.HasMember("JobManagerSpec") && !value["JobManagerSpec"].IsNull())
+    {
+        if (!value["JobManagerSpec"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `JobConfig.JobManagerSpec` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobManagerSpec = value["JobManagerSpec"].GetDouble();
+        m_jobManagerSpecHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskManagerSpec") && !value["TaskManagerSpec"].IsNull())
+    {
+        if (!value["TaskManagerSpec"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `JobConfig.TaskManagerSpec` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskManagerSpec = value["TaskManagerSpec"].GetDouble();
+        m_taskManagerSpecHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -334,6 +356,22 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "MaxParallelism";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxParallelism, allocator);
+    }
+
+    if (m_jobManagerSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobManagerSpec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobManagerSpec, allocator);
+    }
+
+    if (m_taskManagerSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskManagerSpec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskManagerSpec, allocator);
     }
 
 }
@@ -561,5 +599,37 @@ void JobConfig::SetMaxParallelism(const uint64_t& _maxParallelism)
 bool JobConfig::MaxParallelismHasBeenSet() const
 {
     return m_maxParallelismHasBeenSet;
+}
+
+double JobConfig::GetJobManagerSpec() const
+{
+    return m_jobManagerSpec;
+}
+
+void JobConfig::SetJobManagerSpec(const double& _jobManagerSpec)
+{
+    m_jobManagerSpec = _jobManagerSpec;
+    m_jobManagerSpecHasBeenSet = true;
+}
+
+bool JobConfig::JobManagerSpecHasBeenSet() const
+{
+    return m_jobManagerSpecHasBeenSet;
+}
+
+double JobConfig::GetTaskManagerSpec() const
+{
+    return m_taskManagerSpec;
+}
+
+void JobConfig::SetTaskManagerSpec(const double& _taskManagerSpec)
+{
+    m_taskManagerSpec = _taskManagerSpec;
+    m_taskManagerSpecHasBeenSet = true;
+}
+
+bool JobConfig::TaskManagerSpecHasBeenSet() const
+{
+    return m_taskManagerSpecHasBeenSet;
 }
 

@@ -135,17 +135,17 @@ namespace TencentCloud
                     bool ActivityTypeHasBeenSet() const;
 
                     /**
-                     * 获取活动开始时间，单位：秒
+                     * 获取活动开始时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 活动开始时间，单位：秒
+                     * @return StartTime 活动开始时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置活动开始时间，单位：秒
+                     * 设置活动开始时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 活动开始时间，单位：秒
+                     * @param StartTime 活动开始时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -157,17 +157,17 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取活动结束时间，单位：秒
+                     * 获取活动结束时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 活动结束时间，单位：秒
+                     * @return EndTime 活动结束时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置活动结束时间，单位：秒
+                     * 设置活动结束时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 活动结束时间，单位：秒
+                     * @param EndTime 活动结束时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -223,17 +223,17 @@ namespace TencentCloud
                     bool PrivacyAgreementIdHasBeenSet() const;
 
                     /**
-                     * 获取活动更新时间，单位：秒
+                     * 获取活动更新时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 活动更新时间，单位：秒
+                     * @return UpdateTime 活动更新时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
-                     * 设置活动更新时间，单位：秒
+                     * 设置活动更新时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 活动更新时间，单位：秒
+                     * @param UpdateTime 活动更新时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
@@ -297,14 +297,14 @@ namespace TencentCloud
                     bool m_activityTypeHasBeenSet;
 
                     /**
-                     * 活动开始时间，单位：秒
+                     * 活动开始时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 活动结束时间，单位：秒
+                     * 活动结束时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endTime;
@@ -325,7 +325,7 @@ namespace TencentCloud
                     bool m_privacyAgreementIdHasBeenSet;
 
                     /**
-                     * 活动更新时间，单位：秒
+                     * 活动更新时间戳，单位：秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updateTime;

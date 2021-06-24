@@ -126,6 +126,49 @@ AntiddosClient::CreateBlackWhiteIpListOutcomeCallable AntiddosClient::CreateBlac
     return task->get_future();
 }
 
+AntiddosClient::CreateBoundIPOutcome AntiddosClient::CreateBoundIP(const CreateBoundIPRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBoundIP");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBoundIPResponse rsp = CreateBoundIPResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBoundIPOutcome(rsp);
+        else
+            return CreateBoundIPOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBoundIPOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreateBoundIPAsync(const CreateBoundIPRequest& request, const CreateBoundIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBoundIP(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreateBoundIPOutcomeCallable AntiddosClient::CreateBoundIPCallable(const CreateBoundIPRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBoundIPOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBoundIP(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::CreateDDoSAIOutcome AntiddosClient::CreateDDoSAI(const CreateDDoSAIRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDDoSAI");

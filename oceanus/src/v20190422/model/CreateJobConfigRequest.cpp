@@ -32,7 +32,9 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_propertiesHasBeenSet(false),
     m_autoDeleteHasBeenSet(false),
     m_cOSBucketHasBeenSet(false),
-    m_logCollectHasBeenSet(false)
+    m_logCollectHasBeenSet(false),
+    m_jobManagerSpecHasBeenSet(false),
+    m_taskManagerSpecHasBeenSet(false)
 {
 }
 
@@ -135,6 +137,22 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "LogCollect";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_logCollect, allocator);
+    }
+
+    if (m_jobManagerSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobManagerSpec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_jobManagerSpec, allocator);
+    }
+
+    if (m_taskManagerSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskManagerSpec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskManagerSpec, allocator);
     }
 
 
@@ -303,6 +321,38 @@ void CreateJobConfigRequest::SetLogCollect(const bool& _logCollect)
 bool CreateJobConfigRequest::LogCollectHasBeenSet() const
 {
     return m_logCollectHasBeenSet;
+}
+
+double CreateJobConfigRequest::GetJobManagerSpec() const
+{
+    return m_jobManagerSpec;
+}
+
+void CreateJobConfigRequest::SetJobManagerSpec(const double& _jobManagerSpec)
+{
+    m_jobManagerSpec = _jobManagerSpec;
+    m_jobManagerSpecHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::JobManagerSpecHasBeenSet() const
+{
+    return m_jobManagerSpecHasBeenSet;
+}
+
+double CreateJobConfigRequest::GetTaskManagerSpec() const
+{
+    return m_taskManagerSpec;
+}
+
+void CreateJobConfigRequest::SetTaskManagerSpec(const double& _taskManagerSpec)
+{
+    m_taskManagerSpec = _taskManagerSpec;
+    m_taskManagerSpecHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::TaskManagerSpecHasBeenSet() const
+{
+    return m_taskManagerSpecHasBeenSet;
 }
 
 

@@ -27,6 +27,8 @@
 #include <tencentcloud/antiddos/v20200309/model/AssociateDDoSEipAddressResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateBlackWhiteIpListRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateBlackWhiteIpListResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateBoundIPRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateBoundIPResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSAIRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSAIResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateDDoSGeoIPBlockConfigRequest.h>
@@ -123,6 +125,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateBlackWhiteIpListResponse> CreateBlackWhiteIpListOutcome;
                 typedef std::future<CreateBlackWhiteIpListOutcome> CreateBlackWhiteIpListOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateBlackWhiteIpListRequest&, CreateBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlackWhiteIpListAsyncHandler;
+                typedef Outcome<Error, Model::CreateBoundIPResponse> CreateBoundIPOutcome;
+                typedef std::future<CreateBoundIPOutcome> CreateBoundIPOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::CreateBoundIPRequest&, CreateBoundIPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBoundIPAsyncHandler;
                 typedef Outcome<Error, Model::CreateDDoSAIResponse> CreateDDoSAIOutcome;
                 typedef std::future<CreateDDoSAIOutcome> CreateDDoSAIOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateDDoSAIRequest&, CreateDDoSAIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDDoSAIAsyncHandler;
@@ -257,6 +262,15 @@ namespace TencentCloud
                 CreateBlackWhiteIpListOutcome CreateBlackWhiteIpList(const Model::CreateBlackWhiteIpListRequest &request);
                 void CreateBlackWhiteIpListAsync(const Model::CreateBlackWhiteIpListRequest& request, const CreateBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBlackWhiteIpListOutcomeCallable CreateBlackWhiteIpListCallable(const Model::CreateBlackWhiteIpListRequest& request);
+
+                /**
+                 *绑定IP到高防包实例，支持独享包、共享包；需要注意的是此接口绑定或解绑IP是异步接口，当处于绑定或解绑中时，则不允许再进行绑定或解绑，需要等待当前绑定或解绑完成。
+                 * @param req CreateBoundIPRequest
+                 * @return CreateBoundIPOutcome
+                 */
+                CreateBoundIPOutcome CreateBoundIP(const Model::CreateBoundIPRequest &request);
+                void CreateBoundIPAsync(const Model::CreateBoundIPRequest& request, const CreateBoundIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBoundIPOutcomeCallable CreateBoundIPCallable(const Model::CreateBoundIPRequest& request);
 
                 /**
                  *设置DDoS防护的AI防护开关

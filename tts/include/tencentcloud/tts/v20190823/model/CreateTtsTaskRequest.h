@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool SampleRateHasBeenSet() const;
 
                     /**
-                     * 获取返回音频格式，可取值：mp3（默认），mp3，pcm
-                     * @return Codec 返回音频格式，可取值：mp3（默认），mp3，pcm
+                     * 获取返回音频格式，可取值：mp3（默认），wav，pcm
+                     * @return Codec 返回音频格式，可取值：mp3（默认），wav，pcm
                      */
                     std::string GetCodec() const;
 
                     /**
-                     * 设置返回音频格式，可取值：mp3（默认），mp3，pcm
-                     * @param Codec 返回音频格式，可取值：mp3（默认），mp3，pcm
+                     * 设置返回音频格式，可取值：mp3（默认），wav，pcm
+                     * @param Codec 返回音频格式，可取值：mp3（默认），wav，pcm
                      */
                     void SetCodec(const std::string& _codec);
 
@@ -278,7 +278,7 @@ namespace TencentCloud
                     bool m_sampleRateHasBeenSet;
 
                     /**
-                     * 返回音频格式，可取值：mp3（默认），mp3，pcm
+                     * 返回音频格式，可取值：mp3（默认），wav，pcm
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;

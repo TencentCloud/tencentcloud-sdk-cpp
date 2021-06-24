@@ -201,17 +201,17 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取作业类型
+                     * 获取作业类型，1：sql作业，2：Jar作业
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobType 作业类型
+                     * @return JobType 作业类型，1：sql作业，2：Jar作业
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetJobType() const;
 
                     /**
-                     * 设置作业类型
+                     * 设置作业类型，1：sql作业，2：Jar作业
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JobType 作业类型
+                     * @param JobType 作业类型，1：sql作业，2：Jar作业
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetJobType(const int64_t& _jobType);
@@ -640,6 +640,28 @@ namespace TencentCloud
                      */
                     bool ClusterStatusHasBeenSet() const;
 
+                    /**
+                     * 获取细粒度下的运行的CU数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunningCu 细粒度下的运行的CU数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetRunningCu() const;
+
+                    /**
+                     * 设置细粒度下的运行的CU数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RunningCu 细粒度下的运行的CU数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRunningCu(const double& _runningCu);
+
+                    /**
+                     * 判断参数 RunningCu 是否已赋值
+                     * @return RunningCu 是否已赋值
+                     */
+                    bool RunningCuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -692,7 +714,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 作业类型
+                     * 作业类型，1：sql作业，2：Jar作业
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jobType;
@@ -830,6 +852,13 @@ namespace TencentCloud
                      */
                     int64_t m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
+
+                    /**
+                     * 细粒度下的运行的CU数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_runningCu;
+                    bool m_runningCuHasBeenSet;
 
                 };
             }
