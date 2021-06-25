@@ -49,11 +49,11 @@ namespace TencentCloud
                     /**
                      * 获取录制间隔。
 单位秒，默认：1800。
-取值范围：300-7200。
+取值范围：60-7200。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      * @return RecordInterval 录制间隔。
 单位秒，默认：1800。
-取值范围：300-7200。
+取值范围：60-7200。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      */
                     int64_t GetRecordInterval() const;
@@ -61,11 +61,11 @@ namespace TencentCloud
                     /**
                      * 设置录制间隔。
 单位秒，默认：1800。
-取值范围：300-7200。
+取值范围：60-7200。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      * @param RecordInterval 录制间隔。
 单位秒，默认：1800。
-取值范围：300-7200。
+取值范围：60-7200。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      */
                     void SetRecordInterval(const int64_t& _recordInterval);
@@ -78,20 +78,20 @@ namespace TencentCloud
 
                     /**
                      * 获取录制存储时长。
-单位秒，取值范围： 0 - 93312000。
+单位秒，取值范围： 0 - 1500天。
 0：表示永久存储。
                      * @return StorageTime 录制存储时长。
-单位秒，取值范围： 0 - 93312000。
+单位秒，取值范围： 0 - 1500天。
 0：表示永久存储。
                      */
                     int64_t GetStorageTime() const;
 
                     /**
                      * 设置录制存储时长。
-单位秒，取值范围： 0 - 93312000。
+单位秒，取值范围： 0 - 1500天。
 0：表示永久存储。
                      * @param StorageTime 录制存储时长。
-单位秒，取值范围： 0 - 93312000。
+单位秒，取值范围： 0 - 1500天。
 0：表示永久存储。
                      */
                     void SetStorageTime(const int64_t& _storageTime);
@@ -228,12 +228,86 @@ namespace TencentCloud
                      */
                     bool VodFileNameHasBeenSet() const;
 
+                    /**
+                     * 获取任务流
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Procedure 任务流
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProcedure() const;
+
+                    /**
+                     * 设置任务流
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Procedure 任务流
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProcedure(const std::string& _procedure);
+
+                    /**
+                     * 判断参数 Procedure 是否已赋值
+                     * @return Procedure 是否已赋值
+                     */
+                    bool ProcedureHasBeenSet() const;
+
+                    /**
+                     * 获取视频存储策略。
+normal：标准存储。
+cold：低频存储。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StorageMode 视频存储策略。
+normal：标准存储。
+cold：低频存储。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStorageMode() const;
+
+                    /**
+                     * 设置视频存储策略。
+normal：标准存储。
+cold：低频存储。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StorageMode 视频存储策略。
+normal：标准存储。
+cold：低频存储。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStorageMode(const std::string& _storageMode);
+
+                    /**
+                     * 判断参数 StorageMode 是否已赋值
+                     * @return StorageMode 是否已赋值
+                     */
+                    bool StorageModeHasBeenSet() const;
+
+                    /**
+                     * 获取点播应用分类
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClassId 点播应用分类
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetClassId() const;
+
+                    /**
+                     * 设置点播应用分类
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClassId 点播应用分类
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClassId(const int64_t& _classId);
+
+                    /**
+                     * 判断参数 ClassId 是否已赋值
+                     * @return ClassId 是否已赋值
+                     */
+                    bool ClassIdHasBeenSet() const;
+
                 private:
 
                     /**
                      * 录制间隔。
 单位秒，默认：1800。
-取值范围：300-7200。
+取值范围：60-7200。
 此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。
                      */
                     int64_t m_recordInterval;
@@ -241,7 +315,7 @@ namespace TencentCloud
 
                     /**
                      * 录制存储时长。
-单位秒，取值范围： 0 - 93312000。
+单位秒，取值范围： 0 - 1500天。
 0：表示永久存储。
                      */
                     int64_t m_storageTime;
@@ -282,6 +356,29 @@ namespace TencentCloud
                      */
                     std::string m_vodFileName;
                     bool m_vodFileNameHasBeenSet;
+
+                    /**
+                     * 任务流
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_procedure;
+                    bool m_procedureHasBeenSet;
+
+                    /**
+                     * 视频存储策略。
+normal：标准存储。
+cold：低频存储。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_storageMode;
+                    bool m_storageModeHasBeenSet;
+
+                    /**
+                     * 点播应用分类
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_classId;
+                    bool m_classIdHasBeenSet;
 
                 };
             }

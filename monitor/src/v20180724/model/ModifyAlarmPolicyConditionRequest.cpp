@@ -27,7 +27,9 @@ ModifyAlarmPolicyConditionRequest::ModifyAlarmPolicyConditionRequest() :
     m_policyIdHasBeenSet(false),
     m_conditionTemplateIdHasBeenSet(false),
     m_conditionHasBeenSet(false),
-    m_eventConditionHasBeenSet(false)
+    m_eventConditionHasBeenSet(false),
+    m_filterHasBeenSet(false),
+    m_groupByHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,28 @@ string ModifyAlarmPolicyConditionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eventCondition.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_filterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_filter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_groupByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupBy.begin(); itr != m_groupBy.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -166,6 +190,38 @@ void ModifyAlarmPolicyConditionRequest::SetEventCondition(const AlarmPolicyEvent
 bool ModifyAlarmPolicyConditionRequest::EventConditionHasBeenSet() const
 {
     return m_eventConditionHasBeenSet;
+}
+
+AlarmPolicyFilter ModifyAlarmPolicyConditionRequest::GetFilter() const
+{
+    return m_filter;
+}
+
+void ModifyAlarmPolicyConditionRequest::SetFilter(const AlarmPolicyFilter& _filter)
+{
+    m_filter = _filter;
+    m_filterHasBeenSet = true;
+}
+
+bool ModifyAlarmPolicyConditionRequest::FilterHasBeenSet() const
+{
+    return m_filterHasBeenSet;
+}
+
+vector<string> ModifyAlarmPolicyConditionRequest::GetGroupBy() const
+{
+    return m_groupBy;
+}
+
+void ModifyAlarmPolicyConditionRequest::SetGroupBy(const vector<string>& _groupBy)
+{
+    m_groupBy = _groupBy;
+    m_groupByHasBeenSet = true;
+}
+
+bool ModifyAlarmPolicyConditionRequest::GroupByHasBeenSet() const
+{
+    return m_groupByHasBeenSet;
 }
 
 

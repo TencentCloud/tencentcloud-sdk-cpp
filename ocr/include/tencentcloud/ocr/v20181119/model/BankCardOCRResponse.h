@@ -156,6 +156,20 @@ namespace TencentCloud
                      */
                     bool WarningCodeHasBeenSet() const;
 
+                    /**
+                     * 获取图片质量分数，请求enable_quality_value时返回（取值范围：0-100，分数越低越模糊，建议阈值≥50）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QualityValue 图片质量分数，请求enable_quality_value时返回（取值范围：0-100，分数越低越模糊，建议阈值≥50）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetQualityValue() const;
+
+                    /**
+                     * 判断参数 QualityValue 是否已赋值
+                     * @return QualityValue 是否已赋值
+                     */
+                    bool QualityValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -214,6 +228,13 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_warningCode;
                     bool m_warningCodeHasBeenSet;
+
+                    /**
+                     * 图片质量分数，请求enable_quality_value时返回（取值范围：0-100，分数越低越模糊，建议阈值≥50）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_qualityValue;
+                    bool m_qualityValueHasBeenSet;
 
                 };
             }

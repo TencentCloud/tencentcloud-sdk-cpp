@@ -176,6 +176,24 @@ namespace TencentCloud
                      */
                     bool EnableBorderCheckHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回图片质量分数（图片质量分数是评价一个图片的模糊程度的标准），默认false。
+                     * @return EnableQualityValue 是否返回图片质量分数（图片质量分数是评价一个图片的模糊程度的标准），默认false。
+                     */
+                    bool GetEnableQualityValue() const;
+
+                    /**
+                     * 设置是否返回图片质量分数（图片质量分数是评价一个图片的模糊程度的标准），默认false。
+                     * @param EnableQualityValue 是否返回图片质量分数（图片质量分数是评价一个图片的模糊程度的标准），默认false。
+                     */
+                    void SetEnableQualityValue(const bool& _enableQualityValue);
+
+                    /**
+                     * 判断参数 EnableQualityValue 是否已赋值
+                     * @return EnableQualityValue 是否已赋值
+                     */
+                    bool EnableQualityValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +239,12 @@ namespace TencentCloud
                      */
                     bool m_enableBorderCheck;
                     bool m_enableBorderCheckHasBeenSet;
+
+                    /**
+                     * 是否返回图片质量分数（图片质量分数是评价一个图片的模糊程度的标准），默认false。
+                     */
+                    bool m_enableQualityValue;
+                    bool m_enableQualityValueHasBeenSet;
 
                 };
             }

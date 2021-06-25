@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取sql总锁等待时间
-                     * @return LockTime sql总锁等待时间
+                     * 获取sql总锁等待时间，单位秒
+                     * @return LockTime sql总锁等待时间，单位秒
                      */
                     double GetLockTime() const;
 
                     /**
-                     * 设置sql总锁等待时间
-                     * @param LockTime sql总锁等待时间
+                     * 设置sql总锁等待时间，单位秒
+                     * @param LockTime sql总锁等待时间，单位秒
                      */
                     void SetLockTime(const double& _lockTime);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool LockTimeHasBeenSet() const;
 
                     /**
-                     * 获取最大锁等待时间
-                     * @return LockTimeMax 最大锁等待时间
+                     * 获取最大锁等待时间，单位秒
+                     * @return LockTimeMax 最大锁等待时间，单位秒
                      */
                     double GetLockTimeMax() const;
 
                     /**
-                     * 设置最大锁等待时间
-                     * @param LockTimeMax 最大锁等待时间
+                     * 设置最大锁等待时间，单位秒
+                     * @param LockTimeMax 最大锁等待时间，单位秒
                      */
                     void SetLockTimeMax(const double& _lockTimeMax);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool LockTimeMaxHasBeenSet() const;
 
                     /**
-                     * 获取最小锁等待时间
-                     * @return LockTimeMin 最小锁等待时间
+                     * 获取最小锁等待时间，单位秒
+                     * @return LockTimeMin 最小锁等待时间，单位秒
                      */
                     double GetLockTimeMin() const;
 
                     /**
-                     * 设置最小锁等待时间
-                     * @param LockTimeMin 最小锁等待时间
+                     * 设置最小锁等待时间，单位秒
+                     * @param LockTimeMin 最小锁等待时间，单位秒
                      */
                     void SetLockTimeMin(const double& _lockTimeMin);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool RowsExaminedMinHasBeenSet() const;
 
                     /**
-                     * 获取总耗时
-                     * @return QueryTime 总耗时
+                     * 获取总耗时，单位秒
+                     * @return QueryTime 总耗时，单位秒
                      */
                     double GetQueryTime() const;
 
                     /**
-                     * 设置总耗时
-                     * @param QueryTime 总耗时
+                     * 设置总耗时，单位秒
+                     * @param QueryTime 总耗时，单位秒
                      */
                     void SetQueryTime(const double& _queryTime);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool QueryTimeHasBeenSet() const;
 
                     /**
-                     * 获取最大执行时间
-                     * @return QueryTimeMax 最大执行时间
+                     * 获取最大执行时间，单位秒
+                     * @return QueryTimeMax 最大执行时间，单位秒
                      */
                     double GetQueryTimeMax() const;
 
                     /**
-                     * 设置最大执行时间
-                     * @param QueryTimeMax 最大执行时间
+                     * 设置最大执行时间，单位秒
+                     * @param QueryTimeMax 最大执行时间，单位秒
                      */
                     void SetQueryTimeMax(const double& _queryTimeMax);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool QueryTimeMaxHasBeenSet() const;
 
                     /**
-                     * 获取最小执行时间
-                     * @return QueryTimeMin 最小执行时间
+                     * 获取最小执行时间，单位秒
+                     * @return QueryTimeMin 最小执行时间，单位秒
                      */
                     double GetQueryTimeMin() const;
 
                     /**
-                     * 设置最小执行时间
-                     * @param QueryTimeMin 最小执行时间
+                     * 设置最小执行时间，单位秒
+                     * @param QueryTimeMin 最小执行时间，单位秒
                      */
                     void SetQueryTimeMin(const double& _queryTimeMin);
 
@@ -335,14 +335,14 @@ namespace TencentCloud
                     bool SchemaHasBeenSet() const;
 
                     /**
-                     * 获取总耗时占比
-                     * @return QueryTimeRatio 总耗时占比
+                     * 获取总耗时占比，单位%
+                     * @return QueryTimeRatio 总耗时占比，单位%
                      */
                     double GetQueryTimeRatio() const;
 
                     /**
-                     * 设置总耗时占比
-                     * @param QueryTimeRatio 总耗时占比
+                     * 设置总耗时占比，单位%
+                     * @param QueryTimeRatio 总耗时占比，单位%
                      */
                     void SetQueryTimeRatio(const double& _queryTimeRatio);
 
@@ -353,14 +353,14 @@ namespace TencentCloud
                     bool QueryTimeRatioHasBeenSet() const;
 
                     /**
-                     * 获取sql总锁等待时间占比
-                     * @return LockTimeRatio sql总锁等待时间占比
+                     * 获取sql总锁等待时间占比，单位%
+                     * @return LockTimeRatio sql总锁等待时间占比，单位%
                      */
                     double GetLockTimeRatio() const;
 
                     /**
-                     * 设置sql总锁等待时间占比
-                     * @param LockTimeRatio sql总锁等待时间占比
+                     * 设置sql总锁等待时间占比，单位%
+                     * @param LockTimeRatio sql总锁等待时间占比，单位%
                      */
                     void SetLockTimeRatio(const double& _lockTimeRatio);
 
@@ -371,14 +371,14 @@ namespace TencentCloud
                     bool LockTimeRatioHasBeenSet() const;
 
                     /**
-                     * 获取总扫描行数占比
-                     * @return RowsExaminedRatio 总扫描行数占比
+                     * 获取总扫描行数占比，单位%
+                     * @return RowsExaminedRatio 总扫描行数占比，单位%
                      */
                     double GetRowsExaminedRatio() const;
 
                     /**
-                     * 设置总扫描行数占比
-                     * @param RowsExaminedRatio 总扫描行数占比
+                     * 设置总扫描行数占比，单位%
+                     * @param RowsExaminedRatio 总扫描行数占比，单位%
                      */
                     void SetRowsExaminedRatio(const double& _rowsExaminedRatio);
 
@@ -389,14 +389,14 @@ namespace TencentCloud
                     bool RowsExaminedRatioHasBeenSet() const;
 
                     /**
-                     * 获取总返回行数占比
-                     * @return RowsSentRatio 总返回行数占比
+                     * 获取总返回行数占比，单位%
+                     * @return RowsSentRatio 总返回行数占比，单位%
                      */
                     double GetRowsSentRatio() const;
 
                     /**
-                     * 设置总返回行数占比
-                     * @param RowsSentRatio 总返回行数占比
+                     * 设置总返回行数占比，单位%
+                     * @param RowsSentRatio 总返回行数占比，单位%
                      */
                     void SetRowsSentRatio(const double& _rowsSentRatio);
 
@@ -407,14 +407,14 @@ namespace TencentCloud
                     bool RowsSentRatioHasBeenSet() const;
 
                     /**
-                     * 获取平均执行时间
-                     * @return QueryTimeAvg 平均执行时间
+                     * 获取平均执行时间，单位秒
+                     * @return QueryTimeAvg 平均执行时间，单位秒
                      */
                     double GetQueryTimeAvg() const;
 
                     /**
-                     * 设置平均执行时间
-                     * @param QueryTimeAvg 平均执行时间
+                     * 设置平均执行时间，单位秒
+                     * @param QueryTimeAvg 平均执行时间，单位秒
                      */
                     void SetQueryTimeAvg(const double& _queryTimeAvg);
 
@@ -443,14 +443,14 @@ namespace TencentCloud
                     bool RowsSentAvgHasBeenSet() const;
 
                     /**
-                     * 获取平均锁等待时间
-                     * @return LockTimeAvg 平均锁等待时间
+                     * 获取平均锁等待时间，单位秒
+                     * @return LockTimeAvg 平均锁等待时间，单位秒
                      */
                     double GetLockTimeAvg() const;
 
                     /**
-                     * 设置平均锁等待时间
-                     * @param LockTimeAvg 平均锁等待时间
+                     * 设置平均锁等待时间，单位秒
+                     * @param LockTimeAvg 平均锁等待时间，单位秒
                      */
                     void SetLockTimeAvg(const double& _lockTimeAvg);
 
@@ -481,19 +481,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * sql总锁等待时间
+                     * sql总锁等待时间，单位秒
                      */
                     double m_lockTime;
                     bool m_lockTimeHasBeenSet;
 
                     /**
-                     * 最大锁等待时间
+                     * 最大锁等待时间，单位秒
                      */
                     double m_lockTimeMax;
                     bool m_lockTimeMaxHasBeenSet;
 
                     /**
-                     * 最小锁等待时间
+                     * 最小锁等待时间，单位秒
                      */
                     double m_lockTimeMin;
                     bool m_lockTimeMinHasBeenSet;
@@ -517,19 +517,19 @@ namespace TencentCloud
                     bool m_rowsExaminedMinHasBeenSet;
 
                     /**
-                     * 总耗时
+                     * 总耗时，单位秒
                      */
                     double m_queryTime;
                     bool m_queryTimeHasBeenSet;
 
                     /**
-                     * 最大执行时间
+                     * 最大执行时间，单位秒
                      */
                     double m_queryTimeMax;
                     bool m_queryTimeMaxHasBeenSet;
 
                     /**
-                     * 最小执行时间
+                     * 最小执行时间，单位秒
                      */
                     double m_queryTimeMin;
                     bool m_queryTimeMinHasBeenSet;
@@ -577,31 +577,31 @@ namespace TencentCloud
                     bool m_schemaHasBeenSet;
 
                     /**
-                     * 总耗时占比
+                     * 总耗时占比，单位%
                      */
                     double m_queryTimeRatio;
                     bool m_queryTimeRatioHasBeenSet;
 
                     /**
-                     * sql总锁等待时间占比
+                     * sql总锁等待时间占比，单位%
                      */
                     double m_lockTimeRatio;
                     bool m_lockTimeRatioHasBeenSet;
 
                     /**
-                     * 总扫描行数占比
+                     * 总扫描行数占比，单位%
                      */
                     double m_rowsExaminedRatio;
                     bool m_rowsExaminedRatioHasBeenSet;
 
                     /**
-                     * 总返回行数占比
+                     * 总返回行数占比，单位%
                      */
                     double m_rowsSentRatio;
                     bool m_rowsSentRatioHasBeenSet;
 
                     /**
-                     * 平均执行时间
+                     * 平均执行时间，单位秒
                      */
                     double m_queryTimeAvg;
                     bool m_queryTimeAvgHasBeenSet;
@@ -613,7 +613,7 @@ namespace TencentCloud
                     bool m_rowsSentAvgHasBeenSet;
 
                     /**
-                     * 平均锁等待时间
+                     * 平均锁等待时间，单位秒
                      */
                     double m_lockTimeAvg;
                     bool m_lockTimeAvgHasBeenSet;

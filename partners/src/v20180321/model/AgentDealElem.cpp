@@ -46,7 +46,9 @@ AgentDealElem::AgentDealElem() :
     m_payerModeHasBeenSet(false),
     m_activityIdHasBeenSet(false),
     m_overdueTimeHasBeenSet(false),
-    m_productInfoHasBeenSet(false)
+    m_productInfoHasBeenSet(false),
+    m_paymentMethodHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -332,6 +334,26 @@ CoreInternalOutcome AgentDealElem::Deserialize(const rapidjson::Value &value)
         m_productInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("PaymentMethod") && !value["PaymentMethod"].IsNull())
+    {
+        if (!value["PaymentMethod"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AgentDealElem.PaymentMethod` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paymentMethod = string(value["PaymentMethod"].GetString());
+        m_paymentMethodHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AgentDealElem.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -553,6 +575,22 @@ void AgentDealElem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_paymentMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PaymentMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paymentMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -972,5 +1010,37 @@ void AgentDealElem::SetProductInfo(const vector<ProductInfoElem>& _productInfo)
 bool AgentDealElem::ProductInfoHasBeenSet() const
 {
     return m_productInfoHasBeenSet;
+}
+
+string AgentDealElem::GetPaymentMethod() const
+{
+    return m_paymentMethod;
+}
+
+void AgentDealElem::SetPaymentMethod(const string& _paymentMethod)
+{
+    m_paymentMethod = _paymentMethod;
+    m_paymentMethodHasBeenSet = true;
+}
+
+bool AgentDealElem::PaymentMethodHasBeenSet() const
+{
+    return m_paymentMethodHasBeenSet;
+}
+
+string AgentDealElem::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void AgentDealElem::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool AgentDealElem::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

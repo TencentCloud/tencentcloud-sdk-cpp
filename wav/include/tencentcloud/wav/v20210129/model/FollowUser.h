@@ -110,14 +110,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取该成员添加此外部联系人的时间,单位为秒
-                     * @return CreateTime 该成员添加此外部联系人的时间,单位为秒
+                     * 获取该成员添加此外部联系人的时间戳，单位为秒
+                     * @return CreateTime 该成员添加此外部联系人的时间戳，单位为秒
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置该成员添加此外部联系人的时间,单位为秒
-                     * @param CreateTime 该成员添加此外部联系人的时间,单位为秒
+                     * 设置该成员添加此外部联系人的时间戳，单位为秒
+                     * @param CreateTime 该成员添加此外部联系人的时间戳，单位为秒
                      */
                     void SetCreateTime(const uint64_t& _createTime);
 
@@ -128,14 +128,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取该成员添加此客户的来源，具体含义详见来<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
-                     * @return AddWay 该成员添加此客户的来源，具体含义详见来<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
+                     * 获取该成员添加此客户的来源，具体含义详见<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
+                     * @return AddWay 该成员添加此客户的来源，具体含义详见<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
                      */
                     int64_t GetAddWay() const;
 
                     /**
-                     * 设置该成员添加此客户的来源，具体含义详见来<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
-                     * @param AddWay 该成员添加此客户的来源，具体含义详见来<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
+                     * 设置该成员添加此客户的来源，具体含义详见<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
+                     * @param AddWay 该成员添加此客户的来源，具体含义详见<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
                      */
                     void SetAddWay(const int64_t& _addWay);
 
@@ -208,13 +208,13 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 该成员添加此外部联系人的时间,单位为秒
+                     * 该成员添加此外部联系人的时间戳，单位为秒
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 该成员添加此客户的来源，具体含义详见来<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
+                     * 该成员添加此客户的来源，具体含义详见<a href="https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89">来源定义</a>
                      */
                     int64_t m_addWay;
                     bool m_addWayHasBeenSet;

@@ -53,6 +53,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsV2Response.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeClientBalanceNewRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeClientBalanceNewResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBaseInfoRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBaseInfoResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosRequest.h>
@@ -124,6 +126,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClientBalanceResponse> DescribeClientBalanceOutcome;
                 typedef std::future<DescribeClientBalanceOutcome> DescribeClientBalanceOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeClientBalanceRequest&, DescribeClientBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientBalanceAsyncHandler;
+                typedef Outcome<Error, Model::DescribeClientBalanceNewResponse> DescribeClientBalanceNewOutcome;
+                typedef std::future<DescribeClientBalanceNewOutcome> DescribeClientBalanceNewOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeClientBalanceNewRequest&, DescribeClientBalanceNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientBalanceNewAsyncHandler;
                 typedef Outcome<Error, Model::DescribeClientBaseInfoResponse> DescribeClientBaseInfoOutcome;
                 typedef std::future<DescribeClientBaseInfoOutcome> DescribeClientBaseInfoOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeClientBaseInfoRequest&, DescribeClientBaseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientBaseInfoAsyncHandler;
@@ -273,13 +278,22 @@ namespace TencentCloud
                 DescribeAgentSelfPayDealsV2OutcomeCallable DescribeAgentSelfPayDealsV2Callable(const Model::DescribeAgentSelfPayDealsV2Request& request);
 
                 /**
-                 *为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额
+                 *【该接口将逐步下线，请切换使用升级版本DescribeClientBalanceNew】为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额.
                  * @param req DescribeClientBalanceRequest
                  * @return DescribeClientBalanceOutcome
                  */
                 DescribeClientBalanceOutcome DescribeClientBalance(const Model::DescribeClientBalanceRequest &request);
                 void DescribeClientBalanceAsync(const Model::DescribeClientBalanceRequest& request, const DescribeClientBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClientBalanceOutcomeCallable DescribeClientBalanceCallable(const Model::DescribeClientBalanceRequest& request);
+
+                /**
+                 *为合作伙伴提供查询客户余额能力。调用者必须是合作伙伴，只能查询自己名下客户余额
+                 * @param req DescribeClientBalanceNewRequest
+                 * @return DescribeClientBalanceNewOutcome
+                 */
+                DescribeClientBalanceNewOutcome DescribeClientBalanceNew(const Model::DescribeClientBalanceNewRequest &request);
+                void DescribeClientBalanceNewAsync(const Model::DescribeClientBalanceNewRequest& request, const DescribeClientBalanceNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClientBalanceNewOutcomeCallable DescribeClientBalanceNewCallable(const Model::DescribeClientBalanceNewRequest& request);
 
                 /**
                  *该接口即将下线，请切换调用DescribeClientBasicInfo。

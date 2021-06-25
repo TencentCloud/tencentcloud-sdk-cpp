@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实付金额
-                     * @return RealTotalCost 实付金额
+                     * 获取实付金额（单位：分）
+                     * @return RealTotalCost 实付金额（单位：分）
                      */
                     uint64_t GetRealTotalCost() const;
 
                     /**
-                     * 设置实付金额
-                     * @param RealTotalCost 实付金额
+                     * 设置实付金额（单位：分）
+                     * @param RealTotalCost 实付金额（单位：分）
                      */
                     void SetRealTotalCost(const uint64_t& _realTotalCost);
 
@@ -64,13 +64,37 @@ namespace TencentCloud
                      */
                     bool RealTotalCostHasBeenSet() const;
 
+                    /**
+                     * 获取订单实际金额（不含折扣，单位：分）
+                     * @return OriginalTotalCost 订单实际金额（不含折扣，单位：分）
+                     */
+                    int64_t GetOriginalTotalCost() const;
+
+                    /**
+                     * 设置订单实际金额（不含折扣，单位：分）
+                     * @param OriginalTotalCost 订单实际金额（不含折扣，单位：分）
+                     */
+                    void SetOriginalTotalCost(const int64_t& _originalTotalCost);
+
+                    /**
+                     * 判断参数 OriginalTotalCost 是否已赋值
+                     * @return OriginalTotalCost 是否已赋值
+                     */
+                    bool OriginalTotalCostHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实付金额
+                     * 实付金额（单位：分）
                      */
                     uint64_t m_realTotalCost;
                     bool m_realTotalCostHasBeenSet;
+
+                    /**
+                     * 订单实际金额（不含折扣，单位：分）
+                     */
+                    int64_t m_originalTotalCost;
+                    bool m_originalTotalCostHasBeenSet;
 
                 };
             }

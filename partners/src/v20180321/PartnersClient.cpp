@@ -685,6 +685,49 @@ PartnersClient::DescribeClientBalanceOutcomeCallable PartnersClient::DescribeCli
     return task->get_future();
 }
 
+PartnersClient::DescribeClientBalanceNewOutcome PartnersClient::DescribeClientBalanceNew(const DescribeClientBalanceNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClientBalanceNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClientBalanceNewResponse rsp = DescribeClientBalanceNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClientBalanceNewOutcome(rsp);
+        else
+            return DescribeClientBalanceNewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClientBalanceNewOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeClientBalanceNewAsync(const DescribeClientBalanceNewRequest& request, const DescribeClientBalanceNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClientBalanceNew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeClientBalanceNewOutcomeCallable PartnersClient::DescribeClientBalanceNewCallable(const DescribeClientBalanceNewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClientBalanceNewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClientBalanceNew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeClientBaseInfoOutcome PartnersClient::DescribeClientBaseInfo(const DescribeClientBaseInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClientBaseInfo");

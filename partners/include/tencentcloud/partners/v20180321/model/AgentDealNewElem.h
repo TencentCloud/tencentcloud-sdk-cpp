@@ -604,6 +604,50 @@ namespace TencentCloud
                      */
                     bool ProductInfoHasBeenSet() const;
 
+                    /**
+                     * 获取付款方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaymentMethod 付款方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymentMethod() const;
+
+                    /**
+                     * 设置付款方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PaymentMethod 付款方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymentMethod(const std::string& _paymentMethod);
+
+                    /**
+                     * 判断参数 PaymentMethod 是否已赋值
+                     * @return PaymentMethod 是否已赋值
+                     */
+                    bool PaymentMethodHasBeenSet() const;
+
+                    /**
+                     * 获取订单更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateTime 订单更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置订单更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdateTime 订单更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -783,6 +827,20 @@ namespace TencentCloud
                      */
                     std::vector<ProductInfoElem> m_productInfo;
                     bool m_productInfoHasBeenSet;
+
+                    /**
+                     * 付款方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymentMethod;
+                    bool m_paymentMethodHasBeenSet;
+
+                    /**
+                     * 订单更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ AgentClientElem::AgentClientElem() :
     m_hasOverdueBillHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_salesUinHasBeenSet(false),
-    m_salesNameHasBeenSet(false)
+    m_salesNameHasBeenSet(false),
+    m_clientNameHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome AgentClientElem::Deserialize(const rapidjson::Value &value)
         m_salesNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientName") && !value["ClientName"].IsNull())
+    {
+        if (!value["ClientName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AgentClientElem.ClientName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientName = string(value["ClientName"].GetString());
+        m_clientNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void AgentClientElem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "SalesName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_salesName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void AgentClientElem::SetSalesName(const string& _salesName)
 bool AgentClientElem::SalesNameHasBeenSet() const
 {
     return m_salesNameHasBeenSet;
+}
+
+string AgentClientElem::GetClientName() const
+{
+    return m_clientName;
+}
+
+void AgentClientElem::SetClientName(const string& _clientName)
+{
+    m_clientName = _clientName;
+    m_clientNameHasBeenSet = true;
+}
+
+bool AgentClientElem::ClientNameHasBeenSet() const
+{
+    return m_clientNameHasBeenSet;
 }
 

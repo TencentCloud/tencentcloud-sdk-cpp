@@ -34,7 +34,9 @@ CreateAlarmPolicyRequest::CreateAlarmPolicyRequest() :
     m_conditionHasBeenSet(false),
     m_eventConditionHasBeenSet(false),
     m_noticeIdsHasBeenSet(false),
-    m_triggerTasksHasBeenSet(false)
+    m_triggerTasksHasBeenSet(false),
+    m_filterHasBeenSet(false),
+    m_groupByHasBeenSet(false)
 {
 }
 
@@ -152,6 +154,28 @@ string CreateAlarmPolicyRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_filterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_filter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_groupByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupBy.begin(); itr != m_groupBy.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -353,6 +377,38 @@ void CreateAlarmPolicyRequest::SetTriggerTasks(const vector<AlarmPolicyTriggerTa
 bool CreateAlarmPolicyRequest::TriggerTasksHasBeenSet() const
 {
     return m_triggerTasksHasBeenSet;
+}
+
+AlarmPolicyFilter CreateAlarmPolicyRequest::GetFilter() const
+{
+    return m_filter;
+}
+
+void CreateAlarmPolicyRequest::SetFilter(const AlarmPolicyFilter& _filter)
+{
+    m_filter = _filter;
+    m_filterHasBeenSet = true;
+}
+
+bool CreateAlarmPolicyRequest::FilterHasBeenSet() const
+{
+    return m_filterHasBeenSet;
+}
+
+vector<string> CreateAlarmPolicyRequest::GetGroupBy() const
+{
+    return m_groupBy;
+}
+
+void CreateAlarmPolicyRequest::SetGroupBy(const vector<string>& _groupBy)
+{
+    m_groupBy = _groupBy;
+    m_groupByHasBeenSet = true;
+}
+
+bool CreateAlarmPolicyRequest::GroupByHasBeenSet() const
+{
+    return m_groupByHasBeenSet;
 }
 
 

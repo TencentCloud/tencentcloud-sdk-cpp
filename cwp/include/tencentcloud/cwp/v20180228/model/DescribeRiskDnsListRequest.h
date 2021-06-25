@@ -118,14 +118,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取排序方式
-                     * @return Order 排序方式
+                     * 获取排序方式：根据请求次数排序：asc-升序/desc-降序
+                     * @return Order 排序方式：根据请求次数排序：asc-升序/desc-降序
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方式
-                     * @param Order 排序方式
+                     * 设置排序方式：根据请求次数排序：asc-升序/desc-降序
+                     * @param Order 排序方式：根据请求次数排序：asc-升序/desc-降序
                      */
                     void SetOrder(const std::string& _order);
 
@@ -136,14 +136,14 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return By 排序字段
+                     * 获取排序字段：AccessCount-请求次数
+                     * @return By 排序字段：AccessCount-请求次数
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段
-                     * @param By 排序字段
+                     * 设置排序字段：AccessCount-请求次数
+                     * @param By 排序字段：AccessCount-请求次数
                      */
                     void SetBy(const std::string& _by);
 
@@ -179,13 +179,13 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 排序方式
+                     * 排序方式：根据请求次数排序：asc-升序/desc-降序
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * 排序字段：AccessCount-请求次数
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

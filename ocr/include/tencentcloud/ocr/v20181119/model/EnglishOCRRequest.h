@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool EnableCandWordHasBeenSet() const;
 
+                    /**
+                     * 获取预处理开关，功能是检测图片倾斜的角度，将原本倾斜的图片矫正。该参数默认值为true。
+                     * @return Preprocess 预处理开关，功能是检测图片倾斜的角度，将原本倾斜的图片矫正。该参数默认值为true。
+                     */
+                    bool GetPreprocess() const;
+
+                    /**
+                     * 设置预处理开关，功能是检测图片倾斜的角度，将原本倾斜的图片矫正。该参数默认值为true。
+                     * @param Preprocess 预处理开关，功能是检测图片倾斜的角度，将原本倾斜的图片矫正。该参数默认值为true。
+                     */
+                    void SetPreprocess(const bool& _preprocess);
+
+                    /**
+                     * 判断参数 Preprocess 是否已赋值
+                     * @return Preprocess 是否已赋值
+                     */
+                    bool PreprocessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +202,12 @@ namespace TencentCloud
                      */
                     bool m_enableCandWord;
                     bool m_enableCandWordHasBeenSet;
+
+                    /**
+                     * 预处理开关，功能是检测图片倾斜的角度，将原本倾斜的图片矫正。该参数默认值为true。
+                     */
+                    bool m_preprocess;
+                    bool m_preprocessHasBeenSet;
 
                 };
             }

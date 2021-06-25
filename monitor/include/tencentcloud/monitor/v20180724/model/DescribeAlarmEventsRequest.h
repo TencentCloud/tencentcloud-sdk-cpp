@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool NamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取监控类型，如 MT_QCE。如果不填默认为 MT_QCE。
+                     * @return MonitorType 监控类型，如 MT_QCE。如果不填默认为 MT_QCE。
+                     */
+                    std::string GetMonitorType() const;
+
+                    /**
+                     * 设置监控类型，如 MT_QCE。如果不填默认为 MT_QCE。
+                     * @param MonitorType 监控类型，如 MT_QCE。如果不填默认为 MT_QCE。
+                     */
+                    void SetMonitorType(const std::string& _monitorType);
+
+                    /**
+                     * 判断参数 MonitorType 是否已赋值
+                     * @return MonitorType 是否已赋值
+                     */
+                    bool MonitorTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 监控类型，如 MT_QCE。如果不填默认为 MT_QCE。
+                     */
+                    std::string m_monitorType;
+                    bool m_monitorTypeHasBeenSet;
 
                 };
             }

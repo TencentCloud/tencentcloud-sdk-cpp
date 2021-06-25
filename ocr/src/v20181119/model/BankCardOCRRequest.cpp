@@ -29,7 +29,8 @@ BankCardOCRRequest::BankCardOCRRequest() :
     m_retCardNoImageHasBeenSet(false),
     m_enableCopyCheckHasBeenSet(false),
     m_enableReshootCheckHasBeenSet(false),
-    m_enableBorderCheckHasBeenSet(false)
+    m_enableBorderCheckHasBeenSet(false),
+    m_enableQualityValueHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string BankCardOCRRequest::ToJsonString() const
         string key = "EnableBorderCheck";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableBorderCheck, allocator);
+    }
+
+    if (m_enableQualityValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableQualityValue";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableQualityValue, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void BankCardOCRRequest::SetEnableBorderCheck(const bool& _enableBorderCheck)
 bool BankCardOCRRequest::EnableBorderCheckHasBeenSet() const
 {
     return m_enableBorderCheckHasBeenSet;
+}
+
+bool BankCardOCRRequest::GetEnableQualityValue() const
+{
+    return m_enableQualityValue;
+}
+
+void BankCardOCRRequest::SetEnableQualityValue(const bool& _enableQualityValue)
+{
+    m_enableQualityValue = _enableQualityValue;
+    m_enableQualityValueHasBeenSet = true;
+}
+
+bool BankCardOCRRequest::EnableQualityValueHasBeenSet() const
+{
+    return m_enableQualityValueHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ EnglishOCRRequest::EnglishOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_enableCoordPointHasBeenSet(false),
-    m_enableCandWordHasBeenSet(false)
+    m_enableCandWordHasBeenSet(false),
+    m_preprocessHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string EnglishOCRRequest::ToJsonString() const
         string key = "EnableCandWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableCandWord, allocator);
+    }
+
+    if (m_preprocessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Preprocess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_preprocess, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void EnglishOCRRequest::SetEnableCandWord(const bool& _enableCandWord)
 bool EnglishOCRRequest::EnableCandWordHasBeenSet() const
 {
     return m_enableCandWordHasBeenSet;
+}
+
+bool EnglishOCRRequest::GetPreprocess() const
+{
+    return m_preprocess;
+}
+
+void EnglishOCRRequest::SetPreprocess(const bool& _preprocess)
+{
+    m_preprocess = _preprocess;
+    m_preprocessHasBeenSet = true;
+}
+
+bool EnglishOCRRequest::PreprocessHasBeenSet() const
+{
+    return m_preprocessHasBeenSet;
 }
 
 

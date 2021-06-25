@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool HasOverdueBillHasBeenSet() const;
 
                     /**
-                     * 获取1:待代理商审核;2:待腾讯云审核
-                     * @return Status 1:待代理商审核;2:待腾讯云审核
+                     * 获取1:待代理商审核;2:待腾讯云审核4:待腾讯云渠道审批
+                     * @return Status 1:待代理商审核;2:待腾讯云审核4:待腾讯云渠道审批
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置1:待代理商审核;2:待腾讯云审核
-                     * @param Status 1:待代理商审核;2:待腾讯云审核
+                     * 设置1:待代理商审核;2:待腾讯云审核4:待腾讯云渠道审批
+                     * @param Status 1:待代理商审核;2:待腾讯云审核4:待腾讯云渠道审批
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -234,6 +234,28 @@ namespace TencentCloud
                      */
                     bool SalesNameHasBeenSet() const;
 
+                    /**
+                     * 获取客户名称，此字段和控制台返回一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientName 客户名称，此字段和控制台返回一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClientName() const;
+
+                    /**
+                     * 设置客户名称，此字段和控制台返回一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClientName 客户名称，此字段和控制台返回一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClientName(const std::string& _clientName);
+
+                    /**
+                     * 判断参数 ClientName 是否已赋值
+                     * @return ClientName 是否已赋值
+                     */
+                    bool ClientNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,7 +301,7 @@ namespace TencentCloud
                     bool m_hasOverdueBillHasBeenSet;
 
                     /**
-                     * 1:待代理商审核;2:待腾讯云审核
+                     * 1:待代理商审核;2:待腾讯云审核4:待腾讯云渠道审批
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -297,6 +319,13 @@ namespace TencentCloud
                      */
                     std::string m_salesName;
                     bool m_salesNameHasBeenSet;
+
+                    /**
+                     * 客户名称，此字段和控制台返回一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clientName;
+                    bool m_clientNameHasBeenSet;
 
                 };
             }

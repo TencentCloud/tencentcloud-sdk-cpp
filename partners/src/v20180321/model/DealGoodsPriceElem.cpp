@@ -21,7 +21,8 @@ using namespace TencentCloud::Partners::V20180321::Model;
 using namespace std;
 
 DealGoodsPriceElem::DealGoodsPriceElem() :
-    m_realTotalCostHasBeenSet(false)
+    m_realTotalCostHasBeenSet(false),
+    m_originalTotalCostHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome DealGoodsPriceElem::Deserialize(const rapidjson::Value &valu
         m_realTotalCostHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginalTotalCost") && !value["OriginalTotalCost"].IsNull())
+    {
+        if (!value["OriginalTotalCost"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DealGoodsPriceElem.OriginalTotalCost` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalTotalCost = value["OriginalTotalCost"].GetInt64();
+        m_originalTotalCostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void DealGoodsPriceElem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realTotalCost, allocator);
+    }
+
+    if (m_originalTotalCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalTotalCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_originalTotalCost, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void DealGoodsPriceElem::SetRealTotalCost(const uint64_t& _realTotalCost)
 bool DealGoodsPriceElem::RealTotalCostHasBeenSet() const
 {
     return m_realTotalCostHasBeenSet;
+}
+
+int64_t DealGoodsPriceElem::GetOriginalTotalCost() const
+{
+    return m_originalTotalCost;
+}
+
+void DealGoodsPriceElem::SetOriginalTotalCost(const int64_t& _originalTotalCost)
+{
+    m_originalTotalCost = _originalTotalCost;
+    m_originalTotalCostHasBeenSet = true;
+}
+
+bool DealGoodsPriceElem::OriginalTotalCostHasBeenSet() const
+{
+    return m_originalTotalCostHasBeenSet;
 }
 

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取巡检开关。
-                     * @return InstanceConfs 巡检开关。
+                     * 获取实例配置，包括巡检、概览开关等。
+                     * @return InstanceConfs 实例配置，包括巡检、概览开关等。
                      */
                     InstanceConfs GetInstanceConfs() const;
 
                     /**
-                     * 设置巡检开关。
-                     * @param InstanceConfs 巡检开关。
+                     * 设置实例配置，包括巡检、概览开关等。
+                     * @param InstanceConfs 实例配置，包括巡检、概览开关等。
                      */
                     void SetInstanceConfs(const InstanceConfs& _instanceConfs);
 
@@ -118,7 +118,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 巡检开关。
+                     * 实例配置，包括巡检、概览开关等。
                      */
                     InstanceConfs m_instanceConfs;
                     bool m_instanceConfsHasBeenSet;

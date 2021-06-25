@@ -31,7 +31,8 @@ BankCardOCRResponse::BankCardOCRResponse() :
     m_cardNameHasBeenSet(false),
     m_borderCutImageHasBeenSet(false),
     m_cardNoImageHasBeenSet(false),
-    m_warningCodeHasBeenSet(false)
+    m_warningCodeHasBeenSet(false),
+    m_qualityValueHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,16 @@ CoreInternalOutcome BankCardOCRResponse::Deserialize(const string &payload)
         m_warningCodeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("QualityValue") && !rsp["QualityValue"].IsNull())
+    {
+        if (!rsp["QualityValue"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `QualityValue` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_qualityValue = rsp["QualityValue"].GetInt64();
+        m_qualityValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -235,6 +246,16 @@ vector<int64_t> BankCardOCRResponse::GetWarningCode() const
 bool BankCardOCRResponse::WarningCodeHasBeenSet() const
 {
     return m_warningCodeHasBeenSet;
+}
+
+int64_t BankCardOCRResponse::GetQualityValue() const
+{
+    return m_qualityValue;
+}
+
+bool BankCardOCRResponse::QualityValueHasBeenSet() const
+{
+    return m_qualityValueHasBeenSet;
 }
 
 

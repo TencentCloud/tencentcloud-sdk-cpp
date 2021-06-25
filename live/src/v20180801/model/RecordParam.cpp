@@ -25,7 +25,10 @@ RecordParam::RecordParam() :
     m_storageTimeHasBeenSet(false),
     m_enableHasBeenSet(false),
     m_vodSubAppIdHasBeenSet(false),
-    m_vodFileNameHasBeenSet(false)
+    m_vodFileNameHasBeenSet(false),
+    m_procedureHasBeenSet(false),
+    m_storageModeHasBeenSet(false),
+    m_classIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,36 @@ CoreInternalOutcome RecordParam::Deserialize(const rapidjson::Value &value)
         m_vodFileNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Procedure") && !value["Procedure"].IsNull())
+    {
+        if (!value["Procedure"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RecordParam.Procedure` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_procedure = string(value["Procedure"].GetString());
+        m_procedureHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageMode") && !value["StorageMode"].IsNull())
+    {
+        if (!value["StorageMode"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RecordParam.StorageMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageMode = string(value["StorageMode"].GetString());
+        m_storageModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClassId") && !value["ClassId"].IsNull())
+    {
+        if (!value["ClassId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `RecordParam.ClassId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_classId = value["ClassId"].GetInt64();
+        m_classIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +162,30 @@ void RecordParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "VodFileName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vodFileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_procedureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Procedure";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_procedure.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_classIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClassId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_classId, allocator);
     }
 
 }
@@ -212,5 +269,53 @@ void RecordParam::SetVodFileName(const string& _vodFileName)
 bool RecordParam::VodFileNameHasBeenSet() const
 {
     return m_vodFileNameHasBeenSet;
+}
+
+string RecordParam::GetProcedure() const
+{
+    return m_procedure;
+}
+
+void RecordParam::SetProcedure(const string& _procedure)
+{
+    m_procedure = _procedure;
+    m_procedureHasBeenSet = true;
+}
+
+bool RecordParam::ProcedureHasBeenSet() const
+{
+    return m_procedureHasBeenSet;
+}
+
+string RecordParam::GetStorageMode() const
+{
+    return m_storageMode;
+}
+
+void RecordParam::SetStorageMode(const string& _storageMode)
+{
+    m_storageMode = _storageMode;
+    m_storageModeHasBeenSet = true;
+}
+
+bool RecordParam::StorageModeHasBeenSet() const
+{
+    return m_storageModeHasBeenSet;
+}
+
+int64_t RecordParam::GetClassId() const
+{
+    return m_classId;
+}
+
+void RecordParam::SetClassId(const int64_t& _classId)
+{
+    m_classId = _classId;
+    m_classIdHasBeenSet = true;
+}
+
+bool RecordParam::ClassIdHasBeenSet() const
+{
+    return m_classIdHasBeenSet;
 }
 

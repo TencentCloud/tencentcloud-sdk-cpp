@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeAlarmEventsRequest::DescribeAlarmEventsRequest() :
     m_moduleHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_monitorTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeAlarmEventsRequest::ToJsonString() const
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_monitorTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_monitorType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeAlarmEventsRequest::SetNamespace(const string& _namespace)
 bool DescribeAlarmEventsRequest::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
+}
+
+string DescribeAlarmEventsRequest::GetMonitorType() const
+{
+    return m_monitorType;
+}
+
+void DescribeAlarmEventsRequest::SetMonitorType(const string& _monitorType)
+{
+    m_monitorType = _monitorType;
+    m_monitorTypeHasBeenSet = true;
+}
+
+bool DescribeAlarmEventsRequest::MonitorTypeHasBeenSet() const
+{
+    return m_monitorTypeHasBeenSet;
 }
 
 

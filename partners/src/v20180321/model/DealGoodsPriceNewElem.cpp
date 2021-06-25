@@ -21,7 +21,8 @@ using namespace TencentCloud::Partners::V20180321::Model;
 using namespace std;
 
 DealGoodsPriceNewElem::DealGoodsPriceNewElem() :
-    m_realTotalCostHasBeenSet(false)
+    m_realTotalCostHasBeenSet(false),
+    m_originalTotalCostHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome DealGoodsPriceNewElem::Deserialize(const rapidjson::Value &v
         m_realTotalCostHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginalTotalCost") && !value["OriginalTotalCost"].IsNull())
+    {
+        if (!value["OriginalTotalCost"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DealGoodsPriceNewElem.OriginalTotalCost` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalTotalCost = value["OriginalTotalCost"].GetInt64();
+        m_originalTotalCostHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void DealGoodsPriceNewElem::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realTotalCost, allocator);
+    }
+
+    if (m_originalTotalCostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalTotalCost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_originalTotalCost, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void DealGoodsPriceNewElem::SetRealTotalCost(const int64_t& _realTotalCost)
 bool DealGoodsPriceNewElem::RealTotalCostHasBeenSet() const
 {
     return m_realTotalCostHasBeenSet;
+}
+
+int64_t DealGoodsPriceNewElem::GetOriginalTotalCost() const
+{
+    return m_originalTotalCost;
+}
+
+void DealGoodsPriceNewElem::SetOriginalTotalCost(const int64_t& _originalTotalCost)
+{
+    m_originalTotalCost = _originalTotalCost;
+    m_originalTotalCostHasBeenSet = true;
+}
+
+bool DealGoodsPriceNewElem::OriginalTotalCostHasBeenSet() const
+{
+    return m_originalTotalCostHasBeenSet;
 }
 

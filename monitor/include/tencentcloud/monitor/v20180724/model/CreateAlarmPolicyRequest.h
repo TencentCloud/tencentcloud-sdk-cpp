@@ -24,6 +24,7 @@
 #include <tencentcloud/monitor/v20180724/model/AlarmPolicyCondition.h>
 #include <tencentcloud/monitor/v20180724/model/AlarmPolicyEventCondition.h>
 #include <tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmPolicyFilter.h>
 
 
 namespace TencentCloud
@@ -261,6 +262,42 @@ namespace TencentCloud
                      */
                     bool TriggerTasksHasBeenSet() const;
 
+                    /**
+                     * 获取全局过滤条件
+                     * @return Filter 全局过滤条件
+                     */
+                    AlarmPolicyFilter GetFilter() const;
+
+                    /**
+                     * 设置全局过滤条件
+                     * @param Filter 全局过滤条件
+                     */
+                    void SetFilter(const AlarmPolicyFilter& _filter);
+
+                    /**
+                     * 判断参数 Filter 是否已赋值
+                     * @return Filter 是否已赋值
+                     */
+                    bool FilterHasBeenSet() const;
+
+                    /**
+                     * 获取聚合维度列表，指定按哪些维度 key 来做 group by
+                     * @return GroupBy 聚合维度列表，指定按哪些维度 key 来做 group by
+                     */
+                    std::vector<std::string> GetGroupBy() const;
+
+                    /**
+                     * 设置聚合维度列表，指定按哪些维度 key 来做 group by
+                     * @param GroupBy 聚合维度列表，指定按哪些维度 key 来做 group by
+                     */
+                    void SetGroupBy(const std::vector<std::string>& _groupBy);
+
+                    /**
+                     * 判断参数 GroupBy 是否已赋值
+                     * @return GroupBy 是否已赋值
+                     */
+                    bool GroupByHasBeenSet() const;
+
                 private:
 
                     /**
@@ -334,6 +371,18 @@ namespace TencentCloud
                      */
                     std::vector<AlarmPolicyTriggerTask> m_triggerTasks;
                     bool m_triggerTasksHasBeenSet;
+
+                    /**
+                     * 全局过滤条件
+                     */
+                    AlarmPolicyFilter m_filter;
+                    bool m_filterHasBeenSet;
+
+                    /**
+                     * 聚合维度列表，指定按哪些维度 key 来做 group by
+                     */
+                    std::vector<std::string> m_groupBy;
+                    bool m_groupByHasBeenSet;
 
                 };
             }

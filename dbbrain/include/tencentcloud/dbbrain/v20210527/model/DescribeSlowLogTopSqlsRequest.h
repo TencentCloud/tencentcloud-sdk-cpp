@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。
-                     * @return SortBy 排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。
+                     * 获取排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。
+                     * @return SortBy 排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。
                      */
                     std::string GetSortBy() const;
 
                     /**
-                     * 设置排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。
-                     * @param SortBy 排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。
+                     * 设置排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。
+                     * @param SortBy 排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。
                      */
                     void SetSortBy(const std::string& _sortBy);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool SortByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，支持ASC（升序）以及DESC（降序）。
-                     * @return OrderBy 排序方式，支持ASC（升序）以及DESC（降序）。
+                     * 获取排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。
+                     * @return OrderBy 排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序方式，支持ASC（升序）以及DESC（降序）。
-                     * @param OrderBy 排序方式，支持ASC（升序）以及DESC（降序）。
+                     * 设置排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。
+                     * @param OrderBy 排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
@@ -226,13 +226,13 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。
+                     * 排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键，默认为QueryTime。
                      */
                     std::string m_sortBy;
                     bool m_sortByHasBeenSet;
 
                     /**
-                     * 排序方式，支持ASC（升序）以及DESC（降序）。
+                     * 排序方式，支持ASC（升序）以及DESC（降序），默认为DESC。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
