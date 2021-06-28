@@ -75,6 +75,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeHistoryServiceResponse.h
   include/tencentcloud/cwp/v20180228/model/RenewProVersionRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeWebPageGeneralizeRequest.h
+  include/tencentcloud/cwp/v20180228/model/RiskDnsList.h
   include/tencentcloud/cwp/v20180228/model/DescribeComponentsRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyWebPageProtectSettingResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeNonlocalLoginPlacesRequest.h
@@ -405,6 +406,7 @@ set(cwp_src
   src/v20180228/model/DescribeHistoryServiceResponse.cpp
   src/v20180228/model/RenewProVersionRequest.cpp
   src/v20180228/model/DescribeWebPageGeneralizeRequest.cpp
+  src/v20180228/model/RiskDnsList.cpp
   src/v20180228/model/DescribeComponentsRequest.cpp
   src/v20180228/model/ModifyWebPageProtectSettingResponse.cpp
   src/v20180228/model/DescribeNonlocalLoginPlacesRequest.cpp

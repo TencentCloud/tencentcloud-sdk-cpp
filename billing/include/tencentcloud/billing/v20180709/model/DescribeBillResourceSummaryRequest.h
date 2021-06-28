@@ -154,6 +154,42 @@ namespace TencentCloud
                      */
                     bool ActionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取查询指定资源信息
+                     * @return ResourceId 查询指定资源信息
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置查询指定资源信息
+                     * @param ResourceId 查询指定资源信息
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取付费模式 prePay/postPay
+                     * @return PayMode 付费模式 prePay/postPay
+                     */
+                    std::string GetPayMode() const;
+
+                    /**
+                     * 设置付费模式 prePay/postPay
+                     * @param PayMode 付费模式 prePay/postPay
+                     */
+                    void SetPayMode(const std::string& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +228,18 @@ namespace TencentCloud
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
+
+                    /**
+                     * 查询指定资源信息
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 付费模式 prePay/postPay
+                     */
+                    std::string m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

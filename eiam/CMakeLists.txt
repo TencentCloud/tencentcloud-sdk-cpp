@@ -1,0 +1,154 @@
+#
+# Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(eiam_public_header
+  include/tencentcloud/eiam/v20210420/EiamClient.h
+  )
+
+set(eiam_public_header_model
+  include/tencentcloud/eiam/v20210420/model/DescribeUserGroupRequest.h
+  include/tencentcloud/eiam/v20210420/model/RemoveUserFromUserGroupResponse.h
+  include/tencentcloud/eiam/v20210420/model/DecribePublicKeyRequest.h
+  include/tencentcloud/eiam/v20210420/model/DescribeOrgNodeResponse.h
+  include/tencentcloud/eiam/v20210420/model/CreateOrgNodeResponse.h
+  include/tencentcloud/eiam/v20210420/model/ListUsersInOrgNodeResponse.h
+  include/tencentcloud/eiam/v20210420/model/DeleteUserRequest.h
+  include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToOrgNodeResponse.h
+  include/tencentcloud/eiam/v20210420/model/OrgNodeChildInfo.h
+  include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserRequest.h
+  include/tencentcloud/eiam/v20210420/model/DeleteOrgNodeResponse.h
+  include/tencentcloud/eiam/v20210420/model/AddUserToUserGroupResponse.h
+  include/tencentcloud/eiam/v20210420/model/CreateUserResponse.h
+  include/tencentcloud/eiam/v20210420/model/OrgNodeChildUserInfo.h
+  include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserGroupRequest.h
+  include/tencentcloud/eiam/v20210420/model/ListUsersInOrgNodeRequest.h
+  include/tencentcloud/eiam/v20210420/model/InheritedForm.h
+  include/tencentcloud/eiam/v20210420/model/CreateUserGroupResponse.h
+  include/tencentcloud/eiam/v20210420/model/DeleteUserResponse.h
+  include/tencentcloud/eiam/v20210420/model/ListUsersInUserGroupResponse.h
+  include/tencentcloud/eiam/v20210420/model/AddUserToUserGroupRequest.h
+  include/tencentcloud/eiam/v20210420/model/DescribeApplicationResponse.h
+  include/tencentcloud/eiam/v20210420/model/UpdateOrgNodeResponse.h
+  include/tencentcloud/eiam/v20210420/model/ApplicationAuthorizationInfo.h
+  include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserResponse.h
+  include/tencentcloud/eiam/v20210420/model/DeleteUserGroupResponse.h
+  include/tencentcloud/eiam/v20210420/model/DescribeApplicationRequest.h
+  include/tencentcloud/eiam/v20210420/model/UpdateOrgNodeRequest.h
+  include/tencentcloud/eiam/v20210420/model/DecribePublicKeyResponse.h
+  include/tencentcloud/eiam/v20210420/model/CreateUserRequest.h
+  include/tencentcloud/eiam/v20210420/model/ListUserGroupsOfUserResponse.h
+  include/tencentcloud/eiam/v20210420/model/DescribeUserInfoResponse.h
+  include/tencentcloud/eiam/v20210420/model/DeleteOrgNodeRequest.h
+  include/tencentcloud/eiam/v20210420/model/CreateOrgNodeRequest.h
+  include/tencentcloud/eiam/v20210420/model/RemoveUserFromUserGroupRequest.h
+  include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserGroupResponse.h
+  include/tencentcloud/eiam/v20210420/model/DeleteUserGroupRequest.h
+  include/tencentcloud/eiam/v20210420/model/DescribeUserInfoRequest.h
+  include/tencentcloud/eiam/v20210420/model/DescribeUserGroupResponse.h
+  include/tencentcloud/eiam/v20210420/model/ListUserGroupsOfUserRequest.h
+  include/tencentcloud/eiam/v20210420/model/ListUsersInUserGroupRequest.h
+  include/tencentcloud/eiam/v20210420/model/UserInfo.h
+  include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToOrgNodeRequest.h
+  include/tencentcloud/eiam/v20210420/model/CreateUserGroupRequest.h
+  include/tencentcloud/eiam/v20210420/model/DescribeOrgNodeRequest.h
+  )
+
+set(eiam_src
+  src/v20210420/EiamClient.cpp
+  src/v20210420/model/DescribeUserGroupRequest.cpp
+  src/v20210420/model/RemoveUserFromUserGroupResponse.cpp
+  src/v20210420/model/DecribePublicKeyRequest.cpp
+  src/v20210420/model/DescribeOrgNodeResponse.cpp
+  src/v20210420/model/CreateOrgNodeResponse.cpp
+  src/v20210420/model/ListUsersInOrgNodeResponse.cpp
+  src/v20210420/model/DeleteUserRequest.cpp
+  src/v20210420/model/ListAuthorizedApplicationsToOrgNodeResponse.cpp
+  src/v20210420/model/OrgNodeChildInfo.cpp
+  src/v20210420/model/ListAuthorizedApplicationsToUserRequest.cpp
+  src/v20210420/model/DeleteOrgNodeResponse.cpp
+  src/v20210420/model/AddUserToUserGroupResponse.cpp
+  src/v20210420/model/CreateUserResponse.cpp
+  src/v20210420/model/OrgNodeChildUserInfo.cpp
+  src/v20210420/model/ListAuthorizedApplicationsToUserGroupRequest.cpp
+  src/v20210420/model/ListUsersInOrgNodeRequest.cpp
+  src/v20210420/model/InheritedForm.cpp
+  src/v20210420/model/CreateUserGroupResponse.cpp
+  src/v20210420/model/DeleteUserResponse.cpp
+  src/v20210420/model/ListUsersInUserGroupResponse.cpp
+  src/v20210420/model/AddUserToUserGroupRequest.cpp
+  src/v20210420/model/DescribeApplicationResponse.cpp
+  src/v20210420/model/UpdateOrgNodeResponse.cpp
+  src/v20210420/model/ApplicationAuthorizationInfo.cpp
+  src/v20210420/model/ListAuthorizedApplicationsToUserResponse.cpp
+  src/v20210420/model/DeleteUserGroupResponse.cpp
+  src/v20210420/model/DescribeApplicationRequest.cpp
+  src/v20210420/model/UpdateOrgNodeRequest.cpp
+  src/v20210420/model/DecribePublicKeyResponse.cpp
+  src/v20210420/model/CreateUserRequest.cpp
+  src/v20210420/model/ListUserGroupsOfUserResponse.cpp
+  src/v20210420/model/DescribeUserInfoResponse.cpp
+  src/v20210420/model/DeleteOrgNodeRequest.cpp
+  src/v20210420/model/CreateOrgNodeRequest.cpp
+  src/v20210420/model/RemoveUserFromUserGroupRequest.cpp
+  src/v20210420/model/ListAuthorizedApplicationsToUserGroupResponse.cpp
+  src/v20210420/model/DeleteUserGroupRequest.cpp
+  src/v20210420/model/DescribeUserInfoRequest.cpp
+  src/v20210420/model/DescribeUserGroupResponse.cpp
+  src/v20210420/model/ListUserGroupsOfUserRequest.cpp
+  src/v20210420/model/ListUsersInUserGroupRequest.cpp
+  src/v20210420/model/UserInfo.cpp
+  src/v20210420/model/ListAuthorizedApplicationsToOrgNodeRequest.cpp
+  src/v20210420/model/CreateUserGroupRequest.cpp
+  src/v20210420/model/DescribeOrgNodeRequest.cpp
+  )
+
+set(eiam_include
+    include/tencentcloud/eiam
+  )
+
+add_library(eiam ${LIB_TYPE}
+  ${eiam_public_header}
+  ${eiam_public_header_model}
+  ${eiam_src})
+
+set_target_properties(eiam
+  PROPERTIES
+  LINKER_LANGUAGE CXX
+  ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+  RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+  OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}eiam
+  )
+
+target_include_directories(eiam
+  PRIVATE include
+    ${CMAKE_SOURCE_DIR}/core/include
+  )
+target_link_libraries(eiam
+  core)
+
+#install(FILES ${eiam_public_header}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/eiam/v20210420)
+#install(FILES ${eiam_public_header_model}
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/eiam/v20210420/model)
+install(DIRECTORY ${eiam_include}
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
+
+install(TARGETS eiam
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  )

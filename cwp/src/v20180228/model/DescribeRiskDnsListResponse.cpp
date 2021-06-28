@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-DescribeRiskDnsListResponse::DescribeRiskDnsListResponse()
+DescribeRiskDnsListResponse::DescribeRiskDnsListResponse() :
+    m_riskDnsListHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -61,9 +63,59 @@ CoreInternalOutcome DescribeRiskDnsListResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("RiskDnsList") && !rsp["RiskDnsList"].IsNull())
+    {
+        if (!rsp["RiskDnsList"].IsArray())
+            return CoreInternalOutcome(Error("response `RiskDnsList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RiskDnsList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RiskDnsList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_riskDnsList.push_back(item);
+        }
+        m_riskDnsListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<RiskDnsList> DescribeRiskDnsListResponse::GetRiskDnsList() const
+{
+    return m_riskDnsList;
+}
+
+bool DescribeRiskDnsListResponse::RiskDnsListHasBeenSet() const
+{
+    return m_riskDnsListHasBeenSet;
+}
+
+uint64_t DescribeRiskDnsListResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeRiskDnsListResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 

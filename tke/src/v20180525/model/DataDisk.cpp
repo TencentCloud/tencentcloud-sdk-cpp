@@ -25,7 +25,8 @@ DataDisk::DataDisk() :
     m_fileSystemHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
     m_autoFormatAndMountHasBeenSet(false),
-    m_mountTargetHasBeenSet(false)
+    m_mountTargetHasBeenSet(false),
+    m_diskPartitionHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome DataDisk::Deserialize(const rapidjson::Value &value)
         m_mountTargetHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskPartition") && !value["DiskPartition"].IsNull())
+    {
+        if (!value["DiskPartition"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DataDisk.DiskPartition` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskPartition = string(value["DiskPartition"].GetString());
+        m_diskPartitionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void DataDisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "MountTarget";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mountTarget.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskPartitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskPartition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskPartition.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void DataDisk::SetMountTarget(const string& _mountTarget)
 bool DataDisk::MountTargetHasBeenSet() const
 {
     return m_mountTargetHasBeenSet;
+}
+
+string DataDisk::GetDiskPartition() const
+{
+    return m_diskPartition;
+}
+
+void DataDisk::SetDiskPartition(const string& _diskPartition)
+{
+    m_diskPartition = _diskPartition;
+    m_diskPartitionHasBeenSet = true;
+}
+
+bool DataDisk::DiskPartitionHasBeenSet() const
+{
+    return m_diskPartitionHasBeenSet;
 }
 

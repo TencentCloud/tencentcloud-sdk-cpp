@@ -28,7 +28,9 @@ DescribeBillResourceSummaryRequest::DescribeBillResourceSummaryRequest() :
     m_periodTypeHasBeenSet(false),
     m_monthHasBeenSet(false),
     m_needRecordNumHasBeenSet(false),
-    m_actionTypeHasBeenSet(false)
+    m_actionTypeHasBeenSet(false),
+    m_resourceIdHasBeenSet(false),
+    m_payModeHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,22 @@ string DescribeBillResourceSummaryRequest::ToJsonString() const
         string key = "ActionType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_actionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +207,38 @@ void DescribeBillResourceSummaryRequest::SetActionType(const string& _actionType
 bool DescribeBillResourceSummaryRequest::ActionTypeHasBeenSet() const
 {
     return m_actionTypeHasBeenSet;
+}
+
+string DescribeBillResourceSummaryRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void DescribeBillResourceSummaryRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool DescribeBillResourceSummaryRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
+}
+
+string DescribeBillResourceSummaryRequest::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void DescribeBillResourceSummaryRequest::SetPayMode(const string& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool DescribeBillResourceSummaryRequest::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
 }
 
 

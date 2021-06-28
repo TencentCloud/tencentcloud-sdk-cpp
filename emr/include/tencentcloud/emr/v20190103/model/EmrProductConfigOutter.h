@@ -399,6 +399,50 @@ namespace TencentCloud
                      */
                     bool CbsEncryptHasBeenSet() const;
 
+                    /**
+                     * 获取自定义应用角色。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationRole 自定义应用角色。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationRole() const;
+
+                    /**
+                     * 设置自定义应用角色。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationRole 自定义应用角色。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationRole(const std::string& _applicationRole);
+
+                    /**
+                     * 判断参数 ApplicationRole 是否已赋值
+                     * @return ApplicationRole 是否已赋值
+                     */
+                    bool ApplicationRoleHasBeenSet() const;
+
+                    /**
+                     * 获取安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityGroups 安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSecurityGroups() const;
+
+                    /**
+                     * 设置安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SecurityGroups 安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecurityGroups(const std::vector<std::string>& _securityGroups);
+
+                    /**
+                     * 判断参数 SecurityGroups 是否已赋值
+                     * @return SecurityGroups 是否已赋值
+                     */
+                    bool SecurityGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -512,6 +556,20 @@ namespace TencentCloud
                      */
                     int64_t m_cbsEncrypt;
                     bool m_cbsEncryptHasBeenSet;
+
+                    /**
+                     * 自定义应用角色。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationRole;
+                    bool m_applicationRoleHasBeenSet;
+
+                    /**
+                     * 安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_securityGroups;
+                    bool m_securityGroupsHasBeenSet;
 
                 };
             }

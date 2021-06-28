@@ -794,6 +794,28 @@ namespace TencentCloud
                      */
                     bool ProductIdHasBeenSet() const;
 
+                    /**
+                     * 获取地区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zone 地区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置地区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Zone 地区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1025,6 +1047,13 @@ namespace TencentCloud
                      */
                     int64_t m_productId;
                     bool m_productIdHasBeenSet;
+
+                    /**
+                     * 地区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

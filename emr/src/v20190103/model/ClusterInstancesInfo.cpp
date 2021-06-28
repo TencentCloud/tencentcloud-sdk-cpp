@@ -49,7 +49,8 @@ ClusterInstancesInfo::ClusterInstancesInfo() :
     m_hiveMetaDbHasBeenSet(false),
     m_serviceClassHasBeenSet(false),
     m_aliasInfoHasBeenSet(false),
-    m_productIdHasBeenSet(false)
+    m_productIdHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -365,6 +366,16 @@ CoreInternalOutcome ClusterInstancesInfo::Deserialize(const rapidjson::Value &va
         m_productIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterInstancesInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -610,6 +621,14 @@ void ClusterInstancesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_productId, allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1077,5 +1096,21 @@ void ClusterInstancesInfo::SetProductId(const int64_t& _productId)
 bool ClusterInstancesInfo::ProductIdHasBeenSet() const
 {
     return m_productIdHasBeenSet;
+}
+
+string ClusterInstancesInfo::GetZone() const
+{
+    return m_zone;
+}
+
+void ClusterInstancesInfo::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 

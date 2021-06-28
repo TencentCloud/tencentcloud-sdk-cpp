@@ -36,7 +36,9 @@ EmrProductConfigOutter::EmrProductConfigOutter() :
     m_supportHAHasBeenSet(false),
     m_securityOnHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
-    m_cbsEncryptHasBeenSet(false)
+    m_cbsEncryptHasBeenSet(false),
+    m_applicationRoleHasBeenSet(false),
+    m_securityGroupsHasBeenSet(false)
 {
 }
 
@@ -236,6 +238,29 @@ CoreInternalOutcome EmrProductConfigOutter::Deserialize(const rapidjson::Value &
         m_cbsEncryptHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationRole") && !value["ApplicationRole"].IsNull())
+    {
+        if (!value["ApplicationRole"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EmrProductConfigOutter.ApplicationRole` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationRole = string(value["ApplicationRole"].GetString());
+        m_applicationRoleHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityGroups") && !value["SecurityGroups"].IsNull())
+    {
+        if (!value["SecurityGroups"].IsArray())
+            return CoreInternalOutcome(Error("response `EmrProductConfigOutter.SecurityGroups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityGroups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroups.push_back((*itr).GetString());
+        }
+        m_securityGroupsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -378,6 +403,27 @@ void EmrProductConfigOutter::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "CbsEncrypt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cbsEncrypt, allocator);
+    }
+
+    if (m_applicationRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationRole.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroups.begin(); itr != m_securityGroups.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -637,5 +683,37 @@ void EmrProductConfigOutter::SetCbsEncrypt(const int64_t& _cbsEncrypt)
 bool EmrProductConfigOutter::CbsEncryptHasBeenSet() const
 {
     return m_cbsEncryptHasBeenSet;
+}
+
+string EmrProductConfigOutter::GetApplicationRole() const
+{
+    return m_applicationRole;
+}
+
+void EmrProductConfigOutter::SetApplicationRole(const string& _applicationRole)
+{
+    m_applicationRole = _applicationRole;
+    m_applicationRoleHasBeenSet = true;
+}
+
+bool EmrProductConfigOutter::ApplicationRoleHasBeenSet() const
+{
+    return m_applicationRoleHasBeenSet;
+}
+
+vector<string> EmrProductConfigOutter::GetSecurityGroups() const
+{
+    return m_securityGroups;
+}
+
+void EmrProductConfigOutter::SetSecurityGroups(const vector<string>& _securityGroups)
+{
+    m_securityGroups = _securityGroups;
+    m_securityGroupsHasBeenSet = true;
+}
+
+bool EmrProductConfigOutter::SecurityGroupsHasBeenSet() const
+{
+    return m_securityGroupsHasBeenSet;
 }
 

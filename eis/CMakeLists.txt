@@ -15,10 +15,25 @@
 #
 
 set(eis_public_header
+  include/tencentcloud/eis/v20210601/EisClient.h
   include/tencentcloud/eis/v20200715/EisClient.h
   )
 
 set(eis_public_header_model
+  include/tencentcloud/eis/v20210601/model/ListRuntimesMCResponse.h
+  include/tencentcloud/eis/v20210601/model/RuntimeMC.h
+  include/tencentcloud/eis/v20210601/model/GetRuntimeResourceMonitorMetricMCResponse.h
+  include/tencentcloud/eis/v20210601/model/ListRuntimeDeployedInstancesMCRequest.h
+  include/tencentcloud/eis/v20210601/model/ListDeployableRuntimesMCResponse.h
+  include/tencentcloud/eis/v20210601/model/GetRuntimeMCResponse.h
+  include/tencentcloud/eis/v20210601/model/ListDeployableRuntimesMCRequest.h
+  include/tencentcloud/eis/v20210601/model/ListRuntimesMCRequest.h
+  include/tencentcloud/eis/v20210601/model/GetRuntimeMCRequest.h
+  include/tencentcloud/eis/v20210601/model/MetricValueMC.h
+  include/tencentcloud/eis/v20210601/model/GetRuntimeResourceMonitorMetricMCRequest.h
+  include/tencentcloud/eis/v20210601/model/AbstractRuntimeMC.h
+  include/tencentcloud/eis/v20210601/model/ListRuntimeDeployedInstancesMCResponse.h
+  include/tencentcloud/eis/v20210601/model/RuntimeDeployedInstanceMC.h
   include/tencentcloud/eis/v20200715/model/EisConnectionOperation.h
   include/tencentcloud/eis/v20200715/model/ListEisConnectorsRequest.h
   include/tencentcloud/eis/v20200715/model/EisConnectorSummary.h
@@ -30,7 +45,22 @@ set(eis_public_header_model
   )
 
 set(eis_src
+  src/v20210601/EisClient.cpp
   src/v20200715/EisClient.cpp
+  src/v20210601/model/ListRuntimesMCResponse.cpp
+  src/v20210601/model/RuntimeMC.cpp
+  src/v20210601/model/GetRuntimeResourceMonitorMetricMCResponse.cpp
+  src/v20210601/model/ListRuntimeDeployedInstancesMCRequest.cpp
+  src/v20210601/model/ListDeployableRuntimesMCResponse.cpp
+  src/v20210601/model/GetRuntimeMCResponse.cpp
+  src/v20210601/model/ListDeployableRuntimesMCRequest.cpp
+  src/v20210601/model/ListRuntimesMCRequest.cpp
+  src/v20210601/model/GetRuntimeMCRequest.cpp
+  src/v20210601/model/MetricValueMC.cpp
+  src/v20210601/model/GetRuntimeResourceMonitorMetricMCRequest.cpp
+  src/v20210601/model/AbstractRuntimeMC.cpp
+  src/v20210601/model/ListRuntimeDeployedInstancesMCResponse.cpp
+  src/v20210601/model/RuntimeDeployedInstanceMC.cpp
   src/v20200715/model/EisConnectionOperation.cpp
   src/v20200715/model/ListEisConnectorsRequest.cpp
   src/v20200715/model/EisConnectorSummary.cpp
