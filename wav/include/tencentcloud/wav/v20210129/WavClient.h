@@ -41,6 +41,8 @@
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactDetailResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactListResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryExternalUserMappingInfoRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryExternalUserMappingInfoResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryMiniAppCodeListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryMiniAppCodeListResponse.h>
 
@@ -84,6 +86,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryExternalContactListResponse> QueryExternalContactListOutcome;
                 typedef std::future<QueryExternalContactListOutcome> QueryExternalContactListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryExternalContactListRequest&, QueryExternalContactListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExternalContactListAsyncHandler;
+                typedef Outcome<Error, Model::QueryExternalUserMappingInfoResponse> QueryExternalUserMappingInfoOutcome;
+                typedef std::future<QueryExternalUserMappingInfoOutcome> QueryExternalUserMappingInfoOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryExternalUserMappingInfoRequest&, QueryExternalUserMappingInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExternalUserMappingInfoAsyncHandler;
                 typedef Outcome<Error, Model::QueryMiniAppCodeListResponse> QueryMiniAppCodeListOutcome;
                 typedef std::future<QueryMiniAppCodeListOutcome> QueryMiniAppCodeListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryMiniAppCodeListRequest&, QueryMiniAppCodeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMiniAppCodeListAsyncHandler;
@@ -170,6 +175,15 @@ namespace TencentCloud
                 QueryExternalContactListOutcome QueryExternalContactList(const Model::QueryExternalContactListRequest &request);
                 void QueryExternalContactListAsync(const Model::QueryExternalContactListRequest& request, const QueryExternalContactListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryExternalContactListOutcomeCallable QueryExternalContactListCallable(const Model::QueryExternalContactListRequest& request);
+
+                /**
+                 *企业可通过此接口将企业主体对应的外部联系人id转换为乐销车应用主体对应的外部联系人。
+                 * @param req QueryExternalUserMappingInfoRequest
+                 * @return QueryExternalUserMappingInfoOutcome
+                 */
+                QueryExternalUserMappingInfoOutcome QueryExternalUserMappingInfo(const Model::QueryExternalUserMappingInfoRequest &request);
+                void QueryExternalUserMappingInfoAsync(const Model::QueryExternalUserMappingInfoRequest& request, const QueryExternalUserMappingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryExternalUserMappingInfoOutcomeCallable QueryExternalUserMappingInfoCallable(const Model::QueryExternalUserMappingInfoRequest& request);
 
                 /**
                  *查询小程序码列表接口

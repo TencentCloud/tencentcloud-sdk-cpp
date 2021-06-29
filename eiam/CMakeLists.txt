@@ -25,6 +25,7 @@ set(eiam_public_header_model
   include/tencentcloud/eiam/v20210420/model/DescribeOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/CreateOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/ListUsersInOrgNodeResponse.h
+  include/tencentcloud/eiam/v20210420/model/ModifyUserInfoResponse.h
   include/tencentcloud/eiam/v20210420/model/DeleteUserRequest.h
   include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/OrgNodeChildInfo.h
@@ -64,6 +65,7 @@ set(eiam_public_header_model
   include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToOrgNodeRequest.h
   include/tencentcloud/eiam/v20210420/model/CreateUserGroupRequest.h
   include/tencentcloud/eiam/v20210420/model/DescribeOrgNodeRequest.h
+  include/tencentcloud/eiam/v20210420/model/ModifyUserInfoRequest.h
   )
 
 set(eiam_src
@@ -74,6 +76,7 @@ set(eiam_src
   src/v20210420/model/DescribeOrgNodeResponse.cpp
   src/v20210420/model/CreateOrgNodeResponse.cpp
   src/v20210420/model/ListUsersInOrgNodeResponse.cpp
+  src/v20210420/model/ModifyUserInfoResponse.cpp
   src/v20210420/model/DeleteUserRequest.cpp
   src/v20210420/model/ListAuthorizedApplicationsToOrgNodeResponse.cpp
   src/v20210420/model/OrgNodeChildInfo.cpp
@@ -113,6 +116,7 @@ set(eiam_src
   src/v20210420/model/ListAuthorizedApplicationsToOrgNodeRequest.cpp
   src/v20210420/model/CreateUserGroupRequest.cpp
   src/v20210420/model/DescribeOrgNodeRequest.cpp
+  src/v20210420/model/ModifyUserInfoRequest.cpp
   )
 
 set(eiam_include

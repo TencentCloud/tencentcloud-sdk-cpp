@@ -29,7 +29,8 @@ CreateTranscodeRequest::CreateTranscodeRequest() :
     m_minResolutionHasBeenSet(false),
     m_thumbnailResolutionHasBeenSet(false),
     m_compressFileTypeHasBeenSet(false),
-    m_extraDataHasBeenSet(false)
+    m_extraDataHasBeenSet(false),
+    m_priorityHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateTranscodeRequest::ToJsonString() const
         string key = "ExtraData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extraData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_priorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Priority";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_priority.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CreateTranscodeRequest::SetExtraData(const string& _extraData)
 bool CreateTranscodeRequest::ExtraDataHasBeenSet() const
 {
     return m_extraDataHasBeenSet;
+}
+
+string CreateTranscodeRequest::GetPriority() const
+{
+    return m_priority;
+}
+
+void CreateTranscodeRequest::SetPriority(const string& _priority)
+{
+    m_priority = _priority;
+    m_priorityHasBeenSet = true;
+}
+
+bool CreateTranscodeRequest::PriorityHasBeenSet() const
+{
+    return m_priorityHasBeenSet;
 }
 
 

@@ -814,6 +814,49 @@ EiamClient::ListUsersInUserGroupOutcomeCallable EiamClient::ListUsersInUserGroup
     return task->get_future();
 }
 
+EiamClient::ModifyUserInfoOutcome EiamClient::ModifyUserInfo(const ModifyUserInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserInfoResponse rsp = ModifyUserInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserInfoOutcome(rsp);
+        else
+            return ModifyUserInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserInfoOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::ModifyUserInfoAsync(const ModifyUserInfoRequest& request, const ModifyUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::ModifyUserInfoOutcomeCallable EiamClient::ModifyUserInfoCallable(const ModifyUserInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EiamClient::RemoveUserFromUserGroupOutcome EiamClient::RemoveUserFromUserGroup(const RemoveUserFromUserGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveUserFromUserGroup");

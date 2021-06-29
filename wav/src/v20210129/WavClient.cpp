@@ -427,6 +427,49 @@ WavClient::QueryExternalContactListOutcomeCallable WavClient::QueryExternalConta
     return task->get_future();
 }
 
+WavClient::QueryExternalUserMappingInfoOutcome WavClient::QueryExternalUserMappingInfo(const QueryExternalUserMappingInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryExternalUserMappingInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryExternalUserMappingInfoResponse rsp = QueryExternalUserMappingInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryExternalUserMappingInfoOutcome(rsp);
+        else
+            return QueryExternalUserMappingInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryExternalUserMappingInfoOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryExternalUserMappingInfoAsync(const QueryExternalUserMappingInfoRequest& request, const QueryExternalUserMappingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryExternalUserMappingInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryExternalUserMappingInfoOutcomeCallable WavClient::QueryExternalUserMappingInfoCallable(const QueryExternalUserMappingInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryExternalUserMappingInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryExternalUserMappingInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WavClient::QueryMiniAppCodeListOutcome WavClient::QueryMiniAppCodeList(const QueryMiniAppCodeListRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryMiniAppCodeList");
