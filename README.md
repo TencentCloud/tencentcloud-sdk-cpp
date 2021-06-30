@@ -80,6 +80,10 @@ make
 sudo make install
 ```
 
+通过修改 SDK 根目录下的 `CMakeLists.txt` 可以控制部分编译行为
+1. 生成静态库文件：修改 `option(BUILD_SHARED_LIBS  "Enable shared library" ON)` 将 ON 改为 OFF。删除 `sdk_build` 目录，重新执行编译。
+2. 关闭不需要产品的编译，例如云服务器 cvm：注释掉 `add_subdirectory(cvm)`，改为 `#add_subdirectory(cvm)`
+
 # 使用 C++ SDK 示例
 下文以 cvm 产品的 DescribeInstances 接口为例：
 
@@ -235,6 +239,13 @@ make
 ```
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 ./DescribeInstances
+```
+
+如果是安装的静态库，需要修改 `example/cvm/v20170312/CMakeLists.txt`，在链接库的配置代码中，追加链接库：
+
+```
+target_link_libraries(DescribeInstances tencentcloud-sdk-cpp-cvm tencentcloud-sdk-cpp-core -lcrypto -lcurl -luuid)
+target_link_libraries(DescribeInstancesAsync tencentcloud-sdk-cpp-cvm tencentcloud-sdk-cpp-core -lcrypto -lcurl -luuid)
 ```
 
 更多例子请参考 example 目录。
