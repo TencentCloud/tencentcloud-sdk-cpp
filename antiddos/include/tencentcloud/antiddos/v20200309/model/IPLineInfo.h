@@ -52,14 +52,14 @@ namespace TencentCloud
 "ctcc"：电信线路IP
 "cucc"：联通线路IP
 "cmcc"：移动线路IP
-"abroad"：海外线路IP
+"abroad"：境外线路IP
 ]
                      * @return Type IP线路类型，取值[
 "bgp"：BGP线路IP
 "ctcc"：电信线路IP
 "cucc"：联通线路IP
 "cmcc"：移动线路IP
-"abroad"：海外线路IP
+"abroad"：境外线路IP
 ]
                      */
                     std::string GetType() const;
@@ -70,14 +70,14 @@ namespace TencentCloud
 "ctcc"：电信线路IP
 "cucc"：联通线路IP
 "cmcc"：移动线路IP
-"abroad"：海外线路IP
+"abroad"：境外线路IP
 ]
                      * @param Type IP线路类型，取值[
 "bgp"：BGP线路IP
 "ctcc"：电信线路IP
 "cucc"：联通线路IP
 "cmcc"：移动线路IP
-"abroad"：海外线路IP
+"abroad"：境外线路IP
 ]
                      */
                     void SetType(const std::string& _type);
@@ -114,7 +114,7 @@ namespace TencentCloud
 "ctcc"：电信线路IP
 "cucc"：联通线路IP
 "cmcc"：移动线路IP
-"abroad"：海外线路IP
+"abroad"：境外线路IP
 ]
                      */
                     std::string m_type;
