@@ -43,8 +43,8 @@ namespace
 
         // use the sdk
 
-        string secretId = CUtils::GetEnv("ENV_SecretId");
-        string secretKey = CUtils::GetEnv("ENV_SecretKey");
+        string secretId = CUtils::GetEnv("TENCENTCLOUD_SECRET_ID");
+        string secretKey = CUtils::GetEnv("TENCENTCLOUD_SECRET_KEY");
         Credential cred = Credential(secretId, secretKey);
 
         HttpProfile httpProfile = HttpProfile();

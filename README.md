@@ -66,14 +66,15 @@ yum install libuuid-devel
 ```
 
 # 从源代码构建 SDK
-1. 前往 [Github 代码托管地址](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
 
+1. 前往 [Github 代码托管地址](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
 2. 进入 SDK 创建生成必要的构建文件
 
 ```
 cd <path/to/tencentcloud-sdk-cpp>
 mkdir sdk_build
 cd sdk_build
+# centos 下使用 cmake3 ..
 cmake ..
 make
 sudo make install
@@ -104,9 +105,8 @@ int main()
 {
     TencentCloud::InitAPI();
 
-    string secretId = "<your secret id>";
-    string secretKey = "<your secret key>";
-    Credential cred = Credential(secretId, secretKey);
+    // 前往 https://console.cloud.tencent.com/cam/capi 获取 API 密钥 SecretId SecretKey
+    Credential cred = Credential("YourSecretId", "YourSecretKey");
 
     DescribeInstancesRequest req = DescribeInstancesRequest();
 
@@ -119,6 +119,7 @@ int main()
         TencentCloud::ShutdownAPI();
         return -1;
     }
+
     DescribeInstancesResponse rsp = outcome.GetResult();
     cout<<"RequestId="<<rsp.GetRequestId()<<endl;
     cout<<"TotalCount="<<rsp.GetTotalCount()<<endl;
@@ -164,10 +165,9 @@ int main()
     TencentCloud::InitAPI();
 
     // use the sdk
-    // 实例化一个认证对象，入参需要传入腾讯云账户secretId，secretKey,此处还需注意密钥对的保密
-    string secretId = "<your secret id>";
-    string secretKey = "<your secret key>";
-    Credential cred = Credential(secretId, secretKey);
+    // 实例化一个认证对象，入参需要传入腾讯云账户 SecretId 和 SecretKey, 切勿将密钥泄露给他人
+    // 前往 https://console.cloud.tencent.com/cam/capi 获取 API 密钥 SecretId SecretKey
+    Credential cred = Credential("YourSecretId, YourSecretKey");
 
     // 实例化一个http选项，可选的，没有特殊需求可以跳过。
     HttpProfile httpProfile = HttpProfile();
@@ -224,15 +224,16 @@ demo 用例编译执行：
 cd example/cvm/v20170312
 mkdir build
 cd build
+# centos 下使用 cmake3 ..
 cmake ..
 make
 ./DescribeInstances
 ```
 
-如果报错动态库找不到，可指定动态库路径，例如，如果 libtencentcloud-sdk-cpp-core.so 安装到了 /usr/local/lib 路径下：
+如果报错动态库找不到，可指定动态库路径。例如 libtencentcloud-sdk-cpp-core.so 安装到了 `/usr/local/lib` 路径下（centos 下可能是`/usr/local/lib64`），则追加此目录到`LD_LIBRARY_PATH`环境变量中：
 
 ```
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 ./DescribeInstances
 ```
 
@@ -253,8 +254,9 @@ make
 将生成的 libgtest.a libgtest_main.a 静态库，以及 gtest 的头文件，拷贝到系统目录下。
 
 ## 配置环境变量
-- ENV_SecretId: 密钥 ID
-- ENV_SecretKey: 密钥 Key
+
+- TENCENTCLOUD_SECRET_ID: API 密钥 SecretId
+- TENCENTCLOUD_SECRET_KEY: API 密钥 SecretKey
 
 ## 测试
 执行以下脚本
