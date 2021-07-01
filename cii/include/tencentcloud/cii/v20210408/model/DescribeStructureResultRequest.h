@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CII_V20210408_MODEL_CREATESTRUCTURETASKRESPONSE_H_
-#define TENCENTCLOUD_CII_V20210408_MODEL_CREATESTRUCTURETASKRESPONSE_H_
+#ifndef TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBESTRUCTURERESULTREQUEST_H_
+#define TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBESTRUCTURERESULTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -32,21 +32,27 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CreateStructureTask返回参数结构体
+                * DescribeStructureResult请求参数结构体
                 */
-                class CreateStructureTaskResponse : public AbstractModel
+                class DescribeStructureResultRequest : public AbstractModel
                 {
                 public:
-                    CreateStructureTaskResponse();
-                    ~CreateStructureTaskResponse() = default;
-                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    DescribeStructureResultRequest();
+                    ~DescribeStructureResultRequest() = default;
+                    std::string ToJsonString() const;
 
 
                     /**
-                     * 获取创建的主任务号，用于查询结果
-                     * @return MainTaskId 创建的主任务号，用于查询结果
+                     * 获取创建任务时返回的主任务ID
+                     * @return MainTaskId 创建任务时返回的主任务ID
                      */
                     std::string GetMainTaskId() const;
+
+                    /**
+                     * 设置创建任务时返回的主任务ID
+                     * @param MainTaskId 创建任务时返回的主任务ID
+                     */
+                    void SetMainTaskId(const std::string& _mainTaskId);
 
                     /**
                      * 判断参数 MainTaskId 是否已赋值
@@ -57,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建的主任务号，用于查询结果
+                     * 创建任务时返回的主任务ID
                      */
                     std::string m_mainTaskId;
                     bool m_mainTaskIdHasBeenSet;
@@ -68,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CII_V20210408_MODEL_CREATESTRUCTURETASKRESPONSE_H_
+#endif // !TENCENTCLOUD_CII_V20210408_MODEL_DESCRIBESTRUCTURERESULTREQUEST_H_

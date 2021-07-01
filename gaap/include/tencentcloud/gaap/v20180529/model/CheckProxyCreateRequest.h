@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool GroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取IP版本，可取值：IPv4、IPv6，默认值IPv4
+                     * @return IPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
+                     */
+                    std::string GetIPAddressVersion() const;
+
+                    /**
+                     * 设置IP版本，可取值：IPv4、IPv6，默认值IPv4
+                     * @param IPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
+                     */
+                    void SetIPAddressVersion(const std::string& _iPAddressVersion);
+
+                    /**
+                     * 判断参数 IPAddressVersion 是否已赋值
+                     * @return IPAddressVersion 是否已赋值
+                     */
+                    bool IPAddressVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * IP版本，可取值：IPv4、IPv6，默认值IPv4
+                     */
+                    std::string m_iPAddressVersion;
+                    bool m_iPAddressVersionHasBeenSet;
 
                 };
             }

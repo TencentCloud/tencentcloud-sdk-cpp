@@ -255,6 +255,49 @@ TiiaClient::DetectLabelOutcomeCallable TiiaClient::DetectLabelCallable(const Det
     return task->get_future();
 }
 
+TiiaClient::DetectLabelBetaOutcome TiiaClient::DetectLabelBeta(const DetectLabelBetaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectLabelBeta");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectLabelBetaResponse rsp = DetectLabelBetaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectLabelBetaOutcome(rsp);
+        else
+            return DetectLabelBetaOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectLabelBetaOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectLabelBetaAsync(const DetectLabelBetaRequest& request, const DetectLabelBetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectLabelBeta(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectLabelBetaOutcomeCallable TiiaClient::DetectLabelBetaCallable(const DetectLabelBetaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectLabelBetaOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectLabelBeta(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::DetectMisbehaviorOutcome TiiaClient::DetectMisbehavior(const DetectMisbehaviorRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectMisbehavior");

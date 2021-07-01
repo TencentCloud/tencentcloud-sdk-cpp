@@ -23,7 +23,8 @@ using namespace TencentCloud::Gaap::V20180529::Model;
 using namespace std;
 
 DescribeAccessRegionsByDestRegionRequest::DescribeAccessRegionsByDestRegionRequest() :
-    m_destRegionHasBeenSet(false)
+    m_destRegionHasBeenSet(false),
+    m_iPAddressVersionHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeAccessRegionsByDestRegionRequest::ToJsonString() const
         string key = "DestRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_destRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPAddressVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPAddressVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeAccessRegionsByDestRegionRequest::SetDestRegion(const string& _dest
 bool DescribeAccessRegionsByDestRegionRequest::DestRegionHasBeenSet() const
 {
     return m_destRegionHasBeenSet;
+}
+
+string DescribeAccessRegionsByDestRegionRequest::GetIPAddressVersion() const
+{
+    return m_iPAddressVersion;
+}
+
+void DescribeAccessRegionsByDestRegionRequest::SetIPAddressVersion(const string& _iPAddressVersion)
+{
+    m_iPAddressVersion = _iPAddressVersion;
+    m_iPAddressVersionHasBeenSet = true;
+}
+
+bool DescribeAccessRegionsByDestRegionRequest::IPAddressVersionHasBeenSet() const
+{
+    return m_iPAddressVersionHasBeenSet;
 }
 
 

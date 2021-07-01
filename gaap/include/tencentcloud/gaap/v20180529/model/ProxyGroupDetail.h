@@ -372,6 +372,28 @@ namespace TencentCloud
                      */
                     bool ClientIPMethodHasBeenSet() const;
 
+                    /**
+                     * 获取IP版本，可取值：IPv4、IPv6，默认值IPv4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIPAddressVersion() const;
+
+                    /**
+                     * 设置IP版本，可取值：IPv4、IPv6，默认值IPv4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIPAddressVersion(const std::string& _iPAddressVersion);
+
+                    /**
+                     * 判断参数 IPAddressVersion 是否已赋值
+                     * @return IPAddressVersion 是否已赋值
+                     */
+                    bool IPAddressVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -478,6 +500,13 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_clientIPMethod;
                     bool m_clientIPMethodHasBeenSet;
+
+                    /**
+                     * IP版本，可取值：IPv4、IPv6，默认值IPv4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_iPAddressVersion;
+                    bool m_iPAddressVersionHasBeenSet;
 
                 };
             }

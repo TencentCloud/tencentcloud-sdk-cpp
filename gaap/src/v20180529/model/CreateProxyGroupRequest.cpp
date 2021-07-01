@@ -27,7 +27,8 @@ CreateProxyGroupRequest::CreateProxyGroupRequest() :
     m_groupNameHasBeenSet(false),
     m_realServerRegionHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_accessRegionSetHasBeenSet(false)
+    m_accessRegionSetHasBeenSet(false),
+    m_iPAddressVersionHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string CreateProxyGroupRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_iPAddressVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPAddressVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -178,6 +187,22 @@ void CreateProxyGroupRequest::SetAccessRegionSet(const vector<AccessConfiguratio
 bool CreateProxyGroupRequest::AccessRegionSetHasBeenSet() const
 {
     return m_accessRegionSetHasBeenSet;
+}
+
+string CreateProxyGroupRequest::GetIPAddressVersion() const
+{
+    return m_iPAddressVersion;
+}
+
+void CreateProxyGroupRequest::SetIPAddressVersion(const string& _iPAddressVersion)
+{
+    m_iPAddressVersion = _iPAddressVersion;
+    m_iPAddressVersionHasBeenSet = true;
+}
+
+bool CreateProxyGroupRequest::IPAddressVersionHasBeenSet() const
+{
+    return m_iPAddressVersionHasBeenSet;
 }
 
 

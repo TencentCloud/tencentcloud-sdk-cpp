@@ -27,7 +27,8 @@ CreateStructureTaskRequest::CreateStructureTaskRequest() :
     m_taskInfosHasBeenSet(false),
     m_policyIdHasBeenSet(false),
     m_triggerTypeHasBeenSet(false),
-    m_insuranceTypesHasBeenSet(false)
+    m_insuranceTypesHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,14 @@ string CreateStructureTaskRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -176,6 +185,22 @@ void CreateStructureTaskRequest::SetInsuranceTypes(const vector<string>& _insura
 bool CreateStructureTaskRequest::InsuranceTypesHasBeenSet() const
 {
     return m_insuranceTypesHasBeenSet;
+}
+
+string CreateStructureTaskRequest::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void CreateStructureTaskRequest::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool CreateStructureTaskRequest::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
 }
 
 

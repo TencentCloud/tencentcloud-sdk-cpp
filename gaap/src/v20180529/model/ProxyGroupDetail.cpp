@@ -36,7 +36,8 @@ ProxyGroupDetail::ProxyGroupDetail() :
     m_tagSetHasBeenSet(false),
     m_policyIdHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_clientIPMethodHasBeenSet(false)
+    m_clientIPMethodHasBeenSet(false),
+    m_iPAddressVersionHasBeenSet(false)
 {
 }
 
@@ -225,6 +226,16 @@ CoreInternalOutcome ProxyGroupDetail::Deserialize(const rapidjson::Value &value)
         m_clientIPMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("IPAddressVersion") && !value["IPAddressVersion"].IsNull())
+    {
+        if (!value["IPAddressVersion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProxyGroupDetail.IPAddressVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPAddressVersion = string(value["IPAddressVersion"].GetString());
+        m_iPAddressVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -371,6 +382,14 @@ void ProxyGroupDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_iPAddressVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPAddressVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -630,5 +649,21 @@ void ProxyGroupDetail::SetClientIPMethod(const vector<int64_t>& _clientIPMethod)
 bool ProxyGroupDetail::ClientIPMethodHasBeenSet() const
 {
     return m_clientIPMethodHasBeenSet;
+}
+
+string ProxyGroupDetail::GetIPAddressVersion() const
+{
+    return m_iPAddressVersion;
+}
+
+void ProxyGroupDetail::SetIPAddressVersion(const string& _iPAddressVersion)
+{
+    m_iPAddressVersion = _iPAddressVersion;
+    m_iPAddressVersionHasBeenSet = true;
+}
+
+bool ProxyGroupDetail::IPAddressVersionHasBeenSet() const
+{
+    return m_iPAddressVersionHasBeenSet;
 }
 

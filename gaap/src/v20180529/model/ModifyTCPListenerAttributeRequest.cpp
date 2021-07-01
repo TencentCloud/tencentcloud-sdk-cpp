@@ -31,7 +31,9 @@ ModifyTCPListenerAttributeRequest::ModifyTCPListenerAttributeRequest() :
     m_delayLoopHasBeenSet(false),
     m_connectTimeoutHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
-    m_failoverSwitchHasBeenSet(false)
+    m_failoverSwitchHasBeenSet(false),
+    m_healthyThresholdHasBeenSet(false),
+    m_unhealthyThresholdHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,22 @@ string ModifyTCPListenerAttributeRequest::ToJsonString() const
         string key = "FailoverSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_failoverSwitch, allocator);
+    }
+
+    if (m_healthyThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthyThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_healthyThreshold, allocator);
+    }
+
+    if (m_unhealthyThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnhealthyThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_unhealthyThreshold, allocator);
     }
 
 
@@ -264,6 +282,38 @@ void ModifyTCPListenerAttributeRequest::SetFailoverSwitch(const uint64_t& _failo
 bool ModifyTCPListenerAttributeRequest::FailoverSwitchHasBeenSet() const
 {
     return m_failoverSwitchHasBeenSet;
+}
+
+uint64_t ModifyTCPListenerAttributeRequest::GetHealthyThreshold() const
+{
+    return m_healthyThreshold;
+}
+
+void ModifyTCPListenerAttributeRequest::SetHealthyThreshold(const uint64_t& _healthyThreshold)
+{
+    m_healthyThreshold = _healthyThreshold;
+    m_healthyThresholdHasBeenSet = true;
+}
+
+bool ModifyTCPListenerAttributeRequest::HealthyThresholdHasBeenSet() const
+{
+    return m_healthyThresholdHasBeenSet;
+}
+
+uint64_t ModifyTCPListenerAttributeRequest::GetUnhealthyThreshold() const
+{
+    return m_unhealthyThreshold;
+}
+
+void ModifyTCPListenerAttributeRequest::SetUnhealthyThreshold(const uint64_t& _unhealthyThreshold)
+{
+    m_unhealthyThreshold = _unhealthyThreshold;
+    m_unhealthyThresholdHasBeenSet = true;
+}
+
+bool ModifyTCPListenerAttributeRequest::UnhealthyThresholdHasBeenSet() const
+{
+    return m_unhealthyThresholdHasBeenSet;
 }
 
 

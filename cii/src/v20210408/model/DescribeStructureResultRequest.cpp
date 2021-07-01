@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gaap/v20180529/model/DescribeRegionAndPriceRequest.h>
+#include <tencentcloud/cii/v20210408/model/DescribeStructureResultRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Gaap::V20180529::Model;
+using namespace TencentCloud::Cii::V20210408::Model;
 using namespace std;
 
-DescribeRegionAndPriceRequest::DescribeRegionAndPriceRequest() :
-    m_iPAddressVersionHasBeenSet(false)
+DescribeStructureResultRequest::DescribeStructureResultRequest() :
+    m_mainTaskIdHasBeenSet(false)
 {
 }
 
-string DescribeRegionAndPriceRequest::ToJsonString() const
+string DescribeStructureResultRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_iPAddressVersionHasBeenSet)
+    if (m_mainTaskIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IPAddressVersion";
+        string key = "MainTaskId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mainTaskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string DescribeRegionAndPriceRequest::ToJsonString() const
 }
 
 
-string DescribeRegionAndPriceRequest::GetIPAddressVersion() const
+string DescribeStructureResultRequest::GetMainTaskId() const
 {
-    return m_iPAddressVersion;
+    return m_mainTaskId;
 }
 
-void DescribeRegionAndPriceRequest::SetIPAddressVersion(const string& _iPAddressVersion)
+void DescribeStructureResultRequest::SetMainTaskId(const string& _mainTaskId)
 {
-    m_iPAddressVersion = _iPAddressVersion;
-    m_iPAddressVersionHasBeenSet = true;
+    m_mainTaskId = _mainTaskId;
+    m_mainTaskIdHasBeenSet = true;
 }
 
-bool DescribeRegionAndPriceRequest::IPAddressVersionHasBeenSet() const
+bool DescribeStructureResultRequest::MainTaskIdHasBeenSet() const
 {
-    return m_iPAddressVersionHasBeenSet;
+    return m_mainTaskIdHasBeenSet;
 }
 
 

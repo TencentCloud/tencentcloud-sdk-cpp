@@ -258,6 +258,42 @@ namespace TencentCloud
                      */
                     bool FailoverSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10
+                     * @return HealthyThreshold 健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10
+                     */
+                    uint64_t GetHealthyThreshold() const;
+
+                    /**
+                     * 设置健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10
+                     * @param HealthyThreshold 健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10
+                     */
+                    void SetHealthyThreshold(const uint64_t& _healthyThreshold);
+
+                    /**
+                     * 判断参数 HealthyThreshold 是否已赋值
+                     * @return HealthyThreshold 是否已赋值
+                     */
+                    bool HealthyThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10
+                     * @return UnhealthyThreshold 不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10
+                     */
+                    uint64_t GetUnhealthyThreshold() const;
+
+                    /**
+                     * 设置不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10
+                     * @param UnhealthyThreshold 不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10
+                     */
+                    void SetUnhealthyThreshold(const uint64_t& _unhealthyThreshold);
+
+                    /**
+                     * 判断参数 UnhealthyThreshold 是否已赋值
+                     * @return UnhealthyThreshold 是否已赋值
+                     */
+                    bool UnhealthyThresholdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +367,18 @@ namespace TencentCloud
                      */
                     int64_t m_failoverSwitch;
                     bool m_failoverSwitchHasBeenSet;
+
+                    /**
+                     * 健康阈值，表示连续检查成功多少次后认定源站健康。范围为1到10
+                     */
+                    uint64_t m_healthyThreshold;
+                    bool m_healthyThresholdHasBeenSet;
+
+                    /**
+                     * 不健康阈值，表示连续检查失败多少次数后认为源站不健康。范围为1到10
+                     */
+                    uint64_t m_unhealthyThreshold;
+                    bool m_unhealthyThresholdHasBeenSet;
 
                 };
             }

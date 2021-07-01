@@ -161,6 +161,24 @@ AccidentInsurance：意外险
                      */
                     bool InsuranceTypesHasBeenSet() const;
 
+                    /**
+                     * 获取回调地址，接收Post请求传送结果
+                     * @return CallbackUrl 回调地址，接收Post请求传送结果
+                     */
+                    std::string GetCallbackUrl() const;
+
+                    /**
+                     * 设置回调地址，接收Post请求传送结果
+                     * @param CallbackUrl 回调地址，接收Post请求传送结果
+                     */
+                    void SetCallbackUrl(const std::string& _callbackUrl);
+
+                    /**
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
+                     */
+                    bool CallbackUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -199,6 +217,12 @@ AccidentInsurance：意外险
                      */
                     std::vector<std::string> m_insuranceTypes;
                     bool m_insuranceTypesHasBeenSet;
+
+                    /**
+                     * 回调地址，接收Post请求传送结果
+                     */
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
 
                 };
             }

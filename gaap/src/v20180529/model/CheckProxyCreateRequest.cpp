@@ -27,7 +27,8 @@ CheckProxyCreateRequest::CheckProxyCreateRequest() :
     m_realServerRegionHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_concurrentHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_iPAddressVersionHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string CheckProxyCreateRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPAddressVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPAddressVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void CheckProxyCreateRequest::SetGroupId(const string& _groupId)
 bool CheckProxyCreateRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+string CheckProxyCreateRequest::GetIPAddressVersion() const
+{
+    return m_iPAddressVersion;
+}
+
+void CheckProxyCreateRequest::SetIPAddressVersion(const string& _iPAddressVersion)
+{
+    m_iPAddressVersion = _iPAddressVersion;
+    m_iPAddressVersionHasBeenSet = true;
+}
+
+bool CheckProxyCreateRequest::IPAddressVersionHasBeenSet() const
+{
+    return m_iPAddressVersionHasBeenSet;
 }
 
 

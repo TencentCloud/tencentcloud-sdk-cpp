@@ -27,6 +27,8 @@
 #include <tencentcloud/cii/v20210408/model/CreateStructureTaskResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructCompareDataRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructCompareDataResponse.h>
+#include <tencentcloud/cii/v20210408/model/DescribeStructureResultRequest.h>
+#include <tencentcloud/cii/v20210408/model/DescribeStructureResultResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultResponse.h>
 
@@ -49,6 +51,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeStructCompareDataResponse> DescribeStructCompareDataOutcome;
                 typedef std::future<DescribeStructCompareDataOutcome> DescribeStructCompareDataOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructCompareDataRequest&, DescribeStructCompareDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructCompareDataAsyncHandler;
+                typedef Outcome<Error, Model::DescribeStructureResultResponse> DescribeStructureResultOutcome;
+                typedef std::future<DescribeStructureResultOutcome> DescribeStructureResultOutcomeCallable;
+                typedef std::function<void(const CiiClient*, const Model::DescribeStructureResultRequest&, DescribeStructureResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureResultAsyncHandler;
                 typedef Outcome<Error, Model::DescribeStructureTaskResultResponse> DescribeStructureTaskResultOutcome;
                 typedef std::future<DescribeStructureTaskResultOutcome> DescribeStructureTaskResultOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructureTaskResultRequest&, DescribeStructureTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureTaskResultAsyncHandler;
@@ -56,7 +61,7 @@ namespace TencentCloud
 
 
                 /**
-                 *基于提供的客户及保单信息，启动结构化识别任务。
+                 *本接口(CreateStructureTask)基于提供的客户及保单信息，创建并启动结构化识别任务。
                  * @param req CreateStructureTaskRequest
                  * @return CreateStructureTaskOutcome
                  */
@@ -72,6 +77,15 @@ namespace TencentCloud
                 DescribeStructCompareDataOutcome DescribeStructCompareData(const Model::DescribeStructCompareDataRequest &request);
                 void DescribeStructCompareDataAsync(const Model::DescribeStructCompareDataRequest& request, const DescribeStructCompareDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStructCompareDataOutcomeCallable DescribeStructCompareDataCallable(const Model::DescribeStructCompareDataRequest& request);
+
+                /**
+                 *本接口(DescribeStructureResult)用于查询结构化结果接口
+                 * @param req DescribeStructureResultRequest
+                 * @return DescribeStructureResultOutcome
+                 */
+                DescribeStructureResultOutcome DescribeStructureResult(const Model::DescribeStructureResultRequest &request);
+                void DescribeStructureResultAsync(const Model::DescribeStructureResultRequest& request, const DescribeStructureResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStructureResultOutcomeCallable DescribeStructureResultCallable(const Model::DescribeStructureResultRequest& request);
 
                 /**
                  *依据任务ID获取结构化结果接口。

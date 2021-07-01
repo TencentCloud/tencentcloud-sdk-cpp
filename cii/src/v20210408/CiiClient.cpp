@@ -126,6 +126,49 @@ CiiClient::DescribeStructCompareDataOutcomeCallable CiiClient::DescribeStructCom
     return task->get_future();
 }
 
+CiiClient::DescribeStructureResultOutcome CiiClient::DescribeStructureResult(const DescribeStructureResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStructureResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStructureResultResponse rsp = DescribeStructureResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStructureResultOutcome(rsp);
+        else
+            return DescribeStructureResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStructureResultOutcome(outcome.GetError());
+    }
+}
+
+void CiiClient::DescribeStructureResultAsync(const DescribeStructureResultRequest& request, const DescribeStructureResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStructureResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiiClient::DescribeStructureResultOutcomeCallable CiiClient::DescribeStructureResultCallable(const DescribeStructureResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStructureResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStructureResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CiiClient::DescribeStructureTaskResultOutcome CiiClient::DescribeStructureTaskResult(const DescribeStructureTaskResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStructureTaskResult");

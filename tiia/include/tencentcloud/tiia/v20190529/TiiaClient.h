@@ -33,6 +33,8 @@
 #include <tencentcloud/tiia/v20190529/model/DetectDisgustResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectLabelResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DetectLabelBetaRequest.h>
+#include <tencentcloud/tiia/v20190529/model/DetectLabelBetaResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectMisbehaviorRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectMisbehaviorResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductRequest.h>
@@ -72,6 +74,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DetectLabelResponse> DetectLabelOutcome;
                 typedef std::future<DetectLabelOutcome> DetectLabelOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectLabelRequest&, DetectLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLabelAsyncHandler;
+                typedef Outcome<Error, Model::DetectLabelBetaResponse> DetectLabelBetaOutcome;
+                typedef std::future<DetectLabelBetaOutcome> DetectLabelBetaOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::DetectLabelBetaRequest&, DetectLabelBetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLabelBetaAsyncHandler;
                 typedef Outcome<Error, Model::DetectMisbehaviorResponse> DetectMisbehaviorOutcome;
                 typedef std::future<DetectMisbehaviorOutcome> DetectMisbehaviorOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectMisbehaviorRequest&, DetectMisbehaviorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectMisbehaviorAsyncHandler;
@@ -168,6 +173,18 @@ namespace TencentCloud
                 DetectLabelOutcome DetectLabel(const Model::DetectLabelRequest &request);
                 void DetectLabelAsync(const Model::DetectLabelRequest& request, const DetectLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectLabelOutcomeCallable DetectLabelCallable(const Model::DetectLabelRequest& request);
+
+                /**
+                 *图像标签测试接口
+
+>     
+- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
+                 * @param req DetectLabelBetaRequest
+                 * @return DetectLabelBetaOutcome
+                 */
+                DetectLabelBetaOutcome DetectLabelBeta(const Model::DetectLabelBetaRequest &request);
+                void DetectLabelBetaAsync(const Model::DetectLabelBetaRequest& request, const DetectLabelBetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectLabelBetaOutcomeCallable DetectLabelBetaCallable(const Model::DetectLabelBetaRequest& request);
 
                 /**
                  *可以识别输入的图片中是否包含不良行为，例如打架斗殴、赌博、抽烟等，可以应用于广告图、直播截图、短视频截图等审核，减少不良行为对平台内容质量的影响，维护健康向上的互联网环境。

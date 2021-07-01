@@ -35,7 +35,9 @@ TCPListener::TCPListener() :
     m_bindStatusHasBeenSet(false),
     m_realServerSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_clientIPMethodHasBeenSet(false)
+    m_clientIPMethodHasBeenSet(false),
+    m_healthyThresholdHasBeenSet(false),
+    m_unhealthyThresholdHasBeenSet(false)
 {
 }
 
@@ -204,6 +206,26 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
         m_clientIPMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthyThreshold") && !value["HealthyThreshold"].IsNull())
+    {
+        if (!value["HealthyThreshold"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TCPListener.HealthyThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthyThreshold = value["HealthyThreshold"].GetUint64();
+        m_healthyThresholdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnhealthyThreshold") && !value["UnhealthyThreshold"].IsNull())
+    {
+        if (!value["UnhealthyThreshold"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `TCPListener.UnhealthyThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_unhealthyThreshold = value["UnhealthyThreshold"].GetUint64();
+        m_unhealthyThresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +358,22 @@ void TCPListener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ClientIPMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clientIPMethod, allocator);
+    }
+
+    if (m_healthyThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthyThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_healthyThreshold, allocator);
+    }
+
+    if (m_unhealthyThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnhealthyThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unhealthyThreshold, allocator);
     }
 
 }
@@ -579,5 +617,37 @@ void TCPListener::SetClientIPMethod(const uint64_t& _clientIPMethod)
 bool TCPListener::ClientIPMethodHasBeenSet() const
 {
     return m_clientIPMethodHasBeenSet;
+}
+
+uint64_t TCPListener::GetHealthyThreshold() const
+{
+    return m_healthyThreshold;
+}
+
+void TCPListener::SetHealthyThreshold(const uint64_t& _healthyThreshold)
+{
+    m_healthyThreshold = _healthyThreshold;
+    m_healthyThresholdHasBeenSet = true;
+}
+
+bool TCPListener::HealthyThresholdHasBeenSet() const
+{
+    return m_healthyThresholdHasBeenSet;
+}
+
+uint64_t TCPListener::GetUnhealthyThreshold() const
+{
+    return m_unhealthyThreshold;
+}
+
+void TCPListener::SetUnhealthyThreshold(const uint64_t& _unhealthyThreshold)
+{
+    m_unhealthyThreshold = _unhealthyThreshold;
+    m_unhealthyThresholdHasBeenSet = true;
+}
+
+bool TCPListener::UnhealthyThresholdHasBeenSet() const
+{
+    return m_unhealthyThresholdHasBeenSet;
 }
 

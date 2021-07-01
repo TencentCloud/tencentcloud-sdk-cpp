@@ -29,7 +29,8 @@ InquiryPriceCreateProxyRequest::InquiryPriceCreateProxyRequest() :
     m_concurrencyHasBeenSet(false),
     m_realServerRegionHasBeenSet(false),
     m_concurrentHasBeenSet(false),
-    m_billingTypeHasBeenSet(false)
+    m_billingTypeHasBeenSet(false),
+    m_iPAddressVersionHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string InquiryPriceCreateProxyRequest::ToJsonString() const
         string key = "BillingType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_billingType, allocator);
+    }
+
+    if (m_iPAddressVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPAddressVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void InquiryPriceCreateProxyRequest::SetBillingType(const int64_t& _billingType)
 bool InquiryPriceCreateProxyRequest::BillingTypeHasBeenSet() const
 {
     return m_billingTypeHasBeenSet;
+}
+
+string InquiryPriceCreateProxyRequest::GetIPAddressVersion() const
+{
+    return m_iPAddressVersion;
+}
+
+void InquiryPriceCreateProxyRequest::SetIPAddressVersion(const string& _iPAddressVersion)
+{
+    m_iPAddressVersion = _iPAddressVersion;
+    m_iPAddressVersionHasBeenSet = true;
+}
+
+bool InquiryPriceCreateProxyRequest::IPAddressVersionHasBeenSet() const
+{
+    return m_iPAddressVersionHasBeenSet;
 }
 
 

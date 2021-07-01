@@ -34,7 +34,9 @@ CreateTCPListenersRequest::CreateTCPListenersRequest() :
     m_connectTimeoutHasBeenSet(false),
     m_realServerPortsHasBeenSet(false),
     m_clientIPMethodHasBeenSet(false),
-    m_failoverSwitchHasBeenSet(false)
+    m_failoverSwitchHasBeenSet(false),
+    m_healthyThresholdHasBeenSet(false),
+    m_unhealthyThresholdHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,22 @@ string CreateTCPListenersRequest::ToJsonString() const
         string key = "FailoverSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_failoverSwitch, allocator);
+    }
+
+    if (m_healthyThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthyThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_healthyThreshold, allocator);
+    }
+
+    if (m_unhealthyThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnhealthyThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_unhealthyThreshold, allocator);
     }
 
 
@@ -349,6 +367,38 @@ void CreateTCPListenersRequest::SetFailoverSwitch(const int64_t& _failoverSwitch
 bool CreateTCPListenersRequest::FailoverSwitchHasBeenSet() const
 {
     return m_failoverSwitchHasBeenSet;
+}
+
+uint64_t CreateTCPListenersRequest::GetHealthyThreshold() const
+{
+    return m_healthyThreshold;
+}
+
+void CreateTCPListenersRequest::SetHealthyThreshold(const uint64_t& _healthyThreshold)
+{
+    m_healthyThreshold = _healthyThreshold;
+    m_healthyThresholdHasBeenSet = true;
+}
+
+bool CreateTCPListenersRequest::HealthyThresholdHasBeenSet() const
+{
+    return m_healthyThresholdHasBeenSet;
+}
+
+uint64_t CreateTCPListenersRequest::GetUnhealthyThreshold() const
+{
+    return m_unhealthyThreshold;
+}
+
+void CreateTCPListenersRequest::SetUnhealthyThreshold(const uint64_t& _unhealthyThreshold)
+{
+    m_unhealthyThreshold = _unhealthyThreshold;
+    m_unhealthyThresholdHasBeenSet = true;
+}
+
+bool CreateTCPListenersRequest::UnhealthyThresholdHasBeenSet() const
+{
+    return m_unhealthyThresholdHasBeenSet;
 }
 
 
