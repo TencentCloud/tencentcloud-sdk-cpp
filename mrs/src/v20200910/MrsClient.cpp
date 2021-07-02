@@ -126,6 +126,92 @@ MrsClient::ImageToObjectOutcomeCallable MrsClient::ImageToObjectCallable(const I
     return task->get_future();
 }
 
+MrsClient::ReportImageStructuredOutcome MrsClient::ReportImageStructured(const ReportImageStructuredRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportImageStructured");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportImageStructuredResponse rsp = ReportImageStructuredResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportImageStructuredOutcome(rsp);
+        else
+            return ReportImageStructuredOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportImageStructuredOutcome(outcome.GetError());
+    }
+}
+
+void MrsClient::ReportImageStructuredAsync(const ReportImageStructuredRequest& request, const ReportImageStructuredAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportImageStructured(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MrsClient::ReportImageStructuredOutcomeCallable MrsClient::ReportImageStructuredCallable(const ReportImageStructuredRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportImageStructuredOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportImageStructured(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MrsClient::ReportTextStructuredOutcome MrsClient::ReportTextStructured(const ReportTextStructuredRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportTextStructured");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportTextStructuredResponse rsp = ReportTextStructuredResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportTextStructuredOutcome(rsp);
+        else
+            return ReportTextStructuredOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportTextStructuredOutcome(outcome.GetError());
+    }
+}
+
+void MrsClient::ReportTextStructuredAsync(const ReportTextStructuredRequest& request, const ReportTextStructuredAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportTextStructured(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MrsClient::ReportTextStructuredOutcomeCallable MrsClient::ReportTextStructuredCallable(const ReportTextStructuredRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportTextStructuredOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportTextStructured(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MrsClient::TextToClassOutcome MrsClient::TextToClass(const TextToClassRequest &request)
 {
     auto outcome = MakeRequest(request, "TextToClass");

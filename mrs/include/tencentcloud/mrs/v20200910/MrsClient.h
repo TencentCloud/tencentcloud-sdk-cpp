@@ -27,6 +27,10 @@
 #include <tencentcloud/mrs/v20200910/model/ImageToClassResponse.h>
 #include <tencentcloud/mrs/v20200910/model/ImageToObjectRequest.h>
 #include <tencentcloud/mrs/v20200910/model/ImageToObjectResponse.h>
+#include <tencentcloud/mrs/v20200910/model/ReportImageStructuredRequest.h>
+#include <tencentcloud/mrs/v20200910/model/ReportImageStructuredResponse.h>
+#include <tencentcloud/mrs/v20200910/model/ReportTextStructuredRequest.h>
+#include <tencentcloud/mrs/v20200910/model/ReportTextStructuredResponse.h>
 #include <tencentcloud/mrs/v20200910/model/TextToClassRequest.h>
 #include <tencentcloud/mrs/v20200910/model/TextToClassResponse.h>
 #include <tencentcloud/mrs/v20200910/model/TextToObjectRequest.h>
@@ -51,6 +55,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ImageToObjectResponse> ImageToObjectOutcome;
                 typedef std::future<ImageToObjectOutcome> ImageToObjectOutcomeCallable;
                 typedef std::function<void(const MrsClient*, const Model::ImageToObjectRequest&, ImageToObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageToObjectAsyncHandler;
+                typedef Outcome<Error, Model::ReportImageStructuredResponse> ReportImageStructuredOutcome;
+                typedef std::future<ReportImageStructuredOutcome> ReportImageStructuredOutcomeCallable;
+                typedef std::function<void(const MrsClient*, const Model::ReportImageStructuredRequest&, ReportImageStructuredOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportImageStructuredAsyncHandler;
+                typedef Outcome<Error, Model::ReportTextStructuredResponse> ReportTextStructuredOutcome;
+                typedef std::future<ReportTextStructuredOutcome> ReportTextStructuredOutcomeCallable;
+                typedef std::function<void(const MrsClient*, const Model::ReportTextStructuredRequest&, ReportTextStructuredOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportTextStructuredAsyncHandler;
                 typedef Outcome<Error, Model::TextToClassResponse> TextToClassOutcome;
                 typedef std::future<TextToClassOutcome> TextToClassOutcomeCallable;
                 typedef std::function<void(const MrsClient*, const Model::TextToClassRequest&, TextToClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToClassAsyncHandler;
@@ -77,6 +87,28 @@ namespace TencentCloud
                 ImageToObjectOutcome ImageToObject(const Model::ImageToObjectRequest &request);
                 void ImageToObjectAsync(const Model::ImageToObjectRequest& request, const ImageToObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImageToObjectOutcomeCallable ImageToObjectCallable(const Model::ImageToObjectRequest& request);
+
+                /**
+                 *接口没有流量
+
+将输入的图片类型报告结构化
+                 * @param req ReportImageStructuredRequest
+                 * @return ReportImageStructuredOutcome
+                 */
+                ReportImageStructuredOutcome ReportImageStructured(const Model::ReportImageStructuredRequest &request);
+                void ReportImageStructuredAsync(const Model::ReportImageStructuredRequest& request, const ReportImageStructuredAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportImageStructuredOutcomeCallable ReportImageStructuredCallable(const Model::ReportImageStructuredRequest& request);
+
+                /**
+                 *接口还未上线
+
+将输入的医疗报告文本内容进行结构化输出
+                 * @param req ReportTextStructuredRequest
+                 * @return ReportTextStructuredOutcome
+                 */
+                ReportTextStructuredOutcome ReportTextStructured(const Model::ReportTextStructuredRequest &request);
+                void ReportTextStructuredAsync(const Model::ReportTextStructuredRequest& request, const ReportTextStructuredAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportTextStructuredOutcomeCallable ReportTextStructuredCallable(const Model::ReportTextStructuredRequest& request);
 
                 /**
                  *文本分类
