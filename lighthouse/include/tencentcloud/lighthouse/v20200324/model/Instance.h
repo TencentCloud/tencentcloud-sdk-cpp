@@ -549,6 +549,24 @@ FAILED：表示操作失败
                      */
                     bool OsNameHasBeenSet() const;
 
+                    /**
+                     * 获取可用区。
+                     * @return Zone 可用区。
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置可用区。
+                     * @param Zone 可用区。
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -711,6 +729,12 @@ FAILED：表示操作失败
                      */
                     std::string m_osName;
                     bool m_osNameHasBeenSet;
+
+                    /**
+                     * 可用区。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

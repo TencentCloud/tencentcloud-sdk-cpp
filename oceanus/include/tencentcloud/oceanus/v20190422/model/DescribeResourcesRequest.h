@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要查询的资源ID数组
-                     * @return ResourceIds 需要查询的资源ID数组
+                     * 获取需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。
+                     * @return ResourceIds 需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
-                     * 设置需要查询的资源ID数组
-                     * @param ResourceIds 需要查询的资源ID数组
+                     * 设置需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。
+                     * @param ResourceIds 需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
 
@@ -98,14 +98,18 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询资源配置列表， 如果不填写，返回该ResourceId下所有作业配置列表
-                     * @return Filters 查询资源配置列表， 如果不填写，返回该ResourceId下所有作业配置列表
+                     * 获取<li><strong>ResourceName</strong></li>
+<p style="padding-left: 30px;">按照资源名字过滤，支持模糊过滤。传入的过滤名字不超过5个</p><p style="padding-left: 30px;">类型: String</p><p style="padding-left: 30px;">必选: 否</p>
+                     * @return Filters <li><strong>ResourceName</strong></li>
+<p style="padding-left: 30px;">按照资源名字过滤，支持模糊过滤。传入的过滤名字不超过5个</p><p style="padding-left: 30px;">类型: String</p><p style="padding-left: 30px;">必选: 否</p>
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询资源配置列表， 如果不填写，返回该ResourceId下所有作业配置列表
-                     * @param Filters 查询资源配置列表， 如果不填写，返回该ResourceId下所有作业配置列表
+                     * 设置<li><strong>ResourceName</strong></li>
+<p style="padding-left: 30px;">按照资源名字过滤，支持模糊过滤。传入的过滤名字不超过5个</p><p style="padding-left: 30px;">类型: String</p><p style="padding-left: 30px;">必选: 否</p>
+                     * @param Filters <li><strong>ResourceName</strong></li>
+<p style="padding-left: 30px;">按照资源名字过滤，支持模糊过滤。传入的过滤名字不超过5个</p><p style="padding-left: 30px;">类型: String</p><p style="padding-left: 30px;">必选: 否</p>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -118,7 +122,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要查询的资源ID数组
+                     * 需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
@@ -136,7 +140,8 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询资源配置列表， 如果不填写，返回该ResourceId下所有作业配置列表
+                     * <li><strong>ResourceName</strong></li>
+<p style="padding-left: 30px;">按照资源名字过滤，支持模糊过滤。传入的过滤名字不超过5个</p><p style="padding-left: 30px;">类型: String</p><p style="padding-left: 30px;">必选: 否</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -111,6 +111,8 @@
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceResizeInstanceDisksResponse.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceRunInstancesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceRunInstancesResponse.h>
+#include <tencentcloud/cvm/v20170312/model/InquiryPriceTerminateInstancesRequest.h>
+#include <tencentcloud/cvm/v20170312/model/InquiryPriceTerminateInstancesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyHostsAttributeRequest.h>
@@ -305,6 +307,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::InquiryPriceRunInstancesResponse> InquiryPriceRunInstancesOutcome;
                 typedef std::future<InquiryPriceRunInstancesOutcome> InquiryPriceRunInstancesOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::InquiryPriceRunInstancesRequest&, InquiryPriceRunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceRunInstancesAsyncHandler;
+                typedef Outcome<Error, Model::InquiryPriceTerminateInstancesResponse> InquiryPriceTerminateInstancesOutcome;
+                typedef std::future<InquiryPriceTerminateInstancesOutcome> InquiryPriceTerminateInstancesOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::InquiryPriceTerminateInstancesRequest&, InquiryPriceTerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceTerminateInstancesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDisasterRecoverGroupAttributeResponse> ModifyDisasterRecoverGroupAttributeOutcome;
                 typedef std::future<ModifyDisasterRecoverGroupAttributeOutcome> ModifyDisasterRecoverGroupAttributeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyDisasterRecoverGroupAttributeRequest&, ModifyDisasterRecoverGroupAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisasterRecoverGroupAttributeAsyncHandler;
@@ -862,6 +867,18 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 InquiryPriceRunInstancesOutcome InquiryPriceRunInstances(const Model::InquiryPriceRunInstancesRequest &request);
                 void InquiryPriceRunInstancesAsync(const Model::InquiryPriceRunInstancesRequest& request, const InquiryPriceRunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceRunInstancesOutcomeCallable InquiryPriceRunInstancesCallable(const Model::InquiryPriceRunInstancesRequest& request);
+
+                /**
+                 *本接口 (InquiryPriceTerminateInstances) 用于退还实例询价。
+
+* 查询退还实例可以返还的费用。
+* 支持批量操作，每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定[错误码](#4.-.E9.94.99.E8.AF.AF.E7.A0.81)返回。
+                 * @param req InquiryPriceTerminateInstancesRequest
+                 * @return InquiryPriceTerminateInstancesOutcome
+                 */
+                InquiryPriceTerminateInstancesOutcome InquiryPriceTerminateInstances(const Model::InquiryPriceTerminateInstancesRequest &request);
+                void InquiryPriceTerminateInstancesAsync(const Model::InquiryPriceTerminateInstancesRequest& request, const InquiryPriceTerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceTerminateInstancesOutcomeCallable InquiryPriceTerminateInstancesCallable(const Model::InquiryPriceTerminateInstancesRequest& request);
 
                 /**
                  *本接口 (ModifyDisasterRecoverGroupAttribute)用于修改[分散置放群组](https://cloud.tencent.com/document/product/213/15486)属性。

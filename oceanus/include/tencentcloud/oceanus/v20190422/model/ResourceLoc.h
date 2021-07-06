@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源位置的存储类型，目前只支持COS
-                     * @return StorageType 资源位置的存储类型，目前只支持COS
+                     * 获取资源位置的存储类型，目前只支持1:COS
+                     * @return StorageType 资源位置的存储类型，目前只支持1:COS
                      */
                     int64_t GetStorageType() const;
 
                     /**
-                     * 设置资源位置的存储类型，目前只支持COS
-                     * @param StorageType 资源位置的存储类型，目前只支持COS
+                     * 设置资源位置的存储类型，目前只支持1:COS
+                     * @param StorageType 资源位置的存储类型，目前只支持1:COS
                      */
                     void SetStorageType(const int64_t& _storageType);
 
@@ -86,7 +86,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源位置的存储类型，目前只支持COS
+                     * 资源位置的存储类型，目前只支持1:COS
                      */
                     int64_t m_storageType;
                     bool m_storageTypeHasBeenSet;

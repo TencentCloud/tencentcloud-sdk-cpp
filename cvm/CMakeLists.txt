@@ -20,6 +20,7 @@ set(cvm_public_header
 
 set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ChargePrepaid.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceTerminateInstancesResponse.h
   include/tencentcloud/cvm/v20170312/model/LocalDiskType.h
   include/tencentcloud/cvm/v20170312/model/AssociateInstancesKeyPairsResponse.h
   include/tencentcloud/cvm/v20170312/model/RenewInstancesRequest.h
@@ -155,6 +156,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeZonesResponse.h
   include/tencentcloud/cvm/v20170312/model/ItemPrice.h
   include/tencentcloud/cvm/v20170312/model/InstanceTypeQuotaItem.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceTerminateInstancesRequest.h
   include/tencentcloud/cvm/v20170312/model/ImageOsList.h
   include/tencentcloud/cvm/v20170312/model/ReservedInstanceTypeItem.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceRunInstancesResponse.h
@@ -215,6 +217,7 @@ set(cvm_public_header_model
 set(cvm_src
   src/v20170312/CvmClient.cpp
   src/v20170312/model/ChargePrepaid.cpp
+  src/v20170312/model/InquiryPriceTerminateInstancesResponse.cpp
   src/v20170312/model/LocalDiskType.cpp
   src/v20170312/model/AssociateInstancesKeyPairsResponse.cpp
   src/v20170312/model/RenewInstancesRequest.cpp
@@ -350,6 +353,7 @@ set(cvm_src
   src/v20170312/model/DescribeZonesResponse.cpp
   src/v20170312/model/ItemPrice.cpp
   src/v20170312/model/InstanceTypeQuotaItem.cpp
+  src/v20170312/model/InquiryPriceTerminateInstancesRequest.cpp
   src/v20170312/model/ImageOsList.cpp
   src/v20170312/model/ReservedInstanceTypeItem.cpp
   src/v20170312/model/InquiryPriceRunInstancesResponse.cpp

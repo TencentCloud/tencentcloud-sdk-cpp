@@ -1932,6 +1932,49 @@ CvmClient::InquiryPriceRunInstancesOutcomeCallable CvmClient::InquiryPriceRunIns
     return task->get_future();
 }
 
+CvmClient::InquiryPriceTerminateInstancesOutcome CvmClient::InquiryPriceTerminateInstances(const InquiryPriceTerminateInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceTerminateInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceTerminateInstancesResponse rsp = InquiryPriceTerminateInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceTerminateInstancesOutcome(rsp);
+        else
+            return InquiryPriceTerminateInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceTerminateInstancesOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::InquiryPriceTerminateInstancesAsync(const InquiryPriceTerminateInstancesRequest& request, const InquiryPriceTerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceTerminateInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::InquiryPriceTerminateInstancesOutcomeCallable CvmClient::InquiryPriceTerminateInstancesCallable(const InquiryPriceTerminateInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceTerminateInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceTerminateInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::ModifyDisasterRecoverGroupAttributeOutcome CvmClient::ModifyDisasterRecoverGroupAttribute(const ModifyDisasterRecoverGroupAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDisasterRecoverGroupAttribute");

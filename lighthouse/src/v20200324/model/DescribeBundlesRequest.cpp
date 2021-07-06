@@ -26,7 +26,8 @@ DescribeBundlesRequest::DescribeBundlesRequest() :
     m_bundleIdsHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_zonesHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,19 @@ string DescribeBundlesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -151,6 +165,22 @@ void DescribeBundlesRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeBundlesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+vector<string> DescribeBundlesRequest::GetZones() const
+{
+    return m_zones;
+}
+
+void DescribeBundlesRequest::SetZones(const vector<string>& _zones)
+{
+    m_zones = _zones;
+    m_zonesHasBeenSet = true;
+}
+
+bool DescribeBundlesRequest::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
 }
 
 

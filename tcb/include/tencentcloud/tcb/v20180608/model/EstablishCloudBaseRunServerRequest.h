@@ -260,6 +260,24 @@ namespace TencentCloud
                      */
                     bool OpenAccessTypesHasBeenSet() const;
 
+                    /**
+                     * 获取是否创建Path 0未传默认创建 1创建 2不创建
+                     * @return IsCreatePath 是否创建Path 0未传默认创建 1创建 2不创建
+                     */
+                    int64_t GetIsCreatePath() const;
+
+                    /**
+                     * 设置是否创建Path 0未传默认创建 1创建 2不创建
+                     * @param IsCreatePath 是否创建Path 0未传默认创建 1创建 2不创建
+                     */
+                    void SetIsCreatePath(const int64_t& _isCreatePath);
+
+                    /**
+                     * 判断参数 IsCreatePath 是否已赋值
+                     * @return IsCreatePath 是否已赋值
+                     */
+                    bool IsCreatePathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -333,6 +351,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_openAccessTypes;
                     bool m_openAccessTypesHasBeenSet;
+
+                    /**
+                     * 是否创建Path 0未传默认创建 1创建 2不创建
+                     */
+                    int64_t m_isCreatePath;
+                    bool m_isCreatePathHasBeenSet;
 
                 };
             }

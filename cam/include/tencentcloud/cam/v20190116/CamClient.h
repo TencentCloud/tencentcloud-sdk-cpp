@@ -113,6 +113,8 @@
 #include <tencentcloud/cam/v20190116/model/ListGroupsForUserResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListPoliciesRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListPoliciesResponse.h>
+#include <tencentcloud/cam/v20190116/model/ListPoliciesGrantingServiceAccessRequest.h>
+#include <tencentcloud/cam/v20190116/model/ListPoliciesGrantingServiceAccessResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListPolicyVersionsRequest.h>
 #include <tencentcloud/cam/v20190116/model/ListPolicyVersionsResponse.h>
 #include <tencentcloud/cam/v20190116/model/ListSAMLProvidersRequest.h>
@@ -296,6 +298,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListPoliciesResponse> ListPoliciesOutcome;
                 typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListPoliciesRequest&, ListPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPoliciesAsyncHandler;
+                typedef Outcome<Error, Model::ListPoliciesGrantingServiceAccessResponse> ListPoliciesGrantingServiceAccessOutcome;
+                typedef std::future<ListPoliciesGrantingServiceAccessOutcome> ListPoliciesGrantingServiceAccessOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::ListPoliciesGrantingServiceAccessRequest&, ListPoliciesGrantingServiceAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPoliciesGrantingServiceAccessAsyncHandler;
                 typedef Outcome<Error, Model::ListPolicyVersionsResponse> ListPolicyVersionsOutcome;
                 typedef std::future<ListPolicyVersionsOutcome> ListPolicyVersionsOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ListPolicyVersionsRequest&, ListPolicyVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPolicyVersionsAsyncHandler;
@@ -754,6 +759,15 @@ namespace TencentCloud
                 ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest &request);
                 void ListPoliciesAsync(const Model::ListPoliciesRequest& request, const ListPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListPoliciesOutcomeCallable ListPoliciesCallable(const Model::ListPoliciesRequest& request);
+
+                /**
+                 *获取所有已授权服务
+                 * @param req ListPoliciesGrantingServiceAccessRequest
+                 * @return ListPoliciesGrantingServiceAccessOutcome
+                 */
+                ListPoliciesGrantingServiceAccessOutcome ListPoliciesGrantingServiceAccess(const Model::ListPoliciesGrantingServiceAccessRequest &request);
+                void ListPoliciesGrantingServiceAccessAsync(const Model::ListPoliciesGrantingServiceAccessRequest& request, const ListPoliciesGrantingServiceAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListPoliciesGrantingServiceAccessOutcomeCallable ListPoliciesGrantingServiceAccessCallable(const Model::ListPoliciesGrantingServiceAccessRequest& request);
 
                 /**
                  *该接口（ListPolicyVersions）用于获取策略版本列表

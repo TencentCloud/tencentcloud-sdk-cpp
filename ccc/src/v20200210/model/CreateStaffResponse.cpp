@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ccc::V20200210::Model;
 using namespace std;
 
-CreateStaffResponse::CreateStaffResponse()
+CreateStaffResponse::CreateStaffResponse() :
+    m_errorStaffListHasBeenSet(false)
 {
 }
 
@@ -61,9 +62,39 @@ CoreInternalOutcome CreateStaffResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ErrorStaffList") && !rsp["ErrorStaffList"].IsNull())
+    {
+        if (!rsp["ErrorStaffList"].IsArray())
+            return CoreInternalOutcome(Error("response `ErrorStaffList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ErrorStaffList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ErrStaffItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_errorStaffList.push_back(item);
+        }
+        m_errorStaffListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<ErrStaffItem> CreateStaffResponse::GetErrorStaffList() const
+{
+    return m_errorStaffList;
+}
+
+bool CreateStaffResponse::ErrorStaffListHasBeenSet() const
+{
+    return m_errorStaffListHasBeenSet;
+}
 
 

@@ -1975,6 +1975,49 @@ CamClient::ListPoliciesOutcomeCallable CamClient::ListPoliciesCallable(const Lis
     return task->get_future();
 }
 
+CamClient::ListPoliciesGrantingServiceAccessOutcome CamClient::ListPoliciesGrantingServiceAccess(const ListPoliciesGrantingServiceAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListPoliciesGrantingServiceAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListPoliciesGrantingServiceAccessResponse rsp = ListPoliciesGrantingServiceAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListPoliciesGrantingServiceAccessOutcome(rsp);
+        else
+            return ListPoliciesGrantingServiceAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return ListPoliciesGrantingServiceAccessOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::ListPoliciesGrantingServiceAccessAsync(const ListPoliciesGrantingServiceAccessRequest& request, const ListPoliciesGrantingServiceAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListPoliciesGrantingServiceAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::ListPoliciesGrantingServiceAccessOutcomeCallable CamClient::ListPoliciesGrantingServiceAccessCallable(const ListPoliciesGrantingServiceAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListPoliciesGrantingServiceAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->ListPoliciesGrantingServiceAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::ListPolicyVersionsOutcome CamClient::ListPolicyVersions(const ListPolicyVersionsRequest &request)
 {
     auto outcome = MakeRequest(request, "ListPolicyVersions");

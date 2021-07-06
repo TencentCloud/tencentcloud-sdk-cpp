@@ -44,7 +44,8 @@ Instance::Instance() :
     m_expiredTimeHasBeenSet(false),
     m_platformTypeHasBeenSet(false),
     m_platformHasBeenSet(false),
-    m_osNameHasBeenSet(false)
+    m_osNameHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -320,6 +321,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_osNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Instance.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -530,6 +541,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "OsName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_osName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -917,5 +936,21 @@ void Instance::SetOsName(const string& _osName)
 bool Instance::OsNameHasBeenSet() const
 {
     return m_osNameHasBeenSet;
+}
+
+string Instance::GetZone() const
+{
+    return m_zone;
+}
+
+void Instance::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool Instance::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 

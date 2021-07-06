@@ -40,6 +40,49 @@ CccClient::CccClient(const Credential &credential, const string &region, const C
 }
 
 
+CccClient::BindStaffSkillGroupListOutcome CccClient::BindStaffSkillGroupList(const BindStaffSkillGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindStaffSkillGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindStaffSkillGroupListResponse rsp = BindStaffSkillGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindStaffSkillGroupListOutcome(rsp);
+        else
+            return BindStaffSkillGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return BindStaffSkillGroupListOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::BindStaffSkillGroupListAsync(const BindStaffSkillGroupListRequest& request, const BindStaffSkillGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindStaffSkillGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::BindStaffSkillGroupListOutcomeCallable CccClient::BindStaffSkillGroupListCallable(const BindStaffSkillGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindStaffSkillGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->BindStaffSkillGroupList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::CreateSDKLoginTokenOutcome CccClient::CreateSDKLoginToken(const CreateSDKLoginTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSDKLoginToken");
@@ -119,6 +162,49 @@ CccClient::CreateStaffOutcomeCallable CccClient::CreateStaffCallable(const Creat
         [this, request]()
         {
             return this->CreateStaff(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DeleteStaffOutcome CccClient::DeleteStaff(const DeleteStaffRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteStaff");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteStaffResponse rsp = DeleteStaffResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteStaffOutcome(rsp);
+        else
+            return DeleteStaffOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteStaffOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DeleteStaffAsync(const DeleteStaffRequest& request, const DeleteStaffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteStaff(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DeleteStaffOutcomeCallable CccClient::DeleteStaffCallable(const DeleteStaffRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteStaffOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteStaff(request);
         }
     );
 
@@ -506,6 +592,49 @@ CccClient::DescribeTelSessionOutcomeCallable CccClient::DescribeTelSessionCallab
         [this, request]()
         {
             return this->DescribeTelSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::UnbindStaffSkillGroupListOutcome CccClient::UnbindStaffSkillGroupList(const UnbindStaffSkillGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindStaffSkillGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindStaffSkillGroupListResponse rsp = UnbindStaffSkillGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindStaffSkillGroupListOutcome(rsp);
+        else
+            return UnbindStaffSkillGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindStaffSkillGroupListOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::UnbindStaffSkillGroupListAsync(const UnbindStaffSkillGroupListRequest& request, const UnbindStaffSkillGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindStaffSkillGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::UnbindStaffSkillGroupListOutcomeCallable CccClient::UnbindStaffSkillGroupListCallable(const UnbindStaffSkillGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindStaffSkillGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindStaffSkillGroupList(request);
         }
     );
 

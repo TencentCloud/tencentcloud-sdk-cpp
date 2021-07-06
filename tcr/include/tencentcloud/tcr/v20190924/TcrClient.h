@@ -33,6 +33,8 @@
 #include <tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImageLifecyclePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImageLifecyclePersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateImmutableTagRulesRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateImmutableTagRulesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInstanceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInstanceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInstanceTokenRequest.h>
@@ -71,6 +73,8 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteImageLifecyclePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImagePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImagePersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteImmutableTagRulesRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteImmutableTagRulesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceTokenRequest.h>
@@ -115,6 +119,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeImagePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImagesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImagesResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeImmutableTagRulesRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeImmutableTagRulesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstanceStatusRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstanceStatusResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstanceTokenRequest.h>
@@ -171,6 +177,8 @@
 #include <tencentcloud/tcr/v20190924/model/ManageReplicationResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyApplicationTriggerPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyImmutableTagRulesRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyImmutableTagRulesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyInstanceTokenRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyInstanceTokenResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyNamespaceRequest.h>
@@ -224,6 +232,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateImageLifecyclePersonalResponse> CreateImageLifecyclePersonalOutcome;
                 typedef std::future<CreateImageLifecyclePersonalOutcome> CreateImageLifecyclePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateImageLifecyclePersonalRequest&, CreateImageLifecyclePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageLifecyclePersonalAsyncHandler;
+                typedef Outcome<Error, Model::CreateImmutableTagRulesResponse> CreateImmutableTagRulesOutcome;
+                typedef std::future<CreateImmutableTagRulesOutcome> CreateImmutableTagRulesOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateImmutableTagRulesRequest&, CreateImmutableTagRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImmutableTagRulesAsyncHandler;
                 typedef Outcome<Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
@@ -281,6 +292,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteImagePersonalResponse> DeleteImagePersonalOutcome;
                 typedef std::future<DeleteImagePersonalOutcome> DeleteImagePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteImagePersonalRequest&, DeleteImagePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImagePersonalAsyncHandler;
+                typedef Outcome<Error, Model::DeleteImmutableTagRulesResponse> DeleteImmutableTagRulesOutcome;
+                typedef std::future<DeleteImmutableTagRulesOutcome> DeleteImmutableTagRulesOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteImmutableTagRulesRequest&, DeleteImmutableTagRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImmutableTagRulesAsyncHandler;
                 typedef Outcome<Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
                 typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
@@ -347,6 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeImagesResponse> DescribeImagesOutcome;
                 typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeImagesRequest&, DescribeImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeImmutableTagRulesResponse> DescribeImmutableTagRulesOutcome;
+                typedef std::future<DescribeImmutableTagRulesOutcome> DescribeImmutableTagRulesOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeImmutableTagRulesRequest&, DescribeImmutableTagRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImmutableTagRulesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeInstanceStatusResponse> DescribeInstanceStatusOutcome;
                 typedef std::future<DescribeInstanceStatusOutcome> DescribeInstanceStatusOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeInstanceStatusRequest&, DescribeInstanceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceStatusAsyncHandler;
@@ -431,6 +448,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyApplicationTriggerPersonalResponse> ModifyApplicationTriggerPersonalOutcome;
                 typedef std::future<ModifyApplicationTriggerPersonalOutcome> ModifyApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyApplicationTriggerPersonalRequest&, ModifyApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationTriggerPersonalAsyncHandler;
+                typedef Outcome<Error, Model::ModifyImmutableTagRulesResponse> ModifyImmutableTagRulesOutcome;
+                typedef std::future<ModifyImmutableTagRulesOutcome> ModifyImmutableTagRulesOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ModifyImmutableTagRulesRequest&, ModifyImmutableTagRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImmutableTagRulesAsyncHandler;
                 typedef Outcome<Error, Model::ModifyInstanceTokenResponse> ModifyInstanceTokenOutcome;
                 typedef std::future<ModifyInstanceTokenOutcome> ModifyInstanceTokenOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyInstanceTokenRequest&, ModifyInstanceTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceTokenAsyncHandler;
@@ -514,6 +534,15 @@ namespace TencentCloud
                 CreateImageLifecyclePersonalOutcome CreateImageLifecyclePersonal(const Model::CreateImageLifecyclePersonalRequest &request);
                 void CreateImageLifecyclePersonalAsync(const Model::CreateImageLifecyclePersonalRequest& request, const CreateImageLifecyclePersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateImageLifecyclePersonalOutcomeCallable CreateImageLifecyclePersonalCallable(const Model::CreateImageLifecyclePersonalRequest& request);
+
+                /**
+                 *创建镜像不可变规则
+                 * @param req CreateImmutableTagRulesRequest
+                 * @return CreateImmutableTagRulesOutcome
+                 */
+                CreateImmutableTagRulesOutcome CreateImmutableTagRules(const Model::CreateImmutableTagRulesRequest &request);
+                void CreateImmutableTagRulesAsync(const Model::CreateImmutableTagRulesRequest& request, const CreateImmutableTagRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImmutableTagRulesOutcomeCallable CreateImmutableTagRulesCallable(const Model::CreateImmutableTagRulesRequest& request);
 
                 /**
                  *创建实例
@@ -685,6 +714,15 @@ namespace TencentCloud
                 DeleteImagePersonalOutcome DeleteImagePersonal(const Model::DeleteImagePersonalRequest &request);
                 void DeleteImagePersonalAsync(const Model::DeleteImagePersonalRequest& request, const DeleteImagePersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteImagePersonalOutcomeCallable DeleteImagePersonalCallable(const Model::DeleteImagePersonalRequest& request);
+
+                /**
+                 * 删除镜像不可变规则
+                 * @param req DeleteImmutableTagRulesRequest
+                 * @return DeleteImmutableTagRulesOutcome
+                 */
+                DeleteImmutableTagRulesOutcome DeleteImmutableTagRules(const Model::DeleteImmutableTagRulesRequest &request);
+                void DeleteImmutableTagRulesAsync(const Model::DeleteImmutableTagRulesRequest& request, const DeleteImmutableTagRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImmutableTagRulesOutcomeCallable DeleteImmutableTagRulesCallable(const Model::DeleteImmutableTagRulesRequest& request);
 
                 /**
                  *删除镜像仓库企业版实例
@@ -883,6 +921,15 @@ namespace TencentCloud
                 DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest &request);
                 void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request);
+
+                /**
+                 *列出镜像不可变规则
+                 * @param req DescribeImmutableTagRulesRequest
+                 * @return DescribeImmutableTagRulesOutcome
+                 */
+                DescribeImmutableTagRulesOutcome DescribeImmutableTagRules(const Model::DescribeImmutableTagRulesRequest &request);
+                void DescribeImmutableTagRulesAsync(const Model::DescribeImmutableTagRulesRequest& request, const DescribeImmutableTagRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImmutableTagRulesOutcomeCallable DescribeImmutableTagRulesCallable(const Model::DescribeImmutableTagRulesRequest& request);
 
                 /**
                  *查询实例当前状态以及过程信息
@@ -1135,6 +1182,15 @@ namespace TencentCloud
                 ModifyApplicationTriggerPersonalOutcome ModifyApplicationTriggerPersonal(const Model::ModifyApplicationTriggerPersonalRequest &request);
                 void ModifyApplicationTriggerPersonalAsync(const Model::ModifyApplicationTriggerPersonalRequest& request, const ModifyApplicationTriggerPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApplicationTriggerPersonalOutcomeCallable ModifyApplicationTriggerPersonalCallable(const Model::ModifyApplicationTriggerPersonalRequest& request);
+
+                /**
+                 *更新镜像不可变规则
+                 * @param req ModifyImmutableTagRulesRequest
+                 * @return ModifyImmutableTagRulesOutcome
+                 */
+                ModifyImmutableTagRulesOutcome ModifyImmutableTagRules(const Model::ModifyImmutableTagRulesRequest &request);
+                void ModifyImmutableTagRulesAsync(const Model::ModifyImmutableTagRulesRequest& request, const ModifyImmutableTagRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyImmutableTagRulesOutcomeCallable ModifyImmutableTagRulesCallable(const Model::ModifyImmutableTagRulesRequest& request);
 
                 /**
                  *更新实例内指定长期访问凭证的启用状态

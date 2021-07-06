@@ -34,7 +34,8 @@ EstablishCloudBaseRunServerRequest::EstablishCloudBaseRunServerRequest() :
     m_sourceHasBeenSet(false),
     m_vpcInfoHasBeenSet(false),
     m_publicAccessHasBeenSet(false),
-    m_openAccessTypesHasBeenSet(false)
+    m_openAccessTypesHasBeenSet(false),
+    m_isCreatePathHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,14 @@ string EstablishCloudBaseRunServerRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isCreatePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCreatePath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isCreatePath, allocator);
     }
 
 
@@ -346,6 +355,22 @@ void EstablishCloudBaseRunServerRequest::SetOpenAccessTypes(const vector<string>
 bool EstablishCloudBaseRunServerRequest::OpenAccessTypesHasBeenSet() const
 {
     return m_openAccessTypesHasBeenSet;
+}
+
+int64_t EstablishCloudBaseRunServerRequest::GetIsCreatePath() const
+{
+    return m_isCreatePath;
+}
+
+void EstablishCloudBaseRunServerRequest::SetIsCreatePath(const int64_t& _isCreatePath)
+{
+    m_isCreatePath = _isCreatePath;
+    m_isCreatePathHasBeenSet = true;
+}
+
+bool EstablishCloudBaseRunServerRequest::IsCreatePathHasBeenSet() const
+{
+    return m_isCreatePathHasBeenSet;
 }
 
 

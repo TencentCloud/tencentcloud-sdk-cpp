@@ -255,6 +255,49 @@ TcrClient::CreateImageLifecyclePersonalOutcomeCallable TcrClient::CreateImageLif
     return task->get_future();
 }
 
+TcrClient::CreateImmutableTagRulesOutcome TcrClient::CreateImmutableTagRules(const CreateImmutableTagRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImmutableTagRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImmutableTagRulesResponse rsp = CreateImmutableTagRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImmutableTagRulesOutcome(rsp);
+        else
+            return CreateImmutableTagRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImmutableTagRulesOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateImmutableTagRulesAsync(const CreateImmutableTagRulesRequest& request, const CreateImmutableTagRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateImmutableTagRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CreateImmutableTagRulesOutcomeCallable TcrClient::CreateImmutableTagRulesCallable(const CreateImmutableTagRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateImmutableTagRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateImmutableTagRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::CreateInstanceOutcome TcrClient::CreateInstance(const CreateInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstance");
@@ -1065,6 +1108,49 @@ TcrClient::DeleteImagePersonalOutcomeCallable TcrClient::DeleteImagePersonalCall
         [this, request]()
         {
             return this->DeleteImagePersonal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DeleteImmutableTagRulesOutcome TcrClient::DeleteImmutableTagRules(const DeleteImmutableTagRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImmutableTagRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImmutableTagRulesResponse rsp = DeleteImmutableTagRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImmutableTagRulesOutcome(rsp);
+        else
+            return DeleteImmutableTagRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImmutableTagRulesOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteImmutableTagRulesAsync(const DeleteImmutableTagRulesRequest& request, const DeleteImmutableTagRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteImmutableTagRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteImmutableTagRulesOutcomeCallable TcrClient::DeleteImmutableTagRulesCallable(const DeleteImmutableTagRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteImmutableTagRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteImmutableTagRules(request);
         }
     );
 
@@ -2011,6 +2097,49 @@ TcrClient::DescribeImagesOutcomeCallable TcrClient::DescribeImagesCallable(const
         [this, request]()
         {
             return this->DescribeImages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DescribeImmutableTagRulesOutcome TcrClient::DescribeImmutableTagRules(const DescribeImmutableTagRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImmutableTagRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImmutableTagRulesResponse rsp = DescribeImmutableTagRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImmutableTagRulesOutcome(rsp);
+        else
+            return DescribeImmutableTagRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImmutableTagRulesOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeImmutableTagRulesAsync(const DescribeImmutableTagRulesRequest& request, const DescribeImmutableTagRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImmutableTagRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeImmutableTagRulesOutcomeCallable TcrClient::DescribeImmutableTagRulesCallable(const DescribeImmutableTagRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImmutableTagRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImmutableTagRules(request);
         }
     );
 
@@ -3215,6 +3344,49 @@ TcrClient::ModifyApplicationTriggerPersonalOutcomeCallable TcrClient::ModifyAppl
         [this, request]()
         {
             return this->ModifyApplicationTriggerPersonal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::ModifyImmutableTagRulesOutcome TcrClient::ModifyImmutableTagRules(const ModifyImmutableTagRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyImmutableTagRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyImmutableTagRulesResponse rsp = ModifyImmutableTagRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyImmutableTagRulesOutcome(rsp);
+        else
+            return ModifyImmutableTagRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyImmutableTagRulesOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ModifyImmutableTagRulesAsync(const ModifyImmutableTagRulesRequest& request, const ModifyImmutableTagRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyImmutableTagRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::ModifyImmutableTagRulesOutcomeCallable TcrClient::ModifyImmutableTagRulesCallable(const ModifyImmutableTagRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyImmutableTagRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyImmutableTagRules(request);
         }
     );
 

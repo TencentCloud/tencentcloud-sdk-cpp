@@ -147,6 +147,24 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取可用区列表。默认为全部可用区。
+                     * @return Zones 可用区列表。默认为全部可用区。
+                     */
+                    std::vector<std::string> GetZones() const;
+
+                    /**
+                     * 设置可用区列表。默认为全部可用区。
+                     * @param Zones 可用区列表。默认为全部可用区。
+                     */
+                    void SetZones(const std::vector<std::string>& _zones);
+
+                    /**
+                     * 判断参数 Zones 是否已赋值
+                     * @return Zones 是否已赋值
+                     */
+                    bool ZonesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,6 +198,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 可用区列表。默认为全部可用区。
+                     */
+                    std::vector<std::string> m_zones;
+                    bool m_zonesHasBeenSet;
 
                 };
             }

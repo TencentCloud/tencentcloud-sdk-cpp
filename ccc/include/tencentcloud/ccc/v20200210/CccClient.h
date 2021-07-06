@@ -23,10 +23,14 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListRequest.h>
+#include <tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateStaffResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeChatMessagesResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsRequest.h>
@@ -45,6 +49,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelSessionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelSessionResponse.h>
+#include <tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h>
+#include <tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListResponse.h>
 
 
 namespace TencentCloud
@@ -59,12 +65,18 @@ namespace TencentCloud
                 CccClient(const Credential &credential, const std::string &region);
                 CccClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::BindStaffSkillGroupListResponse> BindStaffSkillGroupListOutcome;
+                typedef std::future<BindStaffSkillGroupListOutcome> BindStaffSkillGroupListOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::BindStaffSkillGroupListRequest&, BindStaffSkillGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindStaffSkillGroupListAsyncHandler;
                 typedef Outcome<Error, Model::CreateSDKLoginTokenResponse> CreateSDKLoginTokenOutcome;
                 typedef std::future<CreateSDKLoginTokenOutcome> CreateSDKLoginTokenOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateSDKLoginTokenRequest&, CreateSDKLoginTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSDKLoginTokenAsyncHandler;
                 typedef Outcome<Error, Model::CreateStaffResponse> CreateStaffOutcome;
                 typedef std::future<CreateStaffOutcome> CreateStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateStaffRequest&, CreateStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStaffAsyncHandler;
+                typedef Outcome<Error, Model::DeleteStaffResponse> DeleteStaffOutcome;
+                typedef std::future<DeleteStaffOutcome> DeleteStaffOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DeleteStaffRequest&, DeleteStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStaffAsyncHandler;
                 typedef Outcome<Error, Model::DescribeChatMessagesResponse> DescribeChatMessagesOutcome;
                 typedef std::future<DescribeChatMessagesOutcome> DescribeChatMessagesOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeChatMessagesRequest&, DescribeChatMessagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChatMessagesAsyncHandler;
@@ -92,8 +104,20 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeTelSessionResponse> DescribeTelSessionOutcome;
                 typedef std::future<DescribeTelSessionOutcome> DescribeTelSessionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeTelSessionRequest&, DescribeTelSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelSessionAsyncHandler;
+                typedef Outcome<Error, Model::UnbindStaffSkillGroupListResponse> UnbindStaffSkillGroupListOutcome;
+                typedef std::future<UnbindStaffSkillGroupListOutcome> UnbindStaffSkillGroupListOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::UnbindStaffSkillGroupListRequest&, UnbindStaffSkillGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindStaffSkillGroupListAsyncHandler;
 
 
+
+                /**
+                 *绑定坐席所属技能组
+                 * @param req BindStaffSkillGroupListRequest
+                 * @return BindStaffSkillGroupListOutcome
+                 */
+                BindStaffSkillGroupListOutcome BindStaffSkillGroupList(const Model::BindStaffSkillGroupListRequest &request);
+                void BindStaffSkillGroupListAsync(const Model::BindStaffSkillGroupListRequest& request, const BindStaffSkillGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindStaffSkillGroupListOutcomeCallable BindStaffSkillGroupListCallable(const Model::BindStaffSkillGroupListRequest& request);
 
                 /**
                  *创建 SDK 登录 Token。
@@ -114,6 +138,15 @@ namespace TencentCloud
                 CreateStaffOutcomeCallable CreateStaffCallable(const Model::CreateStaffRequest& request);
 
                 /**
+                 *删除坐席信息
+                 * @param req DeleteStaffRequest
+                 * @return DeleteStaffOutcome
+                 */
+                DeleteStaffOutcome DeleteStaff(const Model::DeleteStaffRequest &request);
+                void DeleteStaffAsync(const Model::DeleteStaffRequest& request, const DeleteStaffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStaffOutcomeCallable DeleteStaffCallable(const Model::DeleteStaffRequest& request);
+
+                /**
                  *包括具体聊天内容
                  * @param req DescribeChatMessagesRequest
                  * @return DescribeChatMessagesOutcome
@@ -132,7 +165,7 @@ namespace TencentCloud
                 DescribeIMCdrsOutcomeCallable DescribeIMCdrsCallable(const Model::DescribeIMCdrsRequest& request);
 
                 /**
-                 *获取 PSTN 活动会话列表。
+                 *获取当前正在通话的会话列表
                  * @param req DescribePSTNActiveSessionListRequest
                  * @return DescribePSTNActiveSessionListOutcome
                  */
@@ -195,6 +228,15 @@ namespace TencentCloud
                 DescribeTelSessionOutcome DescribeTelSession(const Model::DescribeTelSessionRequest &request);
                 void DescribeTelSessionAsync(const Model::DescribeTelSessionRequest& request, const DescribeTelSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTelSessionOutcomeCallable DescribeTelSessionCallable(const Model::DescribeTelSessionRequest& request);
+
+                /**
+                 *解绑坐席所属技能组
+                 * @param req UnbindStaffSkillGroupListRequest
+                 * @return UnbindStaffSkillGroupListOutcome
+                 */
+                UnbindStaffSkillGroupListOutcome UnbindStaffSkillGroupList(const Model::UnbindStaffSkillGroupListRequest &request);
+                void UnbindStaffSkillGroupListAsync(const Model::UnbindStaffSkillGroupListRequest& request, const UnbindStaffSkillGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindStaffSkillGroupListOutcomeCallable UnbindStaffSkillGroupListCallable(const Model::UnbindStaffSkillGroupListRequest& request);
 
             };
         }
