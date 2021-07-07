@@ -814,6 +814,49 @@ TcbClient::DescribeCloudBaseProjectVersionListOutcomeCallable TcbClient::Describ
     return task->get_future();
 }
 
+TcbClient::DescribeCloudBaseRunConfForGateWayOutcome TcbClient::DescribeCloudBaseRunConfForGateWay(const DescribeCloudBaseRunConfForGateWayRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunConfForGateWay");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunConfForGateWayResponse rsp = DescribeCloudBaseRunConfForGateWayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunConfForGateWayOutcome(rsp);
+        else
+            return DescribeCloudBaseRunConfForGateWayOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunConfForGateWayOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunConfForGateWayAsync(const DescribeCloudBaseRunConfForGateWayRequest& request, const DescribeCloudBaseRunConfForGateWayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudBaseRunConfForGateWay(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCloudBaseRunConfForGateWayOutcomeCallable TcbClient::DescribeCloudBaseRunConfForGateWayCallable(const DescribeCloudBaseRunConfForGateWayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudBaseRunConfForGateWayOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudBaseRunConfForGateWay(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeCloudBaseRunResourceOutcome TcbClient::DescribeCloudBaseRunResource(const DescribeCloudBaseRunResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseRunResource");
@@ -1925,6 +1968,49 @@ TcbClient::EstablishWxGatewayRouteOutcomeCallable TcbClient::EstablishWxGatewayR
         [this, request]()
         {
             return this->EstablishWxGatewayRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::ModifyCloudBaseRunServerFlowConfOutcome TcbClient::ModifyCloudBaseRunServerFlowConf(const ModifyCloudBaseRunServerFlowConfRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudBaseRunServerFlowConf");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudBaseRunServerFlowConfResponse rsp = ModifyCloudBaseRunServerFlowConfResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudBaseRunServerFlowConfOutcome(rsp);
+        else
+            return ModifyCloudBaseRunServerFlowConfOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudBaseRunServerFlowConfOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyCloudBaseRunServerFlowConfAsync(const ModifyCloudBaseRunServerFlowConfRequest& request, const ModifyCloudBaseRunServerFlowConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCloudBaseRunServerFlowConf(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::ModifyCloudBaseRunServerFlowConfOutcomeCallable TcbClient::ModifyCloudBaseRunServerFlowConfCallable(const ModifyCloudBaseRunServerFlowConfRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCloudBaseRunServerFlowConfOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCloudBaseRunServerFlowConf(request);
         }
     );
 

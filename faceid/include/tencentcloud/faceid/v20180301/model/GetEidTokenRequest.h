@@ -137,6 +137,24 @@ namespace TencentCloud
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取最长长度1024位。用户从Url中进入核身认证结束后重定向的回调链接地址。EidToken会在该链接的query参数中。
+                     * @return RedirectUrl 最长长度1024位。用户从Url中进入核身认证结束后重定向的回调链接地址。EidToken会在该链接的query参数中。
+                     */
+                    std::string GetRedirectUrl() const;
+
+                    /**
+                     * 设置最长长度1024位。用户从Url中进入核身认证结束后重定向的回调链接地址。EidToken会在该链接的query参数中。
+                     * @param RedirectUrl 最长长度1024位。用户从Url中进入核身认证结束后重定向的回调链接地址。EidToken会在该链接的query参数中。
+                     */
+                    void SetRedirectUrl(const std::string& _redirectUrl);
+
+                    /**
+                     * 判断参数 RedirectUrl 是否已赋值
+                     * @return RedirectUrl 是否已赋值
+                     */
+                    bool RedirectUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,6 +187,12 @@ namespace TencentCloud
                      */
                     GetEidTokenConfig m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 最长长度1024位。用户从Url中进入核身认证结束后重定向的回调链接地址。EidToken会在该链接的query参数中。
+                     */
+                    std::string m_redirectUrl;
+                    bool m_redirectUrlHasBeenSet;
 
                 };
             }

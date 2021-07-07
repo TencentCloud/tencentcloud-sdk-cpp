@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool PageNumberHasBeenSet() const;
 
+                    /**
+                     * 获取按手机号筛选
+                     * @return Phones 按手机号筛选
+                     */
+                    std::vector<std::string> GetPhones() const;
+
+                    /**
+                     * 设置按手机号筛选
+                     * @param Phones 按手机号筛选
+                     */
+                    void SetPhones(const std::vector<std::string>& _phones);
+
+                    /**
+                     * 判断参数 Phones 是否已赋值
+                     * @return Phones 是否已赋值
+                     */
+                    bool PhonesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
+
+                    /**
+                     * 按手机号筛选
+                     */
+                    std::vector<std::string> m_phones;
+                    bool m_phonesHasBeenSet;
 
                 };
             }

@@ -40,6 +40,49 @@ IotvideoClient::IotvideoClient(const Credential &credential, const string &regio
 }
 
 
+IotvideoClient::ApplyAIModelOutcome IotvideoClient::ApplyAIModel(const ApplyAIModelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyAIModel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyAIModelResponse rsp = ApplyAIModelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyAIModelOutcome(rsp);
+        else
+            return ApplyAIModelOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyAIModelOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::ApplyAIModelAsync(const ApplyAIModelRequest& request, const ApplyAIModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyAIModel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::ApplyAIModelOutcomeCallable IotvideoClient::ApplyAIModelCallable(const ApplyAIModelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyAIModelOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyAIModel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::BatchUpdateFirmwareOutcome IotvideoClient::BatchUpdateFirmware(const BatchUpdateFirmwareRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchUpdateFirmware");
@@ -76,6 +119,49 @@ IotvideoClient::BatchUpdateFirmwareOutcomeCallable IotvideoClient::BatchUpdateFi
         [this, request]()
         {
             return this->BatchUpdateFirmware(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::CancelAIModelApplicationOutcome IotvideoClient::CancelAIModelApplication(const CancelAIModelApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelAIModelApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelAIModelApplicationResponse rsp = CancelAIModelApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelAIModelApplicationOutcome(rsp);
+        else
+            return CancelAIModelApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelAIModelApplicationOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CancelAIModelApplicationAsync(const CancelAIModelApplicationRequest& request, const CancelAIModelApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelAIModelApplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CancelAIModelApplicationOutcomeCallable IotvideoClient::CancelAIModelApplicationCallable(const CancelAIModelApplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelAIModelApplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelAIModelApplication(request);
         }
     );
 
@@ -212,6 +298,49 @@ IotvideoClient::ControlDeviceDataOutcomeCallable IotvideoClient::ControlDeviceDa
     return task->get_future();
 }
 
+IotvideoClient::CreateAIDetectionOutcome IotvideoClient::CreateAIDetection(const CreateAIDetectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAIDetection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAIDetectionResponse rsp = CreateAIDetectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAIDetectionOutcome(rsp);
+        else
+            return CreateAIDetectionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAIDetectionOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CreateAIDetectionAsync(const CreateAIDetectionRequest& request, const CreateAIDetectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAIDetection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CreateAIDetectionOutcomeCallable IotvideoClient::CreateAIDetectionCallable(const CreateAIDetectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAIDetectionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAIDetection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::CreateBatchOutcome IotvideoClient::CreateBatch(const CreateBatchRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatch");
@@ -248,6 +377,49 @@ IotvideoClient::CreateBatchOutcomeCallable IotvideoClient::CreateBatchCallable(c
         [this, request]()
         {
             return this->CreateBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::CreateCOSCredentialsOutcome IotvideoClient::CreateCOSCredentials(const CreateCOSCredentialsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCOSCredentials");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCOSCredentialsResponse rsp = CreateCOSCredentialsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCOSCredentialsOutcome(rsp);
+        else
+            return CreateCOSCredentialsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCOSCredentialsOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CreateCOSCredentialsAsync(const CreateCOSCredentialsRequest& request, const CreateCOSCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCOSCredentials(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CreateCOSCredentialsOutcomeCallable IotvideoClient::CreateCOSCredentialsCallable(const CreateCOSCredentialsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCOSCredentialsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCOSCredentials(request);
         }
     );
 
@@ -592,6 +764,178 @@ IotvideoClient::DeleteProductOutcomeCallable IotvideoClient::DeleteProductCallab
         [this, request]()
         {
             return this->DeleteProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeAIModelApplicationsOutcome IotvideoClient::DescribeAIModelApplications(const DescribeAIModelApplicationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIModelApplications");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIModelApplicationsResponse rsp = DescribeAIModelApplicationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIModelApplicationsOutcome(rsp);
+        else
+            return DescribeAIModelApplicationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIModelApplicationsOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeAIModelApplicationsAsync(const DescribeAIModelApplicationsRequest& request, const DescribeAIModelApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAIModelApplications(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeAIModelApplicationsOutcomeCallable IotvideoClient::DescribeAIModelApplicationsCallable(const DescribeAIModelApplicationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAIModelApplicationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAIModelApplications(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeAIModelChannelOutcome IotvideoClient::DescribeAIModelChannel(const DescribeAIModelChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIModelChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIModelChannelResponse rsp = DescribeAIModelChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIModelChannelOutcome(rsp);
+        else
+            return DescribeAIModelChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIModelChannelOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeAIModelChannelAsync(const DescribeAIModelChannelRequest& request, const DescribeAIModelChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAIModelChannel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeAIModelChannelOutcomeCallable IotvideoClient::DescribeAIModelChannelCallable(const DescribeAIModelChannelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAIModelChannelOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAIModelChannel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeAIModelUsageOutcome IotvideoClient::DescribeAIModelUsage(const DescribeAIModelUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIModelUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIModelUsageResponse rsp = DescribeAIModelUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIModelUsageOutcome(rsp);
+        else
+            return DescribeAIModelUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIModelUsageOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeAIModelUsageAsync(const DescribeAIModelUsageRequest& request, const DescribeAIModelUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAIModelUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeAIModelUsageOutcomeCallable IotvideoClient::DescribeAIModelUsageCallable(const DescribeAIModelUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAIModelUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAIModelUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeAIModelsOutcome IotvideoClient::DescribeAIModels(const DescribeAIModelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIModels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIModelsResponse rsp = DescribeAIModelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIModelsOutcome(rsp);
+        else
+            return DescribeAIModelsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIModelsOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeAIModelsAsync(const DescribeAIModelsRequest& request, const DescribeAIModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAIModels(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeAIModelsOutcomeCallable IotvideoClient::DescribeAIModelsCallable(const DescribeAIModelsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAIModelsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAIModels(request);
         }
     );
 
@@ -2233,6 +2577,49 @@ IotvideoClient::PublishMessageOutcomeCallable IotvideoClient::PublishMessageCall
     return task->get_future();
 }
 
+IotvideoClient::ReportAliveDeviceOutcome IotvideoClient::ReportAliveDevice(const ReportAliveDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportAliveDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportAliveDeviceResponse rsp = ReportAliveDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportAliveDeviceOutcome(rsp);
+        else
+            return ReportAliveDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportAliveDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::ReportAliveDeviceAsync(const ReportAliveDeviceRequest& request, const ReportAliveDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportAliveDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::ReportAliveDeviceOutcomeCallable IotvideoClient::ReportAliveDeviceCallable(const ReportAliveDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportAliveDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportAliveDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::ResetCloudStorageOutcome IotvideoClient::ResetCloudStorage(const ResetCloudStorageRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetCloudStorage");
@@ -2398,6 +2785,49 @@ IotvideoClient::TransferCloudStorageOutcomeCallable IotvideoClient::TransferClou
         [this, request]()
         {
             return this->TransferCloudStorage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::UpdateAIModelChannelOutcome IotvideoClient::UpdateAIModelChannel(const UpdateAIModelChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAIModelChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAIModelChannelResponse rsp = UpdateAIModelChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAIModelChannelOutcome(rsp);
+        else
+            return UpdateAIModelChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAIModelChannelOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::UpdateAIModelChannelAsync(const UpdateAIModelChannelRequest& request, const UpdateAIModelChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAIModelChannel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::UpdateAIModelChannelOutcomeCallable IotvideoClient::UpdateAIModelChannelCallable(const UpdateAIModelChannelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAIModelChannelOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAIModelChannel(request);
         }
     );
 

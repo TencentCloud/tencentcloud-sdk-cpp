@@ -278,6 +278,24 @@ namespace TencentCloud
                      */
                     bool IsCreatePathHasBeenSet() const;
 
+                    /**
+                     * 获取指定创建路径（如不存在，则创建。存在，则忽略）
+                     * @return ServerPath 指定创建路径（如不存在，则创建。存在，则忽略）
+                     */
+                    std::string GetServerPath() const;
+
+                    /**
+                     * 设置指定创建路径（如不存在，则创建。存在，则忽略）
+                     * @param ServerPath 指定创建路径（如不存在，则创建。存在，则忽略）
+                     */
+                    void SetServerPath(const std::string& _serverPath);
+
+                    /**
+                     * 判断参数 ServerPath 是否已赋值
+                     * @return ServerPath 是否已赋值
+                     */
+                    bool ServerPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -357,6 +375,12 @@ namespace TencentCloud
                      */
                     int64_t m_isCreatePath;
                     bool m_isCreatePathHasBeenSet;
+
+                    /**
+                     * 指定创建路径（如不存在，则创建。存在，则忽略）
+                     */
+                    std::string m_serverPath;
+                    bool m_serverPathHasBeenSet;
 
                 };
             }

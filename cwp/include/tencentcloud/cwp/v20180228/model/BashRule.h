@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取危险等级(1: 高危 2:中危 3: 低危)
-                     * @return Level 危险等级(1: 高危 2:中危 3: 低危)
+                     * 获取危险等级(0 ：无 1: 高危 2:中危 3: 低危)
+                     * @return Level 危险等级(0 ：无 1: 高危 2:中危 3: 低危)
                      */
                     uint64_t GetLevel() const;
 
                     /**
-                     * 设置危险等级(1: 高危 2:中危 3: 低危)
-                     * @param Level 危险等级(1: 高危 2:中危 3: 低危)
+                     * 设置危险等级(0 ：无 1: 高危 2:中危 3: 低危)
+                     * @param Level 危险等级(0 ：无 1: 高危 2:中危 3: 低危)
                      */
                     void SetLevel(const uint64_t& _level);
 
@@ -262,6 +262,72 @@ namespace TencentCloud
                      */
                     bool HostipHasBeenSet() const;
 
+                    /**
+                     * 获取生效服务器的uuid数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uuids 生效服务器的uuid数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetUuids() const;
+
+                    /**
+                     * 设置生效服务器的uuid数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Uuids 生效服务器的uuid数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUuids(const std::vector<std::string>& _uuids);
+
+                    /**
+                     * 判断参数 Uuids 是否已赋值
+                     * @return Uuids 是否已赋值
+                     */
+                    bool UuidsHasBeenSet() const;
+
+                    /**
+                     * 获取0=黑名单 1=白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return White 0=黑名单 1=白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetWhite() const;
+
+                    /**
+                     * 设置0=黑名单 1=白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param White 0=黑名单 1=白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWhite(const uint64_t& _white);
+
+                    /**
+                     * 判断参数 White 是否已赋值
+                     * @return White 是否已赋值
+                     */
+                    bool WhiteHasBeenSet() const;
+
+                    /**
+                     * 获取是否处理之前的事件 0: 不处理 1:处理
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DealOldEvents 是否处理之前的事件 0: 不处理 1:处理
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDealOldEvents() const;
+
+                    /**
+                     * 设置是否处理之前的事件 0: 不处理 1:处理
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DealOldEvents 是否处理之前的事件 0: 不处理 1:处理
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDealOldEvents(const uint64_t& _dealOldEvents);
+
+                    /**
+                     * 判断参数 DealOldEvents 是否已赋值
+                     * @return DealOldEvents 是否已赋值
+                     */
+                    bool DealOldEventsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,7 +349,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 危险等级(1: 高危 2:中危 3: 低危)
+                     * 危险等级(0 ：无 1: 高危 2:中危 3: 低危)
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
@@ -335,6 +401,27 @@ namespace TencentCloud
                      */
                     std::string m_hostip;
                     bool m_hostipHasBeenSet;
+
+                    /**
+                     * 生效服务器的uuid数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_uuids;
+                    bool m_uuidsHasBeenSet;
+
+                    /**
+                     * 0=黑名单 1=白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_white;
+                    bool m_whiteHasBeenSet;
+
+                    /**
+                     * 是否处理之前的事件 0: 不处理 1:处理
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_dealOldEvents;
+                    bool m_dealOldEventsHasBeenSet;
 
                 };
             }

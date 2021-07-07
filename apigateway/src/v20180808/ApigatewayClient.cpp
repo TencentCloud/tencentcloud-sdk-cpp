@@ -427,6 +427,49 @@ ApigatewayClient::CreateIPStrategyOutcomeCallable ApigatewayClient::CreateIPStra
     return task->get_future();
 }
 
+ApigatewayClient::CreatePluginOutcome ApigatewayClient::CreatePlugin(const CreatePluginRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePlugin");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePluginResponse rsp = CreatePluginResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePluginOutcome(rsp);
+        else
+            return CreatePluginOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePluginOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::CreatePluginAsync(const CreatePluginRequest& request, const CreatePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePlugin(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::CreatePluginOutcomeCallable ApigatewayClient::CreatePluginCallable(const CreatePluginRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePluginOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePlugin(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::CreateServiceOutcome ApigatewayClient::CreateService(const CreateServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateService");

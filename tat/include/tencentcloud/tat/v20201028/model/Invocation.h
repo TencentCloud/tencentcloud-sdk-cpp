@@ -269,6 +269,24 @@ namespace TencentCloud
                      */
                     bool DefaultParametersHasBeenSet() const;
 
+                    /**
+                     * 获取执行命令的实例类型，取值范围：CVM、LIGHTHOUSE。
+                     * @return InstanceKind 执行命令的实例类型，取值范围：CVM、LIGHTHOUSE。
+                     */
+                    std::string GetInstanceKind() const;
+
+                    /**
+                     * 设置执行命令的实例类型，取值范围：CVM、LIGHTHOUSE。
+                     * @param InstanceKind 执行命令的实例类型，取值范围：CVM、LIGHTHOUSE。
+                     */
+                    void SetInstanceKind(const std::string& _instanceKind);
+
+                    /**
+                     * 判断参数 InstanceKind 是否已赋值
+                     * @return InstanceKind 是否已赋值
+                     */
+                    bool InstanceKindHasBeenSet() const;
+
                 private:
 
                     /**
@@ -342,6 +360,12 @@ namespace TencentCloud
                      */
                     std::string m_defaultParameters;
                     bool m_defaultParametersHasBeenSet;
+
+                    /**
+                     * 执行命令的实例类型，取值范围：CVM、LIGHTHOUSE。
+                     */
+                    std::string m_instanceKind;
+                    bool m_instanceKindHasBeenSet;
 
                 };
             }

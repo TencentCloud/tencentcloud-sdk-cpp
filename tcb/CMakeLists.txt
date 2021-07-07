@@ -22,6 +22,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h
   include/tencentcloud/tcb/v20180608/model/OrderInfo.h
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunConfForGateWayRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtensionUploadInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h
@@ -57,12 +58,13 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/FunctionInfo.h
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunEnvRequest.h
+  include/tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunServerDBClusterRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h
-  include/tencentcloud/tcb/v20180608/model/Tag.h
+  include/tencentcloud/tcb/v20180608/model/CloudBaseRunVersionFlowItem.h
   include/tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunSubNetsResponse.h
@@ -74,6 +76,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DeleteEndUserResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseEsInfo.h
+  include/tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfResponse.h
   include/tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerResponse.h
   include/tencentcloud/tcb/v20180608/model/EnvInfo.h
   include/tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h
@@ -104,6 +107,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceForExtendResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateAndDeployCloudBaseProjectRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunConfForGateWayResponse.h
   include/tencentcloud/tcb/v20180608/model/DatabasesInfo.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseSecurityContext.h
   include/tencentcloud/tcb/v20180608/model/ExtensionFile.h
@@ -140,11 +144,14 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseCodeRepoDetail.h
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h
+  include/tencentcloud/tcb/v20180608/model/Tag.h
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyEndUserResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudRunServiceVolume.h
+  include/tencentcloud/tcb/v20180608/model/CloudBaseRunForGatewayConf.h
   include/tencentcloud/tcb/v20180608/model/ExtensionFileInfo.h
+  include/tencentcloud/tcb/v20180608/model/ObjectKV.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseProjectVersion.h
   include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtensionUploadInfoResponse.h
@@ -162,6 +169,7 @@ set(tcb_src
   src/v20180608/model/DescribeEnvLimitResponse.cpp
   src/v20180608/model/OrderInfo.cpp
   src/v20180608/model/CheckTcbServiceResponse.cpp
+  src/v20180608/model/DescribeCloudBaseRunConfForGateWayRequest.cpp
   src/v20180608/model/DescribeCloudBaseRunServerVersionRequest.cpp
   src/v20180608/model/DescribeExtensionUploadInfoRequest.cpp
   src/v20180608/model/DescribeCloudBaseRunServerVersionResponse.cpp
@@ -197,12 +205,13 @@ set(tcb_src
   src/v20180608/model/FunctionInfo.cpp
   src/v20180608/model/CommonServiceAPIRequest.cpp
   src/v20180608/model/CreateWxCloudBaseRunEnvRequest.cpp
+  src/v20180608/model/ModifyCloudBaseRunServerFlowConfRequest.cpp
   src/v20180608/model/CreateStaticStoreRequest.cpp
   src/v20180608/model/CreateWxCloudBaseRunServerDBClusterRequest.cpp
   src/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.cpp
   src/v20180608/model/CreateAuthDomainResponse.cpp
   src/v20180608/model/DescribeEnvsRequest.cpp
-  src/v20180608/model/Tag.cpp
+  src/v20180608/model/CloudBaseRunVersionFlowItem.cpp
   src/v20180608/model/DeleteWxGatewayRouteRequest.cpp
   src/v20180608/model/DescribeExtraPkgBillingInfoRequest.cpp
   src/v20180608/model/DescribeWxCloudBaseRunSubNetsResponse.cpp
@@ -214,6 +223,7 @@ set(tcb_src
   src/v20180608/model/DeleteEndUserResponse.cpp
   src/v20180608/model/ModifyDatabaseACLResponse.cpp
   src/v20180608/model/CloudBaseEsInfo.cpp
+  src/v20180608/model/ModifyCloudBaseRunServerFlowConfResponse.cpp
   src/v20180608/model/EstablishCloudBaseRunServerResponse.cpp
   src/v20180608/model/EnvInfo.cpp
   src/v20180608/model/DestroyEnvRequest.cpp
@@ -244,6 +254,7 @@ set(tcb_src
   src/v20180608/model/DescribeCloudBaseRunResourceForExtendResponse.cpp
   src/v20180608/model/CreateAndDeployCloudBaseProjectRequest.cpp
   src/v20180608/model/DescribeCloudBaseRunVersionRequest.cpp
+  src/v20180608/model/DescribeCloudBaseRunConfForGateWayResponse.cpp
   src/v20180608/model/DatabasesInfo.cpp
   src/v20180608/model/CloudBaseSecurityContext.cpp
   src/v20180608/model/ExtensionFile.cpp
@@ -280,11 +291,14 @@ set(tcb_src
   src/v20180608/model/DescribeCloudBaseBuildServiceRequest.cpp
   src/v20180608/model/CloudBaseCodeRepoDetail.cpp
   src/v20180608/model/CheckTcbServiceRequest.cpp
+  src/v20180608/model/Tag.cpp
   src/v20180608/model/CreateCloudBaseRunResourceRequest.cpp
   src/v20180608/model/ModifyEndUserResponse.cpp
   src/v20180608/model/DescribeAuthDomainsRequest.cpp
   src/v20180608/model/CloudRunServiceVolume.cpp
+  src/v20180608/model/CloudBaseRunForGatewayConf.cpp
   src/v20180608/model/ExtensionFileInfo.cpp
+  src/v20180608/model/ObjectKV.cpp
   src/v20180608/model/CloudBaseProjectVersion.cpp
   src/v20180608/model/DescribeDatabaseACLResponse.cpp
   src/v20180608/model/DescribeExtensionUploadInfoResponse.cpp

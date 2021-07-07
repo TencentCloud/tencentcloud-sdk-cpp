@@ -212,6 +212,49 @@ FaceidClient::CheckBankCardInformationOutcomeCallable FaceidClient::CheckBankCar
     return task->get_future();
 }
 
+FaceidClient::CheckEidTokenStatusOutcome FaceidClient::CheckEidTokenStatus(const CheckEidTokenStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckEidTokenStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckEidTokenStatusResponse rsp = CheckEidTokenStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckEidTokenStatusOutcome(rsp);
+        else
+            return CheckEidTokenStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckEidTokenStatusOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::CheckEidTokenStatusAsync(const CheckEidTokenStatusRequest& request, const CheckEidTokenStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckEidTokenStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::CheckEidTokenStatusOutcomeCallable FaceidClient::CheckEidTokenStatusCallable(const CheckEidTokenStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckEidTokenStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckEidTokenStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::CheckIdCardInformationOutcome FaceidClient::CheckIdCardInformation(const CheckIdCardInformationRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckIdCardInformation");

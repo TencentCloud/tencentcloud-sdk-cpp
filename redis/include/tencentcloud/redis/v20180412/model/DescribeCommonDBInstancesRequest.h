@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool VipsHasBeenSet() const;
 
                     /**
-                     * 获取vpc网络统一Id列表
-                     * @return UniqVpcIds vpc网络统一Id列表
+                     * 获取vpc网络ID信息列表
+                     * @return UniqVpcIds vpc网络ID信息列表
                      */
                     std::vector<std::string> GetUniqVpcIds() const;
 
                     /**
-                     * 设置vpc网络统一Id列表
-                     * @param UniqVpcIds vpc网络统一Id列表
+                     * 设置vpc网络ID信息列表
+                     * @param UniqVpcIds vpc网络ID信息列表
                      */
                     void SetUniqVpcIds(const std::vector<std::string>& _uniqVpcIds);
 
@@ -223,14 +223,14 @@ namespace TencentCloud
                     bool UniqVpcIdsHasBeenSet() const;
 
                     /**
-                     * 获取子网统一id列表
-                     * @return UniqSubnetIds 子网统一id列表
+                     * 获取子网统一ID列表
+                     * @return UniqSubnetIds 子网统一ID列表
                      */
                     std::vector<std::string> GetUniqSubnetIds() const;
 
                     /**
-                     * 设置子网统一id列表
-                     * @param UniqSubnetIds 子网统一id列表
+                     * 设置子网统一ID列表
+                     * @param UniqSubnetIds 子网统一ID列表
                      */
                     void SetUniqSubnetIds(const std::vector<std::string>& _uniqSubnetIds);
 
@@ -333,13 +333,13 @@ namespace TencentCloud
                     bool m_vipsHasBeenSet;
 
                     /**
-                     * vpc网络统一Id列表
+                     * vpc网络ID信息列表
                      */
                     std::vector<std::string> m_uniqVpcIds;
                     bool m_uniqVpcIdsHasBeenSet;
 
                     /**
-                     * 子网统一id列表
+                     * 子网统一ID列表
                      */
                     std::vector<std::string> m_uniqSubnetIds;
                     bool m_uniqSubnetIdsHasBeenSet;

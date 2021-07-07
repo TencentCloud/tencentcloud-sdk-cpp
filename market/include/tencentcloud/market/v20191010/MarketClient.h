@@ -25,8 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/market/v20191010/model/FlowProductRemindRequest.h>
 #include <tencentcloud/market/v20191010/model/FlowProductRemindResponse.h>
-#include <tencentcloud/market/v20191010/model/GetCateTreeRequest.h>
-#include <tencentcloud/market/v20191010/model/GetCateTreeResponse.h>
 #include <tencentcloud/market/v20191010/model/GetUsagePlanUsageAmountRequest.h>
 #include <tencentcloud/market/v20191010/model/GetUsagePlanUsageAmountResponse.h>
 
@@ -46,9 +44,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::FlowProductRemindResponse> FlowProductRemindOutcome;
                 typedef std::future<FlowProductRemindOutcome> FlowProductRemindOutcomeCallable;
                 typedef std::function<void(const MarketClient*, const Model::FlowProductRemindRequest&, FlowProductRemindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlowProductRemindAsyncHandler;
-                typedef Outcome<Error, Model::GetCateTreeResponse> GetCateTreeOutcome;
-                typedef std::future<GetCateTreeOutcome> GetCateTreeOutcomeCallable;
-                typedef std::function<void(const MarketClient*, const Model::GetCateTreeRequest&, GetCateTreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCateTreeAsyncHandler;
                 typedef Outcome<Error, Model::GetUsagePlanUsageAmountResponse> GetUsagePlanUsageAmountOutcome;
                 typedef std::future<GetUsagePlanUsageAmountOutcome> GetUsagePlanUsageAmountOutcomeCallable;
                 typedef std::function<void(const MarketClient*, const Model::GetUsagePlanUsageAmountRequest&, GetUsagePlanUsageAmountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUsagePlanUsageAmountAsyncHandler;
@@ -63,15 +58,6 @@ namespace TencentCloud
                 FlowProductRemindOutcome FlowProductRemind(const Model::FlowProductRemindRequest &request);
                 void FlowProductRemindAsync(const Model::FlowProductRemindRequest& request, const FlowProductRemindAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FlowProductRemindOutcomeCallable FlowProductRemindCallable(const Model::FlowProductRemindRequest& request);
-
-                /**
-                 *获取分类名称
-                 * @param req GetCateTreeRequest
-                 * @return GetCateTreeOutcome
-                 */
-                GetCateTreeOutcome GetCateTree(const Model::GetCateTreeRequest &request);
-                void GetCateTreeAsync(const Model::GetCateTreeRequest& request, const GetCateTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetCateTreeOutcomeCallable GetCateTreeCallable(const Model::GetCateTreeRequest& request);
 
                 /**
                  *该接口可以根据InstanceId查询实例的api的使用情况。

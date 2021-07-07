@@ -14,33 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/market/v20191010/model/GetCateTreeRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeScanVulSettingRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Market::V20191010::Model;
+using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-GetCateTreeRequest::GetCateTreeRequest() :
-    m_cateIdHasBeenSet(false)
+DescribeScanVulSettingRequest::DescribeScanVulSettingRequest()
 {
 }
 
-string GetCateTreeRequest::ToJsonString() const
+string DescribeScanVulSettingRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_cateIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CateId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_cateId, allocator);
-    }
 
 
     rapidjson::StringBuffer buffer;
@@ -49,21 +40,5 @@ string GetCateTreeRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-uint64_t GetCateTreeRequest::GetCateId() const
-{
-    return m_cateId;
-}
-
-void GetCateTreeRequest::SetCateId(const uint64_t& _cateId)
-{
-    m_cateId = _cateId;
-    m_cateIdHasBeenSet = true;
-}
-
-bool GetCateTreeRequest::CateIdHasBeenSet() const
-{
-    return m_cateIdHasBeenSet;
-}
 
 

@@ -23,7 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-DescribeMachineRegionsResponse::DescribeMachineRegionsResponse()
+DescribeMachineRegionsResponse::DescribeMachineRegionsResponse() :
+    m_cVMHasBeenSet(false),
+    m_bMHasBeenSet(false),
+    m_lHHasBeenSet(false),
+    m_eCMHasBeenSet(false),
+    m_otherHasBeenSet(false)
 {
 }
 
@@ -61,9 +66,159 @@ CoreInternalOutcome DescribeMachineRegionsResponse::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("CVM") && !rsp["CVM"].IsNull())
+    {
+        if (!rsp["CVM"].IsArray())
+            return CoreInternalOutcome(Error("response `CVM` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CVM"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RegionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cVM.push_back(item);
+        }
+        m_cVMHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BM") && !rsp["BM"].IsNull())
+    {
+        if (!rsp["BM"].IsArray())
+            return CoreInternalOutcome(Error("response `BM` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["BM"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RegionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_bM.push_back(item);
+        }
+        m_bMHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LH") && !rsp["LH"].IsNull())
+    {
+        if (!rsp["LH"].IsArray())
+            return CoreInternalOutcome(Error("response `LH` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["LH"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RegionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_lH.push_back(item);
+        }
+        m_lHHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ECM") && !rsp["ECM"].IsNull())
+    {
+        if (!rsp["ECM"].IsArray())
+            return CoreInternalOutcome(Error("response `ECM` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ECM"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RegionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_eCM.push_back(item);
+        }
+        m_eCMHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Other") && !rsp["Other"].IsNull())
+    {
+        if (!rsp["Other"].IsArray())
+            return CoreInternalOutcome(Error("response `Other` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Other"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RegionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_other.push_back(item);
+        }
+        m_otherHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<RegionInfo> DescribeMachineRegionsResponse::GetCVM() const
+{
+    return m_cVM;
+}
+
+bool DescribeMachineRegionsResponse::CVMHasBeenSet() const
+{
+    return m_cVMHasBeenSet;
+}
+
+vector<RegionInfo> DescribeMachineRegionsResponse::GetBM() const
+{
+    return m_bM;
+}
+
+bool DescribeMachineRegionsResponse::BMHasBeenSet() const
+{
+    return m_bMHasBeenSet;
+}
+
+vector<RegionInfo> DescribeMachineRegionsResponse::GetLH() const
+{
+    return m_lH;
+}
+
+bool DescribeMachineRegionsResponse::LHHasBeenSet() const
+{
+    return m_lHHasBeenSet;
+}
+
+vector<RegionInfo> DescribeMachineRegionsResponse::GetECM() const
+{
+    return m_eCM;
+}
+
+bool DescribeMachineRegionsResponse::ECMHasBeenSet() const
+{
+    return m_eCMHasBeenSet;
+}
+
+vector<RegionInfo> DescribeMachineRegionsResponse::GetOther() const
+{
+    return m_other;
+}
+
+bool DescribeMachineRegionsResponse::OtherHasBeenSet() const
+{
+    return m_otherHasBeenSet;
+}
 
 

@@ -41,6 +41,8 @@
 #include <tencentcloud/apigateway/v20180808/model/CreateApiKeyResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateIPStrategyRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateIPStrategyResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/CreatePluginRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/CreatePluginResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateServiceRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateServiceResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/CreateUsagePlanRequest.h>
@@ -196,6 +198,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateIPStrategyResponse> CreateIPStrategyOutcome;
                 typedef std::future<CreateIPStrategyOutcome> CreateIPStrategyOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::CreateIPStrategyRequest&, CreateIPStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIPStrategyAsyncHandler;
+                typedef Outcome<Error, Model::CreatePluginResponse> CreatePluginOutcome;
+                typedef std::future<CreatePluginOutcome> CreatePluginOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::CreatePluginRequest&, CreatePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePluginAsyncHandler;
                 typedef Outcome<Error, Model::CreateServiceResponse> CreateServiceOutcome;
                 typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::CreateServiceRequest&, CreateServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceAsyncHandler;
@@ -454,6 +459,15 @@ API 网关中每个服务都会提供一个默认的域名供用户调用，但�
                 CreateIPStrategyOutcome CreateIPStrategy(const Model::CreateIPStrategyRequest &request);
                 void CreateIPStrategyAsync(const Model::CreateIPStrategyRequest& request, const CreateIPStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateIPStrategyOutcomeCallable CreateIPStrategyCallable(const Model::CreateIPStrategyRequest& request);
+
+                /**
+                 *创建API网关插件。
+                 * @param req CreatePluginRequest
+                 * @return CreatePluginOutcome
+                 */
+                CreatePluginOutcome CreatePlugin(const Model::CreatePluginRequest &request);
+                void CreatePluginAsync(const Model::CreatePluginRequest& request, const CreatePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePluginOutcomeCallable CreatePluginCallable(const Model::CreatePluginRequest& request);
 
                 /**
                  *本接口（CreateService）用于创建服务。

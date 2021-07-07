@@ -23,16 +23,24 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/iotvideo/v20201215/model/ApplyAIModelRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/ApplyAIModelResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/BatchUpdateFirmwareRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/BatchUpdateFirmwareResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/CancelAIModelApplicationRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/CancelAIModelApplicationResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CancelDeviceFirmwareTaskRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/CancelDeviceFirmwareTaskResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CheckForwardAuthRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/CheckForwardAuthResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/ControlDeviceDataRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/ControlDeviceDataResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/CreateAIDetectionRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/CreateAIDetectionResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateBatchRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateBatchResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/CreateCOSCredentialsRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/CreateCOSCredentialsResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateCloudStorageRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateCloudStorageResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateForwardRuleRequest.h>
@@ -49,6 +57,14 @@
 #include <tencentcloud/iotvideo/v20201215/model/DeleteForwardRuleResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DeleteProductRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DeleteProductResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeAIModelApplicationsRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeAIModelApplicationsResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeAIModelChannelRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeAIModelChannelResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeAIModelUsageRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeAIModelUsageResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeAIModelsRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeAIModelsResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeBalanceRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeBalanceResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeBalanceTransactionsRequest.h>
@@ -125,6 +141,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/ModifyProductResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/PublishMessageRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/PublishMessageResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/ReportAliveDeviceRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/ReportAliveDeviceResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/ResetCloudStorageRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/ResetCloudStorageResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/RetryDeviceFirmwareTaskRequest.h>
@@ -133,6 +151,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/SetForwardAuthResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/TransferCloudStorageRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/TransferCloudStorageResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/UpdateAIModelChannelRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/UpdateAIModelChannelResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/UploadFirmwareRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/UploadFirmwareResponse.h>
 
@@ -149,9 +169,15 @@ namespace TencentCloud
                 IotvideoClient(const Credential &credential, const std::string &region);
                 IotvideoClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::ApplyAIModelResponse> ApplyAIModelOutcome;
+                typedef std::future<ApplyAIModelOutcome> ApplyAIModelOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ApplyAIModelRequest&, ApplyAIModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyAIModelAsyncHandler;
                 typedef Outcome<Error, Model::BatchUpdateFirmwareResponse> BatchUpdateFirmwareOutcome;
                 typedef std::future<BatchUpdateFirmwareOutcome> BatchUpdateFirmwareOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::BatchUpdateFirmwareRequest&, BatchUpdateFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchUpdateFirmwareAsyncHandler;
+                typedef Outcome<Error, Model::CancelAIModelApplicationResponse> CancelAIModelApplicationOutcome;
+                typedef std::future<CancelAIModelApplicationOutcome> CancelAIModelApplicationOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CancelAIModelApplicationRequest&, CancelAIModelApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelAIModelApplicationAsyncHandler;
                 typedef Outcome<Error, Model::CancelDeviceFirmwareTaskResponse> CancelDeviceFirmwareTaskOutcome;
                 typedef std::future<CancelDeviceFirmwareTaskOutcome> CancelDeviceFirmwareTaskOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CancelDeviceFirmwareTaskRequest&, CancelDeviceFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelDeviceFirmwareTaskAsyncHandler;
@@ -161,9 +187,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ControlDeviceDataResponse> ControlDeviceDataOutcome;
                 typedef std::future<ControlDeviceDataOutcome> ControlDeviceDataOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ControlDeviceDataRequest&, ControlDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDeviceDataAsyncHandler;
+                typedef Outcome<Error, Model::CreateAIDetectionResponse> CreateAIDetectionOutcome;
+                typedef std::future<CreateAIDetectionOutcome> CreateAIDetectionOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CreateAIDetectionRequest&, CreateAIDetectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAIDetectionAsyncHandler;
                 typedef Outcome<Error, Model::CreateBatchResponse> CreateBatchOutcome;
                 typedef std::future<CreateBatchOutcome> CreateBatchOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateBatchRequest&, CreateBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchAsyncHandler;
+                typedef Outcome<Error, Model::CreateCOSCredentialsResponse> CreateCOSCredentialsOutcome;
+                typedef std::future<CreateCOSCredentialsOutcome> CreateCOSCredentialsOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CreateCOSCredentialsRequest&, CreateCOSCredentialsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCOSCredentialsAsyncHandler;
                 typedef Outcome<Error, Model::CreateCloudStorageResponse> CreateCloudStorageOutcome;
                 typedef std::future<CreateCloudStorageOutcome> CreateCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateCloudStorageRequest&, CreateCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudStorageAsyncHandler;
@@ -188,6 +220,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteProductResponse> DeleteProductOutcome;
                 typedef std::future<DeleteProductOutcome> DeleteProductOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DeleteProductRequest&, DeleteProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProductAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAIModelApplicationsResponse> DescribeAIModelApplicationsOutcome;
+                typedef std::future<DescribeAIModelApplicationsOutcome> DescribeAIModelApplicationsOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeAIModelApplicationsRequest&, DescribeAIModelApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIModelApplicationsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAIModelChannelResponse> DescribeAIModelChannelOutcome;
+                typedef std::future<DescribeAIModelChannelOutcome> DescribeAIModelChannelOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeAIModelChannelRequest&, DescribeAIModelChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIModelChannelAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAIModelUsageResponse> DescribeAIModelUsageOutcome;
+                typedef std::future<DescribeAIModelUsageOutcome> DescribeAIModelUsageOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeAIModelUsageRequest&, DescribeAIModelUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIModelUsageAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAIModelsResponse> DescribeAIModelsOutcome;
+                typedef std::future<DescribeAIModelsOutcome> DescribeAIModelsOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeAIModelsRequest&, DescribeAIModelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIModelsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBalanceResponse> DescribeBalanceOutcome;
                 typedef std::future<DescribeBalanceOutcome> DescribeBalanceOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeBalanceRequest&, DescribeBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBalanceAsyncHandler;
@@ -302,6 +346,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::PublishMessageResponse> PublishMessageOutcome;
                 typedef std::future<PublishMessageOutcome> PublishMessageOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::PublishMessageRequest&, PublishMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishMessageAsyncHandler;
+                typedef Outcome<Error, Model::ReportAliveDeviceResponse> ReportAliveDeviceOutcome;
+                typedef std::future<ReportAliveDeviceOutcome> ReportAliveDeviceOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ReportAliveDeviceRequest&, ReportAliveDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportAliveDeviceAsyncHandler;
                 typedef Outcome<Error, Model::ResetCloudStorageResponse> ResetCloudStorageOutcome;
                 typedef std::future<ResetCloudStorageOutcome> ResetCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ResetCloudStorageRequest&, ResetCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageAsyncHandler;
@@ -314,11 +361,23 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::TransferCloudStorageResponse> TransferCloudStorageOutcome;
                 typedef std::future<TransferCloudStorageOutcome> TransferCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::TransferCloudStorageRequest&, TransferCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferCloudStorageAsyncHandler;
+                typedef Outcome<Error, Model::UpdateAIModelChannelResponse> UpdateAIModelChannelOutcome;
+                typedef std::future<UpdateAIModelChannelOutcome> UpdateAIModelChannelOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::UpdateAIModelChannelRequest&, UpdateAIModelChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAIModelChannelAsyncHandler;
                 typedef Outcome<Error, Model::UploadFirmwareResponse> UploadFirmwareOutcome;
                 typedef std::future<UploadFirmwareOutcome> UploadFirmwareOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::UploadFirmwareRequest&, UploadFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFirmwareAsyncHandler;
 
 
+
+                /**
+                 *申请AI模型
+                 * @param req ApplyAIModelRequest
+                 * @return ApplyAIModelOutcome
+                 */
+                ApplyAIModelOutcome ApplyAIModel(const Model::ApplyAIModelRequest &request);
+                void ApplyAIModelAsync(const Model::ApplyAIModelRequest& request, const ApplyAIModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyAIModelOutcomeCallable ApplyAIModelCallable(const Model::ApplyAIModelRequest& request);
 
                 /**
                  *本接口（BatchUpdateFirmware）用于批量更新设备固件 
@@ -328,6 +387,15 @@ namespace TencentCloud
                 BatchUpdateFirmwareOutcome BatchUpdateFirmware(const Model::BatchUpdateFirmwareRequest &request);
                 void BatchUpdateFirmwareAsync(const Model::BatchUpdateFirmwareRequest& request, const BatchUpdateFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchUpdateFirmwareOutcomeCallable BatchUpdateFirmwareCallable(const Model::BatchUpdateFirmwareRequest& request);
+
+                /**
+                 *取消AI模型申请
+                 * @param req CancelAIModelApplicationRequest
+                 * @return CancelAIModelApplicationOutcome
+                 */
+                CancelAIModelApplicationOutcome CancelAIModelApplication(const Model::CancelAIModelApplicationRequest &request);
+                void CancelAIModelApplicationAsync(const Model::CancelAIModelApplicationRequest& request, const CancelAIModelApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelAIModelApplicationOutcomeCallable CancelAIModelApplicationCallable(const Model::CancelAIModelApplicationRequest& request);
 
                 /**
                  *本接口用于取消设备升级任务
@@ -357,6 +425,15 @@ namespace TencentCloud
                 ControlDeviceDataOutcomeCallable ControlDeviceDataCallable(const Model::ControlDeviceDataRequest& request);
 
                 /**
+                 *发起AI推理请求
+                 * @param req CreateAIDetectionRequest
+                 * @return CreateAIDetectionOutcome
+                 */
+                CreateAIDetectionOutcome CreateAIDetection(const Model::CreateAIDetectionRequest &request);
+                void CreateAIDetectionAsync(const Model::CreateAIDetectionRequest& request, const CreateAIDetectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAIDetectionOutcomeCallable CreateAIDetectionCallable(const Model::CreateAIDetectionRequest& request);
+
+                /**
                  *创建批次
                  * @param req CreateBatchRequest
                  * @return CreateBatchOutcome
@@ -364,6 +441,15 @@ namespace TencentCloud
                 CreateBatchOutcome CreateBatch(const Model::CreateBatchRequest &request);
                 void CreateBatchAsync(const Model::CreateBatchRequest& request, const CreateBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBatchOutcomeCallable CreateBatchCallable(const Model::CreateBatchRequest& request);
+
+                /**
+                 *创建COS上传密钥
+                 * @param req CreateCOSCredentialsRequest
+                 * @return CreateCOSCredentialsOutcome
+                 */
+                CreateCOSCredentialsOutcome CreateCOSCredentials(const Model::CreateCOSCredentialsRequest &request);
+                void CreateCOSCredentialsAsync(const Model::CreateCOSCredentialsRequest& request, const CreateCOSCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCOSCredentialsOutcomeCallable CreateCOSCredentialsCallable(const Model::CreateCOSCredentialsRequest& request);
 
                 /**
                  *开通云存服务
@@ -436,6 +522,42 @@ namespace TencentCloud
                 DeleteProductOutcome DeleteProduct(const Model::DeleteProductRequest &request);
                 void DeleteProductAsync(const Model::DeleteProductRequest& request, const DeleteProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteProductOutcomeCallable DeleteProductCallable(const Model::DeleteProductRequest& request);
+
+                /**
+                 *用户AI模型申请记录
+                 * @param req DescribeAIModelApplicationsRequest
+                 * @return DescribeAIModelApplicationsOutcome
+                 */
+                DescribeAIModelApplicationsOutcome DescribeAIModelApplications(const Model::DescribeAIModelApplicationsRequest &request);
+                void DescribeAIModelApplicationsAsync(const Model::DescribeAIModelApplicationsRequest& request, const DescribeAIModelApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIModelApplicationsOutcomeCallable DescribeAIModelApplicationsCallable(const Model::DescribeAIModelApplicationsRequest& request);
+
+                /**
+                 *查看AI推理结果推送配置
+                 * @param req DescribeAIModelChannelRequest
+                 * @return DescribeAIModelChannelOutcome
+                 */
+                DescribeAIModelChannelOutcome DescribeAIModelChannel(const Model::DescribeAIModelChannelRequest &request);
+                void DescribeAIModelChannelAsync(const Model::DescribeAIModelChannelRequest& request, const DescribeAIModelChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIModelChannelOutcomeCallable DescribeAIModelChannelCallable(const Model::DescribeAIModelChannelRequest& request);
+
+                /**
+                 *查看AI模型资源包
+                 * @param req DescribeAIModelUsageRequest
+                 * @return DescribeAIModelUsageOutcome
+                 */
+                DescribeAIModelUsageOutcome DescribeAIModelUsage(const Model::DescribeAIModelUsageRequest &request);
+                void DescribeAIModelUsageAsync(const Model::DescribeAIModelUsageRequest& request, const DescribeAIModelUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIModelUsageOutcomeCallable DescribeAIModelUsageCallable(const Model::DescribeAIModelUsageRequest& request);
+
+                /**
+                 *拉取AI模型列表
+                 * @param req DescribeAIModelsRequest
+                 * @return DescribeAIModelsOutcome
+                 */
+                DescribeAIModelsOutcome DescribeAIModels(const Model::DescribeAIModelsRequest &request);
+                void DescribeAIModelsAsync(const Model::DescribeAIModelsRequest& request, const DescribeAIModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIModelsOutcomeCallable DescribeAIModelsCallable(const Model::DescribeAIModelsRequest& request);
 
                 /**
                  *查询账户余额
@@ -780,6 +902,15 @@ namespace TencentCloud
                 PublishMessageOutcomeCallable PublishMessageCallable(const Model::PublishMessageRequest& request);
 
                 /**
+                 *上报活跃设备
+                 * @param req ReportAliveDeviceRequest
+                 * @return ReportAliveDeviceOutcome
+                 */
+                ReportAliveDeviceOutcome ReportAliveDevice(const Model::ReportAliveDeviceRequest &request);
+                void ReportAliveDeviceAsync(const Model::ReportAliveDeviceRequest& request, const ReportAliveDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportAliveDeviceOutcomeCallable ReportAliveDeviceCallable(const Model::ReportAliveDeviceRequest& request);
+
+                /**
                  *重置云存服务
                  * @param req ResetCloudStorageRequest
                  * @return ResetCloudStorageOutcome
@@ -814,6 +945,15 @@ namespace TencentCloud
                 TransferCloudStorageOutcome TransferCloudStorage(const Model::TransferCloudStorageRequest &request);
                 void TransferCloudStorageAsync(const Model::TransferCloudStorageRequest& request, const TransferCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TransferCloudStorageOutcomeCallable TransferCloudStorageCallable(const Model::TransferCloudStorageRequest& request);
+
+                /**
+                 *更新AI推理结果推送配置
+                 * @param req UpdateAIModelChannelRequest
+                 * @return UpdateAIModelChannelOutcome
+                 */
+                UpdateAIModelChannelOutcome UpdateAIModelChannel(const Model::UpdateAIModelChannelRequest &request);
+                void UpdateAIModelChannelAsync(const Model::UpdateAIModelChannelRequest& request, const UpdateAIModelChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAIModelChannelOutcomeCallable UpdateAIModelChannelCallable(const Model::UpdateAIModelChannelRequest& request);
 
                 /**
                  *本接口（UploadFirmware）用于上传设备固件信息 

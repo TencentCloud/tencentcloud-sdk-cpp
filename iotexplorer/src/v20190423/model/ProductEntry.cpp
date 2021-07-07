@@ -35,7 +35,9 @@ ProductEntry::ProductEntry() :
     m_productTypeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_moduleIdHasBeenSet(false),
-    m_enableProductScriptHasBeenSet(false)
+    m_enableProductScriptHasBeenSet(false),
+    m_createUserIdHasBeenSet(false),
+    m_creatorNickNameHasBeenSet(false)
 {
 }
 
@@ -194,6 +196,26 @@ CoreInternalOutcome ProductEntry::Deserialize(const rapidjson::Value &value)
         m_enableProductScriptHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateUserId") && !value["CreateUserId"].IsNull())
+    {
+        if (!value["CreateUserId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ProductEntry.CreateUserId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createUserId = value["CreateUserId"].GetInt64();
+        m_createUserIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatorNickName") && !value["CreatorNickName"].IsNull())
+    {
+        if (!value["CreatorNickName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProductEntry.CreatorNickName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creatorNickName = string(value["CreatorNickName"].GetString());
+        m_creatorNickNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +341,22 @@ void ProductEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EnableProductScript";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_enableProductScript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createUserId, allocator);
+    }
+
+    if (m_creatorNickNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatorNickName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creatorNickName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +600,37 @@ void ProductEntry::SetEnableProductScript(const string& _enableProductScript)
 bool ProductEntry::EnableProductScriptHasBeenSet() const
 {
     return m_enableProductScriptHasBeenSet;
+}
+
+int64_t ProductEntry::GetCreateUserId() const
+{
+    return m_createUserId;
+}
+
+void ProductEntry::SetCreateUserId(const int64_t& _createUserId)
+{
+    m_createUserId = _createUserId;
+    m_createUserIdHasBeenSet = true;
+}
+
+bool ProductEntry::CreateUserIdHasBeenSet() const
+{
+    return m_createUserIdHasBeenSet;
+}
+
+string ProductEntry::GetCreatorNickName() const
+{
+    return m_creatorNickName;
+}
+
+void ProductEntry::SetCreatorNickName(const string& _creatorNickName)
+{
+    m_creatorNickName = _creatorNickName;
+    m_creatorNickNameHasBeenSet = true;
+}
+
+bool ProductEntry::CreatorNickNameHasBeenSet() const
+{
+    return m_creatorNickNameHasBeenSet;
 }
 

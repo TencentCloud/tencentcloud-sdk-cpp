@@ -14,59 +14,54 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_MARKET_V20191010_MODEL_GETCATETREEREQUEST_H_
-#define TENCENTCLOUD_MARKET_V20191010_MODEL_GETCATETREEREQUEST_H_
+#ifndef TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_CREATEPLUGINRESPONSE_H_
+#define TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_CREATEPLUGINRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/apigateway/v20180808/model/Plugin.h>
 
 
 namespace TencentCloud
 {
-    namespace Market
+    namespace Apigateway
     {
-        namespace V20191010
+        namespace V20180808
         {
             namespace Model
             {
                 /**
-                * GetCateTree请求参数结构体
+                * CreatePlugin返回参数结构体
                 */
-                class GetCateTreeRequest : public AbstractModel
+                class CreatePluginResponse : public AbstractModel
                 {
                 public:
-                    GetCateTreeRequest();
-                    ~GetCateTreeRequest() = default;
-                    std::string ToJsonString() const;
+                    CreatePluginResponse();
+                    ~CreatePluginResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取分类ID
-                     * @return CateId 分类ID
+                     * 获取新建的插件详情。
+                     * @return Result 新建的插件详情。
                      */
-                    uint64_t GetCateId() const;
+                    Plugin GetResult() const;
 
                     /**
-                     * 设置分类ID
-                     * @param CateId 分类ID
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
                      */
-                    void SetCateId(const uint64_t& _cateId);
-
-                    /**
-                     * 判断参数 CateId 是否已赋值
-                     * @return CateId 是否已赋值
-                     */
-                    bool CateIdHasBeenSet() const;
+                    bool ResultHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 分类ID
+                     * 新建的插件详情。
                      */
-                    uint64_t m_cateId;
-                    bool m_cateIdHasBeenSet;
+                    Plugin m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }
@@ -74,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_MARKET_V20191010_MODEL_GETCATETREEREQUEST_H_
+#endif // !TENCENTCLOUD_APIGATEWAY_V20180808_MODEL_CREATEPLUGINRESPONSE_H_

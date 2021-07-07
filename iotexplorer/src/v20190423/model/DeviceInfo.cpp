@@ -34,7 +34,9 @@ DeviceInfo::DeviceInfo() :
     m_appKeyHasBeenSet(false),
     m_devEUIHasBeenSet(false),
     m_appSKeyHasBeenSet(false),
-    m_nwkSKeyHasBeenSet(false)
+    m_nwkSKeyHasBeenSet(false),
+    m_createUserIdHasBeenSet(false),
+    m_creatorNickNameHasBeenSet(false)
 {
 }
 
@@ -183,6 +185,26 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
         m_nwkSKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateUserId") && !value["CreateUserId"].IsNull())
+    {
+        if (!value["CreateUserId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.CreateUserId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createUserId = value["CreateUserId"].GetInt64();
+        m_createUserIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatorNickName") && !value["CreatorNickName"].IsNull())
+    {
+        if (!value["CreatorNickName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.CreatorNickName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creatorNickName = string(value["CreatorNickName"].GetString());
+        m_creatorNickNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +322,22 @@ void DeviceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "NwkSKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nwkSKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createUserId, allocator);
+    }
+
+    if (m_creatorNickNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatorNickName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creatorNickName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +565,37 @@ void DeviceInfo::SetNwkSKey(const string& _nwkSKey)
 bool DeviceInfo::NwkSKeyHasBeenSet() const
 {
     return m_nwkSKeyHasBeenSet;
+}
+
+int64_t DeviceInfo::GetCreateUserId() const
+{
+    return m_createUserId;
+}
+
+void DeviceInfo::SetCreateUserId(const int64_t& _createUserId)
+{
+    m_createUserId = _createUserId;
+    m_createUserIdHasBeenSet = true;
+}
+
+bool DeviceInfo::CreateUserIdHasBeenSet() const
+{
+    return m_createUserIdHasBeenSet;
+}
+
+string DeviceInfo::GetCreatorNickName() const
+{
+    return m_creatorNickName;
+}
+
+void DeviceInfo::SetCreatorNickName(const string& _creatorNickName)
+{
+    m_creatorNickName = _creatorNickName;
+    m_creatorNickNameHasBeenSet = true;
+}
+
+bool DeviceInfo::CreatorNickNameHasBeenSet() const
+{
+    return m_creatorNickNameHasBeenSet;
 }
 

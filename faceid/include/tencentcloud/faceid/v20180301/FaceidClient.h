@@ -31,6 +31,8 @@
 #include <tencentcloud/faceid/v20180301/model/BankCardVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/CheckBankCardInformationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/CheckBankCardInformationResponse.h>
+#include <tencentcloud/faceid/v20180301/model/CheckEidTokenStatusRequest.h>
+#include <tencentcloud/faceid/v20180301/model/CheckEidTokenStatusResponse.h>
 #include <tencentcloud/faceid/v20180301/model/CheckIdCardInformationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/CheckIdCardInformationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/CheckPhoneAndNameRequest.h>
@@ -105,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CheckBankCardInformationResponse> CheckBankCardInformationOutcome;
                 typedef std::future<CheckBankCardInformationOutcome> CheckBankCardInformationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::CheckBankCardInformationRequest&, CheckBankCardInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckBankCardInformationAsyncHandler;
+                typedef Outcome<Error, Model::CheckEidTokenStatusResponse> CheckEidTokenStatusOutcome;
+                typedef std::future<CheckEidTokenStatusOutcome> CheckEidTokenStatusOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::CheckEidTokenStatusRequest&, CheckEidTokenStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckEidTokenStatusAsyncHandler;
                 typedef Outcome<Error, Model::CheckIdCardInformationResponse> CheckIdCardInformationOutcome;
                 typedef std::future<CheckIdCardInformationOutcome> CheckIdCardInformationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::CheckIdCardInformationRequest&, CheckIdCardInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckIdCardInformationAsyncHandler;
@@ -217,6 +222,15 @@ namespace TencentCloud
                 CheckBankCardInformationOutcomeCallable CheckBankCardInformationCallable(const Model::CheckBankCardInformationRequest& request);
 
                 /**
+                 *用于轮询E证通H5场景EidToken验证状态。
+                 * @param req CheckEidTokenStatusRequest
+                 * @return CheckEidTokenStatusOutcome
+                 */
+                CheckEidTokenStatusOutcome CheckEidTokenStatus(const Model::CheckEidTokenStatusRequest &request);
+                void CheckEidTokenStatusAsync(const Model::CheckEidTokenStatusRequest& request, const CheckEidTokenStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckEidTokenStatusOutcomeCallable CheckEidTokenStatusCallable(const Model::CheckEidTokenStatusRequest& request);
+
+                /**
                  *传入身份证人像面照片，识别身份证照片上的信息，并将姓名、身份证号、身份证人像照片与公安权威库的证件照进行比对，是否属于同一个人，从而验证身份证信息的真实性。
                  * @param req CheckIdCardInformationRequest
                  * @return CheckIdCardInformationOutcome
@@ -290,7 +304,7 @@ namespace TencentCloud
                 GetEidResultOutcomeCallable GetEidResultCallable(const Model::GetEidResultRequest& request);
 
                 /**
-                 *每次调用E证通小程序服务前，需先调用本接口获取EidToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。
+                 *每次调用E证通服务前，需先调用本接口获取EidToken，用来串联E证通流程，在验证完成后，用于获取E证通结果信息。
                  * @param req GetEidTokenRequest
                  * @return GetEidTokenOutcome
                  */

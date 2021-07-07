@@ -14,77 +14,78 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_MARKET_V20191010_MODEL_GETCATETREERESPONSE_H_
-#define TENCENTCLOUD_MARKET_V20191010_MODEL_GETCATETREERESPONSE_H_
+#ifndef TENCENTCLOUD_TCB_V20180608_MODEL_DESCRIBECLOUDBASERUNCONFFORGATEWAYRESPONSE_H_
+#define TENCENTCLOUD_TCB_V20180608_MODEL_DESCRIBECLOUDBASERUNCONFFORGATEWAYRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/CloudBaseRunForGatewayConf.h>
 
 
 namespace TencentCloud
 {
-    namespace Market
+    namespace Tcb
     {
-        namespace V20191010
+        namespace V20180608
         {
             namespace Model
             {
                 /**
-                * GetCateTree返回参数结构体
+                * DescribeCloudBaseRunConfForGateWay返回参数结构体
                 */
-                class GetCateTreeResponse : public AbstractModel
+                class DescribeCloudBaseRunConfForGateWayResponse : public AbstractModel
                 {
                 public:
-                    GetCateTreeResponse();
-                    ~GetCateTreeResponse() = default;
+                    DescribeCloudBaseRunConfForGateWayResponse();
+                    ~DescribeCloudBaseRunConfForGateWayResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
                     /**
-                     * 获取分类ID
+                     * 获取最近更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CateId 分类ID
+                     * @return LastUpTime 最近更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t GetCateId() const;
+                    std::string GetLastUpTime() const;
 
                     /**
-                     * 判断参数 CateId 是否已赋值
-                     * @return CateId 是否已赋值
+                     * 判断参数 LastUpTime 是否已赋值
+                     * @return LastUpTime 是否已赋值
                      */
-                    bool CateIdHasBeenSet() const;
+                    bool LastUpTimeHasBeenSet() const;
 
                     /**
-                     * 获取分类名称
+                     * 获取配置信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 分类名称
+                     * @return Data 配置信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetName() const;
+                    std::vector<CloudBaseRunForGatewayConf> GetData() const;
 
                     /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      */
-                    bool NameHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 分类ID
+                     * 最近更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_cateId;
-                    bool m_cateIdHasBeenSet;
+                    std::string m_lastUpTime;
+                    bool m_lastUpTimeHasBeenSet;
 
                     /**
-                     * 分类名称
+                     * 配置信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
+                    std::vector<CloudBaseRunForGatewayConf> m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -92,4 +93,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_MARKET_V20191010_MODEL_GETCATETREERESPONSE_H_
+#endif // !TENCENTCLOUD_TCB_V20180608_MODEL_DESCRIBECLOUDBASERUNCONFFORGATEWAYRESPONSE_H_

@@ -19,22 +19,18 @@ set(market_public_header
   )
 
 set(market_public_header_model
-  include/tencentcloud/market/v20191010/model/GetCateTreeRequest.h
-  include/tencentcloud/market/v20191010/model/FlowProductRemindResponse.h
-  include/tencentcloud/market/v20191010/model/GetCateTreeResponse.h
   include/tencentcloud/market/v20191010/model/GetUsagePlanUsageAmountResponse.h
-  include/tencentcloud/market/v20191010/model/FlowProductRemindRequest.h
   include/tencentcloud/market/v20191010/model/GetUsagePlanUsageAmountRequest.h
+  include/tencentcloud/market/v20191010/model/FlowProductRemindRequest.h
+  include/tencentcloud/market/v20191010/model/FlowProductRemindResponse.h
   )
 
 set(market_src
   src/v20191010/MarketClient.cpp
-  src/v20191010/model/GetCateTreeRequest.cpp
-  src/v20191010/model/FlowProductRemindResponse.cpp
-  src/v20191010/model/GetCateTreeResponse.cpp
   src/v20191010/model/GetUsagePlanUsageAmountResponse.cpp
-  src/v20191010/model/FlowProductRemindRequest.cpp
   src/v20191010/model/GetUsagePlanUsageAmountRequest.cpp
+  src/v20191010/model/FlowProductRemindRequest.cpp
+  src/v20191010/model/FlowProductRemindResponse.cpp
   )
 
 set(market_include

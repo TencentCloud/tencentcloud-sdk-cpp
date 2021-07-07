@@ -132,6 +132,42 @@ namespace TencentCloud
                      */
                     bool VulEmergencyHasBeenSet() const;
 
+                    /**
+                     * 获取超时时长 单位秒
+                     * @return TimeoutPeriod 超时时长 单位秒
+                     */
+                    uint64_t GetTimeoutPeriod() const;
+
+                    /**
+                     * 设置超时时长 单位秒
+                     * @param TimeoutPeriod 超时时长 单位秒
+                     */
+                    void SetTimeoutPeriod(const uint64_t& _timeoutPeriod);
+
+                    /**
+                     * 判断参数 TimeoutPeriod 是否已赋值
+                     * @return TimeoutPeriod 是否已赋值
+                     */
+                    bool TimeoutPeriodHasBeenSet() const;
+
+                    /**
+                     * 获取需要扫描的漏洞id
+                     * @return VulIds 需要扫描的漏洞id
+                     */
+                    std::vector<uint64_t> GetVulIds() const;
+
+                    /**
+                     * 设置需要扫描的漏洞id
+                     * @param VulIds 需要扫描的漏洞id
+                     */
+                    void SetVulIds(const std::vector<uint64_t>& _vulIds);
+
+                    /**
+                     * 判断参数 VulIds 是否已赋值
+                     * @return VulIds 是否已赋值
+                     */
+                    bool VulIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +199,18 @@ namespace TencentCloud
                      */
                     uint64_t m_vulEmergency;
                     bool m_vulEmergencyHasBeenSet;
+
+                    /**
+                     * 超时时长 单位秒
+                     */
+                    uint64_t m_timeoutPeriod;
+                    bool m_timeoutPeriodHasBeenSet;
+
+                    /**
+                     * 需要扫描的漏洞id
+                     */
+                    std::vector<uint64_t> m_vulIds;
+                    bool m_vulIdsHasBeenSet;
 
                 };
             }

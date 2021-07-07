@@ -33,7 +33,13 @@ BashEvent::BashEvent() :
     m_ruleLevelHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_machineNameHasBeenSet(false)
+    m_machineNameHasBeenSet(false),
+    m_detectByHasBeenSet(false),
+    m_pidHasBeenSet(false),
+    m_exeHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false),
+    m_ruleCategoryHasBeenSet(false),
+    m_regexBashCmdHasBeenSet(false)
 {
 }
 
@@ -172,6 +178,66 @@ CoreInternalOutcome BashEvent::Deserialize(const rapidjson::Value &value)
         m_machineNameHasBeenSet = true;
     }
 
+    if (value.HasMember("DetectBy") && !value["DetectBy"].IsNull())
+    {
+        if (!value["DetectBy"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `BashEvent.DetectBy` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_detectBy = value["DetectBy"].GetUint64();
+        m_detectByHasBeenSet = true;
+    }
+
+    if (value.HasMember("Pid") && !value["Pid"].IsNull())
+    {
+        if (!value["Pid"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BashEvent.Pid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pid = string(value["Pid"].GetString());
+        m_pidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Exe") && !value["Exe"].IsNull())
+    {
+        if (!value["Exe"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BashEvent.Exe` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_exe = string(value["Exe"].GetString());
+        m_exeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BashEvent.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleCategory") && !value["RuleCategory"].IsNull())
+    {
+        if (!value["RuleCategory"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `BashEvent.RuleCategory` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleCategory = value["RuleCategory"].GetUint64();
+        m_ruleCategoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegexBashCmd") && !value["RegexBashCmd"].IsNull())
+    {
+        if (!value["RegexBashCmd"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BashEvent.RegexBashCmd` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regexBashCmd = string(value["RegexBashCmd"].GetString());
+        m_regexBashCmdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +347,54 @@ void BashEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "MachineName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_machineName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detectByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetectBy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_detectBy, allocator);
+    }
+
+    if (m_pidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Exe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exe.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleCategory, allocator);
+    }
+
+    if (m_regexBashCmdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegexBashCmd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regexBashCmd.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +606,101 @@ void BashEvent::SetMachineName(const string& _machineName)
 bool BashEvent::MachineNameHasBeenSet() const
 {
     return m_machineNameHasBeenSet;
+}
+
+uint64_t BashEvent::GetDetectBy() const
+{
+    return m_detectBy;
+}
+
+void BashEvent::SetDetectBy(const uint64_t& _detectBy)
+{
+    m_detectBy = _detectBy;
+    m_detectByHasBeenSet = true;
+}
+
+bool BashEvent::DetectByHasBeenSet() const
+{
+    return m_detectByHasBeenSet;
+}
+
+string BashEvent::GetPid() const
+{
+    return m_pid;
+}
+
+void BashEvent::SetPid(const string& _pid)
+{
+    m_pid = _pid;
+    m_pidHasBeenSet = true;
+}
+
+bool BashEvent::PidHasBeenSet() const
+{
+    return m_pidHasBeenSet;
+}
+
+string BashEvent::GetExe() const
+{
+    return m_exe;
+}
+
+void BashEvent::SetExe(const string& _exe)
+{
+    m_exe = _exe;
+    m_exeHasBeenSet = true;
+}
+
+bool BashEvent::ExeHasBeenSet() const
+{
+    return m_exeHasBeenSet;
+}
+
+string BashEvent::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void BashEvent::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool BashEvent::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
+}
+
+uint64_t BashEvent::GetRuleCategory() const
+{
+    return m_ruleCategory;
+}
+
+void BashEvent::SetRuleCategory(const uint64_t& _ruleCategory)
+{
+    m_ruleCategory = _ruleCategory;
+    m_ruleCategoryHasBeenSet = true;
+}
+
+bool BashEvent::RuleCategoryHasBeenSet() const
+{
+    return m_ruleCategoryHasBeenSet;
+}
+
+string BashEvent::GetRegexBashCmd() const
+{
+    return m_regexBashCmd;
+}
+
+void BashEvent::SetRegexBashCmd(const string& _regexBashCmd)
+{
+    m_regexBashCmd = _regexBashCmd;
+    m_regexBashCmdHasBeenSet = true;
+}
+
+bool BashEvent::RegexBashCmdHasBeenSet() const
+{
+    return m_regexBashCmdHasBeenSet;
 }
 

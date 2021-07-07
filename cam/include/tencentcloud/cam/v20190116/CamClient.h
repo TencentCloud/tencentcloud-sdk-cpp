@@ -91,6 +91,8 @@
 #include <tencentcloud/cam/v20190116/model/GetRoleResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetSAMLProviderRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetSAMLProviderResponse.h>
+#include <tencentcloud/cam/v20190116/model/GetSecurityLastUsedRequest.h>
+#include <tencentcloud/cam/v20190116/model/GetSecurityLastUsedResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetServiceLinkedRoleDeletionStatusRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetServiceLinkedRoleDeletionStatusResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetUserRequest.h>
@@ -265,6 +267,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetSAMLProviderResponse> GetSAMLProviderOutcome;
                 typedef std::future<GetSAMLProviderOutcome> GetSAMLProviderOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetSAMLProviderRequest&, GetSAMLProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSAMLProviderAsyncHandler;
+                typedef Outcome<Error, Model::GetSecurityLastUsedResponse> GetSecurityLastUsedOutcome;
+                typedef std::future<GetSecurityLastUsedOutcome> GetSecurityLastUsedOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::GetSecurityLastUsedRequest&, GetSecurityLastUsedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSecurityLastUsedAsyncHandler;
                 typedef Outcome<Error, Model::GetServiceLinkedRoleDeletionStatusResponse> GetServiceLinkedRoleDeletionStatusOutcome;
                 typedef std::future<GetServiceLinkedRoleDeletionStatusOutcome> GetServiceLinkedRoleDeletionStatusOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetServiceLinkedRoleDeletionStatusRequest&, GetServiceLinkedRoleDeletionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceLinkedRoleDeletionStatusAsyncHandler;
@@ -660,6 +665,15 @@ namespace TencentCloud
                 GetSAMLProviderOutcome GetSAMLProvider(const Model::GetSAMLProviderRequest &request);
                 void GetSAMLProviderAsync(const Model::GetSAMLProviderRequest& request, const GetSAMLProviderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetSAMLProviderOutcomeCallable GetSAMLProviderCallable(const Model::GetSAMLProviderRequest& request);
+
+                /**
+                 *获取密钥最近使用情况
+                 * @param req GetSecurityLastUsedRequest
+                 * @return GetSecurityLastUsedOutcome
+                 */
+                GetSecurityLastUsedOutcome GetSecurityLastUsed(const Model::GetSecurityLastUsedRequest &request);
+                void GetSecurityLastUsedAsync(const Model::GetSecurityLastUsedRequest& request, const GetSecurityLastUsedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetSecurityLastUsedOutcomeCallable GetSecurityLastUsedCallable(const Model::GetSecurityLastUsedRequest& request);
 
                 /**
                  *根据删除TaskId获取服务相关角色删除状态

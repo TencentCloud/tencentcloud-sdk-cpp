@@ -54,6 +54,18 @@ namespace TencentCloud
                      */
                     bool IntranetAddressHasBeenSet() const;
 
+                    /**
+                     * 获取公网访问地址
+                     * @return InternetAddress 公网访问地址
+                     */
+                    std::string GetInternetAddress() const;
+
+                    /**
+                     * 判断参数 InternetAddress 是否已赋值
+                     * @return InternetAddress 是否已赋值
+                     */
+                    bool InternetAddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -61,6 +73,12 @@ namespace TencentCloud
                      */
                     std::string m_intranetAddress;
                     bool m_intranetAddressHasBeenSet;
+
+                    /**
+                     * 公网访问地址
+                     */
+                    std::string m_internetAddress;
+                    bool m_internetAddressHasBeenSet;
 
                 };
             }

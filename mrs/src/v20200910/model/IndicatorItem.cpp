@@ -29,7 +29,8 @@ IndicatorItem::IndicatorItem() :
     m_unitHasBeenSet(false),
     m_rangeHasBeenSet(false),
     m_arrowHasBeenSet(false),
-    m_normalHasBeenSet(false)
+    m_normalHasBeenSet(false),
+    m_itemStringHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
         m_normalHasBeenSet = true;
     }
 
+    if (value.HasMember("ItemString") && !value["ItemString"].IsNull())
+    {
+        if (!value["ItemString"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IndicatorItem.ItemString` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_itemString = string(value["ItemString"].GetString());
+        m_itemStringHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void IndicatorItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Normal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_normal, allocator);
+    }
+
+    if (m_itemStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ItemString";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_itemString.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void IndicatorItem::SetNormal(const bool& _normal)
 bool IndicatorItem::NormalHasBeenSet() const
 {
     return m_normalHasBeenSet;
+}
+
+string IndicatorItem::GetItemString() const
+{
+    return m_itemString;
+}
+
+void IndicatorItem::SetItemString(const string& _itemString)
+{
+    m_itemString = _itemString;
+    m_itemStringHasBeenSet = true;
+}
+
+bool IndicatorItem::ItemStringHasBeenSet() const
+{
+    return m_itemStringHasBeenSet;
 }
 

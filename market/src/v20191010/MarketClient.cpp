@@ -83,49 +83,6 @@ MarketClient::FlowProductRemindOutcomeCallable MarketClient::FlowProductRemindCa
     return task->get_future();
 }
 
-MarketClient::GetCateTreeOutcome MarketClient::GetCateTree(const GetCateTreeRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetCateTree");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetCateTreeResponse rsp = GetCateTreeResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetCateTreeOutcome(rsp);
-        else
-            return GetCateTreeOutcome(o.GetError());
-    }
-    else
-    {
-        return GetCateTreeOutcome(outcome.GetError());
-    }
-}
-
-void MarketClient::GetCateTreeAsync(const GetCateTreeRequest& request, const GetCateTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetCateTree(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-MarketClient::GetCateTreeOutcomeCallable MarketClient::GetCateTreeCallable(const GetCateTreeRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<GetCateTreeOutcome()>>(
-        [this, request]()
-        {
-            return this->GetCateTree(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 MarketClient::GetUsagePlanUsageAmountOutcome MarketClient::GetUsagePlanUsageAmount(const GetUsagePlanUsageAmountRequest &request)
 {
     auto outcome = MakeRequest(request, "GetUsagePlanUsageAmount");

@@ -1502,6 +1502,49 @@ CamClient::GetSAMLProviderOutcomeCallable CamClient::GetSAMLProviderCallable(con
     return task->get_future();
 }
 
+CamClient::GetSecurityLastUsedOutcome CamClient::GetSecurityLastUsed(const GetSecurityLastUsedRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetSecurityLastUsed");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetSecurityLastUsedResponse rsp = GetSecurityLastUsedResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetSecurityLastUsedOutcome(rsp);
+        else
+            return GetSecurityLastUsedOutcome(o.GetError());
+    }
+    else
+    {
+        return GetSecurityLastUsedOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::GetSecurityLastUsedAsync(const GetSecurityLastUsedRequest& request, const GetSecurityLastUsedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetSecurityLastUsed(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::GetSecurityLastUsedOutcomeCallable CamClient::GetSecurityLastUsedCallable(const GetSecurityLastUsedRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetSecurityLastUsedOutcome()>>(
+        [this, request]()
+        {
+            return this->GetSecurityLastUsed(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::GetServiceLinkedRoleDeletionStatusOutcome CamClient::GetServiceLinkedRoleDeletionStatus(const GetServiceLinkedRoleDeletionStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "GetServiceLinkedRoleDeletionStatus");

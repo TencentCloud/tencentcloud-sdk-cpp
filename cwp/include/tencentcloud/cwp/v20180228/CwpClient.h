@@ -37,6 +37,8 @@
 #include <tencentcloud/cwp/v20180228/model/CreateProcessTaskResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateProtectServerRequest.h>
 #include <tencentcloud/cwp/v20180228/model/CreateProtectServerResponse.h>
+#include <tencentcloud/cwp/v20180228/model/CreateScanMalwareSettingRequest.h>
+#include <tencentcloud/cwp/v20180228/model/CreateScanMalwareSettingResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateSearchLogRequest.h>
 #include <tencentcloud/cwp/v20180228/model/CreateSearchLogResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateSearchTemplateRequest.h>
@@ -147,6 +149,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeMaliciousRequestsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMalwareInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMalwareInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeMalwareTimingScanSettingRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeMalwareTimingScanSettingResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMalwaresRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMalwaresResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeNonlocalLoginPlacesRequest.h>
@@ -179,6 +183,10 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanMalwareScheduleRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeScanMalwareScheduleResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeScanTaskDetailsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeScanTaskDetailsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeScanVulSettingRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeScanVulSettingResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSearchExportListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSearchExportListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSearchLogsRequest.h>
@@ -219,6 +227,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeWeeklyReportsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/EditBashRuleRequest.h>
 #include <tencentcloud/cwp/v20180228/model/EditBashRuleResponse.h>
+#include <tencentcloud/cwp/v20180228/model/EditBashRulesRequest.h>
+#include <tencentcloud/cwp/v20180228/model/EditBashRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/EditPrivilegeRuleRequest.h>
 #include <tencentcloud/cwp/v20180228/model/EditPrivilegeRuleResponse.h>
 #include <tencentcloud/cwp/v20180228/model/EditReverseShellRuleRequest.h>
@@ -279,6 +289,10 @@
 #include <tencentcloud/cwp/v20180228/model/RescanImpactedHostResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ScanVulRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ScanVulResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ScanVulAgainRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ScanVulAgainResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ScanVulSettingRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ScanVulSettingResponse.h>
 #include <tencentcloud/cwp/v20180228/model/SeparateMalwaresRequest.h>
 #include <tencentcloud/cwp/v20180228/model/SeparateMalwaresResponse.h>
 #include <tencentcloud/cwp/v20180228/model/SetBashEventsStatusRequest.h>
@@ -332,6 +346,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateProtectServerResponse> CreateProtectServerOutcome;
                 typedef std::future<CreateProtectServerOutcome> CreateProtectServerOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::CreateProtectServerRequest&, CreateProtectServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProtectServerAsyncHandler;
+                typedef Outcome<Error, Model::CreateScanMalwareSettingResponse> CreateScanMalwareSettingOutcome;
+                typedef std::future<CreateScanMalwareSettingOutcome> CreateScanMalwareSettingOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::CreateScanMalwareSettingRequest&, CreateScanMalwareSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScanMalwareSettingAsyncHandler;
                 typedef Outcome<Error, Model::CreateSearchLogResponse> CreateSearchLogOutcome;
                 typedef std::future<CreateSearchLogOutcome> CreateSearchLogOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::CreateSearchLogRequest&, CreateSearchLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSearchLogAsyncHandler;
@@ -497,6 +514,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeMalwareInfoResponse> DescribeMalwareInfoOutcome;
                 typedef std::future<DescribeMalwareInfoOutcome> DescribeMalwareInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeMalwareInfoRequest&, DescribeMalwareInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMalwareInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeMalwareTimingScanSettingResponse> DescribeMalwareTimingScanSettingOutcome;
+                typedef std::future<DescribeMalwareTimingScanSettingOutcome> DescribeMalwareTimingScanSettingOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeMalwareTimingScanSettingRequest&, DescribeMalwareTimingScanSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMalwareTimingScanSettingAsyncHandler;
                 typedef Outcome<Error, Model::DescribeMalwaresResponse> DescribeMalwaresOutcome;
                 typedef std::future<DescribeMalwaresOutcome> DescribeMalwaresOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeMalwaresRequest&, DescribeMalwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMalwaresAsyncHandler;
@@ -545,6 +565,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeScanMalwareScheduleResponse> DescribeScanMalwareScheduleOutcome;
                 typedef std::future<DescribeScanMalwareScheduleOutcome> DescribeScanMalwareScheduleOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeScanMalwareScheduleRequest&, DescribeScanMalwareScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanMalwareScheduleAsyncHandler;
+                typedef Outcome<Error, Model::DescribeScanTaskDetailsResponse> DescribeScanTaskDetailsOutcome;
+                typedef std::future<DescribeScanTaskDetailsOutcome> DescribeScanTaskDetailsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeScanTaskDetailsRequest&, DescribeScanTaskDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanTaskDetailsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeScanVulSettingResponse> DescribeScanVulSettingOutcome;
+                typedef std::future<DescribeScanVulSettingOutcome> DescribeScanVulSettingOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeScanVulSettingRequest&, DescribeScanVulSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanVulSettingAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSearchExportListResponse> DescribeSearchExportListOutcome;
                 typedef std::future<DescribeSearchExportListOutcome> DescribeSearchExportListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeSearchExportListRequest&, DescribeSearchExportListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSearchExportListAsyncHandler;
@@ -605,6 +631,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EditBashRuleResponse> EditBashRuleOutcome;
                 typedef std::future<EditBashRuleOutcome> EditBashRuleOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::EditBashRuleRequest&, EditBashRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditBashRuleAsyncHandler;
+                typedef Outcome<Error, Model::EditBashRulesResponse> EditBashRulesOutcome;
+                typedef std::future<EditBashRulesOutcome> EditBashRulesOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::EditBashRulesRequest&, EditBashRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditBashRulesAsyncHandler;
                 typedef Outcome<Error, Model::EditPrivilegeRuleResponse> EditPrivilegeRuleOutcome;
                 typedef std::future<EditPrivilegeRuleOutcome> EditPrivilegeRuleOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::EditPrivilegeRuleRequest&, EditPrivilegeRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditPrivilegeRuleAsyncHandler;
@@ -695,6 +724,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ScanVulResponse> ScanVulOutcome;
                 typedef std::future<ScanVulOutcome> ScanVulOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ScanVulRequest&, ScanVulOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanVulAsyncHandler;
+                typedef Outcome<Error, Model::ScanVulAgainResponse> ScanVulAgainOutcome;
+                typedef std::future<ScanVulAgainOutcome> ScanVulAgainOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ScanVulAgainRequest&, ScanVulAgainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanVulAgainAsyncHandler;
+                typedef Outcome<Error, Model::ScanVulSettingResponse> ScanVulSettingOutcome;
+                typedef std::future<ScanVulSettingOutcome> ScanVulSettingOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ScanVulSettingRequest&, ScanVulSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanVulSettingAsyncHandler;
                 typedef Outcome<Error, Model::SeparateMalwaresResponse> SeparateMalwaresOutcome;
                 typedef std::future<SeparateMalwaresOutcome> SeparateMalwaresOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::SeparateMalwaresRequest&, SeparateMalwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SeparateMalwaresAsyncHandler;
@@ -787,6 +822,15 @@ namespace TencentCloud
                 CreateProtectServerOutcome CreateProtectServer(const Model::CreateProtectServerRequest &request);
                 void CreateProtectServerAsync(const Model::CreateProtectServerRequest& request, const CreateProtectServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateProtectServerOutcomeCallable CreateProtectServerCallable(const Model::CreateProtectServerRequest& request);
+
+                /**
+                 *该接口可以对入侵检测-文件查杀扫描检测
+                 * @param req CreateScanMalwareSettingRequest
+                 * @return CreateScanMalwareSettingOutcome
+                 */
+                CreateScanMalwareSettingOutcome CreateScanMalwareSetting(const Model::CreateScanMalwareSettingRequest &request);
+                void CreateScanMalwareSettingAsync(const Model::CreateScanMalwareSettingRequest& request, const CreateScanMalwareSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateScanMalwareSettingOutcomeCallable CreateScanMalwareSettingCallable(const Model::CreateScanMalwareSettingRequest& request);
 
                 /**
                  *添加历史搜索记录
@@ -1284,6 +1328,15 @@ namespace TencentCloud
                 DescribeMalwareInfoOutcomeCallable DescribeMalwareInfoCallable(const Model::DescribeMalwareInfoRequest& request);
 
                 /**
+                 *查询定时扫描配置
+                 * @param req DescribeMalwareTimingScanSettingRequest
+                 * @return DescribeMalwareTimingScanSettingOutcome
+                 */
+                DescribeMalwareTimingScanSettingOutcome DescribeMalwareTimingScanSetting(const Model::DescribeMalwareTimingScanSettingRequest &request);
+                void DescribeMalwareTimingScanSettingAsync(const Model::DescribeMalwareTimingScanSettingRequest& request, const DescribeMalwareTimingScanSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMalwareTimingScanSettingOutcomeCallable DescribeMalwareTimingScanSettingCallable(const Model::DescribeMalwareTimingScanSettingRequest& request);
+
+                /**
                  *本接口（DescribeMalwares）用于获取木马事件列表。
                  * @param req DescribeMalwaresRequest
                  * @return DescribeMalwaresOutcome
@@ -1427,6 +1480,24 @@ namespace TencentCloud
                 DescribeScanMalwareScheduleOutcome DescribeScanMalwareSchedule(const Model::DescribeScanMalwareScheduleRequest &request);
                 void DescribeScanMalwareScheduleAsync(const Model::DescribeScanMalwareScheduleRequest& request, const DescribeScanMalwareScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScanMalwareScheduleOutcomeCallable DescribeScanMalwareScheduleCallable(const Model::DescribeScanMalwareScheduleRequest& request);
+
+                /**
+                 *DescribeScanTaskDetails 查询扫描任务详情 , 可以查询扫描进度信息/异常;
+                 * @param req DescribeScanTaskDetailsRequest
+                 * @return DescribeScanTaskDetailsOutcome
+                 */
+                DescribeScanTaskDetailsOutcome DescribeScanTaskDetails(const Model::DescribeScanTaskDetailsRequest &request);
+                void DescribeScanTaskDetailsAsync(const Model::DescribeScanTaskDetailsRequest& request, const DescribeScanTaskDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScanTaskDetailsOutcomeCallable DescribeScanTaskDetailsCallable(const Model::DescribeScanTaskDetailsRequest& request);
+
+                /**
+                 *查询定期检测的配置
+                 * @param req DescribeScanVulSettingRequest
+                 * @return DescribeScanVulSettingOutcome
+                 */
+                DescribeScanVulSettingOutcome DescribeScanVulSetting(const Model::DescribeScanVulSettingRequest &request);
+                void DescribeScanVulSettingAsync(const Model::DescribeScanVulSettingRequest& request, const DescribeScanVulSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScanVulSettingOutcomeCallable DescribeScanVulSettingCallable(const Model::DescribeScanVulSettingRequest& request);
 
                 /**
                  *导出ES查询文档列表
@@ -1609,6 +1680,15 @@ namespace TencentCloud
                 EditBashRuleOutcome EditBashRule(const Model::EditBashRuleRequest &request);
                 void EditBashRuleAsync(const Model::EditBashRuleRequest& request, const EditBashRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EditBashRuleOutcomeCallable EditBashRuleCallable(const Model::EditBashRuleRequest& request);
+
+                /**
+                 *新增或修改高危命令规则
+                 * @param req EditBashRulesRequest
+                 * @return EditBashRulesOutcome
+                 */
+                EditBashRulesOutcome EditBashRules(const Model::EditBashRulesRequest &request);
+                void EditBashRulesAsync(const Model::EditBashRulesRequest& request, const EditBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EditBashRulesOutcomeCallable EditBashRulesCallable(const Model::EditBashRulesRequest& request);
 
                 /**
                  *新增或修改本地提权规则
@@ -1872,13 +1952,31 @@ namespace TencentCloud
                 RescanImpactedHostOutcomeCallable RescanImpactedHostCallable(const Model::RescanImpactedHostRequest& request);
 
                 /**
-                 *漏洞管理 - 一键检测
+                 * 一键检测
                  * @param req ScanVulRequest
                  * @return ScanVulOutcome
                  */
                 ScanVulOutcome ScanVul(const Model::ScanVulRequest &request);
                 void ScanVulAsync(const Model::ScanVulRequest& request, const ScanVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ScanVulOutcomeCallable ScanVulCallable(const Model::ScanVulRequest& request);
+
+                /**
+                 *漏洞管理-重新检测接口
+                 * @param req ScanVulAgainRequest
+                 * @return ScanVulAgainOutcome
+                 */
+                ScanVulAgainOutcome ScanVulAgain(const Model::ScanVulAgainRequest &request);
+                void ScanVulAgainAsync(const Model::ScanVulAgainRequest& request, const ScanVulAgainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScanVulAgainOutcomeCallable ScanVulAgainCallable(const Model::ScanVulAgainRequest& request);
+
+                /**
+                 *定期扫描漏洞设置
+                 * @param req ScanVulSettingRequest
+                 * @return ScanVulSettingOutcome
+                 */
+                ScanVulSettingOutcome ScanVulSetting(const Model::ScanVulSettingRequest &request);
+                void ScanVulSettingAsync(const Model::ScanVulSettingRequest& request, const ScanVulSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScanVulSettingOutcomeCallable ScanVulSettingCallable(const Model::ScanVulSettingRequest& request);
 
                 /**
                  *本接口（SeparateMalwares）用于隔离木马。

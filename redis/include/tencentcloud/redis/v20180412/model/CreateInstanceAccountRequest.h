@@ -79,14 +79,38 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取子账号密码
-                     * @return AccountPassword 子账号密码
+                     * 获取1.长度8-30位,推荐使用12位以上的密码
+2.不能以"/"开头
+3.至少包含两项
+    a.小写字母a-z
+    b.大写字母A-Z
+    c.数字0-9
+    d.()`~!@#$%^&*-+=_|{}[]:;<>,.?/
+                     * @return AccountPassword 1.长度8-30位,推荐使用12位以上的密码
+2.不能以"/"开头
+3.至少包含两项
+    a.小写字母a-z
+    b.大写字母A-Z
+    c.数字0-9
+    d.()`~!@#$%^&*-+=_|{}[]:;<>,.?/
                      */
                     std::string GetAccountPassword() const;
 
                     /**
-                     * 设置子账号密码
-                     * @param AccountPassword 子账号密码
+                     * 设置1.长度8-30位,推荐使用12位以上的密码
+2.不能以"/"开头
+3.至少包含两项
+    a.小写字母a-z
+    b.大写字母A-Z
+    c.数字0-9
+    d.()`~!@#$%^&*-+=_|{}[]:;<>,.?/
+                     * @param AccountPassword 1.长度8-30位,推荐使用12位以上的密码
+2.不能以"/"开头
+3.至少包含两项
+    a.小写字母a-z
+    b.大写字母A-Z
+    c.数字0-9
+    d.()`~!@#$%^&*-+=_|{}[]:;<>,.?/
                      */
                     void SetAccountPassword(const std::string& _accountPassword);
 
@@ -165,7 +189,13 @@ namespace TencentCloud
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * 子账号密码
+                     * 1.长度8-30位,推荐使用12位以上的密码
+2.不能以"/"开头
+3.至少包含两项
+    a.小写字母a-z
+    b.大写字母A-Z
+    c.数字0-9
+    d.()`~!@#$%^&*-+=_|{}[]:;<>,.?/
                      */
                     std::string m_accountPassword;
                     bool m_accountPasswordHasBeenSet;

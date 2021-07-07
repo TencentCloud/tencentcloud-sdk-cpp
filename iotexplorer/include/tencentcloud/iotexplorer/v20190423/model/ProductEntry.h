@@ -320,6 +320,50 @@ namespace TencentCloud
                      */
                     bool EnableProductScriptHasBeenSet() const;
 
+                    /**
+                     * 获取创建人 UinId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateUserId 创建人 UinId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCreateUserId() const;
+
+                    /**
+                     * 设置创建人 UinId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateUserId 创建人 UinId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateUserId(const int64_t& _createUserId);
+
+                    /**
+                     * 判断参数 CreateUserId 是否已赋值
+                     * @return CreateUserId 是否已赋值
+                     */
+                    bool CreateUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取创建者昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatorNickName 创建者昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreatorNickName() const;
+
+                    /**
+                     * 设置创建者昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreatorNickName 创建者昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreatorNickName(const std::string& _creatorNickName);
+
+                    /**
+                     * 判断参数 CreatorNickName 是否已赋值
+                     * @return CreatorNickName 是否已赋值
+                     */
+                    bool CreatorNickNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -412,6 +456,20 @@ namespace TencentCloud
                      */
                     std::string m_enableProductScript;
                     bool m_enableProductScriptHasBeenSet;
+
+                    /**
+                     * 创建人 UinId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_createUserId;
+                    bool m_createUserIdHasBeenSet;
+
+                    /**
+                     * 创建者昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creatorNickName;
+                    bool m_creatorNickNameHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ using namespace TencentCloud::Faceid::V20180301::Model;
 using namespace std;
 
 GetEidTokenResponse::GetEidTokenResponse() :
-    m_eidTokenHasBeenSet(false)
+    m_eidTokenHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome GetEidTokenResponse::Deserialize(const string &payload)
         m_eidTokenHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Url") && !rsp["Url"].IsNull())
+    {
+        if (!rsp["Url"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(rsp["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -85,6 +96,16 @@ string GetEidTokenResponse::GetEidToken() const
 bool GetEidTokenResponse::EidTokenHasBeenSet() const
 {
     return m_eidTokenHasBeenSet;
+}
+
+string GetEidTokenResponse::GetUrl() const
+{
+    return m_url;
+}
+
+bool GetEidTokenResponse::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 
 

@@ -27,7 +27,9 @@ ScanVulRequest::ScanVulRequest() :
     m_vulLevelsHasBeenSet(false),
     m_hostTypeHasBeenSet(false),
     m_quuidListHasBeenSet(false),
-    m_vulEmergencyHasBeenSet(false)
+    m_vulEmergencyHasBeenSet(false),
+    m_timeoutPeriodHasBeenSet(false),
+    m_vulIdsHasBeenSet(false)
 {
 }
 
@@ -81,6 +83,27 @@ string ScanVulRequest::ToJsonString() const
         string key = "VulEmergency";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_vulEmergency, allocator);
+    }
+
+    if (m_timeoutPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeoutPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeoutPeriod, allocator);
+    }
+
+    if (m_vulIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_vulIds.begin(); itr != m_vulIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -169,6 +192,38 @@ void ScanVulRequest::SetVulEmergency(const uint64_t& _vulEmergency)
 bool ScanVulRequest::VulEmergencyHasBeenSet() const
 {
     return m_vulEmergencyHasBeenSet;
+}
+
+uint64_t ScanVulRequest::GetTimeoutPeriod() const
+{
+    return m_timeoutPeriod;
+}
+
+void ScanVulRequest::SetTimeoutPeriod(const uint64_t& _timeoutPeriod)
+{
+    m_timeoutPeriod = _timeoutPeriod;
+    m_timeoutPeriodHasBeenSet = true;
+}
+
+bool ScanVulRequest::TimeoutPeriodHasBeenSet() const
+{
+    return m_timeoutPeriodHasBeenSet;
+}
+
+vector<uint64_t> ScanVulRequest::GetVulIds() const
+{
+    return m_vulIds;
+}
+
+void ScanVulRequest::SetVulIds(const vector<uint64_t>& _vulIds)
+{
+    m_vulIds = _vulIds;
+    m_vulIdsHasBeenSet = true;
+}
+
+bool ScanVulRequest::VulIdsHasBeenSet() const
+{
+    return m_vulIdsHasBeenSet;
 }
 
 

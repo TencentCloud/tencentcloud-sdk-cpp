@@ -341,6 +341,49 @@ CwpClient::CreateProtectServerOutcomeCallable CwpClient::CreateProtectServerCall
     return task->get_future();
 }
 
+CwpClient::CreateScanMalwareSettingOutcome CwpClient::CreateScanMalwareSetting(const CreateScanMalwareSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateScanMalwareSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateScanMalwareSettingResponse rsp = CreateScanMalwareSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateScanMalwareSettingOutcome(rsp);
+        else
+            return CreateScanMalwareSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateScanMalwareSettingOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::CreateScanMalwareSettingAsync(const CreateScanMalwareSettingRequest& request, const CreateScanMalwareSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateScanMalwareSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::CreateScanMalwareSettingOutcomeCallable CwpClient::CreateScanMalwareSettingCallable(const CreateScanMalwareSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateScanMalwareSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateScanMalwareSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::CreateSearchLogOutcome CwpClient::CreateSearchLog(const CreateSearchLogRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSearchLog");
@@ -2706,6 +2749,49 @@ CwpClient::DescribeMalwareInfoOutcomeCallable CwpClient::DescribeMalwareInfoCall
     return task->get_future();
 }
 
+CwpClient::DescribeMalwareTimingScanSettingOutcome CwpClient::DescribeMalwareTimingScanSetting(const DescribeMalwareTimingScanSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMalwareTimingScanSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMalwareTimingScanSettingResponse rsp = DescribeMalwareTimingScanSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMalwareTimingScanSettingOutcome(rsp);
+        else
+            return DescribeMalwareTimingScanSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMalwareTimingScanSettingOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeMalwareTimingScanSettingAsync(const DescribeMalwareTimingScanSettingRequest& request, const DescribeMalwareTimingScanSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMalwareTimingScanSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeMalwareTimingScanSettingOutcomeCallable CwpClient::DescribeMalwareTimingScanSettingCallable(const DescribeMalwareTimingScanSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMalwareTimingScanSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMalwareTimingScanSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeMalwaresOutcome CwpClient::DescribeMalwares(const DescribeMalwaresRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMalwares");
@@ -3387,6 +3473,92 @@ CwpClient::DescribeScanMalwareScheduleOutcomeCallable CwpClient::DescribeScanMal
         [this, request]()
         {
             return this->DescribeScanMalwareSchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeScanTaskDetailsOutcome CwpClient::DescribeScanTaskDetails(const DescribeScanTaskDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScanTaskDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScanTaskDetailsResponse rsp = DescribeScanTaskDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScanTaskDetailsOutcome(rsp);
+        else
+            return DescribeScanTaskDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScanTaskDetailsOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeScanTaskDetailsAsync(const DescribeScanTaskDetailsRequest& request, const DescribeScanTaskDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScanTaskDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeScanTaskDetailsOutcomeCallable CwpClient::DescribeScanTaskDetailsCallable(const DescribeScanTaskDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScanTaskDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScanTaskDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeScanVulSettingOutcome CwpClient::DescribeScanVulSetting(const DescribeScanVulSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScanVulSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScanVulSettingResponse rsp = DescribeScanVulSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScanVulSettingOutcome(rsp);
+        else
+            return DescribeScanVulSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScanVulSettingOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeScanVulSettingAsync(const DescribeScanVulSettingRequest& request, const DescribeScanVulSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScanVulSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeScanVulSettingOutcomeCallable CwpClient::DescribeScanVulSettingCallable(const DescribeScanVulSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScanVulSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScanVulSetting(request);
         }
     );
 
@@ -4247,6 +4419,49 @@ CwpClient::EditBashRuleOutcomeCallable CwpClient::EditBashRuleCallable(const Edi
         [this, request]()
         {
             return this->EditBashRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::EditBashRulesOutcome CwpClient::EditBashRules(const EditBashRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "EditBashRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EditBashRulesResponse rsp = EditBashRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EditBashRulesOutcome(rsp);
+        else
+            return EditBashRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return EditBashRulesOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::EditBashRulesAsync(const EditBashRulesRequest& request, const EditBashRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EditBashRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::EditBashRulesOutcomeCallable CwpClient::EditBashRulesCallable(const EditBashRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EditBashRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->EditBashRules(request);
         }
     );
 
@@ -5537,6 +5752,92 @@ CwpClient::ScanVulOutcomeCallable CwpClient::ScanVulCallable(const ScanVulReques
         [this, request]()
         {
             return this->ScanVul(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ScanVulAgainOutcome CwpClient::ScanVulAgain(const ScanVulAgainRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScanVulAgain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScanVulAgainResponse rsp = ScanVulAgainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScanVulAgainOutcome(rsp);
+        else
+            return ScanVulAgainOutcome(o.GetError());
+    }
+    else
+    {
+        return ScanVulAgainOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ScanVulAgainAsync(const ScanVulAgainRequest& request, const ScanVulAgainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScanVulAgain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ScanVulAgainOutcomeCallable CwpClient::ScanVulAgainCallable(const ScanVulAgainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScanVulAgainOutcome()>>(
+        [this, request]()
+        {
+            return this->ScanVulAgain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ScanVulSettingOutcome CwpClient::ScanVulSetting(const ScanVulSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScanVulSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScanVulSettingResponse rsp = ScanVulSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScanVulSettingOutcome(rsp);
+        else
+            return ScanVulSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ScanVulSettingOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ScanVulSettingAsync(const ScanVulSettingRequest& request, const ScanVulSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScanVulSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ScanVulSettingOutcomeCallable CwpClient::ScanVulSettingCallable(const ScanVulSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScanVulSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->ScanVulSetting(request);
         }
     );
 

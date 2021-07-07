@@ -24,7 +24,8 @@ using namespace TencentCloud::Tse::V20201207::Model;
 using namespace std;
 
 DescribeSREInstanceAccessAddressResponse::DescribeSREInstanceAccessAddressResponse() :
-    m_intranetAddressHasBeenSet(false)
+    m_intranetAddressHasBeenSet(false),
+    m_internetAddressHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome DescribeSREInstanceAccessAddressResponse::Deserialize(const 
         m_intranetAddressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InternetAddress") && !rsp["InternetAddress"].IsNull())
+    {
+        if (!rsp["InternetAddress"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InternetAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internetAddress = string(rsp["InternetAddress"].GetString());
+        m_internetAddressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -85,6 +96,16 @@ string DescribeSREInstanceAccessAddressResponse::GetIntranetAddress() const
 bool DescribeSREInstanceAccessAddressResponse::IntranetAddressHasBeenSet() const
 {
     return m_intranetAddressHasBeenSet;
+}
+
+string DescribeSREInstanceAccessAddressResponse::GetInternetAddress() const
+{
+    return m_internetAddress;
+}
+
+bool DescribeSREInstanceAccessAddressResponse::InternetAddressHasBeenSet() const
+{
+    return m_internetAddressHasBeenSet;
 }
 
 

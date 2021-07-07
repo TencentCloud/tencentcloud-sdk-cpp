@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ID
-                     * @return Id ID
+                     * 获取数据ID
+                     * @return Id 数据ID
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置ID
-                     * @param Id ID
+                     * 设置数据ID
+                     * @param Id 数据ID
                      */
                     void SetId(const uint64_t& _id);
 
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取规则等级
-                     * @return RuleLevel 规则等级
+                     * 获取规则等级：1-高 2-中 3-低
+                     * @return RuleLevel 规则等级：1-高 2-中 3-低
                      */
                     uint64_t GetRuleLevel() const;
 
                     /**
-                     * 设置规则等级
-                     * @param RuleLevel 规则等级
+                     * 设置规则等级：1-高 2-中 3-低
+                     * @param RuleLevel 规则等级：1-高 2-中 3-低
                      */
                     void SetRuleLevel(const uint64_t& _ruleLevel);
 
@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool RuleLevelHasBeenSet() const;
 
                     /**
-                     * 获取处理状态
-                     * @return Status 处理状态
+                     * 获取处理状态： 0 = 待处理 1= 已处理, 2 = 已加白
+                     * @return Status 处理状态： 0 = 待处理 1= 已处理, 2 = 已加白
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置处理状态
-                     * @param Status 处理状态
+                     * 设置处理状态： 0 = 待处理 1= 已处理, 2 = 已加白
+                     * @param Status 处理状态： 0 = 待处理 1= 已处理, 2 = 已加白
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -280,10 +280,142 @@ namespace TencentCloud
                      */
                     bool MachineNameHasBeenSet() const;
 
+                    /**
+                     * 获取0: bash日志 1: 实时监控(雷霆版)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DetectBy 0: bash日志 1: 实时监控(雷霆版)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDetectBy() const;
+
+                    /**
+                     * 设置0: bash日志 1: 实时监控(雷霆版)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DetectBy 0: bash日志 1: 实时监控(雷霆版)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDetectBy(const uint64_t& _detectBy);
+
+                    /**
+                     * 判断参数 DetectBy 是否已赋值
+                     * @return DetectBy 是否已赋值
+                     */
+                    bool DetectByHasBeenSet() const;
+
+                    /**
+                     * 获取进程id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Pid 进程id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPid() const;
+
+                    /**
+                     * 设置进程id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Pid 进程id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPid(const std::string& _pid);
+
+                    /**
+                     * 判断参数 Pid 是否已赋值
+                     * @return Pid 是否已赋值
+                     */
+                    bool PidHasBeenSet() const;
+
+                    /**
+                     * 获取进程名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Exe 进程名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExe() const;
+
+                    /**
+                     * 设置进程名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Exe 进程名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExe(const std::string& _exe);
+
+                    /**
+                     * 判断参数 Exe 是否已赋值
+                     * @return Exe 是否已赋值
+                     */
+                    bool ExeHasBeenSet() const;
+
+                    /**
+                     * 获取处理时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModifyTime 处理时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetModifyTime() const;
+
+                    /**
+                     * 设置处理时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModifyTime 处理时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModifyTime(const std::string& _modifyTime);
+
+                    /**
+                     * 判断参数 ModifyTime 是否已赋值
+                     * @return ModifyTime 是否已赋值
+                     */
+                    bool ModifyTimeHasBeenSet() const;
+
+                    /**
+                     * 获取规则类别  0=系统规则，1=用户规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleCategory 规则类别  0=系统规则，1=用户规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetRuleCategory() const;
+
+                    /**
+                     * 设置规则类别  0=系统规则，1=用户规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleCategory 规则类别  0=系统规则，1=用户规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleCategory(const uint64_t& _ruleCategory);
+
+                    /**
+                     * 判断参数 RuleCategory 是否已赋值
+                     * @return RuleCategory 是否已赋值
+                     */
+                    bool RuleCategoryHasBeenSet() const;
+
+                    /**
+                     * 获取自动生成的正则表达式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegexBashCmd 自动生成的正则表达式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegexBashCmd() const;
+
+                    /**
+                     * 设置自动生成的正则表达式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegexBashCmd 自动生成的正则表达式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegexBashCmd(const std::string& _regexBashCmd);
+
+                    /**
+                     * 判断参数 RegexBashCmd 是否已赋值
+                     * @return RegexBashCmd 是否已赋值
+                     */
+                    bool RegexBashCmdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ID
+                     * 数据ID
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
@@ -337,13 +469,13 @@ namespace TencentCloud
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 规则等级
+                     * 规则等级：1-高 2-中 3-低
                      */
                     uint64_t m_ruleLevel;
                     bool m_ruleLevelHasBeenSet;
 
                     /**
-                     * 处理状态
+                     * 处理状态： 0 = 待处理 1= 已处理, 2 = 已加白
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -359,6 +491,48 @@ namespace TencentCloud
                      */
                     std::string m_machineName;
                     bool m_machineNameHasBeenSet;
+
+                    /**
+                     * 0: bash日志 1: 实时监控(雷霆版)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_detectBy;
+                    bool m_detectByHasBeenSet;
+
+                    /**
+                     * 进程id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pid;
+                    bool m_pidHasBeenSet;
+
+                    /**
+                     * 进程名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_exe;
+                    bool m_exeHasBeenSet;
+
+                    /**
+                     * 处理时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_modifyTime;
+                    bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 规则类别  0=系统规则，1=用户规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ruleCategory;
+                    bool m_ruleCategoryHasBeenSet;
+
+                    /**
+                     * 自动生成的正则表达式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regexBashCmd;
+                    bool m_regexBashCmdHasBeenSet;
 
                 };
             }

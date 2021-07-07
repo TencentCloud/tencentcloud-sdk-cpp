@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/market/v20191010/model/GetCateTreeResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Market::V20191010::Model;
+using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-GetCateTreeResponse::GetCateTreeResponse() :
-    m_cateIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+ModifyCloudBaseRunServerFlowConfResponse::ModifyCloudBaseRunServerFlowConfResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome GetCateTreeResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyCloudBaseRunServerFlowConfResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,24 +62,14 @@ CoreInternalOutcome GetCateTreeResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("CateId") && !rsp["CateId"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["CateId"].IsUint64())
+        if (!rsp["Result"].IsString())
         {
-            return CoreInternalOutcome(Error("response `CateId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_cateId = rsp["CateId"].GetUint64();
-        m_cateIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Name") && !rsp["Name"].IsNull())
-    {
-        if (!rsp["Name"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(rsp["Name"].GetString());
-        m_nameHasBeenSet = true;
+        m_result = string(rsp["Result"].GetString());
+        m_resultHasBeenSet = true;
     }
 
 
@@ -88,24 +77,14 @@ CoreInternalOutcome GetCateTreeResponse::Deserialize(const string &payload)
 }
 
 
-uint64_t GetCateTreeResponse::GetCateId() const
+string ModifyCloudBaseRunServerFlowConfResponse::GetResult() const
 {
-    return m_cateId;
+    return m_result;
 }
 
-bool GetCateTreeResponse::CateIdHasBeenSet() const
+bool ModifyCloudBaseRunServerFlowConfResponse::ResultHasBeenSet() const
 {
-    return m_cateIdHasBeenSet;
-}
-
-string GetCateTreeResponse::GetName() const
-{
-    return m_name;
-}
-
-bool GetCateTreeResponse::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
 

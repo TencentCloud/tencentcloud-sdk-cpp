@@ -244,6 +244,28 @@ namespace TencentCloud
                      */
                     bool NormalHasBeenSet() const;
 
+                    /**
+                     * 获取项目原文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ItemString 项目原文
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetItemString() const;
+
+                    /**
+                     * 设置项目原文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ItemString 项目原文
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetItemString(const std::string& _itemString);
+
+                    /**
+                     * 判断参数 ItemString 是否已赋值
+                     * @return ItemString 是否已赋值
+                     */
+                    bool ItemStringHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +330,13 @@ namespace TencentCloud
                      */
                     bool m_normal;
                     bool m_normalHasBeenSet;
+
+                    /**
+                     * 项目原文
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_itemString;
+                    bool m_itemStringHasBeenSet;
 
                 };
             }

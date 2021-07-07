@@ -59,6 +59,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectLatestVersionListResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectVersionListRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectVersionListResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunConfForGateWayRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunConfForGateWayResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceForExtendRequest.h>
@@ -111,6 +113,8 @@
 #include <tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerResponse.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEndUserRequest.h>
@@ -189,6 +193,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCloudBaseProjectVersionListResponse> DescribeCloudBaseProjectVersionListOutcome;
                 typedef std::future<DescribeCloudBaseProjectVersionListOutcome> DescribeCloudBaseProjectVersionListOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseProjectVersionListRequest&, DescribeCloudBaseProjectVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseProjectVersionListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCloudBaseRunConfForGateWayResponse> DescribeCloudBaseRunConfForGateWayOutcome;
+                typedef std::future<DescribeCloudBaseRunConfForGateWayOutcome> DescribeCloudBaseRunConfForGateWayOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunConfForGateWayRequest&, DescribeCloudBaseRunConfForGateWayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunConfForGateWayAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCloudBaseRunResourceResponse> DescribeCloudBaseRunResourceOutcome;
                 typedef std::future<DescribeCloudBaseRunResourceOutcome> DescribeCloudBaseRunResourceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunResourceRequest&, DescribeCloudBaseRunResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunResourceAsyncHandler;
@@ -267,6 +274,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::EstablishWxGatewayRouteResponse> EstablishWxGatewayRouteOutcome;
                 typedef std::future<EstablishWxGatewayRouteOutcome> EstablishWxGatewayRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::EstablishWxGatewayRouteRequest&, EstablishWxGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstablishWxGatewayRouteAsyncHandler;
+                typedef Outcome<Error, Model::ModifyCloudBaseRunServerFlowConfResponse> ModifyCloudBaseRunServerFlowConfOutcome;
+                typedef std::future<ModifyCloudBaseRunServerFlowConfOutcome> ModifyCloudBaseRunServerFlowConfOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyCloudBaseRunServerFlowConfRequest&, ModifyCloudBaseRunServerFlowConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudBaseRunServerFlowConfAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDatabaseACLResponse> ModifyDatabaseACLOutcome;
                 typedef std::future<ModifyDatabaseACLOutcome> ModifyDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyDatabaseACLRequest&, ModifyDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseACLAsyncHandler;
@@ -446,6 +456,15 @@ namespace TencentCloud
                 DescribeCloudBaseProjectVersionListOutcome DescribeCloudBaseProjectVersionList(const Model::DescribeCloudBaseProjectVersionListRequest &request);
                 void DescribeCloudBaseProjectVersionListAsync(const Model::DescribeCloudBaseProjectVersionListRequest& request, const DescribeCloudBaseProjectVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudBaseProjectVersionListOutcomeCallable DescribeCloudBaseProjectVersionListCallable(const Model::DescribeCloudBaseProjectVersionListRequest& request);
+
+                /**
+                 *独立网关中拉取云托管服务对应的配置信息
+                 * @param req DescribeCloudBaseRunConfForGateWayRequest
+                 * @return DescribeCloudBaseRunConfForGateWayOutcome
+                 */
+                DescribeCloudBaseRunConfForGateWayOutcome DescribeCloudBaseRunConfForGateWay(const Model::DescribeCloudBaseRunConfForGateWayRequest &request);
+                void DescribeCloudBaseRunConfForGateWayAsync(const Model::DescribeCloudBaseRunConfForGateWayRequest& request, const DescribeCloudBaseRunConfForGateWayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudBaseRunConfForGateWayOutcomeCallable DescribeCloudBaseRunConfForGateWayCallable(const Model::DescribeCloudBaseRunConfForGateWayRequest& request);
 
                 /**
                  *查看容器托管的集群状态
@@ -683,6 +702,15 @@ namespace TencentCloud
                 EstablishWxGatewayRouteOutcome EstablishWxGatewayRoute(const Model::EstablishWxGatewayRouteRequest &request);
                 void EstablishWxGatewayRouteAsync(const Model::EstablishWxGatewayRouteRequest& request, const EstablishWxGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EstablishWxGatewayRouteOutcomeCallable EstablishWxGatewayRouteCallable(const Model::EstablishWxGatewayRouteRequest& request);
+
+                /**
+                 *修改容器内的版本流量配置
+                 * @param req ModifyCloudBaseRunServerFlowConfRequest
+                 * @return ModifyCloudBaseRunServerFlowConfOutcome
+                 */
+                ModifyCloudBaseRunServerFlowConfOutcome ModifyCloudBaseRunServerFlowConf(const Model::ModifyCloudBaseRunServerFlowConfRequest &request);
+                void ModifyCloudBaseRunServerFlowConfAsync(const Model::ModifyCloudBaseRunServerFlowConfRequest& request, const ModifyCloudBaseRunServerFlowConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloudBaseRunServerFlowConfOutcomeCallable ModifyCloudBaseRunServerFlowConfCallable(const Model::ModifyCloudBaseRunServerFlowConfRequest& request);
 
                 /**
                  *修改数据库权限

@@ -27,7 +27,8 @@ GetEidTokenRequest::GetEidTokenRequest() :
     m_idCardHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_extraHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_redirectUrlHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string GetEidTokenRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_config.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_redirectUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedirectUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_redirectUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void GetEidTokenRequest::SetConfig(const GetEidTokenConfig& _config)
 bool GetEidTokenRequest::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+string GetEidTokenRequest::GetRedirectUrl() const
+{
+    return m_redirectUrl;
+}
+
+void GetEidTokenRequest::SetRedirectUrl(const string& _redirectUrl)
+{
+    m_redirectUrl = _redirectUrl;
+    m_redirectUrlHasBeenSet = true;
+}
+
+bool GetEidTokenRequest::RedirectUrlHasBeenSet() const
+{
+    return m_redirectUrlHasBeenSet;
 }
 
 

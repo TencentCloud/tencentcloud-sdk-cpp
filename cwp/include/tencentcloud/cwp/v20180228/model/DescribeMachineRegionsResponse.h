@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/RegionInfo.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,97 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取CVM 云服务器地域列表
+                     * @return CVM CVM 云服务器地域列表
+                     */
+                    std::vector<RegionInfo> GetCVM() const;
+
+                    /**
+                     * 判断参数 CVM 是否已赋值
+                     * @return CVM 是否已赋值
+                     */
+                    bool CVMHasBeenSet() const;
+
+                    /**
+                     * 获取BM 黑石机器地域列表
+                     * @return BM BM 黑石机器地域列表
+                     */
+                    std::vector<RegionInfo> GetBM() const;
+
+                    /**
+                     * 判断参数 BM 是否已赋值
+                     * @return BM 是否已赋值
+                     */
+                    bool BMHasBeenSet() const;
+
+                    /**
+                     * 获取LH 轻量应用服务器地域列表
+                     * @return LH LH 轻量应用服务器地域列表
+                     */
+                    std::vector<RegionInfo> GetLH() const;
+
+                    /**
+                     * 判断参数 LH 是否已赋值
+                     * @return LH 是否已赋值
+                     */
+                    bool LHHasBeenSet() const;
+
+                    /**
+                     * 获取ECM 边缘计算服务器地域列表
+                     * @return ECM ECM 边缘计算服务器地域列表
+                     */
+                    std::vector<RegionInfo> GetECM() const;
+
+                    /**
+                     * 判断参数 ECM 是否已赋值
+                     * @return ECM 是否已赋值
+                     */
+                    bool ECMHasBeenSet() const;
+
+                    /**
+                     * 获取Other 混合云地域列表
+                     * @return Other Other 混合云地域列表
+                     */
+                    std::vector<RegionInfo> GetOther() const;
+
+                    /**
+                     * 判断参数 Other 是否已赋值
+                     * @return Other 是否已赋值
+                     */
+                    bool OtherHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * CVM 云服务器地域列表
+                     */
+                    std::vector<RegionInfo> m_cVM;
+                    bool m_cVMHasBeenSet;
+
+                    /**
+                     * BM 黑石机器地域列表
+                     */
+                    std::vector<RegionInfo> m_bM;
+                    bool m_bMHasBeenSet;
+
+                    /**
+                     * LH 轻量应用服务器地域列表
+                     */
+                    std::vector<RegionInfo> m_lH;
+                    bool m_lHHasBeenSet;
+
+                    /**
+                     * ECM 边缘计算服务器地域列表
+                     */
+                    std::vector<RegionInfo> m_eCM;
+                    bool m_eCMHasBeenSet;
+
+                    /**
+                     * Other 混合云地域列表
+                     */
+                    std::vector<RegionInfo> m_other;
+                    bool m_otherHasBeenSet;
 
                 };
             }

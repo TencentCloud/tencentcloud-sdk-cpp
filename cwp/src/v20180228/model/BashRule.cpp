@@ -32,7 +32,10 @@ BashRule::BashRule() :
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_hostipHasBeenSet(false)
+    m_hostipHasBeenSet(false),
+    m_uuidsHasBeenSet(false),
+    m_whiteHasBeenSet(false),
+    m_dealOldEventsHasBeenSet(false)
 {
 }
 
@@ -161,6 +164,39 @@ CoreInternalOutcome BashRule::Deserialize(const rapidjson::Value &value)
         m_hostipHasBeenSet = true;
     }
 
+    if (value.HasMember("Uuids") && !value["Uuids"].IsNull())
+    {
+        if (!value["Uuids"].IsArray())
+            return CoreInternalOutcome(Error("response `BashRule.Uuids` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Uuids"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_uuids.push_back((*itr).GetString());
+        }
+        m_uuidsHasBeenSet = true;
+    }
+
+    if (value.HasMember("White") && !value["White"].IsNull())
+    {
+        if (!value["White"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `BashRule.White` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_white = value["White"].GetUint64();
+        m_whiteHasBeenSet = true;
+    }
+
+    if (value.HasMember("DealOldEvents") && !value["DealOldEvents"].IsNull())
+    {
+        if (!value["DealOldEvents"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `BashRule.DealOldEvents` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dealOldEvents = value["DealOldEvents"].GetUint64();
+        m_dealOldEventsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +298,35 @@ void BashRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Hostip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hostip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uuidsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uuids";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_uuids.begin(); itr != m_uuids.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_whiteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "White";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_white, allocator);
+    }
+
+    if (m_dealOldEventsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealOldEvents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dealOldEvents, allocator);
     }
 
 }
@@ -457,5 +522,53 @@ void BashRule::SetHostip(const string& _hostip)
 bool BashRule::HostipHasBeenSet() const
 {
     return m_hostipHasBeenSet;
+}
+
+vector<string> BashRule::GetUuids() const
+{
+    return m_uuids;
+}
+
+void BashRule::SetUuids(const vector<string>& _uuids)
+{
+    m_uuids = _uuids;
+    m_uuidsHasBeenSet = true;
+}
+
+bool BashRule::UuidsHasBeenSet() const
+{
+    return m_uuidsHasBeenSet;
+}
+
+uint64_t BashRule::GetWhite() const
+{
+    return m_white;
+}
+
+void BashRule::SetWhite(const uint64_t& _white)
+{
+    m_white = _white;
+    m_whiteHasBeenSet = true;
+}
+
+bool BashRule::WhiteHasBeenSet() const
+{
+    return m_whiteHasBeenSet;
+}
+
+uint64_t BashRule::GetDealOldEvents() const
+{
+    return m_dealOldEvents;
+}
+
+void BashRule::SetDealOldEvents(const uint64_t& _dealOldEvents)
+{
+    m_dealOldEvents = _dealOldEvents;
+    m_dealOldEventsHasBeenSet = true;
+}
+
+bool BashRule::DealOldEventsHasBeenSet() const
+{
+    return m_dealOldEventsHasBeenSet;
 }
 
