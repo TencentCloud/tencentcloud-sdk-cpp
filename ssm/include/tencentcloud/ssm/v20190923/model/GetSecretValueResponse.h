@@ -67,8 +67,10 @@ namespace TencentCloud
                     bool VersionIdHasBeenSet() const;
 
                     /**
-                     * 获取在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。SecretBinary和SecretString只有一个不为空。
-                     * @return SecretBinary 在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。SecretBinary和SecretString只有一个不为空。
+                     * 获取在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。
+SecretBinary和SecretString只有一个不为空。
+                     * @return SecretBinary 在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。
+SecretBinary和SecretString只有一个不为空。
                      */
                     std::string GetSecretBinary() const;
 
@@ -79,8 +81,10 @@ namespace TencentCloud
                     bool SecretBinaryHasBeenSet() const;
 
                     /**
-                     * 获取在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。SecretBinary和SecretString只有一个不为空。
-                     * @return SecretString 在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。SecretBinary和SecretString只有一个不为空。
+                     * 获取在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。
+SecretBinary和SecretString只有一个不为空。
+                     * @return SecretString 在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。
+SecretBinary和SecretString只有一个不为空。
                      */
                     std::string GetSecretString() const;
 
@@ -105,13 +109,15 @@ namespace TencentCloud
                     bool m_versionIdHasBeenSet;
 
                     /**
-                     * 在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。SecretBinary和SecretString只有一个不为空。
+                     * 在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。
+SecretBinary和SecretString只有一个不为空。
                      */
                     std::string m_secretBinary;
                     bool m_secretBinaryHasBeenSet;
 
                     /**
-                     * 在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。SecretBinary和SecretString只有一个不为空。
+                     * 在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。
+SecretBinary和SecretString只有一个不为空。
                      */
                     std::string m_secretString;
                     bool m_secretStringHasBeenSet;

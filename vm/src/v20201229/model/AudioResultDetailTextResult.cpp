@@ -26,8 +26,8 @@ AudioResultDetailTextResult::AudioResultDetailTextResult() :
     m_libIdHasBeenSet(false),
     m_libNameHasBeenSet(false),
     m_scoreHasBeenSet(false),
-    m_libTypeHasBeenSet(false),
-    m_suggestionHasBeenSet(false)
+    m_suggestionHasBeenSet(false),
+    m_libTypeHasBeenSet(false)
 {
 }
 
@@ -89,16 +89,6 @@ CoreInternalOutcome AudioResultDetailTextResult::Deserialize(const rapidjson::Va
         m_scoreHasBeenSet = true;
     }
 
-    if (value.HasMember("LibType") && !value["LibType"].IsNull())
-    {
-        if (!value["LibType"].IsInt64())
-        {
-            return CoreInternalOutcome(Error("response `AudioResultDetailTextResult.LibType` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_libType = value["LibType"].GetInt64();
-        m_libTypeHasBeenSet = true;
-    }
-
     if (value.HasMember("Suggestion") && !value["Suggestion"].IsNull())
     {
         if (!value["Suggestion"].IsString())
@@ -107,6 +97,16 @@ CoreInternalOutcome AudioResultDetailTextResult::Deserialize(const rapidjson::Va
         }
         m_suggestion = string(value["Suggestion"].GetString());
         m_suggestionHasBeenSet = true;
+    }
+
+    if (value.HasMember("LibType") && !value["LibType"].IsNull())
+    {
+        if (!value["LibType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `AudioResultDetailTextResult.LibType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_libType = value["LibType"].GetInt64();
+        m_libTypeHasBeenSet = true;
     }
 
 
@@ -161,20 +161,20 @@ void AudioResultDetailTextResult::ToJsonObject(rapidjson::Value &value, rapidjso
         value.AddMember(iKey, m_score, allocator);
     }
 
-    if (m_libTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LibType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_libType, allocator);
-    }
-
     if (m_suggestionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_libTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LibType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_libType, allocator);
     }
 
 }
@@ -260,22 +260,6 @@ bool AudioResultDetailTextResult::ScoreHasBeenSet() const
     return m_scoreHasBeenSet;
 }
 
-int64_t AudioResultDetailTextResult::GetLibType() const
-{
-    return m_libType;
-}
-
-void AudioResultDetailTextResult::SetLibType(const int64_t& _libType)
-{
-    m_libType = _libType;
-    m_libTypeHasBeenSet = true;
-}
-
-bool AudioResultDetailTextResult::LibTypeHasBeenSet() const
-{
-    return m_libTypeHasBeenSet;
-}
-
 string AudioResultDetailTextResult::GetSuggestion() const
 {
     return m_suggestion;
@@ -290,5 +274,21 @@ void AudioResultDetailTextResult::SetSuggestion(const string& _suggestion)
 bool AudioResultDetailTextResult::SuggestionHasBeenSet() const
 {
     return m_suggestionHasBeenSet;
+}
+
+int64_t AudioResultDetailTextResult::GetLibType() const
+{
+    return m_libType;
+}
+
+void AudioResultDetailTextResult::SetLibType(const int64_t& _libType)
+{
+    m_libType = _libType;
+    m_libTypeHasBeenSet = true;
+}
+
+bool AudioResultDetailTextResult::LibTypeHasBeenSet() const
+{
+    return m_libTypeHasBeenSet;
 }
 

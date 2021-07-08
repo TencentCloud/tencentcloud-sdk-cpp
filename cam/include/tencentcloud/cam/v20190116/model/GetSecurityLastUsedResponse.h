@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cam/v20190116/model/SecretIdLastUsed.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,25 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
 
 
+                    /**
+                     * 获取密钥ID最近访问列表
+                     * @return SecretIdLastUsedRows 密钥ID最近访问列表
+                     */
+                    std::vector<SecretIdLastUsed> GetSecretIdLastUsedRows() const;
+
+                    /**
+                     * 判断参数 SecretIdLastUsedRows 是否已赋值
+                     * @return SecretIdLastUsedRows 是否已赋值
+                     */
+                    bool SecretIdLastUsedRowsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 密钥ID最近访问列表
+                     */
+                    std::vector<SecretIdLastUsed> m_secretIdLastUsedRows;
+                    bool m_secretIdLastUsedRowsHasBeenSet;
 
                 };
             }

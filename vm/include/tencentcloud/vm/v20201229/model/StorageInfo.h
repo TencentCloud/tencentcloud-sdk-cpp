@@ -48,22 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取类型 可选：
-URL 资源链接类型
-COS 腾讯云对象存储类型
-                     * @return Type 类型 可选：
-URL 资源链接类型
-COS 腾讯云对象存储类型
+                     * 获取该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)；该字段应当与传入的访问类型相对应，可用于强校验并方便系统快速识别访问地址；若不传入此参数，则默认值为URL，此时系统将自动判定访问地址类型。
+                     * @return Type 该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)；该字段应当与传入的访问类型相对应，可用于强校验并方便系统快速识别访问地址；若不传入此参数，则默认值为URL，此时系统将自动判定访问地址类型。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型 可选：
-URL 资源链接类型
-COS 腾讯云对象存储类型
-                     * @param Type 类型 可选：
-URL 资源链接类型
-COS 腾讯云对象存储类型
+                     * 设置该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)；该字段应当与传入的访问类型相对应，可用于强校验并方便系统快速识别访问地址；若不传入此参数，则默认值为URL，此时系统将自动判定访问地址类型。
+                     * @param Type 该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)；该字段应当与传入的访问类型相对应，可用于强校验并方便系统快速识别访问地址；若不传入此参数，则默认值为URL，此时系统将自动判定访问地址类型。
                      */
                     void SetType(const std::string& _type);
 
@@ -74,14 +66,14 @@ COS 腾讯云对象存储类型
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取资源链接
-                     * @return Url 资源链接
+                     * 获取该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空，该参数与BucketInfo参数须传入其中之一
+                     * @return Url 该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空，该参数与BucketInfo参数须传入其中之一
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置资源链接
-                     * @param Url 资源链接
+                     * 设置该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空，该参数与BucketInfo参数须传入其中之一
+                     * @param Url 该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空，该参数与BucketInfo参数须传入其中之一
                      */
                     void SetUrl(const std::string& _url);
 
@@ -92,14 +84,14 @@ COS 腾讯云对象存储类型
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云存储桶信息
-                     * @return BucketInfo 腾讯云存储桶信息
+                     * 获取该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空，该参数与Url参数须传入其中之一。
+                     * @return BucketInfo 该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空，该参数与Url参数须传入其中之一。
                      */
                     BucketInfo GetBucketInfo() const;
 
                     /**
-                     * 设置腾讯云存储桶信息
-                     * @param BucketInfo 腾讯云存储桶信息
+                     * 设置该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空，该参数与Url参数须传入其中之一。
+                     * @param BucketInfo 该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空，该参数与Url参数须传入其中之一。
                      */
                     void SetBucketInfo(const BucketInfo& _bucketInfo);
 
@@ -112,21 +104,19 @@ COS 腾讯云对象存储类型
                 private:
 
                     /**
-                     * 类型 可选：
-URL 资源链接类型
-COS 腾讯云对象存储类型
+                     * 该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)；该字段应当与传入的访问类型相对应，可用于强校验并方便系统快速识别访问地址；若不传入此参数，则默认值为URL，此时系统将自动判定访问地址类型。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 资源链接
+                     * 该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空，该参数与BucketInfo参数须传入其中之一
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 腾讯云存储桶信息
+                     * 该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空，该参数与Url参数须传入其中之一。
                      */
                     BucketInfo m_bucketInfo;
                     bool m_bucketInfoHasBeenSet;

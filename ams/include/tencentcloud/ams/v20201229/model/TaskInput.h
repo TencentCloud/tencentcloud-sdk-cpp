@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 音视频任务结构
+                * 音视频任务数据结构
                 */
                 class TaskInput : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据ID
-                     * @return DataId 数据ID
+                     * 获取选填参数，该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
+                     * @return DataId 选填参数，该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
                      */
                     std::string GetDataId() const;
 
                     /**
-                     * 设置数据ID
-                     * @param DataId 数据ID
+                     * 设置选填参数，该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
+                     * @param DataId 选填参数，该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
                      */
                     void SetDataId(const std::string& _dataId);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool DataIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名
-                     * @return Name 任务名
+                     * 获取选填参数，该字段表示音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
+                     * @return Name 选填参数，该字段表示音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名
-                     * @param Name 任务名
+                     * 设置选填参数，该字段表示音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
+                     * @param Name 选填参数，该字段表示音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
                      */
                     void SetName(const std::string& _name);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取任务输入
-                     * @return Input 任务输入
+                     * 获取必填参数，该字段表示审核文件的访问参数，用于获取审核媒体文件，该参数内包括访问类型和访问地址。
+                     * @return Input 必填参数，该字段表示审核文件的访问参数，用于获取审核媒体文件，该参数内包括访问类型和访问地址。
                      */
                     StorageInfo GetInput() const;
 
                     /**
-                     * 设置任务输入
-                     * @param Input 任务输入
+                     * 设置必填参数，该字段表示审核文件的访问参数，用于获取审核媒体文件，该参数内包括访问类型和访问地址。
+                     * @param Input 必填参数，该字段表示审核文件的访问参数，用于获取审核媒体文件，该参数内包括访问类型和访问地址。
                      */
                     void SetInput(const StorageInfo& _input);
 
@@ -104,19 +104,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据ID
+                     * 选填参数，该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**。
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
 
                     /**
-                     * 任务名
+                     * 选填参数，该字段表示音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 任务输入
+                     * 必填参数，该字段表示审核文件的访问参数，用于获取审核媒体文件，该参数内包括访问类型和访问地址。
                      */
                     StorageInfo m_input;
                     bool m_inputHasBeenSet;

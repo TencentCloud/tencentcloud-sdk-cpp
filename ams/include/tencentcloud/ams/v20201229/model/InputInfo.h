@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取传入的类型可选：URL，COS
+                     * 获取该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 传入的类型可选：URL，COS
+                     * @return Type 该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置传入的类型可选：URL，COS
+                     * 设置该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 传入的类型可选：URL，COS
+                     * @param Type 该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetType(const std::string& _type);
@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Url地址
+                     * 获取该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Url Url地址
+                     * @return Url 该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置Url地址
+                     * 设置该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Url Url地址
+                     * @param Url 该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUrl(const std::string& _url);
@@ -92,17 +92,17 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取桶信息。当输入当时COS时，该字段不为空
+                     * 获取该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BucketInfo 桶信息。当输入当时COS时，该字段不为空
+                     * @return BucketInfo 该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BucketInfo GetBucketInfo() const;
 
                     /**
-                     * 设置桶信息。当输入当时COS时，该字段不为空
+                     * 设置该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BucketInfo 桶信息。当输入当时COS时，该字段不为空
+                     * @param BucketInfo 该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBucketInfo(const BucketInfo& _bucketInfo);
@@ -116,21 +116,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 传入的类型可选：URL，COS
+                     * 该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Url地址
+                     * 该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 桶信息。当输入当时COS时，该字段不为空
+                     * 该字段表示文件访问的腾讯云存储桶信息。<br> 备注：当Type为COS时此字段不为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BucketInfo m_bucketInfo;

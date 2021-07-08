@@ -65,6 +65,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/RoleInfo.h
   include/tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagResponse.h
   include/tencentcloud/cam/v20190116/model/CreatePolicyVersionRequest.h
+  include/tencentcloud/cam/v20190116/model/SecretIdLastUsed.h
   include/tencentcloud/cam/v20190116/model/DeleteGroupRequest.h
   include/tencentcloud/cam/v20190116/model/GetUserResponse.h
   include/tencentcloud/cam/v20190116/model/DeleteUserResponse.h
@@ -219,6 +220,7 @@ set(cam_src
   src/v20190116/model/RoleInfo.cpp
   src/v20190116/model/DescribeSafeAuthFlagResponse.cpp
   src/v20190116/model/CreatePolicyVersionRequest.cpp
+  src/v20190116/model/SecretIdLastUsed.cpp
   src/v20190116/model/DeleteGroupRequest.cpp
   src/v20190116/model/GetUserResponse.cpp
   src/v20190116/model/DeleteUserResponse.cpp

@@ -49,17 +49,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入的数据ID
+                     * 获取该字段用于返回音频审核任务数据所对应的数据ID，方便后续查询和管理审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataId 输入的数据ID
+                     * @return DataId 该字段用于返回音频审核任务数据所对应的数据ID，方便后续查询和管理审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDataId() const;
 
                     /**
-                     * 设置输入的数据ID
+                     * 设置该字段用于返回音频审核任务数据所对应的数据ID，方便后续查询和管理审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataId 输入的数据ID
+                     * @param DataId 该字段用于返回音频审核任务数据所对应的数据ID，方便后续查询和管理审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDataId(const std::string& _dataId);
@@ -71,14 +71,14 @@ namespace TencentCloud
                     bool DataIdHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
+                     * @return TaskId 该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param TaskId 任务ID
+                     * 设置该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
+                     * @param TaskId 该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -89,14 +89,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取状态，可选：PENDING，RUNNING，ERROR，FINISH，CANCELLED
-                     * @return Status 状态，可选：PENDING，RUNNING，ERROR，FINISH，CANCELLED
+                     * 获取该字段用于返回所查询内容的任务状态。
+<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。
+                     * @return Status 该字段用于返回所查询内容的任务状态。
+<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态，可选：PENDING，RUNNING，ERROR，FINISH，CANCELLED
-                     * @param Status 状态，可选：PENDING，RUNNING，ERROR，FINISH，CANCELLED
+                     * 设置该字段用于返回所查询内容的任务状态。
+<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。
+                     * @param Status 该字段用于返回所查询内容的任务状态。
+<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -107,17 +111,17 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
+                     * 获取该字段用于返回音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 任务名称
+                     * @return Name 该字段用于返回音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名称
+                     * 设置该字段用于返回音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name 任务名称
+                     * @param Name 该字段用于返回音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
@@ -129,17 +133,17 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取业务类型
+                     * 获取该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BizType 业务类型
+                     * @return BizType 该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBizType() const;
 
                     /**
-                     * 设置业务类型
+                     * 设置该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BizType 业务类型
+                     * @param BizType 该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBizType(const std::string& _bizType);
@@ -151,17 +155,17 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
+                     * 获取该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 任务类型
+                     * @return Type 该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置任务类型
+                     * 设置该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 任务类型
+                     * @param Type 该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetType(const std::string& _type);
@@ -173,17 +177,17 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取建议。可选：Pass，Block，Review
+                     * 获取该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Suggestion 建议。可选：Pass，Block，Review
+                     * @return Suggestion 该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置建议。可选：Pass，Block，Review
+                     * 设置该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Suggestion 建议。可选：Pass，Block，Review
+                     * @param Suggestion 该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -217,17 +221,17 @@ namespace TencentCloud
                     bool MediaInfoHasBeenSet() const;
 
                     /**
-                     * 获取任务违规标签
+                     * 获取该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Labels 任务违规标签
+                     * @return Labels 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskLabel> GetLabels() const;
 
                     /**
-                     * 设置任务违规标签
+                     * 设置该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Labels 任务违规标签
+                     * @param Labels 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLabels(const std::vector<TaskLabel>& _labels);
@@ -239,14 +243,14 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间（ iso 8601 格式）
-                     * @return CreatedAt 创建时间（ iso 8601 格式）
+                     * 获取该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
+                     * @return CreatedAt 该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置创建时间（ iso 8601 格式）
-                     * @param CreatedAt 创建时间（ iso 8601 格式）
+                     * 设置该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
+                     * @param CreatedAt 该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
                      */
                     void SetCreatedAt(const std::string& _createdAt);
 
@@ -257,17 +261,17 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取更新时间（ iso 8601 格式）
+                     * 获取该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdatedAt 更新时间（ iso 8601 格式）
+                     * @return UpdatedAt 该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
-                     * 设置更新时间（ iso 8601 格式）
+                     * 设置该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdatedAt 更新时间（ iso 8601 格式）
+                     * @param UpdatedAt 该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -281,47 +285,48 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入的数据ID
+                     * 该字段用于返回音频审核任务数据所对应的数据ID，方便后续查询和管理审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
 
                     /**
-                     * 任务ID
+                     * 该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 状态，可选：PENDING，RUNNING，ERROR，FINISH，CANCELLED
+                     * 该字段用于返回所查询内容的任务状态。
+<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * 该字段用于返回音频审核任务所对应的任务名称，方便后续查询和管理审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 业务类型
+                     * 该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * 该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 建议。可选：Pass，Block，Review
+                     * 该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
@@ -335,20 +340,20 @@ namespace TencentCloud
                     bool m_mediaInfoHasBeenSet;
 
                     /**
-                     * 任务违规标签
+                     * 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskLabel> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 创建时间（ iso 8601 格式）
+                     * 该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 更新时间（ iso 8601 格式）
+                     * 该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;

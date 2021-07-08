@@ -368,14 +368,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取是否需要支持Ipv6，1：是，0：否。
-                     * @return NeedSupportIpv6 是否需要支持Ipv6，1：是，0：否。
+                     * 获取是否需要支持Ipv6，1：是，0：否（默认）。
+                     * @return NeedSupportIpv6 是否需要支持Ipv6，1：是，0：否（默认）。
                      */
                     uint64_t GetNeedSupportIpv6() const;
 
                     /**
-                     * 设置是否需要支持Ipv6，1：是，0：否。
-                     * @param NeedSupportIpv6 是否需要支持Ipv6，1：是，0：否。
+                     * 设置是否需要支持Ipv6，1：是，0：否（默认）。
+                     * @param NeedSupportIpv6 是否需要支持Ipv6，1：是，0：否（默认）。
                      */
                     void SetNeedSupportIpv6(const uint64_t& _needSupportIpv6);
 
@@ -532,7 +532,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 是否需要支持Ipv6，1：是，0：否。
+                     * 是否需要支持Ipv6，1：是，0：否（默认）。
                      */
                     uint64_t m_needSupportIpv6;
                     bool m_needSupportIpv6HasBeenSet;

@@ -30,7 +30,12 @@ DescribeSecretResponse::DescribeSecretResponse() :
     m_createUinHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_deleteTimeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_secretTypeHasBeenSet(false),
+    m_productNameHasBeenSet(false),
+    m_resourceIDHasBeenSet(false),
+    m_rotationStatusHasBeenSet(false),
+    m_rotationFrequencyHasBeenSet(false)
 {
 }
 
@@ -138,6 +143,56 @@ CoreInternalOutcome DescribeSecretResponse::Deserialize(const string &payload)
         m_createTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SecretType") && !rsp["SecretType"].IsNull())
+    {
+        if (!rsp["SecretType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `SecretType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretType = rsp["SecretType"].GetInt64();
+        m_secretTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProductName") && !rsp["ProductName"].IsNull())
+    {
+        if (!rsp["ProductName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProductName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productName = string(rsp["ProductName"].GetString());
+        m_productNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResourceID") && !rsp["ResourceID"].IsNull())
+    {
+        if (!rsp["ResourceID"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ResourceID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceID = string(rsp["ResourceID"].GetString());
+        m_resourceIDHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RotationStatus") && !rsp["RotationStatus"].IsNull())
+    {
+        if (!rsp["RotationStatus"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `RotationStatus` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_rotationStatus = rsp["RotationStatus"].GetBool();
+        m_rotationStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RotationFrequency") && !rsp["RotationFrequency"].IsNull())
+    {
+        if (!rsp["RotationFrequency"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `RotationFrequency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rotationFrequency = rsp["RotationFrequency"].GetInt64();
+        m_rotationFrequencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -211,6 +266,56 @@ uint64_t DescribeSecretResponse::GetCreateTime() const
 bool DescribeSecretResponse::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+int64_t DescribeSecretResponse::GetSecretType() const
+{
+    return m_secretType;
+}
+
+bool DescribeSecretResponse::SecretTypeHasBeenSet() const
+{
+    return m_secretTypeHasBeenSet;
+}
+
+string DescribeSecretResponse::GetProductName() const
+{
+    return m_productName;
+}
+
+bool DescribeSecretResponse::ProductNameHasBeenSet() const
+{
+    return m_productNameHasBeenSet;
+}
+
+string DescribeSecretResponse::GetResourceID() const
+{
+    return m_resourceID;
+}
+
+bool DescribeSecretResponse::ResourceIDHasBeenSet() const
+{
+    return m_resourceIDHasBeenSet;
+}
+
+bool DescribeSecretResponse::GetRotationStatus() const
+{
+    return m_rotationStatus;
+}
+
+bool DescribeSecretResponse::RotationStatusHasBeenSet() const
+{
+    return m_rotationStatusHasBeenSet;
+}
+
+int64_t DescribeSecretResponse::GetRotationFrequency() const
+{
+    return m_rotationFrequency;
+}
+
+bool DescribeSecretResponse::RotationFrequencyHasBeenSet() const
+{
+    return m_rotationFrequencyHasBeenSet;
 }
 
 

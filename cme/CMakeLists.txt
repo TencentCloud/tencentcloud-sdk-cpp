@@ -39,7 +39,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/SearchMaterialRequest.h
   include/tencentcloud/cme/v20191029/model/DeleteTeamResponse.h
   include/tencentcloud/cme/v20191029/model/StreamConnectOutput.h
-  include/tencentcloud/cme/v20191029/model/VideoSegmentationProjectInput.h
+  include/tencentcloud/cme/v20191029/model/CopyProjectRequest.h
   include/tencentcloud/cme/v20191029/model/SearchScope.h
   include/tencentcloud/cme/v20191029/model/RevokeResourceAuthorizationResponse.h
   include/tencentcloud/cme/v20191029/model/HandleStreamConnectProjectRequest.h
@@ -80,6 +80,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/EmptyTrackItem.h
   include/tencentcloud/cme/v20191029/model/PlatformInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeJoinTeamsRequest.h
+  include/tencentcloud/cme/v20191029/model/VideoSegmentationProjectInput.h
   include/tencentcloud/cme/v20191029/model/DeleteMaterialRequest.h
   include/tencentcloud/cme/v20191029/model/CreateProjectResponse.h
   include/tencentcloud/cme/v20191029/model/VideoEditProjectInput.h
@@ -122,6 +123,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/CreateClassResponse.h
   include/tencentcloud/cme/v20191029/model/SlotInfo.h
   include/tencentcloud/cme/v20191029/model/MediaReplacementInfo.h
+  include/tencentcloud/cme/v20191029/model/TaskBaseInfo.h
   include/tencentcloud/cme/v20191029/model/RecordReplayProjectInput.h
   include/tencentcloud/cme/v20191029/model/VideoStreamInfo.h
   include/tencentcloud/cme/v20191029/model/AddTeamMemberRequest.h
@@ -167,7 +169,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/PresetTagInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeSharedSpaceRequest.h
   include/tencentcloud/cme/v20191029/model/KuaishouPublishInfo.h
-  include/tencentcloud/cme/v20191029/model/TaskBaseInfo.h
+  include/tencentcloud/cme/v20191029/model/CopyProjectResponse.h
   include/tencentcloud/cme/v20191029/model/DeleteClassResponse.h
   include/tencentcloud/cme/v20191029/model/GrantResourceAuthorizationRequest.h
   include/tencentcloud/cme/v20191029/model/MediaMetaData.h
@@ -202,7 +204,7 @@ set(cme_src
   src/v20191029/model/SearchMaterialRequest.cpp
   src/v20191029/model/DeleteTeamResponse.cpp
   src/v20191029/model/StreamConnectOutput.cpp
-  src/v20191029/model/VideoSegmentationProjectInput.cpp
+  src/v20191029/model/CopyProjectRequest.cpp
   src/v20191029/model/SearchScope.cpp
   src/v20191029/model/RevokeResourceAuthorizationResponse.cpp
   src/v20191029/model/HandleStreamConnectProjectRequest.cpp
@@ -243,6 +245,7 @@ set(cme_src
   src/v20191029/model/EmptyTrackItem.cpp
   src/v20191029/model/PlatformInfo.cpp
   src/v20191029/model/DescribeJoinTeamsRequest.cpp
+  src/v20191029/model/VideoSegmentationProjectInput.cpp
   src/v20191029/model/DeleteMaterialRequest.cpp
   src/v20191029/model/CreateProjectResponse.cpp
   src/v20191029/model/VideoEditProjectInput.cpp
@@ -285,6 +288,7 @@ set(cme_src
   src/v20191029/model/CreateClassResponse.cpp
   src/v20191029/model/SlotInfo.cpp
   src/v20191029/model/MediaReplacementInfo.cpp
+  src/v20191029/model/TaskBaseInfo.cpp
   src/v20191029/model/RecordReplayProjectInput.cpp
   src/v20191029/model/VideoStreamInfo.cpp
   src/v20191029/model/AddTeamMemberRequest.cpp
@@ -330,7 +334,7 @@ set(cme_src
   src/v20191029/model/PresetTagInfo.cpp
   src/v20191029/model/DescribeSharedSpaceRequest.cpp
   src/v20191029/model/KuaishouPublishInfo.cpp
-  src/v20191029/model/TaskBaseInfo.cpp
+  src/v20191029/model/CopyProjectResponse.cpp
   src/v20191029/model/DeleteClassResponse.cpp
   src/v20191029/model/GrantResourceAuthorizationRequest.cpp
   src/v20191029/model/MediaMetaData.cpp

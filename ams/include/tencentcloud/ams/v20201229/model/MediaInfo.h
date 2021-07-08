@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取编码格式
-                     * @return Codecs 编码格式
+                     * 获取该字段用于返回传入的媒体文件的编码格式，如wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape等。
+                     * @return Codecs 该字段用于返回传入的媒体文件的编码格式，如wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape等。
                      */
                     std::string GetCodecs() const;
 
                     /**
-                     * 设置编码格式
-                     * @param Codecs 编码格式
+                     * 设置该字段用于返回传入的媒体文件的编码格式，如wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape等。
+                     * @param Codecs 该字段用于返回传入的媒体文件的编码格式，如wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape等。
                      */
                     void SetCodecs(const std::string& _codecs);
 
@@ -65,18 +65,14 @@ namespace TencentCloud
                     bool CodecsHasBeenSet() const;
 
                     /**
-                     * 获取流检测时分片时长
-注意：此字段可能返回 0，表示取不到有效值。
-                     * @return Duration 流检测时分片时长
-注意：此字段可能返回 0，表示取不到有效值。
+                     * 获取该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为秒。**默认值为15秒**，支持用户自定义配置。
+                     * @return Duration 该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为秒。**默认值为15秒**，支持用户自定义配置。
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置流检测时分片时长
-注意：此字段可能返回 0，表示取不到有效值。
-                     * @param Duration 流检测时分片时长
-注意：此字段可能返回 0，表示取不到有效值。
+                     * 设置该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为秒。**默认值为15秒**，支持用户自定义配置。
+                     * @param Duration 该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为秒。**默认值为15秒**，支持用户自定义配置。
                      */
                     void SetDuration(const int64_t& _duration);
 
@@ -87,14 +83,14 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取宽，单位为像素
-                     * @return Width 宽，单位为像素
+                     * 获取*内测中，敬请期待*
+                     * @return Width *内测中，敬请期待*
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置宽，单位为像素
-                     * @param Width 宽，单位为像素
+                     * 设置*内测中，敬请期待*
+                     * @param Width *内测中，敬请期待*
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -105,14 +101,14 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取高，单位为像素
-                     * @return Height 高，单位为像素
+                     * 获取*内测中，敬请期待*
+                     * @return Height *内测中，敬请期待*
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置高，单位为像素
-                     * @param Height 高，单位为像素
+                     * 设置*内测中，敬请期待*
+                     * @param Height *内测中，敬请期待*
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -123,14 +119,14 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取缩略图
-                     * @return Thumbnail 缩略图
+                     * 获取*内测中，敬请期待*
+                     * @return Thumbnail *内测中，敬请期待*
                      */
                     std::string GetThumbnail() const;
 
                     /**
-                     * 设置缩略图
-                     * @param Thumbnail 缩略图
+                     * 设置*内测中，敬请期待*
+                     * @param Thumbnail *内测中，敬请期待*
                      */
                     void SetThumbnail(const std::string& _thumbnail);
 
@@ -143,32 +139,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 编码格式
+                     * 该字段用于返回传入的媒体文件的编码格式，如wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape等。
                      */
                     std::string m_codecs;
                     bool m_codecsHasBeenSet;
 
                     /**
-                     * 流检测时分片时长
-注意：此字段可能返回 0，表示取不到有效值。
+                     * 该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为秒。**默认值为15秒**，支持用户自定义配置。
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 宽，单位为像素
+                     * *内测中，敬请期待*
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 高，单位为像素
+                     * *内测中，敬请期待*
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 缩略图
+                     * *内测中，敬请期待*
                      */
                     std::string m_thumbnail;
                     bool m_thumbnailHasBeenSet;

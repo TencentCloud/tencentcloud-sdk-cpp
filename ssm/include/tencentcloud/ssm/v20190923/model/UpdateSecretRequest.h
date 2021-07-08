@@ -79,14 +79,18 @@ namespace TencentCloud
                     bool VersionIdHasBeenSet() const;
 
                     /**
-                     * 获取新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。SecretBinary 和 SecretString 只能一个不为空。
-                     * @return SecretBinary 新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。SecretBinary 和 SecretString 只能一个不为空。
+                     * 获取新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。
+SecretBinary 和 SecretString 只能一个不为空。
+                     * @return SecretBinary 新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。
+SecretBinary 和 SecretString 只能一个不为空。
                      */
                     std::string GetSecretBinary() const;
 
                     /**
-                     * 设置新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。SecretBinary 和 SecretString 只能一个不为空。
-                     * @param SecretBinary 新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。SecretBinary 和 SecretString 只能一个不为空。
+                     * 设置新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。
+SecretBinary 和 SecretString 只能一个不为空。
+                     * @param SecretBinary 新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。
+SecretBinary 和 SecretString 只能一个不为空。
                      */
                     void SetSecretBinary(const std::string& _secretBinary);
 
@@ -97,14 +101,14 @@ namespace TencentCloud
                     bool SecretBinaryHasBeenSet() const;
 
                     /**
-                     * 获取新的凭据内容为文本的场景使用该字段，不需要base64编码。SecretBinary 和 SecretString 只能一个不为空。
-                     * @return SecretString 新的凭据内容为文本的场景使用该字段，不需要base64编码。SecretBinary 和 SecretString 只能一个不为空。
+                     * 获取新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。
+                     * @return SecretString 新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。
                      */
                     std::string GetSecretString() const;
 
                     /**
-                     * 设置新的凭据内容为文本的场景使用该字段，不需要base64编码。SecretBinary 和 SecretString 只能一个不为空。
-                     * @param SecretString 新的凭据内容为文本的场景使用该字段，不需要base64编码。SecretBinary 和 SecretString 只能一个不为空。
+                     * 设置新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。
+                     * @param SecretString 新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。
                      */
                     void SetSecretString(const std::string& _secretString);
 
@@ -129,13 +133,14 @@ namespace TencentCloud
                     bool m_versionIdHasBeenSet;
 
                     /**
-                     * 新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。SecretBinary 和 SecretString 只能一个不为空。
+                     * 新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。
+SecretBinary 和 SecretString 只能一个不为空。
                      */
                     std::string m_secretBinary;
                     bool m_secretBinaryHasBeenSet;
 
                     /**
-                     * 新的凭据内容为文本的场景使用该字段，不需要base64编码。SecretBinary 和 SecretString 只能一个不为空。
+                     * 新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。
                      */
                     std::string m_secretString;
                     bool m_secretStringHasBeenSet;

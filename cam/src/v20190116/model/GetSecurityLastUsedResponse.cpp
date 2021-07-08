@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cam::V20190116::Model;
 using namespace std;
 
-GetSecurityLastUsedResponse::GetSecurityLastUsedResponse()
+GetSecurityLastUsedResponse::GetSecurityLastUsedResponse() :
+    m_secretIdLastUsedRowsHasBeenSet(false)
 {
 }
 
@@ -61,9 +62,39 @@ CoreInternalOutcome GetSecurityLastUsedResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("SecretIdLastUsedRows") && !rsp["SecretIdLastUsedRows"].IsNull())
+    {
+        if (!rsp["SecretIdLastUsedRows"].IsArray())
+            return CoreInternalOutcome(Error("response `SecretIdLastUsedRows` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SecretIdLastUsedRows"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecretIdLastUsed item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_secretIdLastUsedRows.push_back(item);
+        }
+        m_secretIdLastUsedRowsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+vector<SecretIdLastUsed> GetSecurityLastUsedResponse::GetSecretIdLastUsedRows() const
+{
+    return m_secretIdLastUsedRows;
+}
+
+bool GetSecurityLastUsedResponse::SecretIdLastUsedRowsHasBeenSet() const
+{
+    return m_secretIdLastUsedRowsHasBeenSet;
+}
 
 

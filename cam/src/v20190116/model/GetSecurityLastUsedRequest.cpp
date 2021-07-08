@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cam::V20190116::Model;
 using namespace std;
 
-GetSecurityLastUsedRequest::GetSecurityLastUsedRequest()
+GetSecurityLastUsedRequest::GetSecurityLastUsedRequest() :
+    m_secretIdListHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,19 @@ string GetSecurityLastUsedRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_secretIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_secretIdList.begin(); itr != m_secretIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +54,21 @@ string GetSecurityLastUsedRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> GetSecurityLastUsedRequest::GetSecretIdList() const
+{
+    return m_secretIdList;
+}
+
+void GetSecurityLastUsedRequest::SetSecretIdList(const vector<string>& _secretIdList)
+{
+    m_secretIdList = _secretIdList;
+    m_secretIdListHasBeenSet = true;
+}
+
+bool GetSecurityLastUsedRequest::SecretIdListHasBeenSet() const
+{
+    return m_secretIdListHasBeenSet;
+}
 
 

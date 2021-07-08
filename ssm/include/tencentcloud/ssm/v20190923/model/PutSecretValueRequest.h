@@ -79,14 +79,18 @@ namespace TencentCloud
                     bool VersionIdHasBeenSet() const;
 
                     /**
-                     * 获取二进制凭据信息，使用base64编码。SecretBinary 和 SecretString 必须且只能设置一个。
-                     * @return SecretBinary 二进制凭据信息，使用base64编码。SecretBinary 和 SecretString 必须且只能设置一个。
+                     * 获取二进制凭据信息，使用base64编码。
+SecretBinary 和 SecretString 必须且只能设置一个。
+                     * @return SecretBinary 二进制凭据信息，使用base64编码。
+SecretBinary 和 SecretString 必须且只能设置一个。
                      */
                     std::string GetSecretBinary() const;
 
                     /**
-                     * 设置二进制凭据信息，使用base64编码。SecretBinary 和 SecretString 必须且只能设置一个。
-                     * @param SecretBinary 二进制凭据信息，使用base64编码。SecretBinary 和 SecretString 必须且只能设置一个。
+                     * 设置二进制凭据信息，使用base64编码。
+SecretBinary 和 SecretString 必须且只能设置一个。
+                     * @param SecretBinary 二进制凭据信息，使用base64编码。
+SecretBinary 和 SecretString 必须且只能设置一个。
                      */
                     void SetSecretBinary(const std::string& _secretBinary);
 
@@ -129,7 +133,8 @@ namespace TencentCloud
                     bool m_versionIdHasBeenSet;
 
                     /**
-                     * 二进制凭据信息，使用base64编码。SecretBinary 和 SecretString 必须且只能设置一个。
+                     * 二进制凭据信息，使用base64编码。
+SecretBinary 和 SecretString 必须且只能设置一个。
                      */
                     std::string m_secretBinary;
                     bool m_secretBinaryHasBeenSet;

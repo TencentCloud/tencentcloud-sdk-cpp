@@ -83,6 +83,49 @@ CmeClient::AddTeamMemberOutcomeCallable CmeClient::AddTeamMemberCallable(const A
     return task->get_future();
 }
 
+CmeClient::CopyProjectOutcome CmeClient::CopyProject(const CopyProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "CopyProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CopyProjectResponse rsp = CopyProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CopyProjectOutcome(rsp);
+        else
+            return CopyProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return CopyProjectOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::CopyProjectAsync(const CopyProjectRequest& request, const CopyProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CopyProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::CopyProjectOutcomeCallable CmeClient::CopyProjectCallable(const CopyProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CopyProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->CopyProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmeClient::CreateClassOutcome CmeClient::CreateClass(const CreateClassRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClass");

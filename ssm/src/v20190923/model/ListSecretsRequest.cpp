@@ -28,7 +28,8 @@ ListSecretsRequest::ListSecretsRequest() :
     m_orderTypeHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_searchSecretNameHasBeenSet(false),
-    m_tagFiltersHasBeenSet(false)
+    m_tagFiltersHasBeenSet(false),
+    m_secretTypeHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string ListSecretsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_secretTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_secretType, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void ListSecretsRequest::SetTagFilters(const vector<TagFilter>& _tagFilters)
 bool ListSecretsRequest::TagFiltersHasBeenSet() const
 {
     return m_tagFiltersHasBeenSet;
+}
+
+uint64_t ListSecretsRequest::GetSecretType() const
+{
+    return m_secretType;
+}
+
+void ListSecretsRequest::SetSecretType(const uint64_t& _secretType)
+{
+    m_secretType = _secretType;
+    m_secretTypeHasBeenSet = true;
+}
+
+bool ListSecretsRequest::SecretTypeHasBeenSet() const
+{
+    return m_secretTypeHasBeenSet;
 }
 
 

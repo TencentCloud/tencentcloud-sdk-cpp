@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取语言分类，如中文、英文等；
+                     * 获取该字段用于返回语种检测结果所对应的语种标签，目前支持：**Arabic**（阿拉伯语）、**English**（英语）、**Mandarin**（普通话）、**Tibetan**（藏语）、**Uyghur**（维语）、**Other**（其他上面5类之外）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Label 语言分类，如中文、英文等；
+                     * @return Label 该字段用于返回语种检测结果所对应的语种标签，目前支持：**Arabic**（阿拉伯语）、**English**（英语）、**Mandarin**（普通话）、**Tibetan**（藏语）、**Uyghur**（维语）、**Other**（其他上面5类之外）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置语言分类，如中文、英文等；
+                     * 设置该字段用于返回语种检测结果所对应的语种标签，目前支持：**Arabic**（阿拉伯语）、**English**（英语）、**Mandarin**（普通话）、**Tibetan**（藏语）、**Uyghur**（维语）、**Other**（其他上面5类之外）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 语言分类，如中文、英文等；
+                     * @param Label 该字段用于返回语种检测结果所对应的语种标签，目前支持：**Arabic**（阿拉伯语）、**English**（英语）、**Mandarin**（普通话）、**Tibetan**（藏语）、**Uyghur**（维语）、**Other**（其他上面5类之外）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLabel(const std::string& _label);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取得分
+                     * 获取该参数用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于当前返回的语种标签；如：*Uyghur 99*，则表明该音频非常有可能属于维语内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Score 得分
+                     * @return Score 该参数用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于当前返回的语种标签；如：*Uyghur 99*，则表明该音频非常有可能属于维语内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetScore() const;
 
                     /**
-                     * 设置得分
+                     * 设置该参数用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于当前返回的语种标签；如：*Uyghur 99*，则表明该音频非常有可能属于维语内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 得分
+                     * @param Score 该参数用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于当前返回的语种标签；如：*Uyghur 99*，则表明该音频非常有可能属于维语内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetScore(const int64_t& _score);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
+                     * 获取该参数用于返回对应语种标签的片段在音频文件内的开始时间，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 开始时间
+                     * @return StartTime 该参数用于返回对应语种标签的片段在音频文件内的开始时间，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetStartTime() const;
 
                     /**
-                     * 设置开始时间
+                     * 设置该参数用于返回对应语种标签的片段在音频文件内的开始时间，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 开始时间
+                     * @param StartTime 该参数用于返回对应语种标签的片段在音频文件内的开始时间，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStartTime(const double& _startTime);
@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
+                     * 获取该参数用于返回对应语种标签的片段在音频文件内的结束时间，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 结束时间
+                     * @return EndTime 该参数用于返回对应语种标签的片段在音频文件内的结束时间，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetEndTime() const;
 
                     /**
-                     * 设置结束时间
+                     * 设置该参数用于返回对应语种标签的片段在音频文件内的结束时间，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 结束时间
+                     * @param EndTime 该参数用于返回对应语种标签的片段在音频文件内的结束时间，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEndTime(const double& _endTime);
@@ -135,17 +135,17 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取子标签码
+                     * 获取*内测中，敬请期待*
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubLabelCode 子标签码
+                     * @return SubLabelCode *内测中，敬请期待*
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSubLabelCode() const;
 
                     /**
-                     * 设置子标签码
+                     * 设置*内测中，敬请期待*
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubLabelCode 子标签码
+                     * @param SubLabelCode *内测中，敬请期待*
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSubLabelCode(const std::string& _subLabelCode);
@@ -159,35 +159,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 语言分类，如中文、英文等；
+                     * 该字段用于返回语种检测结果所对应的语种标签，目前支持：**Arabic**（阿拉伯语）、**English**（英语）、**Mandarin**（普通话）、**Tibetan**（藏语）、**Uyghur**（维语）、**Other**（其他上面5类之外）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 得分
+                     * 该参数用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于当前返回的语种标签；如：*Uyghur 99*，则表明该音频非常有可能属于维语内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 该参数用于返回对应语种标签的片段在音频文件内的开始时间，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 该参数用于返回对应语种标签的片段在音频文件内的结束时间，单位为毫秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 子标签码
+                     * *内测中，敬请期待*
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subLabelCode;

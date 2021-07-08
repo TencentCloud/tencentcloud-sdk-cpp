@@ -40,6 +40,49 @@ SsmClient::SsmClient(const Credential &credential, const string &region, const C
 }
 
 
+SsmClient::CreateProductSecretOutcome SsmClient::CreateProductSecret(const CreateProductSecretRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProductSecret");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProductSecretResponse rsp = CreateProductSecretResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProductSecretOutcome(rsp);
+        else
+            return CreateProductSecretOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProductSecretOutcome(outcome.GetError());
+    }
+}
+
+void SsmClient::CreateProductSecretAsync(const CreateProductSecretRequest& request, const CreateProductSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateProductSecret(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsmClient::CreateProductSecretOutcomeCallable SsmClient::CreateProductSecretCallable(const CreateProductSecretRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateProductSecretOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateProductSecret(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SsmClient::CreateSecretOutcome SsmClient::CreateSecret(const CreateSecretRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSecret");
@@ -169,6 +212,135 @@ SsmClient::DeleteSecretVersionOutcomeCallable SsmClient::DeleteSecretVersionCall
     return task->get_future();
 }
 
+SsmClient::DescribeAsyncRequestInfoOutcome SsmClient::DescribeAsyncRequestInfo(const DescribeAsyncRequestInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAsyncRequestInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAsyncRequestInfoResponse rsp = DescribeAsyncRequestInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAsyncRequestInfoOutcome(rsp);
+        else
+            return DescribeAsyncRequestInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAsyncRequestInfoOutcome(outcome.GetError());
+    }
+}
+
+void SsmClient::DescribeAsyncRequestInfoAsync(const DescribeAsyncRequestInfoRequest& request, const DescribeAsyncRequestInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAsyncRequestInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsmClient::DescribeAsyncRequestInfoOutcomeCallable SsmClient::DescribeAsyncRequestInfoCallable(const DescribeAsyncRequestInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAsyncRequestInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAsyncRequestInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SsmClient::DescribeRotationDetailOutcome SsmClient::DescribeRotationDetail(const DescribeRotationDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRotationDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRotationDetailResponse rsp = DescribeRotationDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRotationDetailOutcome(rsp);
+        else
+            return DescribeRotationDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRotationDetailOutcome(outcome.GetError());
+    }
+}
+
+void SsmClient::DescribeRotationDetailAsync(const DescribeRotationDetailRequest& request, const DescribeRotationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRotationDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsmClient::DescribeRotationDetailOutcomeCallable SsmClient::DescribeRotationDetailCallable(const DescribeRotationDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRotationDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRotationDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SsmClient::DescribeRotationHistoryOutcome SsmClient::DescribeRotationHistory(const DescribeRotationHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRotationHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRotationHistoryResponse rsp = DescribeRotationHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRotationHistoryOutcome(rsp);
+        else
+            return DescribeRotationHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRotationHistoryOutcome(outcome.GetError());
+    }
+}
+
+void SsmClient::DescribeRotationHistoryAsync(const DescribeRotationHistoryRequest& request, const DescribeRotationHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRotationHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsmClient::DescribeRotationHistoryOutcomeCallable SsmClient::DescribeRotationHistoryCallable(const DescribeRotationHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRotationHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRotationHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SsmClient::DescribeSecretOutcome SsmClient::DescribeSecret(const DescribeSecretRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecret");
@@ -205,6 +377,49 @@ SsmClient::DescribeSecretOutcomeCallable SsmClient::DescribeSecretCallable(const
         [this, request]()
         {
             return this->DescribeSecret(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SsmClient::DescribeSupportedProductsOutcome SsmClient::DescribeSupportedProducts(const DescribeSupportedProductsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSupportedProducts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSupportedProductsResponse rsp = DescribeSupportedProductsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSupportedProductsOutcome(rsp);
+        else
+            return DescribeSupportedProductsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSupportedProductsOutcome(outcome.GetError());
+    }
+}
+
+void SsmClient::DescribeSupportedProductsAsync(const DescribeSupportedProductsRequest& request, const DescribeSupportedProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSupportedProducts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsmClient::DescribeSupportedProductsOutcomeCallable SsmClient::DescribeSupportedProductsCallable(const DescribeSupportedProductsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSupportedProductsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSupportedProducts(request);
         }
     );
 
@@ -599,6 +814,49 @@ SsmClient::RestoreSecretOutcomeCallable SsmClient::RestoreSecretCallable(const R
     return task->get_future();
 }
 
+SsmClient::RotateProductSecretOutcome SsmClient::RotateProductSecret(const RotateProductSecretRequest &request)
+{
+    auto outcome = MakeRequest(request, "RotateProductSecret");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RotateProductSecretResponse rsp = RotateProductSecretResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RotateProductSecretOutcome(rsp);
+        else
+            return RotateProductSecretOutcome(o.GetError());
+    }
+    else
+    {
+        return RotateProductSecretOutcome(outcome.GetError());
+    }
+}
+
+void SsmClient::RotateProductSecretAsync(const RotateProductSecretRequest& request, const RotateProductSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RotateProductSecret(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsmClient::RotateProductSecretOutcomeCallable SsmClient::RotateProductSecretCallable(const RotateProductSecretRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RotateProductSecretOutcome()>>(
+        [this, request]()
+        {
+            return this->RotateProductSecret(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SsmClient::UpdateDescriptionOutcome SsmClient::UpdateDescription(const UpdateDescriptionRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateDescription");
@@ -635,6 +893,49 @@ SsmClient::UpdateDescriptionOutcomeCallable SsmClient::UpdateDescriptionCallable
         [this, request]()
         {
             return this->UpdateDescription(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SsmClient::UpdateRotationStatusOutcome SsmClient::UpdateRotationStatus(const UpdateRotationStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateRotationStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateRotationStatusResponse rsp = UpdateRotationStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateRotationStatusOutcome(rsp);
+        else
+            return UpdateRotationStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateRotationStatusOutcome(outcome.GetError());
+    }
+}
+
+void SsmClient::UpdateRotationStatusAsync(const UpdateRotationStatusRequest& request, const UpdateRotationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateRotationStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsmClient::UpdateRotationStatusOutcomeCallable SsmClient::UpdateRotationStatusCallable(const UpdateRotationStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateRotationStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateRotationStatus(request);
         }
     );
 

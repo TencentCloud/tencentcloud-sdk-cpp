@@ -29,6 +29,8 @@
 #include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateStaffResponse.h>
+#include <tencentcloud/ccc/v20200210/model/CreateUserSigRequest.h>
+#include <tencentcloud/ccc/v20200210/model/CreateUserSigResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h>
@@ -74,6 +76,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateStaffResponse> CreateStaffOutcome;
                 typedef std::future<CreateStaffOutcome> CreateStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateStaffRequest&, CreateStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStaffAsyncHandler;
+                typedef Outcome<Error, Model::CreateUserSigResponse> CreateUserSigOutcome;
+                typedef std::future<CreateUserSigOutcome> CreateUserSigOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::CreateUserSigRequest&, CreateUserSigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserSigAsyncHandler;
                 typedef Outcome<Error, Model::DeleteStaffResponse> DeleteStaffOutcome;
                 typedef std::future<DeleteStaffOutcome> DeleteStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DeleteStaffRequest&, DeleteStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStaffAsyncHandler;
@@ -136,6 +141,15 @@ namespace TencentCloud
                 CreateStaffOutcome CreateStaff(const Model::CreateStaffRequest &request);
                 void CreateStaffAsync(const Model::CreateStaffRequest& request, const CreateStaffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateStaffOutcomeCallable CreateStaffCallable(const Model::CreateStaffRequest& request);
+
+                /**
+                 *创建用户数据签名
+                 * @param req CreateUserSigRequest
+                 * @return CreateUserSigOutcome
+                 */
+                CreateUserSigOutcome CreateUserSig(const Model::CreateUserSigRequest &request);
+                void CreateUserSigAsync(const Model::CreateUserSigRequest& request, const CreateUserSigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserSigOutcomeCallable CreateUserSigCallable(const Model::CreateUserSigRequest& request);
 
                 /**
                  *删除坐席信息

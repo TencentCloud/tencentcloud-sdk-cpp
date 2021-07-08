@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固定为Moan（呻吟）
+                     * 获取该字段用于返回检测结果需要检测的内容类型，此处固定为**Moan**（呻吟）以调用呻吟检测功能。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Label 固定为Moan（呻吟）
+                     * @return Label 该字段用于返回检测结果需要检测的内容类型，此处固定为**Moan**（呻吟）以调用呻吟检测功能。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置固定为Moan（呻吟）
+                     * 设置该字段用于返回检测结果需要检测的内容类型，此处固定为**Moan**（呻吟）以调用呻吟检测功能。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 固定为Moan（呻吟）
+                     * @param Label 该字段用于返回检测结果需要检测的内容类型，此处固定为**Moan**（呻吟）以调用呻吟检测功能。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLabel(const std::string& _label);
@@ -69,14 +69,14 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取分数
-                     * @return Score 分数
+                     * 获取该字段用于返回呻吟检测的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于呻吟内容。
+                     * @return Score 该字段用于返回呻吟检测的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于呻吟内容。
                      */
                     int64_t GetScore() const;
 
                     /**
-                     * 设置分数
-                     * @param Score 分数
+                     * 设置该字段用于返回呻吟检测的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于呻吟内容。
+                     * @param Score 该字段用于返回呻吟检测的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于呻吟内容。
                      */
                     void SetScore(const int64_t& _score);
 
@@ -87,14 +87,14 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为毫秒。
+                     * @return StartTime 该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为毫秒。
                      */
                     double GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param StartTime 开始时间
+                     * 设置该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为毫秒。
+                     * @param StartTime 该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为毫秒。
                      */
                     void SetStartTime(const double& _startTime);
 
@@ -105,14 +105,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为毫秒。
+                     * @return EndTime 该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为毫秒。
                      */
                     double GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为毫秒。
+                     * @param EndTime 该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为毫秒。
                      */
                     void SetEndTime(const double& _endTime);
 
@@ -123,14 +123,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取子标签码
-                     * @return SubLabelCode 子标签码
+                     * 获取*内测中，敬请期待*
+                     * @return SubLabelCode *内测中，敬请期待*
                      */
                     std::string GetSubLabelCode() const;
 
                     /**
-                     * 设置子标签码
-                     * @param SubLabelCode 子标签码
+                     * 设置*内测中，敬请期待*
+                     * @param SubLabelCode *内测中，敬请期待*
                      */
                     void SetSubLabelCode(const std::string& _subLabelCode);
 
@@ -143,32 +143,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 固定为Moan（呻吟）
+                     * 该字段用于返回检测结果需要检测的内容类型，此处固定为**Moan**（呻吟）以调用呻吟检测功能。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 分数
+                     * 该字段用于返回呻吟检测的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于呻吟内容。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为毫秒。
                      */
                     double m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为毫秒。
                      */
                     double m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 子标签码
+                     * *内测中，敬请期待*
                      */
                     std::string m_subLabelCode;
                     bool m_subLabelCodeHasBeenSet;

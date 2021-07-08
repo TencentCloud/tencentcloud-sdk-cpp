@@ -28,7 +28,11 @@ SecretMetadata::SecretMetadata() :
     m_statusHasBeenSet(false),
     m_deleteTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_kmsKeyTypeHasBeenSet(false)
+    m_kmsKeyTypeHasBeenSet(false),
+    m_rotationStatusHasBeenSet(false),
+    m_nextRotationTimeHasBeenSet(false),
+    m_secretTypeHasBeenSet(false),
+    m_productNameHasBeenSet(false)
 {
 }
 
@@ -117,6 +121,46 @@ CoreInternalOutcome SecretMetadata::Deserialize(const rapidjson::Value &value)
         m_kmsKeyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RotationStatus") && !value["RotationStatus"].IsNull())
+    {
+        if (!value["RotationStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `SecretMetadata.RotationStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rotationStatus = value["RotationStatus"].GetInt64();
+        m_rotationStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("NextRotationTime") && !value["NextRotationTime"].IsNull())
+    {
+        if (!value["NextRotationTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `SecretMetadata.NextRotationTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextRotationTime = value["NextRotationTime"].GetUint64();
+        m_nextRotationTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretType") && !value["SecretType"].IsNull())
+    {
+        if (!value["SecretType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `SecretMetadata.SecretType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretType = value["SecretType"].GetInt64();
+        m_secretTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductName") && !value["ProductName"].IsNull())
+    {
+        if (!value["ProductName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecretMetadata.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productName = string(value["ProductName"].GetString());
+        m_productNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +230,38 @@ void SecretMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "KmsKeyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_kmsKeyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rotationStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RotationStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rotationStatus, allocator);
+    }
+
+    if (m_nextRotationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextRotationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nextRotationTime, allocator);
+    }
+
+    if (m_secretTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_secretType, allocator);
+    }
+
+    if (m_productNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +393,69 @@ void SecretMetadata::SetKmsKeyType(const string& _kmsKeyType)
 bool SecretMetadata::KmsKeyTypeHasBeenSet() const
 {
     return m_kmsKeyTypeHasBeenSet;
+}
+
+int64_t SecretMetadata::GetRotationStatus() const
+{
+    return m_rotationStatus;
+}
+
+void SecretMetadata::SetRotationStatus(const int64_t& _rotationStatus)
+{
+    m_rotationStatus = _rotationStatus;
+    m_rotationStatusHasBeenSet = true;
+}
+
+bool SecretMetadata::RotationStatusHasBeenSet() const
+{
+    return m_rotationStatusHasBeenSet;
+}
+
+uint64_t SecretMetadata::GetNextRotationTime() const
+{
+    return m_nextRotationTime;
+}
+
+void SecretMetadata::SetNextRotationTime(const uint64_t& _nextRotationTime)
+{
+    m_nextRotationTime = _nextRotationTime;
+    m_nextRotationTimeHasBeenSet = true;
+}
+
+bool SecretMetadata::NextRotationTimeHasBeenSet() const
+{
+    return m_nextRotationTimeHasBeenSet;
+}
+
+int64_t SecretMetadata::GetSecretType() const
+{
+    return m_secretType;
+}
+
+void SecretMetadata::SetSecretType(const int64_t& _secretType)
+{
+    m_secretType = _secretType;
+    m_secretTypeHasBeenSet = true;
+}
+
+bool SecretMetadata::SecretTypeHasBeenSet() const
+{
+    return m_secretTypeHasBeenSet;
+}
+
+string SecretMetadata::GetProductName() const
+{
+    return m_productName;
+}
+
+void SecretMetadata::SetProductName(const string& _productName)
+{
+    m_productName = _productName;
+    m_productNameHasBeenSet = true;
+}
+
+bool SecretMetadata::ProductNameHasBeenSet() const
+{
+    return m_productNameHasBeenSet;
 }
 

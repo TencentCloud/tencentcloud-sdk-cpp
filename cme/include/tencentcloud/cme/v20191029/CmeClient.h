@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cme/v20191029/model/AddTeamMemberRequest.h>
 #include <tencentcloud/cme/v20191029/model/AddTeamMemberResponse.h>
+#include <tencentcloud/cme/v20191029/model/CopyProjectRequest.h>
+#include <tencentcloud/cme/v20191029/model/CopyProjectResponse.h>
 #include <tencentcloud/cme/v20191029/model/CreateClassRequest.h>
 #include <tencentcloud/cme/v20191029/model/CreateClassResponse.h>
 #include <tencentcloud/cme/v20191029/model/CreateLinkRequest.h>
@@ -128,6 +130,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AddTeamMemberResponse> AddTeamMemberOutcome;
                 typedef std::future<AddTeamMemberOutcome> AddTeamMemberOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::AddTeamMemberRequest&, AddTeamMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddTeamMemberAsyncHandler;
+                typedef Outcome<Error, Model::CopyProjectResponse> CopyProjectOutcome;
+                typedef std::future<CopyProjectOutcome> CopyProjectOutcomeCallable;
+                typedef std::function<void(const CmeClient*, const Model::CopyProjectRequest&, CopyProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyProjectAsyncHandler;
                 typedef Outcome<Error, Model::CreateClassResponse> CreateClassOutcome;
                 typedef std::future<CreateClassOutcome> CreateClassOutcomeCallable;
                 typedef std::function<void(const CmeClient*, const Model::CreateClassRequest&, CreateClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClassAsyncHandler;
@@ -268,6 +273,15 @@ namespace TencentCloud
                 AddTeamMemberOutcome AddTeamMember(const Model::AddTeamMemberRequest &request);
                 void AddTeamMemberAsync(const Model::AddTeamMemberRequest& request, const AddTeamMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddTeamMemberOutcomeCallable AddTeamMemberCallable(const Model::AddTeamMemberRequest& request);
+
+                /**
+                 *复制一个项目，包括项目素材及轨道数据。目前仅普通剪辑及模板制作项目可复制，其它类型的项目不支持复制。
+                 * @param req CopyProjectRequest
+                 * @return CopyProjectOutcome
+                 */
+                CopyProjectOutcome CopyProject(const Model::CopyProjectRequest &request);
+                void CopyProjectAsync(const Model::CopyProjectRequest& request, const CopyProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CopyProjectOutcomeCallable CopyProjectCallable(const Model::CopyProjectRequest& request);
 
                 /**
                  *新增分类，用于管理素材。分类层数不能超过20。

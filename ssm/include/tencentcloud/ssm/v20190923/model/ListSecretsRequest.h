@@ -98,14 +98,42 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取根据凭据状态进行过滤，默认为0表示查询全部，1 表示查询Enabed 凭据列表，2表示查询Disabled 凭据列表， 3 表示查询PendingDelete 凭据列表。
-                     * @return State 根据凭据状态进行过滤，默认为0表示查询全部，1 表示查询Enabed 凭据列表，2表示查询Disabled 凭据列表， 3 表示查询PendingDelete 凭据列表。
+                     * 获取根据凭据状态进行过滤。
+默认为0表示查询全部。
+1 --  表示查询Enabled 凭据列表。
+2 --  表示查询Disabled 凭据列表。
+3 --  表示查询PendingDelete 凭据列表。
+4 --  表示PendingCreate。
+5 --  表示CreateFailed。
+其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
+                     * @return State 根据凭据状态进行过滤。
+默认为0表示查询全部。
+1 --  表示查询Enabled 凭据列表。
+2 --  表示查询Disabled 凭据列表。
+3 --  表示查询PendingDelete 凭据列表。
+4 --  表示PendingCreate。
+5 --  表示CreateFailed。
+其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
                      */
                     uint64_t GetState() const;
 
                     /**
-                     * 设置根据凭据状态进行过滤，默认为0表示查询全部，1 表示查询Enabed 凭据列表，2表示查询Disabled 凭据列表， 3 表示查询PendingDelete 凭据列表。
-                     * @param State 根据凭据状态进行过滤，默认为0表示查询全部，1 表示查询Enabed 凭据列表，2表示查询Disabled 凭据列表， 3 表示查询PendingDelete 凭据列表。
+                     * 设置根据凭据状态进行过滤。
+默认为0表示查询全部。
+1 --  表示查询Enabled 凭据列表。
+2 --  表示查询Disabled 凭据列表。
+3 --  表示查询PendingDelete 凭据列表。
+4 --  表示PendingCreate。
+5 --  表示CreateFailed。
+其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
+                     * @param State 根据凭据状态进行过滤。
+默认为0表示查询全部。
+1 --  表示查询Enabled 凭据列表。
+2 --  表示查询Disabled 凭据列表。
+3 --  表示查询PendingDelete 凭据列表。
+4 --  表示PendingCreate。
+5 --  表示CreateFailed。
+其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
                      */
                     void SetState(const uint64_t& _state);
 
@@ -134,14 +162,14 @@ namespace TencentCloud
                     bool SearchSecretNameHasBeenSet() const;
 
                     /**
-                     * 获取标签过滤条件
-                     * @return TagFilters 标签过滤条件
+                     * 获取标签过滤条件。
+                     * @return TagFilters 标签过滤条件。
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
-                     * 设置标签过滤条件
-                     * @param TagFilters 标签过滤条件
+                     * 设置标签过滤条件。
+                     * @param TagFilters 标签过滤条件。
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
 
@@ -150,6 +178,32 @@ namespace TencentCloud
                      * @return TagFilters 是否已赋值
                      */
                     bool TagFiltersHasBeenSet() const;
+
+                    /**
+                     * 获取0  -- 表示用户自定义凭据，默认为0。
+1  -- 表示用户云产品凭据。
+这个参数只能在云产品凭据(1)和用户自定义凭据(0)中二选一。
+                     * @return SecretType 0  -- 表示用户自定义凭据，默认为0。
+1  -- 表示用户云产品凭据。
+这个参数只能在云产品凭据(1)和用户自定义凭据(0)中二选一。
+                     */
+                    uint64_t GetSecretType() const;
+
+                    /**
+                     * 设置0  -- 表示用户自定义凭据，默认为0。
+1  -- 表示用户云产品凭据。
+这个参数只能在云产品凭据(1)和用户自定义凭据(0)中二选一。
+                     * @param SecretType 0  -- 表示用户自定义凭据，默认为0。
+1  -- 表示用户云产品凭据。
+这个参数只能在云产品凭据(1)和用户自定义凭据(0)中二选一。
+                     */
+                    void SetSecretType(const uint64_t& _secretType);
+
+                    /**
+                     * 判断参数 SecretType 是否已赋值
+                     * @return SecretType 是否已赋值
+                     */
+                    bool SecretTypeHasBeenSet() const;
 
                 private:
 
@@ -172,7 +226,14 @@ namespace TencentCloud
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 根据凭据状态进行过滤，默认为0表示查询全部，1 表示查询Enabed 凭据列表，2表示查询Disabled 凭据列表， 3 表示查询PendingDelete 凭据列表。
+                     * 根据凭据状态进行过滤。
+默认为0表示查询全部。
+1 --  表示查询Enabled 凭据列表。
+2 --  表示查询Disabled 凭据列表。
+3 --  表示查询PendingDelete 凭据列表。
+4 --  表示PendingCreate。
+5 --  表示CreateFailed。
+其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效
                      */
                     uint64_t m_state;
                     bool m_stateHasBeenSet;
@@ -184,10 +245,18 @@ namespace TencentCloud
                     bool m_searchSecretNameHasBeenSet;
 
                     /**
-                     * 标签过滤条件
+                     * 标签过滤条件。
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
+
+                    /**
+                     * 0  -- 表示用户自定义凭据，默认为0。
+1  -- 表示用户云产品凭据。
+这个参数只能在云产品凭据(1)和用户自定义凭据(0)中二选一。
+                     */
+                    uint64_t m_secretType;
+                    bool m_secretTypeHasBeenSet;
 
                 };
             }

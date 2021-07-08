@@ -23,14 +23,24 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ssm/v20190923/model/CreateProductSecretRequest.h>
+#include <tencentcloud/ssm/v20190923/model/CreateProductSecretResponse.h>
 #include <tencentcloud/ssm/v20190923/model/CreateSecretRequest.h>
 #include <tencentcloud/ssm/v20190923/model/CreateSecretResponse.h>
 #include <tencentcloud/ssm/v20190923/model/DeleteSecretRequest.h>
 #include <tencentcloud/ssm/v20190923/model/DeleteSecretResponse.h>
 #include <tencentcloud/ssm/v20190923/model/DeleteSecretVersionRequest.h>
 #include <tencentcloud/ssm/v20190923/model/DeleteSecretVersionResponse.h>
+#include <tencentcloud/ssm/v20190923/model/DescribeAsyncRequestInfoRequest.h>
+#include <tencentcloud/ssm/v20190923/model/DescribeAsyncRequestInfoResponse.h>
+#include <tencentcloud/ssm/v20190923/model/DescribeRotationDetailRequest.h>
+#include <tencentcloud/ssm/v20190923/model/DescribeRotationDetailResponse.h>
+#include <tencentcloud/ssm/v20190923/model/DescribeRotationHistoryRequest.h>
+#include <tencentcloud/ssm/v20190923/model/DescribeRotationHistoryResponse.h>
 #include <tencentcloud/ssm/v20190923/model/DescribeSecretRequest.h>
 #include <tencentcloud/ssm/v20190923/model/DescribeSecretResponse.h>
+#include <tencentcloud/ssm/v20190923/model/DescribeSupportedProductsRequest.h>
+#include <tencentcloud/ssm/v20190923/model/DescribeSupportedProductsResponse.h>
 #include <tencentcloud/ssm/v20190923/model/DisableSecretRequest.h>
 #include <tencentcloud/ssm/v20190923/model/DisableSecretResponse.h>
 #include <tencentcloud/ssm/v20190923/model/EnableSecretRequest.h>
@@ -49,8 +59,12 @@
 #include <tencentcloud/ssm/v20190923/model/PutSecretValueResponse.h>
 #include <tencentcloud/ssm/v20190923/model/RestoreSecretRequest.h>
 #include <tencentcloud/ssm/v20190923/model/RestoreSecretResponse.h>
+#include <tencentcloud/ssm/v20190923/model/RotateProductSecretRequest.h>
+#include <tencentcloud/ssm/v20190923/model/RotateProductSecretResponse.h>
 #include <tencentcloud/ssm/v20190923/model/UpdateDescriptionRequest.h>
 #include <tencentcloud/ssm/v20190923/model/UpdateDescriptionResponse.h>
+#include <tencentcloud/ssm/v20190923/model/UpdateRotationStatusRequest.h>
+#include <tencentcloud/ssm/v20190923/model/UpdateRotationStatusResponse.h>
 #include <tencentcloud/ssm/v20190923/model/UpdateSecretRequest.h>
 #include <tencentcloud/ssm/v20190923/model/UpdateSecretResponse.h>
 
@@ -67,6 +81,9 @@ namespace TencentCloud
                 SsmClient(const Credential &credential, const std::string &region);
                 SsmClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateProductSecretResponse> CreateProductSecretOutcome;
+                typedef std::future<CreateProductSecretOutcome> CreateProductSecretOutcomeCallable;
+                typedef std::function<void(const SsmClient*, const Model::CreateProductSecretRequest&, CreateProductSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProductSecretAsyncHandler;
                 typedef Outcome<Error, Model::CreateSecretResponse> CreateSecretOutcome;
                 typedef std::future<CreateSecretOutcome> CreateSecretOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::CreateSecretRequest&, CreateSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecretAsyncHandler;
@@ -76,9 +93,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteSecretVersionResponse> DeleteSecretVersionOutcome;
                 typedef std::future<DeleteSecretVersionOutcome> DeleteSecretVersionOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::DeleteSecretVersionRequest&, DeleteSecretVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecretVersionAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAsyncRequestInfoResponse> DescribeAsyncRequestInfoOutcome;
+                typedef std::future<DescribeAsyncRequestInfoOutcome> DescribeAsyncRequestInfoOutcomeCallable;
+                typedef std::function<void(const SsmClient*, const Model::DescribeAsyncRequestInfoRequest&, DescribeAsyncRequestInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncRequestInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRotationDetailResponse> DescribeRotationDetailOutcome;
+                typedef std::future<DescribeRotationDetailOutcome> DescribeRotationDetailOutcomeCallable;
+                typedef std::function<void(const SsmClient*, const Model::DescribeRotationDetailRequest&, DescribeRotationDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRotationDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRotationHistoryResponse> DescribeRotationHistoryOutcome;
+                typedef std::future<DescribeRotationHistoryOutcome> DescribeRotationHistoryOutcomeCallable;
+                typedef std::function<void(const SsmClient*, const Model::DescribeRotationHistoryRequest&, DescribeRotationHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRotationHistoryAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSecretResponse> DescribeSecretOutcome;
                 typedef std::future<DescribeSecretOutcome> DescribeSecretOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::DescribeSecretRequest&, DescribeSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecretAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSupportedProductsResponse> DescribeSupportedProductsOutcome;
+                typedef std::future<DescribeSupportedProductsOutcome> DescribeSupportedProductsOutcomeCallable;
+                typedef std::function<void(const SsmClient*, const Model::DescribeSupportedProductsRequest&, DescribeSupportedProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSupportedProductsAsyncHandler;
                 typedef Outcome<Error, Model::DisableSecretResponse> DisableSecretOutcome;
                 typedef std::future<DisableSecretOutcome> DisableSecretOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::DisableSecretRequest&, DisableSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableSecretAsyncHandler;
@@ -106,14 +135,29 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RestoreSecretResponse> RestoreSecretOutcome;
                 typedef std::future<RestoreSecretOutcome> RestoreSecretOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::RestoreSecretRequest&, RestoreSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreSecretAsyncHandler;
+                typedef Outcome<Error, Model::RotateProductSecretResponse> RotateProductSecretOutcome;
+                typedef std::future<RotateProductSecretOutcome> RotateProductSecretOutcomeCallable;
+                typedef std::function<void(const SsmClient*, const Model::RotateProductSecretRequest&, RotateProductSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RotateProductSecretAsyncHandler;
                 typedef Outcome<Error, Model::UpdateDescriptionResponse> UpdateDescriptionOutcome;
                 typedef std::future<UpdateDescriptionOutcome> UpdateDescriptionOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::UpdateDescriptionRequest&, UpdateDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDescriptionAsyncHandler;
+                typedef Outcome<Error, Model::UpdateRotationStatusResponse> UpdateRotationStatusOutcome;
+                typedef std::future<UpdateRotationStatusOutcome> UpdateRotationStatusOutcomeCallable;
+                typedef std::function<void(const SsmClient*, const Model::UpdateRotationStatusRequest&, UpdateRotationStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRotationStatusAsyncHandler;
                 typedef Outcome<Error, Model::UpdateSecretResponse> UpdateSecretOutcome;
                 typedef std::future<UpdateSecretOutcome> UpdateSecretOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::UpdateSecretRequest&, UpdateSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSecretAsyncHandler;
 
 
+
+                /**
+                 *创建云产品凭据
+                 * @param req CreateProductSecretRequest
+                 * @return CreateProductSecretOutcome
+                 */
+                CreateProductSecretOutcome CreateProductSecret(const Model::CreateProductSecretRequest &request);
+                void CreateProductSecretAsync(const Model::CreateProductSecretRequest& request, const CreateProductSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProductSecretOutcomeCallable CreateProductSecretCallable(const Model::CreateProductSecretRequest& request);
 
                 /**
                  *创建新的凭据信息，通过KMS进行加密保护。每个Region最多可创建存储1000个凭据信息。
@@ -135,12 +179,42 @@ namespace TencentCloud
 
                 /**
                  *该接口用于直接删除指定凭据下的单个版本凭据，删除操作立即生效，对所有状态下的凭据版本都可以删除。
+本接口仅适用于用户自定义凭据，本接口不能对云产品凭据进行操作。
                  * @param req DeleteSecretVersionRequest
                  * @return DeleteSecretVersionOutcome
                  */
                 DeleteSecretVersionOutcome DeleteSecretVersion(const Model::DeleteSecretVersionRequest &request);
                 void DeleteSecretVersionAsync(const Model::DeleteSecretVersionRequest& request, const DeleteSecretVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSecretVersionOutcomeCallable DeleteSecretVersionCallable(const Model::DeleteSecretVersionRequest& request);
+
+                /**
+                 *查询异步任务的执行结果
+                 * @param req DescribeAsyncRequestInfoRequest
+                 * @return DescribeAsyncRequestInfoOutcome
+                 */
+                DescribeAsyncRequestInfoOutcome DescribeAsyncRequestInfo(const Model::DescribeAsyncRequestInfoRequest &request);
+                void DescribeAsyncRequestInfoAsync(const Model::DescribeAsyncRequestInfoRequest& request, const DescribeAsyncRequestInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAsyncRequestInfoOutcomeCallable DescribeAsyncRequestInfoCallable(const Model::DescribeAsyncRequestInfoRequest& request);
+
+                /**
+                 *查询凭据轮转策略详情。
+本接口只适用于云产品凭据。
+                 * @param req DescribeRotationDetailRequest
+                 * @return DescribeRotationDetailOutcome
+                 */
+                DescribeRotationDetailOutcome DescribeRotationDetail(const Model::DescribeRotationDetailRequest &request);
+                void DescribeRotationDetailAsync(const Model::DescribeRotationDetailRequest& request, const DescribeRotationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRotationDetailOutcomeCallable DescribeRotationDetailCallable(const Model::DescribeRotationDetailRequest& request);
+
+                /**
+                 *查询凭据轮转历史版本。
+本接口仅适用于云产品凭据。
+                 * @param req DescribeRotationHistoryRequest
+                 * @return DescribeRotationHistoryOutcome
+                 */
+                DescribeRotationHistoryOutcome DescribeRotationHistory(const Model::DescribeRotationHistoryRequest &request);
+                void DescribeRotationHistoryAsync(const Model::DescribeRotationHistoryRequest& request, const DescribeRotationHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRotationHistoryOutcomeCallable DescribeRotationHistoryCallable(const Model::DescribeRotationHistoryRequest& request);
 
                 /**
                  *获取凭据的详细属性信息。
@@ -150,6 +224,15 @@ namespace TencentCloud
                 DescribeSecretOutcome DescribeSecret(const Model::DescribeSecretRequest &request);
                 void DescribeSecretAsync(const Model::DescribeSecretRequest& request, const DescribeSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecretOutcomeCallable DescribeSecretCallable(const Model::DescribeSecretRequest& request);
+
+                /**
+                 *查询支持的云产品列表
+                 * @param req DescribeSupportedProductsRequest
+                 * @return DescribeSupportedProductsOutcome
+                 */
+                DescribeSupportedProductsOutcome DescribeSupportedProducts(const Model::DescribeSupportedProductsRequest &request);
+                void DescribeSupportedProductsAsync(const Model::DescribeSupportedProductsRequest& request, const DescribeSupportedProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSupportedProductsOutcomeCallable DescribeSupportedProductsCallable(const Model::DescribeSupportedProductsRequest& request);
 
                 /**
                  *停用指定的凭据，停用后状态为 Disabled，无法通过接口获取该凭据的明文。
@@ -179,7 +262,8 @@ namespace TencentCloud
                 GetRegionsOutcomeCallable GetRegionsCallable(const Model::GetRegionsRequest& request);
 
                 /**
-                 *获取指定凭据名称和版本的凭据明文信息，只能获取启用状态的凭据明文。
+                 *对于用户自定义凭据，通过指定凭据名称和版本来获取凭据的明文信息；
+对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。
                  * @param req GetSecretValueRequest
                  * @return GetSecretValueOutcome
                  */
@@ -216,6 +300,7 @@ namespace TencentCloud
 
                 /**
                  *该接口在指定名称的凭据下增加新版本的凭据内容，一个凭据下最多可以支持10个版本。只能对处于Enabled 和 Disabled 状态的凭据添加新的版本。
+本接口仅适用于用户自定义凭据，对云产品凭据不能操作。
                  * @param req PutSecretValueRequest
                  * @return PutSecretValueOutcome
                  */
@@ -233,6 +318,15 @@ namespace TencentCloud
                 RestoreSecretOutcomeCallable RestoreSecretCallable(const Model::RestoreSecretRequest& request);
 
                 /**
+                 *轮转云产品凭据。该接口仅适用于处于Enabled状态的云产品凭据，对于其他状态的云产品凭据或用户自定义凭据不适用。
+                 * @param req RotateProductSecretRequest
+                 * @return RotateProductSecretOutcome
+                 */
+                RotateProductSecretOutcome RotateProductSecret(const Model::RotateProductSecretRequest &request);
+                void RotateProductSecretAsync(const Model::RotateProductSecretRequest& request, const RotateProductSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RotateProductSecretOutcomeCallable RotateProductSecretCallable(const Model::RotateProductSecretRequest& request);
+
+                /**
                  *该接口用于修改指定凭据的描述信息，仅能修改Enabled 和 Disabled 状态的凭据。
                  * @param req UpdateDescriptionRequest
                  * @return UpdateDescriptionOutcome
@@ -242,7 +336,20 @@ namespace TencentCloud
                 UpdateDescriptionOutcomeCallable UpdateDescriptionCallable(const Model::UpdateDescriptionRequest& request);
 
                 /**
+                 *设置云产品凭据轮转策略，可以设置：
+是否开启轮转
+轮转周期
+轮转开始时间
+                 * @param req UpdateRotationStatusRequest
+                 * @return UpdateRotationStatusOutcome
+                 */
+                UpdateRotationStatusOutcome UpdateRotationStatus(const Model::UpdateRotationStatusRequest &request);
+                void UpdateRotationStatusAsync(const Model::UpdateRotationStatusRequest& request, const UpdateRotationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateRotationStatusOutcomeCallable UpdateRotationStatusCallable(const Model::UpdateRotationStatusRequest& request);
+
+                /**
                  *该接口用于更新指定凭据名称和版本号的内容，调用该接口会对新的凭据内容加密后覆盖旧的内容。仅允许更新Enabled 和 Disabled 状态的凭据。
+本接口仅适用于用户自定义凭据，不能对云产品凭据操作。
                  * @param req UpdateSecretRequest
                  * @return UpdateSecretOutcome
                  */

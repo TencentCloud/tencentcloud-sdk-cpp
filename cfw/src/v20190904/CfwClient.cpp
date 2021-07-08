@@ -384,6 +384,92 @@ CfwClient::DescribeAssociatedInstanceListOutcomeCallable CfwClient::DescribeAsso
     return task->get_future();
 }
 
+CfwClient::DescribeBlockByIpTimesListOutcome CfwClient::DescribeBlockByIpTimesList(const DescribeBlockByIpTimesListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlockByIpTimesList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlockByIpTimesListResponse rsp = DescribeBlockByIpTimesListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlockByIpTimesListOutcome(rsp);
+        else
+            return DescribeBlockByIpTimesListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlockByIpTimesListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeBlockByIpTimesListAsync(const DescribeBlockByIpTimesListRequest& request, const DescribeBlockByIpTimesListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBlockByIpTimesList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeBlockByIpTimesListOutcomeCallable CfwClient::DescribeBlockByIpTimesListCallable(const DescribeBlockByIpTimesListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBlockByIpTimesListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBlockByIpTimesList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DescribeBlockStaticListOutcome CfwClient::DescribeBlockStaticList(const DescribeBlockStaticListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlockStaticList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlockStaticListResponse rsp = DescribeBlockStaticListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlockStaticListOutcome(rsp);
+        else
+            return DescribeBlockStaticListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlockStaticListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeBlockStaticListAsync(const DescribeBlockStaticListRequest& request, const DescribeBlockStaticListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBlockStaticList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeBlockStaticListOutcomeCallable CfwClient::DescribeBlockStaticListCallable(const DescribeBlockStaticListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBlockStaticListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBlockStaticList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeCfwEipsOutcome CfwClient::DescribeCfwEips(const DescribeCfwEipsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCfwEips");
@@ -685,6 +771,92 @@ CfwClient::DescribeSyncAssetStatusOutcomeCallable CfwClient::DescribeSyncAssetSt
     return task->get_future();
 }
 
+CfwClient::DescribeTLogInfoOutcome CfwClient::DescribeTLogInfo(const DescribeTLogInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTLogInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTLogInfoResponse rsp = DescribeTLogInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTLogInfoOutcome(rsp);
+        else
+            return DescribeTLogInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTLogInfoOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeTLogInfoAsync(const DescribeTLogInfoRequest& request, const DescribeTLogInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTLogInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeTLogInfoOutcomeCallable CfwClient::DescribeTLogInfoCallable(const DescribeTLogInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTLogInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTLogInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DescribeTLogIpListOutcome CfwClient::DescribeTLogIpList(const DescribeTLogIpListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTLogIpList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTLogIpListResponse rsp = DescribeTLogIpListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTLogIpListOutcome(rsp);
+        else
+            return DescribeTLogIpListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTLogIpListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeTLogIpListAsync(const DescribeTLogIpListRequest& request, const DescribeTLogIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTLogIpList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeTLogIpListOutcomeCallable CfwClient::DescribeTLogIpListCallable(const DescribeTLogIpListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTLogIpListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTLogIpList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeTableStatusOutcome CfwClient::DescribeTableStatus(const DescribeTableStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTableStatus");
@@ -721,6 +893,49 @@ CfwClient::DescribeTableStatusOutcomeCallable CfwClient::DescribeTableStatusCall
         [this, request]()
         {
             return this->DescribeTableStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DescribeUnHandleEventTabListOutcome CfwClient::DescribeUnHandleEventTabList(const DescribeUnHandleEventTabListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUnHandleEventTabList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUnHandleEventTabListResponse rsp = DescribeUnHandleEventTabListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUnHandleEventTabListOutcome(rsp);
+        else
+            return DescribeUnHandleEventTabListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUnHandleEventTabListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeUnHandleEventTabListAsync(const DescribeUnHandleEventTabListRequest& request, const DescribeUnHandleEventTabListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUnHandleEventTabList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeUnHandleEventTabListOutcomeCallable CfwClient::DescribeUnHandleEventTabListCallable(const DescribeUnHandleEventTabListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUnHandleEventTabListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUnHandleEventTabList(request);
         }
     );
 
@@ -979,6 +1194,49 @@ CfwClient::ModifyBlockIgnoreListOutcomeCallable CfwClient::ModifyBlockIgnoreList
         [this, request]()
         {
             return this->ModifyBlockIgnoreList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::ModifyBlockTopOutcome CfwClient::ModifyBlockTop(const ModifyBlockTopRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBlockTop");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBlockTopResponse rsp = ModifyBlockTopResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBlockTopOutcome(rsp);
+        else
+            return ModifyBlockTopOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBlockTopOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyBlockTopAsync(const ModifyBlockTopRequest& request, const ModifyBlockTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBlockTop(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyBlockTopOutcomeCallable CfwClient::ModifyBlockTopCallable(const ModifyBlockTopRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBlockTopOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBlockTop(request);
         }
     );
 

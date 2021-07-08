@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求时传入的DataId
+                     * 获取该字段用于返回创建音频审核任务时在TaskInput结构内传入的DataId，用于标识具体审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataId 请求时传入的DataId
+                     * @return DataId 该字段用于返回创建音频审核任务时在TaskInput结构内传入的DataId，用于标识具体审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDataId() const;
 
                     /**
-                     * 设置请求时传入的DataId
+                     * 设置该字段用于返回创建音频审核任务时在TaskInput结构内传入的DataId，用于标识具体审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DataId 请求时传入的DataId
+                     * @param DataId 该字段用于返回创建音频审核任务时在TaskInput结构内传入的DataId，用于标识具体审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDataId(const std::string& _dataId);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool DataIdHasBeenSet() const;
 
                     /**
-                     * 获取TaskId，任务ID
+                     * 获取该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId TaskId，任务ID
+                     * @return TaskId 该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置TaskId，任务ID
+                     * 设置该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TaskId TaskId，任务ID
+                     * @param TaskId 该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取错误码。如果code为OK，则表示创建成功，其他则参考公共错误码
+                     * 获取该字段用于返回任务创建的状态，如返回OK则代表任务创建成功，其他返回值可参考公共错误码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Code 错误码。如果code为OK，则表示创建成功，其他则参考公共错误码
+                     * @return Code 该字段用于返回任务创建的状态，如返回OK则代表任务创建成功，其他返回值可参考公共错误码。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置错误码。如果code为OK，则表示创建成功，其他则参考公共错误码
+                     * 设置该字段用于返回任务创建的状态，如返回OK则代表任务创建成功，其他返回值可参考公共错误码。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Code 错误码。如果code为OK，则表示创建成功，其他则参考公共错误码
+                     * @param Code 该字段用于返回任务创建的状态，如返回OK则代表任务创建成功，其他返回值可参考公共错误码。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCode(const std::string& _code);
@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取如果错误，该字段表示错误详情
+                     * 获取**仅在Code的返回值为错误码时生效**，用于返回错误的详情内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Message 如果错误，该字段表示错误详情
+                     * @return Message **仅在Code的返回值为错误码时生效**，用于返回错误的详情内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置如果错误，该字段表示错误详情
+                     * 设置**仅在Code的返回值为错误码时生效**，用于返回错误的详情内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Message 如果错误，该字段表示错误详情
+                     * @param Message **仅在Code的返回值为错误码时生效**，用于返回错误的详情内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMessage(const std::string& _message);
@@ -137,28 +137,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求时传入的DataId
+                     * 该字段用于返回创建音频审核任务时在TaskInput结构内传入的DataId，用于标识具体审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
 
                     /**
-                     * TaskId，任务ID
+                     * 该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 错误码。如果code为OK，则表示创建成功，其他则参考公共错误码
+                     * 该字段用于返回任务创建的状态，如返回OK则代表任务创建成功，其他返回值可参考公共错误码。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 如果错误，该字段表示错误详情
+                     * **仅在Code的返回值为错误码时生效**，用于返回错误的详情内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;

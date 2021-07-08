@@ -48,41 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取场景
-Porn 色情
-Sexy 性感
-Illegal 违法
-Abuse 谩骂
-Ad 广告
-以及其他令人反感、不安全或不适宜的内容类型。
+                     * 获取该字段用于返回检测结果所对应的恶意场景。返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**AppLogo**：广告台标，**Custom**：自定义违规，以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Scene 场景
-Porn 色情
-Sexy 性感
-Illegal 违法
-Abuse 谩骂
-Ad 广告
-以及其他令人反感、不安全或不适宜的内容类型。
+                     * @return Scene 该字段用于返回检测结果所对应的恶意场景。返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**AppLogo**：广告台标，**Custom**：自定义违规，以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetScene() const;
 
                     /**
-                     * 设置场景
-Porn 色情
-Sexy 性感
-Illegal 违法
-Abuse 谩骂
-Ad 广告
-以及其他令人反感、不安全或不适宜的内容类型。
+                     * 设置该字段用于返回检测结果所对应的恶意场景。返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**AppLogo**：广告台标，**Custom**：自定义违规，以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scene 场景
-Porn 色情
-Sexy 性感
-Illegal 违法
-Abuse 谩骂
-Ad 广告
-以及其他令人反感、不安全或不适宜的内容类型。
+                     * @param Scene 该字段用于返回检测结果所对应的恶意场景。返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**AppLogo**：广告台标，**Custom**：自定义违规，以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetScene(const std::string& _scene);
@@ -94,25 +70,17 @@ Ad 广告
                     bool SceneHasBeenSet() const;
 
                     /**
-                     * 获取是否命中
-0 未命中
-1 命中
+                     * 获取该参数用于标识审核内容是否命中恶意标签，取值：0（**未命中**）和1（**命中**）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HitFlag 是否命中
-0 未命中
-1 命中
+                     * @return HitFlag 该参数用于标识审核内容是否命中恶意标签，取值：0（**未命中**）和1（**命中**）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetHitFlag() const;
 
                     /**
-                     * 设置是否命中
-0 未命中
-1 命中
+                     * 设置该参数用于标识审核内容是否命中恶意标签，取值：0（**未命中**）和1（**命中**）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HitFlag 是否命中
-0 未命中
-1 命中
+                     * @param HitFlag 该参数用于标识审核内容是否命中恶意标签，取值：0（**未命中**）和1（**命中**）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHitFlag(const int64_t& _hitFlag);
@@ -124,29 +92,21 @@ Ad 广告
                     bool HitFlagHasBeenSet() const;
 
                     /**
-                     * 获取审核建议，可选值：
-Pass 通过，
-Review 建议人审，
-Block 确认违规
+                     * 获取该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
+返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Suggestion 审核建议，可选值：
-Pass 通过，
-Review 建议人审，
-Block 确认违规
+                     * @return Suggestion 该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
+返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置审核建议，可选值：
-Pass 通过，
-Review 建议人审，
-Block 确认违规
+                     * 设置该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
+返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Suggestion 审核建议，可选值：
-Pass 通过，
-Review 建议人审，
-Block 确认违规
+                     * @param Suggestion 该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
+返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSuggestion(const std::string& _suggestion);
@@ -158,17 +118,17 @@ Block 确认违规
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取识别结果一级标签
+                     * 获取该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Label 识别结果一级标签
+                     * @return Label 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置识别结果一级标签
+                     * 设置该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 识别结果一级标签
+                     * @param Label 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLabel(const std::string& _label);
@@ -180,17 +140,17 @@ Block 确认违规
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取识别结果二级标签
+                     * 获取该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubLabel 识别结果二级标签
+                     * @return SubLabel 该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSubLabel() const;
 
                     /**
-                     * 设置识别结果二级标签
+                     * 设置该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubLabel 识别结果二级标签
+                     * @param SubLabel 该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSubLabel(const std::string& _subLabel);
@@ -202,17 +162,17 @@ Block 确认违规
                     bool SubLabelHasBeenSet() const;
 
                     /**
-                     * 获取分数
+                     * 获取该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 -性行为 99*，则表明该文本非常有可能属于色情性行为内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Score 分数
+                     * @return Score 该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 -性行为 99*，则表明该文本非常有可能属于色情性行为内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetScore() const;
 
                     /**
-                     * 设置分数
+                     * 设置该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 -性行为 99*，则表明该文本非常有可能属于色情性行为内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Score 分数
+                     * @param Score 该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 -性行为 99*，则表明该文本非常有可能属于色情性行为内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetScore(const int64_t& _score);
@@ -224,17 +184,17 @@ Block 确认违规
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取适应特定场景，则该数据为名称列表，否则为null
+                     * 获取该字段用于返回审核图片在敏感场景下命中的特定对象名称列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Names 适应特定场景，则该数据为名称列表，否则为null
+                     * @return Names 该字段用于返回审核图片在敏感场景下命中的特定对象名称列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
-                     * 设置适应特定场景，则该数据为名称列表，否则为null
+                     * 设置该字段用于返回审核图片在敏感场景下命中的特定对象名称列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Names 适应特定场景，则该数据为名称列表，否则为null
+                     * @param Names 该字段用于返回审核图片在敏感场景下命中的特定对象名称列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNames(const std::vector<std::string>& _names);
@@ -246,17 +206,17 @@ Block 确认违规
                     bool NamesHasBeenSet() const;
 
                     /**
-                     * 获取图片OCR文本
+                     * 获取该字段用于返回图片OCR文本识别的检测结果，识别**上限在5000字节内**。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Text 图片OCR文本
+                     * @return Text 该字段用于返回图片OCR文本识别的检测结果，识别**上限在5000字节内**。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置图片OCR文本
+                     * 设置该字段用于返回图片OCR文本识别的检测结果，识别**上限在5000字节内**。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Text 图片OCR文本
+                     * @param Text 该字段用于返回图片OCR文本识别的检测结果，识别**上限在5000字节内**。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetText(const std::string& _text);
@@ -268,17 +228,17 @@ Block 确认违规
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取其他详情
+                     * 获取该字段用于返回图像审核子结果的其他详细信息，如文本位置、自定义库等。详细返回内容敬请参考ImageResultsResultDetail数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Details 其他详情
+                     * @return Details 该字段用于返回图像审核子结果的其他详细信息，如文本位置、自定义库等。详细返回内容敬请参考ImageResultsResultDetail数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageResultsResultDetail> GetDetails() const;
 
                     /**
-                     * 设置其他详情
+                     * 设置该字段用于返回图像审核子结果的其他详细信息，如文本位置、自定义库等。详细返回内容敬请参考ImageResultsResultDetail数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Details 其他详情
+                     * @param Details 该字段用于返回图像审核子结果的其他详细信息，如文本位置、自定义库等。详细返回内容敬请参考ImageResultsResultDetail数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDetails(const std::vector<ImageResultsResultDetail>& _details);
@@ -292,74 +252,64 @@ Block 确认违规
                 private:
 
                     /**
-                     * 场景
-Porn 色情
-Sexy 性感
-Illegal 违法
-Abuse 谩骂
-Ad 广告
-以及其他令人反感、不安全或不适宜的内容类型。
+                     * 该字段用于返回检测结果所对应的恶意场景。返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**AppLogo**：广告台标，**Custom**：自定义违规，以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scene;
                     bool m_sceneHasBeenSet;
 
                     /**
-                     * 是否命中
-0 未命中
-1 命中
+                     * 该参数用于标识审核内容是否命中恶意标签，取值：0（**未命中**）和1（**命中**）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hitFlag;
                     bool m_hitFlagHasBeenSet;
 
                     /**
-                     * 审核建议，可选值：
-Pass 通过，
-Review 建议人审，
-Block 确认违规
+                     * 该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>
+返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 识别结果一级标签
+                     * 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 识别结果二级标签
+                     * 该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
 
                     /**
-                     * 分数
+                     * 该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 -性行为 99*，则表明该文本非常有可能属于色情性行为内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 适应特定场景，则该数据为名称列表，否则为null
+                     * 该字段用于返回审核图片在敏感场景下命中的特定对象名称列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_names;
                     bool m_namesHasBeenSet;
 
                     /**
-                     * 图片OCR文本
+                     * 该字段用于返回图片OCR文本识别的检测结果，识别**上限在5000字节内**。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
-                     * 其他详情
+                     * 该字段用于返回图像审核子结果的其他详细信息，如文本位置、自定义库等。详细返回内容敬请参考ImageResultsResultDetail数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageResultsResultDetail> m_details;

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/apigateway/v20180808/model/AttachPluginRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/AttachPluginResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/BindEnvironmentRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/BindEnvironmentResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/BindIPStrategyRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/apigateway/v20180808/model/DeleteApiKeyResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteIPStrategyRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteIPStrategyResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DeletePluginRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DeletePluginResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteServiceRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteServiceResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DeleteServiceSubDomainMappingRequest.h>
@@ -67,6 +71,8 @@
 #include <tencentcloud/apigateway/v20180808/model/DescribeAPIDocDetailResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeAPIDocsRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeAPIDocsResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeAllPluginApisRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeAllPluginApisResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiEnvironmentStrategyRequest.h>
@@ -87,6 +93,10 @@
 #include <tencentcloud/apigateway/v20180808/model/DescribeIPStrategysStatusResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeLogSearchRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeLogSearchResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribePluginRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribePluginResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribePluginApisRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribePluginApisResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribePluginsRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribePluginsResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeServiceRequest.h>
@@ -115,6 +125,8 @@
 #include <tencentcloud/apigateway/v20180808/model/DescribeUsagePlanSecretIdsResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeUsagePlansStatusRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeUsagePlansStatusResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DetachPluginRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DetachPluginResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DisableApiKeyRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DisableApiKeyResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/EnableApiKeyRequest.h>
@@ -131,6 +143,8 @@
 #include <tencentcloud/apigateway/v20180808/model/ModifyApiIncrementResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyIPStrategyRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyIPStrategyResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/ModifyPluginRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/ModifyPluginResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyServiceRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyServiceResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyServiceEnvironmentStrategyRequest.h>
@@ -171,6 +185,9 @@ namespace TencentCloud
                 ApigatewayClient(const Credential &credential, const std::string &region);
                 ApigatewayClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::AttachPluginResponse> AttachPluginOutcome;
+                typedef std::future<AttachPluginOutcome> AttachPluginOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::AttachPluginRequest&, AttachPluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachPluginAsyncHandler;
                 typedef Outcome<Error, Model::BindEnvironmentResponse> BindEnvironmentOutcome;
                 typedef std::future<BindEnvironmentOutcome> BindEnvironmentOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::BindEnvironmentRequest&, BindEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindEnvironmentAsyncHandler;
@@ -219,6 +236,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteIPStrategyResponse> DeleteIPStrategyOutcome;
                 typedef std::future<DeleteIPStrategyOutcome> DeleteIPStrategyOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DeleteIPStrategyRequest&, DeleteIPStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIPStrategyAsyncHandler;
+                typedef Outcome<Error, Model::DeletePluginResponse> DeletePluginOutcome;
+                typedef std::future<DeletePluginOutcome> DeletePluginOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DeletePluginRequest&, DeletePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePluginAsyncHandler;
                 typedef Outcome<Error, Model::DeleteServiceResponse> DeleteServiceOutcome;
                 typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DeleteServiceRequest&, DeleteServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceAsyncHandler;
@@ -237,6 +257,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAPIDocsResponse> DescribeAPIDocsOutcome;
                 typedef std::future<DescribeAPIDocsOutcome> DescribeAPIDocsOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeAPIDocsRequest&, DescribeAPIDocsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAPIDocsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAllPluginApisResponse> DescribeAllPluginApisOutcome;
+                typedef std::future<DescribeAllPluginApisOutcome> DescribeAllPluginApisOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribeAllPluginApisRequest&, DescribeAllPluginApisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllPluginApisAsyncHandler;
                 typedef Outcome<Error, Model::DescribeApiResponse> DescribeApiOutcome;
                 typedef std::future<DescribeApiOutcome> DescribeApiOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeApiRequest&, DescribeApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiAsyncHandler;
@@ -267,6 +290,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeLogSearchResponse> DescribeLogSearchOutcome;
                 typedef std::future<DescribeLogSearchOutcome> DescribeLogSearchOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeLogSearchRequest&, DescribeLogSearchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogSearchAsyncHandler;
+                typedef Outcome<Error, Model::DescribePluginResponse> DescribePluginOutcome;
+                typedef std::future<DescribePluginOutcome> DescribePluginOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribePluginRequest&, DescribePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginAsyncHandler;
+                typedef Outcome<Error, Model::DescribePluginApisResponse> DescribePluginApisOutcome;
+                typedef std::future<DescribePluginApisOutcome> DescribePluginApisOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribePluginApisRequest&, DescribePluginApisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginApisAsyncHandler;
                 typedef Outcome<Error, Model::DescribePluginsResponse> DescribePluginsOutcome;
                 typedef std::future<DescribePluginsOutcome> DescribePluginsOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribePluginsRequest&, DescribePluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginsAsyncHandler;
@@ -309,6 +338,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUsagePlansStatusResponse> DescribeUsagePlansStatusOutcome;
                 typedef std::future<DescribeUsagePlansStatusOutcome> DescribeUsagePlansStatusOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeUsagePlansStatusRequest&, DescribeUsagePlansStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsagePlansStatusAsyncHandler;
+                typedef Outcome<Error, Model::DetachPluginResponse> DetachPluginOutcome;
+                typedef std::future<DetachPluginOutcome> DetachPluginOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DetachPluginRequest&, DetachPluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachPluginAsyncHandler;
                 typedef Outcome<Error, Model::DisableApiKeyResponse> DisableApiKeyOutcome;
                 typedef std::future<DisableApiKeyOutcome> DisableApiKeyOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DisableApiKeyRequest&, DisableApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableApiKeyAsyncHandler;
@@ -333,6 +365,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyIPStrategyResponse> ModifyIPStrategyOutcome;
                 typedef std::future<ModifyIPStrategyOutcome> ModifyIPStrategyOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::ModifyIPStrategyRequest&, ModifyIPStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIPStrategyAsyncHandler;
+                typedef Outcome<Error, Model::ModifyPluginResponse> ModifyPluginOutcome;
+                typedef std::future<ModifyPluginOutcome> ModifyPluginOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::ModifyPluginRequest&, ModifyPluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPluginAsyncHandler;
                 typedef Outcome<Error, Model::ModifyServiceResponse> ModifyServiceOutcome;
                 typedef std::future<ModifyServiceOutcome> ModifyServiceOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::ModifyServiceRequest&, ModifyServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceAsyncHandler;
@@ -374,6 +409,15 @@ namespace TencentCloud
                 typedef std::function<void(const ApigatewayClient*, const Model::UpdateServiceRequest&, UpdateServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceAsyncHandler;
 
 
+
+                /**
+                 *绑定插件到API上。
+                 * @param req AttachPluginRequest
+                 * @return AttachPluginOutcome
+                 */
+                AttachPluginOutcome AttachPlugin(const Model::AttachPluginRequest &request);
+                void AttachPluginAsync(const Model::AttachPluginRequest& request, const AttachPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachPluginOutcomeCallable AttachPluginCallable(const Model::AttachPluginRequest& request);
 
                 /**
                  *本接口（BindEnvironment）用于绑定使用计划到服务或API。
@@ -526,6 +570,15 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DeleteIPStrategyOutcomeCallable DeleteIPStrategyCallable(const Model::DeleteIPStrategyRequest& request);
 
                 /**
+                 *删除API网关插件
+                 * @param req DeletePluginRequest
+                 * @return DeletePluginOutcome
+                 */
+                DeletePluginOutcome DeletePlugin(const Model::DeletePluginRequest &request);
+                void DeletePluginAsync(const Model::DeletePluginRequest& request, const DeletePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePluginOutcomeCallable DeletePluginCallable(const Model::DeletePluginRequest& request);
+
+                /**
                  *本接口（DeleteService）用于删除 API 网关中某个服务。
                  * @param req DeleteServiceRequest
                  * @return DeleteServiceOutcome
@@ -581,6 +634,15 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DescribeAPIDocsOutcome DescribeAPIDocs(const Model::DescribeAPIDocsRequest &request);
                 void DescribeAPIDocsAsync(const Model::DescribeAPIDocsRequest& request, const DescribeAPIDocsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAPIDocsOutcomeCallable DescribeAPIDocsCallable(const Model::DescribeAPIDocsRequest& request);
+
+                /**
+                 *展示插件相关的API列表，包括已绑定的和未绑定的API信息。
+                 * @param req DescribeAllPluginApisRequest
+                 * @return DescribeAllPluginApisOutcome
+                 */
+                DescribeAllPluginApisOutcome DescribeAllPluginApis(const Model::DescribeAllPluginApisRequest &request);
+                void DescribeAllPluginApisAsync(const Model::DescribeAllPluginApisRequest& request, const DescribeAllPluginApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllPluginApisOutcomeCallable DescribeAllPluginApisCallable(const Model::DescribeAllPluginApisRequest& request);
 
                 /**
                  *本接口（DescribeApi）用于查询用户 API 网关的 API 接口的详细信息。​
@@ -674,6 +736,24 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DescribeLogSearchOutcome DescribeLogSearch(const Model::DescribeLogSearchRequest &request);
                 void DescribeLogSearchAsync(const Model::DescribeLogSearchRequest& request, const DescribeLogSearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogSearchOutcomeCallable DescribeLogSearchCallable(const Model::DescribeLogSearchRequest& request);
+
+                /**
+                 *展示插件详情，支持按照插件ID进行。
+                 * @param req DescribePluginRequest
+                 * @return DescribePluginOutcome
+                 */
+                DescribePluginOutcome DescribePlugin(const Model::DescribePluginRequest &request);
+                void DescribePluginAsync(const Model::DescribePluginRequest& request, const DescribePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePluginOutcomeCallable DescribePluginCallable(const Model::DescribePluginRequest& request);
+
+                /**
+                 *查询指定插件下绑定的API信息
+                 * @param req DescribePluginApisRequest
+                 * @return DescribePluginApisOutcome
+                 */
+                DescribePluginApisOutcome DescribePluginApis(const Model::DescribePluginApisRequest &request);
+                void DescribePluginApisAsync(const Model::DescribePluginApisRequest& request, const DescribePluginApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePluginApisOutcomeCallable DescribePluginApisCallable(const Model::DescribePluginApisRequest& request);
 
                 /**
                  *展示插件列表和详情，支持分页，支持按照插件类型查询，支持按照插件ID批量查询，支持按照插件名称查询。
@@ -809,6 +889,15 @@ API 网关可绑定自定义域名到服务，用于服务调用。此接口用�
                 DescribeUsagePlansStatusOutcomeCallable DescribeUsagePlansStatusCallable(const Model::DescribeUsagePlansStatusRequest& request);
 
                 /**
+                 *解除插件与API绑定
+                 * @param req DetachPluginRequest
+                 * @return DetachPluginOutcome
+                 */
+                DetachPluginOutcome DetachPlugin(const Model::DetachPluginRequest &request);
+                void DetachPluginAsync(const Model::DetachPluginRequest& request, const DetachPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetachPluginOutcomeCallable DetachPluginCallable(const Model::DetachPluginRequest& request);
+
+                /**
                  *本接口（DisableApiKey）用于禁用一对 API 密钥。
                  * @param req DisableApiKeyRequest
                  * @return DisableApiKeyOutcome
@@ -879,6 +968,15 @@ API 网关可绑定自定义域名到服务，用于服务调用。此接口用�
                 ModifyIPStrategyOutcome ModifyIPStrategy(const Model::ModifyIPStrategyRequest &request);
                 void ModifyIPStrategyAsync(const Model::ModifyIPStrategyRequest& request, const ModifyIPStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyIPStrategyOutcomeCallable ModifyIPStrategyCallable(const Model::ModifyIPStrategyRequest& request);
+
+                /**
+                 *修改API网关插件。
+                 * @param req ModifyPluginRequest
+                 * @return ModifyPluginOutcome
+                 */
+                ModifyPluginOutcome ModifyPlugin(const Model::ModifyPluginRequest &request);
+                void ModifyPluginAsync(const Model::ModifyPluginRequest& request, const ModifyPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPluginOutcomeCallable ModifyPluginCallable(const Model::ModifyPluginRequest& request);
 
                 /**
                  *本接口（ModifyService）用于修改服务的相关信息。当服务创建后，服务的名称、描述和服务类型均可被修改。

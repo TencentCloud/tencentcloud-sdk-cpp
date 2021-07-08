@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool CreateUinHasBeenSet() const;
 
                     /**
-                     * 获取凭据状态：Enabled、Disabled、PendingDelete
-                     * @return Status 凭据状态：Enabled、Disabled、PendingDelete
+                     * 获取凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。
+                     * @return Status 凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。
                      */
                     std::string GetStatus() const;
 
@@ -126,6 +126,76 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取0 --  用户自定义凭据类型；1 -- 云产品凭据类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecretType 0 --  用户自定义凭据类型；1 -- 云产品凭据类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSecretType() const;
+
+                    /**
+                     * 判断参数 SecretType 是否已赋值
+                     * @return SecretType 是否已赋值
+                     */
+                    bool SecretTypeHasBeenSet() const;
+
+                    /**
+                     * 获取云产品名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductName 云产品名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProductName() const;
+
+                    /**
+                     * 判断参数 ProductName 是否已赋值
+                     * @return ProductName 是否已赋值
+                     */
+                    bool ProductNameHasBeenSet() const;
+
+                    /**
+                     * 获取云产品实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceID 云产品实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResourceID() const;
+
+                    /**
+                     * 判断参数 ResourceID 是否已赋值
+                     * @return ResourceID 是否已赋值
+                     */
+                    bool ResourceIDHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启轮转：True -- 开启轮转；False -- 禁止轮转。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RotationStatus 是否开启轮转：True -- 开启轮转；False -- 禁止轮转。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetRotationStatus() const;
+
+                    /**
+                     * 判断参数 RotationStatus 是否已赋值
+                     * @return RotationStatus 是否已赋值
+                     */
+                    bool RotationStatusHasBeenSet() const;
+
+                    /**
+                     * 获取轮转周期，默认以天为单位。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RotationFrequency 轮转周期，默认以天为单位。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRotationFrequency() const;
+
+                    /**
+                     * 判断参数 RotationFrequency 是否已赋值
+                     * @return RotationFrequency 是否已赋值
+                     */
+                    bool RotationFrequencyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,7 +223,7 @@ namespace TencentCloud
                     bool m_createUinHasBeenSet;
 
                     /**
-                     * 凭据状态：Enabled、Disabled、PendingDelete
+                     * 凭据状态：Enabled、Disabled、PendingDelete, Creating, Failed。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -169,6 +239,41 @@ namespace TencentCloud
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 0 --  用户自定义凭据类型；1 -- 云产品凭据类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_secretType;
+                    bool m_secretTypeHasBeenSet;
+
+                    /**
+                     * 云产品名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productName;
+                    bool m_productNameHasBeenSet;
+
+                    /**
+                     * 云产品实例ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceID;
+                    bool m_resourceIDHasBeenSet;
+
+                    /**
+                     * 是否开启轮转：True -- 开启轮转；False -- 禁止轮转。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_rotationStatus;
+                    bool m_rotationStatusHasBeenSet;
+
+                    /**
+                     * 轮转周期，默认以天为单位。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_rotationFrequency;
+                    bool m_rotationFrequencyHasBeenSet;
 
                 };
             }

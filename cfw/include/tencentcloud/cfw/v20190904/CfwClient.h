@@ -39,6 +39,10 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeAcListsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeBlockByIpTimesListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeBlockByIpTimesListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeBlockStaticListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeBlockStaticListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoRequest.h>
@@ -53,8 +57,14 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeSwitchListsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSyncAssetStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSyncAssetStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeTLogInfoRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeTLogInfoResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeTLogIpListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeTLogIpListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeTableStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeTableStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeUnHandleEventTabListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeUnHandleEventTabListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeVpcRuleOverviewRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeVpcRuleOverviewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ExpandCfwVerticalRequest.h>
@@ -67,6 +77,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyAllSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyBlockTopRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyBlockTopResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyItemSwitchStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyItemSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupAllRuleStatusRequest.h>
@@ -117,6 +129,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAssociatedInstanceListResponse> DescribeAssociatedInstanceListOutcome;
                 typedef std::future<DescribeAssociatedInstanceListOutcome> DescribeAssociatedInstanceListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeAssociatedInstanceListRequest&, DescribeAssociatedInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssociatedInstanceListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBlockByIpTimesListResponse> DescribeBlockByIpTimesListOutcome;
+                typedef std::future<DescribeBlockByIpTimesListOutcome> DescribeBlockByIpTimesListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeBlockByIpTimesListRequest&, DescribeBlockByIpTimesListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockByIpTimesListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBlockStaticListResponse> DescribeBlockStaticListOutcome;
+                typedef std::future<DescribeBlockStaticListOutcome> DescribeBlockStaticListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeBlockStaticListRequest&, DescribeBlockStaticListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockStaticListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCfwEipsResponse> DescribeCfwEipsOutcome;
                 typedef std::future<DescribeCfwEipsOutcome> DescribeCfwEipsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeCfwEipsRequest&, DescribeCfwEipsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwEipsAsyncHandler;
@@ -138,9 +156,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSyncAssetStatusResponse> DescribeSyncAssetStatusOutcome;
                 typedef std::future<DescribeSyncAssetStatusOutcome> DescribeSyncAssetStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeSyncAssetStatusRequest&, DescribeSyncAssetStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSyncAssetStatusAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTLogInfoResponse> DescribeTLogInfoOutcome;
+                typedef std::future<DescribeTLogInfoOutcome> DescribeTLogInfoOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeTLogInfoRequest&, DescribeTLogInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTLogInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeTLogIpListResponse> DescribeTLogIpListOutcome;
+                typedef std::future<DescribeTLogIpListOutcome> DescribeTLogIpListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeTLogIpListRequest&, DescribeTLogIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTLogIpListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTableStatusResponse> DescribeTableStatusOutcome;
                 typedef std::future<DescribeTableStatusOutcome> DescribeTableStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeTableStatusRequest&, DescribeTableStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableStatusAsyncHandler;
+                typedef Outcome<Error, Model::DescribeUnHandleEventTabListResponse> DescribeUnHandleEventTabListOutcome;
+                typedef std::future<DescribeUnHandleEventTabListOutcome> DescribeUnHandleEventTabListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeUnHandleEventTabListRequest&, DescribeUnHandleEventTabListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnHandleEventTabListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeVpcRuleOverviewResponse> DescribeVpcRuleOverviewOutcome;
                 typedef std::future<DescribeVpcRuleOverviewOutcome> DescribeVpcRuleOverviewOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeVpcRuleOverviewRequest&, DescribeVpcRuleOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcRuleOverviewAsyncHandler;
@@ -159,6 +186,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyBlockIgnoreListResponse> ModifyBlockIgnoreListOutcome;
                 typedef std::future<ModifyBlockIgnoreListOutcome> ModifyBlockIgnoreListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyBlockIgnoreListRequest&, ModifyBlockIgnoreListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockIgnoreListAsyncHandler;
+                typedef Outcome<Error, Model::ModifyBlockTopResponse> ModifyBlockTopOutcome;
+                typedef std::future<ModifyBlockTopOutcome> ModifyBlockTopOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyBlockTopRequest&, ModifyBlockTopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockTopAsyncHandler;
                 typedef Outcome<Error, Model::ModifyItemSwitchStatusResponse> ModifyItemSwitchStatusOutcome;
                 typedef std::future<ModifyItemSwitchStatusOutcome> ModifyItemSwitchStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyItemSwitchStatusRequest&, ModifyItemSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyItemSwitchStatusAsyncHandler;
@@ -253,6 +283,26 @@ namespace TencentCloud
                 DescribeAssociatedInstanceListOutcomeCallable DescribeAssociatedInstanceListCallable(const Model::DescribeAssociatedInstanceListRequest& request);
 
                 /**
+                 *DescribeBlockByIpTimesList 告警中心阻断ip折线图
+
+                 * @param req DescribeBlockByIpTimesListRequest
+                 * @return DescribeBlockByIpTimesListOutcome
+                 */
+                DescribeBlockByIpTimesListOutcome DescribeBlockByIpTimesList(const Model::DescribeBlockByIpTimesListRequest &request);
+                void DescribeBlockByIpTimesListAsync(const Model::DescribeBlockByIpTimesListRequest& request, const DescribeBlockByIpTimesListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlockByIpTimesListOutcomeCallable DescribeBlockByIpTimesListCallable(const Model::DescribeBlockByIpTimesListRequest& request);
+
+                /**
+                 *DescribeBlockStaticList 告警中心柱形图
+
+                 * @param req DescribeBlockStaticListRequest
+                 * @return DescribeBlockStaticListOutcome
+                 */
+                DescribeBlockStaticListOutcome DescribeBlockStaticList(const Model::DescribeBlockStaticListRequest &request);
+                void DescribeBlockStaticListAsync(const Model::DescribeBlockStaticListRequest& request, const DescribeBlockStaticListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlockStaticListOutcomeCallable DescribeBlockStaticListCallable(const Model::DescribeBlockStaticListRequest& request);
+
+                /**
                  *查询防火墙弹性公网ip
                  * @param req DescribeCfwEipsRequest
                  * @return DescribeCfwEipsOutcome
@@ -316,6 +366,26 @@ namespace TencentCloud
                 DescribeSyncAssetStatusOutcomeCallable DescribeSyncAssetStatusCallable(const Model::DescribeSyncAssetStatusRequest& request);
 
                 /**
+                 *DescribeTLogInfo告警中心概况
+
+                 * @param req DescribeTLogInfoRequest
+                 * @return DescribeTLogInfoOutcome
+                 */
+                DescribeTLogInfoOutcome DescribeTLogInfo(const Model::DescribeTLogInfoRequest &request);
+                void DescribeTLogInfoAsync(const Model::DescribeTLogInfoRequest& request, const DescribeTLogInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTLogInfoOutcomeCallable DescribeTLogInfoCallable(const Model::DescribeTLogInfoRequest& request);
+
+                /**
+                 *DescribeTLogIpList告警中心ip柱形图
+
+                 * @param req DescribeTLogIpListRequest
+                 * @return DescribeTLogIpListOutcome
+                 */
+                DescribeTLogIpListOutcome DescribeTLogIpList(const Model::DescribeTLogIpListRequest &request);
+                void DescribeTLogIpListAsync(const Model::DescribeTLogIpListRequest& request, const DescribeTLogIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTLogIpListOutcomeCallable DescribeTLogIpListCallable(const Model::DescribeTLogIpListRequest& request);
+
+                /**
                  *查询规则表状态
                  * @param req DescribeTableStatusRequest
                  * @return DescribeTableStatusOutcome
@@ -323,6 +393,16 @@ namespace TencentCloud
                 DescribeTableStatusOutcome DescribeTableStatus(const Model::DescribeTableStatusRequest &request);
                 void DescribeTableStatusAsync(const Model::DescribeTableStatusRequest& request, const DescribeTableStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTableStatusOutcomeCallable DescribeTableStatusCallable(const Model::DescribeTableStatusRequest& request);
+
+                /**
+                 *DescribeUnHandleEventTabList 告警中心伪攻击链事件未处置接口
+
+                 * @param req DescribeUnHandleEventTabListRequest
+                 * @return DescribeUnHandleEventTabListOutcome
+                 */
+                DescribeUnHandleEventTabListOutcome DescribeUnHandleEventTabList(const Model::DescribeUnHandleEventTabListRequest &request);
+                void DescribeUnHandleEventTabListAsync(const Model::DescribeUnHandleEventTabListRequest& request, const DescribeUnHandleEventTabListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUnHandleEventTabListOutcomeCallable DescribeUnHandleEventTabListCallable(const Model::DescribeUnHandleEventTabListRequest& request);
 
                 /**
                  *vpc规则列表概况
@@ -380,6 +460,15 @@ namespace TencentCloud
                 ModifyBlockIgnoreListOutcome ModifyBlockIgnoreList(const Model::ModifyBlockIgnoreListRequest &request);
                 void ModifyBlockIgnoreListAsync(const Model::ModifyBlockIgnoreListRequest& request, const ModifyBlockIgnoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBlockIgnoreListOutcomeCallable ModifyBlockIgnoreListCallable(const Model::ModifyBlockIgnoreListRequest& request);
+
+                /**
+                 *ModifyBlockTop取消置顶接口
+                 * @param req ModifyBlockTopRequest
+                 * @return ModifyBlockTopOutcome
+                 */
+                ModifyBlockTopOutcome ModifyBlockTop(const Model::ModifyBlockTopRequest &request);
+                void ModifyBlockTopAsync(const Model::ModifyBlockTopRequest& request, const ModifyBlockTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBlockTopOutcomeCallable ModifyBlockTopCallable(const Model::ModifyBlockTopRequest& request);
 
                 /**
                  *修改单个防火墙开关

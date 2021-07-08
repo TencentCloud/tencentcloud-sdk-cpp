@@ -169,6 +169,49 @@ CccClient::CreateStaffOutcomeCallable CccClient::CreateStaffCallable(const Creat
     return task->get_future();
 }
 
+CccClient::CreateUserSigOutcome CccClient::CreateUserSig(const CreateUserSigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserSig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserSigResponse rsp = CreateUserSigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserSigOutcome(rsp);
+        else
+            return CreateUserSigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserSigOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreateUserSigAsync(const CreateUserSigRequest& request, const CreateUserSigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserSig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreateUserSigOutcomeCallable CccClient::CreateUserSigCallable(const CreateUserSigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserSigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserSig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DeleteStaffOutcome CccClient::DeleteStaff(const DeleteStaffRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteStaff");

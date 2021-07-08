@@ -42,7 +42,31 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取查询密钥ID列表
+                     * @return SecretIdList 查询密钥ID列表
+                     */
+                    std::vector<std::string> GetSecretIdList() const;
+
+                    /**
+                     * 设置查询密钥ID列表
+                     * @param SecretIdList 查询密钥ID列表
+                     */
+                    void SetSecretIdList(const std::vector<std::string>& _secretIdList);
+
+                    /**
+                     * 判断参数 SecretIdList 是否已赋值
+                     * @return SecretIdList 是否已赋值
+                     */
+                    bool SecretIdListHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 查询密钥ID列表
+                     */
+                    std::vector<std::string> m_secretIdList;
+                    bool m_secretIdListHasBeenSet;
 
                 };
             }
