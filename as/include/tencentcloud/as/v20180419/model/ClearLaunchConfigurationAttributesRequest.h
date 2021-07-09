@@ -82,6 +82,50 @@ namespace TencentCloud
                      */
                     bool ClearDataDisksHasBeenSet() const;
 
+                    /**
+                     * 获取是否清空云服务器主机名相关设置信息，非必填，默认为 false。
+填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将不设置主机名。
+                     * @return ClearHostNameSettings 是否清空云服务器主机名相关设置信息，非必填，默认为 false。
+填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将不设置主机名。
+                     */
+                    bool GetClearHostNameSettings() const;
+
+                    /**
+                     * 设置是否清空云服务器主机名相关设置信息，非必填，默认为 false。
+填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将不设置主机名。
+                     * @param ClearHostNameSettings 是否清空云服务器主机名相关设置信息，非必填，默认为 false。
+填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将不设置主机名。
+                     */
+                    void SetClearHostNameSettings(const bool& _clearHostNameSettings);
+
+                    /**
+                     * 判断参数 ClearHostNameSettings 是否已赋值
+                     * @return ClearHostNameSettings 是否已赋值
+                     */
+                    bool ClearHostNameSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取是否清空云服务器实例名相关设置信息，非必填，默认为 false。
+填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置。
+                     * @return ClearInstanceNameSettings 是否清空云服务器实例名相关设置信息，非必填，默认为 false。
+填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置。
+                     */
+                    bool GetClearInstanceNameSettings() const;
+
+                    /**
+                     * 设置是否清空云服务器实例名相关设置信息，非必填，默认为 false。
+填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置。
+                     * @param ClearInstanceNameSettings 是否清空云服务器实例名相关设置信息，非必填，默认为 false。
+填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置。
+                     */
+                    void SetClearInstanceNameSettings(const bool& _clearInstanceNameSettings);
+
+                    /**
+                     * 判断参数 ClearInstanceNameSettings 是否已赋值
+                     * @return ClearInstanceNameSettings 是否已赋值
+                     */
+                    bool ClearInstanceNameSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -96,6 +140,20 @@ namespace TencentCloud
                      */
                     bool m_clearDataDisks;
                     bool m_clearDataDisksHasBeenSet;
+
+                    /**
+                     * 是否清空云服务器主机名相关设置信息，非必填，默认为 false。
+填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将不设置主机名。
+                     */
+                    bool m_clearHostNameSettings;
+                    bool m_clearHostNameSettingsHasBeenSet;
+
+                    /**
+                     * 是否清空云服务器实例名相关设置信息，非必填，默认为 false。
+填 true 代表清空主机名设置信息，清空后基于此新创建的云主机将按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置。
+                     */
+                    bool m_clearInstanceNameSettings;
+                    bool m_clearInstanceNameSettingsHasBeenSet;
 
                 };
             }

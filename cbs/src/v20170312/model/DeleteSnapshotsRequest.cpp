@@ -23,7 +23,8 @@ using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
 DeleteSnapshotsRequest::DeleteSnapshotsRequest() :
-    m_snapshotIdsHasBeenSet(false)
+    m_snapshotIdsHasBeenSet(false),
+    m_deleteBindImagesHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string DeleteSnapshotsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_deleteBindImagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteBindImages";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteBindImages, allocator);
     }
 
 
@@ -69,6 +78,22 @@ void DeleteSnapshotsRequest::SetSnapshotIds(const vector<string>& _snapshotIds)
 bool DeleteSnapshotsRequest::SnapshotIdsHasBeenSet() const
 {
     return m_snapshotIdsHasBeenSet;
+}
+
+bool DeleteSnapshotsRequest::GetDeleteBindImages() const
+{
+    return m_deleteBindImages;
+}
+
+void DeleteSnapshotsRequest::SetDeleteBindImages(const bool& _deleteBindImages)
+{
+    m_deleteBindImages = _deleteBindImages;
+    m_deleteBindImagesHasBeenSet = true;
+}
+
+bool DeleteSnapshotsRequest::DeleteBindImagesHasBeenSet() const
+{
+    return m_deleteBindImagesHasBeenSet;
 }
 
 

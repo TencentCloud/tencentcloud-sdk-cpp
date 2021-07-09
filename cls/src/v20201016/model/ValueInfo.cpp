@@ -23,7 +23,8 @@ using namespace std;
 ValueInfo::ValueInfo() :
     m_typeHasBeenSet(false),
     m_tokenizerHasBeenSet(false),
-    m_sqlFlagHasBeenSet(false)
+    m_sqlFlagHasBeenSet(false),
+    m_containZHHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ValueInfo::Deserialize(const rapidjson::Value &value)
         m_sqlFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainZH") && !value["ContainZH"].IsNull())
+    {
+        if (!value["ContainZH"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ValueInfo.ContainZH` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_containZH = value["ContainZH"].GetBool();
+        m_containZHHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ValueInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SqlFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sqlFlag, allocator);
+    }
+
+    if (m_containZHHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainZH";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_containZH, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ValueInfo::SetSqlFlag(const bool& _sqlFlag)
 bool ValueInfo::SqlFlagHasBeenSet() const
 {
     return m_sqlFlagHasBeenSet;
+}
+
+bool ValueInfo::GetContainZH() const
+{
+    return m_containZH;
+}
+
+void ValueInfo::SetContainZH(const bool& _containZH)
+{
+    m_containZH = _containZH;
+    m_containZHHasBeenSet = true;
+}
+
+bool ValueInfo::ContainZHHasBeenSet() const
+{
+    return m_containZHHasBeenSet;
 }
 

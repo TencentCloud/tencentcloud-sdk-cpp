@@ -67,6 +67,8 @@
 #include <tencentcloud/scf/v20180416/model/GetReservedConcurrencyConfigResponse.h>
 #include <tencentcloud/scf/v20180416/model/InvokeRequest.h>
 #include <tencentcloud/scf/v20180416/model/InvokeResponse.h>
+#include <tencentcloud/scf/v20180416/model/InvokeFunctionRequest.h>
+#include <tencentcloud/scf/v20180416/model/InvokeFunctionResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListAliasesRequest.h>
 #include <tencentcloud/scf/v20180416/model/ListAliasesResponse.h>
 #include <tencentcloud/scf/v20180416/model/ListAsyncEventsRequest.h>
@@ -185,6 +187,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::InvokeResponse> InvokeOutcome;
                 typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::InvokeRequest&, InvokeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeAsyncHandler;
+                typedef Outcome<Error, Model::InvokeFunctionResponse> InvokeFunctionOutcome;
+                typedef std::future<InvokeFunctionOutcome> InvokeFunctionOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::InvokeFunctionRequest&, InvokeFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InvokeFunctionAsyncHandler;
                 typedef Outcome<Error, Model::ListAliasesResponse> ListAliasesOutcome;
                 typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::ListAliasesRequest&, ListAliasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAliasesAsyncHandler;
@@ -449,6 +454,15 @@ namespace TencentCloud
                 InvokeOutcome Invoke(const Model::InvokeRequest &request);
                 void InvokeAsync(const Model::InvokeRequest& request, const InvokeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InvokeOutcomeCallable InvokeCallable(const Model::InvokeRequest& request);
+
+                /**
+                 * SCF同步调用函数接口
+                 * @param req InvokeFunctionRequest
+                 * @return InvokeFunctionOutcome
+                 */
+                InvokeFunctionOutcome InvokeFunction(const Model::InvokeFunctionRequest &request);
+                void InvokeFunctionAsync(const Model::InvokeFunctionRequest& request, const InvokeFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InvokeFunctionOutcomeCallable InvokeFunctionCallable(const Model::InvokeFunctionRequest& request);
 
                 /**
                  *返回一个函数下的全部别名，可以根据特定函数版本过滤。

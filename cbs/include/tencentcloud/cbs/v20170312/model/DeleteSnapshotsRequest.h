@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool SnapshotIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否强制删除快照关联的镜像
+                     * @return DeleteBindImages 是否强制删除快照关联的镜像
+                     */
+                    bool GetDeleteBindImages() const;
+
+                    /**
+                     * 设置是否强制删除快照关联的镜像
+                     * @param DeleteBindImages 是否强制删除快照关联的镜像
+                     */
+                    void SetDeleteBindImages(const bool& _deleteBindImages);
+
+                    /**
+                     * 判断参数 DeleteBindImages 是否已赋值
+                     * @return DeleteBindImages 是否已赋值
+                     */
+                    bool DeleteBindImagesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_snapshotIds;
                     bool m_snapshotIdsHasBeenSet;
+
+                    /**
+                     * 是否强制删除快照关联的镜像
+                     */
+                    bool m_deleteBindImages;
+                    bool m_deleteBindImagesHasBeenSet;
 
                 };
             }

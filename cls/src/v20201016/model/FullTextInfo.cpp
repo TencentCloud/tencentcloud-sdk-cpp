@@ -22,7 +22,8 @@ using namespace std;
 
 FullTextInfo::FullTextInfo() :
     m_caseSensitiveHasBeenSet(false),
-    m_tokenizerHasBeenSet(false)
+    m_tokenizerHasBeenSet(false),
+    m_containZHHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome FullTextInfo::Deserialize(const rapidjson::Value &value)
         m_tokenizerHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainZH") && !value["ContainZH"].IsNull())
+    {
+        if (!value["ContainZH"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `FullTextInfo.ContainZH` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_containZH = value["ContainZH"].GetBool();
+        m_containZHHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void FullTextInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Tokenizer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tokenizer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containZHHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainZH";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_containZH, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void FullTextInfo::SetTokenizer(const string& _tokenizer)
 bool FullTextInfo::TokenizerHasBeenSet() const
 {
     return m_tokenizerHasBeenSet;
+}
+
+bool FullTextInfo::GetContainZH() const
+{
+    return m_containZH;
+}
+
+void FullTextInfo::SetContainZH(const bool& _containZH)
+{
+    m_containZH = _containZH;
+    m_containZHHasBeenSet = true;
+}
+
+bool FullTextInfo::ContainZHHasBeenSet() const
+{
+    return m_containZHHasBeenSet;
 }
 

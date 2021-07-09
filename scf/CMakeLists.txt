@@ -49,6 +49,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/ListLayerVersionsResponse.h
   include/tencentcloud/scf/v20180416/model/DeleteFunctionRequest.h
   include/tencentcloud/scf/v20180416/model/CopyFunctionResponse.h
+  include/tencentcloud/scf/v20180416/model/InvokeFunctionResponse.h
   include/tencentcloud/scf/v20180416/model/Namespace.h
   include/tencentcloud/scf/v20180416/model/GetFunctionRequest.h
   include/tencentcloud/scf/v20180416/model/ListNamespacesRequest.h
@@ -113,6 +114,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/GetLayerVersionResponse.h
   include/tencentcloud/scf/v20180416/model/PutReservedConcurrencyConfigResponse.h
   include/tencentcloud/scf/v20180416/model/FunctionLog.h
+  include/tencentcloud/scf/v20180416/model/InvokeFunctionRequest.h
   include/tencentcloud/scf/v20180416/model/RetryConfig.h
   include/tencentcloud/scf/v20180416/model/GetFunctionAddressResponse.h
   include/tencentcloud/scf/v20180416/model/CfsInsInfo.h
@@ -176,6 +178,7 @@ set(scf_src
   src/v20180416/model/ListLayerVersionsResponse.cpp
   src/v20180416/model/DeleteFunctionRequest.cpp
   src/v20180416/model/CopyFunctionResponse.cpp
+  src/v20180416/model/InvokeFunctionResponse.cpp
   src/v20180416/model/Namespace.cpp
   src/v20180416/model/GetFunctionRequest.cpp
   src/v20180416/model/ListNamespacesRequest.cpp
@@ -240,6 +243,7 @@ set(scf_src
   src/v20180416/model/GetLayerVersionResponse.cpp
   src/v20180416/model/PutReservedConcurrencyConfigResponse.cpp
   src/v20180416/model/FunctionLog.cpp
+  src/v20180416/model/InvokeFunctionRequest.cpp
   src/v20180416/model/RetryConfig.cpp
   src/v20180416/model/GetFunctionAddressResponse.cpp
   src/v20180416/model/CfsInsInfo.cpp

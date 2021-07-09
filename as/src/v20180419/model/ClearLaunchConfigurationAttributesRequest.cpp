@@ -24,7 +24,9 @@ using namespace std;
 
 ClearLaunchConfigurationAttributesRequest::ClearLaunchConfigurationAttributesRequest() :
     m_launchConfigurationIdHasBeenSet(false),
-    m_clearDataDisksHasBeenSet(false)
+    m_clearDataDisksHasBeenSet(false),
+    m_clearHostNameSettingsHasBeenSet(false),
+    m_clearInstanceNameSettingsHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string ClearLaunchConfigurationAttributesRequest::ToJsonString() const
         string key = "ClearDataDisks";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_clearDataDisks, allocator);
+    }
+
+    if (m_clearHostNameSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClearHostNameSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clearHostNameSettings, allocator);
+    }
+
+    if (m_clearInstanceNameSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClearInstanceNameSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clearInstanceNameSettings, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void ClearLaunchConfigurationAttributesRequest::SetClearDataDisks(const bool& _c
 bool ClearLaunchConfigurationAttributesRequest::ClearDataDisksHasBeenSet() const
 {
     return m_clearDataDisksHasBeenSet;
+}
+
+bool ClearLaunchConfigurationAttributesRequest::GetClearHostNameSettings() const
+{
+    return m_clearHostNameSettings;
+}
+
+void ClearLaunchConfigurationAttributesRequest::SetClearHostNameSettings(const bool& _clearHostNameSettings)
+{
+    m_clearHostNameSettings = _clearHostNameSettings;
+    m_clearHostNameSettingsHasBeenSet = true;
+}
+
+bool ClearLaunchConfigurationAttributesRequest::ClearHostNameSettingsHasBeenSet() const
+{
+    return m_clearHostNameSettingsHasBeenSet;
+}
+
+bool ClearLaunchConfigurationAttributesRequest::GetClearInstanceNameSettings() const
+{
+    return m_clearInstanceNameSettings;
+}
+
+void ClearLaunchConfigurationAttributesRequest::SetClearInstanceNameSettings(const bool& _clearInstanceNameSettings)
+{
+    m_clearInstanceNameSettings = _clearInstanceNameSettings;
+    m_clearInstanceNameSettingsHasBeenSet = true;
+}
+
+bool ClearLaunchConfigurationAttributesRequest::ClearInstanceNameSettingsHasBeenSet() const
+{
+    return m_clearInstanceNameSettingsHasBeenSet;
 }
 
 

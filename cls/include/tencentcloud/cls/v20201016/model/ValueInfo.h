@@ -100,6 +100,28 @@ namespace TencentCloud
                      */
                     bool SqlFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否包含中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainZH 是否包含中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetContainZH() const;
+
+                    /**
+                     * 设置是否包含中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContainZH 是否包含中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContainZH(const bool& _containZH);
+
+                    /**
+                     * 判断参数 ContainZH 是否已赋值
+                     * @return ContainZH 是否已赋值
+                     */
+                    bool ContainZHHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +141,13 @@ namespace TencentCloud
                      */
                     bool m_sqlFlag;
                     bool m_sqlFlagHasBeenSet;
+
+                    /**
+                     * 是否包含中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_containZH;
+                    bool m_containZHHasBeenSet;
 
                 };
             }

@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取是否生效
-                     * @return Status 是否生效
+                     * 获取默认不生效
+                     * @return Status 默认不生效
                      */
                     bool GetStatus() const;
 
                     /**
-                     * 设置是否生效
-                     * @param Status 是否生效
+                     * 设置默认不生效
+                     * @param Status 默认不生效
                      */
                     void SetStatus(const bool& _status);
 
@@ -106,7 +106,7 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 是否生效
+                     * 默认不生效
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;

@@ -117,6 +117,8 @@
 #include <tencentcloud/redis/v20180412/model/InquiryPriceRenewInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/InquiryPriceUpgradeInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/InquiryPriceUpgradeInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/KillMasterGroupRequest.h>
+#include <tencentcloud/redis/v20180412/model/KillMasterGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/ManualBackupInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/ManualBackupInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModfiyInstancePasswordRequest.h>
@@ -308,6 +310,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::InquiryPriceUpgradeInstanceResponse> InquiryPriceUpgradeInstanceOutcome;
                 typedef std::future<InquiryPriceUpgradeInstanceOutcome> InquiryPriceUpgradeInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::InquiryPriceUpgradeInstanceRequest&, InquiryPriceUpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceUpgradeInstanceAsyncHandler;
+                typedef Outcome<Error, Model::KillMasterGroupResponse> KillMasterGroupOutcome;
+                typedef std::future<KillMasterGroupOutcome> KillMasterGroupOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::KillMasterGroupRequest&, KillMasterGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillMasterGroupAsyncHandler;
                 typedef Outcome<Error, Model::ManualBackupInstanceResponse> ManualBackupInstanceOutcome;
                 typedef std::future<ManualBackupInstanceOutcome> ManualBackupInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ManualBackupInstanceRequest&, ManualBackupInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManualBackupInstanceAsyncHandler;
@@ -787,6 +792,15 @@ namespace TencentCloud
                 InquiryPriceUpgradeInstanceOutcome InquiryPriceUpgradeInstance(const Model::InquiryPriceUpgradeInstanceRequest &request);
                 void InquiryPriceUpgradeInstanceAsync(const Model::InquiryPriceUpgradeInstanceRequest& request, const InquiryPriceUpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceUpgradeInstanceOutcomeCallable InquiryPriceUpgradeInstanceCallable(const Model::InquiryPriceUpgradeInstanceRequest& request);
+
+                /**
+                 *模拟故障
+                 * @param req KillMasterGroupRequest
+                 * @return KillMasterGroupOutcome
+                 */
+                KillMasterGroupOutcome KillMasterGroup(const Model::KillMasterGroupRequest &request);
+                void KillMasterGroupAsync(const Model::KillMasterGroupRequest& request, const KillMasterGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                KillMasterGroupOutcomeCallable KillMasterGroupCallable(const Model::KillMasterGroupRequest& request);
 
                 /**
                  *手动备份Redis实例

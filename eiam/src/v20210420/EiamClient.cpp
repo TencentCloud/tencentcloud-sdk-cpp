@@ -212,49 +212,6 @@ EiamClient::CreateUserGroupOutcomeCallable EiamClient::CreateUserGroupCallable(c
     return task->get_future();
 }
 
-EiamClient::DecribePublicKeyOutcome EiamClient::DecribePublicKey(const DecribePublicKeyRequest &request)
-{
-    auto outcome = MakeRequest(request, "DecribePublicKey");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DecribePublicKeyResponse rsp = DecribePublicKeyResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DecribePublicKeyOutcome(rsp);
-        else
-            return DecribePublicKeyOutcome(o.GetError());
-    }
-    else
-    {
-        return DecribePublicKeyOutcome(outcome.GetError());
-    }
-}
-
-void EiamClient::DecribePublicKeyAsync(const DecribePublicKeyRequest& request, const DecribePublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DecribePublicKey(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-EiamClient::DecribePublicKeyOutcomeCallable EiamClient::DecribePublicKeyCallable(const DecribePublicKeyRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DecribePublicKeyOutcome()>>(
-        [this, request]()
-        {
-            return this->DecribePublicKey(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 EiamClient::DeleteOrgNodeOutcome EiamClient::DeleteOrgNode(const DeleteOrgNodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteOrgNode");

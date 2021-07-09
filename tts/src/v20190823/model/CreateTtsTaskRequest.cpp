@@ -32,7 +32,8 @@ CreateTtsTaskRequest::CreateTtsTaskRequest() :
     m_primaryLanguageHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
     m_codecHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_voiceoverDialogueSplitHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string CreateTtsTaskRequest::ToJsonString() const
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voiceoverDialogueSplitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoiceoverDialogueSplit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_voiceoverDialogueSplit, allocator);
     }
 
 
@@ -289,6 +298,22 @@ void CreateTtsTaskRequest::SetCallbackUrl(const string& _callbackUrl)
 bool CreateTtsTaskRequest::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+bool CreateTtsTaskRequest::GetVoiceoverDialogueSplit() const
+{
+    return m_voiceoverDialogueSplit;
+}
+
+void CreateTtsTaskRequest::SetVoiceoverDialogueSplit(const bool& _voiceoverDialogueSplit)
+{
+    m_voiceoverDialogueSplit = _voiceoverDialogueSplit;
+    m_voiceoverDialogueSplitHasBeenSet = true;
+}
+
+bool CreateTtsTaskRequest::VoiceoverDialogueSplitHasBeenSet() const
+{
+    return m_voiceoverDialogueSplitHasBeenSet;
 }
 
 

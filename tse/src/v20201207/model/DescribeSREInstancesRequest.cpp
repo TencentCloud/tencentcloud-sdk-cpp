@@ -25,7 +25,8 @@ using namespace std;
 DescribeSREInstancesRequest::DescribeSREInstancesRequest() :
     m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_queryTypeHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DescribeSREInstancesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_queryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queryType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DescribeSREInstancesRequest::SetOffset(const int64_t& _offset)
 bool DescribeSREInstancesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeSREInstancesRequest::GetQueryType() const
+{
+    return m_queryType;
+}
+
+void DescribeSREInstancesRequest::SetQueryType(const string& _queryType)
+{
+    m_queryType = _queryType;
+    m_queryTypeHasBeenSet = true;
+}
+
+bool DescribeSREInstancesRequest::QueryTypeHasBeenSet() const
+{
+    return m_queryTypeHasBeenSet;
 }
 
 

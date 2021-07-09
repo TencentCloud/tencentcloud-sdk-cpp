@@ -37,7 +37,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskListResponse.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceRequest.h
-  include/tencentcloud/redis/v20180412/model/TendisNodes.h
+  include/tencentcloud/redis/v20180412/model/KillMasterGroupResponse.h
   include/tencentcloud/redis/v20180412/model/RenewInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeSlowLogResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesRequest.h
@@ -80,6 +80,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeTendisSlowLogResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeProductInfoResponse.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceAccountRequest.h
+  include/tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeBackupUrlResponse.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceRenewInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsRequest.h
@@ -94,7 +95,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/InstanceIntegerParam.h
   include/tencentcloud/redis/v20180412/model/UpgradeVersionToMultiAvailabilityZonesRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTookDistRequest.h
-  include/tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowRequest.h
+  include/tencentcloud/redis/v20180412/model/KillMasterGroupRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceTextParam.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdTookResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeySizeDistRequest.h
@@ -126,6 +127,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ProductConf.h
   include/tencentcloud/redis/v20180412/model/ModifyConnectionConfigRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceNode.h
+  include/tencentcloud/redis/v20180412/model/TendisNodes.h
   include/tencentcloud/redis/v20180412/model/StartupInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceDTSInstanceInfo.h
   include/tencentcloud/redis/v20180412/model/TradeDealDetail.h
@@ -214,7 +216,7 @@ set(redis_src
   src/v20180412/model/AssociateSecurityGroupsRequest.cpp
   src/v20180412/model/DescribeTaskListResponse.cpp
   src/v20180412/model/ModifyInstanceRequest.cpp
-  src/v20180412/model/TendisNodes.cpp
+  src/v20180412/model/KillMasterGroupResponse.cpp
   src/v20180412/model/RenewInstanceResponse.cpp
   src/v20180412/model/DescribeSlowLogResponse.cpp
   src/v20180412/model/DescribeCommonDBInstancesRequest.cpp
@@ -257,6 +259,7 @@ set(redis_src
   src/v20180412/model/DescribeTendisSlowLogResponse.cpp
   src/v20180412/model/DescribeProductInfoResponse.cpp
   src/v20180412/model/ModifyInstanceAccountRequest.cpp
+  src/v20180412/model/ModifyMaintenanceWindowRequest.cpp
   src/v20180412/model/DescribeBackupUrlResponse.cpp
   src/v20180412/model/InquiryPriceRenewInstanceResponse.cpp
   src/v20180412/model/DescribeDBSecurityGroupsRequest.cpp
@@ -271,7 +274,7 @@ set(redis_src
   src/v20180412/model/InstanceIntegerParam.cpp
   src/v20180412/model/UpgradeVersionToMultiAvailabilityZonesRequest.cpp
   src/v20180412/model/DescribeInstanceMonitorTookDistRequest.cpp
-  src/v20180412/model/ModifyMaintenanceWindowRequest.cpp
+  src/v20180412/model/KillMasterGroupRequest.cpp
   src/v20180412/model/InstanceTextParam.cpp
   src/v20180412/model/DescribeInstanceMonitorTopNCmdTookResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorBigKeySizeDistRequest.cpp
@@ -303,6 +306,7 @@ set(redis_src
   src/v20180412/model/ProductConf.cpp
   src/v20180412/model/ModifyConnectionConfigRequest.cpp
   src/v20180412/model/InstanceNode.cpp
+  src/v20180412/model/TendisNodes.cpp
   src/v20180412/model/StartupInstanceResponse.cpp
   src/v20180412/model/DescribeInstanceDTSInstanceInfo.cpp
   src/v20180412/model/TradeDealDetail.cpp

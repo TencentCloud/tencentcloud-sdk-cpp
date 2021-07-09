@@ -97,6 +97,24 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取查询类型
+                     * @return QueryType 查询类型
+                     */
+                    std::string GetQueryType() const;
+
+                    /**
+                     * 设置查询类型
+                     * @param QueryType 查询类型
+                     */
+                    void SetQueryType(const std::string& _queryType);
+
+                    /**
+                     * 判断参数 QueryType 是否已赋值
+                     * @return QueryType 是否已赋值
+                     */
+                    bool QueryTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +134,12 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 查询类型
+                     */
+                    std::string m_queryType;
+                    bool m_queryTypeHasBeenSet;
 
                 };
             }

@@ -31,8 +31,6 @@
 #include <tencentcloud/eiam/v20210420/model/CreateUserResponse.h>
 #include <tencentcloud/eiam/v20210420/model/CreateUserGroupRequest.h>
 #include <tencentcloud/eiam/v20210420/model/CreateUserGroupResponse.h>
-#include <tencentcloud/eiam/v20210420/model/DecribePublicKeyRequest.h>
-#include <tencentcloud/eiam/v20210420/model/DecribePublicKeyResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DeleteOrgNodeRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DeleteOrgNodeResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DeleteUserRequest.h>
@@ -91,9 +89,6 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateUserGroupResponse> CreateUserGroupOutcome;
                 typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::CreateUserGroupRequest&, CreateUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
-                typedef Outcome<Error, Model::DecribePublicKeyResponse> DecribePublicKeyOutcome;
-                typedef std::future<DecribePublicKeyOutcome> DecribePublicKeyOutcomeCallable;
-                typedef std::function<void(const EiamClient*, const Model::DecribePublicKeyRequest&, DecribePublicKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DecribePublicKeyAsyncHandler;
                 typedef Outcome<Error, Model::DeleteOrgNodeResponse> DeleteOrgNodeOutcome;
                 typedef std::future<DeleteOrgNodeOutcome> DeleteOrgNodeOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::DeleteOrgNodeRequest&, DeleteOrgNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOrgNodeAsyncHandler;
@@ -180,15 +175,6 @@ namespace TencentCloud
                 CreateUserGroupOutcome CreateUserGroup(const Model::CreateUserGroupRequest &request);
                 void CreateUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUserGroupOutcomeCallable CreateUserGroupCallable(const Model::CreateUserGroupRequest& request);
-
-                /**
-                 *获取JWT公钥信息
-                 * @param req DecribePublicKeyRequest
-                 * @return DecribePublicKeyOutcome
-                 */
-                DecribePublicKeyOutcome DecribePublicKey(const Model::DecribePublicKeyRequest &request);
-                void DecribePublicKeyAsync(const Model::DecribePublicKeyRequest& request, const DecribePublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DecribePublicKeyOutcomeCallable DecribePublicKeyCallable(const Model::DecribePublicKeyRequest& request);
 
                 /**
                  *删除一个机构节点

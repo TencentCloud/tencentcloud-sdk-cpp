@@ -141,14 +141,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户类型(1:主账号;2:子用户;3:企业微信子用户;4:协作者;5:消息接收人)
-                     * @return UserType 用户类型(1:主账号;2:子用户;3:企业微信子用户;4:协作者;5:消息接收人)
+                     * 获取用户类型(2:子用户;3:企业微信子用户;4:协作者;5:消息接收人)
+                     * @return UserType 用户类型(2:子用户;3:企业微信子用户;4:协作者;5:消息接收人)
                      */
                     uint64_t GetUserType() const;
 
                     /**
-                     * 设置用户类型(1:主账号;2:子用户;3:企业微信子用户;4:协作者;5:消息接收人)
-                     * @param UserType 用户类型(1:主账号;2:子用户;3:企业微信子用户;4:协作者;5:消息接收人)
+                     * 设置用户类型(2:子用户;3:企业微信子用户;4:协作者;5:消息接收人)
+                     * @param UserType 用户类型(2:子用户;3:企业微信子用户;4:协作者;5:消息接收人)
                      */
                     void SetUserType(const uint64_t& _userType);
 
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 用户类型(1:主账号;2:子用户;3:企业微信子用户;4:协作者;5:消息接收人)
+                     * 用户类型(2:子用户;3:企业微信子用户;4:协作者;5:消息接收人)
                      */
                     uint64_t m_userType;
                     bool m_userTypeHasBeenSet;

@@ -36,7 +36,9 @@ ModifyLaunchConfigurationAttributesRequest::ModifyLaunchConfigurationAttributesR
     m_instanceMarketOptionsHasBeenSet(false),
     m_diskTypePolicyHasBeenSet(false),
     m_systemDiskHasBeenSet(false),
-    m_dataDisksHasBeenSet(false)
+    m_dataDisksHasBeenSet(false),
+    m_hostNameSettingsHasBeenSet(false),
+    m_instanceNameSettingsHasBeenSet(false)
 {
 }
 
@@ -178,6 +180,24 @@ string ModifyLaunchConfigurationAttributesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_hostNameSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostNameSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hostNameSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_instanceNameSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceNameSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceNameSettings.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -410,6 +430,38 @@ void ModifyLaunchConfigurationAttributesRequest::SetDataDisks(const vector<DataD
 bool ModifyLaunchConfigurationAttributesRequest::DataDisksHasBeenSet() const
 {
     return m_dataDisksHasBeenSet;
+}
+
+HostNameSettings ModifyLaunchConfigurationAttributesRequest::GetHostNameSettings() const
+{
+    return m_hostNameSettings;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetHostNameSettings(const HostNameSettings& _hostNameSettings)
+{
+    m_hostNameSettings = _hostNameSettings;
+    m_hostNameSettingsHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::HostNameSettingsHasBeenSet() const
+{
+    return m_hostNameSettingsHasBeenSet;
+}
+
+InstanceNameSettings ModifyLaunchConfigurationAttributesRequest::GetInstanceNameSettings() const
+{
+    return m_instanceNameSettings;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetInstanceNameSettings(const InstanceNameSettings& _instanceNameSettings)
+{
+    m_instanceNameSettings = _instanceNameSettings;
+    m_instanceNameSettingsHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::InstanceNameSettingsHasBeenSet() const
+{
+    return m_instanceNameSettingsHasBeenSet;
 }
 
 

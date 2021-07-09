@@ -986,6 +986,49 @@ ScfClient::InvokeOutcomeCallable ScfClient::InvokeCallable(const InvokeRequest &
     return task->get_future();
 }
 
+ScfClient::InvokeFunctionOutcome ScfClient::InvokeFunction(const InvokeFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "InvokeFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InvokeFunctionResponse rsp = InvokeFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InvokeFunctionOutcome(rsp);
+        else
+            return InvokeFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return InvokeFunctionOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::InvokeFunctionAsync(const InvokeFunctionRequest& request, const InvokeFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InvokeFunction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::InvokeFunctionOutcomeCallable ScfClient::InvokeFunctionCallable(const InvokeFunctionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InvokeFunctionOutcome()>>(
+        [this, request]()
+        {
+            return this->InvokeFunction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::ListAliasesOutcome ScfClient::ListAliases(const ListAliasesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListAliases");

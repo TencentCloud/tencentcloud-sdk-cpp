@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tse/v20201207/model/EnvInfo.h>
 
 
 namespace TencentCloud
@@ -344,6 +345,28 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取环境配置信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnvInfos 环境配置信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EnvInfo> GetEnvInfos() const;
+
+                    /**
+                     * 设置环境配置信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnvInfos 环境配置信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnvInfos(const std::vector<EnvInfo>& _envInfos);
+
+                    /**
+                     * 判断参数 EnvInfos 是否已赋值
+                     * @return EnvInfos 是否已赋值
+                     */
+                    bool EnvInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -442,6 +465,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 环境配置信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EnvInfo> m_envInfos;
+                    bool m_envInfosHasBeenSet;
 
                 };
             }

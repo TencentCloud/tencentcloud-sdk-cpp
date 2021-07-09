@@ -21,7 +21,6 @@ set(eiam_public_header
 set(eiam_public_header_model
   include/tencentcloud/eiam/v20210420/model/DescribeUserGroupRequest.h
   include/tencentcloud/eiam/v20210420/model/RemoveUserFromUserGroupResponse.h
-  include/tencentcloud/eiam/v20210420/model/DecribePublicKeyRequest.h
   include/tencentcloud/eiam/v20210420/model/DescribeOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/CreateOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/ListUsersInOrgNodeResponse.h
@@ -33,7 +32,6 @@ set(eiam_public_header_model
   include/tencentcloud/eiam/v20210420/model/DeleteOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/AddUserToUserGroupResponse.h
   include/tencentcloud/eiam/v20210420/model/CreateUserResponse.h
-  include/tencentcloud/eiam/v20210420/model/OrgNodeChildUserInfo.h
   include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserGroupRequest.h
   include/tencentcloud/eiam/v20210420/model/ListUsersInOrgNodeRequest.h
   include/tencentcloud/eiam/v20210420/model/InheritedForm.h
@@ -41,14 +39,14 @@ set(eiam_public_header_model
   include/tencentcloud/eiam/v20210420/model/DeleteUserResponse.h
   include/tencentcloud/eiam/v20210420/model/ListUsersInUserGroupResponse.h
   include/tencentcloud/eiam/v20210420/model/AddUserToUserGroupRequest.h
-  include/tencentcloud/eiam/v20210420/model/DescribeApplicationResponse.h
-  include/tencentcloud/eiam/v20210420/model/UpdateOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/ApplicationAuthorizationInfo.h
+  include/tencentcloud/eiam/v20210420/model/UpdateOrgNodeResponse.h
+  include/tencentcloud/eiam/v20210420/model/DescribeApplicationResponse.h
   include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserResponse.h
   include/tencentcloud/eiam/v20210420/model/DeleteUserGroupResponse.h
   include/tencentcloud/eiam/v20210420/model/DescribeApplicationRequest.h
   include/tencentcloud/eiam/v20210420/model/UpdateOrgNodeRequest.h
-  include/tencentcloud/eiam/v20210420/model/DecribePublicKeyResponse.h
+  include/tencentcloud/eiam/v20210420/model/OrgNodeChildUserInfo.h
   include/tencentcloud/eiam/v20210420/model/CreateUserRequest.h
   include/tencentcloud/eiam/v20210420/model/ListUserGroupsOfUserResponse.h
   include/tencentcloud/eiam/v20210420/model/DescribeUserInfoResponse.h
@@ -72,7 +70,6 @@ set(eiam_src
   src/v20210420/EiamClient.cpp
   src/v20210420/model/DescribeUserGroupRequest.cpp
   src/v20210420/model/RemoveUserFromUserGroupResponse.cpp
-  src/v20210420/model/DecribePublicKeyRequest.cpp
   src/v20210420/model/DescribeOrgNodeResponse.cpp
   src/v20210420/model/CreateOrgNodeResponse.cpp
   src/v20210420/model/ListUsersInOrgNodeResponse.cpp
@@ -84,7 +81,6 @@ set(eiam_src
   src/v20210420/model/DeleteOrgNodeResponse.cpp
   src/v20210420/model/AddUserToUserGroupResponse.cpp
   src/v20210420/model/CreateUserResponse.cpp
-  src/v20210420/model/OrgNodeChildUserInfo.cpp
   src/v20210420/model/ListAuthorizedApplicationsToUserGroupRequest.cpp
   src/v20210420/model/ListUsersInOrgNodeRequest.cpp
   src/v20210420/model/InheritedForm.cpp
@@ -92,14 +88,14 @@ set(eiam_src
   src/v20210420/model/DeleteUserResponse.cpp
   src/v20210420/model/ListUsersInUserGroupResponse.cpp
   src/v20210420/model/AddUserToUserGroupRequest.cpp
-  src/v20210420/model/DescribeApplicationResponse.cpp
-  src/v20210420/model/UpdateOrgNodeResponse.cpp
   src/v20210420/model/ApplicationAuthorizationInfo.cpp
+  src/v20210420/model/UpdateOrgNodeResponse.cpp
+  src/v20210420/model/DescribeApplicationResponse.cpp
   src/v20210420/model/ListAuthorizedApplicationsToUserResponse.cpp
   src/v20210420/model/DeleteUserGroupResponse.cpp
   src/v20210420/model/DescribeApplicationRequest.cpp
   src/v20210420/model/UpdateOrgNodeRequest.cpp
-  src/v20210420/model/DecribePublicKeyResponse.cpp
+  src/v20210420/model/OrgNodeChildUserInfo.cpp
   src/v20210420/model/CreateUserRequest.cpp
   src/v20210420/model/ListUserGroupsOfUserResponse.cpp
   src/v20210420/model/DescribeUserInfoResponse.cpp

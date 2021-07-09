@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/eiam/v20210420/model/DecribePublicKeyResponse.h>
+#include <tencentcloud/redis/v20180412/model/KillMasterGroupResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Eiam::V20210420::Model;
+using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
-DecribePublicKeyResponse::DecribePublicKeyResponse() :
-    m_publicKeyHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_applicationIdHasBeenSet(false)
+KillMasterGroupResponse::KillMasterGroupResponse() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DecribePublicKeyResponse::Deserialize(const string &payload)
+CoreInternalOutcome KillMasterGroupResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,34 +62,14 @@ CoreInternalOutcome DecribePublicKeyResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("PublicKey") && !rsp["PublicKey"].IsNull())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["PublicKey"].IsString())
+        if (!rsp["TaskId"].IsInt64())
         {
-            return CoreInternalOutcome(Error("response `PublicKey` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_publicKey = string(rsp["PublicKey"].GetString());
-        m_publicKeyHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("KeyId") && !rsp["KeyId"].IsNull())
-    {
-        if (!rsp["KeyId"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `KeyId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_keyId = string(rsp["KeyId"].GetString());
-        m_keyIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ApplicationId") && !rsp["ApplicationId"].IsNull())
-    {
-        if (!rsp["ApplicationId"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_applicationId = string(rsp["ApplicationId"].GetString());
-        m_applicationIdHasBeenSet = true;
+        m_taskId = rsp["TaskId"].GetInt64();
+        m_taskIdHasBeenSet = true;
     }
 
 
@@ -99,34 +77,14 @@ CoreInternalOutcome DecribePublicKeyResponse::Deserialize(const string &payload)
 }
 
 
-string DecribePublicKeyResponse::GetPublicKey() const
+int64_t KillMasterGroupResponse::GetTaskId() const
 {
-    return m_publicKey;
+    return m_taskId;
 }
 
-bool DecribePublicKeyResponse::PublicKeyHasBeenSet() const
+bool KillMasterGroupResponse::TaskIdHasBeenSet() const
 {
-    return m_publicKeyHasBeenSet;
-}
-
-string DecribePublicKeyResponse::GetKeyId() const
-{
-    return m_keyId;
-}
-
-bool DecribePublicKeyResponse::KeyIdHasBeenSet() const
-{
-    return m_keyIdHasBeenSet;
-}
-
-string DecribePublicKeyResponse::GetApplicationId() const
-{
-    return m_applicationId;
-}
-
-bool DecribePublicKeyResponse::ApplicationIdHasBeenSet() const
-{
-    return m_applicationIdHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

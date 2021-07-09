@@ -35,7 +35,8 @@ SREInstance::SREInstance() :
     m_storageCapacityHasBeenSet(false),
     m_paymodeHasBeenSet(false),
     m_eKSClusterIDHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_envInfosHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,26 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("EnvInfos") && !value["EnvInfos"].IsNull())
+    {
+        if (!value["EnvInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `SREInstance.EnvInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EnvInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EnvInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_envInfos.push_back(item);
+        }
+        m_envInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +348,21 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_envInfos.begin(); itr != m_envInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -570,5 +606,21 @@ void SREInstance::SetCreateTime(const string& _createTime)
 bool SREInstance::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+vector<EnvInfo> SREInstance::GetEnvInfos() const
+{
+    return m_envInfos;
+}
+
+void SREInstance::SetEnvInfos(const vector<EnvInfo>& _envInfos)
+{
+    m_envInfos = _envInfos;
+    m_envInfosHasBeenSet = true;
+}
+
+bool SREInstance::EnvInfosHasBeenSet() const
+{
+    return m_envInfosHasBeenSet;
 }
 

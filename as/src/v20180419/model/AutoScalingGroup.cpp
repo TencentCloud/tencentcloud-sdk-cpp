@@ -46,7 +46,9 @@ AutoScalingGroup::AutoScalingGroup() :
     m_tagsHasBeenSet(false),
     m_serviceSettingsHasBeenSet(false),
     m_ipv6AddressCountHasBeenSet(false),
-    m_multiZoneSubnetPolicyHasBeenSet(false)
+    m_multiZoneSubnetPolicyHasBeenSet(false),
+    m_healthCheckTypeHasBeenSet(false),
+    m_loadBalancerHealthCheckGracePeriodHasBeenSet(false)
 {
 }
 
@@ -354,6 +356,26 @@ CoreInternalOutcome AutoScalingGroup::Deserialize(const rapidjson::Value &value)
         m_multiZoneSubnetPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthCheckType") && !value["HealthCheckType"].IsNull())
+    {
+        if (!value["HealthCheckType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AutoScalingGroup.HealthCheckType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthCheckType = string(value["HealthCheckType"].GetString());
+        m_healthCheckTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoadBalancerHealthCheckGracePeriod") && !value["LoadBalancerHealthCheckGracePeriod"].IsNull())
+    {
+        if (!value["LoadBalancerHealthCheckGracePeriod"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `AutoScalingGroup.LoadBalancerHealthCheckGracePeriod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancerHealthCheckGracePeriod = value["LoadBalancerHealthCheckGracePeriod"].GetUint64();
+        m_loadBalancerHealthCheckGracePeriodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -602,6 +624,22 @@ void AutoScalingGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "MultiZoneSubnetPolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_multiZoneSubnetPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthCheckType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalancerHealthCheckGracePeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancerHealthCheckGracePeriod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_loadBalancerHealthCheckGracePeriod, allocator);
     }
 
 }
@@ -1021,5 +1059,37 @@ void AutoScalingGroup::SetMultiZoneSubnetPolicy(const string& _multiZoneSubnetPo
 bool AutoScalingGroup::MultiZoneSubnetPolicyHasBeenSet() const
 {
     return m_multiZoneSubnetPolicyHasBeenSet;
+}
+
+string AutoScalingGroup::GetHealthCheckType() const
+{
+    return m_healthCheckType;
+}
+
+void AutoScalingGroup::SetHealthCheckType(const string& _healthCheckType)
+{
+    m_healthCheckType = _healthCheckType;
+    m_healthCheckTypeHasBeenSet = true;
+}
+
+bool AutoScalingGroup::HealthCheckTypeHasBeenSet() const
+{
+    return m_healthCheckTypeHasBeenSet;
+}
+
+uint64_t AutoScalingGroup::GetLoadBalancerHealthCheckGracePeriod() const
+{
+    return m_loadBalancerHealthCheckGracePeriod;
+}
+
+void AutoScalingGroup::SetLoadBalancerHealthCheckGracePeriod(const uint64_t& _loadBalancerHealthCheckGracePeriod)
+{
+    m_loadBalancerHealthCheckGracePeriod = _loadBalancerHealthCheckGracePeriod;
+    m_loadBalancerHealthCheckGracePeriodHasBeenSet = true;
+}
+
+bool AutoScalingGroup::LoadBalancerHealthCheckGracePeriodHasBeenSet() const
+{
+    return m_loadBalancerHealthCheckGracePeriodHasBeenSet;
 }
 
