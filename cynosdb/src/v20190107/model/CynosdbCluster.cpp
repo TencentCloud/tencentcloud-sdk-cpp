@@ -48,7 +48,12 @@ CynosdbCluster::CynosdbCluster() :
     m_tasksHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_dbModeHasBeenSet(false),
-    m_serverlessStatusHasBeenSet(false)
+    m_serverlessStatusHasBeenSet(false),
+    m_storageHasBeenSet(false),
+    m_storageIdHasBeenSet(false),
+    m_storagePayModeHasBeenSet(false),
+    m_minStorageSizeHasBeenSet(false),
+    m_maxStorageSizeHasBeenSet(false)
 {
 }
 
@@ -357,6 +362,56 @@ CoreInternalOutcome CynosdbCluster::Deserialize(const rapidjson::Value &value)
         m_serverlessStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Storage") && !value["Storage"].IsNull())
+    {
+        if (!value["Storage"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `CynosdbCluster.Storage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storage = value["Storage"].GetInt64();
+        m_storageHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageId") && !value["StorageId"].IsNull())
+    {
+        if (!value["StorageId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CynosdbCluster.StorageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageId = string(value["StorageId"].GetString());
+        m_storageIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("StoragePayMode") && !value["StoragePayMode"].IsNull())
+    {
+        if (!value["StoragePayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `CynosdbCluster.StoragePayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storagePayMode = value["StoragePayMode"].GetInt64();
+        m_storagePayModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinStorageSize") && !value["MinStorageSize"].IsNull())
+    {
+        if (!value["MinStorageSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `CynosdbCluster.MinStorageSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minStorageSize = value["MinStorageSize"].GetInt64();
+        m_minStorageSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxStorageSize") && !value["MaxStorageSize"].IsNull())
+    {
+        if (!value["MaxStorageSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `CynosdbCluster.MaxStorageSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxStorageSize = value["MaxStorageSize"].GetInt64();
+        m_maxStorageSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -600,6 +655,46 @@ void CynosdbCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ServerlessStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serverlessStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Storage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storage, allocator);
+    }
+
+    if (m_storageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storagePayModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoragePayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storagePayMode, allocator);
+    }
+
+    if (m_minStorageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinStorageSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minStorageSize, allocator);
+    }
+
+    if (m_maxStorageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxStorageSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxStorageSize, allocator);
     }
 
 }
@@ -1051,5 +1146,85 @@ void CynosdbCluster::SetServerlessStatus(const string& _serverlessStatus)
 bool CynosdbCluster::ServerlessStatusHasBeenSet() const
 {
     return m_serverlessStatusHasBeenSet;
+}
+
+int64_t CynosdbCluster::GetStorage() const
+{
+    return m_storage;
+}
+
+void CynosdbCluster::SetStorage(const int64_t& _storage)
+{
+    m_storage = _storage;
+    m_storageHasBeenSet = true;
+}
+
+bool CynosdbCluster::StorageHasBeenSet() const
+{
+    return m_storageHasBeenSet;
+}
+
+string CynosdbCluster::GetStorageId() const
+{
+    return m_storageId;
+}
+
+void CynosdbCluster::SetStorageId(const string& _storageId)
+{
+    m_storageId = _storageId;
+    m_storageIdHasBeenSet = true;
+}
+
+bool CynosdbCluster::StorageIdHasBeenSet() const
+{
+    return m_storageIdHasBeenSet;
+}
+
+int64_t CynosdbCluster::GetStoragePayMode() const
+{
+    return m_storagePayMode;
+}
+
+void CynosdbCluster::SetStoragePayMode(const int64_t& _storagePayMode)
+{
+    m_storagePayMode = _storagePayMode;
+    m_storagePayModeHasBeenSet = true;
+}
+
+bool CynosdbCluster::StoragePayModeHasBeenSet() const
+{
+    return m_storagePayModeHasBeenSet;
+}
+
+int64_t CynosdbCluster::GetMinStorageSize() const
+{
+    return m_minStorageSize;
+}
+
+void CynosdbCluster::SetMinStorageSize(const int64_t& _minStorageSize)
+{
+    m_minStorageSize = _minStorageSize;
+    m_minStorageSizeHasBeenSet = true;
+}
+
+bool CynosdbCluster::MinStorageSizeHasBeenSet() const
+{
+    return m_minStorageSizeHasBeenSet;
+}
+
+int64_t CynosdbCluster::GetMaxStorageSize() const
+{
+    return m_maxStorageSize;
+}
+
+void CynosdbCluster::SetMaxStorageSize(const int64_t& _maxStorageSize)
+{
+    m_maxStorageSize = _maxStorageSize;
+    m_maxStorageSizeHasBeenSet = true;
+}
+
+bool CynosdbCluster::MaxStorageSizeHasBeenSet() const
+{
+    return m_maxStorageSizeHasBeenSet;
 }
 

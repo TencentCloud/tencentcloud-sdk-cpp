@@ -41,18 +41,28 @@
 #include <tencentcloud/eiam/v20210420/model/DescribeApplicationResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeOrgNodeRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeOrgNodeResponse.h>
+#include <tencentcloud/eiam/v20210420/model/DescribePublicKeyRequest.h>
+#include <tencentcloud/eiam/v20210420/model/DescribePublicKeyResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeUserGroupRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeUserGroupResponse.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeUserInfoRequest.h>
 #include <tencentcloud/eiam/v20210420/model/DescribeUserInfoResponse.h>
+#include <tencentcloud/eiam/v20210420/model/ListApplicationAuthorizationsRequest.h>
+#include <tencentcloud/eiam/v20210420/model/ListApplicationAuthorizationsResponse.h>
+#include <tencentcloud/eiam/v20210420/model/ListApplicationsRequest.h>
+#include <tencentcloud/eiam/v20210420/model/ListApplicationsResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToOrgNodeRequest.h>
 #include <tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToOrgNodeResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserRequest.h>
 #include <tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserGroupRequest.h>
 #include <tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserGroupResponse.h>
+#include <tencentcloud/eiam/v20210420/model/ListUserGroupsRequest.h>
+#include <tencentcloud/eiam/v20210420/model/ListUserGroupsResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ListUserGroupsOfUserRequest.h>
 #include <tencentcloud/eiam/v20210420/model/ListUserGroupsOfUserResponse.h>
+#include <tencentcloud/eiam/v20210420/model/ListUsersRequest.h>
+#include <tencentcloud/eiam/v20210420/model/ListUsersResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ListUsersInOrgNodeRequest.h>
 #include <tencentcloud/eiam/v20210420/model/ListUsersInOrgNodeResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ListUsersInUserGroupRequest.h>
@@ -104,12 +114,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeOrgNodeResponse> DescribeOrgNodeOutcome;
                 typedef std::future<DescribeOrgNodeOutcome> DescribeOrgNodeOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::DescribeOrgNodeRequest&, DescribeOrgNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrgNodeAsyncHandler;
+                typedef Outcome<Error, Model::DescribePublicKeyResponse> DescribePublicKeyOutcome;
+                typedef std::future<DescribePublicKeyOutcome> DescribePublicKeyOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::DescribePublicKeyRequest&, DescribePublicKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicKeyAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUserGroupResponse> DescribeUserGroupOutcome;
                 typedef std::future<DescribeUserGroupOutcome> DescribeUserGroupOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::DescribeUserGroupRequest&, DescribeUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserGroupAsyncHandler;
                 typedef Outcome<Error, Model::DescribeUserInfoResponse> DescribeUserInfoOutcome;
                 typedef std::future<DescribeUserInfoOutcome> DescribeUserInfoOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::DescribeUserInfoRequest&, DescribeUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInfoAsyncHandler;
+                typedef Outcome<Error, Model::ListApplicationAuthorizationsResponse> ListApplicationAuthorizationsOutcome;
+                typedef std::future<ListApplicationAuthorizationsOutcome> ListApplicationAuthorizationsOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::ListApplicationAuthorizationsRequest&, ListApplicationAuthorizationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationAuthorizationsAsyncHandler;
+                typedef Outcome<Error, Model::ListApplicationsResponse> ListApplicationsOutcome;
+                typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::ListApplicationsRequest&, ListApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationsAsyncHandler;
                 typedef Outcome<Error, Model::ListAuthorizedApplicationsToOrgNodeResponse> ListAuthorizedApplicationsToOrgNodeOutcome;
                 typedef std::future<ListAuthorizedApplicationsToOrgNodeOutcome> ListAuthorizedApplicationsToOrgNodeOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::ListAuthorizedApplicationsToOrgNodeRequest&, ListAuthorizedApplicationsToOrgNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAuthorizedApplicationsToOrgNodeAsyncHandler;
@@ -119,9 +138,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListAuthorizedApplicationsToUserGroupResponse> ListAuthorizedApplicationsToUserGroupOutcome;
                 typedef std::future<ListAuthorizedApplicationsToUserGroupOutcome> ListAuthorizedApplicationsToUserGroupOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::ListAuthorizedApplicationsToUserGroupRequest&, ListAuthorizedApplicationsToUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAuthorizedApplicationsToUserGroupAsyncHandler;
+                typedef Outcome<Error, Model::ListUserGroupsResponse> ListUserGroupsOutcome;
+                typedef std::future<ListUserGroupsOutcome> ListUserGroupsOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::ListUserGroupsRequest&, ListUserGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUserGroupsAsyncHandler;
                 typedef Outcome<Error, Model::ListUserGroupsOfUserResponse> ListUserGroupsOfUserOutcome;
                 typedef std::future<ListUserGroupsOfUserOutcome> ListUserGroupsOfUserOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::ListUserGroupsOfUserRequest&, ListUserGroupsOfUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUserGroupsOfUserAsyncHandler;
+                typedef Outcome<Error, Model::ListUsersResponse> ListUsersOutcome;
+                typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::ListUsersRequest&, ListUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
                 typedef Outcome<Error, Model::ListUsersInOrgNodeResponse> ListUsersInOrgNodeOutcome;
                 typedef std::future<ListUsersInOrgNodeOutcome> ListUsersInOrgNodeOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::ListUsersInOrgNodeRequest&, ListUsersInOrgNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersInOrgNodeAsyncHandler;
@@ -222,6 +247,15 @@ namespace TencentCloud
                 DescribeOrgNodeOutcomeCallable DescribeOrgNodeCallable(const Model::DescribeOrgNodeRequest& request);
 
                 /**
+                 *获取JWT公钥信息。
+                 * @param req DescribePublicKeyRequest
+                 * @return DescribePublicKeyOutcome
+                 */
+                DescribePublicKeyOutcome DescribePublicKey(const Model::DescribePublicKeyRequest &request);
+                void DescribePublicKeyAsync(const Model::DescribePublicKeyRequest& request, const DescribePublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePublicKeyOutcomeCallable DescribePublicKeyCallable(const Model::DescribePublicKeyRequest& request);
+
+                /**
                  *获取用户组信息
                  * @param req DescribeUserGroupRequest
                  * @return DescribeUserGroupOutcome
@@ -238,6 +272,24 @@ namespace TencentCloud
                 DescribeUserInfoOutcome DescribeUserInfo(const Model::DescribeUserInfoRequest &request);
                 void DescribeUserInfoAsync(const Model::DescribeUserInfoRequest& request, const DescribeUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserInfoOutcomeCallable DescribeUserInfoCallable(const Model::DescribeUserInfoRequest& request);
+
+                /**
+                 *应用授权关系列表（含搜索条件匹配）。
+                 * @param req ListApplicationAuthorizationsRequest
+                 * @return ListApplicationAuthorizationsOutcome
+                 */
+                ListApplicationAuthorizationsOutcome ListApplicationAuthorizations(const Model::ListApplicationAuthorizationsRequest &request);
+                void ListApplicationAuthorizationsAsync(const Model::ListApplicationAuthorizationsRequest& request, const ListApplicationAuthorizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListApplicationAuthorizationsOutcomeCallable ListApplicationAuthorizationsCallable(const Model::ListApplicationAuthorizationsRequest& request);
+
+                /**
+                 *获取应用列表信息。
+                 * @param req ListApplicationsRequest
+                 * @return ListApplicationsOutcome
+                 */
+                ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest &request);
+                void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request);
 
                 /**
                  *通过机构节点ID获得被授权访问的应用列表。
@@ -267,6 +319,15 @@ namespace TencentCloud
                 ListAuthorizedApplicationsToUserGroupOutcomeCallable ListAuthorizedApplicationsToUserGroupCallable(const Model::ListAuthorizedApplicationsToUserGroupRequest& request);
 
                 /**
+                 *获取用户组列表信息（包含查询条件）。
+                 * @param req ListUserGroupsRequest
+                 * @return ListUserGroupsOutcome
+                 */
+                ListUserGroupsOutcome ListUserGroups(const Model::ListUserGroupsRequest &request);
+                void ListUserGroupsAsync(const Model::ListUserGroupsRequest& request, const ListUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListUserGroupsOutcomeCallable ListUserGroupsCallable(const Model::ListUserGroupsRequest& request);
+
+                /**
                  *获取用户所在的用户组列表
                  * @param req ListUserGroupsOfUserRequest
                  * @return ListUserGroupsOfUserOutcome
@@ -274,6 +335,15 @@ namespace TencentCloud
                 ListUserGroupsOfUserOutcome ListUserGroupsOfUser(const Model::ListUserGroupsOfUserRequest &request);
                 void ListUserGroupsOfUserAsync(const Model::ListUserGroupsOfUserRequest& request, const ListUserGroupsOfUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListUserGroupsOfUserOutcomeCallable ListUserGroupsOfUserCallable(const Model::ListUserGroupsOfUserRequest& request);
+
+                /**
+                 *获取用户列表信息。
+                 * @param req ListUsersRequest
+                 * @return ListUsersOutcome
+                 */
+                ListUsersOutcome ListUsers(const Model::ListUsersRequest &request);
+                void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request);
 
                 /**
                  *根据机构节点ID读取节点下用户

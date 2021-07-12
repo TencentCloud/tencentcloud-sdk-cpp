@@ -178,14 +178,14 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取普通实例内存
-                     * @return Memory 普通实例内存
+                     * 获取普通实例内存,单位G
+                     * @return Memory 普通实例内存,单位G
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置普通实例内存
-                     * @param Memory 普通实例内存
+                     * 设置普通实例内存,单位G
+                     * @param Memory 普通实例内存,单位G
                      */
                     void SetMemory(const int64_t& _memory);
 
@@ -196,14 +196,14 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取存储
-                     * @return Storage 存储
+                     * 获取存储大小，单位G
+                     * @return Storage 存储大小，单位G
                      */
                     int64_t GetStorage() const;
 
                     /**
-                     * 设置存储
-                     * @param Storage 存储
+                     * 设置存储大小，单位G
+                     * @param Storage 存储大小，单位G
                      */
                     void SetStorage(const int64_t& _storage);
 
@@ -232,14 +232,14 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取账号密码(8-64个字符，至少包含字母、数字、字符（支持的字符：_+-&=!@#$%^*()~）中的两种)
-                     * @return AdminPassword 账号密码(8-64个字符，至少包含字母、数字、字符（支持的字符：_+-&=!@#$%^*()~）中的两种)
+                     * 获取账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种)
+                     * @return AdminPassword 账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种)
                      */
                     std::string GetAdminPassword() const;
 
                     /**
-                     * 设置账号密码(8-64个字符，至少包含字母、数字、字符（支持的字符：_+-&=!@#$%^*()~）中的两种)
-                     * @param AdminPassword 账号密码(8-64个字符，至少包含字母、数字、字符（支持的字符：_+-&=!@#$%^*()~）中的两种)
+                     * 设置账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种)
+                     * @param AdminPassword 账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种)
                      */
                     void SetAdminPassword(const std::string& _adminPassword);
 
@@ -407,13 +407,17 @@ timeRollback，时间点回档
 
                     /**
                      * 获取普通实例存储上限，单位GB
+当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限
                      * @return StorageLimit 普通实例存储上限，单位GB
+当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限
                      */
                     int64_t GetStorageLimit() const;
 
                     /**
                      * 设置普通实例存储上限，单位GB
+当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限
                      * @param StorageLimit 普通实例存储上限，单位GB
+当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限
                      */
                     void SetStorageLimit(const int64_t& _storageLimit);
 
@@ -693,6 +697,32 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     bool AutoPauseDelayHasBeenSet() const;
 
+                    /**
+                     * 获取集群存储计费模式，按量计费：0，包年包月：1。默认按量计费
+当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费
+回档与克隆均不支持包年包月存储
+                     * @return StoragePayMode 集群存储计费模式，按量计费：0，包年包月：1。默认按量计费
+当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费
+回档与克隆均不支持包年包月存储
+                     */
+                    int64_t GetStoragePayMode() const;
+
+                    /**
+                     * 设置集群存储计费模式，按量计费：0，包年包月：1。默认按量计费
+当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费
+回档与克隆均不支持包年包月存储
+                     * @param StoragePayMode 集群存储计费模式，按量计费：0，包年包月：1。默认按量计费
+当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费
+回档与克隆均不支持包年包月存储
+                     */
+                    void SetStoragePayMode(const int64_t& _storagePayMode);
+
+                    /**
+                     * 判断参数 StoragePayMode 是否已赋值
+                     * @return StoragePayMode 是否已赋值
+                     */
+                    bool StoragePayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -740,13 +770,13 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 普通实例内存
+                     * 普通实例内存,单位G
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 存储
+                     * 存储大小，单位G
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
@@ -758,7 +788,7 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 账号密码(8-64个字符，至少包含字母、数字、字符（支持的字符：_+-&=!@#$%^*()~）中的两种)
+                     * 账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种)
                      */
                     std::string m_adminPassword;
                     bool m_adminPasswordHasBeenSet;
@@ -816,6 +846,7 @@ timeRollback，时间点回档
 
                     /**
                      * 普通实例存储上限，单位GB
+当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限
                      */
                     int64_t m_storageLimit;
                     bool m_storageLimitHasBeenSet;
@@ -906,6 +937,14 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     int64_t m_autoPauseDelay;
                     bool m_autoPauseDelayHasBeenSet;
+
+                    /**
+                     * 集群存储计费模式，按量计费：0，包年包月：1。默认按量计费
+当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费
+回档与克隆均不支持包年包月存储
+                     */
+                    int64_t m_storagePayMode;
+                    bool m_storagePayModeHasBeenSet;
 
                 };
             }

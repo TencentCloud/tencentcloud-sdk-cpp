@@ -560,6 +560,96 @@ pause
                      */
                     bool ServerlessStatusHasBeenSet() const;
 
+                    /**
+                     * 获取集群预付费存储值大小
+                     * @return Storage 集群预付费存储值大小
+                     */
+                    int64_t GetStorage() const;
+
+                    /**
+                     * 设置集群预付费存储值大小
+                     * @param Storage 集群预付费存储值大小
+                     */
+                    void SetStorage(const int64_t& _storage);
+
+                    /**
+                     * 判断参数 Storage 是否已赋值
+                     * @return Storage 是否已赋值
+                     */
+                    bool StorageHasBeenSet() const;
+
+                    /**
+                     * 获取集群存储为预付费时的存储ID，用于预付费存储变配
+                     * @return StorageId 集群存储为预付费时的存储ID，用于预付费存储变配
+                     */
+                    std::string GetStorageId() const;
+
+                    /**
+                     * 设置集群存储为预付费时的存储ID，用于预付费存储变配
+                     * @param StorageId 集群存储为预付费时的存储ID，用于预付费存储变配
+                     */
+                    void SetStorageId(const std::string& _storageId);
+
+                    /**
+                     * 判断参数 StorageId 是否已赋值
+                     * @return StorageId 是否已赋值
+                     */
+                    bool StorageIdHasBeenSet() const;
+
+                    /**
+                     * 获取集群存储付费模式。0-按量计费，1-包年包月
+                     * @return StoragePayMode 集群存储付费模式。0-按量计费，1-包年包月
+                     */
+                    int64_t GetStoragePayMode() const;
+
+                    /**
+                     * 设置集群存储付费模式。0-按量计费，1-包年包月
+                     * @param StoragePayMode 集群存储付费模式。0-按量计费，1-包年包月
+                     */
+                    void SetStoragePayMode(const int64_t& _storagePayMode);
+
+                    /**
+                     * 判断参数 StoragePayMode 是否已赋值
+                     * @return StoragePayMode 是否已赋值
+                     */
+                    bool StoragePayModeHasBeenSet() const;
+
+                    /**
+                     * 获取集群计算规格对应的最小存储值
+                     * @return MinStorageSize 集群计算规格对应的最小存储值
+                     */
+                    int64_t GetMinStorageSize() const;
+
+                    /**
+                     * 设置集群计算规格对应的最小存储值
+                     * @param MinStorageSize 集群计算规格对应的最小存储值
+                     */
+                    void SetMinStorageSize(const int64_t& _minStorageSize);
+
+                    /**
+                     * 判断参数 MinStorageSize 是否已赋值
+                     * @return MinStorageSize 是否已赋值
+                     */
+                    bool MinStorageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取集群计算规格对应的最大存储值
+                     * @return MaxStorageSize 集群计算规格对应的最大存储值
+                     */
+                    int64_t GetMaxStorageSize() const;
+
+                    /**
+                     * 设置集群计算规格对应的最大存储值
+                     * @param MaxStorageSize 集群计算规格对应的最大存储值
+                     */
+                    void SetMaxStorageSize(const int64_t& _maxStorageSize);
+
+                    /**
+                     * 判断参数 MaxStorageSize 是否已赋值
+                     * @return MaxStorageSize 是否已赋值
+                     */
+                    bool MaxStorageSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -731,6 +821,36 @@ pause
                      */
                     std::string m_serverlessStatus;
                     bool m_serverlessStatusHasBeenSet;
+
+                    /**
+                     * 集群预付费存储值大小
+                     */
+                    int64_t m_storage;
+                    bool m_storageHasBeenSet;
+
+                    /**
+                     * 集群存储为预付费时的存储ID，用于预付费存储变配
+                     */
+                    std::string m_storageId;
+                    bool m_storageIdHasBeenSet;
+
+                    /**
+                     * 集群存储付费模式。0-按量计费，1-包年包月
+                     */
+                    int64_t m_storagePayMode;
+                    bool m_storagePayModeHasBeenSet;
+
+                    /**
+                     * 集群计算规格对应的最小存储值
+                     */
+                    int64_t m_minStorageSize;
+                    bool m_minStorageSizeHasBeenSet;
+
+                    /**
+                     * 集群计算规格对应的最大存储值
+                     */
+                    int64_t m_maxStorageSize;
+                    bool m_maxStorageSizeHasBeenSet;
 
                 };
             }

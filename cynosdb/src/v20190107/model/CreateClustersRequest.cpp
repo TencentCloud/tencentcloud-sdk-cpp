@@ -55,7 +55,8 @@ CreateClustersRequest::CreateClustersRequest() :
     m_minCpuHasBeenSet(false),
     m_maxCpuHasBeenSet(false),
     m_autoPauseHasBeenSet(false),
-    m_autoPauseDelayHasBeenSet(false)
+    m_autoPauseDelayHasBeenSet(false),
+    m_storagePayModeHasBeenSet(false)
 {
 }
 
@@ -335,6 +336,14 @@ string CreateClustersRequest::ToJsonString() const
         string key = "AutoPauseDelay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoPauseDelay, allocator);
+    }
+
+    if (m_storagePayModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoragePayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_storagePayMode, allocator);
     }
 
 
@@ -871,6 +880,22 @@ void CreateClustersRequest::SetAutoPauseDelay(const int64_t& _autoPauseDelay)
 bool CreateClustersRequest::AutoPauseDelayHasBeenSet() const
 {
     return m_autoPauseDelayHasBeenSet;
+}
+
+int64_t CreateClustersRequest::GetStoragePayMode() const
+{
+    return m_storagePayMode;
+}
+
+void CreateClustersRequest::SetStoragePayMode(const int64_t& _storagePayMode)
+{
+    m_storagePayMode = _storagePayMode;
+    m_storagePayModeHasBeenSet = true;
+}
+
+bool CreateClustersRequest::StoragePayModeHasBeenSet() const
+{
+    return m_storagePayModeHasBeenSet;
 }
 
 

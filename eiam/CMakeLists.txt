@@ -20,32 +20,43 @@ set(eiam_public_header
 
 set(eiam_public_header_model
   include/tencentcloud/eiam/v20210420/model/DescribeUserGroupRequest.h
-  include/tencentcloud/eiam/v20210420/model/RemoveUserFromUserGroupResponse.h
+  include/tencentcloud/eiam/v20210420/model/ListApplicationAuthorizationsRequest.h
   include/tencentcloud/eiam/v20210420/model/DescribeOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/CreateOrgNodeResponse.h
+  include/tencentcloud/eiam/v20210420/model/ListApplicationsRequest.h
+  include/tencentcloud/eiam/v20210420/model/UserSearchCriteria.h
   include/tencentcloud/eiam/v20210420/model/ListUsersInOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/ModifyUserInfoResponse.h
   include/tencentcloud/eiam/v20210420/model/DeleteUserRequest.h
   include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/OrgNodeChildInfo.h
+  include/tencentcloud/eiam/v20210420/model/SortCondition.h
+  include/tencentcloud/eiam/v20210420/model/InheritedForm.h
   include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserRequest.h
   include/tencentcloud/eiam/v20210420/model/DeleteOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/AddUserToUserGroupResponse.h
   include/tencentcloud/eiam/v20210420/model/CreateUserResponse.h
+  include/tencentcloud/eiam/v20210420/model/ListUsersResponse.h
   include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserGroupRequest.h
-  include/tencentcloud/eiam/v20210420/model/ListUsersInOrgNodeRequest.h
-  include/tencentcloud/eiam/v20210420/model/InheritedForm.h
+  include/tencentcloud/eiam/v20210420/model/ListUserGroupsResponse.h
+  include/tencentcloud/eiam/v20210420/model/DescribePublicKeyRequest.h
+  include/tencentcloud/eiam/v20210420/model/AuthorizationInfo.h
   include/tencentcloud/eiam/v20210420/model/CreateUserGroupResponse.h
   include/tencentcloud/eiam/v20210420/model/DeleteUserResponse.h
   include/tencentcloud/eiam/v20210420/model/ListUsersInUserGroupResponse.h
+  include/tencentcloud/eiam/v20210420/model/ListUserGroupsRequest.h
   include/tencentcloud/eiam/v20210420/model/AddUserToUserGroupRequest.h
   include/tencentcloud/eiam/v20210420/model/ApplicationAuthorizationInfo.h
-  include/tencentcloud/eiam/v20210420/model/UpdateOrgNodeResponse.h
+  include/tencentcloud/eiam/v20210420/model/ApplicationInformation.h
+  include/tencentcloud/eiam/v20210420/model/ListApplicationAuthorizationsResponse.h
   include/tencentcloud/eiam/v20210420/model/DescribeApplicationResponse.h
+  include/tencentcloud/eiam/v20210420/model/UserGroupInformation.h
+  include/tencentcloud/eiam/v20210420/model/ApplicationInfoSearchCriteria.h
   include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserResponse.h
   include/tencentcloud/eiam/v20210420/model/DeleteUserGroupResponse.h
   include/tencentcloud/eiam/v20210420/model/DescribeApplicationRequest.h
   include/tencentcloud/eiam/v20210420/model/UpdateOrgNodeRequest.h
+  include/tencentcloud/eiam/v20210420/model/AuthorizationInfoSearchCriteria.h
   include/tencentcloud/eiam/v20210420/model/OrgNodeChildUserInfo.h
   include/tencentcloud/eiam/v20210420/model/CreateUserRequest.h
   include/tencentcloud/eiam/v20210420/model/ListUserGroupsOfUserResponse.h
@@ -53,48 +64,67 @@ set(eiam_public_header_model
   include/tencentcloud/eiam/v20210420/model/DeleteOrgNodeRequest.h
   include/tencentcloud/eiam/v20210420/model/CreateOrgNodeRequest.h
   include/tencentcloud/eiam/v20210420/model/RemoveUserFromUserGroupRequest.h
+  include/tencentcloud/eiam/v20210420/model/ListUsersInOrgNodeRequest.h
   include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserGroupResponse.h
+  include/tencentcloud/eiam/v20210420/model/ListUsersRequest.h
+  include/tencentcloud/eiam/v20210420/model/UpdateOrgNodeResponse.h
+  include/tencentcloud/eiam/v20210420/model/DescribePublicKeyResponse.h
   include/tencentcloud/eiam/v20210420/model/DeleteUserGroupRequest.h
+  include/tencentcloud/eiam/v20210420/model/UserGroupInfoSearchCriteria.h
   include/tencentcloud/eiam/v20210420/model/DescribeUserInfoRequest.h
   include/tencentcloud/eiam/v20210420/model/DescribeUserGroupResponse.h
   include/tencentcloud/eiam/v20210420/model/ListUserGroupsOfUserRequest.h
+  include/tencentcloud/eiam/v20210420/model/UserInformation.h
   include/tencentcloud/eiam/v20210420/model/ListUsersInUserGroupRequest.h
   include/tencentcloud/eiam/v20210420/model/UserInfo.h
   include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToOrgNodeRequest.h
   include/tencentcloud/eiam/v20210420/model/CreateUserGroupRequest.h
   include/tencentcloud/eiam/v20210420/model/DescribeOrgNodeRequest.h
   include/tencentcloud/eiam/v20210420/model/ModifyUserInfoRequest.h
+  include/tencentcloud/eiam/v20210420/model/ListApplicationsResponse.h
+  include/tencentcloud/eiam/v20210420/model/RemoveUserFromUserGroupResponse.h
   )
 
 set(eiam_src
   src/v20210420/EiamClient.cpp
   src/v20210420/model/DescribeUserGroupRequest.cpp
-  src/v20210420/model/RemoveUserFromUserGroupResponse.cpp
+  src/v20210420/model/ListApplicationAuthorizationsRequest.cpp
   src/v20210420/model/DescribeOrgNodeResponse.cpp
   src/v20210420/model/CreateOrgNodeResponse.cpp
+  src/v20210420/model/ListApplicationsRequest.cpp
+  src/v20210420/model/UserSearchCriteria.cpp
   src/v20210420/model/ListUsersInOrgNodeResponse.cpp
   src/v20210420/model/ModifyUserInfoResponse.cpp
   src/v20210420/model/DeleteUserRequest.cpp
   src/v20210420/model/ListAuthorizedApplicationsToOrgNodeResponse.cpp
   src/v20210420/model/OrgNodeChildInfo.cpp
+  src/v20210420/model/SortCondition.cpp
+  src/v20210420/model/InheritedForm.cpp
   src/v20210420/model/ListAuthorizedApplicationsToUserRequest.cpp
   src/v20210420/model/DeleteOrgNodeResponse.cpp
   src/v20210420/model/AddUserToUserGroupResponse.cpp
   src/v20210420/model/CreateUserResponse.cpp
+  src/v20210420/model/ListUsersResponse.cpp
   src/v20210420/model/ListAuthorizedApplicationsToUserGroupRequest.cpp
-  src/v20210420/model/ListUsersInOrgNodeRequest.cpp
-  src/v20210420/model/InheritedForm.cpp
+  src/v20210420/model/ListUserGroupsResponse.cpp
+  src/v20210420/model/DescribePublicKeyRequest.cpp
+  src/v20210420/model/AuthorizationInfo.cpp
   src/v20210420/model/CreateUserGroupResponse.cpp
   src/v20210420/model/DeleteUserResponse.cpp
   src/v20210420/model/ListUsersInUserGroupResponse.cpp
+  src/v20210420/model/ListUserGroupsRequest.cpp
   src/v20210420/model/AddUserToUserGroupRequest.cpp
   src/v20210420/model/ApplicationAuthorizationInfo.cpp
-  src/v20210420/model/UpdateOrgNodeResponse.cpp
+  src/v20210420/model/ApplicationInformation.cpp
+  src/v20210420/model/ListApplicationAuthorizationsResponse.cpp
   src/v20210420/model/DescribeApplicationResponse.cpp
+  src/v20210420/model/UserGroupInformation.cpp
+  src/v20210420/model/ApplicationInfoSearchCriteria.cpp
   src/v20210420/model/ListAuthorizedApplicationsToUserResponse.cpp
   src/v20210420/model/DeleteUserGroupResponse.cpp
   src/v20210420/model/DescribeApplicationRequest.cpp
   src/v20210420/model/UpdateOrgNodeRequest.cpp
+  src/v20210420/model/AuthorizationInfoSearchCriteria.cpp
   src/v20210420/model/OrgNodeChildUserInfo.cpp
   src/v20210420/model/CreateUserRequest.cpp
   src/v20210420/model/ListUserGroupsOfUserResponse.cpp
@@ -102,17 +132,25 @@ set(eiam_src
   src/v20210420/model/DeleteOrgNodeRequest.cpp
   src/v20210420/model/CreateOrgNodeRequest.cpp
   src/v20210420/model/RemoveUserFromUserGroupRequest.cpp
+  src/v20210420/model/ListUsersInOrgNodeRequest.cpp
   src/v20210420/model/ListAuthorizedApplicationsToUserGroupResponse.cpp
+  src/v20210420/model/ListUsersRequest.cpp
+  src/v20210420/model/UpdateOrgNodeResponse.cpp
+  src/v20210420/model/DescribePublicKeyResponse.cpp
   src/v20210420/model/DeleteUserGroupRequest.cpp
+  src/v20210420/model/UserGroupInfoSearchCriteria.cpp
   src/v20210420/model/DescribeUserInfoRequest.cpp
   src/v20210420/model/DescribeUserGroupResponse.cpp
   src/v20210420/model/ListUserGroupsOfUserRequest.cpp
+  src/v20210420/model/UserInformation.cpp
   src/v20210420/model/ListUsersInUserGroupRequest.cpp
   src/v20210420/model/UserInfo.cpp
   src/v20210420/model/ListAuthorizedApplicationsToOrgNodeRequest.cpp
   src/v20210420/model/CreateUserGroupRequest.cpp
   src/v20210420/model/DescribeOrgNodeRequest.cpp
   src/v20210420/model/ModifyUserInfoRequest.cpp
+  src/v20210420/model/ListApplicationsResponse.cpp
+  src/v20210420/model/RemoveUserFromUserGroupResponse.cpp
   )
 
 set(eiam_include

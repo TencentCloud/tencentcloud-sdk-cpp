@@ -556,6 +556,49 @@ TcbClient::DeleteCloudBaseProjectLatestVersionOutcomeCallable TcbClient::DeleteC
     return task->get_future();
 }
 
+TcbClient::DeleteCloudBaseRunServerVersionOutcome TcbClient::DeleteCloudBaseRunServerVersion(const DeleteCloudBaseRunServerVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudBaseRunServerVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudBaseRunServerVersionResponse rsp = DeleteCloudBaseRunServerVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudBaseRunServerVersionOutcome(rsp);
+        else
+            return DeleteCloudBaseRunServerVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudBaseRunServerVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteCloudBaseRunServerVersionAsync(const DeleteCloudBaseRunServerVersionRequest& request, const DeleteCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudBaseRunServerVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DeleteCloudBaseRunServerVersionOutcomeCallable TcbClient::DeleteCloudBaseRunServerVersionCallable(const DeleteCloudBaseRunServerVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudBaseRunServerVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudBaseRunServerVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DeleteEndUserOutcome TcbClient::DeleteEndUser(const DeleteEndUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteEndUser");

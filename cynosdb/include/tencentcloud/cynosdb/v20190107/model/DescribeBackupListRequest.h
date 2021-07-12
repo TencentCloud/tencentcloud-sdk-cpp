@@ -96,6 +96,28 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取数据库类型，取值范围: 
+<li> MYSQL </li>
+                     * @return DbType 数据库类型，取值范围: 
+<li> MYSQL </li>
+                     */
+                    std::string GetDbType() const;
+
+                    /**
+                     * 设置数据库类型，取值范围: 
+<li> MYSQL </li>
+                     * @param DbType 数据库类型，取值范围: 
+<li> MYSQL </li>
+                     */
+                    void SetDbType(const std::string& _dbType);
+
+                    /**
+                     * 判断参数 DbType 是否已赋值
+                     * @return DbType 是否已赋值
+                     */
+                    bool DbTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +137,13 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 数据库类型，取值范围: 
+<li> MYSQL </li>
+                     */
+                    std::string m_dbType;
+                    bool m_dbTypeHasBeenSet;
 
                 };
             }

@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tiw/v20190919/model/OmittedDuration.h>
 #include <tencentcloud/tiw/v20190919/model/VideoInfo.h>
+#include <tencentcloud/tiw/v20190919/model/Interrupt.h>
 
 
 namespace TencentCloud
@@ -220,6 +221,20 @@ namespace TencentCloud
                      */
                     bool ReplayUrlHasBeenSet() const;
 
+                    /**
+                     * 获取视频流在录制过程中断流次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Interrupts 视频流在录制过程中断流次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Interrupt> GetInterrupts() const;
+
+                    /**
+                     * 判断参数 Interrupts 是否已赋值
+                     * @return Interrupts 是否已赋值
+                     */
+                    bool InterruptsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -309,6 +324,13 @@ namespace TencentCloud
                      */
                     std::string m_replayUrl;
                     bool m_replayUrlHasBeenSet;
+
+                    /**
+                     * 视频流在录制过程中断流次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Interrupt> m_interrupts;
+                    bool m_interruptsHasBeenSet;
 
                 };
             }

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计费订单id
-                     * @return DealName 计费订单id
+                     * 获取计费订单id（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）
+                     * @return DealName 计费订单id（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）
                      */
                     std::string GetDealName() const;
 
                     /**
-                     * 设置计费订单id
-                     * @param DealName 计费订单id
+                     * 设置计费订单id（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）
+                     * @param DealName 计费订单id（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）
                      */
                     void SetDealName(const std::string& _dealName);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计费订单id
+                     * 计费订单id（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;

@@ -427,6 +427,49 @@ EiamClient::DescribeOrgNodeOutcomeCallable EiamClient::DescribeOrgNodeCallable(c
     return task->get_future();
 }
 
+EiamClient::DescribePublicKeyOutcome EiamClient::DescribePublicKey(const DescribePublicKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicKeyResponse rsp = DescribePublicKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicKeyOutcome(rsp);
+        else
+            return DescribePublicKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicKeyOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::DescribePublicKeyAsync(const DescribePublicKeyRequest& request, const DescribePublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePublicKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::DescribePublicKeyOutcomeCallable EiamClient::DescribePublicKeyCallable(const DescribePublicKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePublicKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePublicKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EiamClient::DescribeUserGroupOutcome EiamClient::DescribeUserGroup(const DescribeUserGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserGroup");
@@ -506,6 +549,92 @@ EiamClient::DescribeUserInfoOutcomeCallable EiamClient::DescribeUserInfoCallable
         [this, request]()
         {
             return this->DescribeUserInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::ListApplicationAuthorizationsOutcome EiamClient::ListApplicationAuthorizations(const ListApplicationAuthorizationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListApplicationAuthorizations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListApplicationAuthorizationsResponse rsp = ListApplicationAuthorizationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListApplicationAuthorizationsOutcome(rsp);
+        else
+            return ListApplicationAuthorizationsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListApplicationAuthorizationsOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::ListApplicationAuthorizationsAsync(const ListApplicationAuthorizationsRequest& request, const ListApplicationAuthorizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListApplicationAuthorizations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::ListApplicationAuthorizationsOutcomeCallable EiamClient::ListApplicationAuthorizationsCallable(const ListApplicationAuthorizationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListApplicationAuthorizationsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListApplicationAuthorizations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::ListApplicationsOutcome EiamClient::ListApplications(const ListApplicationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListApplications");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListApplicationsResponse rsp = ListApplicationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListApplicationsOutcome(rsp);
+        else
+            return ListApplicationsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListApplicationsOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListApplications(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::ListApplicationsOutcomeCallable EiamClient::ListApplicationsCallable(const ListApplicationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListApplicationsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListApplications(request);
         }
     );
 
@@ -642,6 +771,49 @@ EiamClient::ListAuthorizedApplicationsToUserGroupOutcomeCallable EiamClient::Lis
     return task->get_future();
 }
 
+EiamClient::ListUserGroupsOutcome EiamClient::ListUserGroups(const ListUserGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListUserGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListUserGroupsResponse rsp = ListUserGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListUserGroupsOutcome(rsp);
+        else
+            return ListUserGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListUserGroupsOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::ListUserGroupsAsync(const ListUserGroupsRequest& request, const ListUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListUserGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::ListUserGroupsOutcomeCallable EiamClient::ListUserGroupsCallable(const ListUserGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListUserGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListUserGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EiamClient::ListUserGroupsOfUserOutcome EiamClient::ListUserGroupsOfUser(const ListUserGroupsOfUserRequest &request)
 {
     auto outcome = MakeRequest(request, "ListUserGroupsOfUser");
@@ -678,6 +850,49 @@ EiamClient::ListUserGroupsOfUserOutcomeCallable EiamClient::ListUserGroupsOfUser
         [this, request]()
         {
             return this->ListUserGroupsOfUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EiamClient::ListUsersOutcome EiamClient::ListUsers(const ListUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListUsersResponse rsp = ListUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListUsersOutcome(rsp);
+        else
+            return ListUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return ListUsersOutcome(outcome.GetError());
+    }
+}
+
+void EiamClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListUsers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EiamClient::ListUsersOutcomeCallable EiamClient::ListUsersCallable(const ListUsersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListUsersOutcome()>>(
+        [this, request]()
+        {
+            return this->ListUsers(request);
         }
     );
 

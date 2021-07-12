@@ -48,6 +48,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskResponse.h
   include/tencentcloud/tiw/v20190919/model/DescribeWhiteboardPushCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/CustomLayout.h
+  include/tencentcloud/tiw/v20190919/model/Interrupt.h
   include/tencentcloud/tiw/v20190919/model/VideoInfo.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyResponse.h
   include/tencentcloud/tiw/v20190919/model/Concat.h
@@ -115,6 +116,7 @@ set(tiw_src
   src/v20190919/model/DescribeVideoGenerationTaskResponse.cpp
   src/v20190919/model/DescribeWhiteboardPushCallbackResponse.cpp
   src/v20190919/model/CustomLayout.cpp
+  src/v20190919/model/Interrupt.cpp
   src/v20190919/model/VideoInfo.cpp
   src/v20190919/model/SetTranscodeCallbackKeyResponse.cpp
   src/v20190919/model/Concat.cpp

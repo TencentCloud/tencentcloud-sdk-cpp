@@ -47,6 +47,8 @@
 #include <tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunServerDBClusterResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseRunServerVersionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteEndUserRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteEndUserResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteRequest.h>
@@ -175,6 +177,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteCloudBaseProjectLatestVersionResponse> DeleteCloudBaseProjectLatestVersionOutcome;
                 typedef std::future<DeleteCloudBaseProjectLatestVersionOutcome> DeleteCloudBaseProjectLatestVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteCloudBaseProjectLatestVersionRequest&, DeleteCloudBaseProjectLatestVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudBaseProjectLatestVersionAsyncHandler;
+                typedef Outcome<Error, Model::DeleteCloudBaseRunServerVersionResponse> DeleteCloudBaseRunServerVersionOutcome;
+                typedef std::future<DeleteCloudBaseRunServerVersionOutcome> DeleteCloudBaseRunServerVersionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteCloudBaseRunServerVersionRequest&, DeleteCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudBaseRunServerVersionAsyncHandler;
                 typedef Outcome<Error, Model::DeleteEndUserResponse> DeleteEndUserOutcome;
                 typedef std::future<DeleteEndUserOutcome> DeleteEndUserOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteEndUserRequest&, DeleteEndUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEndUserAsyncHandler;
@@ -402,6 +407,15 @@ namespace TencentCloud
                 DeleteCloudBaseProjectLatestVersionOutcome DeleteCloudBaseProjectLatestVersion(const Model::DeleteCloudBaseProjectLatestVersionRequest &request);
                 void DeleteCloudBaseProjectLatestVersionAsync(const Model::DeleteCloudBaseProjectLatestVersionRequest& request, const DeleteCloudBaseProjectLatestVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCloudBaseProjectLatestVersionOutcomeCallable DeleteCloudBaseProjectLatestVersionCallable(const Model::DeleteCloudBaseProjectLatestVersionRequest& request);
+
+                /**
+                 *删除服务版本
+                 * @param req DeleteCloudBaseRunServerVersionRequest
+                 * @return DeleteCloudBaseRunServerVersionOutcome
+                 */
+                DeleteCloudBaseRunServerVersionOutcome DeleteCloudBaseRunServerVersion(const Model::DeleteCloudBaseRunServerVersionRequest &request);
+                void DeleteCloudBaseRunServerVersionAsync(const Model::DeleteCloudBaseRunServerVersionRequest& request, const DeleteCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudBaseRunServerVersionOutcomeCallable DeleteCloudBaseRunServerVersionCallable(const Model::DeleteCloudBaseRunServerVersionRequest& request);
 
                 /**
                  *删除终端用户

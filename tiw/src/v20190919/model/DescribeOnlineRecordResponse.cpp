@@ -36,7 +36,8 @@ DescribeOnlineRecordResponse::DescribeOnlineRecordResponse() :
     m_exceptionCntHasBeenSet(false),
     m_omittedDurationsHasBeenSet(false),
     m_videoInfosHasBeenSet(false),
-    m_replayUrlHasBeenSet(false)
+    m_replayUrlHasBeenSet(false),
+    m_interruptsHasBeenSet(false)
 {
 }
 
@@ -224,6 +225,26 @@ CoreInternalOutcome DescribeOnlineRecordResponse::Deserialize(const string &payl
         m_replayUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Interrupts") && !rsp["Interrupts"].IsNull())
+    {
+        if (!rsp["Interrupts"].IsArray())
+            return CoreInternalOutcome(Error("response `Interrupts` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Interrupts"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Interrupt item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_interrupts.push_back(item);
+        }
+        m_interruptsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +378,16 @@ string DescribeOnlineRecordResponse::GetReplayUrl() const
 bool DescribeOnlineRecordResponse::ReplayUrlHasBeenSet() const
 {
     return m_replayUrlHasBeenSet;
+}
+
+vector<Interrupt> DescribeOnlineRecordResponse::GetInterrupts() const
+{
+    return m_interrupts;
+}
+
+bool DescribeOnlineRecordResponse::InterruptsHasBeenSet() const
+{
+    return m_interruptsHasBeenSet;
 }
 
 

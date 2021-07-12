@@ -25,7 +25,8 @@ using namespace std;
 DescribeBackupListRequest::DescribeBackupListRequest() :
     m_clusterIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_dbTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeBackupListRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_dbTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dbType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeBackupListRequest::SetOffset(const int64_t& _offset)
 bool DescribeBackupListRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeBackupListRequest::GetDbType() const
+{
+    return m_dbType;
+}
+
+void DescribeBackupListRequest::SetDbType(const string& _dbType)
+{
+    m_dbType = _dbType;
+    m_dbTypeHasBeenSet = true;
+}
+
+bool DescribeBackupListRequest::DbTypeHasBeenSet() const
+{
+    return m_dbTypeHasBeenSet;
 }
 
 
