@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool FileContentHasBeenSet() const;
 
                     /**
-                     * 获取对应数据Base64文件名称
-                     * @return FileName 对应数据Base64文件名称
+                     * 获取带后缀的文件名称，如music.mkv
+                     * @return FileName 带后缀的文件名称，如music.mkv
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置对应数据Base64文件名称
-                     * @param FileName 对应数据Base64文件名称
+                     * 设置带后缀的文件名称，如music.mkv
+                     * @param FileName 带后缀的文件名称，如music.mkv
                      */
                     void SetFileName(const std::string& _fileName);
 
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_fileContentHasBeenSet;
 
                     /**
-                     * 对应数据Base64文件名称
+                     * 带后缀的文件名称，如music.mkv
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;

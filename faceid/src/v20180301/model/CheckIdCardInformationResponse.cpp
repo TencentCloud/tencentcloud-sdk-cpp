@@ -35,7 +35,8 @@ CheckIdCardInformationResponse::CheckIdCardInformationResponse() :
     m_idNumHasBeenSet(false),
     m_portraitHasBeenSet(false),
     m_warningsHasBeenSet(false),
-    m_qualityHasBeenSet(false)
+    m_qualityHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,23 @@ CoreInternalOutcome CheckIdCardInformationResponse::Deserialize(const string &pa
         m_qualityHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Encryption") && !rsp["Encryption"].IsNull())
+    {
+        if (!rsp["Encryption"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `Encryption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_encryption.Deserialize(rsp["Encryption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_encryptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,6 +334,16 @@ double CheckIdCardInformationResponse::GetQuality() const
 bool CheckIdCardInformationResponse::QualityHasBeenSet() const
 {
     return m_qualityHasBeenSet;
+}
+
+Encryption CheckIdCardInformationResponse::GetEncryption() const
+{
+    return m_encryption;
+}
+
+bool CheckIdCardInformationResponse::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

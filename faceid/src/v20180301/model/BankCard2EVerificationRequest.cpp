@@ -24,7 +24,8 @@ using namespace std;
 
 BankCard2EVerificationRequest::BankCard2EVerificationRequest() :
     m_nameHasBeenSet(false),
-    m_bankCardHasBeenSet(false)
+    m_bankCardHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,15 @@ string BankCard2EVerificationRequest::ToJsonString() const
         string key = "BankCard";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_bankCard.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -89,6 +99,22 @@ void BankCard2EVerificationRequest::SetBankCard(const string& _bankCard)
 bool BankCard2EVerificationRequest::BankCardHasBeenSet() const
 {
     return m_bankCardHasBeenSet;
+}
+
+Encryption BankCard2EVerificationRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void BankCard2EVerificationRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool BankCard2EVerificationRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

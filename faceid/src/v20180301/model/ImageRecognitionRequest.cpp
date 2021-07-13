@@ -26,7 +26,8 @@ ImageRecognitionRequest::ImageRecognitionRequest() :
     m_idCardHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
-    m_optionalHasBeenSet(false)
+    m_optionalHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,15 @@ string ImageRecognitionRequest::ToJsonString() const
         string key = "Optional";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_optional.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -139,6 +149,22 @@ void ImageRecognitionRequest::SetOptional(const string& _optional)
 bool ImageRecognitionRequest::OptionalHasBeenSet() const
 {
     return m_optionalHasBeenSet;
+}
+
+Encryption ImageRecognitionRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void ImageRecognitionRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool ImageRecognitionRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

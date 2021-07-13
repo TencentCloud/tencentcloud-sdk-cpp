@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取获取健康得分的时间。
-                     * @return Time 获取健康得分的时间。
+                     * 获取获取健康得分的时间，时间格式如：2019-09-10 12:13:14。
+                     * @return Time 获取健康得分的时间，时间格式如：2019-09-10 12:13:14。
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置获取健康得分的时间。
-                     * @param Time 获取健康得分的时间。
+                     * 设置获取健康得分的时间，时间格式如：2019-09-10 12:13:14。
+                     * @param Time 获取健康得分的时间，时间格式如：2019-09-10 12:13:14。
                      */
                     void SetTime(const std::string& _time);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 获取健康得分的时间。
+                     * 获取健康得分的时间，时间格式如：2019-09-10 12:13:14。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;

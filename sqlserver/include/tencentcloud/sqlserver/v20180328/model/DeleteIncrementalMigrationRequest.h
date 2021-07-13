@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取备份导入任务ID
-                     * @return BackupMigrationId 备份导入任务ID
+                     * 获取备份导入任务ID，由CreateBackupMigration接口返回
+                     * @return BackupMigrationId 备份导入任务ID，由CreateBackupMigration接口返回
                      */
                     std::string GetBackupMigrationId() const;
 
                     /**
-                     * 设置备份导入任务ID
-                     * @param BackupMigrationId 备份导入任务ID
+                     * 设置备份导入任务ID，由CreateBackupMigration接口返回
+                     * @param BackupMigrationId 备份导入任务ID，由CreateBackupMigration接口返回
                      */
                     void SetBackupMigrationId(const std::string& _backupMigrationId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool BackupMigrationIdHasBeenSet() const;
 
                     /**
-                     * 获取增量备份导入任务ID
-                     * @return IncrementalMigrationId 增量备份导入任务ID
+                     * 获取增量备份导入任务ID，由CreateIncrementalMigration接口返回
+                     * @return IncrementalMigrationId 增量备份导入任务ID，由CreateIncrementalMigration接口返回
                      */
                     std::string GetIncrementalMigrationId() const;
 
                     /**
-                     * 设置增量备份导入任务ID
-                     * @param IncrementalMigrationId 增量备份导入任务ID
+                     * 设置增量备份导入任务ID，由CreateIncrementalMigration接口返回
+                     * @param IncrementalMigrationId 增量备份导入任务ID，由CreateIncrementalMigration接口返回
                      */
                     void SetIncrementalMigrationId(const std::string& _incrementalMigrationId);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 备份导入任务ID
+                     * 备份导入任务ID，由CreateBackupMigration接口返回
                      */
                     std::string m_backupMigrationId;
                     bool m_backupMigrationIdHasBeenSet;
 
                     /**
-                     * 增量备份导入任务ID
+                     * 增量备份导入任务ID，由CreateIncrementalMigration接口返回
                      */
                     std::string m_incrementalMigrationId;
                     bool m_incrementalMigrationIdHasBeenSet;

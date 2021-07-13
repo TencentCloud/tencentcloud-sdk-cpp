@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool ZoneNameHasBeenSet() const;
 
+                    /**
+                     * 获取实例购买页可用区展示标签
+                     * @return InstanceDisplayLabel 实例购买页可用区展示标签
+                     */
+                    std::string GetInstanceDisplayLabel() const;
+
+                    /**
+                     * 设置实例购买页可用区展示标签
+                     * @param InstanceDisplayLabel 实例购买页可用区展示标签
+                     */
+                    void SetInstanceDisplayLabel(const std::string& _instanceDisplayLabel);
+
+                    /**
+                     * 判断参数 InstanceDisplayLabel 是否已赋值
+                     * @return InstanceDisplayLabel 是否已赋值
+                     */
+                    bool InstanceDisplayLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
+
+                    /**
+                     * 实例购买页可用区展示标签
+                     */
+                    std::string m_instanceDisplayLabel;
+                    bool m_instanceDisplayLabelHasBeenSet;
 
                 };
             }

@@ -33,7 +33,11 @@ DescribeEnvLimitResponse::DescribeEnvLimitResponse() :
     m_maxDeleteMonthlyHasBeenSet(false),
     m_currentDeleteMonthlyHasBeenSet(false),
     m_maxFreeTrialNumHasBeenSet(false),
-    m_currentFreeTrialNumHasBeenSet(false)
+    m_currentFreeTrialNumHasBeenSet(false),
+    m_changePayTotalHasBeenSet(false),
+    m_currentChangePayTotalHasBeenSet(false),
+    m_changePayMonthlyHasBeenSet(false),
+    m_currentChangePayMonthlyHasBeenSet(false)
 {
 }
 
@@ -171,6 +175,46 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
         m_currentFreeTrialNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ChangePayTotal") && !rsp["ChangePayTotal"].IsNull())
+    {
+        if (!rsp["ChangePayTotal"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ChangePayTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_changePayTotal = rsp["ChangePayTotal"].GetInt64();
+        m_changePayTotalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CurrentChangePayTotal") && !rsp["CurrentChangePayTotal"].IsNull())
+    {
+        if (!rsp["CurrentChangePayTotal"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `CurrentChangePayTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentChangePayTotal = rsp["CurrentChangePayTotal"].GetInt64();
+        m_currentChangePayTotalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ChangePayMonthly") && !rsp["ChangePayMonthly"].IsNull())
+    {
+        if (!rsp["ChangePayMonthly"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ChangePayMonthly` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_changePayMonthly = rsp["ChangePayMonthly"].GetInt64();
+        m_changePayMonthlyHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CurrentChangePayMonthly") && !rsp["CurrentChangePayMonthly"].IsNull())
+    {
+        if (!rsp["CurrentChangePayMonthly"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `CurrentChangePayMonthly` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentChangePayMonthly = rsp["CurrentChangePayMonthly"].GetInt64();
+        m_currentChangePayMonthlyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -274,6 +318,46 @@ int64_t DescribeEnvLimitResponse::GetCurrentFreeTrialNum() const
 bool DescribeEnvLimitResponse::CurrentFreeTrialNumHasBeenSet() const
 {
     return m_currentFreeTrialNumHasBeenSet;
+}
+
+int64_t DescribeEnvLimitResponse::GetChangePayTotal() const
+{
+    return m_changePayTotal;
+}
+
+bool DescribeEnvLimitResponse::ChangePayTotalHasBeenSet() const
+{
+    return m_changePayTotalHasBeenSet;
+}
+
+int64_t DescribeEnvLimitResponse::GetCurrentChangePayTotal() const
+{
+    return m_currentChangePayTotal;
+}
+
+bool DescribeEnvLimitResponse::CurrentChangePayTotalHasBeenSet() const
+{
+    return m_currentChangePayTotalHasBeenSet;
+}
+
+int64_t DescribeEnvLimitResponse::GetChangePayMonthly() const
+{
+    return m_changePayMonthly;
+}
+
+bool DescribeEnvLimitResponse::ChangePayMonthlyHasBeenSet() const
+{
+    return m_changePayMonthlyHasBeenSet;
+}
+
+int64_t DescribeEnvLimitResponse::GetCurrentChangePayMonthly() const
+{
+    return m_currentChangePayMonthly;
+}
+
+bool DescribeEnvLimitResponse::CurrentChangePayMonthlyHasBeenSet() const
+{
+    return m_currentChangePayMonthlyHasBeenSet;
 }
 
 

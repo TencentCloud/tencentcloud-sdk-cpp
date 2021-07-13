@@ -71,6 +71,8 @@
 #include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagResponse.h>
 #include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagCollRequest.h>
 #include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagCollResponse.h>
+#include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagIntlRequest.h>
+#include <tencentcloud/cam/v20190116/model/DescribeSafeAuthFlagIntlResponse.h>
 #include <tencentcloud/cam/v20190116/model/DescribeSubAccountsRequest.h>
 #include <tencentcloud/cam/v20190116/model/DescribeSubAccountsResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachGroupPolicyRequest.h>
@@ -79,6 +81,8 @@
 #include <tencentcloud/cam/v20190116/model/DetachRolePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/DetachUserPolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/DetachUserPolicyResponse.h>
+#include <tencentcloud/cam/v20190116/model/GetAccountSummaryRequest.h>
+#include <tencentcloud/cam/v20190116/model/GetAccountSummaryResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoRequest.h>
 #include <tencentcloud/cam/v20190116/model/GetCustomMFATokenInfoResponse.h>
 #include <tencentcloud/cam/v20190116/model/GetGroupRequest.h>
@@ -237,6 +241,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSafeAuthFlagCollResponse> DescribeSafeAuthFlagCollOutcome;
                 typedef std::future<DescribeSafeAuthFlagCollOutcome> DescribeSafeAuthFlagCollOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DescribeSafeAuthFlagCollRequest&, DescribeSafeAuthFlagCollOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafeAuthFlagCollAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSafeAuthFlagIntlResponse> DescribeSafeAuthFlagIntlOutcome;
+                typedef std::future<DescribeSafeAuthFlagIntlOutcome> DescribeSafeAuthFlagIntlOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DescribeSafeAuthFlagIntlRequest&, DescribeSafeAuthFlagIntlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafeAuthFlagIntlAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSubAccountsResponse> DescribeSubAccountsOutcome;
                 typedef std::future<DescribeSubAccountsOutcome> DescribeSubAccountsOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DescribeSubAccountsRequest&, DescribeSubAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubAccountsAsyncHandler;
@@ -249,6 +256,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DetachUserPolicyResponse> DetachUserPolicyOutcome;
                 typedef std::future<DetachUserPolicyOutcome> DetachUserPolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DetachUserPolicyRequest&, DetachUserPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachUserPolicyAsyncHandler;
+                typedef Outcome<Error, Model::GetAccountSummaryResponse> GetAccountSummaryOutcome;
+                typedef std::future<GetAccountSummaryOutcome> GetAccountSummaryOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::GetAccountSummaryRequest&, GetAccountSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountSummaryAsyncHandler;
                 typedef Outcome<Error, Model::GetCustomMFATokenInfoResponse> GetCustomMFATokenInfoOutcome;
                 typedef std::future<GetCustomMFATokenInfoOutcome> GetCustomMFATokenInfoOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::GetCustomMFATokenInfoRequest&, GetCustomMFATokenInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomMFATokenInfoAsyncHandler;
@@ -577,6 +587,15 @@ namespace TencentCloud
                 DescribeSafeAuthFlagCollOutcomeCallable DescribeSafeAuthFlagCollCallable(const Model::DescribeSafeAuthFlagCollRequest& request);
 
                 /**
+                 *查询安全设置(国际站)
+                 * @param req DescribeSafeAuthFlagIntlRequest
+                 * @return DescribeSafeAuthFlagIntlOutcome
+                 */
+                DescribeSafeAuthFlagIntlOutcome DescribeSafeAuthFlagIntl(const Model::DescribeSafeAuthFlagIntlRequest &request);
+                void DescribeSafeAuthFlagIntlAsync(const Model::DescribeSafeAuthFlagIntlRequest& request, const DescribeSafeAuthFlagIntlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSafeAuthFlagIntlOutcomeCallable DescribeSafeAuthFlagIntlCallable(const Model::DescribeSafeAuthFlagIntlRequest& request);
+
+                /**
                  *通过子用户UIN列表查询子用户
                  * @param req DescribeSubAccountsRequest
                  * @return DescribeSubAccountsOutcome
@@ -611,6 +630,15 @@ namespace TencentCloud
                 DetachUserPolicyOutcome DetachUserPolicy(const Model::DetachUserPolicyRequest &request);
                 void DetachUserPolicyAsync(const Model::DetachUserPolicyRequest& request, const DetachUserPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetachUserPolicyOutcomeCallable DetachUserPolicyCallable(const Model::DetachUserPolicyRequest& request);
+
+                /**
+                 *查询账户摘要 
+                 * @param req GetAccountSummaryRequest
+                 * @return GetAccountSummaryOutcome
+                 */
+                GetAccountSummaryOutcome GetAccountSummary(const Model::GetAccountSummaryRequest &request);
+                void GetAccountSummaryAsync(const Model::GetAccountSummaryRequest& request, const GetAccountSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAccountSummaryOutcomeCallable GetAccountSummaryCallable(const Model::GetAccountSummaryRequest& request);
 
                 /**
                  *获取自定义多因子Token关联信息

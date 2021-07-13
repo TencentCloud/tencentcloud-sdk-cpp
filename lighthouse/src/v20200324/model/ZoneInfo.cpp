@@ -22,7 +22,8 @@ using namespace std;
 
 ZoneInfo::ZoneInfo() :
     m_zoneHasBeenSet(false),
-    m_zoneNameHasBeenSet(false)
+    m_zoneNameHasBeenSet(false),
+    m_instanceDisplayLabelHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
         m_zoneNameHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceDisplayLabel") && !value["InstanceDisplayLabel"].IsNull())
+    {
+        if (!value["InstanceDisplayLabel"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ZoneInfo.InstanceDisplayLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceDisplayLabel = string(value["InstanceDisplayLabel"].GetString());
+        m_instanceDisplayLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ZoneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceDisplayLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceDisplayLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceDisplayLabel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ZoneInfo::SetZoneName(const string& _zoneName)
 bool ZoneInfo::ZoneNameHasBeenSet() const
 {
     return m_zoneNameHasBeenSet;
+}
+
+string ZoneInfo::GetInstanceDisplayLabel() const
+{
+    return m_instanceDisplayLabel;
+}
+
+void ZoneInfo::SetInstanceDisplayLabel(const string& _instanceDisplayLabel)
+{
+    m_instanceDisplayLabel = _instanceDisplayLabel;
+    m_instanceDisplayLabelHasBeenSet = true;
+}
+
+bool ZoneInfo::InstanceDisplayLabelHasBeenSet() const
+{
+    return m_instanceDisplayLabelHasBeenSet;
 }
 

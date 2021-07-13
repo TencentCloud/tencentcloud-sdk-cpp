@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool BackupMigrationIdHasBeenSet() const;
 
                     /**
-                     * 获取增量导入任务ID
-                     * @return IncrementalMigrationId 增量导入任务ID
+                     * 获取增量导入任务ID，由CreateIncrementalMigration接口返回
+                     * @return IncrementalMigrationId 增量导入任务ID，由CreateIncrementalMigration接口返回
                      */
                     std::string GetIncrementalMigrationId() const;
 
                     /**
-                     * 设置增量导入任务ID
-                     * @param IncrementalMigrationId 增量导入任务ID
+                     * 设置增量导入任务ID，由CreateIncrementalMigration接口返回
+                     * @param IncrementalMigrationId 增量导入任务ID，由CreateIncrementalMigration接口返回
                      */
                     void SetIncrementalMigrationId(const std::string& _incrementalMigrationId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool IncrementalMigrationIdHasBeenSet() const;
 
                     /**
-                     * 获取是否需要恢复，NO-不需要，YES-需要
-                     * @return IsRecovery 是否需要恢复，NO-不需要，YES-需要
+                     * 获取是否需要恢复，NO-不需要，YES-需要，默认不修改增量备份导入任务是否需要恢复的属性。
+                     * @return IsRecovery 是否需要恢复，NO-不需要，YES-需要，默认不修改增量备份导入任务是否需要恢复的属性。
                      */
                     std::string GetIsRecovery() const;
 
                     /**
-                     * 设置是否需要恢复，NO-不需要，YES-需要
-                     * @param IsRecovery 是否需要恢复，NO-不需要，YES-需要
+                     * 设置是否需要恢复，NO-不需要，YES-需要，默认不修改增量备份导入任务是否需要恢复的属性。
+                     * @param IsRecovery 是否需要恢复，NO-不需要，YES-需要，默认不修改增量备份导入任务是否需要恢复的属性。
                      */
                     void SetIsRecovery(const std::string& _isRecovery);
 
@@ -147,13 +147,13 @@ namespace TencentCloud
                     bool m_backupMigrationIdHasBeenSet;
 
                     /**
-                     * 增量导入任务ID
+                     * 增量导入任务ID，由CreateIncrementalMigration接口返回
                      */
                     std::string m_incrementalMigrationId;
                     bool m_incrementalMigrationIdHasBeenSet;
 
                     /**
-                     * 是否需要恢复，NO-不需要，YES-需要
+                     * 是否需要恢复，NO-不需要，YES-需要，默认不修改增量备份导入任务是否需要恢复的属性。
                      */
                     std::string m_isRecovery;
                     bool m_isRecoveryHasBeenSet;

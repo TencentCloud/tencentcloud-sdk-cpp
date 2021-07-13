@@ -172,6 +172,28 @@ Config = {"CopyWarn":true,"ReshootWarn":true}
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要对返回中的敏感信息进行加密。默认false。
+其中敏感信息包括：Response.IdNum、Response.Name
+                     * @return IsEncrypt 是否需要对返回中的敏感信息进行加密。默认false。
+其中敏感信息包括：Response.IdNum、Response.Name
+                     */
+                    bool GetIsEncrypt() const;
+
+                    /**
+                     * 设置是否需要对返回中的敏感信息进行加密。默认false。
+其中敏感信息包括：Response.IdNum、Response.Name
+                     * @param IsEncrypt 是否需要对返回中的敏感信息进行加密。默认false。
+其中敏感信息包括：Response.IdNum、Response.Name
+                     */
+                    void SetIsEncrypt(const bool& _isEncrypt);
+
+                    /**
+                     * 判断参数 IsEncrypt 是否已赋值
+                     * @return IsEncrypt 是否已赋值
+                     */
+                    bool IsEncryptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +232,13 @@ Config = {"CopyWarn":true,"ReshootWarn":true}
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 是否需要对返回中的敏感信息进行加密。默认false。
+其中敏感信息包括：Response.IdNum、Response.Name
+                     */
+                    bool m_isEncrypt;
+                    bool m_isEncryptHasBeenSet;
 
                 };
             }

@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool FileContentHasBeenSet() const;
 
                     /**
-                     * 获取对应数据Base64文件名称 test.png
-                     * @return FileName 对应数据Base64文件名称 test.png
+                     * 获取带后缀的文件名称，如 test.png
+                     * @return FileName 带后缀的文件名称，如 test.png
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置对应数据Base64文件名称 test.png
-                     * @param FileName 对应数据Base64文件名称 test.png
+                     * 设置带后缀的文件名称，如 test.png
+                     * @param FileName 带后缀的文件名称，如 test.png
                      */
                     void SetFileName(const std::string& _fileName);
 
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_fileContentHasBeenSet;
 
                     /**
-                     * 对应数据Base64文件名称 test.png
+                     * 带后缀的文件名称，如 test.png
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;

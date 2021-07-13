@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool ProjectNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否保留资源
+                     * @return KeepResource 是否保留资源
+                     */
+                    bool GetKeepResource() const;
+
+                    /**
+                     * 设置是否保留资源
+                     * @param KeepResource 是否保留资源
+                     */
+                    void SetKeepResource(const bool& _keepResource);
+
+                    /**
+                     * 判断参数 KeepResource 是否已赋值
+                     * @return KeepResource 是否已赋值
+                     */
+                    bool KeepResourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
+
+                    /**
+                     * 是否保留资源
+                     */
+                    bool m_keepResource;
+                    bool m_keepResourceHasBeenSet;
 
                 };
             }

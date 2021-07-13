@@ -79,8 +79,8 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取事件详情。
-                     * @return Explanation 事件详情。
+                     * 获取诊断事件详情，若无附加解释信息则输出为空。
+                     * @return Explanation 诊断事件详情，若无附加解释信息则输出为空。
                      */
                     std::string GetExplanation() const;
 
@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool ExplanationHasBeenSet() const;
 
                     /**
-                     * 获取概要。
-                     * @return Outline 概要。
+                     * 获取诊断概要。
+                     * @return Outline 诊断概要。
                      */
                     std::string GetOutline() const;
 
@@ -139,8 +139,8 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取建议。
-                     * @return Suggestions 建议。
+                     * 获取诊断建议，若无建议则输出为空。
+                     * @return Suggestions 诊断建议，若无建议则输出为空。
                      */
                     std::string GetSuggestions() const;
 
@@ -197,13 +197,13 @@ namespace TencentCloud
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 事件详情。
+                     * 诊断事件详情，若无附加解释信息则输出为空。
                      */
                     std::string m_explanation;
                     bool m_explanationHasBeenSet;
 
                     /**
-                     * 概要。
+                     * 诊断概要。
                      */
                     std::string m_outline;
                     bool m_outlineHasBeenSet;
@@ -227,7 +227,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 建议。
+                     * 诊断建议，若无建议则输出为空。
                      */
                     std::string m_suggestions;
                     bool m_suggestionsHasBeenSet;

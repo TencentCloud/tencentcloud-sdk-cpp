@@ -24,7 +24,8 @@ using namespace std;
 
 CheckPhoneAndNameRequest::CheckPhoneAndNameRequest() :
     m_mobileHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,15 @@ string CheckPhoneAndNameRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -89,6 +99,22 @@ void CheckPhoneAndNameRequest::SetName(const string& _name)
 bool CheckPhoneAndNameRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+Encryption CheckPhoneAndNameRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void CheckPhoneAndNameRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool CheckPhoneAndNameRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

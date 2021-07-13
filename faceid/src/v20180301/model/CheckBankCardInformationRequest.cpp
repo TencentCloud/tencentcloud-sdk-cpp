@@ -23,7 +23,8 @@ using namespace TencentCloud::Faceid::V20180301::Model;
 using namespace std;
 
 CheckBankCardInformationRequest::CheckBankCardInformationRequest() :
-    m_bankCardHasBeenSet(false)
+    m_bankCardHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,15 @@ string CheckBankCardInformationRequest::ToJsonString() const
         string key = "BankCard";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_bankCard.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -64,6 +74,22 @@ void CheckBankCardInformationRequest::SetBankCard(const string& _bankCard)
 bool CheckBankCardInformationRequest::BankCardHasBeenSet() const
 {
     return m_bankCardHasBeenSet;
+}
+
+Encryption CheckBankCardInformationRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void CheckBankCardInformationRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool CheckBankCardInformationRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

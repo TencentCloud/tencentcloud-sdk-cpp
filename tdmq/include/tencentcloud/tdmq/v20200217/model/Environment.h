@@ -172,6 +172,28 @@ namespace TencentCloud
                      */
                     bool NamespaceNameHasBeenSet() const;
 
+                    /**
+                     * 获取Topic数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicNum Topic数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTopicNum() const;
+
+                    /**
+                     * 设置Topic数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TopicNum Topic数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTopicNum(const int64_t& _topicNum);
+
+                    /**
+                     * 判断参数 TopicNum 是否已赋值
+                     * @return TopicNum 是否已赋值
+                     */
+                    bool TopicNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +237,13 @@ namespace TencentCloud
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
+
+                    /**
+                     * Topic数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_topicNum;
+                    bool m_topicNumHasBeenSet;
 
                 };
             }

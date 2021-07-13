@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool ProfileIdHasBeenSet() const;
 
                     /**
-                     * 获取配置类型。
+                     * 获取配置类型，支持值包括："dbScan_mail_configuration" - 数据库巡检邮件配置，"scheduler_mail_configuration" - 定期生成邮件配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProfileType 配置类型。
+                     * @return ProfileType 配置类型，支持值包括："dbScan_mail_configuration" - 数据库巡检邮件配置，"scheduler_mail_configuration" - 定期生成邮件配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProfileType() const;
 
                     /**
-                     * 设置配置类型。
+                     * 设置配置类型，支持值包括："dbScan_mail_configuration" - 数据库巡检邮件配置，"scheduler_mail_configuration" - 定期生成邮件配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProfileType 配置类型。
+                     * @param ProfileType 配置类型，支持值包括："dbScan_mail_configuration" - 数据库巡检邮件配置，"scheduler_mail_configuration" - 定期生成邮件配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProfileType(const std::string& _profileType);
@@ -92,17 +92,17 @@ namespace TencentCloud
                     bool ProfileTypeHasBeenSet() const;
 
                     /**
-                     * 获取配置级别，"User"或"Instance"。
+                     * 获取配置级别，支持值包括："User" - 用户级别，"Instance" - 实例级别，其中数据库巡检邮件配置为用户级别，定期生成邮件配置为实例级别。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProfileLevel 配置级别，"User"或"Instance"。
+                     * @return ProfileLevel 配置级别，支持值包括："User" - 用户级别，"Instance" - 实例级别，其中数据库巡检邮件配置为用户级别，定期生成邮件配置为实例级别。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProfileLevel() const;
 
                     /**
-                     * 设置配置级别，"User"或"Instance"。
+                     * 设置配置级别，支持值包括："User" - 用户级别，"Instance" - 实例级别，其中数据库巡检邮件配置为用户级别，定期生成邮件配置为实例级别。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProfileLevel 配置级别，"User"或"Instance"。
+                     * @param ProfileLevel 配置级别，支持值包括："User" - 用户级别，"Instance" - 实例级别，其中数据库巡检邮件配置为用户级别，定期生成邮件配置为实例级别。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProfileLevel(const std::string& _profileLevel);
@@ -163,14 +163,14 @@ namespace TencentCloud
                     bool m_profileIdHasBeenSet;
 
                     /**
-                     * 配置类型。
+                     * 配置类型，支持值包括："dbScan_mail_configuration" - 数据库巡检邮件配置，"scheduler_mail_configuration" - 定期生成邮件配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_profileType;
                     bool m_profileTypeHasBeenSet;
 
                     /**
-                     * 配置级别，"User"或"Instance"。
+                     * 配置级别，支持值包括："User" - 用户级别，"Instance" - 实例级别，其中数据库巡检邮件配置为用户级别，定期生成邮件配置为实例级别。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_profileLevel;

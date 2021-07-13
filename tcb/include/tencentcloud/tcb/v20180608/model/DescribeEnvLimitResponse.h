@@ -162,6 +162,54 @@ namespace TencentCloud
                      */
                     bool CurrentFreeTrialNumHasBeenSet() const;
 
+                    /**
+                     * 获取转支付限额总数
+                     * @return ChangePayTotal 转支付限额总数
+                     */
+                    int64_t GetChangePayTotal() const;
+
+                    /**
+                     * 判断参数 ChangePayTotal 是否已赋值
+                     * @return ChangePayTotal 是否已赋值
+                     */
+                    bool ChangePayTotalHasBeenSet() const;
+
+                    /**
+                     * 获取当前已用转支付次数
+                     * @return CurrentChangePayTotal 当前已用转支付次数
+                     */
+                    int64_t GetCurrentChangePayTotal() const;
+
+                    /**
+                     * 判断参数 CurrentChangePayTotal 是否已赋值
+                     * @return CurrentChangePayTotal 是否已赋值
+                     */
+                    bool CurrentChangePayTotalHasBeenSet() const;
+
+                    /**
+                     * 获取转支付每月限额
+                     * @return ChangePayMonthly 转支付每月限额
+                     */
+                    int64_t GetChangePayMonthly() const;
+
+                    /**
+                     * 判断参数 ChangePayMonthly 是否已赋值
+                     * @return ChangePayMonthly 是否已赋值
+                     */
+                    bool ChangePayMonthlyHasBeenSet() const;
+
+                    /**
+                     * 获取本月已用转支付额度
+                     * @return CurrentChangePayMonthly 本月已用转支付额度
+                     */
+                    int64_t GetCurrentChangePayMonthly() const;
+
+                    /**
+                     * 判断参数 CurrentChangePayMonthly 是否已赋值
+                     * @return CurrentChangePayMonthly 是否已赋值
+                     */
+                    bool CurrentChangePayMonthlyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -223,6 +271,30 @@ namespace TencentCloud
                      */
                     int64_t m_currentFreeTrialNum;
                     bool m_currentFreeTrialNumHasBeenSet;
+
+                    /**
+                     * 转支付限额总数
+                     */
+                    int64_t m_changePayTotal;
+                    bool m_changePayTotalHasBeenSet;
+
+                    /**
+                     * 当前已用转支付次数
+                     */
+                    int64_t m_currentChangePayTotal;
+                    bool m_currentChangePayTotalHasBeenSet;
+
+                    /**
+                     * 转支付每月限额
+                     */
+                    int64_t m_changePayMonthly;
+                    bool m_changePayMonthlyHasBeenSet;
+
+                    /**
+                     * 本月已用转支付额度
+                     */
+                    int64_t m_currentChangePayMonthly;
+                    bool m_currentChangePayMonthlyHasBeenSet;
 
                 };
             }

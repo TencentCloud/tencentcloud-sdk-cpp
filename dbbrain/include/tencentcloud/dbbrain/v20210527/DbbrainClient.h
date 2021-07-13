@@ -181,7 +181,7 @@ namespace TencentCloud
 
 
                 /**
-                 *添加邮件接收联系人的姓名， 邮件地址，返回值为添加成功的联系人id。Region统一选择广州。
+                 *添加邮件接收联系人的姓名， 邮件地址，返回值为添加成功的联系人id。
                  * @param req AddUserContactRequest
                  * @return AddUserContactOutcome
                  */
@@ -316,7 +316,7 @@ namespace TencentCloud
                 DescribeHealthScoreOutcomeCallable DescribeHealthScoreCallable(const Model::DescribeHealthScoreRequest& request);
 
                 /**
-                 *获取发送邮件的配置， 包括数据库巡检的邮件配置以及定期生成健康报告的邮件发送配置。Region统一选择广州。
+                 *获取发送邮件的配置， 包括数据库巡检的邮件配置以及定期生成健康报告的邮件发送配置。
                  * @param req DescribeMailProfileRequest
                  * @return DescribeMailProfileOutcome
                  */

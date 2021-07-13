@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool UploadTypeHasBeenSet() const;
 
                     /**
-                     * 获取分页，页大小
-                     * @return Limit 分页，页大小
+                     * 获取分页，页大小，默认值：100
+                     * @return Limit 分页，页大小，默认值：100
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页，页大小
-                     * @param Limit 分页，页大小
+                     * 设置分页，页大小，默认值：100
+                     * @param Limit 分页，页大小，默认值：100
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页，页数
-                     * @return Offset 分页，页数
+                     * 获取分页，页数，默认值：0
+                     * @return Offset 分页，页数，默认值：0
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页，页数
-                     * @param Offset 分页，页数
+                     * 设置分页，页数，默认值：0
+                     * @param Offset 分页，页数，默认值：0
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，name,createTime,startTime,endTime
-                     * @return OrderBy 排序字段，name,createTime,startTime,endTime
+                     * 获取排序字段，name；createTime；startTime；endTime，默认按照createTime递增排序。
+                     * @return OrderBy 排序字段，name；createTime；startTime；endTime，默认按照createTime递增排序。
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段，name,createTime,startTime,endTime
-                     * @param OrderBy 排序字段，name,createTime,startTime,endTime
+                     * 设置排序字段，name；createTime；startTime；endTime，默认按照createTime递增排序。
+                     * @param OrderBy 排序字段，name；createTime；startTime；endTime，默认按照createTime递增排序。
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
@@ -223,14 +223,14 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，desc,asc
-                     * @return OrderByType 排序方式，desc,asc
+                     * 获取排序方式，desc-递减排序，asc-递增排序。默认按照asc排序，且在OrderBy为有效值时，本参数有效
+                     * @return OrderByType 排序方式，desc-递减排序，asc-递增排序。默认按照asc排序，且在OrderBy为有效值时，本参数有效
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置排序方式，desc,asc
-                     * @param OrderByType 排序方式，desc,asc
+                     * 设置排序方式，desc-递减排序，asc-递增排序。默认按照asc排序，且在OrderBy为有效值时，本参数有效
+                     * @param OrderByType 排序方式，desc-递减排序，asc-递增排序。默认按照asc排序，且在OrderBy为有效值时，本参数有效
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
@@ -285,25 +285,25 @@ namespace TencentCloud
                     bool m_uploadTypeHasBeenSet;
 
                     /**
-                     * 分页，页大小
+                     * 分页，页大小，默认值：100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页，页数
+                     * 分页，页数，默认值：0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序字段，name,createTime,startTime,endTime
+                     * 排序字段，name；createTime；startTime；endTime，默认按照createTime递增排序。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序方式，desc,asc
+                     * 排序方式，desc-递减排序，asc-递增排序。默认按照asc排序，且在OrderBy为有效值时，本参数有效
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;

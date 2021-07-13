@@ -25,7 +25,8 @@ using namespace std;
 CheckIdCardInformationRequest::CheckIdCardInformationRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_isEncryptHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CheckIdCardInformationRequest::ToJsonString() const
         string key = "Config";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isEncryptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsEncrypt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isEncrypt, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CheckIdCardInformationRequest::SetConfig(const string& _config)
 bool CheckIdCardInformationRequest::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+bool CheckIdCardInformationRequest::GetIsEncrypt() const
+{
+    return m_isEncrypt;
+}
+
+void CheckIdCardInformationRequest::SetIsEncrypt(const bool& _isEncrypt)
+{
+    m_isEncrypt = _isEncrypt;
+    m_isEncryptHasBeenSet = true;
+}
+
+bool CheckIdCardInformationRequest::IsEncryptHasBeenSet() const
+{
+    return m_isEncryptHasBeenSet;
 }
 
 

@@ -27,7 +27,8 @@ Environment::Environment() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false)
+    m_namespaceNameHasBeenSet(false),
+    m_topicNumHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome Environment::Deserialize(const rapidjson::Value &value)
         m_namespaceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TopicNum") && !value["TopicNum"].IsNull())
+    {
+        if (!value["TopicNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Environment.TopicNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicNum = value["TopicNum"].GetInt64();
+        m_topicNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void Environment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "NamespaceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_namespaceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_topicNum, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void Environment::SetNamespaceName(const string& _namespaceName)
 bool Environment::NamespaceNameHasBeenSet() const
 {
     return m_namespaceNameHasBeenSet;
+}
+
+int64_t Environment::GetTopicNum() const
+{
+    return m_topicNum;
+}
+
+void Environment::SetTopicNum(const int64_t& _topicNum)
+{
+    m_topicNum = _topicNum;
+    m_topicNumHasBeenSet = true;
+}
+
+bool Environment::TopicNumHasBeenSet() const
+{
+    return m_topicNumHasBeenSet;
 }
 

@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteCloudBaseProjectLatestVersionRequest::DeleteCloudBaseProjectLatestVersionRequest() :
     m_envIdHasBeenSet(false),
-    m_projectNameHasBeenSet(false)
+    m_projectNameHasBeenSet(false),
+    m_keepResourceHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteCloudBaseProjectLatestVersionRequest::ToJsonString() const
         string key = "ProjectName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keepResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepResource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_keepResource, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DeleteCloudBaseProjectLatestVersionRequest::SetProjectName(const string& _p
 bool DeleteCloudBaseProjectLatestVersionRequest::ProjectNameHasBeenSet() const
 {
     return m_projectNameHasBeenSet;
+}
+
+bool DeleteCloudBaseProjectLatestVersionRequest::GetKeepResource() const
+{
+    return m_keepResource;
+}
+
+void DeleteCloudBaseProjectLatestVersionRequest::SetKeepResource(const bool& _keepResource)
+{
+    m_keepResource = _keepResource;
+    m_keepResourceHasBeenSet = true;
+}
+
+bool DeleteCloudBaseProjectLatestVersionRequest::KeepResourceHasBeenSet() const
+{
+    return m_keepResourceHasBeenSet;
 }
 
 

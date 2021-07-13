@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取事件 ID 。
-                     * @return EventId 事件 ID 。
+                     * 获取事件唯一ID 。
+                     * @return EventId 事件唯一ID 。
                      */
                     int64_t GetEventId() const;
 
                     /**
-                     * 设置事件 ID 。
-                     * @param EventId 事件 ID 。
+                     * 设置事件唯一ID 。
+                     * @param EventId 事件唯一ID 。
                      */
                     void SetEventId(const int64_t& _eventId);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool SeverityHasBeenSet() const;
 
                     /**
-                     * 获取概要。
-                     * @return Outline 概要。
+                     * 获取诊断概要。
+                     * @return Outline 诊断概要。
                      */
                     std::string GetOutline() const;
 
                     /**
-                     * 设置概要。
-                     * @param Outline 概要。
+                     * 设置诊断概要。
+                     * @param Outline 诊断概要。
                      */
                     void SetOutline(const std::string& _outline);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool OutlineHasBeenSet() const;
 
                     /**
-                     * 获取诊断项。
-                     * @return DiagItem 诊断项。
+                     * 获取诊断项说明。
+                     * @return DiagItem 诊断项说明。
                      */
                     std::string GetDiagItem() const;
 
                     /**
-                     * 设置诊断项。
-                     * @param DiagItem 诊断项。
+                     * 设置诊断项说明。
+                     * @param DiagItem 诊断项说明。
                      */
                     void SetDiagItem(const std::string& _diagItem);
 
@@ -174,17 +174,13 @@ namespace TencentCloud
 
                     /**
                      * 获取实例 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param InstanceId 实例 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -195,17 +191,17 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取保留字段
+                     * 获取保留字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Metric 保留字段
+                     * @return Metric 保留字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMetric() const;
 
                     /**
-                     * 设置保留字段
+                     * 设置保留字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Metric 保留字段
+                     * @param Metric 保留字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMetric(const std::string& _metric);
@@ -217,18 +213,14 @@ namespace TencentCloud
                     bool MetricHasBeenSet() const;
 
                     /**
-                     * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取地域。
+                     * @return Region 地域。
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置地域。
+                     * @param Region 地域。
                      */
                     void SetRegion(const std::string& _region);
 
@@ -259,7 +251,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 事件 ID 。
+                     * 事件唯一ID 。
                      */
                     int64_t m_eventId;
                     bool m_eventIdHasBeenSet;
@@ -271,34 +263,32 @@ namespace TencentCloud
                     bool m_severityHasBeenSet;
 
                     /**
-                     * 概要。
+                     * 诊断概要。
                      */
                     std::string m_outline;
                     bool m_outlineHasBeenSet;
 
                     /**
-                     * 诊断项。
+                     * 诊断项说明。
                      */
                     std::string m_diagItem;
                     bool m_diagItemHasBeenSet;
 
                     /**
                      * 实例 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 保留字段
+                     * 保留字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;
 
                     /**
-                     * 地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 地域。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

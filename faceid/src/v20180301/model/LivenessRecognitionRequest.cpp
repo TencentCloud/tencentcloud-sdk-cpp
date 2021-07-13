@@ -28,7 +28,8 @@ LivenessRecognitionRequest::LivenessRecognitionRequest() :
     m_videoBase64HasBeenSet(false),
     m_livenessTypeHasBeenSet(false),
     m_validateDataHasBeenSet(false),
-    m_optionalHasBeenSet(false)
+    m_optionalHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,15 @@ string LivenessRecognitionRequest::ToJsonString() const
         string key = "Optional";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_optional.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -189,6 +199,22 @@ void LivenessRecognitionRequest::SetOptional(const string& _optional)
 bool LivenessRecognitionRequest::OptionalHasBeenSet() const
 {
     return m_optionalHasBeenSet;
+}
+
+Encryption LivenessRecognitionRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void LivenessRecognitionRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool LivenessRecognitionRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

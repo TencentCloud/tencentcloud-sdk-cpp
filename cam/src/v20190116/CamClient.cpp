@@ -1072,6 +1072,49 @@ CamClient::DescribeSafeAuthFlagCollOutcomeCallable CamClient::DescribeSafeAuthFl
     return task->get_future();
 }
 
+CamClient::DescribeSafeAuthFlagIntlOutcome CamClient::DescribeSafeAuthFlagIntl(const DescribeSafeAuthFlagIntlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSafeAuthFlagIntl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSafeAuthFlagIntlResponse rsp = DescribeSafeAuthFlagIntlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSafeAuthFlagIntlOutcome(rsp);
+        else
+            return DescribeSafeAuthFlagIntlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSafeAuthFlagIntlOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DescribeSafeAuthFlagIntlAsync(const DescribeSafeAuthFlagIntlRequest& request, const DescribeSafeAuthFlagIntlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSafeAuthFlagIntl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DescribeSafeAuthFlagIntlOutcomeCallable CamClient::DescribeSafeAuthFlagIntlCallable(const DescribeSafeAuthFlagIntlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSafeAuthFlagIntlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSafeAuthFlagIntl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::DescribeSubAccountsOutcome CamClient::DescribeSubAccounts(const DescribeSubAccountsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubAccounts");
@@ -1237,6 +1280,49 @@ CamClient::DetachUserPolicyOutcomeCallable CamClient::DetachUserPolicyCallable(c
         [this, request]()
         {
             return this->DetachUserPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::GetAccountSummaryOutcome CamClient::GetAccountSummary(const GetAccountSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAccountSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAccountSummaryResponse rsp = GetAccountSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAccountSummaryOutcome(rsp);
+        else
+            return GetAccountSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAccountSummaryOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::GetAccountSummaryAsync(const GetAccountSummaryRequest& request, const GetAccountSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAccountSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::GetAccountSummaryOutcomeCallable CamClient::GetAccountSummaryCallable(const GetAccountSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAccountSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAccountSummary(request);
         }
     );
 

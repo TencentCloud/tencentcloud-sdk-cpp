@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SQL优化建议，可解析为JSON数组。
-                     * @return Advices SQL优化建议，可解析为JSON数组。
+                     * 获取SQL优化建议，可解析为JSON数组，无需优化时输出为空。
+                     * @return Advices SQL优化建议，可解析为JSON数组，无需优化时输出为空。
                      */
                     std::string GetAdvices() const;
 
@@ -55,8 +55,8 @@ namespace TencentCloud
                     bool AdvicesHasBeenSet() const;
 
                     /**
-                     * 获取SQL优化建议备注，可解析为String数组。
-                     * @return Comments SQL优化建议备注，可解析为String数组。
+                     * 获取SQL优化建议备注，可解析为String数组，无需优化时输出为空。
+                     * @return Comments SQL优化建议备注，可解析为String数组，无需优化时输出为空。
                      */
                     std::string GetComments() const;
 
@@ -103,8 +103,8 @@ namespace TencentCloud
                     bool TablesHasBeenSet() const;
 
                     /**
-                     * 获取SQL执行计划，可解析为JSON。
-                     * @return SqlPlan SQL执行计划，可解析为JSON。
+                     * 获取SQL执行计划，可解析为JSON，无需优化时输出为空。
+                     * @return SqlPlan SQL执行计划，可解析为JSON，无需优化时输出为空。
                      */
                     std::string GetSqlPlan() const;
 
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool SqlPlanHasBeenSet() const;
 
                     /**
-                     * 获取SQL优化后的成本节约详情，可解析为JSON。
-                     * @return Cost SQL优化后的成本节约详情，可解析为JSON。
+                     * 获取SQL优化后的成本节约详情，可解析为JSON，无需优化时输出为空。
+                     * @return Cost SQL优化后的成本节约详情，可解析为JSON，无需优化时输出为空。
                      */
                     std::string GetCost() const;
 
@@ -129,13 +129,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SQL优化建议，可解析为JSON数组。
+                     * SQL优化建议，可解析为JSON数组，无需优化时输出为空。
                      */
                     std::string m_advices;
                     bool m_advicesHasBeenSet;
 
                     /**
-                     * SQL优化建议备注，可解析为String数组。
+                     * SQL优化建议备注，可解析为String数组，无需优化时输出为空。
                      */
                     std::string m_comments;
                     bool m_commentsHasBeenSet;
@@ -159,13 +159,13 @@ namespace TencentCloud
                     bool m_tablesHasBeenSet;
 
                     /**
-                     * SQL执行计划，可解析为JSON。
+                     * SQL执行计划，可解析为JSON，无需优化时输出为空。
                      */
                     std::string m_sqlPlan;
                     bool m_sqlPlanHasBeenSet;
 
                     /**
-                     * SQL优化后的成本节约详情，可解析为JSON。
+                     * SQL优化后的成本节约详情，可解析为JSON，无需优化时输出为空。
                      */
                     std::string m_cost;
                     bool m_costHasBeenSet;
