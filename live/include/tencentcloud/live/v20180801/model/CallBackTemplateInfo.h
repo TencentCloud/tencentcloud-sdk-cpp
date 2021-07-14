@@ -119,6 +119,24 @@ namespace TencentCloud
                     bool StreamBeginNotifyUrlHasBeenSet() const;
 
                     /**
+                     * 获取混流回调 URL。(参数已弃用)。
+                     * @return StreamMixNotifyUrl 混流回调 URL。(参数已弃用)。
+                     */
+                    std::string GetStreamMixNotifyUrl() const;
+
+                    /**
+                     * 设置混流回调 URL。(参数已弃用)。
+                     * @param StreamMixNotifyUrl 混流回调 URL。(参数已弃用)。
+                     */
+                    void SetStreamMixNotifyUrl(const std::string& _streamMixNotifyUrl);
+
+                    /**
+                     * 判断参数 StreamMixNotifyUrl 是否已赋值
+                     * @return StreamMixNotifyUrl 是否已赋值
+                     */
+                    bool StreamMixNotifyUrlHasBeenSet() const;
+
+                    /**
                      * 获取断流回调 URL。
                      * @return StreamEndNotifyUrl 断流回调 URL。
                      */
@@ -135,24 +153,6 @@ namespace TencentCloud
                      * @return StreamEndNotifyUrl 是否已赋值
                      */
                     bool StreamEndNotifyUrlHasBeenSet() const;
-
-                    /**
-                     * 获取混流回调 URL。
-                     * @return StreamMixNotifyUrl 混流回调 URL。
-                     */
-                    std::string GetStreamMixNotifyUrl() const;
-
-                    /**
-                     * 设置混流回调 URL。
-                     * @param StreamMixNotifyUrl 混流回调 URL。
-                     */
-                    void SetStreamMixNotifyUrl(const std::string& _streamMixNotifyUrl);
-
-                    /**
-                     * 判断参数 StreamMixNotifyUrl 是否已赋值
-                     * @return StreamMixNotifyUrl 是否已赋值
-                     */
-                    bool StreamMixNotifyUrlHasBeenSet() const;
 
                     /**
                      * 获取录制回调 URL。
@@ -253,16 +253,16 @@ namespace TencentCloud
                     bool m_streamBeginNotifyUrlHasBeenSet;
 
                     /**
+                     * 混流回调 URL。(参数已弃用)。
+                     */
+                    std::string m_streamMixNotifyUrl;
+                    bool m_streamMixNotifyUrlHasBeenSet;
+
+                    /**
                      * 断流回调 URL。
                      */
                     std::string m_streamEndNotifyUrl;
                     bool m_streamEndNotifyUrlHasBeenSet;
-
-                    /**
-                     * 混流回调 URL。
-                     */
-                    std::string m_streamMixNotifyUrl;
-                    bool m_streamMixNotifyUrlHasBeenSet;
 
                     /**
                      * 录制回调 URL。

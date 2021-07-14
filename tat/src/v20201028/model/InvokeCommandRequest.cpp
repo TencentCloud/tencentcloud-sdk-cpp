@@ -25,7 +25,8 @@ using namespace std;
 InvokeCommandRequest::InvokeCommandRequest() :
     m_commandIdHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_usernameHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string InvokeCommandRequest::ToJsonString() const
         string key = "Parameters";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_parameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Username";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void InvokeCommandRequest::SetParameters(const string& _parameters)
 bool InvokeCommandRequest::ParametersHasBeenSet() const
 {
     return m_parametersHasBeenSet;
+}
+
+string InvokeCommandRequest::GetUsername() const
+{
+    return m_username;
+}
+
+void InvokeCommandRequest::SetUsername(const string& _username)
+{
+    m_username = _username;
+    m_usernameHasBeenSet = true;
+}
+
+bool InvokeCommandRequest::UsernameHasBeenSet() const
+{
+    return m_usernameHasBeenSet;
 }
 
 

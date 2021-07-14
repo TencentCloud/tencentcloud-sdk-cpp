@@ -50,9 +50,7 @@ namespace TencentCloud
                     /**
                      * 获取子任务名称。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 子任务名称。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTaskName() const;
@@ -60,9 +58,7 @@ namespace TencentCloud
                     /**
                      * 设置子任务名称。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TaskName 子任务名称。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -124,9 +120,7 @@ namespace TencentCloud
                     /**
                      * 获取子任务进度。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgressRate 子任务进度。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetProgressRate() const;
@@ -134,9 +128,7 @@ namespace TencentCloud
                     /**
                      * 设置子任务进度。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ProgressRate 子任务进度。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProgressRate(const int64_t& _progressRate);
@@ -150,9 +142,7 @@ namespace TencentCloud
                     /**
                      * 获取画质重生处理后文件的下载地址。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadUrl 画质重生处理后文件的下载地址。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDownloadUrl() const;
@@ -160,9 +150,7 @@ namespace TencentCloud
                     /**
                      * 设置画质重生处理后文件的下载地址。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param DownloadUrl 画质重生处理后文件的下载地址。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDownloadUrl(const std::string& _downloadUrl);
@@ -176,9 +164,7 @@ namespace TencentCloud
                     /**
                      * 获取画质重生处理后文件的MD5。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5 画质重生处理后文件的MD5。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMd5() const;
@@ -186,9 +172,7 @@ namespace TencentCloud
                     /**
                      * 设置画质重生处理后文件的MD5。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Md5 画质重生处理后文件的MD5。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMd5(const std::string& _md5);
@@ -202,9 +186,7 @@ namespace TencentCloud
                     /**
                      * 获取画质重生处理后文件的详细信息。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileInfo 画质重生处理后文件的详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FileInfo GetFileInfo() const;
@@ -212,9 +194,7 @@ namespace TencentCloud
                     /**
                      * 设置画质重生处理后文件的详细信息。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FileInfo 画质重生处理后文件的详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFileInfo(const FileInfo& _fileInfo);
@@ -229,7 +209,6 @@ namespace TencentCloud
 
                     /**
                      * 子任务名称。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskName;
@@ -253,14 +232,12 @@ namespace TencentCloud
                     /**
                      * 子任务进度。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_progressRate;
                     bool m_progressRateHasBeenSet;
 
                     /**
                      * 画质重生处理后文件的下载地址。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downloadUrl;
@@ -269,14 +246,12 @@ namespace TencentCloud
                     /**
                      * 画质重生处理后文件的MD5。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
                      * 画质重生处理后文件的详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FileInfo m_fileInfo;

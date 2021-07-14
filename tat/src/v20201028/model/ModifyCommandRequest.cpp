@@ -30,7 +30,8 @@ ModifyCommandRequest::ModifyCommandRequest() :
     m_commandTypeHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_defaultParametersHasBeenSet(false)
+    m_defaultParametersHasBeenSet(false),
+    m_usernameHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string ModifyCommandRequest::ToJsonString() const
         string key = "DefaultParameters";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_defaultParameters.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Username";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void ModifyCommandRequest::SetDefaultParameters(const string& _defaultParameters
 bool ModifyCommandRequest::DefaultParametersHasBeenSet() const
 {
     return m_defaultParametersHasBeenSet;
+}
+
+string ModifyCommandRequest::GetUsername() const
+{
+    return m_username;
+}
+
+void ModifyCommandRequest::SetUsername(const string& _username)
+{
+    m_username = _username;
+    m_usernameHasBeenSet = true;
+}
+
+bool ModifyCommandRequest::UsernameHasBeenSet() const
+{
+    return m_usernameHasBeenSet;
 }
 
 

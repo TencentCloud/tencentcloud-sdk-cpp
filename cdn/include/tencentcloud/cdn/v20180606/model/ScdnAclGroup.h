@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdn/v20180606/model/ScdnAclRule.h>
+#include <tencentcloud/cdn/v20180606/model/ScdnErrorPage.h>
 
 
 namespace TencentCloud
@@ -84,14 +85,14 @@ namespace TencentCloud
                     bool ConfigureHasBeenSet() const;
 
                     /**
-                     * 获取规则行为，一般为refuse
-                     * @return Result 规则行为，一般为refuse
+                     * 获取规则行为，一般为refuse，重定向redirect
+                     * @return Result 规则行为，一般为refuse，重定向redirect
                      */
                     std::string GetResult() const;
 
                     /**
-                     * 设置规则行为，一般为refuse
-                     * @param Result 规则行为，一般为refuse
+                     * 设置规则行为，一般为refuse，重定向redirect
+                     * @param Result 规则行为，一般为refuse，重定向redirect
                      */
                     void SetResult(const std::string& _result);
 
@@ -119,6 +120,28 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取错误页面配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrorPage 错误页面配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScdnErrorPage GetErrorPage() const;
+
+                    /**
+                     * 设置错误页面配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ErrorPage 错误页面配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetErrorPage(const ScdnErrorPage& _errorPage);
+
+                    /**
+                     * 判断参数 ErrorPage 是否已赋值
+                     * @return ErrorPage 是否已赋值
+                     */
+                    bool ErrorPageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,7 +157,7 @@ namespace TencentCloud
                     bool m_configureHasBeenSet;
 
                     /**
-                     * 规则行为，一般为refuse
+                     * 规则行为，一般为refuse，重定向redirect
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
@@ -144,6 +167,13 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 错误页面配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScdnErrorPage m_errorPage;
+                    bool m_errorPageHasBeenSet;
 
                 };
             }

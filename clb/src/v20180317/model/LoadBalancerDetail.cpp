@@ -52,7 +52,8 @@ LoadBalancerDetail::LoadBalancerDetail() :
     m_targetWeightHasBeenSet(false),
     m_isolationHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
-    m_loadBalancerPassToTargetHasBeenSet(false)
+    m_loadBalancerPassToTargetHasBeenSet(false),
+    m_targetHealthHasBeenSet(false)
 {
 }
 
@@ -415,6 +416,16 @@ CoreInternalOutcome LoadBalancerDetail::Deserialize(const rapidjson::Value &valu
         m_loadBalancerPassToTargetHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetHealth") && !value["TargetHealth"].IsNull())
+    {
+        if (!value["TargetHealth"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LoadBalancerDetail.TargetHealth` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetHealth = string(value["TargetHealth"].GetString());
+        m_targetHealthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -691,6 +702,14 @@ void LoadBalancerDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "LoadBalancerPassToTarget";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loadBalancerPassToTarget, allocator);
+    }
+
+    if (m_targetHealthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetHealth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetHealth.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1206,5 +1225,21 @@ void LoadBalancerDetail::SetLoadBalancerPassToTarget(const uint64_t& _loadBalanc
 bool LoadBalancerDetail::LoadBalancerPassToTargetHasBeenSet() const
 {
     return m_loadBalancerPassToTargetHasBeenSet;
+}
+
+string LoadBalancerDetail::GetTargetHealth() const
+{
+    return m_targetHealth;
+}
+
+void LoadBalancerDetail::SetTargetHealth(const string& _targetHealth)
+{
+    m_targetHealth = _targetHealth;
+    m_targetHealthHasBeenSet = true;
+}
+
+bool LoadBalancerDetail::TargetHealthHasBeenSet() const
+{
+    return m_targetHealthHasBeenSet;
 }
 

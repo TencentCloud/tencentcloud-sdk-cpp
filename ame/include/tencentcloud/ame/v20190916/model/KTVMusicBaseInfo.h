@@ -154,6 +154,24 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取歌曲时长
+                     * @return Duration 歌曲时长
+                     */
+                    uint64_t GetDuration() const;
+
+                    /**
+                     * 设置歌曲时长
+                     * @param Duration 歌曲时长
+                     */
+                    void SetDuration(const uint64_t& _duration);
+
+                    /**
+                     * 判断参数 Duration 是否已赋值
+                     * @return Duration 是否已赋值
+                     */
+                    bool DurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +209,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 歌曲时长
+                     */
+                    uint64_t m_duration;
+                    bool m_durationHasBeenSet;
 
                 };
             }

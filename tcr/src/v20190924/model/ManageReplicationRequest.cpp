@@ -27,7 +27,8 @@ ManageReplicationRequest::ManageReplicationRequest() :
     m_destinationRegistryIdHasBeenSet(false),
     m_ruleHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_destinationRegionIdHasBeenSet(false)
+    m_destinationRegionIdHasBeenSet(false),
+    m_peerReplicationOptionHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,15 @@ string ManageReplicationRequest::ToJsonString() const
         string key = "DestinationRegionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_destinationRegionId, allocator);
+    }
+
+    if (m_peerReplicationOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PeerReplicationOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_peerReplicationOption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -165,6 +175,22 @@ void ManageReplicationRequest::SetDestinationRegionId(const uint64_t& _destinati
 bool ManageReplicationRequest::DestinationRegionIdHasBeenSet() const
 {
     return m_destinationRegionIdHasBeenSet;
+}
+
+PeerReplicationOption ManageReplicationRequest::GetPeerReplicationOption() const
+{
+    return m_peerReplicationOption;
+}
+
+void ManageReplicationRequest::SetPeerReplicationOption(const PeerReplicationOption& _peerReplicationOption)
+{
+    m_peerReplicationOption = _peerReplicationOption;
+    m_peerReplicationOptionHasBeenSet = true;
+}
+
+bool ManageReplicationRequest::PeerReplicationOptionHasBeenSet() const
+{
+    return m_peerReplicationOptionHasBeenSet;
 }
 
 

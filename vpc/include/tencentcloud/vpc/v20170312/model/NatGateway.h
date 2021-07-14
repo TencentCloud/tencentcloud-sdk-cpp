@@ -27,6 +27,7 @@
 #include <tencentcloud/vpc/v20170312/model/NatGatewayAddress.h>
 #include <tencentcloud/vpc/v20170312/model/DestinationIpPortTranslationNatRule.h>
 #include <tencentcloud/vpc/v20170312/model/Tag.h>
+#include <tencentcloud/vpc/v20170312/model/SourceIpTranslationNatRule.h>
 
 
 namespace TencentCloud
@@ -339,6 +340,72 @@ namespace TencentCloud
                      */
                     bool SecurityGroupSetHasBeenSet() const;
 
+                    /**
+                     * 获取NAT网关的SNAT转发规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceIpTranslationNatRuleSet NAT网关的SNAT转发规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SourceIpTranslationNatRule> GetSourceIpTranslationNatRuleSet() const;
+
+                    /**
+                     * 设置NAT网关的SNAT转发规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SourceIpTranslationNatRuleSet NAT网关的SNAT转发规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSourceIpTranslationNatRuleSet(const std::vector<SourceIpTranslationNatRule>& _sourceIpTranslationNatRuleSet);
+
+                    /**
+                     * 判断参数 SourceIpTranslationNatRuleSet 是否已赋值
+                     * @return SourceIpTranslationNatRuleSet 是否已赋值
+                     */
+                    bool SourceIpTranslationNatRuleSetHasBeenSet() const;
+
+                    /**
+                     * 获取是否独享型NAT。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsExclusive 是否独享型NAT。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsExclusive() const;
+
+                    /**
+                     * 设置是否独享型NAT。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsExclusive 是否独享型NAT。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsExclusive(const bool& _isExclusive);
+
+                    /**
+                     * 判断参数 IsExclusive 是否已赋值
+                     * @return IsExclusive 是否已赋值
+                     */
+                    bool IsExclusiveHasBeenSet() const;
+
+                    /**
+                     * 获取独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExclusiveGatewayBandwidth 独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetExclusiveGatewayBandwidth() const;
+
+                    /**
+                     * 设置独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExclusiveGatewayBandwidth 独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExclusiveGatewayBandwidth(const uint64_t& _exclusiveGatewayBandwidth);
+
+                    /**
+                     * 判断参数 ExclusiveGatewayBandwidth 是否已赋值
+                     * @return ExclusiveGatewayBandwidth 是否已赋值
+                     */
+                    bool ExclusiveGatewayBandwidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -435,6 +502,27 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroupSet;
                     bool m_securityGroupSetHasBeenSet;
+
+                    /**
+                     * NAT网关的SNAT转发规则。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SourceIpTranslationNatRule> m_sourceIpTranslationNatRuleSet;
+                    bool m_sourceIpTranslationNatRuleSetHasBeenSet;
+
+                    /**
+                     * 是否独享型NAT。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isExclusive;
+                    bool m_isExclusiveHasBeenSet;
+
+                    /**
+                     * 独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_exclusiveGatewayBandwidth;
+                    bool m_exclusiveGatewayBandwidthHasBeenSet;
 
                 };
             }

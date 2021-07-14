@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcr/v20190924/model/ReplicationRule.h>
+#include <tencentcloud/tcr/v20190924/model/PeerReplicationOption.h>
 
 
 namespace TencentCloud
@@ -133,6 +134,24 @@ namespace TencentCloud
                      */
                     bool DestinationRegionIdHasBeenSet() const;
 
+                    /**
+                     * 获取开启跨主账号实例同步配置项
+                     * @return PeerReplicationOption 开启跨主账号实例同步配置项
+                     */
+                    PeerReplicationOption GetPeerReplicationOption() const;
+
+                    /**
+                     * 设置开启跨主账号实例同步配置项
+                     * @param PeerReplicationOption 开启跨主账号实例同步配置项
+                     */
+                    void SetPeerReplicationOption(const PeerReplicationOption& _peerReplicationOption);
+
+                    /**
+                     * 判断参数 PeerReplicationOption 是否已赋值
+                     * @return PeerReplicationOption 是否已赋值
+                     */
+                    bool PeerReplicationOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +183,12 @@ namespace TencentCloud
                      */
                     uint64_t m_destinationRegionId;
                     bool m_destinationRegionIdHasBeenSet;
+
+                    /**
+                     * 开启跨主账号实例同步配置项
+                     */
+                    PeerReplicationOption m_peerReplicationOption;
+                    bool m_peerReplicationOptionHasBeenSet;
 
                 };
             }

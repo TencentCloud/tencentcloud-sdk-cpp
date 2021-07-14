@@ -31,7 +31,14 @@ DcnDetailItem::DcnDetailItem() :
     m_statusHasBeenSet(false),
     m_statusDescHasBeenSet(false),
     m_dcnFlagHasBeenSet(false),
-    m_dcnStatusHasBeenSet(false)
+    m_dcnStatusHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_memoryHasBeenSet(false),
+    m_storageHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_periodEndTimeHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -150,6 +157,76 @@ CoreInternalOutcome DcnDetailItem::Deserialize(const rapidjson::Value &value)
         m_dcnStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    {
+        if (!value["Cpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DcnDetailItem.Cpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = value["Cpu"].GetInt64();
+        m_cpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("Memory") && !value["Memory"].IsNull())
+    {
+        if (!value["Memory"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DcnDetailItem.Memory` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_memory = value["Memory"].GetInt64();
+        m_memoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("Storage") && !value["Storage"].IsNull())
+    {
+        if (!value["Storage"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DcnDetailItem.Storage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storage = value["Storage"].GetInt64();
+        m_storageHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DcnDetailItem.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = value["PayMode"].GetInt64();
+        m_payModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DcnDetailItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PeriodEndTime") && !value["PeriodEndTime"].IsNull())
+    {
+        if (!value["PeriodEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DcnDetailItem.PeriodEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_periodEndTime = string(value["PeriodEndTime"].GetString());
+        m_periodEndTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `DcnDetailItem.InstanceType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = value["InstanceType"].GetInt64();
+        m_instanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +320,62 @@ void DcnDetailItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DcnStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dcnStatus, allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_memoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Memory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memory, allocator);
+    }
+
+    if (m_storageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Storage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storage, allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PeriodEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_periodEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceType, allocator);
     }
 
 }
@@ -422,5 +555,117 @@ void DcnDetailItem::SetDcnStatus(const int64_t& _dcnStatus)
 bool DcnDetailItem::DcnStatusHasBeenSet() const
 {
     return m_dcnStatusHasBeenSet;
+}
+
+int64_t DcnDetailItem::GetCpu() const
+{
+    return m_cpu;
+}
+
+void DcnDetailItem::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool DcnDetailItem::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
+}
+
+int64_t DcnDetailItem::GetMemory() const
+{
+    return m_memory;
+}
+
+void DcnDetailItem::SetMemory(const int64_t& _memory)
+{
+    m_memory = _memory;
+    m_memoryHasBeenSet = true;
+}
+
+bool DcnDetailItem::MemoryHasBeenSet() const
+{
+    return m_memoryHasBeenSet;
+}
+
+int64_t DcnDetailItem::GetStorage() const
+{
+    return m_storage;
+}
+
+void DcnDetailItem::SetStorage(const int64_t& _storage)
+{
+    m_storage = _storage;
+    m_storageHasBeenSet = true;
+}
+
+bool DcnDetailItem::StorageHasBeenSet() const
+{
+    return m_storageHasBeenSet;
+}
+
+int64_t DcnDetailItem::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void DcnDetailItem::SetPayMode(const int64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool DcnDetailItem::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+string DcnDetailItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void DcnDetailItem::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool DcnDetailItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string DcnDetailItem::GetPeriodEndTime() const
+{
+    return m_periodEndTime;
+}
+
+void DcnDetailItem::SetPeriodEndTime(const string& _periodEndTime)
+{
+    m_periodEndTime = _periodEndTime;
+    m_periodEndTimeHasBeenSet = true;
+}
+
+bool DcnDetailItem::PeriodEndTimeHasBeenSet() const
+{
+    return m_periodEndTimeHasBeenSet;
+}
+
+int64_t DcnDetailItem::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void DcnDetailItem::SetInstanceType(const int64_t& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool DcnDetailItem::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 

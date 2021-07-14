@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool WorkingDirectoryHasBeenSet() const;
 
+                    /**
+                     * 获取执行用户。
+                     * @return Username 执行用户。
+                     */
+                    std::string GetUsername() const;
+
+                    /**
+                     * 设置执行用户。
+                     * @param Username 执行用户。
+                     */
+                    void SetUsername(const std::string& _username);
+
+                    /**
+                     * 判断参数 Username 是否已赋值
+                     * @return Username 是否已赋值
+                     */
+                    bool UsernameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_workingDirectory;
                     bool m_workingDirectoryHasBeenSet;
+
+                    /**
+                     * 执行用户。
+                     */
+                    std::string m_username;
+                    bool m_usernameHasBeenSet;
 
                 };
             }

@@ -229,6 +229,28 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取在 CVM 或 Lighthouse 实例中执行命令的用户名称。
+使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。默认情况下，在Linux实例中以root用户执行命令。
+                     * @return Username 在 CVM 或 Lighthouse 实例中执行命令的用户名称。
+使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。默认情况下，在Linux实例中以root用户执行命令。
+                     */
+                    std::string GetUsername() const;
+
+                    /**
+                     * 设置在 CVM 或 Lighthouse 实例中执行命令的用户名称。
+使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。默认情况下，在Linux实例中以root用户执行命令。
+                     * @param Username 在 CVM 或 Lighthouse 实例中执行命令的用户名称。
+使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。默认情况下，在Linux实例中以root用户执行命令。
+                     */
+                    void SetUsername(const std::string& _username);
+
+                    /**
+                     * 判断参数 Username 是否已赋值
+                     * @return Username 是否已赋值
+                     */
+                    bool UsernameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +312,13 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 在 CVM 或 Lighthouse 实例中执行命令的用户名称。
+使用最小权限执行命令是权限管理的最佳实践，建议您以普通用户身份执行云助手命令。默认情况下，在Linux实例中以root用户执行命令。
+                     */
+                    std::string m_username;
+                    bool m_usernameHasBeenSet;
 
                 };
             }

@@ -272,14 +272,12 @@ namespace TencentCloud
                      * 获取编码器支持选项，可选值：
 h264,
 h265,
-av1
-。
+av1。
 不填默认h264。
                      * @return VideoCodec 编码器支持选项，可选值：
 h264,
 h265,
-av1
-。
+av1。
 不填默认h264。
                      */
                     std::string GetVideoCodec() const;
@@ -288,14 +286,12 @@ av1
                      * 设置编码器支持选项，可选值：
 h264,
 h265,
-av1
-。
+av1。
 不填默认h264。
                      * @param VideoCodec 编码器支持选项，可选值：
 h264,
 h265,
-av1
-。
+av1。
 不填默认h264。
                      */
                     void SetVideoCodec(const std::string& _videoCodec);
@@ -479,8 +475,7 @@ hlg。
                      * 编码器支持选项，可选值：
 h264,
 h265,
-av1
-。
+av1。
 不填默认h264。
                      */
                     std::string m_videoCodec;

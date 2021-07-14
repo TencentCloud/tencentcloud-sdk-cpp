@@ -26,7 +26,8 @@ KTVMusicBaseInfo::KTVMusicBaseInfo() :
     m_singerSetHasBeenSet(false),
     m_lyricistSetHasBeenSet(false),
     m_composerSetHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_durationHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const rapidjson::Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Duration") && !value["Duration"].IsNull())
+    {
+        if (!value["Duration"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `KTVMusicBaseInfo.Duration` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_duration = value["Duration"].GetUint64();
+        m_durationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -180,6 +191,14 @@ void KTVMusicBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_durationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Duration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_duration, allocator);
     }
 
 }
@@ -279,5 +298,21 @@ void KTVMusicBaseInfo::SetTagSet(const vector<string>& _tagSet)
 bool KTVMusicBaseInfo::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+uint64_t KTVMusicBaseInfo::GetDuration() const
+{
+    return m_duration;
+}
+
+void KTVMusicBaseInfo::SetDuration(const uint64_t& _duration)
+{
+    m_duration = _duration;
+    m_durationHasBeenSet = true;
+}
+
+bool KTVMusicBaseInfo::DurationHasBeenSet() const
+{
+    return m_durationHasBeenSet;
 }
 

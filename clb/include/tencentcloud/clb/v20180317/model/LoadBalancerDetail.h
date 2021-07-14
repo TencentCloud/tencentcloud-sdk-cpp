@@ -754,6 +754,28 @@ Public：公网属性， Private：内网属性。
                      */
                     bool LoadBalancerPassToTargetHasBeenSet() const;
 
+                    /**
+                     * 获取后端目标健康状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetHealth 后端目标健康状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTargetHealth() const;
+
+                    /**
+                     * 设置后端目标健康状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetHealth 后端目标健康状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetHealth(const std::string& _targetHealth);
+
+                    /**
+                     * 判断参数 TargetHealth 是否已赋值
+                     * @return TargetHealth 是否已赋值
+                     */
+                    bool TargetHealthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -979,6 +1001,13 @@ Public：公网属性， Private：内网属性。
                      */
                     uint64_t m_loadBalancerPassToTarget;
                     bool m_loadBalancerPassToTargetHasBeenSet;
+
+                    /**
+                     * 后端目标健康状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetHealth;
+                    bool m_targetHealthHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
 UnBindLiveDomainCertRequest::UnBindLiveDomainCertRequest() :
-    m_domainNameHasBeenSet(false)
+    m_domainNameHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string UnBindLiveDomainCertRequest::ToJsonString() const
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void UnBindLiveDomainCertRequest::SetDomainName(const string& _domainName)
 bool UnBindLiveDomainCertRequest::DomainNameHasBeenSet() const
 {
     return m_domainNameHasBeenSet;
+}
+
+string UnBindLiveDomainCertRequest::GetType() const
+{
+    return m_type;
+}
+
+void UnBindLiveDomainCertRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool UnBindLiveDomainCertRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

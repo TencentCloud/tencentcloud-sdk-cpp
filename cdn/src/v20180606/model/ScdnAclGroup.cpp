@@ -24,7 +24,8 @@ ScdnAclGroup::ScdnAclGroup() :
     m_ruleNameHasBeenSet(false),
     m_configureHasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_errorPageHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,23 @@ CoreInternalOutcome ScdnAclGroup::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorPage") && !value["ErrorPage"].IsNull())
+    {
+        if (!value["ErrorPage"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `ScdnAclGroup.ErrorPage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_errorPage.Deserialize(value["ErrorPage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_errorPageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +145,15 @@ void ScdnAclGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorPageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorPage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_errorPage.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -194,5 +221,21 @@ void ScdnAclGroup::SetStatus(const string& _status)
 bool ScdnAclGroup::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+ScdnErrorPage ScdnAclGroup::GetErrorPage() const
+{
+    return m_errorPage;
+}
+
+void ScdnAclGroup::SetErrorPage(const ScdnErrorPage& _errorPage)
+{
+    m_errorPage = _errorPage;
+    m_errorPageHasBeenSet = true;
+}
+
+bool ScdnAclGroup::ErrorPageHasBeenSet() const
+{
+    return m_errorPageHasBeenSet;
 }
 

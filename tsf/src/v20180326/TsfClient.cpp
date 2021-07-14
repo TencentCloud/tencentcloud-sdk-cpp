@@ -599,6 +599,49 @@ TsfClient::CreateContainGroupOutcomeCallable TsfClient::CreateContainGroupCallab
     return task->get_future();
 }
 
+TsfClient::CreateFileConfigOutcome TsfClient::CreateFileConfig(const CreateFileConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFileConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFileConfigResponse rsp = CreateFileConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFileConfigOutcome(rsp);
+        else
+            return CreateFileConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFileConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateFileConfigAsync(const CreateFileConfigRequest& request, const CreateFileConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFileConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateFileConfigOutcomeCallable TsfClient::CreateFileConfigCallable(const CreateFileConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFileConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFileConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::CreateGatewayApiOutcome TsfClient::CreateGatewayApi(const CreateGatewayApiRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateGatewayApi");
@@ -2957,6 +3000,49 @@ TsfClient::DescribeEnabledUnitRuleOutcomeCallable TsfClient::DescribeEnabledUnit
         [this, request]()
         {
             return this->DescribeEnabledUnitRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeFileConfigsOutcome TsfClient::DescribeFileConfigs(const DescribeFileConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFileConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFileConfigsResponse rsp = DescribeFileConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFileConfigsOutcome(rsp);
+        else
+            return DescribeFileConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFileConfigsOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeFileConfigsAsync(const DescribeFileConfigsRequest& request, const DescribeFileConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFileConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeFileConfigsOutcomeCallable TsfClient::DescribeFileConfigsCallable(const DescribeFileConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFileConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFileConfigs(request);
         }
     );
 
@@ -6010,6 +6096,49 @@ TsfClient::ReleaseConfigOutcomeCallable TsfClient::ReleaseConfigCallable(const R
         [this, request]()
         {
             return this->ReleaseConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ReleaseFileConfigOutcome TsfClient::ReleaseFileConfig(const ReleaseFileConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseFileConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseFileConfigResponse rsp = ReleaseFileConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseFileConfigOutcome(rsp);
+        else
+            return ReleaseFileConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseFileConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ReleaseFileConfigAsync(const ReleaseFileConfigRequest& request, const ReleaseFileConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseFileConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ReleaseFileConfigOutcomeCallable TsfClient::ReleaseFileConfigCallable(const ReleaseFileConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseFileConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseFileConfig(request);
         }
     );
 

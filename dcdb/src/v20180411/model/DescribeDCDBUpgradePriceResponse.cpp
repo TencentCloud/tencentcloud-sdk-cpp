@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeDCDBUpgradePriceResponse::DescribeDCDBUpgradePriceResponse() :
     m_originalPriceHasBeenSet(false),
-    m_priceHasBeenSet(false)
+    m_priceHasBeenSet(false),
+    m_formulaHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeDCDBUpgradePriceResponse::Deserialize(const string &
         m_priceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Formula") && !rsp["Formula"].IsNull())
+    {
+        if (!rsp["Formula"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Formula` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_formula = string(rsp["Formula"].GetString());
+        m_formulaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -106,6 +117,16 @@ int64_t DescribeDCDBUpgradePriceResponse::GetPrice() const
 bool DescribeDCDBUpgradePriceResponse::PriceHasBeenSet() const
 {
     return m_priceHasBeenSet;
+}
+
+string DescribeDCDBUpgradePriceResponse::GetFormula() const
+{
+    return m_formula;
+}
+
+bool DescribeDCDBUpgradePriceResponse::FormulaHasBeenSet() const
+{
+    return m_formulaHasBeenSet;
 }
 
 

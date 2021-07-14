@@ -31,7 +31,8 @@ CreateCommandRequest::CreateCommandRequest() :
     m_timeoutHasBeenSet(false),
     m_enableParameterHasBeenSet(false),
     m_defaultParametersHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_usernameHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string CreateCommandRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_usernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Username";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -271,6 +280,22 @@ void CreateCommandRequest::SetTags(const vector<Tag>& _tags)
 bool CreateCommandRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateCommandRequest::GetUsername() const
+{
+    return m_username;
+}
+
+void CreateCommandRequest::SetUsername(const string& _username)
+{
+    m_username = _username;
+    m_usernameHasBeenSet = true;
+}
+
+bool CreateCommandRequest::UsernameHasBeenSet() const
+{
+    return m_usernameHasBeenSet;
 }
 
 

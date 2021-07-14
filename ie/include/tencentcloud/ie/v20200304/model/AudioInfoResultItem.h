@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音频流的流id
-                     * @return Stream 音频流的流id
+                     * 获取音频流的流id。
+                     * @return Stream 音频流的流id。
                      */
                     int64_t GetStream() const;
 
                     /**
-                     * 设置音频流的流id
-                     * @param Stream 音频流的流id
+                     * 设置音频流的流id。
+                     * @param Stream 音频流的流id。
                      */
                     void SetStream(const int64_t& _stream);
 
@@ -67,9 +67,7 @@ namespace TencentCloud
                     /**
                      * 获取音频采样率 。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sample 音频采样率 。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetSample() const;
@@ -77,9 +75,7 @@ namespace TencentCloud
                     /**
                      * 设置音频采样率 。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Sample 音频采样率 。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSample(const int64_t& _sample);
@@ -93,9 +89,7 @@ namespace TencentCloud
                     /**
                      * 获取音频声道数。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Channel 音频声道数。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetChannel() const;
@@ -103,9 +97,7 @@ namespace TencentCloud
                     /**
                      * 设置音频声道数。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Channel 音频声道数。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetChannel(const int64_t& _channel);
@@ -119,9 +111,7 @@ namespace TencentCloud
                     /**
                      * 获取编码格式，如aac, mp3等。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Codec 编码格式，如aac, mp3等。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCodec() const;
@@ -129,9 +119,7 @@ namespace TencentCloud
                     /**
                      * 设置编码格式，如aac, mp3等。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Codec 编码格式，如aac, mp3等。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCodec(const std::string& _codec);
@@ -145,9 +133,7 @@ namespace TencentCloud
                     /**
                      * 获取码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bitrate 码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetBitrate() const;
@@ -155,9 +141,7 @@ namespace TencentCloud
                     /**
                      * 设置码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Bitrate 码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBitrate(const int64_t& _bitrate);
@@ -171,9 +155,7 @@ namespace TencentCloud
                     /**
                      * 获取音频时长，单位：ms。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 音频时长，单位：ms。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetDuration() const;
@@ -181,9 +163,7 @@ namespace TencentCloud
                     /**
                      * 设置音频时长，单位：ms。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Duration 音频时长，单位：ms。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDuration(const int64_t& _duration);
@@ -197,14 +177,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音频流的流id
+                     * 音频流的流id。
                      */
                     int64_t m_stream;
                     bool m_streamHasBeenSet;
 
                     /**
                      * 音频采样率 。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sample;
@@ -213,14 +192,12 @@ namespace TencentCloud
                     /**
                      * 音频声道数。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_channel;
                     bool m_channelHasBeenSet;
 
                     /**
                      * 编码格式，如aac, mp3等。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codec;
@@ -229,14 +206,12 @@ namespace TencentCloud
                     /**
                      * 码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
                      * 音频时长，单位：ms。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_duration;

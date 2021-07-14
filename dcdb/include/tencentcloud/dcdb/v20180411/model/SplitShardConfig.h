@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ShardInstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取数据切分比例
-                     * @return SplitRate 数据切分比例
+                     * 获取数据切分比例，固定50%
+                     * @return SplitRate 数据切分比例，固定50%
                      */
                     int64_t GetSplitRate() const;
 
                     /**
-                     * 设置数据切分比例
-                     * @param SplitRate 数据切分比例
+                     * 设置数据切分比例，固定50%
+                     * @param SplitRate 数据切分比例，固定50%
                      */
                     void SetSplitRate(const int64_t& _splitRate);
 
@@ -127,7 +127,7 @@ namespace TencentCloud
                     bool m_shardInstanceIdsHasBeenSet;
 
                     /**
-                     * 数据切分比例
+                     * 数据切分比例，固定50%
                      */
                     int64_t m_splitRate;
                     bool m_splitRateHasBeenSet;

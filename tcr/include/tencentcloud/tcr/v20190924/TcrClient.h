@@ -27,6 +27,8 @@
 #include <tencentcloud/tcr/v20190924/model/BatchDeleteImagePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/BatchDeleteRepositoryPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/BatchDeleteRepositoryPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CheckInstanceRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CheckInstanceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CheckInstanceNameRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CheckInstanceNameResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalRequest.h>
@@ -223,6 +225,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BatchDeleteRepositoryPersonalResponse> BatchDeleteRepositoryPersonalOutcome;
                 typedef std::future<BatchDeleteRepositoryPersonalOutcome> BatchDeleteRepositoryPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::BatchDeleteRepositoryPersonalRequest&, BatchDeleteRepositoryPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteRepositoryPersonalAsyncHandler;
+                typedef Outcome<Error, Model::CheckInstanceResponse> CheckInstanceOutcome;
+                typedef std::future<CheckInstanceOutcome> CheckInstanceOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CheckInstanceRequest&, CheckInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckInstanceAsyncHandler;
                 typedef Outcome<Error, Model::CheckInstanceNameResponse> CheckInstanceNameOutcome;
                 typedef std::future<CheckInstanceNameOutcome> CheckInstanceNameOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CheckInstanceNameRequest&, CheckInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckInstanceNameAsyncHandler;
@@ -507,6 +512,15 @@ namespace TencentCloud
                 BatchDeleteRepositoryPersonalOutcome BatchDeleteRepositoryPersonal(const Model::BatchDeleteRepositoryPersonalRequest &request);
                 void BatchDeleteRepositoryPersonalAsync(const Model::BatchDeleteRepositoryPersonalRequest& request, const BatchDeleteRepositoryPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchDeleteRepositoryPersonalOutcomeCallable BatchDeleteRepositoryPersonalCallable(const Model::BatchDeleteRepositoryPersonalRequest& request);
+
+                /**
+                 *用于校验企业版实例信息
+                 * @param req CheckInstanceRequest
+                 * @return CheckInstanceOutcome
+                 */
+                CheckInstanceOutcome CheckInstance(const Model::CheckInstanceRequest &request);
+                void CheckInstanceAsync(const Model::CheckInstanceRequest& request, const CheckInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckInstanceOutcomeCallable CheckInstanceCallable(const Model::CheckInstanceRequest& request);
 
                 /**
                  *检查待创建的实例名称是否符合规范

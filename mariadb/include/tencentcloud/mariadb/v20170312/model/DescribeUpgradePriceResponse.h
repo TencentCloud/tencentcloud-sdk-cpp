@@ -66,6 +66,18 @@ namespace TencentCloud
                      */
                     bool PriceHasBeenSet() const;
 
+                    /**
+                     * 获取变配明细计算公式
+                     * @return Formula 变配明细计算公式
+                     */
+                    std::string GetFormula() const;
+
+                    /**
+                     * 判断参数 Formula 是否已赋值
+                     * @return Formula 是否已赋值
+                     */
+                    bool FormulaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +91,12 @@ namespace TencentCloud
                      */
                     int64_t m_price;
                     bool m_priceHasBeenSet;
+
+                    /**
+                     * 变配明细计算公式
+                     */
+                    std::string m_formula;
+                    bool m_formulaHasBeenSet;
 
                 };
             }

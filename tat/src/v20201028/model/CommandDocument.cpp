@@ -24,7 +24,8 @@ CommandDocument::CommandDocument() :
     m_contentHasBeenSet(false),
     m_commandTypeHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_workingDirectoryHasBeenSet(false)
+    m_workingDirectoryHasBeenSet(false),
+    m_usernameHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CommandDocument::Deserialize(const rapidjson::Value &value)
         m_workingDirectoryHasBeenSet = true;
     }
 
+    if (value.HasMember("Username") && !value["Username"].IsNull())
+    {
+        if (!value["Username"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CommandDocument.Username` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_username = string(value["Username"].GetString());
+        m_usernameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void CommandDocument::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "WorkingDirectory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workingDirectory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Username";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void CommandDocument::SetWorkingDirectory(const string& _workingDirectory)
 bool CommandDocument::WorkingDirectoryHasBeenSet() const
 {
     return m_workingDirectoryHasBeenSet;
+}
+
+string CommandDocument::GetUsername() const
+{
+    return m_username;
+}
+
+void CommandDocument::SetUsername(const string& _username)
+{
+    m_username = _username;
+    m_usernameHasBeenSet = true;
+}
+
+bool CommandDocument::UsernameHasBeenSet() const
+{
+    return m_usernameHasBeenSet;
 }
 

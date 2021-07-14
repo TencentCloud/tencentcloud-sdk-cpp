@@ -299,6 +299,24 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取在实例上执行命令的用户名。
+                     * @return Username 在实例上执行命令的用户名。
+                     */
+                    std::string GetUsername() const;
+
+                    /**
+                     * 设置在实例上执行命令的用户名。
+                     * @param Username 在实例上执行命令的用户名。
+                     */
+                    void SetUsername(const std::string& _username);
+
+                    /**
+                     * 判断参数 Username 是否已赋值
+                     * @return Username 是否已赋值
+                     */
+                    bool UsernameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +402,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 在实例上执行命令的用户名。
+                     */
+                    std::string m_username;
+                    bool m_usernameHasBeenSet;
 
                 };
             }

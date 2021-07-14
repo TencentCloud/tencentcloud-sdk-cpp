@@ -49,6 +49,8 @@
 #include <tencentcloud/tsf/v20180326/model/CreateConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateContainGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateContainGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreateFileConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreateFileConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateGatewayApiRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateGatewayApiResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateGroupRequest.h>
@@ -159,6 +161,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeDownloadInfoResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeEnabledUnitRuleRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeEnabledUnitRuleResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeFileConfigsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeFileConfigsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeFlowLastBatchStateRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeFlowLastBatchStateResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeGatewayAllGroupApisRequest.h>
@@ -301,6 +305,8 @@
 #include <tencentcloud/tsf/v20180326/model/ReleaseApiGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ReleaseConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ReleaseConfigResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ReleaseFileConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/ReleaseFileConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ReleasePublicConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ReleasePublicConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/RemoveInstancesRequest.h>
@@ -404,6 +410,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateContainGroupResponse> CreateContainGroupOutcome;
                 typedef std::future<CreateContainGroupOutcome> CreateContainGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateContainGroupRequest&, CreateContainGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContainGroupAsyncHandler;
+                typedef Outcome<Error, Model::CreateFileConfigResponse> CreateFileConfigOutcome;
+                typedef std::future<CreateFileConfigOutcome> CreateFileConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreateFileConfigRequest&, CreateFileConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileConfigAsyncHandler;
                 typedef Outcome<Error, Model::CreateGatewayApiResponse> CreateGatewayApiOutcome;
                 typedef std::future<CreateGatewayApiOutcome> CreateGatewayApiOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateGatewayApiRequest&, CreateGatewayApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGatewayApiAsyncHandler;
@@ -569,6 +578,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeEnabledUnitRuleResponse> DescribeEnabledUnitRuleOutcome;
                 typedef std::future<DescribeEnabledUnitRuleOutcome> DescribeEnabledUnitRuleOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeEnabledUnitRuleRequest&, DescribeEnabledUnitRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnabledUnitRuleAsyncHandler;
+                typedef Outcome<Error, Model::DescribeFileConfigsResponse> DescribeFileConfigsOutcome;
+                typedef std::future<DescribeFileConfigsOutcome> DescribeFileConfigsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeFileConfigsRequest&, DescribeFileConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileConfigsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFlowLastBatchStateResponse> DescribeFlowLastBatchStateOutcome;
                 typedef std::future<DescribeFlowLastBatchStateOutcome> DescribeFlowLastBatchStateOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeFlowLastBatchStateRequest&, DescribeFlowLastBatchStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowLastBatchStateAsyncHandler;
@@ -782,6 +794,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ReleaseConfigResponse> ReleaseConfigOutcome;
                 typedef std::future<ReleaseConfigOutcome> ReleaseConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ReleaseConfigRequest&, ReleaseConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseConfigAsyncHandler;
+                typedef Outcome<Error, Model::ReleaseFileConfigResponse> ReleaseFileConfigOutcome;
+                typedef std::future<ReleaseFileConfigOutcome> ReleaseFileConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::ReleaseFileConfigRequest&, ReleaseFileConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseFileConfigAsyncHandler;
                 typedef Outcome<Error, Model::ReleasePublicConfigResponse> ReleasePublicConfigOutcome;
                 typedef std::future<ReleasePublicConfigOutcome> ReleasePublicConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ReleasePublicConfigRequest&, ReleasePublicConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleasePublicConfigAsyncHandler;
@@ -976,6 +991,15 @@ namespace TencentCloud
                 CreateContainGroupOutcome CreateContainGroup(const Model::CreateContainGroupRequest &request);
                 void CreateContainGroupAsync(const Model::CreateContainGroupRequest& request, const CreateContainGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateContainGroupOutcomeCallable CreateContainGroupCallable(const Model::CreateContainGroupRequest& request);
+
+                /**
+                 *创建文件配置项
+                 * @param req CreateFileConfigRequest
+                 * @return CreateFileConfigOutcome
+                 */
+                CreateFileConfigOutcome CreateFileConfig(const Model::CreateFileConfigRequest &request);
+                void CreateFileConfigAsync(const Model::CreateFileConfigRequest& request, const CreateFileConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFileConfigOutcomeCallable CreateFileConfigCallable(const Model::CreateFileConfigRequest& request);
 
                 /**
                  *批量导入API至api分组(也支持新建API到分组)
@@ -1473,6 +1497,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeEnabledUnitRuleOutcome DescribeEnabledUnitRule(const Model::DescribeEnabledUnitRuleRequest &request);
                 void DescribeEnabledUnitRuleAsync(const Model::DescribeEnabledUnitRuleRequest& request, const DescribeEnabledUnitRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnabledUnitRuleOutcomeCallable DescribeEnabledUnitRuleCallable(const Model::DescribeEnabledUnitRuleRequest& request);
+
+                /**
+                 *查询文件配置项列表
+                 * @param req DescribeFileConfigsRequest
+                 * @return DescribeFileConfigsOutcome
+                 */
+                DescribeFileConfigsOutcome DescribeFileConfigs(const Model::DescribeFileConfigsRequest &request);
+                void DescribeFileConfigsAsync(const Model::DescribeFileConfigsRequest& request, const DescribeFileConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFileConfigsOutcomeCallable DescribeFileConfigsCallable(const Model::DescribeFileConfigsRequest& request);
 
                 /**
                  *查询工作流最新一个批次的状态信息
@@ -2114,6 +2147,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 ReleaseConfigOutcome ReleaseConfig(const Model::ReleaseConfigRequest &request);
                 void ReleaseConfigAsync(const Model::ReleaseConfigRequest& request, const ReleaseConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReleaseConfigOutcomeCallable ReleaseConfigCallable(const Model::ReleaseConfigRequest& request);
+
+                /**
+                 *发布文件配置
+                 * @param req ReleaseFileConfigRequest
+                 * @return ReleaseFileConfigOutcome
+                 */
+                ReleaseFileConfigOutcome ReleaseFileConfig(const Model::ReleaseFileConfigRequest &request);
+                void ReleaseFileConfigAsync(const Model::ReleaseFileConfigRequest& request, const ReleaseFileConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReleaseFileConfigOutcomeCallable ReleaseFileConfigCallable(const Model::ReleaseFileConfigRequest& request);
 
                 /**
                  *发布公共配置

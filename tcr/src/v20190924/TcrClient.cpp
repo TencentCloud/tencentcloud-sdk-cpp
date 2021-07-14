@@ -126,6 +126,49 @@ TcrClient::BatchDeleteRepositoryPersonalOutcomeCallable TcrClient::BatchDeleteRe
     return task->get_future();
 }
 
+TcrClient::CheckInstanceOutcome TcrClient::CheckInstance(const CheckInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckInstanceResponse rsp = CheckInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckInstanceOutcome(rsp);
+        else
+            return CheckInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CheckInstanceAsync(const CheckInstanceRequest& request, const CheckInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CheckInstanceOutcomeCallable TcrClient::CheckInstanceCallable(const CheckInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::CheckInstanceNameOutcome TcrClient::CheckInstanceName(const CheckInstanceNameRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckInstanceName");

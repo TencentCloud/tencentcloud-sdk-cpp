@@ -244,6 +244,132 @@ namespace TencentCloud
                      */
                     bool DcnStatusHasBeenSet() const;
 
+                    /**
+                     * 获取实例CPU核数
+                     * @return Cpu 实例CPU核数
+                     */
+                    int64_t GetCpu() const;
+
+                    /**
+                     * 设置实例CPU核数
+                     * @param Cpu 实例CPU核数
+                     */
+                    void SetCpu(const int64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
+                    /**
+                     * 获取实例内存大小，单位 GB
+                     * @return Memory 实例内存大小，单位 GB
+                     */
+                    int64_t GetMemory() const;
+
+                    /**
+                     * 设置实例内存大小，单位 GB
+                     * @param Memory 实例内存大小，单位 GB
+                     */
+                    void SetMemory(const int64_t& _memory);
+
+                    /**
+                     * 判断参数 Memory 是否已赋值
+                     * @return Memory 是否已赋值
+                     */
+                    bool MemoryHasBeenSet() const;
+
+                    /**
+                     * 获取实例存储大小，单位 GB
+                     * @return Storage 实例存储大小，单位 GB
+                     */
+                    int64_t GetStorage() const;
+
+                    /**
+                     * 设置实例存储大小，单位 GB
+                     * @param Storage 实例存储大小，单位 GB
+                     */
+                    void SetStorage(const int64_t& _storage);
+
+                    /**
+                     * 判断参数 Storage 是否已赋值
+                     * @return Storage 是否已赋值
+                     */
+                    bool StorageHasBeenSet() const;
+
+                    /**
+                     * 获取付费模式
+                     * @return PayMode 付费模式
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置付费模式
+                     * @param PayMode 付费模式
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取实例创建时间，格式为 2006-01-02 15:04:05
+                     * @return CreateTime 实例创建时间，格式为 2006-01-02 15:04:05
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置实例创建时间，格式为 2006-01-02 15:04:05
+                     * @param CreateTime 实例创建时间，格式为 2006-01-02 15:04:05
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取实例到期时间，格式为 2006-01-02 15:04:05
+                     * @return PeriodEndTime 实例到期时间，格式为 2006-01-02 15:04:05
+                     */
+                    std::string GetPeriodEndTime() const;
+
+                    /**
+                     * 设置实例到期时间，格式为 2006-01-02 15:04:05
+                     * @param PeriodEndTime 实例到期时间，格式为 2006-01-02 15:04:05
+                     */
+                    void SetPeriodEndTime(const std::string& _periodEndTime);
+
+                    /**
+                     * 判断参数 PeriodEndTime 是否已赋值
+                     * @return PeriodEndTime 是否已赋值
+                     */
+                    bool PeriodEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
+                     * @return InstanceType 1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
+                     */
+                    int64_t GetInstanceType() const;
+
+                    /**
+                     * 设置1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
+                     * @param InstanceType 1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
+                     */
+                    void SetInstanceType(const int64_t& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +437,48 @@ namespace TencentCloud
                      */
                     int64_t m_dcnStatus;
                     bool m_dcnStatusHasBeenSet;
+
+                    /**
+                     * 实例CPU核数
+                     */
+                    int64_t m_cpu;
+                    bool m_cpuHasBeenSet;
+
+                    /**
+                     * 实例内存大小，单位 GB
+                     */
+                    int64_t m_memory;
+                    bool m_memoryHasBeenSet;
+
+                    /**
+                     * 实例存储大小，单位 GB
+                     */
+                    int64_t m_storage;
+                    bool m_storageHasBeenSet;
+
+                    /**
+                     * 付费模式
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * 实例创建时间，格式为 2006-01-02 15:04:05
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 实例到期时间，格式为 2006-01-02 15:04:05
+                     */
+                    std::string m_periodEndTime;
+                    bool m_periodEndTimeHasBeenSet;
+
+                    /**
+                     * 1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
+                     */
+                    int64_t m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

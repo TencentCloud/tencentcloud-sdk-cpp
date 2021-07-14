@@ -31,7 +31,8 @@ TopicInfo::TopicInfo() :
     m_tagsHasBeenSet(false),
     m_autoSplitHasBeenSet(false),
     m_maxSplitPartitionsHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         m_storageTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Period") && !value["Period"].IsNull())
+    {
+        if (!value["Period"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `TopicInfo.Period` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_period = value["Period"].GetInt64();
+        m_periodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +271,14 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_period, allocator);
     }
 
 }
@@ -439,5 +458,21 @@ void TopicInfo::SetStorageType(const string& _storageType)
 bool TopicInfo::StorageTypeHasBeenSet() const
 {
     return m_storageTypeHasBeenSet;
+}
+
+int64_t TopicInfo::GetPeriod() const
+{
+    return m_period;
+}
+
+void TopicInfo::SetPeriod(const int64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool TopicInfo::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 

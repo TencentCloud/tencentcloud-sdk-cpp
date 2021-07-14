@@ -67,9 +67,7 @@ namespace TencentCloud
                     /**
                      * 获取视频宽度。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 视频宽度。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetWidth() const;
@@ -77,9 +75,7 @@ namespace TencentCloud
                     /**
                      * 设置视频宽度。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Width 视频宽度。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWidth(const int64_t& _width);
@@ -93,9 +89,7 @@ namespace TencentCloud
                     /**
                      * 获取视频高度。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 视频高度。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetHeight() const;
@@ -103,9 +97,7 @@ namespace TencentCloud
                     /**
                      * 设置视频高度。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Height 视频高度。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHeight(const int64_t& _height);
@@ -119,9 +111,7 @@ namespace TencentCloud
                     /**
                      * 获取视频码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bitrate 视频码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetBitrate() const;
@@ -129,9 +119,7 @@ namespace TencentCloud
                     /**
                      * 设置视频码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Bitrate 视频码率，单位：bps。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBitrate(const int64_t& _bitrate);
@@ -144,20 +132,16 @@ namespace TencentCloud
 
                     /**
                      * 获取视频帧率，用分数格式表示，如：25/1, 99/32等等。
-注意：此字段可能返回 null，表示取不到有效值 。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Fps 视频帧率，用分数格式表示，如：25/1, 99/32等等。
-注意：此字段可能返回 null，表示取不到有效值 。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFps() const;
 
                     /**
                      * 设置视频帧率，用分数格式表示，如：25/1, 99/32等等。
-注意：此字段可能返回 null，表示取不到有效值 。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param Fps 视频帧率，用分数格式表示，如：25/1, 99/32等等。
-注意：此字段可能返回 null，表示取不到有效值 。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFps(const std::string& _fps);
@@ -171,9 +155,7 @@ namespace TencentCloud
                     /**
                      * 获取编码格式，如h264,h265等等 。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Codec 编码格式，如h264,h265等等 。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCodec() const;
@@ -181,9 +163,7 @@ namespace TencentCloud
                     /**
                      * 设置编码格式，如h264,h265等等 。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Codec 编码格式，如h264,h265等等 。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCodec(const std::string& _codec);
@@ -197,9 +177,7 @@ namespace TencentCloud
                     /**
                      * 获取播放旋转角度，可选值0-360。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rotate 播放旋转角度，可选值0-360。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetRotate() const;
@@ -207,9 +185,7 @@ namespace TencentCloud
                     /**
                      * 设置播放旋转角度，可选值0-360。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Rotate 播放旋转角度，可选值0-360。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRotate(const int64_t& _rotate);
@@ -223,9 +199,7 @@ namespace TencentCloud
                     /**
                      * 获取视频时长，单位：ms 。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 视频时长，单位：ms 。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetDuration() const;
@@ -233,9 +207,7 @@ namespace TencentCloud
                     /**
                      * 设置视频时长，单位：ms 。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Duration 视频时长，单位：ms 。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDuration(const int64_t& _duration);
@@ -249,9 +221,7 @@ namespace TencentCloud
                     /**
                      * 获取颜色空间，如yuv420p，yuv444p等等。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PixFormat 颜色空间，如yuv420p，yuv444p等等。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPixFormat() const;
@@ -259,9 +229,7 @@ namespace TencentCloud
                     /**
                      * 设置颜色空间，如yuv420p，yuv444p等等。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param PixFormat 颜色空间，如yuv420p，yuv444p等等。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPixFormat(const std::string& _pixFormat);
@@ -283,14 +251,12 @@ namespace TencentCloud
                     /**
                      * 视频宽度。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
                      * 视频高度。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;
@@ -299,14 +265,12 @@ namespace TencentCloud
                     /**
                      * 视频码率，单位：bps。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
                      * 视频帧率，用分数格式表示，如：25/1, 99/32等等。
-注意：此字段可能返回 null，表示取不到有效值 。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fps;
@@ -315,14 +279,12 @@ namespace TencentCloud
                     /**
                      * 编码格式，如h264,h265等等 。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;
 
                     /**
                      * 播放旋转角度，可选值0-360。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rotate;
@@ -331,14 +293,12 @@ namespace TencentCloud
                     /**
                      * 视频时长，单位：ms 。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 颜色空间，如yuv420p，yuv444p等等。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pixFormat;

@@ -60,6 +60,40 @@ namespace TencentCloud
                      */
                     bool DomainNameHasBeenSet() const;
 
+                    /**
+                     * 获取枚举值：
+gray: 解绑灰度规则
+formal(默认): 解绑正式规则
+
+不传则为formal
+                     * @return Type 枚举值：
+gray: 解绑灰度规则
+formal(默认): 解绑正式规则
+
+不传则为formal
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置枚举值：
+gray: 解绑灰度规则
+formal(默认): 解绑正式规则
+
+不传则为formal
+                     * @param Type 枚举值：
+gray: 解绑灰度规则
+formal(默认): 解绑正式规则
+
+不传则为formal
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +101,16 @@ namespace TencentCloud
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
+
+                    /**
+                     * 枚举值：
+gray: 解绑灰度规则
+formal(默认): 解绑正式规则
+
+不传则为formal
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

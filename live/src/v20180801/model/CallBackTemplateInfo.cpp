@@ -25,8 +25,8 @@ CallBackTemplateInfo::CallBackTemplateInfo() :
     m_templateNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_streamBeginNotifyUrlHasBeenSet(false),
-    m_streamEndNotifyUrlHasBeenSet(false),
     m_streamMixNotifyUrlHasBeenSet(false),
+    m_streamEndNotifyUrlHasBeenSet(false),
     m_recordNotifyUrlHasBeenSet(false),
     m_snapshotNotifyUrlHasBeenSet(false),
     m_pornCensorshipNotifyUrlHasBeenSet(false),
@@ -79,16 +79,6 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
         m_streamBeginNotifyUrlHasBeenSet = true;
     }
 
-    if (value.HasMember("StreamEndNotifyUrl") && !value["StreamEndNotifyUrl"].IsNull())
-    {
-        if (!value["StreamEndNotifyUrl"].IsString())
-        {
-            return CoreInternalOutcome(Error("response `CallBackTemplateInfo.StreamEndNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_streamEndNotifyUrl = string(value["StreamEndNotifyUrl"].GetString());
-        m_streamEndNotifyUrlHasBeenSet = true;
-    }
-
     if (value.HasMember("StreamMixNotifyUrl") && !value["StreamMixNotifyUrl"].IsNull())
     {
         if (!value["StreamMixNotifyUrl"].IsString())
@@ -97,6 +87,16 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
         }
         m_streamMixNotifyUrl = string(value["StreamMixNotifyUrl"].GetString());
         m_streamMixNotifyUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("StreamEndNotifyUrl") && !value["StreamEndNotifyUrl"].IsNull())
+    {
+        if (!value["StreamEndNotifyUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CallBackTemplateInfo.StreamEndNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_streamEndNotifyUrl = string(value["StreamEndNotifyUrl"].GetString());
+        m_streamEndNotifyUrlHasBeenSet = true;
     }
 
     if (value.HasMember("RecordNotifyUrl") && !value["RecordNotifyUrl"].IsNull())
@@ -178,20 +178,20 @@ void CallBackTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         value.AddMember(iKey, rapidjson::Value(m_streamBeginNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_streamEndNotifyUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StreamEndNotifyUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_streamEndNotifyUrl.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_streamMixNotifyUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "StreamMixNotifyUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_streamMixNotifyUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_streamEndNotifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamEndNotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_streamEndNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recordNotifyUrlHasBeenSet)
@@ -293,22 +293,6 @@ bool CallBackTemplateInfo::StreamBeginNotifyUrlHasBeenSet() const
     return m_streamBeginNotifyUrlHasBeenSet;
 }
 
-string CallBackTemplateInfo::GetStreamEndNotifyUrl() const
-{
-    return m_streamEndNotifyUrl;
-}
-
-void CallBackTemplateInfo::SetStreamEndNotifyUrl(const string& _streamEndNotifyUrl)
-{
-    m_streamEndNotifyUrl = _streamEndNotifyUrl;
-    m_streamEndNotifyUrlHasBeenSet = true;
-}
-
-bool CallBackTemplateInfo::StreamEndNotifyUrlHasBeenSet() const
-{
-    return m_streamEndNotifyUrlHasBeenSet;
-}
-
 string CallBackTemplateInfo::GetStreamMixNotifyUrl() const
 {
     return m_streamMixNotifyUrl;
@@ -323,6 +307,22 @@ void CallBackTemplateInfo::SetStreamMixNotifyUrl(const string& _streamMixNotifyU
 bool CallBackTemplateInfo::StreamMixNotifyUrlHasBeenSet() const
 {
     return m_streamMixNotifyUrlHasBeenSet;
+}
+
+string CallBackTemplateInfo::GetStreamEndNotifyUrl() const
+{
+    return m_streamEndNotifyUrl;
+}
+
+void CallBackTemplateInfo::SetStreamEndNotifyUrl(const string& _streamEndNotifyUrl)
+{
+    m_streamEndNotifyUrl = _streamEndNotifyUrl;
+    m_streamEndNotifyUrlHasBeenSet = true;
+}
+
+bool CallBackTemplateInfo::StreamEndNotifyUrlHasBeenSet() const
+{
+    return m_streamEndNotifyUrlHasBeenSet;
 }
 
 string CallBackTemplateInfo::GetRecordNotifyUrl() const

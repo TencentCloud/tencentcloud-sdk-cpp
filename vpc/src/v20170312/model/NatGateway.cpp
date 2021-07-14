@@ -35,7 +35,10 @@ NatGateway::NatGateway() :
     m_directConnectGatewayIdsHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_securityGroupSetHasBeenSet(false)
+    m_securityGroupSetHasBeenSet(false),
+    m_sourceIpTranslationNatRuleSetHasBeenSet(false),
+    m_isExclusiveHasBeenSet(false),
+    m_exclusiveGatewayBandwidthHasBeenSet(false)
 {
 }
 
@@ -230,6 +233,46 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
         m_securityGroupSetHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceIpTranslationNatRuleSet") && !value["SourceIpTranslationNatRuleSet"].IsNull())
+    {
+        if (!value["SourceIpTranslationNatRuleSet"].IsArray())
+            return CoreInternalOutcome(Error("response `NatGateway.SourceIpTranslationNatRuleSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SourceIpTranslationNatRuleSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SourceIpTranslationNatRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_sourceIpTranslationNatRuleSet.push_back(item);
+        }
+        m_sourceIpTranslationNatRuleSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsExclusive") && !value["IsExclusive"].IsNull())
+    {
+        if (!value["IsExclusive"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `NatGateway.IsExclusive` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isExclusive = value["IsExclusive"].GetBool();
+        m_isExclusiveHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExclusiveGatewayBandwidth") && !value["ExclusiveGatewayBandwidth"].IsNull())
+    {
+        if (!value["ExclusiveGatewayBandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `NatGateway.ExclusiveGatewayBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_exclusiveGatewayBandwidth = value["ExclusiveGatewayBandwidth"].GetUint64();
+        m_exclusiveGatewayBandwidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -386,6 +429,37 @@ void NatGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_sourceIpTranslationNatRuleSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceIpTranslationNatRuleSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sourceIpTranslationNatRuleSet.begin(); itr != m_sourceIpTranslationNatRuleSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isExclusiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsExclusive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isExclusive, allocator);
+    }
+
+    if (m_exclusiveGatewayBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExclusiveGatewayBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exclusiveGatewayBandwidth, allocator);
     }
 
 }
@@ -629,5 +703,53 @@ void NatGateway::SetSecurityGroupSet(const vector<string>& _securityGroupSet)
 bool NatGateway::SecurityGroupSetHasBeenSet() const
 {
     return m_securityGroupSetHasBeenSet;
+}
+
+vector<SourceIpTranslationNatRule> NatGateway::GetSourceIpTranslationNatRuleSet() const
+{
+    return m_sourceIpTranslationNatRuleSet;
+}
+
+void NatGateway::SetSourceIpTranslationNatRuleSet(const vector<SourceIpTranslationNatRule>& _sourceIpTranslationNatRuleSet)
+{
+    m_sourceIpTranslationNatRuleSet = _sourceIpTranslationNatRuleSet;
+    m_sourceIpTranslationNatRuleSetHasBeenSet = true;
+}
+
+bool NatGateway::SourceIpTranslationNatRuleSetHasBeenSet() const
+{
+    return m_sourceIpTranslationNatRuleSetHasBeenSet;
+}
+
+bool NatGateway::GetIsExclusive() const
+{
+    return m_isExclusive;
+}
+
+void NatGateway::SetIsExclusive(const bool& _isExclusive)
+{
+    m_isExclusive = _isExclusive;
+    m_isExclusiveHasBeenSet = true;
+}
+
+bool NatGateway::IsExclusiveHasBeenSet() const
+{
+    return m_isExclusiveHasBeenSet;
+}
+
+uint64_t NatGateway::GetExclusiveGatewayBandwidth() const
+{
+    return m_exclusiveGatewayBandwidth;
+}
+
+void NatGateway::SetExclusiveGatewayBandwidth(const uint64_t& _exclusiveGatewayBandwidth)
+{
+    m_exclusiveGatewayBandwidth = _exclusiveGatewayBandwidth;
+    m_exclusiveGatewayBandwidthHasBeenSet = true;
+}
+
+bool NatGateway::ExclusiveGatewayBandwidthHasBeenSet() const
+{
+    return m_exclusiveGatewayBandwidthHasBeenSet;
 }
 
