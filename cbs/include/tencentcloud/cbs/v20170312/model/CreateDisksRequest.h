@@ -22,8 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cbs/v20170312/model/Placement.h>
-#include <tencentcloud/cbs/v20170312/model/DiskChargePrepaid.h>
 #include <tencentcloud/cbs/v20170312/model/Tag.h>
+#include <tencentcloud/cbs/v20170312/model/DiskChargePrepaid.h>
 
 
 namespace TencentCloud
@@ -46,22 +46,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
-                     * @return DiskType 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
+                     * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目。若不指定项目，将在默认项目下进行创建。
+                     * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目。若不指定项目，将在默认项目下进行创建。
                      */
-                    std::string GetDiskType() const;
+                    Placement GetPlacement() const;
 
                     /**
-                     * 设置硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
-                     * @param DiskType 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
+                     * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目。若不指定项目，将在默认项目下进行创建。
+                     * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目。若不指定项目，将在默认项目下进行创建。
                      */
-                    void SetDiskType(const std::string& _diskType);
+                    void SetPlacement(const Placement& _placement);
 
                     /**
-                     * 判断参数 DiskType 是否已赋值
-                     * @return DiskType 是否已赋值
+                     * 判断参数 Placement 是否已赋值
+                     * @return Placement 是否已赋值
                      */
-                    bool DiskTypeHasBeenSet() const;
+                    bool PlacementHasBeenSet() const;
 
                     /**
                      * 获取云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDCPAID：独享集群付费<br>各类型价格请参考云硬盘[价格总览](/document/product/362/2413)。
@@ -82,22 +82,22 @@ namespace TencentCloud
                     bool DiskChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目。若不指定项目，将在默认项目下进行创建。
-                     * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目。若不指定项目，将在默认项目下进行创建。
+                     * 获取硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
+                     * @return DiskType 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
                      */
-                    Placement GetPlacement() const;
+                    std::string GetDiskType() const;
 
                     /**
-                     * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目。若不指定项目，将在默认项目下进行创建。
-                     * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目。若不指定项目，将在默认项目下进行创建。
+                     * 设置硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
+                     * @param DiskType 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
                      */
-                    void SetPlacement(const Placement& _placement);
+                    void SetDiskType(const std::string& _diskType);
 
                     /**
-                     * 判断参数 Placement 是否已赋值
-                     * @return Placement 是否已赋值
+                     * 判断参数 DiskType 是否已赋值
+                     * @return DiskType 是否已赋值
                      */
-                    bool PlacementHasBeenSet() const;
+                    bool DiskTypeHasBeenSet() const;
 
                     /**
                      * 获取云盘显示名称。不传则默认为“未命名”。最大长度不能超60个字节。
@@ -118,6 +118,42 @@ namespace TencentCloud
                     bool DiskNameHasBeenSet() const;
 
                     /**
+                     * 获取云盘绑定的标签。
+                     * @return Tags 云盘绑定的标签。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置云盘绑定的标签。
+                     * @param Tags 云盘绑定的标签。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照，可通过[DescribeSnapshots](/document/product/362/15647)接口查询快照，见输出参数DiskUsage解释。
+                     * @return SnapshotId 快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照，可通过[DescribeSnapshots](/document/product/362/15647)接口查询快照，见输出参数DiskUsage解释。
+                     */
+                    std::string GetSnapshotId() const;
+
+                    /**
+                     * 设置快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照，可通过[DescribeSnapshots](/document/product/362/15647)接口查询快照，见输出参数DiskUsage解释。
+                     * @param SnapshotId 快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照，可通过[DescribeSnapshots](/document/product/362/15647)接口查询快照，见输出参数DiskUsage解释。
+                     */
+                    void SetSnapshotId(const std::string& _snapshotId);
+
+                    /**
+                     * 判断参数 SnapshotId 是否已赋值
+                     * @return SnapshotId 是否已赋值
+                     */
+                    bool SnapshotIdHasBeenSet() const;
+
+                    /**
                      * 获取创建云硬盘数量，不传则默认为1。单次请求最多可创建的云盘数有限制，具体参见[云硬盘使用限制](https://cloud.tencent.com/doc/product/362/5145)。
                      * @return DiskCount 创建云硬盘数量，不传则默认为1。单次请求最多可创建的云盘数有限制，具体参见[云硬盘使用限制](https://cloud.tencent.com/doc/product/362/5145)。
                      */
@@ -136,22 +172,22 @@ namespace TencentCloud
                     bool DiskCountHasBeenSet() const;
 
                     /**
-                     * 获取预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
-                     * @return DiskChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
+                     * 获取可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
+                     * @return ThroughputPerformance 可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
                      */
-                    DiskChargePrepaid GetDiskChargePrepaid() const;
+                    uint64_t GetThroughputPerformance() const;
 
                     /**
-                     * 设置预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
-                     * @param DiskChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
+                     * 设置可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
+                     * @param ThroughputPerformance 可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
                      */
-                    void SetDiskChargePrepaid(const DiskChargePrepaid& _diskChargePrepaid);
+                    void SetThroughputPerformance(const uint64_t& _throughputPerformance);
 
                     /**
-                     * 判断参数 DiskChargePrepaid 是否已赋值
-                     * @return DiskChargePrepaid 是否已赋值
+                     * 判断参数 ThroughputPerformance 是否已赋值
+                     * @return ThroughputPerformance 是否已赋值
                      */
-                    bool DiskChargePrepaidHasBeenSet() const;
+                    bool ThroughputPerformanceHasBeenSet() const;
 
                     /**
                      * 获取云硬盘大小，单位为GB。<br><li>如果传入`SnapshotId`则可不传`DiskSize`，此时新建云盘的大小为快照大小<br><li>如果传入`SnapshotId`同时传入`DiskSize`，则云盘大小必须大于或等于快照大小<br><li>云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
@@ -172,22 +208,22 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照，可通过[DescribeSnapshots](/document/product/362/15647)接口查询快照，见输出参数DiskUsage解释。
-                     * @return SnapshotId 快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照，可通过[DescribeSnapshots](/document/product/362/15647)接口查询快照，见输出参数DiskUsage解释。
+                     * 获取可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
+                     * @return Shareable 可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
                      */
-                    std::string GetSnapshotId() const;
+                    bool GetShareable() const;
 
                     /**
-                     * 设置快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照，可通过[DescribeSnapshots](/document/product/362/15647)接口查询快照，见输出参数DiskUsage解释。
-                     * @param SnapshotId 快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照，可通过[DescribeSnapshots](/document/product/362/15647)接口查询快照，见输出参数DiskUsage解释。
+                     * 设置可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
+                     * @param Shareable 可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
                      */
-                    void SetSnapshotId(const std::string& _snapshotId);
+                    void SetShareable(const bool& _shareable);
 
                     /**
-                     * 判断参数 SnapshotId 是否已赋值
-                     * @return SnapshotId 是否已赋值
+                     * 判断参数 Shareable 是否已赋值
+                     * @return Shareable 是否已赋值
                      */
-                    bool SnapshotIdHasBeenSet() const;
+                    bool ShareableHasBeenSet() const;
 
                     /**
                      * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
@@ -226,72 +262,42 @@ namespace TencentCloud
                     bool EncryptHasBeenSet() const;
 
                     /**
-                     * 获取云盘绑定的标签。
-                     * @return Tags 云盘绑定的标签。
+                     * 获取预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
+                     * @return DiskChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
                      */
-                    std::vector<Tag> GetTags() const;
+                    DiskChargePrepaid GetDiskChargePrepaid() const;
 
                     /**
-                     * 设置云盘绑定的标签。
-                     * @param Tags 云盘绑定的标签。
+                     * 设置预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
+                     * @param DiskChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
                      */
-                    void SetTags(const std::vector<Tag>& _tags);
+                    void SetDiskChargePrepaid(const DiskChargePrepaid& _diskChargePrepaid);
 
                     /**
-                     * 判断参数 Tags 是否已赋值
-                     * @return Tags 是否已赋值
+                     * 判断参数 DiskChargePrepaid 是否已赋值
+                     * @return DiskChargePrepaid 是否已赋值
                      */
-                    bool TagsHasBeenSet() const;
+                    bool DiskChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
-                     * @return Shareable 可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
+                     * 获取销毁云盘时删除关联的非永久快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁。
+                     * @return DeleteSnapshot 销毁云盘时删除关联的非永久快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁。
                      */
-                    bool GetShareable() const;
+                    int64_t GetDeleteSnapshot() const;
 
                     /**
-                     * 设置可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
-                     * @param Shareable 可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
+                     * 设置销毁云盘时删除关联的非永久快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁。
+                     * @param DeleteSnapshot 销毁云盘时删除关联的非永久快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁。
                      */
-                    void SetShareable(const bool& _shareable);
+                    void SetDeleteSnapshot(const int64_t& _deleteSnapshot);
 
                     /**
-                     * 判断参数 Shareable 是否已赋值
-                     * @return Shareable 是否已赋值
+                     * 判断参数 DeleteSnapshot 是否已赋值
+                     * @return DeleteSnapshot 是否已赋值
                      */
-                    bool ShareableHasBeenSet() const;
-
-                    /**
-                     * 获取可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
-                     * @return ThroughputPerformance 可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
-                     */
-                    uint64_t GetThroughputPerformance() const;
-
-                    /**
-                     * 设置可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
-                     * @param ThroughputPerformance 可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
-                     */
-                    void SetThroughputPerformance(const uint64_t& _throughputPerformance);
-
-                    /**
-                     * 判断参数 ThroughputPerformance 是否已赋值
-                     * @return ThroughputPerformance 是否已赋值
-                     */
-                    bool ThroughputPerformanceHasBeenSet() const;
+                    bool DeleteSnapshotHasBeenSet() const;
 
                 private:
-
-                    /**
-                     * 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
-                     */
-                    std::string m_diskType;
-                    bool m_diskTypeHasBeenSet;
-
-                    /**
-                     * 云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDCPAID：独享集群付费<br>各类型价格请参考云硬盘[价格总览](/document/product/362/2413)。
-                     */
-                    std::string m_diskChargeType;
-                    bool m_diskChargeTypeHasBeenSet;
 
                     /**
                      * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目。若不指定项目，将在默认项目下进行创建。
@@ -300,10 +306,34 @@ namespace TencentCloud
                     bool m_placementHasBeenSet;
 
                     /**
+                     * 云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDCPAID：独享集群付费<br>各类型价格请参考云硬盘[价格总览](/document/product/362/2413)。
+                     */
+                    std::string m_diskChargeType;
+                    bool m_diskChargeTypeHasBeenSet;
+
+                    /**
+                     * 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。
+                     */
+                    std::string m_diskType;
+                    bool m_diskTypeHasBeenSet;
+
+                    /**
                      * 云盘显示名称。不传则默认为“未命名”。最大长度不能超60个字节。
                      */
                     std::string m_diskName;
                     bool m_diskNameHasBeenSet;
+
+                    /**
+                     * 云盘绑定的标签。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照，可通过[DescribeSnapshots](/document/product/362/15647)接口查询快照，见输出参数DiskUsage解释。
+                     */
+                    std::string m_snapshotId;
+                    bool m_snapshotIdHasBeenSet;
 
                     /**
                      * 创建云硬盘数量，不传则默认为1。单次请求最多可创建的云盘数有限制，具体参见[云硬盘使用限制](https://cloud.tencent.com/doc/product/362/5145)。
@@ -312,10 +342,10 @@ namespace TencentCloud
                     bool m_diskCountHasBeenSet;
 
                     /**
-                     * 预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
+                     * 可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
                      */
-                    DiskChargePrepaid m_diskChargePrepaid;
-                    bool m_diskChargePrepaidHasBeenSet;
+                    uint64_t m_throughputPerformance;
+                    bool m_throughputPerformanceHasBeenSet;
 
                     /**
                      * 云硬盘大小，单位为GB。<br><li>如果传入`SnapshotId`则可不传`DiskSize`，此时新建云盘的大小为快照大小<br><li>如果传入`SnapshotId`同时传入`DiskSize`，则云盘大小必须大于或等于快照大小<br><li>云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。
@@ -324,10 +354,10 @@ namespace TencentCloud
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照，可通过[DescribeSnapshots](/document/product/362/15647)接口查询快照，见输出参数DiskUsage解释。
+                     * 可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
                      */
-                    std::string m_snapshotId;
-                    bool m_snapshotIdHasBeenSet;
+                    bool m_shareable;
+                    bool m_shareableHasBeenSet;
 
                     /**
                      * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
@@ -342,22 +372,16 @@ namespace TencentCloud
                     bool m_encryptHasBeenSet;
 
                     /**
-                     * 云盘绑定的标签。
+                     * 预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。
                      */
-                    std::vector<Tag> m_tags;
-                    bool m_tagsHasBeenSet;
+                    DiskChargePrepaid m_diskChargePrepaid;
+                    bool m_diskChargePrepaidHasBeenSet;
 
                     /**
-                     * 可选参数，默认为False。传入True时，云盘将创建为共享型云盘。
+                     * 销毁云盘时删除关联的非永久快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁。
                      */
-                    bool m_shareable;
-                    bool m_shareableHasBeenSet;
-
-                    /**
-                     * 可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）
-                     */
-                    uint64_t m_throughputPerformance;
-                    bool m_throughputPerformanceHasBeenSet;
+                    int64_t m_deleteSnapshot;
+                    bool m_deleteSnapshotHasBeenSet;
 
                 };
             }

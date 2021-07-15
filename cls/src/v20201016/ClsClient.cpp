@@ -40,6 +40,49 @@ ClsClient::ClsClient(const Credential &credential, const string &region, const C
 }
 
 
+ClsClient::ApplyConfigToMachineGroupOutcome ClsClient::ApplyConfigToMachineGroup(const ApplyConfigToMachineGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyConfigToMachineGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyConfigToMachineGroupResponse rsp = ApplyConfigToMachineGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyConfigToMachineGroupOutcome(rsp);
+        else
+            return ApplyConfigToMachineGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyConfigToMachineGroupOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ApplyConfigToMachineGroupAsync(const ApplyConfigToMachineGroupRequest& request, const ApplyConfigToMachineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyConfigToMachineGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ApplyConfigToMachineGroupOutcomeCallable ClsClient::ApplyConfigToMachineGroupCallable(const ApplyConfigToMachineGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyConfigToMachineGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyConfigToMachineGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateAlarmOutcome ClsClient::CreateAlarm(const CreateAlarmRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAlarm");
@@ -126,6 +169,49 @@ ClsClient::CreateAlarmNoticeOutcomeCallable ClsClient::CreateAlarmNoticeCallable
     return task->get_future();
 }
 
+ClsClient::CreateConfigOutcome ClsClient::CreateConfig(const CreateConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConfigResponse rsp = CreateConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConfigOutcome(rsp);
+        else
+            return CreateConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConfigOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateConfigAsync(const CreateConfigRequest& request, const CreateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateConfigOutcomeCallable ClsClient::CreateConfigCallable(const CreateConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateExportOutcome ClsClient::CreateExport(const CreateExportRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExport");
@@ -205,6 +291,49 @@ ClsClient::CreateIndexOutcomeCallable ClsClient::CreateIndexCallable(const Creat
         [this, request]()
         {
             return this->CreateIndex(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::CreateLogsetOutcome ClsClient::CreateLogset(const CreateLogsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLogset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLogsetResponse rsp = CreateLogsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLogsetOutcome(rsp);
+        else
+            return CreateLogsetOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLogsetOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateLogsetAsync(const CreateLogsetRequest& request, const CreateLogsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLogset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateLogsetOutcomeCallable ClsClient::CreateLogsetCallable(const CreateLogsetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLogsetOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLogset(request);
         }
     );
 
@@ -384,6 +513,92 @@ ClsClient::DeleteAlarmNoticeOutcomeCallable ClsClient::DeleteAlarmNoticeCallable
     return task->get_future();
 }
 
+ClsClient::DeleteConfigOutcome ClsClient::DeleteConfig(const DeleteConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConfigResponse rsp = DeleteConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConfigOutcome(rsp);
+        else
+            return DeleteConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConfigOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteConfigAsync(const DeleteConfigRequest& request, const DeleteConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteConfigOutcomeCallable ClsClient::DeleteConfigCallable(const DeleteConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DeleteConfigFromMachineGroupOutcome ClsClient::DeleteConfigFromMachineGroup(const DeleteConfigFromMachineGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConfigFromMachineGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConfigFromMachineGroupResponse rsp = DeleteConfigFromMachineGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConfigFromMachineGroupOutcome(rsp);
+        else
+            return DeleteConfigFromMachineGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConfigFromMachineGroupOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteConfigFromMachineGroupAsync(const DeleteConfigFromMachineGroupRequest& request, const DeleteConfigFromMachineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteConfigFromMachineGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteConfigFromMachineGroupOutcomeCallable ClsClient::DeleteConfigFromMachineGroupCallable(const DeleteConfigFromMachineGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteConfigFromMachineGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteConfigFromMachineGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DeleteExportOutcome ClsClient::DeleteExport(const DeleteExportRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteExport");
@@ -463,6 +678,49 @@ ClsClient::DeleteIndexOutcomeCallable ClsClient::DeleteIndexCallable(const Delet
         [this, request]()
         {
             return this->DeleteIndex(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DeleteLogsetOutcome ClsClient::DeleteLogset(const DeleteLogsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLogset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLogsetResponse rsp = DeleteLogsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLogsetOutcome(rsp);
+        else
+            return DeleteLogsetOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLogsetOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteLogsetAsync(const DeleteLogsetRequest& request, const DeleteLogsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLogset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteLogsetOutcomeCallable ClsClient::DeleteLogsetCallable(const DeleteLogsetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLogsetOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLogset(request);
         }
     );
 
@@ -642,6 +900,92 @@ ClsClient::DescribeAlarmsOutcomeCallable ClsClient::DescribeAlarmsCallable(const
     return task->get_future();
 }
 
+ClsClient::DescribeConfigMachineGroupsOutcome ClsClient::DescribeConfigMachineGroups(const DescribeConfigMachineGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigMachineGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigMachineGroupsResponse rsp = DescribeConfigMachineGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigMachineGroupsOutcome(rsp);
+        else
+            return DescribeConfigMachineGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigMachineGroupsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeConfigMachineGroupsAsync(const DescribeConfigMachineGroupsRequest& request, const DescribeConfigMachineGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigMachineGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeConfigMachineGroupsOutcomeCallable ClsClient::DescribeConfigMachineGroupsCallable(const DescribeConfigMachineGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigMachineGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigMachineGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeConfigsOutcome ClsClient::DescribeConfigs(const DescribeConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigsResponse rsp = DescribeConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigsOutcome(rsp);
+        else
+            return DescribeConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeConfigsAsync(const DescribeConfigsRequest& request, const DescribeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeConfigsOutcomeCallable ClsClient::DescribeConfigsCallable(const DescribeConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DescribeExportsOutcome ClsClient::DescribeExports(const DescribeExportsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExports");
@@ -764,6 +1108,92 @@ ClsClient::DescribeLogContextOutcomeCallable ClsClient::DescribeLogContextCallab
         [this, request]()
         {
             return this->DescribeLogContext(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeLogsetsOutcome ClsClient::DescribeLogsets(const DescribeLogsetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogsets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogsetsResponse rsp = DescribeLogsetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogsetsOutcome(rsp);
+        else
+            return DescribeLogsetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogsetsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeLogsetsAsync(const DescribeLogsetsRequest& request, const DescribeLogsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogsets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeLogsetsOutcomeCallable ClsClient::DescribeLogsetsCallable(const DescribeLogsetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogsetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogsets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeMachineGroupConfigsOutcome ClsClient::DescribeMachineGroupConfigs(const DescribeMachineGroupConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMachineGroupConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMachineGroupConfigsResponse rsp = DescribeMachineGroupConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMachineGroupConfigsOutcome(rsp);
+        else
+            return DescribeMachineGroupConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMachineGroupConfigsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeMachineGroupConfigsAsync(const DescribeMachineGroupConfigsRequest& request, const DescribeMachineGroupConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMachineGroupConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeMachineGroupConfigsOutcomeCallable ClsClient::DescribeMachineGroupConfigsCallable(const DescribeMachineGroupConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMachineGroupConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMachineGroupConfigs(request);
         }
     );
 
@@ -1115,6 +1545,49 @@ ClsClient::ModifyAlarmNoticeOutcomeCallable ClsClient::ModifyAlarmNoticeCallable
     return task->get_future();
 }
 
+ClsClient::ModifyConfigOutcome ClsClient::ModifyConfig(const ModifyConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConfigResponse rsp = ModifyConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConfigOutcome(rsp);
+        else
+            return ModifyConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConfigOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyConfigAsync(const ModifyConfigRequest& request, const ModifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyConfigOutcomeCallable ClsClient::ModifyConfigCallable(const ModifyConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::ModifyIndexOutcome ClsClient::ModifyIndex(const ModifyIndexRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyIndex");
@@ -1151,6 +1624,49 @@ ClsClient::ModifyIndexOutcomeCallable ClsClient::ModifyIndexCallable(const Modif
         [this, request]()
         {
             return this->ModifyIndex(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::ModifyLogsetOutcome ClsClient::ModifyLogset(const ModifyLogsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLogset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLogsetResponse rsp = ModifyLogsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLogsetOutcome(rsp);
+        else
+            return ModifyLogsetOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLogsetOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyLogsetAsync(const ModifyLogsetRequest& request, const ModifyLogsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLogset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyLogsetOutcomeCallable ClsClient::ModifyLogsetCallable(const ModifyLogsetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLogsetOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLogset(request);
         }
     );
 

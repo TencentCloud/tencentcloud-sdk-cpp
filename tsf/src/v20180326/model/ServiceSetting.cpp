@@ -23,7 +23,10 @@ using namespace std;
 ServiceSetting::ServiceSetting() :
     m_accessTypeHasBeenSet(false),
     m_protocolPortsHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_disableServiceHasBeenSet(false),
+    m_headlessServiceHasBeenSet(false),
+    m_allowDeleteServiceHasBeenSet(false)
 {
 }
 
@@ -72,6 +75,36 @@ CoreInternalOutcome ServiceSetting::Deserialize(const rapidjson::Value &value)
         m_subnetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DisableService") && !value["DisableService"].IsNull())
+    {
+        if (!value["DisableService"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ServiceSetting.DisableService` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableService = value["DisableService"].GetBool();
+        m_disableServiceHasBeenSet = true;
+    }
+
+    if (value.HasMember("HeadlessService") && !value["HeadlessService"].IsNull())
+    {
+        if (!value["HeadlessService"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ServiceSetting.HeadlessService` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_headlessService = value["HeadlessService"].GetBool();
+        m_headlessServiceHasBeenSet = true;
+    }
+
+    if (value.HasMember("AllowDeleteService") && !value["AllowDeleteService"].IsNull())
+    {
+        if (!value["AllowDeleteService"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `ServiceSetting.AllowDeleteService` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowDeleteService = value["AllowDeleteService"].GetBool();
+        m_allowDeleteServiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +141,30 @@ void ServiceSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableService, allocator);
+    }
+
+    if (m_headlessServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeadlessService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_headlessService, allocator);
+    }
+
+    if (m_allowDeleteServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowDeleteService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowDeleteService, allocator);
     }
 
 }
@@ -159,5 +216,53 @@ void ServiceSetting::SetSubnetId(const string& _subnetId)
 bool ServiceSetting::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+bool ServiceSetting::GetDisableService() const
+{
+    return m_disableService;
+}
+
+void ServiceSetting::SetDisableService(const bool& _disableService)
+{
+    m_disableService = _disableService;
+    m_disableServiceHasBeenSet = true;
+}
+
+bool ServiceSetting::DisableServiceHasBeenSet() const
+{
+    return m_disableServiceHasBeenSet;
+}
+
+bool ServiceSetting::GetHeadlessService() const
+{
+    return m_headlessService;
+}
+
+void ServiceSetting::SetHeadlessService(const bool& _headlessService)
+{
+    m_headlessService = _headlessService;
+    m_headlessServiceHasBeenSet = true;
+}
+
+bool ServiceSetting::HeadlessServiceHasBeenSet() const
+{
+    return m_headlessServiceHasBeenSet;
+}
+
+bool ServiceSetting::GetAllowDeleteService() const
+{
+    return m_allowDeleteService;
+}
+
+void ServiceSetting::SetAllowDeleteService(const bool& _allowDeleteService)
+{
+    m_allowDeleteService = _allowDeleteService;
+    m_allowDeleteServiceHasBeenSet = true;
+}
+
+bool ServiceSetting::AllowDeleteServiceHasBeenSet() const
+{
+    return m_allowDeleteServiceHasBeenSet;
 }
 

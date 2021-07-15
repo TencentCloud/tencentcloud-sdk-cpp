@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool CommIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间，14天内。本地unix时间戳（1588031999s）
-                     * @return StartTime 查询开始时间，14天内。本地unix时间戳（1588031999s）
+                     * 获取查询开始时间，14天内。本地unix时间戳（1588031999s），查询实时数据时，查询起止时间不超过1个小时。
+                     * @return StartTime 查询开始时间，14天内。本地unix时间戳（1588031999s），查询实时数据时，查询起止时间不超过1个小时。
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，14天内。本地unix时间戳（1588031999s）
-                     * @param StartTime 查询开始时间，14天内。本地unix时间戳（1588031999s）
+                     * 设置查询开始时间，14天内。本地unix时间戳（1588031999s），查询实时数据时，查询起止时间不超过1个小时。
+                     * @param StartTime 查询开始时间，14天内。本地unix时间戳（1588031999s），查询实时数据时，查询起止时间不超过1个小时。
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -247,7 +247,7 @@ bigvHeight：上/下行分辨率高
                     bool m_commIdHasBeenSet;
 
                     /**
-                     * 查询开始时间，14天内。本地unix时间戳（1588031999s）
+                     * 查询开始时间，14天内。本地unix时间戳（1588031999s），查询实时数据时，查询起止时间不超过1个小时。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;

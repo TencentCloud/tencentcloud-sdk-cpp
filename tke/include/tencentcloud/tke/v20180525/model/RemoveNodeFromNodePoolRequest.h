@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取节点id列表
-                     * @return InstanceIds 节点id列表
+                     * 获取节点id列表，一次最多支持100台
+                     * @return InstanceIds 节点id列表，一次最多支持100台
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置节点id列表
-                     * @param InstanceIds 节点id列表
+                     * 设置节点id列表，一次最多支持100台
+                     * @param InstanceIds 节点id列表，一次最多支持100台
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 节点id列表
+                     * 节点id列表，一次最多支持100台
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

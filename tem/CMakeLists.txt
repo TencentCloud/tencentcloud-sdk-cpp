@@ -26,7 +26,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20201221/model/CreateServiceV2Response.h
   include/tencentcloud/tem/v20201221/model/CreateCosTokenV2Request.h
   include/tencentcloud/tem/v20201221/model/DeployServiceV2Response.h
-  include/tencentcloud/tem/v20201221/model/IngressTls.h
+  include/tencentcloud/tem/v20201221/model/EsInfo.h
   include/tencentcloud/tem/v20201221/model/DescribeNamespacesResponse.h
   include/tencentcloud/tem/v20201221/model/PortMapping.h
   include/tencentcloud/tem/v20201221/model/RestartServiceRunPodRequest.h
@@ -65,9 +65,11 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20201221/model/DescribeServiceRunPodListV2Response.h
   include/tencentcloud/tem/v20201221/model/TemNamespaceInfo.h
   include/tencentcloud/tem/v20201221/model/NamespacePage.h
+  include/tencentcloud/tem/v20201221/model/HealthCheckConfig.h
   include/tencentcloud/tem/v20201221/model/CreateCosTokenV2Response.h
+  include/tencentcloud/tem/v20201221/model/IngressTls.h
   include/tencentcloud/tem/v20201221/model/GenerateDownloadUrlRequest.h
-  include/tencentcloud/tem/v20201221/model/EsInfo.h
+  include/tencentcloud/tem/v20201221/model/DeployStrategyConf.h
   include/tencentcloud/tem/v20201221/model/DescribeIngressRequest.h
   include/tencentcloud/tem/v20201221/model/CreateServiceV2Request.h
   include/tencentcloud/tem/v20201221/model/EksService.h
@@ -83,7 +85,7 @@ set(tem_src
   src/v20201221/model/CreateServiceV2Response.cpp
   src/v20201221/model/CreateCosTokenV2Request.cpp
   src/v20201221/model/DeployServiceV2Response.cpp
-  src/v20201221/model/IngressTls.cpp
+  src/v20201221/model/EsInfo.cpp
   src/v20201221/model/DescribeNamespacesResponse.cpp
   src/v20201221/model/PortMapping.cpp
   src/v20201221/model/RestartServiceRunPodRequest.cpp
@@ -122,9 +124,11 @@ set(tem_src
   src/v20201221/model/DescribeServiceRunPodListV2Response.cpp
   src/v20201221/model/TemNamespaceInfo.cpp
   src/v20201221/model/NamespacePage.cpp
+  src/v20201221/model/HealthCheckConfig.cpp
   src/v20201221/model/CreateCosTokenV2Response.cpp
+  src/v20201221/model/IngressTls.cpp
   src/v20201221/model/GenerateDownloadUrlRequest.cpp
-  src/v20201221/model/EsInfo.cpp
+  src/v20201221/model/DeployStrategyConf.cpp
   src/v20201221/model/DescribeIngressRequest.cpp
   src/v20201221/model/CreateServiceV2Request.cpp
   src/v20201221/model/EksService.cpp

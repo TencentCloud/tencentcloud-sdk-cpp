@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/EditMediaFileInfo.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
+#include <tencentcloud/mps/v20190612/model/EditMediaOutputConfig.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
 
 
@@ -98,6 +99,24 @@ namespace TencentCloud
                      * @return OutputObjectPath 是否已赋值
                      */
                     bool OutputObjectPathHasBeenSet() const;
+
+                    /**
+                     * 获取编辑后生成的文件配置。
+                     * @return OutputConfig 编辑后生成的文件配置。
+                     */
+                    EditMediaOutputConfig GetOutputConfig() const;
+
+                    /**
+                     * 设置编辑后生成的文件配置。
+                     * @param OutputConfig 编辑后生成的文件配置。
+                     */
+                    void SetOutputConfig(const EditMediaOutputConfig& _outputConfig);
+
+                    /**
+                     * 判断参数 OutputConfig 是否已赋值
+                     * @return OutputConfig 是否已赋值
+                     */
+                    bool OutputConfigHasBeenSet() const;
 
                     /**
                      * 获取任务的事件通知信息，不填代表不获取事件通知。
@@ -190,6 +209,12 @@ namespace TencentCloud
                      */
                     std::string m_outputObjectPath;
                     bool m_outputObjectPathHasBeenSet;
+
+                    /**
+                     * 编辑后生成的文件配置。
+                     */
+                    EditMediaOutputConfig m_outputConfig;
+                    bool m_outputConfigHasBeenSet;
 
                     /**
                      * 任务的事件通知信息，不填代表不获取事件通知。

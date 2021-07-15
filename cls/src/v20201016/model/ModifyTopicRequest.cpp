@@ -28,7 +28,8 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_tagsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_autoSplitHasBeenSet(false),
-    m_maxSplitPartitionsHasBeenSet(false)
+    m_maxSplitPartitionsHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string ModifyTopicRequest::ToJsonString() const
         string key = "MaxSplitPartitions";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxSplitPartitions, allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_period, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void ModifyTopicRequest::SetMaxSplitPartitions(const int64_t& _maxSplitPartition
 bool ModifyTopicRequest::MaxSplitPartitionsHasBeenSet() const
 {
     return m_maxSplitPartitionsHasBeenSet;
+}
+
+int64_t ModifyTopicRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void ModifyTopicRequest::SetPeriod(const int64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
 

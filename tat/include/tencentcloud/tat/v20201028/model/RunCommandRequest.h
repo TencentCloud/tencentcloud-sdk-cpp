@@ -62,20 +62,20 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取待执行命令的实例ID列表。 支持实例类型：
+                     * 获取待执行命令的实例ID列表，上限100。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
-                     * @return InstanceIds 待执行命令的实例ID列表。 支持实例类型：
+                     * @return InstanceIds 待执行命令的实例ID列表，上限100。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置待执行命令的实例ID列表。 支持实例类型：
+                     * 设置待执行命令的实例ID列表，上限100。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
-                     * @param InstanceIds 待执行命令的实例ID列表。 支持实例类型：
+                     * @param InstanceIds 待执行命令的实例ID列表，上限100。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
                      */
@@ -350,7 +350,7 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 待执行命令的实例ID列表。 支持实例类型：
+                     * 待执行命令的实例ID列表，上限100。支持实例类型：
 <li> CVM
 <li> LIGHTHOUSE
                      */

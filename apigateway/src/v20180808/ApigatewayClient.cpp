@@ -83,6 +83,49 @@ ApigatewayClient::AttachPluginOutcomeCallable ApigatewayClient::AttachPluginCall
     return task->get_future();
 }
 
+ApigatewayClient::BindApiAppOutcome ApigatewayClient::BindApiApp(const BindApiAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindApiApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindApiAppResponse rsp = BindApiAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindApiAppOutcome(rsp);
+        else
+            return BindApiAppOutcome(o.GetError());
+    }
+    else
+    {
+        return BindApiAppOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::BindApiAppAsync(const BindApiAppRequest& request, const BindApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindApiApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::BindApiAppOutcomeCallable ApigatewayClient::BindApiAppCallable(const BindApiAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindApiAppOutcome()>>(
+        [this, request]()
+        {
+            return this->BindApiApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::BindEnvironmentOutcome ApigatewayClient::BindEnvironment(const BindEnvironmentRequest &request)
 {
     auto outcome = MakeRequest(request, "BindEnvironment");
@@ -384,6 +427,49 @@ ApigatewayClient::CreateApiOutcomeCallable ApigatewayClient::CreateApiCallable(c
     return task->get_future();
 }
 
+ApigatewayClient::CreateApiAppOutcome ApigatewayClient::CreateApiApp(const CreateApiAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApiApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApiAppResponse rsp = CreateApiAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApiAppOutcome(rsp);
+        else
+            return CreateApiAppOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApiAppOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::CreateApiAppAsync(const CreateApiAppRequest& request, const CreateApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateApiApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::CreateApiAppOutcomeCallable ApigatewayClient::CreateApiAppCallable(const CreateApiAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateApiAppOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateApiApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::CreateApiKeyOutcome ApigatewayClient::CreateApiKey(const CreateApiKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApiKey");
@@ -678,6 +764,49 @@ ApigatewayClient::DeleteApiOutcomeCallable ApigatewayClient::DeleteApiCallable(c
         [this, request]()
         {
             return this->DeleteApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::DeleteApiAppOutcome ApigatewayClient::DeleteApiApp(const DeleteApiAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteApiApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteApiAppResponse rsp = DeleteApiAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteApiAppOutcome(rsp);
+        else
+            return DeleteApiAppOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteApiAppOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DeleteApiAppAsync(const DeleteApiAppRequest& request, const DeleteApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteApiApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DeleteApiAppOutcomeCallable ApigatewayClient::DeleteApiAppCallable(const DeleteApiAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteApiAppOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteApiApp(request);
         }
     );
 
@@ -1151,6 +1280,178 @@ ApigatewayClient::DescribeApiOutcomeCallable ApigatewayClient::DescribeApiCallab
         [this, request]()
         {
             return this->DescribeApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::DescribeApiAppOutcome ApigatewayClient::DescribeApiApp(const DescribeApiAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiAppResponse rsp = DescribeApiAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiAppOutcome(rsp);
+        else
+            return DescribeApiAppOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiAppOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeApiAppAsync(const DescribeApiAppRequest& request, const DescribeApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApiApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeApiAppOutcomeCallable ApigatewayClient::DescribeApiAppCallable(const DescribeApiAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApiAppOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApiApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::DescribeApiAppBindApisStatusOutcome ApigatewayClient::DescribeApiAppBindApisStatus(const DescribeApiAppBindApisStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiAppBindApisStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiAppBindApisStatusResponse rsp = DescribeApiAppBindApisStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiAppBindApisStatusOutcome(rsp);
+        else
+            return DescribeApiAppBindApisStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiAppBindApisStatusOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeApiAppBindApisStatusAsync(const DescribeApiAppBindApisStatusRequest& request, const DescribeApiAppBindApisStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApiAppBindApisStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeApiAppBindApisStatusOutcomeCallable ApigatewayClient::DescribeApiAppBindApisStatusCallable(const DescribeApiAppBindApisStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApiAppBindApisStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApiAppBindApisStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::DescribeApiAppsStatusOutcome ApigatewayClient::DescribeApiAppsStatus(const DescribeApiAppsStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiAppsStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiAppsStatusResponse rsp = DescribeApiAppsStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiAppsStatusOutcome(rsp);
+        else
+            return DescribeApiAppsStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiAppsStatusOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeApiAppsStatusAsync(const DescribeApiAppsStatusRequest& request, const DescribeApiAppsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApiAppsStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeApiAppsStatusOutcomeCallable ApigatewayClient::DescribeApiAppsStatusCallable(const DescribeApiAppsStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApiAppsStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApiAppsStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::DescribeApiBindApiAppsStatusOutcome ApigatewayClient::DescribeApiBindApiAppsStatus(const DescribeApiBindApiAppsStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiBindApiAppsStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiBindApiAppsStatusResponse rsp = DescribeApiBindApiAppsStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiBindApiAppsStatusOutcome(rsp);
+        else
+            return DescribeApiBindApiAppsStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiBindApiAppsStatusOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeApiBindApiAppsStatusAsync(const DescribeApiBindApiAppsStatusRequest& request, const DescribeApiBindApiAppsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApiBindApiAppsStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeApiBindApiAppsStatusOutcomeCallable ApigatewayClient::DescribeApiBindApiAppsStatusCallable(const DescribeApiBindApiAppsStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApiBindApiAppsStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApiBindApiAppsStatus(request);
         }
     );
 
@@ -1846,6 +2147,49 @@ ApigatewayClient::DescribeServiceEnvironmentStrategyOutcomeCallable ApigatewayCl
     return task->get_future();
 }
 
+ApigatewayClient::DescribeServiceForApiAppOutcome ApigatewayClient::DescribeServiceForApiApp(const DescribeServiceForApiAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServiceForApiApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServiceForApiAppResponse rsp = DescribeServiceForApiAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServiceForApiAppOutcome(rsp);
+        else
+            return DescribeServiceForApiAppOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServiceForApiAppOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribeServiceForApiAppAsync(const DescribeServiceForApiAppRequest& request, const DescribeServiceForApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServiceForApiApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribeServiceForApiAppOutcomeCallable ApigatewayClient::DescribeServiceForApiAppCallable(const DescribeServiceForApiAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServiceForApiAppOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServiceForApiApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::DescribeServiceReleaseVersionOutcome ApigatewayClient::DescribeServiceReleaseVersion(const DescribeServiceReleaseVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServiceReleaseVersion");
@@ -2491,6 +2835,49 @@ ApigatewayClient::ModifyApiOutcomeCallable ApigatewayClient::ModifyApiCallable(c
     return task->get_future();
 }
 
+ApigatewayClient::ModifyApiAppOutcome ApigatewayClient::ModifyApiApp(const ModifyApiAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApiApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApiAppResponse rsp = ModifyApiAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApiAppOutcome(rsp);
+        else
+            return ModifyApiAppOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApiAppOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::ModifyApiAppAsync(const ModifyApiAppRequest& request, const ModifyApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApiApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::ModifyApiAppOutcomeCallable ApigatewayClient::ModifyApiAppCallable(const ModifyApiAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApiAppOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApiApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::ModifyApiEnvironmentStrategyOutcome ApigatewayClient::ModifyApiEnvironmentStrategy(const ModifyApiEnvironmentStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyApiEnvironmentStrategy");
@@ -3129,6 +3516,92 @@ ApigatewayClient::UnReleaseServiceOutcomeCallable ApigatewayClient::UnReleaseSer
         [this, request]()
         {
             return this->UnReleaseService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::UnbindApiAppOutcome ApigatewayClient::UnbindApiApp(const UnbindApiAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindApiApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindApiAppResponse rsp = UnbindApiAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindApiAppOutcome(rsp);
+        else
+            return UnbindApiAppOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindApiAppOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::UnbindApiAppAsync(const UnbindApiAppRequest& request, const UnbindApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindApiApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::UnbindApiAppOutcomeCallable ApigatewayClient::UnbindApiAppCallable(const UnbindApiAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindApiAppOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindApiApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApigatewayClient::UpdateApiAppKeyOutcome ApigatewayClient::UpdateApiAppKey(const UpdateApiAppKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateApiAppKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateApiAppKeyResponse rsp = UpdateApiAppKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateApiAppKeyOutcome(rsp);
+        else
+            return UpdateApiAppKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateApiAppKeyOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::UpdateApiAppKeyAsync(const UpdateApiAppKeyRequest& request, const UpdateApiAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateApiAppKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::UpdateApiAppKeyOutcomeCallable ApigatewayClient::UpdateApiAppKeyCallable(const UpdateApiAppKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateApiAppKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateApiAppKey(request);
         }
     );
 

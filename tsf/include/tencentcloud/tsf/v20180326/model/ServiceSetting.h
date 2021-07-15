@@ -113,6 +113,72 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否创建 k8s service，默认为 false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisableService 是否创建 k8s service，默认为 false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDisableService() const;
+
+                    /**
+                     * 设置是否创建 k8s service，默认为 false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DisableService 是否创建 k8s service，默认为 false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDisableService(const bool& _disableService);
+
+                    /**
+                     * 判断参数 DisableService 是否已赋值
+                     * @return DisableService 是否已赋值
+                     */
+                    bool DisableServiceHasBeenSet() const;
+
+                    /**
+                     * 获取service 是否为 headless 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HeadlessService service 是否为 headless 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetHeadlessService() const;
+
+                    /**
+                     * 设置service 是否为 headless 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HeadlessService service 是否为 headless 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHeadlessService(const bool& _headlessService);
+
+                    /**
+                     * 判断参数 HeadlessService 是否已赋值
+                     * @return HeadlessService 是否已赋值
+                     */
+                    bool HeadlessServiceHasBeenSet() const;
+
+                    /**
+                     * 获取当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AllowDeleteService 当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAllowDeleteService() const;
+
+                    /**
+                     * 设置当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AllowDeleteService 当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAllowDeleteService(const bool& _allowDeleteService);
+
+                    /**
+                     * 判断参数 AllowDeleteService 是否已赋值
+                     * @return AllowDeleteService 是否已赋值
+                     */
+                    bool AllowDeleteServiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +201,27 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 是否创建 k8s service，默认为 false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_disableService;
+                    bool m_disableServiceHasBeenSet;
+
+                    /**
+                     * service 是否为 headless 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_headlessService;
+                    bool m_headlessServiceHasBeenSet;
+
+                    /**
+                     * 当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_allowDeleteService;
+                    bool m_allowDeleteServiceHasBeenSet;
 
                 };
             }

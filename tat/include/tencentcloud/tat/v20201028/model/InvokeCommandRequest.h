@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool CommandIdHasBeenSet() const;
 
                     /**
-                     * 获取待执行命令的实例ID列表。
-                     * @return InstanceIds 待执行命令的实例ID列表。
+                     * 获取待执行命令的实例ID列表，上限100。
+                     * @return InstanceIds 待执行命令的实例ID列表，上限100。
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置待执行命令的实例ID列表。
-                     * @param InstanceIds 待执行命令的实例ID列表。
+                     * 设置待执行命令的实例ID列表，上限100。
+                     * @param InstanceIds 待执行命令的实例ID列表，上限100。
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -143,7 +143,7 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool m_commandIdHasBeenSet;
 
                     /**
-                     * 待执行命令的实例ID列表。
+                     * 待执行命令的实例ID列表，上限100。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

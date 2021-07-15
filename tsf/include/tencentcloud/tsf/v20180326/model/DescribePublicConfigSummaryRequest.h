@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取按时间排序：creation_time；按名称排序：config_name
+                     * @return OrderBy 按时间排序：creation_time；按名称排序：config_name
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置按时间排序：creation_time；按名称排序：config_name
+                     * @param OrderBy 按时间排序：creation_time；按名称排序：config_name
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取升序传 0，降序传 1
+                     * @return OrderType 升序传 0，降序传 1
+                     */
+                    int64_t GetOrderType() const;
+
+                    /**
+                     * 设置升序传 0，降序传 1
+                     * @param OrderType 升序传 0，降序传 1
+                     */
+                    void SetOrderType(const int64_t& _orderType);
+
+                    /**
+                     * 判断参数 OrderType 是否已赋值
+                     * @return OrderType 是否已赋值
+                     */
+                    bool OrderTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 按时间排序：creation_time；按名称排序：config_name
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * 升序传 0，降序传 1
+                     */
+                    int64_t m_orderType;
+                    bool m_orderTypeHasBeenSet;
 
                 };
             }

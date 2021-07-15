@@ -25,7 +25,9 @@ using namespace std;
 DescribePublicConfigSummaryRequest::DescribePublicConfigSummaryRequest() :
     m_searchWordHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_orderByHasBeenSet(false),
+    m_orderTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string DescribePublicConfigSummaryRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_orderType, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void DescribePublicConfigSummaryRequest::SetLimit(const int64_t& _limit)
 bool DescribePublicConfigSummaryRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribePublicConfigSummaryRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribePublicConfigSummaryRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribePublicConfigSummaryRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
+int64_t DescribePublicConfigSummaryRequest::GetOrderType() const
+{
+    return m_orderType;
+}
+
+void DescribePublicConfigSummaryRequest::SetOrderType(const int64_t& _orderType)
+{
+    m_orderType = _orderType;
+    m_orderTypeHasBeenSet = true;
+}
+
+bool DescribePublicConfigSummaryRequest::OrderTypeHasBeenSet() const
+{
+    return m_orderTypeHasBeenSet;
 }
 
 

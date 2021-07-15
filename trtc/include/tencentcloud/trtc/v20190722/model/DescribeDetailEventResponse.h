@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的事件列表
-                     * @return Data 返回的事件列表
+                     * 获取返回的事件列表，若没有数据，会返回空数组。
+                     * @return Data 返回的事件列表，若没有数据，会返回空数组。
                      */
                     std::vector<EventList> GetData() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回的事件列表
+                     * 返回的事件列表，若没有数据，会返回空数组。
                      */
                     std::vector<EventList> m_data;
                     bool m_dataHasBeenSet;

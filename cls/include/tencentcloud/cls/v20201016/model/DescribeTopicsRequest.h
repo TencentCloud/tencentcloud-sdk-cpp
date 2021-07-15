@@ -82,8 +82,15 @@ namespace TencentCloud
 
 必选：否
 
+<br><li> storageType
 
-每次请求的Filters的上限为10，Filter.Values的上限为5。
+按照【日志主题的存储类型】进行过滤。可选值 hot（实时存储），cold（离线存储）
+类型：String
+
+必选：否
+
+
+每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * @return Filters <br><li> topicName
 
 按照【日志主题名称】进行过滤。
@@ -122,8 +129,15 @@ namespace TencentCloud
 
 必选：否
 
+<br><li> storageType
 
-每次请求的Filters的上限为10，Filter.Values的上限为5。
+按照【日志主题的存储类型】进行过滤。可选值 hot（实时存储），cold（离线存储）
+类型：String
+
+必选：否
+
+
+每次请求的Filters的上限为10，Filter.Values的上限为100。
                      */
                     std::vector<Filter> GetFilters() const;
 
@@ -166,8 +180,15 @@ namespace TencentCloud
 
 必选：否
 
+<br><li> storageType
 
-每次请求的Filters的上限为10，Filter.Values的上限为5。
+按照【日志主题的存储类型】进行过滤。可选值 hot（实时存储），cold（离线存储）
+类型：String
+
+必选：否
+
+
+每次请求的Filters的上限为10，Filter.Values的上限为100。
                      * @param Filters <br><li> topicName
 
 按照【日志主题名称】进行过滤。
@@ -206,8 +227,15 @@ namespace TencentCloud
 
 必选：否
 
+<br><li> storageType
 
-每次请求的Filters的上限为10，Filter.Values的上限为5。
+按照【日志主题的存储类型】进行过滤。可选值 hot（实时存储），cold（离线存储）
+类型：String
+
+必选：否
+
+
+每次请求的Filters的上限为10，Filter.Values的上限为100。
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -294,8 +322,15 @@ namespace TencentCloud
 
 必选：否
 
+<br><li> storageType
 
-每次请求的Filters的上限为10，Filter.Values的上限为5。
+按照【日志主题的存储类型】进行过滤。可选值 hot（实时存储），cold（离线存储）
+类型：String
+
+必选：否
+
+
+每次请求的Filters的上限为10，Filter.Values的上限为100。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

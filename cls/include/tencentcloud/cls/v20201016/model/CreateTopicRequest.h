@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启自动分裂，默认值为false
-                     * @return AutoSplit 是否开启自动分裂，默认值为false
+                     * 获取是否开启自动分裂，默认值为true
+                     * @return AutoSplit 是否开启自动分裂，默认值为true
                      */
                     bool GetAutoSplit() const;
 
                     /**
-                     * 设置是否开启自动分裂，默认值为false
-                     * @param AutoSplit 是否开启自动分裂，默认值为false
+                     * 设置是否开启自动分裂，默认值为true
+                     * @param AutoSplit 是否开启自动分裂，默认值为true
                      */
                     void SetAutoSplit(const bool& _autoSplit);
 
@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool MaxSplitPartitionsHasBeenSet() const;
 
                     /**
-                     * 获取日志主题的存储类型，可选值 hot（热存储），cold（冷存储）默认为hot
-                     * @return StorageType 日志主题的存储类型，可选值 hot（热存储），cold（冷存储）默认为hot
+                     * 获取日志主题的存储类型，可选值 hot（实时存储），cold（离线存储）；默认为hot。若传入cold，请先联系客服进行开白。
+                     * @return StorageType 日志主题的存储类型，可选值 hot（实时存储），cold（离线存储）；默认为hot。若传入cold，请先联系客服进行开白。
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置日志主题的存储类型，可选值 hot（热存储），cold（冷存储）默认为hot
-                     * @param StorageType 日志主题的存储类型，可选值 hot（热存储），cold（冷存储）默认为hot
+                     * 设置日志主题的存储类型，可选值 hot（实时存储），cold（离线存储）；默认为hot。若传入cold，请先联系客服进行开白。
+                     * @param StorageType 日志主题的存储类型，可选值 hot（实时存储），cold（离线存储）；默认为hot。若传入cold，请先联系客服进行开白。
                      */
                     void SetStorageType(const std::string& _storageType);
 
@@ -168,6 +168,24 @@ namespace TencentCloud
                      * @return StorageType 是否已赋值
                      */
                     bool StorageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取生命周期，单位天；可取值范围1~366。默认30天
+                     * @return Period 生命周期，单位天；可取值范围1~366。默认30天
+                     */
+                    int64_t GetPeriod() const;
+
+                    /**
+                     * 设置生命周期，单位天；可取值范围1~366。默认30天
+                     * @param Period 生命周期，单位天；可取值范围1~366。默认30天
+                     */
+                    void SetPeriod(const int64_t& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     */
+                    bool PeriodHasBeenSet() const;
 
                 private:
 
@@ -196,7 +214,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 是否开启自动分裂，默认值为false
+                     * 是否开启自动分裂，默认值为true
                      */
                     bool m_autoSplit;
                     bool m_autoSplitHasBeenSet;
@@ -208,10 +226,16 @@ namespace TencentCloud
                     bool m_maxSplitPartitionsHasBeenSet;
 
                     /**
-                     * 日志主题的存储类型，可选值 hot（热存储），cold（冷存储）默认为hot
+                     * 日志主题的存储类型，可选值 hot（实时存储），cold（离线存储）；默认为hot。若传入cold，请先联系客服进行开白。
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
+
+                    /**
+                     * 生命周期，单位天；可取值范围1~366。默认30天
+                     */
+                    int64_t m_period;
+                    bool m_periodHasBeenSet;
 
                 };
             }

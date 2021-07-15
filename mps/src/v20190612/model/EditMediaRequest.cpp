@@ -26,6 +26,7 @@ EditMediaRequest::EditMediaRequest() :
     m_fileInfosHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
     m_outputObjectPathHasBeenSet(false),
+    m_outputConfigHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -70,6 +71,15 @@ string EditMediaRequest::ToJsonString() const
         string key = "OutputObjectPath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_outputObjectPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_outputConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_taskNotifyConfigHasBeenSet)
@@ -159,6 +169,22 @@ void EditMediaRequest::SetOutputObjectPath(const string& _outputObjectPath)
 bool EditMediaRequest::OutputObjectPathHasBeenSet() const
 {
     return m_outputObjectPathHasBeenSet;
+}
+
+EditMediaOutputConfig EditMediaRequest::GetOutputConfig() const
+{
+    return m_outputConfig;
+}
+
+void EditMediaRequest::SetOutputConfig(const EditMediaOutputConfig& _outputConfig)
+{
+    m_outputConfig = _outputConfig;
+    m_outputConfigHasBeenSet = true;
+}
+
+bool EditMediaRequest::OutputConfigHasBeenSet() const
+{
+    return m_outputConfigHasBeenSet;
 }
 
 TaskNotifyConfig EditMediaRequest::GetTaskNotifyConfig() const

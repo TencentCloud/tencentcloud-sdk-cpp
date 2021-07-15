@@ -27,7 +27,8 @@ RunVersionPod::RunVersionPod() :
     m_createTimeHasBeenSet(false),
     m_podIpHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_deployVersionHasBeenSet(false)
+    m_deployVersionHasBeenSet(false),
+    m_restartCountHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome RunVersionPod::Deserialize(const rapidjson::Value &value)
         m_deployVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("RestartCount") && !value["RestartCount"].IsNull())
+    {
+        if (!value["RestartCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `RunVersionPod.RestartCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_restartCount = value["RestartCount"].GetInt64();
+        m_restartCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void RunVersionPod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DeployVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deployVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_restartCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestartCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_restartCount, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void RunVersionPod::SetDeployVersion(const string& _deployVersion)
 bool RunVersionPod::DeployVersionHasBeenSet() const
 {
     return m_deployVersionHasBeenSet;
+}
+
+int64_t RunVersionPod::GetRestartCount() const
+{
+    return m_restartCount;
+}
+
+void RunVersionPod::SetRestartCount(const int64_t& _restartCount)
+{
+    m_restartCount = _restartCount;
+    m_restartCountHasBeenSet = true;
+}
+
+bool RunVersionPod::RestartCountHasBeenSet() const
+{
+    return m_restartCountHasBeenSet;
 }
 

@@ -23,14 +23,20 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cls/v20201016/model/ApplyConfigToMachineGroupRequest.h>
+#include <tencentcloud/cls/v20201016/model/ApplyConfigToMachineGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmNoticeRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmNoticeResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateConfigRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateExportRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateExportResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateIndexRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateIndexResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateLogsetRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateLogsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateMachineGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateTopicRequest.h>
@@ -39,10 +45,16 @@
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmNoticeRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmNoticeResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteConfigRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteConfigResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteExportRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteExportResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteIndexRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteIndexResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteLogsetRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteLogsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteMachineGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteTopicRequest.h>
@@ -51,12 +63,20 @@
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmNoticesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeConfigsRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeConfigsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeExportsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeExportsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeIndexRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeIndexResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogContextRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogContextResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeLogsetsRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeLogsetsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeMachineGroupsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeMachineGroupsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeMachinesRequest.h>
@@ -73,8 +93,12 @@
 #include <tencentcloud/cls/v20201016/model/ModifyAlarmResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyAlarmNoticeRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyAlarmNoticeResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyConfigRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyIndexRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyIndexResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyLogsetRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyLogsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyMachineGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyTopicRequest.h>
@@ -97,18 +121,27 @@ namespace TencentCloud
                 ClsClient(const Credential &credential, const std::string &region);
                 ClsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::ApplyConfigToMachineGroupResponse> ApplyConfigToMachineGroupOutcome;
+                typedef std::future<ApplyConfigToMachineGroupOutcome> ApplyConfigToMachineGroupOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ApplyConfigToMachineGroupRequest&, ApplyConfigToMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyConfigToMachineGroupAsyncHandler;
                 typedef Outcome<Error, Model::CreateAlarmResponse> CreateAlarmOutcome;
                 typedef std::future<CreateAlarmOutcome> CreateAlarmOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateAlarmRequest&, CreateAlarmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmAsyncHandler;
                 typedef Outcome<Error, Model::CreateAlarmNoticeResponse> CreateAlarmNoticeOutcome;
                 typedef std::future<CreateAlarmNoticeOutcome> CreateAlarmNoticeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateAlarmNoticeRequest&, CreateAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmNoticeAsyncHandler;
+                typedef Outcome<Error, Model::CreateConfigResponse> CreateConfigOutcome;
+                typedef std::future<CreateConfigOutcome> CreateConfigOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateConfigRequest&, CreateConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigAsyncHandler;
                 typedef Outcome<Error, Model::CreateExportResponse> CreateExportOutcome;
                 typedef std::future<CreateExportOutcome> CreateExportOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateExportRequest&, CreateExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExportAsyncHandler;
                 typedef Outcome<Error, Model::CreateIndexResponse> CreateIndexOutcome;
                 typedef std::future<CreateIndexOutcome> CreateIndexOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateIndexRequest&, CreateIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIndexAsyncHandler;
+                typedef Outcome<Error, Model::CreateLogsetResponse> CreateLogsetOutcome;
+                typedef std::future<CreateLogsetOutcome> CreateLogsetOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateLogsetRequest&, CreateLogsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLogsetAsyncHandler;
                 typedef Outcome<Error, Model::CreateMachineGroupResponse> CreateMachineGroupOutcome;
                 typedef std::future<CreateMachineGroupOutcome> CreateMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateMachineGroupRequest&, CreateMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMachineGroupAsyncHandler;
@@ -121,12 +154,21 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteAlarmNoticeResponse> DeleteAlarmNoticeOutcome;
                 typedef std::future<DeleteAlarmNoticeOutcome> DeleteAlarmNoticeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteAlarmNoticeRequest&, DeleteAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmNoticeAsyncHandler;
+                typedef Outcome<Error, Model::DeleteConfigResponse> DeleteConfigOutcome;
+                typedef std::future<DeleteConfigOutcome> DeleteConfigOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteConfigRequest&, DeleteConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigAsyncHandler;
+                typedef Outcome<Error, Model::DeleteConfigFromMachineGroupResponse> DeleteConfigFromMachineGroupOutcome;
+                typedef std::future<DeleteConfigFromMachineGroupOutcome> DeleteConfigFromMachineGroupOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteConfigFromMachineGroupRequest&, DeleteConfigFromMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigFromMachineGroupAsyncHandler;
                 typedef Outcome<Error, Model::DeleteExportResponse> DeleteExportOutcome;
                 typedef std::future<DeleteExportOutcome> DeleteExportOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteExportRequest&, DeleteExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExportAsyncHandler;
                 typedef Outcome<Error, Model::DeleteIndexResponse> DeleteIndexOutcome;
                 typedef std::future<DeleteIndexOutcome> DeleteIndexOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteIndexRequest&, DeleteIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIndexAsyncHandler;
+                typedef Outcome<Error, Model::DeleteLogsetResponse> DeleteLogsetOutcome;
+                typedef std::future<DeleteLogsetOutcome> DeleteLogsetOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteLogsetRequest&, DeleteLogsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogsetAsyncHandler;
                 typedef Outcome<Error, Model::DeleteMachineGroupResponse> DeleteMachineGroupOutcome;
                 typedef std::future<DeleteMachineGroupOutcome> DeleteMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteMachineGroupRequest&, DeleteMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMachineGroupAsyncHandler;
@@ -139,6 +181,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAlarmsResponse> DescribeAlarmsOutcome;
                 typedef std::future<DescribeAlarmsOutcome> DescribeAlarmsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeAlarmsRequest&, DescribeAlarmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeConfigMachineGroupsResponse> DescribeConfigMachineGroupsOutcome;
+                typedef std::future<DescribeConfigMachineGroupsOutcome> DescribeConfigMachineGroupsOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeConfigMachineGroupsRequest&, DescribeConfigMachineGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigMachineGroupsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeConfigsResponse> DescribeConfigsOutcome;
+                typedef std::future<DescribeConfigsOutcome> DescribeConfigsOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeConfigsRequest&, DescribeConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeExportsResponse> DescribeExportsOutcome;
                 typedef std::future<DescribeExportsOutcome> DescribeExportsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeExportsRequest&, DescribeExportsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportsAsyncHandler;
@@ -148,6 +196,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeLogContextResponse> DescribeLogContextOutcome;
                 typedef std::future<DescribeLogContextOutcome> DescribeLogContextOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeLogContextRequest&, DescribeLogContextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogContextAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLogsetsResponse> DescribeLogsetsOutcome;
+                typedef std::future<DescribeLogsetsOutcome> DescribeLogsetsOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeLogsetsRequest&, DescribeLogsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogsetsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeMachineGroupConfigsResponse> DescribeMachineGroupConfigsOutcome;
+                typedef std::future<DescribeMachineGroupConfigsOutcome> DescribeMachineGroupConfigsOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeMachineGroupConfigsRequest&, DescribeMachineGroupConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachineGroupConfigsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeMachineGroupsResponse> DescribeMachineGroupsOutcome;
                 typedef std::future<DescribeMachineGroupsOutcome> DescribeMachineGroupsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeMachineGroupsRequest&, DescribeMachineGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachineGroupsAsyncHandler;
@@ -172,9 +226,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyAlarmNoticeResponse> ModifyAlarmNoticeOutcome;
                 typedef std::future<ModifyAlarmNoticeOutcome> ModifyAlarmNoticeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyAlarmNoticeRequest&, ModifyAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmNoticeAsyncHandler;
+                typedef Outcome<Error, Model::ModifyConfigResponse> ModifyConfigOutcome;
+                typedef std::future<ModifyConfigOutcome> ModifyConfigOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyConfigRequest&, ModifyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigAsyncHandler;
                 typedef Outcome<Error, Model::ModifyIndexResponse> ModifyIndexOutcome;
                 typedef std::future<ModifyIndexOutcome> ModifyIndexOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyIndexRequest&, ModifyIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIndexAsyncHandler;
+                typedef Outcome<Error, Model::ModifyLogsetResponse> ModifyLogsetOutcome;
+                typedef std::future<ModifyLogsetOutcome> ModifyLogsetOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyLogsetRequest&, ModifyLogsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogsetAsyncHandler;
                 typedef Outcome<Error, Model::ModifyMachineGroupResponse> ModifyMachineGroupOutcome;
                 typedef std::future<ModifyMachineGroupOutcome> ModifyMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyMachineGroupRequest&, ModifyMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMachineGroupAsyncHandler;
@@ -189,6 +249,15 @@ namespace TencentCloud
                 typedef std::function<void(const ClsClient*, const Model::SplitPartitionRequest&, SplitPartitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SplitPartitionAsyncHandler;
 
 
+
+                /**
+                 *应用采集配置到指定机器组
+                 * @param req ApplyConfigToMachineGroupRequest
+                 * @return ApplyConfigToMachineGroupOutcome
+                 */
+                ApplyConfigToMachineGroupOutcome ApplyConfigToMachineGroup(const Model::ApplyConfigToMachineGroupRequest &request);
+                void ApplyConfigToMachineGroupAsync(const Model::ApplyConfigToMachineGroupRequest& request, const ApplyConfigToMachineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyConfigToMachineGroupOutcomeCallable ApplyConfigToMachineGroupCallable(const Model::ApplyConfigToMachineGroupRequest& request);
 
                 /**
                  *本接口用于创建告警策略。
@@ -209,6 +278,15 @@ namespace TencentCloud
                 CreateAlarmNoticeOutcomeCallable CreateAlarmNoticeCallable(const Model::CreateAlarmNoticeRequest& request);
 
                 /**
+                 *创建采集规则配置
+                 * @param req CreateConfigRequest
+                 * @return CreateConfigOutcome
+                 */
+                CreateConfigOutcome CreateConfig(const Model::CreateConfigRequest &request);
+                void CreateConfigAsync(const Model::CreateConfigRequest& request, const CreateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConfigOutcomeCallable CreateConfigCallable(const Model::CreateConfigRequest& request);
+
+                /**
                  *本接口用于创建日志导出
                  * @param req CreateExportRequest
                  * @return CreateExportOutcome
@@ -225,6 +303,15 @@ namespace TencentCloud
                 CreateIndexOutcome CreateIndex(const Model::CreateIndexRequest &request);
                 void CreateIndexAsync(const Model::CreateIndexRequest& request, const CreateIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateIndexOutcomeCallable CreateIndexCallable(const Model::CreateIndexRequest& request);
+
+                /**
+                 *本接口用于创建日志集，返回新创建的日志集的 ID。
+                 * @param req CreateLogsetRequest
+                 * @return CreateLogsetOutcome
+                 */
+                CreateLogsetOutcome CreateLogset(const Model::CreateLogsetRequest &request);
+                void CreateLogsetAsync(const Model::CreateLogsetRequest& request, const CreateLogsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLogsetOutcomeCallable CreateLogsetCallable(const Model::CreateLogsetRequest& request);
 
                 /**
                  *创建机器组
@@ -263,6 +350,24 @@ namespace TencentCloud
                 DeleteAlarmNoticeOutcomeCallable DeleteAlarmNoticeCallable(const Model::DeleteAlarmNoticeRequest& request);
 
                 /**
+                 *删除采集规则配置
+                 * @param req DeleteConfigRequest
+                 * @return DeleteConfigOutcome
+                 */
+                DeleteConfigOutcome DeleteConfig(const Model::DeleteConfigRequest &request);
+                void DeleteConfigAsync(const Model::DeleteConfigRequest& request, const DeleteConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConfigOutcomeCallable DeleteConfigCallable(const Model::DeleteConfigRequest& request);
+
+                /**
+                 *删除应用到机器组的采集配置
+                 * @param req DeleteConfigFromMachineGroupRequest
+                 * @return DeleteConfigFromMachineGroupOutcome
+                 */
+                DeleteConfigFromMachineGroupOutcome DeleteConfigFromMachineGroup(const Model::DeleteConfigFromMachineGroupRequest &request);
+                void DeleteConfigFromMachineGroupAsync(const Model::DeleteConfigFromMachineGroupRequest& request, const DeleteConfigFromMachineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConfigFromMachineGroupOutcomeCallable DeleteConfigFromMachineGroupCallable(const Model::DeleteConfigFromMachineGroupRequest& request);
+
+                /**
                  *本接口用于删除日志导出
                  * @param req DeleteExportRequest
                  * @return DeleteExportOutcome
@@ -279,6 +384,15 @@ namespace TencentCloud
                 DeleteIndexOutcome DeleteIndex(const Model::DeleteIndexRequest &request);
                 void DeleteIndexAsync(const Model::DeleteIndexRequest& request, const DeleteIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteIndexOutcomeCallable DeleteIndexCallable(const Model::DeleteIndexRequest& request);
+
+                /**
+                 *本接口用于删除日志集。
+                 * @param req DeleteLogsetRequest
+                 * @return DeleteLogsetOutcome
+                 */
+                DeleteLogsetOutcome DeleteLogset(const Model::DeleteLogsetRequest &request);
+                void DeleteLogsetAsync(const Model::DeleteLogsetRequest& request, const DeleteLogsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLogsetOutcomeCallable DeleteLogsetCallable(const Model::DeleteLogsetRequest& request);
 
                 /**
                  *删除机器组
@@ -317,6 +431,24 @@ namespace TencentCloud
                 DescribeAlarmsOutcomeCallable DescribeAlarmsCallable(const Model::DescribeAlarmsRequest& request);
 
                 /**
+                 *获取采集规则配置所绑定的机器组
+                 * @param req DescribeConfigMachineGroupsRequest
+                 * @return DescribeConfigMachineGroupsOutcome
+                 */
+                DescribeConfigMachineGroupsOutcome DescribeConfigMachineGroups(const Model::DescribeConfigMachineGroupsRequest &request);
+                void DescribeConfigMachineGroupsAsync(const Model::DescribeConfigMachineGroupsRequest& request, const DescribeConfigMachineGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigMachineGroupsOutcomeCallable DescribeConfigMachineGroupsCallable(const Model::DescribeConfigMachineGroupsRequest& request);
+
+                /**
+                 *获取采集规则配置
+                 * @param req DescribeConfigsRequest
+                 * @return DescribeConfigsOutcome
+                 */
+                DescribeConfigsOutcome DescribeConfigs(const Model::DescribeConfigsRequest &request);
+                void DescribeConfigsAsync(const Model::DescribeConfigsRequest& request, const DescribeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigsOutcomeCallable DescribeConfigsCallable(const Model::DescribeConfigsRequest& request);
+
+                /**
                  *本接口用于获取日志导出列表
                  * @param req DescribeExportsRequest
                  * @return DescribeExportsOutcome
@@ -342,6 +474,24 @@ namespace TencentCloud
                 DescribeLogContextOutcome DescribeLogContext(const Model::DescribeLogContextRequest &request);
                 void DescribeLogContextAsync(const Model::DescribeLogContextRequest& request, const DescribeLogContextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogContextOutcomeCallable DescribeLogContextCallable(const Model::DescribeLogContextRequest& request);
+
+                /**
+                 *本接口用于获取日志集信息列表。
+                 * @param req DescribeLogsetsRequest
+                 * @return DescribeLogsetsOutcome
+                 */
+                DescribeLogsetsOutcome DescribeLogsets(const Model::DescribeLogsetsRequest &request);
+                void DescribeLogsetsAsync(const Model::DescribeLogsetsRequest& request, const DescribeLogsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogsetsOutcomeCallable DescribeLogsetsCallable(const Model::DescribeLogsetsRequest& request);
+
+                /**
+                 *获取机器组绑定的采集规则配置
+                 * @param req DescribeMachineGroupConfigsRequest
+                 * @return DescribeMachineGroupConfigsOutcome
+                 */
+                DescribeMachineGroupConfigsOutcome DescribeMachineGroupConfigs(const Model::DescribeMachineGroupConfigsRequest &request);
+                void DescribeMachineGroupConfigsAsync(const Model::DescribeMachineGroupConfigsRequest& request, const DescribeMachineGroupConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMachineGroupConfigsOutcomeCallable DescribeMachineGroupConfigsCallable(const Model::DescribeMachineGroupConfigsRequest& request);
 
                 /**
                  *获取机器组信息列表
@@ -416,6 +566,15 @@ namespace TencentCloud
                 ModifyAlarmNoticeOutcomeCallable ModifyAlarmNoticeCallable(const Model::ModifyAlarmNoticeRequest& request);
 
                 /**
+                 *修改采集规则配置
+                 * @param req ModifyConfigRequest
+                 * @return ModifyConfigOutcome
+                 */
+                ModifyConfigOutcome ModifyConfig(const Model::ModifyConfigRequest &request);
+                void ModifyConfigAsync(const Model::ModifyConfigRequest& request, const ModifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConfigOutcomeCallable ModifyConfigCallable(const Model::ModifyConfigRequest& request);
+
+                /**
                  *本接口用于修改索引配置
 
                  * @param req ModifyIndexRequest
@@ -424,6 +583,15 @@ namespace TencentCloud
                 ModifyIndexOutcome ModifyIndex(const Model::ModifyIndexRequest &request);
                 void ModifyIndexAsync(const Model::ModifyIndexRequest& request, const ModifyIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyIndexOutcomeCallable ModifyIndexCallable(const Model::ModifyIndexRequest& request);
+
+                /**
+                 *本接口用于修改日志集信息
+                 * @param req ModifyLogsetRequest
+                 * @return ModifyLogsetOutcome
+                 */
+                ModifyLogsetOutcome ModifyLogset(const Model::ModifyLogsetRequest &request);
+                void ModifyLogsetAsync(const Model::ModifyLogsetRequest& request, const ModifyLogsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLogsetOutcomeCallable ModifyLogsetCallable(const Model::ModifyLogsetRequest& request);
 
                 /**
                  *修改机器组

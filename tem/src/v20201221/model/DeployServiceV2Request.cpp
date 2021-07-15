@@ -51,7 +51,12 @@ DeployServiceV2Request::DeployServiceV2Request() :
     m_useRegistryDefaultConfigHasBeenSet(false),
     m_settingConfsHasBeenSet(false),
     m_eksServiceHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+    m_versionIdHasBeenSet(false),
+    m_postStartHasBeenSet(false),
+    m_preStopHasBeenSet(false),
+    m_deployStrategyConfHasBeenSet(false),
+    m_livenessHasBeenSet(false),
+    m_readinessHasBeenSet(false)
 {
 }
 
@@ -345,6 +350,49 @@ string DeployServiceV2Request::ToJsonString() const
         string key = "VersionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_postStartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostStart";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_postStart.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preStopHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreStop";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_preStop.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployStrategyConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployStrategyConf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_deployStrategyConf.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_livenessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Liveness";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_liveness.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_readinessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Readiness";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_readiness.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -817,6 +865,86 @@ void DeployServiceV2Request::SetVersionId(const string& _versionId)
 bool DeployServiceV2Request::VersionIdHasBeenSet() const
 {
     return m_versionIdHasBeenSet;
+}
+
+string DeployServiceV2Request::GetPostStart() const
+{
+    return m_postStart;
+}
+
+void DeployServiceV2Request::SetPostStart(const string& _postStart)
+{
+    m_postStart = _postStart;
+    m_postStartHasBeenSet = true;
+}
+
+bool DeployServiceV2Request::PostStartHasBeenSet() const
+{
+    return m_postStartHasBeenSet;
+}
+
+string DeployServiceV2Request::GetPreStop() const
+{
+    return m_preStop;
+}
+
+void DeployServiceV2Request::SetPreStop(const string& _preStop)
+{
+    m_preStop = _preStop;
+    m_preStopHasBeenSet = true;
+}
+
+bool DeployServiceV2Request::PreStopHasBeenSet() const
+{
+    return m_preStopHasBeenSet;
+}
+
+DeployStrategyConf DeployServiceV2Request::GetDeployStrategyConf() const
+{
+    return m_deployStrategyConf;
+}
+
+void DeployServiceV2Request::SetDeployStrategyConf(const DeployStrategyConf& _deployStrategyConf)
+{
+    m_deployStrategyConf = _deployStrategyConf;
+    m_deployStrategyConfHasBeenSet = true;
+}
+
+bool DeployServiceV2Request::DeployStrategyConfHasBeenSet() const
+{
+    return m_deployStrategyConfHasBeenSet;
+}
+
+HealthCheckConfig DeployServiceV2Request::GetLiveness() const
+{
+    return m_liveness;
+}
+
+void DeployServiceV2Request::SetLiveness(const HealthCheckConfig& _liveness)
+{
+    m_liveness = _liveness;
+    m_livenessHasBeenSet = true;
+}
+
+bool DeployServiceV2Request::LivenessHasBeenSet() const
+{
+    return m_livenessHasBeenSet;
+}
+
+HealthCheckConfig DeployServiceV2Request::GetReadiness() const
+{
+    return m_readiness;
+}
+
+void DeployServiceV2Request::SetReadiness(const HealthCheckConfig& _readiness)
+{
+    m_readiness = _readiness;
+    m_readinessHasBeenSet = true;
+}
+
+bool DeployServiceV2Request::ReadinessHasBeenSet() const
+{
+    return m_readinessHasBeenSet;
 }
 
 

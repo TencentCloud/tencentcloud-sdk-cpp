@@ -227,18 +227,14 @@ namespace TencentCloud
                     bool CallbackKeyHasBeenSet() const;
 
                     /**
-                     * 获取混流回调 URL，
-相关协议文档：[事件消息通知](/document/product/267/32744)。
-                     * @return StreamMixNotifyUrl 混流回调 URL，
-相关协议文档：[事件消息通知](/document/product/267/32744)。
+                     * 获取参数已弃用。
+                     * @return StreamMixNotifyUrl 参数已弃用。
                      */
                     std::string GetStreamMixNotifyUrl() const;
 
                     /**
-                     * 设置混流回调 URL，
-相关协议文档：[事件消息通知](/document/product/267/32744)。
-                     * @param StreamMixNotifyUrl 混流回调 URL，
-相关协议文档：[事件消息通知](/document/product/267/32744)。
+                     * 设置参数已弃用。
+                     * @param StreamMixNotifyUrl 参数已弃用。
                      */
                     void SetStreamMixNotifyUrl(const std::string& _streamMixNotifyUrl);
 
@@ -309,8 +305,7 @@ namespace TencentCloud
                     bool m_callbackKeyHasBeenSet;
 
                     /**
-                     * 混流回调 URL，
-相关协议文档：[事件消息通知](/document/product/267/32744)。
+                     * 参数已弃用。
                      */
                     std::string m_streamMixNotifyUrl;
                     bool m_streamMixNotifyUrlHasBeenSet;

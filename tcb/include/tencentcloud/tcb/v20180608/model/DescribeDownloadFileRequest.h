@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取代码uri
-                     * @return CodeUri 代码uri
+                     * 获取代码uri，格式如：extension://abcdefhhxxx.zip，对应 DescribeExtensionUploadInfo 接口的返回值
+                     * @return CodeUri 代码uri，格式如：extension://abcdefhhxxx.zip，对应 DescribeExtensionUploadInfo 接口的返回值
                      */
                     std::string GetCodeUri() const;
 
                     /**
-                     * 设置代码uri
-                     * @param CodeUri 代码uri
+                     * 设置代码uri，格式如：extension://abcdefhhxxx.zip，对应 DescribeExtensionUploadInfo 接口的返回值
+                     * @param CodeUri 代码uri，格式如：extension://abcdefhhxxx.zip，对应 DescribeExtensionUploadInfo 接口的返回值
                      */
                     void SetCodeUri(const std::string& _codeUri);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 代码uri
+                     * 代码uri，格式如：extension://abcdefhhxxx.zip，对应 DescribeExtensionUploadInfo 接口的返回值
                      */
                     std::string m_codeUri;
                     bool m_codeUriHasBeenSet;

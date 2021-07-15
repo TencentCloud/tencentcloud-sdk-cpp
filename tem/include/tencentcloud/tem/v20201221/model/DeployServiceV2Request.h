@@ -29,6 +29,8 @@
 #include <tencentcloud/tem/v20201221/model/PortMapping.h>
 #include <tencentcloud/tem/v20201221/model/MountedSettingConf.h>
 #include <tencentcloud/tem/v20201221/model/EksService.h>
+#include <tencentcloud/tem/v20201221/model/DeployStrategyConf.h>
+#include <tencentcloud/tem/v20201221/model/HealthCheckConfig.h>
 
 
 namespace TencentCloud
@@ -596,6 +598,96 @@ namespace TencentCloud
                      */
                     bool VersionIdHasBeenSet() const;
 
+                    /**
+                     * 获取启动后执行的脚本
+                     * @return PostStart 启动后执行的脚本
+                     */
+                    std::string GetPostStart() const;
+
+                    /**
+                     * 设置启动后执行的脚本
+                     * @param PostStart 启动后执行的脚本
+                     */
+                    void SetPostStart(const std::string& _postStart);
+
+                    /**
+                     * 判断参数 PostStart 是否已赋值
+                     * @return PostStart 是否已赋值
+                     */
+                    bool PostStartHasBeenSet() const;
+
+                    /**
+                     * 获取停止前执行的脚本
+                     * @return PreStop 停止前执行的脚本
+                     */
+                    std::string GetPreStop() const;
+
+                    /**
+                     * 设置停止前执行的脚本
+                     * @param PreStop 停止前执行的脚本
+                     */
+                    void SetPreStop(const std::string& _preStop);
+
+                    /**
+                     * 判断参数 PreStop 是否已赋值
+                     * @return PreStop 是否已赋值
+                     */
+                    bool PreStopHasBeenSet() const;
+
+                    /**
+                     * 获取分批发布策略配置
+                     * @return DeployStrategyConf 分批发布策略配置
+                     */
+                    DeployStrategyConf GetDeployStrategyConf() const;
+
+                    /**
+                     * 设置分批发布策略配置
+                     * @param DeployStrategyConf 分批发布策略配置
+                     */
+                    void SetDeployStrategyConf(const DeployStrategyConf& _deployStrategyConf);
+
+                    /**
+                     * 判断参数 DeployStrategyConf 是否已赋值
+                     * @return DeployStrategyConf 是否已赋值
+                     */
+                    bool DeployStrategyConfHasBeenSet() const;
+
+                    /**
+                     * 获取存活探针配置
+                     * @return Liveness 存活探针配置
+                     */
+                    HealthCheckConfig GetLiveness() const;
+
+                    /**
+                     * 设置存活探针配置
+                     * @param Liveness 存活探针配置
+                     */
+                    void SetLiveness(const HealthCheckConfig& _liveness);
+
+                    /**
+                     * 判断参数 Liveness 是否已赋值
+                     * @return Liveness 是否已赋值
+                     */
+                    bool LivenessHasBeenSet() const;
+
+                    /**
+                     * 获取就绪探针配置
+                     * @return Readiness 就绪探针配置
+                     */
+                    HealthCheckConfig GetReadiness() const;
+
+                    /**
+                     * 设置就绪探针配置
+                     * @param Readiness 就绪探针配置
+                     */
+                    void SetReadiness(const HealthCheckConfig& _readiness);
+
+                    /**
+                     * 判断参数 Readiness 是否已赋值
+                     * @return Readiness 是否已赋值
+                     */
+                    bool ReadinessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -777,6 +869,36 @@ namespace TencentCloud
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
+
+                    /**
+                     * 启动后执行的脚本
+                     */
+                    std::string m_postStart;
+                    bool m_postStartHasBeenSet;
+
+                    /**
+                     * 停止前执行的脚本
+                     */
+                    std::string m_preStop;
+                    bool m_preStopHasBeenSet;
+
+                    /**
+                     * 分批发布策略配置
+                     */
+                    DeployStrategyConf m_deployStrategyConf;
+                    bool m_deployStrategyConfHasBeenSet;
+
+                    /**
+                     * 存活探针配置
+                     */
+                    HealthCheckConfig m_liveness;
+                    bool m_livenessHasBeenSet;
+
+                    /**
+                     * 就绪探针配置
+                     */
+                    HealthCheckConfig m_readiness;
+                    bool m_readinessHasBeenSet;
 
                 };
             }

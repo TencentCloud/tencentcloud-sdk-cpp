@@ -283,7 +283,7 @@ namespace TencentCloud
                 DescribeAssociatedInstanceListOutcomeCallable DescribeAssociatedInstanceListCallable(const Model::DescribeAssociatedInstanceListRequest& request);
 
                 /**
-                 *DescribeBlockByIpTimesList 告警中心阻断ip折线图
+                 *DescribeBlockByIpTimesList 告警中心阻断IP折线图
 
                  * @param req DescribeBlockByIpTimesListRequest
                  * @return DescribeBlockByIpTimesListOutcome
@@ -303,7 +303,7 @@ namespace TencentCloud
                 DescribeBlockStaticListOutcomeCallable DescribeBlockStaticListCallable(const Model::DescribeBlockStaticListRequest& request);
 
                 /**
-                 *查询防火墙弹性公网ip
+                 *查询防火墙弹性公网IP
                  * @param req DescribeCfwEipsRequest
                  * @return DescribeCfwEipsOutcome
                  */
@@ -376,7 +376,7 @@ namespace TencentCloud
                 DescribeTLogInfoOutcomeCallable DescribeTLogInfoCallable(const Model::DescribeTLogInfoRequest& request);
 
                 /**
-                 *DescribeTLogIpList告警中心ip柱形图
+                 *DescribeTLogIpList告警中心IP柱形图
 
                  * @param req DescribeTLogIpListRequest
                  * @return DescribeTLogIpListOutcome

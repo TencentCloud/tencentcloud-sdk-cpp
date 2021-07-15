@@ -180,6 +180,28 @@ namespace TencentCloud
                      */
                     bool DeployVersionHasBeenSet() const;
 
+                    /**
+                     * 获取重启次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RestartCount 重启次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRestartCount() const;
+
+                    /**
+                     * 设置重启次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RestartCount 重启次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRestartCount(const int64_t& _restartCount);
+
+                    /**
+                     * 判断参数 RestartCount 是否已赋值
+                     * @return RestartCount 是否已赋值
+                     */
+                    bool RestartCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -225,6 +247,13 @@ namespace TencentCloud
                      */
                     std::string m_deployVersion;
                     bool m_deployVersionHasBeenSet;
+
+                    /**
+                     * 重启次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_restartCount;
+                    bool m_restartCountHasBeenSet;
 
                 };
             }
