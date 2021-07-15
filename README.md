@@ -258,11 +258,13 @@ target_link_libraries(DescribeInstancesAsync tencentcloud-sdk-cpp-cvm tencentclo
 ```
 git clone https://github.com/google/googletest
 cd googletest
-cmake CMakeLists.txt
+checkout release-1.10.0
+mkdir build && cd build
+# centos 改为 cmake3 ..
+cmake ..
 make
+sudo make install
 ```
-
-将生成的 libgtest.a libgtest_main.a 静态库，以及 gtest 的头文件，拷贝到系统目录下。
 
 ## 配置环境变量
 
@@ -275,3 +277,5 @@ make
 ```
 sh function_test.sh
 ```
+
+注意：centos 操作系统需要将 `function_test.sh` 中的 cmake 改为 cmake3，或者在环境变量中设置别名 alias。

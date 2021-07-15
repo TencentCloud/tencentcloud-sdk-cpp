@@ -26,7 +26,7 @@ link_directories(${CMAKE_SOURCE_DIR}/ft_build/lib)
 
 add_executable(cbs_ft Cbs_DescribeDisks_Ft.cpp Main.cpp)
 target_link_libraries(cbs_ft tencentcloud-sdk-cpp-cbs tencentcloud-sdk-cpp-core)
-target_link_libraries(cbs_ft gtest gmock_main)
+target_link_libraries(cbs_ft gtest gmock_main -lpthread -lm)
 
 set_target_properties(cbs_ft
   PROPERTIES
