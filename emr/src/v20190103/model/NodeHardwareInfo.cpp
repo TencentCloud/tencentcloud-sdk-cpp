@@ -59,7 +59,8 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_autoFlagHasBeenSet(false),
     m_hardwareResourceTypeHasBeenSet(false),
     m_isDynamicSpecHasBeenSet(false),
-    m_dynamicPodSpecHasBeenSet(false)
+    m_dynamicPodSpecHasBeenSet(false),
+    m_supportModifyPayModeHasBeenSet(false)
 {
 }
 
@@ -485,6 +486,16 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const rapidjson::Value &value)
         m_dynamicPodSpecHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportModifyPayMode") && !value["SupportModifyPayMode"].IsNull())
+    {
+        if (!value["SupportModifyPayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `NodeHardwareInfo.SupportModifyPayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportModifyPayMode = value["SupportModifyPayMode"].GetInt64();
+        m_supportModifyPayModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -817,6 +828,14 @@ void NodeHardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "DynamicPodSpec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dynamicPodSpec.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportModifyPayModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportModifyPayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportModifyPayMode, allocator);
     }
 
 }
@@ -1444,5 +1463,21 @@ void NodeHardwareInfo::SetDynamicPodSpec(const string& _dynamicPodSpec)
 bool NodeHardwareInfo::DynamicPodSpecHasBeenSet() const
 {
     return m_dynamicPodSpecHasBeenSet;
+}
+
+int64_t NodeHardwareInfo::GetSupportModifyPayMode() const
+{
+    return m_supportModifyPayMode;
+}
+
+void NodeHardwareInfo::SetSupportModifyPayMode(const int64_t& _supportModifyPayMode)
+{
+    m_supportModifyPayMode = _supportModifyPayMode;
+    m_supportModifyPayModeHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::SupportModifyPayModeHasBeenSet() const
+{
+    return m_supportModifyPayModeHasBeenSet;
 }
 

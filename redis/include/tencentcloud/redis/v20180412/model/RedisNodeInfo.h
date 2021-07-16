@@ -65,6 +65,24 @@ namespace TencentCloud
                     bool NodeTypeHasBeenSet() const;
 
                     /**
+                     * 获取主节点或者副本节点的ID，创建时不需要传递此参数。
+                     * @return NodeId 主节点或者副本节点的ID，创建时不需要传递此参数。
+                     */
+                    int64_t GetNodeId() const;
+
+                    /**
+                     * 设置主节点或者副本节点的ID，创建时不需要传递此参数。
+                     * @param NodeId 主节点或者副本节点的ID，创建时不需要传递此参数。
+                     */
+                    void SetNodeId(const int64_t& _nodeId);
+
+                    /**
+                     * 判断参数 NodeId 是否已赋值
+                     * @return NodeId 是否已赋值
+                     */
+                    bool NodeIdHasBeenSet() const;
+
+                    /**
                      * 获取主节点或者副本节点的可用区ID
                      * @return ZoneId 主节点或者副本节点的可用区ID
                      */
@@ -83,22 +101,22 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取主节点或者副本节点的ID，创建时不需要传递此参数。
-                     * @return NodeId 主节点或者副本节点的ID，创建时不需要传递此参数。
+                     * 获取主节点或者副本节点的可用区名称
+                     * @return ZoneName 主节点或者副本节点的可用区名称
                      */
-                    int64_t GetNodeId() const;
+                    std::string GetZoneName() const;
 
                     /**
-                     * 设置主节点或者副本节点的ID，创建时不需要传递此参数。
-                     * @param NodeId 主节点或者副本节点的ID，创建时不需要传递此参数。
+                     * 设置主节点或者副本节点的可用区名称
+                     * @param ZoneName 主节点或者副本节点的可用区名称
                      */
-                    void SetNodeId(const int64_t& _nodeId);
+                    void SetZoneName(const std::string& _zoneName);
 
                     /**
-                     * 判断参数 NodeId 是否已赋值
-                     * @return NodeId 是否已赋值
+                     * 判断参数 ZoneName 是否已赋值
+                     * @return ZoneName 是否已赋值
                      */
-                    bool NodeIdHasBeenSet() const;
+                    bool ZoneNameHasBeenSet() const;
 
                 private:
 
@@ -109,16 +127,22 @@ namespace TencentCloud
                     bool m_nodeTypeHasBeenSet;
 
                     /**
+                     * 主节点或者副本节点的ID，创建时不需要传递此参数。
+                     */
+                    int64_t m_nodeId;
+                    bool m_nodeIdHasBeenSet;
+
+                    /**
                      * 主节点或者副本节点的可用区ID
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 主节点或者副本节点的ID，创建时不需要传递此参数。
+                     * 主节点或者副本节点的可用区名称
                      */
-                    int64_t m_nodeId;
-                    bool m_nodeIdHasBeenSet;
+                    std::string m_zoneName;
+                    bool m_zoneNameHasBeenSet;
 
                 };
             }

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/redis/v20180412/model/ApplyParamsTemplateRequest.h>
+#include <tencentcloud/redis/v20180412/model/ApplyParamsTemplateResponse.h>
 #include <tencentcloud/redis/v20180412/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/redis/v20180412/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/redis/v20180412/model/ChangeReplicaToMasterRequest.h>
@@ -35,8 +37,12 @@
 #include <tencentcloud/redis/v20180412/model/CreateInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/CreateInstancesRequest.h>
 #include <tencentcloud/redis/v20180412/model/CreateInstancesResponse.h>
+#include <tencentcloud/redis/v20180412/model/CreateParamTemplateRequest.h>
+#include <tencentcloud/redis/v20180412/model/CreateParamTemplateResponse.h>
 #include <tencentcloud/redis/v20180412/model/DeleteInstanceAccountRequest.h>
 #include <tencentcloud/redis/v20180412/model/DeleteInstanceAccountResponse.h>
+#include <tencentcloud/redis/v20180412/model/DeleteParamTemplateRequest.h>
+#include <tencentcloud/redis/v20180412/model/DeleteParamTemplateResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h>
@@ -85,6 +91,10 @@
 #include <tencentcloud/redis/v20180412/model/DescribeInstancesResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeParamTemplateInfoRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeParamTemplateInfoResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeParamTemplatesRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeParamTemplatesResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProductInfoRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProductInfoResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupRequest.h>
@@ -139,6 +149,8 @@
 #include <tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyParamTemplateRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyParamTemplateResponse.h>
 #include <tencentcloud/redis/v20180412/model/RenewInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/RenewInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ResetPasswordRequest.h>
@@ -169,6 +181,9 @@ namespace TencentCloud
                 RedisClient(const Credential &credential, const std::string &region);
                 RedisClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::ApplyParamsTemplateResponse> ApplyParamsTemplateOutcome;
+                typedef std::future<ApplyParamsTemplateOutcome> ApplyParamsTemplateOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ApplyParamsTemplateRequest&, ApplyParamsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyParamsTemplateAsyncHandler;
                 typedef Outcome<Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
@@ -187,9 +202,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateInstancesResponse> CreateInstancesOutcome;
                 typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::CreateInstancesRequest&, CreateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancesAsyncHandler;
+                typedef Outcome<Error, Model::CreateParamTemplateResponse> CreateParamTemplateOutcome;
+                typedef std::future<CreateParamTemplateOutcome> CreateParamTemplateOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::CreateParamTemplateRequest&, CreateParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateParamTemplateAsyncHandler;
                 typedef Outcome<Error, Model::DeleteInstanceAccountResponse> DeleteInstanceAccountOutcome;
                 typedef std::future<DeleteInstanceAccountOutcome> DeleteInstanceAccountOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DeleteInstanceAccountRequest&, DeleteInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAccountAsyncHandler;
+                typedef Outcome<Error, Model::DeleteParamTemplateResponse> DeleteParamTemplateOutcome;
+                typedef std::future<DeleteParamTemplateOutcome> DeleteParamTemplateOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DeleteParamTemplateRequest&, DeleteParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParamTemplateAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAutoBackupConfigResponse> DescribeAutoBackupConfigOutcome;
                 typedef std::future<DescribeAutoBackupConfigOutcome> DescribeAutoBackupConfigOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeAutoBackupConfigRequest&, DescribeAutoBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoBackupConfigAsyncHandler;
@@ -262,6 +283,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeMaintenanceWindowResponse> DescribeMaintenanceWindowOutcome;
                 typedef std::future<DescribeMaintenanceWindowOutcome> DescribeMaintenanceWindowOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeMaintenanceWindowRequest&, DescribeMaintenanceWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintenanceWindowAsyncHandler;
+                typedef Outcome<Error, Model::DescribeParamTemplateInfoResponse> DescribeParamTemplateInfoOutcome;
+                typedef std::future<DescribeParamTemplateInfoOutcome> DescribeParamTemplateInfoOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeParamTemplateInfoRequest&, DescribeParamTemplateInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParamTemplateInfoAsyncHandler;
+                typedef Outcome<Error, Model::DescribeParamTemplatesResponse> DescribeParamTemplatesOutcome;
+                typedef std::future<DescribeParamTemplatesOutcome> DescribeParamTemplatesOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeParamTemplatesRequest&, DescribeParamTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParamTemplatesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeProductInfoResponse> DescribeProductInfoOutcome;
                 typedef std::future<DescribeProductInfoOutcome> DescribeProductInfoOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeProductInfoRequest&, DescribeProductInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductInfoAsyncHandler;
@@ -343,6 +370,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyNetworkConfigResponse> ModifyNetworkConfigOutcome;
                 typedef std::future<ModifyNetworkConfigOutcome> ModifyNetworkConfigOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyNetworkConfigRequest&, ModifyNetworkConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkConfigAsyncHandler;
+                typedef Outcome<Error, Model::ModifyParamTemplateResponse> ModifyParamTemplateOutcome;
+                typedef std::future<ModifyParamTemplateOutcome> ModifyParamTemplateOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyParamTemplateRequest&, ModifyParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParamTemplateAsyncHandler;
                 typedef Outcome<Error, Model::RenewInstanceResponse> RenewInstanceOutcome;
                 typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::RenewInstanceRequest&, RenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
@@ -369,6 +399,15 @@ namespace TencentCloud
                 typedef std::function<void(const RedisClient*, const Model::UpgradeVersionToMultiAvailabilityZonesRequest&, UpgradeVersionToMultiAvailabilityZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeVersionToMultiAvailabilityZonesAsyncHandler;
 
 
+
+                /**
+                 *应用参数模板到实例
+                 * @param req ApplyParamsTemplateRequest
+                 * @return ApplyParamsTemplateOutcome
+                 */
+                ApplyParamsTemplateOutcome ApplyParamsTemplate(const Model::ApplyParamsTemplateRequest &request);
+                void ApplyParamsTemplateAsync(const Model::ApplyParamsTemplateRequest& request, const ApplyParamsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyParamsTemplateOutcomeCallable ApplyParamsTemplateCallable(const Model::ApplyParamsTemplateRequest& request);
 
                 /**
                  *本接口 (AssociateSecurityGroups) 用于安全组批量绑定多个指定实例。
@@ -425,6 +464,15 @@ namespace TencentCloud
                 CreateInstancesOutcomeCallable CreateInstancesCallable(const Model::CreateInstancesRequest& request);
 
                 /**
+                 *创建参数模板
+                 * @param req CreateParamTemplateRequest
+                 * @return CreateParamTemplateOutcome
+                 */
+                CreateParamTemplateOutcome CreateParamTemplate(const Model::CreateParamTemplateRequest &request);
+                void CreateParamTemplateAsync(const Model::CreateParamTemplateRequest& request, const CreateParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateParamTemplateOutcomeCallable CreateParamTemplateCallable(const Model::CreateParamTemplateRequest& request);
+
+                /**
                  *删除实例子账号
                  * @param req DeleteInstanceAccountRequest
                  * @return DeleteInstanceAccountOutcome
@@ -432,6 +480,15 @@ namespace TencentCloud
                 DeleteInstanceAccountOutcome DeleteInstanceAccount(const Model::DeleteInstanceAccountRequest &request);
                 void DeleteInstanceAccountAsync(const Model::DeleteInstanceAccountRequest& request, const DeleteInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstanceAccountOutcomeCallable DeleteInstanceAccountCallable(const Model::DeleteInstanceAccountRequest& request);
+
+                /**
+                 *删除参数模板
+                 * @param req DeleteParamTemplateRequest
+                 * @return DeleteParamTemplateOutcome
+                 */
+                DeleteParamTemplateOutcome DeleteParamTemplate(const Model::DeleteParamTemplateRequest &request);
+                void DeleteParamTemplateAsync(const Model::DeleteParamTemplateRequest& request, const DeleteParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteParamTemplateOutcomeCallable DeleteParamTemplateCallable(const Model::DeleteParamTemplateRequest& request);
 
                 /**
                  *获取备份配置
@@ -648,6 +705,24 @@ namespace TencentCloud
                 DescribeMaintenanceWindowOutcome DescribeMaintenanceWindow(const Model::DescribeMaintenanceWindowRequest &request);
                 void DescribeMaintenanceWindowAsync(const Model::DescribeMaintenanceWindowRequest& request, const DescribeMaintenanceWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMaintenanceWindowOutcomeCallable DescribeMaintenanceWindowCallable(const Model::DescribeMaintenanceWindowRequest& request);
+
+                /**
+                 *查询参数模板详情
+                 * @param req DescribeParamTemplateInfoRequest
+                 * @return DescribeParamTemplateInfoOutcome
+                 */
+                DescribeParamTemplateInfoOutcome DescribeParamTemplateInfo(const Model::DescribeParamTemplateInfoRequest &request);
+                void DescribeParamTemplateInfoAsync(const Model::DescribeParamTemplateInfoRequest& request, const DescribeParamTemplateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeParamTemplateInfoOutcomeCallable DescribeParamTemplateInfoCallable(const Model::DescribeParamTemplateInfoRequest& request);
+
+                /**
+                 *查询参数模板列表
+                 * @param req DescribeParamTemplatesRequest
+                 * @return DescribeParamTemplatesOutcome
+                 */
+                DescribeParamTemplatesOutcome DescribeParamTemplates(const Model::DescribeParamTemplatesRequest &request);
+                void DescribeParamTemplatesAsync(const Model::DescribeParamTemplatesRequest& request, const DescribeParamTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeParamTemplatesOutcomeCallable DescribeParamTemplatesCallable(const Model::DescribeParamTemplatesRequest& request);
 
                 /**
                  *本接口查询指定可用区和实例类型下 Redis 的售卖规格， 如果用户不在购买白名单中，将不能查询该可用区或该类型的售卖规格详情。申请购买某地域白名单可以提交工单
@@ -891,6 +966,15 @@ namespace TencentCloud
                 ModifyNetworkConfigOutcome ModifyNetworkConfig(const Model::ModifyNetworkConfigRequest &request);
                 void ModifyNetworkConfigAsync(const Model::ModifyNetworkConfigRequest& request, const ModifyNetworkConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNetworkConfigOutcomeCallable ModifyNetworkConfigCallable(const Model::ModifyNetworkConfigRequest& request);
+
+                /**
+                 *修改参数模板
+                 * @param req ModifyParamTemplateRequest
+                 * @return ModifyParamTemplateOutcome
+                 */
+                ModifyParamTemplateOutcome ModifyParamTemplate(const Model::ModifyParamTemplateRequest &request);
+                void ModifyParamTemplateAsync(const Model::ModifyParamTemplateRequest& request, const ModifyParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyParamTemplateOutcomeCallable ModifyParamTemplateCallable(const Model::ModifyParamTemplateRequest& request);
 
                 /**
                  *续费实例

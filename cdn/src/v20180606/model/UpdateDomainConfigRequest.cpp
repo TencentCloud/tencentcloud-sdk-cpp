@@ -62,7 +62,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_ipv6AccessHasBeenSet(false),
     m_offlineCacheHasBeenSet(false),
     m_originCombineHasBeenSet(false),
-    m_quicHasBeenSet(false)
+    m_quicHasBeenSet(false),
+    m_ossPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -431,6 +432,15 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_quic.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ossPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OssPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ossPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1079,6 +1089,22 @@ void UpdateDomainConfigRequest::SetQuic(const Quic& _quic)
 bool UpdateDomainConfigRequest::QuicHasBeenSet() const
 {
     return m_quicHasBeenSet;
+}
+
+OssPrivateAccess UpdateDomainConfigRequest::GetOssPrivateAccess() const
+{
+    return m_ossPrivateAccess;
+}
+
+void UpdateDomainConfigRequest::SetOssPrivateAccess(const OssPrivateAccess& _ossPrivateAccess)
+{
+    m_ossPrivateAccess = _ossPrivateAccess;
+    m_ossPrivateAccessHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::OssPrivateAccessHasBeenSet() const
+{
+    return m_ossPrivateAccessHasBeenSet;
 }
 
 

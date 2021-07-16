@@ -24,6 +24,7 @@ EditMediaTask::EditMediaTask() :
     m_taskIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_errCodeHasBeenSet(false),
+    m_errCodeExtHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_outputHasBeenSet(false),
@@ -67,6 +68,16 @@ CoreInternalOutcome EditMediaTask::Deserialize(const rapidjson::Value &value)
         }
         m_errCode = value["ErrCode"].GetInt64();
         m_errCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrCodeExt") && !value["ErrCodeExt"].IsNull())
+    {
+        if (!value["ErrCodeExt"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EditMediaTask.ErrCodeExt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errCodeExt = string(value["ErrCodeExt"].GetString());
+        m_errCodeExtHasBeenSet = true;
     }
 
     if (value.HasMember("Message") && !value["Message"].IsNull())
@@ -191,6 +202,14 @@ void EditMediaTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, m_errCode, allocator);
     }
 
+    if (m_errCodeExtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrCodeExt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errCodeExt.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_messageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -299,6 +318,22 @@ void EditMediaTask::SetErrCode(const int64_t& _errCode)
 bool EditMediaTask::ErrCodeHasBeenSet() const
 {
     return m_errCodeHasBeenSet;
+}
+
+string EditMediaTask::GetErrCodeExt() const
+{
+    return m_errCodeExt;
+}
+
+void EditMediaTask::SetErrCodeExt(const string& _errCodeExt)
+{
+    m_errCodeExt = _errCodeExt;
+    m_errCodeExtHasBeenSet = true;
+}
+
+bool EditMediaTask::ErrCodeExtHasBeenSet() const
+{
+    return m_errCodeExtHasBeenSet;
 }
 
 string EditMediaTask::GetMessage() const

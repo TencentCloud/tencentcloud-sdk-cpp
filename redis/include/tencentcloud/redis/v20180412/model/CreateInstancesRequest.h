@@ -45,24 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
-                     * @return ZoneId 实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
-                     */
-                    uint64_t GetZoneId() const;
-
-                    /**
-                     * 设置实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
-                     * @param ZoneId 实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
-                     */
-                    void SetZoneId(const uint64_t& _zoneId);
-
-                    /**
-                     * 判断参数 ZoneId 是否已赋值
-                     * @return ZoneId 是否已赋值
-                     */
-                    bool ZoneIdHasBeenSet() const;
-
-                    /**
                      * 获取实例类型：2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)。
                      * @return TypeId 实例类型：2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)。
                      */
@@ -155,6 +137,24 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      * @return BillingMode 是否已赋值
                      */
                     bool BillingModeHasBeenSet() const;
+
+                    /**
+                     * 获取实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     * @return ZoneId 实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     */
+                    uint64_t GetZoneId() const;
+
+                    /**
+                     * 设置实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     * @param ZoneId 实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     */
+                    void SetZoneId(const uint64_t& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
 
                     /**
                      * 获取实例密码，当输入参数NoAuth为true且使用私有网络VPC时，Password为非必填，否则Password为必填参数。
@@ -416,13 +416,43 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     bool ResourceTagsHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     * @return ZoneName 实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     */
+                    std::string GetZoneName() const;
 
                     /**
-                     * 实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     * 设置实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     * @param ZoneName 实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
                      */
-                    uint64_t m_zoneId;
-                    bool m_zoneIdHasBeenSet;
+                    void SetZoneName(const std::string& _zoneName);
+
+                    /**
+                     * 判断参数 ZoneName 是否已赋值
+                     * @return ZoneName 是否已赋值
+                     */
+                    bool ZoneNameHasBeenSet() const;
+
+                    /**
+                     * 获取创建实例需要应用的参数模板ID，不传则应用默认的参数模板
+                     * @return TemplateId 创建实例需要应用的参数模板ID，不传则应用默认的参数模板
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 设置创建实例需要应用的参数模板ID，不传则应用默认的参数模板
+                     * @param TemplateId 创建实例需要应用的参数模板ID，不传则应用默认的参数模板
+                     */
+                    void SetTemplateId(const std::string& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 实例类型：2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)。
@@ -454,6 +484,12 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     int64_t m_billingMode;
                     bool m_billingModeHasBeenSet;
+
+                    /**
+                     * 实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     */
+                    uint64_t m_zoneId;
+                    bool m_zoneIdHasBeenSet;
 
                     /**
                      * 实例密码，当输入参数NoAuth为true且使用私有网络VPC时，Password为非必填，否则Password为必填参数。
@@ -540,6 +576,18 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     std::vector<ResourceTag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * 实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。
+                     */
+                    std::string m_zoneName;
+                    bool m_zoneNameHasBeenSet;
+
+                    /**
+                     * 创建实例需要应用的参数模板ID，不传则应用默认的参数模板
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
 
                 };
             }

@@ -22,8 +22,9 @@ using namespace std;
 
 RedisNodeInfo::RedisNodeInfo() :
     m_nodeTypeHasBeenSet(false),
+    m_nodeIdHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
+    m_zoneNameHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,16 @@ CoreInternalOutcome RedisNodeInfo::Deserialize(const rapidjson::Value &value)
         m_nodeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeId") && !value["NodeId"].IsNull())
+    {
+        if (!value["NodeId"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `RedisNodeInfo.NodeId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeId = value["NodeId"].GetInt64();
+        m_nodeIdHasBeenSet = true;
+    }
+
     if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
     {
         if (!value["ZoneId"].IsUint64())
@@ -52,14 +63,14 @@ CoreInternalOutcome RedisNodeInfo::Deserialize(const rapidjson::Value &value)
         m_zoneIdHasBeenSet = true;
     }
 
-    if (value.HasMember("NodeId") && !value["NodeId"].IsNull())
+    if (value.HasMember("ZoneName") && !value["ZoneName"].IsNull())
     {
-        if (!value["NodeId"].IsInt64())
+        if (!value["ZoneName"].IsString())
         {
-            return CoreInternalOutcome(Error("response `RedisNodeInfo.NodeId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Error("response `RedisNodeInfo.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_nodeId = value["NodeId"].GetInt64();
-        m_nodeIdHasBeenSet = true;
+        m_zoneName = string(value["ZoneName"].GetString());
+        m_zoneNameHasBeenSet = true;
     }
 
 
@@ -77,6 +88,14 @@ void RedisNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, m_nodeType, allocator);
     }
 
+    if (m_nodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nodeId, allocator);
+    }
+
     if (m_zoneIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -85,12 +104,12 @@ void RedisNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, m_zoneId, allocator);
     }
 
-    if (m_nodeIdHasBeenSet)
+    if (m_zoneNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NodeId";
+        string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_nodeId, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -112,6 +131,22 @@ bool RedisNodeInfo::NodeTypeHasBeenSet() const
     return m_nodeTypeHasBeenSet;
 }
 
+int64_t RedisNodeInfo::GetNodeId() const
+{
+    return m_nodeId;
+}
+
+void RedisNodeInfo::SetNodeId(const int64_t& _nodeId)
+{
+    m_nodeId = _nodeId;
+    m_nodeIdHasBeenSet = true;
+}
+
+bool RedisNodeInfo::NodeIdHasBeenSet() const
+{
+    return m_nodeIdHasBeenSet;
+}
+
 uint64_t RedisNodeInfo::GetZoneId() const
 {
     return m_zoneId;
@@ -128,19 +163,19 @@ bool RedisNodeInfo::ZoneIdHasBeenSet() const
     return m_zoneIdHasBeenSet;
 }
 
-int64_t RedisNodeInfo::GetNodeId() const
+string RedisNodeInfo::GetZoneName() const
 {
-    return m_nodeId;
+    return m_zoneName;
 }
 
-void RedisNodeInfo::SetNodeId(const int64_t& _nodeId)
+void RedisNodeInfo::SetZoneName(const string& _zoneName)
 {
-    m_nodeId = _nodeId;
-    m_nodeIdHasBeenSet = true;
+    m_zoneName = _zoneName;
+    m_zoneNameHasBeenSet = true;
 }
 
-bool RedisNodeInfo::NodeIdHasBeenSet() const
+bool RedisNodeInfo::ZoneNameHasBeenSet() const
 {
-    return m_nodeIdHasBeenSet;
+    return m_zoneNameHasBeenSet;
 }
 

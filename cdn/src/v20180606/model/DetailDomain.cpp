@@ -76,7 +76,8 @@ DetailDomain::DetailDomain() :
     m_offlineCacheHasBeenSet(false),
     m_originCombineHasBeenSet(false),
     m_postMaxSizeHasBeenSet(false),
-    m_quicHasBeenSet(false)
+    m_quicHasBeenSet(false),
+    m_ossPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -948,6 +949,23 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
         m_quicHasBeenSet = true;
     }
 
+    if (value.HasMember("OssPrivateAccess") && !value["OssPrivateAccess"].IsNull())
+    {
+        if (!value["OssPrivateAccess"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `DetailDomain.OssPrivateAccess` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ossPrivateAccess.Deserialize(value["OssPrivateAccess"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ossPrivateAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1460,6 +1478,15 @@ void DetailDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_quic.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ossPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OssPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ossPrivateAccess.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2359,5 +2386,21 @@ void DetailDomain::SetQuic(const Quic& _quic)
 bool DetailDomain::QuicHasBeenSet() const
 {
     return m_quicHasBeenSet;
+}
+
+OssPrivateAccess DetailDomain::GetOssPrivateAccess() const
+{
+    return m_ossPrivateAccess;
+}
+
+void DetailDomain::SetOssPrivateAccess(const OssPrivateAccess& _ossPrivateAccess)
+{
+    m_ossPrivateAccess = _ossPrivateAccess;
+    m_ossPrivateAccessHasBeenSet = true;
+}
+
+bool DetailDomain::OssPrivateAccessHasBeenSet() const
+{
+    return m_ossPrivateAccessHasBeenSet;
 }
 

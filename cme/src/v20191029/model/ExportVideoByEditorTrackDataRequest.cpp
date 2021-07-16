@@ -27,6 +27,7 @@ ExportVideoByEditorTrackDataRequest::ExportVideoByEditorTrackDataRequest() :
     m_definitionHasBeenSet(false),
     m_exportDestinationHasBeenSet(false),
     m_trackDataHasBeenSet(false),
+    m_coverDataHasBeenSet(false),
     m_cMEExportInfoHasBeenSet(false),
     m_vODExportInfoHasBeenSet(false),
     m_operatorHasBeenSet(false)
@@ -70,6 +71,14 @@ string ExportVideoByEditorTrackDataRequest::ToJsonString() const
         string key = "TrackData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_trackData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_coverDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoverData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_coverData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cMEExportInfoHasBeenSet)
@@ -168,6 +177,22 @@ void ExportVideoByEditorTrackDataRequest::SetTrackData(const string& _trackData)
 bool ExportVideoByEditorTrackDataRequest::TrackDataHasBeenSet() const
 {
     return m_trackDataHasBeenSet;
+}
+
+string ExportVideoByEditorTrackDataRequest::GetCoverData() const
+{
+    return m_coverData;
+}
+
+void ExportVideoByEditorTrackDataRequest::SetCoverData(const string& _coverData)
+{
+    m_coverData = _coverData;
+    m_coverDataHasBeenSet = true;
+}
+
+bool ExportVideoByEditorTrackDataRequest::CoverDataHasBeenSet() const
+{
+    return m_coverDataHasBeenSet;
 }
 
 CMEExportInfo ExportVideoByEditorTrackDataRequest::GetCMEExportInfo() const

@@ -28,7 +28,8 @@ InquiryPriceRenewInstanceRequest::InquiryPriceRenewInstanceRequest() :
     m_placementHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
-    m_currencyHasBeenSet(false)
+    m_currencyHasBeenSet(false),
+    m_modifyPayModeHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,14 @@ string InquiryPriceRenewInstanceRequest::ToJsonString() const
         string key = "Currency";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_currency.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyPayModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyPayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modifyPayMode, allocator);
     }
 
 
@@ -195,6 +204,22 @@ void InquiryPriceRenewInstanceRequest::SetCurrency(const string& _currency)
 bool InquiryPriceRenewInstanceRequest::CurrencyHasBeenSet() const
 {
     return m_currencyHasBeenSet;
+}
+
+int64_t InquiryPriceRenewInstanceRequest::GetModifyPayMode() const
+{
+    return m_modifyPayMode;
+}
+
+void InquiryPriceRenewInstanceRequest::SetModifyPayMode(const int64_t& _modifyPayMode)
+{
+    m_modifyPayMode = _modifyPayMode;
+    m_modifyPayModeHasBeenSet = true;
+}
+
+bool InquiryPriceRenewInstanceRequest::ModifyPayModeHasBeenSet() const
+{
+    return m_modifyPayModeHasBeenSet;
 }
 
 

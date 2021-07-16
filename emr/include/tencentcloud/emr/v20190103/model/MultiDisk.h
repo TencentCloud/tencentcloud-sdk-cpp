@@ -47,14 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云盘类型("CLOUD_PREMIUM","CLOUD_SSD","CLOUD_BASIC")的一种
-                     * @return DiskType 云盘类型("CLOUD_PREMIUM","CLOUD_SSD","CLOUD_BASIC")的一种
+                     * 获取云盘类型
+<li>CLOUD_SSD：表示云SSD。</li>
+<li>CLOUD_PREMIUM：表示高效云盘。</li>
+<li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
+                     * @return DiskType 云盘类型
+<li>CLOUD_SSD：表示云SSD。</li>
+<li>CLOUD_PREMIUM：表示高效云盘。</li>
+<li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置云盘类型("CLOUD_PREMIUM","CLOUD_SSD","CLOUD_BASIC")的一种
-                     * @param DiskType 云盘类型("CLOUD_PREMIUM","CLOUD_SSD","CLOUD_BASIC")的一种
+                     * 设置云盘类型
+<li>CLOUD_SSD：表示云SSD。</li>
+<li>CLOUD_PREMIUM：表示高效云盘。</li>
+<li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
+                     * @param DiskType 云盘类型
+<li>CLOUD_SSD：表示云SSD。</li>
+<li>CLOUD_PREMIUM：表示高效云盘。</li>
+<li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
                      */
                     void SetDiskType(const std::string& _diskType);
 
@@ -103,7 +115,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云盘类型("CLOUD_PREMIUM","CLOUD_SSD","CLOUD_BASIC")的一种
+                     * 云盘类型
+<li>CLOUD_SSD：表示云SSD。</li>
+<li>CLOUD_PREMIUM：表示高效云盘。</li>
+<li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;

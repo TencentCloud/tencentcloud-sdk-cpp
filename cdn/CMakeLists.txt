@@ -253,6 +253,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ListTopDataResponse.h
   include/tencentcloud/cdn/v20180606/model/MaxAge.h
   include/tencentcloud/cdn/v20180606/model/UpdateDomainConfigResponse.h
+  include/tencentcloud/cdn/v20180606/model/OssPrivateAccess.h
   include/tencentcloud/cdn/v20180606/model/LogSetInfo.h
   include/tencentcloud/cdn/v20180606/model/ListDiagnoseReportResponse.h
   include/tencentcloud/cdn/v20180606/model/SearchClsLogRequest.h
@@ -530,6 +531,7 @@ set(cdn_src
   src/v20180606/model/ListTopDataResponse.cpp
   src/v20180606/model/MaxAge.cpp
   src/v20180606/model/UpdateDomainConfigResponse.cpp
+  src/v20180606/model/OssPrivateAccess.cpp
   src/v20180606/model/LogSetInfo.cpp
   src/v20180606/model/ListDiagnoseReportResponse.cpp
   src/v20180606/model/SearchClsLogRequest.cpp

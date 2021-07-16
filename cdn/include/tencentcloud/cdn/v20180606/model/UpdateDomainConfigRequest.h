@@ -56,6 +56,7 @@
 #include <tencentcloud/cdn/v20180606/model/OfflineCache.h>
 #include <tencentcloud/cdn/v20180606/model/OriginCombine.h>
 #include <tencentcloud/cdn/v20180606/model/Quic.h>
+#include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
 
 
 namespace TencentCloud
@@ -825,6 +826,24 @@ global：全球加速
                      */
                     bool QuicHasBeenSet() const;
 
+                    /**
+                     * 获取回源OSS私有鉴权
+                     * @return OssPrivateAccess 回源OSS私有鉴权
+                     */
+                    OssPrivateAccess GetOssPrivateAccess() const;
+
+                    /**
+                     * 设置回源OSS私有鉴权
+                     * @param OssPrivateAccess 回源OSS私有鉴权
+                     */
+                    void SetOssPrivateAccess(const OssPrivateAccess& _ossPrivateAccess);
+
+                    /**
+                     * 判断参数 OssPrivateAccess 是否已赋值
+                     * @return OssPrivateAccess 是否已赋值
+                     */
+                    bool OssPrivateAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1073,6 +1092,12 @@ global：全球加速
                      */
                     Quic m_quic;
                     bool m_quicHasBeenSet;
+
+                    /**
+                     * 回源OSS私有鉴权
+                     */
+                    OssPrivateAccess m_ossPrivateAccess;
+                    bool m_ossPrivateAccessHasBeenSet;
 
                 };
             }

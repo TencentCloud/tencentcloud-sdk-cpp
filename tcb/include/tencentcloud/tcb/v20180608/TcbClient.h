@@ -87,6 +87,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvPostpaidDeductRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvPostpaidDeductResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeExtensionUploadInfoRequest.h>
@@ -103,6 +105,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSmsQuotasRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSmsQuotasResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeSpecialCostItemsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeSpecialCostItemsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunSubNetsRequest.h>
@@ -237,6 +241,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeEnvLimitResponse> DescribeEnvLimitOutcome;
                 typedef std::future<DescribeEnvLimitOutcome> DescribeEnvLimitOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvLimitRequest&, DescribeEnvLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvLimitAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEnvPostpaidDeductResponse> DescribeEnvPostpaidDeductOutcome;
+                typedef std::future<DescribeEnvPostpaidDeductOutcome> DescribeEnvPostpaidDeductOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeEnvPostpaidDeductRequest&, DescribeEnvPostpaidDeductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvPostpaidDeductAsyncHandler;
                 typedef Outcome<Error, Model::DescribeEnvsResponse> DescribeEnvsOutcome;
                 typedef std::future<DescribeEnvsOutcome> DescribeEnvsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvsRequest&, DescribeEnvsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvsAsyncHandler;
@@ -261,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSmsQuotasResponse> DescribeSmsQuotasOutcome;
                 typedef std::future<DescribeSmsQuotasOutcome> DescribeSmsQuotasOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeSmsQuotasRequest&, DescribeSmsQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmsQuotasAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSpecialCostItemsResponse> DescribeSpecialCostItemsOutcome;
+                typedef std::future<DescribeSpecialCostItemsOutcome> DescribeSpecialCostItemsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeSpecialCostItemsRequest&, DescribeSpecialCostItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecialCostItemsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeWxCloudBaseRunEnvsResponse> DescribeWxCloudBaseRunEnvsOutcome;
                 typedef std::future<DescribeWxCloudBaseRunEnvsOutcome> DescribeWxCloudBaseRunEnvsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeWxCloudBaseRunEnvsRequest&, DescribeWxCloudBaseRunEnvsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWxCloudBaseRunEnvsAsyncHandler;
@@ -589,6 +599,15 @@ namespace TencentCloud
                 DescribeEnvLimitOutcomeCallable DescribeEnvLimitCallable(const Model::DescribeEnvLimitRequest& request);
 
                 /**
+                 *查询环境后付费计费详情
+                 * @param req DescribeEnvPostpaidDeductRequest
+                 * @return DescribeEnvPostpaidDeductOutcome
+                 */
+                DescribeEnvPostpaidDeductOutcome DescribeEnvPostpaidDeduct(const Model::DescribeEnvPostpaidDeductRequest &request);
+                void DescribeEnvPostpaidDeductAsync(const Model::DescribeEnvPostpaidDeductRequest& request, const DescribeEnvPostpaidDeductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvPostpaidDeductOutcomeCallable DescribeEnvPostpaidDeductCallable(const Model::DescribeEnvPostpaidDeductRequest& request);
+
+                /**
                  *获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数
                  * @param req DescribeEnvsRequest
                  * @return DescribeEnvsOutcome
@@ -662,6 +681,15 @@ namespace TencentCloud
                 DescribeSmsQuotasOutcome DescribeSmsQuotas(const Model::DescribeSmsQuotasRequest &request);
                 void DescribeSmsQuotasAsync(const Model::DescribeSmsQuotasRequest& request, const DescribeSmsQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSmsQuotasOutcomeCallable DescribeSmsQuotasCallable(const Model::DescribeSmsQuotasRequest& request);
+
+                /**
+                 *查询环境1分钱抵扣信息
+                 * @param req DescribeSpecialCostItemsRequest
+                 * @return DescribeSpecialCostItemsOutcome
+                 */
+                DescribeSpecialCostItemsOutcome DescribeSpecialCostItems(const Model::DescribeSpecialCostItemsRequest &request);
+                void DescribeSpecialCostItemsAsync(const Model::DescribeSpecialCostItemsRequest& request, const DescribeSpecialCostItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSpecialCostItemsOutcomeCallable DescribeSpecialCostItemsCallable(const Model::DescribeSpecialCostItemsRequest& request);
 
                 /**
                  *查询微信云托管环境信息

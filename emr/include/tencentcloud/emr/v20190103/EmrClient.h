@@ -111,7 +111,7 @@ namespace TencentCloud
 
 
                 /**
-                 *创建EMR实例
+                 *创建EMR集群实例
                  * @param req CreateInstanceRequest
                  * @return CreateInstanceOutcome
                  */

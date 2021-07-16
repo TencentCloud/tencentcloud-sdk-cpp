@@ -911,6 +911,28 @@ namespace TencentCloud
                      */
                     bool DynamicPodSpecHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持变更计费类型 1是，0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportModifyPayMode 是否支持变更计费类型 1是，0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSupportModifyPayMode() const;
+
+                    /**
+                     * 设置是否支持变更计费类型 1是，0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SupportModifyPayMode 是否支持变更计费类型 1是，0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSupportModifyPayMode(const int64_t& _supportModifyPayMode);
+
+                    /**
+                     * 判断参数 SupportModifyPayMode 是否已赋值
+                     * @return SupportModifyPayMode 是否已赋值
+                     */
+                    bool SupportModifyPayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1186,6 +1208,13 @@ namespace TencentCloud
                      */
                     std::string m_dynamicPodSpec;
                     bool m_dynamicPodSpecHasBeenSet;
+
+                    /**
+                     * 是否支持变更计费类型 1是，0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_supportModifyPayMode;
+                    bool m_supportModifyPayModeHasBeenSet;
 
                 };
             }

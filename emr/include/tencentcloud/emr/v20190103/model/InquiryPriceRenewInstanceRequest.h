@@ -159,6 +159,24 @@ namespace TencentCloud
                      */
                     bool CurrencyHasBeenSet() const;
 
+                    /**
+                     * 获取是否按量转包年包月。0：否，1：是。
+                     * @return ModifyPayMode 是否按量转包年包月。0：否，1：是。
+                     */
+                    int64_t GetModifyPayMode() const;
+
+                    /**
+                     * 设置是否按量转包年包月。0：否，1：是。
+                     * @param ModifyPayMode 是否按量转包年包月。0：否，1：是。
+                     */
+                    void SetModifyPayMode(const int64_t& _modifyPayMode);
+
+                    /**
+                     * 判断参数 ModifyPayMode 是否已赋值
+                     * @return ModifyPayMode 是否已赋值
+                     */
+                    bool ModifyPayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +216,12 @@ namespace TencentCloud
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;
+
+                    /**
+                     * 是否按量转包年包月。0：否，1：是。
+                     */
+                    int64_t m_modifyPayMode;
+                    bool m_modifyPayModeHasBeenSet;
 
                 };
             }

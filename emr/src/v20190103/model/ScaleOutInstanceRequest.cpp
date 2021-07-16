@@ -43,7 +43,8 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_clickHouseClusterTypeHasBeenSet(false),
     m_yarnNodeLabelHasBeenSet(false),
     m_podParameterHasBeenSet(false),
-    m_masterCountHasBeenSet(false)
+    m_masterCountHasBeenSet(false),
+    m_startServiceAfterScaleOutHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,14 @@ string ScaleOutInstanceRequest::ToJsonString() const
         string key = "MasterCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_masterCount, allocator);
+    }
+
+    if (m_startServiceAfterScaleOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartServiceAfterScaleOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startServiceAfterScaleOut.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -600,6 +609,22 @@ void ScaleOutInstanceRequest::SetMasterCount(const uint64_t& _masterCount)
 bool ScaleOutInstanceRequest::MasterCountHasBeenSet() const
 {
     return m_masterCountHasBeenSet;
+}
+
+string ScaleOutInstanceRequest::GetStartServiceAfterScaleOut() const
+{
+    return m_startServiceAfterScaleOut;
+}
+
+void ScaleOutInstanceRequest::SetStartServiceAfterScaleOut(const string& _startServiceAfterScaleOut)
+{
+    m_startServiceAfterScaleOut = _startServiceAfterScaleOut;
+    m_startServiceAfterScaleOutHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::StartServiceAfterScaleOutHasBeenSet() const
+{
+    return m_startServiceAfterScaleOutHasBeenSet;
 }
 
 

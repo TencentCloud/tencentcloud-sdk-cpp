@@ -331,14 +331,14 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群提供的资源
-                     * @return HardwareResourceType 扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群提供的资源
+                     * 获取扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源
+                     * @return HardwareResourceType 扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源
                      */
                     std::string GetHardwareResourceType() const;
 
                     /**
-                     * 设置扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群提供的资源
-                     * @param HardwareResourceType 扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群提供的资源
+                     * 设置扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源
+                     * @param HardwareResourceType 扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源
                      */
                     void SetHardwareResourceType(const std::string& _hardwareResourceType);
 
@@ -440,13 +440,25 @@ namespace TencentCloud
 
                     /**
                      * 获取扩容的Master节点的数量。
+使用clickhouse集群扩容时，该参数不生效。
+使用kafka集群扩容时，该参数不生效。
+当HardwareResourceType=POD时，该参数不生效。
                      * @return MasterCount 扩容的Master节点的数量。
+使用clickhouse集群扩容时，该参数不生效。
+使用kafka集群扩容时，该参数不生效。
+当HardwareResourceType=POD时，该参数不生效。
                      */
                     uint64_t GetMasterCount() const;
 
                     /**
                      * 设置扩容的Master节点的数量。
+使用clickhouse集群扩容时，该参数不生效。
+使用kafka集群扩容时，该参数不生效。
+当HardwareResourceType=POD时，该参数不生效。
                      * @param MasterCount 扩容的Master节点的数量。
+使用clickhouse集群扩容时，该参数不生效。
+使用kafka集群扩容时，该参数不生效。
+当HardwareResourceType=POD时，该参数不生效。
                      */
                     void SetMasterCount(const uint64_t& _masterCount);
 
@@ -455,6 +467,24 @@ namespace TencentCloud
                      * @return MasterCount 是否已赋值
                      */
                     bool MasterCountHasBeenSet() const;
+
+                    /**
+                     * 获取扩容后是否启动服务，true：启动，false：不启动
+                     * @return StartServiceAfterScaleOut 扩容后是否启动服务，true：启动，false：不启动
+                     */
+                    std::string GetStartServiceAfterScaleOut() const;
+
+                    /**
+                     * 设置扩容后是否启动服务，true：启动，false：不启动
+                     * @param StartServiceAfterScaleOut 扩容后是否启动服务，true：启动，false：不启动
+                     */
+                    void SetStartServiceAfterScaleOut(const std::string& _startServiceAfterScaleOut);
+
+                    /**
+                     * 判断参数 StartServiceAfterScaleOut 是否已赋值
+                     * @return StartServiceAfterScaleOut 是否已赋值
+                     */
+                    bool StartServiceAfterScaleOutHasBeenSet() const;
 
                 private:
 
@@ -551,7 +581,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群提供的资源
+                     * 扩容所选资源类型，可选范围为"host","pod"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源
                      */
                     std::string m_hardwareResourceType;
                     bool m_hardwareResourceTypeHasBeenSet;
@@ -588,9 +618,18 @@ namespace TencentCloud
 
                     /**
                      * 扩容的Master节点的数量。
+使用clickhouse集群扩容时，该参数不生效。
+使用kafka集群扩容时，该参数不生效。
+当HardwareResourceType=POD时，该参数不生效。
                      */
                     uint64_t m_masterCount;
                     bool m_masterCountHasBeenSet;
+
+                    /**
+                     * 扩容后是否启动服务，true：启动，false：不启动
+                     */
+                    std::string m_startServiceAfterScaleOut;
+                    bool m_startServiceAfterScaleOutHasBeenSet;
 
                 };
             }

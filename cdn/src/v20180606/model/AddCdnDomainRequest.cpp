@@ -56,7 +56,9 @@ AddCdnDomainRequest::AddCdnDomainRequest() :
     m_tagHasBeenSet(false),
     m_ipv6AccessHasBeenSet(false),
     m_offlineCacheHasBeenSet(false),
-    m_quicHasBeenSet(false)
+    m_quicHasBeenSet(false),
+    m_awsPrivateAccessHasBeenSet(false),
+    m_ossPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -373,6 +375,24 @@ string AddCdnDomainRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_quic.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_awsPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AwsPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_awsPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ossPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OssPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ossPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -925,6 +945,38 @@ void AddCdnDomainRequest::SetQuic(const Quic& _quic)
 bool AddCdnDomainRequest::QuicHasBeenSet() const
 {
     return m_quicHasBeenSet;
+}
+
+AwsPrivateAccess AddCdnDomainRequest::GetAwsPrivateAccess() const
+{
+    return m_awsPrivateAccess;
+}
+
+void AddCdnDomainRequest::SetAwsPrivateAccess(const AwsPrivateAccess& _awsPrivateAccess)
+{
+    m_awsPrivateAccess = _awsPrivateAccess;
+    m_awsPrivateAccessHasBeenSet = true;
+}
+
+bool AddCdnDomainRequest::AwsPrivateAccessHasBeenSet() const
+{
+    return m_awsPrivateAccessHasBeenSet;
+}
+
+OssPrivateAccess AddCdnDomainRequest::GetOssPrivateAccess() const
+{
+    return m_ossPrivateAccess;
+}
+
+void AddCdnDomainRequest::SetOssPrivateAccess(const OssPrivateAccess& _ossPrivateAccess)
+{
+    m_ossPrivateAccess = _ossPrivateAccess;
+    m_ossPrivateAccessHasBeenSet = true;
+}
+
+bool AddCdnDomainRequest::OssPrivateAccessHasBeenSet() const
+{
+    return m_ossPrivateAccessHasBeenSet;
 }
 
 

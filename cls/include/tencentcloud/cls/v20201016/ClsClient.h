@@ -39,6 +39,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateLogsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateMachineGroupResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateShipperRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateTopicRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateTopicResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteLogsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteMachineGroupResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteShipperRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteTopicRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteTopicResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmNoticesRequest.h>
@@ -83,6 +87,10 @@
 #include <tencentcloud/cls/v20201016/model/DescribeMachinesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribePartitionsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribePartitionsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeShipperTasksRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeShipperTasksResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeShippersRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeShippersResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeTopicsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeTopicsResponse.h>
 #include <tencentcloud/cls/v20201016/model/GetAlarmLogRequest.h>
@@ -101,8 +109,12 @@
 #include <tencentcloud/cls/v20201016/model/ModifyLogsetResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyMachineGroupResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyShipperRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyTopicRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyTopicResponse.h>
+#include <tencentcloud/cls/v20201016/model/RetryShipperTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/RetryShipperTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/SearchLogRequest.h>
 #include <tencentcloud/cls/v20201016/model/SearchLogResponse.h>
 #include <tencentcloud/cls/v20201016/model/SplitPartitionRequest.h>
@@ -145,6 +157,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateMachineGroupResponse> CreateMachineGroupOutcome;
                 typedef std::future<CreateMachineGroupOutcome> CreateMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateMachineGroupRequest&, CreateMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMachineGroupAsyncHandler;
+                typedef Outcome<Error, Model::CreateShipperResponse> CreateShipperOutcome;
+                typedef std::future<CreateShipperOutcome> CreateShipperOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateShipperRequest&, CreateShipperOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateShipperAsyncHandler;
                 typedef Outcome<Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
@@ -172,6 +187,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteMachineGroupResponse> DeleteMachineGroupOutcome;
                 typedef std::future<DeleteMachineGroupOutcome> DeleteMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteMachineGroupRequest&, DeleteMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMachineGroupAsyncHandler;
+                typedef Outcome<Error, Model::DeleteShipperResponse> DeleteShipperOutcome;
+                typedef std::future<DeleteShipperOutcome> DeleteShipperOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteShipperRequest&, DeleteShipperOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShipperAsyncHandler;
                 typedef Outcome<Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
                 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
@@ -211,6 +229,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribePartitionsResponse> DescribePartitionsOutcome;
                 typedef std::future<DescribePartitionsOutcome> DescribePartitionsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribePartitionsRequest&, DescribePartitionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePartitionsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeShipperTasksResponse> DescribeShipperTasksOutcome;
+                typedef std::future<DescribeShipperTasksOutcome> DescribeShipperTasksOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeShipperTasksRequest&, DescribeShipperTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShipperTasksAsyncHandler;
+                typedef Outcome<Error, Model::DescribeShippersResponse> DescribeShippersOutcome;
+                typedef std::future<DescribeShippersOutcome> DescribeShippersOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeShippersRequest&, DescribeShippersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShippersAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTopicsResponse> DescribeTopicsOutcome;
                 typedef std::future<DescribeTopicsOutcome> DescribeTopicsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeTopicsRequest&, DescribeTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicsAsyncHandler;
@@ -238,9 +262,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyMachineGroupResponse> ModifyMachineGroupOutcome;
                 typedef std::future<ModifyMachineGroupOutcome> ModifyMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyMachineGroupRequest&, ModifyMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMachineGroupAsyncHandler;
+                typedef Outcome<Error, Model::ModifyShipperResponse> ModifyShipperOutcome;
+                typedef std::future<ModifyShipperOutcome> ModifyShipperOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyShipperRequest&, ModifyShipperOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyShipperAsyncHandler;
                 typedef Outcome<Error, Model::ModifyTopicResponse> ModifyTopicOutcome;
                 typedef std::future<ModifyTopicOutcome> ModifyTopicOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyTopicRequest&, ModifyTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAsyncHandler;
+                typedef Outcome<Error, Model::RetryShipperTaskResponse> RetryShipperTaskOutcome;
+                typedef std::future<RetryShipperTaskOutcome> RetryShipperTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::RetryShipperTaskRequest&, RetryShipperTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryShipperTaskAsyncHandler;
                 typedef Outcome<Error, Model::SearchLogResponse> SearchLogOutcome;
                 typedef std::future<SearchLogOutcome> SearchLogOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::SearchLogRequest&, SearchLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchLogAsyncHandler;
@@ -323,6 +353,15 @@ namespace TencentCloud
                 CreateMachineGroupOutcomeCallable CreateMachineGroupCallable(const Model::CreateMachineGroupRequest& request);
 
                 /**
+                 *创建新的投递规则，客户如果使用此接口，需要自行处理CLS对指定bucket的写权限。
+                 * @param req CreateShipperRequest
+                 * @return CreateShipperOutcome
+                 */
+                CreateShipperOutcome CreateShipper(const Model::CreateShipperRequest &request);
+                void CreateShipperAsync(const Model::CreateShipperRequest& request, const CreateShipperAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateShipperOutcomeCallable CreateShipperCallable(const Model::CreateShipperRequest& request);
+
+                /**
                  *本接口用于创建日志主题。
                  * @param req CreateTopicRequest
                  * @return CreateTopicOutcome
@@ -402,6 +441,15 @@ namespace TencentCloud
                 DeleteMachineGroupOutcome DeleteMachineGroup(const Model::DeleteMachineGroupRequest &request);
                 void DeleteMachineGroupAsync(const Model::DeleteMachineGroupRequest& request, const DeleteMachineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteMachineGroupOutcomeCallable DeleteMachineGroupCallable(const Model::DeleteMachineGroupRequest& request);
+
+                /**
+                 *删除投递规则
+                 * @param req DeleteShipperRequest
+                 * @return DeleteShipperOutcome
+                 */
+                DeleteShipperOutcome DeleteShipper(const Model::DeleteShipperRequest &request);
+                void DeleteShipperAsync(const Model::DeleteShipperRequest& request, const DeleteShipperAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteShipperOutcomeCallable DeleteShipperCallable(const Model::DeleteShipperRequest& request);
 
                 /**
                  *本接口用于删除日志主题。
@@ -521,6 +569,24 @@ namespace TencentCloud
                 DescribePartitionsOutcomeCallable DescribePartitionsCallable(const Model::DescribePartitionsRequest& request);
 
                 /**
+                 *获取投递任务列表
+                 * @param req DescribeShipperTasksRequest
+                 * @return DescribeShipperTasksOutcome
+                 */
+                DescribeShipperTasksOutcome DescribeShipperTasks(const Model::DescribeShipperTasksRequest &request);
+                void DescribeShipperTasksAsync(const Model::DescribeShipperTasksRequest& request, const DescribeShipperTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeShipperTasksOutcomeCallable DescribeShipperTasksCallable(const Model::DescribeShipperTasksRequest& request);
+
+                /**
+                 *获取投递规则信息列表
+                 * @param req DescribeShippersRequest
+                 * @return DescribeShippersOutcome
+                 */
+                DescribeShippersOutcome DescribeShippers(const Model::DescribeShippersRequest &request);
+                void DescribeShippersAsync(const Model::DescribeShippersRequest& request, const DescribeShippersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeShippersOutcomeCallable DescribeShippersCallable(const Model::DescribeShippersRequest& request);
+
+                /**
                  * 本接口用于获取日志主题列表，支持分页
                  * @param req DescribeTopicsRequest
                  * @return DescribeTopicsOutcome
@@ -603,6 +669,15 @@ namespace TencentCloud
                 ModifyMachineGroupOutcomeCallable ModifyMachineGroupCallable(const Model::ModifyMachineGroupRequest& request);
 
                 /**
+                 *修改现有的投递规则，客户如果使用此接口，需要自行处理CLS对指定bucket的写权限。
+                 * @param req ModifyShipperRequest
+                 * @return ModifyShipperOutcome
+                 */
+                ModifyShipperOutcome ModifyShipper(const Model::ModifyShipperRequest &request);
+                void ModifyShipperAsync(const Model::ModifyShipperRequest& request, const ModifyShipperAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyShipperOutcomeCallable ModifyShipperCallable(const Model::ModifyShipperRequest& request);
+
+                /**
                  *本接口用于修改日志主题。
                  * @param req ModifyTopicRequest
                  * @return ModifyTopicOutcome
@@ -610,6 +685,15 @@ namespace TencentCloud
                 ModifyTopicOutcome ModifyTopic(const Model::ModifyTopicRequest &request);
                 void ModifyTopicAsync(const Model::ModifyTopicRequest& request, const ModifyTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTopicOutcomeCallable ModifyTopicCallable(const Model::ModifyTopicRequest& request);
+
+                /**
+                 *重试失败的投递任务
+                 * @param req RetryShipperTaskRequest
+                 * @return RetryShipperTaskOutcome
+                 */
+                RetryShipperTaskOutcome RetryShipperTask(const Model::RetryShipperTaskRequest &request);
+                void RetryShipperTaskAsync(const Model::RetryShipperTaskRequest& request, const RetryShipperTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RetryShipperTaskOutcomeCallable RetryShipperTaskCallable(const Model::RetryShipperTaskRequest& request);
 
                 /**
                  *本接口用于搜索日志

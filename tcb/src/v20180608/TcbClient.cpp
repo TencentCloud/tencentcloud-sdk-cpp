@@ -1416,6 +1416,49 @@ TcbClient::DescribeEnvLimitOutcomeCallable TcbClient::DescribeEnvLimitCallable(c
     return task->get_future();
 }
 
+TcbClient::DescribeEnvPostpaidDeductOutcome TcbClient::DescribeEnvPostpaidDeduct(const DescribeEnvPostpaidDeductRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnvPostpaidDeduct");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnvPostpaidDeductResponse rsp = DescribeEnvPostpaidDeductResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnvPostpaidDeductOutcome(rsp);
+        else
+            return DescribeEnvPostpaidDeductOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnvPostpaidDeductOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeEnvPostpaidDeductAsync(const DescribeEnvPostpaidDeductRequest& request, const DescribeEnvPostpaidDeductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEnvPostpaidDeduct(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeEnvPostpaidDeductOutcomeCallable TcbClient::DescribeEnvPostpaidDeductCallable(const DescribeEnvPostpaidDeductRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEnvPostpaidDeductOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEnvPostpaidDeduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeEnvsOutcome TcbClient::DescribeEnvs(const DescribeEnvsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnvs");
@@ -1753,6 +1796,49 @@ TcbClient::DescribeSmsQuotasOutcomeCallable TcbClient::DescribeSmsQuotasCallable
         [this, request]()
         {
             return this->DescribeSmsQuotas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeSpecialCostItemsOutcome TcbClient::DescribeSpecialCostItems(const DescribeSpecialCostItemsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSpecialCostItems");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSpecialCostItemsResponse rsp = DescribeSpecialCostItemsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSpecialCostItemsOutcome(rsp);
+        else
+            return DescribeSpecialCostItemsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSpecialCostItemsOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeSpecialCostItemsAsync(const DescribeSpecialCostItemsRequest& request, const DescribeSpecialCostItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSpecialCostItems(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeSpecialCostItemsOutcomeCallable TcbClient::DescribeSpecialCostItemsCallable(const DescribeSpecialCostItemsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSpecialCostItemsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSpecialCostItems(request);
         }
     );
 

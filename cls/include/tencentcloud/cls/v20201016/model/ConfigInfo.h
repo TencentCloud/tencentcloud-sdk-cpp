@@ -89,17 +89,17 @@ namespace TencentCloud
                     bool LogFormatHasBeenSet() const;
 
                     /**
-                     * 获取通配符日志采集路径列表，以/**/分隔文件目录和文件名
+                     * 获取日志采集路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Path 通配符日志采集路径列表，以/**/分隔文件目录和文件名
+                     * @return Path 日志采集路径
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置通配符日志采集路径列表，以/**/分隔文件目录和文件名
+                     * 设置日志采集路径
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Path 通配符日志采集路径列表，以/**/分隔文件目录和文件名
+                     * @param Path 日志采集路径
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPath(const std::string& _path);
@@ -250,7 +250,7 @@ namespace TencentCloud
                     bool m_logFormatHasBeenSet;
 
                     /**
-                     * 通配符日志采集路径列表，以/**/分隔文件目录和文件名
+                     * 日志采集路径
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;

@@ -66,6 +66,7 @@
 #include <tencentcloud/cdn/v20180606/model/OriginCombine.h>
 #include <tencentcloud/cdn/v20180606/model/PostSize.h>
 #include <tencentcloud/cdn/v20180606/model/Quic.h>
+#include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
 
 
 namespace TencentCloud
@@ -1380,6 +1381,28 @@ off：不支持
                      */
                     bool QuicHasBeenSet() const;
 
+                    /**
+                     * 获取回源OSS私有鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OssPrivateAccess 回源OSS私有鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OssPrivateAccess GetOssPrivateAccess() const;
+
+                    /**
+                     * 设置回源OSS私有鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OssPrivateAccess 回源OSS私有鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOssPrivateAccess(const OssPrivateAccess& _ossPrivateAccess);
+
+                    /**
+                     * 判断参数 OssPrivateAccess 是否已赋值
+                     * @return OssPrivateAccess 是否已赋值
+                     */
+                    bool OssPrivateAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1788,6 +1811,13 @@ off：不支持
                      */
                     Quic m_quic;
                     bool m_quicHasBeenSet;
+
+                    /**
+                     * 回源OSS私有鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OssPrivateAccess m_ossPrivateAccess;
+                    bool m_ossPrivateAccessHasBeenSet;
 
                 };
             }

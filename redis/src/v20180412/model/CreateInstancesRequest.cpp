@@ -23,12 +23,12 @@ using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
 CreateInstancesRequest::CreateInstancesRequest() :
-    m_zoneIdHasBeenSet(false),
     m_typeIdHasBeenSet(false),
     m_memSizeHasBeenSet(false),
     m_goodsNumHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_billingModeHasBeenSet(false),
+    m_zoneIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
@@ -42,7 +42,9 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_instanceNameHasBeenSet(false),
     m_noAuthHasBeenSet(false),
     m_nodeSetHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_zoneNameHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -52,14 +54,6 @@ string CreateInstancesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_zoneIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ZoneId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_zoneId, allocator);
-    }
 
     if (m_typeIdHasBeenSet)
     {
@@ -99,6 +93,14 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "BillingMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_billingMode, allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_zoneId, allocator);
     }
 
     if (m_passwordHasBeenSet)
@@ -232,6 +234,22 @@ string CreateInstancesRequest::ToJsonString() const
         }
     }
 
+    if (m_zoneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -239,22 +257,6 @@ string CreateInstancesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-uint64_t CreateInstancesRequest::GetZoneId() const
-{
-    return m_zoneId;
-}
-
-void CreateInstancesRequest::SetZoneId(const uint64_t& _zoneId)
-{
-    m_zoneId = _zoneId;
-    m_zoneIdHasBeenSet = true;
-}
-
-bool CreateInstancesRequest::ZoneIdHasBeenSet() const
-{
-    return m_zoneIdHasBeenSet;
-}
 
 uint64_t CreateInstancesRequest::GetTypeId() const
 {
@@ -334,6 +336,22 @@ void CreateInstancesRequest::SetBillingMode(const int64_t& _billingMode)
 bool CreateInstancesRequest::BillingModeHasBeenSet() const
 {
     return m_billingModeHasBeenSet;
+}
+
+uint64_t CreateInstancesRequest::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void CreateInstancesRequest::SetZoneId(const uint64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
 }
 
 string CreateInstancesRequest::GetPassword() const
@@ -558,6 +576,38 @@ void CreateInstancesRequest::SetResourceTags(const vector<ResourceTag>& _resourc
 bool CreateInstancesRequest::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+string CreateInstancesRequest::GetZoneName() const
+{
+    return m_zoneName;
+}
+
+void CreateInstancesRequest::SetZoneName(const string& _zoneName)
+{
+    m_zoneName = _zoneName;
+    m_zoneNameHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::ZoneNameHasBeenSet() const
+{
+    return m_zoneNameHasBeenSet;
+}
+
+string CreateInstancesRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void CreateInstancesRequest::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 
 

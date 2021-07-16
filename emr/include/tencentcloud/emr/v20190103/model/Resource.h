@@ -49,17 +49,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点规格描述
+                     * 获取节点规格描述，如CVM.SA2。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Spec 节点规格描述
+                     * @return Spec 节点规格描述，如CVM.SA2。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSpec() const;
 
                     /**
-                     * 设置节点规格描述
+                     * 设置节点规格描述，如CVM.SA2。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Spec 节点规格描述
+                     * @param Spec 节点规格描述，如CVM.SA2。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSpec(const std::string& _spec);
@@ -72,16 +72,40 @@ namespace TencentCloud
 
                     /**
                      * 获取存储类型
+取值范围：
+<li>4：表示云SSD。</li>
+<li>5：表示高效云盘。</li>
+<li>6：表示增强型SSD云硬盘。</li>
+<li>11：表示吞吐型云硬盘。</li>
+<li>12：表示极速型SSD云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageType 存储类型
+取值范围：
+<li>4：表示云SSD。</li>
+<li>5：表示高效云盘。</li>
+<li>6：表示增强型SSD云硬盘。</li>
+<li>11：表示吞吐型云硬盘。</li>
+<li>12：表示极速型SSD云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStorageType() const;
 
                     /**
                      * 设置存储类型
+取值范围：
+<li>4：表示云SSD。</li>
+<li>5：表示高效云盘。</li>
+<li>6：表示增强型SSD云硬盘。</li>
+<li>11：表示吞吐型云硬盘。</li>
+<li>12：表示极速型SSD云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param StorageType 存储类型
+取值范围：
+<li>4：表示云SSD。</li>
+<li>5：表示高效云盘。</li>
+<li>6：表示增强型SSD云硬盘。</li>
+<li>11：表示吞吐型云硬盘。</li>
+<li>12：表示极速型SSD云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStorageType(const int64_t& _storageType);
@@ -94,16 +118,32 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘类型
+取值范围：
+<li>CLOUD_SSD：表示云SSD。</li>
+<li>CLOUD_PREMIUM：表示高效云盘。</li>
+<li>CLOUD_BASIC：表示云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskType 磁盘类型
+取值范围：
+<li>CLOUD_SSD：表示云SSD。</li>
+<li>CLOUD_PREMIUM：表示高效云盘。</li>
+<li>CLOUD_BASIC：表示云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置磁盘类型
+取值范围：
+<li>CLOUD_SSD：表示云SSD。</li>
+<li>CLOUD_PREMIUM：表示高效云盘。</li>
+<li>CLOUD_BASIC：表示云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param DiskType 磁盘类型
+取值范围：
+<li>CLOUD_SSD：表示云SSD。</li>
+<li>CLOUD_PREMIUM：表示高效云盘。</li>
+<li>CLOUD_BASIC：表示云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -247,17 +287,17 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取规格类型
+                     * 获取规格类型，如S2.MEDIUM8
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceType 规格类型
+                     * @return InstanceType 规格类型，如S2.MEDIUM8
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置规格类型
+                     * 设置规格类型，如S2.MEDIUM8
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceType 规格类型
+                     * @param InstanceType 规格类型，如S2.MEDIUM8
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -269,17 +309,17 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取本地盘数量
+                     * 获取本地盘数量，该字段已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LocalDiskNum 本地盘数量
+                     * @return LocalDiskNum 本地盘数量，该字段已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetLocalDiskNum() const;
 
                     /**
-                     * 设置本地盘数量
+                     * 设置本地盘数量，该字段已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LocalDiskNum 本地盘数量
+                     * @param LocalDiskNum 本地盘数量，该字段已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLocalDiskNum(const uint64_t& _localDiskNum);
@@ -291,17 +331,17 @@ namespace TencentCloud
                     bool LocalDiskNumHasBeenSet() const;
 
                     /**
-                     * 获取盘数量
+                     * 获取本地盘数量，如2
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskNum 盘数量
+                     * @return DiskNum 本地盘数量，如2
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetDiskNum() const;
 
                     /**
-                     * 设置盘数量
+                     * 设置本地盘数量，如2
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskNum 盘数量
+                     * @param DiskNum 本地盘数量，如2
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDiskNum(const uint64_t& _diskNum);
@@ -315,7 +355,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点规格描述
+                     * 节点规格描述，如CVM.SA2。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spec;
@@ -323,6 +363,12 @@ namespace TencentCloud
 
                     /**
                      * 存储类型
+取值范围：
+<li>4：表示云SSD。</li>
+<li>5：表示高效云盘。</li>
+<li>6：表示增强型SSD云硬盘。</li>
+<li>11：表示吞吐型云硬盘。</li>
+<li>12：表示极速型SSD云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storageType;
@@ -330,6 +376,10 @@ namespace TencentCloud
 
                     /**
                      * 磁盘类型
+取值范围：
+<li>CLOUD_SSD：表示云SSD。</li>
+<li>CLOUD_PREMIUM：表示高效云盘。</li>
+<li>CLOUD_BASIC：表示云硬盘。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskType;
@@ -378,21 +428,21 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 规格类型
+                     * 规格类型，如S2.MEDIUM8
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 本地盘数量
+                     * 本地盘数量，该字段已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_localDiskNum;
                     bool m_localDiskNumHasBeenSet;
 
                     /**
-                     * 盘数量
+                     * 本地盘数量，如2
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_diskNum;

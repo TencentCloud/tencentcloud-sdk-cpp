@@ -384,6 +384,49 @@ ClsClient::CreateMachineGroupOutcomeCallable ClsClient::CreateMachineGroupCallab
     return task->get_future();
 }
 
+ClsClient::CreateShipperOutcome ClsClient::CreateShipper(const CreateShipperRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateShipper");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateShipperResponse rsp = CreateShipperResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateShipperOutcome(rsp);
+        else
+            return CreateShipperOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateShipperOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateShipperAsync(const CreateShipperRequest& request, const CreateShipperAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateShipper(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateShipperOutcomeCallable ClsClient::CreateShipperCallable(const CreateShipperRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateShipperOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateShipper(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateTopicOutcome ClsClient::CreateTopic(const CreateTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTopic");
@@ -764,6 +807,49 @@ ClsClient::DeleteMachineGroupOutcomeCallable ClsClient::DeleteMachineGroupCallab
         [this, request]()
         {
             return this->DeleteMachineGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DeleteShipperOutcome ClsClient::DeleteShipper(const DeleteShipperRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteShipper");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteShipperResponse rsp = DeleteShipperResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteShipperOutcome(rsp);
+        else
+            return DeleteShipperOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteShipperOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteShipperAsync(const DeleteShipperRequest& request, const DeleteShipperAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteShipper(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteShipperOutcomeCallable ClsClient::DeleteShipperCallable(const DeleteShipperRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteShipperOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteShipper(request);
         }
     );
 
@@ -1330,6 +1416,92 @@ ClsClient::DescribePartitionsOutcomeCallable ClsClient::DescribePartitionsCallab
     return task->get_future();
 }
 
+ClsClient::DescribeShipperTasksOutcome ClsClient::DescribeShipperTasks(const DescribeShipperTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeShipperTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeShipperTasksResponse rsp = DescribeShipperTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeShipperTasksOutcome(rsp);
+        else
+            return DescribeShipperTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeShipperTasksOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeShipperTasksAsync(const DescribeShipperTasksRequest& request, const DescribeShipperTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeShipperTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeShipperTasksOutcomeCallable ClsClient::DescribeShipperTasksCallable(const DescribeShipperTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeShipperTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeShipperTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeShippersOutcome ClsClient::DescribeShippers(const DescribeShippersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeShippers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeShippersResponse rsp = DescribeShippersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeShippersOutcome(rsp);
+        else
+            return DescribeShippersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeShippersOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeShippersAsync(const DescribeShippersRequest& request, const DescribeShippersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeShippers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeShippersOutcomeCallable ClsClient::DescribeShippersCallable(const DescribeShippersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeShippersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeShippers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DescribeTopicsOutcome ClsClient::DescribeTopics(const DescribeTopicsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopics");
@@ -1717,6 +1889,49 @@ ClsClient::ModifyMachineGroupOutcomeCallable ClsClient::ModifyMachineGroupCallab
     return task->get_future();
 }
 
+ClsClient::ModifyShipperOutcome ClsClient::ModifyShipper(const ModifyShipperRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyShipper");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyShipperResponse rsp = ModifyShipperResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyShipperOutcome(rsp);
+        else
+            return ModifyShipperOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyShipperOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyShipperAsync(const ModifyShipperRequest& request, const ModifyShipperAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyShipper(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyShipperOutcomeCallable ClsClient::ModifyShipperCallable(const ModifyShipperRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyShipperOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyShipper(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::ModifyTopicOutcome ClsClient::ModifyTopic(const ModifyTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTopic");
@@ -1753,6 +1968,49 @@ ClsClient::ModifyTopicOutcomeCallable ClsClient::ModifyTopicCallable(const Modif
         [this, request]()
         {
             return this->ModifyTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::RetryShipperTaskOutcome ClsClient::RetryShipperTask(const RetryShipperTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RetryShipperTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RetryShipperTaskResponse rsp = RetryShipperTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RetryShipperTaskOutcome(rsp);
+        else
+            return RetryShipperTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return RetryShipperTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::RetryShipperTaskAsync(const RetryShipperTaskRequest& request, const RetryShipperTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RetryShipperTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::RetryShipperTaskOutcomeCallable ClsClient::RetryShipperTaskCallable(const RetryShipperTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RetryShipperTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->RetryShipperTask(request);
         }
     );
 

@@ -30,7 +30,9 @@ PodSpec::PodSpec() :
     m_cpuTypeHasBeenSet(false),
     m_podVolumesHasBeenSet(false),
     m_isDynamicSpecHasBeenSet(false),
-    m_dynamicPodSpecHasBeenSet(false)
+    m_dynamicPodSpecHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -159,6 +161,26 @@ CoreInternalOutcome PodSpec::Deserialize(const rapidjson::Value &value)
         m_dynamicPodSpecHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PodSpec.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `PodSpec.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -257,6 +279,22 @@ void PodSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dynamicPodSpec.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -420,5 +458,37 @@ void PodSpec::SetDynamicPodSpec(const DynamicPodSpec& _dynamicPodSpec)
 bool PodSpec::DynamicPodSpecHasBeenSet() const
 {
     return m_dynamicPodSpecHasBeenSet;
+}
+
+string PodSpec::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void PodSpec::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool PodSpec::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+string PodSpec::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void PodSpec::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool PodSpec::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
 }
 

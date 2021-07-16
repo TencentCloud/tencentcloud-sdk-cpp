@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
-CreateInstanceResponse::CreateInstanceResponse()
+CreateInstanceResponse::CreateInstanceResponse() :
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -61,9 +62,29 @@ CoreInternalOutcome CreateInstanceResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    {
+        if (!rsp["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
+
+string CreateInstanceResponse::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+bool CreateInstanceResponse::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
 
 
