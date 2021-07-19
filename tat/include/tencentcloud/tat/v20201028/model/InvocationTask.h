@@ -282,6 +282,24 @@ namespace TencentCloud
                      */
                     bool CommandDocumentHasBeenSet() const;
 
+                    /**
+                     * 获取执行任务失败时的错误信息。
+                     * @return ErrorInfo 执行任务失败时的错误信息。
+                     */
+                    std::string GetErrorInfo() const;
+
+                    /**
+                     * 设置执行任务失败时的错误信息。
+                     * @param ErrorInfo 执行任务失败时的错误信息。
+                     */
+                    void SetErrorInfo(const std::string& _errorInfo);
+
+                    /**
+                     * 判断参数 ErrorInfo 是否已赋值
+                     * @return ErrorInfo 是否已赋值
+                     */
+                    bool ErrorInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -358,6 +376,12 @@ namespace TencentCloud
                      */
                     CommandDocument m_commandDocument;
                     bool m_commandDocumentHasBeenSet;
+
+                    /**
+                     * 执行任务失败时的错误信息。
+                     */
+                    std::string m_errorInfo;
+                    bool m_errorInfoHasBeenSet;
 
                 };
             }

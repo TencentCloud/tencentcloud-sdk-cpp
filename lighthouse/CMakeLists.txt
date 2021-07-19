@@ -25,12 +25,13 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesTrafficPackagesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteKeyPairsResponse.h
-  include/tencentcloud/lighthouse/v20200324/model/TerminateInstancesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/AttachCcnRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/RegionInfo.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceDeniedActions.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyBundle.h
+  include/tencentcloud/lighthouse/v20200324/model/DetachCcnResponse.h
   include/tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotResponse.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesResponse.h
@@ -42,7 +43,9 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DiscountDetail.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeRegionsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/AttachCcnResponse.h
   include/tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/ResetAttachCcnRequest.h
   include/tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ImportKeyPairResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsRequest.h
@@ -60,9 +63,10 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallRuleDescriptionRequest.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceTrafficPackage.h
   include/tencentcloud/lighthouse/v20200324/model/StartInstancesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/TerminateInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/TrafficPackage.h
   include/tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsResponse.h
-  include/tencentcloud/lighthouse/v20200324/model/DescribeResetInstanceBlueprintsResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceReturnable.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesAttributeRequest.h
@@ -87,12 +91,14 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/StopInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeKeyPairsRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeCcnAttachedInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/lighthouse/v20200324/model/LoginSettings.h
   include/tencentcloud/lighthouse/v20200324/model/Instance.h
   include/tencentcloud/lighthouse/v20200324/model/CreateKeyPairResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstanceVncUrlResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyFirewallRulesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeCcnAttachedInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/Blueprint.h
   include/tencentcloud/lighthouse/v20200324/model/DeniedAction.h
@@ -103,6 +109,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordRequest.h
   include/tencentcloud/lighthouse/v20200324/model/CreateKeyPairRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DetachCcnRequest.h
   include/tencentcloud/lighthouse/v20200324/model/Filter.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/Snapshot.h
@@ -120,6 +127,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/CreateBlueprintResponse.h
   include/tencentcloud/lighthouse/v20200324/model/PolicyDetail.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeResetInstanceBlueprintsRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/ResetAttachCcnResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesRenewFlagResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotRequest.h
   include/tencentcloud/lighthouse/v20200324/model/TerminateInstancesRequest.h
@@ -130,7 +138,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/Price.h
   include/tencentcloud/lighthouse/v20200324/model/BlueprintPrice.h
   include/tencentcloud/lighthouse/v20200324/model/GeneralResourceQuota.h
-  include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DescribeResetInstanceBlueprintsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/SoftwareDetail.h
   include/tencentcloud/lighthouse/v20200324/model/InstancePrice.h
   include/tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h
@@ -140,6 +148,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceCreateInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/CcnAttachedInstance.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeModifyInstanceBundlesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotRequest.h
   include/tencentcloud/lighthouse/v20200324/model/BlueprintInstance.h
@@ -156,12 +165,13 @@ set(lighthouse_src
   src/v20200324/model/DescribeInstancesTrafficPackagesResponse.cpp
   src/v20200324/model/DescribeInstancesDeniedActionsRequest.cpp
   src/v20200324/model/DeleteKeyPairsResponse.cpp
-  src/v20200324/model/TerminateInstancesResponse.cpp
+  src/v20200324/model/AttachCcnRequest.cpp
   src/v20200324/model/DescribeSnapshotsDeniedActionsResponse.cpp
   src/v20200324/model/RegionInfo.cpp
   src/v20200324/model/DescribeBlueprintInstancesResponse.cpp
   src/v20200324/model/InstanceDeniedActions.cpp
   src/v20200324/model/ModifyBundle.cpp
+  src/v20200324/model/DetachCcnResponse.cpp
   src/v20200324/model/CreateInstanceSnapshotResponse.cpp
   src/v20200324/model/InquirePriceRenewInstancesResponse.cpp
   src/v20200324/model/DeleteFirewallRulesResponse.cpp
@@ -173,7 +183,9 @@ set(lighthouse_src
   src/v20200324/model/InquirePriceRenewInstancesRequest.cpp
   src/v20200324/model/DiscountDetail.cpp
   src/v20200324/model/DescribeRegionsResponse.cpp
+  src/v20200324/model/AttachCcnResponse.cpp
   src/v20200324/model/RebootInstancesRequest.cpp
+  src/v20200324/model/ResetAttachCcnRequest.cpp
   src/v20200324/model/AssociateInstancesKeyPairsRequest.cpp
   src/v20200324/model/ImportKeyPairResponse.cpp
   src/v20200324/model/DescribeSnapshotsRequest.cpp
@@ -191,9 +203,10 @@ set(lighthouse_src
   src/v20200324/model/ModifyFirewallRuleDescriptionRequest.cpp
   src/v20200324/model/InstanceTrafficPackage.cpp
   src/v20200324/model/StartInstancesResponse.cpp
+  src/v20200324/model/TerminateInstancesResponse.cpp
   src/v20200324/model/TrafficPackage.cpp
   src/v20200324/model/DisassociateInstancesKeyPairsResponse.cpp
-  src/v20200324/model/DescribeResetInstanceBlueprintsResponse.cpp
+  src/v20200324/model/DescribeBlueprintsRequest.cpp
   src/v20200324/model/InstanceReturnable.cpp
   src/v20200324/model/DescribeInstancesDeniedActionsResponse.cpp
   src/v20200324/model/ModifyInstancesAttributeRequest.cpp
@@ -218,12 +231,14 @@ set(lighthouse_src
   src/v20200324/model/StopInstancesRequest.cpp
   src/v20200324/model/DescribeBlueprintsResponse.cpp
   src/v20200324/model/DescribeKeyPairsRequest.cpp
+  src/v20200324/model/DescribeCcnAttachedInstancesRequest.cpp
   src/v20200324/model/ResetInstancesPasswordResponse.cpp
   src/v20200324/model/LoginSettings.cpp
   src/v20200324/model/Instance.cpp
   src/v20200324/model/CreateKeyPairResponse.cpp
   src/v20200324/model/DescribeInstanceVncUrlResponse.cpp
   src/v20200324/model/ModifyFirewallRulesResponse.cpp
+  src/v20200324/model/DescribeCcnAttachedInstancesResponse.cpp
   src/v20200324/model/DescribeBundlesRequest.cpp
   src/v20200324/model/Blueprint.cpp
   src/v20200324/model/DeniedAction.cpp
@@ -234,6 +249,7 @@ set(lighthouse_src
   src/v20200324/model/ResetInstancesPasswordRequest.cpp
   src/v20200324/model/CreateKeyPairRequest.cpp
   src/v20200324/model/DescribeInstancesRequest.cpp
+  src/v20200324/model/DetachCcnRequest.cpp
   src/v20200324/model/Filter.cpp
   src/v20200324/model/DescribeSnapshotsResponse.cpp
   src/v20200324/model/Snapshot.cpp
@@ -251,6 +267,7 @@ set(lighthouse_src
   src/v20200324/model/CreateBlueprintResponse.cpp
   src/v20200324/model/PolicyDetail.cpp
   src/v20200324/model/DescribeResetInstanceBlueprintsRequest.cpp
+  src/v20200324/model/ResetAttachCcnResponse.cpp
   src/v20200324/model/ModifyInstancesRenewFlagResponse.cpp
   src/v20200324/model/ApplyInstanceSnapshotRequest.cpp
   src/v20200324/model/TerminateInstancesRequest.cpp
@@ -261,7 +278,7 @@ set(lighthouse_src
   src/v20200324/model/Price.cpp
   src/v20200324/model/BlueprintPrice.cpp
   src/v20200324/model/GeneralResourceQuota.cpp
-  src/v20200324/model/DescribeBlueprintsRequest.cpp
+  src/v20200324/model/DescribeResetInstanceBlueprintsResponse.cpp
   src/v20200324/model/SoftwareDetail.cpp
   src/v20200324/model/InstancePrice.cpp
   src/v20200324/model/ModifySnapshotAttributeResponse.cpp
@@ -271,6 +288,7 @@ set(lighthouse_src
   src/v20200324/model/ResetInstanceResponse.cpp
   src/v20200324/model/DescribeFirewallRulesRequest.cpp
   src/v20200324/model/InquirePriceCreateInstancesRequest.cpp
+  src/v20200324/model/CcnAttachedInstance.cpp
   src/v20200324/model/DescribeModifyInstanceBundlesResponse.cpp
   src/v20200324/model/CreateInstanceSnapshotRequest.cpp
   src/v20200324/model/BlueprintInstance.cpp

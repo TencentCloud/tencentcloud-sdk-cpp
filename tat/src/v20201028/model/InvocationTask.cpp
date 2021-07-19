@@ -31,7 +31,8 @@ InvocationTask::InvocationTask() :
     m_endTimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_commandDocumentHasBeenSet(false)
+    m_commandDocumentHasBeenSet(false),
+    m_errorInfoHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,16 @@ CoreInternalOutcome InvocationTask::Deserialize(const rapidjson::Value &value)
         m_commandDocumentHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorInfo") && !value["ErrorInfo"].IsNull())
+    {
+        if (!value["ErrorInfo"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InvocationTask.ErrorInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorInfo = string(value["ErrorInfo"].GetString());
+        m_errorInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ void InvocationTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_commandDocument.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_errorInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -438,5 +457,21 @@ void InvocationTask::SetCommandDocument(const CommandDocument& _commandDocument)
 bool InvocationTask::CommandDocumentHasBeenSet() const
 {
     return m_commandDocumentHasBeenSet;
+}
+
+string InvocationTask::GetErrorInfo() const
+{
+    return m_errorInfo;
+}
+
+void InvocationTask::SetErrorInfo(const string& _errorInfo)
+{
+    m_errorInfo = _errorInfo;
+    m_errorInfoHasBeenSet = true;
+}
+
+bool InvocationTask::ErrorInfoHasBeenSet() const
+{
+    return m_errorInfoHasBeenSet;
 }
 

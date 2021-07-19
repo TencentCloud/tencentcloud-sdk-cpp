@@ -27,6 +27,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/AttachCcnRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/AttachCcnResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundleDiscountResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeCcnAttachedInstancesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeCcnAttachedInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeFirewallRulesTemplateRequest.h>
@@ -83,6 +87,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeZonesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeZonesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DetachCcnRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DetachCcnResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ImportKeyPairRequest.h>
@@ -109,6 +115,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ResetAttachCcnRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ResetAttachCcnResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordRequest.h>
@@ -139,6 +147,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AssociateInstancesKeyPairsResponse> AssociateInstancesKeyPairsOutcome;
                 typedef std::future<AssociateInstancesKeyPairsOutcome> AssociateInstancesKeyPairsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::AssociateInstancesKeyPairsRequest&, AssociateInstancesKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateInstancesKeyPairsAsyncHandler;
+                typedef Outcome<Error, Model::AttachCcnResponse> AttachCcnOutcome;
+                typedef std::future<AttachCcnOutcome> AttachCcnOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::AttachCcnRequest&, AttachCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachCcnAsyncHandler;
                 typedef Outcome<Error, Model::CreateBlueprintResponse> CreateBlueprintOutcome;
                 typedef std::future<CreateBlueprintOutcome> CreateBlueprintOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateBlueprintRequest&, CreateBlueprintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlueprintAsyncHandler;
@@ -175,6 +186,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBundlesResponse> DescribeBundlesOutcome;
                 typedef std::future<DescribeBundlesOutcome> DescribeBundlesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeBundlesRequest&, DescribeBundlesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBundlesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCcnAttachedInstancesResponse> DescribeCcnAttachedInstancesOutcome;
+                typedef std::future<DescribeCcnAttachedInstancesOutcome> DescribeCcnAttachedInstancesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeCcnAttachedInstancesRequest&, DescribeCcnAttachedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnAttachedInstancesAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFirewallRulesResponse> DescribeFirewallRulesOutcome;
                 typedef std::future<DescribeFirewallRulesOutcome> DescribeFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeFirewallRulesRequest&, DescribeFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirewallRulesAsyncHandler;
@@ -223,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
                 typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
+                typedef Outcome<Error, Model::DetachCcnResponse> DetachCcnOutcome;
+                typedef std::future<DetachCcnOutcome> DetachCcnOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DetachCcnRequest&, DetachCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachCcnAsyncHandler;
                 typedef Outcome<Error, Model::DisassociateInstancesKeyPairsResponse> DisassociateInstancesKeyPairsOutcome;
                 typedef std::future<DisassociateInstancesKeyPairsOutcome> DisassociateInstancesKeyPairsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DisassociateInstancesKeyPairsRequest&, DisassociateInstancesKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateInstancesKeyPairsAsyncHandler;
@@ -262,6 +279,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RebootInstancesResponse> RebootInstancesOutcome;
                 typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RebootInstancesRequest&, RebootInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
+                typedef Outcome<Error, Model::ResetAttachCcnResponse> ResetAttachCcnOutcome;
+                typedef std::future<ResetAttachCcnOutcome> ResetAttachCcnOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ResetAttachCcnRequest&, ResetAttachCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAttachCcnAsyncHandler;
                 typedef Outcome<Error, Model::ResetInstanceResponse> ResetInstanceOutcome;
                 typedef std::future<ResetInstanceOutcome> ResetInstanceOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ResetInstanceRequest&, ResetInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstanceAsyncHandler;
@@ -306,6 +326,15 @@ namespace TencentCloud
                 AssociateInstancesKeyPairsOutcome AssociateInstancesKeyPairs(const Model::AssociateInstancesKeyPairsRequest &request);
                 void AssociateInstancesKeyPairsAsync(const Model::AssociateInstancesKeyPairsRequest& request, const AssociateInstancesKeyPairsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssociateInstancesKeyPairsOutcomeCallable AssociateInstancesKeyPairsCallable(const Model::AssociateInstancesKeyPairsRequest& request);
+
+                /**
+                 *本接口 (AttachCcn) 用于建立与云联网的关联。
+                 * @param req AttachCcnRequest
+                 * @return AttachCcnOutcome
+                 */
+                AttachCcnOutcome AttachCcn(const Model::AttachCcnRequest &request);
+                void AttachCcnAsync(const Model::AttachCcnRequest& request, const AttachCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachCcnOutcomeCallable AttachCcnCallable(const Model::AttachCcnRequest& request);
 
                 /**
                  *本接口 (CreateBlueprint) 用于创建镜像。
@@ -434,6 +463,15 @@ namespace TencentCloud
                 DescribeBundlesOutcome DescribeBundles(const Model::DescribeBundlesRequest &request);
                 void DescribeBundlesAsync(const Model::DescribeBundlesRequest& request, const DescribeBundlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBundlesOutcomeCallable DescribeBundlesCallable(const Model::DescribeBundlesRequest& request);
+
+                /**
+                 *本接口 (DescribeCcnAttachedInstances) 用于查询云联网关联的实例信息。
+                 * @param req DescribeCcnAttachedInstancesRequest
+                 * @return DescribeCcnAttachedInstancesOutcome
+                 */
+                DescribeCcnAttachedInstancesOutcome DescribeCcnAttachedInstances(const Model::DescribeCcnAttachedInstancesRequest &request);
+                void DescribeCcnAttachedInstancesAsync(const Model::DescribeCcnAttachedInstancesRequest& request, const DescribeCcnAttachedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCcnAttachedInstancesOutcomeCallable DescribeCcnAttachedInstancesCallable(const Model::DescribeCcnAttachedInstancesRequest& request);
 
                 /**
                  *本接口（DescribeFirewallRules）用于查询实例的防火墙规则。
@@ -588,6 +626,15 @@ namespace TencentCloud
                 DescribeZonesOutcome DescribeZones(const Model::DescribeZonesRequest &request);
                 void DescribeZonesAsync(const Model::DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeZonesOutcomeCallable DescribeZonesCallable(const Model::DescribeZonesRequest& request);
+
+                /**
+                 *本接口 (AttachCcn) 用于解除与云联网的关联。
+                 * @param req DetachCcnRequest
+                 * @return DetachCcnOutcome
+                 */
+                DetachCcnOutcome DetachCcn(const Model::DetachCcnRequest &request);
+                void DetachCcnAsync(const Model::DetachCcnRequest& request, const DetachCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetachCcnOutcomeCallable DetachCcnCallable(const Model::DetachCcnRequest& request);
 
                 /**
                  *本接口（DisassociateInstancesKeyPairs）用于解除实例与指定密钥对的绑定关系。
@@ -746,6 +793,15 @@ namespace TencentCloud
                 RebootInstancesOutcome RebootInstances(const Model::RebootInstancesRequest &request);
                 void RebootInstancesAsync(const Model::RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RebootInstancesOutcomeCallable RebootInstancesCallable(const Model::RebootInstancesRequest& request);
+
+                /**
+                 *本接口 (ResetAttachCcn) 用于关联云联网实例申请过期时，重新申请关联操作。
+                 * @param req ResetAttachCcnRequest
+                 * @return ResetAttachCcnOutcome
+                 */
+                ResetAttachCcnOutcome ResetAttachCcn(const Model::ResetAttachCcnRequest &request);
+                void ResetAttachCcnAsync(const Model::ResetAttachCcnRequest& request, const ResetAttachCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetAttachCcnOutcomeCallable ResetAttachCcnCallable(const Model::ResetAttachCcnRequest& request);
 
                 /**
                  *本接口（ResetInstance）用于重装指定实例上的镜像。

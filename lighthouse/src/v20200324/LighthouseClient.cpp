@@ -126,6 +126,49 @@ LighthouseClient::AssociateInstancesKeyPairsOutcomeCallable LighthouseClient::As
     return task->get_future();
 }
 
+LighthouseClient::AttachCcnOutcome LighthouseClient::AttachCcn(const AttachCcnRequest &request)
+{
+    auto outcome = MakeRequest(request, "AttachCcn");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AttachCcnResponse rsp = AttachCcnResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AttachCcnOutcome(rsp);
+        else
+            return AttachCcnOutcome(o.GetError());
+    }
+    else
+    {
+        return AttachCcnOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::AttachCcnAsync(const AttachCcnRequest& request, const AttachCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AttachCcn(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::AttachCcnOutcomeCallable LighthouseClient::AttachCcnCallable(const AttachCcnRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AttachCcnOutcome()>>(
+        [this, request]()
+        {
+            return this->AttachCcn(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::CreateBlueprintOutcome LighthouseClient::CreateBlueprint(const CreateBlueprintRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBlueprint");
@@ -635,6 +678,49 @@ LighthouseClient::DescribeBundlesOutcomeCallable LighthouseClient::DescribeBundl
         [this, request]()
         {
             return this->DescribeBundles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeCcnAttachedInstancesOutcome LighthouseClient::DescribeCcnAttachedInstances(const DescribeCcnAttachedInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCcnAttachedInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCcnAttachedInstancesResponse rsp = DescribeCcnAttachedInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCcnAttachedInstancesOutcome(rsp);
+        else
+            return DescribeCcnAttachedInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCcnAttachedInstancesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeCcnAttachedInstancesAsync(const DescribeCcnAttachedInstancesRequest& request, const DescribeCcnAttachedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCcnAttachedInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeCcnAttachedInstancesOutcomeCallable LighthouseClient::DescribeCcnAttachedInstancesCallable(const DescribeCcnAttachedInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCcnAttachedInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCcnAttachedInstances(request);
         }
     );
 
@@ -1330,6 +1416,49 @@ LighthouseClient::DescribeZonesOutcomeCallable LighthouseClient::DescribeZonesCa
     return task->get_future();
 }
 
+LighthouseClient::DetachCcnOutcome LighthouseClient::DetachCcn(const DetachCcnRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetachCcn");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetachCcnResponse rsp = DetachCcnResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetachCcnOutcome(rsp);
+        else
+            return DetachCcnOutcome(o.GetError());
+    }
+    else
+    {
+        return DetachCcnOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DetachCcnAsync(const DetachCcnRequest& request, const DetachCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetachCcn(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DetachCcnOutcomeCallable LighthouseClient::DetachCcnCallable(const DetachCcnRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetachCcnOutcome()>>(
+        [this, request]()
+        {
+            return this->DetachCcn(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DisassociateInstancesKeyPairsOutcome LighthouseClient::DisassociateInstancesKeyPairs(const DisassociateInstancesKeyPairsRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateInstancesKeyPairs");
@@ -1882,6 +2011,49 @@ LighthouseClient::RebootInstancesOutcomeCallable LighthouseClient::RebootInstanc
         [this, request]()
         {
             return this->RebootInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ResetAttachCcnOutcome LighthouseClient::ResetAttachCcn(const ResetAttachCcnRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetAttachCcn");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetAttachCcnResponse rsp = ResetAttachCcnResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetAttachCcnOutcome(rsp);
+        else
+            return ResetAttachCcnOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetAttachCcnOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ResetAttachCcnAsync(const ResetAttachCcnRequest& request, const ResetAttachCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetAttachCcn(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ResetAttachCcnOutcomeCallable LighthouseClient::ResetAttachCcnCallable(const ResetAttachCcnRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetAttachCcnOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetAttachCcn(request);
         }
     );
 
