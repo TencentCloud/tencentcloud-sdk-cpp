@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool QualifierHasBeenSet() const;
 
                     /**
-                     * 获取事件状态
-                     * @return Status 事件状态
+                     * 获取事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败
+                     * @return Status 事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置事件状态
-                     * @param Status 事件状态
+                     * 设置事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败
+                     * @param Status 事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败
                      */
                     void SetStatus(const std::string& _status);
 
@@ -175,7 +175,7 @@ namespace TencentCloud
                     bool m_qualifierHasBeenSet;
 
                     /**
-                     * 事件状态
+                     * 事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

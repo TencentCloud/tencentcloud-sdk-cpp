@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OrgNodeIdHasBeenSet() const;
 
                     /**
-                     * 获取是否读取其子节点信息。当读取层数为空或0时，默认仅读取当前机构节点信息。当读取层数为1时，读取本机构节点以及其第一层子节点信息。
-                     * @return IncludeOrgNodeChildInfo 是否读取其子节点信息。当读取层数为空或0时，默认仅读取当前机构节点信息。当读取层数为1时，读取本机构节点以及其第一层子节点信息。
+                     * 获取是否读取其子节点信息。当其为空或false时，默认仅读取当前机构节点信息。当其为true时，读取本机构节点以及其第一层子节点信息。
+                     * @return IncludeOrgNodeChildInfo 是否读取其子节点信息。当其为空或false时，默认仅读取当前机构节点信息。当其为true时，读取本机构节点以及其第一层子节点信息。
                      */
                     bool GetIncludeOrgNodeChildInfo() const;
 
                     /**
-                     * 设置是否读取其子节点信息。当读取层数为空或0时，默认仅读取当前机构节点信息。当读取层数为1时，读取本机构节点以及其第一层子节点信息。
-                     * @param IncludeOrgNodeChildInfo 是否读取其子节点信息。当读取层数为空或0时，默认仅读取当前机构节点信息。当读取层数为1时，读取本机构节点以及其第一层子节点信息。
+                     * 设置是否读取其子节点信息。当其为空或false时，默认仅读取当前机构节点信息。当其为true时，读取本机构节点以及其第一层子节点信息。
+                     * @param IncludeOrgNodeChildInfo 是否读取其子节点信息。当其为空或false时，默认仅读取当前机构节点信息。当其为true时，读取本机构节点以及其第一层子节点信息。
                      */
                     void SetIncludeOrgNodeChildInfo(const bool& _includeOrgNodeChildInfo);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_orgNodeIdHasBeenSet;
 
                     /**
-                     * 是否读取其子节点信息。当读取层数为空或0时，默认仅读取当前机构节点信息。当读取层数为1时，读取本机构节点以及其第一层子节点信息。
+                     * 是否读取其子节点信息。当其为空或false时，默认仅读取当前机构节点信息。当其为true时，读取本机构节点以及其第一层子节点信息。
                      */
                     bool m_includeOrgNodeChildInfo;
                     bool m_includeOrgNodeChildInfoHasBeenSet;

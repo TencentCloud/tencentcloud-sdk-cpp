@@ -101,14 +101,12 @@ namespace TencentCloud
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；
-4 ：死信队列；
-5 ：事务消息。
+4 ：死信队列。
                      * @return TopicType 0： 普通消息；
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；
-4 ：死信队列；
-5 ：事务消息。
+4 ：死信队列。
                      */
                     uint64_t GetTopicType() const;
 
@@ -117,14 +115,12 @@ namespace TencentCloud
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；
-4 ：死信队列；
-5 ：事务消息。
+4 ：死信队列。
                      * @param TopicType 0： 普通消息；
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；
-4 ：死信队列；
-5 ：事务消息。
+4 ：死信队列。
                      */
                     void SetTopicType(const uint64_t& _topicType);
 
@@ -195,8 +191,7 @@ namespace TencentCloud
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；
-4 ：死信队列；
-5 ：事务消息。
+4 ：死信队列。
                      */
                     uint64_t m_topicType;
                     bool m_topicTypeHasBeenSet;

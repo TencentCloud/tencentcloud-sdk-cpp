@@ -48,7 +48,10 @@ AutoScalingGroup::AutoScalingGroup() :
     m_ipv6AddressCountHasBeenSet(false),
     m_multiZoneSubnetPolicyHasBeenSet(false),
     m_healthCheckTypeHasBeenSet(false),
-    m_loadBalancerHealthCheckGracePeriodHasBeenSet(false)
+    m_loadBalancerHealthCheckGracePeriodHasBeenSet(false),
+    m_instanceAllocationPolicyHasBeenSet(false),
+    m_spotMixedAllocationPolicyHasBeenSet(false),
+    m_capacityRebalanceHasBeenSet(false)
 {
 }
 
@@ -376,6 +379,43 @@ CoreInternalOutcome AutoScalingGroup::Deserialize(const rapidjson::Value &value)
         m_loadBalancerHealthCheckGracePeriodHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceAllocationPolicy") && !value["InstanceAllocationPolicy"].IsNull())
+    {
+        if (!value["InstanceAllocationPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AutoScalingGroup.InstanceAllocationPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceAllocationPolicy = string(value["InstanceAllocationPolicy"].GetString());
+        m_instanceAllocationPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpotMixedAllocationPolicy") && !value["SpotMixedAllocationPolicy"].IsNull())
+    {
+        if (!value["SpotMixedAllocationPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `AutoScalingGroup.SpotMixedAllocationPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_spotMixedAllocationPolicy.Deserialize(value["SpotMixedAllocationPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_spotMixedAllocationPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("CapacityRebalance") && !value["CapacityRebalance"].IsNull())
+    {
+        if (!value["CapacityRebalance"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `AutoScalingGroup.CapacityRebalance` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_capacityRebalance = value["CapacityRebalance"].GetBool();
+        m_capacityRebalanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -640,6 +680,31 @@ void AutoScalingGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "LoadBalancerHealthCheckGracePeriod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loadBalancerHealthCheckGracePeriod, allocator);
+    }
+
+    if (m_instanceAllocationPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceAllocationPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceAllocationPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_spotMixedAllocationPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpotMixedAllocationPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_spotMixedAllocationPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_capacityRebalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CapacityRebalance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_capacityRebalance, allocator);
     }
 
 }
@@ -1091,5 +1156,53 @@ void AutoScalingGroup::SetLoadBalancerHealthCheckGracePeriod(const uint64_t& _lo
 bool AutoScalingGroup::LoadBalancerHealthCheckGracePeriodHasBeenSet() const
 {
     return m_loadBalancerHealthCheckGracePeriodHasBeenSet;
+}
+
+string AutoScalingGroup::GetInstanceAllocationPolicy() const
+{
+    return m_instanceAllocationPolicy;
+}
+
+void AutoScalingGroup::SetInstanceAllocationPolicy(const string& _instanceAllocationPolicy)
+{
+    m_instanceAllocationPolicy = _instanceAllocationPolicy;
+    m_instanceAllocationPolicyHasBeenSet = true;
+}
+
+bool AutoScalingGroup::InstanceAllocationPolicyHasBeenSet() const
+{
+    return m_instanceAllocationPolicyHasBeenSet;
+}
+
+SpotMixedAllocationPolicy AutoScalingGroup::GetSpotMixedAllocationPolicy() const
+{
+    return m_spotMixedAllocationPolicy;
+}
+
+void AutoScalingGroup::SetSpotMixedAllocationPolicy(const SpotMixedAllocationPolicy& _spotMixedAllocationPolicy)
+{
+    m_spotMixedAllocationPolicy = _spotMixedAllocationPolicy;
+    m_spotMixedAllocationPolicyHasBeenSet = true;
+}
+
+bool AutoScalingGroup::SpotMixedAllocationPolicyHasBeenSet() const
+{
+    return m_spotMixedAllocationPolicyHasBeenSet;
+}
+
+bool AutoScalingGroup::GetCapacityRebalance() const
+{
+    return m_capacityRebalance;
+}
+
+void AutoScalingGroup::SetCapacityRebalance(const bool& _capacityRebalance)
+{
+    m_capacityRebalance = _capacityRebalance;
+    m_capacityRebalanceHasBeenSet = true;
+}
+
+bool AutoScalingGroup::CapacityRebalanceHasBeenSet() const
+{
+    return m_capacityRebalanceHasBeenSet;
 }
 

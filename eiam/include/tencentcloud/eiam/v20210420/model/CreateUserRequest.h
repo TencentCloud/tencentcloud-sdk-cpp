@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool UserGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取用户手机号。
-                     * @return Phone 用户手机号。
+                     * 获取用户手机号。例如：+86-1xxxxxxxxxx。
+                     * @return Phone 用户手机号。例如：+86-1xxxxxxxxxx。
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置用户手机号。
-                     * @param Phone 用户手机号。
+                     * 设置用户手机号。例如：+86-1xxxxxxxxxx。
+                     * @param Phone 用户手机号。例如：+86-1xxxxxxxxxx。
                      */
                     void SetPhone(const std::string& _phone);
 
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_userGroupIdsHasBeenSet;
 
                     /**
-                     * 用户手机号。
+                     * 用户手机号。例如：+86-1xxxxxxxxxx。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;

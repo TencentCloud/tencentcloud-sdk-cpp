@@ -83,6 +83,49 @@ DcdbClient::AssociateSecurityGroupsOutcomeCallable DcdbClient::AssociateSecurity
     return task->get_future();
 }
 
+DcdbClient::CancelDcnJobOutcome DcdbClient::CancelDcnJob(const CancelDcnJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelDcnJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelDcnJobResponse rsp = CancelDcnJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelDcnJobOutcome(rsp);
+        else
+            return CancelDcnJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelDcnJobOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::CancelDcnJobAsync(const CancelDcnJobRequest& request, const CancelDcnJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelDcnJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::CancelDcnJobOutcomeCallable DcdbClient::CancelDcnJobCallable(const CancelDcnJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelDcnJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelDcnJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::CloneAccountOutcome DcdbClient::CloneAccount(const CloneAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "CloneAccount");

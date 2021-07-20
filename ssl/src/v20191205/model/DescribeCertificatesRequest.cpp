@@ -30,7 +30,9 @@ DescribeCertificatesRequest::DescribeCertificatesRequest() :
     m_projectIdHasBeenSet(false),
     m_expirationSortHasBeenSet(false),
     m_certificateStatusHasBeenSet(false),
-    m_deployableHasBeenSet(false)
+    m_deployableHasBeenSet(false),
+    m_uploadHasBeenSet(false),
+    m_renewHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,22 @@ string DescribeCertificatesRequest::ToJsonString() const
         string key = "Deployable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deployable, allocator);
+    }
+
+    if (m_uploadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Upload";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_upload, allocator);
+    }
+
+    if (m_renewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Renew";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_renew, allocator);
     }
 
 
@@ -244,6 +262,38 @@ void DescribeCertificatesRequest::SetDeployable(const uint64_t& _deployable)
 bool DescribeCertificatesRequest::DeployableHasBeenSet() const
 {
     return m_deployableHasBeenSet;
+}
+
+int64_t DescribeCertificatesRequest::GetUpload() const
+{
+    return m_upload;
+}
+
+void DescribeCertificatesRequest::SetUpload(const int64_t& _upload)
+{
+    m_upload = _upload;
+    m_uploadHasBeenSet = true;
+}
+
+bool DescribeCertificatesRequest::UploadHasBeenSet() const
+{
+    return m_uploadHasBeenSet;
+}
+
+int64_t DescribeCertificatesRequest::GetRenew() const
+{
+    return m_renew;
+}
+
+void DescribeCertificatesRequest::SetRenew(const int64_t& _renew)
+{
+    m_renew = _renew;
+    m_renewHasBeenSet = true;
+}
+
+bool DescribeCertificatesRequest::RenewHasBeenSet() const
+{
+    return m_renewHasBeenSet;
 }
 
 

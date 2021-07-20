@@ -34,6 +34,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceRequest.h
   include/tencentcloud/mariadb/v20170312/model/FlushBinlogResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsResponse.h
+  include/tencentcloud/mariadb/v20170312/model/CancelDcnJobResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DestroyHourDBInstanceResponse.h
@@ -79,7 +80,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/RestartDBInstancesResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeSaleInfoResponse.h
   include/tencentcloud/mariadb/v20170312/model/Deal.h
-  include/tencentcloud/mariadb/v20170312/model/GrantAccountPrivilegesRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceDetailsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DBParamValue.h
   include/tencentcloud/mariadb/v20170312/model/SpecConfigInfo.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBParametersRequest.h
@@ -105,6 +106,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ModifyBackupTimeResponse.h
   include/tencentcloud/mariadb/v20170312/model/Database.h
   include/tencentcloud/mariadb/v20170312/model/GrantAccountPrivilegesResponse.h
+  include/tencentcloud/mariadb/v20170312/model/CancelDcnJobRequest.h
   include/tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessRequest.h
   include/tencentcloud/mariadb/v20170312/model/DatabasePrivilege.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.h
@@ -113,7 +115,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/FunctionPrivilege.h
   include/tencentcloud/mariadb/v20170312/model/ModifyAccountDescriptionRequest.h
   include/tencentcloud/mariadb/v20170312/model/KillSessionResponse.h
-  include/tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceDetailsRequest.h
+  include/tencentcloud/mariadb/v20170312/model/GrantAccountPrivilegesRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeBackupTimeResponse.h
   include/tencentcloud/mariadb/v20170312/model/SlowLogData.h
   include/tencentcloud/mariadb/v20170312/model/RenewDBInstanceResponse.h
@@ -175,6 +177,7 @@ set(mariadb_src
   src/v20170312/model/DescribeUpgradePriceRequest.cpp
   src/v20170312/model/FlushBinlogResponse.cpp
   src/v20170312/model/DescribeDBSecurityGroupsResponse.cpp
+  src/v20170312/model/CancelDcnJobResponse.cpp
   src/v20170312/model/DescribeDBResourceUsageDetailsResponse.cpp
   src/v20170312/model/DescribeDBInstanceSpecsResponse.cpp
   src/v20170312/model/DestroyHourDBInstanceResponse.cpp
@@ -220,7 +223,7 @@ set(mariadb_src
   src/v20170312/model/RestartDBInstancesResponse.cpp
   src/v20170312/model/DescribeSaleInfoResponse.cpp
   src/v20170312/model/Deal.cpp
-  src/v20170312/model/GrantAccountPrivilegesRequest.cpp
+  src/v20170312/model/DescribeDBPerformanceDetailsRequest.cpp
   src/v20170312/model/DBParamValue.cpp
   src/v20170312/model/SpecConfigInfo.cpp
   src/v20170312/model/ModifyDBParametersRequest.cpp
@@ -246,6 +249,7 @@ set(mariadb_src
   src/v20170312/model/ModifyBackupTimeResponse.cpp
   src/v20170312/model/Database.cpp
   src/v20170312/model/GrantAccountPrivilegesResponse.cpp
+  src/v20170312/model/CancelDcnJobRequest.cpp
   src/v20170312/model/OpenDBExtranetAccessRequest.cpp
   src/v20170312/model/DatabasePrivilege.cpp
   src/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.cpp
@@ -254,7 +258,7 @@ set(mariadb_src
   src/v20170312/model/FunctionPrivilege.cpp
   src/v20170312/model/ModifyAccountDescriptionRequest.cpp
   src/v20170312/model/KillSessionResponse.cpp
-  src/v20170312/model/DescribeDBPerformanceDetailsRequest.cpp
+  src/v20170312/model/GrantAccountPrivilegesRequest.cpp
   src/v20170312/model/DescribeBackupTimeResponse.cpp
   src/v20170312/model/SlowLogData.cpp
   src/v20170312/model/RenewDBInstanceResponse.cpp

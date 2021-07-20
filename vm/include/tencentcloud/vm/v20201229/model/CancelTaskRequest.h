@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要取消的审核任务。
+                     * @return TaskId 该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要取消的审核任务。
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param TaskId 任务ID
+                     * 设置该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要取消的审核任务。
+                     * @param TaskId 该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要取消的审核任务。
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID
+                     * 该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要取消的审核任务。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

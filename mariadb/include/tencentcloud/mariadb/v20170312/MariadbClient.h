@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/mariadb/v20170312/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/AssociateSecurityGroupsResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/CancelDcnJobRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/CancelDcnJobResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/CloneAccountRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/CloneAccountResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/CloseDBExtranetAccessRequest.h>
@@ -144,6 +146,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Error, Model::CancelDcnJobResponse> CancelDcnJobOutcome;
+                typedef std::future<CancelDcnJobOutcome> CancelDcnJobOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::CancelDcnJobRequest&, CancelDcnJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelDcnJobAsyncHandler;
                 typedef Outcome<Error, Model::CloneAccountResponse> CloneAccountOutcome;
                 typedef std::future<CloneAccountOutcome> CloneAccountOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::CloneAccountRequest&, CloneAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneAccountAsyncHandler;
@@ -308,6 +313,15 @@ namespace TencentCloud
                 AssociateSecurityGroupsOutcome AssociateSecurityGroups(const Model::AssociateSecurityGroupsRequest &request);
                 void AssociateSecurityGroupsAsync(const Model::AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
+
+                /**
+                 *取消DCN同步
+                 * @param req CancelDcnJobRequest
+                 * @return CancelDcnJobOutcome
+                 */
+                CancelDcnJobOutcome CancelDcnJob(const Model::CancelDcnJobRequest &request);
+                void CancelDcnJobAsync(const Model::CancelDcnJobRequest& request, const CancelDcnJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelDcnJobOutcomeCallable CancelDcnJobCallable(const Model::CancelDcnJobRequest& request);
 
                 /**
                  *本接口（CloneAccount）用于克隆实例账户。

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每页展示多少条。（默认展示10条）
-                     * @return Limit 每页展示多少条。（默认展示10条）
+                     * 获取该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。
+                     * @return Limit 该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页展示多少条。（默认展示10条）
-                     * @param Limit 每页展示多少条。（默认展示10条）
+                     * 设置该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。
+                     * @param Limit 该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤参数
-                     * @return Filter 过滤参数
+                     * 获取该参数表示任务筛选器的输入参数，可根据业务类型、审核文件类型、处理建议及任务状态筛选想要查看的审核任务，具体参数内容请参见TaskFilter数据结构的详细描述。
+                     * @return Filter 该参数表示任务筛选器的输入参数，可根据业务类型、审核文件类型、处理建议及任务状态筛选想要查看的审核任务，具体参数内容请参见TaskFilter数据结构的详细描述。
                      */
                     TaskFilter GetFilter() const;
 
                     /**
-                     * 设置过滤参数
-                     * @param Filter 过滤参数
+                     * 设置该参数表示任务筛选器的输入参数，可根据业务类型、审核文件类型、处理建议及任务状态筛选想要查看的审核任务，具体参数内容请参见TaskFilter数据结构的详细描述。
+                     * @param Filter 该参数表示任务筛选器的输入参数，可根据业务类型、审核文件类型、处理建议及任务状态筛选想要查看的审核任务，具体参数内容请参见TaskFilter数据结构的详细描述。
                      */
                     void SetFilter(const TaskFilter& _filter);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取翻页token，在向前或向后翻页时需要
-                     * @return PageToken 翻页token，在向前或向后翻页时需要
+                     * 获取该参数表示翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。
+                     * @return PageToken 该参数表示翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。
                      */
                     std::string GetPageToken() const;
 
                     /**
-                     * 设置翻页token，在向前或向后翻页时需要
-                     * @param PageToken 翻页token，在向前或向后翻页时需要
+                     * 设置该参数表示翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。
+                     * @param PageToken 该参数表示翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。
                      */
                     void SetPageToken(const std::string& _pageToken);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool PageTokenHasBeenSet() const;
 
                     /**
-                     * 获取开始时间。默认是最近3天。
-                     * @return StartTime 开始时间。默认是最近3天。
+                     * 获取该参数表示任务列表的开始时间，格式为ISO8601标准的时间戳。**默认值为最近3天**，若传入该参数，则在这一时间到EndTime之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。
+                     * @return StartTime 该参数表示任务列表的开始时间，格式为ISO8601标准的时间戳。**默认值为最近3天**，若传入该参数，则在这一时间到EndTime之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间。默认是最近3天。
-                     * @param StartTime 开始时间。默认是最近3天。
+                     * 设置该参数表示任务列表的开始时间，格式为ISO8601标准的时间戳。**默认值为最近3天**，若传入该参数，则在这一时间到EndTime之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。
+                     * @param StartTime 该参数表示任务列表的开始时间，格式为ISO8601标准的时间戳。**默认值为最近3天**，若传入该参数，则在这一时间到EndTime之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间。默认为空
-                     * @return EndTime 结束时间。默认为空
+                     * 获取该参数表示任务列表的结束时间，格式为ISO8601标准的时间戳。**默认值为空**，若传入该参数，则在这StartTime到这一时间之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。
+                     * @return EndTime 该参数表示任务列表的结束时间，格式为ISO8601标准的时间戳。**默认值为空**，若传入该参数，则在这StartTime到这一时间之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间。默认为空
-                     * @param EndTime 结束时间。默认为空
+                     * 设置该参数表示任务列表的结束时间，格式为ISO8601标准的时间戳。**默认值为空**，若传入该参数，则在这StartTime到这一时间之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。
+                     * @param EndTime 该参数表示任务列表的结束时间，格式为ISO8601标准的时间戳。**默认值为空**，若传入该参数，则在这StartTime到这一时间之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -136,31 +136,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 每页展示多少条。（默认展示10条）
+                     * 该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤参数
+                     * 该参数表示任务筛选器的输入参数，可根据业务类型、审核文件类型、处理建议及任务状态筛选想要查看的审核任务，具体参数内容请参见TaskFilter数据结构的详细描述。
                      */
                     TaskFilter m_filter;
                     bool m_filterHasBeenSet;
 
                     /**
-                     * 翻页token，在向前或向后翻页时需要
+                     * 该参数表示翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。
                      */
                     std::string m_pageToken;
                     bool m_pageTokenHasBeenSet;
 
                     /**
-                     * 开始时间。默认是最近3天。
+                     * 该参数表示任务列表的开始时间，格式为ISO8601标准的时间戳。**默认值为最近3天**，若传入该参数，则在这一时间到EndTime之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间。默认为空
+                     * 该参数表示任务列表的结束时间，格式为ISO8601标准的时间戳。**默认值为空**，若传入该参数，则在这StartTime到这一时间之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

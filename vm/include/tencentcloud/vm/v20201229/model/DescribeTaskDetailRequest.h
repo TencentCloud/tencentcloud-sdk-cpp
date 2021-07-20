@@ -43,14 +43,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID，创建任务后返回的TaskId字段
-                     * @return TaskId 任务ID，创建任务后返回的TaskId字段
+                     * 获取该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
+<br>备注：查询接口单次最大查询量为**20条每次**。
+                     * @return TaskId 该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
+<br>备注：查询接口单次最大查询量为**20条每次**。
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID，创建任务后返回的TaskId字段
-                     * @param TaskId 任务ID，创建任务后返回的TaskId字段
+                     * 设置该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
+<br>备注：查询接口单次最大查询量为**20条每次**。
+                     * @param TaskId 该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
+<br>备注：查询接口单次最大查询量为**20条每次**。
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -61,14 +65,14 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取是否展示所有分片，默认只展示命中规则的分片
-                     * @return ShowAllSegments 是否展示所有分片，默认只展示命中规则的分片
+                     * 获取该布尔字段表示是否展示全部的视频片段，取值：True(展示全部的视频分片)、False(只展示命中审核规则的视频分片)；默认值为False。
+                     * @return ShowAllSegments 该布尔字段表示是否展示全部的视频片段，取值：True(展示全部的视频分片)、False(只展示命中审核规则的视频分片)；默认值为False。
                      */
                     bool GetShowAllSegments() const;
 
                     /**
-                     * 设置是否展示所有分片，默认只展示命中规则的分片
-                     * @param ShowAllSegments 是否展示所有分片，默认只展示命中规则的分片
+                     * 设置该布尔字段表示是否展示全部的视频片段，取值：True(展示全部的视频分片)、False(只展示命中审核规则的视频分片)；默认值为False。
+                     * @param ShowAllSegments 该布尔字段表示是否展示全部的视频片段，取值：True(展示全部的视频分片)、False(只展示命中审核规则的视频分片)；默认值为False。
                      */
                     void SetShowAllSegments(const bool& _showAllSegments);
 
@@ -81,13 +85,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID，创建任务后返回的TaskId字段
+                     * 该字段表示创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
+<br>备注：查询接口单次最大查询量为**20条每次**。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 是否展示所有分片，默认只展示命中规则的分片
+                     * 该布尔字段表示是否展示全部的视频片段，取值：True(展示全部的视频分片)、False(只展示命中审核规则的视频分片)；默认值为False。
                      */
                     bool m_showAllSegments;
                     bool m_showAllSegmentsHasBeenSet;

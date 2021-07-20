@@ -83,3 +83,46 @@ BaClient::CreateWeappQRUrlOutcomeCallable BaClient::CreateWeappQRUrlCallable(con
     return task->get_future();
 }
 
+BaClient::SyncIcpOrderWebInfoOutcome BaClient::SyncIcpOrderWebInfo(const SyncIcpOrderWebInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncIcpOrderWebInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncIcpOrderWebInfoResponse rsp = SyncIcpOrderWebInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncIcpOrderWebInfoOutcome(rsp);
+        else
+            return SyncIcpOrderWebInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncIcpOrderWebInfoOutcome(outcome.GetError());
+    }
+}
+
+void BaClient::SyncIcpOrderWebInfoAsync(const SyncIcpOrderWebInfoRequest& request, const SyncIcpOrderWebInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SyncIcpOrderWebInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BaClient::SyncIcpOrderWebInfoOutcomeCallable BaClient::SyncIcpOrderWebInfoCallable(const SyncIcpOrderWebInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SyncIcpOrderWebInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->SyncIcpOrderWebInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

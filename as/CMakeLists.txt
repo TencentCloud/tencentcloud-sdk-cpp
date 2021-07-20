@@ -135,6 +135,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/RemoveInstancesRequest.h
   include/tencentcloud/as/v20180419/model/StartAutoScalingInstancesRequest.h
   include/tencentcloud/as/v20180419/model/AttachInstancesRequest.h
+  include/tencentcloud/as/v20180419/model/SpotMixedAllocationPolicy.h
   include/tencentcloud/as/v20180419/model/DescribeScalingPoliciesResponse.h
   include/tencentcloud/as/v20180419/model/Activity.h
   include/tencentcloud/as/v20180419/model/ModifyDesiredCapacityResponse.h
@@ -268,6 +269,7 @@ set(as_src
   src/v20180419/model/RemoveInstancesRequest.cpp
   src/v20180419/model/StartAutoScalingInstancesRequest.cpp
   src/v20180419/model/AttachInstancesRequest.cpp
+  src/v20180419/model/SpotMixedAllocationPolicy.cpp
   src/v20180419/model/DescribeScalingPoliciesResponse.cpp
   src/v20180419/model/Activity.cpp
   src/v20180419/model/ModifyDesiredCapacityResponse.cpp

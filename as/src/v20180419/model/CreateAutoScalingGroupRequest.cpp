@@ -43,7 +43,9 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_ipv6AddressCountHasBeenSet(false),
     m_multiZoneSubnetPolicyHasBeenSet(false),
     m_healthCheckTypeHasBeenSet(false),
-    m_loadBalancerHealthCheckGracePeriodHasBeenSet(false)
+    m_loadBalancerHealthCheckGracePeriodHasBeenSet(false),
+    m_instanceAllocationPolicyHasBeenSet(false),
+    m_spotMixedAllocationPolicyHasBeenSet(false)
 {
 }
 
@@ -255,6 +257,23 @@ string CreateAutoScalingGroupRequest::ToJsonString() const
         string key = "LoadBalancerHealthCheckGracePeriod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_loadBalancerHealthCheckGracePeriod, allocator);
+    }
+
+    if (m_instanceAllocationPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceAllocationPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceAllocationPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_spotMixedAllocationPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpotMixedAllocationPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_spotMixedAllocationPolicy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -599,6 +618,38 @@ void CreateAutoScalingGroupRequest::SetLoadBalancerHealthCheckGracePeriod(const 
 bool CreateAutoScalingGroupRequest::LoadBalancerHealthCheckGracePeriodHasBeenSet() const
 {
     return m_loadBalancerHealthCheckGracePeriodHasBeenSet;
+}
+
+string CreateAutoScalingGroupRequest::GetInstanceAllocationPolicy() const
+{
+    return m_instanceAllocationPolicy;
+}
+
+void CreateAutoScalingGroupRequest::SetInstanceAllocationPolicy(const string& _instanceAllocationPolicy)
+{
+    m_instanceAllocationPolicy = _instanceAllocationPolicy;
+    m_instanceAllocationPolicyHasBeenSet = true;
+}
+
+bool CreateAutoScalingGroupRequest::InstanceAllocationPolicyHasBeenSet() const
+{
+    return m_instanceAllocationPolicyHasBeenSet;
+}
+
+SpotMixedAllocationPolicy CreateAutoScalingGroupRequest::GetSpotMixedAllocationPolicy() const
+{
+    return m_spotMixedAllocationPolicy;
+}
+
+void CreateAutoScalingGroupRequest::SetSpotMixedAllocationPolicy(const SpotMixedAllocationPolicy& _spotMixedAllocationPolicy)
+{
+    m_spotMixedAllocationPolicy = _spotMixedAllocationPolicy;
+    m_spotMixedAllocationPolicyHasBeenSet = true;
+}
+
+bool CreateAutoScalingGroupRequest::SpotMixedAllocationPolicyHasBeenSet() const
+{
+    return m_spotMixedAllocationPolicyHasBeenSet;
 }
 
 

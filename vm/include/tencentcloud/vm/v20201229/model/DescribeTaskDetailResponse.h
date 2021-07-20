@@ -48,9 +48,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务Id
+                     * 获取该字段用于返回创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 任务Id
+                     * @return TaskId 该字段用于返回创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTaskId() const;
@@ -62,9 +62,9 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取审核时传入的数据Id
+                     * 获取该字段用于返回调用视频审核接口时传入的数据ID参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataId 审核时传入的数据Id
+                     * @return DataId 该字段用于返回调用视频审核接口时传入的数据ID参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDataId() const;
@@ -76,9 +76,9 @@ namespace TencentCloud
                     bool DataIdHasBeenSet() const;
 
                     /**
-                     * 获取业务类型
+                     * 获取该字段用于返回调用视频审核接口时传入的BizType参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BizType 业务类型
+                     * @return BizType 该字段用于返回调用视频审核接口时传入的BizType参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBizType() const;
@@ -90,9 +90,9 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
+                     * 获取该字段用于返回调用视频审核接口时传入的TaskInput参数中的任务名称，方便任务的识别与管理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 任务名称
+                     * @return Name 该字段用于返回调用视频审核接口时传入的TaskInput参数中的任务名称，方便任务的识别与管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
@@ -104,19 +104,11 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取状态，可选值：
-FINISH 已完成
-PENDING 等待中
-RUNNING 进行中
-ERROR 出错
-CANCELLED 已取消
+                     * 获取该字段用于返回所查询内容的任务状态。
+<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态，可选值：
-FINISH 已完成
-PENDING 等待中
-RUNNING 进行中
-ERROR 出错
-CANCELLED 已取消
+                     * @return Status 该字段用于返回所查询内容的任务状态。
+<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStatus() const;
@@ -128,9 +120,9 @@ CANCELLED 已取消
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取类型
+                     * 获取该字段用于返回调用视频审核接口时输入的视频审核类型，取值为：**VIDEO**（点播音频）和**LIVE_VIDEO**（直播音频），默认值为VIDEO。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 类型
+                     * @return Type 该字段用于返回调用视频审核接口时输入的视频审核类型，取值为：**VIDEO**（点播音频）和**LIVE_VIDEO**（直播音频），默认值为VIDEO。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetType() const;
@@ -142,17 +134,9 @@ CANCELLED 已取消
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取审核建议
-可选：
-Pass 通过
-Reveiw 建议复审
-Block 确认违规
+                     * 获取该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Suggestion 审核建议
-可选：
-Pass 通过
-Reveiw 建议复审
-Block 确认违规
+                     * @return Suggestion 该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSuggestion() const;
@@ -164,9 +148,9 @@ Block 确认违规
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取审核结果
+                     * 获取该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Labels 审核结果
+                     * @return Labels 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskLabel> GetLabels() const;
@@ -178,9 +162,9 @@ Block 确认违规
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取媒体解码信息
+                     * 获取该字段用于返回输入媒体文件的详细信息，包括编解码格式、分片时长等信息。详细内容敬请参考MediaInfo数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MediaInfo 媒体解码信息
+                     * @return MediaInfo 该字段用于返回输入媒体文件的详细信息，包括编解码格式、分片时长等信息。详细内容敬请参考MediaInfo数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaInfo GetMediaInfo() const;
@@ -192,9 +176,9 @@ Block 确认违规
                     bool MediaInfoHasBeenSet() const;
 
                     /**
-                     * 获取任务信息
+                     * 获取该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputInfo 任务信息
+                     * @return InputInfo 该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InputInfo GetInputInfo() const;
@@ -206,9 +190,9 @@ Block 确认违规
                     bool InputInfoHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，格式为 ISO 8601
+                     * 获取该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedAt 创建时间，格式为 ISO 8601
+                     * @return CreatedAt 该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCreatedAt() const;
@@ -220,9 +204,9 @@ Block 确认违规
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取更新时间，格式为 ISO 8601
+                     * 获取该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdatedAt 更新时间，格式为 ISO 8601
+                     * @return UpdatedAt 该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUpdatedAt() const;
@@ -234,11 +218,9 @@ Block 确认违规
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取视频中截帧审核的结果。
-数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。
+                     * 获取该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageSegments 视频中截帧审核的结果。
-数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。
+                     * @return ImageSegments 该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageSegments> GetImageSegments() const;
@@ -250,11 +232,9 @@ Block 确认违规
                     bool ImageSegmentsHasBeenSet() const;
 
                     /**
-                     * 获取视频中音频审核的结果。
-数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。
+                     * 获取该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AudioSegments 视频中音频审核的结果。
-数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。
+                     * @return AudioSegments 该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AudioSegments> GetAudioSegments() const;
@@ -266,17 +246,13 @@ Block 确认违规
                     bool AudioSegmentsHasBeenSet() const;
 
                     /**
-                     * 获取如果返回的状态为ERROR，该字段会标记错误类型。
-可选值：：
-DECODE_ERROR: 解码失败。（输入资源中可能包含无法解码的视频）
-URL_ERROR：下载地址验证失败。
-TIMEOUT_ERROR：处理超时。
+                     * 获取当任务状态为Error时，返回对应错误的类型，取值：**DECODE_ERROR**: 解码失败。（输入资源中可能包含无法解码的视频）
+**URL_ERROR**：下载地址验证失败。
+**TIMEOUT_ERROR**：处理超时。任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorType 如果返回的状态为ERROR，该字段会标记错误类型。
-可选值：：
-DECODE_ERROR: 解码失败。（输入资源中可能包含无法解码的视频）
-URL_ERROR：下载地址验证失败。
-TIMEOUT_ERROR：处理超时。
+                     * @return ErrorType 当任务状态为Error时，返回对应错误的类型，取值：**DECODE_ERROR**: 解码失败。（输入资源中可能包含无法解码的视频）
+**URL_ERROR**：下载地址验证失败。
+**TIMEOUT_ERROR**：处理超时。任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetErrorType() const;
@@ -288,9 +264,9 @@ TIMEOUT_ERROR：处理超时。
                     bool ErrorTypeHasBeenSet() const;
 
                     /**
-                     * 获取审核任务错误日志。当Error不为空时，会展示该字段
+                     * 获取当任务状态为Error时，该字段用于返回对应错误的详细描述，任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorDescription 审核任务错误日志。当Error不为空时，会展示该字段
+                     * @return ErrorDescription 当任务状态为Error时，该字段用于返回对应错误的详细描述，任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetErrorDescription() const;
@@ -304,127 +280,115 @@ TIMEOUT_ERROR：处理超时。
                 private:
 
                     /**
-                     * 任务Id
+                     * 该字段用于返回创建视频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 审核时传入的数据Id
+                     * 该字段用于返回调用视频审核接口时传入的数据ID参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
 
                     /**
-                     * 业务类型
+                     * 该字段用于返回调用视频审核接口时传入的BizType参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * 该字段用于返回调用视频审核接口时传入的TaskInput参数中的任务名称，方便任务的识别与管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 状态，可选值：
-FINISH 已完成
-PENDING 等待中
-RUNNING 进行中
-ERROR 出错
-CANCELLED 已取消
+                     * 该字段用于返回所查询内容的任务状态。
+<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 类型
+                     * 该字段用于返回调用视频审核接口时输入的视频审核类型，取值为：**VIDEO**（点播音频）和**LIVE_VIDEO**（直播音频），默认值为VIDEO。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 审核建议
-可选：
-Pass 通过
-Reveiw 建议复审
-Block 确认违规
+                     * 该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 审核结果
+                     * 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskLabel> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 媒体解码信息
+                     * 该字段用于返回输入媒体文件的详细信息，包括编解码格式、分片时长等信息。详细内容敬请参考MediaInfo数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaInfo m_mediaInfo;
                     bool m_mediaInfoHasBeenSet;
 
                     /**
-                     * 任务信息
+                     * 该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;
 
                     /**
-                     * 创建时间，格式为 ISO 8601
+                     * 该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 更新时间，格式为 ISO 8601
+                     * 该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 视频中截帧审核的结果。
-数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。
+                     * 该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageSegments> m_imageSegments;
                     bool m_imageSegmentsHasBeenSet;
 
                     /**
-                     * 视频中音频审核的结果。
-数据有效期为24小时，如需要储存更长时间请在已配置的COS储存桶中设置。
+                     * 该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AudioSegments> m_audioSegments;
                     bool m_audioSegmentsHasBeenSet;
 
                     /**
-                     * 如果返回的状态为ERROR，该字段会标记错误类型。
-可选值：：
-DECODE_ERROR: 解码失败。（输入资源中可能包含无法解码的视频）
-URL_ERROR：下载地址验证失败。
-TIMEOUT_ERROR：处理超时。
+                     * 当任务状态为Error时，返回对应错误的类型，取值：**DECODE_ERROR**: 解码失败。（输入资源中可能包含无法解码的视频）
+**URL_ERROR**：下载地址验证失败。
+**TIMEOUT_ERROR**：处理超时。任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorType;
                     bool m_errorTypeHasBeenSet;
 
                     /**
-                     * 审核任务错误日志。当Error不为空时，会展示该字段
+                     * 当任务状态为Error时，该字段用于返回对应错误的详细描述，任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorDescription;

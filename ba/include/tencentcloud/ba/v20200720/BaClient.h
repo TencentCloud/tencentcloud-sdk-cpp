@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ba/v20200720/model/CreateWeappQRUrlRequest.h>
 #include <tencentcloud/ba/v20200720/model/CreateWeappQRUrlResponse.h>
+#include <tencentcloud/ba/v20200720/model/SyncIcpOrderWebInfoRequest.h>
+#include <tencentcloud/ba/v20200720/model/SyncIcpOrderWebInfoResponse.h>
 
 
 namespace TencentCloud
@@ -42,6 +44,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateWeappQRUrlResponse> CreateWeappQRUrlOutcome;
                 typedef std::future<CreateWeappQRUrlOutcome> CreateWeappQRUrlOutcomeCallable;
                 typedef std::function<void(const BaClient*, const Model::CreateWeappQRUrlRequest&, CreateWeappQRUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWeappQRUrlAsyncHandler;
+                typedef Outcome<Error, Model::SyncIcpOrderWebInfoResponse> SyncIcpOrderWebInfoOutcome;
+                typedef std::future<SyncIcpOrderWebInfoOutcome> SyncIcpOrderWebInfoOutcomeCallable;
+                typedef std::function<void(const BaClient*, const Model::SyncIcpOrderWebInfoRequest&, SyncIcpOrderWebInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncIcpOrderWebInfoAsyncHandler;
 
 
 
@@ -53,6 +58,16 @@ namespace TencentCloud
                 CreateWeappQRUrlOutcome CreateWeappQRUrl(const Model::CreateWeappQRUrlRequest &request);
                 void CreateWeappQRUrlAsync(const Model::CreateWeappQRUrlRequest& request, const CreateWeappQRUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateWeappQRUrlOutcomeCallable CreateWeappQRUrlCallable(const Model::CreateWeappQRUrlRequest& request);
+
+                /**
+                 *将备案ICP订单下的一个网站信息 同步给订单下其他网站，需要被同步的网站被检查通过(isCheck:true)；
+只有指定的网站信息字段能被同步
+                 * @param req SyncIcpOrderWebInfoRequest
+                 * @return SyncIcpOrderWebInfoOutcome
+                 */
+                SyncIcpOrderWebInfoOutcome SyncIcpOrderWebInfo(const Model::SyncIcpOrderWebInfoRequest &request);
+                void SyncIcpOrderWebInfoAsync(const Model::SyncIcpOrderWebInfoRequest& request, const SyncIcpOrderWebInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncIcpOrderWebInfoOutcomeCallable SyncIcpOrderWebInfoCallable(const Model::SyncIcpOrderWebInfoRequest& request);
 
             };
         }

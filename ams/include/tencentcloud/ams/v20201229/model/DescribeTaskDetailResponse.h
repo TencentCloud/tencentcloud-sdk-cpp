@@ -46,9 +46,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID
+                     * 获取该字段用于返回创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 任务ID
+                     * @return TaskId 该字段用于返回创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTaskId() const;
@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取审核时传入的数据Id
+                     * 获取该字段用于返回调用音频审核接口时在Tasks参数内传入的数据ID参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataId 审核时传入的数据Id
+                     * @return DataId 该字段用于返回调用音频审核接口时在Tasks参数内传入的数据ID参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDataId() const;
@@ -74,9 +74,9 @@ namespace TencentCloud
                     bool DataIdHasBeenSet() const;
 
                     /**
-                     * 获取业务类型，用户可以在控制台查看自己配置的BizType
+                     * 获取该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BizType 业务类型，用户可以在控制台查看自己配置的BizType
+                     * @return BizType 该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBizType() const;
@@ -88,9 +88,9 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
+                     * 获取该字段用于返回调用音频审核接口时传入的TaskInput参数中的任务名称，方便任务的识别与管理。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 任务名称
+                     * @return Name 该字段用于返回调用音频审核接口时传入的TaskInput参数中的任务名称，方便任务的识别与管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
@@ -102,19 +102,11 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取查询内容审核任务的状态，可选值：
-FINISH 已完成
-PENDING 等待中
-RUNNING 进行中
-ERROR 出错
-CANCELLED 已取消
+                     * 获取该字段用于返回所查询内容的任务状态。
+<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 查询内容审核任务的状态，可选值：
-FINISH 已完成
-PENDING 等待中
-RUNNING 进行中
-ERROR 出错
-CANCELLED 已取消
+                     * @return Status 该字段用于返回所查询内容的任务状态。
+<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStatus() const;
@@ -126,9 +118,9 @@ CANCELLED 已取消
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务类型：可选AUDIO（点播音频），LIVE_AUDIO（直播音频）
+                     * 获取该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 任务类型：可选AUDIO（点播音频），LIVE_AUDIO（直播音频）
+                     * @return Type 该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetType() const;
@@ -140,15 +132,9 @@ CANCELLED 已取消
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取智能审核服务对于内容违规类型的等级，可选值：
-Pass 建议通过；
-Reveiw 建议复审；
-Block 建议屏蔽；
+                     * 获取该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Suggestion 智能审核服务对于内容违规类型的等级，可选值：
-Pass 建议通过；
-Reveiw 建议复审；
-Block 建议屏蔽；
+                     * @return Suggestion 该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSuggestion() const;
@@ -160,11 +146,9 @@ Block 建议屏蔽；
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取智能审核服务对于内容违规类型的判断，详见返回值列表
-如：Label：Porn（色情）；
+                     * 获取该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Labels 智能审核服务对于内容违规类型的判断，详见返回值列表
-如：Label：Porn（色情）；
+                     * @return Labels 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskLabel> GetLabels() const;
@@ -176,9 +160,9 @@ Block 建议屏蔽；
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取输入的媒体信息
+                     * 获取该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputInfo 输入的媒体信息
+                     * @return InputInfo 该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InputInfo GetInputInfo() const;
@@ -190,9 +174,9 @@ Block 建议屏蔽；
                     bool InputInfoHasBeenSet() const;
 
                     /**
-                     * 获取音频文本，备注：这里的文本最大只返回前1000个字符
+                     * 获取该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AudioText 音频文本，备注：这里的文本最大只返回前1000个字符
+                     * @return AudioText 该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAudioText() const;
@@ -204,9 +188,9 @@ Block 建议屏蔽；
                     bool AudioTextHasBeenSet() const;
 
                     /**
-                     * 获取音频片段审核信息
+                     * 获取该字段用于返回音频片段的审核结果，主要包括开始时间和音频审核的相应结果。<br>具体输出内容请参见AudioSegments及AudioResult数据结构的详细描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AudioSegments 音频片段审核信息
+                     * @return AudioSegments 该字段用于返回音频片段的审核结果，主要包括开始时间和音频审核的相应结果。<br>具体输出内容请参见AudioSegments及AudioResult数据结构的详细描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AudioSegments> GetAudioSegments() const;
@@ -218,9 +202,9 @@ Block 建议屏蔽；
                     bool AudioSegmentsHasBeenSet() const;
 
                     /**
-                     * 获取错误类型，如果任务状态为Error，则该字段不为空
+                     * 获取当任务状态为Error时，该字段用于返回对应错误的类型；任务状态非Error时，默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorType 错误类型，如果任务状态为Error，则该字段不为空
+                     * @return ErrorType 当任务状态为Error时，该字段用于返回对应错误的类型；任务状态非Error时，默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetErrorType() const;
@@ -232,9 +216,9 @@ Block 建议屏蔽；
                     bool ErrorTypeHasBeenSet() const;
 
                     /**
-                     * 获取错误描述，如果任务状态为Error，则该字段不为空
+                     * 获取当任务状态为Error时，该字段用于返回对应错误的详细描述，任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorDescription 错误描述，如果任务状态为Error，则该字段不为空
+                     * @return ErrorDescription 当任务状态为Error时，该字段用于返回对应错误的详细描述，任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetErrorDescription() const;
@@ -246,9 +230,9 @@ Block 建议屏蔽；
                     bool ErrorDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间，格式为 ISO 8601
+                     * 获取该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedAt 任务创建时间，格式为 ISO 8601
+                     * @return CreatedAt 该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCreatedAt() const;
@@ -260,9 +244,9 @@ Block 建议屏蔽；
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取任务最后更新时间，格式为 ISO 8601
+                     * 获取该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdatedAt 任务最后更新时间，格式为 ISO 8601
+                     * @return UpdatedAt 该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUpdatedAt() const;
@@ -276,114 +260,106 @@ Block 建议屏蔽；
                 private:
 
                     /**
-                     * 任务ID
+                     * 该字段用于返回创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 审核时传入的数据Id
+                     * 该字段用于返回调用音频审核接口时在Tasks参数内传入的数据ID参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;
 
                     /**
-                     * 业务类型，用户可以在控制台查看自己配置的BizType
+                     * 该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * 该字段用于返回调用音频审核接口时传入的TaskInput参数中的任务名称，方便任务的识别与管理。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 查询内容审核任务的状态，可选值：
-FINISH 已完成
-PENDING 等待中
-RUNNING 进行中
-ERROR 出错
-CANCELLED 已取消
+                     * 该字段用于返回所查询内容的任务状态。
+<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务类型：可选AUDIO（点播音频），LIVE_AUDIO（直播音频）
+                     * 该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 智能审核服务对于内容违规类型的等级，可选值：
-Pass 建议通过；
-Reveiw 建议复审；
-Block 建议屏蔽；
+                     * 该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestion;
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 智能审核服务对于内容违规类型的判断，详见返回值列表
-如：Label：Porn（色情）；
+                     * 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskLabel> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 输入的媒体信息
+                     * 该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;
 
                     /**
-                     * 音频文本，备注：这里的文本最大只返回前1000个字符
+                     * 该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_audioText;
                     bool m_audioTextHasBeenSet;
 
                     /**
-                     * 音频片段审核信息
+                     * 该字段用于返回音频片段的审核结果，主要包括开始时间和音频审核的相应结果。<br>具体输出内容请参见AudioSegments及AudioResult数据结构的详细描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AudioSegments> m_audioSegments;
                     bool m_audioSegmentsHasBeenSet;
 
                     /**
-                     * 错误类型，如果任务状态为Error，则该字段不为空
+                     * 当任务状态为Error时，该字段用于返回对应错误的类型；任务状态非Error时，默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorType;
                     bool m_errorTypeHasBeenSet;
 
                     /**
-                     * 错误描述，如果任务状态为Error，则该字段不为空
+                     * 当任务状态为Error时，该字段用于返回对应错误的详细描述，任务状态非Error时默认返回为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorDescription;
                     bool m_errorDescriptionHasBeenSet;
 
                     /**
-                     * 任务创建时间，格式为 ISO 8601
+                     * 该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 任务最后更新时间，格式为 ISO 8601
+                     * 该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;

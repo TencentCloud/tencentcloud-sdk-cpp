@@ -19,12 +19,16 @@ set(ba_public_header
   )
 
 set(ba_public_header_model
+  include/tencentcloud/ba/v20200720/model/SyncIcpOrderWebInfoRequest.h
+  include/tencentcloud/ba/v20200720/model/SyncIcpOrderWebInfoResponse.h
   include/tencentcloud/ba/v20200720/model/CreateWeappQRUrlRequest.h
   include/tencentcloud/ba/v20200720/model/CreateWeappQRUrlResponse.h
   )
 
 set(ba_src
   src/v20200720/BaClient.cpp
+  src/v20200720/model/SyncIcpOrderWebInfoRequest.cpp
+  src/v20200720/model/SyncIcpOrderWebInfoResponse.cpp
   src/v20200720/model/CreateWeappQRUrlRequest.cpp
   src/v20200720/model/CreateWeappQRUrlResponse.cpp
   )

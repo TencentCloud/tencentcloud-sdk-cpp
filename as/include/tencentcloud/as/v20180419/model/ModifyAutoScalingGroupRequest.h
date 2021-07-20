@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/as/v20180419/model/ServiceSettings.h>
+#include <tencentcloud/as/v20180419/model/SpotMixedAllocationPolicy.h>
 
 
 namespace TencentCloud
@@ -457,6 +458,54 @@ namespace TencentCloud
                      */
                     bool LoadBalancerHealthCheckGracePeriodHasBeenSet() const;
 
+                    /**
+                     * 获取实例分配策略，取值包括 LAUNCH_CONFIGURATION 和 SPOT_MIXED。
+<br><li> LAUNCH_CONFIGURATION，代表传统的按照启动配置模式。
+<br><li> SPOT_MIXED，代表竞价混合模式。目前仅支持启动配置为按量计费模式时使用混合模式，混合模式下，伸缩组将根据设定扩容按量或竞价机型。使用混合模式时，关联的启动配置的计费类型不可被修改。
+                     * @return InstanceAllocationPolicy 实例分配策略，取值包括 LAUNCH_CONFIGURATION 和 SPOT_MIXED。
+<br><li> LAUNCH_CONFIGURATION，代表传统的按照启动配置模式。
+<br><li> SPOT_MIXED，代表竞价混合模式。目前仅支持启动配置为按量计费模式时使用混合模式，混合模式下，伸缩组将根据设定扩容按量或竞价机型。使用混合模式时，关联的启动配置的计费类型不可被修改。
+                     */
+                    std::string GetInstanceAllocationPolicy() const;
+
+                    /**
+                     * 设置实例分配策略，取值包括 LAUNCH_CONFIGURATION 和 SPOT_MIXED。
+<br><li> LAUNCH_CONFIGURATION，代表传统的按照启动配置模式。
+<br><li> SPOT_MIXED，代表竞价混合模式。目前仅支持启动配置为按量计费模式时使用混合模式，混合模式下，伸缩组将根据设定扩容按量或竞价机型。使用混合模式时，关联的启动配置的计费类型不可被修改。
+                     * @param InstanceAllocationPolicy 实例分配策略，取值包括 LAUNCH_CONFIGURATION 和 SPOT_MIXED。
+<br><li> LAUNCH_CONFIGURATION，代表传统的按照启动配置模式。
+<br><li> SPOT_MIXED，代表竞价混合模式。目前仅支持启动配置为按量计费模式时使用混合模式，混合模式下，伸缩组将根据设定扩容按量或竞价机型。使用混合模式时，关联的启动配置的计费类型不可被修改。
+                     */
+                    void SetInstanceAllocationPolicy(const std::string& _instanceAllocationPolicy);
+
+                    /**
+                     * 判断参数 InstanceAllocationPolicy 是否已赋值
+                     * @return InstanceAllocationPolicy 是否已赋值
+                     */
+                    bool InstanceAllocationPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取竞价混合模式下，各计费类型实例的分配策略。
+仅当 InstanceAllocationPolicy 取 SPOT_MIXED 时可用。
+                     * @return SpotMixedAllocationPolicy 竞价混合模式下，各计费类型实例的分配策略。
+仅当 InstanceAllocationPolicy 取 SPOT_MIXED 时可用。
+                     */
+                    SpotMixedAllocationPolicy GetSpotMixedAllocationPolicy() const;
+
+                    /**
+                     * 设置竞价混合模式下，各计费类型实例的分配策略。
+仅当 InstanceAllocationPolicy 取 SPOT_MIXED 时可用。
+                     * @param SpotMixedAllocationPolicy 竞价混合模式下，各计费类型实例的分配策略。
+仅当 InstanceAllocationPolicy 取 SPOT_MIXED 时可用。
+                     */
+                    void SetSpotMixedAllocationPolicy(const SpotMixedAllocationPolicy& _spotMixedAllocationPolicy);
+
+                    /**
+                     * 判断参数 SpotMixedAllocationPolicy 是否已赋值
+                     * @return SpotMixedAllocationPolicy 是否已赋值
+                     */
+                    bool SpotMixedAllocationPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -590,6 +639,21 @@ namespace TencentCloud
                      */
                     uint64_t m_loadBalancerHealthCheckGracePeriod;
                     bool m_loadBalancerHealthCheckGracePeriodHasBeenSet;
+
+                    /**
+                     * 实例分配策略，取值包括 LAUNCH_CONFIGURATION 和 SPOT_MIXED。
+<br><li> LAUNCH_CONFIGURATION，代表传统的按照启动配置模式。
+<br><li> SPOT_MIXED，代表竞价混合模式。目前仅支持启动配置为按量计费模式时使用混合模式，混合模式下，伸缩组将根据设定扩容按量或竞价机型。使用混合模式时，关联的启动配置的计费类型不可被修改。
+                     */
+                    std::string m_instanceAllocationPolicy;
+                    bool m_instanceAllocationPolicyHasBeenSet;
+
+                    /**
+                     * 竞价混合模式下，各计费类型实例的分配策略。
+仅当 InstanceAllocationPolicy 取 SPOT_MIXED 时可用。
+                     */
+                    SpotMixedAllocationPolicy m_spotMixedAllocationPolicy;
+                    bool m_spotMixedAllocationPolicyHasBeenSet;
 
                 };
             }

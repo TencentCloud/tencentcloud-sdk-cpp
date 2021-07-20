@@ -186,6 +186,42 @@ namespace TencentCloud
                      */
                     bool DeployableHasBeenSet() const;
 
+                    /**
+                     * 获取是否筛选上传托管的 1筛选，0不筛选
+                     * @return Upload 是否筛选上传托管的 1筛选，0不筛选
+                     */
+                    int64_t GetUpload() const;
+
+                    /**
+                     * 设置是否筛选上传托管的 1筛选，0不筛选
+                     * @param Upload 是否筛选上传托管的 1筛选，0不筛选
+                     */
+                    void SetUpload(const int64_t& _upload);
+
+                    /**
+                     * 判断参数 Upload 是否已赋值
+                     * @return Upload 是否已赋值
+                     */
+                    bool UploadHasBeenSet() const;
+
+                    /**
+                     * 获取是否筛选可续期证书 1筛选 0不筛选
+                     * @return Renew 是否筛选可续期证书 1筛选 0不筛选
+                     */
+                    int64_t GetRenew() const;
+
+                    /**
+                     * 设置是否筛选可续期证书 1筛选 0不筛选
+                     * @param Renew 是否筛选可续期证书 1筛选 0不筛选
+                     */
+                    void SetRenew(const int64_t& _renew);
+
+                    /**
+                     * 判断参数 Renew 是否已赋值
+                     * @return Renew 是否已赋值
+                     */
+                    bool RenewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +271,18 @@ namespace TencentCloud
                      */
                     uint64_t m_deployable;
                     bool m_deployableHasBeenSet;
+
+                    /**
+                     * 是否筛选上传托管的 1筛选，0不筛选
+                     */
+                    int64_t m_upload;
+                    bool m_uploadHasBeenSet;
+
+                    /**
+                     * 是否筛选可续期证书 1筛选 0不筛选
+                     */
+                    int64_t m_renew;
+                    bool m_renewHasBeenSet;
 
                 };
             }
