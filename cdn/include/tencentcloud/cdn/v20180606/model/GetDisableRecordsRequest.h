@@ -43,6 +43,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取指定 URL 查询
+                     * @return Url 指定 URL 查询
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置指定 URL 查询
+                     * @param Url 指定 URL 查询
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     */
+                    bool UrlHasBeenSet() const;
+
+                    /**
                      * 获取开始时间，如：2018-12-12 10:24:00。
                      * @return StartTime 开始时间，如：2018-12-12 10:24:00。
                      */
@@ -77,24 +95,6 @@ namespace TencentCloud
                      * @return EndTime 是否已赋值
                      */
                     bool EndTimeHasBeenSet() const;
-
-                    /**
-                     * 获取指定 URL 查询
-                     * @return Url 指定 URL 查询
-                     */
-                    std::string GetUrl() const;
-
-                    /**
-                     * 设置指定 URL 查询
-                     * @param Url 指定 URL 查询
-                     */
-                    void SetUrl(const std::string& _url);
-
-                    /**
-                     * 判断参数 Url 是否已赋值
-                     * @return Url 是否已赋值
-                     */
-                    bool UrlHasBeenSet() const;
 
                     /**
                      * 获取URL 当前状态
@@ -158,7 +158,31 @@ enable：当前为可用状态，已解禁，可正常访问
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取任务ID，任务ID和起始时间需要至少填写一项。
+                     * @return TaskId 任务ID，任务ID和起始时间需要至少填写一项。
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置任务ID，任务ID和起始时间需要至少填写一项。
+                     * @param TaskId 任务ID，任务ID和起始时间需要至少填写一项。
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 指定 URL 查询
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
 
                     /**
                      * 开始时间，如：2018-12-12 10:24:00。
@@ -171,12 +195,6 @@ enable：当前为可用状态，已解禁，可正常访问
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
-
-                    /**
-                     * 指定 URL 查询
-                     */
-                    std::string m_url;
-                    bool m_urlHasBeenSet;
 
                     /**
                      * URL 当前状态
@@ -197,6 +215,12 @@ enable：当前为可用状态，已解禁，可正常访问
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 任务ID，任务ID和起始时间需要至少填写一项。
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

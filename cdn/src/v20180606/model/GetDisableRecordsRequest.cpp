@@ -23,12 +23,13 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace std;
 
 GetDisableRecordsRequest::GetDisableRecordsRequest() :
+    m_urlHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_urlHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,14 @@ string GetDisableRecordsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_startTimeHasBeenSet)
     {
@@ -53,14 +62,6 @@ string GetDisableRecordsRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_urlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Url";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -87,6 +88,14 @@ string GetDisableRecordsRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -94,6 +103,22 @@ string GetDisableRecordsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string GetDisableRecordsRequest::GetUrl() const
+{
+    return m_url;
+}
+
+void GetDisableRecordsRequest::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool GetDisableRecordsRequest::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
+}
 
 string GetDisableRecordsRequest::GetStartTime() const
 {
@@ -125,22 +150,6 @@ void GetDisableRecordsRequest::SetEndTime(const string& _endTime)
 bool GetDisableRecordsRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
-}
-
-string GetDisableRecordsRequest::GetUrl() const
-{
-    return m_url;
-}
-
-void GetDisableRecordsRequest::SetUrl(const string& _url)
-{
-    m_url = _url;
-    m_urlHasBeenSet = true;
-}
-
-bool GetDisableRecordsRequest::UrlHasBeenSet() const
-{
-    return m_urlHasBeenSet;
 }
 
 string GetDisableRecordsRequest::GetStatus() const
@@ -189,6 +198,22 @@ void GetDisableRecordsRequest::SetLimit(const int64_t& _limit)
 bool GetDisableRecordsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string GetDisableRecordsRequest::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void GetDisableRecordsRequest::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool GetDisableRecordsRequest::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

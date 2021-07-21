@@ -761,7 +761,7 @@ namespace TencentCloud
                 CreateDeployGroupOutcomeCallable CreateDeployGroupCallable(const Model::CreateDeployGroupRequest& request);
 
                 /**
-                 *该接口（CreateParamTemplate）用于创建参数模板。
+                 *该接口（CreateParamTemplate）用于创建参数模板，全地域公共参数Region均为ap-guangzhou。
                  * @param req CreateParamTemplateRequest
                  * @return CreateParamTemplateOutcome
                  */
@@ -833,7 +833,7 @@ namespace TencentCloud
                 DeleteDeployGroupsOutcomeCallable DeleteDeployGroupsCallable(const Model::DeleteDeployGroupsRequest& request);
 
                 /**
-                 *该接口（DeleteParamTemplate）用于删除参数模板。
+                 *该接口（DeleteParamTemplate）用于删除参数模板，全地域公共参数Region均为ap-guangzhou。
                  * @param req DeleteParamTemplateRequest
                  * @return DeleteParamTemplateOutcome
                  */
@@ -1172,7 +1172,7 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
 
                 /**
-                 *该接口（DescribeParamTemplateInfo）用于查询参数模板详情。
+                 *该接口（DescribeParamTemplateInfo）用于查询参数模板详情，全地域公共参数Region均为ap-guangzhou。
                  * @param req DescribeParamTemplateInfoRequest
                  * @return DescribeParamTemplateInfoOutcome
                  */
@@ -1481,7 +1481,7 @@ namespace TencentCloud
                 ModifyNameOrDescByDpIdOutcomeCallable ModifyNameOrDescByDpIdCallable(const Model::ModifyNameOrDescByDpIdRequest& request);
 
                 /**
-                 *该接口（ModifyParamTemplate）用于修改参数模板。
+                 *该接口（ModifyParamTemplate）用于修改参数模板，全地域公共参数Region均为ap-guangzhou。
                  * @param req ModifyParamTemplateRequest
                  * @return ModifyParamTemplateOutcome
                  */

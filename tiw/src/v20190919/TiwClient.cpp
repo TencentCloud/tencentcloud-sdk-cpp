@@ -40,6 +40,49 @@ TiwClient::TiwClient(const Credential &credential, const string &region, const C
 }
 
 
+TiwClient::CreateSnapshotTaskOutcome TiwClient::CreateSnapshotTask(const CreateSnapshotTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSnapshotTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSnapshotTaskResponse rsp = CreateSnapshotTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSnapshotTaskOutcome(rsp);
+        else
+            return CreateSnapshotTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSnapshotTaskOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::CreateSnapshotTaskAsync(const CreateSnapshotTaskRequest& request, const CreateSnapshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSnapshotTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::CreateSnapshotTaskOutcomeCallable TiwClient::CreateSnapshotTaskCallable(const CreateSnapshotTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSnapshotTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSnapshotTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::CreateTranscodeOutcome TiwClient::CreateTranscode(const CreateTranscodeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTranscode");
@@ -248,6 +291,49 @@ TiwClient::DescribeQualityMetricsOutcomeCallable TiwClient::DescribeQualityMetri
         [this, request]()
         {
             return this->DescribeQualityMetrics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeSnapshotTaskOutcome TiwClient::DescribeSnapshotTask(const DescribeSnapshotTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotTaskResponse rsp = DescribeSnapshotTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotTaskOutcome(rsp);
+        else
+            return DescribeSnapshotTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotTaskOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeSnapshotTaskAsync(const DescribeSnapshotTaskRequest& request, const DescribeSnapshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeSnapshotTaskOutcomeCallable TiwClient::DescribeSnapshotTaskCallable(const DescribeSnapshotTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotTask(request);
         }
     );
 

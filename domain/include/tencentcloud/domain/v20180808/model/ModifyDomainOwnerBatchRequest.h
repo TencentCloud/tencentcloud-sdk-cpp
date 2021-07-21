@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool NewOwnerUinHasBeenSet() const;
 
+                    /**
+                     * 获取是否同时转移对应的 DNS 解析域名，默认false
+                     * @return TransferDns 是否同时转移对应的 DNS 解析域名，默认false
+                     */
+                    bool GetTransferDns() const;
+
+                    /**
+                     * 设置是否同时转移对应的 DNS 解析域名，默认false
+                     * @param TransferDns 是否同时转移对应的 DNS 解析域名，默认false
+                     */
+                    void SetTransferDns(const bool& _transferDns);
+
+                    /**
+                     * 判断参数 TransferDns 是否已赋值
+                     * @return TransferDns 是否已赋值
+                     */
+                    bool TransferDnsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_newOwnerUin;
                     bool m_newOwnerUinHasBeenSet;
+
+                    /**
+                     * 是否同时转移对应的 DNS 解析域名，默认false
+                     */
+                    bool m_transferDns;
+                    bool m_transferDnsHasBeenSet;
 
                 };
             }

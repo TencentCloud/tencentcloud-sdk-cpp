@@ -19,14 +19,16 @@ set(waf_public_header
   )
 
 set(waf_public_header_model
-  include/tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsResponse.h
+  include/tencentcloud/waf/v20180125/model/ResponseCode.h
   include/tencentcloud/waf/v20180125/model/DescribeCustomRulesRspRuleListItem.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusResponse.h
-  include/tencentcloud/waf/v20180125/model/ResponseCode.h
+  include/tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordResponse.h
+  include/tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeFlowTrendRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteDownloadRecordResponse.h
+  include/tencentcloud/waf/v20180125/model/ModifyAccessPeriodRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteSessionResponse.h
@@ -46,14 +48,16 @@ set(waf_public_header_model
 
 set(waf_src
   src/v20180125/WafClient.cpp
-  src/v20180125/model/DescribeUserClbWafRegionsResponse.cpp
+  src/v20180125/model/ResponseCode.cpp
   src/v20180125/model/DescribeCustomRulesRspRuleListItem.cpp
   src/v20180125/model/ModifyCustomRuleStatusResponse.cpp
-  src/v20180125/model/ResponseCode.cpp
+  src/v20180125/model/DescribeUserClbWafRegionsResponse.cpp
   src/v20180125/model/DeleteAttackDownloadRecordResponse.cpp
+  src/v20180125/model/ModifyAccessPeriodResponse.cpp
   src/v20180125/model/DescribeFlowTrendRequest.cpp
   src/v20180125/model/ModifyCustomRuleStatusRequest.cpp
   src/v20180125/model/DeleteDownloadRecordResponse.cpp
+  src/v20180125/model/ModifyAccessPeriodRequest.cpp
   src/v20180125/model/DescribeUserClbWafRegionsRequest.cpp
   src/v20180125/model/DeleteAttackDownloadRecordRequest.cpp
   src/v20180125/model/DeleteSessionResponse.cpp

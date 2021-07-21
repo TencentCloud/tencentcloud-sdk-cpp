@@ -25,6 +25,7 @@ using namespace std;
 DescribeBindingPolicyObjectListRequest::DescribeBindingPolicyObjectListRequest() :
     m_moduleHasBeenSet(false),
     m_groupIdHasBeenSet(false),
+    m_policyIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_dimensionsHasBeenSet(false)
@@ -52,6 +53,14 @@ string DescribeBindingPolicyObjectListRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_groupId, allocator);
+    }
+
+    if (m_policyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_policyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -123,6 +132,22 @@ void DescribeBindingPolicyObjectListRequest::SetGroupId(const int64_t& _groupId)
 bool DescribeBindingPolicyObjectListRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+string DescribeBindingPolicyObjectListRequest::GetPolicyId() const
+{
+    return m_policyId;
+}
+
+void DescribeBindingPolicyObjectListRequest::SetPolicyId(const string& _policyId)
+{
+    m_policyId = _policyId;
+    m_policyIdHasBeenSet = true;
+}
+
+bool DescribeBindingPolicyObjectListRequest::PolicyIdHasBeenSet() const
+{
+    return m_policyIdHasBeenSet;
 }
 
 int64_t DescribeBindingPolicyObjectListRequest::GetLimit() const

@@ -35,6 +35,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/InstanceRelation.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListProtocolBlockConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListBGPInstancesRequest.h
+  include/tencentcloud/antiddos/v20200309/model/SwitchWaterPrintConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/DeleteDDoSSpeedLimitConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/CreatePacketFilterConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateL7RuleCertsRequest.h
@@ -113,6 +114,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DefaultAlarmThreshold.h
   include/tencentcloud/antiddos/v20200309/model/ForwardListener.h
   include/tencentcloud/antiddos/v20200309/model/BGPInstanceSpecification.h
+  include/tencentcloud/antiddos/v20200309/model/SwitchWaterPrintConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateWaterPrintKeyRequest.h
   include/tencentcloud/antiddos/v20200309/model/WaterPrintRelation.h
   include/tencentcloud/antiddos/v20200309/model/InsL7Rules.h
@@ -164,6 +166,7 @@ set(antiddos_src
   src/v20200309/model/InstanceRelation.cpp
   src/v20200309/model/DescribeListProtocolBlockConfigResponse.cpp
   src/v20200309/model/DescribeListBGPInstancesRequest.cpp
+  src/v20200309/model/SwitchWaterPrintConfigRequest.cpp
   src/v20200309/model/DeleteDDoSSpeedLimitConfigRequest.cpp
   src/v20200309/model/CreatePacketFilterConfigResponse.cpp
   src/v20200309/model/CreateL7RuleCertsRequest.cpp
@@ -242,6 +245,7 @@ set(antiddos_src
   src/v20200309/model/DefaultAlarmThreshold.cpp
   src/v20200309/model/ForwardListener.cpp
   src/v20200309/model/BGPInstanceSpecification.cpp
+  src/v20200309/model/SwitchWaterPrintConfigResponse.cpp
   src/v20200309/model/CreateWaterPrintKeyRequest.cpp
   src/v20200309/model/WaterPrintRelation.cpp
   src/v20200309/model/InsL7Rules.cpp

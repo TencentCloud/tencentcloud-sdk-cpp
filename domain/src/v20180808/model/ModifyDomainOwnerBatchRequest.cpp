@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyDomainOwnerBatchRequest::ModifyDomainOwnerBatchRequest() :
     m_domainsHasBeenSet(false),
-    m_newOwnerUinHasBeenSet(false)
+    m_newOwnerUinHasBeenSet(false),
+    m_transferDnsHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string ModifyDomainOwnerBatchRequest::ToJsonString() const
         string key = "NewOwnerUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_newOwnerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferDnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferDns";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_transferDns, allocator);
     }
 
 
@@ -94,6 +103,22 @@ void ModifyDomainOwnerBatchRequest::SetNewOwnerUin(const string& _newOwnerUin)
 bool ModifyDomainOwnerBatchRequest::NewOwnerUinHasBeenSet() const
 {
     return m_newOwnerUinHasBeenSet;
+}
+
+bool ModifyDomainOwnerBatchRequest::GetTransferDns() const
+{
+    return m_transferDns;
+}
+
+void ModifyDomainOwnerBatchRequest::SetTransferDns(const bool& _transferDns)
+{
+    m_transferDns = _transferDns;
+    m_transferDnsHasBeenSet = true;
+}
+
+bool ModifyDomainOwnerBatchRequest::TransferDnsHasBeenSet() const
+{
+    return m_transferDnsHasBeenSet;
 }
 
 

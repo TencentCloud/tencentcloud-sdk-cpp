@@ -26,7 +26,9 @@ InvokeCommandRequest::InvokeCommandRequest() :
     m_commandIdHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_workingDirectoryHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,22 @@ string InvokeCommandRequest::ToJsonString() const
         string key = "Username";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workingDirectoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkingDirectory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workingDirectory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeout, allocator);
     }
 
 
@@ -144,6 +162,38 @@ void InvokeCommandRequest::SetUsername(const string& _username)
 bool InvokeCommandRequest::UsernameHasBeenSet() const
 {
     return m_usernameHasBeenSet;
+}
+
+string InvokeCommandRequest::GetWorkingDirectory() const
+{
+    return m_workingDirectory;
+}
+
+void InvokeCommandRequest::SetWorkingDirectory(const string& _workingDirectory)
+{
+    m_workingDirectory = _workingDirectory;
+    m_workingDirectoryHasBeenSet = true;
+}
+
+bool InvokeCommandRequest::WorkingDirectoryHasBeenSet() const
+{
+    return m_workingDirectoryHasBeenSet;
+}
+
+uint64_t InvokeCommandRequest::GetTimeout() const
+{
+    return m_timeout;
+}
+
+void InvokeCommandRequest::SetTimeout(const uint64_t& _timeout)
+{
+    m_timeout = _timeout;
+    m_timeoutHasBeenSet = true;
+}
+
+bool InvokeCommandRequest::TimeoutHasBeenSet() const
+{
+    return m_timeoutHasBeenSet;
 }
 
 

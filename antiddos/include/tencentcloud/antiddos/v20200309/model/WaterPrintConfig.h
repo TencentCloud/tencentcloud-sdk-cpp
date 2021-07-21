@@ -132,6 +132,36 @@ namespace TencentCloud
                      */
                     bool KeysHasBeenSet() const;
 
+                    /**
+                     * 获取水印检查模式, 取值[
+checkall（普通模式）
+shortfpcheckall（精简模式）
+]
+                     * @return Verify 水印检查模式, 取值[
+checkall（普通模式）
+shortfpcheckall（精简模式）
+]
+                     */
+                    std::string GetVerify() const;
+
+                    /**
+                     * 设置水印检查模式, 取值[
+checkall（普通模式）
+shortfpcheckall（精简模式）
+]
+                     * @param Verify 水印检查模式, 取值[
+checkall（普通模式）
+shortfpcheckall（精简模式）
+]
+                     */
+                    void SetVerify(const std::string& _verify);
+
+                    /**
+                     * 判断参数 Verify 是否已赋值
+                     * @return Verify 是否已赋值
+                     */
+                    bool VerifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -160,6 +190,15 @@ namespace TencentCloud
                      */
                     std::vector<WaterPrintKey> m_keys;
                     bool m_keysHasBeenSet;
+
+                    /**
+                     * 水印检查模式, 取值[
+checkall（普通模式）
+shortfpcheckall（精简模式）
+]
+                     */
+                    std::string m_verify;
+                    bool m_verifyHasBeenSet;
 
                 };
             }

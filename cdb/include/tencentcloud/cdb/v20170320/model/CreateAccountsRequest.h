@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取新账户最大可用连接数。
-                     * @return MaxUserConnections 新账户最大可用连接数。
+                     * 获取新账户最大可用连接数，默认值为10240，最大可设置值为10240。
+                     * @return MaxUserConnections 新账户最大可用连接数，默认值为10240，最大可设置值为10240。
                      */
                     int64_t GetMaxUserConnections() const;
 
                     /**
-                     * 设置新账户最大可用连接数。
-                     * @param MaxUserConnections 新账户最大可用连接数。
+                     * 设置新账户最大可用连接数，默认值为10240，最大可设置值为10240。
+                     * @param MaxUserConnections 新账户最大可用连接数，默认值为10240，最大可设置值为10240。
                      */
                     void SetMaxUserConnections(const int64_t& _maxUserConnections);
 
@@ -160,7 +160,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 新账户最大可用连接数。
+                     * 新账户最大可用连接数，默认值为10240，最大可设置值为10240。
                      */
                     int64_t m_maxUserConnections;
                     bool m_maxUserConnectionsHasBeenSet;

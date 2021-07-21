@@ -284,6 +284,94 @@ namespace TencentCloud
                      */
                     bool MaxStorageCapacityHasBeenSet() const;
 
+                    /**
+                     * 获取集群版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Version 集群版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置集群版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Version 集群版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     */
+                    bool VersionHasBeenSet() const;
+
+                    /**
+                     * 获取公网访问接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicEndPoint 公网访问接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPublicEndPoint() const;
+
+                    /**
+                     * 设置公网访问接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicEndPoint 公网访问接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicEndPoint(const std::string& _publicEndPoint);
+
+                    /**
+                     * 判断参数 PublicEndPoint 是否已赋值
+                     * @return PublicEndPoint 是否已赋值
+                     */
+                    bool PublicEndPointHasBeenSet() const;
+
+                    /**
+                     * 获取VPC访问接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcEndPoint VPC访问接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVpcEndPoint() const;
+
+                    /**
+                     * 设置VPC访问接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcEndPoint VPC访问接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcEndPoint(const std::string& _vpcEndPoint);
+
+                    /**
+                     * 判断参数 VpcEndPoint 是否已赋值
+                     * @return VpcEndPoint 是否已赋值
+                     */
+                    bool VpcEndPointHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NamespaceNum 命名空间数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetNamespaceNum() const;
+
+                    /**
+                     * 设置命名空间数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NamespaceNum 命名空间数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNamespaceNum(const int64_t& _namespaceNum);
+
+                    /**
+                     * 判断参数 NamespaceNum 是否已赋值
+                     * @return NamespaceNum 是否已赋值
+                     */
+                    bool NamespaceNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -364,6 +452,34 @@ namespace TencentCloud
                      */
                     int64_t m_maxStorageCapacity;
                     bool m_maxStorageCapacityHasBeenSet;
+
+                    /**
+                     * 集群版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
+
+                    /**
+                     * 公网访问接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicEndPoint;
+                    bool m_publicEndPointHasBeenSet;
+
+                    /**
+                     * VPC访问接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcEndPoint;
+                    bool m_vpcEndPointHasBeenSet;
+
+                    /**
+                     * 命名空间数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_namespaceNum;
+                    bool m_namespaceNumHasBeenSet;
 
                 };
             }

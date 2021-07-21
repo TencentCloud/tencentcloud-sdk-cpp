@@ -105,6 +105,8 @@
 #include <tencentcloud/antiddos/v20200309/model/ModifyDomainUsrNameResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyPacketFilterConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyPacketFilterConfigResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/SwitchWaterPrintConfigRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/SwitchWaterPrintConfigResponse.h>
 
 
 namespace TencentCloud
@@ -242,6 +244,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyPacketFilterConfigResponse> ModifyPacketFilterConfigOutcome;
                 typedef std::future<ModifyPacketFilterConfigOutcome> ModifyPacketFilterConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::ModifyPacketFilterConfigRequest&, ModifyPacketFilterConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPacketFilterConfigAsyncHandler;
+                typedef Outcome<Error, Model::SwitchWaterPrintConfigResponse> SwitchWaterPrintConfigOutcome;
+                typedef std::future<SwitchWaterPrintConfigOutcome> SwitchWaterPrintConfigOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::SwitchWaterPrintConfigRequest&, SwitchWaterPrintConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchWaterPrintConfigAsyncHandler;
 
 
 
@@ -615,6 +620,15 @@ namespace TencentCloud
                 ModifyPacketFilterConfigOutcome ModifyPacketFilterConfig(const Model::ModifyPacketFilterConfigRequest &request);
                 void ModifyPacketFilterConfigAsync(const Model::ModifyPacketFilterConfigRequest& request, const ModifyPacketFilterConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPacketFilterConfigOutcomeCallable ModifyPacketFilterConfigCallable(const Model::ModifyPacketFilterConfigRequest& request);
+
+                /**
+                 *开启或关闭DDoS防护的水印防护配置
+                 * @param req SwitchWaterPrintConfigRequest
+                 * @return SwitchWaterPrintConfigOutcome
+                 */
+                SwitchWaterPrintConfigOutcome SwitchWaterPrintConfig(const Model::SwitchWaterPrintConfigRequest &request);
+                void SwitchWaterPrintConfigAsync(const Model::SwitchWaterPrintConfigRequest& request, const SwitchWaterPrintConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchWaterPrintConfigOutcomeCallable SwitchWaterPrintConfigCallable(const Model::SwitchWaterPrintConfigRequest& request);
 
             };
         }

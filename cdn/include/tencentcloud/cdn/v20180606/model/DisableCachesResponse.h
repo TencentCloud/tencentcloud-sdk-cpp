@@ -57,6 +57,20 @@ namespace TencentCloud
                      */
                     bool CacheOptResultHasBeenSet() const;
 
+                    /**
+                     * 获取任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskId 任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +79,13 @@ namespace TencentCloud
                      */
                     CacheOptResult m_cacheOptResult;
                     bool m_cacheOptResultHasBeenSet;
+
+                    /**
+                     * 任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

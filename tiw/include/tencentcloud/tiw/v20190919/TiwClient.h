@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tiw/v20190919/model/CreateSnapshotTaskRequest.h>
+#include <tencentcloud/tiw/v20190919/model/CreateSnapshotTaskResponse.h>
 #include <tencentcloud/tiw/v20190919/model/CreateTranscodeRequest.h>
 #include <tencentcloud/tiw/v20190919/model/CreateTranscodeResponse.h>
 #include <tencentcloud/tiw/v20190919/model/CreateVideoGenerationTaskRequest.h>
@@ -33,6 +35,8 @@
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeQualityMetricsRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeQualityMetricsResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeSnapshotTaskRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeSnapshotTaskResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackRequest.h>
@@ -87,6 +91,9 @@ namespace TencentCloud
                 TiwClient(const Credential &credential, const std::string &region);
                 TiwClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateSnapshotTaskResponse> CreateSnapshotTaskOutcome;
+                typedef std::future<CreateSnapshotTaskOutcome> CreateSnapshotTaskOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::CreateSnapshotTaskRequest&, CreateSnapshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotTaskAsyncHandler;
                 typedef Outcome<Error, Model::CreateTranscodeResponse> CreateTranscodeOutcome;
                 typedef std::future<CreateTranscodeOutcome> CreateTranscodeOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::CreateTranscodeRequest&, CreateTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTranscodeAsyncHandler;
@@ -102,6 +109,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeQualityMetricsResponse> DescribeQualityMetricsOutcome;
                 typedef std::future<DescribeQualityMetricsOutcome> DescribeQualityMetricsOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeQualityMetricsRequest&, DescribeQualityMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityMetricsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSnapshotTaskResponse> DescribeSnapshotTaskOutcome;
+                typedef std::future<DescribeSnapshotTaskOutcome> DescribeSnapshotTaskOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribeSnapshotTaskRequest&, DescribeSnapshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotTaskAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTranscodeResponse> DescribeTranscodeOutcome;
                 typedef std::future<DescribeTranscodeOutcome> DescribeTranscodeOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeTranscodeRequest&, DescribeTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeAsyncHandler;
@@ -166,6 +176,15 @@ namespace TencentCloud
 
 
                 /**
+                 *创建白板板书生成任务, 在任务结束后，如果提供了回调地址，将通过回调地址通知板书生成结果
+                 * @param req CreateSnapshotTaskRequest
+                 * @return CreateSnapshotTaskOutcome
+                 */
+                CreateSnapshotTaskOutcome CreateSnapshotTask(const Model::CreateSnapshotTaskRequest &request);
+                void CreateSnapshotTaskAsync(const Model::CreateSnapshotTaskRequest& request, const CreateSnapshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSnapshotTaskOutcomeCallable CreateSnapshotTaskCallable(const Model::CreateSnapshotTaskRequest& request);
+
+                /**
                  *创建一个文档转码任务
                  * @param req CreateTranscodeRequest
                  * @return CreateTranscodeOutcome
@@ -209,6 +228,15 @@ namespace TencentCloud
                 DescribeQualityMetricsOutcome DescribeQualityMetrics(const Model::DescribeQualityMetricsRequest &request);
                 void DescribeQualityMetricsAsync(const Model::DescribeQualityMetricsRequest& request, const DescribeQualityMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQualityMetricsOutcomeCallable DescribeQualityMetricsCallable(const Model::DescribeQualityMetricsRequest& request);
+
+                /**
+                 *获取指定白板板书生成任务信息
+                 * @param req DescribeSnapshotTaskRequest
+                 * @return DescribeSnapshotTaskOutcome
+                 */
+                DescribeSnapshotTaskOutcome DescribeSnapshotTask(const Model::DescribeSnapshotTaskRequest &request);
+                void DescribeSnapshotTaskAsync(const Model::DescribeSnapshotTaskRequest& request, const DescribeSnapshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotTaskOutcomeCallable DescribeSnapshotTaskCallable(const Model::DescribeSnapshotTaskRequest& request);
 
                 /**
                  *查询文档转码任务的执行进度与转码结果

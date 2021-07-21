@@ -39,6 +39,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeFlowTrendResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusResponse.h>
 
@@ -79,6 +81,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeUserClbWafRegionsResponse> DescribeUserClbWafRegionsOutcome;
                 typedef std::future<DescribeUserClbWafRegionsOutcome> DescribeUserClbWafRegionsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeUserClbWafRegionsRequest&, DescribeUserClbWafRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserClbWafRegionsAsyncHandler;
+                typedef Outcome<Error, Model::ModifyAccessPeriodResponse> ModifyAccessPeriodOutcome;
+                typedef std::future<ModifyAccessPeriodOutcome> ModifyAccessPeriodOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyAccessPeriodRequest&, ModifyAccessPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessPeriodAsyncHandler;
                 typedef Outcome<Error, Model::ModifyCustomRuleStatusResponse> ModifyCustomRuleStatusOutcome;
                 typedef std::future<ModifyCustomRuleStatusOutcome> ModifyCustomRuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyCustomRuleStatusRequest&, ModifyCustomRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomRuleStatusAsyncHandler;
@@ -156,6 +161,15 @@ namespace TencentCloud
                 DescribeUserClbWafRegionsOutcome DescribeUserClbWafRegions(const Model::DescribeUserClbWafRegionsRequest &request);
                 void DescribeUserClbWafRegionsAsync(const Model::DescribeUserClbWafRegionsRequest& request, const DescribeUserClbWafRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserClbWafRegionsOutcomeCallable DescribeUserClbWafRegionsCallable(const Model::DescribeUserClbWafRegionsRequest& request);
+
+                /**
+                 *本接口用于修改访问日志保存期限
+                 * @param req ModifyAccessPeriodRequest
+                 * @return ModifyAccessPeriodOutcome
+                 */
+                ModifyAccessPeriodOutcome ModifyAccessPeriod(const Model::ModifyAccessPeriodRequest &request);
+                void ModifyAccessPeriodAsync(const Model::ModifyAccessPeriodRequest& request, const ModifyAccessPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccessPeriodOutcomeCallable ModifyAccessPeriodCallable(const Model::ModifyAccessPeriodRequest& request);
 
                 /**
                  *开启或禁用自定义策略

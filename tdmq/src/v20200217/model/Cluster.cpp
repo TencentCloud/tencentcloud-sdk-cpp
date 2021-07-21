@@ -33,7 +33,11 @@ Cluster::Cluster() :
     m_maxTopicNumHasBeenSet(false),
     m_maxQpsHasBeenSet(false),
     m_messageRetentionTimeHasBeenSet(false),
-    m_maxStorageCapacityHasBeenSet(false)
+    m_maxStorageCapacityHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_publicEndPointHasBeenSet(false),
+    m_vpcEndPointHasBeenSet(false),
+    m_namespaceNumHasBeenSet(false)
 {
 }
 
@@ -172,6 +176,46 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_maxStorageCapacityHasBeenSet = true;
     }
 
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicEndPoint") && !value["PublicEndPoint"].IsNull())
+    {
+        if (!value["PublicEndPoint"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.PublicEndPoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicEndPoint = string(value["PublicEndPoint"].GetString());
+        m_publicEndPointHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcEndPoint") && !value["VpcEndPoint"].IsNull())
+    {
+        if (!value["VpcEndPoint"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.VpcEndPoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcEndPoint = string(value["VpcEndPoint"].GetString());
+        m_vpcEndPointHasBeenSet = true;
+    }
+
+    if (value.HasMember("NamespaceNum") && !value["NamespaceNum"].IsNull())
+    {
+        if (!value["NamespaceNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `Cluster.NamespaceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceNum = value["NamespaceNum"].GetInt64();
+        m_namespaceNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +325,38 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "MaxStorageCapacity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxStorageCapacity, allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicEndPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicEndPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicEndPoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcEndPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcEndPoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcEndPoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamespaceNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_namespaceNum, allocator);
     }
 
 }
@@ -492,5 +568,69 @@ void Cluster::SetMaxStorageCapacity(const int64_t& _maxStorageCapacity)
 bool Cluster::MaxStorageCapacityHasBeenSet() const
 {
     return m_maxStorageCapacityHasBeenSet;
+}
+
+string Cluster::GetVersion() const
+{
+    return m_version;
+}
+
+void Cluster::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool Cluster::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+string Cluster::GetPublicEndPoint() const
+{
+    return m_publicEndPoint;
+}
+
+void Cluster::SetPublicEndPoint(const string& _publicEndPoint)
+{
+    m_publicEndPoint = _publicEndPoint;
+    m_publicEndPointHasBeenSet = true;
+}
+
+bool Cluster::PublicEndPointHasBeenSet() const
+{
+    return m_publicEndPointHasBeenSet;
+}
+
+string Cluster::GetVpcEndPoint() const
+{
+    return m_vpcEndPoint;
+}
+
+void Cluster::SetVpcEndPoint(const string& _vpcEndPoint)
+{
+    m_vpcEndPoint = _vpcEndPoint;
+    m_vpcEndPointHasBeenSet = true;
+}
+
+bool Cluster::VpcEndPointHasBeenSet() const
+{
+    return m_vpcEndPointHasBeenSet;
+}
+
+int64_t Cluster::GetNamespaceNum() const
+{
+    return m_namespaceNum;
+}
+
+void Cluster::SetNamespaceNum(const int64_t& _namespaceNum)
+{
+    m_namespaceNum = _namespaceNum;
+    m_namespaceNumHasBeenSet = true;
+}
+
+bool Cluster::NamespaceNumHasBeenSet() const
+{
+    return m_namespaceNumHasBeenSet;
 }
 

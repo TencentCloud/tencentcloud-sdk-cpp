@@ -384,6 +384,49 @@ WafClient::DescribeUserClbWafRegionsOutcomeCallable WafClient::DescribeUserClbWa
     return task->get_future();
 }
 
+WafClient::ModifyAccessPeriodOutcome WafClient::ModifyAccessPeriod(const ModifyAccessPeriodRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccessPeriod");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccessPeriodResponse rsp = ModifyAccessPeriodResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccessPeriodOutcome(rsp);
+        else
+            return ModifyAccessPeriodOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccessPeriodOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyAccessPeriodAsync(const ModifyAccessPeriodRequest& request, const ModifyAccessPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccessPeriod(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyAccessPeriodOutcomeCallable WafClient::ModifyAccessPeriodCallable(const ModifyAccessPeriodRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccessPeriodOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccessPeriod(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyCustomRuleStatusOutcome WafClient::ModifyCustomRuleStatus(const ModifyCustomRuleStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCustomRuleStatus");

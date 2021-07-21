@@ -44,17 +44,17 @@ namespace TencentCloud
 
                     /**
                      * 获取模板 ID 数组。
-注：默认数组长度最大100。
+<dx-alert infotype="notice" title="注意">默认数组长度最大100</dx-alert>
                      * @return TemplateIdSet 模板 ID 数组。
-注：默认数组长度最大100。
+<dx-alert infotype="notice" title="注意">默认数组长度最大100</dx-alert>
                      */
                     std::vector<uint64_t> GetTemplateIdSet() const;
 
                     /**
                      * 设置模板 ID 数组。
-注：默认数组长度最大100。
+<dx-alert infotype="notice" title="注意">默认数组长度最大100</dx-alert>
                      * @param TemplateIdSet 模板 ID 数组。
-注：默认数组长度最大100。
+<dx-alert infotype="notice" title="注意">默认数组长度最大100</dx-alert>
                      */
                     void SetTemplateIdSet(const std::vector<uint64_t>& _templateIdSet);
 
@@ -94,7 +94,7 @@ namespace TencentCloud
 
                     /**
                      * 模板 ID 数组。
-注：默认数组长度最大100。
+<dx-alert infotype="notice" title="注意">默认数组长度最大100</dx-alert>
                      */
                     std::vector<uint64_t> m_templateIdSet;
                     bool m_templateIdSetHasBeenSet;

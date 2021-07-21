@@ -1803,3 +1803,46 @@ AntiddosClient::ModifyPacketFilterConfigOutcomeCallable AntiddosClient::ModifyPa
     return task->get_future();
 }
 
+AntiddosClient::SwitchWaterPrintConfigOutcome AntiddosClient::SwitchWaterPrintConfig(const SwitchWaterPrintConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchWaterPrintConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchWaterPrintConfigResponse rsp = SwitchWaterPrintConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchWaterPrintConfigOutcome(rsp);
+        else
+            return SwitchWaterPrintConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchWaterPrintConfigOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::SwitchWaterPrintConfigAsync(const SwitchWaterPrintConfigRequest& request, const SwitchWaterPrintConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchWaterPrintConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::SwitchWaterPrintConfigOutcomeCallable AntiddosClient::SwitchWaterPrintConfigCallable(const SwitchWaterPrintConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchWaterPrintConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchWaterPrintConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

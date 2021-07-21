@@ -134,6 +134,42 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                      */
                     bool UsernameHasBeenSet() const;
 
+                    /**
+                     * 获取命令执行路径, 默认以Command配置的WorkingDirectory执行。
+                     * @return WorkingDirectory 命令执行路径, 默认以Command配置的WorkingDirectory执行。
+                     */
+                    std::string GetWorkingDirectory() const;
+
+                    /**
+                     * 设置命令执行路径, 默认以Command配置的WorkingDirectory执行。
+                     * @param WorkingDirectory 命令执行路径, 默认以Command配置的WorkingDirectory执行。
+                     */
+                    void SetWorkingDirectory(const std::string& _workingDirectory);
+
+                    /**
+                     * 判断参数 WorkingDirectory 是否已赋值
+                     * @return WorkingDirectory 是否已赋值
+                     */
+                    bool WorkingDirectoryHasBeenSet() const;
+
+                    /**
+                     * 获取命令超时时间，取值范围[1, 86400]。默认以Command配置的Timeout执行。
+                     * @return Timeout 命令超时时间，取值范围[1, 86400]。默认以Command配置的Timeout执行。
+                     */
+                    uint64_t GetTimeout() const;
+
+                    /**
+                     * 设置命令超时时间，取值范围[1, 86400]。默认以Command配置的Timeout执行。
+                     * @param Timeout 命令超时时间，取值范围[1, 86400]。默认以Command配置的Timeout执行。
+                     */
+                    void SetTimeout(const uint64_t& _timeout);
+
+                    /**
+                     * 判断参数 Timeout 是否已赋值
+                     * @return Timeout 是否已赋值
+                     */
+                    bool TimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +200,18 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
+
+                    /**
+                     * 命令执行路径, 默认以Command配置的WorkingDirectory执行。
+                     */
+                    std::string m_workingDirectory;
+                    bool m_workingDirectoryHasBeenSet;
+
+                    /**
+                     * 命令超时时间，取值范围[1, 86400]。默认以Command配置的Timeout执行。
+                     */
+                    uint64_t m_timeout;
+                    bool m_timeoutHasBeenSet;
 
                 };
             }

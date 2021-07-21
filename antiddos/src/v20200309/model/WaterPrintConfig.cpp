@@ -24,7 +24,8 @@ WaterPrintConfig::WaterPrintConfig() :
     m_offsetHasBeenSet(false),
     m_openStatusHasBeenSet(false),
     m_listenersHasBeenSet(false),
-    m_keysHasBeenSet(false)
+    m_keysHasBeenSet(false),
+    m_verifyHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome WaterPrintConfig::Deserialize(const rapidjson::Value &value)
         m_keysHasBeenSet = true;
     }
 
+    if (value.HasMember("Verify") && !value["Verify"].IsNull())
+    {
+        if (!value["Verify"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `WaterPrintConfig.Verify` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_verify = string(value["Verify"].GetString());
+        m_verifyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -144,6 +155,14 @@ void WaterPrintConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_verifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Verify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_verify.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -211,5 +230,21 @@ void WaterPrintConfig::SetKeys(const vector<WaterPrintKey>& _keys)
 bool WaterPrintConfig::KeysHasBeenSet() const
 {
     return m_keysHasBeenSet;
+}
+
+string WaterPrintConfig::GetVerify() const
+{
+    return m_verify;
+}
+
+void WaterPrintConfig::SetVerify(const string& _verify)
+{
+    m_verify = _verify;
+    m_verifyHasBeenSet = true;
+}
+
+bool WaterPrintConfig::VerifyHasBeenSet() const
+{
+    return m_verifyHasBeenSet;
 }
 

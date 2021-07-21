@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转发监听端口，取值1~65535
-                     * @return FrontendPort 转发监听端口，取值1~65535
+                     * 获取转发监听端口下限，取值1~65535
+                     * @return FrontendPort 转发监听端口下限，取值1~65535
                      */
                     int64_t GetFrontendPort() const;
 
                     /**
-                     * 设置转发监听端口，取值1~65535
-                     * @param FrontendPort 转发监听端口，取值1~65535
+                     * 设置转发监听端口下限，取值1~65535
+                     * @param FrontendPort 转发监听端口下限，取值1~65535
                      */
                     void SetFrontendPort(const int64_t& _frontendPort);
 
@@ -94,10 +94,28 @@ UDP
                      */
                     bool ForwardProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取转发监听端口上限，取值1~65535
+                     * @return FrontendPortEnd 转发监听端口上限，取值1~65535
+                     */
+                    int64_t GetFrontendPortEnd() const;
+
+                    /**
+                     * 设置转发监听端口上限，取值1~65535
+                     * @param FrontendPortEnd 转发监听端口上限，取值1~65535
+                     */
+                    void SetFrontendPortEnd(const int64_t& _frontendPortEnd);
+
+                    /**
+                     * 判断参数 FrontendPortEnd 是否已赋值
+                     * @return FrontendPortEnd 是否已赋值
+                     */
+                    bool FrontendPortEndHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 转发监听端口，取值1~65535
+                     * 转发监听端口下限，取值1~65535
                      */
                     int64_t m_frontendPort;
                     bool m_frontendPortHasBeenSet;
@@ -110,6 +128,12 @@ UDP
                      */
                     std::string m_forwardProtocol;
                     bool m_forwardProtocolHasBeenSet;
+
+                    /**
+                     * 转发监听端口上限，取值1~65535
+                     */
+                    int64_t m_frontendPortEnd;
+                    bool m_frontendPortEndHasBeenSet;
 
                 };
             }

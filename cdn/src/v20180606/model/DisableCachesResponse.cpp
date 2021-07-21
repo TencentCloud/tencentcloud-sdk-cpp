@@ -24,7 +24,8 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace std;
 
 DisableCachesResponse::DisableCachesResponse() :
-    m_cacheOptResultHasBeenSet(false)
+    m_cacheOptResultHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,16 @@ CoreInternalOutcome DisableCachesResponse::Deserialize(const string &payload)
         m_cacheOptResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -92,6 +103,16 @@ CacheOptResult DisableCachesResponse::GetCacheOptResult() const
 bool DisableCachesResponse::CacheOptResultHasBeenSet() const
 {
     return m_cacheOptResultHasBeenSet;
+}
+
+string DisableCachesResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool DisableCachesResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

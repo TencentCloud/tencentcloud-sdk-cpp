@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取策略组id
-                     * @return GroupId 策略组id
+                     * 获取策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0
+                     * @return GroupId 策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置策略组id
-                     * @param GroupId 策略组id
+                     * 设置策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0
+                     * @param GroupId 策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0
                      */
                     void SetGroupId(const int64_t& _groupId);
 
@@ -78,6 +78,24 @@ namespace TencentCloud
                      * @return GroupId 是否已赋值
                      */
                     bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0
+                     * @return PolicyId 告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0
+                     */
+                    std::string GetPolicyId() const;
+
+                    /**
+                     * 设置告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0
+                     * @param PolicyId 告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0
+                     */
+                    void SetPolicyId(const std::string& _policyId);
+
+                    /**
+                     * 判断参数 PolicyId 是否已赋值
+                     * @return PolicyId 是否已赋值
+                     */
+                    bool PolicyIdHasBeenSet() const;
 
                     /**
                      * 获取分页参数，每页返回的数量，取值1~100，默认20
@@ -142,10 +160,16 @@ namespace TencentCloud
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 策略组id
+                     * 策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0
+                     */
+                    std::string m_policyId;
+                    bool m_policyIdHasBeenSet;
 
                     /**
                      * 分页参数，每页返回的数量，取值1~100，默认20

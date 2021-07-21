@@ -22,7 +22,8 @@ using namespace std;
 
 ForwardListener::ForwardListener() :
     m_frontendPortHasBeenSet(false),
-    m_forwardProtocolHasBeenSet(false)
+    m_forwardProtocolHasBeenSet(false),
+    m_frontendPortEndHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ForwardListener::Deserialize(const rapidjson::Value &value)
         m_forwardProtocolHasBeenSet = true;
     }
 
+    if (value.HasMember("FrontendPortEnd") && !value["FrontendPortEnd"].IsNull())
+    {
+        if (!value["FrontendPortEnd"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `ForwardListener.FrontendPortEnd` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_frontendPortEnd = value["FrontendPortEnd"].GetInt64();
+        m_frontendPortEndHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ForwardListener::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ForwardProtocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_forwardProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_frontendPortEndHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrontendPortEnd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_frontendPortEnd, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ForwardListener::SetForwardProtocol(const string& _forwardProtocol)
 bool ForwardListener::ForwardProtocolHasBeenSet() const
 {
     return m_forwardProtocolHasBeenSet;
+}
+
+int64_t ForwardListener::GetFrontendPortEnd() const
+{
+    return m_frontendPortEnd;
+}
+
+void ForwardListener::SetFrontendPortEnd(const int64_t& _frontendPortEnd)
+{
+    m_frontendPortEnd = _frontendPortEnd;
+    m_frontendPortEndHasBeenSet = true;
+}
+
+bool ForwardListener::FrontendPortEndHasBeenSet() const
+{
+    return m_frontendPortEndHasBeenSet;
 }
 
