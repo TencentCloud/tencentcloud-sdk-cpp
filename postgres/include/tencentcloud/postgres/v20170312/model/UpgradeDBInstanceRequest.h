@@ -150,6 +150,60 @@ namespace TencentCloud
                      */
                     bool ActivityIdHasBeenSet() const;
 
+                    /**
+                     * 获取指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。
+                     * @return SwitchTag 指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。
+                     */
+                    int64_t GetSwitchTag() const;
+
+                    /**
+                     * 设置指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。
+                     * @param SwitchTag 指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。
+                     */
+                    void SetSwitchTag(const int64_t& _switchTag);
+
+                    /**
+                     * 判断参数 SwitchTag 是否已赋值
+                     * @return SwitchTag 是否已赋值
+                     */
+                    bool SwitchTagHasBeenSet() const;
+
+                    /**
+                     * 获取切换开始时间
+                     * @return SwitchStartTime 切换开始时间
+                     */
+                    std::string GetSwitchStartTime() const;
+
+                    /**
+                     * 设置切换开始时间
+                     * @param SwitchStartTime 切换开始时间
+                     */
+                    void SetSwitchStartTime(const std::string& _switchStartTime);
+
+                    /**
+                     * 判断参数 SwitchStartTime 是否已赋值
+                     * @return SwitchStartTime 是否已赋值
+                     */
+                    bool SwitchStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取切换截止时间
+                     * @return SwitchEndTime 切换截止时间
+                     */
+                    std::string GetSwitchEndTime() const;
+
+                    /**
+                     * 设置切换截止时间
+                     * @param SwitchEndTime 切换截止时间
+                     */
+                    void SetSwitchEndTime(const std::string& _switchEndTime);
+
+                    /**
+                     * 判断参数 SwitchEndTime 是否已赋值
+                     * @return SwitchEndTime 是否已赋值
+                     */
+                    bool SwitchEndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +241,24 @@ namespace TencentCloud
                      */
                     int64_t m_activityId;
                     bool m_activityIdHasBeenSet;
+
+                    /**
+                     * 指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。
+                     */
+                    int64_t m_switchTag;
+                    bool m_switchTagHasBeenSet;
+
+                    /**
+                     * 切换开始时间
+                     */
+                    std::string m_switchStartTime;
+                    bool m_switchStartTimeHasBeenSet;
+
+                    /**
+                     * 切换截止时间
+                     */
+                    std::string m_switchEndTime;
+                    bool m_switchEndTimeHasBeenSet;
 
                 };
             }

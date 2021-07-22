@@ -83,6 +83,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/ModifyVpcEndPointServiceAttributeRequest.h
   include/tencentcloud/vpc/v20170312/model/FilterObject.h
   include/tencentcloud/vpc/v20170312/model/DescribeIpGeolocationInfosResponse.h
+  include/tencentcloud/vpc/v20170312/model/DescribeVpcTaskResultRequest.h
   include/tencentcloud/vpc/v20170312/model/AssociateNetworkAclSubnetsResponse.h
   include/tencentcloud/vpc/v20170312/model/DeleteNatGatewayDestinationIpPortTranslationNatRuleRequest.h
   include/tencentcloud/vpc/v20170312/model/ResetRoutesRequest.h
@@ -496,6 +497,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeAddressTemplateGroupsRequest.h
   include/tencentcloud/vpc/v20170312/model/CheckNetDetectStateResponse.h
   include/tencentcloud/vpc/v20170312/model/DisassociateVpcEndPointSecurityGroupsResponse.h
+  include/tencentcloud/vpc/v20170312/model/DescribeVpcTaskResultResponse.h
   include/tencentcloud/vpc/v20170312/model/AssociateNatGatewayAddressResponse.h
   include/tencentcloud/vpc/v20170312/model/RemoveBandwidthPackageResourcesRequest.h
   include/tencentcloud/vpc/v20170312/model/VpngwCcnRoutes.h
@@ -695,6 +697,7 @@ set(vpc_src
   src/v20170312/model/ModifyVpcEndPointServiceAttributeRequest.cpp
   src/v20170312/model/FilterObject.cpp
   src/v20170312/model/DescribeIpGeolocationInfosResponse.cpp
+  src/v20170312/model/DescribeVpcTaskResultRequest.cpp
   src/v20170312/model/AssociateNetworkAclSubnetsResponse.cpp
   src/v20170312/model/DeleteNatGatewayDestinationIpPortTranslationNatRuleRequest.cpp
   src/v20170312/model/ResetRoutesRequest.cpp
@@ -1108,6 +1111,7 @@ set(vpc_src
   src/v20170312/model/DescribeAddressTemplateGroupsRequest.cpp
   src/v20170312/model/CheckNetDetectStateResponse.cpp
   src/v20170312/model/DisassociateVpcEndPointSecurityGroupsResponse.cpp
+  src/v20170312/model/DescribeVpcTaskResultResponse.cpp
   src/v20170312/model/AssociateNatGatewayAddressResponse.cpp
   src/v20170312/model/RemoveBandwidthPackageResourcesRequest.cpp
   src/v20170312/model/VpngwCcnRoutes.cpp

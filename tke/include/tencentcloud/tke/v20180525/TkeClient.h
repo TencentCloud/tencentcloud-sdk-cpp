@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/tke/v20180525/model/AcquireClusterAdminRoleRequest.h>
 #include <tencentcloud/tke/v20180525/model/AcquireClusterAdminRoleResponse.h>
+#include <tencentcloud/tke/v20180525/model/AddClusterCIDRRequest.h>
+#include <tencentcloud/tke/v20180525/model/AddClusterCIDRResponse.h>
 #include <tencentcloud/tke/v20180525/model/AddExistedInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/AddExistedInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/AddNodeToNodePoolRequest.h>
@@ -139,6 +141,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeRegionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DisableVpcCniNetworkTypeRequest.h>
+#include <tencentcloud/tke/v20180525/model/DisableVpcCniNetworkTypeResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeResponse.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressRequest.h>
@@ -186,6 +190,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AcquireClusterAdminRoleResponse> AcquireClusterAdminRoleOutcome;
                 typedef std::future<AcquireClusterAdminRoleOutcome> AcquireClusterAdminRoleOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::AcquireClusterAdminRoleRequest&, AcquireClusterAdminRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AcquireClusterAdminRoleAsyncHandler;
+                typedef Outcome<Error, Model::AddClusterCIDRResponse> AddClusterCIDROutcome;
+                typedef std::future<AddClusterCIDROutcome> AddClusterCIDROutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::AddClusterCIDRRequest&, AddClusterCIDROutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddClusterCIDRAsyncHandler;
                 typedef Outcome<Error, Model::AddExistedInstancesResponse> AddExistedInstancesOutcome;
                 typedef std::future<AddExistedInstancesOutcome> AddExistedInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::AddExistedInstancesRequest&, AddExistedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddExistedInstancesAsyncHandler;
@@ -357,6 +364,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeRouteTableConflictsResponse> DescribeRouteTableConflictsOutcome;
                 typedef std::future<DescribeRouteTableConflictsOutcome> DescribeRouteTableConflictsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeRouteTableConflictsRequest&, DescribeRouteTableConflictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTableConflictsAsyncHandler;
+                typedef Outcome<Error, Model::DisableVpcCniNetworkTypeResponse> DisableVpcCniNetworkTypeOutcome;
+                typedef std::future<DisableVpcCniNetworkTypeOutcome> DisableVpcCniNetworkTypeOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DisableVpcCniNetworkTypeRequest&, DisableVpcCniNetworkTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableVpcCniNetworkTypeAsyncHandler;
                 typedef Outcome<Error, Model::EnableVpcCniNetworkTypeResponse> EnableVpcCniNetworkTypeOutcome;
                 typedef std::future<EnableVpcCniNetworkTypeOutcome> EnableVpcCniNetworkTypeOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableVpcCniNetworkTypeRequest&, EnableVpcCniNetworkTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpcCniNetworkTypeAsyncHandler;
@@ -413,6 +423,15 @@ namespace TencentCloud
                 AcquireClusterAdminRoleOutcome AcquireClusterAdminRole(const Model::AcquireClusterAdminRoleRequest &request);
                 void AcquireClusterAdminRoleAsync(const Model::AcquireClusterAdminRoleRequest& request, const AcquireClusterAdminRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AcquireClusterAdminRoleOutcomeCallable AcquireClusterAdminRoleCallable(const Model::AcquireClusterAdminRoleRequest& request);
+
+                /**
+                 *给GR集群增加可用的ClusterCIDR
+                 * @param req AddClusterCIDRRequest
+                 * @return AddClusterCIDROutcome
+                 */
+                AddClusterCIDROutcome AddClusterCIDR(const Model::AddClusterCIDRRequest &request);
+                void AddClusterCIDRAsync(const Model::AddClusterCIDRRequest& request, const AddClusterCIDRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddClusterCIDROutcomeCallable AddClusterCIDRCallable(const Model::AddClusterCIDRRequest& request);
 
                 /**
                  *添加已经存在的实例到集群
@@ -926,6 +945,15 @@ namespace TencentCloud
                 DescribeRouteTableConflictsOutcome DescribeRouteTableConflicts(const Model::DescribeRouteTableConflictsRequest &request);
                 void DescribeRouteTableConflictsAsync(const Model::DescribeRouteTableConflictsRequest& request, const DescribeRouteTableConflictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRouteTableConflictsOutcomeCallable DescribeRouteTableConflictsCallable(const Model::DescribeRouteTableConflictsRequest& request);
+
+                /**
+                 *提供给附加了VPC-CNI能力的Global-Route集群关闭VPC-CNI
+                 * @param req DisableVpcCniNetworkTypeRequest
+                 * @return DisableVpcCniNetworkTypeOutcome
+                 */
+                DisableVpcCniNetworkTypeOutcome DisableVpcCniNetworkType(const Model::DisableVpcCniNetworkTypeRequest &request);
+                void DisableVpcCniNetworkTypeAsync(const Model::DisableVpcCniNetworkTypeRequest& request, const DisableVpcCniNetworkTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableVpcCniNetworkTypeOutcomeCallable DisableVpcCniNetworkTypeCallable(const Model::DisableVpcCniNetworkTypeRequest& request);
 
                 /**
                  *GR集群可以通过本接口附加vpc-cni容器网络插件，开启vpc-cni容器网络能力

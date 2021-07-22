@@ -25,10 +25,11 @@ using namespace std;
 FaceFusionRequest::FaceFusionRequest() :
     m_projectIdHasBeenSet(false),
     m_modelIdHasBeenSet(false),
-    m_imageHasBeenSet(false),
     m_rspImgTypeHasBeenSet(false),
+    m_imageHasBeenSet(false),
     m_pornDetectHasBeenSet(false),
-    m_celebrityIdentifyHasBeenSet(false)
+    m_celebrityIdentifyHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
@@ -55,20 +56,20 @@ string FaceFusionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_modelId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_imageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Image";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_rspImgTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RspImgType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_rspImgType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Image";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pornDetectHasBeenSet)
@@ -85,6 +86,14 @@ string FaceFusionRequest::ToJsonString() const
         string key = "CelebrityIdentify";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_celebrityIdentify, allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -127,22 +136,6 @@ bool FaceFusionRequest::ModelIdHasBeenSet() const
     return m_modelIdHasBeenSet;
 }
 
-string FaceFusionRequest::GetImage() const
-{
-    return m_image;
-}
-
-void FaceFusionRequest::SetImage(const string& _image)
-{
-    m_image = _image;
-    m_imageHasBeenSet = true;
-}
-
-bool FaceFusionRequest::ImageHasBeenSet() const
-{
-    return m_imageHasBeenSet;
-}
-
 string FaceFusionRequest::GetRspImgType() const
 {
     return m_rspImgType;
@@ -157,6 +150,22 @@ void FaceFusionRequest::SetRspImgType(const string& _rspImgType)
 bool FaceFusionRequest::RspImgTypeHasBeenSet() const
 {
     return m_rspImgTypeHasBeenSet;
+}
+
+string FaceFusionRequest::GetImage() const
+{
+    return m_image;
+}
+
+void FaceFusionRequest::SetImage(const string& _image)
+{
+    m_image = _image;
+    m_imageHasBeenSet = true;
+}
+
+bool FaceFusionRequest::ImageHasBeenSet() const
+{
+    return m_imageHasBeenSet;
 }
 
 int64_t FaceFusionRequest::GetPornDetect() const
@@ -189,6 +198,22 @@ void FaceFusionRequest::SetCelebrityIdentify(const int64_t& _celebrityIdentify)
 bool FaceFusionRequest::CelebrityIdentifyHasBeenSet() const
 {
     return m_celebrityIdentifyHasBeenSet;
+}
+
+string FaceFusionRequest::GetUrl() const
+{
+    return m_url;
+}
+
+void FaceFusionRequest::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool FaceFusionRequest::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 
 

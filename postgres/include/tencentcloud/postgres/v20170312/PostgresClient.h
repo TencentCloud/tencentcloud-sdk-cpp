@@ -95,6 +95,8 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyReadOnlyGroupConfigRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyReadOnlyGroupConfigResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifySwitchTimePeriodRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ModifySwitchTimePeriodResponse.h>
 #include <tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessRequest.h>
 #include <tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/OpenServerlessDBExtranetAccessRequest.h>
@@ -235,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyReadOnlyGroupConfigResponse> ModifyReadOnlyGroupConfigOutcome;
                 typedef std::future<ModifyReadOnlyGroupConfigOutcome> ModifyReadOnlyGroupConfigOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyReadOnlyGroupConfigRequest&, ModifyReadOnlyGroupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReadOnlyGroupConfigAsyncHandler;
+                typedef Outcome<Error, Model::ModifySwitchTimePeriodResponse> ModifySwitchTimePeriodOutcome;
+                typedef std::future<ModifySwitchTimePeriodOutcome> ModifySwitchTimePeriodOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ModifySwitchTimePeriodRequest&, ModifySwitchTimePeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySwitchTimePeriodAsyncHandler;
                 typedef Outcome<Error, Model::OpenDBExtranetAccessResponse> OpenDBExtranetAccessOutcome;
                 typedef std::future<OpenDBExtranetAccessOutcome> OpenDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::OpenDBExtranetAccessRequest&, OpenDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenDBExtranetAccessAsyncHandler;
@@ -590,6 +595,15 @@ namespace TencentCloud
                 ModifyReadOnlyGroupConfigOutcomeCallable ModifyReadOnlyGroupConfigCallable(const Model::ModifyReadOnlyGroupConfigRequest& request);
 
                 /**
+                 *当升级完成后，对处于等待切换状态下的实例，强制实例立即切换。
+                 * @param req ModifySwitchTimePeriodRequest
+                 * @return ModifySwitchTimePeriodOutcome
+                 */
+                ModifySwitchTimePeriodOutcome ModifySwitchTimePeriod(const Model::ModifySwitchTimePeriodRequest &request);
+                void ModifySwitchTimePeriodAsync(const Model::ModifySwitchTimePeriodRequest& request, const ModifySwitchTimePeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySwitchTimePeriodOutcomeCallable ModifySwitchTimePeriodCallable(const Model::ModifySwitchTimePeriodRequest& request);
+
+                /**
                  *本接口（OpenDBExtranetAccess）用于开通外网。
                  * @param req OpenDBExtranetAccessRequest
                  * @return OpenDBExtranetAccessOutcome
@@ -662,7 +676,7 @@ namespace TencentCloud
                 SetAutoRenewFlagOutcomeCallable SetAutoRenewFlagCallable(const Model::SetAutoRenewFlagRequest& request);
 
                 /**
-                 *本接口（UpgradeDBInstance）用于升级实例。
+                 *本接口（UpgradeDBInstance）用于升级实例配置。
                  * @param req UpgradeDBInstanceRequest
                  * @return UpgradeDBInstanceOutcome
                  */

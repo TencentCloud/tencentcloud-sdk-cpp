@@ -1330,6 +1330,92 @@ TdmqClient::DescribeEnvironmentsOutcomeCallable TdmqClient::DescribeEnvironments
     return task->get_future();
 }
 
+TdmqClient::DescribeNamespaceBundlesOptOutcome TdmqClient::DescribeNamespaceBundlesOpt(const DescribeNamespaceBundlesOptRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNamespaceBundlesOpt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNamespaceBundlesOptResponse rsp = DescribeNamespaceBundlesOptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNamespaceBundlesOptOutcome(rsp);
+        else
+            return DescribeNamespaceBundlesOptOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNamespaceBundlesOptOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeNamespaceBundlesOptAsync(const DescribeNamespaceBundlesOptRequest& request, const DescribeNamespaceBundlesOptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNamespaceBundlesOpt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeNamespaceBundlesOptOutcomeCallable TdmqClient::DescribeNamespaceBundlesOptCallable(const DescribeNamespaceBundlesOptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNamespaceBundlesOptOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNamespaceBundlesOpt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeNodeHealthOptOutcome TdmqClient::DescribeNodeHealthOpt(const DescribeNodeHealthOptRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNodeHealthOpt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNodeHealthOptResponse rsp = DescribeNodeHealthOptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNodeHealthOptOutcome(rsp);
+        else
+            return DescribeNodeHealthOptOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNodeHealthOptOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeNodeHealthOptAsync(const DescribeNodeHealthOptRequest& request, const DescribeNodeHealthOptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNodeHealthOpt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeNodeHealthOptOutcomeCallable TdmqClient::DescribeNodeHealthOptCallable(const DescribeNodeHealthOptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNodeHealthOptOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNodeHealthOpt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeProducersOutcome TdmqClient::DescribeProducers(const DescribeProducersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProducers");

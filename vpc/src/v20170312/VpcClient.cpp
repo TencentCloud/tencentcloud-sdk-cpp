@@ -6705,6 +6705,49 @@ VpcClient::DescribeVpcResourceDashboardOutcomeCallable VpcClient::DescribeVpcRes
     return task->get_future();
 }
 
+VpcClient::DescribeVpcTaskResultOutcome VpcClient::DescribeVpcTaskResult(const DescribeVpcTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpcTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpcTaskResultResponse rsp = DescribeVpcTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpcTaskResultOutcome(rsp);
+        else
+            return DescribeVpcTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpcTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeVpcTaskResultAsync(const DescribeVpcTaskResultRequest& request, const DescribeVpcTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVpcTaskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeVpcTaskResultOutcomeCallable VpcClient::DescribeVpcTaskResultCallable(const DescribeVpcTaskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVpcTaskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVpcTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeVpcsOutcome VpcClient::DescribeVpcs(const DescribeVpcsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVpcs");

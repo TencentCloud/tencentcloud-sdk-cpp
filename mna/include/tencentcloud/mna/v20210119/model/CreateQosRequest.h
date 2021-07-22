@@ -190,6 +190,24 @@ BU4M：上行带宽保障4Mbps
                      */
                     bool CapacityHasBeenSet() const;
 
+                    /**
+                     * 获取应用模板ID
+                     * @return TemplateId 应用模板ID
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 设置应用模板ID
+                     * @param TemplateId 应用模板ID
+                     */
+                    void SetTemplateId(const std::string& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +254,12 @@ BU4M：上行带宽保障4Mbps
                      */
                     Capacity m_capacity;
                     bool m_capacityHasBeenSet;
+
+                    /**
+                     * 应用模板ID
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
 
                 };
             }

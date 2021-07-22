@@ -28,7 +28,10 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_dBInstanceIdHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
-    m_activityIdHasBeenSet(false)
+    m_activityIdHasBeenSet(false),
+    m_switchTagHasBeenSet(false),
+    m_switchStartTimeHasBeenSet(false),
+    m_switchEndTimeHasBeenSet(false)
 {
 }
 
@@ -90,6 +93,30 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "ActivityId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_activityId, allocator);
+    }
+
+    if (m_switchTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_switchTag, allocator);
+    }
+
+    if (m_switchStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_switchStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_switchEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_switchEndTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +221,54 @@ void UpgradeDBInstanceRequest::SetActivityId(const int64_t& _activityId)
 bool UpgradeDBInstanceRequest::ActivityIdHasBeenSet() const
 {
     return m_activityIdHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceRequest::GetSwitchTag() const
+{
+    return m_switchTag;
+}
+
+void UpgradeDBInstanceRequest::SetSwitchTag(const int64_t& _switchTag)
+{
+    m_switchTag = _switchTag;
+    m_switchTagHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::SwitchTagHasBeenSet() const
+{
+    return m_switchTagHasBeenSet;
+}
+
+string UpgradeDBInstanceRequest::GetSwitchStartTime() const
+{
+    return m_switchStartTime;
+}
+
+void UpgradeDBInstanceRequest::SetSwitchStartTime(const string& _switchStartTime)
+{
+    m_switchStartTime = _switchStartTime;
+    m_switchStartTimeHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::SwitchStartTimeHasBeenSet() const
+{
+    return m_switchStartTimeHasBeenSet;
+}
+
+string UpgradeDBInstanceRequest::GetSwitchEndTime() const
+{
+    return m_switchEndTime;
+}
+
+void UpgradeDBInstanceRequest::SetSwitchEndTime(const string& _switchEndTime)
+{
+    m_switchEndTime = _switchEndTime;
+    m_switchEndTimeHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::SwitchEndTimeHasBeenSet() const
+{
+    return m_switchEndTimeHasBeenSet;
 }
 
 

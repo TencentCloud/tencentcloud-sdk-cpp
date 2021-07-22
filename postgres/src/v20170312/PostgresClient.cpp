@@ -1588,6 +1588,49 @@ PostgresClient::ModifyReadOnlyGroupConfigOutcomeCallable PostgresClient::ModifyR
     return task->get_future();
 }
 
+PostgresClient::ModifySwitchTimePeriodOutcome PostgresClient::ModifySwitchTimePeriod(const ModifySwitchTimePeriodRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySwitchTimePeriod");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySwitchTimePeriodResponse rsp = ModifySwitchTimePeriodResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySwitchTimePeriodOutcome(rsp);
+        else
+            return ModifySwitchTimePeriodOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySwitchTimePeriodOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifySwitchTimePeriodAsync(const ModifySwitchTimePeriodRequest& request, const ModifySwitchTimePeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySwitchTimePeriod(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifySwitchTimePeriodOutcomeCallable PostgresClient::ModifySwitchTimePeriodCallable(const ModifySwitchTimePeriodRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySwitchTimePeriodOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySwitchTimePeriod(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::OpenDBExtranetAccessOutcome PostgresClient::OpenDBExtranetAccess(const OpenDBExtranetAccessRequest &request)
 {
     auto outcome = MakeRequest(request, "OpenDBExtranetAccess");

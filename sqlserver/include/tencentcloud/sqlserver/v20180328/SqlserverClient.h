@@ -87,6 +87,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBsResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDBsNormalRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDBsNormalResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeFlowStatusResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeIncrementalMigrationRequest.h>
@@ -157,6 +159,12 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBNameResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBRemarkRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBRemarkResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseCDCRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseCDCResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseCTRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseCTResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseMdfRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseMdfResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyIncrementalMigrationRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyIncrementalMigrationResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyMaintenanceSpanRequest.h>
@@ -311,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDBsResponse> DescribeDBsOutcome;
                 typedef std::future<DescribeDBsOutcome> DescribeDBsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeDBsRequest&, DescribeDBsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDBsNormalResponse> DescribeDBsNormalOutcome;
+                typedef std::future<DescribeDBsNormalOutcome> DescribeDBsNormalOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeDBsNormalRequest&, DescribeDBsNormalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBsNormalAsyncHandler;
                 typedef Outcome<Error, Model::DescribeFlowStatusResponse> DescribeFlowStatusOutcome;
                 typedef std::future<DescribeFlowStatusOutcome> DescribeFlowStatusOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeFlowStatusRequest&, DescribeFlowStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowStatusAsyncHandler;
@@ -416,6 +427,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyDBRemarkResponse> ModifyDBRemarkOutcome;
                 typedef std::future<ModifyDBRemarkOutcome> ModifyDBRemarkOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDBRemarkRequest&, ModifyDBRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBRemarkAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDatabaseCDCResponse> ModifyDatabaseCDCOutcome;
+                typedef std::future<ModifyDatabaseCDCOutcome> ModifyDatabaseCDCOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyDatabaseCDCRequest&, ModifyDatabaseCDCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseCDCAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDatabaseCTResponse> ModifyDatabaseCTOutcome;
+                typedef std::future<ModifyDatabaseCTOutcome> ModifyDatabaseCTOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyDatabaseCTRequest&, ModifyDatabaseCTOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseCTAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDatabaseMdfResponse> ModifyDatabaseMdfOutcome;
+                typedef std::future<ModifyDatabaseMdfOutcome> ModifyDatabaseMdfOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyDatabaseMdfRequest&, ModifyDatabaseMdfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseMdfAsyncHandler;
                 typedef Outcome<Error, Model::ModifyIncrementalMigrationResponse> ModifyIncrementalMigrationOutcome;
                 typedef std::future<ModifyIncrementalMigrationOutcome> ModifyIncrementalMigrationOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyIncrementalMigrationRequest&, ModifyIncrementalMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIncrementalMigrationAsyncHandler;
@@ -774,6 +794,15 @@ namespace TencentCloud
                 DescribeDBsOutcomeCallable DescribeDBsCallable(const Model::DescribeDBsRequest& request);
 
                 /**
+                 *本接口(DescribeDBsNormal)用于查询数据库配置信息，此接口不包含数据库的关联账号
+                 * @param req DescribeDBsNormalRequest
+                 * @return DescribeDBsNormalOutcome
+                 */
+                DescribeDBsNormalOutcome DescribeDBsNormal(const Model::DescribeDBsNormalRequest &request);
+                void DescribeDBsNormalAsync(const Model::DescribeDBsNormalRequest& request, const DescribeDBsNormalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBsNormalOutcomeCallable DescribeDBsNormalCallable(const Model::DescribeDBsNormalRequest& request);
+
+                /**
                  *本接口(DescribeFlowStatus)用于查询流程状态。
                  * @param req DescribeFlowStatusRequest
                  * @return DescribeFlowStatusOutcome
@@ -1087,6 +1116,33 @@ namespace TencentCloud
                 ModifyDBRemarkOutcome ModifyDBRemark(const Model::ModifyDBRemarkRequest &request);
                 void ModifyDBRemarkAsync(const Model::ModifyDBRemarkRequest& request, const ModifyDBRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBRemarkOutcomeCallable ModifyDBRemarkCallable(const Model::ModifyDBRemarkRequest& request);
+
+                /**
+                 *本接口(ModifyDatabaseCDC)用于开启、关闭数据库数据变更捕获(CDC)
+                 * @param req ModifyDatabaseCDCRequest
+                 * @return ModifyDatabaseCDCOutcome
+                 */
+                ModifyDatabaseCDCOutcome ModifyDatabaseCDC(const Model::ModifyDatabaseCDCRequest &request);
+                void ModifyDatabaseCDCAsync(const Model::ModifyDatabaseCDCRequest& request, const ModifyDatabaseCDCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDatabaseCDCOutcomeCallable ModifyDatabaseCDCCallable(const Model::ModifyDatabaseCDCRequest& request);
+
+                /**
+                 *本接口(ModifyDatabaseCT)用于启用、禁用数据库数据变更跟踪(CT)
+                 * @param req ModifyDatabaseCTRequest
+                 * @return ModifyDatabaseCTOutcome
+                 */
+                ModifyDatabaseCTOutcome ModifyDatabaseCT(const Model::ModifyDatabaseCTRequest &request);
+                void ModifyDatabaseCTAsync(const Model::ModifyDatabaseCTRequest& request, const ModifyDatabaseCTAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDatabaseCTOutcomeCallable ModifyDatabaseCTCallable(const Model::ModifyDatabaseCTRequest& request);
+
+                /**
+                 *本接口(ModifyDatabaseMdf)用于收缩数据库mdf(Shrink mdf)
+                 * @param req ModifyDatabaseMdfRequest
+                 * @return ModifyDatabaseMdfOutcome
+                 */
+                ModifyDatabaseMdfOutcome ModifyDatabaseMdf(const Model::ModifyDatabaseMdfRequest &request);
+                void ModifyDatabaseMdfAsync(const Model::ModifyDatabaseMdfRequest& request, const ModifyDatabaseMdfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDatabaseMdfOutcomeCallable ModifyDatabaseMdfCallable(const Model::ModifyDatabaseMdfRequest& request);
 
                 /**
                  *本接口（ModifyIncrementalMigration）用于修改增量备份导入任务。

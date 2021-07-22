@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool ModelIdHasBeenSet() const;
 
                     /**
-                     * 获取返回图像方式（url 或 base64) ，二选一。url有效期为30天。
-                     * @return RspImgType 返回图像方式（url 或 base64) ，二选一。url有效期为30天。
+                     * 获取返回图像方式（url 或 base64) ，二选一。url有效期为7天。
+                     * @return RspImgType 返回图像方式（url 或 base64) ，二选一。url有效期为7天。
                      */
                     std::string GetRspImgType() const;
 
                     /**
-                     * 设置返回图像方式（url 或 base64) ，二选一。url有效期为30天。
-                     * @param RspImgType 返回图像方式（url 或 base64) ，二选一。url有效期为30天。
+                     * 设置返回图像方式（url 或 base64) ，二选一。url有效期为7天。
+                     * @param RspImgType 返回图像方式（url 或 base64) ，二选一。url有效期为7天。
                      */
                     void SetRspImgType(const std::string& _rspImgType);
 
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_modelIdHasBeenSet;
 
                     /**
-                     * 返回图像方式（url 或 base64) ，二选一。url有效期为30天。
+                     * 返回图像方式（url 或 base64) ，二选一。url有效期为7天。
                      */
                     std::string m_rspImgType;
                     bool m_rspImgTypeHasBeenSet;

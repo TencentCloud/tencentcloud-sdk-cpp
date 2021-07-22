@@ -483,6 +483,50 @@ namespace TencentCloud
                      */
                     bool IsLuckyDeviceHasBeenSet() const;
 
+                    /**
+                     * 获取标识机器维保状态。Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaintainStatus 标识机器维保状态。Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMaintainStatus() const;
+
+                    /**
+                     * 设置标识机器维保状态。Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaintainStatus 标识机器维保状态。Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaintainStatus(const std::string& _maintainStatus);
+
+                    /**
+                     * 判断参数 MaintainStatus 是否已赋值
+                     * @return MaintainStatus 是否已赋值
+                     */
+                    bool MaintainStatusHasBeenSet() const;
+
+                    /**
+                     * 获取维保信息描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaintainMessage 维保信息描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMaintainMessage() const;
+
+                    /**
+                     * 设置维保信息描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaintainMessage 维保信息描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaintainMessage(const std::string& _maintainMessage);
+
+                    /**
+                     * 判断参数 MaintainMessage 是否已赋值
+                     * @return MaintainMessage 是否已赋值
+                     */
+                    bool MaintainMessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -629,6 +673,20 @@ namespace TencentCloud
                      */
                     uint64_t m_isLuckyDevice;
                     bool m_isLuckyDeviceHasBeenSet;
+
+                    /**
+                     * 标识机器维保状态。Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_maintainStatus;
+                    bool m_maintainStatusHasBeenSet;
+
+                    /**
+                     * 维保信息描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_maintainMessage;
+                    bool m_maintainMessageHasBeenSet;
 
                 };
             }

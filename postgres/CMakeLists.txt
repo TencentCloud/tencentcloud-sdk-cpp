@@ -52,6 +52,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/CreateInstancesResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeOrdersResponse.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceCreateDBInstancesResponse.h
+  include/tencentcloud/postgres/v20170312/model/ModifySwitchTimePeriodResponse.h
   include/tencentcloud/postgres/v20170312/model/DisIsolateDBInstancesRequest.h
   include/tencentcloud/postgres/v20170312/model/ServerlessDBInstanceNetInfo.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstancesRequest.h
@@ -113,6 +114,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DBBackup.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBErrlogsResponse.h
   include/tencentcloud/postgres/v20170312/model/InquiryPriceUpgradeDBInstanceResponse.h
+  include/tencentcloud/postgres/v20170312/model/ModifySwitchTimePeriodRequest.h
   include/tencentcloud/postgres/v20170312/model/RegionInfo.h
   include/tencentcloud/postgres/v20170312/model/RestartDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstancesResponse.h
@@ -165,6 +167,7 @@ set(postgres_src
   src/v20170312/model/CreateInstancesResponse.cpp
   src/v20170312/model/DescribeOrdersResponse.cpp
   src/v20170312/model/InquiryPriceCreateDBInstancesResponse.cpp
+  src/v20170312/model/ModifySwitchTimePeriodResponse.cpp
   src/v20170312/model/DisIsolateDBInstancesRequest.cpp
   src/v20170312/model/ServerlessDBInstanceNetInfo.cpp
   src/v20170312/model/DescribeDBInstancesRequest.cpp
@@ -226,6 +229,7 @@ set(postgres_src
   src/v20170312/model/DBBackup.cpp
   src/v20170312/model/DescribeDBErrlogsResponse.cpp
   src/v20170312/model/InquiryPriceUpgradeDBInstanceResponse.cpp
+  src/v20170312/model/ModifySwitchTimePeriodRequest.cpp
   src/v20170312/model/RegionInfo.cpp
   src/v20170312/model/RestartDBInstanceResponse.cpp
   src/v20170312/model/DescribeDBInstancesResponse.cpp

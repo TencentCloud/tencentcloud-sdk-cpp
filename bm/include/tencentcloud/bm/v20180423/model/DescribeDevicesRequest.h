@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量
-                     * @return Limit 返回数量
+                     * 获取返回数量，默认为20，最大值为100。
+                     * @return Limit 返回数量，默认为20，最大值为100。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量
-                     * @param Limit 返回数量
+                     * 设置返回数量，默认为20，最大值为100。
+                     * @param Limit 返回数量，默认为20，最大值为100。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -367,6 +367,24 @@ namespace TencentCloud
                      */
                     bool OrderHasBeenSet() const;
 
+                    /**
+                     * 获取按照维保方式过滤。可取值为 Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保
+                     * @return MaintainStatus 按照维保方式过滤。可取值为 Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保
+                     */
+                    std::string GetMaintainStatus() const;
+
+                    /**
+                     * 设置按照维保方式过滤。可取值为 Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保
+                     * @param MaintainStatus 按照维保方式过滤。可取值为 Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保
+                     */
+                    void SetMaintainStatus(const std::string& _maintainStatus);
+
+                    /**
+                     * 判断参数 MaintainStatus 是否已赋值
+                     * @return MaintainStatus 是否已赋值
+                     */
+                    bool MaintainStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -376,7 +394,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量
+                     * 返回数量，默认为20，最大值为100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -476,6 +494,12 @@ namespace TencentCloud
                      */
                     uint64_t m_order;
                     bool m_orderHasBeenSet;
+
+                    /**
+                     * 按照维保方式过滤。可取值为 Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保
+                     */
+                    std::string m_maintainStatus;
+                    bool m_maintainStatusHasBeenSet;
 
                 };
             }

@@ -40,7 +40,8 @@ DescribeDevicesRequest::DescribeDevicesRequest() :
     m_deviceTypeHasBeenSet(false),
     m_isLuckyDeviceHasBeenSet(false),
     m_orderFieldHasBeenSet(false),
-    m_orderHasBeenSet(false)
+    m_orderHasBeenSet(false),
+    m_maintainStatusHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,14 @@ string DescribeDevicesRequest::ToJsonString() const
         string key = "Order";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_order, allocator);
+    }
+
+    if (m_maintainStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaintainStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_maintainStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -511,6 +520,22 @@ void DescribeDevicesRequest::SetOrder(const uint64_t& _order)
 bool DescribeDevicesRequest::OrderHasBeenSet() const
 {
     return m_orderHasBeenSet;
+}
+
+string DescribeDevicesRequest::GetMaintainStatus() const
+{
+    return m_maintainStatus;
+}
+
+void DescribeDevicesRequest::SetMaintainStatus(const string& _maintainStatus)
+{
+    m_maintainStatus = _maintainStatus;
+    m_maintainStatusHasBeenSet = true;
+}
+
+bool DescribeDevicesRequest::MaintainStatusHasBeenSet() const
+{
+    return m_maintainStatusHasBeenSet;
 }
 
 

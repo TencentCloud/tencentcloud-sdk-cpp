@@ -83,6 +83,49 @@ TkeClient::AcquireClusterAdminRoleOutcomeCallable TkeClient::AcquireClusterAdmin
     return task->get_future();
 }
 
+TkeClient::AddClusterCIDROutcome TkeClient::AddClusterCIDR(const AddClusterCIDRRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddClusterCIDR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddClusterCIDRResponse rsp = AddClusterCIDRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddClusterCIDROutcome(rsp);
+        else
+            return AddClusterCIDROutcome(o.GetError());
+    }
+    else
+    {
+        return AddClusterCIDROutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::AddClusterCIDRAsync(const AddClusterCIDRRequest& request, const AddClusterCIDRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddClusterCIDR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::AddClusterCIDROutcomeCallable TkeClient::AddClusterCIDRCallable(const AddClusterCIDRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddClusterCIDROutcome()>>(
+        [this, request]()
+        {
+            return this->AddClusterCIDR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::AddExistedInstancesOutcome TkeClient::AddExistedInstances(const AddExistedInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "AddExistedInstances");
@@ -2527,6 +2570,49 @@ TkeClient::DescribeRouteTableConflictsOutcomeCallable TkeClient::DescribeRouteTa
         [this, request]()
         {
             return this->DescribeRouteTableConflicts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DisableVpcCniNetworkTypeOutcome TkeClient::DisableVpcCniNetworkType(const DisableVpcCniNetworkTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableVpcCniNetworkType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableVpcCniNetworkTypeResponse rsp = DisableVpcCniNetworkTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableVpcCniNetworkTypeOutcome(rsp);
+        else
+            return DisableVpcCniNetworkTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableVpcCniNetworkTypeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DisableVpcCniNetworkTypeAsync(const DisableVpcCniNetworkTypeRequest& request, const DisableVpcCniNetworkTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableVpcCniNetworkType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DisableVpcCniNetworkTypeOutcomeCallable TkeClient::DisableVpcCniNetworkTypeCallable(const DisableVpcCniNetworkTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableVpcCniNetworkTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableVpcCniNetworkType(request);
         }
     );
 

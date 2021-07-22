@@ -28,7 +28,8 @@ CreateQosRequest::CreateQosRequest() :
     m_qosMenuHasBeenSet(false),
     m_deviceInfoHasBeenSet(false),
     m_durationHasBeenSet(false),
-    m_capacityHasBeenSet(false)
+    m_capacityHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,14 @@ string CreateQosRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_capacity.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -193,6 +202,22 @@ void CreateQosRequest::SetCapacity(const Capacity& _capacity)
 bool CreateQosRequest::CapacityHasBeenSet() const
 {
     return m_capacityHasBeenSet;
+}
+
+string CreateQosRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void CreateQosRequest::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool CreateQosRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 
 

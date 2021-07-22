@@ -83,6 +83,10 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeNamespaceBundlesOptRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeNamespaceBundlesOptResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeNodeHealthOptRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeNodeHealthOptResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeProducersRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeProducersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsRequest.h>
@@ -223,6 +227,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeEnvironmentsResponse> DescribeEnvironmentsOutcome;
                 typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeEnvironmentsRequest&, DescribeEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNamespaceBundlesOptResponse> DescribeNamespaceBundlesOptOutcome;
+                typedef std::future<DescribeNamespaceBundlesOptOutcome> DescribeNamespaceBundlesOptOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeNamespaceBundlesOptRequest&, DescribeNamespaceBundlesOptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNamespaceBundlesOptAsyncHandler;
+                typedef Outcome<Error, Model::DescribeNodeHealthOptResponse> DescribeNodeHealthOptOutcome;
+                typedef std::future<DescribeNodeHealthOptOutcome> DescribeNodeHealthOptOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeNodeHealthOptRequest&, DescribeNodeHealthOptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeHealthOptAsyncHandler;
                 typedef Outcome<Error, Model::DescribeProducersResponse> DescribeProducersOutcome;
                 typedef std::future<DescribeProducersOutcome> DescribeProducersOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeProducersRequest&, DescribeProducersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProducersAsyncHandler;
@@ -549,6 +559,24 @@ namespace TencentCloud
                 DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest &request);
                 void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request);
+
+                /**
+                 *运营端获取命名空间bundle列表
+                 * @param req DescribeNamespaceBundlesOptRequest
+                 * @return DescribeNamespaceBundlesOptOutcome
+                 */
+                DescribeNamespaceBundlesOptOutcome DescribeNamespaceBundlesOpt(const Model::DescribeNamespaceBundlesOptRequest &request);
+                void DescribeNamespaceBundlesOptAsync(const Model::DescribeNamespaceBundlesOptRequest& request, const DescribeNamespaceBundlesOptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNamespaceBundlesOptOutcomeCallable DescribeNamespaceBundlesOptCallable(const Model::DescribeNamespaceBundlesOptRequest& request);
+
+                /**
+                 *运营端获节点健康状态
+                 * @param req DescribeNodeHealthOptRequest
+                 * @return DescribeNodeHealthOptOutcome
+                 */
+                DescribeNodeHealthOptOutcome DescribeNodeHealthOpt(const Model::DescribeNodeHealthOptRequest &request);
+                void DescribeNodeHealthOptAsync(const Model::DescribeNodeHealthOptRequest& request, const DescribeNodeHealthOptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNodeHealthOptOutcomeCallable DescribeNodeHealthOptCallable(const Model::DescribeNodeHealthOptRequest& request);
 
                 /**
                  *获取生产者列表，仅显示在线的生产者

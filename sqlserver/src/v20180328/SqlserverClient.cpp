@@ -1416,6 +1416,49 @@ SqlserverClient::DescribeDBsOutcomeCallable SqlserverClient::DescribeDBsCallable
     return task->get_future();
 }
 
+SqlserverClient::DescribeDBsNormalOutcome SqlserverClient::DescribeDBsNormal(const DescribeDBsNormalRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBsNormal");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBsNormalResponse rsp = DescribeDBsNormalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBsNormalOutcome(rsp);
+        else
+            return DescribeDBsNormalOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBsNormalOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeDBsNormalAsync(const DescribeDBsNormalRequest& request, const DescribeDBsNormalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBsNormal(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeDBsNormalOutcomeCallable SqlserverClient::DescribeDBsNormalCallable(const DescribeDBsNormalRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBsNormalOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBsNormal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::DescribeFlowStatusOutcome SqlserverClient::DescribeFlowStatus(const DescribeFlowStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFlowStatus");
@@ -2914,6 +2957,135 @@ SqlserverClient::ModifyDBRemarkOutcomeCallable SqlserverClient::ModifyDBRemarkCa
         [this, request]()
         {
             return this->ModifyDBRemark(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::ModifyDatabaseCDCOutcome SqlserverClient::ModifyDatabaseCDC(const ModifyDatabaseCDCRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDatabaseCDC");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDatabaseCDCResponse rsp = ModifyDatabaseCDCResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDatabaseCDCOutcome(rsp);
+        else
+            return ModifyDatabaseCDCOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDatabaseCDCOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyDatabaseCDCAsync(const ModifyDatabaseCDCRequest& request, const ModifyDatabaseCDCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDatabaseCDC(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::ModifyDatabaseCDCOutcomeCallable SqlserverClient::ModifyDatabaseCDCCallable(const ModifyDatabaseCDCRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDatabaseCDCOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDatabaseCDC(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::ModifyDatabaseCTOutcome SqlserverClient::ModifyDatabaseCT(const ModifyDatabaseCTRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDatabaseCT");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDatabaseCTResponse rsp = ModifyDatabaseCTResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDatabaseCTOutcome(rsp);
+        else
+            return ModifyDatabaseCTOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDatabaseCTOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyDatabaseCTAsync(const ModifyDatabaseCTRequest& request, const ModifyDatabaseCTAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDatabaseCT(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::ModifyDatabaseCTOutcomeCallable SqlserverClient::ModifyDatabaseCTCallable(const ModifyDatabaseCTRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDatabaseCTOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDatabaseCT(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::ModifyDatabaseMdfOutcome SqlserverClient::ModifyDatabaseMdf(const ModifyDatabaseMdfRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDatabaseMdf");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDatabaseMdfResponse rsp = ModifyDatabaseMdfResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDatabaseMdfOutcome(rsp);
+        else
+            return ModifyDatabaseMdfOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDatabaseMdfOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyDatabaseMdfAsync(const ModifyDatabaseMdfRequest& request, const ModifyDatabaseMdfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDatabaseMdf(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::ModifyDatabaseMdfOutcomeCallable SqlserverClient::ModifyDatabaseMdfCallable(const ModifyDatabaseMdfRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDatabaseMdfOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDatabaseMdf(request);
         }
     );
 

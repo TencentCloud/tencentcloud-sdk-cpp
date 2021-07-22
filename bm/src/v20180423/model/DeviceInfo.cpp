@@ -44,7 +44,9 @@ DeviceInfo::DeviceInfo() :
     m_subnetNameHasBeenSet(false),
     m_vpcCidrBlockHasBeenSet(false),
     m_subnetCidrBlockHasBeenSet(false),
-    m_isLuckyDeviceHasBeenSet(false)
+    m_isLuckyDeviceHasBeenSet(false),
+    m_maintainStatusHasBeenSet(false),
+    m_maintainMessageHasBeenSet(false)
 {
 }
 
@@ -303,6 +305,26 @@ CoreInternalOutcome DeviceInfo::Deserialize(const rapidjson::Value &value)
         m_isLuckyDeviceHasBeenSet = true;
     }
 
+    if (value.HasMember("MaintainStatus") && !value["MaintainStatus"].IsNull())
+    {
+        if (!value["MaintainStatus"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.MaintainStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maintainStatus = string(value["MaintainStatus"].GetString());
+        m_maintainStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaintainMessage") && !value["MaintainMessage"].IsNull())
+    {
+        if (!value["MaintainMessage"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeviceInfo.MaintainMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maintainMessage = string(value["MaintainMessage"].GetString());
+        m_maintainMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -507,6 +529,22 @@ void DeviceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "IsLuckyDevice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isLuckyDevice, allocator);
+    }
+
+    if (m_maintainStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaintainStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maintainStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maintainMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaintainMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maintainMessage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -894,5 +932,37 @@ void DeviceInfo::SetIsLuckyDevice(const uint64_t& _isLuckyDevice)
 bool DeviceInfo::IsLuckyDeviceHasBeenSet() const
 {
     return m_isLuckyDeviceHasBeenSet;
+}
+
+string DeviceInfo::GetMaintainStatus() const
+{
+    return m_maintainStatus;
+}
+
+void DeviceInfo::SetMaintainStatus(const string& _maintainStatus)
+{
+    m_maintainStatus = _maintainStatus;
+    m_maintainStatusHasBeenSet = true;
+}
+
+bool DeviceInfo::MaintainStatusHasBeenSet() const
+{
+    return m_maintainStatusHasBeenSet;
+}
+
+string DeviceInfo::GetMaintainMessage() const
+{
+    return m_maintainMessage;
+}
+
+void DeviceInfo::SetMaintainMessage(const string& _maintainMessage)
+{
+    m_maintainMessage = _maintainMessage;
+    m_maintainMessageHasBeenSet = true;
+}
+
+bool DeviceInfo::MaintainMessageHasBeenSet() const
+{
+    return m_maintainMessageHasBeenSet;
 }
 
