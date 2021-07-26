@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/redis/v20180412/model/BackupDownloadInfo.h>
 
 
 namespace TencentCloud
@@ -66,6 +67,34 @@ namespace TencentCloud
                      */
                     bool InnerDownloadUrlHasBeenSet() const;
 
+                    /**
+                     * 获取文件名称（仅tendis实例有值）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Filenames 文件名称（仅tendis实例有值）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetFilenames() const;
+
+                    /**
+                     * 判断参数 Filenames 是否已赋值
+                     * @return Filenames 是否已赋值
+                     */
+                    bool FilenamesHasBeenSet() const;
+
+                    /**
+                     * 获取备份文件信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupInfos 备份文件信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BackupDownloadInfo> GetBackupInfos() const;
+
+                    /**
+                     * 判断参数 BackupInfos 是否已赋值
+                     * @return BackupInfos 是否已赋值
+                     */
+                    bool BackupInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +108,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_innerDownloadUrl;
                     bool m_innerDownloadUrlHasBeenSet;
+
+                    /**
+                     * 文件名称（仅tendis实例有值）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_filenames;
+                    bool m_filenamesHasBeenSet;
+
+                    /**
+                     * 备份文件信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BackupDownloadInfo> m_backupInfos;
+                    bool m_backupInfosHasBeenSet;
 
                 };
             }

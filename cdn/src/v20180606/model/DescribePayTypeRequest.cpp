@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace std;
 
 DescribePayTypeRequest::DescribePayTypeRequest() :
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribePayTypeRequest::ToJsonString() const
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribePayTypeRequest::SetArea(const string& _area)
 bool DescribePayTypeRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+string DescribePayTypeRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribePayTypeRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribePayTypeRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

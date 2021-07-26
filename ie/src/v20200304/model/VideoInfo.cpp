@@ -33,7 +33,8 @@ VideoInfo::VideoInfo() :
     m_darInfoHasBeenSet(false),
     m_hdrHasBeenSet(false),
     m_videoEnhanceHasBeenSet(false),
-    m_hiddenMarkInfoHasBeenSet(false)
+    m_hiddenMarkInfoHasBeenSet(false),
+    m_textMarkInfoHasBeenSet(false)
 {
 }
 
@@ -203,6 +204,26 @@ CoreInternalOutcome VideoInfo::Deserialize(const rapidjson::Value &value)
         m_hiddenMarkInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("TextMarkInfo") && !value["TextMarkInfo"].IsNull())
+    {
+        if (!value["TextMarkInfo"].IsArray())
+            return CoreInternalOutcome(Error("response `VideoInfo.TextMarkInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TextMarkInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TextMarkInfoItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_textMarkInfo.push_back(item);
+        }
+        m_textMarkInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -322,6 +343,21 @@ void VideoInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hiddenMarkInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_textMarkInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextMarkInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_textMarkInfo.begin(); itr != m_textMarkInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -533,5 +569,21 @@ void VideoInfo::SetHiddenMarkInfo(const HiddenMarkInfo& _hiddenMarkInfo)
 bool VideoInfo::HiddenMarkInfoHasBeenSet() const
 {
     return m_hiddenMarkInfoHasBeenSet;
+}
+
+vector<TextMarkInfoItem> VideoInfo::GetTextMarkInfo() const
+{
+    return m_textMarkInfo;
+}
+
+void VideoInfo::SetTextMarkInfo(const vector<TextMarkInfoItem>& _textMarkInfo)
+{
+    m_textMarkInfo = _textMarkInfo;
+    m_textMarkInfoHasBeenSet = true;
+}
+
+bool VideoInfo::TextMarkInfoHasBeenSet() const
+{
+    return m_textMarkInfoHasBeenSet;
 }
 

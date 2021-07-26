@@ -57,6 +57,7 @@
 #include <tencentcloud/cdn/v20180606/model/OriginCombine.h>
 #include <tencentcloud/cdn/v20180606/model/Quic.h>
 #include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/WebSocket.h>
 
 
 namespace TencentCloud
@@ -844,6 +845,24 @@ global：全球加速
                      */
                     bool OssPrivateAccessHasBeenSet() const;
 
+                    /**
+                     * 获取WebSocket配置
+                     * @return WebSocket WebSocket配置
+                     */
+                    WebSocket GetWebSocket() const;
+
+                    /**
+                     * 设置WebSocket配置
+                     * @param WebSocket WebSocket配置
+                     */
+                    void SetWebSocket(const WebSocket& _webSocket);
+
+                    /**
+                     * 判断参数 WebSocket 是否已赋值
+                     * @return WebSocket 是否已赋值
+                     */
+                    bool WebSocketHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1098,6 +1117,12 @@ global：全球加速
                      */
                     OssPrivateAccess m_ossPrivateAccess;
                     bool m_ossPrivateAccessHasBeenSet;
+
+                    /**
+                     * WebSocket配置
+                     */
+                    WebSocket m_webSocket;
+                    bool m_webSocketHasBeenSet;
 
                 };
             }

@@ -136,6 +136,42 @@ namespace TencentCloud
                      */
                     bool NotifyModeHasBeenSet() const;
 
+                    /**
+                     * 获取通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     * @return NotifyType 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     */
+                    std::string GetNotifyType() const;
+
+                    /**
+                     * 设置通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     * @param NotifyType 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     */
+                    void SetNotifyType(const std::string& _notifyType);
+
+                    /**
+                     * 判断参数 NotifyType 是否已赋值
+                     * @return NotifyType 是否已赋值
+                     */
+                    bool NotifyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取HTTP回调地址，NotifyType为URL时必填。
+                     * @return NotifyUrl HTTP回调地址，NotifyType为URL时必填。
+                     */
+                    std::string GetNotifyUrl() const;
+
+                    /**
+                     * 设置HTTP回调地址，NotifyType为URL时必填。
+                     * @param NotifyUrl HTTP回调地址，NotifyType为URL时必填。
+                     */
+                    void SetNotifyUrl(const std::string& _notifyUrl);
+
+                    /**
+                     * 判断参数 NotifyUrl 是否已赋值
+                     * @return NotifyUrl 是否已赋值
+                     */
+                    bool NotifyUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +203,18 @@ namespace TencentCloud
                      */
                     std::string m_notifyMode;
                     bool m_notifyModeHasBeenSet;
+
+                    /**
+                     * 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+                     */
+                    std::string m_notifyType;
+                    bool m_notifyTypeHasBeenSet;
+
+                    /**
+                     * HTTP回调地址，NotifyType为URL时必填。
+                     */
+                    std::string m_notifyUrl;
+                    bool m_notifyUrlHasBeenSet;
 
                 };
             }

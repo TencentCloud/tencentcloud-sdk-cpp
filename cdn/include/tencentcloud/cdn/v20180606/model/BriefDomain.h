@@ -369,6 +369,24 @@ global：全球锁定
                      */
                     bool ReadonlyHasBeenSet() const;
 
+                    /**
+                     * 获取域名所属产品，cdn/ecdn
+                     * @return Product 域名所属产品，cdn/ecdn
+                     */
+                    std::string GetProduct() const;
+
+                    /**
+                     * 设置域名所属产品，cdn/ecdn
+                     * @param Product 域名所属产品，cdn/ecdn
+                     */
+                    void SetProduct(const std::string& _product);
+
+                    /**
+                     * 判断参数 Product 是否已赋值
+                     * @return Product 是否已赋值
+                     */
+                    bool ProductHasBeenSet() const;
+
                 private:
 
                     /**
@@ -470,6 +488,12 @@ global：全球锁定
                      */
                     std::string m_readonly;
                     bool m_readonlyHasBeenSet;
+
+                    /**
+                     * 域名所属产品，cdn/ecdn
+                     */
+                    std::string m_product;
+                    bool m_productHasBeenSet;
 
                 };
             }

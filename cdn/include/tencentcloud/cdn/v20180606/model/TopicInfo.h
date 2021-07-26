@@ -122,6 +122,28 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取归属于cdn或ecdn
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Channel 归属于cdn或ecdn
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChannel() const;
+
+                    /**
+                     * 设置归属于cdn或ecdn
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Channel 归属于cdn或ecdn
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChannel(const std::string& _channel);
+
+                    /**
+                     * 判断参数 Channel 是否已赋值
+                     * @return Channel 是否已赋值
+                     */
+                    bool ChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +170,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 归属于cdn或ecdn
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channel;
+                    bool m_channelHasBeenSet;
 
                 };
             }

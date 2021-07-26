@@ -193,6 +193,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AnimatedGraphicTaskInput.h
   include/tencentcloud/mps/v20190612/model/DeleteContentReviewTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/AIAnalysisTemplateItem.h
+  include/tencentcloud/mps/v20190612/model/HeadTailParameter.h
   include/tencentcloud/mps/v20190612/model/RawImageWatermarkInput.h
   include/tencentcloud/mps/v20190612/model/DescribeImageSpriteTemplatesRequest.h
   include/tencentcloud/mps/v20190612/model/AiSampleTagOperation.h
@@ -558,6 +559,7 @@ set(mps_src
   src/v20190612/model/AnimatedGraphicTaskInput.cpp
   src/v20190612/model/DeleteContentReviewTemplateRequest.cpp
   src/v20190612/model/AIAnalysisTemplateItem.cpp
+  src/v20190612/model/HeadTailParameter.cpp
   src/v20190612/model/RawImageWatermarkInput.cpp
   src/v20190612/model/DescribeImageSpriteTemplatesRequest.cpp
   src/v20190612/model/AiSampleTagOperation.cpp

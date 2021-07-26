@@ -25,7 +25,9 @@ using namespace std;
 
 DescribeBackupUrlResponse::DescribeBackupUrlResponse() :
     m_downloadUrlHasBeenSet(false),
-    m_innerDownloadUrlHasBeenSet(false)
+    m_innerDownloadUrlHasBeenSet(false),
+    m_filenamesHasBeenSet(false),
+    m_backupInfosHasBeenSet(false)
 {
 }
 
@@ -89,6 +91,39 @@ CoreInternalOutcome DescribeBackupUrlResponse::Deserialize(const string &payload
         m_innerDownloadUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Filenames") && !rsp["Filenames"].IsNull())
+    {
+        if (!rsp["Filenames"].IsArray())
+            return CoreInternalOutcome(Error("response `Filenames` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Filenames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_filenames.push_back((*itr).GetString());
+        }
+        m_filenamesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BackupInfos") && !rsp["BackupInfos"].IsNull())
+    {
+        if (!rsp["BackupInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `BackupInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["BackupInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BackupDownloadInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_backupInfos.push_back(item);
+        }
+        m_backupInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -112,6 +147,26 @@ vector<string> DescribeBackupUrlResponse::GetInnerDownloadUrl() const
 bool DescribeBackupUrlResponse::InnerDownloadUrlHasBeenSet() const
 {
     return m_innerDownloadUrlHasBeenSet;
+}
+
+vector<string> DescribeBackupUrlResponse::GetFilenames() const
+{
+    return m_filenames;
+}
+
+bool DescribeBackupUrlResponse::FilenamesHasBeenSet() const
+{
+    return m_filenamesHasBeenSet;
+}
+
+vector<BackupDownloadInfo> DescribeBackupUrlResponse::GetBackupInfos() const
+{
+    return m_backupInfos;
+}
+
+bool DescribeBackupUrlResponse::BackupInfosHasBeenSet() const
+{
+    return m_backupInfosHasBeenSet;
 }
 
 

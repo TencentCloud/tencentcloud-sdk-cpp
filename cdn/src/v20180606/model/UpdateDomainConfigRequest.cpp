@@ -63,7 +63,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_offlineCacheHasBeenSet(false),
     m_originCombineHasBeenSet(false),
     m_quicHasBeenSet(false),
-    m_ossPrivateAccessHasBeenSet(false)
+    m_ossPrivateAccessHasBeenSet(false),
+    m_webSocketHasBeenSet(false)
 {
 }
 
@@ -441,6 +442,15 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ossPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_webSocketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebSocket";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_webSocket.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1105,6 +1115,22 @@ void UpdateDomainConfigRequest::SetOssPrivateAccess(const OssPrivateAccess& _oss
 bool UpdateDomainConfigRequest::OssPrivateAccessHasBeenSet() const
 {
     return m_ossPrivateAccessHasBeenSet;
+}
+
+WebSocket UpdateDomainConfigRequest::GetWebSocket() const
+{
+    return m_webSocket;
+}
+
+void UpdateDomainConfigRequest::SetWebSocket(const WebSocket& _webSocket)
+{
+    m_webSocket = _webSocket;
+    m_webSocketHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::WebSocketHasBeenSet() const
+{
+    return m_webSocketHasBeenSet;
 }
 
 

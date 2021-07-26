@@ -33,7 +33,8 @@ BriefDomain::BriefDomain() :
     m_originHasBeenSet(false),
     m_disableHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_readonlyHasBeenSet(false)
+    m_readonlyHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,16 @@ CoreInternalOutcome BriefDomain::Deserialize(const rapidjson::Value &value)
         m_readonlyHasBeenSet = true;
     }
 
+    if (value.HasMember("Product") && !value["Product"].IsNull())
+    {
+        if (!value["Product"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `BriefDomain.Product` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_product = string(value["Product"].GetString());
+        m_productHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +300,14 @@ void BriefDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Readonly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_readonly.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -500,5 +519,21 @@ void BriefDomain::SetReadonly(const string& _readonly)
 bool BriefDomain::ReadonlyHasBeenSet() const
 {
     return m_readonlyHasBeenSet;
+}
+
+string BriefDomain::GetProduct() const
+{
+    return m_product;
+}
+
+void BriefDomain::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool BriefDomain::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 

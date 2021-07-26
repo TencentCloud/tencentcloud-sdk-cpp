@@ -26,7 +26,8 @@ DescribeSlowLogUserHostStatsRequest::DescribeSlowLogUserHostStatsRequest() :
     m_instanceIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_productHasBeenSet(false)
+    m_productHasBeenSet(false),
+    m_md5HasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeSlowLogUserHostStatsRequest::ToJsonString() const
         string key = "Product";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_md5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Md5";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_md5.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeSlowLogUserHostStatsRequest::SetProduct(const string& _product)
 bool DescribeSlowLogUserHostStatsRequest::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
+}
+
+string DescribeSlowLogUserHostStatsRequest::GetMd5() const
+{
+    return m_md5;
+}
+
+void DescribeSlowLogUserHostStatsRequest::SetMd5(const string& _md5)
+{
+    m_md5 = _md5;
+    m_md5HasBeenSet = true;
+}
+
+bool DescribeSlowLogUserHostStatsRequest::Md5HasBeenSet() const
+{
+    return m_md5HasBeenSet;
 }
 
 

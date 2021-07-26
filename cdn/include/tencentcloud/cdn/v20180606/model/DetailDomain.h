@@ -67,6 +67,7 @@
 #include <tencentcloud/cdn/v20180606/model/PostSize.h>
 #include <tencentcloud/cdn/v20180606/model/Quic.h>
 #include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/WebSocket.h>
 
 
 namespace TencentCloud
@@ -1403,6 +1404,28 @@ off：不支持
                      */
                     bool OssPrivateAccessHasBeenSet() const;
 
+                    /**
+                     * 获取WebSocket配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WebSocket WebSocket配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WebSocket GetWebSocket() const;
+
+                    /**
+                     * 设置WebSocket配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WebSocket WebSocket配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWebSocket(const WebSocket& _webSocket);
+
+                    /**
+                     * 判断参数 WebSocket 是否已赋值
+                     * @return WebSocket 是否已赋值
+                     */
+                    bool WebSocketHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1818,6 +1841,13 @@ off：不支持
                      */
                     OssPrivateAccess m_ossPrivateAccess;
                     bool m_ossPrivateAccessHasBeenSet;
+
+                    /**
+                     * WebSocket配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WebSocket m_webSocket;
+                    bool m_webSocketHasBeenSet;
 
                 };
             }

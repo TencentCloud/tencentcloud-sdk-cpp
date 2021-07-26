@@ -23,15 +23,16 @@ using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
 InquiryPriceCreateInstanceRequest::InquiryPriceCreateInstanceRequest() :
-    m_zoneIdHasBeenSet(false),
     m_typeIdHasBeenSet(false),
     m_memSizeHasBeenSet(false),
     m_goodsNumHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_billingModeHasBeenSet(false),
+    m_zoneIdHasBeenSet(false),
     m_redisShardNumHasBeenSet(false),
     m_redisReplicasNumHasBeenSet(false),
-    m_replicasReadonlyHasBeenSet(false)
+    m_replicasReadonlyHasBeenSet(false),
+    m_zoneNameHasBeenSet(false)
 {
 }
 
@@ -41,14 +42,6 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_zoneIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ZoneId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_zoneId, allocator);
-    }
 
     if (m_typeIdHasBeenSet)
     {
@@ -90,6 +83,14 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
         d.AddMember(iKey, m_billingMode, allocator);
     }
 
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_zoneId, allocator);
+    }
+
     if (m_redisShardNumHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -114,6 +115,14 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
         d.AddMember(iKey, m_replicasReadonly, allocator);
     }
 
+    if (m_zoneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -121,22 +130,6 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-uint64_t InquiryPriceCreateInstanceRequest::GetZoneId() const
-{
-    return m_zoneId;
-}
-
-void InquiryPriceCreateInstanceRequest::SetZoneId(const uint64_t& _zoneId)
-{
-    m_zoneId = _zoneId;
-    m_zoneIdHasBeenSet = true;
-}
-
-bool InquiryPriceCreateInstanceRequest::ZoneIdHasBeenSet() const
-{
-    return m_zoneIdHasBeenSet;
-}
 
 uint64_t InquiryPriceCreateInstanceRequest::GetTypeId() const
 {
@@ -218,6 +211,22 @@ bool InquiryPriceCreateInstanceRequest::BillingModeHasBeenSet() const
     return m_billingModeHasBeenSet;
 }
 
+uint64_t InquiryPriceCreateInstanceRequest::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void InquiryPriceCreateInstanceRequest::SetZoneId(const uint64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool InquiryPriceCreateInstanceRequest::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
 int64_t InquiryPriceCreateInstanceRequest::GetRedisShardNum() const
 {
     return m_redisShardNum;
@@ -264,6 +273,22 @@ void InquiryPriceCreateInstanceRequest::SetReplicasReadonly(const bool& _replica
 bool InquiryPriceCreateInstanceRequest::ReplicasReadonlyHasBeenSet() const
 {
     return m_replicasReadonlyHasBeenSet;
+}
+
+string InquiryPriceCreateInstanceRequest::GetZoneName() const
+{
+    return m_zoneName;
+}
+
+void InquiryPriceCreateInstanceRequest::SetZoneName(const string& _zoneName)
+{
+    m_zoneName = _zoneName;
+    m_zoneNameHasBeenSet = true;
+}
+
+bool InquiryPriceCreateInstanceRequest::ZoneNameHasBeenSet() const
+{
+    return m_zoneNameHasBeenSet;
 }
 
 

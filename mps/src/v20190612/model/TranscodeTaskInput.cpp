@@ -31,7 +31,8 @@ TranscodeTaskInput::TranscodeTaskInput() :
     m_outputStorageHasBeenSet(false),
     m_outputObjectPathHasBeenSet(false),
     m_segmentObjectNameHasBeenSet(false),
-    m_objectNumberFormatHasBeenSet(false)
+    m_objectNumberFormatHasBeenSet(false),
+    m_headTailParameterHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,23 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
         m_objectNumberFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("HeadTailParameter") && !value["HeadTailParameter"].IsNull())
+    {
+        if (!value["HeadTailParameter"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `TranscodeTaskInput.HeadTailParameter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_headTailParameter.Deserialize(value["HeadTailParameter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_headTailParameterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -309,6 +327,15 @@ void TranscodeTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_objectNumberFormat.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_headTailParameterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeadTailParameter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_headTailParameter.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -488,5 +515,21 @@ void TranscodeTaskInput::SetObjectNumberFormat(const NumberFormat& _objectNumber
 bool TranscodeTaskInput::ObjectNumberFormatHasBeenSet() const
 {
     return m_objectNumberFormatHasBeenSet;
+}
+
+HeadTailParameter TranscodeTaskInput::GetHeadTailParameter() const
+{
+    return m_headTailParameter;
+}
+
+void TranscodeTaskInput::SetHeadTailParameter(const HeadTailParameter& _headTailParameter)
+{
+    m_headTailParameter = _headTailParameter;
+    m_headTailParameterHasBeenSet = true;
+}
+
+bool TranscodeTaskInput::HeadTailParameterHasBeenSet() const
+{
+    return m_headTailParameterHasBeenSet;
 }
 

@@ -26,7 +26,8 @@ AssociateAddressRequest::AssociateAddressRequest() :
     m_addressIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
+    m_privateIpAddressHasBeenSet(false),
+    m_eipDirectConnectionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string AssociateAddressRequest::ToJsonString() const
         string key = "PrivateIpAddress";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_privateIpAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eipDirectConnectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipDirectConnection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_eipDirectConnection, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void AssociateAddressRequest::SetPrivateIpAddress(const string& _privateIpAddres
 bool AssociateAddressRequest::PrivateIpAddressHasBeenSet() const
 {
     return m_privateIpAddressHasBeenSet;
+}
+
+bool AssociateAddressRequest::GetEipDirectConnection() const
+{
+    return m_eipDirectConnection;
+}
+
+void AssociateAddressRequest::SetEipDirectConnection(const bool& _eipDirectConnection)
+{
+    m_eipDirectConnection = _eipDirectConnection;
+    m_eipDirectConnectionHasBeenSet = true;
+}
+
+bool AssociateAddressRequest::EipDirectConnectionHasBeenSet() const
+{
+    return m_eipDirectConnectionHasBeenSet;
 }
 
 

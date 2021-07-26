@@ -346,6 +346,24 @@ client：指定查询客户端地区（用户请求终端所在地区）数据�
                      */
                     bool AreaTypeHasBeenSet() const;
 
+                    /**
+                     * 获取指定查询的产品数据，可选为cdn或者ecdn，默认为cdn
+                     * @return Product 指定查询的产品数据，可选为cdn或者ecdn，默认为cdn
+                     */
+                    std::string GetProduct() const;
+
+                    /**
+                     * 设置指定查询的产品数据，可选为cdn或者ecdn，默认为cdn
+                     * @param Product 指定查询的产品数据，可选为cdn或者ecdn，默认为cdn
+                     */
+                    void SetProduct(const std::string& _product);
+
+                    /**
+                     * 判断参数 Product 是否已赋值
+                     * @return Product 是否已赋值
+                     */
+                    bool ProductHasBeenSet() const;
+
                 private:
 
                     /**
@@ -438,6 +456,12 @@ client：指定查询客户端地区（用户请求终端所在地区）数据�
                      */
                     std::string m_areaType;
                     bool m_areaTypeHasBeenSet;
+
+                    /**
+                     * 指定查询的产品数据，可选为cdn或者ecdn，默认为cdn
+                     */
+                    std::string m_product;
+                    bool m_productHasBeenSet;
 
                 };
             }

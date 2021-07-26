@@ -23,7 +23,9 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace std;
 
 DescribeCertDomainsRequest::DescribeCertDomainsRequest() :
-    m_certHasBeenSet(false)
+    m_certHasBeenSet(false),
+    m_certIdHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DescribeCertDomainsRequest::ToJsonString() const
         string key = "Cert";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cert.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DescribeCertDomainsRequest::SetCert(const string& _cert)
 bool DescribeCertDomainsRequest::CertHasBeenSet() const
 {
     return m_certHasBeenSet;
+}
+
+string DescribeCertDomainsRequest::GetCertId() const
+{
+    return m_certId;
+}
+
+void DescribeCertDomainsRequest::SetCertId(const string& _certId)
+{
+    m_certId = _certId;
+    m_certIdHasBeenSet = true;
+}
+
+bool DescribeCertDomainsRequest::CertIdHasBeenSet() const
+{
+    return m_certIdHasBeenSet;
+}
+
+string DescribeCertDomainsRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeCertDomainsRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeCertDomainsRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

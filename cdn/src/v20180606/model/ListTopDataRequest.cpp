@@ -32,7 +32,8 @@ ListTopDataRequest::ListTopDataRequest() :
     m_detailHasBeenSet(false),
     m_codeHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_areaTypeHasBeenSet(false)
+    m_areaTypeHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,14 @@ string ListTopDataRequest::ToJsonString() const
         string key = "AreaType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_areaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -294,6 +303,22 @@ void ListTopDataRequest::SetAreaType(const string& _areaType)
 bool ListTopDataRequest::AreaTypeHasBeenSet() const
 {
     return m_areaTypeHasBeenSet;
+}
+
+string ListTopDataRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void ListTopDataRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool ListTopDataRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

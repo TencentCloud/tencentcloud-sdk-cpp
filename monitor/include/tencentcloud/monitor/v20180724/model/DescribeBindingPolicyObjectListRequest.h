@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，每页返回的数量，取值1~100，默认20
-                     * @return Limit 分页参数，每页返回的数量，取值1~100，默认20
+                     * 获取每次返回的数量，取值1~100，默认20
+                     * @return Limit 每次返回的数量，取值1~100，默认20
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页参数，每页返回的数量，取值1~100，默认20
-                     * @param Limit 分页参数，每页返回的数量，取值1~100，默认20
+                     * 设置每次返回的数量，取值1~100，默认20
+                     * @param Limit 每次返回的数量，取值1~100，默认20
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，页偏移量，从0开始计数，默认0
-                     * @return Offset 分页参数，页偏移量，从0开始计数，默认0
+                     * 获取偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推
+                     * @return Offset 偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页参数，页偏移量，从0开始计数，默认0
-                     * @param Offset 分页参数，页偏移量，从0开始计数，默认0
+                     * 设置偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推
+                     * @param Offset 偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -172,13 +172,13 @@ namespace TencentCloud
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 分页参数，每页返回的数量，取值1~100，默认20
+                     * 每次返回的数量，取值1~100，默认20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页参数，页偏移量，从0开始计数，默认0
+                     * 偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

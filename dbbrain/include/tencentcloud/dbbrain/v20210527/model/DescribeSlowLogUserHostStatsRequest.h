@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool ProductHasBeenSet() const;
 
+                    /**
+                     * 获取SOL模板的MD5值
+                     * @return Md5 SOL模板的MD5值
+                     */
+                    std::string GetMd5() const;
+
+                    /**
+                     * 设置SOL模板的MD5值
+                     * @param Md5 SOL模板的MD5值
+                     */
+                    void SetMd5(const std::string& _md5);
+
+                    /**
+                     * 判断参数 Md5 是否已赋值
+                     * @return Md5 是否已赋值
+                     */
+                    bool Md5HasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
+
+                    /**
+                     * SOL模板的MD5值
+                     */
+                    std::string m_md5;
+                    bool m_md5HasBeenSet;
 
                 };
             }

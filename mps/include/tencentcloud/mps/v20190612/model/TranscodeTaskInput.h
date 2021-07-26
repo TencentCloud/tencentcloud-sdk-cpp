@@ -30,6 +30,7 @@
 #include <tencentcloud/mps/v20190612/model/MosaicInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/NumberFormat.h>
+#include <tencentcloud/mps/v20190612/model/HeadTailParameter.h>
 
 
 namespace TencentCloud
@@ -306,6 +307,28 @@ namespace TencentCloud
                      */
                     bool ObjectNumberFormatHasBeenSet() const;
 
+                    /**
+                     * 获取片头片尾参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HeadTailParameter 片头片尾参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HeadTailParameter GetHeadTailParameter() const;
+
+                    /**
+                     * 设置片头片尾参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HeadTailParameter 片头片尾参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHeadTailParameter(const HeadTailParameter& _headTailParameter);
+
+                    /**
+                     * 判断参数 HeadTailParameter 是否已赋值
+                     * @return HeadTailParameter 是否已赋值
+                     */
+                    bool HeadTailParameterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -387,6 +410,13 @@ namespace TencentCloud
                      */
                     NumberFormat m_objectNumberFormat;
                     bool m_objectNumberFormatHasBeenSet;
+
+                    /**
+                     * 片头片尾参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HeadTailParameter m_headTailParameter;
+                    bool m_headTailParameterHasBeenSet;
 
                 };
             }

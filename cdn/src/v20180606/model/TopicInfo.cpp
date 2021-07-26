@@ -24,7 +24,8 @@ TopicInfo::TopicInfo() :
     m_topicIdHasBeenSet(false),
     m_topicNameHasBeenSet(false),
     m_enabledHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_channelHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Channel") && !value["Channel"].IsNull())
+    {
+        if (!value["Channel"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TopicInfo.Channel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channel = string(value["Channel"].GetString());
+        m_channelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Channel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void TopicInfo::SetCreateTime(const string& _createTime)
 bool TopicInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string TopicInfo::GetChannel() const
+{
+    return m_channel;
+}
+
+void TopicInfo::SetChannel(const string& _channel)
+{
+    m_channel = _channel;
+    m_channelHasBeenSet = true;
+}
+
+bool TopicInfo::ChannelHasBeenSet() const
+{
+    return m_channelHasBeenSet;
 }
 

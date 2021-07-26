@@ -107,6 +107,7 @@ set(ie_public_header_model
   include/tencentcloud/ie/v20200304/model/CosInfo.h
   include/tencentcloud/ie/v20200304/model/MediaResultInfo.h
   include/tencentcloud/ie/v20200304/model/FrameTagResult.h
+  include/tencentcloud/ie/v20200304/model/TextMarkInfoItem.h
   include/tencentcloud/ie/v20200304/model/MediaCuttingTimeInfo.h
   include/tencentcloud/ie/v20200304/model/TargetInfo.h
   include/tencentcloud/ie/v20200304/model/CreateMediaQualityRestorationTaskRequest.h
@@ -217,6 +218,7 @@ set(ie_src
   src/v20200304/model/CosInfo.cpp
   src/v20200304/model/MediaResultInfo.cpp
   src/v20200304/model/FrameTagResult.cpp
+  src/v20200304/model/TextMarkInfoItem.cpp
   src/v20200304/model/MediaCuttingTimeInfo.cpp
   src/v20200304/model/TargetInfo.cpp
   src/v20200304/model/CreateMediaQualityRestorationTaskRequest.cpp

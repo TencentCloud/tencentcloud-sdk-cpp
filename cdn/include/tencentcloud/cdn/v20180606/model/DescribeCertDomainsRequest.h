@@ -60,6 +60,42 @@ namespace TencentCloud
                      */
                     bool CertHasBeenSet() const;
 
+                    /**
+                     * 获取托管证书ID，Cert和CertId不能均未空，都填写时以CerId为准。
+                     * @return CertId 托管证书ID，Cert和CertId不能均未空，都填写时以CerId为准。
+                     */
+                    std::string GetCertId() const;
+
+                    /**
+                     * 设置托管证书ID，Cert和CertId不能均未空，都填写时以CerId为准。
+                     * @param CertId 托管证书ID，Cert和CertId不能均未空，都填写时以CerId为准。
+                     */
+                    void SetCertId(const std::string& _certId);
+
+                    /**
+                     * 判断参数 CertId 是否已赋值
+                     * @return CertId 是否已赋值
+                     */
+                    bool CertIdHasBeenSet() const;
+
+                    /**
+                     * 获取域名所属产品，cdn或ecdn，默认cdn。
+                     * @return Product 域名所属产品，cdn或ecdn，默认cdn。
+                     */
+                    std::string GetProduct() const;
+
+                    /**
+                     * 设置域名所属产品，cdn或ecdn，默认cdn。
+                     * @param Product 域名所属产品，cdn或ecdn，默认cdn。
+                     */
+                    void SetProduct(const std::string& _product);
+
+                    /**
+                     * 判断参数 Product 是否已赋值
+                     * @return Product 是否已赋值
+                     */
+                    bool ProductHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +103,18 @@ namespace TencentCloud
                      */
                     std::string m_cert;
                     bool m_certHasBeenSet;
+
+                    /**
+                     * 托管证书ID，Cert和CertId不能均未空，都填写时以CerId为准。
+                     */
+                    std::string m_certId;
+                    bool m_certIdHasBeenSet;
+
+                    /**
+                     * 域名所属产品，cdn或ecdn，默认cdn。
+                     */
+                    std::string m_product;
+                    bool m_productHasBeenSet;
 
                 };
             }

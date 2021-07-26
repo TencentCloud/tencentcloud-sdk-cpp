@@ -122,6 +122,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/AdvancedAuthenticationTypeB.h
   include/tencentcloud/cdn/v20180606/model/WebpAdapter.h
   include/tencentcloud/cdn/v20180606/model/CreateScdnLogTaskResponse.h
+  include/tencentcloud/cdn/v20180606/model/WebSocket.h
   include/tencentcloud/cdn/v20180606/model/MapInfo.h
   include/tencentcloud/cdn/v20180606/model/DescribeCertDomainsResponse.h
   include/tencentcloud/cdn/v20180606/model/ScdnBotConfig.h
@@ -400,6 +401,7 @@ set(cdn_src
   src/v20180606/model/AdvancedAuthenticationTypeB.cpp
   src/v20180606/model/WebpAdapter.cpp
   src/v20180606/model/CreateScdnLogTaskResponse.cpp
+  src/v20180606/model/WebSocket.cpp
   src/v20180606/model/MapInfo.cpp
   src/v20180606/model/DescribeCertDomainsResponse.cpp
   src/v20180606/model/ScdnBotConfig.cpp

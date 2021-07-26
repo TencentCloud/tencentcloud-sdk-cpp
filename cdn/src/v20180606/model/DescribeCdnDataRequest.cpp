@@ -36,7 +36,8 @@ DescribeCdnDataRequest::DescribeCdnDataRequest() :
     m_dataSourceHasBeenSet(false),
     m_ipProtocolHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_areaTypeHasBeenSet(false)
+    m_areaTypeHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,14 @@ string DescribeCdnDataRequest::ToJsonString() const
         string key = "AreaType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_areaType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -394,6 +403,22 @@ void DescribeCdnDataRequest::SetAreaType(const string& _areaType)
 bool DescribeCdnDataRequest::AreaTypeHasBeenSet() const
 {
     return m_areaTypeHasBeenSet;
+}
+
+string DescribeCdnDataRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeCdnDataRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeCdnDataRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

@@ -280,14 +280,14 @@ namespace TencentCloud
                     bool DiskChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取销毁云盘时删除关联的非永久快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁。
-                     * @return DeleteSnapshot 销毁云盘时删除关联的非永久快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁。
+                     * 获取销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
+                     * @return DeleteSnapshot 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
                      */
                     int64_t GetDeleteSnapshot() const;
 
                     /**
-                     * 设置销毁云盘时删除关联的非永久快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁。
-                     * @param DeleteSnapshot 销毁云盘时删除关联的非永久快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁。
+                     * 设置销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
+                     * @param DeleteSnapshot 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
                      */
                     void SetDeleteSnapshot(const int64_t& _deleteSnapshot);
 
@@ -378,7 +378,7 @@ namespace TencentCloud
                     bool m_diskChargePrepaidHasBeenSet;
 
                     /**
-                     * 销毁云盘时删除关联的非永久快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁。
+                     * 销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。
                      */
                     int64_t m_deleteSnapshot;
                     bool m_deleteSnapshotHasBeenSet;

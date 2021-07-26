@@ -1545,6 +1545,92 @@ SqlserverClient::DescribeIncrementalMigrationOutcomeCallable SqlserverClient::De
     return task->get_future();
 }
 
+SqlserverClient::DescribeInstanceParamRecordsOutcome SqlserverClient::DescribeInstanceParamRecords(const DescribeInstanceParamRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceParamRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceParamRecordsResponse rsp = DescribeInstanceParamRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceParamRecordsOutcome(rsp);
+        else
+            return DescribeInstanceParamRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceParamRecordsOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeInstanceParamRecordsAsync(const DescribeInstanceParamRecordsRequest& request, const DescribeInstanceParamRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceParamRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeInstanceParamRecordsOutcomeCallable SqlserverClient::DescribeInstanceParamRecordsCallable(const DescribeInstanceParamRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceParamRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceParamRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::DescribeInstanceParamsOutcome SqlserverClient::DescribeInstanceParams(const DescribeInstanceParamsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceParams");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceParamsResponse rsp = DescribeInstanceParamsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceParamsOutcome(rsp);
+        else
+            return DescribeInstanceParamsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceParamsOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeInstanceParamsAsync(const DescribeInstanceParamsRequest& request, const DescribeInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceParams(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeInstanceParamsOutcomeCallable SqlserverClient::DescribeInstanceParamsCallable(const DescribeInstanceParamsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceParamsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceParams(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::DescribeMaintenanceSpanOutcome SqlserverClient::DescribeMaintenanceSpan(const DescribeMaintenanceSpanRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMaintenanceSpan");
@@ -3129,6 +3215,49 @@ SqlserverClient::ModifyIncrementalMigrationOutcomeCallable SqlserverClient::Modi
         [this, request]()
         {
             return this->ModifyIncrementalMigration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::ModifyInstanceParamOutcome SqlserverClient::ModifyInstanceParam(const ModifyInstanceParamRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceParam");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceParamResponse rsp = ModifyInstanceParamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceParamOutcome(rsp);
+        else
+            return ModifyInstanceParamOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceParamOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyInstanceParamAsync(const ModifyInstanceParamRequest& request, const ModifyInstanceParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceParam(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::ModifyInstanceParamOutcomeCallable SqlserverClient::ModifyInstanceParamCallable(const ModifyInstanceParamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceParamOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceParam(request);
         }
     );
 

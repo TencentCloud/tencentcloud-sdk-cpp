@@ -30,7 +30,8 @@ DescribeBillingDataRequest::DescribeBillingDataRequest() :
     m_projectHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_districtHasBeenSet(false),
-    m_metricHasBeenSet(false)
+    m_metricHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string DescribeBillingDataRequest::ToJsonString() const
         string key = "Metric";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_metric.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void DescribeBillingDataRequest::SetMetric(const string& _metric)
 bool DescribeBillingDataRequest::MetricHasBeenSet() const
 {
     return m_metricHasBeenSet;
+}
+
+string DescribeBillingDataRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeBillingDataRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeBillingDataRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

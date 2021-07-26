@@ -28,6 +28,7 @@
 #include <tencentcloud/ie/v20200304/model/DarInfo.h>
 #include <tencentcloud/ie/v20200304/model/VideoEnhance.h>
 #include <tencentcloud/ie/v20200304/model/HiddenMarkInfo.h>
+#include <tencentcloud/ie/v20200304/model/TextMarkInfoItem.h>
 
 
 namespace TencentCloud
@@ -404,6 +405,24 @@ hlg。
                      */
                     bool HiddenMarkInfoHasBeenSet() const;
 
+                    /**
+                     * 获取文本水印参数信息。
+                     * @return TextMarkInfo 文本水印参数信息。
+                     */
+                    std::vector<TextMarkInfoItem> GetTextMarkInfo() const;
+
+                    /**
+                     * 设置文本水印参数信息。
+                     * @param TextMarkInfo 文本水印参数信息。
+                     */
+                    void SetTextMarkInfo(const std::vector<TextMarkInfoItem>& _textMarkInfo);
+
+                    /**
+                     * 判断参数 TextMarkInfo 是否已赋值
+                     * @return TextMarkInfo 是否已赋值
+                     */
+                    bool TextMarkInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -513,6 +532,12 @@ hlg。
                      */
                     HiddenMarkInfo m_hiddenMarkInfo;
                     bool m_hiddenMarkInfoHasBeenSet;
+
+                    /**
+                     * 文本水印参数信息。
+                     */
+                    std::vector<TextMarkInfoItem> m_textMarkInfo;
+                    bool m_textMarkInfoHasBeenSet;
 
                 };
             }
