@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool VulLevelsHasBeenSet() const;
 
                     /**
-                     * 获取定期检测时间
-                     * @return TimerTime 定期检测时间
+                     * 获取定期检测时间，如：02:10:50
+                     * @return TimerTime 定期检测时间，如：02:10:50
                      */
                     std::string GetTimerTime() const;
 
                     /**
-                     * 设置定期检测时间
-                     * @param TimerTime 定期检测时间
+                     * 设置定期检测时间，如：02:10:50
+                     * @param TimerTime 定期检测时间，如：02:10:50
                      */
                     void SetTimerTime(const std::string& _timerTime);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool VulEmergencyHasBeenSet() const;
 
                     /**
-                     * 获取扫描开始时间
-                     * @return StartTime 扫描开始时间
+                     * 获取扫描开始时间，如：00:00
+                     * @return StartTime 扫描开始时间，如：00:00
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置扫描开始时间
-                     * @param StartTime 扫描开始时间
+                     * 设置扫描开始时间，如：00:00
+                     * @param StartTime 扫描开始时间，如：00:00
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取扫描结束时间
-                     * @return EndTime 扫描结束时间
+                     * 获取扫描结束时间，如：08:00
+                     * @return EndTime 扫描结束时间，如：08:00
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置扫描结束时间
-                     * @param EndTime 扫描结束时间
+                     * 设置扫描结束时间，如：08:00
+                     * @param EndTime 扫描结束时间，如：08:00
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -207,7 +207,7 @@ namespace TencentCloud
                     bool m_vulLevelsHasBeenSet;
 
                     /**
-                     * 定期检测时间
+                     * 定期检测时间，如：02:10:50
                      */
                     std::string m_timerTime;
                     bool m_timerTimeHasBeenSet;
@@ -219,13 +219,13 @@ namespace TencentCloud
                     bool m_vulEmergencyHasBeenSet;
 
                     /**
-                     * 扫描开始时间
+                     * 扫描开始时间，如：00:00
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 扫描结束时间
+                     * 扫描结束时间，如：08:00
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

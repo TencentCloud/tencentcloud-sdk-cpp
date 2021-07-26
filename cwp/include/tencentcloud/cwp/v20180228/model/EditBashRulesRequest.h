@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取是否全局规则(默认否)
-                     * @return IsGlobal 是否全局规则(默认否)
+                     * 获取是否全局规则(默认否)：1-全局，0-非全局
+                     * @return IsGlobal 是否全局规则(默认否)：1-全局，0-非全局
                      */
                     uint64_t GetIsGlobal() const;
 
                     /**
-                     * 设置是否全局规则(默认否)
-                     * @param IsGlobal 是否全局规则(默认否)
+                     * 设置是否全局规则(默认否)：1-全局，0-非全局
+                     * @param IsGlobal 是否全局规则(默认否)：1-全局，0-非全局
                      */
                     void SetIsGlobal(const uint64_t& _isGlobal);
 
@@ -261,7 +261,7 @@ namespace TencentCloud
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 是否全局规则(默认否)
+                     * 是否全局规则(默认否)：1-全局，0-非全局
                      */
                     uint64_t m_isGlobal;
                     bool m_isGlobalHasBeenSet;

@@ -31,7 +31,14 @@ CreateInstancePreRequest::CreateInstancePreRequest() :
     m_subnetIdHasBeenSet(false),
     m_msgRetentionTimeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_renewFlagHasBeenSet(false),
+    m_kafkaVersionHasBeenSet(false),
+    m_specificationsTypeHasBeenSet(false),
+    m_diskSizeHasBeenSet(false),
+    m_bandWidthHasBeenSet(false),
+    m_partitionHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_diskTypeHasBeenSet(false)
 {
 }
 
@@ -112,6 +119,69 @@ string CreateInstancePreRequest::ToJsonString() const
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_renewFlag, allocator);
+    }
+
+    if (m_kafkaVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kafkaVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specificationsTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecificationsType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_specificationsType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_bandWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BandWidth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bandWidth, allocator);
+    }
+
+    if (m_partitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Partition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_partition, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_diskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +334,118 @@ void CreateInstancePreRequest::SetRenewFlag(const int64_t& _renewFlag)
 bool CreateInstancePreRequest::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
+}
+
+string CreateInstancePreRequest::GetKafkaVersion() const
+{
+    return m_kafkaVersion;
+}
+
+void CreateInstancePreRequest::SetKafkaVersion(const string& _kafkaVersion)
+{
+    m_kafkaVersion = _kafkaVersion;
+    m_kafkaVersionHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::KafkaVersionHasBeenSet() const
+{
+    return m_kafkaVersionHasBeenSet;
+}
+
+string CreateInstancePreRequest::GetSpecificationsType() const
+{
+    return m_specificationsType;
+}
+
+void CreateInstancePreRequest::SetSpecificationsType(const string& _specificationsType)
+{
+    m_specificationsType = _specificationsType;
+    m_specificationsTypeHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::SpecificationsTypeHasBeenSet() const
+{
+    return m_specificationsTypeHasBeenSet;
+}
+
+int64_t CreateInstancePreRequest::GetDiskSize() const
+{
+    return m_diskSize;
+}
+
+void CreateInstancePreRequest::SetDiskSize(const int64_t& _diskSize)
+{
+    m_diskSize = _diskSize;
+    m_diskSizeHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::DiskSizeHasBeenSet() const
+{
+    return m_diskSizeHasBeenSet;
+}
+
+int64_t CreateInstancePreRequest::GetBandWidth() const
+{
+    return m_bandWidth;
+}
+
+void CreateInstancePreRequest::SetBandWidth(const int64_t& _bandWidth)
+{
+    m_bandWidth = _bandWidth;
+    m_bandWidthHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::BandWidthHasBeenSet() const
+{
+    return m_bandWidthHasBeenSet;
+}
+
+int64_t CreateInstancePreRequest::GetPartition() const
+{
+    return m_partition;
+}
+
+void CreateInstancePreRequest::SetPartition(const int64_t& _partition)
+{
+    m_partition = _partition;
+    m_partitionHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::PartitionHasBeenSet() const
+{
+    return m_partitionHasBeenSet;
+}
+
+vector<Tag> CreateInstancePreRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateInstancePreRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string CreateInstancePreRequest::GetDiskType() const
+{
+    return m_diskType;
+}
+
+void CreateInstancePreRequest::SetDiskType(const string& _diskType)
+{
+    m_diskType = _diskType;
+    m_diskTypeHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::DiskTypeHasBeenSet() const
+{
+    return m_diskTypeHasBeenSet;
 }
 
 

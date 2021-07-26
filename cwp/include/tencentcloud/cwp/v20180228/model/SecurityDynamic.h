@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取安全事件发生事件。
-                     * @return EventTime 安全事件发生事件。
+                     * 获取安全事件发生时间。
+                     * @return EventTime 安全事件发生时间。
                      */
                     std::string GetEventTime() const;
 
                     /**
-                     * 设置安全事件发生事件。
-                     * @param EventTime 安全事件发生事件。
+                     * 设置安全事件发生时间。
+                     * @param EventTime 安全事件发生时间。
                      */
                     void SetEventTime(const std::string& _eventTime);
 
@@ -181,7 +181,7 @@ namespace TencentCloud
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 安全事件发生事件。
+                     * 安全事件发生时间。
                      */
                     std::string m_eventTime;
                     bool m_eventTimeHasBeenSet;

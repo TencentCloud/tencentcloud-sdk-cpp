@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取返回数据库的详细配置信息，比如：数据库是否开启CDC、CT等
-                     * @return DBList 返回数据库的详细配置信息，比如：数据库是否开启CDC、CT等
+                     * 获取返回数据库的详细配置信息，例如：数据库是否开启CDC、CT等
+                     * @return DBList 返回数据库的详细配置信息，例如：数据库是否开启CDC、CT等
                      */
                     std::vector<DbNormalDetail> GetDBList() const;
 
@@ -76,7 +76,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 返回数据库的详细配置信息，比如：数据库是否开启CDC、CT等
+                     * 返回数据库的详细配置信息，例如：数据库是否开启CDC、CT等
                      */
                     std::vector<DbNormalDetail> m_dBList;
                     bool m_dBListHasBeenSet;

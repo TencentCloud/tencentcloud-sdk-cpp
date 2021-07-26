@@ -23,14 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/tse/v20201207/model/DescribeConfigRequest.h>
-#include <tencentcloud/tse/v20201207/model/DescribeConfigResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstancesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstancesResponse.h>
-#include <tencentcloud/tse/v20201207/model/ManageConfigRequest.h>
-#include <tencentcloud/tse/v20201207/model/ManageConfigResponse.h>
 
 
 namespace TencentCloud
@@ -45,29 +41,14 @@ namespace TencentCloud
                 TseClient(const Credential &credential, const std::string &region);
                 TseClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Error, Model::DescribeConfigResponse> DescribeConfigOutcome;
-                typedef std::future<DescribeConfigOutcome> DescribeConfigOutcomeCallable;
-                typedef std::function<void(const TseClient*, const Model::DescribeConfigRequest&, DescribeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSREInstanceAccessAddressResponse> DescribeSREInstanceAccessAddressOutcome;
                 typedef std::future<DescribeSREInstanceAccessAddressOutcome> DescribeSREInstanceAccessAddressOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeSREInstanceAccessAddressRequest&, DescribeSREInstanceAccessAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSREInstanceAccessAddressAsyncHandler;
                 typedef Outcome<Error, Model::DescribeSREInstancesResponse> DescribeSREInstancesOutcome;
                 typedef std::future<DescribeSREInstancesOutcome> DescribeSREInstancesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeSREInstancesRequest&, DescribeSREInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSREInstancesAsyncHandler;
-                typedef Outcome<Error, Model::ManageConfigResponse> ManageConfigOutcome;
-                typedef std::future<ManageConfigOutcome> ManageConfigOutcomeCallable;
-                typedef std::function<void(const TseClient*, const Model::ManageConfigRequest&, ManageConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageConfigAsyncHandler;
 
 
-
-                /**
-                 *查看配置项
-                 * @param req DescribeConfigRequest
-                 * @return DescribeConfigOutcome
-                 */
-                DescribeConfigOutcome DescribeConfig(const Model::DescribeConfigRequest &request);
-                void DescribeConfigAsync(const Model::DescribeConfigRequest& request, const DescribeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeConfigOutcomeCallable DescribeConfigCallable(const Model::DescribeConfigRequest& request);
 
                 /**
                  *查询微服务注册引擎实例访问地址
@@ -86,15 +67,6 @@ namespace TencentCloud
                 DescribeSREInstancesOutcome DescribeSREInstances(const Model::DescribeSREInstancesRequest &request);
                 void DescribeSREInstancesAsync(const Model::DescribeSREInstancesRequest& request, const DescribeSREInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSREInstancesOutcomeCallable DescribeSREInstancesCallable(const Model::DescribeSREInstancesRequest& request);
-
-                /**
-                 *管理配置
-                 * @param req ManageConfigRequest
-                 * @return ManageConfigOutcome
-                 */
-                ManageConfigOutcome ManageConfig(const Model::ManageConfigRequest &request);
-                void ManageConfigAsync(const Model::ManageConfigRequest& request, const ManageConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ManageConfigOutcomeCallable ManageConfigCallable(const Model::ManageConfigRequest& request);
 
             };
         }

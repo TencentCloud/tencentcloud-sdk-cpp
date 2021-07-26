@@ -79,8 +79,8 @@ namespace TencentCloud
                     bool TimerIntervalHasBeenSet() const;
 
                     /**
-                     * 获取定期检测时间
-                     * @return TimerTime 定期检测时间
+                     * 获取定期检测时间，如：00:00
+                     * @return TimerTime 定期检测时间，如：00:00
                      */
                     std::string GetTimerTime() const;
 
@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool TimerTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否紧急漏洞
-                     * @return VulEmergency 是否紧急漏洞
+                     * 获取是否紧急漏洞：0-否 1-是
+                     * @return VulEmergency 是否紧急漏洞：0-否 1-是
                      */
                     uint64_t GetVulEmergency() const;
 
@@ -139,8 +139,8 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取一键扫描超时时长
-                     * @return ClickTimeout 一键扫描超时时长
+                     * 获取一键扫描超时时长，如：1800秒（s）
+                     * @return ClickTimeout 一键扫描超时时长，如：1800秒（s）
                      */
                     uint64_t GetClickTimeout() const;
 
@@ -171,13 +171,13 @@ namespace TencentCloud
                     bool m_timerIntervalHasBeenSet;
 
                     /**
-                     * 定期检测时间
+                     * 定期检测时间，如：00:00
                      */
                     std::string m_timerTime;
                     bool m_timerTimeHasBeenSet;
 
                     /**
-                     * 是否紧急漏洞
+                     * 是否紧急漏洞：0-否 1-是
                      */
                     uint64_t m_vulEmergency;
                     bool m_vulEmergencyHasBeenSet;
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 一键扫描超时时长
+                     * 一键扫描超时时长，如：1800秒（s）
                      */
                     uint64_t m_clickTimeout;
                     bool m_clickTimeoutHasBeenSet;

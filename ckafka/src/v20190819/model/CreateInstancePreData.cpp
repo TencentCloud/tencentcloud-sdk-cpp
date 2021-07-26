@@ -22,7 +22,8 @@ using namespace std;
 
 CreateInstancePreData::CreateInstancePreData() :
     m_flowIdHasBeenSet(false),
-    m_dealNamesHasBeenSet(false)
+    m_dealNamesHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ CoreInternalOutcome CreateInstancePreData::Deserialize(const rapidjson::Value &v
         m_dealNamesHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CreateInstancePreData.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void CreateInstancePreData::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void CreateInstancePreData::SetDealNames(const vector<string>& _dealNames)
 bool CreateInstancePreData::DealNamesHasBeenSet() const
 {
     return m_dealNamesHasBeenSet;
+}
+
+string CreateInstancePreData::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CreateInstancePreData::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CreateInstancePreData::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

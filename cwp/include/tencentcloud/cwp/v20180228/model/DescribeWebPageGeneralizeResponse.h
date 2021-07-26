@@ -103,8 +103,8 @@ namespace TencentCloud
                     bool TamperNumHasBeenSet() const;
 
                     /**
-                     * 获取今日防护
-                     * @return ProtectToday 今日防护
+                     * 获取今日防护数
+                     * @return ProtectToday 今日防护数
                      */
                     uint64_t GetProtectToday() const;
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_tamperNumHasBeenSet;
 
                     /**
-                     * 今日防护
+                     * 今日防护数
                      */
                     uint64_t m_protectToday;
                     bool m_protectTodayHasBeenSet;

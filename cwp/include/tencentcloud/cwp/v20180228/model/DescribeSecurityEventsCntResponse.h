@@ -187,6 +187,30 @@ namespace TencentCloud
                      */
                     bool AttackLogsHasBeenSet() const;
 
+                    /**
+                     * 获取受影响机器数
+                     * @return EffectMachineCount 受影响机器数
+                     */
+                    uint64_t GetEffectMachineCount() const;
+
+                    /**
+                     * 判断参数 EffectMachineCount 是否已赋值
+                     * @return EffectMachineCount 是否已赋值
+                     */
+                    bool EffectMachineCountHasBeenSet() const;
+
+                    /**
+                     * 获取所有事件总数
+                     * @return EventsCount 所有事件总数
+                     */
+                    uint64_t GetEventsCount() const;
+
+                    /**
+                     * 判断参数 EventsCount 是否已赋值
+                     * @return EventsCount 是否已赋值
+                     */
+                    bool EventsCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +284,18 @@ namespace TencentCloud
                      */
                     SecurityEventInfo m_attackLogs;
                     bool m_attackLogsHasBeenSet;
+
+                    /**
+                     * 受影响机器数
+                     */
+                    uint64_t m_effectMachineCount;
+                    bool m_effectMachineCountHasBeenSet;
+
+                    /**
+                     * 所有事件总数
+                     */
+                    uint64_t m_eventsCount;
+                    bool m_eventsCountHasBeenSet;
 
                 };
             }

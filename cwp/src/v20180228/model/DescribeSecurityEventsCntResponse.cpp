@@ -35,7 +35,9 @@ DescribeSecurityEventsCntResponse::DescribeSecurityEventsCntResponse() :
     m_webVulHasBeenSet(false),
     m_emergencyVulHasBeenSet(false),
     m_baseLineHasBeenSet(false),
-    m_attackLogsHasBeenSet(false)
+    m_attackLogsHasBeenSet(false),
+    m_effectMachineCountHasBeenSet(false),
+    m_eventsCountHasBeenSet(false)
 {
 }
 
@@ -277,6 +279,26 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
         m_attackLogsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EffectMachineCount") && !rsp["EffectMachineCount"].IsNull())
+    {
+        if (!rsp["EffectMachineCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `EffectMachineCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_effectMachineCount = rsp["EffectMachineCount"].GetUint64();
+        m_effectMachineCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EventsCount") && !rsp["EventsCount"].IsNull())
+    {
+        if (!rsp["EventsCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `EventsCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventsCount = rsp["EventsCount"].GetUint64();
+        m_eventsCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -400,6 +422,26 @@ SecurityEventInfo DescribeSecurityEventsCntResponse::GetAttackLogs() const
 bool DescribeSecurityEventsCntResponse::AttackLogsHasBeenSet() const
 {
     return m_attackLogsHasBeenSet;
+}
+
+uint64_t DescribeSecurityEventsCntResponse::GetEffectMachineCount() const
+{
+    return m_effectMachineCount;
+}
+
+bool DescribeSecurityEventsCntResponse::EffectMachineCountHasBeenSet() const
+{
+    return m_effectMachineCountHasBeenSet;
+}
+
+uint64_t DescribeSecurityEventsCntResponse::GetEventsCount() const
+{
+    return m_eventsCount;
+}
+
+bool DescribeSecurityEventsCntResponse::EventsCountHasBeenSet() const
+{
+    return m_eventsCountHasBeenSet;
 }
 
 

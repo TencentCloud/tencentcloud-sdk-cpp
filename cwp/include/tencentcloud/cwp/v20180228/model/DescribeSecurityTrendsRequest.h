@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间。
-                     * @return BeginDate 开始时间。
+                     * 获取开始时间，如：2021-07-10
+                     * @return BeginDate 开始时间，如：2021-07-10
                      */
                     std::string GetBeginDate() const;
 
                     /**
-                     * 设置开始时间。
-                     * @param BeginDate 开始时间。
+                     * 设置开始时间，如：2021-07-10
+                     * @param BeginDate 开始时间，如：2021-07-10
                      */
                     void SetBeginDate(const std::string& _beginDate);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool BeginDateHasBeenSet() const;
 
                     /**
-                     * 获取结束时间。
-                     * @return EndDate 结束时间。
+                     * 获取结束时间，如：2021-07-10
+                     * @return EndDate 结束时间，如：2021-07-10
                      */
                     std::string GetEndDate() const;
 
                     /**
-                     * 设置结束时间。
-                     * @param EndDate 结束时间。
+                     * 设置结束时间，如：2021-07-10
+                     * @param EndDate 结束时间，如：2021-07-10
                      */
                     void SetEndDate(const std::string& _endDate);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间。
+                     * 开始时间，如：2021-07-10
                      */
                     std::string m_beginDate;
                     bool m_beginDateHasBeenSet;
 
                     /**
-                     * 结束时间。
+                     * 结束时间，如：2021-07-10
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;
