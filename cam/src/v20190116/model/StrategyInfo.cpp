@@ -32,7 +32,10 @@ StrategyInfo::StrategyInfo() :
     m_isAttachedHasBeenSet(false),
     m_deactivedHasBeenSet(false),
     m_deactivedDetailHasBeenSet(false),
-    m_isServiceLinkedPolicyHasBeenSet(false)
+    m_isServiceLinkedPolicyHasBeenSet(false),
+    m_attachEntityCountHasBeenSet(false),
+    m_attachEntityBoundaryCountHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -164,6 +167,36 @@ CoreInternalOutcome StrategyInfo::Deserialize(const rapidjson::Value &value)
         m_isServiceLinkedPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("AttachEntityCount") && !value["AttachEntityCount"].IsNull())
+    {
+        if (!value["AttachEntityCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `StrategyInfo.AttachEntityCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_attachEntityCount = value["AttachEntityCount"].GetInt64();
+        m_attachEntityCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AttachEntityBoundaryCount") && !value["AttachEntityBoundaryCount"].IsNull())
+    {
+        if (!value["AttachEntityBoundaryCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `StrategyInfo.AttachEntityBoundaryCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_attachEntityBoundaryCount = value["AttachEntityBoundaryCount"].GetInt64();
+        m_attachEntityBoundaryCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `StrategyInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +303,30 @@ void StrategyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsServiceLinkedPolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isServiceLinkedPolicy, allocator);
+    }
+
+    if (m_attachEntityCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttachEntityCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_attachEntityCount, allocator);
+    }
+
+    if (m_attachEntityBoundaryCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttachEntityBoundaryCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_attachEntityBoundaryCount, allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +522,53 @@ void StrategyInfo::SetIsServiceLinkedPolicy(const uint64_t& _isServiceLinkedPoli
 bool StrategyInfo::IsServiceLinkedPolicyHasBeenSet() const
 {
     return m_isServiceLinkedPolicyHasBeenSet;
+}
+
+int64_t StrategyInfo::GetAttachEntityCount() const
+{
+    return m_attachEntityCount;
+}
+
+void StrategyInfo::SetAttachEntityCount(const int64_t& _attachEntityCount)
+{
+    m_attachEntityCount = _attachEntityCount;
+    m_attachEntityCountHasBeenSet = true;
+}
+
+bool StrategyInfo::AttachEntityCountHasBeenSet() const
+{
+    return m_attachEntityCountHasBeenSet;
+}
+
+int64_t StrategyInfo::GetAttachEntityBoundaryCount() const
+{
+    return m_attachEntityBoundaryCount;
+}
+
+void StrategyInfo::SetAttachEntityBoundaryCount(const int64_t& _attachEntityBoundaryCount)
+{
+    m_attachEntityBoundaryCount = _attachEntityBoundaryCount;
+    m_attachEntityBoundaryCountHasBeenSet = true;
+}
+
+bool StrategyInfo::AttachEntityBoundaryCountHasBeenSet() const
+{
+    return m_attachEntityBoundaryCountHasBeenSet;
+}
+
+string StrategyInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void StrategyInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool StrategyInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

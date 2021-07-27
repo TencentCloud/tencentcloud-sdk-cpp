@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务状态, 0 初始化， 1 执行中， 2 执行成功，3 数据写入中，-1 执行失败。
-                     * @return State 任务状态, 0 初始化， 1 执行中， 2 执行成功，3 数据写入中，-1 执行失败。
+                     * 获取任务状态：0 初始化， 1 执行中， 2 执行成功，-1 执行失败，-3 已取消。
+                     * @return State 任务状态：0 初始化， 1 执行中， 2 执行成功，-1 执行失败，-3 已取消。
                      */
                     int64_t GetState() const;
 
                     /**
-                     * 设置任务状态, 0 初始化， 1 执行中， 2 执行成功，3 数据写入中，-1 执行失败。
-                     * @param State 任务状态, 0 初始化， 1 执行中， 2 执行成功，3 数据写入中，-1 执行失败。
+                     * 设置任务状态：0 初始化， 1 执行中， 2 执行成功，-1 执行失败，-3 已取消。
+                     * @param State 任务状态：0 初始化， 1 执行中， 2 执行成功，-1 执行失败，-3 已取消。
                      */
                     void SetState(const int64_t& _state);
 
@@ -377,7 +377,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 任务状态, 0 初始化， 1 执行中， 2 执行成功，3 数据写入中，-1 执行失败。
+                     * 任务状态：0 初始化， 1 执行中， 2 执行成功，-1 执行失败，-3 已取消。
                      */
                     int64_t m_state;
                     bool m_stateHasBeenSet;

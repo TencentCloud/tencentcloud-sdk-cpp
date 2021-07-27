@@ -53,6 +53,8 @@
 #include <tencentcloud/tcb/v20180608/model/DeleteEndUserResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeActivityRecordRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeActivityRecordResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h>
@@ -129,6 +131,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ReinstateEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ReinstateEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ReplaceActivityRecordRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ReplaceActivityRecordResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionResponse.h>
 
@@ -190,6 +194,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteWxGatewayRouteResponse> DeleteWxGatewayRouteOutcome;
                 typedef std::future<DeleteWxGatewayRouteOutcome> DeleteWxGatewayRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteWxGatewayRouteRequest&, DeleteWxGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWxGatewayRouteAsyncHandler;
+                typedef Outcome<Error, Model::DescribeActivityRecordResponse> DescribeActivityRecordOutcome;
+                typedef std::future<DescribeActivityRecordOutcome> DescribeActivityRecordOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeActivityRecordRequest&, DescribeActivityRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActivityRecordAsyncHandler;
                 typedef Outcome<Error, Model::DescribeAuthDomainsResponse> DescribeAuthDomainsOutcome;
                 typedef std::future<DescribeAuthDomainsOutcome> DescribeAuthDomainsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeAuthDomainsRequest&, DescribeAuthDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthDomainsAsyncHandler;
@@ -304,6 +311,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ReinstateEnvResponse> ReinstateEnvOutcome;
                 typedef std::future<ReinstateEnvOutcome> ReinstateEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ReinstateEnvRequest&, ReinstateEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReinstateEnvAsyncHandler;
+                typedef Outcome<Error, Model::ReplaceActivityRecordResponse> ReplaceActivityRecordOutcome;
+                typedef std::future<ReplaceActivityRecordOutcome> ReplaceActivityRecordOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ReplaceActivityRecordRequest&, ReplaceActivityRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceActivityRecordAsyncHandler;
                 typedef Outcome<Error, Model::RollUpdateCloudBaseRunServerVersionResponse> RollUpdateCloudBaseRunServerVersionOutcome;
                 typedef std::future<RollUpdateCloudBaseRunServerVersionOutcome> RollUpdateCloudBaseRunServerVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RollUpdateCloudBaseRunServerVersionRequest&, RollUpdateCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollUpdateCloudBaseRunServerVersionAsyncHandler;
@@ -444,6 +454,15 @@ namespace TencentCloud
                 DeleteWxGatewayRouteOutcome DeleteWxGatewayRoute(const Model::DeleteWxGatewayRouteRequest &request);
                 void DeleteWxGatewayRouteAsync(const Model::DeleteWxGatewayRouteRequest& request, const DeleteWxGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteWxGatewayRouteOutcomeCallable DeleteWxGatewayRouteCallable(const Model::DeleteWxGatewayRouteRequest& request);
+
+                /**
+                 *查询活动记录信息
+                 * @param req DescribeActivityRecordRequest
+                 * @return DescribeActivityRecordOutcome
+                 */
+                DescribeActivityRecordOutcome DescribeActivityRecord(const Model::DescribeActivityRecordRequest &request);
+                void DescribeActivityRecordAsync(const Model::DescribeActivityRecordRequest& request, const DescribeActivityRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeActivityRecordOutcomeCallable DescribeActivityRecordCallable(const Model::DescribeActivityRecordRequest& request);
 
                 /**
                  *获取安全域名列表
@@ -789,6 +808,15 @@ namespace TencentCloud
                 ReinstateEnvOutcome ReinstateEnv(const Model::ReinstateEnvRequest &request);
                 void ReinstateEnvAsync(const Model::ReinstateEnvRequest& request, const ReinstateEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReinstateEnvOutcomeCallable ReinstateEnvCallable(const Model::ReinstateEnvRequest& request);
+
+                /**
+                 *更新活动详情
+                 * @param req ReplaceActivityRecordRequest
+                 * @return ReplaceActivityRecordOutcome
+                 */
+                ReplaceActivityRecordOutcome ReplaceActivityRecord(const Model::ReplaceActivityRecordRequest &request);
+                void ReplaceActivityRecordAsync(const Model::ReplaceActivityRecordRequest& request, const ReplaceActivityRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceActivityRecordOutcomeCallable ReplaceActivityRecordCallable(const Model::ReplaceActivityRecordRequest& request);
 
                 /**
                  *针对特定的版本，进行滚动更新

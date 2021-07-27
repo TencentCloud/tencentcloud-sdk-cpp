@@ -61,23 +61,23 @@ namespace TencentCloud
 <li>Porn：图片鉴黄</li>
 <li>Terrorism：图片鉴恐</li>
 <li>Political：图片鉴政</li>
-<li>Porn.Asr：Asr 文字鉴黄</li>
+<li>Porn.Asr：Asr 文字（ 音频中的文字）鉴黄</li>
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
-<li>Political.Asr：Asr 文字鉴政</li>
+<li>Political.Asr：Asr 文字（ 音频中的文字）鉴政</li>
 <li>Political.Ocr：Ocr 文字鉴政</li>
 <li>Terrorism.Ocr：Ocr 文字鉴恐</li>
-<li>Prohibited.Asr：Asr 文字鉴违禁</li>
+<li>Prohibited.Asr：Asr 文字（ 音频中的文字）鉴违禁</li>
 <li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      * @return Type 任务的类型，可以取的值有：
 <li>Porn：图片鉴黄</li>
 <li>Terrorism：图片鉴恐</li>
 <li>Political：图片鉴政</li>
-<li>Porn.Asr：Asr 文字鉴黄</li>
+<li>Porn.Asr：Asr 文字（ 音频中的文字）鉴黄</li>
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
-<li>Political.Asr：Asr 文字鉴政</li>
+<li>Political.Asr：Asr 文字（ 音频中的文字）鉴政</li>
 <li>Political.Ocr：Ocr 文字鉴政</li>
 <li>Terrorism.Ocr：Ocr 文字鉴恐</li>
-<li>Prohibited.Asr：Asr 文字鉴违禁</li>
+<li>Prohibited.Asr：Asr 文字（ 音频中的文字）鉴违禁</li>
 <li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      */
                     std::string GetType() const;
@@ -87,23 +87,23 @@ namespace TencentCloud
 <li>Porn：图片鉴黄</li>
 <li>Terrorism：图片鉴恐</li>
 <li>Political：图片鉴政</li>
-<li>Porn.Asr：Asr 文字鉴黄</li>
+<li>Porn.Asr：Asr 文字（ 音频中的文字）鉴黄</li>
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
-<li>Political.Asr：Asr 文字鉴政</li>
+<li>Political.Asr：Asr 文字（ 音频中的文字）鉴政</li>
 <li>Political.Ocr：Ocr 文字鉴政</li>
 <li>Terrorism.Ocr：Ocr 文字鉴恐</li>
-<li>Prohibited.Asr：Asr 文字鉴违禁</li>
+<li>Prohibited.Asr：Asr 文字（ 音频中的文字）鉴违禁</li>
 <li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      * @param Type 任务的类型，可以取的值有：
 <li>Porn：图片鉴黄</li>
 <li>Terrorism：图片鉴恐</li>
 <li>Political：图片鉴政</li>
-<li>Porn.Asr：Asr 文字鉴黄</li>
+<li>Porn.Asr：Asr 文字（ 音频中的文字）鉴黄</li>
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
-<li>Political.Asr：Asr 文字鉴政</li>
+<li>Political.Asr：Asr 文字（ 音频中的文字）鉴政</li>
 <li>Political.Ocr：Ocr 文字鉴政</li>
 <li>Terrorism.Ocr：Ocr 文字鉴恐</li>
-<li>Prohibited.Asr：Asr 文字鉴违禁</li>
+<li>Prohibited.Asr：Asr 文字（ 音频中的文字）鉴违禁</li>
 <li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      */
                     void SetType(const std::string& _type);
@@ -341,12 +341,12 @@ namespace TencentCloud
 <li>Porn：图片鉴黄</li>
 <li>Terrorism：图片鉴恐</li>
 <li>Political：图片鉴政</li>
-<li>Porn.Asr：Asr 文字鉴黄</li>
+<li>Porn.Asr：Asr 文字（ 音频中的文字）鉴黄</li>
 <li>Porn.Ocr：Ocr 文字鉴黄</li>
-<li>Political.Asr：Asr 文字鉴政</li>
+<li>Political.Asr：Asr 文字（ 音频中的文字）鉴政</li>
 <li>Political.Ocr：Ocr 文字鉴政</li>
 <li>Terrorism.Ocr：Ocr 文字鉴恐</li>
-<li>Prohibited.Asr：Asr 文字鉴违禁</li>
+<li>Prohibited.Asr：Asr 文字（ 音频中的文字）鉴违禁</li>
 <li>Prohibited.Ocr：Ocr 文字鉴违禁</li>
                      */
                     std::string m_type;

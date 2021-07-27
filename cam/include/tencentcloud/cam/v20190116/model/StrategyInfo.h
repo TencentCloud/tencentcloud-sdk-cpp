@@ -290,6 +290,72 @@ namespace TencentCloud
                      */
                     bool IsServiceLinkedPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取关联策略实体数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttachEntityCount 关联策略实体数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAttachEntityCount() const;
+
+                    /**
+                     * 设置关联策略实体数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttachEntityCount 关联策略实体数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttachEntityCount(const int64_t& _attachEntityCount);
+
+                    /**
+                     * 判断参数 AttachEntityCount 是否已赋值
+                     * @return AttachEntityCount 是否已赋值
+                     */
+                    bool AttachEntityCountHasBeenSet() const;
+
+                    /**
+                     * 获取关联权限边界实体数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttachEntityBoundaryCount 关联权限边界实体数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAttachEntityBoundaryCount() const;
+
+                    /**
+                     * 设置关联权限边界实体数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttachEntityBoundaryCount 关联权限边界实体数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttachEntityBoundaryCount(const int64_t& _attachEntityBoundaryCount);
+
+                    /**
+                     * 判断参数 AttachEntityBoundaryCount 是否已赋值
+                     * @return AttachEntityBoundaryCount 是否已赋值
+                     */
+                    bool AttachEntityBoundaryCountHasBeenSet() const;
+
+                    /**
+                     * 获取最后编辑时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateTime 最后编辑时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置最后编辑时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdateTime 最后编辑时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -370,6 +436,27 @@ namespace TencentCloud
                      */
                     uint64_t m_isServiceLinkedPolicy;
                     bool m_isServiceLinkedPolicyHasBeenSet;
+
+                    /**
+                     * 关联策略实体数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_attachEntityCount;
+                    bool m_attachEntityCountHasBeenSet;
+
+                    /**
+                     * 关联权限边界实体数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_attachEntityBoundaryCount;
+                    bool m_attachEntityBoundaryCountHasBeenSet;
+
+                    /**
+                     * 最后编辑时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

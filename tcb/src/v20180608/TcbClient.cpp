@@ -685,6 +685,49 @@ TcbClient::DeleteWxGatewayRouteOutcomeCallable TcbClient::DeleteWxGatewayRouteCa
     return task->get_future();
 }
 
+TcbClient::DescribeActivityRecordOutcome TcbClient::DescribeActivityRecord(const DescribeActivityRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeActivityRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeActivityRecordResponse rsp = DescribeActivityRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeActivityRecordOutcome(rsp);
+        else
+            return DescribeActivityRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeActivityRecordOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeActivityRecordAsync(const DescribeActivityRecordRequest& request, const DescribeActivityRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeActivityRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeActivityRecordOutcomeCallable TcbClient::DescribeActivityRecordCallable(const DescribeActivityRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeActivityRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeActivityRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeAuthDomainsOutcome TcbClient::DescribeAuthDomains(const DescribeAuthDomainsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAuthDomains");
@@ -2312,6 +2355,49 @@ TcbClient::ReinstateEnvOutcomeCallable TcbClient::ReinstateEnvCallable(const Rei
         [this, request]()
         {
             return this->ReinstateEnv(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::ReplaceActivityRecordOutcome TcbClient::ReplaceActivityRecord(const ReplaceActivityRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceActivityRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceActivityRecordResponse rsp = ReplaceActivityRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceActivityRecordOutcome(rsp);
+        else
+            return ReplaceActivityRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceActivityRecordOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ReplaceActivityRecordAsync(const ReplaceActivityRecordRequest& request, const ReplaceActivityRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceActivityRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::ReplaceActivityRecordOutcomeCallable TcbClient::ReplaceActivityRecordCallable(const ReplaceActivityRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceActivityRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceActivityRecord(request);
         }
     );
 

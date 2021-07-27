@@ -19,18 +19,32 @@ set(market_public_header
   )
 
 set(market_public_header_model
-  include/tencentcloud/market/v20191010/model/GetUsagePlanUsageAmountResponse.h
-  include/tencentcloud/market/v20191010/model/GetUsagePlanUsageAmountRequest.h
-  include/tencentcloud/market/v20191010/model/FlowProductRemindRequest.h
+  include/tencentcloud/market/v20191010/model/SyncUserAndOrderInfoResponse.h
+  include/tencentcloud/market/v20191010/model/SyncUserAndOrderInfoRequest.h
+  include/tencentcloud/market/v20191010/model/OfflineProductDeal.h
   include/tencentcloud/market/v20191010/model/FlowProductRemindResponse.h
+  include/tencentcloud/market/v20191010/model/WeChatUserInfo.h
+  include/tencentcloud/market/v20191010/model/GetUsagePlanUsageAmountResponse.h
+  include/tencentcloud/market/v20191010/model/FlowProductRemindRequest.h
+  include/tencentcloud/market/v20191010/model/GetUsagePlanUsageAmountRequest.h
+  include/tencentcloud/market/v20191010/model/Error.h
+  include/tencentcloud/market/v20191010/model/SyncUserAndOrderInfoDetail.h
+  include/tencentcloud/market/v20191010/model/WeChatOrderInfo.h
   )
 
 set(market_src
   src/v20191010/MarketClient.cpp
-  src/v20191010/model/GetUsagePlanUsageAmountResponse.cpp
-  src/v20191010/model/GetUsagePlanUsageAmountRequest.cpp
-  src/v20191010/model/FlowProductRemindRequest.cpp
+  src/v20191010/model/SyncUserAndOrderInfoResponse.cpp
+  src/v20191010/model/SyncUserAndOrderInfoRequest.cpp
+  src/v20191010/model/OfflineProductDeal.cpp
   src/v20191010/model/FlowProductRemindResponse.cpp
+  src/v20191010/model/WeChatUserInfo.cpp
+  src/v20191010/model/GetUsagePlanUsageAmountResponse.cpp
+  src/v20191010/model/FlowProductRemindRequest.cpp
+  src/v20191010/model/GetUsagePlanUsageAmountRequest.cpp
+  src/v20191010/model/Error.cpp
+  src/v20191010/model/SyncUserAndOrderInfoDetail.cpp
+  src/v20191010/model/WeChatOrderInfo.cpp
   )
 
 set(market_include

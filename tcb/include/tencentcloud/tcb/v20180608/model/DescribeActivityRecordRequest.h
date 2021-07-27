@@ -1,0 +1,149 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TCB_V20180608_MODEL_DESCRIBEACTIVITYRECORDREQUEST_H_
+#define TENCENTCLOUD_TCB_V20180608_MODEL_DESCRIBEACTIVITYRECORDREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Tcb
+    {
+        namespace V20180608
+        {
+            namespace Model
+            {
+                /**
+                * DescribeActivityRecord请求参数结构体
+                */
+                class DescribeActivityRecordRequest : public AbstractModel
+                {
+                public:
+                    DescribeActivityRecordRequest();
+                    ~DescribeActivityRecordRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取渠道加密token
+                     * @return ChannelToken 渠道加密token
+                     */
+                    std::string GetChannelToken() const;
+
+                    /**
+                     * 设置渠道加密token
+                     * @param ChannelToken 渠道加密token
+                     */
+                    void SetChannelToken(const std::string& _channelToken);
+
+                    /**
+                     * 判断参数 ChannelToken 是否已赋值
+                     * @return ChannelToken 是否已赋值
+                     */
+                    bool ChannelTokenHasBeenSet() const;
+
+                    /**
+                     * 获取渠道来源，每个来源对应不同secretKey
+                     * @return Channel 渠道来源，每个来源对应不同secretKey
+                     */
+                    std::string GetChannel() const;
+
+                    /**
+                     * 设置渠道来源，每个来源对应不同secretKey
+                     * @param Channel 渠道来源，每个来源对应不同secretKey
+                     */
+                    void SetChannel(const std::string& _channel);
+
+                    /**
+                     * 判断参数 Channel 是否已赋值
+                     * @return Channel 是否已赋值
+                     */
+                    bool ChannelHasBeenSet() const;
+
+                    /**
+                     * 获取活动id列表
+                     * @return ActivityIdList 活动id列表
+                     */
+                    std::vector<int64_t> GetActivityIdList() const;
+
+                    /**
+                     * 设置活动id列表
+                     * @param ActivityIdList 活动id列表
+                     */
+                    void SetActivityIdList(const std::vector<int64_t>& _activityIdList);
+
+                    /**
+                     * 判断参数 ActivityIdList 是否已赋值
+                     * @return ActivityIdList 是否已赋值
+                     */
+                    bool ActivityIdListHasBeenSet() const;
+
+                    /**
+                     * 获取过滤状态码
+                     * @return Status 过滤状态码
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置过滤状态码
+                     * @param Status 过滤状态码
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 渠道加密token
+                     */
+                    std::string m_channelToken;
+                    bool m_channelTokenHasBeenSet;
+
+                    /**
+                     * 渠道来源，每个来源对应不同secretKey
+                     */
+                    std::string m_channel;
+                    bool m_channelHasBeenSet;
+
+                    /**
+                     * 活动id列表
+                     */
+                    std::vector<int64_t> m_activityIdList;
+                    bool m_activityIdListHasBeenSet;
+
+                    /**
+                     * 过滤状态码
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TCB_V20180608_MODEL_DESCRIBEACTIVITYRECORDREQUEST_H_

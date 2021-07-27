@@ -27,6 +27,8 @@
 #include <tencentcloud/market/v20191010/model/FlowProductRemindResponse.h>
 #include <tencentcloud/market/v20191010/model/GetUsagePlanUsageAmountRequest.h>
 #include <tencentcloud/market/v20191010/model/GetUsagePlanUsageAmountResponse.h>
+#include <tencentcloud/market/v20191010/model/SyncUserAndOrderInfoRequest.h>
+#include <tencentcloud/market/v20191010/model/SyncUserAndOrderInfoResponse.h>
 
 
 namespace TencentCloud
@@ -47,6 +49,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::GetUsagePlanUsageAmountResponse> GetUsagePlanUsageAmountOutcome;
                 typedef std::future<GetUsagePlanUsageAmountOutcome> GetUsagePlanUsageAmountOutcomeCallable;
                 typedef std::function<void(const MarketClient*, const Model::GetUsagePlanUsageAmountRequest&, GetUsagePlanUsageAmountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUsagePlanUsageAmountAsyncHandler;
+                typedef Outcome<Error, Model::SyncUserAndOrderInfoResponse> SyncUserAndOrderInfoOutcome;
+                typedef std::future<SyncUserAndOrderInfoOutcome> SyncUserAndOrderInfoOutcomeCallable;
+                typedef std::function<void(const MarketClient*, const Model::SyncUserAndOrderInfoRequest&, SyncUserAndOrderInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncUserAndOrderInfoAsyncHandler;
 
 
 
@@ -68,6 +73,15 @@ namespace TencentCloud
                 GetUsagePlanUsageAmountOutcome GetUsagePlanUsageAmount(const Model::GetUsagePlanUsageAmountRequest &request);
                 void GetUsagePlanUsageAmountAsync(const Model::GetUsagePlanUsageAmountRequest& request, const GetUsagePlanUsageAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetUsagePlanUsageAmountOutcomeCallable GetUsagePlanUsageAmountCallable(const Model::GetUsagePlanUsageAmountRequest& request);
+
+                /**
+                 *同步企微的用户信息和订单信息到云市场
+                 * @param req SyncUserAndOrderInfoRequest
+                 * @return SyncUserAndOrderInfoOutcome
+                 */
+                SyncUserAndOrderInfoOutcome SyncUserAndOrderInfo(const Model::SyncUserAndOrderInfoRequest &request);
+                void SyncUserAndOrderInfoAsync(const Model::SyncUserAndOrderInfoRequest& request, const SyncUserAndOrderInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncUserAndOrderInfoOutcomeCallable SyncUserAndOrderInfoCallable(const Model::SyncUserAndOrderInfoRequest& request);
 
             };
         }
