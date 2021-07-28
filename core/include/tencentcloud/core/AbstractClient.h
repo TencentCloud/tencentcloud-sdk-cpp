@@ -21,6 +21,7 @@
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/http/HttpClient.h>
 #include "AbstractModel.h"
+#include <map>
 
 namespace TencentCloud
 {
@@ -38,9 +39,13 @@ namespace TencentCloud
         void SetCredential(const Credential &credential);
         Credential GetCredential() const;
         void SetNetworkProxy(const NetworkProxy &proxy);
+        HttpClient::HttpResponseOutcome MakeRequestJson(const std::string &actionName, const std::string &params);
+        HttpClient::HttpResponseOutcome MakeRequestOctetStream(const std::string &actionName, std::map<std::string, std::string> &headers, const std::string &body);
 
     protected:
         HttpClient::HttpResponseOutcome MakeRequest(const AbstractModel& request, const std::string &actionName);
+        HttpClient::HttpResponseOutcome DoRequest(const std::string &actionName, const std::string &body, std::map<std::string, std::string> &headers);
+
         void GenerateSignature(HttpRequest &request);
 
     private:

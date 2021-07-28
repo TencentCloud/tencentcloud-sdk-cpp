@@ -14,32 +14,22 @@
  * limitations under the License.
  */
 
+#ifndef TENCENTCLOUD_CORE_COMMONCLIENT_H_
+#define TENCENTCLOUD_CORE_COMMONCLIENT_H_
+
+#include <tencentcloud/core/AbstractClient.h>
+#include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 
-using namespace TencentCloud;
-using namespace std;
-
-void ClientProfile::SetSignMethod(const SignMethod &signMethod)
+namespace TencentCloud
 {
-    m_signMethod = signMethod;
+    class CommonClient : public AbstractClient
+    {
+    public:
+        // CommonClient(const std::string &service, const std::string &version, const Credential &credential, const std::string &region, const std::string &endpoint);
+        CommonClient(const std::string &service, const std::string &version, const Credential &credential, const std::string &region, const ClientProfile &profile);
+        ~CommonClient();
+    };
 }
 
-void ClientProfile::SetHttpProfile(const HttpProfile &httpProfile)
-{
-    m_httpProfile = httpProfile;
-}
-
-HttpProfile ClientProfile::GetHttpProfile() const
-{
-    return m_httpProfile;
-}
-
-void ClientProfile::SetUnsignedPayload(bool flag)
-{
-    m_unsignedPayload = flag;
-}
-
-bool ClientProfile::IsUnsignedPayload()
-{
-    return m_unsignedPayload;
-}
+#endif // !TENCENTCLOUD_CORE_COMMONCLIENT_H_
