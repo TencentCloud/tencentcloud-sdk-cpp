@@ -84,15 +84,34 @@ Credential AbstractClient::GetCredential() const
     return m_credential;
 }
 
-HttpClient::HttpResponseOutcome AbstractClient::MakeRequest(const AbstractModel& request, const string &actionName)
+HttpClient::HttpResponseOutcome AbstractClient::MakeRequest(const AbstractModel& request, const std::string &actionName)
 {
-    string body = request.ToJsonString();
+    const string body = request.ToJsonString();
+    std::map<std::string, std::string> headers;
+    headers.insert(std::make_pair("Content-Type", "application/json"));
+    return DoRequest(actionName, body, headers);
+}
+HttpClient::HttpResponseOutcome AbstractClient::MakeRequestJson(const std::string &actionName, const std::string &params)
+{
+    std::map<std::string, std::string> headers;
+    headers.insert(std::make_pair("Content-Type", "application/json"));
+    return DoRequest(actionName, params, headers);
+}
 
+HttpClient::HttpResponseOutcome AbstractClient::MakeRequestOctetStream(const std::string &actionName, std::map<std::string, std::string> &headers, const std::string &body)
+{
+    headers.insert(std::make_pair("Content-Type", "application/octet-stream"));
+    return DoRequest(actionName, body, headers);
+}
+typedef std::map<std::string, std::string> OctetStreamHeadersMap;
+
+HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &actionName, const std::string &body, std::map<std::string, std::string> &headers)
+{
     HttpProfile httpProfile = m_clientProfile.GetHttpProfile();
     string endpoint = httpProfile.GetEndpoint();
     if (endpoint == "")
         endpoint = m_endpoint;
-
+    
     string::size_type pos = endpoint.find_first_of(".");
     if (pos != string::npos)
         m_service = endpoint.substr(0, pos);
@@ -112,7 +131,6 @@ HttpClient::HttpResponseOutcome AbstractClient::MakeRequest(const AbstractModel&
     httpRequest.SetMethod(HttpRequest::Method::POST);
     httpRequest.SetBody(body);
     httpRequest.AddHeader("Host", url.GetHost());
-    httpRequest.AddHeader("Content-Type", "application/json");
     httpRequest.AddHeader("X-TC-Action", actionName);
     httpRequest.AddHeader("X-TC-Version", m_apiVersion);
     if (m_region != "")
@@ -125,8 +143,14 @@ HttpClient::HttpResponseOutcome AbstractClient::MakeRequest(const AbstractModel&
         httpRequest.AddHeader("Connection", "Keep-Alive");
     else
         httpRequest.AddHeader("Connection", "Close");
+    if (headers.size() > 0)
+    {
+        for(std::map<std::string, std::string>::iterator iter = headers.begin(); iter != headers.end(); iter++)
+        {
+            httpRequest.AddHeader(iter->first, iter->second);
+        }
+    }
     GenerateSignature(httpRequest);
-
     m_httpClient->SetReqTimeout(httpProfile.GetReqTimeout()*1000);
     m_httpClient->SetConnectTimeout(httpProfile.GetConnectTimeout()*1000);
 

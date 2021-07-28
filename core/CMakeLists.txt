@@ -20,6 +20,7 @@ set(core_public_header
     include/tencentcloud/core/AbstractClient.h
     include/tencentcloud/core/AbstractModel.h
     include/tencentcloud/core/AsyncCallerContext.h
+    include/tencentcloud/core/CommonClient.h
     include/tencentcloud/core/Config.h
     include/tencentcloud/core/Credential.h
     include/tencentcloud/core/Error.h
@@ -56,6 +57,7 @@ set(core_src
     src/AbstractClient.cpp
     src/AbstractModel.cpp
     src/AsyncCallerContext.cpp
+    src/CommonClient.cpp
     src/Credential.cpp
     src/Executor.cpp
     src/NetworkProxy.cpp

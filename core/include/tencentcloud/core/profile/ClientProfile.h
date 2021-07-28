@@ -54,7 +54,7 @@ namespace TencentCloud
 
         void SetSignMethod(const SignMethod &signMethod);
         void SetHttpProfile(const HttpProfile &httpProfile);
-        HttpProfile GetHttpProfile();
+        HttpProfile GetHttpProfile() const;
 
     protected:
         void SetUnsignedPayload(bool flag);
