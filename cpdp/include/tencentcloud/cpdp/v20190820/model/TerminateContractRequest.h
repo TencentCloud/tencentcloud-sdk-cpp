@@ -330,6 +330,42 @@ ANONYMOUS: 匿名类型 USER_ID
                      */
                     bool UserTypeHasBeenSet() const;
 
+                    /**
+                     * 获取签约方式
+                     * @return ContractMethod 签约方式
+                     */
+                    std::string GetContractMethod() const;
+
+                    /**
+                     * 设置签约方式
+                     * @param ContractMethod 签约方式
+                     */
+                    void SetContractMethod(const std::string& _contractMethod);
+
+                    /**
+                     * 判断参数 ContractMethod 是否已赋值
+                     * @return ContractMethod 是否已赋值
+                     */
+                    bool ContractMethodHasBeenSet() const;
+
+                    /**
+                     * 获取签约代扣穿透查询存量数据迁移模式
+                     * @return MigrateMode 签约代扣穿透查询存量数据迁移模式
+                     */
+                    std::string GetMigrateMode() const;
+
+                    /**
+                     * 设置签约代扣穿透查询存量数据迁移模式
+                     * @param MigrateMode 签约代扣穿透查询存量数据迁移模式
+                     */
+                    void SetMigrateMode(const std::string& _migrateMode);
+
+                    /**
+                     * 判断参数 MigrateMode 是否已赋值
+                     * @return MigrateMode 是否已赋值
+                     */
+                    bool MigrateModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -424,6 +460,18 @@ ANONYMOUS: 匿名类型 USER_ID
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
+
+                    /**
+                     * 签约方式
+                     */
+                    std::string m_contractMethod;
+                    bool m_contractMethodHasBeenSet;
+
+                    /**
+                     * 签约代扣穿透查询存量数据迁移模式
+                     */
+                    std::string m_migrateMode;
+                    bool m_migrateModeHasBeenSet;
 
                 };
             }

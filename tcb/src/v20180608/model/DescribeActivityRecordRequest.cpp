@@ -26,7 +26,8 @@ DescribeActivityRecordRequest::DescribeActivityRecordRequest() :
     m_channelTokenHasBeenSet(false),
     m_channelHasBeenSet(false),
     m_activityIdListHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_statusesHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,19 @@ string DescribeActivityRecordRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_statusesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Statuses";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_statuses.begin(); itr != m_statuses.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -144,6 +158,22 @@ void DescribeActivityRecordRequest::SetStatus(const int64_t& _status)
 bool DescribeActivityRecordRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<int64_t> DescribeActivityRecordRequest::GetStatuses() const
+{
+    return m_statuses;
+}
+
+void DescribeActivityRecordRequest::SetStatuses(const vector<int64_t>& _statuses)
+{
+    m_statuses = _statuses;
+    m_statusesHasBeenSet = true;
+}
+
+bool DescribeActivityRecordRequest::StatusesHasBeenSet() const
+{
+    return m_statusesHasBeenSet;
 }
 
 

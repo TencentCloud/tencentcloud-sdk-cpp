@@ -384,6 +384,49 @@ GaapClient::CreateCertificateOutcomeCallable GaapClient::CreateCertificateCallab
     return task->get_future();
 }
 
+GaapClient::CreateCustomHeaderOutcome GaapClient::CreateCustomHeader(const CreateCustomHeaderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomHeader");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomHeaderResponse rsp = CreateCustomHeaderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomHeaderOutcome(rsp);
+        else
+            return CreateCustomHeaderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomHeaderOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::CreateCustomHeaderAsync(const CreateCustomHeaderRequest& request, const CreateCustomHeaderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCustomHeader(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::CreateCustomHeaderOutcomeCallable GaapClient::CreateCustomHeaderCallable(const CreateCustomHeaderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCustomHeaderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCustomHeader(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GaapClient::CreateDomainOutcome GaapClient::CreateDomain(const CreateDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDomain");
@@ -1330,6 +1373,49 @@ GaapClient::DescribeAccessRegionsByDestRegionOutcomeCallable GaapClient::Describ
     return task->get_future();
 }
 
+GaapClient::DescribeBlackHeaderOutcome GaapClient::DescribeBlackHeader(const DescribeBlackHeaderRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlackHeader");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlackHeaderResponse rsp = DescribeBlackHeaderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlackHeaderOutcome(rsp);
+        else
+            return DescribeBlackHeaderOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlackHeaderOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DescribeBlackHeaderAsync(const DescribeBlackHeaderRequest& request, const DescribeBlackHeaderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBlackHeader(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DescribeBlackHeaderOutcomeCallable GaapClient::DescribeBlackHeaderCallable(const DescribeBlackHeaderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBlackHeaderOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBlackHeader(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GaapClient::DescribeCertificateDetailOutcome GaapClient::DescribeCertificateDetail(const DescribeCertificateDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCertificateDetail");
@@ -1452,6 +1538,49 @@ GaapClient::DescribeCountryAreaMappingOutcomeCallable GaapClient::DescribeCountr
         [this, request]()
         {
             return this->DescribeCountryAreaMapping(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::DescribeCustomHeaderOutcome GaapClient::DescribeCustomHeader(const DescribeCustomHeaderRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomHeader");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomHeaderResponse rsp = DescribeCustomHeaderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomHeaderOutcome(rsp);
+        else
+            return DescribeCustomHeaderOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomHeaderOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DescribeCustomHeaderAsync(const DescribeCustomHeaderRequest& request, const DescribeCustomHeaderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCustomHeader(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DescribeCustomHeaderOutcomeCallable GaapClient::DescribeCustomHeaderCallable(const DescribeCustomHeaderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCustomHeaderOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCustomHeader(request);
         }
     );
 

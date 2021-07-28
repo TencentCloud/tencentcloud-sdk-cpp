@@ -33,7 +33,8 @@ Invocation::Invocation() :
     m_parametersHasBeenSet(false),
     m_defaultParametersHasBeenSet(false),
     m_instanceKindHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_invocationSourceHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome Invocation::Deserialize(const rapidjson::Value &value)
         m_usernameHasBeenSet = true;
     }
 
+    if (value.HasMember("InvocationSource") && !value["InvocationSource"].IsNull())
+    {
+        if (!value["InvocationSource"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Invocation.InvocationSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invocationSource = string(value["InvocationSource"].GetString());
+        m_invocationSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +309,14 @@ void Invocation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Username";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invocationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvocationSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invocationSource.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -509,5 +528,21 @@ void Invocation::SetUsername(const string& _username)
 bool Invocation::UsernameHasBeenSet() const
 {
     return m_usernameHasBeenSet;
+}
+
+string Invocation::GetInvocationSource() const
+{
+    return m_invocationSource;
+}
+
+void Invocation::SetInvocationSource(const string& _invocationSource)
+{
+    m_invocationSource = _invocationSource;
+    m_invocationSourceHasBeenSet = true;
+}
+
+bool Invocation::InvocationSourceHasBeenSet() const
+{
+    return m_invocationSourceHasBeenSet;
 }
 

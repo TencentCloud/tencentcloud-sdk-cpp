@@ -35,7 +35,9 @@ QueryContractRequest::QueryContractRequest() :
     m_channelContractCodeHasBeenSet(false),
     m_externalContractDataHasBeenSet(false),
     m_midasEnvironmentHasBeenSet(false),
-    m_userTypeHasBeenSet(false)
+    m_userTypeHasBeenSet(false),
+    m_migrateModeHasBeenSet(false),
+    m_contractMethodHasBeenSet(false)
 {
 }
 
@@ -148,6 +150,22 @@ string QueryContractRequest::ToJsonString() const
         string key = "UserType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_migrateModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MigrateMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_migrateMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contractMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContractMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_contractMethod.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +382,38 @@ void QueryContractRequest::SetUserType(const string& _userType)
 bool QueryContractRequest::UserTypeHasBeenSet() const
 {
     return m_userTypeHasBeenSet;
+}
+
+string QueryContractRequest::GetMigrateMode() const
+{
+    return m_migrateMode;
+}
+
+void QueryContractRequest::SetMigrateMode(const string& _migrateMode)
+{
+    m_migrateMode = _migrateMode;
+    m_migrateModeHasBeenSet = true;
+}
+
+bool QueryContractRequest::MigrateModeHasBeenSet() const
+{
+    return m_migrateModeHasBeenSet;
+}
+
+string QueryContractRequest::GetContractMethod() const
+{
+    return m_contractMethod;
+}
+
+void QueryContractRequest::SetContractMethod(const string& _contractMethod)
+{
+    m_contractMethod = _contractMethod;
+    m_contractMethodHasBeenSet = true;
+}
+
+bool QueryContractRequest::ContractMethodHasBeenSet() const
+{
+    return m_contractMethodHasBeenSet;
 }
 
 

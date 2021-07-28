@@ -32,7 +32,8 @@ InvocationTask::InvocationTask() :
     m_createdTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
     m_commandDocumentHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
+    m_errorInfoHasBeenSet(false),
+    m_invocationSourceHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,16 @@ CoreInternalOutcome InvocationTask::Deserialize(const rapidjson::Value &value)
         m_errorInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("InvocationSource") && !value["InvocationSource"].IsNull())
+    {
+        if (!value["InvocationSource"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InvocationTask.InvocationSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invocationSource = string(value["InvocationSource"].GetString());
+        m_invocationSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +289,14 @@ void InvocationTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ErrorInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invocationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvocationSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invocationSource.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -473,5 +492,21 @@ void InvocationTask::SetErrorInfo(const string& _errorInfo)
 bool InvocationTask::ErrorInfoHasBeenSet() const
 {
     return m_errorInfoHasBeenSet;
+}
+
+string InvocationTask::GetInvocationSource() const
+{
+    return m_invocationSource;
+}
+
+void InvocationTask::SetInvocationSource(const string& _invocationSource)
+{
+    m_invocationSource = _invocationSource;
+    m_invocationSourceHasBeenSet = true;
+}
+
+bool InvocationTask::InvocationSourceHasBeenSet() const
+{
+    return m_invocationSourceHasBeenSet;
 }
 

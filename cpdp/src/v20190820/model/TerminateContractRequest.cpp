@@ -36,7 +36,9 @@ TerminateContractRequest::TerminateContractRequest() :
     m_externalContractDataHasBeenSet(false),
     m_terminationReasonHasBeenSet(false),
     m_midasEnvironmentHasBeenSet(false),
-    m_userTypeHasBeenSet(false)
+    m_userTypeHasBeenSet(false),
+    m_contractMethodHasBeenSet(false),
+    m_migrateModeHasBeenSet(false)
 {
 }
 
@@ -157,6 +159,22 @@ string TerminateContractRequest::ToJsonString() const
         string key = "UserType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contractMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContractMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_contractMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_migrateModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MigrateMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_migrateMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -389,6 +407,38 @@ void TerminateContractRequest::SetUserType(const string& _userType)
 bool TerminateContractRequest::UserTypeHasBeenSet() const
 {
     return m_userTypeHasBeenSet;
+}
+
+string TerminateContractRequest::GetContractMethod() const
+{
+    return m_contractMethod;
+}
+
+void TerminateContractRequest::SetContractMethod(const string& _contractMethod)
+{
+    m_contractMethod = _contractMethod;
+    m_contractMethodHasBeenSet = true;
+}
+
+bool TerminateContractRequest::ContractMethodHasBeenSet() const
+{
+    return m_contractMethodHasBeenSet;
+}
+
+string TerminateContractRequest::GetMigrateMode() const
+{
+    return m_migrateMode;
+}
+
+void TerminateContractRequest::SetMigrateMode(const string& _migrateMode)
+{
+    m_migrateMode = _migrateMode;
+    m_migrateModeHasBeenSet = true;
+}
+
+bool TerminateContractRequest::MigrateModeHasBeenSet() const
+{
+    return m_migrateModeHasBeenSet;
 }
 
 

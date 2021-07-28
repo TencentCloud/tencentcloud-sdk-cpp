@@ -900,6 +900,49 @@ AntiddosClient::DeleteWaterPrintKeyOutcomeCallable AntiddosClient::DeleteWaterPr
     return task->get_future();
 }
 
+AntiddosClient::DescribeBasicDeviceStatusOutcome AntiddosClient::DescribeBasicDeviceStatus(const DescribeBasicDeviceStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBasicDeviceStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBasicDeviceStatusResponse rsp = DescribeBasicDeviceStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBasicDeviceStatusOutcome(rsp);
+        else
+            return DescribeBasicDeviceStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBasicDeviceStatusOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeBasicDeviceStatusAsync(const DescribeBasicDeviceStatusRequest& request, const DescribeBasicDeviceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBasicDeviceStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeBasicDeviceStatusOutcomeCallable AntiddosClient::DescribeBasicDeviceStatusCallable(const DescribeBasicDeviceStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBasicDeviceStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBasicDeviceStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DescribeBlackWhiteIpListOutcome AntiddosClient::DescribeBlackWhiteIpList(const DescribeBlackWhiteIpListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBlackWhiteIpList");

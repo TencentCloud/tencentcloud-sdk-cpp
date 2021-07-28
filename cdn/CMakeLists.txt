@@ -76,6 +76,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/TopData.h
   include/tencentcloud/cdn/v20180606/model/EnableCachesRequest.h
   include/tencentcloud/cdn/v20180606/model/Quota.h
+  include/tencentcloud/cdn/v20180606/model/CreateScdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/HeaderKey.h
   include/tencentcloud/cdn/v20180606/model/DescribeBillingDataRequest.h
   include/tencentcloud/cdn/v20180606/model/SimpleCache.h
@@ -194,7 +195,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeIpVisitRequest.h
   include/tencentcloud/cdn/v20180606/model/HttpHeaderRule.h
   include/tencentcloud/cdn/v20180606/model/StatusCodeCacheRule.h
-  include/tencentcloud/cdn/v20180606/model/ClientCert.h
+  include/tencentcloud/cdn/v20180606/model/CreateScdnDomainResponse.h
   include/tencentcloud/cdn/v20180606/model/ScdnTopData.h
   include/tencentcloud/cdn/v20180606/model/ScdnConfig.h
   include/tencentcloud/cdn/v20180606/model/DomainLog.h
@@ -221,6 +222,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/StopScdnDomainResponse.h
   include/tencentcloud/cdn/v20180606/model/VerifyDomainRecordRequest.h
   include/tencentcloud/cdn/v20180606/model/KeyRule.h
+  include/tencentcloud/cdn/v20180606/model/ClientCert.h
   include/tencentcloud/cdn/v20180606/model/CappingRule.h
   include/tencentcloud/cdn/v20180606/model/DeleteScdnDomainResponse.h
   include/tencentcloud/cdn/v20180606/model/ListClsLogTopicsRequest.h
@@ -355,6 +357,7 @@ set(cdn_src
   src/v20180606/model/TopData.cpp
   src/v20180606/model/EnableCachesRequest.cpp
   src/v20180606/model/Quota.cpp
+  src/v20180606/model/CreateScdnDomainRequest.cpp
   src/v20180606/model/HeaderKey.cpp
   src/v20180606/model/DescribeBillingDataRequest.cpp
   src/v20180606/model/SimpleCache.cpp
@@ -473,7 +476,7 @@ set(cdn_src
   src/v20180606/model/DescribeIpVisitRequest.cpp
   src/v20180606/model/HttpHeaderRule.cpp
   src/v20180606/model/StatusCodeCacheRule.cpp
-  src/v20180606/model/ClientCert.cpp
+  src/v20180606/model/CreateScdnDomainResponse.cpp
   src/v20180606/model/ScdnTopData.cpp
   src/v20180606/model/ScdnConfig.cpp
   src/v20180606/model/DomainLog.cpp
@@ -500,6 +503,7 @@ set(cdn_src
   src/v20180606/model/StopScdnDomainResponse.cpp
   src/v20180606/model/VerifyDomainRecordRequest.cpp
   src/v20180606/model/KeyRule.cpp
+  src/v20180606/model/ClientCert.cpp
   src/v20180606/model/CappingRule.cpp
   src/v20180606/model/DeleteScdnDomainResponse.cpp
   src/v20180606/model/ListClsLogTopicsRequest.cpp

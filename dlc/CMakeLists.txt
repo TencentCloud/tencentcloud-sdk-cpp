@@ -24,6 +24,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DeleteUserRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateScriptResponse.h
+  include/tencentcloud/dlc/v20210125/model/CreateTasksInOrderResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTablesResponse.h
   include/tencentcloud/dlc/v20210125/model/WorkGroupInfo.h
   include/tencentcloud/dlc/v20210125/model/ModifyUserResponse.h
@@ -32,6 +33,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DetachUserPolicyRequest.h
   include/tencentcloud/dlc/v20210125/model/DeleteWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h
+  include/tencentcloud/dlc/v20210125/model/CreateTasksInOrderRequest.h
   include/tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyResponse.h
   include/tencentcloud/dlc/v20210125/model/CSVSerde.h
   include/tencentcloud/dlc/v20210125/model/CreateDatabaseRequest.h
@@ -42,6 +44,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DeleteWorkGroupRequest.h
   include/tencentcloud/dlc/v20210125/model/KVPair.h
   include/tencentcloud/dlc/v20210125/model/TableBaseInfo.h
+  include/tencentcloud/dlc/v20210125/model/TasksInfo.h
   include/tencentcloud/dlc/v20210125/model/AttachWorkGroupPolicyRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateUserResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteUserResponse.h
@@ -117,6 +120,7 @@ set(dlc_src
   src/v20210125/model/DeleteUserRequest.cpp
   src/v20210125/model/CreateStoreLocationResponse.cpp
   src/v20210125/model/CreateScriptResponse.cpp
+  src/v20210125/model/CreateTasksInOrderResponse.cpp
   src/v20210125/model/DescribeTablesResponse.cpp
   src/v20210125/model/WorkGroupInfo.cpp
   src/v20210125/model/ModifyUserResponse.cpp
@@ -125,6 +129,7 @@ set(dlc_src
   src/v20210125/model/DetachUserPolicyRequest.cpp
   src/v20210125/model/DeleteWorkGroupResponse.cpp
   src/v20210125/model/DescribeTasksResponse.cpp
+  src/v20210125/model/CreateTasksInOrderRequest.cpp
   src/v20210125/model/DetachWorkGroupPolicyResponse.cpp
   src/v20210125/model/CSVSerde.cpp
   src/v20210125/model/CreateDatabaseRequest.cpp
@@ -135,6 +140,7 @@ set(dlc_src
   src/v20210125/model/DeleteWorkGroupRequest.cpp
   src/v20210125/model/KVPair.cpp
   src/v20210125/model/TableBaseInfo.cpp
+  src/v20210125/model/TasksInfo.cpp
   src/v20210125/model/AttachWorkGroupPolicyRequest.cpp
   src/v20210125/model/CreateUserResponse.cpp
   src/v20210125/model/DeleteUserResponse.cpp

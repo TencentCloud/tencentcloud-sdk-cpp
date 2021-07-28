@@ -43,6 +43,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateTasksInOrderRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateTasksInOrderResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateWorkGroupRequest.h>
@@ -127,6 +129,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateTaskResponse> CreateTaskOutcome;
                 typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateTaskRequest&, CreateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateTasksInOrderResponse> CreateTasksInOrderOutcome;
+                typedef std::future<CreateTasksInOrderOutcome> CreateTasksInOrderOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateTasksInOrderRequest&, CreateTasksInOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTasksInOrderAsyncHandler;
                 typedef Outcome<Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
@@ -279,6 +284,15 @@ namespace TencentCloud
                 CreateTaskOutcome CreateTask(const Model::CreateTaskRequest &request);
                 void CreateTaskAsync(const Model::CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
+
+                /**
+                 *按顺序创建任务
+                 * @param req CreateTasksInOrderRequest
+                 * @return CreateTasksInOrderOutcome
+                 */
+                CreateTasksInOrderOutcome CreateTasksInOrder(const Model::CreateTasksInOrderRequest &request);
+                void CreateTasksInOrderAsync(const Model::CreateTasksInOrderRequest& request, const CreateTasksInOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTasksInOrderOutcomeCallable CreateTasksInOrderCallable(const Model::CreateTasksInOrderRequest& request);
 
                 /**
                  *创建用户

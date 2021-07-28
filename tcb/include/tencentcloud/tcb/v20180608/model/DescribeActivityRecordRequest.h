@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ActivityIdListHasBeenSet() const;
 
                     /**
-                     * 获取过滤状态码
-                     * @return Status 过滤状态码
+                     * 获取过滤状态码，已废弃
+                     * @return Status 过滤状态码，已废弃
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置过滤状态码
-                     * @param Status 过滤状态码
+                     * 设置过滤状态码，已废弃
+                     * @param Status 过滤状态码，已废弃
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -113,6 +113,24 @@ namespace TencentCloud
                      * @return Status 是否已赋值
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取状态码过滤数组，空数组时不过滤
+                     * @return Statuses 状态码过滤数组，空数组时不过滤
+                     */
+                    std::vector<int64_t> GetStatuses() const;
+
+                    /**
+                     * 设置状态码过滤数组，空数组时不过滤
+                     * @param Statuses 状态码过滤数组，空数组时不过滤
+                     */
+                    void SetStatuses(const std::vector<int64_t>& _statuses);
+
+                    /**
+                     * 判断参数 Statuses 是否已赋值
+                     * @return Statuses 是否已赋值
+                     */
+                    bool StatusesHasBeenSet() const;
 
                 private:
 
@@ -135,10 +153,16 @@ namespace TencentCloud
                     bool m_activityIdListHasBeenSet;
 
                     /**
-                     * 过滤状态码
+                     * 过滤状态码，已废弃
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 状态码过滤数组，空数组时不过滤
+                     */
+                    std::vector<int64_t> m_statuses;
+                    bool m_statusesHasBeenSet;
 
                 };
             }

@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool FilterIpHasBeenSet() const;
 
                     /**
-                     * 获取域名搜索（查询域名与协议的CC防护阈值时使用）
-                     * @return FilterDomain 域名搜索（查询域名与协议的CC防护阈值时使用）
+                     * 获取域名搜索(查询域名与协议的CC防护阈值时使用）
+                     * @return FilterDomain 域名搜索(查询域名与协议的CC防护阈值时使用）
                      */
                     std::string GetFilterDomain() const;
 
                     /**
-                     * 设置域名搜索（查询域名与协议的CC防护阈值时使用）
-                     * @param FilterDomain 域名搜索（查询域名与协议的CC防护阈值时使用）
+                     * 设置域名搜索(查询域名与协议的CC防护阈值时使用）
+                     * @param FilterDomain 域名搜索(查询域名与协议的CC防护阈值时使用）
                      */
                     void SetFilterDomain(const std::string& _filterDomain);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_filterIpHasBeenSet;
 
                     /**
-                     * 域名搜索（查询域名与协议的CC防护阈值时使用）
+                     * 域名搜索(查询域名与协议的CC防护阈值时使用）
                      */
                     std::string m_filterDomain;
                     bool m_filterDomainHasBeenSet;

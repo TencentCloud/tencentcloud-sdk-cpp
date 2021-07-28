@@ -466,6 +466,28 @@ namespace TencentCloud
                      */
                     bool MetricsInfoHasBeenSet() const;
 
+                    /**
+                     * 获取告警实例的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Dimensions 告警实例的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDimensions() const;
+
+                    /**
+                     * 设置告警实例的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Dimensions 告警实例的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDimensions(const std::string& _dimensions);
+
+                    /**
+                     * 判断参数 Dimensions 是否已赋值
+                     * @return Dimensions 是否已赋值
+                     */
+                    bool DimensionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -606,6 +628,13 @@ namespace TencentCloud
                      */
                     std::vector<AlarmHistoryMetric> m_metricsInfo;
                     bool m_metricsInfoHasBeenSet;
+
+                    /**
+                     * 告警实例的维度信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dimensions;
+                    bool m_dimensionsHasBeenSet;
 
                 };
             }

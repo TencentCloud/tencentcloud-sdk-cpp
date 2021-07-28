@@ -212,6 +212,49 @@ CdnClient::CreateEdgePackTaskOutcomeCallable CdnClient::CreateEdgePackTaskCallab
     return task->get_future();
 }
 
+CdnClient::CreateScdnDomainOutcome CdnClient::CreateScdnDomain(const CreateScdnDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateScdnDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateScdnDomainResponse rsp = CreateScdnDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateScdnDomainOutcome(rsp);
+        else
+            return CreateScdnDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateScdnDomainOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::CreateScdnDomainAsync(const CreateScdnDomainRequest& request, const CreateScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateScdnDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::CreateScdnDomainOutcomeCallable CdnClient::CreateScdnDomainCallable(const CreateScdnDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateScdnDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateScdnDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::CreateScdnFailedLogTaskOutcome CdnClient::CreateScdnFailedLogTask(const CreateScdnFailedLogTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScdnFailedLogTask");

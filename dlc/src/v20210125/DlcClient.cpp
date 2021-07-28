@@ -470,6 +470,49 @@ DlcClient::CreateTaskOutcomeCallable DlcClient::CreateTaskCallable(const CreateT
     return task->get_future();
 }
 
+DlcClient::CreateTasksInOrderOutcome DlcClient::CreateTasksInOrder(const CreateTasksInOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTasksInOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTasksInOrderResponse rsp = CreateTasksInOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTasksInOrderOutcome(rsp);
+        else
+            return CreateTasksInOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTasksInOrderOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateTasksInOrderAsync(const CreateTasksInOrderRequest& request, const CreateTasksInOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTasksInOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateTasksInOrderOutcomeCallable DlcClient::CreateTasksInOrderCallable(const CreateTasksInOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTasksInOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTasksInOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::CreateUserOutcome DlcClient::CreateUser(const CreateUserRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUser");

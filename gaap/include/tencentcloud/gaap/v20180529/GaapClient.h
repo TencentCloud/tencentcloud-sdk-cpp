@@ -39,6 +39,8 @@
 #include <tencentcloud/gaap/v20180529/model/CloseSecurityPolicyResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateCertificateRequest.h>
 #include <tencentcloud/gaap/v20180529/model/CreateCertificateResponse.h>
+#include <tencentcloud/gaap/v20180529/model/CreateCustomHeaderRequest.h>
+#include <tencentcloud/gaap/v20180529/model/CreateCustomHeaderResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateDomainRequest.h>
 #include <tencentcloud/gaap/v20180529/model/CreateDomainResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateDomainErrorPageInfoRequest.h>
@@ -83,12 +85,16 @@
 #include <tencentcloud/gaap/v20180529/model/DescribeAccessRegionsResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeAccessRegionsByDestRegionRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeAccessRegionsByDestRegionResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeBlackHeaderRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeBlackHeaderResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeCertificateDetailRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeCertificateDetailResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeCertificatesRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeCertificatesResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeCountryAreaMappingRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeCountryAreaMappingResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeCustomHeaderRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeCustomHeaderResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeDestRegionsRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeDestRegionsResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoRequest.h>
@@ -229,6 +235,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateCertificateResponse> CreateCertificateOutcome;
                 typedef std::future<CreateCertificateOutcome> CreateCertificateOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::CreateCertificateRequest&, CreateCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCertificateAsyncHandler;
+                typedef Outcome<Error, Model::CreateCustomHeaderResponse> CreateCustomHeaderOutcome;
+                typedef std::future<CreateCustomHeaderOutcome> CreateCustomHeaderOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::CreateCustomHeaderRequest&, CreateCustomHeaderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomHeaderAsyncHandler;
                 typedef Outcome<Error, Model::CreateDomainResponse> CreateDomainOutcome;
                 typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::CreateDomainRequest&, CreateDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainAsyncHandler;
@@ -295,6 +304,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAccessRegionsByDestRegionResponse> DescribeAccessRegionsByDestRegionOutcome;
                 typedef std::future<DescribeAccessRegionsByDestRegionOutcome> DescribeAccessRegionsByDestRegionOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeAccessRegionsByDestRegionRequest&, DescribeAccessRegionsByDestRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessRegionsByDestRegionAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBlackHeaderResponse> DescribeBlackHeaderOutcome;
+                typedef std::future<DescribeBlackHeaderOutcome> DescribeBlackHeaderOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DescribeBlackHeaderRequest&, DescribeBlackHeaderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlackHeaderAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCertificateDetailResponse> DescribeCertificateDetailOutcome;
                 typedef std::future<DescribeCertificateDetailOutcome> DescribeCertificateDetailOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeCertificateDetailRequest&, DescribeCertificateDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateDetailAsyncHandler;
@@ -304,6 +316,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCountryAreaMappingResponse> DescribeCountryAreaMappingOutcome;
                 typedef std::future<DescribeCountryAreaMappingOutcome> DescribeCountryAreaMappingOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeCountryAreaMappingRequest&, DescribeCountryAreaMappingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCountryAreaMappingAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCustomHeaderResponse> DescribeCustomHeaderOutcome;
+                typedef std::future<DescribeCustomHeaderOutcome> DescribeCustomHeaderOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DescribeCustomHeaderRequest&, DescribeCustomHeaderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomHeaderAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDestRegionsResponse> DescribeDestRegionsOutcome;
                 typedef std::future<DescribeDestRegionsOutcome> DescribeDestRegionsOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeDestRegionsRequest&, DescribeDestRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDestRegionsAsyncHandler;
@@ -534,6 +549,15 @@ namespace TencentCloud
                 CreateCertificateOutcomeCallable CreateCertificateCallable(const Model::CreateCertificateRequest& request);
 
                 /**
+                 *本接口（CreateCustomHeader）用于创建HTTP/HTTPS监听器的自定义header，客户端请求通过访问该监听器时，会将监听器中配置的header信息发送到源站。
+                 * @param req CreateCustomHeaderRequest
+                 * @return CreateCustomHeaderOutcome
+                 */
+                CreateCustomHeaderOutcome CreateCustomHeader(const Model::CreateCustomHeaderRequest &request);
+                void CreateCustomHeaderAsync(const Model::CreateCustomHeaderRequest& request, const CreateCustomHeaderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomHeaderOutcomeCallable CreateCustomHeaderCallable(const Model::CreateCustomHeaderRequest& request);
+
+                /**
                  *本接口（CreateDomain）用于创建HTTP/HTTPS监听器的访问域名，客户端请求通过访问该域名来请求后端业务。
 该接口仅支持version3.0的通道。
                  * @param req CreateDomainRequest
@@ -733,6 +757,15 @@ namespace TencentCloud
                 DescribeAccessRegionsByDestRegionOutcomeCallable DescribeAccessRegionsByDestRegionCallable(const Model::DescribeAccessRegionsByDestRegionRequest& request);
 
                 /**
+                 *本接口（DescribeBlackHeader）用于查询禁用的自定义header 名称
+                 * @param req DescribeBlackHeaderRequest
+                 * @return DescribeBlackHeaderOutcome
+                 */
+                DescribeBlackHeaderOutcome DescribeBlackHeader(const Model::DescribeBlackHeaderRequest &request);
+                void DescribeBlackHeaderAsync(const Model::DescribeBlackHeaderRequest& request, const DescribeBlackHeaderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlackHeaderOutcomeCallable DescribeBlackHeaderCallable(const Model::DescribeBlackHeaderRequest& request);
+
+                /**
                  *本接口（DescribeCertificateDetail）用于查询证书详情，包括证书ID，证书名字，证书类型，证书内容以及密钥等信息。
                  * @param req DescribeCertificateDetailRequest
                  * @return DescribeCertificateDetailOutcome
@@ -758,6 +791,15 @@ namespace TencentCloud
                 DescribeCountryAreaMappingOutcome DescribeCountryAreaMapping(const Model::DescribeCountryAreaMappingRequest &request);
                 void DescribeCountryAreaMappingAsync(const Model::DescribeCountryAreaMappingRequest& request, const DescribeCountryAreaMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCountryAreaMappingOutcomeCallable DescribeCountryAreaMappingCallable(const Model::DescribeCountryAreaMappingRequest& request);
+
+                /**
+                 *本接口（DescribeCustomHeader）用于自定义header列表
+                 * @param req DescribeCustomHeaderRequest
+                 * @return DescribeCustomHeaderOutcome
+                 */
+                DescribeCustomHeaderOutcome DescribeCustomHeader(const Model::DescribeCustomHeaderRequest &request);
+                void DescribeCustomHeaderAsync(const Model::DescribeCustomHeaderRequest& request, const DescribeCustomHeaderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomHeaderOutcomeCallable DescribeCustomHeaderCallable(const Model::DescribeCustomHeaderRequest& request);
 
                 /**
                  *本接口（DescribeDestRegions）用于查询源站区域，即源站服务器所在区域。

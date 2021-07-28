@@ -300,6 +300,24 @@ namespace TencentCloud
                      */
                     bool ErrorInfoHasBeenSet() const;
 
+                    /**
+                     * 获取调用来源。
+                     * @return InvocationSource 调用来源。
+                     */
+                    std::string GetInvocationSource() const;
+
+                    /**
+                     * 设置调用来源。
+                     * @param InvocationSource 调用来源。
+                     */
+                    void SetInvocationSource(const std::string& _invocationSource);
+
+                    /**
+                     * 判断参数 InvocationSource 是否已赋值
+                     * @return InvocationSource 是否已赋值
+                     */
+                    bool InvocationSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -382,6 +400,12 @@ namespace TencentCloud
                      */
                     std::string m_errorInfo;
                     bool m_errorInfoHasBeenSet;
+
+                    /**
+                     * 调用来源。
+                     */
+                    std::string m_invocationSource;
+                    bool m_invocationSourceHasBeenSet;
 
                 };
             }
