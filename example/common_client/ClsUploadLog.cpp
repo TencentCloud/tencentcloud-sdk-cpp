@@ -70,7 +70,7 @@ int main()
     // 取值00000000000000000000000000000000，ffffffffffffffffffffffffffffffff
     headers.insert(std::make_pair("X-CLS-HashKey", "0fffffffffffffffffffffffffffffff"));
     // 压缩类型
-    headers.insert(std::make_pair("X-CLS-CompressType", "0fffffffffffffffffffffffffffffff"));
+    headers.insert(std::make_pair("X-CLS-CompressType", ""));
 
     auto outcome = common_client.MakeRequestOctetStream("UploadLog", headers, body);
     if (outcome.IsSuccess())
