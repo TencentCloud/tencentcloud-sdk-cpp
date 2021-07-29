@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool CountryIdHasBeenSet() const;
 
+                    /**
+                     * 获取位置名称
+                     * @return Location 位置名称
+                     */
+                    std::string GetLocation() const;
+
+                    /**
+                     * 设置位置名称
+                     * @param Location 位置名称
+                     */
+                    void SetLocation(const std::string& _location);
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     */
+                    bool LocationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     uint64_t m_countryId;
                     bool m_countryIdHasBeenSet;
+
+                    /**
+                     * 位置名称
+                     */
+                    std::string m_location;
+                    bool m_locationHasBeenSet;
 
                 };
             }

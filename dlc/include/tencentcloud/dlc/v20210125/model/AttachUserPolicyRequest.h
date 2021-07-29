@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户Id，和CAM侧Uin匹配
-                     * @return UserId 用户Id，和CAM侧Uin匹配
+                     * 获取用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
+                     * @return UserId 用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id，和CAM侧Uin匹配
-                     * @param UserId 用户Id，和CAM侧Uin匹配
+                     * 设置用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
+                     * @param UserId 用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -82,7 +82,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户Id，和CAM侧Uin匹配
+                     * 用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

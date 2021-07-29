@@ -29,7 +29,8 @@ CreateSubscriptionRequest::CreateSubscriptionRequest() :
     m_isIdempotentHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_autoCreatePolicyTopicHasBeenSet(false)
+    m_autoCreatePolicyTopicHasBeenSet(false),
+    m_postFixPatternHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateSubscriptionRequest::ToJsonString() const
         string key = "AutoCreatePolicyTopic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoCreatePolicyTopic, allocator);
+    }
+
+    if (m_postFixPatternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostFixPattern";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_postFixPattern.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CreateSubscriptionRequest::SetAutoCreatePolicyTopic(const bool& _autoCreate
 bool CreateSubscriptionRequest::AutoCreatePolicyTopicHasBeenSet() const
 {
     return m_autoCreatePolicyTopicHasBeenSet;
+}
+
+string CreateSubscriptionRequest::GetPostFixPattern() const
+{
+    return m_postFixPattern;
+}
+
+void CreateSubscriptionRequest::SetPostFixPattern(const string& _postFixPattern)
+{
+    m_postFixPattern = _postFixPattern;
+    m_postFixPatternHasBeenSet = true;
+}
+
+bool CreateSubscriptionRequest::PostFixPatternHasBeenSet() const
+{
+    return m_postFixPatternHasBeenSet;
 }
 
 

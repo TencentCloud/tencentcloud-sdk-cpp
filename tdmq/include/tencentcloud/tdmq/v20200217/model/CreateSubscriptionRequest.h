@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool AutoCreatePolicyTopicHasBeenSet() const;
 
+                    /**
+                     * 获取指定死信和重试主题名称规范，LEGACY表示历史命名规则，COMMUNITY表示Pulsar社区命名规范
+                     * @return PostFixPattern 指定死信和重试主题名称规范，LEGACY表示历史命名规则，COMMUNITY表示Pulsar社区命名规范
+                     */
+                    std::string GetPostFixPattern() const;
+
+                    /**
+                     * 设置指定死信和重试主题名称规范，LEGACY表示历史命名规则，COMMUNITY表示Pulsar社区命名规范
+                     * @param PostFixPattern 指定死信和重试主题名称规范，LEGACY表示历史命名规则，COMMUNITY表示Pulsar社区命名规范
+                     */
+                    void SetPostFixPattern(const std::string& _postFixPattern);
+
+                    /**
+                     * 判断参数 PostFixPattern 是否已赋值
+                     * @return PostFixPattern 是否已赋值
+                     */
+                    bool PostFixPatternHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     bool m_autoCreatePolicyTopic;
                     bool m_autoCreatePolicyTopicHasBeenSet;
+
+                    /**
+                     * 指定死信和重试主题名称规范，LEGACY表示历史命名规则，COMMUNITY表示Pulsar社区命名规范
+                     */
+                    std::string m_postFixPattern;
+                    bool m_postFixPatternHasBeenSet;
 
                 };
             }

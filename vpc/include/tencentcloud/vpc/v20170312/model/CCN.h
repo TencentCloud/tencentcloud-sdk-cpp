@@ -253,6 +253,50 @@ namespace TencentCloud
                      */
                     bool RoutePriorityFlagHasBeenSet() const;
 
+                    /**
+                     * 获取实例关联的路由表个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RouteTableCount 实例关联的路由表个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetRouteTableCount() const;
+
+                    /**
+                     * 设置实例关联的路由表个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RouteTableCount 实例关联的路由表个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRouteTableCount(const uint64_t& _routeTableCount);
+
+                    /**
+                     * 判断参数 RouteTableCount 是否已赋值
+                     * @return RouteTableCount 是否已赋值
+                     */
+                    bool RouteTableCountHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启云联网多路由表特性。False：未开启，True：开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RouteTableFlag 是否开启云联网多路由表特性。False：未开启，True：开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetRouteTableFlag() const;
+
+                    /**
+                     * 设置是否开启云联网多路由表特性。False：未开启，True：开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RouteTableFlag 是否开启云联网多路由表特性。False：未开启，True：开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRouteTableFlag(const bool& _routeTableFlag);
+
+                    /**
+                     * 判断参数 RouteTableFlag 是否已赋值
+                     * @return RouteTableFlag 是否已赋值
+                     */
+                    bool RouteTableFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -322,6 +366,20 @@ namespace TencentCloud
                      */
                     bool m_routePriorityFlag;
                     bool m_routePriorityFlagHasBeenSet;
+
+                    /**
+                     * 实例关联的路由表个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_routeTableCount;
+                    bool m_routeTableCountHasBeenSet;
+
+                    /**
+                     * 是否开启云联网多路由表特性。False：未开启，True：开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_routeTableFlag;
+                    bool m_routeTableFlagHasBeenSet;
 
                 };
             }

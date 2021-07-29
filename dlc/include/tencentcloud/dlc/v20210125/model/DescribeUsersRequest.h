@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询的用户Id，和CAM侧Uin匹配
-                     * @return UserId 查询的用户Id，和CAM侧Uin匹配
+                     * 获取指定查询的子用户uin，用户需要通过CreateUser接口创建。
+                     * @return UserId 指定查询的子用户uin，用户需要通过CreateUser接口创建。
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置查询的用户Id，和CAM侧Uin匹配
-                     * @param UserId 查询的用户Id，和CAM侧Uin匹配
+                     * 设置指定查询的子用户uin，用户需要通过CreateUser接口创建。
+                     * @param UserId 指定查询的子用户uin，用户需要通过CreateUser接口创建。
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询的用户Id，和CAM侧Uin匹配
+                     * 指定查询的子用户uin，用户需要通过CreateUser接口创建。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

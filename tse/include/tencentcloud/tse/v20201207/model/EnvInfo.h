@@ -155,6 +155,42 @@ namespace TencentCloud
                      */
                     bool ConfigServiceIpHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启config-server公网
+                     * @return EnableConfigInternet 是否开启config-server公网
+                     */
+                    bool GetEnableConfigInternet() const;
+
+                    /**
+                     * 设置是否开启config-server公网
+                     * @param EnableConfigInternet 是否开启config-server公网
+                     */
+                    void SetEnableConfigInternet(const bool& _enableConfigInternet);
+
+                    /**
+                     * 判断参数 EnableConfigInternet 是否已赋值
+                     * @return EnableConfigInternet 是否已赋值
+                     */
+                    bool EnableConfigInternetHasBeenSet() const;
+
+                    /**
+                     * 获取config-server公网访问地址
+                     * @return ConfigInternetServiceIp config-server公网访问地址
+                     */
+                    std::string GetConfigInternetServiceIp() const;
+
+                    /**
+                     * 设置config-server公网访问地址
+                     * @param ConfigInternetServiceIp config-server公网访问地址
+                     */
+                    void SetConfigInternetServiceIp(const std::string& _configInternetServiceIp);
+
+                    /**
+                     * 判断参数 ConfigInternetServiceIp 是否已赋值
+                     * @return ConfigInternetServiceIp 是否已赋值
+                     */
+                    bool ConfigInternetServiceIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +228,18 @@ namespace TencentCloud
                      */
                     std::string m_configServiceIp;
                     bool m_configServiceIpHasBeenSet;
+
+                    /**
+                     * 是否开启config-server公网
+                     */
+                    bool m_enableConfigInternet;
+                    bool m_enableConfigInternetHasBeenSet;
+
+                    /**
+                     * config-server公网访问地址
+                     */
+                    std::string m_configInternetServiceIp;
+                    bool m_configInternetServiceIpHasBeenSet;
 
                 };
             }

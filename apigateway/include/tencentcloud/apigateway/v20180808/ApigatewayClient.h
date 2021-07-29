@@ -91,6 +91,8 @@
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiBindApiAppsStatusResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiEnvironmentStrategyRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiEnvironmentStrategyResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeApiForApiAppRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribeApiForApiAppResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiKeyRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiKeyResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeApiKeysStatusRequest.h>
@@ -309,6 +311,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeApiEnvironmentStrategyResponse> DescribeApiEnvironmentStrategyOutcome;
                 typedef std::future<DescribeApiEnvironmentStrategyOutcome> DescribeApiEnvironmentStrategyOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeApiEnvironmentStrategyRequest&, DescribeApiEnvironmentStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiEnvironmentStrategyAsyncHandler;
+                typedef Outcome<Error, Model::DescribeApiForApiAppResponse> DescribeApiForApiAppOutcome;
+                typedef std::future<DescribeApiForApiAppOutcome> DescribeApiForApiAppOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribeApiForApiAppRequest&, DescribeApiForApiAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiForApiAppAsyncHandler;
                 typedef Outcome<Error, Model::DescribeApiKeyResponse> DescribeApiKeyOutcome;
                 typedef std::future<DescribeApiKeyOutcome> DescribeApiKeyOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeApiKeyRequest&, DescribeApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiKeyAsyncHandler;
@@ -779,6 +784,15 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DescribeApiEnvironmentStrategyOutcome DescribeApiEnvironmentStrategy(const Model::DescribeApiEnvironmentStrategyRequest &request);
                 void DescribeApiEnvironmentStrategyAsync(const Model::DescribeApiEnvironmentStrategyRequest& request, const DescribeApiEnvironmentStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApiEnvironmentStrategyOutcomeCallable DescribeApiEnvironmentStrategyCallable(const Model::DescribeApiEnvironmentStrategyRequest& request);
+
+                /**
+                 *本接口（DescribeApiForApiApp）用于应用使用者查询部署于 API 网关的 API 接口的详细信息。​
+                 * @param req DescribeApiForApiAppRequest
+                 * @return DescribeApiForApiAppOutcome
+                 */
+                DescribeApiForApiAppOutcome DescribeApiForApiApp(const Model::DescribeApiForApiAppRequest &request);
+                void DescribeApiForApiAppAsync(const Model::DescribeApiForApiAppRequest& request, const DescribeApiForApiAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApiForApiAppOutcomeCallable DescribeApiForApiAppCallable(const Model::DescribeApiForApiAppRequest& request);
 
                 /**
                  *本接口（DescribeApiKey）用于查询密钥详情。

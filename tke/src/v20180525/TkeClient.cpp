@@ -2577,6 +2577,49 @@ TkeClient::DescribeRouteTableConflictsOutcomeCallable TkeClient::DescribeRouteTa
     return task->get_future();
 }
 
+TkeClient::DescribeVpcCniPodLimitsOutcome TkeClient::DescribeVpcCniPodLimits(const DescribeVpcCniPodLimitsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVpcCniPodLimits");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVpcCniPodLimitsResponse rsp = DescribeVpcCniPodLimitsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVpcCniPodLimitsOutcome(rsp);
+        else
+            return DescribeVpcCniPodLimitsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVpcCniPodLimitsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeVpcCniPodLimitsAsync(const DescribeVpcCniPodLimitsRequest& request, const DescribeVpcCniPodLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVpcCniPodLimits(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeVpcCniPodLimitsOutcomeCallable TkeClient::DescribeVpcCniPodLimitsCallable(const DescribeVpcCniPodLimitsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVpcCniPodLimitsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVpcCniPodLimits(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DisableVpcCniNetworkTypeOutcome TkeClient::DisableVpcCniNetworkType(const DisableVpcCniNetworkTypeRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableVpcCniNetworkType");

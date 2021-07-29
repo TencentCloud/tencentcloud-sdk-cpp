@@ -1461,7 +1461,9 @@ namespace TencentCloud
                 RenewProVersionOutcomeCallable RenewProVersionCallable(const Model::RenewProVersionRequest& request);
 
                 /**
-                 *本接口 (RescanImpactedHost) 用于漏洞重新检测。
+                 *该接口已废弃
+
+本接口 (RescanImpactedHost) 用于漏洞重新检测。
                  * @param req RescanImpactedHostRequest
                  * @return RescanImpactedHostOutcome
                  */

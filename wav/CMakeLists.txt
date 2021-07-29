@@ -22,6 +22,7 @@ set(wav_public_header_model
   include/tencentcloud/wav/v20210129/model/ActivityJoinDetail.h
   include/tencentcloud/wav/v20210129/model/CreateCorpTagResponse.h
   include/tencentcloud/wav/v20210129/model/QueryChatArchivingListResponse.h
+  include/tencentcloud/wav/v20210129/model/LicenseInfo.h
   include/tencentcloud/wav/v20210129/model/QueryExternalContactDetailRequest.h
   include/tencentcloud/wav/v20210129/model/QueryExternalUserMappingInfoResponse.h
   include/tencentcloud/wav/v20210129/model/ChannelCodeInnerDetail.h
@@ -40,6 +41,7 @@ set(wav_public_header_model
   include/tencentcloud/wav/v20210129/model/QueryActivityLiveCodeListResponse.h
   include/tencentcloud/wav/v20210129/model/QueryActivityJoinListResponse.h
   include/tencentcloud/wav/v20210129/model/ExternalUserMappingInfo.h
+  include/tencentcloud/wav/v20210129/model/QueryLicenseInfoResponse.h
   include/tencentcloud/wav/v20210129/model/ActivityDetail.h
   include/tencentcloud/wav/v20210129/model/ExternalContactTag.h
   include/tencentcloud/wav/v20210129/model/ChatArchivingDetail.h
@@ -52,6 +54,7 @@ set(wav_public_header_model
   include/tencentcloud/wav/v20210129/model/CreateCorpTagRequest.h
   include/tencentcloud/wav/v20210129/model/QueryMiniAppCodeListResponse.h
   include/tencentcloud/wav/v20210129/model/CreateChannelCodeResponse.h
+  include/tencentcloud/wav/v20210129/model/QueryLicenseInfoRequest.h
   include/tencentcloud/wav/v20210129/model/QueryActivityListRequest.h
   include/tencentcloud/wav/v20210129/model/QueryMiniAppCodeListRequest.h
   include/tencentcloud/wav/v20210129/model/QueryChatArchivingListRequest.h
@@ -64,6 +67,7 @@ set(wav_src
   src/v20210129/model/ActivityJoinDetail.cpp
   src/v20210129/model/CreateCorpTagResponse.cpp
   src/v20210129/model/QueryChatArchivingListResponse.cpp
+  src/v20210129/model/LicenseInfo.cpp
   src/v20210129/model/QueryExternalContactDetailRequest.cpp
   src/v20210129/model/QueryExternalUserMappingInfoResponse.cpp
   src/v20210129/model/ChannelCodeInnerDetail.cpp
@@ -82,6 +86,7 @@ set(wav_src
   src/v20210129/model/QueryActivityLiveCodeListResponse.cpp
   src/v20210129/model/QueryActivityJoinListResponse.cpp
   src/v20210129/model/ExternalUserMappingInfo.cpp
+  src/v20210129/model/QueryLicenseInfoResponse.cpp
   src/v20210129/model/ActivityDetail.cpp
   src/v20210129/model/ExternalContactTag.cpp
   src/v20210129/model/ChatArchivingDetail.cpp
@@ -94,6 +99,7 @@ set(wav_src
   src/v20210129/model/CreateCorpTagRequest.cpp
   src/v20210129/model/QueryMiniAppCodeListResponse.cpp
   src/v20210129/model/CreateChannelCodeResponse.cpp
+  src/v20210129/model/QueryLicenseInfoRequest.cpp
   src/v20210129/model/QueryActivityListRequest.cpp
   src/v20210129/model/QueryMiniAppCodeListRequest.cpp
   src/v20210129/model/QueryChatArchivingListRequest.cpp

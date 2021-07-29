@@ -67,6 +67,8 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAlertRuleResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroup.h
   include/tencentcloud/tke/v20180525/model/Instance.h
+  include/tencentcloud/tke/v20180525/model/LoginSettings.h
+  include/tencentcloud/tke/v20180525/model/DescribeVpcCniPodLimitsResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusAlertRuleDetail.h
   include/tencentcloud/tke/v20180525/model/UpgradeAbleInstancesItem.h
   include/tencentcloud/tke/v20180525/model/CreateClusterNodePoolFromExistingAsgRequest.h
@@ -120,12 +122,13 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateRequest.h
   include/tencentcloud/tke/v20180525/model/AddNodeToNodePoolResponse.h
+  include/tencentcloud/tke/v20180525/model/PodLimitsByType.h
   include/tencentcloud/tke/v20180525/model/UpdateEKSClusterResponse.h
   include/tencentcloud/tke/v20180525/model/TagSpecification.h
   include/tencentcloud/tke/v20180525/model/DescribeRegionsRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClustersResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterCredential.h
-  include/tencentcloud/tke/v20180525/model/LoginSettings.h
+  include/tencentcloud/tke/v20180525/model/DescribeVpcCniPodLimitsRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusOverviewsRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterExtraArgs.h
   include/tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsRequest.h
@@ -158,6 +161,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DeleteClusterAsGroupsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/InstanceAdvancedSettings.h
+  include/tencentcloud/tke/v20180525/model/PodLimitsInstance.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAgentsRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressResponse.h
   include/tencentcloud/tke/v20180525/model/AddClusterCIDRResponse.h
@@ -289,6 +293,8 @@ set(tke_src
   src/v20180525/model/DescribePrometheusAlertRuleResponse.cpp
   src/v20180525/model/ClusterAsGroup.cpp
   src/v20180525/model/Instance.cpp
+  src/v20180525/model/LoginSettings.cpp
+  src/v20180525/model/DescribeVpcCniPodLimitsResponse.cpp
   src/v20180525/model/PrometheusAlertRuleDetail.cpp
   src/v20180525/model/UpgradeAbleInstancesItem.cpp
   src/v20180525/model/CreateClusterNodePoolFromExistingAsgRequest.cpp
@@ -342,12 +348,13 @@ set(tke_src
   src/v20180525/model/GetUpgradeInstanceProgressRequest.cpp
   src/v20180525/model/ModifyPrometheusTemplateRequest.cpp
   src/v20180525/model/AddNodeToNodePoolResponse.cpp
+  src/v20180525/model/PodLimitsByType.cpp
   src/v20180525/model/UpdateEKSClusterResponse.cpp
   src/v20180525/model/TagSpecification.cpp
   src/v20180525/model/DescribeRegionsRequest.cpp
   src/v20180525/model/DescribeClustersResponse.cpp
   src/v20180525/model/ClusterCredential.cpp
-  src/v20180525/model/LoginSettings.cpp
+  src/v20180525/model/DescribeVpcCniPodLimitsRequest.cpp
   src/v20180525/model/DescribePrometheusOverviewsRequest.cpp
   src/v20180525/model/ClusterExtraArgs.cpp
   src/v20180525/model/DescribeRouteTableConflictsRequest.cpp
@@ -380,6 +387,7 @@ set(tke_src
   src/v20180525/model/DeleteClusterAsGroupsResponse.cpp
   src/v20180525/model/DescribeClusterInstancesRequest.cpp
   src/v20180525/model/InstanceAdvancedSettings.cpp
+  src/v20180525/model/PodLimitsInstance.cpp
   src/v20180525/model/DescribePrometheusAgentsRequest.cpp
   src/v20180525/model/DescribeEnableVpcCniProgressResponse.cpp
   src/v20180525/model/AddClusterCIDRResponse.cpp

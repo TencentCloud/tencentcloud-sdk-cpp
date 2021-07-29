@@ -87,12 +87,10 @@ namespace TencentCloud
                      * 获取节点类型<li>hotData: 热数据节点</li>
 <li>warmData: 冷数据节点</li>
 <li>dedicatedMaster: 专用主节点</li>
-<li>kibana: Kibana节点</li>
 默认值为hotData
                      * @return Type 节点类型<li>hotData: 热数据节点</li>
 <li>warmData: 冷数据节点</li>
 <li>dedicatedMaster: 专用主节点</li>
-<li>kibana: Kibana节点</li>
 默认值为hotData
                      */
                     std::string GetType() const;
@@ -101,12 +99,10 @@ namespace TencentCloud
                      * 设置节点类型<li>hotData: 热数据节点</li>
 <li>warmData: 冷数据节点</li>
 <li>dedicatedMaster: 专用主节点</li>
-<li>kibana: Kibana节点</li>
 默认值为hotData
                      * @param Type 节点类型<li>hotData: 热数据节点</li>
 <li>warmData: 冷数据节点</li>
 <li>dedicatedMaster: 专用主节点</li>
-<li>kibana: Kibana节点</li>
 默认值为hotData
                      */
                     void SetType(const std::string& _type);
@@ -229,7 +225,6 @@ namespace TencentCloud
                      * 节点类型<li>hotData: 热数据节点</li>
 <li>warmData: 冷数据节点</li>
 <li>dedicatedMaster: 专用主节点</li>
-<li>kibana: Kibana节点</li>
 默认值为hotData
                      */
                     std::string m_type;

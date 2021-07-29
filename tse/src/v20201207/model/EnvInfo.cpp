@@ -26,7 +26,9 @@ EnvInfo::EnvInfo() :
     m_storageCapacityHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_adminServiceIpHasBeenSet(false),
-    m_configServiceIpHasBeenSet(false)
+    m_configServiceIpHasBeenSet(false),
+    m_enableConfigInternetHasBeenSet(false),
+    m_configInternetServiceIpHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,26 @@ CoreInternalOutcome EnvInfo::Deserialize(const rapidjson::Value &value)
         m_configServiceIpHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableConfigInternet") && !value["EnableConfigInternet"].IsNull())
+    {
+        if (!value["EnableConfigInternet"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `EnvInfo.EnableConfigInternet` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableConfigInternet = value["EnableConfigInternet"].GetBool();
+        m_enableConfigInternetHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigInternetServiceIp") && !value["ConfigInternetServiceIp"].IsNull())
+    {
+        if (!value["ConfigInternetServiceIp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `EnvInfo.ConfigInternetServiceIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configInternetServiceIp = string(value["ConfigInternetServiceIp"].GetString());
+        m_configInternetServiceIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +187,22 @@ void EnvInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ConfigServiceIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_configServiceIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableConfigInternetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableConfigInternet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableConfigInternet, allocator);
+    }
+
+    if (m_configInternetServiceIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigInternetServiceIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configInternetServiceIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -264,5 +302,37 @@ void EnvInfo::SetConfigServiceIp(const string& _configServiceIp)
 bool EnvInfo::ConfigServiceIpHasBeenSet() const
 {
     return m_configServiceIpHasBeenSet;
+}
+
+bool EnvInfo::GetEnableConfigInternet() const
+{
+    return m_enableConfigInternet;
+}
+
+void EnvInfo::SetEnableConfigInternet(const bool& _enableConfigInternet)
+{
+    m_enableConfigInternet = _enableConfigInternet;
+    m_enableConfigInternetHasBeenSet = true;
+}
+
+bool EnvInfo::EnableConfigInternetHasBeenSet() const
+{
+    return m_enableConfigInternetHasBeenSet;
+}
+
+string EnvInfo::GetConfigInternetServiceIp() const
+{
+    return m_configInternetServiceIp;
+}
+
+void EnvInfo::SetConfigInternetServiceIp(const string& _configInternetServiceIp)
+{
+    m_configInternetServiceIp = _configInternetServiceIp;
+    m_configInternetServiceIpHasBeenSet = true;
+}
+
+bool EnvInfo::ConfigInternetServiceIpHasBeenSet() const
+{
+    return m_configInternetServiceIpHasBeenSet;
 }
 

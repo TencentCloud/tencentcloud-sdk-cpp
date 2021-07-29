@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询的工作组Id
-                     * @return WorkGroupId 查询的工作组Id
+                     * 获取查询的工作组Id，不填或填0表示不过滤。
+                     * @return WorkGroupId 查询的工作组Id，不填或填0表示不过滤。
                      */
                     int64_t GetWorkGroupId() const;
 
                     /**
-                     * 设置查询的工作组Id
-                     * @param WorkGroupId 查询的工作组Id
+                     * 设置查询的工作组Id，不填或填0表示不过滤。
+                     * @param WorkGroupId 查询的工作组Id，不填或填0表示不过滤。
                      */
                     void SetWorkGroupId(const int64_t& _workGroupId);
 
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询的工作组Id
+                     * 查询的工作组Id，不填或填0表示不过滤。
                      */
                     int64_t m_workGroupId;
                     bool m_workGroupIdHasBeenSet;

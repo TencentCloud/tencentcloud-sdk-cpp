@@ -39,6 +39,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateDatabaseRequest.h
   include/tencentcloud/dlc/v20210125/model/UserIdSetOfWorkGroupId.h
   include/tencentcloud/dlc/v20210125/model/ViewBaseInfo.h
+  include/tencentcloud/dlc/v20210125/model/CreateDatabaseResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksRequest.h
   include/tencentcloud/dlc/v20210125/model/Script.h
   include/tencentcloud/dlc/v20210125/model/DeleteWorkGroupRequest.h
@@ -94,13 +95,14 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CSV.h
   include/tencentcloud/dlc/v20210125/model/DeleteUsersFromWorkGroupRequest.h
   include/tencentcloud/dlc/v20210125/model/Policy.h
+  include/tencentcloud/dlc/v20210125/model/CreateTasksRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTaskResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeWorkGroupsRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeTableResponse.h
   include/tencentcloud/dlc/v20210125/model/TableResponseInfo.h
   include/tencentcloud/dlc/v20210125/model/AddUsersToWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/DetachUserPolicyResponse.h
-  include/tencentcloud/dlc/v20210125/model/CreateDatabaseResponse.h
+  include/tencentcloud/dlc/v20210125/model/CreateTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/UnbindWorkGroupsFromUserResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateWorkGroupRequest.h
   include/tencentcloud/dlc/v20210125/model/SQLTask.h
@@ -135,6 +137,7 @@ set(dlc_src
   src/v20210125/model/CreateDatabaseRequest.cpp
   src/v20210125/model/UserIdSetOfWorkGroupId.cpp
   src/v20210125/model/ViewBaseInfo.cpp
+  src/v20210125/model/CreateDatabaseResponse.cpp
   src/v20210125/model/DescribeTasksRequest.cpp
   src/v20210125/model/Script.cpp
   src/v20210125/model/DeleteWorkGroupRequest.cpp
@@ -190,13 +193,14 @@ set(dlc_src
   src/v20210125/model/CSV.cpp
   src/v20210125/model/DeleteUsersFromWorkGroupRequest.cpp
   src/v20210125/model/Policy.cpp
+  src/v20210125/model/CreateTasksRequest.cpp
   src/v20210125/model/CreateTaskResponse.cpp
   src/v20210125/model/DescribeWorkGroupsRequest.cpp
   src/v20210125/model/DescribeTableResponse.cpp
   src/v20210125/model/TableResponseInfo.cpp
   src/v20210125/model/AddUsersToWorkGroupResponse.cpp
   src/v20210125/model/DetachUserPolicyResponse.cpp
-  src/v20210125/model/CreateDatabaseResponse.cpp
+  src/v20210125/model/CreateTasksResponse.cpp
   src/v20210125/model/UnbindWorkGroupsFromUserResponse.cpp
   src/v20210125/model/CreateWorkGroupRequest.cpp
   src/v20210125/model/SQLTask.cpp

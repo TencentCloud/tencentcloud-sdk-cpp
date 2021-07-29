@@ -367,6 +367,50 @@ namespace TencentCloud
                      */
                     bool EnvInfosHasBeenSet() const;
 
+                    /**
+                     * 获取引擎所在的区域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineRegion 引擎所在的区域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEngineRegion() const;
+
+                    /**
+                     * 设置引擎所在的区域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EngineRegion 引擎所在的区域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEngineRegion(const std::string& _engineRegion);
+
+                    /**
+                     * 判断参数 EngineRegion 是否已赋值
+                     * @return EngineRegion 是否已赋值
+                     */
+                    bool EngineRegionHasBeenSet() const;
+
+                    /**
+                     * 获取注册引擎是否开启公网
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableInternet 注册引擎是否开启公网
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableInternet() const;
+
+                    /**
+                     * 设置注册引擎是否开启公网
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableInternet 注册引擎是否开启公网
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableInternet(const bool& _enableInternet);
+
+                    /**
+                     * 判断参数 EnableInternet 是否已赋值
+                     * @return EnableInternet 是否已赋值
+                     */
+                    bool EnableInternetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -472,6 +516,20 @@ namespace TencentCloud
                      */
                     std::vector<EnvInfo> m_envInfos;
                     bool m_envInfosHasBeenSet;
+
+                    /**
+                     * 引擎所在的区域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineRegion;
+                    bool m_engineRegionHasBeenSet;
+
+                    /**
+                     * 注册引擎是否开启公网
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableInternet;
+                    bool m_enableInternetHasBeenSet;
 
                 };
             }

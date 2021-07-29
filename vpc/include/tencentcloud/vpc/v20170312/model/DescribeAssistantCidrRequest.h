@@ -62,17 +62,17 @@ namespace TencentCloud
                     bool VpcIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。
+                     * 获取过滤条件，参数不支持同时指定VpcIds和Filters。
 <li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>
-                     * @return Filters 过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。
+                     * @return Filters 过滤条件，参数不支持同时指定VpcIds和Filters。
 <li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。
+                     * 设置过滤条件，参数不支持同时指定VpcIds和Filters。
 <li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>
-                     * @param Filters 过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。
+                     * @param Filters 过滤条件，参数不支持同时指定VpcIds和Filters。
 <li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -128,7 +128,7 @@ namespace TencentCloud
                     bool m_vpcIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。
+                     * 过滤条件，参数不支持同时指定VpcIds和Filters。
 <li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>
                      */
                     std::vector<Filter> m_filters;

@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户Id，和CAM侧Uin匹配
-                     * @return UserId 用户Id，和CAM侧Uin匹配
+                     * 获取用户Id，和子用户uin相同
+                     * @return UserId 用户Id，和子用户uin相同
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id，和CAM侧Uin匹配
-                     * @param UserId 用户Id，和CAM侧Uin匹配
+                     * 设置用户Id，和子用户uin相同
+                     * @param UserId 用户Id，和子用户uin相同
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -67,17 +67,17 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户描述
+                     * 获取用户描述信息，方便区分不同用户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserDescription 用户描述
+                     * @return UserDescription 用户描述信息，方便区分不同用户
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUserDescription() const;
 
                     /**
-                     * 设置用户描述
+                     * 设置用户描述信息，方便区分不同用户
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UserDescription 用户描述
+                     * @param UserDescription 用户描述信息，方便区分不同用户
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUserDescription(const std::string& _userDescription);
@@ -111,14 +111,14 @@ namespace TencentCloud
                     bool PolicySetHasBeenSet() const;
 
                     /**
-                     * 获取创建者
-                     * @return Creator 创建者
+                     * 获取当前用户的创建者
+                     * @return Creator 当前用户的创建者
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置创建者
-                     * @param Creator 创建者
+                     * 设置当前用户的创建者
+                     * @param Creator 当前用户的创建者
                      */
                     void SetCreator(const std::string& _creator);
 
@@ -129,14 +129,14 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间，格式如2021-07-28 16:19:32
+                     * @return CreateTime 创建时间，格式如2021-07-28 16:19:32
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * 设置创建时间，格式如2021-07-28 16:19:32
+                     * @param CreateTime 创建时间，格式如2021-07-28 16:19:32
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -193,13 +193,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户Id，和CAM侧Uin匹配
+                     * 用户Id，和子用户uin相同
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户描述
+                     * 用户描述信息，方便区分不同用户
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userDescription;
@@ -213,13 +213,13 @@ namespace TencentCloud
                     bool m_policySetHasBeenSet;
 
                     /**
-                     * 创建者
+                     * 当前用户的创建者
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间，格式如2021-07-28 16:19:32
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

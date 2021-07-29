@@ -21,7 +21,9 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 AiRecognitionTaskSegmentResultOutput::AiRecognitionTaskSegmentResultOutput() :
-    m_segmentSetHasBeenSet(false)
+    m_segmentSetHasBeenSet(false),
+    m_segmentSetFileUrlHasBeenSet(false),
+    m_segmentSetFileUrlExpireTimeHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,26 @@ CoreInternalOutcome AiRecognitionTaskSegmentResultOutput::Deserialize(const rapi
         m_segmentSetHasBeenSet = true;
     }
 
+    if (value.HasMember("SegmentSetFileUrl") && !value["SegmentSetFileUrl"].IsNull())
+    {
+        if (!value["SegmentSetFileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AiRecognitionTaskSegmentResultOutput.SegmentSetFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_segmentSetFileUrl = string(value["SegmentSetFileUrl"].GetString());
+        m_segmentSetFileUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("SegmentSetFileUrlExpireTime") && !value["SegmentSetFileUrlExpireTime"].IsNull())
+    {
+        if (!value["SegmentSetFileUrlExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AiRecognitionTaskSegmentResultOutput.SegmentSetFileUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_segmentSetFileUrlExpireTime = string(value["SegmentSetFileUrlExpireTime"].GetString());
+        m_segmentSetFileUrlExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void AiRecognitionTaskSegmentResultOutput::ToJsonObject(rapidjson::Value &value,
         }
     }
 
+    if (m_segmentSetFileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentSetFileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_segmentSetFileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_segmentSetFileUrlExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentSetFileUrlExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_segmentSetFileUrlExpireTime.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -89,5 +127,37 @@ void AiRecognitionTaskSegmentResultOutput::SetSegmentSet(const vector<AiRecognit
 bool AiRecognitionTaskSegmentResultOutput::SegmentSetHasBeenSet() const
 {
     return m_segmentSetHasBeenSet;
+}
+
+string AiRecognitionTaskSegmentResultOutput::GetSegmentSetFileUrl() const
+{
+    return m_segmentSetFileUrl;
+}
+
+void AiRecognitionTaskSegmentResultOutput::SetSegmentSetFileUrl(const string& _segmentSetFileUrl)
+{
+    m_segmentSetFileUrl = _segmentSetFileUrl;
+    m_segmentSetFileUrlHasBeenSet = true;
+}
+
+bool AiRecognitionTaskSegmentResultOutput::SegmentSetFileUrlHasBeenSet() const
+{
+    return m_segmentSetFileUrlHasBeenSet;
+}
+
+string AiRecognitionTaskSegmentResultOutput::GetSegmentSetFileUrlExpireTime() const
+{
+    return m_segmentSetFileUrlExpireTime;
+}
+
+void AiRecognitionTaskSegmentResultOutput::SetSegmentSetFileUrlExpireTime(const string& _segmentSetFileUrlExpireTime)
+{
+    m_segmentSetFileUrlExpireTime = _segmentSetFileUrlExpireTime;
+    m_segmentSetFileUrlExpireTimeHasBeenSet = true;
+}
+
+bool AiRecognitionTaskSegmentResultOutput::SegmentSetFileUrlExpireTimeHasBeenSet() const
+{
+    return m_segmentSetFileUrlExpireTimeHasBeenSet;
 }
 

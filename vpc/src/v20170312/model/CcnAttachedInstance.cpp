@@ -32,7 +32,9 @@ CcnAttachedInstance::CcnAttachedInstance() :
     m_attachedTimeHasBeenSet(false),
     m_ccnUinHasBeenSet(false),
     m_instanceAreaHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_routeTableIdHasBeenSet(false),
+    m_routeTableNameHasBeenSet(false)
 {
 }
 
@@ -164,6 +166,26 @@ CoreInternalOutcome CcnAttachedInstance::Deserialize(const rapidjson::Value &val
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("RouteTableId") && !value["RouteTableId"].IsNull())
+    {
+        if (!value["RouteTableId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CcnAttachedInstance.RouteTableId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_routeTableId = string(value["RouteTableId"].GetString());
+        m_routeTableIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RouteTableName") && !value["RouteTableName"].IsNull())
+    {
+        if (!value["RouteTableName"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `CcnAttachedInstance.RouteTableName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_routeTableName = string(value["RouteTableName"].GetString());
+        m_routeTableNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +292,22 @@ void CcnAttachedInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_routeTableIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteTableId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeTableId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_routeTableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteTableName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_routeTableName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +503,37 @@ void CcnAttachedInstance::SetDescription(const string& _description)
 bool CcnAttachedInstance::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string CcnAttachedInstance::GetRouteTableId() const
+{
+    return m_routeTableId;
+}
+
+void CcnAttachedInstance::SetRouteTableId(const string& _routeTableId)
+{
+    m_routeTableId = _routeTableId;
+    m_routeTableIdHasBeenSet = true;
+}
+
+bool CcnAttachedInstance::RouteTableIdHasBeenSet() const
+{
+    return m_routeTableIdHasBeenSet;
+}
+
+string CcnAttachedInstance::GetRouteTableName() const
+{
+    return m_routeTableName;
+}
+
+void CcnAttachedInstance::SetRouteTableName(const string& _routeTableName)
+{
+    m_routeTableName = _routeTableName;
+    m_routeTableNameHasBeenSet = true;
+}
+
+bool CcnAttachedInstance::RouteTableNameHasBeenSet() const
+{
+    return m_routeTableNameHasBeenSet;
 }
 

@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeSREInstanceAccessAddressResponse::DescribeSREInstanceAccessAddressResponse() :
     m_intranetAddressHasBeenSet(false),
-    m_internetAddressHasBeenSet(false)
+    m_internetAddressHasBeenSet(false),
+    m_envAddressInfosHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,26 @@ CoreInternalOutcome DescribeSREInstanceAccessAddressResponse::Deserialize(const 
         m_internetAddressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EnvAddressInfos") && !rsp["EnvAddressInfos"].IsNull())
+    {
+        if (!rsp["EnvAddressInfos"].IsArray())
+            return CoreInternalOutcome(Error("response `EnvAddressInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["EnvAddressInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EnvAddressInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_envAddressInfos.push_back(item);
+        }
+        m_envAddressInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -106,6 +127,16 @@ string DescribeSREInstanceAccessAddressResponse::GetInternetAddress() const
 bool DescribeSREInstanceAccessAddressResponse::InternetAddressHasBeenSet() const
 {
     return m_internetAddressHasBeenSet;
+}
+
+vector<EnvAddressInfo> DescribeSREInstanceAccessAddressResponse::GetEnvAddressInfos() const
+{
+    return m_envAddressInfos;
+}
+
+bool DescribeSREInstanceAccessAddressResponse::EnvAddressInfosHasBeenSet() const
+{
+    return m_envAddressInfosHasBeenSet;
 }
 
 

@@ -21,7 +21,9 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 AiRecognitionTaskAsrWordsResultOutput::AiRecognitionTaskAsrWordsResultOutput() :
-    m_resultSetHasBeenSet(false)
+    m_resultSetHasBeenSet(false),
+    m_resultSetFileUrlHasBeenSet(false),
+    m_resultSetFileUrlExpireTimeHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,26 @@ CoreInternalOutcome AiRecognitionTaskAsrWordsResultOutput::Deserialize(const rap
         m_resultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("ResultSetFileUrl") && !value["ResultSetFileUrl"].IsNull())
+    {
+        if (!value["ResultSetFileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrWordsResultOutput.ResultSetFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultSetFileUrl = string(value["ResultSetFileUrl"].GetString());
+        m_resultSetFileUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResultSetFileUrlExpireTime") && !value["ResultSetFileUrlExpireTime"].IsNull())
+    {
+        if (!value["ResultSetFileUrlExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AiRecognitionTaskAsrWordsResultOutput.ResultSetFileUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultSetFileUrlExpireTime = string(value["ResultSetFileUrlExpireTime"].GetString());
+        m_resultSetFileUrlExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void AiRecognitionTaskAsrWordsResultOutput::ToJsonObject(rapidjson::Value &value
         }
     }
 
+    if (m_resultSetFileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultSetFileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultSetFileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultSetFileUrlExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultSetFileUrlExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultSetFileUrlExpireTime.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -89,5 +127,37 @@ void AiRecognitionTaskAsrWordsResultOutput::SetResultSet(const vector<AiRecognit
 bool AiRecognitionTaskAsrWordsResultOutput::ResultSetHasBeenSet() const
 {
     return m_resultSetHasBeenSet;
+}
+
+string AiRecognitionTaskAsrWordsResultOutput::GetResultSetFileUrl() const
+{
+    return m_resultSetFileUrl;
+}
+
+void AiRecognitionTaskAsrWordsResultOutput::SetResultSetFileUrl(const string& _resultSetFileUrl)
+{
+    m_resultSetFileUrl = _resultSetFileUrl;
+    m_resultSetFileUrlHasBeenSet = true;
+}
+
+bool AiRecognitionTaskAsrWordsResultOutput::ResultSetFileUrlHasBeenSet() const
+{
+    return m_resultSetFileUrlHasBeenSet;
+}
+
+string AiRecognitionTaskAsrWordsResultOutput::GetResultSetFileUrlExpireTime() const
+{
+    return m_resultSetFileUrlExpireTime;
+}
+
+void AiRecognitionTaskAsrWordsResultOutput::SetResultSetFileUrlExpireTime(const string& _resultSetFileUrlExpireTime)
+{
+    m_resultSetFileUrlExpireTime = _resultSetFileUrlExpireTime;
+    m_resultSetFileUrlExpireTimeHasBeenSet = true;
+}
+
+bool AiRecognitionTaskAsrWordsResultOutput::ResultSetFileUrlExpireTimeHasBeenSet() const
+{
+    return m_resultSetFileUrlExpireTimeHasBeenSet;
 }
 

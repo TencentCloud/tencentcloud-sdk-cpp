@@ -23,7 +23,8 @@ using namespace std;
 Place::Place() :
     m_cityIdHasBeenSet(false),
     m_provinceIdHasBeenSet(false),
-    m_countryIdHasBeenSet(false)
+    m_countryIdHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome Place::Deserialize(const rapidjson::Value &value)
         m_countryIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Location") && !value["Location"].IsNull())
+    {
+        if (!value["Location"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Place.Location` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_location = string(value["Location"].GetString());
+        m_locationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void Place::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "CountryId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_countryId, allocator);
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void Place::SetCountryId(const uint64_t& _countryId)
 bool Place::CountryIdHasBeenSet() const
 {
     return m_countryIdHasBeenSet;
+}
+
+string Place::GetLocation() const
+{
+    return m_location;
+}
+
+void Place::SetLocation(const string& _location)
+{
+    m_location = _location;
+    m_locationHasBeenSet = true;
+}
+
+bool Place::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
 }
 

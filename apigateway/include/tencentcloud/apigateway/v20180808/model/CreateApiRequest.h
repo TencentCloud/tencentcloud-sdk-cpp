@@ -881,6 +881,24 @@ namespace TencentCloud
                      */
                     bool IsBase64EncodedHasBeenSet() const;
 
+                    /**
+                     * 获取scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。
+                     * @return ServiceScfFunctionType scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。
+                     */
+                    std::string GetServiceScfFunctionType() const;
+
+                    /**
+                     * 设置scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。
+                     * @param ServiceScfFunctionType scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。
+                     */
+                    void SetServiceScfFunctionType(const std::string& _serviceScfFunctionType);
+
+                    /**
+                     * 判断参数 ServiceScfFunctionType 是否已赋值
+                     * @return ServiceScfFunctionType 是否已赋值
+                     */
+                    bool ServiceScfFunctionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1158,6 +1176,12 @@ namespace TencentCloud
                      */
                     bool m_isBase64Encoded;
                     bool m_isBase64EncodedHasBeenSet;
+
+                    /**
+                     * scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。
+                     */
+                    std::string m_serviceScfFunctionType;
+                    bool m_serviceScfFunctionTypeHasBeenSet;
 
                 };
             }

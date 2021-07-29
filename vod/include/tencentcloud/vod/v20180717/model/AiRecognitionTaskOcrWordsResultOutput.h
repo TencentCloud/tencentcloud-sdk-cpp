@@ -49,13 +49,17 @@ namespace TencentCloud
 
                     /**
                      * 获取文本关键词识别结果集。
+<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。
                      * @return ResultSet 文本关键词识别结果集。
+<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。
                      */
                     std::vector<AiRecognitionTaskOcrWordsResultItem> GetResultSet() const;
 
                     /**
                      * 设置文本关键词识别结果集。
+<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。
                      * @param ResultSet 文本关键词识别结果集。
+<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。
                      */
                     void SetResultSet(const std::vector<AiRecognitionTaskOcrWordsResultItem>& _resultSet);
 
@@ -65,13 +69,62 @@ namespace TencentCloud
                      */
                     bool ResultSetHasBeenSet() const;
 
+                    /**
+                     * 获取文本关键词识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。
+                     * @return ResultSetFileUrl 文本关键词识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。
+                     */
+                    std::string GetResultSetFileUrl() const;
+
+                    /**
+                     * 设置文本关键词识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。
+                     * @param ResultSetFileUrl 文本关键词识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。
+                     */
+                    void SetResultSetFileUrl(const std::string& _resultSetFileUrl);
+
+                    /**
+                     * 判断参数 ResultSetFileUrl 是否已赋值
+                     * @return ResultSetFileUrl 是否已赋值
+                     */
+                    bool ResultSetFileUrlHasBeenSet() const;
+
+                    /**
+                     * 获取文本关键词识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @return ResultSetFileUrlExpireTime 文本关键词识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     */
+                    std::string GetResultSetFileUrlExpireTime() const;
+
+                    /**
+                     * 设置文本关键词识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * @param ResultSetFileUrlExpireTime 文本关键词识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     */
+                    void SetResultSetFileUrlExpireTime(const std::string& _resultSetFileUrlExpireTime);
+
+                    /**
+                     * 判断参数 ResultSetFileUrlExpireTime 是否已赋值
+                     * @return ResultSetFileUrlExpireTime 是否已赋值
+                     */
+                    bool ResultSetFileUrlExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 文本关键词识别结果集。
+<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。
                      */
                     std::vector<AiRecognitionTaskOcrWordsResultItem> m_resultSet;
                     bool m_resultSetHasBeenSet;
+
+                    /**
+                     * 文本关键词识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。
+                     */
+                    std::string m_resultSetFileUrl;
+                    bool m_resultSetFileUrlHasBeenSet;
+
+                    /**
+                     * 文本关键词识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     */
+                    std::string m_resultSetFileUrlExpireTime;
+                    bool m_resultSetFileUrlExpireTimeHasBeenSet;
 
                 };
             }

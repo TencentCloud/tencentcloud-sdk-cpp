@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户Id，当前主账号的子账号Uin，和CAM侧匹配
-                     * @return UserId 用户Id，当前主账号的子账号Uin，和CAM侧匹配
+                     * 获取需要授权的子用户uin，可以通过腾讯云控制台右上角 → “账号信息” → “账号ID进行查看”。
+                     * @return UserId 需要授权的子用户uin，可以通过腾讯云控制台右上角 → “账号信息” → “账号ID进行查看”。
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户Id，当前主账号的子账号Uin，和CAM侧匹配
-                     * @param UserId 用户Id，当前主账号的子账号Uin，和CAM侧匹配
+                     * 设置需要授权的子用户uin，可以通过腾讯云控制台右上角 → “账号信息” → “账号ID进行查看”。
+                     * @param UserId 需要授权的子用户uin，可以通过腾讯云控制台右上角 → “账号信息” → “账号ID进行查看”。
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户描述
-                     * @return UserDescription 用户描述
+                     * 获取用户描述信息，方便区分不同用户
+                     * @return UserDescription 用户描述信息，方便区分不同用户
                      */
                     std::string GetUserDescription() const;
 
                     /**
-                     * 设置用户描述
-                     * @param UserDescription 用户描述
+                     * 设置用户描述信息，方便区分不同用户
+                     * @param UserDescription 用户描述信息，方便区分不同用户
                      */
                     void SetUserDescription(const std::string& _userDescription);
 
@@ -100,13 +100,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户Id，当前主账号的子账号Uin，和CAM侧匹配
+                     * 需要授权的子用户uin，可以通过腾讯云控制台右上角 → “账号信息” → “账号ID进行查看”。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户描述
+                     * 用户描述信息，方便区分不同用户
                      */
                     std::string m_userDescription;
                     bool m_userDescriptionHasBeenSet;

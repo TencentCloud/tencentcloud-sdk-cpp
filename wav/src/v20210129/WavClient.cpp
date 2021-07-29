@@ -470,6 +470,49 @@ WavClient::QueryExternalUserMappingInfoOutcomeCallable WavClient::QueryExternalU
     return task->get_future();
 }
 
+WavClient::QueryLicenseInfoOutcome WavClient::QueryLicenseInfo(const QueryLicenseInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryLicenseInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryLicenseInfoResponse rsp = QueryLicenseInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryLicenseInfoOutcome(rsp);
+        else
+            return QueryLicenseInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryLicenseInfoOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryLicenseInfoAsync(const QueryLicenseInfoRequest& request, const QueryLicenseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryLicenseInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryLicenseInfoOutcomeCallable WavClient::QueryLicenseInfoCallable(const QueryLicenseInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryLicenseInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryLicenseInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WavClient::QueryMiniAppCodeListOutcome WavClient::QueryMiniAppCodeList(const QueryMiniAppCodeListRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryMiniAppCodeList");

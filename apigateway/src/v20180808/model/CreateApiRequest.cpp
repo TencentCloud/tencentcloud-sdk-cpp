@@ -68,7 +68,8 @@ CreateApiRequest::CreateApiRequest() :
     m_responseErrorCodesHasBeenSet(false),
     m_targetNamespaceIdHasBeenSet(false),
     m_userTypeHasBeenSet(false),
-    m_isBase64EncodedHasBeenSet(false)
+    m_isBase64EncodedHasBeenSet(false),
+    m_serviceScfFunctionTypeHasBeenSet(false)
 {
 }
 
@@ -493,6 +494,14 @@ string CreateApiRequest::ToJsonString() const
         string key = "IsBase64Encoded";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isBase64Encoded, allocator);
+    }
+
+    if (m_serviceScfFunctionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceScfFunctionType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceScfFunctionType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1237,6 +1246,22 @@ void CreateApiRequest::SetIsBase64Encoded(const bool& _isBase64Encoded)
 bool CreateApiRequest::IsBase64EncodedHasBeenSet() const
 {
     return m_isBase64EncodedHasBeenSet;
+}
+
+string CreateApiRequest::GetServiceScfFunctionType() const
+{
+    return m_serviceScfFunctionType;
+}
+
+void CreateApiRequest::SetServiceScfFunctionType(const string& _serviceScfFunctionType)
+{
+    m_serviceScfFunctionType = _serviceScfFunctionType;
+    m_serviceScfFunctionTypeHasBeenSet = true;
+}
+
+bool CreateApiRequest::ServiceScfFunctionTypeHasBeenSet() const
+{
+    return m_serviceScfFunctionTypeHasBeenSet;
 }
 
 

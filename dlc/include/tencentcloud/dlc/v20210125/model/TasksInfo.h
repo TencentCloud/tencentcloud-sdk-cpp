@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool SQLHasBeenSet() const;
 
                     /**
-                     * 获取任务的配置信息
-                     * @return Config 任务的配置信息
+                     * 获取任务的配置信息，当前仅支持SparkSQLTask任务。
+                     * @return Config 任务的配置信息，当前仅支持SparkSQLTask任务。
                      */
                     std::vector<KVPair> GetConfig() const;
 
                     /**
-                     * 设置任务的配置信息
-                     * @param Config 任务的配置信息
+                     * 设置任务的配置信息，当前仅支持SparkSQLTask任务。
+                     * @param Config 任务的配置信息，当前仅支持SparkSQLTask任务。
                      */
                     void SetConfig(const std::vector<KVPair>& _config);
 
@@ -140,7 +140,7 @@ namespace TencentCloud
                     bool m_sQLHasBeenSet;
 
                     /**
-                     * 任务的配置信息
+                     * 任务的配置信息，当前仅支持SparkSQLTask任务。
                      */
                     std::vector<KVPair> m_config;
                     bool m_configHasBeenSet;

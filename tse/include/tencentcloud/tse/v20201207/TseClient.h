@@ -51,7 +51,7 @@ namespace TencentCloud
 
 
                 /**
-                 *查询微服务注册引擎实例访问地址
+                 *查询引擎实例访问地址
                  * @param req DescribeSREInstanceAccessAddressRequest
                  * @return DescribeSREInstanceAccessAddressOutcome
                  */
@@ -60,7 +60,7 @@ namespace TencentCloud
                 DescribeSREInstanceAccessAddressOutcomeCallable DescribeSREInstanceAccessAddressCallable(const Model::DescribeSREInstanceAccessAddressRequest& request);
 
                 /**
-                 *用于查询微服务引擎实例列表
+                 *用于查询引擎实例列表
                  * @param req DescribeSREInstancesRequest
                  * @return DescribeSREInstancesOutcome
                  */

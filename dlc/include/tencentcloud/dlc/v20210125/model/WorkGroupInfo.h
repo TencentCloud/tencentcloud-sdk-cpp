@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作组Id
-                     * @return WorkGroupId 工作组Id
+                     * 获取查询到的工作组唯一Id
+                     * @return WorkGroupId 查询到的工作组唯一Id
                      */
                     int64_t GetWorkGroupId() const;
 
                     /**
-                     * 设置工作组Id
-                     * @param WorkGroupId 工作组Id
+                     * 设置查询到的工作组唯一Id
+                     * @param WorkGroupId 查询到的工作组唯一Id
                      */
                     void SetWorkGroupId(const int64_t& _workGroupId);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool PolicySetHasBeenSet() const;
 
                     /**
-                     * 获取创建者
-                     * @return Creator 创建者
+                     * 获取工作组的创建人
+                     * @return Creator 工作组的创建人
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置创建者
-                     * @param Creator 创建者
+                     * 设置工作组的创建人
+                     * @param Creator 工作组的创建人
                      */
                     void SetCreator(const std::string& _creator);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取工作组的创建时间，形如2021-07-28 16:19:32
+                     * @return CreateTime 工作组的创建时间，形如2021-07-28 16:19:32
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * 设置工作组的创建时间，形如2021-07-28 16:19:32
+                     * @param CreateTime 工作组的创建时间，形如2021-07-28 16:19:32
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -207,7 +207,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作组Id
+                     * 查询到的工作组唯一Id
                      */
                     int64_t m_workGroupId;
                     bool m_workGroupIdHasBeenSet;
@@ -246,13 +246,13 @@ namespace TencentCloud
                     bool m_policySetHasBeenSet;
 
                     /**
-                     * 创建者
+                     * 工作组的创建人
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 工作组的创建时间，形如2021-07-28 16:19:32
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

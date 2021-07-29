@@ -282,17 +282,17 @@ namespace TencentCloud
                     bool IsDebugAfterChargeHasBeenSet() const;
 
                     /**
-                     * 获取API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH。
+                     * 获取API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、EIAM。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AuthType API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH。
+                     * @return AuthType API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、EIAM。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAuthType() const;
 
                     /**
-                     * 设置API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH。
+                     * 设置API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、EIAM。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuthType API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH。
+                     * @param AuthType API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、EIAM。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAuthType(const std::string& _authType);
@@ -535,7 +535,7 @@ namespace TencentCloud
                     bool m_isDebugAfterChargeHasBeenSet;
 
                     /**
-                     * API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH。
+                     * API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、EIAM。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authType;

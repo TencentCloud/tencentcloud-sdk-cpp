@@ -134,6 +134,28 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取实例关联的路由表ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RouteTableId 实例关联的路由表ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRouteTableId() const;
+
+                    /**
+                     * 设置实例关联的路由表ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RouteTableId 实例关联的路由表ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRouteTableId(const std::string& _routeTableId);
+
+                    /**
+                     * 判断参数 RouteTableId 是否已赋值
+                     * @return RouteTableId 是否已赋值
+                     */
+                    bool RouteTableIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +185,13 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 实例关联的路由表ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_routeTableId;
+                    bool m_routeTableIdHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tse/v20201207/model/EnvAddressInfo.h>
 
 
 namespace TencentCloud
@@ -66,6 +67,18 @@ namespace TencentCloud
                      */
                     bool InternetAddressHasBeenSet() const;
 
+                    /**
+                     * 获取apollo多环境公网ip
+                     * @return EnvAddressInfos apollo多环境公网ip
+                     */
+                    std::vector<EnvAddressInfo> GetEnvAddressInfos() const;
+
+                    /**
+                     * 判断参数 EnvAddressInfos 是否已赋值
+                     * @return EnvAddressInfos 是否已赋值
+                     */
+                    bool EnvAddressInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +92,12 @@ namespace TencentCloud
                      */
                     std::string m_internetAddress;
                     bool m_internetAddressHasBeenSet;
+
+                    /**
+                     * apollo多环境公网ip
+                     */
+                    std::vector<EnvAddressInfo> m_envAddressInfos;
+                    bool m_envAddressInfosHasBeenSet;
 
                 };
             }

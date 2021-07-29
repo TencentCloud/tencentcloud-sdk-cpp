@@ -43,6 +43,8 @@
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalUserMappingInfoRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalUserMappingInfoResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryLicenseInfoRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryLicenseInfoResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryMiniAppCodeListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryMiniAppCodeListResponse.h>
 
@@ -89,6 +91,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryExternalUserMappingInfoResponse> QueryExternalUserMappingInfoOutcome;
                 typedef std::future<QueryExternalUserMappingInfoOutcome> QueryExternalUserMappingInfoOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryExternalUserMappingInfoRequest&, QueryExternalUserMappingInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExternalUserMappingInfoAsyncHandler;
+                typedef Outcome<Error, Model::QueryLicenseInfoResponse> QueryLicenseInfoOutcome;
+                typedef std::future<QueryLicenseInfoOutcome> QueryLicenseInfoOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryLicenseInfoRequest&, QueryLicenseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryLicenseInfoAsyncHandler;
                 typedef Outcome<Error, Model::QueryMiniAppCodeListResponse> QueryMiniAppCodeListOutcome;
                 typedef std::future<QueryMiniAppCodeListOutcome> QueryMiniAppCodeListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryMiniAppCodeListRequest&, QueryMiniAppCodeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMiniAppCodeListAsyncHandler;
@@ -184,6 +189,15 @@ namespace TencentCloud
                 QueryExternalUserMappingInfoOutcome QueryExternalUserMappingInfo(const Model::QueryExternalUserMappingInfoRequest &request);
                 void QueryExternalUserMappingInfoAsync(const Model::QueryExternalUserMappingInfoRequest& request, const QueryExternalUserMappingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryExternalUserMappingInfoOutcomeCallable QueryExternalUserMappingInfoCallable(const Model::QueryExternalUserMappingInfoRequest& request);
+
+                /**
+                 *该接口获取license对应的详细信息
+                 * @param req QueryLicenseInfoRequest
+                 * @return QueryLicenseInfoOutcome
+                 */
+                QueryLicenseInfoOutcome QueryLicenseInfo(const Model::QueryLicenseInfoRequest &request);
+                void QueryLicenseInfoAsync(const Model::QueryLicenseInfoRequest& request, const QueryLicenseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryLicenseInfoOutcomeCallable QueryLicenseInfoCallable(const Model::QueryLicenseInfoRequest& request);
 
                 /**
                  *查询小程序码列表接口

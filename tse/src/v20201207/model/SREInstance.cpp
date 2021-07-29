@@ -36,7 +36,9 @@ SREInstance::SREInstance() :
     m_paymodeHasBeenSet(false),
     m_eKSClusterIDHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_envInfosHasBeenSet(false)
+    m_envInfosHasBeenSet(false),
+    m_engineRegionHasBeenSet(false),
+    m_enableInternetHasBeenSet(false)
 {
 }
 
@@ -218,6 +220,26 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_envInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("EngineRegion") && !value["EngineRegion"].IsNull())
+    {
+        if (!value["EngineRegion"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SREInstance.EngineRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineRegion = string(value["EngineRegion"].GetString());
+        m_engineRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableInternet") && !value["EnableInternet"].IsNull())
+    {
+        if (!value["EnableInternet"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `SREInstance.EnableInternet` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableInternet = value["EnableInternet"].GetBool();
+        m_enableInternetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -363,6 +385,22 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_engineRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableInternetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableInternet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableInternet, allocator);
     }
 
 }
@@ -622,5 +660,37 @@ void SREInstance::SetEnvInfos(const vector<EnvInfo>& _envInfos)
 bool SREInstance::EnvInfosHasBeenSet() const
 {
     return m_envInfosHasBeenSet;
+}
+
+string SREInstance::GetEngineRegion() const
+{
+    return m_engineRegion;
+}
+
+void SREInstance::SetEngineRegion(const string& _engineRegion)
+{
+    m_engineRegion = _engineRegion;
+    m_engineRegionHasBeenSet = true;
+}
+
+bool SREInstance::EngineRegionHasBeenSet() const
+{
+    return m_engineRegionHasBeenSet;
+}
+
+bool SREInstance::GetEnableInternet() const
+{
+    return m_enableInternet;
+}
+
+void SREInstance::SetEnableInternet(const bool& _enableInternet)
+{
+    m_enableInternet = _enableInternet;
+    m_enableInternetHasBeenSet = true;
+}
+
+bool SREInstance::EnableInternetHasBeenSet() const
+{
+    return m_enableInternetHasBeenSet;
 }
 

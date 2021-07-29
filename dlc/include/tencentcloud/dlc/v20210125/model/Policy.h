@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要授权的数据源名称，*代表拥有全部数据源权限
-                     * @return Catalog 需要授权的数据源名称，*代表拥有全部数据源权限
+                     * 获取需要授权的数据源名称，当前仅支持COSDataCatalog或者*
+                     * @return Catalog 需要授权的数据源名称，当前仅支持COSDataCatalog或者*
                      */
                     std::string GetCatalog() const;
 
                     /**
-                     * 设置需要授权的数据源名称，*代表拥有全部数据源权限
-                     * @param Catalog 需要授权的数据源名称，*代表拥有全部数据源权限
+                     * 设置需要授权的数据源名称，当前仅支持COSDataCatalog或者*
+                     * @param Catalog 需要授权的数据源名称，当前仅支持COSDataCatalog或者*
                      */
                     void SetCatalog(const std::string& _catalog);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool CatalogHasBeenSet() const;
 
                     /**
-                     * 获取需要授权的数据库名称，*代表拥有全部数据库名称
-                     * @return Database 需要授权的数据库名称，*代表拥有全部数据库名称
+                     * 获取需要授权的数据库名，填*代表当前Catalog下所有数据库
+                     * @return Database 需要授权的数据库名，填*代表当前Catalog下所有数据库
                      */
                     std::string GetDatabase() const;
 
                     /**
-                     * 设置需要授权的数据库名称，*代表拥有全部数据库名称
-                     * @param Database 需要授权的数据库名称，*代表拥有全部数据库名称
+                     * 设置需要授权的数据库名，填*代表当前Catalog下所有数据库
+                     * @param Database 需要授权的数据库名，填*代表当前Catalog下所有数据库
                      */
                     void SetDatabase(const std::string& _database);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool DatabaseHasBeenSet() const;
 
                     /**
-                     * 获取需要授权的表名称，*代表拥有全部表权限
-                     * @return Table 需要授权的表名称，*代表拥有全部表权限
+                     * 获取需要授权的表名，填*代表当前Database下所有表
+                     * @return Table 需要授权的表名，填*代表当前Database下所有表
                      */
                     std::string GetTable() const;
 
                     /**
-                     * 设置需要授权的表名称，*代表拥有全部表权限
-                     * @param Table 需要授权的表名称，*代表拥有全部表权限
+                     * 设置需要授权的表名，填*代表当前Database下所有表
+                     * @param Table 需要授权的表名，填*代表当前Database下所有表
                      */
                     void SetTable(const std::string& _table);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool TableHasBeenSet() const;
 
                     /**
-                     * 获取授权的操作，当前只支持“ALL”
-                     * @return Operation 授权的操作，当前只支持“ALL”
+                     * 获取授权粒度，当前只支持ALL，即全部权限
+                     * @return Operation 授权粒度，当前只支持ALL，即全部权限
                      */
                     std::string GetOperation() const;
 
                     /**
-                     * 设置授权的操作，当前只支持“ALL”
-                     * @param Operation 授权的操作，当前只支持“ALL”
+                     * 设置授权粒度，当前只支持ALL，即全部权限
+                     * @param Operation 授权粒度，当前只支持ALL，即全部权限
                      */
                     void SetOperation(const std::string& _operation);
 
@@ -121,25 +121,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要授权的数据源名称，*代表拥有全部数据源权限
+                     * 需要授权的数据源名称，当前仅支持COSDataCatalog或者*
                      */
                     std::string m_catalog;
                     bool m_catalogHasBeenSet;
 
                     /**
-                     * 需要授权的数据库名称，*代表拥有全部数据库名称
+                     * 需要授权的数据库名，填*代表当前Catalog下所有数据库
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
-                     * 需要授权的表名称，*代表拥有全部表权限
+                     * 需要授权的表名，填*代表当前Database下所有表
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
-                     * 授权的操作，当前只支持“ALL”
+                     * 授权粒度，当前只支持ALL，即全部权限
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;

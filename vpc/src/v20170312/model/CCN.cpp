@@ -31,7 +31,9 @@ CCN::CCN() :
     m_instanceChargeTypeHasBeenSet(false),
     m_bandwidthLimitTypeHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_routePriorityFlagHasBeenSet(false)
+    m_routePriorityFlagHasBeenSet(false),
+    m_routeTableCountHasBeenSet(false),
+    m_routeTableFlagHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,26 @@ CoreInternalOutcome CCN::Deserialize(const rapidjson::Value &value)
         m_routePriorityFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("RouteTableCount") && !value["RouteTableCount"].IsNull())
+    {
+        if (!value["RouteTableCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `CCN.RouteTableCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_routeTableCount = value["RouteTableCount"].GetUint64();
+        m_routeTableCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("RouteTableFlag") && !value["RouteTableFlag"].IsNull())
+    {
+        if (!value["RouteTableFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `CCN.RouteTableFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_routeTableFlag = value["RouteTableFlag"].GetBool();
+        m_routeTableFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +282,22 @@ void CCN::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "RoutePriorityFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_routePriorityFlag, allocator);
+    }
+
+    if (m_routeTableCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteTableCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_routeTableCount, allocator);
+    }
+
+    if (m_routeTableFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteTableFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_routeTableFlag, allocator);
     }
 
 }
@@ -439,5 +477,37 @@ void CCN::SetRoutePriorityFlag(const bool& _routePriorityFlag)
 bool CCN::RoutePriorityFlagHasBeenSet() const
 {
     return m_routePriorityFlagHasBeenSet;
+}
+
+uint64_t CCN::GetRouteTableCount() const
+{
+    return m_routeTableCount;
+}
+
+void CCN::SetRouteTableCount(const uint64_t& _routeTableCount)
+{
+    m_routeTableCount = _routeTableCount;
+    m_routeTableCountHasBeenSet = true;
+}
+
+bool CCN::RouteTableCountHasBeenSet() const
+{
+    return m_routeTableCountHasBeenSet;
+}
+
+bool CCN::GetRouteTableFlag() const
+{
+    return m_routeTableFlag;
+}
+
+void CCN::SetRouteTableFlag(const bool& _routeTableFlag)
+{
+    m_routeTableFlag = _routeTableFlag;
+    m_routeTableFlagHasBeenSet = true;
+}
+
+bool CCN::RouteTableFlagHasBeenSet() const
+{
+    return m_routeTableFlagHasBeenSet;
 }
 

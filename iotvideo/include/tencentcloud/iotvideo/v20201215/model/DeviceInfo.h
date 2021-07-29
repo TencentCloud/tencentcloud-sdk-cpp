@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool DevicePskHasBeenSet() const;
 
                     /**
-                     * 获取设备启用状态
-                     * @return EnableState 设备启用状态
+                     * 获取设备启用状态 0为停用 1为可用
+                     * @return EnableState 设备启用状态 0为停用 1为可用
                      */
                     uint64_t GetEnableState() const;
 
                     /**
-                     * 设置设备启用状态
-                     * @param EnableState 设备启用状态
+                     * 设置设备启用状态 0为停用 1为可用
+                     * @param EnableState 设备启用状态 0为停用 1为可用
                      */
                     void SetEnableState(const uint64_t& _enableState);
 
@@ -181,7 +181,7 @@ namespace TencentCloud
                     bool m_devicePskHasBeenSet;
 
                     /**
-                     * 设备启用状态
+                     * 设备启用状态 0为停用 1为可用
                      */
                     uint64_t m_enableState;
                     bool m_enableStateHasBeenSet;

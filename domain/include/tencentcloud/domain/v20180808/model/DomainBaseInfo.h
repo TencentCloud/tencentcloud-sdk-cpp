@@ -88,11 +88,13 @@ NotUpload：未实名认证
 InAudit：实名审核中
 Approved：实名审核通过
 Reject：实名审核失败
+NoAudit: 无需实名认证
                      * @return RealNameAuditStatus 域名实名认证状态。
 NotUpload：未实名认证
 InAudit：实名审核中
 Approved：实名审核通过
 Reject：实名审核失败
+NoAudit: 无需实名认证
                      */
                     std::string GetRealNameAuditStatus() const;
 
@@ -102,11 +104,13 @@ NotUpload：未实名认证
 InAudit：实名审核中
 Approved：实名审核通过
 Reject：实名审核失败
+NoAudit: 无需实名认证
                      * @param RealNameAuditStatus 域名实名认证状态。
 NotUpload：未实名认证
 InAudit：实名审核中
 Approved：实名审核通过
 Reject：实名审核失败
+NoAudit: 无需实名认证
                      */
                     void SetRealNameAuditStatus(const std::string& _realNameAuditStatus);
 
@@ -482,6 +486,7 @@ NotUpload：未实名认证
 InAudit：实名审核中
 Approved：实名审核通过
 Reject：实名审核失败
+NoAudit: 无需实名认证
                      */
                     std::string m_realNameAuditStatus;
                     bool m_realNameAuditStatusHasBeenSet;

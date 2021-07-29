@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户总数
-                     * @return TotalCount 用户总数
+                     * 获取查询到的用户总数
+                     * @return TotalCount 查询到的用户总数
                      */
                     int64_t GetTotalCount() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取用户集合
-                     * @return UserSet 用户集合
+                     * 获取查询到的授权用户信息集合
+                     * @return UserSet 查询到的授权用户信息集合
                      */
                     std::vector<UserInfo> GetUserSet() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户总数
+                     * 查询到的用户总数
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 用户集合
+                     * 查询到的授权用户信息集合
                      */
                     std::vector<UserInfo> m_userSet;
                     bool m_userSetHasBeenSet;

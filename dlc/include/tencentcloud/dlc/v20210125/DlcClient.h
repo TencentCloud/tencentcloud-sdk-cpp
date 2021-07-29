@@ -43,6 +43,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateTasksRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateTasksResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTasksInOrderRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTasksInOrderResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateUserRequest.h>
@@ -129,6 +131,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateTaskResponse> CreateTaskOutcome;
                 typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateTaskRequest&, CreateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateTasksResponse> CreateTasksOutcome;
+                typedef std::future<CreateTasksOutcome> CreateTasksOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateTasksRequest&, CreateTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTasksAsyncHandler;
                 typedef Outcome<Error, Model::CreateTasksInOrderResponse> CreateTasksInOrderOutcome;
                 typedef std::future<CreateTasksInOrderOutcome> CreateTasksInOrderOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateTasksInOrderRequest&, CreateTasksInOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTasksInOrderAsyncHandler;
@@ -277,7 +282,7 @@ namespace TencentCloud
                 CreateTableOutcomeCallable CreateTableCallable(const Model::CreateTableRequest& request);
 
                 /**
-                 *本接口（CreateTask）用于创建sql查询任务。
+                 *本接口（CreateTask）用于创建sql查询任务。（推荐使用CreateTasks接口）
                  * @param req CreateTaskRequest
                  * @return CreateTaskOutcome
                  */
@@ -286,7 +291,16 @@ namespace TencentCloud
                 CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
 
                 /**
-                 *按顺序创建任务
+                 *批量创建任务
+                 * @param req CreateTasksRequest
+                 * @return CreateTasksOutcome
+                 */
+                CreateTasksOutcome CreateTasks(const Model::CreateTasksRequest &request);
+                void CreateTasksAsync(const Model::CreateTasksRequest& request, const CreateTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTasksOutcomeCallable CreateTasksCallable(const Model::CreateTasksRequest& request);
+
+                /**
+                 *按顺序创建任务（已经废弃，后期不再维护，请使用接口CreateTasks）
                  * @param req CreateTasksInOrderRequest
                  * @return CreateTasksInOrderOutcome
                  */
