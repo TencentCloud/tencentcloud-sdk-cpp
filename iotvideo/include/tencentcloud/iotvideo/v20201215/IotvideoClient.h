@@ -27,6 +27,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/ApplyAIModelResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/BatchUpdateFirmwareRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/BatchUpdateFirmwareResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/BindCloudStorageUserRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/BindCloudStorageUserResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CancelAIModelApplicationRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/CancelAIModelApplicationResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CancelDeviceFirmwareTaskRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/CreateCOSCredentialsResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateCloudStorageRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateCloudStorageResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/CreateDataForwardRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/CreateDataForwardResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateForwardRuleRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateForwardRuleResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/CreateProductRequest.h>
@@ -85,6 +89,10 @@
 #include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageThumbnailResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageTimeRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageTimeResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageUsersRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageUsersResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeDataForwardListRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeDataForwardListResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeDeviceRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeDeviceResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeDeviceActionHistoryRequest.h>
@@ -97,6 +105,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/DescribeDeviceDataHistoryResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeDeviceEventHistoryRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeDeviceEventHistoryResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeDeviceStatusLogRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeDeviceStatusLogResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeDevicesRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeDevicesResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeFirmwareRequest.h>
@@ -119,6 +129,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/DescribeProductResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeProductsRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/DescribeProductsResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeSDKLogRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/DescribeSDKLogResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/EditFirmwareRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/EditFirmwareResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/GenerateSignedVideoURLRequest.h>
@@ -129,10 +141,18 @@
 #include <tencentcloud/iotvideo/v20201215/model/GetFirmwareURLResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/ImportModelDefinitionRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/ImportModelDefinitionResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/InheritCloudStorageUserRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/InheritCloudStorageUserResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/ListFirmwaresRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/ListFirmwaresResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/ModifyDataForwardRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/ModifyDataForwardResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/ModifyDataForwardStatusRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/ModifyDataForwardStatusResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/ModifyDeviceRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/ModifyDeviceResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/ModifyDeviceLogLevelRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/ModifyDeviceLogLevelResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/ModifyForwardRuleRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/ModifyForwardRuleResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/ModifyModelDefinitionRequest.h>
@@ -155,6 +175,8 @@
 #include <tencentcloud/iotvideo/v20201215/model/UpdateAIModelChannelResponse.h>
 #include <tencentcloud/iotvideo/v20201215/model/UploadFirmwareRequest.h>
 #include <tencentcloud/iotvideo/v20201215/model/UploadFirmwareResponse.h>
+#include <tencentcloud/iotvideo/v20201215/model/WakeUpDeviceRequest.h>
+#include <tencentcloud/iotvideo/v20201215/model/WakeUpDeviceResponse.h>
 
 
 namespace TencentCloud
@@ -175,6 +197,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::BatchUpdateFirmwareResponse> BatchUpdateFirmwareOutcome;
                 typedef std::future<BatchUpdateFirmwareOutcome> BatchUpdateFirmwareOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::BatchUpdateFirmwareRequest&, BatchUpdateFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchUpdateFirmwareAsyncHandler;
+                typedef Outcome<Error, Model::BindCloudStorageUserResponse> BindCloudStorageUserOutcome;
+                typedef std::future<BindCloudStorageUserOutcome> BindCloudStorageUserOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::BindCloudStorageUserRequest&, BindCloudStorageUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudStorageUserAsyncHandler;
                 typedef Outcome<Error, Model::CancelAIModelApplicationResponse> CancelAIModelApplicationOutcome;
                 typedef std::future<CancelAIModelApplicationOutcome> CancelAIModelApplicationOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CancelAIModelApplicationRequest&, CancelAIModelApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelAIModelApplicationAsyncHandler;
@@ -199,6 +224,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateCloudStorageResponse> CreateCloudStorageOutcome;
                 typedef std::future<CreateCloudStorageOutcome> CreateCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateCloudStorageRequest&, CreateCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudStorageAsyncHandler;
+                typedef Outcome<Error, Model::CreateDataForwardResponse> CreateDataForwardOutcome;
+                typedef std::future<CreateDataForwardOutcome> CreateDataForwardOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CreateDataForwardRequest&, CreateDataForwardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataForwardAsyncHandler;
                 typedef Outcome<Error, Model::CreateForwardRuleResponse> CreateForwardRuleOutcome;
                 typedef std::future<CreateForwardRuleOutcome> CreateForwardRuleOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CreateForwardRuleRequest&, CreateForwardRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateForwardRuleAsyncHandler;
@@ -262,6 +290,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCloudStorageTimeResponse> DescribeCloudStorageTimeOutcome;
                 typedef std::future<DescribeCloudStorageTimeOutcome> DescribeCloudStorageTimeOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeCloudStorageTimeRequest&, DescribeCloudStorageTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageTimeAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCloudStorageUsersResponse> DescribeCloudStorageUsersOutcome;
+                typedef std::future<DescribeCloudStorageUsersOutcome> DescribeCloudStorageUsersOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeCloudStorageUsersRequest&, DescribeCloudStorageUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageUsersAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDataForwardListResponse> DescribeDataForwardListOutcome;
+                typedef std::future<DescribeDataForwardListOutcome> DescribeDataForwardListOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeDataForwardListRequest&, DescribeDataForwardListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataForwardListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDeviceResponse> DescribeDeviceOutcome;
                 typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeDeviceRequest&, DescribeDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
@@ -280,6 +314,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeDeviceEventHistoryResponse> DescribeDeviceEventHistoryOutcome;
                 typedef std::future<DescribeDeviceEventHistoryOutcome> DescribeDeviceEventHistoryOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeDeviceEventHistoryRequest&, DescribeDeviceEventHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceEventHistoryAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDeviceStatusLogResponse> DescribeDeviceStatusLogOutcome;
+                typedef std::future<DescribeDeviceStatusLogOutcome> DescribeDeviceStatusLogOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeDeviceStatusLogRequest&, DescribeDeviceStatusLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceStatusLogAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDevicesResponse> DescribeDevicesOutcome;
                 typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeDevicesRequest&, DescribeDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
@@ -313,6 +350,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeProductsResponse> DescribeProductsOutcome;
                 typedef std::future<DescribeProductsOutcome> DescribeProductsOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeProductsRequest&, DescribeProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSDKLogResponse> DescribeSDKLogOutcome;
+                typedef std::future<DescribeSDKLogOutcome> DescribeSDKLogOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeSDKLogRequest&, DescribeSDKLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSDKLogAsyncHandler;
                 typedef Outcome<Error, Model::EditFirmwareResponse> EditFirmwareOutcome;
                 typedef std::future<EditFirmwareOutcome> EditFirmwareOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::EditFirmwareRequest&, EditFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditFirmwareAsyncHandler;
@@ -328,12 +368,24 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ImportModelDefinitionResponse> ImportModelDefinitionOutcome;
                 typedef std::future<ImportModelDefinitionOutcome> ImportModelDefinitionOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ImportModelDefinitionRequest&, ImportModelDefinitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportModelDefinitionAsyncHandler;
+                typedef Outcome<Error, Model::InheritCloudStorageUserResponse> InheritCloudStorageUserOutcome;
+                typedef std::future<InheritCloudStorageUserOutcome> InheritCloudStorageUserOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::InheritCloudStorageUserRequest&, InheritCloudStorageUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InheritCloudStorageUserAsyncHandler;
                 typedef Outcome<Error, Model::ListFirmwaresResponse> ListFirmwaresOutcome;
                 typedef std::future<ListFirmwaresOutcome> ListFirmwaresOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ListFirmwaresRequest&, ListFirmwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFirmwaresAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDataForwardResponse> ModifyDataForwardOutcome;
+                typedef std::future<ModifyDataForwardOutcome> ModifyDataForwardOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ModifyDataForwardRequest&, ModifyDataForwardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataForwardAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDataForwardStatusResponse> ModifyDataForwardStatusOutcome;
+                typedef std::future<ModifyDataForwardStatusOutcome> ModifyDataForwardStatusOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ModifyDataForwardStatusRequest&, ModifyDataForwardStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataForwardStatusAsyncHandler;
                 typedef Outcome<Error, Model::ModifyDeviceResponse> ModifyDeviceOutcome;
                 typedef std::future<ModifyDeviceOutcome> ModifyDeviceOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ModifyDeviceRequest&, ModifyDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceAsyncHandler;
+                typedef Outcome<Error, Model::ModifyDeviceLogLevelResponse> ModifyDeviceLogLevelOutcome;
+                typedef std::future<ModifyDeviceLogLevelOutcome> ModifyDeviceLogLevelOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ModifyDeviceLogLevelRequest&, ModifyDeviceLogLevelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceLogLevelAsyncHandler;
                 typedef Outcome<Error, Model::ModifyForwardRuleResponse> ModifyForwardRuleOutcome;
                 typedef std::future<ModifyForwardRuleOutcome> ModifyForwardRuleOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::ModifyForwardRuleRequest&, ModifyForwardRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyForwardRuleAsyncHandler;
@@ -367,6 +419,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::UploadFirmwareResponse> UploadFirmwareOutcome;
                 typedef std::future<UploadFirmwareOutcome> UploadFirmwareOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::UploadFirmwareRequest&, UploadFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFirmwareAsyncHandler;
+                typedef Outcome<Error, Model::WakeUpDeviceResponse> WakeUpDeviceOutcome;
+                typedef std::future<WakeUpDeviceOutcome> WakeUpDeviceOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::WakeUpDeviceRequest&, WakeUpDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WakeUpDeviceAsyncHandler;
 
 
 
@@ -387,6 +442,15 @@ namespace TencentCloud
                 BatchUpdateFirmwareOutcome BatchUpdateFirmware(const Model::BatchUpdateFirmwareRequest &request);
                 void BatchUpdateFirmwareAsync(const Model::BatchUpdateFirmwareRequest& request, const BatchUpdateFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchUpdateFirmwareOutcomeCallable BatchUpdateFirmwareCallable(const Model::BatchUpdateFirmwareRequest& request);
+
+                /**
+                 *绑定云存用户
+                 * @param req BindCloudStorageUserRequest
+                 * @return BindCloudStorageUserOutcome
+                 */
+                BindCloudStorageUserOutcome BindCloudStorageUser(const Model::BindCloudStorageUserRequest &request);
+                void BindCloudStorageUserAsync(const Model::BindCloudStorageUserRequest& request, const BindCloudStorageUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindCloudStorageUserOutcomeCallable BindCloudStorageUserCallable(const Model::BindCloudStorageUserRequest& request);
 
                 /**
                  *取消AI模型申请
@@ -459,6 +523,15 @@ namespace TencentCloud
                 CreateCloudStorageOutcome CreateCloudStorage(const Model::CreateCloudStorageRequest &request);
                 void CreateCloudStorageAsync(const Model::CreateCloudStorageRequest& request, const CreateCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCloudStorageOutcomeCallable CreateCloudStorageCallable(const Model::CreateCloudStorageRequest& request);
+
+                /**
+                 *创建数据转发
+                 * @param req CreateDataForwardRequest
+                 * @return CreateDataForwardOutcome
+                 */
+                CreateDataForwardOutcome CreateDataForward(const Model::CreateDataForwardRequest &request);
+                void CreateDataForwardAsync(const Model::CreateDataForwardRequest& request, const CreateDataForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDataForwardOutcomeCallable CreateDataForwardCallable(const Model::CreateDataForwardRequest& request);
 
                 /**
                  *创建转发规则
@@ -650,6 +723,24 @@ namespace TencentCloud
                 DescribeCloudStorageTimeOutcomeCallable DescribeCloudStorageTimeCallable(const Model::DescribeCloudStorageTimeRequest& request);
 
                 /**
+                 *拉取云存用户列表
+                 * @param req DescribeCloudStorageUsersRequest
+                 * @return DescribeCloudStorageUsersOutcome
+                 */
+                DescribeCloudStorageUsersOutcome DescribeCloudStorageUsers(const Model::DescribeCloudStorageUsersRequest &request);
+                void DescribeCloudStorageUsersAsync(const Model::DescribeCloudStorageUsersRequest& request, const DescribeCloudStorageUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageUsersOutcomeCallable DescribeCloudStorageUsersCallable(const Model::DescribeCloudStorageUsersRequest& request);
+
+                /**
+                 *获取数据转发列表
+                 * @param req DescribeDataForwardListRequest
+                 * @return DescribeDataForwardListOutcome
+                 */
+                DescribeDataForwardListOutcome DescribeDataForwardList(const Model::DescribeDataForwardListRequest &request);
+                void DescribeDataForwardListAsync(const Model::DescribeDataForwardListRequest& request, const DescribeDataForwardListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataForwardListOutcomeCallable DescribeDataForwardListCallable(const Model::DescribeDataForwardListRequest& request);
+
+                /**
                  *查看设备详情
                  * @param req DescribeDeviceRequest
                  * @return DescribeDeviceOutcome
@@ -702,6 +793,15 @@ namespace TencentCloud
                 DescribeDeviceEventHistoryOutcome DescribeDeviceEventHistory(const Model::DescribeDeviceEventHistoryRequest &request);
                 void DescribeDeviceEventHistoryAsync(const Model::DescribeDeviceEventHistoryRequest& request, const DescribeDeviceEventHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceEventHistoryOutcomeCallable DescribeDeviceEventHistoryCallable(const Model::DescribeDeviceEventHistoryRequest& request);
+
+                /**
+                 *获取设备上下线日志
+                 * @param req DescribeDeviceStatusLogRequest
+                 * @return DescribeDeviceStatusLogOutcome
+                 */
+                DescribeDeviceStatusLogOutcome DescribeDeviceStatusLog(const Model::DescribeDeviceStatusLogRequest &request);
+                void DescribeDeviceStatusLogAsync(const Model::DescribeDeviceStatusLogRequest& request, const DescribeDeviceStatusLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceStatusLogOutcomeCallable DescribeDeviceStatusLogCallable(const Model::DescribeDeviceStatusLogRequest& request);
 
                 /**
                  *获取设备列表
@@ -803,6 +903,15 @@ namespace TencentCloud
                 DescribeProductsOutcomeCallable DescribeProductsCallable(const Model::DescribeProductsRequest& request);
 
                 /**
+                 *获取设备sdk日志
+                 * @param req DescribeSDKLogRequest
+                 * @return DescribeSDKLogOutcome
+                 */
+                DescribeSDKLogOutcome DescribeSDKLog(const Model::DescribeSDKLogRequest &request);
+                void DescribeSDKLogAsync(const Model::DescribeSDKLogRequest& request, const DescribeSDKLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSDKLogOutcomeCallable DescribeSDKLogCallable(const Model::DescribeSDKLogRequest& request);
+
+                /**
                  *本接口用于编辑固件信息
                  * @param req EditFirmwareRequest
                  * @return EditFirmwareOutcome
@@ -848,6 +957,15 @@ namespace TencentCloud
                 ImportModelDefinitionOutcomeCallable ImportModelDefinitionCallable(const Model::ImportModelDefinitionRequest& request);
 
                 /**
+                 *继承云存用户
+                 * @param req InheritCloudStorageUserRequest
+                 * @return InheritCloudStorageUserOutcome
+                 */
+                InheritCloudStorageUserOutcome InheritCloudStorageUser(const Model::InheritCloudStorageUserRequest &request);
+                void InheritCloudStorageUserAsync(const Model::InheritCloudStorageUserRequest& request, const InheritCloudStorageUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InheritCloudStorageUserOutcomeCallable InheritCloudStorageUserCallable(const Model::InheritCloudStorageUserRequest& request);
+
+                /**
                  *本接口（ListFirmwares）用于获取固件列表 
                  * @param req ListFirmwaresRequest
                  * @return ListFirmwaresOutcome
@@ -857,6 +975,24 @@ namespace TencentCloud
                 ListFirmwaresOutcomeCallable ListFirmwaresCallable(const Model::ListFirmwaresRequest& request);
 
                 /**
+                 *修改数据转发
+                 * @param req ModifyDataForwardRequest
+                 * @return ModifyDataForwardOutcome
+                 */
+                ModifyDataForwardOutcome ModifyDataForward(const Model::ModifyDataForwardRequest &request);
+                void ModifyDataForwardAsync(const Model::ModifyDataForwardRequest& request, const ModifyDataForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDataForwardOutcomeCallable ModifyDataForwardCallable(const Model::ModifyDataForwardRequest& request);
+
+                /**
+                 *设置数据转发状态
+                 * @param req ModifyDataForwardStatusRequest
+                 * @return ModifyDataForwardStatusOutcome
+                 */
+                ModifyDataForwardStatusOutcome ModifyDataForwardStatus(const Model::ModifyDataForwardStatusRequest &request);
+                void ModifyDataForwardStatusAsync(const Model::ModifyDataForwardStatusRequest& request, const ModifyDataForwardStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDataForwardStatusOutcomeCallable ModifyDataForwardStatusCallable(const Model::ModifyDataForwardStatusRequest& request);
+
+                /**
                  *修改设备信息
                  * @param req ModifyDeviceRequest
                  * @return ModifyDeviceOutcome
@@ -864,6 +1000,15 @@ namespace TencentCloud
                 ModifyDeviceOutcome ModifyDevice(const Model::ModifyDeviceRequest &request);
                 void ModifyDeviceAsync(const Model::ModifyDeviceRequest& request, const ModifyDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDeviceOutcomeCallable ModifyDeviceCallable(const Model::ModifyDeviceRequest& request);
+
+                /**
+                 *更新设备日志级别
+                 * @param req ModifyDeviceLogLevelRequest
+                 * @return ModifyDeviceLogLevelOutcome
+                 */
+                ModifyDeviceLogLevelOutcome ModifyDeviceLogLevel(const Model::ModifyDeviceLogLevelRequest &request);
+                void ModifyDeviceLogLevelAsync(const Model::ModifyDeviceLogLevelRequest& request, const ModifyDeviceLogLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDeviceLogLevelOutcomeCallable ModifyDeviceLogLevelCallable(const Model::ModifyDeviceLogLevelRequest& request);
 
                 /**
                  *修改转发规则
@@ -963,6 +1108,15 @@ namespace TencentCloud
                 UploadFirmwareOutcome UploadFirmware(const Model::UploadFirmwareRequest &request);
                 void UploadFirmwareAsync(const Model::UploadFirmwareRequest& request, const UploadFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UploadFirmwareOutcomeCallable UploadFirmwareCallable(const Model::UploadFirmwareRequest& request);
+
+                /**
+                 *设备唤醒
+                 * @param req WakeUpDeviceRequest
+                 * @return WakeUpDeviceOutcome
+                 */
+                WakeUpDeviceOutcome WakeUpDevice(const Model::WakeUpDeviceRequest &request);
+                void WakeUpDeviceAsync(const Model::WakeUpDeviceRequest& request, const WakeUpDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                WakeUpDeviceOutcomeCallable WakeUpDeviceCallable(const Model::WakeUpDeviceRequest& request);
 
             };
         }

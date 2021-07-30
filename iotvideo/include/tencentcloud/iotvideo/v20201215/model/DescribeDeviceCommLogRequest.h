@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return MinTime 开始时间
+                     * 获取开始时间 13位时间戳 单位毫秒
+                     * @return MinTime 开始时间 13位时间戳 单位毫秒
                      */
                     uint64_t GetMinTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param MinTime 开始时间
+                     * 设置开始时间 13位时间戳 单位毫秒
+                     * @param MinTime 开始时间 13位时间戳 单位毫秒
                      */
                     void SetMinTime(const uint64_t& _minTime);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool MinTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return MaxTime 结束时间
+                     * 获取结束时间 13位时间戳 单位毫秒
+                     * @return MaxTime 结束时间 13位时间戳 单位毫秒
                      */
                     uint64_t GetMaxTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param MaxTime 结束时间
+                     * 设置结束时间 13位时间戳 单位毫秒
+                     * @param MaxTime 结束时间 13位时间戳 单位毫秒
                      */
                     void SetMaxTime(const uint64_t& _maxTime);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取返回条数
-                     * @return Limit 返回条数
+                     * 获取返回条数 默认为50
+                     * @return Limit 返回条数 默认为50
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回条数
-                     * @param Limit 返回条数
+                     * 设置返回条数 默认为50
+                     * @param Limit 返回条数 默认为50
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取类型：shadow 下行，device 上行
-                     * @return Type 类型：shadow 下行，device 上行
+                     * 获取类型：shadow 下行，device 上行 默认为空则全部查询
+                     * @return Type 类型：shadow 下行，device 上行 默认为空则全部查询
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型：shadow 下行，device 上行
-                     * @param Type 类型：shadow 下行，device 上行
+                     * 设置类型：shadow 下行，device 上行 默认为空则全部查询
+                     * @param Type 类型：shadow 下行，device 上行 默认为空则全部查询
                      */
                     void SetType(const std::string& _type);
 
@@ -171,13 +171,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间
+                     * 开始时间 13位时间戳 单位毫秒
                      */
                     uint64_t m_minTime;
                     bool m_minTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间 13位时间戳 单位毫秒
                      */
                     uint64_t m_maxTime;
                     bool m_maxTimeHasBeenSet;
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 返回条数
+                     * 返回条数 默认为50
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -207,7 +207,7 @@ namespace TencentCloud
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 类型：shadow 下行，device 上行
+                     * 类型：shadow 下行，device 上行 默认为空则全部查询
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

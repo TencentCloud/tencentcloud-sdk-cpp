@@ -324,6 +324,28 @@ namespace TencentCloud
                      */
                     bool RequiredMemorySizeHasBeenSet() const;
 
+                    /**
+                     * 获取CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageId CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetImageId() const;
+
+                    /**
+                     * 设置CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageId CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageId(const std::string& _imageId);
+
+                    /**
+                     * 判断参数 ImageId 是否已赋值
+                     * @return ImageId 是否已赋值
+                     */
+                    bool ImageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -417,6 +439,13 @@ namespace TencentCloud
                      */
                     int64_t m_requiredMemorySize;
                     bool m_requiredMemorySizeHasBeenSet;
+
+                    /**
+                     * CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_imageId;
+                    bool m_imageIdHasBeenSet;
 
                 };
             }

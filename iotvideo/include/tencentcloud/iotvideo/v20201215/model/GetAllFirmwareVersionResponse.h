@@ -43,8 +43,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return Version 无
+                     * 获取固件可用版本列表
+                     * @return Version 固件可用版本列表
                      */
                     std::vector<std::string> GetVersion() const;
 
@@ -57,7 +57,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 固件可用版本列表
                      */
                     std::vector<std::string> m_version;
                     bool m_versionHasBeenSet;

@@ -40,6 +40,49 @@ TcbClient::TcbClient(const Credential &credential, const string &region, const C
 }
 
 
+TcbClient::BindEnvGatewayOutcome TcbClient::BindEnvGateway(const BindEnvGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindEnvGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindEnvGatewayResponse rsp = BindEnvGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindEnvGatewayOutcome(rsp);
+        else
+            return BindEnvGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return BindEnvGatewayOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::BindEnvGatewayAsync(const BindEnvGatewayRequest& request, const BindEnvGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindEnvGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::BindEnvGatewayOutcomeCallable TcbClient::BindEnvGatewayCallable(const BindEnvGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindEnvGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->BindEnvGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::CheckTcbServiceOutcome TcbClient::CheckTcbService(const CheckTcbServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckTcbService");

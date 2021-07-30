@@ -90,6 +90,20 @@ namespace TencentCloud
                      */
                     bool ShiftDurationHasBeenSet() const;
 
+                    /**
+                     * 获取云存用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserId 云存用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +129,13 @@ namespace TencentCloud
                      */
                     uint64_t m_shiftDuration;
                     bool m_shiftDurationHasBeenSet;
+
+                    /**
+                     * 云存用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

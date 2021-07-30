@@ -163,8 +163,8 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取发票消费类型
-                     * @return InvoiceType 发票消费类型
+                     * 获取发票消费类型：交通
+                     * @return InvoiceType 发票消费类型：交通
                      */
                     std::string GetInvoiceType() const;
 
@@ -185,6 +185,102 @@ namespace TencentCloud
                      * @return SerialNumber 是否已赋值
                      */
                     bool SerialNumberHasBeenSet() const;
+
+                    /**
+                     * 获取加收票价
+                     * @return AdditionalCost 加收票价
+                     */
+                    std::string GetAdditionalCost() const;
+
+                    /**
+                     * 判断参数 AdditionalCost 是否已赋值
+                     * @return AdditionalCost 是否已赋值
+                     */
+                    bool AdditionalCostHasBeenSet() const;
+
+                    /**
+                     * 获取手续费
+                     * @return HandlingFee 手续费
+                     */
+                    std::string GetHandlingFee() const;
+
+                    /**
+                     * 判断参数 HandlingFee 是否已赋值
+                     * @return HandlingFee 是否已赋值
+                     */
+                    bool HandlingFeeHasBeenSet() const;
+
+                    /**
+                     * 获取大写金额（票面有大写金额该字段才有值）
+                     * @return LegalAmount 大写金额（票面有大写金额该字段才有值）
+                     */
+                    std::string GetLegalAmount() const;
+
+                    /**
+                     * 判断参数 LegalAmount 是否已赋值
+                     * @return LegalAmount 是否已赋值
+                     */
+                    bool LegalAmountHasBeenSet() const;
+
+                    /**
+                     * 获取售票站
+                     * @return TicketStation 售票站
+                     */
+                    std::string GetTicketStation() const;
+
+                    /**
+                     * 判断参数 TicketStation 是否已赋值
+                     * @return TicketStation 是否已赋值
+                     */
+                    bool TicketStationHasBeenSet() const;
+
+                    /**
+                     * 获取原票价（一般有手续费的才有原始票价字段）
+                     * @return OriginalPrice 原票价（一般有手续费的才有原始票价字段）
+                     */
+                    std::string GetOriginalPrice() const;
+
+                    /**
+                     * 判断参数 OriginalPrice 是否已赋值
+                     * @return OriginalPrice 是否已赋值
+                     */
+                    bool OriginalPriceHasBeenSet() const;
+
+                    /**
+                     * 获取发票类型：火车票、火车票补票、火车票退票凭证
+                     * @return InvoiceStyle 发票类型：火车票、火车票补票、火车票退票凭证
+                     */
+                    std::string GetInvoiceStyle() const;
+
+                    /**
+                     * 判断参数 InvoiceStyle 是否已赋值
+                     * @return InvoiceStyle 是否已赋值
+                     */
+                    bool InvoiceStyleHasBeenSet() const;
+
+                    /**
+                     * 获取收据号码
+                     * @return ReceiptNumber 收据号码
+                     */
+                    std::string GetReceiptNumber() const;
+
+                    /**
+                     * 判断参数 ReceiptNumber 是否已赋值
+                     * @return ReceiptNumber 是否已赋值
+                     */
+                    bool ReceiptNumberHasBeenSet() const;
+
+                    /**
+                     * 获取仅供报销使用：1为是，0为否
+                     * @return IsReceipt 仅供报销使用：1为是，0为否
+                     */
+                    std::string GetIsReceipt() const;
+
+                    /**
+                     * 判断参数 IsReceipt 是否已赋值
+                     * @return IsReceipt 是否已赋值
+                     */
+                    bool IsReceiptHasBeenSet() const;
 
                 private:
 
@@ -249,7 +345,7 @@ namespace TencentCloud
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 发票消费类型
+                     * 发票消费类型：交通
                      */
                     std::string m_invoiceType;
                     bool m_invoiceTypeHasBeenSet;
@@ -259,6 +355,54 @@ namespace TencentCloud
                      */
                     std::string m_serialNumber;
                     bool m_serialNumberHasBeenSet;
+
+                    /**
+                     * 加收票价
+                     */
+                    std::string m_additionalCost;
+                    bool m_additionalCostHasBeenSet;
+
+                    /**
+                     * 手续费
+                     */
+                    std::string m_handlingFee;
+                    bool m_handlingFeeHasBeenSet;
+
+                    /**
+                     * 大写金额（票面有大写金额该字段才有值）
+                     */
+                    std::string m_legalAmount;
+                    bool m_legalAmountHasBeenSet;
+
+                    /**
+                     * 售票站
+                     */
+                    std::string m_ticketStation;
+                    bool m_ticketStationHasBeenSet;
+
+                    /**
+                     * 原票价（一般有手续费的才有原始票价字段）
+                     */
+                    std::string m_originalPrice;
+                    bool m_originalPriceHasBeenSet;
+
+                    /**
+                     * 发票类型：火车票、火车票补票、火车票退票凭证
+                     */
+                    std::string m_invoiceStyle;
+                    bool m_invoiceStyleHasBeenSet;
+
+                    /**
+                     * 收据号码
+                     */
+                    std::string m_receiptNumber;
+                    bool m_receiptNumberHasBeenSet;
+
+                    /**
+                     * 仅供报销使用：1为是，0为否
+                     */
+                    std::string m_isReceipt;
+                    bool m_isReceiptHasBeenSet;
 
                 };
             }

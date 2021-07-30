@@ -29,7 +29,8 @@ DescribeDeviceResponse::DescribeDeviceResponse() :
     m_loginTimeHasBeenSet(false),
     m_devicePskHasBeenSet(false),
     m_enableStateHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_logLevelHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome DescribeDeviceResponse::Deserialize(const string &payload)
         m_expireTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LogLevel") && !rsp["LogLevel"].IsNull())
+    {
+        if (!rsp["LogLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Error("response `LogLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_logLevel = rsp["LogLevel"].GetUint64();
+        m_logLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -190,6 +201,16 @@ uint64_t DescribeDeviceResponse::GetExpireTime() const
 bool DescribeDeviceResponse::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+uint64_t DescribeDeviceResponse::GetLogLevel() const
+{
+    return m_logLevel;
+}
+
+bool DescribeDeviceResponse::LogLevelHasBeenSet() const
+{
+    return m_logLevelHasBeenSet;
 }
 
 

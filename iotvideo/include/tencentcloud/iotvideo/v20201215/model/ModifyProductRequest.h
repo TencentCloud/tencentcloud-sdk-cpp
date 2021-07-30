@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取修改的产品名称
-                     * @return ProductName 修改的产品名称
+                     * 获取修改的产品名称 （支持中文、英文、数字、下划线组合，最多不超过20个字符）
+                     * @return ProductName 修改的产品名称 （支持中文、英文、数字、下划线组合，最多不超过20个字符）
                      */
                     std::string GetProductName() const;
 
                     /**
-                     * 设置修改的产品名称
-                     * @param ProductName 修改的产品名称
+                     * 设置修改的产品名称 （支持中文、英文、数字、下划线组合，最多不超过20个字符）
+                     * @param ProductName 修改的产品名称 （支持中文、英文、数字、下划线组合，最多不超过20个字符）
                      */
                     void SetProductName(const std::string& _productName);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取修改的产品描述
-                     * @return ProductDescription 修改的产品描述
+                     * 获取修改的产品描述 （最多不超过128个字符）
+                     * @return ProductDescription 修改的产品描述 （最多不超过128个字符）
                      */
                     std::string GetProductDescription() const;
 
                     /**
-                     * 设置修改的产品描述
-                     * @param ProductDescription 修改的产品描述
+                     * 设置修改的产品描述 （最多不超过128个字符）
+                     * @param ProductDescription 修改的产品描述 （最多不超过128个字符）
                      */
                     void SetProductDescription(const std::string& _productDescription);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 修改的产品名称
+                     * 修改的产品名称 （支持中文、英文、数字、下划线组合，最多不超过20个字符）
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 修改的产品描述
+                     * 修改的产品描述 （最多不超过128个字符）
                      */
                     std::string m_productDescription;
                     bool m_productDescriptionHasBeenSet;

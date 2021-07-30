@@ -25,7 +25,10 @@ using namespace std;
 DescribeCloudStorageTimeRequest::DescribeCloudStorageTimeRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_dateHasBeenSet(false)
+    m_dateHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,30 @@ string DescribeCloudStorageTimeRequest::ToJsonString() const
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +141,54 @@ void DescribeCloudStorageTimeRequest::SetDate(const string& _date)
 bool DescribeCloudStorageTimeRequest::DateHasBeenSet() const
 {
     return m_dateHasBeenSet;
+}
+
+uint64_t DescribeCloudStorageTimeRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeCloudStorageTimeRequest::SetStartTime(const uint64_t& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeCloudStorageTimeRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+uint64_t DescribeCloudStorageTimeRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeCloudStorageTimeRequest::SetEndTime(const uint64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeCloudStorageTimeRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+string DescribeCloudStorageTimeRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void DescribeCloudStorageTimeRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool DescribeCloudStorageTimeRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

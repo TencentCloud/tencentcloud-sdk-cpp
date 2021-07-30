@@ -79,8 +79,8 @@ namespace TencentCloud
                     bool ProductIDHasBeenSet() const;
 
                     /**
-                     * 获取删除结果
-                     * @return Result 删除结果
+                     * 获取删除结果 0成功 其他不成功
+                     * @return Result 删除结果 0成功 其他不成功
                      */
                     uint64_t GetResult() const;
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_productIDHasBeenSet;
 
                     /**
-                     * 删除结果
+                     * 删除结果 0成功 其他不成功
                      */
                     uint64_t m_result;
                     bool m_resultHasBeenSet;

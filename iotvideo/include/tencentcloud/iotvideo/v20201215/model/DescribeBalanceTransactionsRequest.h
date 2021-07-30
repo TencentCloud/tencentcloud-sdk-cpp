@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。
-                     * @return Operation 流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。
+                     * 获取流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。默认为All
+                     * @return Operation 流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。默认为All
                      */
                     std::string GetOperation() const;
 
                     /**
-                     * 设置流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。
-                     * @param Operation 流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。
+                     * 设置流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。默认为All
+                     * @param Operation 流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。默认为All
                      */
                     void SetOperation(const std::string& _operation);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。
+                     * 流水类型：All-全部类型；Recharge-充值；CreateOrder-新购。默认为All
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;

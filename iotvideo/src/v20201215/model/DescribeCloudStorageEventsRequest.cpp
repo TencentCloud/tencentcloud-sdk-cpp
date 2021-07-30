@@ -29,7 +29,8 @@ DescribeCloudStorageEventsRequest::DescribeCloudStorageEventsRequest() :
     m_endTimeHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_sizeHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+    m_eventIdHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeCloudStorageEventsRequest::ToJsonString() const
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeCloudStorageEventsRequest::SetEventId(const string& _eventId)
 bool DescribeCloudStorageEventsRequest::EventIdHasBeenSet() const
 {
     return m_eventIdHasBeenSet;
+}
+
+string DescribeCloudStorageEventsRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void DescribeCloudStorageEventsRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool DescribeCloudStorageEventsRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

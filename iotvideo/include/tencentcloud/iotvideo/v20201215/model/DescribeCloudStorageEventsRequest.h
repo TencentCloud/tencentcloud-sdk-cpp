@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool EventIdHasBeenSet() const;
 
+                    /**
+                     * 获取用户ID
+                     * @return UserId 用户ID
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置用户ID
+                     * @param UserId 用户ID
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
+
+                    /**
+                     * 用户ID
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

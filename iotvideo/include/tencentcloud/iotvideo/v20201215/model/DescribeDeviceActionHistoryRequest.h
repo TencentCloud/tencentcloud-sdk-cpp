@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool ActionIdHasBeenSet() const;
 
                     /**
-                     * 获取查询条数
-                     * @return Limit 查询条数
+                     * 获取查询条数 默认为0 最大不超过500
+                     * @return Limit 查询条数 默认为0 最大不超过500
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置查询条数
-                     * @param Limit 查询条数
+                     * 设置查询条数 默认为0 最大不超过500
+                     * @param Limit 查询条数 默认为0 最大不超过500
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_actionIdHasBeenSet;
 
                     /**
-                     * 查询条数
+                     * 查询条数 默认为0 最大不超过500
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -96,6 +96,60 @@ namespace TencentCloud
                      */
                     bool DateHasBeenSet() const;
 
+                    /**
+                     * 获取开始时间，unix时间
+                     * @return StartTime 开始时间，unix时间
+                     */
+                    uint64_t GetStartTime() const;
+
+                    /**
+                     * 设置开始时间，unix时间
+                     * @param StartTime 开始时间，unix时间
+                     */
+                    void SetStartTime(const uint64_t& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间，unix时间
+                     * @return EndTime 结束时间，unix时间
+                     */
+                    uint64_t GetEndTime() const;
+
+                    /**
+                     * 设置结束时间，unix时间
+                     * @param EndTime 结束时间，unix时间
+                     */
+                    void SetEndTime(const uint64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取用户ID
+                     * @return UserId 用户ID
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置用户ID
+                     * @param UserId 用户ID
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +169,24 @@ namespace TencentCloud
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
+
+                    /**
+                     * 开始时间，unix时间
+                     */
+                    uint64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 结束时间，unix时间
+                     */
+                    uint64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 用户ID
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

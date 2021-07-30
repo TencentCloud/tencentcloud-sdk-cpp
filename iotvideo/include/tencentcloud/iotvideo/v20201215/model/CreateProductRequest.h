@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取产品设备类型
-                     * @return DeviceType 产品设备类型
+                     * 获取产品设备类型 1.普通设备 2.NVR设备
+                     * @return DeviceType 产品设备类型 1.普通设备 2.NVR设备
                      */
                     uint64_t GetDeviceType() const;
 
                     /**
-                     * 设置产品设备类型
-                     * @param DeviceType 产品设备类型
+                     * 设置产品设备类型 1.普通设备 2.NVR设备
+                     * @param DeviceType 产品设备类型 1.普通设备 2.NVR设备
                      */
                     void SetDeviceType(const uint64_t& _deviceType);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ProductVaildYearsHasBeenSet() const;
 
                     /**
-                     * 获取设备功能码
-                     * @return Features 设备功能码
+                     * 获取设备功能码 ypsxth音频双向通话 spdxth视频单向通话
+                     * @return Features 设备功能码 ypsxth音频双向通话 spdxth视频单向通话
                      */
                     std::vector<std::string> GetFeatures() const;
 
                     /**
-                     * 设置设备功能码
-                     * @param Features 设备功能码
+                     * 设置设备功能码 ypsxth音频双向通话 spdxth视频单向通话
+                     * @param Features 设备功能码 ypsxth音频双向通话 spdxth视频单向通话
                      */
                     void SetFeatures(const std::vector<std::string>& _features);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool FeaturesHasBeenSet() const;
 
                     /**
-                     * 获取设备操作系统
-                     * @return ChipOs 设备操作系统
+                     * 获取设备操作系统 android linux liteos
+                     * @return ChipOs 设备操作系统 android linux liteos
                      */
                     std::string GetChipOs() const;
 
                     /**
-                     * 设置设备操作系统
-                     * @param ChipOs 设备操作系统
+                     * 设置设备操作系统 android linux liteos
+                     * @param ChipOs 设备操作系统 android linux liteos
                      */
                     void SetChipOs(const std::string& _chipOs);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool ProductDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取认证方式。2 PSK
-                     * @return EncryptionType 认证方式。2 PSK
+                     * 获取认证方式 只支持取值为2 psk认证
+                     * @return EncryptionType 认证方式 只支持取值为2 psk认证
                      */
                     uint64_t GetEncryptionType() const;
 
                     /**
-                     * 设置认证方式。2 PSK
-                     * @param EncryptionType 认证方式。2 PSK
+                     * 设置认证方式 只支持取值为2 psk认证
+                     * @param EncryptionType 认证方式 只支持取值为2 psk认证
                      */
                     void SetEncryptionType(const uint64_t& _encryptionType);
 
@@ -213,7 +213,7 @@ namespace TencentCloud
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 产品设备类型
+                     * 产品设备类型 1.普通设备 2.NVR设备
                      */
                     uint64_t m_deviceType;
                     bool m_deviceTypeHasBeenSet;
@@ -225,13 +225,13 @@ namespace TencentCloud
                     bool m_productVaildYearsHasBeenSet;
 
                     /**
-                     * 设备功能码
+                     * 设备功能码 ypsxth音频双向通话 spdxth视频单向通话
                      */
                     std::vector<std::string> m_features;
                     bool m_featuresHasBeenSet;
 
                     /**
-                     * 设备操作系统
+                     * 设备操作系统 android linux liteos
                      */
                     std::string m_chipOs;
                     bool m_chipOsHasBeenSet;
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_productDescriptionHasBeenSet;
 
                     /**
-                     * 认证方式。2 PSK
+                     * 认证方式 只支持取值为2 psk认证
                      */
                     uint64_t m_encryptionType;
                     bool m_encryptionTypeHasBeenSet;

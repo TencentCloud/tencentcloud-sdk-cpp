@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tcb/v20180608/model/BindEnvGatewayRequest.h>
+#include <tencentcloud/tcb/v20180608/model/BindEnvGatewayResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CheckTcbServiceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CommonServiceAPIRequest.h>
@@ -149,6 +151,9 @@ namespace TencentCloud
                 TcbClient(const Credential &credential, const std::string &region);
                 TcbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::BindEnvGatewayResponse> BindEnvGatewayOutcome;
+                typedef std::future<BindEnvGatewayOutcome> BindEnvGatewayOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::BindEnvGatewayRequest&, BindEnvGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindEnvGatewayAsyncHandler;
                 typedef Outcome<Error, Model::CheckTcbServiceResponse> CheckTcbServiceOutcome;
                 typedef std::future<CheckTcbServiceOutcome> CheckTcbServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CheckTcbServiceRequest&, CheckTcbServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckTcbServiceAsyncHandler;
@@ -319,6 +324,15 @@ namespace TencentCloud
                 typedef std::function<void(const TcbClient*, const Model::RollUpdateCloudBaseRunServerVersionRequest&, RollUpdateCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollUpdateCloudBaseRunServerVersionAsyncHandler;
 
 
+
+                /**
+                 *绑定另外一个环境下的网关，callContainer请求可以访问到该网关
+                 * @param req BindEnvGatewayRequest
+                 * @return BindEnvGatewayOutcome
+                 */
+                BindEnvGatewayOutcome BindEnvGateway(const Model::BindEnvGatewayRequest &request);
+                void BindEnvGatewayAsync(const Model::BindEnvGatewayRequest& request, const BindEnvGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindEnvGatewayOutcomeCallable BindEnvGatewayCallable(const Model::BindEnvGatewayRequest& request);
 
                 /**
                  *检查是否开通Tcb服务

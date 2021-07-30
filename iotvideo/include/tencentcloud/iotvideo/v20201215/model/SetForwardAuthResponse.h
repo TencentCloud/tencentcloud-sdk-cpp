@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool RoleIDHasBeenSet() const;
 
                     /**
-                     * 获取消息队列类型
-                     * @return QueueType 消息队列类型
+                     * 获取消息队列类型  0.CMQ 1.CKafka
+                     * @return QueueType 消息队列类型  0.CMQ 1.CKafka
                      */
                     uint64_t GetQueueType() const;
 
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_roleIDHasBeenSet;
 
                     /**
-                     * 消息队列类型
+                     * 消息队列类型  0.CMQ 1.CKafka
                      */
                     uint64_t m_queueType;
                     bool m_queueTypeHasBeenSet;

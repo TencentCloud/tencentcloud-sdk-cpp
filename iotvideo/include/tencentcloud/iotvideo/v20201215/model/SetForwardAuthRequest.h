@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SkeyHasBeenSet() const;
 
                     /**
-                     * 获取消息队列类型
-                     * @return QueueType 消息队列类型
+                     * 获取消息队列类型  0.CMQ 1.CKafka
+                     * @return QueueType 消息队列类型  0.CMQ 1.CKafka
                      */
                     uint64_t GetQueueType() const;
 
                     /**
-                     * 设置消息队列类型
-                     * @param QueueType 消息队列类型
+                     * 设置消息队列类型  0.CMQ 1.CKafka
+                     * @param QueueType 消息队列类型  0.CMQ 1.CKafka
                      */
                     void SetQueueType(const uint64_t& _queueType);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_skeyHasBeenSet;
 
                     /**
-                     * 消息队列类型
+                     * 消息队列类型  0.CMQ 1.CKafka
                      */
                     uint64_t m_queueType;
                     bool m_queueTypeHasBeenSet;

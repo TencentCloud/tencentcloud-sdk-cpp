@@ -35,7 +35,8 @@ Blueprint::Blueprint() :
     m_createdTimeHasBeenSet(false),
     m_blueprintNameHasBeenSet(false),
     m_supportAutomationToolsHasBeenSet(false),
-    m_requiredMemorySizeHasBeenSet(false)
+    m_requiredMemorySizeHasBeenSet(false),
+    m_imageIdHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
         m_requiredMemorySizeHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageId") && !value["ImageId"].IsNull())
+    {
+        if (!value["ImageId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Blueprint.ImageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageId = string(value["ImageId"].GetString());
+        m_imageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void Blueprint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RequiredMemorySize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_requiredMemorySize, allocator);
+    }
+
+    if (m_imageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void Blueprint::SetRequiredMemorySize(const int64_t& _requiredMemorySize)
 bool Blueprint::RequiredMemorySizeHasBeenSet() const
 {
     return m_requiredMemorySizeHasBeenSet;
+}
+
+string Blueprint::GetImageId() const
+{
+    return m_imageId;
+}
+
+void Blueprint::SetImageId(const string& _imageId)
+{
+    m_imageId = _imageId;
+    m_imageIdHasBeenSet = true;
+}
+
+bool Blueprint::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
 }
 

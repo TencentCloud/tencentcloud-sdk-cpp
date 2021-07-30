@@ -83,6 +83,49 @@ BaClient::CreateWeappQRUrlOutcomeCallable BaClient::CreateWeappQRUrlCallable(con
     return task->get_future();
 }
 
+BaClient::DescribeGetAuthInfoOutcome BaClient::DescribeGetAuthInfo(const DescribeGetAuthInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGetAuthInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGetAuthInfoResponse rsp = DescribeGetAuthInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGetAuthInfoOutcome(rsp);
+        else
+            return DescribeGetAuthInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGetAuthInfoOutcome(outcome.GetError());
+    }
+}
+
+void BaClient::DescribeGetAuthInfoAsync(const DescribeGetAuthInfoRequest& request, const DescribeGetAuthInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGetAuthInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BaClient::DescribeGetAuthInfoOutcomeCallable BaClient::DescribeGetAuthInfoCallable(const DescribeGetAuthInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGetAuthInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGetAuthInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BaClient::SyncIcpOrderWebInfoOutcome BaClient::SyncIcpOrderWebInfo(const SyncIcpOrderWebInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "SyncIcpOrderWebInfo");

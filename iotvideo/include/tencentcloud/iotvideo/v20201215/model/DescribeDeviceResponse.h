@@ -114,6 +114,20 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取设备的sdk日志等级，0：关闭，1：错误，2：告警，3：信息，4：调试
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogLevel 设备的sdk日志等级，0：关闭，1：错误，2：告警，3：信息，4：调试
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetLogLevel() const;
+
+                    /**
+                     * 判断参数 LogLevel 是否已赋值
+                     * @return LogLevel 是否已赋值
+                     */
+                    bool LogLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +165,13 @@ namespace TencentCloud
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 设备的sdk日志等级，0：关闭，1：错误，2：告警，3：信息，4：调试
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_logLevel;
+                    bool m_logLevelHasBeenSet;
 
                 };
             }

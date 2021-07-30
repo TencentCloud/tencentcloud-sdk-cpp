@@ -79,8 +79,8 @@ namespace TencentCloud
                     bool ProductIDHasBeenSet() const;
 
                     /**
-                     * 获取消息类型
-                     * @return MsgType 消息类型
+                     * 获取消息类型 1设备上报信息 2设备状态变化通知 3为全选
+                     * @return MsgType 消息类型 1设备上报信息 2设备状态变化通知 3为全选
                      */
                     uint64_t GetMsgType() const;
 
@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool MsgTypeHasBeenSet() const;
 
                     /**
-                     * 获取结果
-                     * @return Result 结果
+                     * 获取结果 2表示禁用 其他为成功
+                     * @return Result 结果 2表示禁用 其他为成功
                      */
                     uint64_t GetResult() const;
 
@@ -207,13 +207,13 @@ namespace TencentCloud
                     bool m_productIDHasBeenSet;
 
                     /**
-                     * 消息类型
+                     * 消息类型 1设备上报信息 2设备状态变化通知 3为全选
                      */
                     uint64_t m_msgType;
                     bool m_msgTypeHasBeenSet;
 
                     /**
-                     * 结果
+                     * 结果 2表示禁用 其他为成功
                      */
                     uint64_t m_result;
                     bool m_resultHasBeenSet;

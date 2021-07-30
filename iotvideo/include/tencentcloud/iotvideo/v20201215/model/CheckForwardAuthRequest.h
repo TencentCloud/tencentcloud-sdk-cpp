@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SkeyHasBeenSet() const;
 
                     /**
-                     * 获取队列类型
-                     * @return QueueType 队列类型
+                     * 获取队列类型 0.CMQ  1.Ckafka
+                     * @return QueueType 队列类型 0.CMQ  1.Ckafka
                      */
                     uint64_t GetQueueType() const;
 
                     /**
-                     * 设置队列类型
-                     * @param QueueType 队列类型
+                     * 设置队列类型 0.CMQ  1.Ckafka
+                     * @param QueueType 队列类型 0.CMQ  1.Ckafka
                      */
                     void SetQueueType(const uint64_t& _queueType);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_skeyHasBeenSet;
 
                     /**
-                     * 队列类型
+                     * 队列类型 0.CMQ  1.Ckafka
                      */
                     uint64_t m_queueType;
                     bool m_queueTypeHasBeenSet;

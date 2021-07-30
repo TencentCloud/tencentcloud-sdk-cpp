@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询偏移量
-                     * @return Offset 查询偏移量
+                     * 获取查询偏移量 默认为0
+                     * @return Offset 查询偏移量 默认为0
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询偏移量
-                     * @param Offset 查询偏移量
+                     * 设置查询偏移量 默认为0
+                     * @param Offset 查询偏移量 默认为0
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询的数量
-                     * @return Limit 查询的数量
+                     * 获取查询的数量 默认为50
+                     * @return Limit 查询的数量 默认为50
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置查询的数量
-                     * @param Limit 查询的数量
+                     * 设置查询的数量 默认为50
+                     * @param Limit 查询的数量 默认为50
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -154,13 +154,13 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询偏移量
+                     * 查询偏移量 默认为0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询的数量
+                     * 查询的数量 默认为50
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

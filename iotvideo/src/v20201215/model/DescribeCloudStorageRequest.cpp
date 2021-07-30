@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeCloudStorageRequest::DescribeCloudStorageRequest() :
     m_productIdHasBeenSet(false),
-    m_deviceNameHasBeenSet(false)
+    m_deviceNameHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeCloudStorageRequest::ToJsonString() const
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeCloudStorageRequest::SetDeviceName(const string& _deviceName)
 bool DescribeCloudStorageRequest::DeviceNameHasBeenSet() const
 {
     return m_deviceNameHasBeenSet;
+}
+
+string DescribeCloudStorageRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void DescribeCloudStorageRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool DescribeCloudStorageRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

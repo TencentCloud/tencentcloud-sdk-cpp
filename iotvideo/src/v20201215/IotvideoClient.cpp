@@ -126,6 +126,49 @@ IotvideoClient::BatchUpdateFirmwareOutcomeCallable IotvideoClient::BatchUpdateFi
     return task->get_future();
 }
 
+IotvideoClient::BindCloudStorageUserOutcome IotvideoClient::BindCloudStorageUser(const BindCloudStorageUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindCloudStorageUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindCloudStorageUserResponse rsp = BindCloudStorageUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindCloudStorageUserOutcome(rsp);
+        else
+            return BindCloudStorageUserOutcome(o.GetError());
+    }
+    else
+    {
+        return BindCloudStorageUserOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::BindCloudStorageUserAsync(const BindCloudStorageUserRequest& request, const BindCloudStorageUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindCloudStorageUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::BindCloudStorageUserOutcomeCallable IotvideoClient::BindCloudStorageUserCallable(const BindCloudStorageUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindCloudStorageUserOutcome()>>(
+        [this, request]()
+        {
+            return this->BindCloudStorageUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::CancelAIModelApplicationOutcome IotvideoClient::CancelAIModelApplication(const CancelAIModelApplicationRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelAIModelApplication");
@@ -463,6 +506,49 @@ IotvideoClient::CreateCloudStorageOutcomeCallable IotvideoClient::CreateCloudSto
         [this, request]()
         {
             return this->CreateCloudStorage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::CreateDataForwardOutcome IotvideoClient::CreateDataForward(const CreateDataForwardRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDataForward");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDataForwardResponse rsp = CreateDataForwardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDataForwardOutcome(rsp);
+        else
+            return CreateDataForwardOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDataForwardOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CreateDataForwardAsync(const CreateDataForwardRequest& request, const CreateDataForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDataForward(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CreateDataForwardOutcomeCallable IotvideoClient::CreateDataForwardCallable(const CreateDataForwardRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDataForwardOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDataForward(request);
         }
     );
 
@@ -1373,6 +1459,92 @@ IotvideoClient::DescribeCloudStorageTimeOutcomeCallable IotvideoClient::Describe
     return task->get_future();
 }
 
+IotvideoClient::DescribeCloudStorageUsersOutcome IotvideoClient::DescribeCloudStorageUsers(const DescribeCloudStorageUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageUsersResponse rsp = DescribeCloudStorageUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageUsersOutcome(rsp);
+        else
+            return DescribeCloudStorageUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageUsersOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeCloudStorageUsersAsync(const DescribeCloudStorageUsersRequest& request, const DescribeCloudStorageUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageUsers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeCloudStorageUsersOutcomeCallable IotvideoClient::DescribeCloudStorageUsersCallable(const DescribeCloudStorageUsersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageUsersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageUsers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeDataForwardListOutcome IotvideoClient::DescribeDataForwardList(const DescribeDataForwardListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataForwardList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataForwardListResponse rsp = DescribeDataForwardListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataForwardListOutcome(rsp);
+        else
+            return DescribeDataForwardListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataForwardListOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeDataForwardListAsync(const DescribeDataForwardListRequest& request, const DescribeDataForwardListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataForwardList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeDataForwardListOutcomeCallable IotvideoClient::DescribeDataForwardListCallable(const DescribeDataForwardListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataForwardListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataForwardList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeDeviceOutcome IotvideoClient::DescribeDevice(const DescribeDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDevice");
@@ -1624,6 +1796,49 @@ IotvideoClient::DescribeDeviceEventHistoryOutcomeCallable IotvideoClient::Descri
         [this, request]()
         {
             return this->DescribeDeviceEventHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeDeviceStatusLogOutcome IotvideoClient::DescribeDeviceStatusLog(const DescribeDeviceStatusLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceStatusLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceStatusLogResponse rsp = DescribeDeviceStatusLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceStatusLogOutcome(rsp);
+        else
+            return DescribeDeviceStatusLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceStatusLogOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeDeviceStatusLogAsync(const DescribeDeviceStatusLogRequest& request, const DescribeDeviceStatusLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeviceStatusLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeDeviceStatusLogOutcomeCallable IotvideoClient::DescribeDeviceStatusLogCallable(const DescribeDeviceStatusLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceStatusLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeviceStatusLog(request);
         }
     );
 
@@ -2104,6 +2319,49 @@ IotvideoClient::DescribeProductsOutcomeCallable IotvideoClient::DescribeProducts
     return task->get_future();
 }
 
+IotvideoClient::DescribeSDKLogOutcome IotvideoClient::DescribeSDKLog(const DescribeSDKLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSDKLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSDKLogResponse rsp = DescribeSDKLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSDKLogOutcome(rsp);
+        else
+            return DescribeSDKLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSDKLogOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeSDKLogAsync(const DescribeSDKLogRequest& request, const DescribeSDKLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSDKLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeSDKLogOutcomeCallable IotvideoClient::DescribeSDKLogCallable(const DescribeSDKLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSDKLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSDKLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::EditFirmwareOutcome IotvideoClient::EditFirmware(const EditFirmwareRequest &request)
 {
     auto outcome = MakeRequest(request, "EditFirmware");
@@ -2319,6 +2577,49 @@ IotvideoClient::ImportModelDefinitionOutcomeCallable IotvideoClient::ImportModel
     return task->get_future();
 }
 
+IotvideoClient::InheritCloudStorageUserOutcome IotvideoClient::InheritCloudStorageUser(const InheritCloudStorageUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "InheritCloudStorageUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InheritCloudStorageUserResponse rsp = InheritCloudStorageUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InheritCloudStorageUserOutcome(rsp);
+        else
+            return InheritCloudStorageUserOutcome(o.GetError());
+    }
+    else
+    {
+        return InheritCloudStorageUserOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::InheritCloudStorageUserAsync(const InheritCloudStorageUserRequest& request, const InheritCloudStorageUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InheritCloudStorageUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::InheritCloudStorageUserOutcomeCallable IotvideoClient::InheritCloudStorageUserCallable(const InheritCloudStorageUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InheritCloudStorageUserOutcome()>>(
+        [this, request]()
+        {
+            return this->InheritCloudStorageUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::ListFirmwaresOutcome IotvideoClient::ListFirmwares(const ListFirmwaresRequest &request)
 {
     auto outcome = MakeRequest(request, "ListFirmwares");
@@ -2362,6 +2663,92 @@ IotvideoClient::ListFirmwaresOutcomeCallable IotvideoClient::ListFirmwaresCallab
     return task->get_future();
 }
 
+IotvideoClient::ModifyDataForwardOutcome IotvideoClient::ModifyDataForward(const ModifyDataForwardRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDataForward");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDataForwardResponse rsp = ModifyDataForwardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDataForwardOutcome(rsp);
+        else
+            return ModifyDataForwardOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDataForwardOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::ModifyDataForwardAsync(const ModifyDataForwardRequest& request, const ModifyDataForwardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDataForward(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::ModifyDataForwardOutcomeCallable IotvideoClient::ModifyDataForwardCallable(const ModifyDataForwardRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDataForwardOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDataForward(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::ModifyDataForwardStatusOutcome IotvideoClient::ModifyDataForwardStatus(const ModifyDataForwardStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDataForwardStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDataForwardStatusResponse rsp = ModifyDataForwardStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDataForwardStatusOutcome(rsp);
+        else
+            return ModifyDataForwardStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDataForwardStatusOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::ModifyDataForwardStatusAsync(const ModifyDataForwardStatusRequest& request, const ModifyDataForwardStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDataForwardStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::ModifyDataForwardStatusOutcomeCallable IotvideoClient::ModifyDataForwardStatusCallable(const ModifyDataForwardStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDataForwardStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDataForwardStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::ModifyDeviceOutcome IotvideoClient::ModifyDevice(const ModifyDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDevice");
@@ -2398,6 +2785,49 @@ IotvideoClient::ModifyDeviceOutcomeCallable IotvideoClient::ModifyDeviceCallable
         [this, request]()
         {
             return this->ModifyDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::ModifyDeviceLogLevelOutcome IotvideoClient::ModifyDeviceLogLevel(const ModifyDeviceLogLevelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDeviceLogLevel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeviceLogLevelResponse rsp = ModifyDeviceLogLevelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeviceLogLevelOutcome(rsp);
+        else
+            return ModifyDeviceLogLevelOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeviceLogLevelOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::ModifyDeviceLogLevelAsync(const ModifyDeviceLogLevelRequest& request, const ModifyDeviceLogLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDeviceLogLevel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::ModifyDeviceLogLevelOutcomeCallable IotvideoClient::ModifyDeviceLogLevelCallable(const ModifyDeviceLogLevelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDeviceLogLevelOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDeviceLogLevel(request);
         }
     );
 
@@ -2871,6 +3301,49 @@ IotvideoClient::UploadFirmwareOutcomeCallable IotvideoClient::UploadFirmwareCall
         [this, request]()
         {
             return this->UploadFirmware(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::WakeUpDeviceOutcome IotvideoClient::WakeUpDevice(const WakeUpDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "WakeUpDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        WakeUpDeviceResponse rsp = WakeUpDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return WakeUpDeviceOutcome(rsp);
+        else
+            return WakeUpDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return WakeUpDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::WakeUpDeviceAsync(const WakeUpDeviceRequest& request, const WakeUpDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->WakeUpDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::WakeUpDeviceOutcomeCallable IotvideoClient::WakeUpDeviceCallable(const WakeUpDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<WakeUpDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->WakeUpDevice(request);
         }
     );
 

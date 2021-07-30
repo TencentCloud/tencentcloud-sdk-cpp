@@ -35,7 +35,15 @@ TrainTicketOCRResponse::TrainTicketOCRResponse() :
     m_seatCategoryHasBeenSet(false),
     m_iDHasBeenSet(false),
     m_invoiceTypeHasBeenSet(false),
-    m_serialNumberHasBeenSet(false)
+    m_serialNumberHasBeenSet(false),
+    m_additionalCostHasBeenSet(false),
+    m_handlingFeeHasBeenSet(false),
+    m_legalAmountHasBeenSet(false),
+    m_ticketStationHasBeenSet(false),
+    m_originalPriceHasBeenSet(false),
+    m_invoiceStyleHasBeenSet(false),
+    m_receiptNumberHasBeenSet(false),
+    m_isReceiptHasBeenSet(false)
 {
 }
 
@@ -193,6 +201,86 @@ CoreInternalOutcome TrainTicketOCRResponse::Deserialize(const string &payload)
         m_serialNumberHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AdditionalCost") && !rsp["AdditionalCost"].IsNull())
+    {
+        if (!rsp["AdditionalCost"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AdditionalCost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_additionalCost = string(rsp["AdditionalCost"].GetString());
+        m_additionalCostHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HandlingFee") && !rsp["HandlingFee"].IsNull())
+    {
+        if (!rsp["HandlingFee"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `HandlingFee` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_handlingFee = string(rsp["HandlingFee"].GetString());
+        m_handlingFeeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LegalAmount") && !rsp["LegalAmount"].IsNull())
+    {
+        if (!rsp["LegalAmount"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `LegalAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_legalAmount = string(rsp["LegalAmount"].GetString());
+        m_legalAmountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TicketStation") && !rsp["TicketStation"].IsNull())
+    {
+        if (!rsp["TicketStation"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TicketStation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ticketStation = string(rsp["TicketStation"].GetString());
+        m_ticketStationHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OriginalPrice") && !rsp["OriginalPrice"].IsNull())
+    {
+        if (!rsp["OriginalPrice"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `OriginalPrice` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalPrice = string(rsp["OriginalPrice"].GetString());
+        m_originalPriceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InvoiceStyle") && !rsp["InvoiceStyle"].IsNull())
+    {
+        if (!rsp["InvoiceStyle"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `InvoiceStyle` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invoiceStyle = string(rsp["InvoiceStyle"].GetString());
+        m_invoiceStyleHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ReceiptNumber") && !rsp["ReceiptNumber"].IsNull())
+    {
+        if (!rsp["ReceiptNumber"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ReceiptNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_receiptNumber = string(rsp["ReceiptNumber"].GetString());
+        m_receiptNumberHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsReceipt") && !rsp["IsReceipt"].IsNull())
+    {
+        if (!rsp["IsReceipt"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IsReceipt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isReceipt = string(rsp["IsReceipt"].GetString());
+        m_isReceiptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,6 +404,86 @@ string TrainTicketOCRResponse::GetSerialNumber() const
 bool TrainTicketOCRResponse::SerialNumberHasBeenSet() const
 {
     return m_serialNumberHasBeenSet;
+}
+
+string TrainTicketOCRResponse::GetAdditionalCost() const
+{
+    return m_additionalCost;
+}
+
+bool TrainTicketOCRResponse::AdditionalCostHasBeenSet() const
+{
+    return m_additionalCostHasBeenSet;
+}
+
+string TrainTicketOCRResponse::GetHandlingFee() const
+{
+    return m_handlingFee;
+}
+
+bool TrainTicketOCRResponse::HandlingFeeHasBeenSet() const
+{
+    return m_handlingFeeHasBeenSet;
+}
+
+string TrainTicketOCRResponse::GetLegalAmount() const
+{
+    return m_legalAmount;
+}
+
+bool TrainTicketOCRResponse::LegalAmountHasBeenSet() const
+{
+    return m_legalAmountHasBeenSet;
+}
+
+string TrainTicketOCRResponse::GetTicketStation() const
+{
+    return m_ticketStation;
+}
+
+bool TrainTicketOCRResponse::TicketStationHasBeenSet() const
+{
+    return m_ticketStationHasBeenSet;
+}
+
+string TrainTicketOCRResponse::GetOriginalPrice() const
+{
+    return m_originalPrice;
+}
+
+bool TrainTicketOCRResponse::OriginalPriceHasBeenSet() const
+{
+    return m_originalPriceHasBeenSet;
+}
+
+string TrainTicketOCRResponse::GetInvoiceStyle() const
+{
+    return m_invoiceStyle;
+}
+
+bool TrainTicketOCRResponse::InvoiceStyleHasBeenSet() const
+{
+    return m_invoiceStyleHasBeenSet;
+}
+
+string TrainTicketOCRResponse::GetReceiptNumber() const
+{
+    return m_receiptNumber;
+}
+
+bool TrainTicketOCRResponse::ReceiptNumberHasBeenSet() const
+{
+    return m_receiptNumberHasBeenSet;
+}
+
+string TrainTicketOCRResponse::GetIsReceipt() const
+{
+    return m_isReceipt;
+}
+
+bool TrainTicketOCRResponse::IsReceiptHasBeenSet() const
+{
+    return m_isReceiptHasBeenSet;
 }
 
 

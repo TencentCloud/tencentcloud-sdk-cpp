@@ -27,7 +27,8 @@ DescribeCloudStorageResponse::DescribeCloudStorageResponse() :
     m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
-    m_shiftDurationHasBeenSet(false)
+    m_shiftDurationHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome DescribeCloudStorageResponse::Deserialize(const string &payl
         m_shiftDurationHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UserId") && !rsp["UserId"].IsNull())
+    {
+        if (!rsp["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(rsp["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,16 @@ uint64_t DescribeCloudStorageResponse::GetShiftDuration() const
 bool DescribeCloudStorageResponse::ShiftDurationHasBeenSet() const
 {
     return m_shiftDurationHasBeenSet;
+}
+
+string DescribeCloudStorageResponse::GetUserId() const
+{
+    return m_userId;
+}
+
+bool DescribeCloudStorageResponse::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

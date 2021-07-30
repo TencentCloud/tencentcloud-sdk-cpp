@@ -73,6 +73,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvPostpaidDeductRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoRequest.h
+  include/tencentcloud/tcb/v20180608/model/BindEnvGatewayResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunSubNetsResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseCapabilities.h
@@ -134,6 +135,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeSmsQuotasResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunImageSecretInfo.h
+  include/tencentcloud/tcb/v20180608/model/BindEnvGatewayRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeDownloadFileResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h
@@ -233,6 +235,7 @@ set(tcb_src
   src/v20180608/model/DeleteWxGatewayRouteRequest.cpp
   src/v20180608/model/DescribeEnvPostpaidDeductRequest.cpp
   src/v20180608/model/DescribeExtraPkgBillingInfoRequest.cpp
+  src/v20180608/model/BindEnvGatewayResponse.cpp
   src/v20180608/model/DescribeWxCloudBaseRunSubNetsResponse.cpp
   src/v20180608/model/DescribeEnvFreeQuotaRequest.cpp
   src/v20180608/model/CloudBaseCapabilities.cpp
@@ -294,6 +297,7 @@ set(tcb_src
   src/v20180608/model/DescribeSmsQuotasResponse.cpp
   src/v20180608/model/DescribeWxCloudBaseRunEnvsRequest.cpp
   src/v20180608/model/CloudBaseRunImageSecretInfo.cpp
+  src/v20180608/model/BindEnvGatewayRequest.cpp
   src/v20180608/model/ModifyEnvResponse.cpp
   src/v20180608/model/DescribeDownloadFileResponse.cpp
   src/v20180608/model/DescribeQuotaDataRequest.cpp
