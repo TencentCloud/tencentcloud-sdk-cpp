@@ -109,14 +109,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（"0"）。
-                     * @return VpcId 负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（"0"）。
+                     * 获取负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcEx](https://cloud.tencent.com/document/product/215/1372) 接口获取。 不填此参数则默认为DefaultVPC。创建内网负载均衡实例时，此参数必填。
+                     * @return VpcId 负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcEx](https://cloud.tencent.com/document/product/215/1372) 接口获取。 不填此参数则默认为DefaultVPC。创建内网负载均衡实例时，此参数必填。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（"0"）。
-                     * @param VpcId 负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（"0"）。
+                     * 设置负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcEx](https://cloud.tencent.com/document/product/215/1372) 接口获取。 不填此参数则默认为DefaultVPC。创建内网负载均衡实例时，此参数必填。
+                     * @param VpcId 负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcEx](https://cloud.tencent.com/document/product/215/1372) 接口获取。 不填此参数则默认为DefaultVPC。创建内网负载均衡实例时，此参数必填。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -127,14 +127,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。
-                     * @return SubnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。
+                     * 获取在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填。
+                     * @return SubnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。
-                     * @param SubnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。
+                     * 设置在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填。
+                     * @param SubnetId 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -145,14 +145,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。
-                     * @return ProjectId 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。
+                     * 获取负载均衡实例所属的项目 ID，可以通过 [DescribeProject](https://cloud.tencent.com/document/product/378/4400) 接口获取。不填此参数则视为默认项目。
+                     * @return ProjectId 负载均衡实例所属的项目 ID，可以通过 [DescribeProject](https://cloud.tencent.com/document/product/378/4400) 接口获取。不填此参数则视为默认项目。
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。
-                     * @param ProjectId 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。
+                     * 设置负载均衡实例所属的项目 ID，可以通过 [DescribeProject](https://cloud.tencent.com/document/product/378/4400) 接口获取。不填此参数则视为默认项目。
+                     * @param ProjectId 负载均衡实例所属的项目 ID，可以通过 [DescribeProject](https://cloud.tencent.com/document/product/378/4400) 接口获取。不填此参数则视为默认项目。
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -163,14 +163,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。
-                     * @return AddressIPVersion 仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。
+                     * 获取仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。说明：取值为IPV6表示为IPV6 NAT64版本；取值为IPv6FullChain，表示为IPv6版本。
+                     * @return AddressIPVersion 仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。说明：取值为IPV6表示为IPV6 NAT64版本；取值为IPv6FullChain，表示为IPv6版本。
                      */
                     std::string GetAddressIPVersion() const;
 
                     /**
-                     * 设置仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。
-                     * @param AddressIPVersion 仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。
+                     * 设置仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。说明：取值为IPV6表示为IPV6 NAT64版本；取值为IPv6FullChain，表示为IPv6版本。
+                     * @param AddressIPVersion 仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。说明：取值为IPV6表示为IPV6 NAT64版本；取值为IPv6FullChain，表示为IPv6版本。
                      */
                     void SetAddressIPVersion(const std::string& _addressIPVersion);
 
@@ -275,14 +275,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool VipIspHasBeenSet() const;
 
                     /**
-                     * 获取购买负载均衡同时，给负载均衡打上标签。
-                     * @return Tags 购买负载均衡同时，给负载均衡打上标签。
+                     * 获取购买负载均衡的同时，给负载均衡打上标签。
+                     * @return Tags 购买负载均衡的同时，给负载均衡打上标签。
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
-                     * 设置购买负载均衡同时，给负载均衡打上标签。
-                     * @param Tags 购买负载均衡同时，给负载均衡打上标签。
+                     * 设置购买负载均衡的同时，给负载均衡打上标签。
+                     * @param Tags 购买负载均衡的同时，给负载均衡打上标签。
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
 
@@ -293,14 +293,26 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取指定Vip申请负载均衡。
-                     * @return Vip 指定Vip申请负载均衡。
+                     * 获取指定VIP申请负载均衡。指定此参数后：
+<ul><li>若创建共享型集群的公网负载均衡实例，则上述的VpcId选填，若实例是IPv6类型的，则SubnetId必填；若是IPv4、IPv6 NAT64类型，则SubnetId不填。</li>
+<li>若创建独占型集群的公网负载均衡实例，则上述的VpcId选填，若实例是IPv6类型的，则SubnetId必填；若是IPv4、IPv6 NAT64类型，则SubnetId不填。
+</li></ul>
+                     * @return Vip 指定VIP申请负载均衡。指定此参数后：
+<ul><li>若创建共享型集群的公网负载均衡实例，则上述的VpcId选填，若实例是IPv6类型的，则SubnetId必填；若是IPv4、IPv6 NAT64类型，则SubnetId不填。</li>
+<li>若创建独占型集群的公网负载均衡实例，则上述的VpcId选填，若实例是IPv6类型的，则SubnetId必填；若是IPv4、IPv6 NAT64类型，则SubnetId不填。
+</li></ul>
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置指定Vip申请负载均衡。
-                     * @param Vip 指定Vip申请负载均衡。
+                     * 设置指定VIP申请负载均衡。指定此参数后：
+<ul><li>若创建共享型集群的公网负载均衡实例，则上述的VpcId选填，若实例是IPv6类型的，则SubnetId必填；若是IPv4、IPv6 NAT64类型，则SubnetId不填。</li>
+<li>若创建独占型集群的公网负载均衡实例，则上述的VpcId选填，若实例是IPv6类型的，则SubnetId必填；若是IPv4、IPv6 NAT64类型，则SubnetId不填。
+</li></ul>
+                     * @param Vip 指定VIP申请负载均衡。指定此参数后：
+<ul><li>若创建共享型集群的公网负载均衡实例，则上述的VpcId选填，若实例是IPv6类型的，则SubnetId必填；若是IPv4、IPv6 NAT64类型，则SubnetId不填。</li>
+<li>若创建独占型集群的公网负载均衡实例，则上述的VpcId选填，若实例是IPv6类型的，则SubnetId必填；若是IPv4、IPv6 NAT64类型，则SubnetId不填。
+</li></ul>
                      */
                     void SetVip(const std::string& _vip);
 
@@ -329,14 +341,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取独占集群信息。
-                     * @return ExclusiveCluster 独占集群信息。
+                     * 获取独占集群信息。若创建独占集群负载均衡实例，则此参数必填。
+                     * @return ExclusiveCluster 独占集群信息。若创建独占集群负载均衡实例，则此参数必填。
                      */
                     ExclusiveCluster GetExclusiveCluster() const;
 
                     /**
-                     * 设置独占集群信息。
-                     * @param ExclusiveCluster 独占集群信息。
+                     * 设置独占集群信息。若创建独占集群负载均衡实例，则此参数必填。
+                     * @param ExclusiveCluster 独占集群信息。若创建独占集群负载均衡实例，则此参数必填。
                      */
                     void SetExclusiveCluster(const ExclusiveCluster& _exclusiveCluster);
 
@@ -481,25 +493,25 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_loadBalancerNameHasBeenSet;
 
                     /**
-                     * 负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 DescribeVpcEx 接口获取。 不传此参数则默认为基础网络（"0"）。
+                     * 负载均衡后端目标设备所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcEx](https://cloud.tencent.com/document/product/215/1372) 接口获取。 不填此参数则默认为DefaultVPC。创建内网负载均衡实例时，此参数必填。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。
+                     * 在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID，内网负载均衡实例的 VIP 将从这个子网中产生。创建内网负载均衡实例时，此参数必填。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。
+                     * 负载均衡实例所属的项目 ID，可以通过 [DescribeProject](https://cloud.tencent.com/document/product/378/4400) 接口获取。不填此参数则视为默认项目。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。
+                     * 仅适用于公网负载均衡。IP版本，可取值：IPV4、IPV6、IPv6FullChain，默认值 IPV4。说明：取值为IPV6表示为IPV6 NAT64版本；取值为IPv6FullChain，表示为IPv6版本。
                      */
                     std::string m_addressIPVersion;
                     bool m_addressIPVersionHasBeenSet;
@@ -536,13 +548,16 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_vipIspHasBeenSet;
 
                     /**
-                     * 购买负载均衡同时，给负载均衡打上标签。
+                     * 购买负载均衡的同时，给负载均衡打上标签。
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 指定Vip申请负载均衡。
+                     * 指定VIP申请负载均衡。指定此参数后：
+<ul><li>若创建共享型集群的公网负载均衡实例，则上述的VpcId选填，若实例是IPv6类型的，则SubnetId必填；若是IPv4、IPv6 NAT64类型，则SubnetId不填。</li>
+<li>若创建独占型集群的公网负载均衡实例，则上述的VpcId选填，若实例是IPv6类型的，则SubnetId必填；若是IPv4、IPv6 NAT64类型，则SubnetId不填。
+</li></ul>
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
@@ -554,7 +569,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_bandwidthPackageIdHasBeenSet;
 
                     /**
-                     * 独占集群信息。
+                     * 独占集群信息。若创建独占集群负载均衡实例，则此参数必填。
                      */
                     ExclusiveCluster m_exclusiveCluster;
                     bool m_exclusiveClusterHasBeenSet;
