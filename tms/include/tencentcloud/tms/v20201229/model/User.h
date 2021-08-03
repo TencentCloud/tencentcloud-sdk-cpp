@@ -196,6 +196,46 @@ namespace TencentCloud
                      */
                     bool PhoneHasBeenSet() const;
 
+                    /**
+                     * 获取该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。
+备注：头像图片大小不超过5MB，建议分辨率不低于256x256；图片下载时间限制为3秒，超过则会返回下载超时。
+                     * @return HeadUrl 该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。
+备注：头像图片大小不超过5MB，建议分辨率不低于256x256；图片下载时间限制为3秒，超过则会返回下载超时。
+                     */
+                    std::string GetHeadUrl() const;
+
+                    /**
+                     * 设置该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。
+备注：头像图片大小不超过5MB，建议分辨率不低于256x256；图片下载时间限制为3秒，超过则会返回下载超时。
+                     * @param HeadUrl 该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。
+备注：头像图片大小不超过5MB，建议分辨率不低于256x256；图片下载时间限制为3秒，超过则会返回下载超时。
+                     */
+                    void SetHeadUrl(const std::string& _headUrl);
+
+                    /**
+                     * 判断参数 HeadUrl 是否已赋值
+                     * @return HeadUrl 是否已赋值
+                     */
+                    bool HeadUrlHasBeenSet() const;
+
+                    /**
+                     * 获取该字段表示业务用户的简介信息，支持汉字、英文及特殊符号，长度不超过5000个汉字字符。
+                     * @return Desc 该字段表示业务用户的简介信息，支持汉字、英文及特殊符号，长度不超过5000个汉字字符。
+                     */
+                    std::string GetDesc() const;
+
+                    /**
+                     * 设置该字段表示业务用户的简介信息，支持汉字、英文及特殊符号，长度不超过5000个汉字字符。
+                     * @param Desc 该字段表示业务用户的简介信息，支持汉字、英文及特殊符号，长度不超过5000个汉字字符。
+                     */
+                    void SetDesc(const std::string& _desc);
+
+                    /**
+                     * 判断参数 Desc 是否已赋值
+                     * @return Desc 是否已赋值
+                     */
+                    bool DescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -245,6 +285,19 @@ namespace TencentCloud
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
+
+                    /**
+                     * 该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。
+备注：头像图片大小不超过5MB，建议分辨率不低于256x256；图片下载时间限制为3秒，超过则会返回下载超时。
+                     */
+                    std::string m_headUrl;
+                    bool m_headUrlHasBeenSet;
+
+                    /**
+                     * 该字段表示业务用户的简介信息，支持汉字、英文及特殊符号，长度不超过5000个汉字字符。
+                     */
+                    std::string m_desc;
+                    bool m_descHasBeenSet;
 
                 };
             }

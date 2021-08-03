@@ -545,6 +545,34 @@ namespace TencentCloud
                      */
                     bool StatusReasonsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启异步属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsyncRunEnable 是否开启异步属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAsyncRunEnable() const;
+
+                    /**
+                     * 判断参数 AsyncRunEnable 是否已赋值
+                     * @return AsyncRunEnable 是否已赋值
+                     */
+                    bool AsyncRunEnableHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启事件追踪
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TraceEnable 是否开启事件追踪
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTraceEnable() const;
+
+                    /**
+                     * 判断参数 TraceEnable 是否已赋值
+                     * @return TraceEnable 是否已赋值
+                     */
+                    bool TraceEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -792,6 +820,20 @@ namespace TencentCloud
                      */
                     std::vector<StatusReason> m_statusReasons;
                     bool m_statusReasonsHasBeenSet;
+
+                    /**
+                     * 是否开启异步属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_asyncRunEnable;
+                    bool m_asyncRunEnableHasBeenSet;
+
+                    /**
+                     * 是否开启事件追踪
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_traceEnable;
+                    bool m_traceEnableHasBeenSet;
 
                 };
             }

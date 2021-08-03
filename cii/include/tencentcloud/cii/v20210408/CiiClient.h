@@ -25,12 +25,16 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cii/v20210408/model/CreateStructureTaskRequest.h>
 #include <tencentcloud/cii/v20210408/model/CreateStructureTaskResponse.h>
+#include <tencentcloud/cii/v20210408/model/CreateStructureTaskTestRequest.h>
+#include <tencentcloud/cii/v20210408/model/CreateStructureTaskTestResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructCompareDataRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructCompareDataResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureResultRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureResultResponse.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultRequest.h>
 #include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultResponse.h>
+#include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultTestRequest.h>
+#include <tencentcloud/cii/v20210408/model/DescribeStructureTaskResultTestResponse.h>
 
 
 namespace TencentCloud
@@ -48,6 +52,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateStructureTaskResponse> CreateStructureTaskOutcome;
                 typedef std::future<CreateStructureTaskOutcome> CreateStructureTaskOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::CreateStructureTaskRequest&, CreateStructureTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStructureTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateStructureTaskTestResponse> CreateStructureTaskTestOutcome;
+                typedef std::future<CreateStructureTaskTestOutcome> CreateStructureTaskTestOutcomeCallable;
+                typedef std::function<void(const CiiClient*, const Model::CreateStructureTaskTestRequest&, CreateStructureTaskTestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStructureTaskTestAsyncHandler;
                 typedef Outcome<Error, Model::DescribeStructCompareDataResponse> DescribeStructCompareDataOutcome;
                 typedef std::future<DescribeStructCompareDataOutcome> DescribeStructCompareDataOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructCompareDataRequest&, DescribeStructCompareDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructCompareDataAsyncHandler;
@@ -57,6 +64,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeStructureTaskResultResponse> DescribeStructureTaskResultOutcome;
                 typedef std::future<DescribeStructureTaskResultOutcome> DescribeStructureTaskResultOutcomeCallable;
                 typedef std::function<void(const CiiClient*, const Model::DescribeStructureTaskResultRequest&, DescribeStructureTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureTaskResultAsyncHandler;
+                typedef Outcome<Error, Model::DescribeStructureTaskResultTestResponse> DescribeStructureTaskResultTestOutcome;
+                typedef std::future<DescribeStructureTaskResultTestOutcome> DescribeStructureTaskResultTestOutcomeCallable;
+                typedef std::function<void(const CiiClient*, const Model::DescribeStructureTaskResultTestRequest&, DescribeStructureTaskResultTestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStructureTaskResultTestAsyncHandler;
 
 
 
@@ -68,6 +78,15 @@ namespace TencentCloud
                 CreateStructureTaskOutcome CreateStructureTask(const Model::CreateStructureTaskRequest &request);
                 void CreateStructureTaskAsync(const Model::CreateStructureTaskRequest& request, const CreateStructureTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateStructureTaskOutcomeCallable CreateStructureTaskCallable(const Model::CreateStructureTaskRequest& request);
+
+                /**
+                 *本接口(CreateStructureTaskTest)基于提供的客户及保单信息，创建并启动结构化识别任务。用于路由到测试环境。
+                 * @param req CreateStructureTaskTestRequest
+                 * @return CreateStructureTaskTestOutcome
+                 */
+                CreateStructureTaskTestOutcome CreateStructureTaskTest(const Model::CreateStructureTaskTestRequest &request);
+                void CreateStructureTaskTestAsync(const Model::CreateStructureTaskTestRequest& request, const CreateStructureTaskTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStructureTaskTestOutcomeCallable CreateStructureTaskTestCallable(const Model::CreateStructureTaskTestRequest& request);
 
                 /**
                  *结构化对比查询接口，对比结构化复核前后数据差异，查询识别正确率，召回率。
@@ -95,6 +114,15 @@ namespace TencentCloud
                 DescribeStructureTaskResultOutcome DescribeStructureTaskResult(const Model::DescribeStructureTaskResultRequest &request);
                 void DescribeStructureTaskResultAsync(const Model::DescribeStructureTaskResultRequest& request, const DescribeStructureTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStructureTaskResultOutcomeCallable DescribeStructureTaskResultCallable(const Model::DescribeStructureTaskResultRequest& request);
+
+                /**
+                 *依据任务ID获取结构化结果接口，该接口用于路由到测试环境。
+                 * @param req DescribeStructureTaskResultTestRequest
+                 * @return DescribeStructureTaskResultTestOutcome
+                 */
+                DescribeStructureTaskResultTestOutcome DescribeStructureTaskResultTest(const Model::DescribeStructureTaskResultTestRequest &request);
+                void DescribeStructureTaskResultTestAsync(const Model::DescribeStructureTaskResultTestRequest& request, const DescribeStructureTaskResultTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStructureTaskResultTestOutcomeCallable DescribeStructureTaskResultTestCallable(const Model::DescribeStructureTaskResultTestRequest& request);
 
             };
         }

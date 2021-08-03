@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取根据使用场景过滤 "ST_DASHBOARD"=Dashboard类型 或 "ST_ALARM"=告警类型
-                     * @return SceneType 根据使用场景过滤 "ST_DASHBOARD"=Dashboard类型 或 "ST_ALARM"=告警类型
+                     * 获取根据使用场景过滤 目前仅有"ST_ALARM"=告警类型
+                     * @return SceneType 根据使用场景过滤 目前仅有"ST_ALARM"=告警类型
                      */
                     std::string GetSceneType() const;
 
                     /**
-                     * 设置根据使用场景过滤 "ST_DASHBOARD"=Dashboard类型 或 "ST_ALARM"=告警类型
-                     * @param SceneType 根据使用场景过滤 "ST_DASHBOARD"=Dashboard类型 或 "ST_ALARM"=告警类型
+                     * 设置根据使用场景过滤 目前仅有"ST_ALARM"=告警类型
+                     * @param SceneType 根据使用场景过滤 目前仅有"ST_ALARM"=告警类型
                      */
                     void SetSceneType(const std::string& _sceneType);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 根据使用场景过滤 "ST_DASHBOARD"=Dashboard类型 或 "ST_ALARM"=告警类型
+                     * 根据使用场景过滤 目前仅有"ST_ALARM"=告警类型
                      */
                     std::string m_sceneType;
                     bool m_sceneTypeHasBeenSet;

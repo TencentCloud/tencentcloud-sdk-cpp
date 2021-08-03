@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ImageNameHasBeenSet() const;
 
                     /**
-                     * 获取需要制作镜像的实例ID。
-                     * @return InstanceId 需要制作镜像的实例ID。
+                     * 获取需要制作镜像的实例ID。基于实例创建镜像时，为必填参数。
+                     * @return InstanceId 需要制作镜像的实例ID。基于实例创建镜像时，为必填参数。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置需要制作镜像的实例ID。
-                     * @param InstanceId 需要制作镜像的实例ID。
+                     * 设置需要制作镜像的实例ID。基于实例创建镜像时，为必填参数。
+                     * @param InstanceId 需要制作镜像的实例ID。基于实例创建镜像时，为必填参数。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -199,7 +199,7 @@ namespace TencentCloud
                     bool m_imageNameHasBeenSet;
 
                     /**
-                     * 需要制作镜像的实例ID。
+                     * 需要制作镜像的实例ID。基于实例创建镜像时，为必填参数。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

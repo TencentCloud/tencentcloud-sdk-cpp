@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。默认值为updated_on。
-                     * @return SortField 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。默认值为updated_on。
+                     * 获取排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。
+                     * @return SortField 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。
                      */
                     std::string GetSortField() const;
 
                     /**
-                     * 设置排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。默认值为updated_on。
-                     * @param SortField 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。默认值为updated_on。
+                     * 设置排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。
+                     * @param SortField 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。
                      */
                     void SetSortField(const std::string& _sortField);
 
@@ -309,7 +309,7 @@ namespace TencentCloud
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。默认值为updated_on。
+                     * 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。
                      */
                     std::string m_sortField;
                     bool m_sortFieldHasBeenSet;

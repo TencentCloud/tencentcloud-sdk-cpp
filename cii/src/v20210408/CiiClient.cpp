@@ -83,6 +83,49 @@ CiiClient::CreateStructureTaskOutcomeCallable CiiClient::CreateStructureTaskCall
     return task->get_future();
 }
 
+CiiClient::CreateStructureTaskTestOutcome CiiClient::CreateStructureTaskTest(const CreateStructureTaskTestRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateStructureTaskTest");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateStructureTaskTestResponse rsp = CreateStructureTaskTestResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateStructureTaskTestOutcome(rsp);
+        else
+            return CreateStructureTaskTestOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateStructureTaskTestOutcome(outcome.GetError());
+    }
+}
+
+void CiiClient::CreateStructureTaskTestAsync(const CreateStructureTaskTestRequest& request, const CreateStructureTaskTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateStructureTaskTest(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiiClient::CreateStructureTaskTestOutcomeCallable CiiClient::CreateStructureTaskTestCallable(const CreateStructureTaskTestRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateStructureTaskTestOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateStructureTaskTest(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CiiClient::DescribeStructCompareDataOutcome CiiClient::DescribeStructCompareData(const DescribeStructCompareDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStructCompareData");
@@ -205,6 +248,49 @@ CiiClient::DescribeStructureTaskResultOutcomeCallable CiiClient::DescribeStructu
         [this, request]()
         {
             return this->DescribeStructureTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CiiClient::DescribeStructureTaskResultTestOutcome CiiClient::DescribeStructureTaskResultTest(const DescribeStructureTaskResultTestRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStructureTaskResultTest");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStructureTaskResultTestResponse rsp = DescribeStructureTaskResultTestResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStructureTaskResultTestOutcome(rsp);
+        else
+            return DescribeStructureTaskResultTestOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStructureTaskResultTestOutcome(outcome.GetError());
+    }
+}
+
+void CiiClient::DescribeStructureTaskResultTestAsync(const DescribeStructureTaskResultTestRequest& request, const DescribeStructureTaskResultTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStructureTaskResultTest(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiiClient::DescribeStructureTaskResultTestOutcomeCallable CiiClient::DescribeStructureTaskResultTestCallable(const DescribeStructureTaskResultTestRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStructureTaskResultTestOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStructureTaskResultTest(request);
         }
     );
 

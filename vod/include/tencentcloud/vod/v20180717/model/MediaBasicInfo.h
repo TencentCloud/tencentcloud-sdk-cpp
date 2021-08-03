@@ -381,9 +381,13 @@ namespace TencentCloud
                      * 获取媒体文件的存储类别：
 <li> STANDARD：标准存储。</li>
 <li> STANDARD_IA：低频存储。</li>
+<li> ARCHIVE：归档存储。</li>
+<li> DEEP_ARCHIVE：深度归档存储。</li>
                      * @return StorageClass 媒体文件的存储类别：
 <li> STANDARD：标准存储。</li>
 <li> STANDARD_IA：低频存储。</li>
+<li> ARCHIVE：归档存储。</li>
+<li> DEEP_ARCHIVE：深度归档存储。</li>
                      */
                     std::string GetStorageClass() const;
 
@@ -391,9 +395,13 @@ namespace TencentCloud
                      * 设置媒体文件的存储类别：
 <li> STANDARD：标准存储。</li>
 <li> STANDARD_IA：低频存储。</li>
+<li> ARCHIVE：归档存储。</li>
+<li> DEEP_ARCHIVE：深度归档存储。</li>
                      * @param StorageClass 媒体文件的存储类别：
 <li> STANDARD：标准存储。</li>
 <li> STANDARD_IA：低频存储。</li>
+<li> ARCHIVE：归档存储。</li>
+<li> DEEP_ARCHIVE：深度归档存储。</li>
                      */
                     void SetStorageClass(const std::string& _storageClass);
 
@@ -517,6 +525,8 @@ namespace TencentCloud
                      * 媒体文件的存储类别：
 <li> STANDARD：标准存储。</li>
 <li> STANDARD_IA：低频存储。</li>
+<li> ARCHIVE：归档存储。</li>
+<li> DEEP_ARCHIVE：深度归档存储。</li>
                      */
                     std::string m_storageClass;
                     bool m_storageClassHasBeenSet;

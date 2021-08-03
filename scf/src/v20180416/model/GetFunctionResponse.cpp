@@ -63,7 +63,9 @@ GetFunctionResponse::GetFunctionResponse() :
     m_availableStatusHasBeenSet(false),
     m_qualifierHasBeenSet(false),
     m_initTimeoutHasBeenSet(false),
-    m_statusReasonsHasBeenSet(false)
+    m_statusReasonsHasBeenSet(false),
+    m_asyncRunEnableHasBeenSet(false),
+    m_traceEnableHasBeenSet(false)
 {
 }
 
@@ -590,6 +592,26 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         m_statusReasonsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AsyncRunEnable") && !rsp["AsyncRunEnable"].IsNull())
+    {
+        if (!rsp["AsyncRunEnable"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AsyncRunEnable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_asyncRunEnable = string(rsp["AsyncRunEnable"].GetString());
+        m_asyncRunEnableHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TraceEnable") && !rsp["TraceEnable"].IsNull())
+    {
+        if (!rsp["TraceEnable"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `TraceEnable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceEnable = string(rsp["TraceEnable"].GetString());
+        m_traceEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -993,6 +1015,26 @@ vector<StatusReason> GetFunctionResponse::GetStatusReasons() const
 bool GetFunctionResponse::StatusReasonsHasBeenSet() const
 {
     return m_statusReasonsHasBeenSet;
+}
+
+string GetFunctionResponse::GetAsyncRunEnable() const
+{
+    return m_asyncRunEnable;
+}
+
+bool GetFunctionResponse::AsyncRunEnableHasBeenSet() const
+{
+    return m_asyncRunEnableHasBeenSet;
+}
+
+string GetFunctionResponse::GetTraceEnable() const
+{
+    return m_traceEnable;
+}
+
+bool GetFunctionResponse::TraceEnableHasBeenSet() const
+{
+    return m_traceEnableHasBeenSet;
 }
 
 

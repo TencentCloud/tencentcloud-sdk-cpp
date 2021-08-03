@@ -27,7 +27,9 @@ User::User() :
     m_genderHasBeenSet(false),
     m_ageHasBeenSet(false),
     m_levelHasBeenSet(false),
-    m_phoneHasBeenSet(false)
+    m_phoneHasBeenSet(false),
+    m_headUrlHasBeenSet(false),
+    m_descHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_phoneHasBeenSet = true;
     }
 
+    if (value.HasMember("HeadUrl") && !value["HeadUrl"].IsNull())
+    {
+        if (!value["HeadUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `User.HeadUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_headUrl = string(value["HeadUrl"].GetString());
+        m_headUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("Desc") && !value["Desc"].IsNull())
+    {
+        if (!value["Desc"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `User.Desc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_desc = string(value["Desc"].GetString());
+        m_descHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "Phone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_phone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_headUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeadUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_headUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Desc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void User::SetPhone(const string& _phone)
 bool User::PhoneHasBeenSet() const
 {
     return m_phoneHasBeenSet;
+}
+
+string User::GetHeadUrl() const
+{
+    return m_headUrl;
+}
+
+void User::SetHeadUrl(const string& _headUrl)
+{
+    m_headUrl = _headUrl;
+    m_headUrlHasBeenSet = true;
+}
+
+bool User::HeadUrlHasBeenSet() const
+{
+    return m_headUrlHasBeenSet;
+}
+
+string User::GetDesc() const
+{
+    return m_desc;
+}
+
+void User::SetDesc(const string& _desc)
+{
+    m_desc = _desc;
+    m_descHasBeenSet = true;
+}
+
+bool User::DescHasBeenSet() const
+{
+    return m_descHasBeenSet;
 }
 

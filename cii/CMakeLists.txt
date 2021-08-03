@@ -22,17 +22,21 @@ set(cii_public_header
 set(cii_public_header_model
   include/tencentcloud/cii/v20210408/model/DescribeStructCompareDataResponse.h
   include/tencentcloud/cii/v20210408/model/DescribeStructureTaskResultRequest.h
+  include/tencentcloud/cii/v20210408/model/DescribeStructureTaskResultTestResponse.h
+  include/tencentcloud/cii/v20210408/model/CreateStructureTaskResponse.h
   include/tencentcloud/cii/v20210408/model/CreateStructureTaskRequest.h
   include/tencentcloud/cii/v20210408/model/CompareMetricsData.h
+  include/tencentcloud/cii/v20210408/model/ReviewDataTaskInfo.h
   include/tencentcloud/cii/v20210408/model/ResultObject.h
   include/tencentcloud/cii/v20210408/model/DescribeStructureResultResponse.h
   include/tencentcloud/cii/v20210408/model/DescribeStructCompareDataRequest.h
-  include/tencentcloud/cii/v20210408/model/CreateStructureTaskResponse.h
-  include/tencentcloud/cii/v20210408/model/ReviewDataTaskInfo.h
+  include/tencentcloud/cii/v20210408/model/CreateStructureTaskTestResponse.h
+  include/tencentcloud/cii/v20210408/model/CreateStructureTaskTestRequest.h
   include/tencentcloud/cii/v20210408/model/DescribeStructureTaskResultResponse.h
   include/tencentcloud/cii/v20210408/model/StructureResultObject.h
   include/tencentcloud/cii/v20210408/model/DescribeStructureResultRequest.h
   include/tencentcloud/cii/v20210408/model/CreateStructureTaskInfo.h
+  include/tencentcloud/cii/v20210408/model/DescribeStructureTaskResultTestRequest.h
   include/tencentcloud/cii/v20201210/model/DescribeStructCompareDataResponse.h
   include/tencentcloud/cii/v20201210/model/DescribeStructureTaskResultRequest.h
   include/tencentcloud/cii/v20201210/model/CreateStructureTaskRequest.h
@@ -48,17 +52,21 @@ set(cii_src
   src/v20201210/CiiClient.cpp
   src/v20210408/model/DescribeStructCompareDataResponse.cpp
   src/v20210408/model/DescribeStructureTaskResultRequest.cpp
+  src/v20210408/model/DescribeStructureTaskResultTestResponse.cpp
+  src/v20210408/model/CreateStructureTaskResponse.cpp
   src/v20210408/model/CreateStructureTaskRequest.cpp
   src/v20210408/model/CompareMetricsData.cpp
+  src/v20210408/model/ReviewDataTaskInfo.cpp
   src/v20210408/model/ResultObject.cpp
   src/v20210408/model/DescribeStructureResultResponse.cpp
   src/v20210408/model/DescribeStructCompareDataRequest.cpp
-  src/v20210408/model/CreateStructureTaskResponse.cpp
-  src/v20210408/model/ReviewDataTaskInfo.cpp
+  src/v20210408/model/CreateStructureTaskTestResponse.cpp
+  src/v20210408/model/CreateStructureTaskTestRequest.cpp
   src/v20210408/model/DescribeStructureTaskResultResponse.cpp
   src/v20210408/model/StructureResultObject.cpp
   src/v20210408/model/DescribeStructureResultRequest.cpp
   src/v20210408/model/CreateStructureTaskInfo.cpp
+  src/v20210408/model/DescribeStructureTaskResultTestRequest.cpp
   src/v20201210/model/DescribeStructCompareDataResponse.cpp
   src/v20201210/model/DescribeStructureTaskResultRequest.cpp
   src/v20201210/model/CreateStructureTaskRequest.cpp
