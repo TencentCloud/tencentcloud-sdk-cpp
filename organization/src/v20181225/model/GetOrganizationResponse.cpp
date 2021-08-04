@@ -131,6 +131,71 @@ CoreInternalOutcome GetOrganizationResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+string GetOrganizationResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_orgIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_orgId, allocator);
+    }
+
+    if (m_hostUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostUin, allocator);
+    }
+
+    if (m_nicknameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Nickname";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nickname.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orgTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_orgType, allocator);
+    }
+
+    if (m_isEmptyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsEmpty";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isEmpty, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t GetOrganizationResponse::GetOrgId() const
 {

@@ -54,7 +54,8 @@ RollUpdateCloudBaseRunServerVersionRequest::RollUpdateCloudBaseRunServerVersionR
     m_customLogsHasBeenSet(false),
     m_enableUnionHasBeenSet(false),
     m_operatorRemarkHasBeenSet(false),
-    m_serverPathHasBeenSet(false)
+    m_serverPathHasBeenSet(false),
+    m_isUpdateClsHasBeenSet(false)
 {
 }
 
@@ -328,6 +329,14 @@ string RollUpdateCloudBaseRunServerVersionRequest::ToJsonString() const
         string key = "ServerPath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serverPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isUpdateClsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsUpdateCls";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isUpdateCls, allocator);
     }
 
 
@@ -848,6 +857,22 @@ void RollUpdateCloudBaseRunServerVersionRequest::SetServerPath(const string& _se
 bool RollUpdateCloudBaseRunServerVersionRequest::ServerPathHasBeenSet() const
 {
     return m_serverPathHasBeenSet;
+}
+
+bool RollUpdateCloudBaseRunServerVersionRequest::GetIsUpdateCls() const
+{
+    return m_isUpdateCls;
+}
+
+void RollUpdateCloudBaseRunServerVersionRequest::SetIsUpdateCls(const bool& _isUpdateCls)
+{
+    m_isUpdateCls = _isUpdateCls;
+    m_isUpdateClsHasBeenSet = true;
+}
+
+bool RollUpdateCloudBaseRunServerVersionRequest::IsUpdateClsHasBeenSet() const
+{
+    return m_isUpdateClsHasBeenSet;
 }
 
 

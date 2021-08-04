@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeMusicResponse();
                     ~DescribeMusicResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

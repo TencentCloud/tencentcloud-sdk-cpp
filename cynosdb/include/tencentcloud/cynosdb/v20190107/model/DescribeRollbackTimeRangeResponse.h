@@ -40,6 +40,7 @@ namespace TencentCloud
                     DescribeRollbackTimeRangeResponse();
                     ~DescribeRollbackTimeRangeResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

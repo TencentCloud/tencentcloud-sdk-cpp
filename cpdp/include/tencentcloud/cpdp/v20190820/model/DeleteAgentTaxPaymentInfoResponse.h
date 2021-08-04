@@ -40,6 +40,7 @@ namespace TencentCloud
                     DeleteAgentTaxPaymentInfoResponse();
                     ~DeleteAgentTaxPaymentInfoResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

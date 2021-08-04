@@ -40,6 +40,7 @@ namespace TencentCloud
                     UpdateTimeTemplateResponse();
                     ~UpdateTimeTemplateResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

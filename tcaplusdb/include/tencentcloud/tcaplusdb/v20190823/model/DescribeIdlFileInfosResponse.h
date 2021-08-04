@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeIdlFileInfosResponse();
                     ~DescribeIdlFileInfosResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

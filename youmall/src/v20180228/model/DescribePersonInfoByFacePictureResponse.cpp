@@ -142,6 +142,79 @@ CoreInternalOutcome DescribePersonInfoByFacePictureResponse::Deserialize(const s
     return CoreInternalOutcome(true);
 }
 
+string DescribePersonInfoByFacePictureResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_companyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompanyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_companyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shopIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShopId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shopId, allocator);
+    }
+
+    if (m_personIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PersonId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_personId, allocator);
+    }
+
+    if (m_pictureUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PictureUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pictureUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_personTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PersonType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_personType, allocator);
+    }
+
+    if (m_firstVisitTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstVisitTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstVisitTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_visitTimesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VisitTimes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_visitTimes, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 string DescribePersonInfoByFacePictureResponse::GetCompanyId() const
 {

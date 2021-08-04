@@ -40,6 +40,7 @@ namespace TencentCloud
                     DeleteAccountsResponse();
                     ~DeleteAccountsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

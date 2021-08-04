@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeProcedureTemplatesResponse();
                     ~DescribeProcedureTemplatesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

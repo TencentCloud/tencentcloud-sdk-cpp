@@ -109,6 +109,55 @@ CoreInternalOutcome DescribeAccountLimitsResponse::Deserialize(const string &pay
     return CoreInternalOutcome(true);
 }
 
+string DescribeAccountLimitsResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_maxNumberOfLaunchConfigurationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxNumberOfLaunchConfigurations";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxNumberOfLaunchConfigurations, allocator);
+    }
+
+    if (m_numberOfLaunchConfigurationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NumberOfLaunchConfigurations";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_numberOfLaunchConfigurations, allocator);
+    }
+
+    if (m_maxNumberOfAutoScalingGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxNumberOfAutoScalingGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxNumberOfAutoScalingGroups, allocator);
+    }
+
+    if (m_numberOfAutoScalingGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NumberOfAutoScalingGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_numberOfAutoScalingGroups, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeAccountLimitsResponse::GetMaxNumberOfLaunchConfigurations() const
 {

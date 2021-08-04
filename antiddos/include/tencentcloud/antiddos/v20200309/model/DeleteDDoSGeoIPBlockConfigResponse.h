@@ -40,6 +40,7 @@ namespace TencentCloud
                     DeleteDDoSGeoIPBlockConfigResponse();
                     ~DeleteDDoSGeoIPBlockConfigResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

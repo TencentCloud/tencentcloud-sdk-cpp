@@ -40,6 +40,7 @@ namespace TencentCloud
                     CreateContainGroupResponse();
                     ~CreateContainGroupResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

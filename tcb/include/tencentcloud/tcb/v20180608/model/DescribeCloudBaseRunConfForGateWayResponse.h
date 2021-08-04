@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeCloudBaseRunConfForGateWayResponse();
                     ~DescribeCloudBaseRunConfForGateWayResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

@@ -217,6 +217,133 @@ CoreInternalOutcome GetRealAvailRatioResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
+string GetRealAvailRatioResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_avgAvailRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvgAvailRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_avgAvailRatio, allocator);
+    }
+
+    if (m_lowestAvailRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LowestAvailRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lowestAvailRatio, allocator);
+    }
+
+    if (m_lowestProvinceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LowestProvince";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lowestProvince.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lowestIspHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LowestIsp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lowestIsp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_provinceDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProvinceData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_provinceData.begin(); itr != m_provinceData.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_avgTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvgTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_avgTime, allocator);
+    }
+
+    if (m_avgAvailRatio2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvgAvailRatio2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_avgAvailRatio2, allocator);
+    }
+
+    if (m_avgTime2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvgTime2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_avgTime2, allocator);
+    }
+
+    if (m_lowestAvailRatio2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LowestAvailRatio2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lowestAvailRatio2, allocator);
+    }
+
+    if (m_lowestProvince2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LowestProvince2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lowestProvince2.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lowestIsp2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LowestIsp2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lowestIsp2.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_provinceData2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProvinceData2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_provinceData2.begin(); itr != m_provinceData2.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 double GetRealAvailRatioResponse::GetAvgAvailRatio() const
 {

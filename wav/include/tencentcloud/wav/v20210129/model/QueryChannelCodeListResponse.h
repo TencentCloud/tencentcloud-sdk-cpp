@@ -41,6 +41,7 @@ namespace TencentCloud
                     QueryChannelCodeListResponse();
                     ~QueryChannelCodeListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

@@ -41,6 +41,7 @@ namespace TencentCloud
                     CreateL4RulesResponse();
                     ~CreateL4RulesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

@@ -98,6 +98,47 @@ CoreInternalOutcome DescribeFirmwareTaskStatisticsResponse::Deserialize(const st
     return CoreInternalOutcome(true);
 }
 
+string DescribeFirmwareTaskStatisticsResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_successTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_successTotal, allocator);
+    }
+
+    if (m_failureTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailureTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failureTotal, allocator);
+    }
+
+    if (m_upgradingTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradingTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upgradingTotal, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeFirmwareTaskStatisticsResponse::GetSuccessTotal() const
 {

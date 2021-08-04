@@ -142,6 +142,79 @@ CoreInternalOutcome DescribeWebPageGeneralizeResponse::Deserialize(const string 
     return CoreInternalOutcome(true);
 }
 
+string DescribeWebPageGeneralizeResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_protectMonitorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectMonitor";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protectMonitor, allocator);
+    }
+
+    if (m_protectDirNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectDirNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protectDirNum, allocator);
+    }
+
+    if (m_protectFileNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectFileNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protectFileNum, allocator);
+    }
+
+    if (m_tamperFileNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TamperFileNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tamperFileNum, allocator);
+    }
+
+    if (m_tamperNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TamperNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tamperNum, allocator);
+    }
+
+    if (m_protectTodayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectToday";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protectToday, allocator);
+    }
+
+    if (m_protectHostNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectHostNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protectHostNum, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeWebPageGeneralizeResponse::GetProtectMonitor() const
 {

@@ -142,6 +142,79 @@ CoreInternalOutcome CropImageResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+string CropImageResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_xHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "X";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_x, allocator);
+    }
+
+    if (m_yHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Y";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_y, allocator);
+    }
+
+    if (m_widthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Width";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_width, allocator);
+    }
+
+    if (m_heightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Height";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_originalWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_originalWidth, allocator);
+    }
+
+    if (m_originalHeightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalHeight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_originalHeight, allocator);
+    }
+
+    if (m_cropResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CropResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cropResult, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t CropImageResponse::GetX() const
 {

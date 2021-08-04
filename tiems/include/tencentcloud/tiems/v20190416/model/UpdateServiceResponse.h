@@ -41,6 +41,7 @@ namespace TencentCloud
                     UpdateServiceResponse();
                     ~UpdateServiceResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

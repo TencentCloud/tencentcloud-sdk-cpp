@@ -207,6 +207,126 @@ CoreInternalOutcome DescribeBillListResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+string DescribeBillListResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_transactionListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransactionList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_transactionList.begin(); itr != m_transactionList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
+    if (m_returnAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReturnAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_returnAmount, allocator);
+    }
+
+    if (m_rechargeAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RechargeAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rechargeAmount, allocator);
+    }
+
+    if (m_blockAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlockAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blockAmount, allocator);
+    }
+
+    if (m_unblockAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnblockAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unblockAmount, allocator);
+    }
+
+    if (m_deductAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeductAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deductAmount, allocator);
+    }
+
+    if (m_agentInAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentInAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentInAmount, allocator);
+    }
+
+    if (m_advanceRechargeAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvanceRechargeAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_advanceRechargeAmount, allocator);
+    }
+
+    if (m_withdrawAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WithdrawAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_withdrawAmount, allocator);
+    }
+
+    if (m_agentOutAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentOutAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentOutAmount, allocator);
+    }
+
+    if (m_advancePayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancePayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_advancePayAmount, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 vector<BillTransactionInfo> DescribeBillListResponse::GetTransactionList() const
 {

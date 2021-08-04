@@ -131,6 +131,71 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+string GetServiceStatusResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_serviceEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serviceEnabled, allocator);
+    }
+
+    if (m_invalidTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvalidType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_invalidType, allocator);
+    }
+
+    if (m_userLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userLevel, allocator);
+    }
+
+    if (m_proExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proExpireTime, allocator);
+    }
+
+    if (m_proRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proRenewFlag, allocator);
+    }
+
+    if (m_proResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 bool GetServiceStatusResponse::GetServiceEnabled() const
 {

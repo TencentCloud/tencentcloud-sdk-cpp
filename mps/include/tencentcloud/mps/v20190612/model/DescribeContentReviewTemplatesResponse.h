@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeContentReviewTemplatesResponse();
                     ~DescribeContentReviewTemplatesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

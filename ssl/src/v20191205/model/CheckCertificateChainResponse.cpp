@@ -101,6 +101,52 @@ CoreInternalOutcome CheckCertificateChainResponse::Deserialize(const string &pay
     return CoreInternalOutcome(true);
 }
 
+string CheckCertificateChainResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_isValidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsValid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isValid, allocator);
+    }
+
+    if (m_isTrustedCAHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTrustedCA";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isTrustedCA, allocator);
+    }
+
+    if (m_chainsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Chains";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_chains.begin(); itr != m_chains.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 bool CheckCertificateChainResponse::GetIsValid() const
 {

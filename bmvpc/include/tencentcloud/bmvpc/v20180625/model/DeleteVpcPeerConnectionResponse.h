@@ -40,6 +40,7 @@ namespace TencentCloud
                     DeleteVpcPeerConnectionResponse();
                     ~DeleteVpcPeerConnectionResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

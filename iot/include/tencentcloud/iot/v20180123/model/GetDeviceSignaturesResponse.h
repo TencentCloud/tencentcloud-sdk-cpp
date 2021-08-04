@@ -41,6 +41,7 @@ namespace TencentCloud
                     GetDeviceSignaturesResponse();
                     ~GetDeviceSignaturesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

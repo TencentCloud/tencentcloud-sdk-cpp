@@ -40,6 +40,7 @@ namespace TencentCloud
                     CreateDBDiagReportUrlResponse();
                     ~CreateDBDiagReportUrlResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

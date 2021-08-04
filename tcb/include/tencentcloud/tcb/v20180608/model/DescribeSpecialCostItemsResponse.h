@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeSpecialCostItemsResponse();
                     ~DescribeSpecialCostItemsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

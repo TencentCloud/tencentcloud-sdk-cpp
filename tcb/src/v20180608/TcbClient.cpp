@@ -427,6 +427,49 @@ TcbClient::CreatePostpayPackageOutcomeCallable TcbClient::CreatePostpayPackageCa
     return task->get_future();
 }
 
+TcbClient::CreateStandaloneGatewayOutcome TcbClient::CreateStandaloneGateway(const CreateStandaloneGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateStandaloneGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateStandaloneGatewayResponse rsp = CreateStandaloneGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateStandaloneGatewayOutcome(rsp);
+        else
+            return CreateStandaloneGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateStandaloneGatewayOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateStandaloneGatewayAsync(const CreateStandaloneGatewayRequest& request, const CreateStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateStandaloneGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::CreateStandaloneGatewayOutcomeCallable TcbClient::CreateStandaloneGatewayCallable(const CreateStandaloneGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateStandaloneGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateStandaloneGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::CreateStaticStoreOutcome TcbClient::CreateStaticStore(const CreateStaticStoreRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateStaticStore");
@@ -1932,6 +1975,92 @@ TcbClient::DescribeSpecialCostItemsOutcomeCallable TcbClient::DescribeSpecialCos
     return task->get_future();
 }
 
+TcbClient::DescribeStandaloneGatewayOutcome TcbClient::DescribeStandaloneGateway(const DescribeStandaloneGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStandaloneGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStandaloneGatewayResponse rsp = DescribeStandaloneGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStandaloneGatewayOutcome(rsp);
+        else
+            return DescribeStandaloneGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStandaloneGatewayOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeStandaloneGatewayAsync(const DescribeStandaloneGatewayRequest& request, const DescribeStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStandaloneGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeStandaloneGatewayOutcomeCallable TcbClient::DescribeStandaloneGatewayCallable(const DescribeStandaloneGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStandaloneGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStandaloneGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DescribeStandaloneGatewayPackageOutcome TcbClient::DescribeStandaloneGatewayPackage(const DescribeStandaloneGatewayPackageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStandaloneGatewayPackage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStandaloneGatewayPackageResponse rsp = DescribeStandaloneGatewayPackageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStandaloneGatewayPackageOutcome(rsp);
+        else
+            return DescribeStandaloneGatewayPackageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStandaloneGatewayPackageOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeStandaloneGatewayPackageAsync(const DescribeStandaloneGatewayPackageRequest& request, const DescribeStandaloneGatewayPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStandaloneGatewayPackage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeStandaloneGatewayPackageOutcomeCallable TcbClient::DescribeStandaloneGatewayPackageCallable(const DescribeStandaloneGatewayPackageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStandaloneGatewayPackageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStandaloneGatewayPackage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeWxCloudBaseRunEnvsOutcome TcbClient::DescribeWxCloudBaseRunEnvs(const DescribeWxCloudBaseRunEnvsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWxCloudBaseRunEnvs");
@@ -2054,6 +2183,49 @@ TcbClient::DestroyEnvOutcomeCallable TcbClient::DestroyEnvCallable(const Destroy
         [this, request]()
         {
             return this->DestroyEnv(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::DestroyStandaloneGatewayOutcome TcbClient::DestroyStandaloneGateway(const DestroyStandaloneGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyStandaloneGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyStandaloneGatewayResponse rsp = DestroyStandaloneGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyStandaloneGatewayOutcome(rsp);
+        else
+            return DestroyStandaloneGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyStandaloneGatewayOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DestroyStandaloneGatewayAsync(const DestroyStandaloneGatewayRequest& request, const DestroyStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyStandaloneGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DestroyStandaloneGatewayOutcomeCallable TcbClient::DestroyStandaloneGatewayCallable(const DestroyStandaloneGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyStandaloneGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyStandaloneGateway(request);
         }
     );
 
@@ -2484,6 +2656,92 @@ TcbClient::RollUpdateCloudBaseRunServerVersionOutcomeCallable TcbClient::RollUpd
         [this, request]()
         {
             return this->RollUpdateCloudBaseRunServerVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::TurnOffStandaloneGatewayOutcome TcbClient::TurnOffStandaloneGateway(const TurnOffStandaloneGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "TurnOffStandaloneGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TurnOffStandaloneGatewayResponse rsp = TurnOffStandaloneGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TurnOffStandaloneGatewayOutcome(rsp);
+        else
+            return TurnOffStandaloneGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return TurnOffStandaloneGatewayOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::TurnOffStandaloneGatewayAsync(const TurnOffStandaloneGatewayRequest& request, const TurnOffStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TurnOffStandaloneGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::TurnOffStandaloneGatewayOutcomeCallable TcbClient::TurnOffStandaloneGatewayCallable(const TurnOffStandaloneGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TurnOffStandaloneGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->TurnOffStandaloneGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::TurnOnStandaloneGatewayOutcome TcbClient::TurnOnStandaloneGateway(const TurnOnStandaloneGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "TurnOnStandaloneGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TurnOnStandaloneGatewayResponse rsp = TurnOnStandaloneGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TurnOnStandaloneGatewayOutcome(rsp);
+        else
+            return TurnOnStandaloneGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return TurnOnStandaloneGatewayOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::TurnOnStandaloneGatewayAsync(const TurnOnStandaloneGatewayRequest& request, const TurnOnStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TurnOnStandaloneGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::TurnOnStandaloneGatewayOutcomeCallable TcbClient::TurnOnStandaloneGatewayCallable(const TurnOnStandaloneGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TurnOnStandaloneGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->TurnOnStandaloneGateway(request);
         }
     );
 

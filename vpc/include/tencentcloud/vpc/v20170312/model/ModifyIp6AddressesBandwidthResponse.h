@@ -40,6 +40,7 @@ namespace TencentCloud
                     ModifyIp6AddressesBandwidthResponse();
                     ~ModifyIp6AddressesBandwidthResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

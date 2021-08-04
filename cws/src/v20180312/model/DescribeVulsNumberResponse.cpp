@@ -184,6 +184,109 @@ CoreInternalOutcome DescribeVulsNumberResponse::Deserialize(const string &payloa
     return CoreInternalOutcome(true);
 }
 
+string DescribeVulsNumberResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_impactSiteNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImpactSiteNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_impactSiteNumber, allocator);
+    }
+
+    if (m_siteNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SiteNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_siteNumber, allocator);
+    }
+
+    if (m_vulsHighNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulsHighNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulsHighNumber, allocator);
+    }
+
+    if (m_vulsMiddleNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulsMiddleNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulsMiddleNumber, allocator);
+    }
+
+    if (m_vulsLowNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulsLowNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulsLowNumber, allocator);
+    }
+
+    if (m_vulsNoticeNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulsNoticeNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulsNoticeNumber, allocator);
+    }
+
+    if (m_pageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageCount, allocator);
+    }
+
+    if (m_sitesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sites";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sites.begin(); itr != m_sites.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_impactSitesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImpactSites";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_impactSites.begin(); itr != m_impactSites.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeVulsNumberResponse::GetImpactSiteNumber() const
 {

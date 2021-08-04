@@ -40,6 +40,7 @@ namespace TencentCloud
                     DescribeDeviceDataResponse();
                     ~DescribeDeviceDataResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

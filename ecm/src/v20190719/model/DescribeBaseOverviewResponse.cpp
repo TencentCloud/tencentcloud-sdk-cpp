@@ -186,6 +186,111 @@ CoreInternalOutcome DescribeBaseOverviewResponse::Deserialize(const string &payl
     return CoreInternalOutcome(true);
 }
 
+string DescribeBaseOverviewResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_moduleNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModuleNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_moduleNum, allocator);
+    }
+
+    if (m_nodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nodeNum, allocator);
+    }
+
+    if (m_vcpuNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VcpuNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vcpuNum, allocator);
+    }
+
+    if (m_memoryNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemoryNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memoryNum, allocator);
+    }
+
+    if (m_storageNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storageNum, allocator);
+    }
+
+    if (m_networkNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_networkNum, allocator);
+    }
+
+    if (m_instanceNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceNum, allocator);
+    }
+
+    if (m_runningNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningNum, allocator);
+    }
+
+    if (m_isolationNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolationNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolationNum, allocator);
+    }
+
+    if (m_expiredNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expiredNum, allocator);
+    }
+
+    if (m_willExpireNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WillExpireNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_willExpireNum, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeBaseOverviewResponse::GetModuleNum() const
 {

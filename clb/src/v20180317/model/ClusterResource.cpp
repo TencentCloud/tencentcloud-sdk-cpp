@@ -25,7 +25,8 @@ ClusterResource::ClusterResource() :
     m_vipHasBeenSet(false),
     m_loadBalancerIdHasBeenSet(false),
     m_idleHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_ispHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ClusterResource::Deserialize(const rapidjson::Value &value)
         m_clusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Isp") && !value["Isp"].IsNull())
+    {
+        if (!value["Isp"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ClusterResource.Isp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isp = string(value["Isp"].GetString());
+        m_ispHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ClusterResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ispHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Isp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ClusterResource::SetClusterName(const string& _clusterName)
 bool ClusterResource::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+string ClusterResource::GetIsp() const
+{
+    return m_isp;
+}
+
+void ClusterResource::SetIsp(const string& _isp)
+{
+    m_isp = _isp;
+    m_ispHasBeenSet = true;
+}
+
+bool ClusterResource::IspHasBeenSet() const
+{
+    return m_ispHasBeenSet;
 }
 

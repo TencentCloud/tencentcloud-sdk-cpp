@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeFleetCapacityResponse();
                     ~DescribeFleetCapacityResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

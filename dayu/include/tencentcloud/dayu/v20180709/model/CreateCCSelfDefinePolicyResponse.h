@@ -41,6 +41,7 @@ namespace TencentCloud
                     CreateCCSelfDefinePolicyResponse();
                     ~CreateCCSelfDefinePolicyResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

@@ -34,12 +34,14 @@ SearchMediaRequest::SearchMediaRequest() :
     m_streamIdsHasBeenSet(false),
     m_vidsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
     m_sortHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_storageRegionsHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
+    m_storageClassesHasBeenSet(false),
     m_textHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_streamIdHasBeenSet(false),
@@ -195,6 +197,15 @@ string SearchMediaRequest::ToJsonString() const
         m_createTime.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_expireTime.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_sortHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -252,6 +263,19 @@ string SearchMediaRequest::ToJsonString() const
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subAppId, allocator);
+    }
+
+    if (m_storageClassesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageClasses";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_storageClasses.begin(); itr != m_storageClasses.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_textHasBeenSet)
@@ -486,6 +510,22 @@ bool SearchMediaRequest::CreateTimeHasBeenSet() const
     return m_createTimeHasBeenSet;
 }
 
+TimeRange SearchMediaRequest::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void SearchMediaRequest::SetExpireTime(const TimeRange& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool SearchMediaRequest::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
 SortBy SearchMediaRequest::GetSort() const
 {
     return m_sort;
@@ -580,6 +620,22 @@ void SearchMediaRequest::SetSubAppId(const uint64_t& _subAppId)
 bool SearchMediaRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+vector<string> SearchMediaRequest::GetStorageClasses() const
+{
+    return m_storageClasses;
+}
+
+void SearchMediaRequest::SetStorageClasses(const vector<string>& _storageClasses)
+{
+    m_storageClasses = _storageClasses;
+    m_storageClassesHasBeenSet = true;
+}
+
+bool SearchMediaRequest::StorageClassesHasBeenSet() const
+{
+    return m_storageClassesHasBeenSet;
 }
 
 string SearchMediaRequest::GetText() const

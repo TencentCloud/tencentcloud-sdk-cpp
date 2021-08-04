@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribePrometheusAgentsResponse();
                     ~DescribePrometheusAgentsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

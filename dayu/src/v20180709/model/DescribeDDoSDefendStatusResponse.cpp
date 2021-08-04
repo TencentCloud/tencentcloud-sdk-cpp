@@ -98,6 +98,47 @@ CoreInternalOutcome DescribeDDoSDefendStatusResponse::Deserialize(const string &
     return CoreInternalOutcome(true);
 }
 
+string DescribeDDoSDefendStatusResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_defendStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefendStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defendStatus, allocator);
+    }
+
+    if (m_undefendExpireHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UndefendExpire";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_undefendExpire.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_showFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_showFlag, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeDDoSDefendStatusResponse::GetDefendStatus() const
 {

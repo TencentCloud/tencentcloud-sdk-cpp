@@ -109,6 +109,55 @@ CoreInternalOutcome DescribeBackupOverviewResponse::Deserialize(const string &pa
     return CoreInternalOutcome(true);
 }
 
+string DescribeBackupOverviewResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_backupCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupCount, allocator);
+    }
+
+    if (m_backupVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupVolume, allocator);
+    }
+
+    if (m_billingVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_billingVolume, allocator);
+    }
+
+    if (m_freeVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreeVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_freeVolume, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeBackupOverviewResponse::GetBackupCount() const
 {

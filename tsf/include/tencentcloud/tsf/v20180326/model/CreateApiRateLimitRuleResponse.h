@@ -40,6 +40,7 @@ namespace TencentCloud
                     CreateApiRateLimitRuleResponse();
                     ~CreateApiRateLimitRuleResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

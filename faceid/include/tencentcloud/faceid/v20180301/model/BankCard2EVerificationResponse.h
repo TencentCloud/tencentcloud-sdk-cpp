@@ -40,6 +40,7 @@ namespace TencentCloud
                     BankCard2EVerificationResponse();
                     ~BankCard2EVerificationResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

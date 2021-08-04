@@ -2104,3 +2104,46 @@ ClsClient::SplitPartitionOutcomeCallable ClsClient::SplitPartitionCallable(const
     return task->get_future();
 }
 
+ClsClient::UploadLogOutcome ClsClient::UploadLog(const UploadLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadLogResponse rsp = UploadLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadLogOutcome(rsp);
+        else
+            return UploadLogOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadLogOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::UploadLogAsync(const UploadLogRequest& request, const UploadLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::UploadLogOutcomeCallable ClsClient::UploadLogCallable(const UploadLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadLogOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

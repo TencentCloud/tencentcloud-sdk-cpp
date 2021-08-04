@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeUserInAndOutTimeResponse();
                     ~DescribeUserInAndOutTimeResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

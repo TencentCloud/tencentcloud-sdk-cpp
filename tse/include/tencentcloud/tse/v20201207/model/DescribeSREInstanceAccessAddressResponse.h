@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeSREInstanceAccessAddressResponse();
                     ~DescribeSREInstanceAccessAddressResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeCdnLogsResponse();
                     ~DescribeCdnLogsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

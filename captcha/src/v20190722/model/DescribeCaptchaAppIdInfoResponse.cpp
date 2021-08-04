@@ -233,6 +233,148 @@ CoreInternalOutcome DescribeCaptchaAppIdInfoResponse::Deserialize(const string &
     return CoreInternalOutcome(true);
 }
 
+string DescribeCaptchaAppIdInfoResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_schemeColorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemeColor";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemeColor.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_languageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Language";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_language, allocator);
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sceneType, allocator);
+    }
+
+    if (m_evilInterceptGradeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvilInterceptGrade";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_evilInterceptGrade, allocator);
+    }
+
+    if (m_smartVerifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartVerify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_smartVerify, allocator);
+    }
+
+    if (m_smartEngineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartEngine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_smartEngine, allocator);
+    }
+
+    if (m_capTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CapType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_capType, allocator);
+    }
+
+    if (m_appNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mailAlarmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MailAlarm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_mailAlarm.begin(); itr != m_mailAlarm.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_trafficThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrafficThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trafficThreshold, allocator);
+    }
+
+    if (m_encryptKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topFullScreenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopFullScreen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_topFullScreen, allocator);
+    }
+
+    if (m_captchaCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaptchaCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_captchaCode, allocator);
+    }
+
+    if (m_captchaMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaptchaMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_captchaMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 string DescribeCaptchaAppIdInfoResponse::GetSchemeColor() const
 {

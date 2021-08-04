@@ -109,6 +109,55 @@ CoreInternalOutcome DescribeNotebookSummaryResponse::Deserialize(const string &p
     return CoreInternalOutcome(true);
 }
 
+string DescribeNotebookSummaryResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_allInstanceCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllInstanceCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allInstanceCnt, allocator);
+    }
+
+    if (m_billingInstanceCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingInstanceCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_billingInstanceCnt, allocator);
+    }
+
+    if (m_storageOnlyBillingInstanceCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageOnlyBillingInstanceCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storageOnlyBillingInstanceCnt, allocator);
+    }
+
+    if (m_computingBillingInstanceCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputingBillingInstanceCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_computingBillingInstanceCnt, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeNotebookSummaryResponse::GetAllInstanceCnt() const
 {

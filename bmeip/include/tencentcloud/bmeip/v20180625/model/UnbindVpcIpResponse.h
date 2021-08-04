@@ -40,6 +40,7 @@ namespace TencentCloud
                     UnbindVpcIpResponse();
                     ~UnbindVpcIpResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

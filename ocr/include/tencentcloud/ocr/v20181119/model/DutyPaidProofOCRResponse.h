@@ -41,6 +41,7 @@ namespace TencentCloud
                     DutyPaidProofOCRResponse();
                     ~DutyPaidProofOCRResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

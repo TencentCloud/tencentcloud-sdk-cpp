@@ -40,6 +40,7 @@ namespace TencentCloud
                     CreateHashDepositNoCertResponse();
                     ~CreateHashDepositNoCertResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

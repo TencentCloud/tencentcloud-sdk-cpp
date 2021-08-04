@@ -40,6 +40,7 @@ namespace TencentCloud
                     CancelKeyDeletionResponse();
                     ~CancelKeyDeletionResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

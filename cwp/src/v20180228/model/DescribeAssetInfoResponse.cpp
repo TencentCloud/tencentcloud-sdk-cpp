@@ -175,6 +175,103 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
+string DescribeAssetInfoResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_machineCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_machineCount, allocator);
+    }
+
+    if (m_accountCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accountCount, allocator);
+    }
+
+    if (m_portCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_portCount, allocator);
+    }
+
+    if (m_processCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processCount, allocator);
+    }
+
+    if (m_softwareCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SoftwareCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_softwareCount, allocator);
+    }
+
+    if (m_databaseCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_databaseCount, allocator);
+    }
+
+    if (m_webAppCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebAppCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webAppCount, allocator);
+    }
+
+    if (m_webFrameCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebFrameCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webFrameCount, allocator);
+    }
+
+    if (m_webServiceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebServiceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webServiceCount, allocator);
+    }
+
+    if (m_webLocationCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebLocationCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webLocationCount, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeAssetInfoResponse::GetMachineCount() const
 {

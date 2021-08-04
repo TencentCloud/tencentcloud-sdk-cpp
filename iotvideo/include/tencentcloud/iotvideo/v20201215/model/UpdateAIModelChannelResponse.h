@@ -40,6 +40,7 @@ namespace TencentCloud
                     UpdateAIModelChannelResponse();
                     ~UpdateAIModelChannelResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

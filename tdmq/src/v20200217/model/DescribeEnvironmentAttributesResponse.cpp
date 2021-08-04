@@ -153,6 +153,87 @@ CoreInternalOutcome DescribeEnvironmentAttributesResponse::Deserialize(const str
     return CoreInternalOutcome(true);
 }
 
+string DescribeEnvironmentAttributesResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_msgTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgTTL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_msgTTL, allocator);
+    }
+
+    if (m_rateInByteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RateInByte";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rateInByte, allocator);
+    }
+
+    if (m_rateInSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RateInSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rateInSize, allocator);
+    }
+
+    if (m_retentionHoursHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionHours";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retentionHours, allocator);
+    }
+
+    if (m_retentionSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retentionSize, allocator);
+    }
+
+    if (m_environmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvironmentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_replicasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Replicas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_replicas, allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeEnvironmentAttributesResponse::GetMsgTTL() const
 {

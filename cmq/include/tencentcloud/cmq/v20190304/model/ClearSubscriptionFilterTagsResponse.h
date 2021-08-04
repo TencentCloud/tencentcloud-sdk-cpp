@@ -40,6 +40,7 @@ namespace TencentCloud
                     ClearSubscriptionFilterTagsResponse();
                     ~ClearSubscriptionFilterTagsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

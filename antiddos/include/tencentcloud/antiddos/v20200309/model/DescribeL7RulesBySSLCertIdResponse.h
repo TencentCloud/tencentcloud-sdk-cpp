@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeL7RulesBySSLCertIdResponse();
                     ~DescribeL7RulesBySSLCertIdResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

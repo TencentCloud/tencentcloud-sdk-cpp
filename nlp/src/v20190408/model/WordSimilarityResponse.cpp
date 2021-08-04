@@ -76,6 +76,31 @@ CoreInternalOutcome WordSimilarityResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+string WordSimilarityResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_similarityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Similarity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_similarity, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 double WordSimilarityResponse::GetSimilarity() const
 {

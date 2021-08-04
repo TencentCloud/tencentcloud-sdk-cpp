@@ -120,6 +120,63 @@ CoreInternalOutcome DescribeInternetAddressQuotaResponse::Deserialize(const stri
     return CoreInternalOutcome(true);
 }
 
+string DescribeInternetAddressQuotaResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_ipv6PrefixLenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6PrefixLen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv6PrefixLen, allocator);
+    }
+
+    if (m_ipv4BgpQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv4BgpQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv4BgpQuota, allocator);
+    }
+
+    if (m_ipv4OtherQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv4OtherQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv4OtherQuota, allocator);
+    }
+
+    if (m_ipv4BgpNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv4BgpNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv4BgpNum, allocator);
+    }
+
+    if (m_ipv4OtherNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv4OtherNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv4OtherNum, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeInternetAddressQuotaResponse::GetIpv6PrefixLen() const
 {

@@ -40,6 +40,7 @@ namespace TencentCloud
                     ModifyMigrationResponse();
                     ~ModifyMigrationResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

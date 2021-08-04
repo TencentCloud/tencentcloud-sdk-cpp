@@ -109,6 +109,55 @@ CoreInternalOutcome DescribeRotationDetailResponse::Deserialize(const string &pa
     return CoreInternalOutcome(true);
 }
 
+string DescribeRotationDetailResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_enableRotationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRotation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableRotation, allocator);
+    }
+
+    if (m_frequencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Frequency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_frequency, allocator);
+    }
+
+    if (m_latestRotateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestRotateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestRotateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nextRotateBeginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextRotateBeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nextRotateBeginTime.c_str(), allocator).Move(), allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 bool DescribeRotationDetailResponse::GetEnableRotation() const
 {

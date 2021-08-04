@@ -206,6 +206,125 @@ CoreInternalOutcome DescribePlayErrorCodeSumInfoListResponse::Deserialize(const 
     return CoreInternalOutcome(true);
 }
 
+string DescribePlayErrorCodeSumInfoListResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_proIspInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProIspInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_proIspInfoList.begin(); itr != m_proIspInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCodeAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCodeAll";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCodeAll, allocator);
+    }
+
+    if (m_totalCode4xxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCode4xx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCode4xx, allocator);
+    }
+
+    if (m_totalCode5xxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCode5xx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCode5xx, allocator);
+    }
+
+    if (m_totalCodeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCodeList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_totalCodeList.begin(); itr != m_totalCodeList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_pageNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageNum, allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_totalPageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalPage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalPage, allocator);
+    }
+
+    if (m_totalNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalNum, allocator);
+    }
+
+    if (m_totalCode2xxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCode2xx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCode2xx, allocator);
+    }
+
+    if (m_totalCode3xxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCode3xx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCode3xx, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 vector<ProIspPlayCodeDataInfo> DescribePlayErrorCodeSumInfoListResponse::GetProIspInfoList() const
 {

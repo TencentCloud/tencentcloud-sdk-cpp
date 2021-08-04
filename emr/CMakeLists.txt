@@ -22,8 +22,9 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/InquirePriceRenewEmrResponse.h
   include/tencentcloud/emr/v20190103/model/MultiDiskMC.h
   include/tencentcloud/emr/v20190103/model/ClusterSetting.h
+  include/tencentcloud/emr/v20190103/model/PodState.h
   include/tencentcloud/emr/v20190103/model/JobResult.h
-  include/tencentcloud/emr/v20190103/model/EmrProductConfigOutter.h
+  include/tencentcloud/emr/v20190103/model/CustomMetaInfo.h
   include/tencentcloud/emr/v20190103/model/LoginSettings.h
   include/tencentcloud/emr/v20190103/model/RunJobFlowRequest.h
   include/tencentcloud/emr/v20190103/model/VPCSettings.h
@@ -31,9 +32,11 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/ScaleOutInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/Resource.h
+  include/tencentcloud/emr/v20190103/model/PriceResource.h
   include/tencentcloud/emr/v20190103/model/TerminateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/TerminateTasksRequest.h
   include/tencentcloud/emr/v20190103/model/PodVolume.h
+  include/tencentcloud/emr/v20190103/model/SyncPodStateResponse.h
   include/tencentcloud/emr/v20190103/model/TerminateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/CreateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/PersistentVolumeContext.h
@@ -44,13 +47,15 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/HostVolumeContext.h
   include/tencentcloud/emr/v20190103/model/Step.h
   include/tencentcloud/emr/v20190103/model/InstanceChargePrepaid.h
+  include/tencentcloud/emr/v20190103/model/DescribeCvmQuotaRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h
   include/tencentcloud/emr/v20190103/model/PreExecuteFileSettings.h
+  include/tencentcloud/emr/v20190103/model/SyncPodStateRequest.h
   include/tencentcloud/emr/v20190103/model/CreateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/InquirePriceRenewEmrRequest.h
   include/tencentcloud/emr/v20190103/model/PodParameter.h
   include/tencentcloud/emr/v20190103/model/MetaDbInfo.h
-  include/tencentcloud/emr/v20190103/model/Execution.h
+  include/tencentcloud/emr/v20190103/model/Configuration.h
   include/tencentcloud/emr/v20190103/model/DescribeInstancesResponse.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/Tag.h
@@ -58,9 +63,10 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/SearchItem.h
   include/tencentcloud/emr/v20190103/model/DynamicPodSpec.h
   include/tencentcloud/emr/v20190103/model/DescribeInstancesRequest.h
-  include/tencentcloud/emr/v20190103/model/CustomMetaInfo.h
+  include/tencentcloud/emr/v20190103/model/EmrProductConfigOutter.h
   include/tencentcloud/emr/v20190103/model/DiskSpec.h
   include/tencentcloud/emr/v20190103/model/JobFlowResourceSpec.h
+  include/tencentcloud/emr/v20190103/model/DescribeCvmQuotaResponse.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h
   include/tencentcloud/emr/v20190103/model/COSSettings.h
@@ -72,9 +78,10 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/OutterResource.h
   include/tencentcloud/emr/v20190103/model/UpdateInstanceSettings.h
-  include/tencentcloud/emr/v20190103/model/Configuration.h
+  include/tencentcloud/emr/v20190103/model/Execution.h
   include/tencentcloud/emr/v20190103/model/TerminateTasksResponse.h
-  include/tencentcloud/emr/v20190103/model/PriceResource.h
+  include/tencentcloud/emr/v20190103/model/QuotaEntity.h
+  include/tencentcloud/emr/v20190103/model/PodSaleSpec.h
   include/tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h
   include/tencentcloud/emr/v20190103/model/NodeHardwareInfo.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceResponse.h
@@ -92,8 +99,9 @@ set(emr_src
   src/v20190103/model/InquirePriceRenewEmrResponse.cpp
   src/v20190103/model/MultiDiskMC.cpp
   src/v20190103/model/ClusterSetting.cpp
+  src/v20190103/model/PodState.cpp
   src/v20190103/model/JobResult.cpp
-  src/v20190103/model/EmrProductConfigOutter.cpp
+  src/v20190103/model/CustomMetaInfo.cpp
   src/v20190103/model/LoginSettings.cpp
   src/v20190103/model/RunJobFlowRequest.cpp
   src/v20190103/model/VPCSettings.cpp
@@ -101,9 +109,11 @@ set(emr_src
   src/v20190103/model/ScaleOutInstanceResponse.cpp
   src/v20190103/model/InquiryPriceCreateInstanceRequest.cpp
   src/v20190103/model/Resource.cpp
+  src/v20190103/model/PriceResource.cpp
   src/v20190103/model/TerminateInstanceRequest.cpp
   src/v20190103/model/TerminateTasksRequest.cpp
   src/v20190103/model/PodVolume.cpp
+  src/v20190103/model/SyncPodStateResponse.cpp
   src/v20190103/model/TerminateInstanceResponse.cpp
   src/v20190103/model/CreateInstanceResponse.cpp
   src/v20190103/model/PersistentVolumeContext.cpp
@@ -114,13 +124,15 @@ set(emr_src
   src/v20190103/model/HostVolumeContext.cpp
   src/v20190103/model/Step.cpp
   src/v20190103/model/InstanceChargePrepaid.cpp
+  src/v20190103/model/DescribeCvmQuotaRequest.cpp
   src/v20190103/model/DescribeClusterNodesRequest.cpp
   src/v20190103/model/PreExecuteFileSettings.cpp
+  src/v20190103/model/SyncPodStateRequest.cpp
   src/v20190103/model/CreateInstanceRequest.cpp
   src/v20190103/model/InquirePriceRenewEmrRequest.cpp
   src/v20190103/model/PodParameter.cpp
   src/v20190103/model/MetaDbInfo.cpp
-  src/v20190103/model/Execution.cpp
+  src/v20190103/model/Configuration.cpp
   src/v20190103/model/DescribeInstancesResponse.cpp
   src/v20190103/model/InquiryPriceScaleOutInstanceRequest.cpp
   src/v20190103/model/Tag.cpp
@@ -128,9 +140,10 @@ set(emr_src
   src/v20190103/model/SearchItem.cpp
   src/v20190103/model/DynamicPodSpec.cpp
   src/v20190103/model/DescribeInstancesRequest.cpp
-  src/v20190103/model/CustomMetaInfo.cpp
+  src/v20190103/model/EmrProductConfigOutter.cpp
   src/v20190103/model/DiskSpec.cpp
   src/v20190103/model/JobFlowResourceSpec.cpp
+  src/v20190103/model/DescribeCvmQuotaResponse.cpp
   src/v20190103/model/InquiryPriceUpdateInstanceRequest.cpp
   src/v20190103/model/DescribeInstanceRenewNodesResponse.cpp
   src/v20190103/model/COSSettings.cpp
@@ -142,9 +155,10 @@ set(emr_src
   src/v20190103/model/InquiryPriceScaleOutInstanceResponse.cpp
   src/v20190103/model/OutterResource.cpp
   src/v20190103/model/UpdateInstanceSettings.cpp
-  src/v20190103/model/Configuration.cpp
+  src/v20190103/model/Execution.cpp
   src/v20190103/model/TerminateTasksResponse.cpp
-  src/v20190103/model/PriceResource.cpp
+  src/v20190103/model/QuotaEntity.cpp
+  src/v20190103/model/PodSaleSpec.cpp
   src/v20190103/model/DescribeClusterNodesResponse.cpp
   src/v20190103/model/NodeHardwareInfo.cpp
   src/v20190103/model/InquiryPriceUpdateInstanceResponse.cpp

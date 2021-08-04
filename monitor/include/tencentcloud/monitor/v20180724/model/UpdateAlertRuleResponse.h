@@ -40,6 +40,7 @@ namespace TencentCloud
                     UpdateAlertRuleResponse();
                     ~UpdateAlertRuleResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

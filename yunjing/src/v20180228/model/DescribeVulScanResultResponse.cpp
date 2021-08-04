@@ -120,6 +120,63 @@ CoreInternalOutcome DescribeVulScanResultResponse::Deserialize(const string &pay
     return CoreInternalOutcome(true);
 }
 
+string DescribeVulScanResultResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_vulNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulNum, allocator);
+    }
+
+    if (m_proVersionNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProVersionNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proVersionNum, allocator);
+    }
+
+    if (m_impactedHostNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImpactedHostNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_impactedHostNum, allocator);
+    }
+
+    if (m_hostNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostNum, allocator);
+    }
+
+    if (m_basicVersionNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BasicVersionNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_basicVersionNum, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeVulScanResultResponse::GetVulNum() const
 {

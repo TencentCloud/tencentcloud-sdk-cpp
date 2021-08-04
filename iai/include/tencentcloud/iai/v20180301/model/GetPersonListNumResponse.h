@@ -40,6 +40,7 @@ namespace TencentCloud
                     GetPersonListNumResponse();
                     ~GetPersonListNumResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

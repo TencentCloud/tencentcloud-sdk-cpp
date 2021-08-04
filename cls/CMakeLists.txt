@@ -19,6 +19,7 @@ set(cls_public_header
   )
 
 set(cls_public_header_model
+  include/tencentcloud/cls/v20201016/model/UploadLogResponse.h
   include/tencentcloud/cls/v20201016/model/CreateAlarmResponse.h
   include/tencentcloud/cls/v20201016/model/AlarmInfo.h
   include/tencentcloud/cls/v20201016/model/LogInfo.h
@@ -85,6 +86,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DeleteConfigResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyIndexResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteIndexRequest.h
+  include/tencentcloud/cls/v20201016/model/UploadLogRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigRequest.h
   include/tencentcloud/cls/v20201016/model/LogsetInfo.h
   include/tencentcloud/cls/v20201016/model/CreateExportRequest.h
@@ -157,6 +159,7 @@ set(cls_public_header_model
 
 set(cls_src
   src/v20201016/ClsClient.cpp
+  src/v20201016/model/UploadLogResponse.cpp
   src/v20201016/model/CreateAlarmResponse.cpp
   src/v20201016/model/AlarmInfo.cpp
   src/v20201016/model/LogInfo.cpp
@@ -223,6 +226,7 @@ set(cls_src
   src/v20201016/model/DeleteConfigResponse.cpp
   src/v20201016/model/ModifyIndexResponse.cpp
   src/v20201016/model/DeleteIndexRequest.cpp
+  src/v20201016/model/UploadLogRequest.cpp
   src/v20201016/model/DeleteConfigRequest.cpp
   src/v20201016/model/LogsetInfo.cpp
   src/v20201016/model/CreateExportRequest.cpp

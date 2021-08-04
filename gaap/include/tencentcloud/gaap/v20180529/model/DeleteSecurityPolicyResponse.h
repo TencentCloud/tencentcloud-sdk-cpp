@@ -40,6 +40,7 @@ namespace TencentCloud
                     DeleteSecurityPolicyResponse();
                     ~DeleteSecurityPolicyResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

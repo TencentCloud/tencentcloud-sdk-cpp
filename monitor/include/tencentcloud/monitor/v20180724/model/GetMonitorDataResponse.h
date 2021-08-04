@@ -41,6 +41,7 @@ namespace TencentCloud
                     GetMonitorDataResponse();
                     ~GetMonitorDataResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

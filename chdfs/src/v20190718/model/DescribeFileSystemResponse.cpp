@@ -116,6 +116,56 @@ CoreInternalOutcome DescribeFileSystemResponse::Deserialize(const string &payloa
     return CoreInternalOutcome(true);
 }
 
+string DescribeFileSystemResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_fileSystemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSystem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileSystem.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fileSystemCapacityUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSystemCapacityUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileSystemCapacityUsed, allocator);
+    }
+
+    if (m_capacityUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CapacityUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_capacityUsed, allocator);
+    }
+
+    if (m_archiveCapacityUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchiveCapacityUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_archiveCapacityUsed, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 FileSystem DescribeFileSystemResponse::GetFileSystem() const
 {

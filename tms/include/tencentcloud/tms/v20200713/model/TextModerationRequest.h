@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。
-                     * @return Content 文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。
+                     * 获取文本内容Base64编码。限制原文长度不能超过10000个unicode字符
+                     * @return Content 文本内容Base64编码。限制原文长度不能超过10000个unicode字符
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。
-                     * @param Content 文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。
+                     * 设置文本内容Base64编码。限制原文长度不能超过10000个unicode字符
+                     * @param Content 文本内容Base64编码。限制原文长度不能超过10000个unicode字符
                      */
                     void SetContent(const std::string& _content);
 
@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。
-                     * @return BizType 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。
+                     * 获取该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
+                     * @return BizType 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
                      */
                     std::string GetBizType() const;
 
                     /**
-                     * 设置该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。
-                     * @param BizType 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。
+                     * 设置该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
+                     * @param BizType 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
                      */
                     void SetBizType(const std::string& _bizType);
 
@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool DataIdHasBeenSet() const;
 
                     /**
-                     * 获取账号相关信息字段，填入后可识别违规风险账号。
-                     * @return User 账号相关信息字段，填入后可识别违规风险账号。
+                     * 获取账号相关信息字段，填入后可识别违规风险账号
+                     * @return User 账号相关信息字段，填入后可识别违规风险账号
                      */
                     User GetUser() const;
 
                     /**
-                     * 设置账号相关信息字段，填入后可识别违规风险账号。
-                     * @param User 账号相关信息字段，填入后可识别违规风险账号。
+                     * 设置账号相关信息字段，填入后可识别违规风险账号
+                     * @param User 账号相关信息字段，填入后可识别违规风险账号
                      */
                     void SetUser(const User& _user);
 
@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取设备相关信息字段，填入后可识别违规风险设备。
-                     * @return Device 设备相关信息字段，填入后可识别违规风险设备。
+                     * 获取设备相关信息字段，填入后可识别违规风险设备
+                     * @return Device 设备相关信息字段，填入后可识别违规风险设备
                      */
                     Device GetDevice() const;
 
                     /**
-                     * 设置设备相关信息字段，填入后可识别违规风险设备。
-                     * @param Device 设备相关信息字段，填入后可识别违规风险设备。
+                     * 设置设备相关信息字段，填入后可识别违规风险设备
+                     * @param Device 设备相关信息字段，填入后可识别违规风险设备
                      */
                     void SetDevice(const Device& _device);
 
@@ -137,13 +137,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。
+                     * 文本内容Base64编码。限制原文长度不能超过10000个unicode字符
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略。 -- 该字段暂未开放。
+                     * 该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
@@ -155,13 +155,13 @@ namespace TencentCloud
                     bool m_dataIdHasBeenSet;
 
                     /**
-                     * 账号相关信息字段，填入后可识别违规风险账号。
+                     * 账号相关信息字段，填入后可识别违规风险账号
                      */
                     User m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 设备相关信息字段，填入后可识别违规风险设备。
+                     * 设备相关信息字段，填入后可识别违规风险设备
                      */
                     Device m_device;
                     bool m_deviceHasBeenSet;

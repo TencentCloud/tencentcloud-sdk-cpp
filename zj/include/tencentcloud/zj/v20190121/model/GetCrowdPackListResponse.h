@@ -41,6 +41,7 @@ namespace TencentCloud
                     GetCrowdPackListResponse();
                     ~GetCrowdPackListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

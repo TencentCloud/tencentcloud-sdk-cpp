@@ -230,6 +230,143 @@ CoreInternalOutcome GetClusterSummaryResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
+string GetClusterSummaryResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalChannelCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalChannelCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalChannelCount, allocator);
+    }
+
+    if (m_myChannelCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MyChannelCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_myChannelCount, allocator);
+    }
+
+    if (m_joinChannelCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JoinChannelCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_joinChannelCount, allocator);
+    }
+
+    if (m_totalPeerCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalPeerCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalPeerCount, allocator);
+    }
+
+    if (m_myPeerCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MyPeerCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_myPeerCount, allocator);
+    }
+
+    if (m_orderCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_orderCount, allocator);
+    }
+
+    if (m_totalGroupCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalGroupCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalGroupCount, allocator);
+    }
+
+    if (m_myGroupCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MyGroupCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_myGroupCount, allocator);
+    }
+
+    if (m_totalChaincodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalChaincodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalChaincodeCount, allocator);
+    }
+
+    if (m_recentChaincodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecentChaincodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recentChaincodeCount, allocator);
+    }
+
+    if (m_myChaincodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MyChaincodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_myChaincodeCount, allocator);
+    }
+
+    if (m_totalCertCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCertCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCertCount, allocator);
+    }
+
+    if (m_tlsCertCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TlsCertCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tlsCertCount, allocator);
+    }
+
+    if (m_peerCertCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PeerCertCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_peerCertCount, allocator);
+    }
+
+    if (m_clientCertCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientCertCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientCertCount, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t GetClusterSummaryResponse::GetTotalChannelCount() const
 {

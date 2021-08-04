@@ -41,6 +41,7 @@ namespace TencentCloud
                     PullSmsReplyStatusResponse();
                     ~PullSmsReplyStatusResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeListPacketFilterConfigResponse();
                     ~DescribeListPacketFilterConfigResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

@@ -40,6 +40,7 @@ namespace TencentCloud
                     DeleteApiGroupResponse();
                     ~DeleteApiGroupResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

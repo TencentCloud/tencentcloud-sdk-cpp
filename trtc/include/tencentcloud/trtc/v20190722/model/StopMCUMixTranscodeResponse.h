@@ -40,6 +40,7 @@ namespace TencentCloud
                     StopMCUMixTranscodeResponse();
                     ~StopMCUMixTranscodeResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

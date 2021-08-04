@@ -40,6 +40,7 @@ namespace TencentCloud
                     SendWxTouchTaskResponse();
                     ~SendWxTouchTaskResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

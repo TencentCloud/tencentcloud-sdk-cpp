@@ -40,6 +40,7 @@ namespace TencentCloud
                     DisableRoutesResponse();
                     ~DisableRoutesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

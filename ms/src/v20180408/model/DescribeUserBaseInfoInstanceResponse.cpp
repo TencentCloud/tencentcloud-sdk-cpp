@@ -98,6 +98,47 @@ CoreInternalOutcome DescribeUserBaseInfoInstanceResponse::Deserialize(const stri
     return CoreInternalOutcome(true);
 }
 
+string DescribeUserBaseInfoInstanceResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_userUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userUin, allocator);
+    }
+
+    if (m_userAppidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAppid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userAppid, allocator);
+    }
+
+    if (m_timeStampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeStamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timeStamp, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeUserBaseInfoInstanceResponse::GetUserUin() const
 {

@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeBlueprintInstancesResponse();
                     ~DescribeBlueprintInstancesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

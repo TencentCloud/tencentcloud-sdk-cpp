@@ -138,6 +138,72 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
     return CoreInternalOutcome(true);
 }
 
+string DescribeBackupConfigResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_startTimeMinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTimeMin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startTimeMin, allocator);
+    }
+
+    if (m_startTimeMaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTimeMax";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startTimeMax, allocator);
+    }
+
+    if (m_backupExpireDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupExpireDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupExpireDays, allocator);
+    }
+
+    if (m_backupMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_binlogExpireDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BinlogExpireDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_binlogExpireDays, allocator);
+    }
+
+    if (m_backupTimeWindowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupTimeWindow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_backupTimeWindow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeBackupConfigResponse::GetStartTimeMin() const
 {

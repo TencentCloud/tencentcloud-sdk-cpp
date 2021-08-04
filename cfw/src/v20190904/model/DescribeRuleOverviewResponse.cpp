@@ -120,6 +120,63 @@ CoreInternalOutcome DescribeRuleOverviewResponse::Deserialize(const string &payl
     return CoreInternalOutcome(true);
 }
 
+string DescribeRuleOverviewResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_allTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allTotal, allocator);
+    }
+
+    if (m_strategyNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StrategyNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_strategyNum, allocator);
+    }
+
+    if (m_startRuleNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartRuleNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startRuleNum, allocator);
+    }
+
+    if (m_stopRuleNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopRuleNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_stopRuleNum, allocator);
+    }
+
+    if (m_remainingNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemainingNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remainingNum, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeRuleOverviewResponse::GetAllTotal() const
 {

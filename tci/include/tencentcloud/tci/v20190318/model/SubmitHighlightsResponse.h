@@ -40,6 +40,7 @@ namespace TencentCloud
                     SubmitHighlightsResponse();
                     ~SubmitHighlightsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

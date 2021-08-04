@@ -109,6 +109,55 @@ CoreInternalOutcome SentimentAnalysisResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
+string SentimentAnalysisResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_positiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Positive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_positive, allocator);
+    }
+
+    if (m_neutralHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Neutral";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_neutral, allocator);
+    }
+
+    if (m_negativeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Negative";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_negative, allocator);
+    }
+
+    if (m_sentimentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sentiment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sentiment.c_str(), allocator).Move(), allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 double SentimentAnalysisResponse::GetPositive() const
 {

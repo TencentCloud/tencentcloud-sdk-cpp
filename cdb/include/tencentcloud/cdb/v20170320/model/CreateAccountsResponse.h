@@ -40,6 +40,7 @@ namespace TencentCloud
                     CreateAccountsResponse();
                     ~CreateAccountsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

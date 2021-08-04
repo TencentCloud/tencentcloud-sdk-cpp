@@ -45,6 +45,7 @@ namespace TencentCloud
                     DescribePolicyGroupInfoResponse();
                     ~DescribePolicyGroupInfoResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

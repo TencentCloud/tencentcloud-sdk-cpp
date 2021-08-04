@@ -40,6 +40,7 @@ namespace TencentCloud
                     CreateBasicDBInstancesResponse();
                     ~CreateBasicDBInstancesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

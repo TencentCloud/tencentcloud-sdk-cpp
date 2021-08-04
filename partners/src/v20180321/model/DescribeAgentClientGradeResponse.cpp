@@ -109,6 +109,55 @@ CoreInternalOutcome DescribeAgentClientGradeResponse::Deserialize(const string &
     return CoreInternalOutcome(true);
 }
 
+string DescribeAgentClientGradeResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_auditStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuditStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_auditStatus, allocator);
+    }
+
+    if (m_authStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authState, allocator);
+    }
+
+    if (m_clientGradeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientGrade";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientGrade.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientType, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeAgentClientGradeResponse::GetAuditStatus() const
 {

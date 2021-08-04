@@ -40,6 +40,7 @@ namespace TencentCloud
                     DeleteClusterRouteTableResponse();
                     ~DeleteClusterRouteTableResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribePrivateCAResponse();
                     ~DescribePrivateCAResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

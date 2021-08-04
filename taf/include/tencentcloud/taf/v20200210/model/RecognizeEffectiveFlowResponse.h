@@ -41,6 +41,7 @@ namespace TencentCloud
                     RecognizeEffectiveFlowResponse();
                     ~RecognizeEffectiveFlowResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

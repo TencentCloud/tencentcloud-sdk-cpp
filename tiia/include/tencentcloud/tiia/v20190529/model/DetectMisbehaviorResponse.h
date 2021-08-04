@@ -40,6 +40,7 @@ namespace TencentCloud
                     DetectMisbehaviorResponse();
                     ~DetectMisbehaviorResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

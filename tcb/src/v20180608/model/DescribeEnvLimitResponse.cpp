@@ -219,6 +219,135 @@ CoreInternalOutcome DescribeEnvLimitResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+string DescribeEnvLimitResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_maxEnvNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxEnvNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxEnvNum, allocator);
+    }
+
+    if (m_currentEnvNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentEnvNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentEnvNum, allocator);
+    }
+
+    if (m_maxFreeEnvNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxFreeEnvNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxFreeEnvNum, allocator);
+    }
+
+    if (m_currentFreeEnvNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentFreeEnvNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentFreeEnvNum, allocator);
+    }
+
+    if (m_maxDeleteTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDeleteTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxDeleteTotal, allocator);
+    }
+
+    if (m_currentDeleteTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentDeleteTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentDeleteTotal, allocator);
+    }
+
+    if (m_maxDeleteMonthlyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDeleteMonthly";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxDeleteMonthly, allocator);
+    }
+
+    if (m_currentDeleteMonthlyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentDeleteMonthly";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentDeleteMonthly, allocator);
+    }
+
+    if (m_maxFreeTrialNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxFreeTrialNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxFreeTrialNum, allocator);
+    }
+
+    if (m_currentFreeTrialNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentFreeTrialNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentFreeTrialNum, allocator);
+    }
+
+    if (m_changePayTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChangePayTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_changePayTotal, allocator);
+    }
+
+    if (m_currentChangePayTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentChangePayTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentChangePayTotal, allocator);
+    }
+
+    if (m_changePayMonthlyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChangePayMonthly";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_changePayMonthly, allocator);
+    }
+
+    if (m_currentChangePayMonthlyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentChangePayMonthly";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentChangePayMonthly, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeEnvLimitResponse::GetMaxEnvNum() const
 {

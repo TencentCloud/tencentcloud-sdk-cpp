@@ -40,6 +40,7 @@ namespace TencentCloud
                     DescribeBGPIPL7RuleMaxCntResponse();
                     ~DescribeBGPIPL7RuleMaxCntResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

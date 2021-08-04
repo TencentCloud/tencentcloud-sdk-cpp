@@ -123,6 +123,68 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
     return CoreInternalOutcome(true);
 }
 
+string DescribeBackupConfigResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_backupTimeBegHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupTimeBeg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupTimeBeg, allocator);
+    }
+
+    if (m_backupTimeEndHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupTimeEnd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupTimeEnd, allocator);
+    }
+
+    if (m_reserveDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReserveDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_reserveDuration, allocator);
+    }
+
+    if (m_backupFreqHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupFreq";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_backupFreq.begin(); itr != m_backupFreq.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_backupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupType.c_str(), allocator).Move(), allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeBackupConfigResponse::GetBackupTimeBeg() const
 {

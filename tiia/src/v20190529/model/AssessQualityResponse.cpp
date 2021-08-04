@@ -142,6 +142,79 @@ CoreInternalOutcome AssessQualityResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+string AssessQualityResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_longImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_longImage, allocator);
+    }
+
+    if (m_blackAndWhiteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlackAndWhite";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blackAndWhite, allocator);
+    }
+
+    if (m_smallImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmallImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_smallImage, allocator);
+    }
+
+    if (m_bigImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BigImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bigImage, allocator);
+    }
+
+    if (m_pureImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PureImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pureImage, allocator);
+    }
+
+    if (m_clarityScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClarityScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clarityScore, allocator);
+    }
+
+    if (m_aestheticScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AestheticScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aestheticScore, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 bool AssessQualityResponse::GetLongImage() const
 {

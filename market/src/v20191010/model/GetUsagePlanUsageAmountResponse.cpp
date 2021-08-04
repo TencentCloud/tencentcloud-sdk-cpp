@@ -98,6 +98,47 @@ CoreInternalOutcome GetUsagePlanUsageAmountResponse::Deserialize(const string &p
     return CoreInternalOutcome(true);
 }
 
+string GetUsagePlanUsageAmountResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_maxRequestNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRequestNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxRequestNum, allocator);
+    }
+
+    if (m_inUseRequestNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InUseRequestNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inUseRequestNum, allocator);
+    }
+
+    if (m_remainingRequestNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemainingRequestNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remainingRequestNum, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t GetUsagePlanUsageAmountResponse::GetMaxRequestNum() const
 {

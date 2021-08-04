@@ -255,6 +255,164 @@ CoreInternalOutcome DescribeDDoSEvInfoResponse::Deserialize(const string &payloa
     return CoreInternalOutcome(true);
 }
 
+string DescribeDDoSEvInfoResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_businessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Business";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tcpPacketSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TcpPacketSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tcpPacketSum, allocator);
+    }
+
+    if (m_tcpKBSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TcpKBSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tcpKBSum, allocator);
+    }
+
+    if (m_udpPacketSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UdpPacketSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_udpPacketSum, allocator);
+    }
+
+    if (m_udpKBSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UdpKBSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_udpKBSum, allocator);
+    }
+
+    if (m_icmpPacketSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IcmpPacketSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_icmpPacketSum, allocator);
+    }
+
+    if (m_icmpKBSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IcmpKBSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_icmpKBSum, allocator);
+    }
+
+    if (m_otherPacketSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OtherPacketSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_otherPacketSum, allocator);
+    }
+
+    if (m_otherKBSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OtherKBSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_otherKBSum, allocator);
+    }
+
+    if (m_totalTrafficHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalTraffic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalTraffic, allocator);
+    }
+
+    if (m_mbpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mbps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mbps, allocator);
+    }
+
+    if (m_ppsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pps, allocator);
+    }
+
+    if (m_pcapUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PcapUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_pcapUrl.begin(); itr != m_pcapUrl.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 string DescribeDDoSEvInfoResponse::GetBusiness() const
 {

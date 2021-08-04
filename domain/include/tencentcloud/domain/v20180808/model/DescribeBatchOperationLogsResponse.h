@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeBatchOperationLogsResponse();
                     ~DescribeBatchOperationLogsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

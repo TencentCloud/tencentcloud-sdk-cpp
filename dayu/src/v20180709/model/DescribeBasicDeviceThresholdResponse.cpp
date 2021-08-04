@@ -76,6 +76,31 @@ CoreInternalOutcome DescribeBasicDeviceThresholdResponse::Deserialize(const stri
     return CoreInternalOutcome(true);
 }
 
+string DescribeBasicDeviceThresholdResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_thresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Threshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_threshold, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeBasicDeviceThresholdResponse::GetThreshold() const
 {

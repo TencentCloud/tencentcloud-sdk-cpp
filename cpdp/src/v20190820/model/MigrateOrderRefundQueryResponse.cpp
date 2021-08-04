@@ -120,6 +120,63 @@ CoreInternalOutcome MigrateOrderRefundQueryResponse::Deserialize(const string &p
     return CoreInternalOutcome(true);
 }
 
+string MigrateOrderRefundQueryResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_isSuccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSuccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSuccess, allocator);
+    }
+
+    if (m_tradeSerialNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TradeSerialNo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tradeSerialNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tradeMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TradeMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tradeMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tradeStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TradeStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tradeStatus, allocator);
+    }
+
+    if (m_thirdChannelOrderIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThirdChannelOrderId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_thirdChannelOrderId.c_str(), allocator).Move(), allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 bool MigrateOrderRefundQueryResponse::GetIsSuccess() const
 {

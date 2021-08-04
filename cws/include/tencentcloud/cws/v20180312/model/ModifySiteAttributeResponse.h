@@ -40,6 +40,7 @@ namespace TencentCloud
                     ModifySiteAttributeResponse();
                     ~ModifySiteAttributeResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

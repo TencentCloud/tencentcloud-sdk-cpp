@@ -130,6 +130,70 @@ CoreInternalOutcome DescribeStorageDataResponse::Deserialize(const string &paylo
     return CoreInternalOutcome(true);
 }
 
+string DescribeStorageDataResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_mediaCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mediaCount, allocator);
+    }
+
+    if (m_totalStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalStorage, allocator);
+    }
+
+    if (m_infrequentStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InfrequentStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_infrequentStorage, allocator);
+    }
+
+    if (m_standardStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_standardStorage, allocator);
+    }
+
+    if (m_storageStatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageStat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_storageStat.begin(); itr != m_storageStat.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeStorageDataResponse::GetMediaCount() const
 {

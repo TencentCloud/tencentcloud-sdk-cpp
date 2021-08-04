@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeDBErrlogsResponse();
                     ~DescribeDBErrlogsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

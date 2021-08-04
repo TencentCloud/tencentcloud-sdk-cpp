@@ -41,6 +41,7 @@ namespace TencentCloud
                     CreateL7RuleCertResponse();
                     ~CreateL7RuleCertResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

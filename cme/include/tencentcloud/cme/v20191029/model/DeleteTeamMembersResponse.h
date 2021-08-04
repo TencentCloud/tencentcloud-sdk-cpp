@@ -40,6 +40,7 @@ namespace TencentCloud
                     DeleteTeamMembersResponse();
                     ~DeleteTeamMembersResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

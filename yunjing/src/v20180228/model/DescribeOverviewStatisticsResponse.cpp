@@ -142,6 +142,79 @@ CoreInternalOutcome DescribeOverviewStatisticsResponse::Deserialize(const string
     return CoreInternalOutcome(true);
 }
 
+string DescribeOverviewStatisticsResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_onlineMachineNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlineMachineNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_onlineMachineNum, allocator);
+    }
+
+    if (m_proVersionMachineNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProVersionMachineNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proVersionMachineNum, allocator);
+    }
+
+    if (m_malwareNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MalwareNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_malwareNum, allocator);
+    }
+
+    if (m_nonlocalLoginNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NonlocalLoginNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nonlocalLoginNum, allocator);
+    }
+
+    if (m_bruteAttackSuccessNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BruteAttackSuccessNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bruteAttackSuccessNum, allocator);
+    }
+
+    if (m_vulNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulNum, allocator);
+    }
+
+    if (m_baseLineNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseLineNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_baseLineNum, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeOverviewStatisticsResponse::GetOnlineMachineNum() const
 {

@@ -40,6 +40,7 @@ namespace TencentCloud
                     DescribeDomainLogListResponse();
                     ~DescribeDomainLogListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

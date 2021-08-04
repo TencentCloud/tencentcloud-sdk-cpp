@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool DeviceNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否删除绑定设备
+                     * @return ForceDelete 是否删除绑定设备
+                     */
+                    bool GetForceDelete() const;
+
+                    /**
+                     * 设置是否删除绑定设备
+                     * @param ForceDelete 是否删除绑定设备
+                     */
+                    void SetForceDelete(const bool& _forceDelete);
+
+                    /**
+                     * 判断参数 ForceDelete 是否已赋值
+                     * @return ForceDelete 是否已赋值
+                     */
+                    bool ForceDeleteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 是否删除绑定设备
+                     */
+                    bool m_forceDelete;
+                    bool m_forceDeleteHasBeenSet;
 
                 };
             }

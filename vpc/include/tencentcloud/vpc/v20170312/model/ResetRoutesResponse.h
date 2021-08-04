@@ -40,6 +40,7 @@ namespace TencentCloud
                     ResetRoutesResponse();
                     ~ResetRoutesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

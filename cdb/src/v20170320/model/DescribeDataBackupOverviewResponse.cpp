@@ -131,6 +131,71 @@ CoreInternalOutcome DescribeDataBackupOverviewResponse::Deserialize(const string
     return CoreInternalOutcome(true);
 }
 
+string DescribeDataBackupOverviewResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_dataBackupVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataBackupVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataBackupVolume, allocator);
+    }
+
+    if (m_dataBackupCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataBackupCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataBackupCount, allocator);
+    }
+
+    if (m_autoBackupVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoBackupVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoBackupVolume, allocator);
+    }
+
+    if (m_autoBackupCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoBackupCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoBackupCount, allocator);
+    }
+
+    if (m_manualBackupVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManualBackupVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_manualBackupVolume, allocator);
+    }
+
+    if (m_manualBackupCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManualBackupCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_manualBackupCount, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeDataBackupOverviewResponse::GetDataBackupVolume() const
 {

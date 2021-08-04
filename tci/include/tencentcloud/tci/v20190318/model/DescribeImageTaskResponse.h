@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeImageTaskResponse();
                     ~DescribeImageTaskResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

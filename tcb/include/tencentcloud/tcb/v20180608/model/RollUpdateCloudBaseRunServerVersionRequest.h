@@ -621,6 +621,24 @@ namespace TencentCloud
                      */
                     bool ServerPathHasBeenSet() const;
 
+                    /**
+                     * 获取是否更新Cls
+                     * @return IsUpdateCls 是否更新Cls
+                     */
+                    bool GetIsUpdateCls() const;
+
+                    /**
+                     * 设置是否更新Cls
+                     * @param IsUpdateCls 是否更新Cls
+                     */
+                    void SetIsUpdateCls(const bool& _isUpdateCls);
+
+                    /**
+                     * 判断参数 IsUpdateCls 是否已赋值
+                     * @return IsUpdateCls 是否已赋值
+                     */
+                    bool IsUpdateClsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -814,6 +832,12 @@ namespace TencentCloud
                      */
                     std::string m_serverPath;
                     bool m_serverPathHasBeenSet;
+
+                    /**
+                     * 是否更新Cls
+                     */
+                    bool m_isUpdateCls;
+                    bool m_isUpdateClsHasBeenSet;
 
                 };
             }

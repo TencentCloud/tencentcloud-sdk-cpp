@@ -40,6 +40,7 @@ namespace TencentCloud
                     DescribeSupportedPrivilegesResponse();
                     ~DescribeSupportedPrivilegesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

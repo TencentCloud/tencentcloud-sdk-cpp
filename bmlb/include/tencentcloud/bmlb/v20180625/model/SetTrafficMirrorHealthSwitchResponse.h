@@ -40,6 +40,7 @@ namespace TencentCloud
                     SetTrafficMirrorHealthSwitchResponse();
                     ~SetTrafficMirrorHealthSwitchResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

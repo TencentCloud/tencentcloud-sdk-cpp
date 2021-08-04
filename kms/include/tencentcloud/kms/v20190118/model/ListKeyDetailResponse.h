@@ -41,6 +41,7 @@ namespace TencentCloud
                     ListKeyDetailResponse();
                     ~ListKeyDetailResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

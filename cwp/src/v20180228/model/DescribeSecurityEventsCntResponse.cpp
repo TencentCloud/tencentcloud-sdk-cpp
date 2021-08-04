@@ -303,6 +303,147 @@ CoreInternalOutcome DescribeSecurityEventsCntResponse::Deserialize(const string 
     return CoreInternalOutcome(true);
 }
 
+string DescribeSecurityEventsCntResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_malwareHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Malware";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_malware.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hostLoginHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostLogin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hostLogin.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_bruteAttackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BruteAttack";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bruteAttack.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_riskDnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskDns";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_riskDns.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_bashHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bash";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bash.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_privilegeRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivilegeRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_privilegeRules.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_reverseShellHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReverseShell";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reverseShell.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sysVulHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SysVul";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sysVul.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_webVulHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebVul";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_webVul.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_emergencyVulHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmergencyVul";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_emergencyVul.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_baseLineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseLine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_baseLine.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_attackLogsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttackLogs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_attackLogs.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_effectMachineCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EffectMachineCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_effectMachineCount, allocator);
+    }
+
+    if (m_eventsCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventsCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_eventsCount, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 SecurityEventInfo DescribeSecurityEventsCntResponse::GetMalware() const
 {

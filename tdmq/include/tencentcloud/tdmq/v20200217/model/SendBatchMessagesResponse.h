@@ -40,6 +40,7 @@ namespace TencentCloud
                     SendBatchMessagesResponse();
                     ~SendBatchMessagesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

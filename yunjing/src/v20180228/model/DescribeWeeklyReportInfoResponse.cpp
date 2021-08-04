@@ -208,6 +208,127 @@ CoreInternalOutcome DescribeWeeklyReportInfoResponse::Deserialize(const string &
     return CoreInternalOutcome(true);
 }
 
+string DescribeWeeklyReportInfoResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_companyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompanyName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_companyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_machineNum, allocator);
+    }
+
+    if (m_onlineMachineNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlineMachineNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_onlineMachineNum, allocator);
+    }
+
+    if (m_offlineMachineNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OfflineMachineNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offlineMachineNum, allocator);
+    }
+
+    if (m_proVersionMachineNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProVersionMachineNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proVersionMachineNum, allocator);
+    }
+
+    if (m_beginDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeginDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_beginDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_levelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Level";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_level.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_malwareNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MalwareNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_malwareNum, allocator);
+    }
+
+    if (m_nonlocalLoginNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NonlocalLoginNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nonlocalLoginNum, allocator);
+    }
+
+    if (m_bruteAttackSuccessNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BruteAttackSuccessNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bruteAttackSuccessNum, allocator);
+    }
+
+    if (m_vulNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulNum, allocator);
+    }
+
+    if (m_downloadUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DownloadUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 string DescribeWeeklyReportInfoResponse::GetCompanyName() const
 {

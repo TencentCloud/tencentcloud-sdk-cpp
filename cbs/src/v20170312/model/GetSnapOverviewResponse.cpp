@@ -109,6 +109,55 @@ CoreInternalOutcome GetSnapOverviewResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+string GetSnapOverviewResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalSize, allocator);
+    }
+
+    if (m_realTradeSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealTradeSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_realTradeSize, allocator);
+    }
+
+    if (m_freeQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreeQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_freeQuota, allocator);
+    }
+
+    if (m_totalNumsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalNums";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalNums, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 double GetSnapOverviewResponse::GetTotalSize() const
 {

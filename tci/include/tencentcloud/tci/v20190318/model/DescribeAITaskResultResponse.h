@@ -43,6 +43,7 @@ namespace TencentCloud
                     DescribeAITaskResultResponse();
                     ~DescribeAITaskResultResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

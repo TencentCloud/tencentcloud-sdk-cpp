@@ -40,6 +40,7 @@ namespace TencentCloud
                     DescribeCaptchaDataSumResponse();
                     ~DescribeCaptchaDataSumResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

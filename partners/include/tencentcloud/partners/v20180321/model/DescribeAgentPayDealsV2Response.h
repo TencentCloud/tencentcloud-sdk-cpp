@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeAgentPayDealsV2Response();
                     ~DescribeAgentPayDealsV2Response() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

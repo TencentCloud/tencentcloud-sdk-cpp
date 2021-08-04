@@ -126,6 +126,49 @@ EmrClient::DescribeClusterNodesOutcomeCallable EmrClient::DescribeClusterNodesCa
     return task->get_future();
 }
 
+EmrClient::DescribeCvmQuotaOutcome EmrClient::DescribeCvmQuota(const DescribeCvmQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCvmQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCvmQuotaResponse rsp = DescribeCvmQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCvmQuotaOutcome(rsp);
+        else
+            return DescribeCvmQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCvmQuotaOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeCvmQuotaAsync(const DescribeCvmQuotaRequest& request, const DescribeCvmQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCvmQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeCvmQuotaOutcomeCallable EmrClient::DescribeCvmQuotaCallable(const DescribeCvmQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCvmQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCvmQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeInstanceRenewNodesOutcome EmrClient::DescribeInstanceRenewNodes(const DescribeInstanceRenewNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceRenewNodes");
@@ -549,6 +592,49 @@ EmrClient::ScaleOutInstanceOutcomeCallable EmrClient::ScaleOutInstanceCallable(c
         [this, request]()
         {
             return this->ScaleOutInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::SyncPodStateOutcome EmrClient::SyncPodState(const SyncPodStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncPodState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncPodStateResponse rsp = SyncPodStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncPodStateOutcome(rsp);
+        else
+            return SyncPodStateOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncPodStateOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::SyncPodStateAsync(const SyncPodStateRequest& request, const SyncPodStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SyncPodState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::SyncPodStateOutcomeCallable EmrClient::SyncPodStateCallable(const SyncPodStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SyncPodStateOutcome()>>(
+        [this, request]()
+        {
+            return this->SyncPodState(request);
         }
     );
 

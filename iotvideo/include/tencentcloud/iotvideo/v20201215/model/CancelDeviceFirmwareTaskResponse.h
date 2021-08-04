@@ -40,6 +40,7 @@ namespace TencentCloud
                     CancelDeviceFirmwareTaskResponse();
                     ~CancelDeviceFirmwareTaskResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

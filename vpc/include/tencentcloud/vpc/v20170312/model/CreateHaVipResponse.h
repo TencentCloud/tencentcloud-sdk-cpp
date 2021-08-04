@@ -41,6 +41,7 @@ namespace TencentCloud
                     CreateHaVipResponse();
                     ~CreateHaVipResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

@@ -144,6 +144,28 @@ namespace TencentCloud
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取互联网服务供应商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Isp 互联网服务供应商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsp() const;
+
+                    /**
+                     * 设置互联网服务供应商
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Isp 互联网服务供应商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsp(const std::string& _isp);
+
+                    /**
+                     * 判断参数 Isp 是否已赋值
+                     * @return Isp 是否已赋值
+                     */
+                    bool IspHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,6 +199,13 @@ namespace TencentCloud
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 互联网服务供应商
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isp;
+                    bool m_ispHasBeenSet;
 
                 };
             }

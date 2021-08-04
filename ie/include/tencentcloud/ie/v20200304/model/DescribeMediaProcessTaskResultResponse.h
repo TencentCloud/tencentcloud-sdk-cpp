@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeMediaProcessTaskResultResponse();
                     ~DescribeMediaProcessTaskResultResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

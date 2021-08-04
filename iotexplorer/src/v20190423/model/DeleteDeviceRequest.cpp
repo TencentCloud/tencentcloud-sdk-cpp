@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteDeviceRequest::DeleteDeviceRequest() :
     m_productIdHasBeenSet(false),
-    m_deviceNameHasBeenSet(false)
+    m_deviceNameHasBeenSet(false),
+    m_forceDeleteHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteDeviceRequest::ToJsonString() const
         string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forceDeleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForceDelete";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceDelete, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DeleteDeviceRequest::SetDeviceName(const string& _deviceName)
 bool DeleteDeviceRequest::DeviceNameHasBeenSet() const
 {
     return m_deviceNameHasBeenSet;
+}
+
+bool DeleteDeviceRequest::GetForceDelete() const
+{
+    return m_forceDelete;
+}
+
+void DeleteDeviceRequest::SetForceDelete(const bool& _forceDelete)
+{
+    m_forceDelete = _forceDelete;
+    m_forceDeleteHasBeenSet = true;
+}
+
+bool DeleteDeviceRequest::ForceDeleteHasBeenSet() const
+{
+    return m_forceDeleteHasBeenSet;
 }
 
 

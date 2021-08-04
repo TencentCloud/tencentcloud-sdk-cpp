@@ -40,6 +40,7 @@ namespace TencentCloud
                     DescribeChargeDetailResponse();
                     ~DescribeChargeDetailResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

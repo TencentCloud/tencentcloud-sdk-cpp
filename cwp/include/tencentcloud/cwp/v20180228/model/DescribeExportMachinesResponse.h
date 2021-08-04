@@ -40,6 +40,7 @@ namespace TencentCloud
                     DescribeExportMachinesResponse();
                     ~DescribeExportMachinesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

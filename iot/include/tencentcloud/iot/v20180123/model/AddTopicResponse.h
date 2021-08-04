@@ -41,6 +41,7 @@ namespace TencentCloud
                     AddTopicResponse();
                     ~AddTopicResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

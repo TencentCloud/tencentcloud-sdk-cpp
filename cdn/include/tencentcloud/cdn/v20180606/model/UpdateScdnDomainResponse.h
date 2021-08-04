@@ -40,6 +40,7 @@ namespace TencentCloud
                     UpdateScdnDomainResponse();
                     ~UpdateScdnDomainResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

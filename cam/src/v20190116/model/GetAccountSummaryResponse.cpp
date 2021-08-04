@@ -131,6 +131,71 @@ CoreInternalOutcome GetAccountSummaryResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
+string GetAccountSummaryResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_policiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Policies";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_policies, allocator);
+    }
+
+    if (m_rolesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Roles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_roles, allocator);
+    }
+
+    if (m_idpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Idps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_idps, allocator);
+    }
+
+    if (m_userHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "User";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_user, allocator);
+    }
+
+    if (m_groupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Group";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_group, allocator);
+    }
+
+    if (m_memberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Member";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_member, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t GetAccountSummaryResponse::GetPolicies() const
 {

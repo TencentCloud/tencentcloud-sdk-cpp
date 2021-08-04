@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeTrtcInteractiveTimeResponse();
                     ~DescribeTrtcInteractiveTimeResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

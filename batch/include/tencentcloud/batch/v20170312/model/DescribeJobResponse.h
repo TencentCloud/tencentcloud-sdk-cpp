@@ -45,6 +45,7 @@ namespace TencentCloud
                     DescribeJobResponse();
                     ~DescribeJobResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

@@ -40,6 +40,7 @@ namespace TencentCloud
                     UnassignIpv6SubnetCidrBlockResponse();
                     ~UnassignIpv6SubnetCidrBlockResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeSmsQuotasResponse();
                     ~DescribeSmsQuotasResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

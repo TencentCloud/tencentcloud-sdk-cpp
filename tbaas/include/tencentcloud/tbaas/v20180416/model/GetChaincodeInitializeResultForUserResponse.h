@@ -40,6 +40,7 @@ namespace TencentCloud
                     GetChaincodeInitializeResultForUserResponse();
                     ~GetChaincodeInitializeResultForUserResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

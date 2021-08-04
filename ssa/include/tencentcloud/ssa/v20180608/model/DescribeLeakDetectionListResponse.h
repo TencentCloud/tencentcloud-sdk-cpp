@@ -40,6 +40,7 @@ namespace TencentCloud
                     DescribeLeakDetectionListResponse();
                     ~DescribeLeakDetectionListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

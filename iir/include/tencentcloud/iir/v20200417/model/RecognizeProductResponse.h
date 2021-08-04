@@ -42,6 +42,7 @@ namespace TencentCloud
                     RecognizeProductResponse();
                     ~RecognizeProductResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

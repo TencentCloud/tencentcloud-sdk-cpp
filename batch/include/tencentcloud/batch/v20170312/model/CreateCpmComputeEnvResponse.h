@@ -40,6 +40,7 @@ namespace TencentCloud
                     CreateCpmComputeEnvResponse();
                     ~CreateCpmComputeEnvResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

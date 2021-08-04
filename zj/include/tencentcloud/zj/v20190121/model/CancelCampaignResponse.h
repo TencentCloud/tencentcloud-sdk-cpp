@@ -41,6 +41,7 @@ namespace TencentCloud
                     CancelCampaignResponse();
                     ~CancelCampaignResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

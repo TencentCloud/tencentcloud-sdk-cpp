@@ -164,6 +164,95 @@ CoreInternalOutcome DescribeCaptchaMiniDataSumResponse::Deserialize(const string
     return CoreInternalOutcome(true);
 }
 
+string DescribeCaptchaMiniDataSumResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_getSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GetSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_getSum, allocator);
+    }
+
+    if (m_vfySuccSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VfySuccSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vfySuccSum, allocator);
+    }
+
+    if (m_vfySumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VfySum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vfySum, allocator);
+    }
+
+    if (m_attackSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttackSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_attackSum, allocator);
+    }
+
+    if (m_captchaMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaptchaMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_captchaMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_captchaCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaptchaCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_captchaCode, allocator);
+    }
+
+    if (m_checkTicketSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckTicketSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkTicketSum, allocator);
+    }
+
+    if (m_ticketThroughputSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TicketThroughputSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ticketThroughputSum, allocator);
+    }
+
+    if (m_ticketInterceptSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TicketInterceptSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ticketInterceptSum, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeCaptchaMiniDataSumResponse::GetGetSum() const
 {

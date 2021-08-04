@@ -40,6 +40,7 @@ namespace TencentCloud
                     TextToVoiceResponse();
                     ~TextToVoiceResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

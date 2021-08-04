@@ -40,6 +40,7 @@ namespace TencentCloud
                     ResetDBInstancePasswordResponse();
                     ~ResetDBInstancePasswordResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

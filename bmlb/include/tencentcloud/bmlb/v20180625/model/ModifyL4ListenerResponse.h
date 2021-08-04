@@ -40,6 +40,7 @@ namespace TencentCloud
                     ModifyL4ListenerResponse();
                     ~ModifyL4ListenerResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

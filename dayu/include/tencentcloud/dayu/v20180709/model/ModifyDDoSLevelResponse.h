@@ -40,6 +40,7 @@ namespace TencentCloud
                     ModifyDDoSLevelResponse();
                     ~ModifyDDoSLevelResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

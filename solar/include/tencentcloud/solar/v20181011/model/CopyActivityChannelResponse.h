@@ -40,6 +40,7 @@ namespace TencentCloud
                     CopyActivityChannelResponse();
                     ~CopyActivityChannelResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

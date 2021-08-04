@@ -40,6 +40,7 @@ namespace TencentCloud
                     InquiryPriceCreateInstanceResponse();
                     ~InquiryPriceCreateInstanceResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

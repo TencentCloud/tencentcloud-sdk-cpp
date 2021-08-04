@@ -40,6 +40,7 @@ namespace TencentCloud
                     ModifyPathRewriteResponse();
                     ~ModifyPathRewriteResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

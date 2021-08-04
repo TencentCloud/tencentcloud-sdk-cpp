@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeServiceTemplateGroupsResponse();
                     ~DescribeServiceTemplateGroupsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

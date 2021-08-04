@@ -40,6 +40,7 @@ namespace TencentCloud
                     ReplaceCertificateResponse();
                     ~ReplaceCertificateResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

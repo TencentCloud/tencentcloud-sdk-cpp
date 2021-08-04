@@ -141,6 +141,78 @@ CoreInternalOutcome DescribeLiveDomainPlayInfoListResponse::Deserialize(const st
     return CoreInternalOutcome(true);
 }
 
+string DescribeLiveDomainPlayInfoListResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_timeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Time";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_time.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalBandwidth, allocator);
+    }
+
+    if (m_totalFluxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalFlux";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalFlux, allocator);
+    }
+
+    if (m_totalRequestHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalRequest";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalRequest, allocator);
+    }
+
+    if (m_totalOnlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalOnline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalOnline, allocator);
+    }
+
+    if (m_domainInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_domainInfoList.begin(); itr != m_domainInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 string DescribeLiveDomainPlayInfoListResponse::GetTime() const
 {

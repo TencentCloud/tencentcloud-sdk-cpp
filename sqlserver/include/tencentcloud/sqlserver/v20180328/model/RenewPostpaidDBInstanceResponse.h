@@ -40,6 +40,7 @@ namespace TencentCloud
                     RenewPostpaidDBInstanceResponse();
                     ~RenewPostpaidDBInstanceResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

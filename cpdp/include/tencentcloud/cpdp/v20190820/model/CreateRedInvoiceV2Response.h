@@ -41,6 +41,7 @@ namespace TencentCloud
                     CreateRedInvoiceV2Response();
                     ~CreateRedInvoiceV2Response() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

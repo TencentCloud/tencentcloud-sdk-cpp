@@ -40,6 +40,7 @@ namespace TencentCloud
                     PauseOnlineRecordResponse();
                     ~PauseOnlineRecordResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

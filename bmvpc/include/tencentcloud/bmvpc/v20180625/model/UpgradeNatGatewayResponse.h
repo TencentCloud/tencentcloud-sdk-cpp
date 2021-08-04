@@ -40,6 +40,7 @@ namespace TencentCloud
                     UpgradeNatGatewayResponse();
                     ~UpgradeNatGatewayResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

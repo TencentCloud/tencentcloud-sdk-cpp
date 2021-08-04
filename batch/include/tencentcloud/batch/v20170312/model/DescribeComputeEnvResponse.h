@@ -44,6 +44,7 @@ namespace TencentCloud
                     DescribeComputeEnvResponse();
                     ~DescribeComputeEnvResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

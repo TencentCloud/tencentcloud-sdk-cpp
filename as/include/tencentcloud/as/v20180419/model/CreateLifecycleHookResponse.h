@@ -40,6 +40,7 @@ namespace TencentCloud
                     CreateLifecycleHookResponse();
                     ~CreateLifecycleHookResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

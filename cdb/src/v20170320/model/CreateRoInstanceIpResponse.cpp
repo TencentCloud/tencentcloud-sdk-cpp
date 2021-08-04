@@ -109,6 +109,55 @@ CoreInternalOutcome CreateRoInstanceIpResponse::Deserialize(const string &payloa
     return CoreInternalOutcome(true);
 }
 
+string CreateRoInstanceIpResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_roVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_roVpcId, allocator);
+    }
+
+    if (m_roSubnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoSubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_roSubnetId, allocator);
+    }
+
+    if (m_roVipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoVip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roVip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roVportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoVport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_roVport, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t CreateRoInstanceIpResponse::GetRoVpcId() const
 {

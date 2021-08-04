@@ -315,6 +315,28 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
+                     * 获取匹配过期时间在此时间段内的文件，无法检索到已过期文件。
+<li>包含所指定的头尾时间点。</li>
+                     * @return ExpireTime 匹配过期时间在此时间段内的文件，无法检索到已过期文件。
+<li>包含所指定的头尾时间点。</li>
+                     */
+                    TimeRange GetExpireTime() const;
+
+                    /**
+                     * 设置匹配过期时间在此时间段内的文件，无法检索到已过期文件。
+<li>包含所指定的头尾时间点。</li>
+                     * @param ExpireTime 匹配过期时间在此时间段内的文件，无法检索到已过期文件。
+<li>包含所指定的头尾时间点。</li>
+                     */
+                    void SetExpireTime(const TimeRange& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
                      * 获取排序方式。
 <li>Sort.Field 可选 CreateTime 。</li>
 <li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
@@ -485,6 +507,40 @@ namespace TencentCloud
                      * @return SubAppId 是否已赋值
                      */
                     bool SubAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取存储类型数组。可选值有：
+<li> STANDARD：标准存储。</li>
+<li> STANDARD_IA：低频存储。</li>
+<li> ARCHIVE：归档存储。</li>
+<li> DEEP_ARCHIVE：深度归档存储。</li>
+                     * @return StorageClasses 存储类型数组。可选值有：
+<li> STANDARD：标准存储。</li>
+<li> STANDARD_IA：低频存储。</li>
+<li> ARCHIVE：归档存储。</li>
+<li> DEEP_ARCHIVE：深度归档存储。</li>
+                     */
+                    std::vector<std::string> GetStorageClasses() const;
+
+                    /**
+                     * 设置存储类型数组。可选值有：
+<li> STANDARD：标准存储。</li>
+<li> STANDARD_IA：低频存储。</li>
+<li> ARCHIVE：归档存储。</li>
+<li> DEEP_ARCHIVE：深度归档存储。</li>
+                     * @param StorageClasses 存储类型数组。可选值有：
+<li> STANDARD：标准存储。</li>
+<li> STANDARD_IA：低频存储。</li>
+<li> ARCHIVE：归档存储。</li>
+<li> DEEP_ARCHIVE：深度归档存储。</li>
+                     */
+                    void SetStorageClasses(const std::vector<std::string>& _storageClasses);
+
+                    /**
+                     * 判断参数 StorageClasses 是否已赋值
+                     * @return StorageClasses 是否已赋值
+                     */
+                    bool StorageClassesHasBeenSet() const;
 
                     /**
                      * 获取（不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
@@ -729,6 +785,13 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
+                     * 匹配过期时间在此时间段内的文件，无法检索到已过期文件。
+<li>包含所指定的头尾时间点。</li>
+                     */
+                    TimeRange m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
                      * 排序方式。
 <li>Sort.Field 可选 CreateTime 。</li>
 <li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>
@@ -779,6 +842,16 @@ namespace TencentCloud
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * 存储类型数组。可选值有：
+<li> STANDARD：标准存储。</li>
+<li> STANDARD_IA：低频存储。</li>
+<li> ARCHIVE：归档存储。</li>
+<li> DEEP_ARCHIVE：深度归档存储。</li>
+                     */
+                    std::vector<std::string> m_storageClasses;
+                    bool m_storageClassesHasBeenSet;
 
                     /**
                      * （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）

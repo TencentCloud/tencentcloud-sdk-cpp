@@ -40,6 +40,7 @@ namespace TencentCloud
                     CreateSyncCheckJobResponse();
                     ~CreateSyncCheckJobResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

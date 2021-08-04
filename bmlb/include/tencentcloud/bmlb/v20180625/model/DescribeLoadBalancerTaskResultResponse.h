@@ -40,6 +40,7 @@ namespace TencentCloud
                     DescribeLoadBalancerTaskResultResponse();
                     ~DescribeLoadBalancerTaskResultResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

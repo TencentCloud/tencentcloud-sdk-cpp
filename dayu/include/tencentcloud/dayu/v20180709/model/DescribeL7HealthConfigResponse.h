@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeL7HealthConfigResponse();
                     ~DescribeL7HealthConfigResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

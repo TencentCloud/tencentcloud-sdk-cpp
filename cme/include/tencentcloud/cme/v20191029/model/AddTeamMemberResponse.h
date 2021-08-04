@@ -40,6 +40,7 @@ namespace TencentCloud
                     AddTeamMemberResponse();
                     ~AddTeamMemberResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

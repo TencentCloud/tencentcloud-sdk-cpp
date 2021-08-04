@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeL4ListenersResponse();
                     ~DescribeL4ListenersResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

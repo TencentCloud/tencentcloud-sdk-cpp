@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeVulsResponse();
                     ~DescribeVulsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

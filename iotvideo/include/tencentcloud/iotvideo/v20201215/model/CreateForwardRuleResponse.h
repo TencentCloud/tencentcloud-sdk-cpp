@@ -40,6 +40,7 @@ namespace TencentCloud
                     CreateForwardRuleResponse();
                     ~CreateForwardRuleResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

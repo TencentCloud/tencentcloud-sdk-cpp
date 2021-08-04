@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeApisStatusResponse();
                     ~DescribeApisStatusResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

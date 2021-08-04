@@ -40,6 +40,7 @@ namespace TencentCloud
                     DescribeDasbImageIdsResponse();
                     ~DescribeDasbImageIdsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

@@ -141,6 +141,78 @@ CoreInternalOutcome DescribeBillBandwidthAndFluxListResponse::Deserialize(const 
     return CoreInternalOutcome(true);
 }
 
+string DescribeBillBandwidthAndFluxListResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_peakBandwidthTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PeakBandwidthTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_peakBandwidthTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_peakBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PeakBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_peakBandwidth, allocator);
+    }
+
+    if (m_p95PeakBandwidthTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "P95PeakBandwidthTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_p95PeakBandwidthTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_p95PeakBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "P95PeakBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_p95PeakBandwidth, allocator);
+    }
+
+    if (m_sumFluxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SumFlux";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sumFlux, allocator);
+    }
+
+    if (m_dataInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataInfoList.begin(); itr != m_dataInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 string DescribeBillBandwidthAndFluxListResponse::GetPeakBandwidthTime() const
 {

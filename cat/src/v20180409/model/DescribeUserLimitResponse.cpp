@@ -109,6 +109,55 @@ CoreInternalOutcome DescribeUserLimitResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
+string DescribeUserLimitResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_maxTaskNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxTaskNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxTaskNum, allocator);
+    }
+
+    if (m_maxAgentNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxAgentNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxAgentNum, allocator);
+    }
+
+    if (m_maxGroupNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxGroupNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxGroupNum, allocator);
+    }
+
+    if (m_minPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minPeriod, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeUserLimitResponse::GetMaxTaskNum() const
 {

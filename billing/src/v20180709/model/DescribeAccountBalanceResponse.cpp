@@ -208,6 +208,127 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
     return CoreInternalOutcome(true);
 }
 
+string DescribeAccountBalanceResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_balanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Balance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_balance, allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_uin, allocator);
+    }
+
+    if (m_realBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealBalance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_realBalance, allocator);
+    }
+
+    if (m_cashAccountBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CashAccountBalance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cashAccountBalance, allocator);
+    }
+
+    if (m_incomeIntoAccountBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncomeIntoAccountBalance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_incomeIntoAccountBalance, allocator);
+    }
+
+    if (m_presentAccountBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PresentAccountBalance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_presentAccountBalance, allocator);
+    }
+
+    if (m_freezeAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreezeAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_freezeAmount, allocator);
+    }
+
+    if (m_oweAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OweAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_oweAmount, allocator);
+    }
+
+    if (m_isAllowArrearsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAllowArrears";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAllowArrears, allocator);
+    }
+
+    if (m_isCreditLimitedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCreditLimited";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCreditLimited, allocator);
+    }
+
+    if (m_creditAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreditAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_creditAmount, allocator);
+    }
+
+    if (m_creditBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreditBalance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_creditBalance, allocator);
+    }
+
+    if (m_realCreditBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealCreditBalance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_realCreditBalance, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeAccountBalanceResponse::GetBalance() const
 {

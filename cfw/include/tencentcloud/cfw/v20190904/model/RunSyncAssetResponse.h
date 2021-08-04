@@ -40,6 +40,7 @@ namespace TencentCloud
                     RunSyncAssetResponse();
                     ~RunSyncAssetResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

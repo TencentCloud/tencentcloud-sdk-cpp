@@ -42,6 +42,7 @@ namespace TencentCloud
                     DescribeL4RulesErrHealthResponse();
                     ~DescribeL4RulesErrHealthResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

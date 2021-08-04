@@ -208,6 +208,127 @@ CoreInternalOutcome CheckDomainResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+string CheckDomainResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_domainNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Available";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_available, allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_premiumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Premium";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_premium, allocator);
+    }
+
+    if (m_priceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Price";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_price, allocator);
+    }
+
+    if (m_blackWordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlackWord";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blackWord, allocator);
+    }
+
+    if (m_describeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Describe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_describe.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_feeRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeeRenew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_feeRenew, allocator);
+    }
+
+    if (m_realPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_realPrice, allocator);
+    }
+
+    if (m_feeTransferHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeeTransfer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_feeTransfer, allocator);
+    }
+
+    if (m_feeRestoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeeRestore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_feeRestore, allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_period, allocator);
+    }
+
+    if (m_recordSupportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordSupport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordSupport, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 string CheckDomainResponse::GetDomainName() const
 {

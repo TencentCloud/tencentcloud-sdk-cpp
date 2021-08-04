@@ -41,6 +41,7 @@ namespace TencentCloud
                     ModifyL4KeepTimeResponse();
                     ~ModifyL4KeepTimeResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

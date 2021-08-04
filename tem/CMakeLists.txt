@@ -15,10 +15,23 @@
 #
 
 set(tem_public_header
+  include/tencentcloud/tem/v20210701/TemClient.h
   include/tencentcloud/tem/v20201221/TemClient.h
   )
 
 set(tem_public_header_model
+  include/tencentcloud/tem/v20210701/model/RunVersionPod.h
+  include/tencentcloud/tem/v20210701/model/ResumeDeployApplicationRequest.h
+  include/tencentcloud/tem/v20210701/model/ResumeDeployApplicationResponse.h
+  include/tencentcloud/tem/v20210701/model/RevertDeployApplicationResponse.h
+  include/tencentcloud/tem/v20210701/model/DeployStrategyConf.h
+  include/tencentcloud/tem/v20210701/model/RevertDeployApplicationRequest.h
+  include/tencentcloud/tem/v20210701/model/TemDeployApplicationDetailInfo.h
+  include/tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailRequest.h
+  include/tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailResponse.h
+  include/tencentcloud/tem/v20210701/model/DeployServiceBatchDetail.h
+  include/tencentcloud/tem/v20210701/model/DescribeRunPodPage.h
+  include/tencentcloud/tem/v20210701/model/DeployServicePodDetail.h
   include/tencentcloud/tem/v20201221/model/MountedSettingConf.h
   include/tencentcloud/tem/v20201221/model/ModifyServiceInfoResponse.h
   include/tencentcloud/tem/v20201221/model/StorageMountConf.h
@@ -77,7 +90,20 @@ set(tem_public_header_model
   )
 
 set(tem_src
+  src/v20210701/TemClient.cpp
   src/v20201221/TemClient.cpp
+  src/v20210701/model/RunVersionPod.cpp
+  src/v20210701/model/ResumeDeployApplicationRequest.cpp
+  src/v20210701/model/ResumeDeployApplicationResponse.cpp
+  src/v20210701/model/RevertDeployApplicationResponse.cpp
+  src/v20210701/model/DeployStrategyConf.cpp
+  src/v20210701/model/RevertDeployApplicationRequest.cpp
+  src/v20210701/model/TemDeployApplicationDetailInfo.cpp
+  src/v20210701/model/DescribeDeployApplicationDetailRequest.cpp
+  src/v20210701/model/DescribeDeployApplicationDetailResponse.cpp
+  src/v20210701/model/DeployServiceBatchDetail.cpp
+  src/v20210701/model/DescribeRunPodPage.cpp
+  src/v20210701/model/DeployServicePodDetail.cpp
   src/v20201221/model/MountedSettingConf.cpp
   src/v20201221/model/ModifyServiceInfoResponse.cpp
   src/v20201221/model/StorageMountConf.cpp

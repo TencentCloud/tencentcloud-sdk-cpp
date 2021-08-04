@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribePublicConfigsResponse();
                     ~DescribePublicConfigsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

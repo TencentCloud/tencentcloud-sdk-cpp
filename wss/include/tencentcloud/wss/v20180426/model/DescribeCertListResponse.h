@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeCertListResponse();
                     ~DescribeCertListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

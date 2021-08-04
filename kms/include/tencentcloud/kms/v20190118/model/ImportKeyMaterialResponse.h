@@ -40,6 +40,7 @@ namespace TencentCloud
                     ImportKeyMaterialResponse();
                     ~ImportKeyMaterialResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

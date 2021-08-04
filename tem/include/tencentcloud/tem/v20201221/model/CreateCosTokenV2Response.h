@@ -41,6 +41,7 @@ namespace TencentCloud
                     CreateCosTokenV2Response();
                     ~CreateCosTokenV2Response() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

@@ -87,6 +87,39 @@ CoreInternalOutcome ModifyTokenResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+string ModifyTokenResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_matchTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compatibleSpanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompatibleSpan";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_compatibleSpan, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 string ModifyTokenResponse::GetMatchToken() const
 {

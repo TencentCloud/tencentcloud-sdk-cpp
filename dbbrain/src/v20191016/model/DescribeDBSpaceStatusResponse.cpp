@@ -109,6 +109,55 @@ CoreInternalOutcome DescribeDBSpaceStatusResponse::Deserialize(const string &pay
     return CoreInternalOutcome(true);
 }
 
+string DescribeDBSpaceStatusResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_growthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Growth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_growth, allocator);
+    }
+
+    if (m_remainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remain, allocator);
+    }
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
+    if (m_availableDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_availableDays, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeDBSpaceStatusResponse::GetGrowth() const
 {

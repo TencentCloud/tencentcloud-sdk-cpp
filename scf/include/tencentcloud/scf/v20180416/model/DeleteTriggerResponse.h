@@ -40,6 +40,7 @@ namespace TencentCloud
                     DeleteTriggerResponse();
                     ~DeleteTriggerResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

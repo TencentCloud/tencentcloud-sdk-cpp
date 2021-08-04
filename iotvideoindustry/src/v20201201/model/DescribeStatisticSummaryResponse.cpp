@@ -109,6 +109,55 @@ CoreInternalOutcome DescribeStatisticSummaryResponse::Deserialize(const string &
     return CoreInternalOutcome(true);
 }
 
+string DescribeStatisticSummaryResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_recordingDeviceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordingDevice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordingDevice, allocator);
+    }
+
+    if (m_nonRecordingDeviceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NonRecordingDevice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nonRecordingDevice, allocator);
+    }
+
+    if (m_watchFluxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WatchFlux";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_watchFlux, allocator);
+    }
+
+    if (m_storageUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storageUsage, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeStatisticSummaryResponse::GetRecordingDevice() const
 {

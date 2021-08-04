@@ -120,6 +120,63 @@ CoreInternalOutcome DescribeEipQuotaResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+string DescribeEipQuotaResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_eipNumQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipNumQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_eipNumQuota, allocator);
+    }
+
+    if (m_currentEipNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentEipNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentEipNum, allocator);
+    }
+
+    if (m_dailyApplyCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DailyApplyCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dailyApplyCount, allocator);
+    }
+
+    if (m_dailyApplyQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DailyApplyQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dailyApplyQuota, allocator);
+    }
+
+    if (m_batchApplyMaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchApplyMax";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_batchApplyMax, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeEipQuotaResponse::GetEipNumQuota() const
 {

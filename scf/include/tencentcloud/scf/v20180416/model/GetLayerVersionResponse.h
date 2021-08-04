@@ -40,6 +40,7 @@ namespace TencentCloud
                     GetLayerVersionResponse();
                     ~GetLayerVersionResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

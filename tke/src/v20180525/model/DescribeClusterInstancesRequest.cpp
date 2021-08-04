@@ -27,7 +27,8 @@ DescribeClusterInstancesRequest::DescribeClusterInstancesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
-    m_instanceRoleHasBeenSet(false)
+    m_instanceRoleHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,21 @@ string DescribeClusterInstancesRequest::ToJsonString() const
         string key = "InstanceRole";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceRole.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -169,6 +185,22 @@ void DescribeClusterInstancesRequest::SetInstanceRole(const string& _instanceRol
 bool DescribeClusterInstancesRequest::InstanceRoleHasBeenSet() const
 {
     return m_instanceRoleHasBeenSet;
+}
+
+vector<Filter> DescribeClusterInstancesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeClusterInstancesRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeClusterInstancesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

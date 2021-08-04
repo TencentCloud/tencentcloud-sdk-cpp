@@ -40,6 +40,7 @@ namespace TencentCloud
                     ModifyL7BackendPortResponse();
                     ~ModifyL7BackendPortResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

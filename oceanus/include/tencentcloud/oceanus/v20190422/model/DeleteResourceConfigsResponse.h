@@ -40,6 +40,7 @@ namespace TencentCloud
                     DeleteResourceConfigsResponse();
                     ~DeleteResourceConfigsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

@@ -41,6 +41,8 @@
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreatePostpayPackageRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreatePostpayPackageResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateStandaloneGatewayRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateStandaloneGatewayResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunEnvRequest.h>
@@ -111,12 +113,18 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeSmsQuotasResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSpecialCostItemsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSpecialCostItemsResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeStandaloneGatewayRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeStandaloneGatewayResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeStandaloneGatewayPackageRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeStandaloneGatewayPackageResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunSubNetsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunSubNetsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DestroyStandaloneGatewayRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DestroyStandaloneGatewayResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerRequest.h>
@@ -137,6 +145,10 @@
 #include <tencentcloud/tcb/v20180608/model/ReplaceActivityRecordResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionResponse.h>
+#include <tencentcloud/tcb/v20180608/model/TurnOffStandaloneGatewayRequest.h>
+#include <tencentcloud/tcb/v20180608/model/TurnOffStandaloneGatewayResponse.h>
+#include <tencentcloud/tcb/v20180608/model/TurnOnStandaloneGatewayRequest.h>
+#include <tencentcloud/tcb/v20180608/model/TurnOnStandaloneGatewayResponse.h>
 
 
 namespace TencentCloud
@@ -178,6 +190,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreatePostpayPackageResponse> CreatePostpayPackageOutcome;
                 typedef std::future<CreatePostpayPackageOutcome> CreatePostpayPackageOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreatePostpayPackageRequest&, CreatePostpayPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePostpayPackageAsyncHandler;
+                typedef Outcome<Error, Model::CreateStandaloneGatewayResponse> CreateStandaloneGatewayOutcome;
+                typedef std::future<CreateStandaloneGatewayOutcome> CreateStandaloneGatewayOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateStandaloneGatewayRequest&, CreateStandaloneGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStandaloneGatewayAsyncHandler;
                 typedef Outcome<Error, Model::CreateStaticStoreResponse> CreateStaticStoreOutcome;
                 typedef std::future<CreateStaticStoreOutcome> CreateStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateStaticStoreRequest&, CreateStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStaticStoreAsyncHandler;
@@ -283,6 +298,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSpecialCostItemsResponse> DescribeSpecialCostItemsOutcome;
                 typedef std::future<DescribeSpecialCostItemsOutcome> DescribeSpecialCostItemsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeSpecialCostItemsRequest&, DescribeSpecialCostItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecialCostItemsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeStandaloneGatewayResponse> DescribeStandaloneGatewayOutcome;
+                typedef std::future<DescribeStandaloneGatewayOutcome> DescribeStandaloneGatewayOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeStandaloneGatewayRequest&, DescribeStandaloneGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStandaloneGatewayAsyncHandler;
+                typedef Outcome<Error, Model::DescribeStandaloneGatewayPackageResponse> DescribeStandaloneGatewayPackageOutcome;
+                typedef std::future<DescribeStandaloneGatewayPackageOutcome> DescribeStandaloneGatewayPackageOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeStandaloneGatewayPackageRequest&, DescribeStandaloneGatewayPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStandaloneGatewayPackageAsyncHandler;
                 typedef Outcome<Error, Model::DescribeWxCloudBaseRunEnvsResponse> DescribeWxCloudBaseRunEnvsOutcome;
                 typedef std::future<DescribeWxCloudBaseRunEnvsOutcome> DescribeWxCloudBaseRunEnvsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeWxCloudBaseRunEnvsRequest&, DescribeWxCloudBaseRunEnvsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWxCloudBaseRunEnvsAsyncHandler;
@@ -292,6 +313,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DestroyEnvResponse> DestroyEnvOutcome;
                 typedef std::future<DestroyEnvOutcome> DestroyEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyEnvRequest&, DestroyEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyEnvAsyncHandler;
+                typedef Outcome<Error, Model::DestroyStandaloneGatewayResponse> DestroyStandaloneGatewayOutcome;
+                typedef std::future<DestroyStandaloneGatewayOutcome> DestroyStandaloneGatewayOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DestroyStandaloneGatewayRequest&, DestroyStandaloneGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyStandaloneGatewayAsyncHandler;
                 typedef Outcome<Error, Model::DestroyStaticStoreResponse> DestroyStaticStoreOutcome;
                 typedef std::future<DestroyStaticStoreOutcome> DestroyStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyStaticStoreRequest&, DestroyStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyStaticStoreAsyncHandler;
@@ -322,6 +346,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::RollUpdateCloudBaseRunServerVersionResponse> RollUpdateCloudBaseRunServerVersionOutcome;
                 typedef std::future<RollUpdateCloudBaseRunServerVersionOutcome> RollUpdateCloudBaseRunServerVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RollUpdateCloudBaseRunServerVersionRequest&, RollUpdateCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollUpdateCloudBaseRunServerVersionAsyncHandler;
+                typedef Outcome<Error, Model::TurnOffStandaloneGatewayResponse> TurnOffStandaloneGatewayOutcome;
+                typedef std::future<TurnOffStandaloneGatewayOutcome> TurnOffStandaloneGatewayOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::TurnOffStandaloneGatewayRequest&, TurnOffStandaloneGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TurnOffStandaloneGatewayAsyncHandler;
+                typedef Outcome<Error, Model::TurnOnStandaloneGatewayResponse> TurnOnStandaloneGatewayOutcome;
+                typedef std::future<TurnOnStandaloneGatewayOutcome> TurnOnStandaloneGatewayOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::TurnOnStandaloneGatewayRequest&, TurnOnStandaloneGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TurnOnStandaloneGatewayAsyncHandler;
 
 
 
@@ -405,6 +435,15 @@ namespace TencentCloud
                 CreatePostpayPackageOutcome CreatePostpayPackage(const Model::CreatePostpayPackageRequest &request);
                 void CreatePostpayPackageAsync(const Model::CreatePostpayPackageRequest& request, const CreatePostpayPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePostpayPackageOutcomeCallable CreatePostpayPackageCallable(const Model::CreatePostpayPackageRequest& request);
+
+                /**
+                 *本接口（CreateStandaloneGateway）用于创建独立网关。
+                 * @param req CreateStandaloneGatewayRequest
+                 * @return CreateStandaloneGatewayOutcome
+                 */
+                CreateStandaloneGatewayOutcome CreateStandaloneGateway(const Model::CreateStandaloneGatewayRequest &request);
+                void CreateStandaloneGatewayAsync(const Model::CreateStandaloneGatewayRequest& request, const CreateStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStandaloneGatewayOutcomeCallable CreateStandaloneGatewayCallable(const Model::CreateStandaloneGatewayRequest& request);
 
                 /**
                  *创建静态托管资源，包括COS和CDN，异步任务创建，查看创建结果需要根据DescribeStaticStore接口来查看
@@ -725,6 +764,24 @@ namespace TencentCloud
                 DescribeSpecialCostItemsOutcomeCallable DescribeSpecialCostItemsCallable(const Model::DescribeSpecialCostItemsRequest& request);
 
                 /**
+                 *本接口（DescribeStandaloneGateway）查询小租户网关套餐信息。
+                 * @param req DescribeStandaloneGatewayRequest
+                 * @return DescribeStandaloneGatewayOutcome
+                 */
+                DescribeStandaloneGatewayOutcome DescribeStandaloneGateway(const Model::DescribeStandaloneGatewayRequest &request);
+                void DescribeStandaloneGatewayAsync(const Model::DescribeStandaloneGatewayRequest& request, const DescribeStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStandaloneGatewayOutcomeCallable DescribeStandaloneGatewayCallable(const Model::DescribeStandaloneGatewayRequest& request);
+
+                /**
+                 *本接口（DescribeStandaloneGatewayPackage）用于查询小租户网关套餐信息。
+                 * @param req DescribeStandaloneGatewayPackageRequest
+                 * @return DescribeStandaloneGatewayPackageOutcome
+                 */
+                DescribeStandaloneGatewayPackageOutcome DescribeStandaloneGatewayPackage(const Model::DescribeStandaloneGatewayPackageRequest &request);
+                void DescribeStandaloneGatewayPackageAsync(const Model::DescribeStandaloneGatewayPackageRequest& request, const DescribeStandaloneGatewayPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStandaloneGatewayPackageOutcomeCallable DescribeStandaloneGatewayPackageCallable(const Model::DescribeStandaloneGatewayPackageRequest& request);
+
+                /**
                  *查询微信云托管环境信息
                  * @param req DescribeWxCloudBaseRunEnvsRequest
                  * @return DescribeWxCloudBaseRunEnvsOutcome
@@ -750,6 +807,15 @@ namespace TencentCloud
                 DestroyEnvOutcome DestroyEnv(const Model::DestroyEnvRequest &request);
                 void DestroyEnvAsync(const Model::DestroyEnvRequest& request, const DestroyEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyEnvOutcomeCallable DestroyEnvCallable(const Model::DestroyEnvRequest& request);
+
+                /**
+                 *本接口（DestroyStandaloneGateway）用于销毁小租户网关。
+                 * @param req DestroyStandaloneGatewayRequest
+                 * @return DestroyStandaloneGatewayOutcome
+                 */
+                DestroyStandaloneGatewayOutcome DestroyStandaloneGateway(const Model::DestroyStandaloneGatewayRequest &request);
+                void DestroyStandaloneGatewayAsync(const Model::DestroyStandaloneGatewayRequest& request, const DestroyStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyStandaloneGatewayOutcomeCallable DestroyStandaloneGatewayCallable(const Model::DestroyStandaloneGatewayRequest& request);
 
                 /**
                  *销毁静态托管资源，该接口创建异步销毁任务，资源最终状态可从DestroyStaticStore接口查看
@@ -840,6 +906,24 @@ namespace TencentCloud
                 RollUpdateCloudBaseRunServerVersionOutcome RollUpdateCloudBaseRunServerVersion(const Model::RollUpdateCloudBaseRunServerVersionRequest &request);
                 void RollUpdateCloudBaseRunServerVersionAsync(const Model::RollUpdateCloudBaseRunServerVersionRequest& request, const RollUpdateCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RollUpdateCloudBaseRunServerVersionOutcomeCallable RollUpdateCloudBaseRunServerVersionCallable(const Model::RollUpdateCloudBaseRunServerVersionRequest& request);
+
+                /**
+                 *本接口（TurnOffStandaloneGateway）用于关闭小租户网关。
+                 * @param req TurnOffStandaloneGatewayRequest
+                 * @return TurnOffStandaloneGatewayOutcome
+                 */
+                TurnOffStandaloneGatewayOutcome TurnOffStandaloneGateway(const Model::TurnOffStandaloneGatewayRequest &request);
+                void TurnOffStandaloneGatewayAsync(const Model::TurnOffStandaloneGatewayRequest& request, const TurnOffStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TurnOffStandaloneGatewayOutcomeCallable TurnOffStandaloneGatewayCallable(const Model::TurnOffStandaloneGatewayRequest& request);
+
+                /**
+                 *本接口（TurnOnStandaloneGateway）用于开启小租户网关。
+                 * @param req TurnOnStandaloneGatewayRequest
+                 * @return TurnOnStandaloneGatewayOutcome
+                 */
+                TurnOnStandaloneGatewayOutcome TurnOnStandaloneGateway(const Model::TurnOnStandaloneGatewayRequest &request);
+                void TurnOnStandaloneGatewayAsync(const Model::TurnOnStandaloneGatewayRequest& request, const TurnOnStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TurnOnStandaloneGatewayOutcomeCallable TurnOnStandaloneGatewayCallable(const Model::TurnOnStandaloneGatewayRequest& request);
 
             };
         }

@@ -87,6 +87,39 @@ CoreInternalOutcome DescribeBasicCCThresholdResponse::Deserialize(const string &
     return CoreInternalOutcome(true);
 }
 
+string DescribeBasicCCThresholdResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_cCEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CCEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cCEnable, allocator);
+    }
+
+    if (m_cCThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CCThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cCThreshold, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeBasicCCThresholdResponse::GetCCEnable() const
 {

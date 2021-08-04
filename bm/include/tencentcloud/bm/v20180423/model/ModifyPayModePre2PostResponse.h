@@ -40,6 +40,7 @@ namespace TencentCloud
                     ModifyPayModePre2PostResponse();
                     ~ModifyPayModePre2PostResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

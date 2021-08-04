@@ -164,6 +164,95 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
     return CoreInternalOutcome(true);
 }
 
+string DescribeGeneralStatResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_machinesAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachinesAll";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_machinesAll, allocator);
+    }
+
+    if (m_machinesUninstalledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachinesUninstalled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_machinesUninstalled, allocator);
+    }
+
+    if (m_agentsAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentsAll";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentsAll, allocator);
+    }
+
+    if (m_agentsOnlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentsOnline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentsOnline, allocator);
+    }
+
+    if (m_agentsOfflineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentsOffline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentsOffline, allocator);
+    }
+
+    if (m_agentsProHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentsPro";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentsPro, allocator);
+    }
+
+    if (m_agentsBasicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentsBasic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentsBasic, allocator);
+    }
+
+    if (m_agentsProExpireWithInSevenDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentsProExpireWithInSevenDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentsProExpireWithInSevenDays, allocator);
+    }
+
+    if (m_riskMachineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskMachine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_riskMachine, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 uint64_t DescribeGeneralStatResponse::GetMachinesAll() const
 {

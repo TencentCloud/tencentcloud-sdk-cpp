@@ -98,6 +98,47 @@ CoreInternalOutcome GetInvokeTxResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
+string GetInvokeTxResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_txValidationCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TxValidationCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_txValidationCode, allocator);
+    }
+
+    if (m_txValidationMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TxValidationMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_txValidationMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_blockIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlockId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blockId, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t GetInvokeTxResponse::GetTxValidationCode() const
 {

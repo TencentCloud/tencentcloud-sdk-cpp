@@ -40,6 +40,7 @@ namespace TencentCloud
                     OfflineInstanceResponse();
                     ~OfflineInstanceResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

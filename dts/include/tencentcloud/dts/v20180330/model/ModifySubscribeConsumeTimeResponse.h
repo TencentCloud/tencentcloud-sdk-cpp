@@ -40,6 +40,7 @@ namespace TencentCloud
                     ModifySubscribeConsumeTimeResponse();
                     ~ModifySubscribeConsumeTimeResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

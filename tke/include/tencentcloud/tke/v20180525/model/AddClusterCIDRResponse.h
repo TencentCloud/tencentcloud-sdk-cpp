@@ -40,6 +40,7 @@ namespace TencentCloud
                     AddClusterCIDRResponse();
                     ~AddClusterCIDRResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

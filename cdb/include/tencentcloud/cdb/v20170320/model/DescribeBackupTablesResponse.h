@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeBackupTablesResponse();
                     ~DescribeBackupTablesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

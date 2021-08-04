@@ -40,6 +40,7 @@ namespace TencentCloud
                     DeleteContentReviewTemplateResponse();
                     ~DeleteContentReviewTemplateResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

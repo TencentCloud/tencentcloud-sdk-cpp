@@ -98,6 +98,47 @@ CoreInternalOutcome DescribeTelCallInfoResponse::Deserialize(const string &paylo
     return CoreInternalOutcome(true);
 }
 
+string DescribeTelCallInfoResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_telCallOutCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TelCallOutCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_telCallOutCount, allocator);
+    }
+
+    if (m_telCallInCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TelCallInCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_telCallInCount, allocator);
+    }
+
+    if (m_seatUsedCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SeatUsedCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_seatUsedCount, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 int64_t DescribeTelCallInfoResponse::GetTelCallOutCount() const
 {

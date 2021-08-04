@@ -40,6 +40,7 @@ namespace TencentCloud
                     DeregisterTargetsFromClassicalLBResponse();
                     ~DeregisterTargetsFromClassicalLBResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

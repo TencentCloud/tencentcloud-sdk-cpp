@@ -42,6 +42,7 @@ namespace TencentCloud
                     DescribePlayErrorCodeSumInfoListResponse();
                     ~DescribePlayErrorCodeSumInfoListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

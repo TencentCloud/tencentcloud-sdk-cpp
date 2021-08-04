@@ -41,6 +41,7 @@ namespace TencentCloud
                     GetResultSummaryResponse();
                     ~GetResultSummaryResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

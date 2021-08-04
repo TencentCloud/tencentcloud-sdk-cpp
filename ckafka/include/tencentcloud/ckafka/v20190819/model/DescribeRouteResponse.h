@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeRouteResponse();
                     ~DescribeRouteResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

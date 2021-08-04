@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeRsgAsGroupActivitiesResponse();
                     ~DescribeRsgAsGroupActivitiesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

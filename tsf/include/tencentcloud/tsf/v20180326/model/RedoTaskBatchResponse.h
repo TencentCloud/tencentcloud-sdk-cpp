@@ -40,6 +40,7 @@ namespace TencentCloud
                     RedoTaskBatchResponse();
                     ~RedoTaskBatchResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

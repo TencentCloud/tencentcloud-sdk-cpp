@@ -98,6 +98,47 @@ CoreInternalOutcome VerifyChipBurnInfoResponse::Deserialize(const string &payloa
     return CoreInternalOutcome(true);
 }
 
+string VerifyChipBurnInfoResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_passHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pass, allocator);
+    }
+
+    if (m_verifiedTimesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifiedTimes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_verifiedTimes, allocator);
+    }
+
+    if (m_leftTimesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LeftTimes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_leftTimes, allocator);
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+    
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
 
 bool VerifyChipBurnInfoResponse::GetPass() const
 {

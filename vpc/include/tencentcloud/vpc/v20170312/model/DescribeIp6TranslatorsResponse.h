@@ -41,6 +41,7 @@ namespace TencentCloud
                     DescribeIp6TranslatorsResponse();
                     ~DescribeIp6TranslatorsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

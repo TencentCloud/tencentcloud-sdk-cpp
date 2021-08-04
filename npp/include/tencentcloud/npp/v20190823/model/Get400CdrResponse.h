@@ -41,6 +41,7 @@ namespace TencentCloud
                     Get400CdrResponse();
                     ~Get400CdrResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

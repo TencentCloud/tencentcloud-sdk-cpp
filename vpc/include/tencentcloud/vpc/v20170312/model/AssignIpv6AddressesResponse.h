@@ -41,6 +41,7 @@ namespace TencentCloud
                     AssignIpv6AddressesResponse();
                     ~AssignIpv6AddressesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**

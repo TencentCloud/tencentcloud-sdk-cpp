@@ -40,6 +40,7 @@ namespace TencentCloud
                     ModifyNetReturnSwitchResponse();
                     ~ModifyNetReturnSwitchResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                 private:

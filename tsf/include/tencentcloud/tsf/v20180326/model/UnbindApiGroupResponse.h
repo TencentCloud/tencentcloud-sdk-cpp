@@ -40,6 +40,7 @@ namespace TencentCloud
                     UnbindApiGroupResponse();
                     ~UnbindApiGroupResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
 
 
                     /**
