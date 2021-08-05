@@ -1201,6 +1201,49 @@ CkafkaClient::DescribeUserOutcomeCallable CkafkaClient::DescribeUserCallable(con
     return task->get_future();
 }
 
+CkafkaClient::FetchMessageByOffsetOutcome CkafkaClient::FetchMessageByOffset(const FetchMessageByOffsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "FetchMessageByOffset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FetchMessageByOffsetResponse rsp = FetchMessageByOffsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FetchMessageByOffsetOutcome(rsp);
+        else
+            return FetchMessageByOffsetOutcome(o.GetError());
+    }
+    else
+    {
+        return FetchMessageByOffsetOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::FetchMessageByOffsetAsync(const FetchMessageByOffsetRequest& request, const FetchMessageByOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FetchMessageByOffset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::FetchMessageByOffsetOutcomeCallable CkafkaClient::FetchMessageByOffsetCallable(const FetchMessageByOffsetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FetchMessageByOffsetOutcome()>>(
+        [this, request]()
+        {
+            return this->FetchMessageByOffset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::ModifyGroupOffsetsOutcome CkafkaClient::ModifyGroupOffsets(const ModifyGroupOffsetsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyGroupOffsets");

@@ -24,7 +24,8 @@ using namespace std;
 
 RepairTaskControlRequest::RepairTaskControlRequest() :
     m_taskIdHasBeenSet(false),
-    m_operateHasBeenSet(false)
+    m_operateHasBeenSet(false),
+    m_operateRemarkHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string RepairTaskControlRequest::ToJsonString() const
         string key = "Operate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_operate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operateRemarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateRemark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operateRemark.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void RepairTaskControlRequest::SetOperate(const string& _operate)
 bool RepairTaskControlRequest::OperateHasBeenSet() const
 {
     return m_operateHasBeenSet;
+}
+
+string RepairTaskControlRequest::GetOperateRemark() const
+{
+    return m_operateRemark;
+}
+
+void RepairTaskControlRequest::SetOperateRemark(const string& _operateRemark)
+{
+    m_operateRemark = _operateRemark;
+    m_operateRemarkHasBeenSet = true;
+}
+
+bool RepairTaskControlRequest::OperateRemarkHasBeenSet() const
+{
+    return m_operateRemarkHasBeenSet;
 }
 
 

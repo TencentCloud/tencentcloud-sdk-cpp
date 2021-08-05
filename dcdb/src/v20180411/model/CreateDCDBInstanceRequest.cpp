@@ -40,7 +40,9 @@ CreateDCDBInstanceRequest::CreateDCDBInstanceRequest() :
     m_instanceNameHasBeenSet(false),
     m_ipv6FlagHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_initParamsHasBeenSet(false)
+    m_initParamsHasBeenSet(false),
+    m_dcnRegionHasBeenSet(false),
+    m_dcnInstanceIdHasBeenSet(false)
 {
 }
 
@@ -217,6 +219,22 @@ string CreateDCDBInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dcnRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DcnRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dcnRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dcnInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DcnInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dcnInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -513,6 +531,38 @@ void CreateDCDBInstanceRequest::SetInitParams(const vector<DBParamValue>& _initP
 bool CreateDCDBInstanceRequest::InitParamsHasBeenSet() const
 {
     return m_initParamsHasBeenSet;
+}
+
+string CreateDCDBInstanceRequest::GetDcnRegion() const
+{
+    return m_dcnRegion;
+}
+
+void CreateDCDBInstanceRequest::SetDcnRegion(const string& _dcnRegion)
+{
+    m_dcnRegion = _dcnRegion;
+    m_dcnRegionHasBeenSet = true;
+}
+
+bool CreateDCDBInstanceRequest::DcnRegionHasBeenSet() const
+{
+    return m_dcnRegionHasBeenSet;
+}
+
+string CreateDCDBInstanceRequest::GetDcnInstanceId() const
+{
+    return m_dcnInstanceId;
+}
+
+void CreateDCDBInstanceRequest::SetDcnInstanceId(const string& _dcnInstanceId)
+{
+    m_dcnInstanceId = _dcnInstanceId;
+    m_dcnInstanceIdHasBeenSet = true;
+}
+
+bool CreateDCDBInstanceRequest::DcnInstanceIdHasBeenSet() const
+{
+    return m_dcnInstanceIdHasBeenSet;
 }
 
 

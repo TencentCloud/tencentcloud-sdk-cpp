@@ -24,7 +24,9 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/QueryOrderOutOrderList.h
   include/tencentcloud/cpdp/v20190820/model/ApplyTradeRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryOutwardOrderResponse.h
+  include/tencentcloud/cpdp/v20190820/model/ConfirmOrderRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryExchangeRateResponse.h
+  include/tencentcloud/cpdp/v20190820/model/UploadTaxPaymentRequest.h
   include/tencentcloud/cpdp/v20190820/model/UnifiedOrderInSubOrderList.h
   include/tencentcloud/cpdp/v20190820/model/QueryAcctBindingRequest.h
   include/tencentcloud/cpdp/v20190820/model/ModifyMntMbrBindRelateAcctBankCodeRequest.h
@@ -35,7 +37,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/QueryTradeRequest.h
   include/tencentcloud/cpdp/v20190820/model/UnifiedOrderResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryBankWithdrawCashDetailsRequest.h
-  include/tencentcloud/cpdp/v20190820/model/ApplyPayerinfoResult.h
+  include/tencentcloud/cpdp/v20190820/model/CreateTransferBatchRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryCustAcctIdBalanceRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryPayerInfoResponse.h
   include/tencentcloud/cpdp/v20190820/model/WithdrawItem.h
@@ -46,12 +48,13 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/RevResigterBillSupportWithdrawRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateInvoiceResponse.h
   include/tencentcloud/cpdp/v20190820/model/AgentTaxPayment.h
-  include/tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResultV2.h
+  include/tencentcloud/cpdp/v20190820/model/CreateOrderRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryAnchorContractInfoRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResult.h
   include/tencentcloud/cpdp/v20190820/model/QueryBankWithdrawCashDetailsResponse.h
-  include/tencentcloud/cpdp/v20190820/model/QueryItem.h
+  include/tencentcloud/cpdp/v20190820/model/CreatePayMerchantRequest.h
   include/tencentcloud/cpdp/v20190820/model/ContractOrderRequest.h
+  include/tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoResponse.h
   include/tencentcloud/cpdp/v20190820/model/AgencyClientInfo.h
   include/tencentcloud/cpdp/v20190820/model/RefundOutSubOrderRefundList.h
   include/tencentcloud/cpdp/v20190820/model/UnbindRelateAcctRequest.h
@@ -75,10 +78,10 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/CreateAcctRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateSinglePayRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateAgentTaxPaymentInfosRequest.h
-  include/tencentcloud/cpdp/v20190820/model/Acct.h
+  include/tencentcloud/cpdp/v20190820/model/ConfirmOrderResponse.h
   include/tencentcloud/cpdp/v20190820/model/CloseOrderResponse.h
   include/tencentcloud/cpdp/v20190820/model/ApplyPayerinfoData.h
-  include/tencentcloud/cpdp/v20190820/model/UploadTaxPaymentRequest.h
+  include/tencentcloud/cpdp/v20190820/model/ModifyMerchantRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateRedInvoiceItem.h
   include/tencentcloud/cpdp/v20190820/model/CheckAcctRequest.h
   include/tencentcloud/cpdp/v20190820/model/CheckAmountResponse.h
@@ -86,6 +89,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/QueryOutwardOrderResult.h
   include/tencentcloud/cpdp/v20190820/model/CreateAgentTaxPaymentInfosResponse.h
   include/tencentcloud/cpdp/v20190820/model/RechargeByThirdPayRequest.h
+  include/tencentcloud/cpdp/v20190820/model/RevokeMemberRechargeThirdPayRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryPayerInfoRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryMerchantInfoForManagementResponse.h
   include/tencentcloud/cpdp/v20190820/model/CreateTransferBatchResponse.h
@@ -95,7 +99,9 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/DescribeOrderStatusRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryMemberTransactionResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryMerchantBalanceResult.h
+  include/tencentcloud/cpdp/v20190820/model/ModifyMerchantResponse.h
   include/tencentcloud/cpdp/v20190820/model/QuerySinglePayResult.h
+  include/tencentcloud/cpdp/v20190820/model/RefundOrderResponse.h
   include/tencentcloud/cpdp/v20190820/model/QuerySinglePayResponse.h
   include/tencentcloud/cpdp/v20190820/model/ResponseTerminateContract.h
   include/tencentcloud/cpdp/v20190820/model/QueryCustAcctIdBalanceResponse.h
@@ -112,14 +118,14 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/BindRelateAcctUnionPayRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateInvoiceResultData.h
   include/tencentcloud/cpdp/v20190820/model/TransferDetailRequest.h
-  include/tencentcloud/cpdp/v20190820/model/CreateTransferBatchRequest.h
+  include/tencentcloud/cpdp/v20190820/model/ApplyPayerinfoResult.h
   include/tencentcloud/cpdp/v20190820/model/RefundResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryAgentTaxPaymentBatchResponse.h
   include/tencentcloud/cpdp/v20190820/model/DeleteAgentTaxPaymentInfosResponse.h
   include/tencentcloud/cpdp/v20190820/model/ReturnContractInfo.h
   include/tencentcloud/cpdp/v20190820/model/RegisterBillSupportWithdrawResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryTransferResultResponse.h
-  include/tencentcloud/cpdp/v20190820/model/QuerySmallAmountTransferResponse.h
+  include/tencentcloud/cpdp/v20190820/model/QueryItem.h
   include/tencentcloud/cpdp/v20190820/model/SceneInfo.h
   include/tencentcloud/cpdp/v20190820/model/QueryContractResponse.h
   include/tencentcloud/cpdp/v20190820/model/CreateInvoiceResultV2.h
@@ -134,7 +140,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/TranItem.h
   include/tencentcloud/cpdp/v20190820/model/ClearItem.h
   include/tencentcloud/cpdp/v20190820/model/MerchantManagementResult.h
-  include/tencentcloud/cpdp/v20190820/model/ApplyWithdrawalResponse.h
+  include/tencentcloud/cpdp/v20190820/model/Acct.h
   include/tencentcloud/cpdp/v20190820/model/QueryBankTransactionDetailsResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryTransferResultRequest.h
   include/tencentcloud/cpdp/v20190820/model/SyncContractDataResponse.h
@@ -150,10 +156,11 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/CreateAcctResponse.h
   include/tencentcloud/cpdp/v20190820/model/DescribeChargeDetailRequest.h
   include/tencentcloud/cpdp/v20190820/model/BindAcctResponse.h
+  include/tencentcloud/cpdp/v20190820/model/CreateOrderResponse.h
   include/tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryExchangerateData.h
-  include/tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoResponse.h
-  include/tencentcloud/cpdp/v20190820/model/QueryRefundRequest.h
+  include/tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResultV2.h
+  include/tencentcloud/cpdp/v20190820/model/QueryMerchantOrderRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryTransferResultData.h
   include/tencentcloud/cpdp/v20190820/model/QueryTransferDetailResponse.h
   include/tencentcloud/cpdp/v20190820/model/BindRelateAccReUnionPayRequest.h
@@ -163,6 +170,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/QueryAcctInfoResponse.h
   include/tencentcloud/cpdp/v20190820/model/MigrateOrderRefundQueryRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryAgentTaxPaymentBatchRequest.h
+  include/tencentcloud/cpdp/v20190820/model/QueryMerchantRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryPayerinfoResult.h
   include/tencentcloud/cpdp/v20190820/model/TransferItem.h
   include/tencentcloud/cpdp/v20190820/model/QueryInvoiceV2Request.h
@@ -172,6 +180,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/RegisterBillResponse.h
   include/tencentcloud/cpdp/v20190820/model/WithdrawCashMembershipRequest.h
   include/tencentcloud/cpdp/v20190820/model/ApplyOutwardOrderRequest.h
+  include/tencentcloud/cpdp/v20190820/model/CreatePayMerchantResponse.h
   include/tencentcloud/cpdp/v20190820/model/UnbindRelateAcctResponse.h
   include/tencentcloud/cpdp/v20190820/model/RechargeByThirdPayResponse.h
   include/tencentcloud/cpdp/v20190820/model/CheckAmountRequest.h
@@ -199,7 +208,8 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/CloseOrderRequest.h
   include/tencentcloud/cpdp/v20190820/model/RevResigterBillSupportWithdrawResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryBalanceResponse.h
-  include/tencentcloud/cpdp/v20190820/model/QueryOutwardOrderData.h
+  include/tencentcloud/cpdp/v20190820/model/ApplyWithdrawalResponse.h
+  include/tencentcloud/cpdp/v20190820/model/RefundOrderRequest.h
   include/tencentcloud/cpdp/v20190820/model/UnBindAcctRequest.h
   include/tencentcloud/cpdp/v20190820/model/TerminateContractRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryTransferBatchRequest.h
@@ -215,6 +225,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/QueryBillDownloadURLRequest.h
   include/tencentcloud/cpdp/v20190820/model/TransferSinglePayRequest.h
   include/tencentcloud/cpdp/v20190820/model/ApplyOutwardOrderResult.h
+  include/tencentcloud/cpdp/v20190820/model/QuerySmallAmountTransferResponse.h
   include/tencentcloud/cpdp/v20190820/model/ApplyPayerInfoRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateSinglePayResponse.h
   include/tencentcloud/cpdp/v20190820/model/RefundMemberTransactionResponse.h
@@ -224,7 +235,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/ApplyApplicationMaterialResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryBankTransactionDetailsRequest.h
   include/tencentcloud/cpdp/v20190820/model/DownloadBillRequest.h
-  include/tencentcloud/cpdp/v20190820/model/RevokeMemberRechargeThirdPayRequest.h
+  include/tencentcloud/cpdp/v20190820/model/QueryRefundRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResultData.h
   include/tencentcloud/cpdp/v20190820/model/QuerySinglePayRequest.h
   include/tencentcloud/cpdp/v20190820/model/ApplyTradeResponse.h
@@ -263,6 +274,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/BindRelateAcctUnionPayResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryReconciliationDocumentRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryOrderResponse.h
+  include/tencentcloud/cpdp/v20190820/model/QueryOutwardOrderData.h
   include/tencentcloud/cpdp/v20190820/model/UnifiedOrderRequest.h
   include/tencentcloud/cpdp/v20190820/model/BankCardItem.h
   include/tencentcloud/cpdp/v20190820/model/MigrateOrderRefundResponse.h
@@ -271,6 +283,8 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/RefundRequest.h
   include/tencentcloud/cpdp/v20190820/model/BindRelateAccReUnionPayResponse.h
   include/tencentcloud/cpdp/v20190820/model/ContractOrderResponse.h
+  include/tencentcloud/cpdp/v20190820/model/QueryMerchantOrderResponse.h
+  include/tencentcloud/cpdp/v20190820/model/QueryMerchantResponse.h
   include/tencentcloud/cpdp/v20190820/model/CreateInvoiceV2Request.h
   )
 
@@ -281,7 +295,9 @@ set(cpdp_src
   src/v20190820/model/QueryOrderOutOrderList.cpp
   src/v20190820/model/ApplyTradeRequest.cpp
   src/v20190820/model/QueryOutwardOrderResponse.cpp
+  src/v20190820/model/ConfirmOrderRequest.cpp
   src/v20190820/model/QueryExchangeRateResponse.cpp
+  src/v20190820/model/UploadTaxPaymentRequest.cpp
   src/v20190820/model/UnifiedOrderInSubOrderList.cpp
   src/v20190820/model/QueryAcctBindingRequest.cpp
   src/v20190820/model/ModifyMntMbrBindRelateAcctBankCodeRequest.cpp
@@ -292,7 +308,7 @@ set(cpdp_src
   src/v20190820/model/QueryTradeRequest.cpp
   src/v20190820/model/UnifiedOrderResponse.cpp
   src/v20190820/model/QueryBankWithdrawCashDetailsRequest.cpp
-  src/v20190820/model/ApplyPayerinfoResult.cpp
+  src/v20190820/model/CreateTransferBatchRequest.cpp
   src/v20190820/model/QueryCustAcctIdBalanceRequest.cpp
   src/v20190820/model/QueryPayerInfoResponse.cpp
   src/v20190820/model/WithdrawItem.cpp
@@ -303,12 +319,13 @@ set(cpdp_src
   src/v20190820/model/RevResigterBillSupportWithdrawRequest.cpp
   src/v20190820/model/CreateInvoiceResponse.cpp
   src/v20190820/model/AgentTaxPayment.cpp
-  src/v20190820/model/CreateRedInvoiceResultV2.cpp
+  src/v20190820/model/CreateOrderRequest.cpp
   src/v20190820/model/QueryAnchorContractInfoRequest.cpp
   src/v20190820/model/CreateRedInvoiceResult.cpp
   src/v20190820/model/QueryBankWithdrawCashDetailsResponse.cpp
-  src/v20190820/model/QueryItem.cpp
+  src/v20190820/model/CreatePayMerchantRequest.cpp
   src/v20190820/model/ContractOrderRequest.cpp
+  src/v20190820/model/ModifyAgentTaxPaymentInfoResponse.cpp
   src/v20190820/model/AgencyClientInfo.cpp
   src/v20190820/model/RefundOutSubOrderRefundList.cpp
   src/v20190820/model/UnbindRelateAcctRequest.cpp
@@ -332,10 +349,10 @@ set(cpdp_src
   src/v20190820/model/CreateAcctRequest.cpp
   src/v20190820/model/CreateSinglePayRequest.cpp
   src/v20190820/model/CreateAgentTaxPaymentInfosRequest.cpp
-  src/v20190820/model/Acct.cpp
+  src/v20190820/model/ConfirmOrderResponse.cpp
   src/v20190820/model/CloseOrderResponse.cpp
   src/v20190820/model/ApplyPayerinfoData.cpp
-  src/v20190820/model/UploadTaxPaymentRequest.cpp
+  src/v20190820/model/ModifyMerchantRequest.cpp
   src/v20190820/model/CreateRedInvoiceItem.cpp
   src/v20190820/model/CheckAcctRequest.cpp
   src/v20190820/model/CheckAmountResponse.cpp
@@ -343,6 +360,7 @@ set(cpdp_src
   src/v20190820/model/QueryOutwardOrderResult.cpp
   src/v20190820/model/CreateAgentTaxPaymentInfosResponse.cpp
   src/v20190820/model/RechargeByThirdPayRequest.cpp
+  src/v20190820/model/RevokeMemberRechargeThirdPayRequest.cpp
   src/v20190820/model/QueryPayerInfoRequest.cpp
   src/v20190820/model/QueryMerchantInfoForManagementResponse.cpp
   src/v20190820/model/CreateTransferBatchResponse.cpp
@@ -352,7 +370,9 @@ set(cpdp_src
   src/v20190820/model/DescribeOrderStatusRequest.cpp
   src/v20190820/model/QueryMemberTransactionResponse.cpp
   src/v20190820/model/QueryMerchantBalanceResult.cpp
+  src/v20190820/model/ModifyMerchantResponse.cpp
   src/v20190820/model/QuerySinglePayResult.cpp
+  src/v20190820/model/RefundOrderResponse.cpp
   src/v20190820/model/QuerySinglePayResponse.cpp
   src/v20190820/model/ResponseTerminateContract.cpp
   src/v20190820/model/QueryCustAcctIdBalanceResponse.cpp
@@ -369,14 +389,14 @@ set(cpdp_src
   src/v20190820/model/BindRelateAcctUnionPayRequest.cpp
   src/v20190820/model/CreateInvoiceResultData.cpp
   src/v20190820/model/TransferDetailRequest.cpp
-  src/v20190820/model/CreateTransferBatchRequest.cpp
+  src/v20190820/model/ApplyPayerinfoResult.cpp
   src/v20190820/model/RefundResponse.cpp
   src/v20190820/model/QueryAgentTaxPaymentBatchResponse.cpp
   src/v20190820/model/DeleteAgentTaxPaymentInfosResponse.cpp
   src/v20190820/model/ReturnContractInfo.cpp
   src/v20190820/model/RegisterBillSupportWithdrawResponse.cpp
   src/v20190820/model/QueryTransferResultResponse.cpp
-  src/v20190820/model/QuerySmallAmountTransferResponse.cpp
+  src/v20190820/model/QueryItem.cpp
   src/v20190820/model/SceneInfo.cpp
   src/v20190820/model/QueryContractResponse.cpp
   src/v20190820/model/CreateInvoiceResultV2.cpp
@@ -391,7 +411,7 @@ set(cpdp_src
   src/v20190820/model/TranItem.cpp
   src/v20190820/model/ClearItem.cpp
   src/v20190820/model/MerchantManagementResult.cpp
-  src/v20190820/model/ApplyWithdrawalResponse.cpp
+  src/v20190820/model/Acct.cpp
   src/v20190820/model/QueryBankTransactionDetailsResponse.cpp
   src/v20190820/model/QueryTransferResultRequest.cpp
   src/v20190820/model/SyncContractDataResponse.cpp
@@ -407,10 +427,11 @@ set(cpdp_src
   src/v20190820/model/CreateAcctResponse.cpp
   src/v20190820/model/DescribeChargeDetailRequest.cpp
   src/v20190820/model/BindAcctResponse.cpp
+  src/v20190820/model/CreateOrderResponse.cpp
   src/v20190820/model/CreateRedInvoiceResponse.cpp
   src/v20190820/model/QueryExchangerateData.cpp
-  src/v20190820/model/ModifyAgentTaxPaymentInfoResponse.cpp
-  src/v20190820/model/QueryRefundRequest.cpp
+  src/v20190820/model/CreateRedInvoiceResultV2.cpp
+  src/v20190820/model/QueryMerchantOrderRequest.cpp
   src/v20190820/model/QueryTransferResultData.cpp
   src/v20190820/model/QueryTransferDetailResponse.cpp
   src/v20190820/model/BindRelateAccReUnionPayRequest.cpp
@@ -420,6 +441,7 @@ set(cpdp_src
   src/v20190820/model/QueryAcctInfoResponse.cpp
   src/v20190820/model/MigrateOrderRefundQueryRequest.cpp
   src/v20190820/model/QueryAgentTaxPaymentBatchRequest.cpp
+  src/v20190820/model/QueryMerchantRequest.cpp
   src/v20190820/model/QueryPayerinfoResult.cpp
   src/v20190820/model/TransferItem.cpp
   src/v20190820/model/QueryInvoiceV2Request.cpp
@@ -429,6 +451,7 @@ set(cpdp_src
   src/v20190820/model/RegisterBillResponse.cpp
   src/v20190820/model/WithdrawCashMembershipRequest.cpp
   src/v20190820/model/ApplyOutwardOrderRequest.cpp
+  src/v20190820/model/CreatePayMerchantResponse.cpp
   src/v20190820/model/UnbindRelateAcctResponse.cpp
   src/v20190820/model/RechargeByThirdPayResponse.cpp
   src/v20190820/model/CheckAmountRequest.cpp
@@ -456,7 +479,8 @@ set(cpdp_src
   src/v20190820/model/CloseOrderRequest.cpp
   src/v20190820/model/RevResigterBillSupportWithdrawResponse.cpp
   src/v20190820/model/QueryBalanceResponse.cpp
-  src/v20190820/model/QueryOutwardOrderData.cpp
+  src/v20190820/model/ApplyWithdrawalResponse.cpp
+  src/v20190820/model/RefundOrderRequest.cpp
   src/v20190820/model/UnBindAcctRequest.cpp
   src/v20190820/model/TerminateContractRequest.cpp
   src/v20190820/model/QueryTransferBatchRequest.cpp
@@ -472,6 +496,7 @@ set(cpdp_src
   src/v20190820/model/QueryBillDownloadURLRequest.cpp
   src/v20190820/model/TransferSinglePayRequest.cpp
   src/v20190820/model/ApplyOutwardOrderResult.cpp
+  src/v20190820/model/QuerySmallAmountTransferResponse.cpp
   src/v20190820/model/ApplyPayerInfoRequest.cpp
   src/v20190820/model/CreateSinglePayResponse.cpp
   src/v20190820/model/RefundMemberTransactionResponse.cpp
@@ -481,7 +506,7 @@ set(cpdp_src
   src/v20190820/model/ApplyApplicationMaterialResponse.cpp
   src/v20190820/model/QueryBankTransactionDetailsRequest.cpp
   src/v20190820/model/DownloadBillRequest.cpp
-  src/v20190820/model/RevokeMemberRechargeThirdPayRequest.cpp
+  src/v20190820/model/QueryRefundRequest.cpp
   src/v20190820/model/CreateRedInvoiceResultData.cpp
   src/v20190820/model/QuerySinglePayRequest.cpp
   src/v20190820/model/ApplyTradeResponse.cpp
@@ -520,6 +545,7 @@ set(cpdp_src
   src/v20190820/model/BindRelateAcctUnionPayResponse.cpp
   src/v20190820/model/QueryReconciliationDocumentRequest.cpp
   src/v20190820/model/QueryOrderResponse.cpp
+  src/v20190820/model/QueryOutwardOrderData.cpp
   src/v20190820/model/UnifiedOrderRequest.cpp
   src/v20190820/model/BankCardItem.cpp
   src/v20190820/model/MigrateOrderRefundResponse.cpp
@@ -528,6 +554,8 @@ set(cpdp_src
   src/v20190820/model/RefundRequest.cpp
   src/v20190820/model/BindRelateAccReUnionPayResponse.cpp
   src/v20190820/model/ContractOrderResponse.cpp
+  src/v20190820/model/QueryMerchantOrderResponse.cpp
+  src/v20190820/model/QueryMerchantResponse.cpp
   src/v20190820/model/CreateInvoiceV2Request.cpp
   )
 

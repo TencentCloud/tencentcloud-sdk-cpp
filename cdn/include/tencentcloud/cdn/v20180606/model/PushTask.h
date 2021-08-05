@@ -87,10 +87,12 @@ namespace TencentCloud
 fail：预热失败
 done：预热成功
 process：预热中
+invalid：预热无效(源站返回4xx或5xx状态码)
                      * @return Status 预热任务状态
 fail：预热失败
 done：预热成功
 process：预热中
+invalid：预热无效(源站返回4xx或5xx状态码)
                      */
                     std::string GetStatus() const;
 
@@ -99,10 +101,12 @@ process：预热中
 fail：预热失败
 done：预热成功
 process：预热中
+invalid：预热无效(源站返回4xx或5xx状态码)
                      * @param Status 预热任务状态
 fail：预热失败
 done：预热成功
 process：预热中
+invalid：预热无效(源站返回4xx或5xx状态码)
                      */
                     void SetStatus(const std::string& _status);
 
@@ -219,6 +223,7 @@ global：全球
 fail：预热失败
 done：预热成功
 process：预热中
+invalid：预热无效(源站返回4xx或5xx状态码)
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

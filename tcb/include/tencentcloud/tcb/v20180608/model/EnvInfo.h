@@ -30,6 +30,7 @@
 #include <tencentcloud/tcb/v20180608/model/LogServiceInfo.h>
 #include <tencentcloud/tcb/v20180608/model/StaticStorageInfo.h>
 #include <tencentcloud/tcb/v20180608/model/Tag.h>
+#include <tencentcloud/tcb/v20180608/model/ClsInfo.h>
 
 
 namespace TencentCloud
@@ -458,6 +459,28 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取自定义日志服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomLogServices 自定义日志服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClsInfo> GetCustomLogServices() const;
+
+                    /**
+                     * 设置自定义日志服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CustomLogServices 自定义日志服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCustomLogServices(const std::vector<ClsInfo>& _customLogServices);
+
+                    /**
+                     * 判断参数 CustomLogServices 是否已赋值
+                     * @return CustomLogServices 是否已赋值
+                     */
+                    bool CustomLogServicesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -589,6 +612,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 自定义日志服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ClsInfo> m_customLogServices;
+                    bool m_customLogServicesHasBeenSet;
 
                 };
             }

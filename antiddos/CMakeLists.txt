@@ -67,6 +67,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/ModifyPacketFilterConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListDDoSGeoIPBlockConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/Layer7Rule.h
+  include/tencentcloud/antiddos/v20200309/model/L4RuleSource.h
   include/tencentcloud/antiddos/v20200309/model/CreateDDoSSpeedLimitConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/CreateDDoSGeoIPBlockConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/CreateProtocolBlockConfigRequest.h
@@ -79,6 +80,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/ModifyDomainUsrNameRequest.h
   include/tencentcloud/antiddos/v20200309/model/CreateDDoSSpeedLimitConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DeletePacketFilterConfigRequest.h
+  include/tencentcloud/antiddos/v20200309/model/ModifyL7RulesEdgeRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListDDoSGeoIPBlockConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeBasicDeviceStatusResponse.h
   include/tencentcloud/antiddos/v20200309/model/WaterPrintConfig.h
@@ -101,6 +103,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/EipAddressRelation.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListListenerResponse.h
   include/tencentcloud/antiddos/v20200309/model/ProtectThresholdRelation.h
+  include/tencentcloud/antiddos/v20200309/model/ModifyL7RulesEdgeResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateL7RuleCertsResponse.h
   include/tencentcloud/antiddos/v20200309/model/DDoSSpeedLimitConfig.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListProtectThresholdConfigResponse.h
@@ -140,6 +143,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DescribeListWaterPrintConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/BGPInstanceUsages.h
   include/tencentcloud/antiddos/v20200309/model/DeleteDDoSSpeedLimitConfigResponse.h
+  include/tencentcloud/antiddos/v20200309/model/L7RuleEntry.h
   include/tencentcloud/antiddos/v20200309/model/CreateWaterPrintKeyResponse.h
   include/tencentcloud/antiddos/v20200309/model/DeleteDDoSGeoIPBlockConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListBlackWhiteIpListRequest.h
@@ -201,6 +205,7 @@ set(antiddos_src
   src/v20200309/model/ModifyPacketFilterConfigResponse.cpp
   src/v20200309/model/DescribeListDDoSGeoIPBlockConfigRequest.cpp
   src/v20200309/model/Layer7Rule.cpp
+  src/v20200309/model/L4RuleSource.cpp
   src/v20200309/model/CreateDDoSSpeedLimitConfigRequest.cpp
   src/v20200309/model/CreateDDoSGeoIPBlockConfigRequest.cpp
   src/v20200309/model/CreateProtocolBlockConfigRequest.cpp
@@ -213,6 +218,7 @@ set(antiddos_src
   src/v20200309/model/ModifyDomainUsrNameRequest.cpp
   src/v20200309/model/CreateDDoSSpeedLimitConfigResponse.cpp
   src/v20200309/model/DeletePacketFilterConfigRequest.cpp
+  src/v20200309/model/ModifyL7RulesEdgeRequest.cpp
   src/v20200309/model/DescribeListDDoSGeoIPBlockConfigResponse.cpp
   src/v20200309/model/DescribeBasicDeviceStatusResponse.cpp
   src/v20200309/model/WaterPrintConfig.cpp
@@ -235,6 +241,7 @@ set(antiddos_src
   src/v20200309/model/EipAddressRelation.cpp
   src/v20200309/model/DescribeListListenerResponse.cpp
   src/v20200309/model/ProtectThresholdRelation.cpp
+  src/v20200309/model/ModifyL7RulesEdgeResponse.cpp
   src/v20200309/model/CreateL7RuleCertsResponse.cpp
   src/v20200309/model/DDoSSpeedLimitConfig.cpp
   src/v20200309/model/DescribeListProtectThresholdConfigResponse.cpp
@@ -274,6 +281,7 @@ set(antiddos_src
   src/v20200309/model/DescribeListWaterPrintConfigResponse.cpp
   src/v20200309/model/BGPInstanceUsages.cpp
   src/v20200309/model/DeleteDDoSSpeedLimitConfigResponse.cpp
+  src/v20200309/model/L7RuleEntry.cpp
   src/v20200309/model/CreateWaterPrintKeyResponse.cpp
   src/v20200309/model/DeleteDDoSGeoIPBlockConfigResponse.cpp
   src/v20200309/model/DescribeListBlackWhiteIpListRequest.cpp

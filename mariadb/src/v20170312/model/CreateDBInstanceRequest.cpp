@@ -40,7 +40,9 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_autoRenewFlagHasBeenSet(false),
     m_ipv6FlagHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_initParamsHasBeenSet(false)
+    m_initParamsHasBeenSet(false),
+    m_dcnRegionHasBeenSet(false),
+    m_dcnInstanceIdHasBeenSet(false)
 {
 }
 
@@ -222,6 +224,22 @@ string CreateDBInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dcnRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DcnRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dcnRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dcnInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DcnInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dcnInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -518,6 +536,38 @@ void CreateDBInstanceRequest::SetInitParams(const vector<DBParamValue>& _initPar
 bool CreateDBInstanceRequest::InitParamsHasBeenSet() const
 {
     return m_initParamsHasBeenSet;
+}
+
+string CreateDBInstanceRequest::GetDcnRegion() const
+{
+    return m_dcnRegion;
+}
+
+void CreateDBInstanceRequest::SetDcnRegion(const string& _dcnRegion)
+{
+    m_dcnRegion = _dcnRegion;
+    m_dcnRegionHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::DcnRegionHasBeenSet() const
+{
+    return m_dcnRegionHasBeenSet;
+}
+
+string CreateDBInstanceRequest::GetDcnInstanceId() const
+{
+    return m_dcnInstanceId;
+}
+
+void CreateDBInstanceRequest::SetDcnInstanceId(const string& _dcnInstanceId)
+{
+    m_dcnInstanceId = _dcnInstanceId;
+    m_dcnInstanceIdHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::DcnInstanceIdHasBeenSet() const
+{
+    return m_dcnInstanceIdHasBeenSet;
 }
 
 

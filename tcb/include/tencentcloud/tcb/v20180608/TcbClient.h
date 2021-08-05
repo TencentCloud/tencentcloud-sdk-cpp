@@ -79,6 +79,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCurveDataRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCurveDataResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDownloadFileRequest.h>
@@ -247,6 +249,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeCloudBaseRunVersionSnapshotResponse> DescribeCloudBaseRunVersionSnapshotOutcome;
                 typedef std::future<DescribeCloudBaseRunVersionSnapshotOutcome> DescribeCloudBaseRunVersionSnapshotOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunVersionSnapshotRequest&, DescribeCloudBaseRunVersionSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunVersionSnapshotAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCurveDataResponse> DescribeCurveDataOutcome;
+                typedef std::future<DescribeCurveDataOutcome> DescribeCurveDataOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCurveDataRequest&, DescribeCurveDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCurveDataAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDatabaseACLResponse> DescribeDatabaseACLOutcome;
                 typedef std::future<DescribeDatabaseACLOutcome> DescribeDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeDatabaseACLRequest&, DescribeDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseACLAsyncHandler;
@@ -606,6 +611,15 @@ namespace TencentCloud
                 DescribeCloudBaseRunVersionSnapshotOutcome DescribeCloudBaseRunVersionSnapshot(const Model::DescribeCloudBaseRunVersionSnapshotRequest &request);
                 void DescribeCloudBaseRunVersionSnapshotAsync(const Model::DescribeCloudBaseRunVersionSnapshotRequest& request, const DescribeCloudBaseRunVersionSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudBaseRunVersionSnapshotOutcomeCallable DescribeCloudBaseRunVersionSnapshotCallable(const Model::DescribeCloudBaseRunVersionSnapshotRequest& request);
+
+                /**
+                 *根据用户传入的指标, 拉取一段时间内的监控数据。
+                 * @param req DescribeCurveDataRequest
+                 * @return DescribeCurveDataOutcome
+                 */
+                DescribeCurveDataOutcome DescribeCurveData(const Model::DescribeCurveDataRequest &request);
+                void DescribeCurveDataAsync(const Model::DescribeCurveDataRequest& request, const DescribeCurveDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCurveDataOutcomeCallable DescribeCurveDataCallable(const Model::DescribeCurveDataRequest& request);
 
                 /**
                  *获取数据库权限

@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool OperateHasBeenSet() const;
 
+                    /**
+                     * 获取打回操作的备注信息
+                     * @return OperateRemark 打回操作的备注信息
+                     */
+                    std::string GetOperateRemark() const;
+
+                    /**
+                     * 设置打回操作的备注信息
+                     * @param OperateRemark 打回操作的备注信息
+                     */
+                    void SetOperateRemark(const std::string& _operateRemark);
+
+                    /**
+                     * 判断参数 OperateRemark 是否已赋值
+                     * @return OperateRemark 是否已赋值
+                     */
+                    bool OperateRemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_operate;
                     bool m_operateHasBeenSet;
+
+                    /**
+                     * 打回操作的备注信息
+                     */
+                    std::string m_operateRemark;
+                    bool m_operateRemarkHasBeenSet;
 
                 };
             }

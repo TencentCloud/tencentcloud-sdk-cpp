@@ -380,6 +380,42 @@ namespace TencentCloud
                      */
                     bool InitParamsHasBeenSet() const;
 
+                    /**
+                     * 获取DCN源地域
+                     * @return DcnRegion DCN源地域
+                     */
+                    std::string GetDcnRegion() const;
+
+                    /**
+                     * 设置DCN源地域
+                     * @param DcnRegion DCN源地域
+                     */
+                    void SetDcnRegion(const std::string& _dcnRegion);
+
+                    /**
+                     * 判断参数 DcnRegion 是否已赋值
+                     * @return DcnRegion 是否已赋值
+                     */
+                    bool DcnRegionHasBeenSet() const;
+
+                    /**
+                     * 获取DCN源实例ID
+                     * @return DcnInstanceId DCN源实例ID
+                     */
+                    std::string GetDcnInstanceId() const;
+
+                    /**
+                     * 设置DCN源实例ID
+                     * @param DcnInstanceId DCN源实例ID
+                     */
+                    void SetDcnInstanceId(const std::string& _dcnInstanceId);
+
+                    /**
+                     * 判断参数 DcnInstanceId 是否已赋值
+                     * @return DcnInstanceId 是否已赋值
+                     */
+                    bool DcnInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -492,6 +528,18 @@ namespace TencentCloud
                      */
                     std::vector<DBParamValue> m_initParams;
                     bool m_initParamsHasBeenSet;
+
+                    /**
+                     * DCN源地域
+                     */
+                    std::string m_dcnRegion;
+                    bool m_dcnRegionHasBeenSet;
+
+                    /**
+                     * DCN源实例ID
+                     */
+                    std::string m_dcnInstanceId;
+                    bool m_dcnInstanceIdHasBeenSet;
 
                 };
             }

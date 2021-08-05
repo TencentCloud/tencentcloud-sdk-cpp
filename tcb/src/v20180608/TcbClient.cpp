@@ -1244,6 +1244,49 @@ TcbClient::DescribeCloudBaseRunVersionSnapshotOutcomeCallable TcbClient::Describ
     return task->get_future();
 }
 
+TcbClient::DescribeCurveDataOutcome TcbClient::DescribeCurveData(const DescribeCurveDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCurveData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCurveDataResponse rsp = DescribeCurveDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCurveDataOutcome(rsp);
+        else
+            return DescribeCurveDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCurveDataOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCurveDataAsync(const DescribeCurveDataRequest& request, const DescribeCurveDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCurveData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeCurveDataOutcomeCallable TcbClient::DescribeCurveDataCallable(const DescribeCurveDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCurveDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCurveData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeDatabaseACLOutcome TcbClient::DescribeDatabaseACL(const DescribeDatabaseACLRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatabaseACL");

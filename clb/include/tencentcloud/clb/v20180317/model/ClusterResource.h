@@ -145,17 +145,17 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取互联网服务供应商
+                     * 获取集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Isp 互联网服务供应商
+                     * @return Isp 集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIsp() const;
 
                     /**
-                     * 设置互联网服务供应商
+                     * 设置集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Isp 互联网服务供应商
+                     * @param Isp 集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIsp(const std::string& _isp);
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 互联网服务供应商
+                     * 集群的Isp属性，如："BGP","CMCC","CUCC","CTCC","INTERNAL"。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isp;

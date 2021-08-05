@@ -2706,6 +2706,49 @@ TkeClient::DescribeRouteTableConflictsOutcomeCallable TkeClient::DescribeRouteTa
     return task->get_future();
 }
 
+TkeClient::DescribeVersionsOutcome TkeClient::DescribeVersions(const DescribeVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVersionsResponse rsp = DescribeVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVersionsOutcome(rsp);
+        else
+            return DescribeVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVersionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeVersionsAsync(const DescribeVersionsRequest& request, const DescribeVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVersions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeVersionsOutcomeCallable TkeClient::DescribeVersionsCallable(const DescribeVersionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVersionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVersions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeVpcCniPodLimitsOutcome TkeClient::DescribeVpcCniPodLimits(const DescribeVpcCniPodLimitsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVpcCniPodLimits");

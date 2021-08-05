@@ -3652,6 +3652,49 @@ LiveClient::DescribePullStreamConfigsOutcomeCallable LiveClient::DescribePullStr
     return task->get_future();
 }
 
+LiveClient::DescribePushBandwidthAndFluxListOutcome LiveClient::DescribePushBandwidthAndFluxList(const DescribePushBandwidthAndFluxListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePushBandwidthAndFluxList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePushBandwidthAndFluxListResponse rsp = DescribePushBandwidthAndFluxListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePushBandwidthAndFluxListOutcome(rsp);
+        else
+            return DescribePushBandwidthAndFluxListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePushBandwidthAndFluxListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribePushBandwidthAndFluxListAsync(const DescribePushBandwidthAndFluxListRequest& request, const DescribePushBandwidthAndFluxListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePushBandwidthAndFluxList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribePushBandwidthAndFluxListOutcomeCallable LiveClient::DescribePushBandwidthAndFluxListCallable(const DescribePushBandwidthAndFluxListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePushBandwidthAndFluxListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePushBandwidthAndFluxList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeRecordTaskOutcome LiveClient::DescribeRecordTask(const DescribeRecordTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRecordTask");

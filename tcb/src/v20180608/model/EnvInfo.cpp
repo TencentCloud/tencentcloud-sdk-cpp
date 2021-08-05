@@ -39,7 +39,8 @@ EnvInfo::EnvInfo() :
     m_payModeHasBeenSet(false),
     m_isDefaultHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_customLogServicesHasBeenSet(false)
 {
 }
 
@@ -298,6 +299,26 @@ CoreInternalOutcome EnvInfo::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomLogServices") && !value["CustomLogServices"].IsNull())
+    {
+        if (!value["CustomLogServices"].IsArray())
+            return CoreInternalOutcome(Error("response `EnvInfo.CustomLogServices` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomLogServices"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClsInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customLogServices.push_back(item);
+        }
+        m_customLogServicesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -493,6 +514,21 @@ void EnvInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
 
         int i=0;
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_customLogServicesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomLogServices";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customLogServices.begin(); itr != m_customLogServices.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -804,5 +840,21 @@ void EnvInfo::SetTags(const vector<Tag>& _tags)
 bool EnvInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<ClsInfo> EnvInfo::GetCustomLogServices() const
+{
+    return m_customLogServices;
+}
+
+void EnvInfo::SetCustomLogServices(const vector<ClsInfo>& _customLogServices)
+{
+    m_customLogServices = _customLogServices;
+    m_customLogServicesHasBeenSet = true;
+}
+
+bool EnvInfo::CustomLogServicesHasBeenSet() const
+{
+    return m_customLogServicesHasBeenSet;
 }
 
