@@ -24,7 +24,9 @@ using namespace TencentCloud::Ocr::V20181119::Model;
 using namespace std;
 
 VatInvoiceVerifyResponse::VatInvoiceVerifyResponse() :
-    m_invoiceHasBeenSet(false)
+    m_invoiceHasBeenSet(false),
+    m_vehicleInvoiceInfoHasBeenSet(false),
+    m_usedVehicleInvoiceInfoHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,40 @@ CoreInternalOutcome VatInvoiceVerifyResponse::Deserialize(const string &payload)
         m_invoiceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VehicleInvoiceInfo") && !rsp["VehicleInvoiceInfo"].IsNull())
+    {
+        if (!rsp["VehicleInvoiceInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `VehicleInvoiceInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vehicleInvoiceInfo.Deserialize(rsp["VehicleInvoiceInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vehicleInvoiceInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UsedVehicleInvoiceInfo") && !rsp["UsedVehicleInvoiceInfo"].IsNull())
+    {
+        if (!rsp["UsedVehicleInvoiceInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Error("response `UsedVehicleInvoiceInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_usedVehicleInvoiceInfo.Deserialize(rsp["UsedVehicleInvoiceInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_usedVehicleInvoiceInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +132,24 @@ string VatInvoiceVerifyResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_invoice.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_vehicleInvoiceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VehicleInvoiceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vehicleInvoiceInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_usedVehicleInvoiceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedVehicleInvoiceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_usedVehicleInvoiceInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +172,26 @@ VatInvoice VatInvoiceVerifyResponse::GetInvoice() const
 bool VatInvoiceVerifyResponse::InvoiceHasBeenSet() const
 {
     return m_invoiceHasBeenSet;
+}
+
+VehicleInvoiceInfo VatInvoiceVerifyResponse::GetVehicleInvoiceInfo() const
+{
+    return m_vehicleInvoiceInfo;
+}
+
+bool VatInvoiceVerifyResponse::VehicleInvoiceInfoHasBeenSet() const
+{
+    return m_vehicleInvoiceInfoHasBeenSet;
+}
+
+UsedVehicleInvoiceInfo VatInvoiceVerifyResponse::GetUsedVehicleInvoiceInfo() const
+{
+    return m_usedVehicleInvoiceInfo;
+}
+
+bool VatInvoiceVerifyResponse::UsedVehicleInvoiceInfoHasBeenSet() const
+{
+    return m_usedVehicleInvoiceInfoHasBeenSet;
 }
 
 

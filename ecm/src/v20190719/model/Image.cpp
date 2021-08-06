@@ -36,7 +36,8 @@ Image::Image() :
     m_imageSizeHasBeenSet(false),
     m_srcImageHasBeenSet(false),
     m_imageSourceHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_isSupportCloudInitHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,16 @@ CoreInternalOutcome Image::Deserialize(const rapidjson::Value &value)
         m_taskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportCloudInit") && !value["IsSupportCloudInit"].IsNull())
+    {
+        if (!value["IsSupportCloudInit"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `Image.IsSupportCloudInit` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportCloudInit = value["IsSupportCloudInit"].GetBool();
+        m_isSupportCloudInitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +357,14 @@ void Image::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSupportCloudInitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportCloudInit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportCloudInit, allocator);
     }
 
 }
@@ -605,5 +624,21 @@ void Image::SetTaskId(const string& _taskId)
 bool Image::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+bool Image::GetIsSupportCloudInit() const
+{
+    return m_isSupportCloudInit;
+}
+
+void Image::SetIsSupportCloudInit(const bool& _isSupportCloudInit)
+{
+    m_isSupportCloudInit = _isSupportCloudInit;
+    m_isSupportCloudInitHasBeenSet = true;
+}
+
+bool Image::IsSupportCloudInitHasBeenSet() const
+{
+    return m_isSupportCloudInitHasBeenSet;
 }
 

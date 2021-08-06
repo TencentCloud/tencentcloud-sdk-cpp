@@ -45,13 +45,17 @@ namespace TencentCloud
 
                     /**
                      * 获取流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。
+注意：序号上限为3000，不能超过上限。
                      * @return SeqId 流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。
+注意：序号上限为3000，不能超过上限。
                      */
                     uint64_t GetSeqId() const;
 
                     /**
                      * 设置流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。
+注意：序号上限为3000，不能超过上限。
                      * @param SeqId 流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。
+注意：序号上限为3000，不能超过上限。
                      */
                     void SetSeqId(const uint64_t& _seqId);
 
@@ -80,14 +84,34 @@ namespace TencentCloud
                     bool IsEndHasBeenSet() const;
 
                     /**
-                     * 获取语音文件类型 	1: raw, 2: wav, 3: mp3, 4: speex (语言文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败)。
-                     * @return VoiceFileType 语音文件类型 	1: raw, 2: wav, 3: mp3, 4: speex (语言文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败)。
+                     * 获取语音文件类型
+1: raw
+2: wav
+3: mp3
+4: speex
+语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。
+                     * @return VoiceFileType 语音文件类型
+1: raw
+2: wav
+3: mp3
+4: speex
+语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。
                      */
                     uint64_t GetVoiceFileType() const;
 
                     /**
-                     * 设置语音文件类型 	1: raw, 2: wav, 3: mp3, 4: speex (语言文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败)。
-                     * @param VoiceFileType 语音文件类型 	1: raw, 2: wav, 3: mp3, 4: speex (语言文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败)。
+                     * 设置语音文件类型
+1: raw
+2: wav
+3: mp3
+4: speex
+语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。
+                     * @param VoiceFileType 语音文件类型
+1: raw
+2: wav
+3: mp3
+4: speex
+语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。
                      */
                     void SetVoiceFileType(const uint64_t& _voiceFileType);
 
@@ -98,14 +122,18 @@ namespace TencentCloud
                     bool VoiceFileTypeHasBeenSet() const;
 
                     /**
-                     * 获取语音编码类型	1:pcm。
-                     * @return VoiceEncodeType 语音编码类型	1:pcm。
+                     * 获取语音编码类型
+1:pcm
+                     * @return VoiceEncodeType 语音编码类型
+1:pcm
                      */
                     uint64_t GetVoiceEncodeType() const;
 
                     /**
-                     * 设置语音编码类型	1:pcm。
-                     * @param VoiceEncodeType 语音编码类型	1:pcm。
+                     * 设置语音编码类型
+1:pcm
+                     * @param VoiceEncodeType 语音编码类型
+1:pcm
                      */
                     void SetVoiceEncodeType(const uint64_t& _voiceEncodeType);
 
@@ -116,14 +144,14 @@ namespace TencentCloud
                     bool VoiceEncodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为0.5k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。
-                     * @return UserVoiceData 当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为0.5k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。
+                     * 获取当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为1k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。
+                     * @return UserVoiceData 当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为1k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。
                      */
                     std::string GetUserVoiceData() const;
 
                     /**
-                     * 设置当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为0.5k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。
-                     * @param UserVoiceData 当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为0.5k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。
+                     * 设置当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为1k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。
+                     * @param UserVoiceData 当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为1k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。
                      */
                     void SetUserVoiceData(const std::string& _userVoiceData);
 
@@ -134,14 +162,14 @@ namespace TencentCloud
                     bool UserVoiceDataHasBeenSet() const;
 
                     /**
-                     * 获取语音段唯一标识，一个完整语音一个SessionId。
-                     * @return SessionId 语音段唯一标识，一个完整语音一个SessionId。
+                     * 获取语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
+                     * @return SessionId 语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置语音段唯一标识，一个完整语音一个SessionId。
-                     * @param SessionId 语音段唯一标识，一个完整语音一个SessionId。
+                     * 设置语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
+                     * @param SessionId 语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
                      */
                     void SetSessionId(const std::string& _sessionId);
 
@@ -170,14 +198,14 @@ namespace TencentCloud
                     bool KeywordsHasBeenSet() const;
 
                     /**
-                     * 获取业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。
-                     * @return SoeAppId 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。
+                     * 获取业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。
+                     * @return SoeAppId 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。
                      */
                     std::string GetSoeAppId() const;
 
                     /**
-                     * 设置业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。
-                     * @param SoeAppId 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。
+                     * 设置业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。
+                     * @param SoeAppId 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。
                      */
                     void SetSoeAppId(const std::string& _soeAppId);
 
@@ -209,6 +237,7 @@ namespace TencentCloud
 
                     /**
                      * 流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。
+注意：序号上限为3000，不能超过上限。
                      */
                     uint64_t m_seqId;
                     bool m_seqIdHasBeenSet;
@@ -220,25 +249,31 @@ namespace TencentCloud
                     bool m_isEndHasBeenSet;
 
                     /**
-                     * 语音文件类型 	1: raw, 2: wav, 3: mp3, 4: speex (语言文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败)。
+                     * 语音文件类型
+1: raw
+2: wav
+3: mp3
+4: speex
+语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。
                      */
                     uint64_t m_voiceFileType;
                     bool m_voiceFileTypeHasBeenSet;
 
                     /**
-                     * 语音编码类型	1:pcm。
+                     * 语音编码类型
+1:pcm
                      */
                     uint64_t m_voiceEncodeType;
                     bool m_voiceEncodeTypeHasBeenSet;
 
                     /**
-                     * 当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为0.5k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。
+                     * 当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为1k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。
                      */
                     std::string m_userVoiceData;
                     bool m_userVoiceDataHasBeenSet;
 
                     /**
-                     * 语音段唯一标识，一个完整语音一个SessionId。
+                     * 语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
@@ -250,7 +285,7 @@ namespace TencentCloud
                     bool m_keywordsHasBeenSet;
 
                     /**
-                     * 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。
+                     * 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。
                      */
                     std::string m_soeAppId;
                     bool m_soeAppIdHasBeenSet;

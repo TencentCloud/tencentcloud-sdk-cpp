@@ -52,6 +52,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/InvoiceGeneralInfo.h
   include/tencentcloud/ocr/v20181119/model/WordCoordPoint.h
   include/tencentcloud/ocr/v20181119/model/InstitutionOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/VehicleInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/BizLicenseVerifyResult.h
   include/tencentcloud/ocr/v20181119/model/TextDetection.h
@@ -107,6 +108,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/BusinessCardInfo.h
   include/tencentcloud/ocr/v20181119/model/TextGeneralHandwriting.h
   include/tencentcloud/ocr/v20181119/model/TableOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/UsedVehicleInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/QrcodeImgSize.h
   include/tencentcloud/ocr/v20181119/model/PassportOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VerifyBasicBizLicenseResponse.h
@@ -245,6 +247,7 @@ set(ocr_src
   src/v20181119/model/InvoiceGeneralInfo.cpp
   src/v20181119/model/WordCoordPoint.cpp
   src/v20181119/model/InstitutionOCRResponse.cpp
+  src/v20181119/model/VehicleInvoiceInfo.cpp
   src/v20181119/model/DriverLicenseOCRRequest.cpp
   src/v20181119/model/BizLicenseVerifyResult.cpp
   src/v20181119/model/TextDetection.cpp
@@ -300,6 +303,7 @@ set(ocr_src
   src/v20181119/model/BusinessCardInfo.cpp
   src/v20181119/model/TextGeneralHandwriting.cpp
   src/v20181119/model/TableOCRRequest.cpp
+  src/v20181119/model/UsedVehicleInvoiceInfo.cpp
   src/v20181119/model/QrcodeImgSize.cpp
   src/v20181119/model/PassportOCRResponse.cpp
   src/v20181119/model/VerifyBasicBizLicenseResponse.cpp

@@ -43,7 +43,8 @@ ModifyAutoScalingGroupRequest::ModifyAutoScalingGroupRequest() :
     m_healthCheckTypeHasBeenSet(false),
     m_loadBalancerHealthCheckGracePeriodHasBeenSet(false),
     m_instanceAllocationPolicyHasBeenSet(false),
-    m_spotMixedAllocationPolicyHasBeenSet(false)
+    m_spotMixedAllocationPolicyHasBeenSet(false),
+    m_capacityRebalanceHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,14 @@ string ModifyAutoScalingGroupRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_spotMixedAllocationPolicy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_capacityRebalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CapacityRebalance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_capacityRebalance, allocator);
     }
 
 
@@ -581,6 +590,22 @@ void ModifyAutoScalingGroupRequest::SetSpotMixedAllocationPolicy(const SpotMixed
 bool ModifyAutoScalingGroupRequest::SpotMixedAllocationPolicyHasBeenSet() const
 {
     return m_spotMixedAllocationPolicyHasBeenSet;
+}
+
+bool ModifyAutoScalingGroupRequest::GetCapacityRebalance() const
+{
+    return m_capacityRebalance;
+}
+
+void ModifyAutoScalingGroupRequest::SetCapacityRebalance(const bool& _capacityRebalance)
+{
+    m_capacityRebalance = _capacityRebalance;
+    m_capacityRebalanceHasBeenSet = true;
+}
+
+bool ModifyAutoScalingGroupRequest::CapacityRebalanceHasBeenSet() const
+{
+    return m_capacityRebalanceHasBeenSet;
 }
 
 

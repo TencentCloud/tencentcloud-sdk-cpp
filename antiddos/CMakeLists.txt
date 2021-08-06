@@ -106,6 +106,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/ModifyL7RulesEdgeResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateL7RuleCertsResponse.h
   include/tencentcloud/antiddos/v20200309/model/DDoSSpeedLimitConfig.h
+  include/tencentcloud/antiddos/v20200309/model/AssociateDDoSEipLoadBalancerRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListProtectThresholdConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/CertIdInsL7Rules.h
   include/tencentcloud/antiddos/v20200309/model/CreateDefaultAlarmThresholdResponse.h
@@ -126,6 +127,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DescribeListDDoSAIResponse.h
   include/tencentcloud/antiddos/v20200309/model/ModifyDDoSSpeedLimitConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/AssociateDDoSEipAddressRequest.h
+  include/tencentcloud/antiddos/v20200309/model/AssociateDDoSEipLoadBalancerResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateBlackWhiteIpListRequest.h
   include/tencentcloud/antiddos/v20200309/model/CreateBoundIPResponse.h
   include/tencentcloud/antiddos/v20200309/model/SpeedValue.h
@@ -244,6 +246,7 @@ set(antiddos_src
   src/v20200309/model/ModifyL7RulesEdgeResponse.cpp
   src/v20200309/model/CreateL7RuleCertsResponse.cpp
   src/v20200309/model/DDoSSpeedLimitConfig.cpp
+  src/v20200309/model/AssociateDDoSEipLoadBalancerRequest.cpp
   src/v20200309/model/DescribeListProtectThresholdConfigResponse.cpp
   src/v20200309/model/CertIdInsL7Rules.cpp
   src/v20200309/model/CreateDefaultAlarmThresholdResponse.cpp
@@ -264,6 +267,7 @@ set(antiddos_src
   src/v20200309/model/DescribeListDDoSAIResponse.cpp
   src/v20200309/model/ModifyDDoSSpeedLimitConfigRequest.cpp
   src/v20200309/model/AssociateDDoSEipAddressRequest.cpp
+  src/v20200309/model/AssociateDDoSEipLoadBalancerResponse.cpp
   src/v20200309/model/CreateBlackWhiteIpListRequest.cpp
   src/v20200309/model/CreateBoundIPResponse.cpp
   src/v20200309/model/SpeedValue.cpp

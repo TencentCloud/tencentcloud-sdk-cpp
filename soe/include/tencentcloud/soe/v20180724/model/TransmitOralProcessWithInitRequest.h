@@ -44,13 +44,17 @@ namespace TencentCloud
 
                     /**
                      * 获取流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。
+注意：序号上限为3000，不能超过上限。
                      * @return SeqId 流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。
+注意：序号上限为3000，不能超过上限。
                      */
                     int64_t GetSeqId() const;
 
                     /**
                      * 设置流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。
+注意：序号上限为3000，不能超过上限。
                      * @param SeqId 流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。
+注意：序号上限为3000，不能超过上限。
                      */
                     void SetSeqId(const int64_t& _seqId);
 
@@ -512,6 +516,7 @@ namespace TencentCloud
 
                     /**
                      * 流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。
+注意：序号上限为3000，不能超过上限。
                      */
                     int64_t m_seqId;
                     bool m_seqIdHasBeenSet;

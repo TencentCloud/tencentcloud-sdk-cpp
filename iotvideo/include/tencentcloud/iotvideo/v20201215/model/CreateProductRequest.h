@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool FeaturesHasBeenSet() const;
 
                     /**
-                     * 获取设备操作系统 android linux liteos
-                     * @return ChipOs 设备操作系统 android linux liteos
+                     * 获取设备操作系统 Linux
+                     * @return ChipOs 设备操作系统 Linux
                      */
                     std::string GetChipOs() const;
 
                     /**
-                     * 设置设备操作系统 android linux liteos
-                     * @param ChipOs 设备操作系统 android linux liteos
+                     * 设置设备操作系统 Linux
+                     * @param ChipOs 设备操作系统 Linux
                      */
                     void SetChipOs(const std::string& _chipOs);
 
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_featuresHasBeenSet;
 
                     /**
-                     * 设备操作系统 android linux liteos
+                     * 设备操作系统 Linux
                      */
                     std::string m_chipOs;
                     bool m_chipOsHasBeenSet;

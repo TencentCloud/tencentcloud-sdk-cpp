@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OperateHasBeenSet() const;
 
                     /**
-                     * 获取打回操作的备注信息
-                     * @return OperateRemark 打回操作的备注信息
+                     * 获取需要重新维修操作的备注信息，可提供返场维修原因，以便驻场快速针对问题定位解决。
+                     * @return OperateRemark 需要重新维修操作的备注信息，可提供返场维修原因，以便驻场快速针对问题定位解决。
                      */
                     std::string GetOperateRemark() const;
 
                     /**
-                     * 设置打回操作的备注信息
-                     * @param OperateRemark 打回操作的备注信息
+                     * 设置需要重新维修操作的备注信息，可提供返场维修原因，以便驻场快速针对问题定位解决。
+                     * @param OperateRemark 需要重新维修操作的备注信息，可提供返场维修原因，以便驻场快速针对问题定位解决。
                      */
                     void SetOperateRemark(const std::string& _operateRemark);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_operateHasBeenSet;
 
                     /**
-                     * 打回操作的备注信息
+                     * 需要重新维修操作的备注信息，可提供返场维修原因，以便驻场快速针对问题定位解决。
                      */
                     std::string m_operateRemark;
                     bool m_operateRemarkHasBeenSet;

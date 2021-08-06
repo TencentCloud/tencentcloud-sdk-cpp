@@ -83,6 +83,49 @@ AntiddosClient::AssociateDDoSEipAddressOutcomeCallable AntiddosClient::Associate
     return task->get_future();
 }
 
+AntiddosClient::AssociateDDoSEipLoadBalancerOutcome AntiddosClient::AssociateDDoSEipLoadBalancer(const AssociateDDoSEipLoadBalancerRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateDDoSEipLoadBalancer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateDDoSEipLoadBalancerResponse rsp = AssociateDDoSEipLoadBalancerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateDDoSEipLoadBalancerOutcome(rsp);
+        else
+            return AssociateDDoSEipLoadBalancerOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateDDoSEipLoadBalancerOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::AssociateDDoSEipLoadBalancerAsync(const AssociateDDoSEipLoadBalancerRequest& request, const AssociateDDoSEipLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateDDoSEipLoadBalancer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::AssociateDDoSEipLoadBalancerOutcomeCallable AntiddosClient::AssociateDDoSEipLoadBalancerCallable(const AssociateDDoSEipLoadBalancerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateDDoSEipLoadBalancerOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateDDoSEipLoadBalancer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::CreateBlackWhiteIpListOutcome AntiddosClient::CreateBlackWhiteIpList(const CreateBlackWhiteIpListRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBlackWhiteIpList");

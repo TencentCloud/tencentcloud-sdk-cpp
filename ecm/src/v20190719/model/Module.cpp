@@ -33,7 +33,8 @@ Module::Module() :
     m_tagSetHasBeenSet(false),
     m_closeIpDirectHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_defaultBandwidthInHasBeenSet(false)
+    m_defaultBandwidthInHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -199,6 +200,16 @@ CoreInternalOutcome Module::Deserialize(const rapidjson::Value &value)
         m_defaultBandwidthInHasBeenSet = true;
     }
 
+    if (value.HasMember("UserData") && !value["UserData"].IsNull())
+    {
+        if (!value["UserData"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Module.UserData` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userData = string(value["UserData"].GetString());
+        m_userDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -322,6 +333,14 @@ void Module::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "DefaultBandwidthIn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defaultBandwidthIn, allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -533,5 +552,21 @@ void Module::SetDefaultBandwidthIn(const int64_t& _defaultBandwidthIn)
 bool Module::DefaultBandwidthInHasBeenSet() const
 {
     return m_defaultBandwidthInHasBeenSet;
+}
+
+string Module::GetUserData() const
+{
+    return m_userData;
+}
+
+void Module::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool Module::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 

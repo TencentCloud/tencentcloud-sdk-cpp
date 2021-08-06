@@ -335,6 +335,24 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持CloudInit
+                     * @return IsSupportCloudInit 是否支持CloudInit
+                     */
+                    bool GetIsSupportCloudInit() const;
+
+                    /**
+                     * 设置是否支持CloudInit
+                     * @param IsSupportCloudInit 是否支持CloudInit
+                     */
+                    void SetIsSupportCloudInit(const bool& _isSupportCloudInit);
+
+                    /**
+                     * 判断参数 IsSupportCloudInit 是否已赋值
+                     * @return IsSupportCloudInit 是否已赋值
+                     */
+                    bool IsSupportCloudInitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +450,12 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 是否支持CloudInit
+                     */
+                    bool m_isSupportCloudInit;
+                    bool m_isSupportCloudInitHasBeenSet;
 
                 };
             }

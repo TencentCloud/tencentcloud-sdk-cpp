@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoice.h>
+#include <tencentcloud/ocr/v20181119/model/VehicleInvoiceInfo.h>
+#include <tencentcloud/ocr/v20181119/model/UsedVehicleInvoiceInfo.h>
 
 
 namespace TencentCloud
@@ -56,6 +58,30 @@ namespace TencentCloud
                      */
                     bool InvoiceHasBeenSet() const;
 
+                    /**
+                     * 获取机动车销售统一发票信息
+                     * @return VehicleInvoiceInfo 机动车销售统一发票信息
+                     */
+                    VehicleInvoiceInfo GetVehicleInvoiceInfo() const;
+
+                    /**
+                     * 判断参数 VehicleInvoiceInfo 是否已赋值
+                     * @return VehicleInvoiceInfo 是否已赋值
+                     */
+                    bool VehicleInvoiceInfoHasBeenSet() const;
+
+                    /**
+                     * 获取二手车销售统一发票信息
+                     * @return UsedVehicleInvoiceInfo 二手车销售统一发票信息
+                     */
+                    UsedVehicleInvoiceInfo GetUsedVehicleInvoiceInfo() const;
+
+                    /**
+                     * 判断参数 UsedVehicleInvoiceInfo 是否已赋值
+                     * @return UsedVehicleInvoiceInfo 是否已赋值
+                     */
+                    bool UsedVehicleInvoiceInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +89,18 @@ namespace TencentCloud
                      */
                     VatInvoice m_invoice;
                     bool m_invoiceHasBeenSet;
+
+                    /**
+                     * 机动车销售统一发票信息
+                     */
+                    VehicleInvoiceInfo m_vehicleInvoiceInfo;
+                    bool m_vehicleInvoiceInfoHasBeenSet;
+
+                    /**
+                     * 二手车销售统一发票信息
+                     */
+                    UsedVehicleInvoiceInfo m_usedVehicleInvoiceInfo;
+                    bool m_usedVehicleInvoiceInfoHasBeenSet;
 
                 };
             }

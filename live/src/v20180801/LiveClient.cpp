@@ -3265,6 +3265,49 @@ LiveClient::DescribeLiveTranscodeTemplatesOutcomeCallable LiveClient::DescribeLi
     return task->get_future();
 }
 
+LiveClient::DescribeLiveTranscodeTotalInfoOutcome LiveClient::DescribeLiveTranscodeTotalInfo(const DescribeLiveTranscodeTotalInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveTranscodeTotalInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveTranscodeTotalInfoResponse rsp = DescribeLiveTranscodeTotalInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveTranscodeTotalInfoOutcome(rsp);
+        else
+            return DescribeLiveTranscodeTotalInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveTranscodeTotalInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveTranscodeTotalInfoAsync(const DescribeLiveTranscodeTotalInfoRequest& request, const DescribeLiveTranscodeTotalInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveTranscodeTotalInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveTranscodeTotalInfoOutcomeCallable LiveClient::DescribeLiveTranscodeTotalInfoCallable(const DescribeLiveTranscodeTotalInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveTranscodeTotalInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveTranscodeTotalInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeLiveWatermarkOutcome LiveClient::DescribeLiveWatermark(const DescribeLiveWatermarkRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLiveWatermark");

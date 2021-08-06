@@ -173,6 +173,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveTranscodeTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveTranscodeTemplatesRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveTranscodeTemplatesResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveTranscodeTotalInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveTranscodeTotalInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveWatermarkRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveWatermarkResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveWatermarkRulesRequest.h>
@@ -494,6 +496,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeLiveTranscodeTemplatesResponse> DescribeLiveTranscodeTemplatesOutcome;
                 typedef std::future<DescribeLiveTranscodeTemplatesOutcome> DescribeLiveTranscodeTemplatesOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveTranscodeTemplatesRequest&, DescribeLiveTranscodeTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveTranscodeTemplatesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeLiveTranscodeTotalInfoResponse> DescribeLiveTranscodeTotalInfoOutcome;
+                typedef std::future<DescribeLiveTranscodeTotalInfoOutcome> DescribeLiveTranscodeTotalInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLiveTranscodeTotalInfoRequest&, DescribeLiveTranscodeTotalInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveTranscodeTotalInfoAsyncHandler;
                 typedef Outcome<Error, Model::DescribeLiveWatermarkResponse> DescribeLiveWatermarkOutcome;
                 typedef std::future<DescribeLiveWatermarkOutcome> DescribeLiveWatermarkOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveWatermarkRequest&, DescribeLiveWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveWatermarkAsyncHandler;
@@ -1360,6 +1365,18 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveTranscodeTemplatesOutcome DescribeLiveTranscodeTemplates(const Model::DescribeLiveTranscodeTemplatesRequest &request);
                 void DescribeLiveTranscodeTemplatesAsync(const Model::DescribeLiveTranscodeTemplatesRequest& request, const DescribeLiveTranscodeTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLiveTranscodeTemplatesOutcomeCallable DescribeLiveTranscodeTemplatesCallable(const Model::DescribeLiveTranscodeTemplatesRequest& request);
+
+                /**
+                 *查询转码总量数据，可查询近30天内数据。
+注意：
+如果是查询某一天内，则返回5分钟粒度数据；
+如果是查询跨天或指定域名， 则返回1小时粒度数据。
+                 * @param req DescribeLiveTranscodeTotalInfoRequest
+                 * @return DescribeLiveTranscodeTotalInfoOutcome
+                 */
+                DescribeLiveTranscodeTotalInfoOutcome DescribeLiveTranscodeTotalInfo(const Model::DescribeLiveTranscodeTotalInfoRequest &request);
+                void DescribeLiveTranscodeTotalInfoAsync(const Model::DescribeLiveTranscodeTotalInfoRequest& request, const DescribeLiveTranscodeTotalInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveTranscodeTotalInfoOutcomeCallable DescribeLiveTranscodeTotalInfoCallable(const Model::DescribeLiveTranscodeTotalInfoRequest& request);
 
                 /**
                  *获取单个水印信息。
