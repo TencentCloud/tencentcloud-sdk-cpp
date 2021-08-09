@@ -604,6 +604,28 @@ namespace TencentCloud
                      */
                     bool CertificationStateHasBeenSet() const;
 
+                    /**
+                     * 获取其他流量信息,流量分离统计其他流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OtherData 其他流量信息,流量分离统计其他流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetOtherData() const;
+
+                    /**
+                     * 设置其他流量信息,流量分离统计其他流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OtherData 其他流量信息,流量分离统计其他流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOtherData(const double& _otherData);
+
+                    /**
+                     * 判断参数 OtherData 是否已赋值
+                     * @return OtherData 是否已赋值
+                     */
+                    bool OtherDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -785,6 +807,13 @@ namespace TencentCloud
                      */
                     int64_t m_certificationState;
                     bool m_certificationStateHasBeenSet;
+
+                    /**
+                     * 其他流量信息,流量分离统计其他流量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_otherData;
+                    bool m_otherDataHasBeenSet;
 
                 };
             }

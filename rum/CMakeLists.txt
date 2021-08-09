@@ -20,13 +20,17 @@ set(rum_public_header
 
 set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/CreateProjectResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h
   include/tencentcloud/rum/v20210622/model/CreateProjectRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageRequest.h
   )
 
 set(rum_src
   src/v20210622/RumClient.cpp
   src/v20210622/model/CreateProjectResponse.cpp
+  src/v20210622/model/DescribeDataPerformancePageResponse.cpp
   src/v20210622/model/CreateProjectRequest.cpp
+  src/v20210622/model/DescribeDataPerformancePageRequest.cpp
   )
 
 set(rum_include

@@ -83,3 +83,46 @@ RumClient::CreateProjectOutcomeCallable RumClient::CreateProjectCallable(const C
     return task->get_future();
 }
 
+RumClient::DescribeDataPerformancePageOutcome RumClient::DescribeDataPerformancePage(const DescribeDataPerformancePageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataPerformancePage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataPerformancePageResponse rsp = DescribeDataPerformancePageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataPerformancePageOutcome(rsp);
+        else
+            return DescribeDataPerformancePageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataPerformancePageOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeDataPerformancePageAsync(const DescribeDataPerformancePageRequest& request, const DescribeDataPerformancePageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataPerformancePage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeDataPerformancePageOutcomeCallable RumClient::DescribeDataPerformancePageCallable(const DescribeDataPerformancePageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataPerformancePageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataPerformancePage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

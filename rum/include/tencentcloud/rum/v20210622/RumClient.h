@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/rum/v20210622/model/CreateProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/CreateProjectResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h>
 
 
 namespace TencentCloud
@@ -42,6 +44,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateProjectResponse> CreateProjectOutcome;
                 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDataPerformancePageResponse> DescribeDataPerformancePageOutcome;
+                typedef std::future<DescribeDataPerformancePageOutcome> DescribeDataPerformancePageOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataPerformancePageRequest&, DescribeDataPerformancePageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPerformancePageAsyncHandler;
 
 
 
@@ -53,6 +58,15 @@ namespace TencentCloud
                 CreateProjectOutcome CreateProject(const Model::CreateProjectRequest &request);
                 void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request);
+
+                /**
+                 *获取PerformancePage信息
+                 * @param req DescribeDataPerformancePageRequest
+                 * @return DescribeDataPerformancePageOutcome
+                 */
+                DescribeDataPerformancePageOutcome DescribeDataPerformancePage(const Model::DescribeDataPerformancePageRequest &request);
+                void DescribeDataPerformancePageAsync(const Model::DescribeDataPerformancePageRequest& request, const DescribeDataPerformancePageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataPerformancePageOutcomeCallable DescribeDataPerformancePageCallable(const Model::DescribeDataPerformancePageRequest& request);
 
             };
         }

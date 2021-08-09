@@ -47,7 +47,8 @@ CardInfo::CardInfo() :
     m_allowArrearsHasBeenSet(false),
     m_needSmsHasBeenSet(false),
     m_providerHasBeenSet(false),
-    m_certificationStateHasBeenSet(false)
+    m_certificationStateHasBeenSet(false),
+    m_otherDataHasBeenSet(false)
 {
 }
 
@@ -326,6 +327,16 @@ CoreInternalOutcome CardInfo::Deserialize(const rapidjson::Value &value)
         m_certificationStateHasBeenSet = true;
     }
 
+    if (value.HasMember("OtherData") && !value["OtherData"].IsNull())
+    {
+        if (!value["OtherData"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `CardInfo.OtherData` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_otherData = value["OtherData"].GetDouble();
+        m_otherDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -547,6 +558,14 @@ void CardInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CertificationState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_certificationState, allocator);
+    }
+
+    if (m_otherDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OtherData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_otherData, allocator);
     }
 
 }
@@ -982,5 +1001,21 @@ void CardInfo::SetCertificationState(const int64_t& _certificationState)
 bool CardInfo::CertificationStateHasBeenSet() const
 {
     return m_certificationStateHasBeenSet;
+}
+
+double CardInfo::GetOtherData() const
+{
+    return m_otherData;
+}
+
+void CardInfo::SetOtherData(const double& _otherData)
+{
+    m_otherData = _otherData;
+    m_otherDataHasBeenSet = true;
+}
+
+bool CardInfo::OtherDataHasBeenSet() const
+{
+    return m_otherDataHasBeenSet;
 }
 
