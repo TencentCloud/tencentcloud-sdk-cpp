@@ -136,6 +136,72 @@ namespace TencentCloud
                      */
                     bool FpsHasBeenSet() const;
 
+                    /**
+                     * 获取色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColorPrimaries 色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetColorPrimaries() const;
+
+                    /**
+                     * 设置色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ColorPrimaries 色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetColorPrimaries(const std::string& _colorPrimaries);
+
+                    /**
+                     * 判断参数 ColorPrimaries 是否已赋值
+                     * @return ColorPrimaries 是否已赋值
+                     */
+                    bool ColorPrimariesHasBeenSet() const;
+
+                    /**
+                     * 获取色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColorSpace 色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetColorSpace() const;
+
+                    /**
+                     * 设置色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ColorSpace 色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetColorSpace(const std::string& _colorSpace);
+
+                    /**
+                     * 判断参数 ColorSpace 是否已赋值
+                     * @return ColorSpace 是否已赋值
+                     */
+                    bool ColorSpaceHasBeenSet() const;
+
+                    /**
+                     * 获取色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColorTransfer 色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetColorTransfer() const;
+
+                    /**
+                     * 设置色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ColorTransfer 色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetColorTransfer(const std::string& _colorTransfer);
+
+                    /**
+                     * 判断参数 ColorTransfer 是否已赋值
+                     * @return ColorTransfer 是否已赋值
+                     */
+                    bool ColorTransferHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +233,27 @@ namespace TencentCloud
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;
+
+                    /**
+                     * 色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_colorPrimaries;
+                    bool m_colorPrimariesHasBeenSet;
+
+                    /**
+                     * 色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_colorSpace;
+                    bool m_colorSpaceHasBeenSet;
+
+                    /**
+                     * 色彩空间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_colorTransfer;
+                    bool m_colorTransferHasBeenSet;
 
                 };
             }

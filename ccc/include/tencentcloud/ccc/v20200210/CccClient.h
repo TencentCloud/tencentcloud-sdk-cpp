@@ -33,6 +33,8 @@
 #include <tencentcloud/ccc/v20200210/model/CreateUserSigResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeCallInMetricsRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeCallInMetricsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeChatMessagesResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeStaffInfoListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeStaffInfoListResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCallInfoRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCallInfoResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h>
@@ -82,6 +86,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteStaffResponse> DeleteStaffOutcome;
                 typedef std::future<DeleteStaffOutcome> DeleteStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DeleteStaffRequest&, DeleteStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStaffAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCallInMetricsResponse> DescribeCallInMetricsOutcome;
+                typedef std::future<DescribeCallInMetricsOutcome> DescribeCallInMetricsOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeCallInMetricsRequest&, DescribeCallInMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallInMetricsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeChatMessagesResponse> DescribeChatMessagesOutcome;
                 typedef std::future<DescribeChatMessagesOutcome> DescribeChatMessagesOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeChatMessagesRequest&, DescribeChatMessagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChatMessagesAsyncHandler;
@@ -100,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeStaffInfoListResponse> DescribeStaffInfoListOutcome;
                 typedef std::future<DescribeStaffInfoListOutcome> DescribeStaffInfoListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeStaffInfoListRequest&, DescribeStaffInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStaffInfoListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeStaffStatusMetricsResponse> DescribeStaffStatusMetricsOutcome;
+                typedef std::future<DescribeStaffStatusMetricsOutcome> DescribeStaffStatusMetricsOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeStaffStatusMetricsRequest&, DescribeStaffStatusMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStaffStatusMetricsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeTelCallInfoResponse> DescribeTelCallInfoOutcome;
                 typedef std::future<DescribeTelCallInfoOutcome> DescribeTelCallInfoOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeTelCallInfoRequest&, DescribeTelCallInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelCallInfoAsyncHandler;
@@ -161,6 +171,15 @@ namespace TencentCloud
                 DeleteStaffOutcomeCallable DeleteStaffCallable(const Model::DeleteStaffRequest& request);
 
                 /**
+                 *获取呼入实时数据统计指标
+                 * @param req DescribeCallInMetricsRequest
+                 * @return DescribeCallInMetricsOutcome
+                 */
+                DescribeCallInMetricsOutcome DescribeCallInMetrics(const Model::DescribeCallInMetricsRequest &request);
+                void DescribeCallInMetricsAsync(const Model::DescribeCallInMetricsRequest& request, const DescribeCallInMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCallInMetricsOutcomeCallable DescribeCallInMetricsCallable(const Model::DescribeCallInMetricsRequest& request);
+
+                /**
                  *包括具体聊天内容
                  * @param req DescribeChatMessagesRequest
                  * @return DescribeChatMessagesOutcome
@@ -215,6 +234,15 @@ namespace TencentCloud
                 DescribeStaffInfoListOutcome DescribeStaffInfoList(const Model::DescribeStaffInfoListRequest &request);
                 void DescribeStaffInfoListAsync(const Model::DescribeStaffInfoListRequest& request, const DescribeStaffInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStaffInfoListOutcomeCallable DescribeStaffInfoListCallable(const Model::DescribeStaffInfoListRequest& request);
+
+                /**
+                 *获取坐席实时状态统计指标
+                 * @param req DescribeStaffStatusMetricsRequest
+                 * @return DescribeStaffStatusMetricsOutcome
+                 */
+                DescribeStaffStatusMetricsOutcome DescribeStaffStatusMetrics(const Model::DescribeStaffStatusMetricsRequest &request);
+                void DescribeStaffStatusMetricsAsync(const Model::DescribeStaffStatusMetricsRequest& request, const DescribeStaffStatusMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStaffStatusMetricsOutcomeCallable DescribeStaffStatusMetricsCallable(const Model::DescribeStaffStatusMetricsRequest& request);
 
                 /**
                  *按实例获取电话消耗统计

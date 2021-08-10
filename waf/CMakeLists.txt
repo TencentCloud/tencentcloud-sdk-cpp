@@ -19,60 +19,104 @@ set(waf_public_header
   )
 
 set(waf_public_header_model
-  include/tencentcloud/waf/v20180125/model/ResponseCode.h
+  include/tencentcloud/waf/v20180125/model/DescribeAccessFastAnalysisResponse.h
+  include/tencentcloud/waf/v20180125/model/CreateAccessExportRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeCustomRulesRspRuleListItem.h
+  include/tencentcloud/waf/v20180125/model/AccessFullTextInfo.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusResponse.h
+  include/tencentcloud/waf/v20180125/model/ResponseCode.h
   include/tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h
+  include/tencentcloud/waf/v20180125/model/DescribeAccessExportsResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeFlowTrendRequest.h
+  include/tencentcloud/waf/v20180125/model/AccessLogItems.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusRequest.h
+  include/tencentcloud/waf/v20180125/model/AccessRuleKeyValueInfo.h
+  include/tencentcloud/waf/v20180125/model/SearchAccessLogResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteDownloadRecordResponse.h
+  include/tencentcloud/waf/v20180125/model/DeleteAccessExportRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyAccessPeriodRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordRequest.h
+  include/tencentcloud/waf/v20180125/model/AccessRuleTagInfo.h
+  include/tencentcloud/waf/v20180125/model/DescribeAccessIndexRequest.h
+  include/tencentcloud/waf/v20180125/model/AccessRuleInfo.h
+  include/tencentcloud/waf/v20180125/model/DescribeAccessFastAnalysisRequest.h
+  include/tencentcloud/waf/v20180125/model/AccessValueInfo.h
   include/tencentcloud/waf/v20180125/model/DeleteSessionResponse.h
-  include/tencentcloud/waf/v20180125/model/BotStatPointItem.h
-  include/tencentcloud/waf/v20180125/model/DescribeCustomRulesResponse.h
+  include/tencentcloud/waf/v20180125/model/AccessLogItem.h
+  include/tencentcloud/waf/v20180125/model/AccessLogInfo.h
   include/tencentcloud/waf/v20180125/model/DeleteSessionRequest.h
+  include/tencentcloud/waf/v20180125/model/DescribeAccessExportsRequest.h
+  include/tencentcloud/waf/v20180125/model/DescribeAccessIndexResponse.h
   include/tencentcloud/waf/v20180125/model/CreateAttackDownloadTaskResponse.h
-  include/tencentcloud/waf/v20180125/model/Strategy.h
+  include/tencentcloud/waf/v20180125/model/CreateAccessExportResponse.h
   include/tencentcloud/waf/v20180125/model/AddCustomRuleResponse.h
-  include/tencentcloud/waf/v20180125/model/DescribeFlowTrendResponse.h
+  include/tencentcloud/waf/v20180125/model/AccessKeyValueInfo.h
+  include/tencentcloud/waf/v20180125/model/BotStatPointItem.h
   include/tencentcloud/waf/v20180125/model/AddCustomRuleRequest.h
+  include/tencentcloud/waf/v20180125/model/DescribeCustomRulesResponse.h
+  include/tencentcloud/waf/v20180125/model/DescribeFlowTrendResponse.h
+  include/tencentcloud/waf/v20180125/model/Strategy.h
   include/tencentcloud/waf/v20180125/model/DescribeCustomRulesRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeCustomRulesPagingInfo.h
   include/tencentcloud/waf/v20180125/model/DeleteDownloadRecordRequest.h
+  include/tencentcloud/waf/v20180125/model/ExportAccessInfo.h
+  include/tencentcloud/waf/v20180125/model/DeleteAccessExportResponse.h
   include/tencentcloud/waf/v20180125/model/CreateAttackDownloadTaskRequest.h
+  include/tencentcloud/waf/v20180125/model/SearchAccessLogRequest.h
   )
 
 set(waf_src
   src/v20180125/WafClient.cpp
-  src/v20180125/model/ResponseCode.cpp
+  src/v20180125/model/DescribeAccessFastAnalysisResponse.cpp
+  src/v20180125/model/CreateAccessExportRequest.cpp
   src/v20180125/model/DescribeCustomRulesRspRuleListItem.cpp
+  src/v20180125/model/AccessFullTextInfo.cpp
   src/v20180125/model/ModifyCustomRuleStatusResponse.cpp
+  src/v20180125/model/ResponseCode.cpp
   src/v20180125/model/DescribeUserClbWafRegionsResponse.cpp
   src/v20180125/model/DeleteAttackDownloadRecordResponse.cpp
   src/v20180125/model/ModifyAccessPeriodResponse.cpp
+  src/v20180125/model/DescribeAccessExportsResponse.cpp
   src/v20180125/model/DescribeFlowTrendRequest.cpp
+  src/v20180125/model/AccessLogItems.cpp
   src/v20180125/model/ModifyCustomRuleStatusRequest.cpp
+  src/v20180125/model/AccessRuleKeyValueInfo.cpp
+  src/v20180125/model/SearchAccessLogResponse.cpp
   src/v20180125/model/DeleteDownloadRecordResponse.cpp
+  src/v20180125/model/DeleteAccessExportRequest.cpp
   src/v20180125/model/ModifyAccessPeriodRequest.cpp
   src/v20180125/model/DescribeUserClbWafRegionsRequest.cpp
   src/v20180125/model/DeleteAttackDownloadRecordRequest.cpp
+  src/v20180125/model/AccessRuleTagInfo.cpp
+  src/v20180125/model/DescribeAccessIndexRequest.cpp
+  src/v20180125/model/AccessRuleInfo.cpp
+  src/v20180125/model/DescribeAccessFastAnalysisRequest.cpp
+  src/v20180125/model/AccessValueInfo.cpp
   src/v20180125/model/DeleteSessionResponse.cpp
-  src/v20180125/model/BotStatPointItem.cpp
-  src/v20180125/model/DescribeCustomRulesResponse.cpp
+  src/v20180125/model/AccessLogItem.cpp
+  src/v20180125/model/AccessLogInfo.cpp
   src/v20180125/model/DeleteSessionRequest.cpp
+  src/v20180125/model/DescribeAccessExportsRequest.cpp
+  src/v20180125/model/DescribeAccessIndexResponse.cpp
   src/v20180125/model/CreateAttackDownloadTaskResponse.cpp
-  src/v20180125/model/Strategy.cpp
+  src/v20180125/model/CreateAccessExportResponse.cpp
   src/v20180125/model/AddCustomRuleResponse.cpp
-  src/v20180125/model/DescribeFlowTrendResponse.cpp
+  src/v20180125/model/AccessKeyValueInfo.cpp
+  src/v20180125/model/BotStatPointItem.cpp
   src/v20180125/model/AddCustomRuleRequest.cpp
+  src/v20180125/model/DescribeCustomRulesResponse.cpp
+  src/v20180125/model/DescribeFlowTrendResponse.cpp
+  src/v20180125/model/Strategy.cpp
   src/v20180125/model/DescribeCustomRulesRequest.cpp
   src/v20180125/model/DescribeCustomRulesPagingInfo.cpp
   src/v20180125/model/DeleteDownloadRecordRequest.cpp
+  src/v20180125/model/ExportAccessInfo.cpp
+  src/v20180125/model/DeleteAccessExportResponse.cpp
   src/v20180125/model/CreateAttackDownloadTaskRequest.cpp
+  src/v20180125/model/SearchAccessLogRequest.cpp
   )
 
 set(waf_include

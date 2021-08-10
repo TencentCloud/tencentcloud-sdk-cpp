@@ -25,14 +25,24 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/waf/v20180125/model/AddCustomRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddCustomRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/CreateAccessExportRequest.h>
+#include <tencentcloud/waf/v20180125/model/CreateAccessExportResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateAttackDownloadTaskRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateAttackDownloadTaskResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteAccessExportRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteAccessExportResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteDownloadRecordRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteDownloadRecordResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSessionRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSessionResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAccessExportsRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAccessExportsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAccessFastAnalysisRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAccessFastAnalysisResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAccessIndexRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAccessIndexResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCustomRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeCustomRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeFlowTrendRequest.h>
@@ -43,6 +53,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/SearchAccessLogRequest.h>
+#include <tencentcloud/waf/v20180125/model/SearchAccessLogResponse.h>
 
 
 namespace TencentCloud
@@ -60,9 +72,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::AddCustomRuleResponse> AddCustomRuleOutcome;
                 typedef std::future<AddCustomRuleOutcome> AddCustomRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddCustomRuleRequest&, AddCustomRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCustomRuleAsyncHandler;
+                typedef Outcome<Error, Model::CreateAccessExportResponse> CreateAccessExportOutcome;
+                typedef std::future<CreateAccessExportOutcome> CreateAccessExportOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::CreateAccessExportRequest&, CreateAccessExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessExportAsyncHandler;
                 typedef Outcome<Error, Model::CreateAttackDownloadTaskResponse> CreateAttackDownloadTaskOutcome;
                 typedef std::future<CreateAttackDownloadTaskOutcome> CreateAttackDownloadTaskOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateAttackDownloadTaskRequest&, CreateAttackDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAttackDownloadTaskAsyncHandler;
+                typedef Outcome<Error, Model::DeleteAccessExportResponse> DeleteAccessExportOutcome;
+                typedef std::future<DeleteAccessExportOutcome> DeleteAccessExportOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteAccessExportRequest&, DeleteAccessExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessExportAsyncHandler;
                 typedef Outcome<Error, Model::DeleteAttackDownloadRecordResponse> DeleteAttackDownloadRecordOutcome;
                 typedef std::future<DeleteAttackDownloadRecordOutcome> DeleteAttackDownloadRecordOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteAttackDownloadRecordRequest&, DeleteAttackDownloadRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAttackDownloadRecordAsyncHandler;
@@ -72,6 +90,15 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteSessionResponse> DeleteSessionOutcome;
                 typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteSessionRequest&, DeleteSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSessionAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAccessExportsResponse> DescribeAccessExportsOutcome;
+                typedef std::future<DescribeAccessExportsOutcome> DescribeAccessExportsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeAccessExportsRequest&, DescribeAccessExportsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessExportsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAccessFastAnalysisResponse> DescribeAccessFastAnalysisOutcome;
+                typedef std::future<DescribeAccessFastAnalysisOutcome> DescribeAccessFastAnalysisOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeAccessFastAnalysisRequest&, DescribeAccessFastAnalysisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessFastAnalysisAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAccessIndexResponse> DescribeAccessIndexOutcome;
+                typedef std::future<DescribeAccessIndexOutcome> DescribeAccessIndexOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeAccessIndexRequest&, DescribeAccessIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessIndexAsyncHandler;
                 typedef Outcome<Error, Model::DescribeCustomRulesResponse> DescribeCustomRulesOutcome;
                 typedef std::future<DescribeCustomRulesOutcome> DescribeCustomRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeCustomRulesRequest&, DescribeCustomRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomRulesAsyncHandler;
@@ -87,6 +114,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyCustomRuleStatusResponse> ModifyCustomRuleStatusOutcome;
                 typedef std::future<ModifyCustomRuleStatusOutcome> ModifyCustomRuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyCustomRuleStatusRequest&, ModifyCustomRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomRuleStatusAsyncHandler;
+                typedef Outcome<Error, Model::SearchAccessLogResponse> SearchAccessLogOutcome;
+                typedef std::future<SearchAccessLogOutcome> SearchAccessLogOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::SearchAccessLogRequest&, SearchAccessLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchAccessLogAsyncHandler;
 
 
 
@@ -100,6 +130,15 @@ namespace TencentCloud
                 AddCustomRuleOutcomeCallable AddCustomRuleCallable(const Model::AddCustomRuleRequest& request);
 
                 /**
+                 *本接口用于创建访问日志导出
+                 * @param req CreateAccessExportRequest
+                 * @return CreateAccessExportOutcome
+                 */
+                CreateAccessExportOutcome CreateAccessExport(const Model::CreateAccessExportRequest &request);
+                void CreateAccessExportAsync(const Model::CreateAccessExportRequest& request, const CreateAccessExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAccessExportOutcomeCallable CreateAccessExportCallable(const Model::CreateAccessExportRequest& request);
+
+                /**
                  *创建攻击日志下载任务
                  * @param req CreateAttackDownloadTaskRequest
                  * @return CreateAttackDownloadTaskOutcome
@@ -107,6 +146,15 @@ namespace TencentCloud
                 CreateAttackDownloadTaskOutcome CreateAttackDownloadTask(const Model::CreateAttackDownloadTaskRequest &request);
                 void CreateAttackDownloadTaskAsync(const Model::CreateAttackDownloadTaskRequest& request, const CreateAttackDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAttackDownloadTaskOutcomeCallable CreateAttackDownloadTaskCallable(const Model::CreateAttackDownloadTaskRequest& request);
+
+                /**
+                 *本接口用于删除访问日志导出
+                 * @param req DeleteAccessExportRequest
+                 * @return DeleteAccessExportOutcome
+                 */
+                DeleteAccessExportOutcome DeleteAccessExport(const Model::DeleteAccessExportRequest &request);
+                void DeleteAccessExportAsync(const Model::DeleteAccessExportRequest& request, const DeleteAccessExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAccessExportOutcomeCallable DeleteAccessExportCallable(const Model::DeleteAccessExportRequest& request);
 
                 /**
                  *删除攻击日志下载任务记录
@@ -134,6 +182,33 @@ namespace TencentCloud
                 DeleteSessionOutcome DeleteSession(const Model::DeleteSessionRequest &request);
                 void DeleteSessionAsync(const Model::DeleteSessionRequest& request, const DeleteSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSessionOutcomeCallable DeleteSessionCallable(const Model::DeleteSessionRequest& request);
+
+                /**
+                 *本接口用于获取访问日志导出列表
+                 * @param req DescribeAccessExportsRequest
+                 * @return DescribeAccessExportsOutcome
+                 */
+                DescribeAccessExportsOutcome DescribeAccessExports(const Model::DescribeAccessExportsRequest &request);
+                void DescribeAccessExportsAsync(const Model::DescribeAccessExportsRequest& request, const DescribeAccessExportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccessExportsOutcomeCallable DescribeAccessExportsCallable(const Model::DescribeAccessExportsRequest& request);
+
+                /**
+                 *本接口用于访问日志的快速分析
+                 * @param req DescribeAccessFastAnalysisRequest
+                 * @return DescribeAccessFastAnalysisOutcome
+                 */
+                DescribeAccessFastAnalysisOutcome DescribeAccessFastAnalysis(const Model::DescribeAccessFastAnalysisRequest &request);
+                void DescribeAccessFastAnalysisAsync(const Model::DescribeAccessFastAnalysisRequest& request, const DescribeAccessFastAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccessFastAnalysisOutcomeCallable DescribeAccessFastAnalysisCallable(const Model::DescribeAccessFastAnalysisRequest& request);
+
+                /**
+                 *本接口用于获取访问日志索引配置信息
+                 * @param req DescribeAccessIndexRequest
+                 * @return DescribeAccessIndexOutcome
+                 */
+                DescribeAccessIndexOutcome DescribeAccessIndex(const Model::DescribeAccessIndexRequest &request);
+                void DescribeAccessIndexAsync(const Model::DescribeAccessIndexRequest& request, const DescribeAccessIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccessIndexOutcomeCallable DescribeAccessIndexCallable(const Model::DescribeAccessIndexRequest& request);
 
                 /**
                  *获取防护配置中的自定义策略列表
@@ -179,6 +254,15 @@ namespace TencentCloud
                 ModifyCustomRuleStatusOutcome ModifyCustomRuleStatus(const Model::ModifyCustomRuleStatusRequest &request);
                 void ModifyCustomRuleStatusAsync(const Model::ModifyCustomRuleStatusRequest& request, const ModifyCustomRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCustomRuleStatusOutcomeCallable ModifyCustomRuleStatusCallable(const Model::ModifyCustomRuleStatusRequest& request);
+
+                /**
+                 *本接口用于搜索WAF访问日志
+                 * @param req SearchAccessLogRequest
+                 * @return SearchAccessLogOutcome
+                 */
+                SearchAccessLogOutcome SearchAccessLog(const Model::SearchAccessLogRequest &request);
+                void SearchAccessLogAsync(const Model::SearchAccessLogRequest& request, const SearchAccessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchAccessLogOutcomeCallable SearchAccessLogCallable(const Model::SearchAccessLogRequest& request);
 
             };
         }

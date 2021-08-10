@@ -129,6 +129,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryContractResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCustAcctIdBalanceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCustAcctIdBalanceResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryDownloadBillURLRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryDownloadBillURLResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceRequest.h>
@@ -386,6 +388,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::QueryCustAcctIdBalanceResponse> QueryCustAcctIdBalanceOutcome;
                 typedef std::future<QueryCustAcctIdBalanceOutcome> QueryCustAcctIdBalanceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryCustAcctIdBalanceRequest&, QueryCustAcctIdBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustAcctIdBalanceAsyncHandler;
+                typedef Outcome<Error, Model::QueryDownloadBillURLResponse> QueryDownloadBillURLOutcome;
+                typedef std::future<QueryDownloadBillURLOutcome> QueryDownloadBillURLOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryDownloadBillURLRequest&, QueryDownloadBillURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDownloadBillURLAsyncHandler;
                 typedef Outcome<Error, Model::QueryExchangeRateResponse> QueryExchangeRateOutcome;
                 typedef std::future<QueryExchangeRateOutcome> QueryExchangeRateOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryExchangeRateRequest&, QueryExchangeRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExchangeRateAsyncHandler;
@@ -999,6 +1004,15 @@ namespace TencentCloud
                 QueryCustAcctIdBalanceOutcome QueryCustAcctIdBalance(const Model::QueryCustAcctIdBalanceRequest &request);
                 void QueryCustAcctIdBalanceAsync(const Model::QueryCustAcctIdBalanceRequest& request, const QueryCustAcctIdBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryCustAcctIdBalanceOutcomeCallable QueryCustAcctIdBalanceCallable(const Model::QueryCustAcctIdBalanceRequest& request);
+
+                /**
+                 *云鉴-查询对账单下载地址的接口
+                 * @param req QueryDownloadBillURLRequest
+                 * @return QueryDownloadBillURLOutcome
+                 */
+                QueryDownloadBillURLOutcome QueryDownloadBillURL(const Model::QueryDownloadBillURLRequest &request);
+                void QueryDownloadBillURLAsync(const Model::QueryDownloadBillURLRequest& request, const QueryDownloadBillURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryDownloadBillURLOutcomeCallable QueryDownloadBillURLCallable(const Model::QueryDownloadBillURLRequest& request);
 
                 /**
                  *跨境-查询汇率

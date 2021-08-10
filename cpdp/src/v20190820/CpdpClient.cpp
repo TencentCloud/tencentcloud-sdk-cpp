@@ -2319,6 +2319,49 @@ CpdpClient::QueryCustAcctIdBalanceOutcomeCallable CpdpClient::QueryCustAcctIdBal
     return task->get_future();
 }
 
+CpdpClient::QueryDownloadBillURLOutcome CpdpClient::QueryDownloadBillURL(const QueryDownloadBillURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryDownloadBillURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryDownloadBillURLResponse rsp = QueryDownloadBillURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryDownloadBillURLOutcome(rsp);
+        else
+            return QueryDownloadBillURLOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryDownloadBillURLOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryDownloadBillURLAsync(const QueryDownloadBillURLRequest& request, const QueryDownloadBillURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryDownloadBillURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryDownloadBillURLOutcomeCallable CpdpClient::QueryDownloadBillURLCallable(const QueryDownloadBillURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryDownloadBillURLOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryDownloadBillURL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryExchangeRateOutcome CpdpClient::QueryExchangeRate(const QueryExchangeRateRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryExchangeRate");

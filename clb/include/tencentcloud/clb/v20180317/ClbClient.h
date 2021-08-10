@@ -83,6 +83,10 @@
 #include <tencentcloud/clb/v20180317/model/DescribeClsLogSetResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClusterResourcesRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeClusterResourcesResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeCustomizedConfigAssociateListRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeCustomizedConfigAssociateListResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeCustomizedConfigListRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeCustomizedConfigListResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeExclusiveClustersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeExclusiveClustersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersRequest.h>
@@ -145,6 +149,8 @@
 #include <tencentcloud/clb/v20180317/model/RegisterTargetsWithClassicalLBResponse.h>
 #include <tencentcloud/clb/v20180317/model/ReplaceCertForLoadBalancersRequest.h>
 #include <tencentcloud/clb/v20180317/model/ReplaceCertForLoadBalancersResponse.h>
+#include <tencentcloud/clb/v20180317/model/SetCustomizedConfigForLoadBalancerRequest.h>
+#include <tencentcloud/clb/v20180317/model/SetCustomizedConfigForLoadBalancerResponse.h>
 #include <tencentcloud/clb/v20180317/model/SetLoadBalancerClsLogRequest.h>
 #include <tencentcloud/clb/v20180317/model/SetLoadBalancerClsLogResponse.h>
 #include <tencentcloud/clb/v20180317/model/SetLoadBalancerSecurityGroupsRequest.h>
@@ -255,6 +261,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeClusterResourcesResponse> DescribeClusterResourcesOutcome;
                 typedef std::future<DescribeClusterResourcesOutcome> DescribeClusterResourcesOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeClusterResourcesRequest&, DescribeClusterResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterResourcesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCustomizedConfigAssociateListResponse> DescribeCustomizedConfigAssociateListOutcome;
+                typedef std::future<DescribeCustomizedConfigAssociateListOutcome> DescribeCustomizedConfigAssociateListOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeCustomizedConfigAssociateListRequest&, DescribeCustomizedConfigAssociateListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomizedConfigAssociateListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCustomizedConfigListResponse> DescribeCustomizedConfigListOutcome;
+                typedef std::future<DescribeCustomizedConfigListOutcome> DescribeCustomizedConfigListOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeCustomizedConfigListRequest&, DescribeCustomizedConfigListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomizedConfigListAsyncHandler;
                 typedef Outcome<Error, Model::DescribeExclusiveClustersResponse> DescribeExclusiveClustersOutcome;
                 typedef std::future<DescribeExclusiveClustersOutcome> DescribeExclusiveClustersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeExclusiveClustersRequest&, DescribeExclusiveClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExclusiveClustersAsyncHandler;
@@ -348,6 +360,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ReplaceCertForLoadBalancersResponse> ReplaceCertForLoadBalancersOutcome;
                 typedef std::future<ReplaceCertForLoadBalancersOutcome> ReplaceCertForLoadBalancersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ReplaceCertForLoadBalancersRequest&, ReplaceCertForLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceCertForLoadBalancersAsyncHandler;
+                typedef Outcome<Error, Model::SetCustomizedConfigForLoadBalancerResponse> SetCustomizedConfigForLoadBalancerOutcome;
+                typedef std::future<SetCustomizedConfigForLoadBalancerOutcome> SetCustomizedConfigForLoadBalancerOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::SetCustomizedConfigForLoadBalancerRequest&, SetCustomizedConfigForLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetCustomizedConfigForLoadBalancerAsyncHandler;
                 typedef Outcome<Error, Model::SetLoadBalancerClsLogResponse> SetLoadBalancerClsLogOutcome;
                 typedef std::future<SetLoadBalancerClsLogOutcome> SetLoadBalancerClsLogOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::SetLoadBalancerClsLogRequest&, SetLoadBalancerClsLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerClsLogAsyncHandler;
@@ -645,6 +660,24 @@ namespace TencentCloud
                 DescribeClusterResourcesOutcomeCallable DescribeClusterResourcesCallable(const Model::DescribeClusterResourcesRequest& request);
 
                 /**
+                 *拉取配置绑定的 server 或 location，如果 domain 存在，结果将根据 domain 过滤。或拉取配置绑定的 loadbalancer。
+                 * @param req DescribeCustomizedConfigAssociateListRequest
+                 * @return DescribeCustomizedConfigAssociateListOutcome
+                 */
+                DescribeCustomizedConfigAssociateListOutcome DescribeCustomizedConfigAssociateList(const Model::DescribeCustomizedConfigAssociateListRequest &request);
+                void DescribeCustomizedConfigAssociateListAsync(const Model::DescribeCustomizedConfigAssociateListRequest& request, const DescribeCustomizedConfigAssociateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomizedConfigAssociateListOutcomeCallable DescribeCustomizedConfigAssociateListCallable(const Model::DescribeCustomizedConfigAssociateListRequest& request);
+
+                /**
+                 *拉取个性化配置列表，返回用户 AppId 下指定类型的配置。
+                 * @param req DescribeCustomizedConfigListRequest
+                 * @return DescribeCustomizedConfigListOutcome
+                 */
+                DescribeCustomizedConfigListOutcome DescribeCustomizedConfigList(const Model::DescribeCustomizedConfigListRequest &request);
+                void DescribeCustomizedConfigListAsync(const Model::DescribeCustomizedConfigListRequest& request, const DescribeCustomizedConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomizedConfigListOutcomeCallable DescribeCustomizedConfigListCallable(const Model::DescribeCustomizedConfigListRequest& request);
+
+                /**
                  *查询集群信息列表，支持以集群类型、集群唯一ID、集群名字、集群标签、集群内vip、集群内负载均衡唯一id、集群网络类型、可用区等条件进行检索
                  * @param req DescribeExclusiveClustersRequest
                  * @return DescribeExclusiveClustersOutcome
@@ -939,6 +972,15 @@ namespace TencentCloud
                 ReplaceCertForLoadBalancersOutcome ReplaceCertForLoadBalancers(const Model::ReplaceCertForLoadBalancersRequest &request);
                 void ReplaceCertForLoadBalancersAsync(const Model::ReplaceCertForLoadBalancersRequest& request, const ReplaceCertForLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReplaceCertForLoadBalancersOutcomeCallable ReplaceCertForLoadBalancersCallable(const Model::ReplaceCertForLoadBalancersRequest& request);
+
+                /**
+                 *负载均衡维度的个性化配置相关操作：创建、删除、修改、绑定、解绑
+                 * @param req SetCustomizedConfigForLoadBalancerRequest
+                 * @return SetCustomizedConfigForLoadBalancerOutcome
+                 */
+                SetCustomizedConfigForLoadBalancerOutcome SetCustomizedConfigForLoadBalancer(const Model::SetCustomizedConfigForLoadBalancerRequest &request);
+                void SetCustomizedConfigForLoadBalancerAsync(const Model::SetCustomizedConfigForLoadBalancerRequest& request, const SetCustomizedConfigForLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetCustomizedConfigForLoadBalancerOutcomeCallable SetCustomizedConfigForLoadBalancerCallable(const Model::SetCustomizedConfigForLoadBalancerRequest& request);
 
                 /**
                  *增加、删除、更新负载均衡的日志服务(CLS)主题。

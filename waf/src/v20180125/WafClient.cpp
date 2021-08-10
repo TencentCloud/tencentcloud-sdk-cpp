@@ -83,6 +83,49 @@ WafClient::AddCustomRuleOutcomeCallable WafClient::AddCustomRuleCallable(const A
     return task->get_future();
 }
 
+WafClient::CreateAccessExportOutcome WafClient::CreateAccessExport(const CreateAccessExportRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccessExport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccessExportResponse rsp = CreateAccessExportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccessExportOutcome(rsp);
+        else
+            return CreateAccessExportOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccessExportOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateAccessExportAsync(const CreateAccessExportRequest& request, const CreateAccessExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccessExport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreateAccessExportOutcomeCallable WafClient::CreateAccessExportCallable(const CreateAccessExportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccessExportOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccessExport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::CreateAttackDownloadTaskOutcome WafClient::CreateAttackDownloadTask(const CreateAttackDownloadTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAttackDownloadTask");
@@ -119,6 +162,49 @@ WafClient::CreateAttackDownloadTaskOutcomeCallable WafClient::CreateAttackDownlo
         [this, request]()
         {
             return this->CreateAttackDownloadTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DeleteAccessExportOutcome WafClient::DeleteAccessExport(const DeleteAccessExportRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccessExport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccessExportResponse rsp = DeleteAccessExportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccessExportOutcome(rsp);
+        else
+            return DeleteAccessExportOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccessExportOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteAccessExportAsync(const DeleteAccessExportRequest& request, const DeleteAccessExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAccessExport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteAccessExportOutcomeCallable WafClient::DeleteAccessExportCallable(const DeleteAccessExportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAccessExportOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAccessExport(request);
         }
     );
 
@@ -248,6 +334,135 @@ WafClient::DeleteSessionOutcomeCallable WafClient::DeleteSessionCallable(const D
         [this, request]()
         {
             return this->DeleteSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeAccessExportsOutcome WafClient::DescribeAccessExports(const DescribeAccessExportsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessExports");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessExportsResponse rsp = DescribeAccessExportsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessExportsOutcome(rsp);
+        else
+            return DescribeAccessExportsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessExportsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeAccessExportsAsync(const DescribeAccessExportsRequest& request, const DescribeAccessExportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessExports(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeAccessExportsOutcomeCallable WafClient::DescribeAccessExportsCallable(const DescribeAccessExportsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessExportsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessExports(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeAccessFastAnalysisOutcome WafClient::DescribeAccessFastAnalysis(const DescribeAccessFastAnalysisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessFastAnalysis");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessFastAnalysisResponse rsp = DescribeAccessFastAnalysisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessFastAnalysisOutcome(rsp);
+        else
+            return DescribeAccessFastAnalysisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessFastAnalysisOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeAccessFastAnalysisAsync(const DescribeAccessFastAnalysisRequest& request, const DescribeAccessFastAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessFastAnalysis(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeAccessFastAnalysisOutcomeCallable WafClient::DescribeAccessFastAnalysisCallable(const DescribeAccessFastAnalysisRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessFastAnalysisOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessFastAnalysis(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeAccessIndexOutcome WafClient::DescribeAccessIndex(const DescribeAccessIndexRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessIndex");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessIndexResponse rsp = DescribeAccessIndexResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessIndexOutcome(rsp);
+        else
+            return DescribeAccessIndexOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessIndexOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeAccessIndexAsync(const DescribeAccessIndexRequest& request, const DescribeAccessIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessIndex(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeAccessIndexOutcomeCallable WafClient::DescribeAccessIndexCallable(const DescribeAccessIndexRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessIndexOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessIndex(request);
         }
     );
 
@@ -463,6 +678,49 @@ WafClient::ModifyCustomRuleStatusOutcomeCallable WafClient::ModifyCustomRuleStat
         [this, request]()
         {
             return this->ModifyCustomRuleStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::SearchAccessLogOutcome WafClient::SearchAccessLog(const SearchAccessLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchAccessLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchAccessLogResponse rsp = SearchAccessLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchAccessLogOutcome(rsp);
+        else
+            return SearchAccessLogOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchAccessLogOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::SearchAccessLogAsync(const SearchAccessLogRequest& request, const SearchAccessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchAccessLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::SearchAccessLogOutcomeCallable WafClient::SearchAccessLogCallable(const SearchAccessLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchAccessLogOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchAccessLog(request);
         }
     );
 

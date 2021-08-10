@@ -100,6 +100,28 @@ namespace TencentCloud
                      */
                     bool CodecHasBeenSet() const;
 
+                    /**
+                     * 获取音频声道数，例如 2。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Channel 音频声道数，例如 2。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetChannel() const;
+
+                    /**
+                     * 设置音频声道数，例如 2。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Channel 音频声道数，例如 2。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChannel(const int64_t& _channel);
+
+                    /**
+                     * 判断参数 Channel 是否已赋值
+                     * @return Channel 是否已赋值
+                     */
+                    bool ChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +141,13 @@ namespace TencentCloud
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;
+
+                    /**
+                     * 音频声道数，例如 2。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_channel;
+                    bool m_channelHasBeenSet;
 
                 };
             }

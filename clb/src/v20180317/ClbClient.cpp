@@ -1330,6 +1330,92 @@ ClbClient::DescribeClusterResourcesOutcomeCallable ClbClient::DescribeClusterRes
     return task->get_future();
 }
 
+ClbClient::DescribeCustomizedConfigAssociateListOutcome ClbClient::DescribeCustomizedConfigAssociateList(const DescribeCustomizedConfigAssociateListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomizedConfigAssociateList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomizedConfigAssociateListResponse rsp = DescribeCustomizedConfigAssociateListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomizedConfigAssociateListOutcome(rsp);
+        else
+            return DescribeCustomizedConfigAssociateListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomizedConfigAssociateListOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeCustomizedConfigAssociateListAsync(const DescribeCustomizedConfigAssociateListRequest& request, const DescribeCustomizedConfigAssociateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCustomizedConfigAssociateList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeCustomizedConfigAssociateListOutcomeCallable ClbClient::DescribeCustomizedConfigAssociateListCallable(const DescribeCustomizedConfigAssociateListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCustomizedConfigAssociateListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCustomizedConfigAssociateList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::DescribeCustomizedConfigListOutcome ClbClient::DescribeCustomizedConfigList(const DescribeCustomizedConfigListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomizedConfigList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomizedConfigListResponse rsp = DescribeCustomizedConfigListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomizedConfigListOutcome(rsp);
+        else
+            return DescribeCustomizedConfigListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomizedConfigListOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeCustomizedConfigListAsync(const DescribeCustomizedConfigListRequest& request, const DescribeCustomizedConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCustomizedConfigList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeCustomizedConfigListOutcomeCallable ClbClient::DescribeCustomizedConfigListCallable(const DescribeCustomizedConfigListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCustomizedConfigListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCustomizedConfigList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeExclusiveClustersOutcome ClbClient::DescribeExclusiveClusters(const DescribeExclusiveClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExclusiveClusters");
@@ -2656,6 +2742,49 @@ ClbClient::ReplaceCertForLoadBalancersOutcomeCallable ClbClient::ReplaceCertForL
         [this, request]()
         {
             return this->ReplaceCertForLoadBalancers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::SetCustomizedConfigForLoadBalancerOutcome ClbClient::SetCustomizedConfigForLoadBalancer(const SetCustomizedConfigForLoadBalancerRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetCustomizedConfigForLoadBalancer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetCustomizedConfigForLoadBalancerResponse rsp = SetCustomizedConfigForLoadBalancerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetCustomizedConfigForLoadBalancerOutcome(rsp);
+        else
+            return SetCustomizedConfigForLoadBalancerOutcome(o.GetError());
+    }
+    else
+    {
+        return SetCustomizedConfigForLoadBalancerOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::SetCustomizedConfigForLoadBalancerAsync(const SetCustomizedConfigForLoadBalancerRequest& request, const SetCustomizedConfigForLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetCustomizedConfigForLoadBalancer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::SetCustomizedConfigForLoadBalancerOutcomeCallable ClbClient::SetCustomizedConfigForLoadBalancerCallable(const SetCustomizedConfigForLoadBalancerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetCustomizedConfigForLoadBalancerOutcome()>>(
+        [this, request]()
+        {
+            return this->SetCustomizedConfigForLoadBalancer(request);
         }
     );
 

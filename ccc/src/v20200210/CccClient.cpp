@@ -255,6 +255,49 @@ CccClient::DeleteStaffOutcomeCallable CccClient::DeleteStaffCallable(const Delet
     return task->get_future();
 }
 
+CccClient::DescribeCallInMetricsOutcome CccClient::DescribeCallInMetrics(const DescribeCallInMetricsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCallInMetrics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCallInMetricsResponse rsp = DescribeCallInMetricsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCallInMetricsOutcome(rsp);
+        else
+            return DescribeCallInMetricsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCallInMetricsOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeCallInMetricsAsync(const DescribeCallInMetricsRequest& request, const DescribeCallInMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCallInMetrics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeCallInMetricsOutcomeCallable CccClient::DescribeCallInMetricsCallable(const DescribeCallInMetricsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCallInMetricsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCallInMetrics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeChatMessagesOutcome CccClient::DescribeChatMessages(const DescribeChatMessagesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeChatMessages");
@@ -506,6 +549,49 @@ CccClient::DescribeStaffInfoListOutcomeCallable CccClient::DescribeStaffInfoList
         [this, request]()
         {
             return this->DescribeStaffInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DescribeStaffStatusMetricsOutcome CccClient::DescribeStaffStatusMetrics(const DescribeStaffStatusMetricsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStaffStatusMetrics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStaffStatusMetricsResponse rsp = DescribeStaffStatusMetricsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStaffStatusMetricsOutcome(rsp);
+        else
+            return DescribeStaffStatusMetricsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStaffStatusMetricsOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeStaffStatusMetricsAsync(const DescribeStaffStatusMetricsRequest& request, const DescribeStaffStatusMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStaffStatusMetrics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeStaffStatusMetricsOutcomeCallable CccClient::DescribeStaffStatusMetricsCallable(const DescribeStaffStatusMetricsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStaffStatusMetricsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStaffStatusMetrics(request);
         }
     );
 

@@ -25,7 +25,10 @@ MediaVideoStreamItem::MediaVideoStreamItem() :
     m_heightHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_codecHasBeenSet(false),
-    m_fpsHasBeenSet(false)
+    m_fpsHasBeenSet(false),
+    m_colorPrimariesHasBeenSet(false),
+    m_colorSpaceHasBeenSet(false),
+    m_colorTransferHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,36 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
         m_fpsHasBeenSet = true;
     }
 
+    if (value.HasMember("ColorPrimaries") && !value["ColorPrimaries"].IsNull())
+    {
+        if (!value["ColorPrimaries"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MediaVideoStreamItem.ColorPrimaries` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_colorPrimaries = string(value["ColorPrimaries"].GetString());
+        m_colorPrimariesHasBeenSet = true;
+    }
+
+    if (value.HasMember("ColorSpace") && !value["ColorSpace"].IsNull())
+    {
+        if (!value["ColorSpace"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MediaVideoStreamItem.ColorSpace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_colorSpace = string(value["ColorSpace"].GetString());
+        m_colorSpaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("ColorTransfer") && !value["ColorTransfer"].IsNull())
+    {
+        if (!value["ColorTransfer"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `MediaVideoStreamItem.ColorTransfer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_colorTransfer = string(value["ColorTransfer"].GetString());
+        m_colorTransferHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +162,30 @@ void MediaVideoStreamItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Fps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fps, allocator);
+    }
+
+    if (m_colorPrimariesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColorPrimaries";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_colorPrimaries.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_colorSpaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColorSpace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_colorSpace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_colorTransferHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColorTransfer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_colorTransfer.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +269,53 @@ void MediaVideoStreamItem::SetFps(const int64_t& _fps)
 bool MediaVideoStreamItem::FpsHasBeenSet() const
 {
     return m_fpsHasBeenSet;
+}
+
+string MediaVideoStreamItem::GetColorPrimaries() const
+{
+    return m_colorPrimaries;
+}
+
+void MediaVideoStreamItem::SetColorPrimaries(const string& _colorPrimaries)
+{
+    m_colorPrimaries = _colorPrimaries;
+    m_colorPrimariesHasBeenSet = true;
+}
+
+bool MediaVideoStreamItem::ColorPrimariesHasBeenSet() const
+{
+    return m_colorPrimariesHasBeenSet;
+}
+
+string MediaVideoStreamItem::GetColorSpace() const
+{
+    return m_colorSpace;
+}
+
+void MediaVideoStreamItem::SetColorSpace(const string& _colorSpace)
+{
+    m_colorSpace = _colorSpace;
+    m_colorSpaceHasBeenSet = true;
+}
+
+bool MediaVideoStreamItem::ColorSpaceHasBeenSet() const
+{
+    return m_colorSpaceHasBeenSet;
+}
+
+string MediaVideoStreamItem::GetColorTransfer() const
+{
+    return m_colorTransfer;
+}
+
+void MediaVideoStreamItem::SetColorTransfer(const string& _colorTransfer)
+{
+    m_colorTransfer = _colorTransfer;
+    m_colorTransferHasBeenSet = true;
+}
+
+bool MediaVideoStreamItem::ColorTransferHasBeenSet() const
+{
+    return m_colorTransferHasBeenSet;
 }
 

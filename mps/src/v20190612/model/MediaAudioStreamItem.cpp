@@ -23,7 +23,8 @@ using namespace std;
 MediaAudioStreamItem::MediaAudioStreamItem() :
     m_bitrateHasBeenSet(false),
     m_samplingRateHasBeenSet(false),
-    m_codecHasBeenSet(false)
+    m_codecHasBeenSet(false),
+    m_channelHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome MediaAudioStreamItem::Deserialize(const rapidjson::Value &va
         m_codecHasBeenSet = true;
     }
 
+    if (value.HasMember("Channel") && !value["Channel"].IsNull())
+    {
+        if (!value["Channel"].IsInt64())
+        {
+            return CoreInternalOutcome(Error("response `MediaAudioStreamItem.Channel` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_channel = value["Channel"].GetInt64();
+        m_channelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void MediaAudioStreamItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Codec";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_codec.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Channel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_channel, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void MediaAudioStreamItem::SetCodec(const string& _codec)
 bool MediaAudioStreamItem::CodecHasBeenSet() const
 {
     return m_codecHasBeenSet;
+}
+
+int64_t MediaAudioStreamItem::GetChannel() const
+{
+    return m_channel;
+}
+
+void MediaAudioStreamItem::SetChannel(const int64_t& _channel)
+{
+    m_channel = _channel;
+    m_channelHasBeenSet = true;
+}
+
+bool MediaAudioStreamItem::ChannelHasBeenSet() const
+{
+    return m_channelHasBeenSet;
 }
 

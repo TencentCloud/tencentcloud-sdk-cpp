@@ -20,12 +20,16 @@ set(ccc_public_header
 
 set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListRequest.h
-  include/tencentcloud/ccc/v20200210/model/DescribeStaffInfoListResponse.h
+  include/tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListRequest.h
   include/tencentcloud/ccc/v20200210/model/IVRKeyPressedElement.h
   include/tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenResponse.h
-  include/tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListRequest.h
+  include/tencentcloud/ccc/v20200210/model/DescribeCallInMetricsResponse.h
+  include/tencentcloud/ccc/v20200210/model/CallInMetrics.h
+  include/tencentcloud/ccc/v20200210/model/DescribeStaffInfoListResponse.h
   include/tencentcloud/ccc/v20200210/model/CreateStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/CreateUserSigRequest.h
+  include/tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h
+  include/tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsRequest.h
   include/tencentcloud/ccc/v20200210/model/SkillGroupItem.h
   include/tencentcloud/ccc/v20200210/model/CreateUserSigResponse.h
   include/tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h
@@ -33,9 +37,11 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeIMCdrsRequest.h
   include/tencentcloud/ccc/v20200210/model/TelCdrInfo.h
   include/tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h
+  include/tencentcloud/ccc/v20200210/model/StaffStatusExtra.h
   include/tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateStaffRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesResponse.h
+  include/tencentcloud/ccc/v20200210/model/CallInNumberMetrics.h
   include/tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListResponse.h
   include/tencentcloud/ccc/v20200210/model/IMCdrInfo.h
   include/tencentcloud/ccc/v20200210/model/ErrStaffItem.h
@@ -45,11 +51,14 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeStaffInfoListRequest.h
   include/tencentcloud/ccc/v20200210/model/SkillGroupInfoItem.h
   include/tencentcloud/ccc/v20200210/model/StaffInfo.h
-  include/tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h
+  include/tencentcloud/ccc/v20200210/model/PSTNSessionInfo.h
   include/tencentcloud/ccc/v20200210/model/ServeParticipant.h
+  include/tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsResponse.h
+  include/tencentcloud/ccc/v20200210/model/CallInSkillGroupMetrics.h
   include/tencentcloud/ccc/v20200210/model/DescribeSeatUserListResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeSeatUserListRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCallInfoResponse.h
+  include/tencentcloud/ccc/v20200210/model/StaffStatusMetrics.h
   include/tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListResponse.h
   include/tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrRequest.h
@@ -58,7 +67,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeTelCallInfoRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h
   include/tencentcloud/ccc/v20200210/model/SeatUserInfo.h
-  include/tencentcloud/ccc/v20200210/model/PSTNSessionInfo.h
+  include/tencentcloud/ccc/v20200210/model/DescribeCallInMetricsRequest.h
   include/tencentcloud/ccc/v20200210/model/Message.h
   include/tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeIMCdrsResponse.h
@@ -67,12 +76,16 @@ set(ccc_public_header_model
 set(ccc_src
   src/v20200210/CccClient.cpp
   src/v20200210/model/BindStaffSkillGroupListRequest.cpp
-  src/v20200210/model/DescribeStaffInfoListResponse.cpp
+  src/v20200210/model/DescribePSTNActiveSessionListRequest.cpp
   src/v20200210/model/IVRKeyPressedElement.cpp
   src/v20200210/model/CreateSDKLoginTokenResponse.cpp
-  src/v20200210/model/DescribePSTNActiveSessionListRequest.cpp
+  src/v20200210/model/DescribeCallInMetricsResponse.cpp
+  src/v20200210/model/CallInMetrics.cpp
+  src/v20200210/model/DescribeStaffInfoListResponse.cpp
   src/v20200210/model/CreateStaffResponse.cpp
   src/v20200210/model/CreateUserSigRequest.cpp
+  src/v20200210/model/UnbindStaffSkillGroupListRequest.cpp
+  src/v20200210/model/DescribeStaffStatusMetricsRequest.cpp
   src/v20200210/model/SkillGroupItem.cpp
   src/v20200210/model/CreateUserSigResponse.cpp
   src/v20200210/model/DeleteStaffRequest.cpp
@@ -80,9 +93,11 @@ set(ccc_src
   src/v20200210/model/DescribeIMCdrsRequest.cpp
   src/v20200210/model/TelCdrInfo.cpp
   src/v20200210/model/DeleteStaffResponse.cpp
+  src/v20200210/model/StaffStatusExtra.cpp
   src/v20200210/model/DescribeSkillGroupInfoListRequest.cpp
   src/v20200210/model/CreateStaffRequest.cpp
   src/v20200210/model/DescribeChatMessagesResponse.cpp
+  src/v20200210/model/CallInNumberMetrics.cpp
   src/v20200210/model/DescribePSTNActiveSessionListResponse.cpp
   src/v20200210/model/IMCdrInfo.cpp
   src/v20200210/model/ErrStaffItem.cpp
@@ -92,11 +107,14 @@ set(ccc_src
   src/v20200210/model/DescribeStaffInfoListRequest.cpp
   src/v20200210/model/SkillGroupInfoItem.cpp
   src/v20200210/model/StaffInfo.cpp
-  src/v20200210/model/UnbindStaffSkillGroupListRequest.cpp
+  src/v20200210/model/PSTNSessionInfo.cpp
   src/v20200210/model/ServeParticipant.cpp
+  src/v20200210/model/DescribeStaffStatusMetricsResponse.cpp
+  src/v20200210/model/CallInSkillGroupMetrics.cpp
   src/v20200210/model/DescribeSeatUserListResponse.cpp
   src/v20200210/model/DescribeSeatUserListRequest.cpp
   src/v20200210/model/DescribeTelCallInfoResponse.cpp
+  src/v20200210/model/StaffStatusMetrics.cpp
   src/v20200210/model/BindStaffSkillGroupListResponse.cpp
   src/v20200210/model/UnbindStaffSkillGroupListResponse.cpp
   src/v20200210/model/DescribeTelCdrRequest.cpp
@@ -105,7 +123,7 @@ set(ccc_src
   src/v20200210/model/DescribeTelCallInfoRequest.cpp
   src/v20200210/model/DescribeTelCdrResponse.cpp
   src/v20200210/model/SeatUserInfo.cpp
-  src/v20200210/model/PSTNSessionInfo.cpp
+  src/v20200210/model/DescribeCallInMetricsRequest.cpp
   src/v20200210/model/Message.cpp
   src/v20200210/model/DescribeSkillGroupInfoListResponse.cpp
   src/v20200210/model/DescribeIMCdrsResponse.cpp
