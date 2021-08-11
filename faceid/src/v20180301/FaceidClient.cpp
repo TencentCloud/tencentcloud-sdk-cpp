@@ -298,6 +298,49 @@ FaceidClient::CheckIdCardInformationOutcomeCallable FaceidClient::CheckIdCardInf
     return task->get_future();
 }
 
+FaceidClient::CheckIdNameDateOutcome FaceidClient::CheckIdNameDate(const CheckIdNameDateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckIdNameDate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckIdNameDateResponse rsp = CheckIdNameDateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckIdNameDateOutcome(rsp);
+        else
+            return CheckIdNameDateOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckIdNameDateOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::CheckIdNameDateAsync(const CheckIdNameDateRequest& request, const CheckIdNameDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckIdNameDate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::CheckIdNameDateOutcomeCallable FaceidClient::CheckIdNameDateCallable(const CheckIdNameDateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckIdNameDateOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckIdNameDate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::CheckPhoneAndNameOutcome FaceidClient::CheckPhoneAndName(const CheckPhoneAndNameRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckPhoneAndName");

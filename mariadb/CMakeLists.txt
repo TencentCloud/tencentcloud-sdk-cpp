@@ -63,6 +63,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DcnDetailItem.h
   include/tencentcloud/mariadb/v20170312/model/ResetAccountPasswordRequest.h
   include/tencentcloud/mariadb/v20170312/model/CopyAccountPrivilegesResponse.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyRealServerAccessStrategyResponse.h
   include/tencentcloud/mariadb/v20170312/model/CloneAccountRequest.h
   include/tencentcloud/mariadb/v20170312/model/ParamModifyResult.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstancesRequest.h
@@ -76,6 +77,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribePriceRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateDBInstanceResponse.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyRealServerAccessStrategyRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeBackupTimeRequest.h
   include/tencentcloud/mariadb/v20170312/model/RestartDBInstancesResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeSaleInfoResponse.h
@@ -206,6 +208,7 @@ set(mariadb_src
   src/v20170312/model/DcnDetailItem.cpp
   src/v20170312/model/ResetAccountPasswordRequest.cpp
   src/v20170312/model/CopyAccountPrivilegesResponse.cpp
+  src/v20170312/model/ModifyRealServerAccessStrategyResponse.cpp
   src/v20170312/model/CloneAccountRequest.cpp
   src/v20170312/model/ParamModifyResult.cpp
   src/v20170312/model/DescribeDBInstancesRequest.cpp
@@ -219,6 +222,7 @@ set(mariadb_src
   src/v20170312/model/DescribeDBInstanceSpecsRequest.cpp
   src/v20170312/model/DescribePriceRequest.cpp
   src/v20170312/model/CreateDBInstanceResponse.cpp
+  src/v20170312/model/ModifyRealServerAccessStrategyRequest.cpp
   src/v20170312/model/DescribeBackupTimeRequest.cpp
   src/v20170312/model/RestartDBInstancesResponse.cpp
   src/v20170312/model/DescribeSaleInfoResponse.cpp

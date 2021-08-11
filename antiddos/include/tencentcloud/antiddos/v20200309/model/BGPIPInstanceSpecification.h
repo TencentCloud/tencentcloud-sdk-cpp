@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取保底防护峰值，单位Gbps
-                     * @return ProtectBandwidth 保底防护峰值，单位Gbps
+                     * 获取保底防护峰值，单位Mbps
+                     * @return ProtectBandwidth 保底防护峰值，单位Mbps
                      */
                     uint64_t GetProtectBandwidth() const;
 
                     /**
-                     * 设置保底防护峰值，单位Gbps
-                     * @param ProtectBandwidth 保底防护峰值，单位Gbps
+                     * 设置保底防护峰值，单位Mbps
+                     * @param ProtectBandwidth 保底防护峰值，单位Mbps
                      */
                     void SetProtectBandwidth(const uint64_t& _protectBandwidth);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool LineHasBeenSet() const;
 
                     /**
-                     * 获取弹性防护峰值，单位Gbps
-                     * @return ElasticBandwidth 弹性防护峰值，单位Gbps
+                     * 获取弹性防护峰值，单位Mbps
+                     * @return ElasticBandwidth 弹性防护峰值，单位Mbps
                      */
                     uint64_t GetElasticBandwidth() const;
 
                     /**
-                     * 设置弹性防护峰值，单位Gbps
-                     * @param ElasticBandwidth 弹性防护峰值，单位Gbps
+                     * 设置弹性防护峰值，单位Mbps
+                     * @param ElasticBandwidth 弹性防护峰值，单位Mbps
                      */
                     void SetElasticBandwidth(const uint64_t& _elasticBandwidth);
 
@@ -211,7 +211,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 保底防护峰值，单位Gbps
+                     * 保底防护峰值，单位Mbps
                      */
                     uint64_t m_protectBandwidth;
                     bool m_protectBandwidthHasBeenSet;
@@ -256,7 +256,7 @@ namespace TencentCloud
                     bool m_lineHasBeenSet;
 
                     /**
-                     * 弹性防护峰值，单位Gbps
+                     * 弹性防护峰值，单位Mbps
                      */
                     uint64_t m_elasticBandwidth;
                     bool m_elasticBandwidthHasBeenSet;

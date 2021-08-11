@@ -29,6 +29,10 @@
 #include <tencentcloud/cls/v20201016/model/CreateAlarmResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmNoticeRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmNoticeResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateAsyncContextTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateAsyncContextTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateAsyncSearchTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateAsyncSearchTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateExportRequest.h>
@@ -47,6 +51,10 @@
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmNoticeRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmNoticeResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteAsyncContextTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteAsyncContextTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteAsyncSearchTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteAsyncSearchTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupRequest.h>
@@ -67,6 +75,14 @@
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmNoticesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeAsyncContextResultRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeAsyncContextResultResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeAsyncContextTasksRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeAsyncContextTasksResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeAsyncSearchResultRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeAsyncSearchResultResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeAsyncSearchTasksRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeAsyncSearchTasksResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigsRequest.h>
@@ -144,6 +160,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CreateAlarmNoticeResponse> CreateAlarmNoticeOutcome;
                 typedef std::future<CreateAlarmNoticeOutcome> CreateAlarmNoticeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateAlarmNoticeRequest&, CreateAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmNoticeAsyncHandler;
+                typedef Outcome<Error, Model::CreateAsyncContextTaskResponse> CreateAsyncContextTaskOutcome;
+                typedef std::future<CreateAsyncContextTaskOutcome> CreateAsyncContextTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateAsyncContextTaskRequest&, CreateAsyncContextTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAsyncContextTaskAsyncHandler;
+                typedef Outcome<Error, Model::CreateAsyncSearchTaskResponse> CreateAsyncSearchTaskOutcome;
+                typedef std::future<CreateAsyncSearchTaskOutcome> CreateAsyncSearchTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateAsyncSearchTaskRequest&, CreateAsyncSearchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAsyncSearchTaskAsyncHandler;
                 typedef Outcome<Error, Model::CreateConfigResponse> CreateConfigOutcome;
                 typedef std::future<CreateConfigOutcome> CreateConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateConfigRequest&, CreateConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigAsyncHandler;
@@ -171,6 +193,12 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DeleteAlarmNoticeResponse> DeleteAlarmNoticeOutcome;
                 typedef std::future<DeleteAlarmNoticeOutcome> DeleteAlarmNoticeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteAlarmNoticeRequest&, DeleteAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmNoticeAsyncHandler;
+                typedef Outcome<Error, Model::DeleteAsyncContextTaskResponse> DeleteAsyncContextTaskOutcome;
+                typedef std::future<DeleteAsyncContextTaskOutcome> DeleteAsyncContextTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteAsyncContextTaskRequest&, DeleteAsyncContextTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAsyncContextTaskAsyncHandler;
+                typedef Outcome<Error, Model::DeleteAsyncSearchTaskResponse> DeleteAsyncSearchTaskOutcome;
+                typedef std::future<DeleteAsyncSearchTaskOutcome> DeleteAsyncSearchTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteAsyncSearchTaskRequest&, DeleteAsyncSearchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAsyncSearchTaskAsyncHandler;
                 typedef Outcome<Error, Model::DeleteConfigResponse> DeleteConfigOutcome;
                 typedef std::future<DeleteConfigOutcome> DeleteConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteConfigRequest&, DeleteConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigAsyncHandler;
@@ -201,6 +229,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeAlarmsResponse> DescribeAlarmsOutcome;
                 typedef std::future<DescribeAlarmsOutcome> DescribeAlarmsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeAlarmsRequest&, DescribeAlarmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAsyncContextResultResponse> DescribeAsyncContextResultOutcome;
+                typedef std::future<DescribeAsyncContextResultOutcome> DescribeAsyncContextResultOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeAsyncContextResultRequest&, DescribeAsyncContextResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncContextResultAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAsyncContextTasksResponse> DescribeAsyncContextTasksOutcome;
+                typedef std::future<DescribeAsyncContextTasksOutcome> DescribeAsyncContextTasksOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeAsyncContextTasksRequest&, DescribeAsyncContextTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncContextTasksAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAsyncSearchResultResponse> DescribeAsyncSearchResultOutcome;
+                typedef std::future<DescribeAsyncSearchResultOutcome> DescribeAsyncSearchResultOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeAsyncSearchResultRequest&, DescribeAsyncSearchResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncSearchResultAsyncHandler;
+                typedef Outcome<Error, Model::DescribeAsyncSearchTasksResponse> DescribeAsyncSearchTasksOutcome;
+                typedef std::future<DescribeAsyncSearchTasksOutcome> DescribeAsyncSearchTasksOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeAsyncSearchTasksRequest&, DescribeAsyncSearchTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncSearchTasksAsyncHandler;
                 typedef Outcome<Error, Model::DescribeConfigMachineGroupsResponse> DescribeConfigMachineGroupsOutcome;
                 typedef std::future<DescribeConfigMachineGroupsOutcome> DescribeConfigMachineGroupsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeConfigMachineGroupsRequest&, DescribeConfigMachineGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigMachineGroupsAsyncHandler;
@@ -313,6 +353,24 @@ namespace TencentCloud
                 CreateAlarmNoticeOutcomeCallable CreateAlarmNoticeCallable(const Model::CreateAlarmNoticeRequest& request);
 
                 /**
+                 *本接口用于创建异步上下文任务
+                 * @param req CreateAsyncContextTaskRequest
+                 * @return CreateAsyncContextTaskOutcome
+                 */
+                CreateAsyncContextTaskOutcome CreateAsyncContextTask(const Model::CreateAsyncContextTaskRequest &request);
+                void CreateAsyncContextTaskAsync(const Model::CreateAsyncContextTaskRequest& request, const CreateAsyncContextTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAsyncContextTaskOutcomeCallable CreateAsyncContextTaskCallable(const Model::CreateAsyncContextTaskRequest& request);
+
+                /**
+                 *本接口用于创建异步检索任务
+                 * @param req CreateAsyncSearchTaskRequest
+                 * @return CreateAsyncSearchTaskOutcome
+                 */
+                CreateAsyncSearchTaskOutcome CreateAsyncSearchTask(const Model::CreateAsyncSearchTaskRequest &request);
+                void CreateAsyncSearchTaskAsync(const Model::CreateAsyncSearchTaskRequest& request, const CreateAsyncSearchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAsyncSearchTaskOutcomeCallable CreateAsyncSearchTaskCallable(const Model::CreateAsyncSearchTaskRequest& request);
+
+                /**
                  *创建采集规则配置
                  * @param req CreateConfigRequest
                  * @return CreateConfigOutcome
@@ -392,6 +450,24 @@ namespace TencentCloud
                 DeleteAlarmNoticeOutcome DeleteAlarmNotice(const Model::DeleteAlarmNoticeRequest &request);
                 void DeleteAlarmNoticeAsync(const Model::DeleteAlarmNoticeRequest& request, const DeleteAlarmNoticeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAlarmNoticeOutcomeCallable DeleteAlarmNoticeCallable(const Model::DeleteAlarmNoticeRequest& request);
+
+                /**
+                 *本接口用于删除异步上下文任务
+                 * @param req DeleteAsyncContextTaskRequest
+                 * @return DeleteAsyncContextTaskOutcome
+                 */
+                DeleteAsyncContextTaskOutcome DeleteAsyncContextTask(const Model::DeleteAsyncContextTaskRequest &request);
+                void DeleteAsyncContextTaskAsync(const Model::DeleteAsyncContextTaskRequest& request, const DeleteAsyncContextTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAsyncContextTaskOutcomeCallable DeleteAsyncContextTaskCallable(const Model::DeleteAsyncContextTaskRequest& request);
+
+                /**
+                 *本接口用于删除异步检索任务
+                 * @param req DeleteAsyncSearchTaskRequest
+                 * @return DeleteAsyncSearchTaskOutcome
+                 */
+                DeleteAsyncSearchTaskOutcome DeleteAsyncSearchTask(const Model::DeleteAsyncSearchTaskRequest &request);
+                void DeleteAsyncSearchTaskAsync(const Model::DeleteAsyncSearchTaskRequest& request, const DeleteAsyncSearchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAsyncSearchTaskOutcomeCallable DeleteAsyncSearchTaskCallable(const Model::DeleteAsyncSearchTaskRequest& request);
 
                 /**
                  *删除采集规则配置
@@ -482,6 +558,42 @@ namespace TencentCloud
                 DescribeAlarmsOutcome DescribeAlarms(const Model::DescribeAlarmsRequest &request);
                 void DescribeAlarmsAsync(const Model::DescribeAlarmsRequest& request, const DescribeAlarmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAlarmsOutcomeCallable DescribeAlarmsCallable(const Model::DescribeAlarmsRequest& request);
+
+                /**
+                 *本接口用户获取异步上下文任务的结果
+                 * @param req DescribeAsyncContextResultRequest
+                 * @return DescribeAsyncContextResultOutcome
+                 */
+                DescribeAsyncContextResultOutcome DescribeAsyncContextResult(const Model::DescribeAsyncContextResultRequest &request);
+                void DescribeAsyncContextResultAsync(const Model::DescribeAsyncContextResultRequest& request, const DescribeAsyncContextResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAsyncContextResultOutcomeCallable DescribeAsyncContextResultCallable(const Model::DescribeAsyncContextResultRequest& request);
+
+                /**
+                 *本接口用于获取异步上下文任务列表
+                 * @param req DescribeAsyncContextTasksRequest
+                 * @return DescribeAsyncContextTasksOutcome
+                 */
+                DescribeAsyncContextTasksOutcome DescribeAsyncContextTasks(const Model::DescribeAsyncContextTasksRequest &request);
+                void DescribeAsyncContextTasksAsync(const Model::DescribeAsyncContextTasksRequest& request, const DescribeAsyncContextTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAsyncContextTasksOutcomeCallable DescribeAsyncContextTasksCallable(const Model::DescribeAsyncContextTasksRequest& request);
+
+                /**
+                 *本接口用户获取异步检索任务的结果
+                 * @param req DescribeAsyncSearchResultRequest
+                 * @return DescribeAsyncSearchResultOutcome
+                 */
+                DescribeAsyncSearchResultOutcome DescribeAsyncSearchResult(const Model::DescribeAsyncSearchResultRequest &request);
+                void DescribeAsyncSearchResultAsync(const Model::DescribeAsyncSearchResultRequest& request, const DescribeAsyncSearchResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAsyncSearchResultOutcomeCallable DescribeAsyncSearchResultCallable(const Model::DescribeAsyncSearchResultRequest& request);
+
+                /**
+                 *本接口用户获取异步检索任务列表
+                 * @param req DescribeAsyncSearchTasksRequest
+                 * @return DescribeAsyncSearchTasksOutcome
+                 */
+                DescribeAsyncSearchTasksOutcome DescribeAsyncSearchTasks(const Model::DescribeAsyncSearchTasksRequest &request);
+                void DescribeAsyncSearchTasksAsync(const Model::DescribeAsyncSearchTasksRequest& request, const DescribeAsyncSearchTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAsyncSearchTasksOutcomeCallable DescribeAsyncSearchTasksCallable(const Model::DescribeAsyncSearchTasksRequest& request);
 
                 /**
                  *获取采集规则配置所绑定的机器组

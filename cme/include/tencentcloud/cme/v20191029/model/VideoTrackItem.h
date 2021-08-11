@@ -85,14 +85,50 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取注：当 SourceType 为 EXTERNAL 时，目前仅支持外部 URL 的媒体直接导入项目中。当外部 URL Scheme 为 https 时，Definiton 为 1000000，MediaKey 为 URL 去掉<code> 'https://' </code>；当外部 URL Scheme 为 http 时，Definiton 为 1000001，MediaKey 为 URL 去掉<code> 'http://'</code>。
-                     * @return SourceMedia 注：当 SourceType 为 EXTERNAL 时，目前仅支持外部 URL 的媒体直接导入项目中。当外部 URL Scheme 为 https 时，Definiton 为 1000000，MediaKey 为 URL 去掉<code> 'https://' </code>；当外部 URL Scheme 为 http 时，Definiton 为 1000001，MediaKey 为 URL 去掉<code> 'http://'</code>。
+                     * 获取视频媒体，可取值为：
+<ul>
+<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>
+<li>当 SourceType 为 CME 时，参数填云剪媒体 Id；</li>
+<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp4`)，参数填写规则请参见注意事项。</li>
+</ul>
+
+注意：
+<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp4`)，参数为：`1000000:www.example.com/a.mp4`。</li>
+<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp4`)，参数为：`1000001:www.example.com/b.mp4`。</li>
+                     * @return SourceMedia 视频媒体，可取值为：
+<ul>
+<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>
+<li>当 SourceType 为 CME 时，参数填云剪媒体 Id；</li>
+<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp4`)，参数填写规则请参见注意事项。</li>
+</ul>
+
+注意：
+<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp4`)，参数为：`1000000:www.example.com/a.mp4`。</li>
+<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp4`)，参数为：`1000001:www.example.com/b.mp4`。</li>
                      */
                     std::string GetSourceMedia() const;
 
                     /**
-                     * 设置注：当 SourceType 为 EXTERNAL 时，目前仅支持外部 URL 的媒体直接导入项目中。当外部 URL Scheme 为 https 时，Definiton 为 1000000，MediaKey 为 URL 去掉<code> 'https://' </code>；当外部 URL Scheme 为 http 时，Definiton 为 1000001，MediaKey 为 URL 去掉<code> 'http://'</code>。
-                     * @param SourceMedia 注：当 SourceType 为 EXTERNAL 时，目前仅支持外部 URL 的媒体直接导入项目中。当外部 URL Scheme 为 https 时，Definiton 为 1000000，MediaKey 为 URL 去掉<code> 'https://' </code>；当外部 URL Scheme 为 http 时，Definiton 为 1000001，MediaKey 为 URL 去掉<code> 'http://'</code>。
+                     * 设置视频媒体，可取值为：
+<ul>
+<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>
+<li>当 SourceType 为 CME 时，参数填云剪媒体 Id；</li>
+<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp4`)，参数填写规则请参见注意事项。</li>
+</ul>
+
+注意：
+<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp4`)，参数为：`1000000:www.example.com/a.mp4`。</li>
+<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp4`)，参数为：`1000001:www.example.com/b.mp4`。</li>
+                     * @param SourceMedia 视频媒体，可取值为：
+<ul>
+<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>
+<li>当 SourceType 为 CME 时，参数填云剪媒体 Id；</li>
+<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp4`)，参数填写规则请参见注意事项。</li>
+</ul>
+
+注意：
+<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp4`)，参数为：`1000000:www.example.com/a.mp4`。</li>
+<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp4`)，参数为：`1000001:www.example.com/b.mp4`。</li>
                      */
                     void SetSourceMedia(const std::string& _sourceMedia);
 
@@ -314,7 +350,16 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 注：当 SourceType 为 EXTERNAL 时，目前仅支持外部 URL 的媒体直接导入项目中。当外部 URL Scheme 为 https 时，Definiton 为 1000000，MediaKey 为 URL 去掉<code> 'https://' </code>；当外部 URL Scheme 为 http 时，Definiton 为 1000001，MediaKey 为 URL 去掉<code> 'http://'</code>。
+                     * 视频媒体，可取值为：
+<ul>
+<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>
+<li>当 SourceType 为 CME 时，参数填云剪媒体 Id；</li>
+<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp4`)，参数填写规则请参见注意事项。</li>
+</ul>
+
+注意：
+<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp4`)，参数为：`1000000:www.example.com/a.mp4`。</li>
+<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp4`)，参数为：`1000001:www.example.com/b.mp4`。</li>
                      */
                     std::string m_sourceMedia;
                     bool m_sourceMediaHasBeenSet;

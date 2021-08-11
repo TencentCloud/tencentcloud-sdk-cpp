@@ -35,6 +35,8 @@
 #include <tencentcloud/faceid/v20180301/model/CheckEidTokenStatusResponse.h>
 #include <tencentcloud/faceid/v20180301/model/CheckIdCardInformationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/CheckIdCardInformationResponse.h>
+#include <tencentcloud/faceid/v20180301/model/CheckIdNameDateRequest.h>
+#include <tencentcloud/faceid/v20180301/model/CheckIdNameDateResponse.h>
 #include <tencentcloud/faceid/v20180301/model/CheckPhoneAndNameRequest.h>
 #include <tencentcloud/faceid/v20180301/model/CheckPhoneAndNameResponse.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthRequest.h>
@@ -113,6 +115,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::CheckIdCardInformationResponse> CheckIdCardInformationOutcome;
                 typedef std::future<CheckIdCardInformationOutcome> CheckIdCardInformationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::CheckIdCardInformationRequest&, CheckIdCardInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckIdCardInformationAsyncHandler;
+                typedef Outcome<Error, Model::CheckIdNameDateResponse> CheckIdNameDateOutcome;
+                typedef std::future<CheckIdNameDateOutcome> CheckIdNameDateOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::CheckIdNameDateRequest&, CheckIdNameDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckIdNameDateAsyncHandler;
                 typedef Outcome<Error, Model::CheckPhoneAndNameResponse> CheckPhoneAndNameOutcome;
                 typedef std::future<CheckPhoneAndNameOutcome> CheckPhoneAndNameOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::CheckPhoneAndNameRequest&, CheckPhoneAndNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckPhoneAndNameAsyncHandler;
@@ -238,6 +243,15 @@ namespace TencentCloud
                 CheckIdCardInformationOutcome CheckIdCardInformation(const Model::CheckIdCardInformationRequest &request);
                 void CheckIdCardInformationAsync(const Model::CheckIdCardInformationRequest& request, const CheckIdCardInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckIdCardInformationOutcomeCallable CheckIdCardInformationCallable(const Model::CheckIdCardInformationRequest& request);
+
+                /**
+                 *本接口用于校验姓名、身份证号、身份证有效期的真实性和一致性。
+                 * @param req CheckIdNameDateRequest
+                 * @return CheckIdNameDateOutcome
+                 */
+                CheckIdNameDateOutcome CheckIdNameDate(const Model::CheckIdNameDateRequest &request);
+                void CheckIdNameDateAsync(const Model::CheckIdNameDateRequest& request, const CheckIdNameDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckIdNameDateOutcomeCallable CheckIdNameDateCallable(const Model::CheckIdNameDateRequest& request);
 
                 /**
                  *手机号二要素核验接口用于校验手机号和姓名的真实性和一致性，支持的手机号段详情请查阅<a href="https://cloud.tencent.com/document/product/1007/46063">运营商类</a>文档。

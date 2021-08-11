@@ -27,7 +27,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/CheckBankCardInformationRequest.h
   include/tencentcloud/faceid/v20180301/model/MobileNetworkTimeVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/GetLiveCodeRequest.h
-  include/tencentcloud/faceid/v20180301/model/GetEidResultResponse.h
+  include/tencentcloud/faceid/v20180301/model/CheckIdNameDateResponse.h
   include/tencentcloud/faceid/v20180301/model/IdCardVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/BankCardVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/CheckBankCardInformationResponse.h
@@ -45,20 +45,22 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/BankCard4EVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/MobileStatusRequest.h
   include/tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenRequest.h
+  include/tencentcloud/faceid/v20180301/model/CheckIdNameDateRequest.h
   include/tencentcloud/faceid/v20180301/model/BankCard2EVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/LivenessRecognitionRequest.h
-  include/tencentcloud/faceid/v20180301/model/CheckIdCardInformationRequest.h
+  include/tencentcloud/faceid/v20180301/model/EidInfo.h
   include/tencentcloud/faceid/v20180301/model/GetFaceIdTokenResponse.h
   include/tencentcloud/faceid/v20180301/model/CheckEidTokenStatusResponse.h
   include/tencentcloud/faceid/v20180301/model/MobileStatusResponse.h
   include/tencentcloud/faceid/v20180301/model/IdCardOCRVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenResponse.h
   include/tencentcloud/faceid/v20180301/model/LivenessResponse.h
-  include/tencentcloud/faceid/v20180301/model/EidInfo.h
+  include/tencentcloud/faceid/v20180301/model/CheckIdCardInformationRequest.h
   include/tencentcloud/faceid/v20180301/model/DetectInfoText.h
   include/tencentcloud/faceid/v20180301/model/DetectAuthRequest.h
   include/tencentcloud/faceid/v20180301/model/MinorsVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/CheckEidTokenStatusRequest.h
+  include/tencentcloud/faceid/v20180301/model/GetEidResultResponse.h
   include/tencentcloud/faceid/v20180301/model/GetRealNameAuthResultRequest.h
   include/tencentcloud/faceid/v20180301/model/ImageRecognitionRequest.h
   include/tencentcloud/faceid/v20180301/model/BankCard4EVerificationRequest.h
@@ -97,7 +99,7 @@ set(faceid_src
   src/v20180301/model/CheckBankCardInformationRequest.cpp
   src/v20180301/model/MobileNetworkTimeVerificationResponse.cpp
   src/v20180301/model/GetLiveCodeRequest.cpp
-  src/v20180301/model/GetEidResultResponse.cpp
+  src/v20180301/model/CheckIdNameDateResponse.cpp
   src/v20180301/model/IdCardVerificationRequest.cpp
   src/v20180301/model/BankCardVerificationRequest.cpp
   src/v20180301/model/CheckBankCardInformationResponse.cpp
@@ -115,20 +117,22 @@ set(faceid_src
   src/v20180301/model/BankCard4EVerificationResponse.cpp
   src/v20180301/model/MobileStatusRequest.cpp
   src/v20180301/model/GetRealNameAuthTokenRequest.cpp
+  src/v20180301/model/CheckIdNameDateRequest.cpp
   src/v20180301/model/BankCard2EVerificationRequest.cpp
   src/v20180301/model/LivenessRecognitionRequest.cpp
-  src/v20180301/model/CheckIdCardInformationRequest.cpp
+  src/v20180301/model/EidInfo.cpp
   src/v20180301/model/GetFaceIdTokenResponse.cpp
   src/v20180301/model/CheckEidTokenStatusResponse.cpp
   src/v20180301/model/MobileStatusResponse.cpp
   src/v20180301/model/IdCardOCRVerificationResponse.cpp
   src/v20180301/model/GetRealNameAuthTokenResponse.cpp
   src/v20180301/model/LivenessResponse.cpp
-  src/v20180301/model/EidInfo.cpp
+  src/v20180301/model/CheckIdCardInformationRequest.cpp
   src/v20180301/model/DetectInfoText.cpp
   src/v20180301/model/DetectAuthRequest.cpp
   src/v20180301/model/MinorsVerificationResponse.cpp
   src/v20180301/model/CheckEidTokenStatusRequest.cpp
+  src/v20180301/model/GetEidResultResponse.cpp
   src/v20180301/model/GetRealNameAuthResultRequest.cpp
   src/v20180301/model/ImageRecognitionRequest.cpp
   src/v20180301/model/BankCard4EVerificationRequest.cpp

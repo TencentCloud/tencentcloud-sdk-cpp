@@ -258,6 +258,24 @@ namespace TencentCloud
                      */
                     bool CpuHasBeenSet() const;
 
+                    /**
+                     * 获取是否急速变配。0-普通升级，1-急速变配。选择急速变配会根据资源状况校验是否可以进行急速变配，满足条件则进行急速变配，不满足条件会返回报错信息。
+                     * @return FastUpgrade 是否急速变配。0-普通升级，1-急速变配。选择急速变配会根据资源状况校验是否可以进行急速变配，满足条件则进行急速变配，不满足条件会返回报错信息。
+                     */
+                    int64_t GetFastUpgrade() const;
+
+                    /**
+                     * 设置是否急速变配。0-普通升级，1-急速变配。选择急速变配会根据资源状况校验是否可以进行急速变配，满足条件则进行急速变配，不满足条件会返回报错信息。
+                     * @param FastUpgrade 是否急速变配。0-普通升级，1-急速变配。选择急速变配会根据资源状况校验是否可以进行急速变配，满足条件则进行急速变配，不满足条件会返回报错信息。
+                     */
+                    void SetFastUpgrade(const int64_t& _fastUpgrade);
+
+                    /**
+                     * 判断参数 FastUpgrade 是否已赋值
+                     * @return FastUpgrade 是否已赋值
+                     */
+                    bool FastUpgradeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +349,12 @@ namespace TencentCloud
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
+
+                    /**
+                     * 是否急速变配。0-普通升级，1-急速变配。选择急速变配会根据资源状况校验是否可以进行急速变配，满足条件则进行急速变配，不满足条件会返回报错信息。
+                     */
+                    int64_t m_fastUpgrade;
+                    bool m_fastUpgradeHasBeenSet;
 
                 };
             }

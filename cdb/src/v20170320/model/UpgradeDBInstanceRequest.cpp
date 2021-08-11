@@ -34,7 +34,8 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_backupZoneHasBeenSet(false),
     m_instanceRoleHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
-    m_cpuHasBeenSet(false)
+    m_cpuHasBeenSet(false),
+    m_fastUpgradeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_fastUpgradeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FastUpgrade";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fastUpgrade, allocator);
     }
 
 
@@ -339,6 +348,22 @@ void UpgradeDBInstanceRequest::SetCpu(const int64_t& _cpu)
 bool UpgradeDBInstanceRequest::CpuHasBeenSet() const
 {
     return m_cpuHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceRequest::GetFastUpgrade() const
+{
+    return m_fastUpgrade;
+}
+
+void UpgradeDBInstanceRequest::SetFastUpgrade(const int64_t& _fastUpgrade)
+{
+    m_fastUpgrade = _fastUpgrade;
+    m_fastUpgradeHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::FastUpgradeHasBeenSet() const
+{
+    return m_fastUpgradeHasBeenSet;
 }
 
 

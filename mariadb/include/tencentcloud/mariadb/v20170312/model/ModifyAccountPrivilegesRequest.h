@@ -130,17 +130,17 @@ namespace TencentCloud
                     bool DatabasePrivilegesHasBeenSet() const;
 
                     /**
-                     * 获取数据库中表的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+                     * 获取数据库中表的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
-                     * @return TablePrivileges 数据库中表的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+                     * @return TablePrivileges 数据库中表的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
                      */
                     std::vector<TablePrivilege> GetTablePrivileges() const;
 
                     /**
-                     * 设置数据库中表的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+                     * 设置数据库中表的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
-                     * @param TablePrivileges 数据库中表的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+                     * @param TablePrivileges 数据库中表的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
                      */
                     void SetTablePrivileges(const std::vector<TablePrivilege>& _tablePrivileges);
@@ -174,17 +174,17 @@ namespace TencentCloud
                     bool ColumnPrivilegesHasBeenSet() const;
 
                     /**
-                     * 获取数据库视图的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+                     * 获取数据库视图的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
-                     * @return ViewPrivileges 数据库视图的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+                     * @return ViewPrivileges 数据库视图的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
                      */
                     std::vector<ViewPrivileges> GetViewPrivileges() const;
 
                     /**
-                     * 设置数据库视图的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+                     * 设置数据库视图的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
-                     * @param ViewPrivileges 数据库视图的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+                     * @param ViewPrivileges 数据库视图的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
                      */
                     void SetViewPrivileges(const std::vector<ViewPrivileges>& _viewPrivileges);
@@ -196,17 +196,17 @@ namespace TencentCloud
                     bool ViewPrivilegesHasBeenSet() const;
 
                     /**
-                     * 获取数据库函数的权限。Privileges 权限的可选值为：权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
+                     * 获取数据库函数的权限。Privileges 权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
-                     * @return FunctionPrivileges 数据库函数的权限。Privileges 权限的可选值为：权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
+                     * @return FunctionPrivileges 数据库函数的权限。Privileges 权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
                      */
                     std::vector<FunctionPrivilege> GetFunctionPrivileges() const;
 
                     /**
-                     * 设置数据库函数的权限。Privileges 权限的可选值为：权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
+                     * 设置数据库函数的权限。Privileges 权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
-                     * @param FunctionPrivileges 数据库函数的权限。Privileges 权限的可选值为：权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
+                     * @param FunctionPrivileges 数据库函数的权限。Privileges 权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
                      */
                     void SetFunctionPrivileges(const std::vector<FunctionPrivilege>& _functionPrivileges);
@@ -218,17 +218,17 @@ namespace TencentCloud
                     bool FunctionPrivilegesHasBeenSet() const;
 
                     /**
-                     * 获取数据库存储过程的权限。Privileges 权限的可选值为：权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
+                     * 获取数据库存储过程的权限。Privileges 权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
-                     * @return ProcedurePrivileges 数据库存储过程的权限。Privileges 权限的可选值为：权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
+                     * @return ProcedurePrivileges 数据库存储过程的权限。Privileges 权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
                      */
                     std::vector<ProcedurePrivilege> GetProcedurePrivileges() const;
 
                     /**
-                     * 设置数据库存储过程的权限。Privileges 权限的可选值为：权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
+                     * 设置数据库存储过程的权限。Privileges 权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
-                     * @param ProcedurePrivileges 数据库存储过程的权限。Privileges 权限的可选值为：权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
+                     * @param ProcedurePrivileges 数据库存储过程的权限。Privileges 权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
                      */
                     void SetProcedurePrivileges(const std::vector<ProcedurePrivilege>& _procedurePrivileges);
@@ -268,7 +268,7 @@ namespace TencentCloud
                     bool m_databasePrivilegesHasBeenSet;
 
                     /**
-                     * 数据库中表的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+                     * 数据库中表的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
                      */
                     std::vector<TablePrivilege> m_tablePrivileges;
@@ -282,21 +282,21 @@ namespace TencentCloud
                     bool m_columnPrivilegesHasBeenSet;
 
                     /**
-                     * 数据库视图的权限。Privileges 权限的可选值为：权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
+                     * 数据库视图的权限。Privileges 权限的可选值为："SELECT","INSERT","UPDATE","DELETE","CREATE", "DROP","REFERENCES","INDEX","ALTER","CREATE VIEW","SHOW VIEW", "TRIGGER"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
                      */
                     std::vector<ViewPrivileges> m_viewPrivileges;
                     bool m_viewPrivilegesHasBeenSet;
 
                     /**
-                     * 数据库函数的权限。Privileges 权限的可选值为：权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
+                     * 数据库函数的权限。Privileges 权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
                      */
                     std::vector<FunctionPrivilege> m_functionPrivileges;
                     bool m_functionPrivilegesHasBeenSet;
 
                     /**
-                     * 数据库存储过程的权限。Privileges 权限的可选值为：权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
+                     * 数据库存储过程的权限。Privileges 权限的可选值为："ALTER ROUTINE"，"EXECUTE"。
 注意，不传该参数表示保留现有权限，如需清除，请在复杂类型Privileges字段传空数组。
                      */
                     std::vector<ProcedurePrivilege> m_procedurePrivileges;

@@ -275,17 +275,17 @@ namespace TencentCloud
                     bool StaticPackRelationHasBeenSet() const;
 
                     /**
-                     * 获取区分高防IP海外线路
+                     * 获取区分高防IP境外线路
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ZoneId 区分高防IP海外线路
+                     * @return ZoneId 区分高防IP境外线路
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetZoneId() const;
 
                     /**
-                     * 设置区分高防IP海外线路
+                     * 设置区分高防IP境外线路
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ZoneId 区分高防IP海外线路
+                     * @param ZoneId 区分高防IP境外线路
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetZoneId(const uint64_t& _zoneId);
@@ -414,6 +414,28 @@ namespace TencentCloud
                      */
                     bool EipAddressInfoHasBeenSet() const;
 
+                    /**
+                     * 获取建议客户接入的域名，客户可使用域名接入。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Domain 建议客户接入的域名，客户可使用域名接入。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置建议客户接入的域名，客户可使用域名接入。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Domain 建议客户接入的域名，客户可使用域名接入。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     */
+                    bool DomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -487,7 +509,7 @@ namespace TencentCloud
                     bool m_staticPackRelationHasBeenSet;
 
                     /**
-                     * 区分高防IP海外线路
+                     * 区分高防IP境外线路
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_zoneId;
@@ -529,6 +551,13 @@ namespace TencentCloud
                      */
                     EipAddressRelation m_eipAddressInfo;
                     bool m_eipAddressInfoHasBeenSet;
+
+                    /**
+                     * 建议客户接入的域名，客户可使用域名接入。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }

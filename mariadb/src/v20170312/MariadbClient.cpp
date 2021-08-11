@@ -2104,6 +2104,49 @@ MariadbClient::ModifyLogFileRetentionPeriodOutcomeCallable MariadbClient::Modify
     return task->get_future();
 }
 
+MariadbClient::ModifyRealServerAccessStrategyOutcome MariadbClient::ModifyRealServerAccessStrategy(const ModifyRealServerAccessStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRealServerAccessStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRealServerAccessStrategyResponse rsp = ModifyRealServerAccessStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRealServerAccessStrategyOutcome(rsp);
+        else
+            return ModifyRealServerAccessStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRealServerAccessStrategyOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::ModifyRealServerAccessStrategyAsync(const ModifyRealServerAccessStrategyRequest& request, const ModifyRealServerAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRealServerAccessStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::ModifyRealServerAccessStrategyOutcomeCallable MariadbClient::ModifyRealServerAccessStrategyCallable(const ModifyRealServerAccessStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRealServerAccessStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRealServerAccessStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::OpenDBExtranetAccessOutcome MariadbClient::OpenDBExtranetAccess(const OpenDBExtranetAccessRequest &request)
 {
     auto outcome = MakeRequest(request, "OpenDBExtranetAccess");

@@ -119,6 +119,8 @@
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBParametersResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyRealServerAccessStrategyRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyRealServerAccessStrategyResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/RenewDBInstanceRequest.h>
@@ -287,6 +289,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ModifyLogFileRetentionPeriodResponse> ModifyLogFileRetentionPeriodOutcome;
                 typedef std::future<ModifyLogFileRetentionPeriodOutcome> ModifyLogFileRetentionPeriodOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyLogFileRetentionPeriodRequest&, ModifyLogFileRetentionPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogFileRetentionPeriodAsyncHandler;
+                typedef Outcome<Error, Model::ModifyRealServerAccessStrategyResponse> ModifyRealServerAccessStrategyOutcome;
+                typedef std::future<ModifyRealServerAccessStrategyOutcome> ModifyRealServerAccessStrategyOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::ModifyRealServerAccessStrategyRequest&, ModifyRealServerAccessStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRealServerAccessStrategyAsyncHandler;
                 typedef Outcome<Error, Model::OpenDBExtranetAccessResponse> OpenDBExtranetAccessOutcome;
                 typedef std::future<OpenDBExtranetAccessOutcome> OpenDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::OpenDBExtranetAccessRequest&, OpenDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenDBExtranetAccessAsyncHandler;
@@ -746,6 +751,20 @@ namespace TencentCloud
                 ModifyLogFileRetentionPeriodOutcome ModifyLogFileRetentionPeriod(const Model::ModifyLogFileRetentionPeriodRequest &request);
                 void ModifyLogFileRetentionPeriodAsync(const Model::ModifyLogFileRetentionPeriodRequest& request, const ModifyLogFileRetentionPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLogFileRetentionPeriodOutcomeCallable ModifyLogFileRetentionPeriodCallable(const Model::ModifyLogFileRetentionPeriodRequest& request);
+
+                /**
+                 *本接口(ModifyRealServerAccessStrategy)用于修改云数据库的VPCGW到RS的访问策略。
+
+**注意**
+- 修改策略后只对新建立的连接生效，老连接不受影响
+- 就近访问只针对实例是跨可用区部署有用，单可用区部署实例就近与否并无作用
+- DB每个Node对应一个proxy，如果开启就近访问，将会把连接集中到对应可用区的proxy上，可能造成热点问题，这种情况下如果是线上业务，请务必根据自己的业务请求量测试符合预期后再进行就近策略变更
+                 * @param req ModifyRealServerAccessStrategyRequest
+                 * @return ModifyRealServerAccessStrategyOutcome
+                 */
+                ModifyRealServerAccessStrategyOutcome ModifyRealServerAccessStrategy(const Model::ModifyRealServerAccessStrategyRequest &request);
+                void ModifyRealServerAccessStrategyAsync(const Model::ModifyRealServerAccessStrategyRequest& request, const ModifyRealServerAccessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRealServerAccessStrategyOutcomeCallable ModifyRealServerAccessStrategyCallable(const Model::ModifyRealServerAccessStrategyRequest& request);
 
                 /**
                  *本接口（OpenDBExtranetAccess）用于开通云数据库实例的外网访问。开通外网访问后，您可通过外网域名和端口访问实例，可使用查询实例列表接口获取外网域名和端口信息。

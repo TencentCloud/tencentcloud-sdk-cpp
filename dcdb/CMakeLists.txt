@@ -28,6 +28,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDBParametersRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeAccountsRequest.h
   include/tencentcloud/dcdb/v20180411/model/SpecConfig.h
+  include/tencentcloud/dcdb/v20180411/model/ModifyRealServerAccessStrategyResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBPriceResponse.h
   include/tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/FlushBinlogResponse.h
@@ -65,6 +66,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ParamConstraint.h
   include/tencentcloud/dcdb/v20180411/model/ResetAccountPasswordResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBSaleInfoRequest.h
+  include/tencentcloud/dcdb/v20180411/model/ModifyRealServerAccessStrategyRequest.h
   include/tencentcloud/dcdb/v20180411/model/ExpandShardConfig.h
   include/tencentcloud/dcdb/v20180411/model/RenewDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/ShardZoneChooseInfo.h
@@ -161,6 +163,7 @@ set(dcdb_src
   src/v20180411/model/DescribeDBParametersRequest.cpp
   src/v20180411/model/DescribeAccountsRequest.cpp
   src/v20180411/model/SpecConfig.cpp
+  src/v20180411/model/ModifyRealServerAccessStrategyResponse.cpp
   src/v20180411/model/DescribeDCDBPriceResponse.cpp
   src/v20180411/model/AssociateSecurityGroupsRequest.cpp
   src/v20180411/model/FlushBinlogResponse.cpp
@@ -198,6 +201,7 @@ set(dcdb_src
   src/v20180411/model/ParamConstraint.cpp
   src/v20180411/model/ResetAccountPasswordResponse.cpp
   src/v20180411/model/DescribeDCDBSaleInfoRequest.cpp
+  src/v20180411/model/ModifyRealServerAccessStrategyRequest.cpp
   src/v20180411/model/ExpandShardConfig.cpp
   src/v20180411/model/RenewDCDBInstanceRequest.cpp
   src/v20180411/model/ShardZoneChooseInfo.cpp
