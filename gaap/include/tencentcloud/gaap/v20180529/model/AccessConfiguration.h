@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool ConcurrentHasBeenSet() const;
 
+                    /**
+                     * 获取网络类型，可取值：normal、cn2，默认值为normal
+                     * @return NetworkType 网络类型，可取值：normal、cn2，默认值为normal
+                     */
+                    std::string GetNetworkType() const;
+
+                    /**
+                     * 设置网络类型，可取值：normal、cn2，默认值为normal
+                     * @param NetworkType 网络类型，可取值：normal、cn2，默认值为normal
+                     */
+                    void SetNetworkType(const std::string& _networkType);
+
+                    /**
+                     * 判断参数 NetworkType 是否已赋值
+                     * @return NetworkType 是否已赋值
+                     */
+                    bool NetworkTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     uint64_t m_concurrent;
                     bool m_concurrentHasBeenSet;
+
+                    /**
+                     * 网络类型，可取值：normal、cn2，默认值为normal
+                     */
+                    std::string m_networkType;
+                    bool m_networkTypeHasBeenSet;
 
                 };
             }

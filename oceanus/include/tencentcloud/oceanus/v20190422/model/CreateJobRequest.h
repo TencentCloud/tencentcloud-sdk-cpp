@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取作业名所属文件夹ID，根目录为"root"
+                     * @return FolderId 作业名所属文件夹ID，根目录为"root"
+                     */
+                    std::string GetFolderId() const;
+
+                    /**
+                     * 设置作业名所属文件夹ID，根目录为"root"
+                     * @param FolderId 作业名所属文件夹ID，根目录为"root"
+                     */
+                    void SetFolderId(const std::string& _folderId);
+
+                    /**
+                     * 判断参数 FolderId 是否已赋值
+                     * @return FolderId 是否已赋值
+                     */
+                    bool FolderIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 作业名所属文件夹ID，根目录为"root"
+                     */
+                    std::string m_folderId;
+                    bool m_folderIdHasBeenSet;
 
                 };
             }

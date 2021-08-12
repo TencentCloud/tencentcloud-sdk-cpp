@@ -587,17 +587,17 @@ UNKNOWN表示未知状态。
                     bool ModifyConfigTimeHasBeenSet() const;
 
                     /**
-                     * 获取通道类型，104表示新的银牌质量通道类型
+                     * 获取通道类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProxyType 通道类型，104表示新的银牌质量通道类型
+                     * @return ProxyType 通道类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetProxyType() const;
 
                     /**
-                     * 设置通道类型，104表示新的银牌质量通道类型
+                     * 设置通道类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyType 通道类型，104表示新的银牌质量通道类型
+                     * @param ProxyType 通道类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProxyType(const uint64_t& _proxyType);
@@ -651,6 +651,28 @@ UNKNOWN表示未知状态。
                      * @return IPAddressVersion 是否已赋值
                      */
                     bool IPAddressVersionHasBeenSet() const;
+
+                    /**
+                     * 获取网络类型：normal、cn2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkType 网络类型：normal、cn2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNetworkType() const;
+
+                    /**
+                     * 设置网络类型：normal、cn2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NetworkType 网络类型：normal、cn2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNetworkType(const std::string& _networkType);
+
+                    /**
+                     * 判断参数 NetworkType 是否已赋值
+                     * @return NetworkType 是否已赋值
+                     */
+                    bool NetworkTypeHasBeenSet() const;
 
                 private:
 
@@ -827,7 +849,7 @@ UNKNOWN表示未知状态。
                     bool m_modifyConfigTimeHasBeenSet;
 
                     /**
-                     * 通道类型，104表示新的银牌质量通道类型
+                     * 通道类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_proxyType;
@@ -846,6 +868,13 @@ UNKNOWN表示未知状态。
                      */
                     std::string m_iPAddressVersion;
                     bool m_iPAddressVersionHasBeenSet;
+
+                    /**
+                     * 网络类型：normal、cn2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_networkType;
+                    bool m_networkTypeHasBeenSet;
 
                 };
             }

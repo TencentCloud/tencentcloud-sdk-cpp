@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FunctionNameHasBeenSet() const;
 
                     /**
-                     * 获取触发函数的版本号或别名
-                     * @return Qualifier 触发函数的版本号或别名
+                     * 获取触发函数的版本号或别名，默认值为$DEFAULT
+                     * @return Qualifier 触发函数的版本号或别名，默认值为$DEFAULT
                      */
                     std::string GetQualifier() const;
 
                     /**
-                     * 设置触发函数的版本号或别名
-                     * @param Qualifier 触发函数的版本号或别名
+                     * 设置触发函数的版本号或别名，默认值为$DEFAULT
+                     * @param Qualifier 触发函数的版本号或别名，默认值为$DEFAULT
                      */
                     void SetQualifier(const std::string& _qualifier);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_functionNameHasBeenSet;
 
                     /**
-                     * 触发函数的版本号或别名
+                     * 触发函数的版本号或别名，默认值为$DEFAULT
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;

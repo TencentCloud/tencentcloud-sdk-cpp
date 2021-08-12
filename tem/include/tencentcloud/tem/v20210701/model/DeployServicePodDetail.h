@@ -156,6 +156,28 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取webshell地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Webshell webshell地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWebshell() const;
+
+                    /**
+                     * 设置webshell地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Webshell webshell地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWebshell(const std::string& _webshell);
+
+                    /**
+                     * 判断参数 Webshell 是否已赋值
+                     * @return Webshell 是否已赋值
+                     */
+                    bool WebshellHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +214,13 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * webshell地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_webshell;
+                    bool m_webshellHasBeenSet;
 
                 };
             }

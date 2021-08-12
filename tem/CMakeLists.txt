@@ -20,18 +20,71 @@ set(tem_public_header
   )
 
 set(tem_public_header_model
-  include/tencentcloud/tem/v20210701/model/RunVersionPod.h
-  include/tencentcloud/tem/v20210701/model/ResumeDeployApplicationRequest.h
+  include/tencentcloud/tem/v20210701/model/MountedSettingConf.h
+  include/tencentcloud/tem/v20210701/model/RestartApplicationPodResponse.h
+  include/tencentcloud/tem/v20210701/model/CreateResourceRequest.h
   include/tencentcloud/tem/v20210701/model/ResumeDeployApplicationResponse.h
-  include/tencentcloud/tem/v20210701/model/RevertDeployApplicationResponse.h
-  include/tencentcloud/tem/v20210701/model/DeployStrategyConf.h
-  include/tencentcloud/tem/v20210701/model/RevertDeployApplicationRequest.h
+  include/tencentcloud/tem/v20210701/model/HealthCheckConfig.h
   include/tencentcloud/tem/v20210701/model/TemDeployApplicationDetailInfo.h
   include/tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailRequest.h
-  include/tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailResponse.h
+  include/tencentcloud/tem/v20210701/model/EsInfo.h
   include/tencentcloud/tem/v20210701/model/DeployServiceBatchDetail.h
+  include/tencentcloud/tem/v20210701/model/DescribeApplicationPodsResponse.h
+  include/tencentcloud/tem/v20210701/model/DeleteIngressRequest.h
+  include/tencentcloud/tem/v20210701/model/RestartApplicationPodRequest.h
+  include/tencentcloud/tem/v20210701/model/DescribeRelatedIngressesRequest.h
+  include/tencentcloud/tem/v20210701/model/ModifyEnvironmentResponse.h
+  include/tencentcloud/tem/v20210701/model/CosToken.h
+  include/tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlRequest.h
+  include/tencentcloud/tem/v20210701/model/DeployApplicationRequest.h
+  include/tencentcloud/tem/v20210701/model/IngressInfo.h
+  include/tencentcloud/tem/v20210701/model/ModifyIngressResponse.h
+  include/tencentcloud/tem/v20210701/model/DescribeEnvironmentsResponse.h
+  include/tencentcloud/tem/v20210701/model/ModifyIngressRequest.h
+  include/tencentcloud/tem/v20210701/model/DescribeApplicationPodsRequest.h
+  include/tencentcloud/tem/v20210701/model/CreateApplicationRequest.h
+  include/tencentcloud/tem/v20210701/model/DescribeRelatedIngressesResponse.h
+  include/tencentcloud/tem/v20210701/model/DescribeIngressesRequest.h
   include/tencentcloud/tem/v20210701/model/DescribeRunPodPage.h
+  include/tencentcloud/tem/v20210701/model/IngressTls.h
   include/tencentcloud/tem/v20210701/model/DeployServicePodDetail.h
+  include/tencentcloud/tem/v20210701/model/LogOutputConf.h
+  include/tencentcloud/tem/v20210701/model/DescribeIngressesResponse.h
+  include/tencentcloud/tem/v20210701/model/DeleteIngressResponse.h
+  include/tencentcloud/tem/v20210701/model/TemNamespaceInfo.h
+  include/tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlResponse.h
+  include/tencentcloud/tem/v20210701/model/IngressRuleBackend.h
+  include/tencentcloud/tem/v20210701/model/DescribeIngressResponse.h
+  include/tencentcloud/tem/v20210701/model/CreateCosTokenResponse.h
+  include/tencentcloud/tem/v20210701/model/IngressRule.h
+  include/tencentcloud/tem/v20210701/model/CronHorizontalAutoscaler.h
+  include/tencentcloud/tem/v20210701/model/StorageConf.h
+  include/tencentcloud/tem/v20210701/model/RunVersionPod.h
+  include/tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailResponse.h
+  include/tencentcloud/tem/v20210701/model/IngressRuleValue.h
+  include/tencentcloud/tem/v20210701/model/CreateResourceResponse.h
+  include/tencentcloud/tem/v20210701/model/ModifyApplicationInfoRequest.h
+  include/tencentcloud/tem/v20210701/model/ModifyApplicationInfoResponse.h
+  include/tencentcloud/tem/v20210701/model/RevertDeployApplicationRequest.h
+  include/tencentcloud/tem/v20210701/model/IngressRulePath.h
+  include/tencentcloud/tem/v20210701/model/CreateEnvironmentResponse.h
+  include/tencentcloud/tem/v20210701/model/NamespacePage.h
+  include/tencentcloud/tem/v20210701/model/CreateApplicationResponse.h
+  include/tencentcloud/tem/v20210701/model/HorizontalAutoscaler.h
+  include/tencentcloud/tem/v20210701/model/StorageMountConf.h
+  include/tencentcloud/tem/v20210701/model/ModifyEnvironmentRequest.h
+  include/tencentcloud/tem/v20210701/model/PortMapping.h
+  include/tencentcloud/tem/v20210701/model/RevertDeployApplicationResponse.h
+  include/tencentcloud/tem/v20210701/model/DeployStrategyConf.h
+  include/tencentcloud/tem/v20210701/model/DescribeIngressRequest.h
+  include/tencentcloud/tem/v20210701/model/CreateCosTokenRequest.h
+  include/tencentcloud/tem/v20210701/model/DescribeEnvironmentsRequest.h
+  include/tencentcloud/tem/v20210701/model/EksService.h
+  include/tencentcloud/tem/v20210701/model/CronHorizontalAutoscalerSchedule.h
+  include/tencentcloud/tem/v20210701/model/ResumeDeployApplicationRequest.h
+  include/tencentcloud/tem/v20210701/model/DeployApplicationResponse.h
+  include/tencentcloud/tem/v20210701/model/CreateEnvironmentRequest.h
+  include/tencentcloud/tem/v20210701/model/Pair.h
   include/tencentcloud/tem/v20201221/model/MountedSettingConf.h
   include/tencentcloud/tem/v20201221/model/ModifyServiceInfoResponse.h
   include/tencentcloud/tem/v20201221/model/StorageMountConf.h
@@ -92,18 +145,71 @@ set(tem_public_header_model
 set(tem_src
   src/v20210701/TemClient.cpp
   src/v20201221/TemClient.cpp
-  src/v20210701/model/RunVersionPod.cpp
-  src/v20210701/model/ResumeDeployApplicationRequest.cpp
+  src/v20210701/model/MountedSettingConf.cpp
+  src/v20210701/model/RestartApplicationPodResponse.cpp
+  src/v20210701/model/CreateResourceRequest.cpp
   src/v20210701/model/ResumeDeployApplicationResponse.cpp
-  src/v20210701/model/RevertDeployApplicationResponse.cpp
-  src/v20210701/model/DeployStrategyConf.cpp
-  src/v20210701/model/RevertDeployApplicationRequest.cpp
+  src/v20210701/model/HealthCheckConfig.cpp
   src/v20210701/model/TemDeployApplicationDetailInfo.cpp
   src/v20210701/model/DescribeDeployApplicationDetailRequest.cpp
-  src/v20210701/model/DescribeDeployApplicationDetailResponse.cpp
+  src/v20210701/model/EsInfo.cpp
   src/v20210701/model/DeployServiceBatchDetail.cpp
+  src/v20210701/model/DescribeApplicationPodsResponse.cpp
+  src/v20210701/model/DeleteIngressRequest.cpp
+  src/v20210701/model/RestartApplicationPodRequest.cpp
+  src/v20210701/model/DescribeRelatedIngressesRequest.cpp
+  src/v20210701/model/ModifyEnvironmentResponse.cpp
+  src/v20210701/model/CosToken.cpp
+  src/v20210701/model/GenerateApplicationPackageDownloadUrlRequest.cpp
+  src/v20210701/model/DeployApplicationRequest.cpp
+  src/v20210701/model/IngressInfo.cpp
+  src/v20210701/model/ModifyIngressResponse.cpp
+  src/v20210701/model/DescribeEnvironmentsResponse.cpp
+  src/v20210701/model/ModifyIngressRequest.cpp
+  src/v20210701/model/DescribeApplicationPodsRequest.cpp
+  src/v20210701/model/CreateApplicationRequest.cpp
+  src/v20210701/model/DescribeRelatedIngressesResponse.cpp
+  src/v20210701/model/DescribeIngressesRequest.cpp
   src/v20210701/model/DescribeRunPodPage.cpp
+  src/v20210701/model/IngressTls.cpp
   src/v20210701/model/DeployServicePodDetail.cpp
+  src/v20210701/model/LogOutputConf.cpp
+  src/v20210701/model/DescribeIngressesResponse.cpp
+  src/v20210701/model/DeleteIngressResponse.cpp
+  src/v20210701/model/TemNamespaceInfo.cpp
+  src/v20210701/model/GenerateApplicationPackageDownloadUrlResponse.cpp
+  src/v20210701/model/IngressRuleBackend.cpp
+  src/v20210701/model/DescribeIngressResponse.cpp
+  src/v20210701/model/CreateCosTokenResponse.cpp
+  src/v20210701/model/IngressRule.cpp
+  src/v20210701/model/CronHorizontalAutoscaler.cpp
+  src/v20210701/model/StorageConf.cpp
+  src/v20210701/model/RunVersionPod.cpp
+  src/v20210701/model/DescribeDeployApplicationDetailResponse.cpp
+  src/v20210701/model/IngressRuleValue.cpp
+  src/v20210701/model/CreateResourceResponse.cpp
+  src/v20210701/model/ModifyApplicationInfoRequest.cpp
+  src/v20210701/model/ModifyApplicationInfoResponse.cpp
+  src/v20210701/model/RevertDeployApplicationRequest.cpp
+  src/v20210701/model/IngressRulePath.cpp
+  src/v20210701/model/CreateEnvironmentResponse.cpp
+  src/v20210701/model/NamespacePage.cpp
+  src/v20210701/model/CreateApplicationResponse.cpp
+  src/v20210701/model/HorizontalAutoscaler.cpp
+  src/v20210701/model/StorageMountConf.cpp
+  src/v20210701/model/ModifyEnvironmentRequest.cpp
+  src/v20210701/model/PortMapping.cpp
+  src/v20210701/model/RevertDeployApplicationResponse.cpp
+  src/v20210701/model/DeployStrategyConf.cpp
+  src/v20210701/model/DescribeIngressRequest.cpp
+  src/v20210701/model/CreateCosTokenRequest.cpp
+  src/v20210701/model/DescribeEnvironmentsRequest.cpp
+  src/v20210701/model/EksService.cpp
+  src/v20210701/model/CronHorizontalAutoscalerSchedule.cpp
+  src/v20210701/model/ResumeDeployApplicationRequest.cpp
+  src/v20210701/model/DeployApplicationResponse.cpp
+  src/v20210701/model/CreateEnvironmentRequest.cpp
+  src/v20210701/model/Pair.cpp
   src/v20201221/model/MountedSettingConf.cpp
   src/v20201221/model/ModifyServiceInfoResponse.cpp
   src/v20201221/model/StorageMountConf.cpp

@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * URL重定向配置
+                * 访问URL重写配置
                 */
                 class UrlRedirect : public AbstractModel
                 {
@@ -48,20 +48,20 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取URL重定向配置开关
+                     * 获取访问URL重写配置开关
 on：开启
 off：关闭
-                     * @return Switch URL重定向配置开关
+                     * @return Switch 访问URL重写配置开关
 on：开启
 off：关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置URL重定向配置开关
+                     * 设置访问URL重写配置开关
 on：开启
 off：关闭
-                     * @param Switch URL重定向配置开关
+                     * @param Switch 访问URL重写配置开关
 on：开启
 off：关闭
                      */
@@ -74,17 +74,17 @@ off：关闭
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取URL重定向规则，当Switch为on时必填，规则数量最大为10个。
+                     * 获取访问URL重写规则，当Switch为on时必填，规则数量最大为10个。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PathRules URL重定向规则，当Switch为on时必填，规则数量最大为10个。
+                     * @return PathRules 访问URL重写规则，当Switch为on时必填，规则数量最大为10个。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UrlRedirectRule> GetPathRules() const;
 
                     /**
-                     * 设置URL重定向规则，当Switch为on时必填，规则数量最大为10个。
+                     * 设置访问URL重写规则，当Switch为on时必填，规则数量最大为10个。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PathRules URL重定向规则，当Switch为on时必填，规则数量最大为10个。
+                     * @param PathRules 访问URL重写规则，当Switch为on时必填，规则数量最大为10个。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPathRules(const std::vector<UrlRedirectRule>& _pathRules);
@@ -98,7 +98,7 @@ off：关闭
                 private:
 
                     /**
-                     * URL重定向配置开关
+                     * 访问URL重写配置开关
 on：开启
 off：关闭
                      */
@@ -106,7 +106,7 @@ off：关闭
                     bool m_switchHasBeenSet;
 
                     /**
-                     * URL重定向规则，当Switch为on时必填，规则数量最大为10个。
+                     * 访问URL重写规则，当Switch为on时必填，规则数量最大为10个。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UrlRedirectRule> m_pathRules;

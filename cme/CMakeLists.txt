@@ -118,6 +118,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/CreateTeamRequest.h
   include/tencentcloud/cme/v20191029/model/MaterialBasicInfo.h
   include/tencentcloud/cme/v20191029/model/ResourceInfo.h
+  include/tencentcloud/cme/v20191029/model/MediaPreprocessOperation.h
   include/tencentcloud/cme/v20191029/model/JoinTeamInfo.h
   include/tencentcloud/cme/v20191029/model/DescribeResourceAuthorizationRequest.h
   include/tencentcloud/cme/v20191029/model/CreateClassResponse.h
@@ -283,6 +284,7 @@ set(cme_src
   src/v20191029/model/CreateTeamRequest.cpp
   src/v20191029/model/MaterialBasicInfo.cpp
   src/v20191029/model/ResourceInfo.cpp
+  src/v20191029/model/MediaPreprocessOperation.cpp
   src/v20191029/model/JoinTeamInfo.cpp
   src/v20191029/model/DescribeResourceAuthorizationRequest.cpp
   src/v20191029/model/CreateClassResponse.cpp

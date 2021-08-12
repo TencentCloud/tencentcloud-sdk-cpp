@@ -25,7 +25,8 @@ DeployServicePodDetail::DeployServicePodDetail() :
     m_podStatusHasBeenSet(false),
     m_podVersionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_webshellHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,16 @@ CoreInternalOutcome DeployServicePodDetail::Deserialize(const rapidjson::Value &
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("Webshell") && !value["Webshell"].IsNull())
+    {
+        if (!value["Webshell"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `DeployServicePodDetail.Webshell` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_webshell = string(value["Webshell"].GetString());
+        m_webshellHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void DeployServicePodDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webshellHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Webshell";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webshell.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void DeployServicePodDetail::SetZone(const string& _zone)
 bool DeployServicePodDetail::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string DeployServicePodDetail::GetWebshell() const
+{
+    return m_webshell;
+}
+
+void DeployServicePodDetail::SetWebshell(const string& _webshell)
+{
+    m_webshell = _webshell;
+    m_webshellHasBeenSet = true;
+}
+
+bool DeployServicePodDetail::WebshellHasBeenSet() const
+{
+    return m_webshellHasBeenSet;
 }
 

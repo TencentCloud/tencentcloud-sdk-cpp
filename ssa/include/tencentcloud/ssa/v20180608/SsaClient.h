@@ -47,6 +47,8 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSocCspmComplianceRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSocCspmComplianceResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeVulDetailRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeVulDetailResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeVulListRequest.h>
@@ -103,6 +105,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeSafetyEventListResponse> DescribeSafetyEventListOutcome;
                 typedef std::future<DescribeSafetyEventListOutcome> DescribeSafetyEventListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeSafetyEventListRequest&, DescribeSafetyEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafetyEventListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeSocCspmComplianceResponse> DescribeSocCspmComplianceOutcome;
+                typedef std::future<DescribeSocCspmComplianceOutcome> DescribeSocCspmComplianceOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeSocCspmComplianceRequest&, DescribeSocCspmComplianceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSocCspmComplianceAsyncHandler;
                 typedef Outcome<Error, Model::DescribeVulDetailResponse> DescribeVulDetailOutcome;
                 typedef std::future<DescribeVulDetailOutcome> DescribeVulDetailOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeVulDetailRequest&, DescribeVulDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulDetailAsyncHandler;
@@ -222,6 +227,15 @@ namespace TencentCloud
                 DescribeSafetyEventListOutcome DescribeSafetyEventList(const Model::DescribeSafetyEventListRequest &request);
                 void DescribeSafetyEventListAsync(const Model::DescribeSafetyEventListRequest& request, const DescribeSafetyEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSafetyEventListOutcomeCallable DescribeSafetyEventListCallable(const Model::DescribeSafetyEventListRequest& request);
+
+                /**
+                 *合规详情项
+                 * @param req DescribeSocCspmComplianceRequest
+                 * @return DescribeSocCspmComplianceOutcome
+                 */
+                DescribeSocCspmComplianceOutcome DescribeSocCspmCompliance(const Model::DescribeSocCspmComplianceRequest &request);
+                void DescribeSocCspmComplianceAsync(const Model::DescribeSocCspmComplianceRequest& request, const DescribeSocCspmComplianceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSocCspmComplianceOutcomeCallable DescribeSocCspmComplianceCallable(const Model::DescribeSocCspmComplianceRequest& request);
 
                 /**
                  *漏洞列表页，获取漏洞详情信息

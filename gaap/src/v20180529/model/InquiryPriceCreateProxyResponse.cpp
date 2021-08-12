@@ -29,7 +29,9 @@ InquiryPriceCreateProxyResponse::InquiryPriceCreateProxyResponse() :
     m_discountProxyDailyPriceHasBeenSet(false),
     m_currencyHasBeenSet(false),
     m_flowUnitPriceHasBeenSet(false),
-    m_discountFlowUnitPriceHasBeenSet(false)
+    m_discountFlowUnitPriceHasBeenSet(false),
+    m_cn2BandwidthPriceHasBeenSet(false),
+    m_cn2BandwidthPriceWithDiscountHasBeenSet(false)
 {
 }
 
@@ -137,6 +139,26 @@ CoreInternalOutcome InquiryPriceCreateProxyResponse::Deserialize(const string &p
         m_discountFlowUnitPriceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Cn2BandwidthPrice") && !rsp["Cn2BandwidthPrice"].IsNull())
+    {
+        if (!rsp["Cn2BandwidthPrice"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `Cn2BandwidthPrice` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cn2BandwidthPrice = rsp["Cn2BandwidthPrice"].GetDouble();
+        m_cn2BandwidthPriceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Cn2BandwidthPriceWithDiscount") && !rsp["Cn2BandwidthPriceWithDiscount"].IsNull())
+    {
+        if (!rsp["Cn2BandwidthPriceWithDiscount"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Error("response `Cn2BandwidthPriceWithDiscount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cn2BandwidthPriceWithDiscount = rsp["Cn2BandwidthPriceWithDiscount"].GetDouble();
+        m_cn2BandwidthPriceWithDiscountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +222,22 @@ string InquiryPriceCreateProxyResponse::ToJsonString() const
         string key = "DiscountFlowUnitPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountFlowUnitPrice, allocator);
+    }
+
+    if (m_cn2BandwidthPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cn2BandwidthPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cn2BandwidthPrice, allocator);
+    }
+
+    if (m_cn2BandwidthPriceWithDiscountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cn2BandwidthPriceWithDiscount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cn2BandwidthPriceWithDiscount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -272,6 +310,26 @@ double InquiryPriceCreateProxyResponse::GetDiscountFlowUnitPrice() const
 bool InquiryPriceCreateProxyResponse::DiscountFlowUnitPriceHasBeenSet() const
 {
     return m_discountFlowUnitPriceHasBeenSet;
+}
+
+double InquiryPriceCreateProxyResponse::GetCn2BandwidthPrice() const
+{
+    return m_cn2BandwidthPrice;
+}
+
+bool InquiryPriceCreateProxyResponse::Cn2BandwidthPriceHasBeenSet() const
+{
+    return m_cn2BandwidthPriceHasBeenSet;
+}
+
+double InquiryPriceCreateProxyResponse::GetCn2BandwidthPriceWithDiscount() const
+{
+    return m_cn2BandwidthPriceWithDiscount;
+}
+
+bool InquiryPriceCreateProxyResponse::Cn2BandwidthPriceWithDiscountHasBeenSet() const
+{
+    return m_cn2BandwidthPriceWithDiscountHasBeenSet;
 }
 
 

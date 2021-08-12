@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 状态码重定向配置，默认为关闭状态（功能灰度中，尚未全量）
+                * 状态码重定向配置，默认为关闭状态
                 */
                 class ErrorPage : public AbstractModel
                 {

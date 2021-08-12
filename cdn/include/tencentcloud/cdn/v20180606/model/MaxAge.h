@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 浏览器缓存规则配置，用于设置 MaxAge 默认值，默认为关闭状态（功能灰度中，尚未全量）
+                * 浏览器缓存规则配置，用于设置 MaxAge 默认值，默认为关闭状态
                 */
                 class MaxAge : public AbstractModel
                 {

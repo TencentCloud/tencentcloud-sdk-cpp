@@ -197,6 +197,62 @@ namespace TencentCloud
                      */
                     bool AuthorizeUrlHasBeenSet() const;
 
+                    /**
+                     * 获取应用图标图片访问地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IconUrl 应用图标图片访问地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIconUrl() const;
+
+                    /**
+                     * 判断参数 IconUrl 是否已赋值
+                     * @return IconUrl 是否已赋值
+                     */
+                    bool IconUrlHasBeenSet() const;
+
+                    /**
+                     * 获取安全等级。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecureLevel 安全等级。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSecureLevel() const;
+
+                    /**
+                     * 判断参数 SecureLevel 是否已赋值
+                     * @return SecureLevel 是否已赋值
+                     */
+                    bool SecureLevelHasBeenSet() const;
+
+                    /**
+                     * 获取应用状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppStatus 应用状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAppStatus() const;
+
+                    /**
+                     * 判断参数 AppStatus 是否已赋值
+                     * @return AppStatus 是否已赋值
+                     */
+                    bool AppStatusHasBeenSet() const;
+
+                    /**
+                     * 获取描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -275,6 +331,34 @@ namespace TencentCloud
                      */
                     std::string m_authorizeUrl;
                     bool m_authorizeUrlHasBeenSet;
+
+                    /**
+                     * 应用图标图片访问地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_iconUrl;
+                    bool m_iconUrlHasBeenSet;
+
+                    /**
+                     * 安全等级。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_secureLevel;
+                    bool m_secureLevelHasBeenSet;
+
+                    /**
+                     * 应用状态。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_appStatus;
+                    bool m_appStatusHasBeenSet;
+
+                    /**
+                     * 描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

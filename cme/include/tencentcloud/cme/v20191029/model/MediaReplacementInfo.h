@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cme/v20191029/model/MediaPreprocessOperation.h>
 
 
 namespace TencentCloud
@@ -47,14 +48,52 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取素材 ID。
-                     * @return MaterialId 素材 ID。
+                     * 获取替换的媒体类型，取值有：
+<li>CMEMaterialId：替换的媒体类型为媒体 ID；</li>
+<li>ImageUrl：替换的媒体类型为图片 URL；</li>
+
+注：默认为 CMEMaterialId 。
+                     * @return MediaType 替换的媒体类型，取值有：
+<li>CMEMaterialId：替换的媒体类型为媒体 ID；</li>
+<li>ImageUrl：替换的媒体类型为图片 URL；</li>
+
+注：默认为 CMEMaterialId 。
+                     */
+                    std::string GetMediaType() const;
+
+                    /**
+                     * 设置替换的媒体类型，取值有：
+<li>CMEMaterialId：替换的媒体类型为媒体 ID；</li>
+<li>ImageUrl：替换的媒体类型为图片 URL；</li>
+
+注：默认为 CMEMaterialId 。
+                     * @param MediaType 替换的媒体类型，取值有：
+<li>CMEMaterialId：替换的媒体类型为媒体 ID；</li>
+<li>ImageUrl：替换的媒体类型为图片 URL；</li>
+
+注：默认为 CMEMaterialId 。
+                     */
+                    void SetMediaType(const std::string& _mediaType);
+
+                    /**
+                     * 判断参数 MediaType 是否已赋值
+                     * @return MediaType 是否已赋值
+                     */
+                    bool MediaTypeHasBeenSet() const;
+
+                    /**
+                     * 获取媒体 ID。
+当媒体类型取值为 CMEMaterialId 时有效。
+                     * @return MaterialId 媒体 ID。
+当媒体类型取值为 CMEMaterialId 时有效。
                      */
                     std::string GetMaterialId() const;
 
                     /**
-                     * 设置素材 ID。
-                     * @param MaterialId 素材 ID。
+                     * 设置媒体 ID。
+当媒体类型取值为 CMEMaterialId 时有效。
+                     * @param MaterialId 媒体 ID。
+当媒体类型取值为 CMEMaterialId 时有效。
                      */
                     void SetMaterialId(const std::string& _materialId);
 
@@ -63,6 +102,32 @@ namespace TencentCloud
                      * @return MaterialId 是否已赋值
                      */
                     bool MaterialIdHasBeenSet() const;
+
+                    /**
+                     * 获取媒体 URL。
+当媒体类型取值为 ImageUrl 时有效，
+图片仅支持 jpg、png 格式，且大小不超过 2M 。
+                     * @return MediaUrl 媒体 URL。
+当媒体类型取值为 ImageUrl 时有效，
+图片仅支持 jpg、png 格式，且大小不超过 2M 。
+                     */
+                    std::string GetMediaUrl() const;
+
+                    /**
+                     * 设置媒体 URL。
+当媒体类型取值为 ImageUrl 时有效，
+图片仅支持 jpg、png 格式，且大小不超过 2M 。
+                     * @param MediaUrl 媒体 URL。
+当媒体类型取值为 ImageUrl 时有效，
+图片仅支持 jpg、png 格式，且大小不超过 2M 。
+                     */
+                    void SetMediaUrl(const std::string& _mediaUrl);
+
+                    /**
+                     * 判断参数 MediaUrl 是否已赋值
+                     * @return MediaUrl 是否已赋值
+                     */
+                    bool MediaUrlHasBeenSet() const;
 
                     /**
                      * 获取替换媒体选取的开始时间，单位为秒，默认为 0。
@@ -82,19 +147,67 @@ namespace TencentCloud
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
+                    /**
+                     * 获取预处理操作。
+注：目前该功能暂不支持，请勿使用。
+                     * @return PreprocessOperation 预处理操作。
+注：目前该功能暂不支持，请勿使用。
+                     */
+                    MediaPreprocessOperation GetPreprocessOperation() const;
+
+                    /**
+                     * 设置预处理操作。
+注：目前该功能暂不支持，请勿使用。
+                     * @param PreprocessOperation 预处理操作。
+注：目前该功能暂不支持，请勿使用。
+                     */
+                    void SetPreprocessOperation(const MediaPreprocessOperation& _preprocessOperation);
+
+                    /**
+                     * 判断参数 PreprocessOperation 是否已赋值
+                     * @return PreprocessOperation 是否已赋值
+                     */
+                    bool PreprocessOperationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 素材 ID。
+                     * 替换的媒体类型，取值有：
+<li>CMEMaterialId：替换的媒体类型为媒体 ID；</li>
+<li>ImageUrl：替换的媒体类型为图片 URL；</li>
+
+注：默认为 CMEMaterialId 。
+                     */
+                    std::string m_mediaType;
+                    bool m_mediaTypeHasBeenSet;
+
+                    /**
+                     * 媒体 ID。
+当媒体类型取值为 CMEMaterialId 时有效。
                      */
                     std::string m_materialId;
                     bool m_materialIdHasBeenSet;
+
+                    /**
+                     * 媒体 URL。
+当媒体类型取值为 ImageUrl 时有效，
+图片仅支持 jpg、png 格式，且大小不超过 2M 。
+                     */
+                    std::string m_mediaUrl;
+                    bool m_mediaUrlHasBeenSet;
 
                     /**
                      * 替换媒体选取的开始时间，单位为秒，默认为 0。
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
+
+                    /**
+                     * 预处理操作。
+注：目前该功能暂不支持，请勿使用。
+                     */
+                    MediaPreprocessOperation m_preprocessOperation;
+                    bool m_preprocessOperationHasBeenSet;
 
                 };
             }

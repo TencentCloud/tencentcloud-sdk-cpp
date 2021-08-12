@@ -34,7 +34,11 @@ DescribeApplicationResponse::DescribeApplicationResponse() :
     m_tokenExpiredHasBeenSet(false),
     m_clientSecretHasBeenSet(false),
     m_publicKeyHasBeenSet(false),
-    m_authorizeUrlHasBeenSet(false)
+    m_authorizeUrlHasBeenSet(false),
+    m_iconUrlHasBeenSet(false),
+    m_secureLevelHasBeenSet(false),
+    m_appStatusHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -182,6 +186,46 @@ CoreInternalOutcome DescribeApplicationResponse::Deserialize(const string &paylo
         m_authorizeUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IconUrl") && !rsp["IconUrl"].IsNull())
+    {
+        if (!rsp["IconUrl"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `IconUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iconUrl = string(rsp["IconUrl"].GetString());
+        m_iconUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SecureLevel") && !rsp["SecureLevel"].IsNull())
+    {
+        if (!rsp["SecureLevel"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `SecureLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secureLevel = string(rsp["SecureLevel"].GetString());
+        m_secureLevelHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AppStatus") && !rsp["AppStatus"].IsNull())
+    {
+        if (!rsp["AppStatus"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `AppStatus` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_appStatus = rsp["AppStatus"].GetBool();
+        m_appStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Description") && !rsp["Description"].IsNull())
+    {
+        if (!rsp["Description"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(rsp["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +322,38 @@ string DescribeApplicationResponse::ToJsonString() const
         string key = "AuthorizeUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_authorizeUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iconUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IconUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iconUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secureLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecureLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secureLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appStatus, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -400,6 +476,46 @@ string DescribeApplicationResponse::GetAuthorizeUrl() const
 bool DescribeApplicationResponse::AuthorizeUrlHasBeenSet() const
 {
     return m_authorizeUrlHasBeenSet;
+}
+
+string DescribeApplicationResponse::GetIconUrl() const
+{
+    return m_iconUrl;
+}
+
+bool DescribeApplicationResponse::IconUrlHasBeenSet() const
+{
+    return m_iconUrlHasBeenSet;
+}
+
+string DescribeApplicationResponse::GetSecureLevel() const
+{
+    return m_secureLevel;
+}
+
+bool DescribeApplicationResponse::SecureLevelHasBeenSet() const
+{
+    return m_secureLevelHasBeenSet;
+}
+
+bool DescribeApplicationResponse::GetAppStatus() const
+{
+    return m_appStatus;
+}
+
+bool DescribeApplicationResponse::AppStatusHasBeenSet() const
+{
+    return m_appStatusHasBeenSet;
+}
+
+string DescribeApplicationResponse::GetDescription() const
+{
+    return m_description;
+}
+
+bool DescribeApplicationResponse::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

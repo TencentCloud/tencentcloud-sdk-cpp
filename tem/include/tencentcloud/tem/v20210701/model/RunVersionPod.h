@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 版本pod
+                * 应用实例
                 */
                 class RunVersionPod : public AbstractModel
                 {
@@ -202,6 +202,50 @@ namespace TencentCloud
                      */
                     bool RestartCountHasBeenSet() const;
 
+                    /**
+                     * 获取pod是否就绪
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ready pod是否就绪
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetReady() const;
+
+                    /**
+                     * 设置pod是否就绪
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Ready pod是否就绪
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReady(const bool& _ready);
+
+                    /**
+                     * 判断参数 Ready 是否已赋值
+                     * @return Ready 是否已赋值
+                     */
+                    bool ReadyHasBeenSet() const;
+
+                    /**
+                     * 获取容器状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerState 容器状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContainerState() const;
+
+                    /**
+                     * 设置容器状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContainerState 容器状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContainerState(const std::string& _containerState);
+
+                    /**
+                     * 判断参数 ContainerState 是否已赋值
+                     * @return ContainerState 是否已赋值
+                     */
+                    bool ContainerStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -254,6 +298,20 @@ namespace TencentCloud
                      */
                     int64_t m_restartCount;
                     bool m_restartCountHasBeenSet;
+
+                    /**
+                     * pod是否就绪
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_ready;
+                    bool m_readyHasBeenSet;
+
+                    /**
+                     * 容器状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerState;
+                    bool m_containerStateHasBeenSet;
 
                 };
             }

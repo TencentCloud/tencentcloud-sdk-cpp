@@ -48,7 +48,8 @@ ProxyInfo::ProxyInfo() :
     m_modifyConfigTimeHasBeenSet(false),
     m_proxyTypeHasBeenSet(false),
     m_clientIPMethodHasBeenSet(false),
-    m_iPAddressVersionHasBeenSet(false)
+    m_iPAddressVersionHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -370,6 +371,16 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
         m_iPAddressVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkType") && !value["NetworkType"].IsNull())
+    {
+        if (!value["NetworkType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `ProxyInfo.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkType = string(value["NetworkType"].GetString());
+        m_networkTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -623,6 +634,14 @@ void ProxyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IPAddressVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1074,5 +1093,21 @@ void ProxyInfo::SetIPAddressVersion(const string& _iPAddressVersion)
 bool ProxyInfo::IPAddressVersionHasBeenSet() const
 {
     return m_iPAddressVersionHasBeenSet;
+}
+
+string ProxyInfo::GetNetworkType() const
+{
+    return m_networkType;
+}
+
+void ProxyInfo::SetNetworkType(const string& _networkType)
+{
+    m_networkType = _networkType;
+    m_networkTypeHasBeenSet = true;
+}
+
+bool ProxyInfo::NetworkTypeHasBeenSet() const
+{
+    return m_networkTypeHasBeenSet;
 }
 

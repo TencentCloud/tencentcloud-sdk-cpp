@@ -23,8 +23,40 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tem/v20210701/model/CreateApplicationRequest.h>
+#include <tencentcloud/tem/v20210701/model/CreateApplicationResponse.h>
+#include <tencentcloud/tem/v20210701/model/CreateCosTokenRequest.h>
+#include <tencentcloud/tem/v20210701/model/CreateCosTokenResponse.h>
+#include <tencentcloud/tem/v20210701/model/CreateEnvironmentRequest.h>
+#include <tencentcloud/tem/v20210701/model/CreateEnvironmentResponse.h>
+#include <tencentcloud/tem/v20210701/model/CreateResourceRequest.h>
+#include <tencentcloud/tem/v20210701/model/CreateResourceResponse.h>
+#include <tencentcloud/tem/v20210701/model/DeleteIngressRequest.h>
+#include <tencentcloud/tem/v20210701/model/DeleteIngressResponse.h>
+#include <tencentcloud/tem/v20210701/model/DeployApplicationRequest.h>
+#include <tencentcloud/tem/v20210701/model/DeployApplicationResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeApplicationPodsRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeApplicationPodsResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeEnvironmentsRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeEnvironmentsResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeIngressRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeIngressResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeIngressesRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeIngressesResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeRelatedIngressesRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeRelatedIngressesResponse.h>
+#include <tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlRequest.h>
+#include <tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlResponse.h>
+#include <tencentcloud/tem/v20210701/model/ModifyApplicationInfoRequest.h>
+#include <tencentcloud/tem/v20210701/model/ModifyApplicationInfoResponse.h>
+#include <tencentcloud/tem/v20210701/model/ModifyEnvironmentRequest.h>
+#include <tencentcloud/tem/v20210701/model/ModifyEnvironmentResponse.h>
+#include <tencentcloud/tem/v20210701/model/ModifyIngressRequest.h>
+#include <tencentcloud/tem/v20210701/model/ModifyIngressResponse.h>
+#include <tencentcloud/tem/v20210701/model/RestartApplicationPodRequest.h>
+#include <tencentcloud/tem/v20210701/model/RestartApplicationPodResponse.h>
 #include <tencentcloud/tem/v20210701/model/ResumeDeployApplicationRequest.h>
 #include <tencentcloud/tem/v20210701/model/ResumeDeployApplicationResponse.h>
 #include <tencentcloud/tem/v20210701/model/RevertDeployApplicationRequest.h>
@@ -43,9 +75,57 @@ namespace TencentCloud
                 TemClient(const Credential &credential, const std::string &region);
                 TemClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Error, Model::CreateApplicationResponse> CreateApplicationOutcome;
+                typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::CreateApplicationRequest&, CreateApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAsyncHandler;
+                typedef Outcome<Error, Model::CreateCosTokenResponse> CreateCosTokenOutcome;
+                typedef std::future<CreateCosTokenOutcome> CreateCosTokenOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::CreateCosTokenRequest&, CreateCosTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosTokenAsyncHandler;
+                typedef Outcome<Error, Model::CreateEnvironmentResponse> CreateEnvironmentOutcome;
+                typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::CreateEnvironmentRequest&, CreateEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvironmentAsyncHandler;
+                typedef Outcome<Error, Model::CreateResourceResponse> CreateResourceOutcome;
+                typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::CreateResourceRequest&, CreateResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceAsyncHandler;
+                typedef Outcome<Error, Model::DeleteIngressResponse> DeleteIngressOutcome;
+                typedef std::future<DeleteIngressOutcome> DeleteIngressOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DeleteIngressRequest&, DeleteIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIngressAsyncHandler;
+                typedef Outcome<Error, Model::DeployApplicationResponse> DeployApplicationOutcome;
+                typedef std::future<DeployApplicationOutcome> DeployApplicationOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DeployApplicationRequest&, DeployApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployApplicationAsyncHandler;
+                typedef Outcome<Error, Model::DescribeApplicationPodsResponse> DescribeApplicationPodsOutcome;
+                typedef std::future<DescribeApplicationPodsOutcome> DescribeApplicationPodsOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeApplicationPodsRequest&, DescribeApplicationPodsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationPodsAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDeployApplicationDetailResponse> DescribeDeployApplicationDetailOutcome;
                 typedef std::future<DescribeDeployApplicationDetailOutcome> DescribeDeployApplicationDetailOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeDeployApplicationDetailRequest&, DescribeDeployApplicationDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployApplicationDetailAsyncHandler;
+                typedef Outcome<Error, Model::DescribeEnvironmentsResponse> DescribeEnvironmentsOutcome;
+                typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeEnvironmentsRequest&, DescribeEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentsAsyncHandler;
+                typedef Outcome<Error, Model::DescribeIngressResponse> DescribeIngressOutcome;
+                typedef std::future<DescribeIngressOutcome> DescribeIngressOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeIngressRequest&, DescribeIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIngressAsyncHandler;
+                typedef Outcome<Error, Model::DescribeIngressesResponse> DescribeIngressesOutcome;
+                typedef std::future<DescribeIngressesOutcome> DescribeIngressesOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeIngressesRequest&, DescribeIngressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIngressesAsyncHandler;
+                typedef Outcome<Error, Model::DescribeRelatedIngressesResponse> DescribeRelatedIngressesOutcome;
+                typedef std::future<DescribeRelatedIngressesOutcome> DescribeRelatedIngressesOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeRelatedIngressesRequest&, DescribeRelatedIngressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedIngressesAsyncHandler;
+                typedef Outcome<Error, Model::GenerateApplicationPackageDownloadUrlResponse> GenerateApplicationPackageDownloadUrlOutcome;
+                typedef std::future<GenerateApplicationPackageDownloadUrlOutcome> GenerateApplicationPackageDownloadUrlOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::GenerateApplicationPackageDownloadUrlRequest&, GenerateApplicationPackageDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateApplicationPackageDownloadUrlAsyncHandler;
+                typedef Outcome<Error, Model::ModifyApplicationInfoResponse> ModifyApplicationInfoOutcome;
+                typedef std::future<ModifyApplicationInfoOutcome> ModifyApplicationInfoOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::ModifyApplicationInfoRequest&, ModifyApplicationInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationInfoAsyncHandler;
+                typedef Outcome<Error, Model::ModifyEnvironmentResponse> ModifyEnvironmentOutcome;
+                typedef std::future<ModifyEnvironmentOutcome> ModifyEnvironmentOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::ModifyEnvironmentRequest&, ModifyEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvironmentAsyncHandler;
+                typedef Outcome<Error, Model::ModifyIngressResponse> ModifyIngressOutcome;
+                typedef std::future<ModifyIngressOutcome> ModifyIngressOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::ModifyIngressRequest&, ModifyIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIngressAsyncHandler;
+                typedef Outcome<Error, Model::RestartApplicationPodResponse> RestartApplicationPodOutcome;
+                typedef std::future<RestartApplicationPodOutcome> RestartApplicationPodOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::RestartApplicationPodRequest&, RestartApplicationPodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartApplicationPodAsyncHandler;
                 typedef Outcome<Error, Model::ResumeDeployApplicationResponse> ResumeDeployApplicationOutcome;
                 typedef std::future<ResumeDeployApplicationOutcome> ResumeDeployApplicationOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ResumeDeployApplicationRequest&, ResumeDeployApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeDeployApplicationAsyncHandler;
@@ -56,6 +136,69 @@ namespace TencentCloud
 
 
                 /**
+                 *创建应用
+                 * @param req CreateApplicationRequest
+                 * @return CreateApplicationOutcome
+                 */
+                CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest &request);
+                void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request);
+
+                /**
+                 *生成Cos临时秘钥
+                 * @param req CreateCosTokenRequest
+                 * @return CreateCosTokenOutcome
+                 */
+                CreateCosTokenOutcome CreateCosToken(const Model::CreateCosTokenRequest &request);
+                void CreateCosTokenAsync(const Model::CreateCosTokenRequest& request, const CreateCosTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCosTokenOutcomeCallable CreateCosTokenCallable(const Model::CreateCosTokenRequest& request);
+
+                /**
+                 *创建环境
+                 * @param req CreateEnvironmentRequest
+                 * @return CreateEnvironmentOutcome
+                 */
+                CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest &request);
+                void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request);
+
+                /**
+                 *绑定云资源
+                 * @param req CreateResourceRequest
+                 * @return CreateResourceOutcome
+                 */
+                CreateResourceOutcome CreateResource(const Model::CreateResourceRequest &request);
+                void CreateResourceAsync(const Model::CreateResourceRequest& request, const CreateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateResourceOutcomeCallable CreateResourceCallable(const Model::CreateResourceRequest& request);
+
+                /**
+                 *删除 Ingress 规则
+                 * @param req DeleteIngressRequest
+                 * @return DeleteIngressOutcome
+                 */
+                DeleteIngressOutcome DeleteIngress(const Model::DeleteIngressRequest &request);
+                void DeleteIngressAsync(const Model::DeleteIngressRequest& request, const DeleteIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteIngressOutcomeCallable DeleteIngressCallable(const Model::DeleteIngressRequest& request);
+
+                /**
+                 *应用部署
+                 * @param req DeployApplicationRequest
+                 * @return DeployApplicationOutcome
+                 */
+                DeployApplicationOutcome DeployApplication(const Model::DeployApplicationRequest &request);
+                void DeployApplicationAsync(const Model::DeployApplicationRequest& request, const DeployApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployApplicationOutcomeCallable DeployApplicationCallable(const Model::DeployApplicationRequest& request);
+
+                /**
+                 *获取应用实例列表
+                 * @param req DescribeApplicationPodsRequest
+                 * @return DescribeApplicationPodsOutcome
+                 */
+                DescribeApplicationPodsOutcome DescribeApplicationPods(const Model::DescribeApplicationPodsRequest &request);
+                void DescribeApplicationPodsAsync(const Model::DescribeApplicationPodsRequest& request, const DescribeApplicationPodsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApplicationPodsOutcomeCallable DescribeApplicationPodsCallable(const Model::DescribeApplicationPodsRequest& request);
+
+                /**
                  *获取分批发布详情
                  * @param req DescribeDeployApplicationDetailRequest
                  * @return DescribeDeployApplicationDetailOutcome
@@ -63,6 +206,87 @@ namespace TencentCloud
                 DescribeDeployApplicationDetailOutcome DescribeDeployApplicationDetail(const Model::DescribeDeployApplicationDetailRequest &request);
                 void DescribeDeployApplicationDetailAsync(const Model::DescribeDeployApplicationDetailRequest& request, const DescribeDeployApplicationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeployApplicationDetailOutcomeCallable DescribeDeployApplicationDetailCallable(const Model::DescribeDeployApplicationDetailRequest& request);
+
+                /**
+                 *获取租户环境列表
+                 * @param req DescribeEnvironmentsRequest
+                 * @return DescribeEnvironmentsOutcome
+                 */
+                DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest &request);
+                void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request);
+
+                /**
+                 *查询 Ingress 规则
+                 * @param req DescribeIngressRequest
+                 * @return DescribeIngressOutcome
+                 */
+                DescribeIngressOutcome DescribeIngress(const Model::DescribeIngressRequest &request);
+                void DescribeIngressAsync(const Model::DescribeIngressRequest& request, const DescribeIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIngressOutcomeCallable DescribeIngressCallable(const Model::DescribeIngressRequest& request);
+
+                /**
+                 *查询 Ingress 规则列表
+                 * @param req DescribeIngressesRequest
+                 * @return DescribeIngressesOutcome
+                 */
+                DescribeIngressesOutcome DescribeIngresses(const Model::DescribeIngressesRequest &request);
+                void DescribeIngressesAsync(const Model::DescribeIngressesRequest& request, const DescribeIngressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIngressesOutcomeCallable DescribeIngressesCallable(const Model::DescribeIngressesRequest& request);
+
+                /**
+                 *查询应用关联的 Ingress 规则列表
+                 * @param req DescribeRelatedIngressesRequest
+                 * @return DescribeRelatedIngressesOutcome
+                 */
+                DescribeRelatedIngressesOutcome DescribeRelatedIngresses(const Model::DescribeRelatedIngressesRequest &request);
+                void DescribeRelatedIngressesAsync(const Model::DescribeRelatedIngressesRequest& request, const DescribeRelatedIngressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRelatedIngressesOutcomeCallable DescribeRelatedIngressesCallable(const Model::DescribeRelatedIngressesRequest& request);
+
+                /**
+                 *生成应用程序包预签名下载链接
+                 * @param req GenerateApplicationPackageDownloadUrlRequest
+                 * @return GenerateApplicationPackageDownloadUrlOutcome
+                 */
+                GenerateApplicationPackageDownloadUrlOutcome GenerateApplicationPackageDownloadUrl(const Model::GenerateApplicationPackageDownloadUrlRequest &request);
+                void GenerateApplicationPackageDownloadUrlAsync(const Model::GenerateApplicationPackageDownloadUrlRequest& request, const GenerateApplicationPackageDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateApplicationPackageDownloadUrlOutcomeCallable GenerateApplicationPackageDownloadUrlCallable(const Model::GenerateApplicationPackageDownloadUrlRequest& request);
+
+                /**
+                 *修改应用基本信息
+                 * @param req ModifyApplicationInfoRequest
+                 * @return ModifyApplicationInfoOutcome
+                 */
+                ModifyApplicationInfoOutcome ModifyApplicationInfo(const Model::ModifyApplicationInfoRequest &request);
+                void ModifyApplicationInfoAsync(const Model::ModifyApplicationInfoRequest& request, const ModifyApplicationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApplicationInfoOutcomeCallable ModifyApplicationInfoCallable(const Model::ModifyApplicationInfoRequest& request);
+
+                /**
+                 *编辑环境
+                 * @param req ModifyEnvironmentRequest
+                 * @return ModifyEnvironmentOutcome
+                 */
+                ModifyEnvironmentOutcome ModifyEnvironment(const Model::ModifyEnvironmentRequest &request);
+                void ModifyEnvironmentAsync(const Model::ModifyEnvironmentRequest& request, const ModifyEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEnvironmentOutcomeCallable ModifyEnvironmentCallable(const Model::ModifyEnvironmentRequest& request);
+
+                /**
+                 *创建或者更新 Ingress 规则
+                 * @param req ModifyIngressRequest
+                 * @return ModifyIngressOutcome
+                 */
+                ModifyIngressOutcome ModifyIngress(const Model::ModifyIngressRequest &request);
+                void ModifyIngressAsync(const Model::ModifyIngressRequest& request, const ModifyIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyIngressOutcomeCallable ModifyIngressCallable(const Model::ModifyIngressRequest& request);
+
+                /**
+                 *重启应用实例
+                 * @param req RestartApplicationPodRequest
+                 * @return RestartApplicationPodOutcome
+                 */
+                RestartApplicationPodOutcome RestartApplicationPod(const Model::RestartApplicationPodRequest &request);
+                void RestartApplicationPodAsync(const Model::RestartApplicationPodRequest& request, const RestartApplicationPodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartApplicationPodOutcomeCallable RestartApplicationPodCallable(const Model::RestartApplicationPodRequest& request);
 
                 /**
                  *开始下一批次发布

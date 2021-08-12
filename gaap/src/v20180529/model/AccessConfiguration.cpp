@@ -23,7 +23,8 @@ using namespace std;
 AccessConfiguration::AccessConfiguration() :
     m_accessRegionHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_concurrentHasBeenSet(false)
+    m_concurrentHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome AccessConfiguration::Deserialize(const rapidjson::Value &val
         m_concurrentHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkType") && !value["NetworkType"].IsNull())
+    {
+        if (!value["NetworkType"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `AccessConfiguration.NetworkType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkType = string(value["NetworkType"].GetString());
+        m_networkTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void AccessConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Concurrent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_concurrent, allocator);
+    }
+
+    if (m_networkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void AccessConfiguration::SetConcurrent(const uint64_t& _concurrent)
 bool AccessConfiguration::ConcurrentHasBeenSet() const
 {
     return m_concurrentHasBeenSet;
+}
+
+string AccessConfiguration::GetNetworkType() const
+{
+    return m_networkType;
+}
+
+void AccessConfiguration::SetNetworkType(const string& _networkType)
+{
+    m_networkType = _networkType;
+    m_networkTypeHasBeenSet = true;
+}
+
+bool AccessConfiguration::NetworkTypeHasBeenSet() const
+{
+    return m_networkTypeHasBeenSet;
 }
 

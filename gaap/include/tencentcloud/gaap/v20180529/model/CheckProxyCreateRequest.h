@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool IPAddressVersionHasBeenSet() const;
 
+                    /**
+                     * 获取网络类型，可取值：normal、cn2，默认值normal
+                     * @return NetworkType 网络类型，可取值：normal、cn2，默认值normal
+                     */
+                    std::string GetNetworkType() const;
+
+                    /**
+                     * 设置网络类型，可取值：normal、cn2，默认值normal
+                     * @param NetworkType 网络类型，可取值：normal、cn2，默认值normal
+                     */
+                    void SetNetworkType(const std::string& _networkType);
+
+                    /**
+                     * 判断参数 NetworkType 是否已赋值
+                     * @return NetworkType 是否已赋值
+                     */
+                    bool NetworkTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_iPAddressVersion;
                     bool m_iPAddressVersionHasBeenSet;
+
+                    /**
+                     * 网络类型，可取值：normal、cn2，默认值normal
+                     */
+                    std::string m_networkType;
+                    bool m_networkTypeHasBeenSet;
 
                 };
             }

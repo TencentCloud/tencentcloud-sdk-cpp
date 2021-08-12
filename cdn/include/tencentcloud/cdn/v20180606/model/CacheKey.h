@@ -41,7 +41,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 缓存键配置（过滤参数配置）
+                * 缓存键配置（忽略参数配置）
                 */
                 class CacheKey : public AbstractModel
                 {
@@ -54,21 +54,21 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启全路径缓存
-on：开启全路径缓存（即关闭参数过滤）
-off：关闭全路径缓存（即开启参数过滤）
+on：开启全路径缓存（即关闭参数忽略）
+off：关闭全路径缓存（即开启参数忽略）
                      * @return FullUrlCache 是否开启全路径缓存
-on：开启全路径缓存（即关闭参数过滤）
-off：关闭全路径缓存（即开启参数过滤）
+on：开启全路径缓存（即关闭参数忽略）
+off：关闭全路径缓存（即开启参数忽略）
                      */
                     std::string GetFullUrlCache() const;
 
                     /**
                      * 设置是否开启全路径缓存
-on：开启全路径缓存（即关闭参数过滤）
-off：关闭全路径缓存（即开启参数过滤）
+on：开启全路径缓存（即关闭参数忽略）
+off：关闭全路径缓存（即开启参数忽略）
                      * @param FullUrlCache 是否开启全路径缓存
-on：开启全路径缓存（即关闭参数过滤）
-off：关闭全路径缓存（即开启参数过滤）
+on：开启全路径缓存（即关闭参数忽略）
+off：关闭全路径缓存（即开启参数忽略）
                      */
                     void SetFullUrlCache(const std::string& _fullUrlCache);
 
@@ -236,8 +236,8 @@ off：关闭全路径缓存（即开启参数过滤）
 
                     /**
                      * 是否开启全路径缓存
-on：开启全路径缓存（即关闭参数过滤）
-off：关闭全路径缓存（即开启参数过滤）
+on：开启全路径缓存（即关闭参数忽略）
+off：关闭全路径缓存（即开启参数忽略）
                      */
                     std::string m_fullUrlCache;
                     bool m_fullUrlCacheHasBeenSet;

@@ -34,7 +34,8 @@ CreateProxyRequest::CreateProxyRequest() :
     m_tagSetHasBeenSet(false),
     m_clonedProxyIdHasBeenSet(false),
     m_billingTypeHasBeenSet(false),
-    m_iPAddressVersionHasBeenSet(false)
+    m_iPAddressVersionHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,14 @@ string CreateProxyRequest::ToJsonString() const
         string key = "IPAddressVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -346,6 +355,22 @@ void CreateProxyRequest::SetIPAddressVersion(const string& _iPAddressVersion)
 bool CreateProxyRequest::IPAddressVersionHasBeenSet() const
 {
     return m_iPAddressVersionHasBeenSet;
+}
+
+string CreateProxyRequest::GetNetworkType() const
+{
+    return m_networkType;
+}
+
+void CreateProxyRequest::SetNetworkType(const string& _networkType)
+{
+    m_networkType = _networkType;
+    m_networkTypeHasBeenSet = true;
+}
+
+bool CreateProxyRequest::NetworkTypeHasBeenSet() const
+{
+    return m_networkTypeHasBeenSet;
 }
 
 

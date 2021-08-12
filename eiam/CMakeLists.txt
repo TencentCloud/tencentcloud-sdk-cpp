@@ -39,6 +39,7 @@ set(eiam_public_header_model
   include/tencentcloud/eiam/v20210420/model/ListUsersResponse.h
   include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserGroupRequest.h
   include/tencentcloud/eiam/v20210420/model/ListUserGroupsResponse.h
+  include/tencentcloud/eiam/v20210420/model/ModifyApplicationResponse.h
   include/tencentcloud/eiam/v20210420/model/DescribePublicKeyRequest.h
   include/tencentcloud/eiam/v20210420/model/AuthorizationInfo.h
   include/tencentcloud/eiam/v20210420/model/CreateUserGroupResponse.h
@@ -58,6 +59,7 @@ set(eiam_public_header_model
   include/tencentcloud/eiam/v20210420/model/UpdateOrgNodeRequest.h
   include/tencentcloud/eiam/v20210420/model/AuthorizationInfoSearchCriteria.h
   include/tencentcloud/eiam/v20210420/model/OrgNodeChildUserInfo.h
+  include/tencentcloud/eiam/v20210420/model/ModifyApplicationRequest.h
   include/tencentcloud/eiam/v20210420/model/CreateUserRequest.h
   include/tencentcloud/eiam/v20210420/model/ListUserGroupsOfUserResponse.h
   include/tencentcloud/eiam/v20210420/model/DescribeUserInfoResponse.h
@@ -107,6 +109,7 @@ set(eiam_src
   src/v20210420/model/ListUsersResponse.cpp
   src/v20210420/model/ListAuthorizedApplicationsToUserGroupRequest.cpp
   src/v20210420/model/ListUserGroupsResponse.cpp
+  src/v20210420/model/ModifyApplicationResponse.cpp
   src/v20210420/model/DescribePublicKeyRequest.cpp
   src/v20210420/model/AuthorizationInfo.cpp
   src/v20210420/model/CreateUserGroupResponse.cpp
@@ -126,6 +129,7 @@ set(eiam_src
   src/v20210420/model/UpdateOrgNodeRequest.cpp
   src/v20210420/model/AuthorizationInfoSearchCriteria.cpp
   src/v20210420/model/OrgNodeChildUserInfo.cpp
+  src/v20210420/model/ModifyApplicationRequest.cpp
   src/v20210420/model/CreateUserRequest.cpp
   src/v20210420/model/ListUserGroupsOfUserResponse.cpp
   src/v20210420/model/DescribeUserInfoResponse.cpp

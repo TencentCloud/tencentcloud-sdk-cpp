@@ -28,7 +28,8 @@ CreateJobRequest::CreateJobRequest() :
     m_clusterTypeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_cuMemHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_folderIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string CreateJobRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_folderIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FolderId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_folderId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void CreateJobRequest::SetRemark(const string& _remark)
 bool CreateJobRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string CreateJobRequest::GetFolderId() const
+{
+    return m_folderId;
+}
+
+void CreateJobRequest::SetFolderId(const string& _folderId)
+{
+    m_folderId = _folderId;
+    m_folderIdHasBeenSet = true;
+}
+
+bool CreateJobRequest::FolderIdHasBeenSet() const
+{
+    return m_folderIdHasBeenSet;
 }
 
 

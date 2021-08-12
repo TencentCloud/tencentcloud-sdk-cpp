@@ -67,8 +67,14 @@
 #include <tencentcloud/antiddos/v20200309/model/DeleteWaterPrintKeyResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBasicDeviceStatusRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBasicDeviceStatusResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeBizTrendRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeBizTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBlackWhiteIpListRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBlackWhiteIpListResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeCCTrendRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeCCTrendResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeDDoSTrendRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeDDoSTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDefaultAlarmThresholdRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeDefaultAlarmThresholdResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeL7RulesBySSLCertIdRequest.h>
@@ -193,9 +199,18 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::DescribeBasicDeviceStatusResponse> DescribeBasicDeviceStatusOutcome;
                 typedef std::future<DescribeBasicDeviceStatusOutcome> DescribeBasicDeviceStatusOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeBasicDeviceStatusRequest&, DescribeBasicDeviceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBasicDeviceStatusAsyncHandler;
+                typedef Outcome<Error, Model::DescribeBizTrendResponse> DescribeBizTrendOutcome;
+                typedef std::future<DescribeBizTrendOutcome> DescribeBizTrendOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeBizTrendRequest&, DescribeBizTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTrendAsyncHandler;
                 typedef Outcome<Error, Model::DescribeBlackWhiteIpListResponse> DescribeBlackWhiteIpListOutcome;
                 typedef std::future<DescribeBlackWhiteIpListOutcome> DescribeBlackWhiteIpListOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeBlackWhiteIpListRequest&, DescribeBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlackWhiteIpListAsyncHandler;
+                typedef Outcome<Error, Model::DescribeCCTrendResponse> DescribeCCTrendOutcome;
+                typedef std::future<DescribeCCTrendOutcome> DescribeCCTrendOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeCCTrendRequest&, DescribeCCTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCCTrendAsyncHandler;
+                typedef Outcome<Error, Model::DescribeDDoSTrendResponse> DescribeDDoSTrendOutcome;
+                typedef std::future<DescribeDDoSTrendOutcome> DescribeDDoSTrendOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeDDoSTrendRequest&, DescribeDDoSTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSTrendAsyncHandler;
                 typedef Outcome<Error, Model::DescribeDefaultAlarmThresholdResponse> DescribeDefaultAlarmThresholdOutcome;
                 typedef std::future<DescribeDefaultAlarmThresholdOutcome> DescribeDefaultAlarmThresholdOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeDefaultAlarmThresholdRequest&, DescribeDefaultAlarmThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultAlarmThresholdAsyncHandler;
@@ -464,6 +479,15 @@ namespace TencentCloud
                 DescribeBasicDeviceStatusOutcomeCallable DescribeBasicDeviceStatusCallable(const Model::DescribeBasicDeviceStatusRequest& request);
 
                 /**
+                 *获取业务流量曲线
+                 * @param req DescribeBizTrendRequest
+                 * @return DescribeBizTrendOutcome
+                 */
+                DescribeBizTrendOutcome DescribeBizTrend(const Model::DescribeBizTrendRequest &request);
+                void DescribeBizTrendAsync(const Model::DescribeBizTrendRequest& request, const DescribeBizTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBizTrendOutcomeCallable DescribeBizTrendCallable(const Model::DescribeBizTrendRequest& request);
+
+                /**
                  *获取DDoS防护的IP黑白名单
                  * @param req DescribeBlackWhiteIpListRequest
                  * @return DescribeBlackWhiteIpListOutcome
@@ -471,6 +495,24 @@ namespace TencentCloud
                 DescribeBlackWhiteIpListOutcome DescribeBlackWhiteIpList(const Model::DescribeBlackWhiteIpListRequest &request);
                 void DescribeBlackWhiteIpListAsync(const Model::DescribeBlackWhiteIpListRequest& request, const DescribeBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBlackWhiteIpListOutcomeCallable DescribeBlackWhiteIpListCallable(const Model::DescribeBlackWhiteIpListRequest& request);
+
+                /**
+                 *获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)
+                 * @param req DescribeCCTrendRequest
+                 * @return DescribeCCTrendOutcome
+                 */
+                DescribeCCTrendOutcome DescribeCCTrend(const Model::DescribeCCTrendRequest &request);
+                void DescribeCCTrendAsync(const Model::DescribeCCTrendRequest& request, const DescribeCCTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCCTrendOutcomeCallable DescribeCCTrendCallable(const Model::DescribeCCTrendRequest& request);
+
+                /**
+                 *获取DDoS攻击流量带宽和攻击包速率数据
+                 * @param req DescribeDDoSTrendRequest
+                 * @return DescribeDDoSTrendOutcome
+                 */
+                DescribeDDoSTrendOutcome DescribeDDoSTrend(const Model::DescribeDDoSTrendRequest &request);
+                void DescribeDDoSTrendAsync(const Model::DescribeDDoSTrendRequest& request, const DescribeDDoSTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDDoSTrendOutcomeCallable DescribeDDoSTrendCallable(const Model::DescribeDDoSTrendRequest& request);
 
                 /**
                  *获取单IP默认告警阈值配置

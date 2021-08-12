@@ -36,8 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 缓存过期配置高级版（功能灰度中，尚未全量）
-注意：该版本不支持设置首页缓存规则
+                * 缓存过期配置高级版，注意：此字段已经弃用，请使用RuleCache
                 */
                 class AdvancedCache : public AbstractModel
                 {

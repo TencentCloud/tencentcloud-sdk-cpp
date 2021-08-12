@@ -67,6 +67,8 @@
 #include <tencentcloud/eiam/v20210420/model/ListUsersInOrgNodeResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ListUsersInUserGroupRequest.h>
 #include <tencentcloud/eiam/v20210420/model/ListUsersInUserGroupResponse.h>
+#include <tencentcloud/eiam/v20210420/model/ModifyApplicationRequest.h>
+#include <tencentcloud/eiam/v20210420/model/ModifyApplicationResponse.h>
 #include <tencentcloud/eiam/v20210420/model/ModifyUserInfoRequest.h>
 #include <tencentcloud/eiam/v20210420/model/ModifyUserInfoResponse.h>
 #include <tencentcloud/eiam/v20210420/model/RemoveUserFromUserGroupRequest.h>
@@ -153,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Error, Model::ListUsersInUserGroupResponse> ListUsersInUserGroupOutcome;
                 typedef std::future<ListUsersInUserGroupOutcome> ListUsersInUserGroupOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::ListUsersInUserGroupRequest&, ListUsersInUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersInUserGroupAsyncHandler;
+                typedef Outcome<Error, Model::ModifyApplicationResponse> ModifyApplicationOutcome;
+                typedef std::future<ModifyApplicationOutcome> ModifyApplicationOutcomeCallable;
+                typedef std::function<void(const EiamClient*, const Model::ModifyApplicationRequest&, ModifyApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationAsyncHandler;
                 typedef Outcome<Error, Model::ModifyUserInfoResponse> ModifyUserInfoOutcome;
                 typedef std::future<ModifyUserInfoOutcome> ModifyUserInfoOutcomeCallable;
                 typedef std::function<void(const EiamClient*, const Model::ModifyUserInfoRequest&, ModifyUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserInfoAsyncHandler;
@@ -362,6 +367,15 @@ namespace TencentCloud
                 ListUsersInUserGroupOutcome ListUsersInUserGroup(const Model::ListUsersInUserGroupRequest &request);
                 void ListUsersInUserGroupAsync(const Model::ListUsersInUserGroupRequest& request, const ListUsersInUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListUsersInUserGroupOutcomeCallable ListUsersInUserGroupCallable(const Model::ListUsersInUserGroupRequest& request);
+
+                /**
+                 *更新一个应用的信息
+                 * @param req ModifyApplicationRequest
+                 * @return ModifyApplicationOutcome
+                 */
+                ModifyApplicationOutcome ModifyApplication(const Model::ModifyApplicationRequest &request);
+                void ModifyApplicationAsync(const Model::ModifyApplicationRequest& request, const ModifyApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApplicationOutcomeCallable ModifyApplicationCallable(const Model::ModifyApplicationRequest& request);
 
                 /**
                  *通过用户名或用户 id 冻结用户

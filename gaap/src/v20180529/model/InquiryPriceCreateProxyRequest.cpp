@@ -30,7 +30,8 @@ InquiryPriceCreateProxyRequest::InquiryPriceCreateProxyRequest() :
     m_realServerRegionHasBeenSet(false),
     m_concurrentHasBeenSet(false),
     m_billingTypeHasBeenSet(false),
-    m_iPAddressVersionHasBeenSet(false)
+    m_iPAddressVersionHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string InquiryPriceCreateProxyRequest::ToJsonString() const
         string key = "IPAddressVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_iPAddressVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void InquiryPriceCreateProxyRequest::SetIPAddressVersion(const string& _iPAddres
 bool InquiryPriceCreateProxyRequest::IPAddressVersionHasBeenSet() const
 {
     return m_iPAddressVersionHasBeenSet;
+}
+
+string InquiryPriceCreateProxyRequest::GetNetworkType() const
+{
+    return m_networkType;
+}
+
+void InquiryPriceCreateProxyRequest::SetNetworkType(const string& _networkType)
+{
+    m_networkType = _networkType;
+    m_networkTypeHasBeenSet = true;
+}
+
+bool InquiryPriceCreateProxyRequest::NetworkTypeHasBeenSet() const
+{
+    return m_networkTypeHasBeenSet;
 }
 
 

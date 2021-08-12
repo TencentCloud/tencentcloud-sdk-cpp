@@ -157,6 +157,50 @@ namespace TencentCloud
                      */
                     bool BatchIndexHasBeenSet() const;
 
+                    /**
+                     * 获取旧实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OldPods 旧实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeployServicePodDetail> GetOldPods() const;
+
+                    /**
+                     * 设置旧实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OldPods 旧实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOldPods(const std::vector<DeployServicePodDetail>& _oldPods);
+
+                    /**
+                     * 判断参数 OldPods 是否已赋值
+                     * @return OldPods 是否已赋值
+                     */
+                    bool OldPodsHasBeenSet() const;
+
+                    /**
+                     * 获取新实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NewPods 新实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeployServicePodDetail> GetNewPods() const;
+
+                    /**
+                     * 设置新实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NewPods 新实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNewPods(const std::vector<DeployServicePodDetail>& _newPods);
+
+                    /**
+                     * 判断参数 NewPods 是否已赋值
+                     * @return NewPods 是否已赋值
+                     */
+                    bool NewPodsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +237,20 @@ namespace TencentCloud
                      */
                     int64_t m_batchIndex;
                     bool m_batchIndexHasBeenSet;
+
+                    /**
+                     * 旧实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeployServicePodDetail> m_oldPods;
+                    bool m_oldPodsHasBeenSet;
+
+                    /**
+                     * 新实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeployServicePodDetail> m_newPods;
+                    bool m_newPodsHasBeenSet;
 
                 };
             }

@@ -28,7 +28,9 @@ RunVersionPod::RunVersionPod() :
     m_podIpHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_deployVersionHasBeenSet(false),
-    m_restartCountHasBeenSet(false)
+    m_restartCountHasBeenSet(false),
+    m_readyHasBeenSet(false),
+    m_containerStateHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome RunVersionPod::Deserialize(const rapidjson::Value &value)
         m_restartCountHasBeenSet = true;
     }
 
+    if (value.HasMember("Ready") && !value["Ready"].IsNull())
+    {
+        if (!value["Ready"].IsBool())
+        {
+            return CoreInternalOutcome(Error("response `RunVersionPod.Ready` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ready = value["Ready"].GetBool();
+        m_readyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerState") && !value["ContainerState"].IsNull())
+    {
+        if (!value["ContainerState"].IsString())
+        {
+            return CoreInternalOutcome(Error("response `RunVersionPod.ContainerState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerState = string(value["ContainerState"].GetString());
+        m_containerStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void RunVersionPod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "RestartCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_restartCount, allocator);
+    }
+
+    if (m_readyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ready";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ready, allocator);
+    }
+
+    if (m_containerStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerState.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void RunVersionPod::SetRestartCount(const int64_t& _restartCount)
 bool RunVersionPod::RestartCountHasBeenSet() const
 {
     return m_restartCountHasBeenSet;
+}
+
+bool RunVersionPod::GetReady() const
+{
+    return m_ready;
+}
+
+void RunVersionPod::SetReady(const bool& _ready)
+{
+    m_ready = _ready;
+    m_readyHasBeenSet = true;
+}
+
+bool RunVersionPod::ReadyHasBeenSet() const
+{
+    return m_readyHasBeenSet;
+}
+
+string RunVersionPod::GetContainerState() const
+{
+    return m_containerState;
+}
+
+void RunVersionPod::SetContainerState(const string& _containerState)
+{
+    m_containerState = _containerState;
+    m_containerStateHasBeenSet = true;
+}
+
+bool RunVersionPod::ContainerStateHasBeenSet() const
+{
+    return m_containerStateHasBeenSet;
 }
 

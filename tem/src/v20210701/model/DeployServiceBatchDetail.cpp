@@ -25,7 +25,9 @@ DeployServiceBatchDetail::DeployServiceBatchDetail() :
     m_newPodListHasBeenSet(false),
     m_batchStatusHasBeenSet(false),
     m_podNumHasBeenSet(false),
-    m_batchIndexHasBeenSet(false)
+    m_batchIndexHasBeenSet(false),
+    m_oldPodsHasBeenSet(false),
+    m_newPodsHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,46 @@ CoreInternalOutcome DeployServiceBatchDetail::Deserialize(const rapidjson::Value
         m_batchIndexHasBeenSet = true;
     }
 
+    if (value.HasMember("OldPods") && !value["OldPods"].IsNull())
+    {
+        if (!value["OldPods"].IsArray())
+            return CoreInternalOutcome(Error("response `DeployServiceBatchDetail.OldPods` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OldPods"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeployServicePodDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_oldPods.push_back(item);
+        }
+        m_oldPodsHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewPods") && !value["NewPods"].IsNull())
+    {
+        if (!value["NewPods"].IsArray())
+            return CoreInternalOutcome(Error("response `DeployServiceBatchDetail.NewPods` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NewPods"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeployServicePodDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_newPods.push_back(item);
+        }
+        m_newPodsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +187,36 @@ void DeployServiceBatchDetail::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "BatchIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_batchIndex, allocator);
+    }
+
+    if (m_oldPodsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldPods";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_oldPods.begin(); itr != m_oldPods.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_newPodsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewPods";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_newPods.begin(); itr != m_newPods.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -228,5 +300,37 @@ void DeployServiceBatchDetail::SetBatchIndex(const int64_t& _batchIndex)
 bool DeployServiceBatchDetail::BatchIndexHasBeenSet() const
 {
     return m_batchIndexHasBeenSet;
+}
+
+vector<DeployServicePodDetail> DeployServiceBatchDetail::GetOldPods() const
+{
+    return m_oldPods;
+}
+
+void DeployServiceBatchDetail::SetOldPods(const vector<DeployServicePodDetail>& _oldPods)
+{
+    m_oldPods = _oldPods;
+    m_oldPodsHasBeenSet = true;
+}
+
+bool DeployServiceBatchDetail::OldPodsHasBeenSet() const
+{
+    return m_oldPodsHasBeenSet;
+}
+
+vector<DeployServicePodDetail> DeployServiceBatchDetail::GetNewPods() const
+{
+    return m_newPods;
+}
+
+void DeployServiceBatchDetail::SetNewPods(const vector<DeployServicePodDetail>& _newPods)
+{
+    m_newPods = _newPods;
+    m_newPodsHasBeenSet = true;
+}
+
+bool DeployServiceBatchDetail::NewPodsHasBeenSet() const
+{
+    return m_newPodsHasBeenSet;
 }
 
